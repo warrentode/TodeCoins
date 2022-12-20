@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "todecoins:block/coin_press_bottom",
+    "east": "todecoins:block/coin_press_side",
+    "north": "todecoins:block/coin_press_side",
+    "particle": "todecoins:block/coin_press_top",
+    "south": "todecoins:block/coin_press_side",
+    "up": "todecoins:block/coin_press_top",
+    "west": "todecoins:block/coin_press_side"
+  }
+}

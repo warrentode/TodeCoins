@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "todecoins:copper_coin"
+    },
+    {
+      "item": "todecoins:copper_coin"
+    }
+  ],
+  "result": {
+    "item": "todecoins:copper_nugget"
+  }
+}

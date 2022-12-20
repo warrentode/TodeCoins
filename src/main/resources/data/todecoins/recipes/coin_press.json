@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "D": {
+      "item": "minecraft:polished_deepslate"
+    }
+  },
+  "pattern": [
+    "III",
+    "DID",
+    "PPP"
+  ],
+  "result": {
+    "item": "todecoins:coin_press"
+  }
+}

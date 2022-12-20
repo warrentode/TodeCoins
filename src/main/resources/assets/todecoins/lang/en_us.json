@@ -1,0 +1,11 @@
+{
+  "item.todecoins.copper_nugget": "Copper Nugget",
+  "item.todecoins.copper_coin": "Copper Coin",
+
+  "block.todecoins.copper_coin_bag": "Bag of Copper Coins",
+  "block.todecoins.coin_press": "Coin Press",
+
+  "itemGroup.todecoinstab": "Tode Coins",
+
+  "container.coin_press": "Coin Press"
+}

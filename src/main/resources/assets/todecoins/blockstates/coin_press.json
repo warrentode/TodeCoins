@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "todecoins:block/coin_press"
+    }
+  }
+}
