@@ -3,7 +3,7 @@
   "group": "coins",
   "ingredients": [
     {
-      "item": "todecraft:copper_coin_bag"
+      "item": "todecoins:copper_coin_bag"
     }
   ],
   "result": {

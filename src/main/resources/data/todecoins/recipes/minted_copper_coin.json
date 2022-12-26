@@ -1,9 +1,0 @@
-{
-  "type": "todecoins:minting",
-  "group": "coins",
-  "count": 2,
-  "ingredient": {
-    "item": "todecoins:copper_nugget"
-  },
-  "item": "todecoins:copper_coin"
-}
