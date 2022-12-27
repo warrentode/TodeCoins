@@ -14,6 +14,7 @@ import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.villager.ModVillagers;
 import org.slf4j.Logger;
 
+@SuppressWarnings("ALL")
 @Mod(TodeCoins.MOD_ID)
 public class TodeCoins {
     public static final String MOD_ID = "todecoins";
