@@ -1,13 +1,21 @@
 {
   "item.todecoins.copper_nugget": "Copper Nugget",
   "item.todecoins.copper_coin": "Copper Coin",
+  "item.todecoins.iron_coin": "Iron Coin",
+  "item.todecoins.gold_coin": "Gold Coin",
+  "item.todecoins.netherite_coin": "Netherite Coin",
+  "item.todecoins.emerald_bank_note": "Emerald Bank Note",
 
   "block.todecoins.copper_coin_bag": "Bag of Copper Coins",
+  "block.todecoins.iron_coin_bag": "Bag of Iron Coins",
+  "block.todecoins.gold_coin_bag": "Bag of Gold Coins",
+  "block.todecoins.netherite_coin_bag": "Bag of Netherite Coins",
+  "block.todecoins.emerald_bank_note_bag": "Bag of Emerald Bank Notes",
   "block.todecoins.coin_press": "Coin Press",
 
   "itemGroup.todecoinstab": "Tode Coins",
 
-  "entity.minecraft.villager.banker": "Banker",
+  "entity.minecraft.villager.todecoins.banker": "Banker",
 
   "container.coin_press": "Coin Press"
 }

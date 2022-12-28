@@ -3,11 +3,11 @@
   "group": "coins",
   "ingredients": [
     {
-      "item": "todecoins:copper_nugget"
+      "item": "todecoins:gold_coin_bag"
     }
   ],
   "result": {
-	"count": 2,
-    "item": "todecoins:copper_coin"
+    "count": 9,
+    "item": "todecoins:gold_coin"
   }
 }

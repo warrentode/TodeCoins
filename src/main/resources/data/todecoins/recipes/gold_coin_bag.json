@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "coins",
+  "key": {
+    "#": {
+      "item": "todecoins:gold_coin"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "todecoins:gold_coin_bag"
+  }
+}

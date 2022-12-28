@@ -3,11 +3,11 @@
   "group": "coins",
   "ingredients": [
     {
-      "item": "todecoins:copper_nugget"
+      "item": "todecoins:netherite_scrap"
     }
   ],
   "result": {
 	"count": 2,
-    "item": "todecoins:copper_coin"
+    "item": "todecoins:netherite_coin"
   }
 }

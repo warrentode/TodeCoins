@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "todecoins:copper_coin"
+    "todecoins:copper_coin",
+    "todecoins:iron_coin"
   ]
 }

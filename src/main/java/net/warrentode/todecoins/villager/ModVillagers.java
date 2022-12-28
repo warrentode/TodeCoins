@@ -27,7 +27,7 @@ public class ModVillagers {
     public static final RegistryObject<VillagerProfession> BANKER = VILLAGER_PROFESSIONS.register("banker",
             () -> new VillagerProfession("banker", x -> x.get() == BANKER_POI.get(),
                     x -> x.get() == BANKER_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
-                    SoundEvents.VILLAGER_WORK_TOOLSMITH));
+                    SoundEvents.CHAIN_STEP));
 
     public static void registerPOIs() {
         try {

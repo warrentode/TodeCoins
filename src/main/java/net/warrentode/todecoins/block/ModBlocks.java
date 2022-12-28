@@ -25,6 +25,18 @@ public class ModBlocks {
     public static final RegistryObject<Block> COPPER_COIN_BAG = registerBlock("copper_coin_bag",
             ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
             ModCreativeModeTab.TODECOINSTAB);
+    public static final RegistryObject<Block> IRON_COIN_BAG = registerBlock("iron_coin_bag",
+            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
+            ModCreativeModeTab.TODECOINSTAB);
+    public static final RegistryObject<Block> GOLD_COIN_BAG = registerBlock("gold_coin_bag",
+            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
+            ModCreativeModeTab.TODECOINSTAB);
+    public static final RegistryObject<Block> EMERALD_BANK_NOTE_BAG = registerBlock("emerald_bank_note_bag",
+            ()-> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
+            ModCreativeModeTab.TODECOINSTAB);
+    public static final RegistryObject<Block> NETHERITE_COIN_BAG = registerBlock("netherite_coin_bag",
+            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
+            ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> COINPRESSBLOCK = registerBlock("coin_press",
             ()-> new CoinPressBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.ANVIL).strength(6f)),

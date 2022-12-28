@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "todecoins:netherite_coin"
+    },
+    {
+      "item": "todecoins:netherite_coin"
+    }
+  ],
+  "result": {
+    "item": "todecoins:netherite_scrap"
+  }
+}

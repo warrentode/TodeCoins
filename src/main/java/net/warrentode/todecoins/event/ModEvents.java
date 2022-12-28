@@ -30,14 +30,89 @@ public class ModEvents {
                     new ItemStack(Items.EMERALD, 1),
                     stack,16,8,0.02F));
         }
-
         if(event.getType() == ModVillagers.BANKER.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
             ItemStack stack = new ItemStack(Items.EMERALD, 1);
             int villagerLevel = 1;
 
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ModItems.COPPER_COIN_BAG, 18),
+                    new ItemStack(ModBlocks.COPPER_COIN_BAG.get(), 18),
+                    stack, 16, 8, 0.02F));
+        }
+
+        if(event.getType() == ModVillagers.BANKER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.IRON_COIN.get(), 1);
+            int villagerLevel = 2;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.COPPER_COIN.get(), 2),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.BANKER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.COPPER_COIN.get(), 2);
+            int villagerLevel = 2;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.IRON_COIN.get(), 1),
+                    stack, 16, 8, 0.02F));
+        }
+
+        if(event.getType() == ModVillagers.BANKER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.GOLD_COIN.get(), 1);
+            int villagerLevel = 3;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.IRON_COIN.get(), 2),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.BANKER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.IRON_COIN.get(), 2);
+            int villagerLevel = 3;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.GOLD_COIN.get(), 1),
+                    stack, 16, 8, 0.02F));
+        }
+
+        if(event.getType() == ModVillagers.BANKER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 1);
+            int villagerLevel = 4;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 64),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.BANKER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Items.EMERALD, 64);
+            int villagerLevel = 4;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 1),
+                    stack, 16, 8, 0.02F));
+        }
+
+        if(event.getType() == ModVillagers.BANKER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.NETHERITE_COIN.get(), 2);
+            int villagerLevel = 5;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 1),
+                    stack, 16, 8, 0.02F));
+        }
+        if(event.getType() == ModVillagers.BANKER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 1);
+            int villagerLevel = 5;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.NETHERITE_COIN.get(), 2),
                     stack,16,8,0.02F));
         }
 
