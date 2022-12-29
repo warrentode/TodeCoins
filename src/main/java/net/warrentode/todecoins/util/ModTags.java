@@ -16,9 +16,9 @@ public class ModTags {
     public static final TagKey<Item> TEXTILES = modItemTag("textiles");
 
     private static TagKey<Block> modBlockTag(String path) {
-        return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(TodeCoins.MOD_ID, path));;
+        return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(TodeCoins.MOD_ID, path));
     }
     private static TagKey<Item> modItemTag(String path) {
-        return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(TodeCoins.MOD_ID, path));;
+        return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(TodeCoins.MOD_ID, path));
     }
 }
