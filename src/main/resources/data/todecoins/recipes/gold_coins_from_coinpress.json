@@ -5,8 +5,8 @@
       "item": "minecraft:gold_nugget"
     }
   ],
-  "result": {
-	"count": 2,
-    "item": "todecoins:gold_coin"
+  "output": {
+    "item": "todecoins:gold_coin",
+    "count": 2
   }
 }

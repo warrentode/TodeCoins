@@ -5,8 +5,8 @@
       "item": "todecoins:copper_nugget"
     }
   ],
-  "result": {
-	"count": 2,
-    "item": "todecoins:copper_coin"
+  "output": {
+    "item": "todecoins:copper_coin",
+    "count": 2
   }
 }

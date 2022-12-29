@@ -15,15 +15,19 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.SingleThreadedRandomSource;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.recipe.CoinPressRecipe;
 import net.warrentode.todecoins.screen.CoinPressMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
@@ -99,18 +103,18 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    protected void saveAdditional(CompoundTag pTag) {
-        pTag.put("inventory", itemHandler.serializeNBT());
-        pTag.putInt("coin_press.progress", this.progress);
+    protected void saveAdditional(CompoundTag tag) {
+        tag.put("inventory", itemHandler.serializeNBT());
+        tag.putInt("coin_press.progress", this.progress);
 
-        super.saveAdditional(pTag);
+        super.saveAdditional(tag);
     }
 
     @Override
-    public void load(CompoundTag pTag) {
-        super.load(pTag);
-        itemHandler.deserializeNBT(pTag.getCompound("inventory"));
-        progress = pTag.getInt("coin_press.progress");
+    public void load(CompoundTag nbt) {
+        super.load(nbt);
+        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
+        progress = nbt.getInt("coin_press.progress");
     }
 
     public void drops() {
@@ -123,10 +127,6 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, CoinPressBlockEntity pEntity) {
-        if(level.isClientSide()) {
-            return;
-        }
-
         if(hasRecipe(pEntity)) {
             pEntity.progress++;
             setChanged(level, pos, state);
@@ -140,34 +140,60 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
         }
     }
 
-    private void resetProgress() {
-        this.progress = 0;
-    }
-
     /* RECIPES */
 
-    private static void craftItem(CoinPressBlockEntity pEntity) {
-        if(hasRecipe(pEntity)) {
-            pEntity.itemHandler.extractItem(0, 1, false);
-            pEntity.itemHandler.extractItem(1, 1, false);
-
-            pEntity.itemHandler.setStackInSlot(2, new ItemStack(ModItems.COPPER_COIN.get(),
-                    pEntity.itemHandler.getStackInSlot(2).getCount() + 2));
-
-            pEntity.resetProgress();
+    private static boolean hasRecipe(CoinPressBlockEntity entity) {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
+
+        boolean hasItemInStampSlot = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.COIN_STAMP.get();
+
+        Optional<CoinPressRecipe> recipe = level.getRecipeManager().getRecipeFor(CoinPressRecipe.Type.INSTANCE, inventory, level);
+
+        return hasItemInStampSlot && recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) &&
+                canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem());
     }
 
-    private static boolean hasRecipe(CoinPressBlockEntity pEntity) {
-        SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
-        for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
+    private static boolean hasItemInStampSlot(CoinPressBlockEntity entity) {
+        return entity.itemHandler.getStackInSlot(0).getItem() == ModItems.COIN_STAMP.get();
+    }
+
+    private static boolean craftItem(CoinPressBlockEntity entity)  {
+        Level level = entity.level;
+        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
+        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        boolean hasItemInStampSlot = pEntity.itemHandler.getStackInSlot(0).getItem() == ModItems.COIN_STAMP.get();
-        boolean hasItemInFirstSlot = pEntity.itemHandler.getStackInSlot(1).getItem() == ModItems.COPPER_NUGGET.get();
+        Optional<CoinPressRecipe> match = level.getRecipeManager()
+                .getRecipeFor(CoinPressRecipe.Type.INSTANCE, inventory, level);
 
-        return hasItemInStampSlot && hasItemInFirstSlot;
+        if(match.isPresent()) {
+            entity.itemHandler.getStackInSlot(0).hurt(1, new SingleThreadedRandomSource(1), null);
+            entity.itemHandler.extractItem(1,1, false);
+
+            entity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(2).getCount() + (match.get().getResultItem().getCount())));
+
+            entity.resetProgress();
+        } else {
+            return false;
+        }
+
+        if (entity.itemHandler.getStackInSlot(0).getDamageValue() == 64 && entity.itemHandler.getStackInSlot(0).getItem() == ModItems.COIN_STAMP.get()) {
+            entity.itemHandler.extractItem(0,1, false);
+        } else {
+            return false;
+        }
+
+        return false;
+    }
+
+    private void resetProgress() {
+        this.progress = 0;
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack stack) {

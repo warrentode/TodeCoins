@@ -3,13 +3,13 @@ loaderVersion="[43,)"
 license="Reciprocal Public License 1.5"
 [[mods]]
 modId="todecoins"
-version="0.0.1-1.19.2"
+version="1.19.2-0.0.1"
 displayName="Tode Coins"
 logoFile="logo.png"
 credits="Shout out to the Iron Knight for supporting all the projects I get myself into!"
 authors="Warren Tode (ToadieOdie)"
 description='''
-Adds currency to the game.
+Adds currency and a banker villager with trades to the game.
 '''
 [[dependencies.todecoins]]
     modId="forge"

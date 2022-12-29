@@ -5,8 +5,8 @@
       "item": "minecraft:iron_nugget"
     }
   ],
-  "result": {
-	"count": 2,
-    "item": "todecoins:iron_coin"
+  "output": {
+    "item": "todecoins:iron_coin",
+    "count": 2
   }
 }
