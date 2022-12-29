@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:string",
+    "minecraft:sugarcane",
+      {
+        "id": "forge:fibre_hemp",
+        "required": false
+      },
+      {
+        "id": "forge:string",
+        "required": false
+      },
+      {
+        "id": "farmersdelight:straw",
+        "required": false
+      },
+      {
+        "id": "supplementaries:flax",
+        "required": false
+      }
+  ]
+}
