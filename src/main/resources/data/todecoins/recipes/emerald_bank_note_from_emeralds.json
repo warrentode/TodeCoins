@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "banknotes",
   "ingredients": [
     {
       "item": "minecraft:emerald"

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "coins",
   "ingredients": [
     {
       "item": "todecoins:netherite_coin_bag"

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:smooth_stone_slab"
+    },
+    "C": {
+      "item": "minecraft:chiseled_stone_bricks"
+    }
+  },
+  "pattern": [
+    " S ",
+    " C ",
+    " S "
+  ],
+  "result": {
+    "item": "todecoins:coin_stamp"
+  }
+}

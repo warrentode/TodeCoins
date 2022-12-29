@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "coins",
   "ingredients": [
     {
       "item": "todecoins:iron_coin_bag"

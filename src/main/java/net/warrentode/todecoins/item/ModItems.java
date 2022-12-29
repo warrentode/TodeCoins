@@ -11,6 +11,9 @@ public class ModItems {
     public static DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MOD_ID);
 
+    public static final RegistryObject<Item> COIN_STAMP = ITEMS.register("coin_stamp",
+            ()-> new Item(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+
     public static final RegistryObject<Item> COPPER_NUGGET = ITEMS.register("copper_nugget",
             ()-> new Item(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
 

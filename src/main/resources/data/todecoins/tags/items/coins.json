@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "todecoins:copper_coin",
+    "todecoins:iron_coin",
+    "todecoins:gold_coin",
+    "todecoins:netherite_coin"
+  ]
+}
