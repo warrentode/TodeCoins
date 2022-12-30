@@ -1,6 +1,26 @@
 {
   "replace": false,
   "values": [
-    "minecraft:emerald"
+    "minecraft:diamond",
+    "minecraft:emerald",
+    "minecraft:ender_pearl",
+    "minecraft:ender_eye",
+    "minecraft:glowstone_dust",
+    "minecraft:lapis_lazuli",
+    "minecraft:quartz",
+    "minecraft:nether_star",
+    "minecraft:prismarine_shard",
+    "minecraft:redstone",
+    "minecraft:amethyst_shard",
+    "minecraft:end_crystal",
+    "minecraft:prismarine_crystals",
+    "minecraft:small_amethyst_bud",
+    "minecraft:medium_amethyst_bud",
+    "minecraft:large_amethyst_bud",
+    "minecraft:amethyst_cluster",
+    {
+      "id": "forge:gems",
+      "required": false
+    }
   ]
 }
