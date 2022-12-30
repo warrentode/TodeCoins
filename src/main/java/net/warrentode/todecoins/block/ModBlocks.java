@@ -13,6 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.block.custom.CoinPressBlock;
+import net.warrentode.todecoins.block.custom.PotOfGoldBlock;
 import net.warrentode.todecoins.item.ModCreativeModeTab;
 import net.warrentode.todecoins.item.ModItems;
 
@@ -32,11 +33,15 @@ public class ModBlocks {
             ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
             ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> EMERALD_BANK_NOTE_BAG = registerBlock("emerald_bank_note_bag",
-            ()-> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
+            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
             ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> NETHERITE_COIN_BAG = registerBlock("netherite_coin_bag",
             ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
             ModCreativeModeTab.TODECOINSTAB);
+
+    public static final RegistryObject<Block> POT_OF_GOLD = registerBlock("pot_of_gold",
+            ()-> new PotOfGoldBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(8f)
+                    .noCollission().requiresCorrectToolForDrops()), ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> COINPRESSBLOCK = registerBlock("coin_press",
             ()-> new CoinPressBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.ANVIL).strength(6f)),
