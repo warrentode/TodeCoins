@@ -12,6 +12,10 @@
         "required": false
       },
       {
+        "id": "forge:bark",
+        "required": false
+      },
+      {
         "id": "farmersdelight:straw",
         "required": false
       },
