@@ -2,7 +2,7 @@
   "type": "todecoins:coinpress",
   "ingredients": [
     {
-      "item": "todecoins:copper_nugget"
+      "tag": "forge:nuggets/copper"
     }
   ],
   "output": {

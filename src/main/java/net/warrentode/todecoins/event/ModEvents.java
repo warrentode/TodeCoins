@@ -21,6 +21,7 @@ public class ModEvents {
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
 
+        // BANKER TRADES SET
         if(event.getType() == ModVillagers.BANKER.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
             ItemStack stack = new ItemStack(ModBlocks.COPPER_COIN_BAG.get(), 18);
@@ -114,6 +115,26 @@ public class ModEvents {
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                     new ItemStack(ModItems.NETHERITE_COIN.get(), 2),
                     stack,16,8,0.02F));
+        }
+
+        // LEPRECHAUN TRADES SET
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModBlocks.COPPER_COIN_BAG.get(), 18);
+            int villagerLevel = 1;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 1),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Items.EMERALD, 1);
+            int villagerLevel = 1;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModBlocks.COPPER_COIN_BAG.get(), 18),
+                    stack, 16, 8, 0.02F));
         }
 
     }

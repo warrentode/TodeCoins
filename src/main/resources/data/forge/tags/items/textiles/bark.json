@@ -1,9 +1,8 @@
 {
   "replace": false,
   "values": [
-    "minecraft:netherite_ingot",
     {
-      "id": "forge:ingots/iron",
+      "id": "forge:bark",
       "required": false
     }
   ]

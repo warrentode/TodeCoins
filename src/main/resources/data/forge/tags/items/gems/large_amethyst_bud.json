@@ -17,10 +17,6 @@
     "minecraft:small_amethyst_bud",
     "minecraft:medium_amethyst_bud",
     "minecraft:large_amethyst_bud",
-    "minecraft:amethyst_cluster",
-    {
-      "id": "forge:gems",
-      "required": false
-    }
+    "minecraft:amethyst_cluster"
   ]
 }

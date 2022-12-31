@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "forge:fibre_hemp",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:straw",
+      "required": false
+    },
+    {
+      "id": "supplementaries:flax",
+      "required": false
+    }
+  ]
+}

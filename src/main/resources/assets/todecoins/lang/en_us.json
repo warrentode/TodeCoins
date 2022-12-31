@@ -18,6 +18,7 @@
   "itemGroup.todecoinstab": "Tode Coins",
 
   "entity.minecraft.villager.todecoins.banker": "Banker",
+  "entity.minecraft.villager.todecoins.leprechaun": "Leprechaun",
 
   "container.coin_press_block_gui": "Coin Press"
 }

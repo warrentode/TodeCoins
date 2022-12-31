@@ -23,11 +23,19 @@ public class ModVillagers {
     public static final RegistryObject<PoiType> BANKER_POI = POI_TYPES.register("banker_poi",
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.COINPRESSBLOCK.get().getStateDefinition().getPossibleStates()),
                     1, 1));
-
     public static final RegistryObject<VillagerProfession> BANKER = VILLAGER_PROFESSIONS.register("banker",
             () -> new VillagerProfession("banker", x -> x.get() == BANKER_POI.get(),
                     x -> x.get() == BANKER_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
                     SoundEvents.CHAIN_STEP));
+
+
+    public static final RegistryObject<PoiType> LEPRECHAUN_POI = POI_TYPES.register("leprechaun_poi",
+            () -> new PoiType(ImmutableSet.copyOf(ModBlocks.POT_OF_GOLD.get().getStateDefinition().getPossibleStates()),
+                    1, 1));
+    public static final RegistryObject<VillagerProfession> LEPRECHAUN = VILLAGER_PROFESSIONS.register("leprechaun",
+            () -> new VillagerProfession("leprechaun", x -> x.get() == LEPRECHAUN_POI.get(),
+                    x -> x.get() == LEPRECHAUN_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
+                    SoundEvents.CHAIN_PLACE));
 
     public static void registerPOIs() {
         try {

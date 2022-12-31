@@ -2,7 +2,7 @@
   "type": "todecoins:coinpress",
   "ingredients": [
     {
-      "item": "minecraft:gold_nugget"
+      "tag": "forge:nuggets/gold"
     }
   ],
   "output": {

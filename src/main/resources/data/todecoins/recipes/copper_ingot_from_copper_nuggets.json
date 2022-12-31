@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "todecoins:copper_nugget"
+      "tag": "forge:nuggets/copper"
     }
   },
   "pattern": [

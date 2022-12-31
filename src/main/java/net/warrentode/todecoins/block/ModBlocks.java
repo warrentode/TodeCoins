@@ -39,7 +39,7 @@ public class ModBlocks {
             ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> POT_OF_GOLD = registerBlock("pot_of_gold",
-            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.AMETHYST).strength(8f)
+            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(8f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> COINPRESSBLOCK = registerBlock("coin_press",
