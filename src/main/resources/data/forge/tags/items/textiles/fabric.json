@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:wool",
+    {
+      "id": "forge:fabric_hemp",
+      "required": false
+    }
+  ]
+}

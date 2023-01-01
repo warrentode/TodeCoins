@@ -28,7 +28,6 @@ public class ModVillagers {
                     x -> x.get() == BANKER_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
                     SoundEvents.CHAIN_STEP));
 
-
     public static final RegistryObject<PoiType> LEPRECHAUN_POI = POI_TYPES.register("leprechaun_poi",
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.POT_OF_GOLD.get().getStateDefinition().getPossibleStates()),
                     1, 1));

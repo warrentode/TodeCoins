@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.warrentode.todecoins.TodeCoins;
 
 public class ModTags {
-    public static final TagKey<Block> CURRENCY_BAGS = modBlockTag("currency_bags");
+    public static final TagKey<Block> CURRENCY_BLOCKS = modBlockTag("storage_blocks");
 
     public static final TagKey<Item> BANKNOTES = modItemTag("banknotes");
     public static final TagKey<Item> COINS = modItemTag("coins");
