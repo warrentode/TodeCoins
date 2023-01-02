@@ -5,6 +5,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -120,30 +121,142 @@ public class ModEvents {
         // LEPRECHAUN TRADES SET
         if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 1);
+            int villagerLevel = 1;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModBlocks.GOLD_COIN_BAG.get(), 6),
+                    stack, 16, 8, 0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
             ItemStack stack = new ItemStack(ModBlocks.GOLD_COIN_BAG.get(), 6);
             int villagerLevel = 1;
-
+            //price
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                     new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 1),
                     stack,16,8,0.02F));
         }
+
         if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 1);
-            int villagerLevel = 1;
-
+            ItemStack stack = new ItemStack(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), 1);
+            int villagerLevel = 2;
+            //price
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ModBlocks.GOLD_COIN_BAG.get(), 6),
+                    new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 16),
                     stack, 16, 8, 0.02F));
         }
         if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 1);
-            int villagerLevel = 1;
-
+            ItemStack stack = new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 16);
+            int villagerLevel = 2;
+            //price
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ModBlocks.GOLD_COIN_BAG.get(), 6),
+                    new ItemStack(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), 1),
+                    stack,16,8,0.02F));
+        }
+
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.EMERALD_HALF_BANK_NOTE.get(), 1);
+            int villagerLevel = 3;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 32),
                     stack, 16, 8, 0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 32);
+            int villagerLevel = 3;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_HALF_BANK_NOTE.get(), 1),
+                    stack,16,8,0.02F));
+        }
+
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 1);
+            int villagerLevel = 4;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 64),
+                    stack, 16, 8, 0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 64);
+            int villagerLevel = 4;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 1),
+                    stack,16,8,0.02F));
+        }
+
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Items.ENDER_EYE, 1);
+            int villagerLevel = 5;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 5),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Items.BLAZE_ROD, 1);
+            int villagerLevel = 5;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.COPPER_BANK_NOTE.get(), 5),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Items.PRISMARINE_SHARD, 1);
+            int villagerLevel = 5;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), 1),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Items.PRISMARINE_CRYSTALS, 1);
+            int villagerLevel = 5;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), 2),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Items.PRISMARINE_SHARD, 1);
+            int villagerLevel = 5;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), 1),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Items.SEA_LANTERN, 1);
+            int villagerLevel = 5;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_HALF_BANK_NOTE.get(), 7),
+                    stack,16,8,0.02F));
+        }
+        if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(Blocks.NETHERITE_BLOCK, 1);
+            int villagerLevel = 5;
+            //price
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 18),
+                    stack,16,8,0.02F));
         }
 
     }
