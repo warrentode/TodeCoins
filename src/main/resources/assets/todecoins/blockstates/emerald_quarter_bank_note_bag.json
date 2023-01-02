@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "todecoins:block/emerald_half_bank_note_bag"
+      "model": "todecoins:block/emerald_quarter_bank_note_bag"
     }
   }
 }
