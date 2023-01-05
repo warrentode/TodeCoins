@@ -1,5 +1,7 @@
 {
-  "item.todecoins.lucky_penny": "Lucky Penny",
+  "item.todecoins.lucky_coin": "Lucky Coin",
+  "tooltips.lucky_coin.hover": "An Unusual Coin",
+  "tooltips.lucky_coin.shiftDown": "Must be good for something...",
 
   "item.todecoins.coin_stamp": "Coin Stamp",
   "item.todecoins.copper_nugget": "Copper Nugget",
@@ -8,17 +10,20 @@
   "item.todecoins.gold_coin": "Gold Coin",
   "item.todecoins.netherite_coin": "Netherite Coin",
 
-  "item.todecoins.copper_bank_note": "Copper Note",
   "item.todecoins.emerald_bank_note": "Emerald Note",
   "item.todecoins.emerald_quarter_bank_note": "Emerald Quarter Note",
   "item.todecoins.emerald_half_bank_note": "Emerald Half Note",
+
+  "item.todecoins.lucky_boots": "Lucky Boots",
+  "item.todecoins.lucky_pants": "Lucky Pants",
+  "item.todecoins.lucky_shirt": "Lucky Shirt",
+  "item.todecoins.lucky_Hat": "Lucky Hat",
 
   "block.todecoins.copper_coin_bag": "Bag of Copper Coins",
   "block.todecoins.iron_coin_bag": "Bag of Iron Coins",
   "block.todecoins.gold_coin_bag": "Bag of Gold Coins",
   "block.todecoins.netherite_coin_bag": "Bag of Netherite Coins",
 
-  "block.todecoins.copper_bank_note_bag": "Bag of Copper Notes",
   "block.todecoins.emerald_bank_note_bag": "Bag of Emerald Notes",
   "block.todecoins.emerald_quarter_bank_note_bag": "Bag of Emerald Quarter Notes",
   "block.todecoins.emerald_half_bank_note_bag": "Bag of Emerald Half Notes",
