@@ -16,7 +16,7 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ModArmorMaterials.LUCKY,
-                    new MobEffectInstance(MobEffects.LUCK, 200, 4)).build();
+                    new MobEffectInstance(MobEffects.LUCK, 6000, 0)).build();
 
     public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
         super(material, slot, settings);

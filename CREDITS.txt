@@ -1,0 +1,7 @@
+Author of this TodeCoins Mod: Warren Tode
+
+Additional Credits:
+ * WrappedHandler Class by noeppi_noeppi | https://github.com/ModdingX/LibX
+ * BetterBrewingRecipe Class by CAS-ual-TY from https://github.com/CAS-ual-TY/Extra-Potions
+ * QuickMove method by diesieben07 | https://github.com/diesieben07/SevenCommons
+ * Overall help with figuring things out by Kaupunjoe https://github.com/Tutorials-By-Kaupenjoe

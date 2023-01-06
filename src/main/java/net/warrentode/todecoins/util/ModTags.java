@@ -13,8 +13,10 @@ public class ModTags {
     public static final TagKey<Item> BANKNOTES = modItemTag("banknotes");
     public static final TagKey<Item> COINS = modItemTag("coins");
     public static final TagKey<Item> CURRENCY = modItemTag("currency");
+    public static final TagKey<Item> CURRENCY_MATERIALS = modItemTag("currency_materials");
     public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");
     public static final TagKey<Item> CURRENCY_FIBER = modItemTag("textiles/currency_fiber");
+    public static final TagKey<Item> CURRENCY_PAPER = modItemTag("textiles/currency_paper");
     public static final TagKey<Item> FABRIC = modItemTag("textiles/paper");
 
     public static final TagKey<Block> STORAGE_BLOCKS = forgeBlockTag("forge:storage_blocks");

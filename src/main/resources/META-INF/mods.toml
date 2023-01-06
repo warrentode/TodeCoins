@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="[43,)"
-license="Reciprocal Public License 1.5"
+license="GNU_GPL.3"
 [[mods]]
 modId="todecoins"
 version="1.19.2-0.0.9"
