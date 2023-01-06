@@ -301,13 +301,13 @@ public class ModEvents {
             int villagerLevel = 5;
             //price
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ModBlocks.POT_OF_GOLD.get(), 2),
+                    new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 3),
                     stack, 16, 8, 0.02F)
             );
         }
         if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModBlocks.POT_OF_GOLD.get(), 2);
+            ItemStack stack = new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 3);
             int villagerLevel = 5;
             //price
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(

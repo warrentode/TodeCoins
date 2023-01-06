@@ -1,0 +1,12 @@
+{
+  "type": "todecoins:coinpress",
+  "ingredients": [
+    {
+      "item": "todecoins:emerald_coarse_wove_paper"
+    }
+  ],
+  "output": {
+    "item": "todecoins:emerald_quarter_bank_note",
+    "count": 1
+  }
+}

@@ -37,13 +37,13 @@ public class ModBlocks {
             ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> EMERALD_QUARTER_BANK_NOTE_BAG = registerBlock("emerald_quarter_bank_note_bag",
-            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.GRASS).strength(2f)),
+            ()-> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
             ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> EMERALD_HALF_BANK_NOTE_BAG = registerBlock("emerald_half_bank_note_bag",
-            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.GRASS).strength(2f)),
+            ()-> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
             ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> EMERALD_BANK_NOTE_BAG = registerBlock("emerald_bank_note_bag",
-            ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.GRASS).strength(2f)),
+            ()-> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
             ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> POT_OF_GOLD = registerBlock("pot_of_gold",

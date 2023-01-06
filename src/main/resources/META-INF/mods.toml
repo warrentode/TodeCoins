@@ -3,7 +3,7 @@ loaderVersion="[43,)"
 license="Reciprocal Public License 1.5"
 [[mods]]
 modId="todecoins"
-version="1.19.2-0.0.8"
+version="1.19.2-0.0.9"
 displayName="Tode Coins"
 logoFile="logo.png"
 credits="Shout out to the Iron Knight for supporting all the projects I get myself into!"

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "forge:fibre",
+      "required": false
+    },
+    {
+      "id": "forge:bark",
+      "required": false
+    },
+    {
+      "id": "forge:string",
+      "required": false
+    },
+    {
+      "id": "forge:paper",
+      "required": false
+    }
+  ]
+}
