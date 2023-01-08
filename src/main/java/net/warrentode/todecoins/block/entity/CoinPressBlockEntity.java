@@ -25,6 +25,7 @@ import net.warrentode.todecoins.block.custom.CoinPressBlock;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.recipe.CoinPressRecipe;
 import net.warrentode.todecoins.screen.CoinPressMenu;
+import net.warrentode.todecoins.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,6 +34,7 @@ import java.util.Optional;
 
 public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -40,9 +42,10 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            boolean isInItemGroup = stack.is(ModTags.CURRENCY_MATERIALS);
             return switch (slot) {
               case 0 -> stack.getItem() == ModItems.COIN_STAMP.get();
-              case 1 -> stack.getItem() == ModItems.COPPER_NUGGET.get();
+              case 1 -> stack.hasTag() == stack.is(ModTags.CURRENCY_MATERIALS);
               case 2 -> false;
               default -> super.isItemValid(slot, stack);
             };
@@ -52,12 +55,12 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     public LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
             Map.of(Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
-                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0,
+                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0,
                             (index, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 1,
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 1,
                             (index, stack) -> itemHandler.isItemValid(1, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0 || index == 1,
+                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0 || index == 1,
                             (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(1, stack))));
 
     protected final ContainerData data;
@@ -117,9 +120,9 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
                 }
 
                 return switch (localDir) {
-                    default -> directionWrappedHandlerMap.get(side.getOpposite()).cast();
+                    default -> directionWrappedHandlerMap.get(side).cast();
                     case EAST -> directionWrappedHandlerMap.get(side.getClockWise()).cast();
-                    case SOUTH -> directionWrappedHandlerMap.get(side).cast();
+                    case SOUTH -> directionWrappedHandlerMap.get(side.getOpposite()).cast();
                     case WEST -> directionWrappedHandlerMap.get(side.getCounterClockWise()).cast();
                 };
             }

@@ -1,6 +1,13 @@
 {
   "replace": false,
   "values": [
-    "#forge:nuggets"
+    {
+      "id": "forge:nuggets",
+      "required": false
+    },
+    {
+      "id": "todecoins:textiles/currency_paper",
+      "required": false
+    }
   ]
 }

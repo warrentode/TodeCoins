@@ -2,15 +2,15 @@
   "replace": false,
   "values": [
     {
-      "id": "todecoins:banknotes",
+      "id": "forge:nuggets/copper",
       "required": false
     },
     {
-      "id": "todecoins:coins",
+      "id": "forge:nuggets/iron",
       "required": false
     },
     {
-      "id": "forge:gems",
+      "id": "forge:nuggets/gold",
       "required": false
     }
   ]

@@ -3,7 +3,6 @@
   "values": [
     "todecoins:emerald_bank_note",
     "todecoins:emerald_quarter_bank_note",
-    "todecoins:emerald_half_bank_note",
-    "todecoins:copper_bank_note"
+    "todecoins:emerald_half_bank_note"
   ]
 }

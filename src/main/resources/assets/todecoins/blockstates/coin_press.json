@@ -1,17 +1,17 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=north": {
       "model": "todecoins:block/coin_press"
     },
-    "facing=west": {
+    "facing=south": {
       "model": "todecoins:block/coin_press",
       "y": 180
     },
-    "facing=north": {
+    "facing=west": {
       "model": "todecoins:block/coin_press",
       "y": 270
     },
-    "facing=south": {
+    "facing=east": {
       "model": "todecoins:block/coin_press",
       "y": 90
     }
