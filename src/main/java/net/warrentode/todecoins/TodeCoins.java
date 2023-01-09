@@ -16,6 +16,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.block.entity.ModBlockEntities;
 import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.loot.ModLootModifiers;
 import net.warrentode.todecoins.potion.ModPotions;
 import net.warrentode.todecoins.recipe.ModRecipes;
 import net.warrentode.todecoins.screen.CoinPressScreen;
@@ -42,6 +43,8 @@ public class TodeCoins {
 
         ModRecipes.register(modEventBus);
         ModPotions.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setup);

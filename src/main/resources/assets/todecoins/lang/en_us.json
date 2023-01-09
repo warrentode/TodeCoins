@@ -1,6 +1,16 @@
 {
+  "tooltips.coin_stamp.hover": "This is for stamping currency in a press.",
+  "tooltips.coin_item.hover": "Since ancient times, coins were either stamped or forged into molds",
+  "tooltips.bank_note_item.hover": "The original bank notes were created by China and worked much like our debit cards today.",
+  "tooltips.fourleafclover.hover":  "Many people believe this is a lucky charm.",
+  "tooltips.lucky_coin.hover": "Smells like fresh clover, what an unusual coin...",
+  "tooltips.textile_item.hover": "Textiles are used to make materials like paper and fabric.",
+
   "item.todecoins.lucky_coin": "Lucky Coin",
-  "tooltips.lucky_coin.hover": "Smells like Fresh Clover",
+  "item.todecoins.four_leaf_clover": "Four Leaf Clover",
+  "item.todecoins.lucky_fiber": "Lucky Fiber",
+  "item.todecoins.lucky_thread": "Lucky Thread",
+  "item.todecoins.lucky_fabric": "Lucky Fabric",
 
   "item.minecraft.potion.effect.luck_potion_2": "Potion of Luck II",
   "item.minecraft.potion.effect.luck_potion_3": "Potion of Luck III",
@@ -72,22 +82,20 @@
   "item.minecraft.lingering_potion.effect.long_unluck_potion_5": "Lingering Potion of Extended Bad Luck V",
   "item.minecraft.lingering_potion.effect.long_unluck_potion_6": "Lingering Potion of Extended Bad Luck VI",
 
-  "item.todecoins.coin_stamp": "Coin Stamp",
-  "item.todecoins.copper_nugget": "Copper Nugget",
+  "item.todecoins.currency_stamp": "Currency Stamp",
   "item.todecoins.copper_coin": "Copper Coin",
   "item.todecoins.iron_coin": "Iron Coin",
   "item.todecoins.gold_coin": "Gold Coin",
   "item.todecoins.netherite_coin": "Netherite Coin",
-
-  "item.todecoins.emerald_fiber": "Emerald Fiber",
-
-  "item.todecoins.emerald_coarse_wove_paper": "Emerald Coarse Wove Paper",
-  "item.todecoins.emerald_wove_paper": "Emerald Wove Paper",
-  "item.todecoins.emerald_smooth_wove_paper": "Emerald Smooth Wove Paper",
-
   "item.todecoins.emerald_bank_note": "Emerald Note",
   "item.todecoins.emerald_quarter_bank_note": "Emerald Quarter Note",
   "item.todecoins.emerald_half_bank_note": "Emerald Half Note",
+
+  "item.todecoins.copper_nugget": "Copper Nugget",
+  "item.todecoins.emerald_fiber": "Emerald Fiber",
+  "item.todecoins.emerald_coarse_wove_paper": "Emerald Coarse Wove Paper",
+  "item.todecoins.emerald_wove_paper": "Emerald Wove Paper",
+  "item.todecoins.emerald_smooth_wove_paper": "Emerald Smooth Wove Paper",
 
   "item.todecoins.lucky_boots": "Lucky Boots",
   "item.todecoins.lucky_pants": "Lucky Pants",
@@ -98,7 +106,6 @@
   "block.todecoins.iron_coin_bag": "Bag of Iron Coins",
   "block.todecoins.gold_coin_bag": "Bag of Gold Coins",
   "block.todecoins.netherite_coin_bag": "Bag of Netherite Coins",
-
   "block.todecoins.emerald_bank_note_bag": "Bag of Emerald Notes",
   "block.todecoins.emerald_quarter_bank_note_bag": "Bag of Emerald Quarter Notes",
   "block.todecoins.emerald_half_bank_note_bag": "Bag of Emerald Half Notes",

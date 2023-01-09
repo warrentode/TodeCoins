@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "todecoins:emerald_fiber"
+    "todecoins:emerald_fiber",
+    "todecoins:lucky_fiber"
   ]
 }

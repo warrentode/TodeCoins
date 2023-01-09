@@ -4,16 +4,16 @@
     "F": {
       "tag": "todecoins:textiles/currency_fiber"
     },
-    "E": {
-      "item": "minecraft:emerald"
+    "L": {
+      "item": "todecoins:lucky_coin"
     }
   },
   "pattern": [
-    "EEE",
-    "EFE",
-    "EEE"
+    "LLL",
+    "LFL",
+    "LLL"
   ],
   "result": {
-    "item": "todecoins:emerald_fiber"
+    "item": "todecoins:lucky_fiber"
   }
 }

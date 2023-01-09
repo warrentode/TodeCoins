@@ -10,12 +10,16 @@ import net.warrentode.todecoins.TodeCoins;
 public class ModTags {
     public static final TagKey<Block> CURRENCY_BLOCKS = modBlockTag("storage_blocks");
 
+    public static final TagKey<Item> NUGGETS = modItemTag("nuggets");
     public static final TagKey<Item> BANKNOTES = modItemTag("banknotes");
     public static final TagKey<Item> COINS = modItemTag("coins");
     public static final TagKey<Item> CURRENCY = modItemTag("currency");
     public static final TagKey<Item> CURRENCY_MATERIALS = modItemTag("currency_materials");
+    public static final TagKey<Item> CURRENCY_STAMPS = modItemTag("currency_stamps");
     public static final TagKey<Item> TEXTILES = modItemTag("textiles");
     public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");
+    public static final TagKey<Item> FABRIC = modItemTag("textiles/fabric");
+    public static final TagKey<Item> THREAD = modItemTag("textiles/thread");
     public static final TagKey<Item> CURRENCY_FIBER = modItemTag("textiles/currency_fiber");
     public static final TagKey<Item> CURRENCY_PAPER = modItemTag("textiles/currency_paper");
 

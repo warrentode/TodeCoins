@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "todecoins:lucky_nugget",
+      "required": false
+    }
+  ]
+}

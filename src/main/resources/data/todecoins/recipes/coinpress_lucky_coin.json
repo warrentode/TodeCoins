@@ -1,0 +1,12 @@
+{
+  "type": "todecoins:coinpress",
+  "ingredients": [
+    {
+      "item": "todecoins:lucky_nugget"
+    }
+  ],
+  "output": {
+    "item": "todecoins:lucky_coin",
+    "count": 1
+  }
+}

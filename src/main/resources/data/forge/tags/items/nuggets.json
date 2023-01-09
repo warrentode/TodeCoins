@@ -12,6 +12,10 @@
     {
       "id": "forge:nuggets/gold",
       "required": false
+    },
+    {
+      "id": "todecoins:nuggets",
+      "required": false
     }
   ]
 }

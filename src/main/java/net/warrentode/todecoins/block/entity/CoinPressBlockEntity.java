@@ -44,7 +44,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             boolean isInItemGroup = stack.is(ModTags.CURRENCY_MATERIALS);
             return switch (slot) {
-              case 0 -> stack.getItem() == ModItems.COIN_STAMP.get();
+              case 0 -> stack.getItem() == ModItems.CURRENCY_STAMP.get();
               case 1 -> stack.hasTag() == stack.is(ModTags.CURRENCY_MATERIALS);
               case 2 -> false;
               default -> super.isItemValid(slot, stack);
@@ -190,7 +190,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        boolean hasItemInStampSlot = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.COIN_STAMP.get();
+        boolean hasItemInStampSlot = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.CURRENCY_STAMP.get();
 
         Optional<CoinPressRecipe> recipe = level.getRecipeManager().getRecipeFor(CoinPressRecipe.Type.INSTANCE, inventory, level);
 
@@ -199,7 +199,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private static boolean hasItemInStampSlot(CoinPressBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(0).getItem() == ModItems.COIN_STAMP.get();
+        return entity.itemHandler.getStackInSlot(0).getItem() == ModItems.CURRENCY_STAMP.get();
     }
 
     private static boolean craftItem(CoinPressBlockEntity entity)  {
@@ -224,7 +224,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
             return false;
         }
 
-        if (entity.itemHandler.getStackInSlot(0).getDamageValue() == 64 && entity.itemHandler.getStackInSlot(0).getItem() == ModItems.COIN_STAMP.get()) {
+        if (entity.itemHandler.getStackInSlot(0).getDamageValue() == 64 && entity.itemHandler.getStackInSlot(0).getItem() == ModItems.CURRENCY_STAMP.get()) {
             entity.itemHandler.extractItem(0,1, false);
         } else {
             return false;

@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "key": {
     "#": {
       "item": "todecoins:gold_coin_bag"
@@ -11,6 +11,7 @@
     "###"
   ],
   "result": {
+    "count": 9,
     "item": "todecoins:pot_of_gold"
   }
 }
