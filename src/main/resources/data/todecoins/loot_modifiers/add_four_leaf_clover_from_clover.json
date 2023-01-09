@@ -1,0 +1,14 @@
+{
+  "type": "todecoins:add_item",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "biomesoplenty"
+    },
+    {
+      "condition": "block_state_property",
+      "block": "biomesoplenty:clover"
+    }
+  ],
+  "item": "todecoins:four_leaf_clover"
+}
