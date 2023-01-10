@@ -76,6 +76,18 @@
   "item.minecraft.lingering_potion.effect.long_unluck_potion_5": "Lingering Potion of Extended Bad Luck V",
   "item.minecraft.lingering_potion.effect.long_unluck_potion_6": "Lingering Potion of Extended Bad Luck VI",
 
+  "item.minecraft.tipped_arrow.effect.luck_potion_2": "Arrow of Luck II",
+  "item.minecraft.tipped_arrow.effect.luck_potion_3": "Arrow of Luck III",
+  "item.minecraft.tipped_arrow.effect.luck_potion_4": "Arrow of Luck IV",
+  "item.minecraft.tipped_arrow.effect.luck_potion_5": "Arrow of Luck V",
+  "item.minecraft.tipped_arrow.effect.luck_potion_6": "Arrow of Luck VI",
+  "item.minecraft.tipped_arrow.effect.unluck_potion": "Arrow of Bad Luck",
+  "item.minecraft.tipped_arrow.effect.unluck_potion_2": "Arrow of Bad Luck II",
+  "item.minecraft.tipped_arrow.effect.unluck_potion_3": "Arrow of Bad Luck III",
+  "item.minecraft.tipped_arrow.effect.unluck_potion_4": "Arrow of Bad Luck IV",
+  "item.minecraft.tipped_arrow.effect.unluck_potion_5": "Arrow of Bad Luck V",
+  "item.minecraft.tipped_arrow.effect.unluck_potion_6": "Arrow of Bad Luck VI",
+
   "item.todecoins.copper_nugget": "Copper Nugget",
 
   "item.todecoins.currency_stamp": "Currency Stamp",
