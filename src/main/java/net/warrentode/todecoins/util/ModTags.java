@@ -11,6 +11,7 @@ public class ModTags {
     public static final TagKey<Block> CURRENCY_BLOCKS = modBlockTag("storage_blocks");
 
     public static final TagKey<Item> NUGGETS = modItemTag("nuggets");
+    public static final TagKey<Item> INGOTS = modItemTag("ingots");
     public static final TagKey<Item> BANKNOTES = modItemTag("banknotes");
     public static final TagKey<Item> COINS = modItemTag("coins");
     public static final TagKey<Item> CURRENCY = modItemTag("currency");
