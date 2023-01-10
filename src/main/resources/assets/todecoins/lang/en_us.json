@@ -6,12 +6,6 @@
   "tooltips.lucky_coin.hover": "Smells like fresh clover, what an unusual coin...",
   "tooltips.textile_item.hover": "Textiles are used to make materials like paper and fabric.",
 
-  "item.todecoins.lucky_coin": "Lucky Coin",
-  "item.todecoins.four_leaf_clover": "Four Leaf Clover",
-  "item.todecoins.lucky_fiber": "Lucky Fiber",
-  "item.todecoins.lucky_thread": "Lucky Thread",
-  "item.todecoins.lucky_fabric": "Lucky Fabric",
-
   "item.minecraft.potion.effect.luck_potion_2": "Potion of Luck II",
   "item.minecraft.potion.effect.luck_potion_3": "Potion of Luck III",
   "item.minecraft.potion.effect.luck_potion_4": "Potion of Luck IV",
@@ -82,6 +76,8 @@
   "item.minecraft.lingering_potion.effect.long_unluck_potion_5": "Lingering Potion of Extended Bad Luck V",
   "item.minecraft.lingering_potion.effect.long_unluck_potion_6": "Lingering Potion of Extended Bad Luck VI",
 
+  "item.todecoins.copper_nugget": "Copper Nugget",
+
   "item.todecoins.currency_stamp": "Currency Stamp",
   "item.todecoins.copper_coin": "Copper Coin",
   "item.todecoins.iron_coin": "Iron Coin",
@@ -91,16 +87,22 @@
   "item.todecoins.emerald_quarter_bank_note": "Emerald Quarter Note",
   "item.todecoins.emerald_half_bank_note": "Emerald Half Note",
 
-  "item.todecoins.copper_nugget": "Copper Nugget",
   "item.todecoins.emerald_fiber": "Emerald Fiber",
   "item.todecoins.emerald_coarse_wove_paper": "Emerald Coarse Wove Paper",
   "item.todecoins.emerald_wove_paper": "Emerald Wove Paper",
   "item.todecoins.emerald_smooth_wove_paper": "Emerald Smooth Wove Paper",
 
+  "item.todecoins.four_leaf_clover": "Four Leaf Clover",
+  "item.todecoins.lucky_nugget": "Lucky Nugget",
+  "item.todecoins.lucky_coin": "Lucky Coin",
+  "item.todecoins.lucky_fiber": "Lucky Fiber",
+  "item.todecoins.lucky_thread": "Lucky Thread",
+  "item.todecoins.lucky_fabric": "Lucky Fabric",
+
   "item.todecoins.lucky_boots": "Lucky Boots",
   "item.todecoins.lucky_pants": "Lucky Pants",
   "item.todecoins.lucky_shirt": "Lucky Shirt",
-  "item.todecoins.lucky_Hat": "Lucky Hat",
+  "item.todecoins.lucky_hat": "Lucky Hat",
 
   "block.todecoins.copper_coin_bag": "Bag of Copper Coins",
   "block.todecoins.iron_coin_bag": "Bag of Iron Coins",

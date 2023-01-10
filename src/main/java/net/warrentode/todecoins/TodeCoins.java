@@ -60,6 +60,8 @@ public class TodeCoins {
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
+        private Object Mapping;
+
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new);
