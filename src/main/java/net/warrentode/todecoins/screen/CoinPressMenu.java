@@ -12,6 +12,7 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.block.entity.CoinPressBlockEntity;
 import net.warrentode.todecoins.screen.slot.ModResultSlot;
+import org.jetbrains.annotations.NotNull;
 
 public class CoinPressMenu extends AbstractContainerMenu {
     public final CoinPressBlockEntity blockEntity;
@@ -72,9 +73,9 @@ public class CoinPressMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_SLOT_COUNT = 3;  // must be the number of slots you have!
 
     @Override
-    public ItemStack quickMoveStack(Player playerIn, int index) {
+    public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
-        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
+        if (!sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
@@ -105,7 +106,7 @@ public class CoinPressMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public boolean stillValid(Player player) {
+    public boolean stillValid(@NotNull Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
                 player, ModBlocks.COINPRESSBLOCK.get());
     }

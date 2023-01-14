@@ -14,7 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.block.custom.CoinPressBlock;
 import net.warrentode.todecoins.block.custom.PotOfGoldBlock;
-import net.warrentode.todecoins.item.ModCreativeModeTab;
+import net.warrentode.todecoins.util.customtab.ModCreativeModeTab;
 import net.warrentode.todecoins.item.ModItems;
 
 import java.util.function.Supplier;
