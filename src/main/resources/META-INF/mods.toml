@@ -5,12 +5,12 @@ issueTrackerURL="https://github.com/toadie-odie/TodeCoins/issues"
 
 [[mods]]
 modId="todecoins"
-version="1.19.2-1.0.0"
+version="1.19.2-1.1.0"
 displayName="Tode Coins"
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 displayURL="https://github.com/toadie-odie/TodeCoins"
 logoFile="logo.png"
-credits="Special thanks to my sons, whom I homeschool, and Marshal Nash for supporting all the projects I tend to get myself into!"
+credits="Special thanks to my sons, and my Patreon supporters, Marshal Nash and Trevor Brannigan, for supporting my blog and the projects I tend to get myself into!"
 authors="Warren Tode (ToadieOdie)"
 description="Adds currency, a banker and leprechaun villager with trades, armor and potions to the game."
 
