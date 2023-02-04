@@ -12,6 +12,7 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, TodeCoins.MOD_ID);
 
+    @SuppressWarnings("DataFlowIssue")
     public static final RegistryObject<BlockEntityType<CoinPressBlockEntity>> COINPRESS_ENTITY =
             BLOCK_ENTITIES.register("coin_press", ()->
                     BlockEntityType.Builder.of(CoinPressBlockEntity::new,

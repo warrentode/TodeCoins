@@ -22,7 +22,6 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.warrentode.todecoins.block.custom.CoinPressBlock;
-import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.recipe.CoinPressRecipe;
 import net.warrentode.todecoins.screen.CoinPressMenu;
 import net.warrentode.todecoins.util.ModTags;
@@ -42,10 +41,9 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            boolean isInItemGroup = stack.is(ModTags.CURRENCY_MATERIALS);
             return switch (slot) {
-              case 0 -> stack.getItem() == ModItems.CURRENCY_STAMP.get();
-              case 1 -> stack.hasTag() == stack.is(ModTags.CURRENCY_MATERIALS);
+              case 0 -> stack.hasTag() == stack.is(ModTags.CURRENCY_STAMPS);
+              case 1 -> true;
               case 2 -> false;
               default -> super.isItemValid(slot, stack);
             };
@@ -95,13 +93,13 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    public Component getDisplayName() {
+    public @NotNull Component getDisplayName() {
         return Component.translatable("container.coin_press_block_gui");
     }
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+    public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pPlayerInventory, @NotNull Player pPlayer) {
         return new CoinPressMenu(pContainerId, pPlayerInventory, this, this.data);
     }
 
@@ -144,7 +142,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
+    protected void saveAdditional(@NotNull CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
         tag.putInt("coin_press.progress", this.progress);
 
@@ -152,7 +150,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    public void load(CompoundTag nbt) {
+    public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         progress = nbt.getInt("coin_press.progress");
@@ -164,6 +162,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
 
+        assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
@@ -183,25 +182,20 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
 
     /* RECIPES */
 
-    private static boolean hasRecipe(CoinPressBlockEntity entity) {
+    private static boolean hasRecipe(@NotNull CoinPressBlockEntity entity) {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        boolean hasItemInStampSlot = entity.itemHandler.getStackInSlot(0).getItem() == ModItems.CURRENCY_STAMP.get();
+        assert level != null;
+        Optional<CoinPressRecipe> match = level.getRecipeManager().getRecipeFor(CoinPressRecipe.Type.INSTANCE, inventory, level);
 
-        Optional<CoinPressRecipe> recipe = level.getRecipeManager().getRecipeFor(CoinPressRecipe.Type.INSTANCE, inventory, level);
-
-        return hasItemInStampSlot && recipe.isPresent() && canInsertAmountIntoOutputSlot(inventory) &&
-                canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem());
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
     }
 
-    private static boolean hasItemInStampSlot(CoinPressBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(0).getItem() == ModItems.CURRENCY_STAMP.get();
-    }
-
+    @SuppressWarnings({"UnusedReturnValue", "SameReturnValue"})
     private static boolean craftItem(CoinPressBlockEntity entity)  {
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
@@ -209,23 +203,39 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
+        assert level != null;
         Optional<CoinPressRecipe> match = level.getRecipeManager()
                 .getRecipeFor(CoinPressRecipe.Type.INSTANCE, inventory, level);
 
         if(match.isPresent()) {
-            entity.itemHandler.getStackInSlot(0).hurt(1, new SingleThreadedRandomSource(1), null);
-            entity.itemHandler.extractItem(1,1, false);
+
+            // check first input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
+            if (entity.itemHandler.getStackInSlot(0).getDamageValue() == entity.itemHandler.getStackInSlot(0).getMaxDamage()
+                    && entity.itemHandler.getStackInSlot(0).is(ModTags.CURRENCY_STAMPS)) {
+                entity.itemHandler.extractItem(0,1, false);
+            } else if (entity.itemHandler.getStackInSlot(0).getDamageValue() != entity.itemHandler.getStackInSlot(0).getMaxDamage()
+                    && entity.itemHandler.getStackInSlot(0).is(ModTags.CURRENCY_STAMPS)) {
+                entity.itemHandler.getStackInSlot(0).hurt(1, new SingleThreadedRandomSource(1), null);
+            } else {
+                entity.itemHandler.extractItem(0,1, false);
+            }
+
+            // check second input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
+            if (entity.itemHandler.getStackInSlot(1).getDamageValue() == entity.itemHandler.getStackInSlot(1).getMaxDamage()
+                    && entity.itemHandler.getStackInSlot(1).is(ModTags.CURRENCY_STAMPS)) {
+                entity.itemHandler.extractItem(0,1, false);
+            } else if (entity.itemHandler.getStackInSlot(1).getDamageValue() != entity.itemHandler.getStackInSlot(1).getMaxDamage()
+                    && entity.itemHandler.getStackInSlot(1).is(ModTags.CURRENCY_STAMPS)) {
+                entity.itemHandler.getStackInSlot(1).hurt(1, new SingleThreadedRandomSource(1), null);
+            } else {
+                entity.itemHandler.extractItem(1,1, false);
+            }
 
             entity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getResultItem().getItem(),
                     entity.itemHandler.getStackInSlot(2).getCount() + (match.get().getResultItem().getCount())));
 
             entity.resetProgress();
-        } else {
-            return false;
-        }
 
-        if (entity.itemHandler.getStackInSlot(0).getDamageValue() == 64 && entity.itemHandler.getStackInSlot(0).getItem() == ModItems.CURRENCY_STAMP.get()) {
-            entity.itemHandler.extractItem(0,1, false);
         } else {
             return false;
         }
