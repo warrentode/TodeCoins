@@ -1,0 +1,26 @@
+// 1.19.2	2023-04-18T18:53:07.3110438	TradeProvider: todecoins
+9b8ad9329fa1b835130ea5fa39206475fa89f471 data/minecraft/trades/armorer/apprentice.json
+37f44d1439670bd2c17748ba2d2b2dacebce4a51 data/minecraft/trades/armorer/expert.json
+8cef68d2786fbe8daa3dcea064ac540fbccdd31a data/minecraft/trades/armorer/journeyman.json
+939e1f3e90ce3958f500321b415a534258a3422e data/minecraft/trades/armorer/master.json
+036e24dddf3073f3776cc1a7e7e195e211601b03 data/minecraft/trades/armorer/novice.json
+8ffbe8f4a44d4d5aa92bdcd6cbf88b7070ea565e data/minecraft/trades/banker/apprentice.json
+1cc3153274ebd502937961bb6e914dd6bfc05c9b data/minecraft/trades/banker/expert.json
+b385a92006fd491d08f72b8908d37a4954a4ebd9 data/minecraft/trades/banker/journeyman.json
+68293cba13ddd71ac3ea041331530ef92b099c4b data/minecraft/trades/banker/master.json
+6bd4cea8d145c5ed506bf6b5e44cb262313ed494 data/minecraft/trades/banker/novice.json
+af9ac9a4d5fe44cb5b50bf7cecc8dd74a27e1c69 data/minecraft/trades/butcher/apprentice.json
+e8150d1b7f360a61bdd28389612021390eb2569d data/minecraft/trades/butcher/expert.json
+abf44c3d93dd09de6c61cb3f0b3fd574d8ebec48 data/minecraft/trades/butcher/journeyman.json
+9ec19bee3a9fff6ba84b355e4938eeffb18eea15 data/minecraft/trades/butcher/master.json
+9b5e3b38d5b1aa8676d249d633e301ec4a009504 data/minecraft/trades/butcher/novice.json
+28dec892733cf9a0319e94c93c2c8ff4fa922525 data/minecraft/trades/cartographer/apprentice.json
+2f987bc2cadd690604127d8c29c36883cc5482f2 data/minecraft/trades/cartographer/expert.json
+dba229cc343365af31a51399d6b5895ff2dbacc9 data/minecraft/trades/cartographer/journeyman.json
+fd51d851fde37b09e145dce785563cab9f49aebe data/minecraft/trades/cartographer/master.json
+592d002ddbcbabdb3b390f27847bf3d946cf8441 data/minecraft/trades/cartographer/novice.json
+7a985f523d60d3c7057430f66a66f6f100f9b376 data/minecraft/trades/leprechaun/apprentice.json
+b88b959c27f4e53f3a3cb229a15ebcff538f34ff data/minecraft/trades/leprechaun/expert.json
+077d5959e30996c1545f0d42ad2cf335bedd71b2 data/minecraft/trades/leprechaun/journeyman.json
+20475114c6981c1841bbbcd467abf86c161de689 data/minecraft/trades/leprechaun/master.json
+05a575276d0ee5f8f61a6543f5a26cf93a6b66c3 data/minecraft/trades/leprechaun/novice.json
