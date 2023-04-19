@@ -1,7 +1,6 @@
 package net.warrentode.todecoins;
 
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
@@ -21,8 +20,6 @@ import net.warrentode.todecoins.potion.ModPotions;
 import net.warrentode.todecoins.recipe.ModRecipes;
 import net.warrentode.todecoins.screen.CoinPressScreen;
 import net.warrentode.todecoins.screen.ModMenuTypes;
-import net.warrentode.todecoins.trades.TradeManager;
-import net.warrentode.todecoins.trades.type.BasicType;
 import net.warrentode.todecoins.util.BetterBrewingRecipe;
 import net.warrentode.todecoins.villager.ModVillagers;
 import org.jetbrains.annotations.NotNull;
@@ -56,14 +53,6 @@ public class TodeCoins {
         event.enqueueWork(()-> {
            ModVillagers.registerPOIs();
         });
-        // AUTHOR: MrCrayfish https://github.com/MrCrayfish/GoblinTraders/tree/1.19.X
-        TradeManager manager = TradeManager.instance();
-        manager.registerTradeSerializer(BasicType.SERIALIZER);
-        manager.registerTrader(ModVillagers.BANKER.get());
-        manager.registerTrader(ModVillagers.LEPRECHAUN.get());
-        manager.registerTrader(VillagerProfession.ARMORER);
-        manager.registerTrader(VillagerProfession.BUTCHER);
-        manager.registerTrader(VillagerProfession.CARTOGRAPHER);
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
