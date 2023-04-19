@@ -105,7 +105,7 @@ public class CoinPressRecipe implements Recipe<SimpleContainer> {
         public static final Serializer INSTANCE = new Serializer();
         @SuppressWarnings("unused")
         public static final ResourceLocation ID =
-                new ResourceLocation(TodeCoins.MOD_ID, "coinpress");
+                new ResourceLocation(TodeCoins.MODID, "coinpress");
         private static final int width = MAX_WIDTH;
         private static final int height = MAX_HEIGHT;
 
@@ -128,7 +128,6 @@ public class CoinPressRecipe implements Recipe<SimpleContainer> {
 
             for(int i = 0; i < ingredients.size(); ++i) {
                 Ingredient ingredient = Ingredient.fromJson(ingredients.get(i));
-                //noinspection ConstantValue,PointlessBooleanExpression
                 if (true || !ingredient.isEmpty()) {
                     // FORGE: Skip checking if an ingredient is empty during shapeless recipe deserialization
                     // to prevent complex ingredients from caching tags too early.
@@ -136,7 +135,6 @@ public class CoinPressRecipe implements Recipe<SimpleContainer> {
                     inputs.add(ingredient);
                 }
             }
-
             return inputs;
         }
 

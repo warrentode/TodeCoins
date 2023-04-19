@@ -1,0 +1,58 @@
+{
+  "replace": false,
+  "trades": [
+    {
+      "type": "todecoins:basic",
+      "experience": 10,
+      "offer_item": {
+        "count": 18,
+        "item": "todecoins:copper_coin_bag"
+      },
+      "payment_item": {
+        "count": 4,
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 5,
+      "offer_item": {
+        "count": 1,
+        "item": "minecraft:bell"
+      },
+      "payment_item": {
+        "count": 24,
+        "item": "todecoins:pot_of_gold"
+      },
+      "price_multiplier": 0.2
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 5,
+      "offer_item": {
+        "count": 1,
+        "item": "minecraft:chainmail_leggings",
+        "nbt": "{Damage:0}"
+      },
+      "payment_item": {
+        "count": 54,
+        "item": "todecoins:copper_coin_bag"
+      },
+      "price_multiplier": 0.2
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 5,
+      "offer_item": {
+        "count": 1,
+        "item": "minecraft:chainmail_boots",
+        "nbt": "{Damage:0}"
+      },
+      "payment_item": {
+        "count": 18,
+        "item": "todecoins:copper_coin_bag"
+      },
+      "price_multiplier": 0.2
+    }
+  ]
+}

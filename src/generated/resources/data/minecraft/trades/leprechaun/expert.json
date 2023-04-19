@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "trades": [
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 1,
+        "item": "minecraft:prismarine_shard"
+      },
+      "payment_item": {
+        "count": 1,
+        "item": "todecoins:emerald_quarter_bank_note"
+      },
+      "price_multiplier": 0.02
+    }
+  ]
+}

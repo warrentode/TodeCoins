@@ -60,7 +60,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     public @NotNull String getName() {
-        return TodeCoins.MOD_ID + ":" + this.name;
+        return TodeCoins.MODID + ":" + this.name;
     }
 
     public float getToughness() {

@@ -10,7 +10,7 @@ displayName="Tode Coins"
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 displayURL="https://github.com/toadie-odie/TodeCoins"
 logoFile="logo.png"
-credits="Special thanks to my sons, and my Patreon supporters: Marshal Nash and Trevor Brannigan, for supporting my blog and my various project!"
+credits="Special thanks to my sons, and my supporters: Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!"
 authors="Warren Tode (ToadieOdie)"
 description="Adds currency, a banker and leprechaun villager with trades, armor and potions to the game."
 
@@ -27,5 +27,6 @@ description="Adds currency, a banker and leprechaun villager with trades, armor 
     ordering="NONE"
     side="BOTH"
 
-[modproperties.backpacked]
-    catalogueItemIcon="todecoins:copper_coin" #Support for Catalogue mod
+[modproperties.todecoins]
+    catalogueItemIcon="todecoins:currency_stamp" #Support for Catalogue mod
+    configuredBackground="todecoins:textures/block/pot.png" #Support for Configured mod

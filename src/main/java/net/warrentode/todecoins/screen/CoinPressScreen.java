@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(TodeCoins.MOD_ID,"textures/gui/coin_press_gui.png");
+            new ResourceLocation(TodeCoins.MODID,"textures/gui/coin_press_gui.png");
 
     public CoinPressScreen(CoinPressMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);

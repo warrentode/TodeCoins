@@ -1,0 +1,47 @@
+{
+  "replace": false,
+  "trades": [
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 1,
+        "item": "todecoins:emerald_bank_note"
+      },
+      "payment_item": {
+        "count": 64,
+        "item": "minecraft:emerald"
+      },
+      "price_multiplier": 0.02
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 64,
+        "item": "minecraft:emerald"
+      },
+      "payment_item": {
+        "count": 1,
+        "item": "todecoins:emerald_bank_note"
+      },
+      "price_multiplier": 0.02
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 3,
+        "item": "todecoins:emerald_bank_note"
+      },
+      "payment_item": {
+        "count": 1,
+        "item": "todecoins:lucky_coin"
+      },
+      "price_multiplier": 0.02
+    }
+  ]
+}

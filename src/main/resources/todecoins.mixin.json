@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "net.warrentode.todecoins.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "todecoins.refmap.json",
+  "mixins": [
+    "MixinVillagerTrades"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}

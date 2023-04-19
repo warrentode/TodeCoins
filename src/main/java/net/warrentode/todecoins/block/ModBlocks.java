@@ -21,7 +21,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, TodeCoins.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, TodeCoins.MODID);
 
     public static final RegistryObject<Block> COPPER_COIN_BAG = registerBlock("copper_coin_bag",
             ()-> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),

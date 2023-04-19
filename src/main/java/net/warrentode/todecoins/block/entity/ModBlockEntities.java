@@ -10,7 +10,7 @@ import net.warrentode.todecoins.block.ModBlocks;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, TodeCoins.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, TodeCoins.MODID);
 
     @SuppressWarnings("DataFlowIssue")
     public static final RegistryObject<BlockEntityType<CoinPressBlockEntity>> COINPRESS_ENTITY =

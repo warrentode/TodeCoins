@@ -1,0 +1,47 @@
+{
+  "replace": false,
+  "trades": [
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 1,
+        "item": "todecoins:gold_coin"
+      },
+      "payment_item": {
+        "count": 2,
+        "item": "todecoins:iron_coin"
+      },
+      "price_multiplier": 0.02
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 2,
+        "item": "todecoins:iron_coin"
+      },
+      "payment_item": {
+        "count": 1,
+        "item": "todecoins:gold_coin"
+      },
+      "price_multiplier": 0.02
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 43,
+        "item": "todecoins:pot_of_gold"
+      },
+      "payment_item": {
+        "count": 1,
+        "item": "todecoins:emerald_bank_note"
+      },
+      "price_multiplier": 0.02
+    }
+  ]
+}

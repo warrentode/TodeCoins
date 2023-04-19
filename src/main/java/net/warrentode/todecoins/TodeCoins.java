@@ -1,7 +1,7 @@
 package net.warrentode.todecoins;
 
-import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
@@ -21,18 +21,21 @@ import net.warrentode.todecoins.potion.ModPotions;
 import net.warrentode.todecoins.recipe.ModRecipes;
 import net.warrentode.todecoins.screen.CoinPressScreen;
 import net.warrentode.todecoins.screen.ModMenuTypes;
+import net.warrentode.todecoins.trades.TradeManager;
+import net.warrentode.todecoins.trades.type.BasicType;
 import net.warrentode.todecoins.util.BetterBrewingRecipe;
 import net.warrentode.todecoins.villager.ModVillagers;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
 
 @SuppressWarnings("ALL")
-@Mod(TodeCoins.MOD_ID)
+@Mod(TodeCoins.MODID)
 public class TodeCoins {
-    public static final String MOD_ID = "todecoins";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final String MODID = "todecoins";
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::setup);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -46,11 +49,6 @@ public class TodeCoins {
         ModPotions.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
-
-        modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::setup);
-
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
 
@@ -58,12 +56,18 @@ public class TodeCoins {
         event.enqueueWork(()-> {
            ModVillagers.registerPOIs();
         });
+        // AUTHOR: MrCrayfish https://github.com/MrCrayfish/GoblinTraders/tree/1.19.X
+        TradeManager manager = TradeManager.instance();
+        manager.registerTradeSerializer(BasicType.SERIALIZER);
+        manager.registerTrader(ModVillagers.BANKER.get());
+        manager.registerTrader(ModVillagers.LEPRECHAUN.get());
+        manager.registerTrader(VillagerProfession.ARMORER);
+        manager.registerTrader(VillagerProfession.BUTCHER);
+        manager.registerTrader(VillagerProfession.CARTOGRAPHER);
     }
 
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
-        private Object Mapping;
-
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new);

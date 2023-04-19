@@ -5,8 +5,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.warrentode.todecoins.TodeCoins;
 import org.jetbrains.annotations.NotNull;
+
+import static net.warrentode.todecoins.TodeCoins.MODID;
 
 @SuppressWarnings("unused")
 public class ModTags {
@@ -37,9 +38,9 @@ public class ModTags {
     public static final TagKey<Item> CURRENCY_PAPER = modItemTag("textiles/currency_paper");
 
     private static @NotNull TagKey<Block> modBlockTag(String path) {
-        return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(TodeCoins.MOD_ID, path));
+        return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MODID, path));
     }
     private static @NotNull TagKey<Item> modItemTag(String path) {
-        return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(TodeCoins.MOD_ID, path));
+        return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MODID, path));
     }
 }
