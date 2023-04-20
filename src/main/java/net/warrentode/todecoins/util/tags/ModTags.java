@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.util;
+package net.warrentode.todecoins.util.tags;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -38,23 +38,23 @@ public class ModTags {
     public static final TagKey<Item> CURRENCY_FIBER = modItemTag("textiles/currency_fiber");
     public static final TagKey<Item> CURRENCY_PAPER = modItemTag("textiles/currency_paper");
 
-    public static final TagKey<Structure> ON_ANCIENT_CITY_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_BASTION_REMNANT_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_DESERT_PYRAMID_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_END_CITY_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_IGLOO_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_JUNGLE_TEMPLE_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_MINESHAFT_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_NETHER_FORTRESS_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_NETHER_FOSSIL_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_NETHER_RUINED_PORTAL_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_OCEAN_RUIN_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_PILLAGER_OUTPOST_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_SHIPWRECK_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_STRONGHOLD_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_SWAMP_HUT_EXPLORER_MAPS = modStructureTag("world gen/structure");
-    public static final TagKey<Structure> ON_VILLAGE_EXPLORER_MAPS = modStructureTag("world gen/structure");
+    public static final TagKey<Structure> ON_ANCIENT_CITY_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_BASTION_REMNANT_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_DESERT_PYRAMID_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_END_CITY_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_IGLOO_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_JUNGLE_TEMPLE_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_MINESHAFT_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_NETHER_FORTRESS_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_NETHER_FOSSIL_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_NETHER_RUINED_PORTAL_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_OCEAN_RUIN_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_PILLAGER_OUTPOST_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_SHIPWRECK_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_STRONGHOLD_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_SWAMP_HUT_EXPLORER_MAPS = modStructureTag("worldgen/structure");
+    public static final TagKey<Structure> ON_VILLAGE_EXPLORER_MAPS = modStructureTag("worldgen/structure");
 
     private static @NotNull TagKey<Block> modBlockTag(String path) {
         return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MODID, path));

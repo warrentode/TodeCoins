@@ -24,7 +24,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.warrentode.todecoins.block.custom.CoinPressBlock;
 import net.warrentode.todecoins.recipe.CoinPressRecipe;
 import net.warrentode.todecoins.screen.CoinPressMenu;
-import net.warrentode.todecoins.util.ModTags;
+import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
