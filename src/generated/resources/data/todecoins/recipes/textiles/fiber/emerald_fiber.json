@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "todecoins:textiles/currency_fiber"
+    },
+    "E": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "pattern": [
+    "###",
+    "#E#",
+    "###"
+  ],
+  "result": {
+    "item": "todecoins:emerald_fiber"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "todecoins:coinpress",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "todecoins:nether_currency_stamp"
+    },
+    {
+      "tag": "forge:nuggets/netherite"
+    }
+  ],
+  "recipe_book_tab": "coins",
+  "result": {
+    "item": "todecoins:nether_gold_coin"
+  },
+  "stampingTime": 50
+}

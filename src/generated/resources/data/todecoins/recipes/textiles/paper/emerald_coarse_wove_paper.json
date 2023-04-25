@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "todecoins:emerald_fiber"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "todecoins:emerald_coarse_wove_paper"
+  }
+}

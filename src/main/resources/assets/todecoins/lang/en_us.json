@@ -5,6 +5,7 @@
   "tooltips.fourleafclover.hover":  "Many people believe this is a lucky charm.",
   "tooltips.lucky_coin.hover": "Smells like fresh clover, what an unusual coin...",
   "tooltips.textile_item.hover": "Textiles are used to make materials like paper and fabric.",
+  "tooltips.barter_coin_item.hover": "Anthropological evidence suggests bartering actually occurs when currency isn't readily available.",
 
   "item.minecraft.potion.effect.luck_potion_2": "Potion of Luck II",
   "item.minecraft.potion.effect.luck_potion_3": "Potion of Luck III",
@@ -87,11 +88,25 @@
   "item.minecraft.tipped_arrow.effect.unluck_potion_4": "Arrow of Bad Luck IV",
   "item.minecraft.tipped_arrow.effect.unluck_potion_5": "Arrow of Bad Luck V",
   "item.minecraft.tipped_arrow.effect.unluck_potion_6": "Arrow of Bad Luck VI",
+  
+  "item.minecraft.tipped_arrow.effect.long_luck_potion_2": "Arrow of Extended Luck II",
+  "item.minecraft.tipped_arrow.effect.long_luck_potion_3": "Arrow of Extended Luck III",
+  "item.minecraft.tipped_arrow.effect.long_luck_potion_4": "Arrow of Extended Luck IV",
+  "item.minecraft.tipped_arrow.effect.long_luck_potion_5": "Arrow of Extended Luck V",
+  "item.minecraft.tipped_arrow.effect.long_luck_potion_6": "Arrow of Extended Luck VI",
+  "item.minecraft.tipped_arrow.effect.long_unluck_potion": "Arrow of Extended Bad Luck",
+  "item.minecraft.tipped_arrow.effect.long_unluck_potion_2": "Arrow of Extended Bad Luck II",
+  "item.minecraft.tipped_arrow.effect.long_unluck_potion_3": "Arrow of Extended Bad Luck III",
+  "item.minecraft.tipped_arrow.effect.long_unluck_potion_4": "Arrow of Extended Bad Luck IV",
+  "item.minecraft.tipped_arrow.effect.long_unluck_potion_5": "Arrow of Extended Bad Luck V",
+  "item.minecraft.tipped_arrow.effect.long_unluck_potion_6": "Arrow of Extended Bad Luck VI",
 
   "item.todecoins.copper_nugget": "Copper Nugget",
   "item.todecoins.netherite_nugget": "Netherite Nugget",
 
   "item.todecoins.currency_stamp": "Currency Stamp",
+  "item.todecoins.nether_currency_stamp": "Nether Currency Stamp",
+  
   "item.todecoins.copper_coin": "Copper Coin",
   "item.todecoins.iron_coin": "Iron Coin",
   "item.todecoins.gold_coin": "Gold Coin",
@@ -99,6 +114,8 @@
   "item.todecoins.emerald_bank_note": "Emerald Note",
   "item.todecoins.emerald_quarter_bank_note": "Emerald Quarter Note",
   "item.todecoins.emerald_half_bank_note": "Emerald Half Note",
+  
+  "item.todecoins.nether_gold_coin": "Nether Gold Coin",
 
   "item.todecoins.emerald_fiber": "Emerald Fiber",
   "item.todecoins.emerald_coarse_wove_paper": "Emerald Coarse Wove Paper",
@@ -133,5 +150,7 @@
   "entity.minecraft.villager.todecoins.banker": "Banker",
   "entity.minecraft.villager.todecoins.leprechaun": "Leprechaun",
 
-  "container.coin_press_block_gui": "Coin Press"
+  "container.coin_press_block_gui": "Coin Press",
+
+  "container.recipe_book.mintable": "mintable"
 }

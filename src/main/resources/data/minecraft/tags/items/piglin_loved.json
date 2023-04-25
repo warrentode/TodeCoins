@@ -3,6 +3,8 @@
   "values": [
     "todecoins:gold_coin",
     "todecoins:gold_coin_bag",
-    "todecoins:pot_of_gold"
+    "todecoins:nether_gold_coin_bag",
+    "todecoins:pot_of_gold",
+    "#forge:piglin_barter_items"
   ]
 }

@@ -1,6 +1,7 @@
 package net.warrentode.todecoins;
 
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,17 +18,19 @@ import net.warrentode.todecoins.block.entity.ModBlockEntities;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModLootModifiers;
 import net.warrentode.todecoins.potion.ModPotions;
-import net.warrentode.todecoins.recipe.ModRecipes;
-import net.warrentode.todecoins.screen.CoinPressScreen;
+import net.warrentode.todecoins.recipe.ModRecipeSerializers;
+import net.warrentode.todecoins.recipe.ModRecipeTypes;
 import net.warrentode.todecoins.screen.ModMenuTypes;
+import net.warrentode.todecoins.screen.coinpressgui.CoinPressScreen;
 import net.warrentode.todecoins.util.BetterBrewingRecipe;
 import net.warrentode.todecoins.villager.ModVillagers;
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("ALL")
 @Mod(TodeCoins.MODID)
 public class TodeCoins {
     public static final String MODID = "todecoins";
+    public static final RecipeBookType RECIPE_TYPE_COINPRESS = RecipeBookType.create("coinpress");
+    
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
@@ -42,13 +45,15 @@ public class TodeCoins {
         ModMenuTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
 
-        ModRecipes.register(modEventBus);
+        ModRecipeSerializers.register(modEventBus);
+        ModRecipeTypes.RECIPE_TYPES.register(modEventBus);
         ModPotions.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
     }
 
 
+    @SuppressWarnings({"Convert2MethodRef", "CodeBlock2Expr"})
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(()-> {
            ModVillagers.registerPOIs();

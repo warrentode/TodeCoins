@@ -8,7 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.item.custom.*;
-import net.warrentode.todecoins.util.customtab.ModCreativeModeTab;
+import net.warrentode.todecoins.util.customtabs.ModCreativeModeTab;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -16,6 +16,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> CURRENCY_STAMP = ITEMS.register("currency_stamp",
             ()-> new CurrencyStampItem(new Item.Properties().tab(ModCreativeModeTab.TODECOINSTAB).defaultDurability(64).setNoRepair()));
+    public static final RegistryObject<Item> NETHER_CURRENCY_STAMP = ITEMS.register("nether_currency_stamp",
+           ()-> new CurrencyStampItem(new Item.Properties().tab(ModCreativeModeTab.TODECOINSTAB).defaultDurability(64).setNoRepair()));
 
     public static final RegistryObject<Item> FOUR_LEAF_CLOVER = ITEMS.register("four_leaf_clover",
             ()-> new FourLeafCloverItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
@@ -42,6 +44,9 @@ public class ModItems {
             ()-> new BankNoteItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
     public static final RegistryObject<Item> LUCKY_COIN = ITEMS.register("lucky_coin",
             ()-> new LuckyCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+
+    public static final RegistryObject<Item> NETHER_GOLD_COIN = ITEMS.register("nether_gold_coin",
+           ()-> new BarterCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
 
     public static final RegistryObject<Item> EMERALD_FIBER = ITEMS.register("emerald_fiber",
             ()-> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "todecoins:currency_stamp"
+    "todecoins:currency_stamp",
+    "todecoins:nether_currency_stamp"
   ]
 }

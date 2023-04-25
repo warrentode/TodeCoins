@@ -6,11 +6,12 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.warrentode.todecoins.TodeCoins;
+
+import static net.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModLootModifiers {
     public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, TodeCoins.MODID);
+            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, MODID);
 
     @SuppressWarnings("unused")
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_ITEM =

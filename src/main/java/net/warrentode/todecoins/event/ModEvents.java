@@ -18,7 +18,6 @@ import static net.warrentode.todecoins.TodeCoins.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID)
 public class ModEvents {
-
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
 

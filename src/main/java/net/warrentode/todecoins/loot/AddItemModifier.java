@@ -21,7 +21,6 @@ public class AddItemModifier extends LootModifier {
             .fieldOf("item").forGetter(m -> m.item)).apply(inst, AddItemModifier::new)));
     private final Item item;
 
-    @SuppressWarnings("unused")
     protected AddItemModifier(LootItemCondition[] conditionsIn, Item item) {
         super(conditionsIn);
         this.item = item;
@@ -29,7 +28,7 @@ public class AddItemModifier extends LootModifier {
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        if(context.getRandom().nextFloat() >= 0.9998f) {
+        if(context.getRandom().nextFloat() >= 0.5f) {
             generatedLoot.add(new ItemStack(item));
         }
 

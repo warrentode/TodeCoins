@@ -1,4 +1,15 @@
 //file:noinspection GroovyAssignabilityCheck
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+    }
+}
+
 plugins {
     id 'eclipse'
     id 'maven-publish'
@@ -6,7 +17,16 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = '1.19.2-1.2.2'
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.spongepowered.mixin'
+
+mixin {
+    add sourceSets.main, "todecoins.refmap.json"
+    config "todecoins.mixins.json"
+    showMessageTypes = true
+}
+
+version = '1.19.2-1.2.4'
 group = 'net.warrentode.todecoins'
 archivesBaseName = 'todecoins'
 
@@ -15,18 +35,16 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: 'parchment', version: '2022.11.27-1.19.2'
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
     runs {
         client {
             workingDirectory project.file('run')
-
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
-
             property 'forge.enabledGameTestNamespaces', 'todecoins'
-
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             mods {
                 todecoins {
                     source sourceSets.main
@@ -36,13 +54,11 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
-
             property 'forge.enabledGameTestNamespaces', 'todecoins'
-
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             mods {
                 todecoins {
                     source sourceSets.main
@@ -52,13 +68,9 @@ minecraft {
 
         gameTestServer {
             workingDirectory project.file('run')
-
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
-
             property 'forge.enabledGameTestNamespaces', 'todecoins'
-
             mods {
                 todecoins {
                     source sourceSets.main
@@ -68,13 +80,9 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-
             property 'forge.logging.markers', 'REGISTRIES'
-
             property 'forge.logging.console.level', 'debug'
-
             args '--mod', 'todecoins', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-
             mods {
                 todecoins {
                     source sourceSets.main
@@ -87,11 +95,14 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-
+    maven { url = "https://maven.theillusivec4.top/" }
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.8'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0:api")
 }
 
 jar {
