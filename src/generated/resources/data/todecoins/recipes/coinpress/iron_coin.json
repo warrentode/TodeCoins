@@ -6,7 +6,7 @@
       "item": "todecoins:currency_stamp"
     },
     {
-      "tag": "forge:ingots/iron"
+      "tag": "forge:nuggets/iron"
     }
   ],
   "recipe_book_tab": "coins",

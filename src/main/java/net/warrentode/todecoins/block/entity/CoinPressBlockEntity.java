@@ -3,18 +3,21 @@ package net.warrentode.todecoins.block.entity;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.Nameable;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
@@ -25,6 +28,7 @@ import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.SingleThreadedRandomSource;
@@ -33,56 +37,74 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
-import net.warrentode.todecoins.block.custom.CoinPressBlock;
-import net.warrentode.todecoins.mixin.RecipeMangerMixin;
+import net.warrentode.todecoins.block.custom.coinpress.CoinPressBlock;
+import net.warrentode.todecoins.block.entity.container.inventory.CoinPressItemHandler;
+import net.warrentode.todecoins.gui.CoinPressMenu;
+import net.warrentode.todecoins.mixin.RecipeManagerAccessor;
 import net.warrentode.todecoins.recipe.CoinPressRecipe;
-import net.warrentode.todecoins.recipe.ModRecipeTypes;
-import net.warrentode.todecoins.screen.coinpressgui.CoinPressMenu;
+import net.warrentode.todecoins.recipe.ModRecipes;
 import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, RecipeHolder {
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+
+public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, Nameable, RecipeHolder {
+    public final ItemStackHandler inventory;
+    public static final int OUTPUT_SLOT = 2;
+    public static final int INVENTORY_SIZE = 3;
+    private int stampingTime;
+    private int totalStampingTime;
+    private Component customName;
+    protected final ContainerData coinpressData;
+    private final Object2IntOpenHashMap<ResourceLocation> usedRecipes;
+    private ResourceLocation lastRecipeID;
+    private ItemStack lastItemCrafted;
+    private boolean checkNewRecipe;
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
+            if (level != null) {
+                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
+            }
+            if (slot >= 0 && slot < OUTPUT_SLOT) {
+                checkNewRecipe = true;
+            }
         }
-        
+
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.hasTag() == stack.is(ModTags.Items.CURRENCY_STAMPS);
-                case 1 -> true;
+                case 0, 1 -> true;
                 case 2 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
     };
     public LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap = Map.of(Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 2, (i, s) -> false)), Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 2, (i, s) -> false)), Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0, (index, stack) -> itemHandler.isItemValid(0, stack))), Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (i) -> i == 1, (index, stack) -> itemHandler.isItemValid(1, stack))), Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0 || index == 1, (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(1, stack))));
-    
-    public SimpleContainer inventory;
-    public static CoinPressBlockEntity coinPress;
-    protected final ContainerData coinPressData;
-    public int stampingTime;
-    public int totalStampingTime;
-    public int experience;
-    public Object2IntOpenHashMap<ResourceLocation> usedRecipeTracker;
-    public ResourceLocation lastRecipeID;
-    public Recipe<?> lastUsedRecipe;
-    public boolean checkNewRecipe;
-    
+    private final Map<Direction, LazyOptional<CoinPressItemHandler>> directionWrappedHandlerMap =
+            Map.of(Direction.DOWN, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
+                    Direction.NORTH, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (index) -> index == 0,
+                            (index, stack) -> itemHandler.isItemValid(0, stack))),
+                    Direction.EAST, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (i) -> i == 1,
+                            (index, stack) -> itemHandler.isItemValid(1, stack))),
+                    Direction.SOUTH, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (index) -> index == 0 || index == 1,
+                            (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(1, stack))));
+
     public CoinPressBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.COINPRESS_ENTITY.get(), pPos, pBlockState);
-        this.usedRecipeTracker = new Object2IntOpenHashMap<>();
-        this.lastRecipeID = null;
+        this.inventory = itemHandler;
+        this.lastItemCrafted = ItemStack.EMPTY;
+        this.usedRecipes = new Object2IntOpenHashMap<>();
         this.checkNewRecipe = true;
-        this.experience = 0;
-        this.coinPressData = new ContainerData() {
+        this.coinpressData = new ContainerData() {
             @Override
             public int get(int pIndex) {
                 return switch (pIndex) {
@@ -91,7 +113,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, R
                     default -> 0;
                 };
             }
-            
+
             @Override
             public void set(int pIndex, int pValue) {
                 switch (pIndex) {
@@ -99,38 +121,55 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, R
                     case 1 -> CoinPressBlockEntity.this.totalStampingTime = pValue;
                 }
             }
-            
+
             @Override
             public int getCount() {
                 return 2;
             }
         };
     }
+
+    @Override
+    public @NotNull Component getName() {
+        return customName != null ? customName : Component.translatable("container.coin_press_block_gui");
+    }
+
+    @Override
+    public boolean hasCustomName() {
+        return this.getCustomName() != null;
+    }
+
     @Override
     public @NotNull Component getDisplayName() {
-        return Component.translatable("container.coin_press_block_gui");
+        return getName();
     }
-    
+
+    @Nullable
+    @Override
+    public Component getCustomName() {
+        return customName;
+    }
+
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pPlayerInventory, @NotNull Player pPlayer) {
-        return new CoinPressMenu(pContainerId, pPlayerInventory, this, this.coinPressData);
+        return new CoinPressMenu(pContainerId, pPlayerInventory, this, this.coinpressData);
     }
-    
+
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
             if (side == null) {
                 return lazyItemHandler.cast();
             }
-            
+
             if (directionWrappedHandlerMap.containsKey(side)) {
                 Direction localDir = this.getBlockState().getValue(CoinPressBlock.FACING);
-                
+
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
                 }
-                
+
                 return switch (localDir) {
                     default -> directionWrappedHandlerMap.get(side).cast();
                     case EAST -> directionWrappedHandlerMap.get(side.getClockWise()).cast();
@@ -139,209 +178,286 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, R
                 };
             }
         }
-        
+
         return super.getCapability(cap, side);
     }
-    
+
     @Override
     public void onLoad() {
         super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
     }
+
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
     }
+
     @Override
     protected void saveAdditional(@NotNull CompoundTag nbt) {
         super.saveAdditional(nbt);
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putInt("coin_press.stampingTime", this.stampingTime);
-        nbt.putInt("coin_press.totalStampingTime", this.totalStampingTime);
+        nbt.putInt("stampingTime", this.stampingTime);
+        nbt.putInt("totalStampingTime", totalStampingTime);
+        lastItemCrafted = ItemStack.of(nbt.getCompound("lastRecipeUsed"));
+        if (customName != null) {
+            nbt.putString("CustomName", Component.Serializer.toJson(customName));
+        }
         CompoundTag compoundRecipes = new CompoundTag();
-        usedRecipeTracker.forEach((recipeId, craftedAmount) -> compoundRecipes.putInt(recipeId.toString(), craftedAmount));
-        nbt.put("RecipesUsed", compoundRecipes);
+        usedRecipes.forEach((recipeId, craftedAmount) -> compoundRecipes.putInt(recipeId.toString(), craftedAmount));
+        nbt.put("usedRecipes", compoundRecipes);
+
     }
+
+    private CompoundTag writeItems(CompoundTag nbt) {
+        super.saveAdditional(nbt);
+        nbt.put("lastRecipeUsed", lastItemCrafted.serializeNBT());
+        nbt.put("inventory", inventory.serializeNBT());
+        return nbt;
+    }
+
+    @Override
+    public @NotNull CompoundTag getUpdateTag() {
+        return writeItems(new CompoundTag());
+    }
+
     @Override
     public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        stampingTime = nbt.getInt("coin_press.stampingTime");
-        totalStampingTime = nbt.getInt("coin_press.totalStampingTime");
-        CompoundTag compoundRecipes = nbt.getCompound("RecipesUsed");
+        stampingTime = nbt.getInt("stampingTime");
+        totalStampingTime = nbt.getInt("totalStampingTime");
+        nbt.put("lastRecipeUsed", lastItemCrafted.serializeNBT());
+        if (nbt.contains("CustomName", 8)) {
+            customName = Component.Serializer.fromJson(nbt.getString("CustomName"));
+        }
+        CompoundTag compoundRecipes = nbt.getCompound("usedRecipes");
         for (String key : compoundRecipes.getAllKeys()) {
-            usedRecipeTracker.put(new ResourceLocation(key), compoundRecipes.getInt(key));
+            usedRecipes.put(new ResourceLocation(key), compoundRecipes.getInt(key));
         }
     }
+
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
-        
+
         assert this.level != null;
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-    
-    public static void tick(Level level, BlockPos pos, BlockState state, CoinPressBlockEntity coinPress) {
-        ItemStack stack = ItemStack.EMPTY;
-        SimpleContainer inventory = coinPress.inventory;
+
+    public static void tick(Level level, BlockPos pos, BlockState state, @NotNull CoinPressBlockEntity coinPress) {
+        boolean didInventoryChange = false;
+        boolean flag = coinPress.isStamping();
+        boolean flag1 = false;
+
         if (coinPress.hasInput()) {
-            Optional<CoinPressRecipe> recipe = coinPress.getMatchingRecipe(new RecipeWrapper((IItemHandlerModifiable) coinPress.inventory));
-            if (recipe.isPresent() && canInsertItemIntoOutputSlot(inventory, stack)) {
-                coinPress.processCurrency(recipe.get(), coinPress);
-                setChanged(level, pos, state);
+            Optional<CoinPressRecipe> recipe = coinPress.getMatchingRecipe(new RecipeWrapper(coinPress.inventory));
+            if (recipe.isPresent() && coinPress.canStamp(recipe.get())) {
+                didInventoryChange = coinPress.processStamping(recipe.get(), coinPress);
             }
             else {
-                coinPress.stampingTime = 0;
+                coinPress.resetProgress();
+                setChanged(level, pos, state);
             }
         }
+        else if (coinPress.stampingTime > 0) {
+            coinPress.resetProgress();
+            setChanged(level, pos, state);
+        }
+
+        if (didInventoryChange) {
+            setChanged(level, pos, state);
+        }
+
+        if (flag != coinPress.isStamping()) {
+            flag1 = true;
+            state = state.setValue(CoinPressBlock.CONDITIONAL, coinPress.isStamping());
+            level.setBlock(pos, state, 3);
+        }
+
+        if (flag1) {
+            setChanged(level, pos, state);
+        }
     }
-    
-    /* RECIPES */
-    private Optional<CoinPressRecipe> getMatchingRecipe(RecipeWrapper inventoryWrapper) {
+
+    private boolean processStamping(CoinPressRecipe recipe, CoinPressBlockEntity coinPress) {
+        if (level == null) {
+            return false;
+        }
+        ++stampingTime;
+        totalStampingTime = recipe.getStampingTime();
+        if (stampingTime >= totalStampingTime) {
+            coinPress.craftItem(recipe, coinPress);
+        }
+        return true;
+    }
+
+    private void craftItem(CoinPressRecipe recipe, CoinPressBlockEntity coinPress) {
+        for (int i = 0; i < inventory.getSlots(); i++) {
+            inventory.setStackInSlot(i, inventory.getStackInSlot(i));
+        }
+
+        // check first input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
+        if (inventory.getStackInSlot(0).getDamageValue() == inventory.getStackInSlot(0).getMaxDamage()
+                && inventory.getStackInSlot(0).is(ModTags.Items.CURRENCY_STAMPS)) {
+            inventory.extractItem(0, 1, false);
+        }
+        else if (inventory.getStackInSlot(0).getDamageValue() != inventory.getStackInSlot(0).getMaxDamage()
+                && inventory.getStackInSlot(0).is(ModTags.Items.CURRENCY_STAMPS)) {
+            inventory.getStackInSlot(0).hurt(1, new SingleThreadedRandomSource(1), null);
+        }
+        else {
+            inventory.extractItem(0, 1, false);
+        }
+
+        // check second input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
+        if (inventory.getStackInSlot(1).getDamageValue() == inventory.getStackInSlot(1).getMaxDamage()
+                && inventory.getStackInSlot(1).is(ModTags.Items.CURRENCY_STAMPS)) {
+            inventory.extractItem(0, 1, false);
+        }
+        else if (inventory.getStackInSlot(1).getDamageValue() != inventory.getStackInSlot(1).getMaxDamage()
+                && inventory.getStackInSlot(1).is(ModTags.Items.CURRENCY_STAMPS)) {
+            inventory.getStackInSlot(1).hurt(1, new SingleThreadedRandomSource(1), null);
+        }
+        else {
+            inventory.extractItem(1, 1, false);
+        }
+
+        inventory.setStackInSlot(OUTPUT_SLOT, new ItemStack(recipe.getResultItem().getItem(),
+                inventory.getStackInSlot(OUTPUT_SLOT).getCount() + (recipe.getResultItem().getCount())));
+
+        lastItemCrafted = recipe.getResultItem();
+        coinPress.setRecipeUsed(recipe);
+        coinPress.resetProgress();
+        setChanged();
+    }
+
+    private boolean canStamp(CoinPressRecipe recipe) {
+        if (hasInput()) {
+            ItemStack resultStack = recipe.getResultItem();
+            return !resultStack.isEmpty() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, recipe.getResultItem());
+        }
+        else {
+            return false;
+        }
+    }
+
+    private Optional<CoinPressRecipe> getMatchingRecipe(RecipeWrapper inventory) {
         if (level == null) return Optional.empty();
-        
+
         if (lastRecipeID != null) {
-            Recipe<RecipeWrapper> recipe = ((RecipeMangerMixin) level.getRecipeManager()).getRecipeMap(ModRecipeTypes.COINPRESS.get()).get(lastRecipeID);
+            Recipe<RecipeWrapper> recipe = ((RecipeManagerAccessor) level.getRecipeManager()).getRecipeMap(ModRecipes.RECIPE_TYPE_COINPRESS.get()).get(lastRecipeID);
             if (recipe instanceof CoinPressRecipe) {
-                if (recipe.matches(inventoryWrapper, level)) {
+                if (recipe.matches(inventory, level)) {
                     return Optional.of((CoinPressRecipe) recipe);
                 }
-                if (recipe.getResultItem().sameItem(getCraftResult()) && canInsertItemIntoOutputSlot(inventory, getCraftResult())) {
+                if (recipe.getResultItem().sameItem(lastItemCrafted)) {
                     return Optional.empty();
                 }
             }
         }
+
         if (checkNewRecipe) {
-            Optional<CoinPressRecipe> recipe = level.getRecipeManager().getRecipeFor(ModRecipeTypes.COINPRESS.get(), inventoryWrapper, level);
+            Optional<CoinPressRecipe> recipe = level.getRecipeManager().getRecipeFor(ModRecipes.RECIPE_TYPE_COINPRESS.get(), inventory, level);
             if (recipe.isPresent()) {
                 lastRecipeID = recipe.get().getId();
                 return recipe;
             }
         }
+
         checkNewRecipe = false;
         return Optional.empty();
     }
-    
-    public boolean hasInput() {
-        return !itemHandler.getStackInSlot(0).isEmpty() || !itemHandler.getStackInSlot(1).isEmpty();
-    }
-    
-    public void processCurrency(CoinPressRecipe recipe, CoinPressBlockEntity coinPress) {
-        BlockPos pos = this.getBlockPos();
-        BlockState state = this.getBlockState();
-        if (level == null) return;
-        
-        stampingTime = recipe.getStampingTime();
-        coinPress.stampingTime++;
-        if (coinPress.stampingTime >= coinPress.totalStampingTime) {
-            craftItem(coinPress);
+
+    private boolean hasInput() {
+        for (int i = 0; i < OUTPUT_SLOT; ++i) {
+            if (!inventory.getStackInSlot(i).isEmpty()) {
+                return true;
+            }
         }
-        else {
-            coinPress.resetStampingTime();
-            setChanged(level, pos, state);
-        }
+        return false;
     }
-    
-    public boolean isCrafting() {
-        return stampingTime > 0;
+
+    private void resetProgress() {
+        this.stampingTime = 0;
     }
-    
-    private static void craftItem(CoinPressBlockEntity entity) {
-        Level level = entity.level;
-        if (level == null) return;
-        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
-        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
-        }
-        
-        Map<ResourceLocation, Recipe<RecipeWrapper>> recipe = ((RecipeMangerMixin) level.getRecipeManager()).getRecipeMap(ModRecipeTypes.COINPRESS.get());
-        
-        if (recipe instanceof CoinPressRecipe) {
-            
-            // check first input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
-            if (entity.itemHandler.getStackInSlot(0).getDamageValue() == entity.itemHandler.getStackInSlot(0).getMaxDamage() && entity.itemHandler.getStackInSlot(0).is(ModTags.Items.CURRENCY_STAMPS)) {
-                entity.itemHandler.extractItem(0, 1, false);
-            }
-            else if (entity.itemHandler.getStackInSlot(0).getDamageValue() != entity.itemHandler.getStackInSlot(0).getMaxDamage() && entity.itemHandler.getStackInSlot(0).is(ModTags.Items.CURRENCY_STAMPS)) {
-                entity.itemHandler.getStackInSlot(0).hurt(1, new SingleThreadedRandomSource(1), null);
-            }
-            else {
-                entity.itemHandler.extractItem(0, 1, false);
-            }
-            
-            // check second input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
-            if (entity.itemHandler.getStackInSlot(1).getDamageValue() == entity.itemHandler.getStackInSlot(1).getMaxDamage() && entity.itemHandler.getStackInSlot(1).is(ModTags.Items.CURRENCY_STAMPS)) {
-                entity.itemHandler.extractItem(0, 1, false);
-            }
-            else if (entity.itemHandler.getStackInSlot(1).getDamageValue() != entity.itemHandler.getStackInSlot(1).getMaxDamage() && entity.itemHandler.getStackInSlot(1).is(ModTags.Items.CURRENCY_STAMPS)) {
-                entity.itemHandler.getStackInSlot(1).hurt(1, new SingleThreadedRandomSource(1), null);
-            }
-            else {
-                entity.itemHandler.extractItem(1, 1, false);
-            }
-            
-            entity.itemHandler.setStackInSlot(2, new ItemStack(((CoinPressRecipe) recipe).getResultItem().getItem(), entity.itemHandler.getStackInSlot(2).getCount() + (((CoinPressRecipe) recipe).getResultItem().getCount())));
-            
-            coinPress.setRecipeUsed((Recipe<?>) recipe);
-            entity.resetStampingTime();
-        }
+
+    private static boolean canInsertItemIntoOutputSlot(@NotNull ItemStackHandler inventory, @NotNull ItemStack stack) {
+        return inventory.getStackInSlot(2).getItem() == stack.getItem() || inventory.getStackInSlot(2).isEmpty();
     }
-    
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack stack) {
-        return inventory.getItem(2).getItem() == stack.getItem() || inventory.getItem(2).isEmpty();
+
+    private static boolean canInsertAmountIntoOutputSlot(@NotNull ItemStackHandler inventory) {
+        return inventory.getStackInSlot(2).getMaxStackSize() > inventory.getStackInSlot(2).getCount();
     }
-    
+
+    public boolean isStamping() {
+        return this.stampingTime > 0;
+    }
+
+    public ItemStackHandler getInventory() {
+        return inventory;
+    }
+
     @Override
     public void setRecipeUsed(@Nullable Recipe<?> recipe) {
         if (recipe != null) {
             ResourceLocation recipeID = recipe.getId();
-            lastUsedRecipe = recipe;
-            usedRecipeTracker.addTo(recipeID, 1);
+            usedRecipes.addTo(recipeID, 1);
         }
     }
-    
-    private void resetStampingTime() {
-        this.stampingTime = 0;
-    }
-    
+
     @Nullable
     @Override
     public Recipe<?> getRecipeUsed() {
-        return lastUsedRecipe;
+        return null;
     }
-    public ItemStack getCraftResult() {
-        return lastUsedRecipe.getResultItem();
-    }
-    
+
     @Override
     public void awardUsedRecipes(@NotNull Player player) {
         List<Recipe<?>> usedRecipes = getUsedRecipesAndPopExperience(player.level, player.position());
         player.awardRecipes(usedRecipes);
-        usedRecipeTracker.clear();
+        usedRecipes.clear();
     }
-    
+
     public List<Recipe<?>> getUsedRecipesAndPopExperience(Level level, Vec3 pos) {
         List<Recipe<?>> list = Lists.newArrayList();
-        
-        for (Object2IntMap.Entry<ResourceLocation> entry : usedRecipeTracker.object2IntEntrySet()) {
+
+        for (Object2IntMap.Entry<ResourceLocation> entry : usedRecipes.object2IntEntrySet()) {
             level.getRecipeManager().byKey(entry.getKey()).ifPresent((recipe) -> {
                 list.add(recipe);
                 splitAndSpawnExperience((ServerLevel) level, pos, entry.getIntValue(), ((CoinPressRecipe) recipe).getExperience());
             });
         }
-        
+
         return list;
     }
+
     private static void splitAndSpawnExperience(ServerLevel level, Vec3 pos, int craftedAmount, float experience) {
         int expTotal = Mth.floor((float) craftedAmount * experience);
         float expFraction = Mth.frac((float) craftedAmount * experience);
         if (expFraction != 0.0F && Math.random() < (double) expFraction) {
             ++expTotal;
         }
-        
+
         ExperienceOrb.award(level, pos, expTotal);
+    }
+
+    @Override
+    public boolean setRecipeUsed(@NotNull Level pLevel, @NotNull ServerPlayer pPlayer, @NotNull Recipe<?> pRecipe) {
+        return RecipeHolder.super.setRecipeUsed(pLevel, pPlayer, pRecipe);
+    }
+
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
+
+    @Override
+    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
+        load(Objects.requireNonNull(pkt.getTag()));
     }
 }

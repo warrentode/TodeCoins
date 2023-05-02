@@ -1,6 +1,6 @@
 {
   "type": "todecoins:coinpress",
-  "experience": 0.65,
+  "experience": 0.35,
   "ingredients": [
     {
       "item": "todecoins:currency_stamp"
@@ -13,5 +13,5 @@
   "result": {
     "item": "todecoins:emerald_half_bank_note"
   },
-  "stampingTime": 75
+  "stampingTime": 50
 }

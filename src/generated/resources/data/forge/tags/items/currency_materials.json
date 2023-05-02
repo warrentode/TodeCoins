@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#forge:nuggets/copper",
+    "#forge:nuggets/iron",
+    "#forge:nuggets/gold",
+    "#todecoins:nuggets/netherite",
+    "#todecoins:textiles/currency_fiber",
+    "#todecoins:textiles/currency_paper"
+  ]
+}

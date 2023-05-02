@@ -5,9 +5,9 @@
   "refmap": "mixins.todecoins.refmap.json",
   "mixins": [
     "PiglinBarterMixin",
-    "RecipeMangerMixin"
+    "RecipeManagerAccessor"
   ],
   "client": [
   ],
-  "minVersion": "0.8.5"
+  "minVersion": "0.8"
 }

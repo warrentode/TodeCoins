@@ -1,6 +1,5 @@
 package net.warrentode.todecoins.datagen.recipes.recipe;
 
-import java.util.function.Consumer;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
@@ -11,6 +10,8 @@ import net.minecraft.world.item.Items;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.util.tags.ModTags;
+
+import java.util.function.Consumer;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
@@ -23,7 +24,7 @@ public class CraftingRecipes {
         storageBlockRecipes(consumer);
         textileRecipes(consumer);
     }
-    
+
     private static void armorRecipes(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_HAT.get(), 1)
                 .pattern("CCC")
@@ -38,7 +39,6 @@ public class CraftingRecipes {
                 .define('C', ModItems.LUCKY_FABRIC.get())
                 .unlockedBy("has_lucky_fabric", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.LUCKY_FABRIC.get()))
                 .save(consumer, new ResourceLocation(MODID, "armor/lucky_fabric/lucky_shirt"));
-        
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_BOOTS.get(), 1)
                 .pattern("C C")
                 .pattern("C C")
@@ -80,7 +80,7 @@ public class CraftingRecipes {
                 .define('D', Items.POLISHED_DEEPSLATE)
                 .define('P', ItemTags.PLANKS)
                 .unlockedBy("has_polished_deepslate", InventoryChangeTrigger.TriggerInstance.hasItems(Items.POLISHED_DEEPSLATE))
-                .save(consumer, new ResourceLocation(MODID, "job_blocks/coinpress"));
+                .save(consumer, new ResourceLocation(MODID, "job_blocks/coin_press"));
         ShapedRecipeBuilder.shaped(ModBlocks.POT_OF_GOLD.get(), 1)
                 .pattern("###")
                 .pattern("###")
@@ -111,7 +111,7 @@ public class CraftingRecipes {
                 .define('#', ModTags.Items.NETHERITE_NUGGET)
                 .unlockedBy("has_netherite_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_NUGGET.get()))
                 .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/netherite_ingot"));
-        
+
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_NUGGET.get(), 1)
                 .pattern("###")
                 .pattern(" # ")
@@ -119,7 +119,7 @@ public class CraftingRecipes {
                 .define('#', ModItems.FOUR_LEAF_CLOVER.get())
                 .unlockedBy("has_four_leaf_clover", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.FOUR_LEAF_CLOVER.get()))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_other/lucky_nugget"));
-        
+
         ShapelessRecipeBuilder.shapeless(ModItems.COPPER_NUGGET.get(), 9)
                 .requires(ModTags.Items.COPPER_INGOT)
                 .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
@@ -128,8 +128,8 @@ public class CraftingRecipes {
                 .requires(Items.NETHERITE_INGOT)
                 .unlockedBy("has_netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nuggets_from_ingots/netherite_nugget"));
-        
-        
+
+
         ShapelessRecipeBuilder.shapeless(ModItems.COPPER_NUGGET.get())
                 .requires(ModItems.COPPER_COIN.get(), 2)
                 .unlockedBy("has_copper_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_NUGGET.get()))
@@ -204,8 +204,8 @@ public class CraftingRecipes {
                 .define('#', ModItems.EMERALD_BANK_NOTE.get())
                 .unlockedBy("has_emerald_note", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EMERALD_BANK_NOTE.get()))
                 .save(consumer, new ResourceLocation(MODID, "storage_blocks/bank_notes_to_bags/emerald_bank_note_bag"));
-        
-        
+
+
         ShapelessRecipeBuilder.shapeless(ModItems.COPPER_COIN.get(), 9)
                 .requires(ModBlocks.COPPER_COIN_BAG.get())
                 .unlockedBy("has_copper_bag", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.COPPER_COIN_BAG.get()))
@@ -256,7 +256,7 @@ public class CraftingRecipes {
                 .define('C', ModItems.LUCKY_COIN.get())
                 .unlockedBy("has_lucky_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.LUCKY_COIN.get()))
                 .save(consumer, new ResourceLocation(MODID, "textiles/fiber/lucky_fiber"));
-        
+
         ShapelessRecipeBuilder.shapeless(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get(), 1)
                 .requires(ModItems.EMERALD_FIBER.get(), 8)
                 .unlockedBy("has_emerald_fiber", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EMERALD_FIBER.get()))
@@ -272,7 +272,7 @@ public class CraftingRecipes {
                 .define('#', ModItems.EMERALD_FIBER.get())
                 .unlockedBy("has_emerald_fiber", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EMERALD_FIBER.get()))
                 .save(consumer, new ResourceLocation(MODID, "textiles/paper/emerald_coarse_wove_paper"));
-        
+
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_FABRIC.get(), 1)
                 .pattern("###")
                 .pattern("###")
@@ -280,7 +280,7 @@ public class CraftingRecipes {
                 .define('#', ModItems.LUCKY_THREAD.get())
                 .unlockedBy("has_lucky_thread", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.LUCKY_THREAD.get()))
                 .save(consumer, new ResourceLocation(MODID, "textiles/fabric/lucky_fabric"));
-        
+
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_THREAD.get(), 1)
                 .pattern("###")
                 .pattern("###")

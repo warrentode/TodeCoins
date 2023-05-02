@@ -1,12 +1,13 @@
 package net.warrentode.todecoins;
 
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,61 +16,66 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.block.entity.ModBlockEntities;
+import net.warrentode.todecoins.gui.CoinPressScreen;
+import net.warrentode.todecoins.gui.ModMenuTypes;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModLootModifiers;
+import net.warrentode.todecoins.potion.BetterBrewingRecipe;
 import net.warrentode.todecoins.potion.ModPotions;
-import net.warrentode.todecoins.recipe.ModRecipeSerializers;
-import net.warrentode.todecoins.recipe.ModRecipeTypes;
-import net.warrentode.todecoins.screen.ModMenuTypes;
-import net.warrentode.todecoins.screen.coinpressgui.CoinPressScreen;
-import net.warrentode.todecoins.util.BetterBrewingRecipe;
+import net.warrentode.todecoins.recipe.ModRecipes;
+import net.warrentode.todecoins.recipe.recipebook.CoinPressRecipeCategories;
+import net.warrentode.todecoins.sounds.ModSounds;
+import net.warrentode.todecoins.util.customtabs.ModCreativeModeTab;
 import net.warrentode.todecoins.villager.ModVillagers;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 @Mod(TodeCoins.MODID)
 public class TodeCoins {
     public static final String MODID = "todecoins";
-    public static final RecipeBookType RECIPE_TYPE_COINPRESS = RecipeBookType.create("coinpress");
-    
+    public static final Logger LOGGER = LogManager.getLogger();
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setup);
 
+        ModSounds.SOUNDS.register(modEventBus);
+
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModVillagers.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
-        ModBlockEntities.register(modEventBus);
-
-        ModRecipeSerializers.register(modEventBus);
-        ModRecipeTypes.RECIPE_TYPES.register(modEventBus);
+        ModRecipes.register(modEventBus);
         ModPotions.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
     }
-
-
-    @SuppressWarnings({"Convert2MethodRef", "CodeBlock2Expr"})
-    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
-        event.enqueueWork(()-> {
-           ModVillagers.registerPOIs();
-        });
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event) {
+        ModCreativeModeTab.preInit();
     }
 
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
+        event.enqueueWork(ModVillagers::registerPOIs);
+    }
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new);
+            event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new));
+        }
+        @SubscribeEvent
+        public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
+            CoinPressRecipeCategories.init(event);
         }
     }
-
     private void setup(final @NotNull FMLCommonSetupEvent event) {
-        event.enqueueWork(()-> {
+        event.enqueueWork(() -> {
             // Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
                     ModItems.LUCKY_COIN.get(), Potions.THICK));

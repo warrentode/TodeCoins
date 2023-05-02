@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#todecoins:coins",
-    "#todecoins:bank_notes",
-    "#forge:piglin_barter_items"
-  ]
-}

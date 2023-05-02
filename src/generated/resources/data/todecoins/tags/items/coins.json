@@ -1,0 +1,10 @@
+{
+  "values": [
+    "todecoins:copper_coin",
+    "todecoins:iron_coin",
+    "todecoins:gold_coin",
+    "todecoins:nether_gold_coin",
+    "todecoins:netherite_coin",
+    "todecoins:lucky_coin"
+  ]
+}

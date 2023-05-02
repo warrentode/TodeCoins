@@ -1,15 +1,14 @@
 package net.warrentode.todecoins.item;
 
+import java.util.function.Supplier;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.warrentode.todecoins.TodeCoins;
+import static net.warrentode.todecoins.TodeCoins.MODID;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.function.Supplier;
 
 @SuppressWarnings("SameParameterValue")
 public enum ModArmorMaterials implements ArmorMaterial {
@@ -60,7 +59,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     public @NotNull String getName() {
-        return TodeCoins.MODID + ":" + this.name;
+        return MODID + ":" + this.name;
     }
 
     public float getToughness() {

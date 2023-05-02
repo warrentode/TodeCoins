@@ -10,11 +10,11 @@ import org.jetbrains.annotations.NotNull;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
-@SuppressWarnings("unused")
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> STORAGE_BLOCKS = modBlockTag("storage_blocks");
         public static final TagKey<Block> CURRENCY_BLOCKS = modBlockTag("storage_blocks/currency_blocks");
+        public static final TagKey<Block> JOB_BLOCKS = modBlockTag("job_blocks");
     }
 
     public static class Items {
@@ -33,11 +33,14 @@ public class ModTags {
 
         public static final TagKey<Item> GEMS = modItemTag("gems");
 
+        public static final TagKey<Item> NUGGETS = modItemTag("nuggets");
         public static final TagKey<Item> COPPER_NUGGET = modItemTag("nuggets/copper");
         public static final TagKey<Item> IRON_NUGGET = modItemTag("nuggets/iron");
         public static final TagKey<Item> GOLD_NUGGET = modItemTag("nuggets/gold");
+        public static final TagKey<Item> LUCKY_NUGGET = modItemTag("nuggets/lucky");
         public static final TagKey<Item> NETHERITE_NUGGET = modItemTag("nuggets/netherite");
 
+        public static final TagKey<Item> INGOTS = modItemTag("ingots");
         public static final TagKey<Item> COPPER_INGOT = modItemTag("ingots/copper");
         public static final TagKey<Item> IRON_INGOT = modItemTag("ingots/iron");
         public static final TagKey<Item> GOLD_INGOT = modItemTag("ingots/gold");
