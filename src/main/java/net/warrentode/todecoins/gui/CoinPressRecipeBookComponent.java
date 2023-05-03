@@ -30,7 +30,7 @@ public class CoinPressRecipeBookComponent extends RecipeBookComponent {
     @Override
     @Nonnull
     protected Component getRecipeFilterName() {
-        return Component.translatable("container.todecoins.coin_press");
+        return Component.translatable("container.recipe_book.coin_press");
     }
 
     @Override
@@ -38,8 +38,8 @@ public class CoinPressRecipeBookComponent extends RecipeBookComponent {
         ItemStack resultStack = recipe.getResultItem();
         this.ghostRecipe.setRecipe(recipe);
         NonNullList<Ingredient> nonnulllist = recipe.getIngredients();
-        if (slots.get(3).getItem().isEmpty()) {
-            this.ghostRecipe.addIngredient(Ingredient.of(resultStack), (slots.get(3)).x, (slots.get(3)).y);
+        if (slots.get(2).getItem().isEmpty()) {
+            this.ghostRecipe.addIngredient(Ingredient.of(resultStack), (slots.get(2)).x, (slots.get(2)).y);
         }
 
         Iterator<Ingredient> iterator = nonnulllist.iterator();
@@ -55,7 +55,5 @@ public class CoinPressRecipeBookComponent extends RecipeBookComponent {
                 this.ghostRecipe.addIngredient(ingredient, slot1.x, slot1.y);
             }
         }
-
-        this.placeRecipe(this.menu.getGridWidth(), this.menu.getGridHeight(), this.menu.getResultSlotIndex(), recipe, recipe.getIngredients().iterator(), 0);
     }
 }

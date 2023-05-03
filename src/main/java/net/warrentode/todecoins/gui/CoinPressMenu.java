@@ -1,7 +1,6 @@
 package net.warrentode.todecoins.gui;
 
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
@@ -22,16 +21,17 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class CoinPressMenu  extends RecipeBookMenu<Container> {
+public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
     public final CoinPressBlockEntity coinPress;
-    public final ItemStackHandler inventory;
     private final Level level;
     private final ContainerData coinpressData;
     private final ContainerLevelAccess canInteractWithCallable;
+    public final ItemStackHandler inventory;
 
     public CoinPressMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf extraData) {
         this(windowId, playerInventory, getBlockEntity(playerInventory, extraData), new SimpleContainerData(2));
     }
+
     public CoinPressMenu(final int windowId, final Inventory playerInventory, final CoinPressBlockEntity blockEntity, ContainerData coinpressData) {
         super(ModMenuTypes.COIN_PRESS_MENU.get(), windowId);
         this.coinPress = blockEntity;
@@ -40,16 +40,16 @@ public class CoinPressMenu  extends RecipeBookMenu<Container> {
         this.level = playerInventory.player.level;
         this.canInteractWithCallable = ContainerLevelAccess.create(Objects.requireNonNull(coinPress.getLevel()), coinPress.getBlockPos());
 
-        addPlayerInventory(playerInventory);
-        addPlayerHotbar(playerInventory);
-
         this.coinPress.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(inventory, 0, 34, 47));
             this.addSlot(new SlotItemHandler(inventory, 1, 70, 47));
             this.addSlot(new CoinPressResultSlot(playerInventory.player, coinPress, handler, 2, 142, 47));
         });
 
-        addDataSlots(coinpressData);
+        this.addPlayerInventory(playerInventory);
+        this.addPlayerHotbar(playerInventory);
+
+        this.addDataSlots(coinpressData);
     }
     public ItemStackHandler getInventory() {
         return inventory;
@@ -104,7 +104,7 @@ public class CoinPressMenu  extends RecipeBookMenu<Container> {
         if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
             // This is a vanilla container slot so merge the stack into the tile inventory
             if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
-                                                                                     + TE_INVENTORY_SLOT_COUNT, false)) {
+                    + TE_INVENTORY_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;  // EMPTY_ITEM
             }
         } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
@@ -161,7 +161,7 @@ public class CoinPressMenu  extends RecipeBookMenu<Container> {
     }
 
     @Override
-    public boolean recipeMatches(Recipe<? super Container> recipe) {
+    public boolean recipeMatches(Recipe<? super RecipeWrapper> recipe) {
         return recipe.matches(new RecipeWrapper(inventory), level);
     }
 
@@ -172,7 +172,7 @@ public class CoinPressMenu  extends RecipeBookMenu<Container> {
 
     @Override
     public int getGridWidth() {
-        return 3;
+        return 2;
     }
 
     @Override

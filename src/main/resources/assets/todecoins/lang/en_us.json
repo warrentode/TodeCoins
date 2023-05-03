@@ -40,6 +40,7 @@
   "item.minecraft.lingering_potion.effect.long_luck_potion_4": "Lingering Potion of Extended Luck IV",
   "item.minecraft.lingering_potion.effect.long_luck_potion_5": "Lingering Potion of Extended Luck V",
   "item.minecraft.lingering_potion.effect.long_luck_potion_6": "Lingering Potion of Extended Luck VI",
+
   "item.minecraft.potion.effect.unluck_potion": "Potion of Bad Luck",
   "item.minecraft.potion.effect.unluck_potion_2": "Potion of Bad Luck II",
   "item.minecraft.potion.effect.unluck_potion_3": "Potion of Bad Luck III",
@@ -141,18 +142,13 @@
   "block.todecoins.emerald_bank_note_bag": "Bag of Emerald Notes",
   "block.todecoins.emerald_quarter_bank_note_bag": "Bag of Emerald Quarter Notes",
   "block.todecoins.emerald_half_bank_note_bag": "Bag of Emerald Half Notes",
-
   "block.todecoins.pot_of_gold": "Pot of Gold",
   "block.todecoins.coin_press": "Coin Press",
-
-  "itemGroup.recipebooktesttab": "Tode Coins",
-
+  "itemGroup.todecoinstab": "Tode Coins",
   "entity.minecraft.villager.todecoins.banker": "Banker",
   "entity.minecraft.villager.todecoins.leprechaun": "Leprechaun",
-
   "container.coin_press_block_gui": "Coin Press",
   "container.recipe_book.coin_press": "Coin Press Recipe Book",
-
   "advancement.root": "Tode Coins Advancements",
   "advancement.root.desc": "Tode Coins Advancement Description",
 

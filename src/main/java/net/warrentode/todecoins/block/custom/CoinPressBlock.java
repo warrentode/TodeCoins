@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.block.custom.coinpress;
+package net.warrentode.todecoins.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -103,22 +103,19 @@ public class CoinPressBlock extends BaseEntityBlock {
     @Override
     public void animateTick(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull RandomSource random) {
         if (state.getValue(CONDITIONAL)) {
-            double d0 = (double) pos.getX() + 0.5D;
-            double d1 = pos.getY();
-            double d2 = (double) pos.getZ() + 0.5D;
-            if (random.nextDouble() < 0.1D) {
-                level.playLocalSound(d0, d1, d2, ModSounds.COINPRESS_USE.get(), SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.2F + 0.9F, false);
-            }
+            double x = pos.getX() + 0.5D;
+            double y = pos.getY() + 1.3D;
+            double z = pos.getZ() + 0.5D;
 
-            Direction direction = state.getValue(FACING);
-            Direction.Axis direction$axis = direction.getAxis();
-            double d3 = 0.52D;
-            double d4 = random.nextDouble() * 0.6D - 0.3D;
-            double d5 = direction$axis == Direction.Axis.X ? (double) direction.getStepX() * d3 : d4;
-            double d6 = random.nextDouble() * 15.0D / 16.0D;
-            double d7 = direction$axis == Direction.Axis.Z ? (double) direction.getStepZ() * d3 : d4;
-            level.addParticle(ParticleTypes.END_ROD, d0 + d5, d1 + d6, d2 + d7, 0.0D, 0.0D, 0.0D);
-            level.addParticle(ParticleTypes.ELECTRIC_SPARK, d0 + d5, d1 + d6, d2 + d7, 0.0D, 0.0D, 0.0D);
+            double v = random.triangle(0.0D, 0.4D);
+            double v1 = random.triangle(0.0D, 0.1D);
+            double v2 = random.triangle(0.0D, 0.4D);
+
+            if (random.nextDouble() < 0.1D) {
+                level.playLocalSound(x, y, z, ModSounds.COINPRESS_USE.get(), SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.2F + 0.9F, false);
+                level.addParticle(ParticleTypes.END_ROD, x + v, y + v1, z + v2, 0.0D, 0.0D, 0.0D);
+                level.addParticle(ParticleTypes.ELECTRIC_SPARK, x, y, z, 0.0D, 0.0D, 0.0D);
+            }
         }
     }
 }

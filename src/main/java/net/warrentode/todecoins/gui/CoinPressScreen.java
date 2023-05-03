@@ -34,7 +34,7 @@ public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> impl
     public void init() {
         super.init();
         this.widthTooNarrow = this.width < 379;
-        this.titleLabelX = 7;
+        this.titleLabelX = 8;
         assert this.minecraft != null;
         this.recipeBookComponent.init(this.width, this.height, this.minecraft, this.widthTooNarrow, this.menu);
         this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
@@ -83,7 +83,7 @@ public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> impl
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
-        int x = (width - imageWidth) / 2;
+        int x = this.leftPos;
         int y = (height - imageHeight) / 2;
 
         this.blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);

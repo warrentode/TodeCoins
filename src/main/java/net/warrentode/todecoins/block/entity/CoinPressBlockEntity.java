@@ -39,7 +39,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
-import net.warrentode.todecoins.block.custom.coinpress.CoinPressBlock;
+import net.warrentode.todecoins.block.custom.CoinPressBlock;
 import net.warrentode.todecoins.block.entity.container.inventory.CoinPressItemHandler;
 import net.warrentode.todecoins.gui.CoinPressMenu;
 import net.warrentode.todecoins.mixin.RecipeManagerAccessor;
@@ -56,7 +56,7 @@ import java.util.Optional;
 
 public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, Nameable, RecipeHolder {
     public final ItemStackHandler inventory;
-    public static final int OUTPUT_SLOT = 2;
+    public static final int RESULT_SLOT = 2;
     public static final int INVENTORY_SIZE = 3;
     private int stampingTime;
     private int totalStampingTime;
@@ -66,16 +66,17 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     private ResourceLocation lastRecipeID;
     private ItemStack lastItemCrafted;
     private boolean checkNewRecipe;
-    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+    public LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+    private final ItemStackHandler itemHandler = new ItemStackHandler(INVENTORY_SIZE) {
         @Override
         protected void onContentsChanged(int slot) {
-            setChanged();
+            if (slot >= 0 && slot < RESULT_SLOT) {
+                checkNewRecipe = true;
+            }
             if (level != null) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
             }
-            if (slot >= 0 && slot < OUTPUT_SLOT) {
-                checkNewRecipe = true;
-            }
+            setChanged();
         }
 
         @Override
@@ -87,7 +88,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
             };
         }
     };
-    public LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+
     private final Map<Direction, LazyOptional<CoinPressItemHandler>> directionWrappedHandlerMap =
             Map.of(Direction.DOWN, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
                     Direction.NORTH, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
@@ -155,7 +156,6 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pPlayerInventory, @NotNull Player pPlayer) {
         return new CoinPressMenu(pContainerId, pPlayerInventory, this, this.coinpressData);
     }
-
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == ForgeCapabilities.ITEM_HANDLER) {
@@ -197,7 +197,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     @Override
     protected void saveAdditional(@NotNull CompoundTag nbt) {
         super.saveAdditional(nbt);
-        nbt.put("inventory", itemHandler.serializeNBT());
+        nbt.put("inventory", inventory.serializeNBT());
         nbt.putInt("stampingTime", this.stampingTime);
         nbt.putInt("totalStampingTime", totalStampingTime);
         lastItemCrafted = ItemStack.of(nbt.getCompound("lastRecipeUsed"));
@@ -225,7 +225,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     @Override
     public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
-        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
+        inventory.deserializeNBT(nbt.getCompound("inventory"));
         stampingTime = nbt.getInt("stampingTime");
         totalStampingTime = nbt.getInt("totalStampingTime");
         nbt.put("lastRecipeUsed", lastItemCrafted.serializeNBT());
@@ -316,7 +316,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         // check second input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
         if (inventory.getStackInSlot(1).getDamageValue() == inventory.getStackInSlot(1).getMaxDamage()
                 && inventory.getStackInSlot(1).is(ModTags.Items.CURRENCY_STAMPS)) {
-            inventory.extractItem(0, 1, false);
+            inventory.extractItem(1, 1, false);
         }
         else if (inventory.getStackInSlot(1).getDamageValue() != inventory.getStackInSlot(1).getMaxDamage()
                 && inventory.getStackInSlot(1).is(ModTags.Items.CURRENCY_STAMPS)) {
@@ -326,8 +326,8 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
             inventory.extractItem(1, 1, false);
         }
 
-        inventory.setStackInSlot(OUTPUT_SLOT, new ItemStack(recipe.getResultItem().getItem(),
-                inventory.getStackInSlot(OUTPUT_SLOT).getCount() + (recipe.getResultItem().getCount())));
+        inventory.setStackInSlot(RESULT_SLOT, new ItemStack(recipe.getResultItem().getItem(),
+                inventory.getStackInSlot(RESULT_SLOT).getCount() + (recipe.getResultItem().getCount())));
 
         lastItemCrafted = recipe.getResultItem();
         coinPress.setRecipeUsed(recipe);
@@ -373,7 +373,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     }
 
     private boolean hasInput() {
-        for (int i = 0; i < OUTPUT_SLOT; ++i) {
+        for (int i = 0; i < RESULT_SLOT; ++i) {
             if (!inventory.getStackInSlot(i).isEmpty()) {
                 return true;
             }

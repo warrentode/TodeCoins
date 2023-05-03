@@ -1,7 +1,5 @@
 package net.warrentode.todecoins.block;
 
-import java.util.Collection;
-import java.util.function.Supplier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -13,11 +11,15 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import static net.warrentode.todecoins.TodeCoins.MODID;
-import net.warrentode.todecoins.block.custom.coinpress.CoinPressBlock;
+import net.warrentode.todecoins.block.custom.CoinPressBlock;
 import net.warrentode.todecoins.block.custom.PotOfGoldBlock;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.util.customtabs.ModCreativeModeTab;
+
+import java.util.Collection;
+import java.util.function.Supplier;
+
+import static net.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
@@ -71,7 +73,7 @@ public class ModBlocks {
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
-    
+
     /** @return A collection of this mod's block items in the order of their registration. **/
     public static Collection<RegistryObject<Item>> orderedItems() {
         return ModItems.ITEMS.getEntries();
