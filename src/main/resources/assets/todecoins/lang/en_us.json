@@ -12,12 +12,14 @@
   "item.minecraft.potion.effect.luck_potion_4": "Potion of Luck IV",
   "item.minecraft.potion.effect.luck_potion_5": "Potion of Luck V",
   "item.minecraft.potion.effect.luck_potion_6": "Potion of Luck VI",
+
   "item.minecraft.potion.effect.long_luck_potion": "Potion of Extended Luck",
   "item.minecraft.potion.effect.long_luck_potion_2": "Potion of Extended Luck II",
   "item.minecraft.potion.effect.long_luck_potion_3": "Potion of Extended Luck III",
   "item.minecraft.potion.effect.long_luck_potion_4": "Potion of Extended Luck IV",
   "item.minecraft.potion.effect.long_luck_potion_5": "Potion of Extended Luck V",
   "item.minecraft.potion.effect.long_luck_potion_6": "Potion of Extended Luck VI",
+
   "item.minecraft.splash_potion.effect.luck_potion_2": "Splash Potion of Luck II",
   "item.minecraft.splash_potion.effect.luck_potion_3": "Splash Potion of Luck III",
   "item.minecraft.splash_potion.effect.luck_potion_4": "Splash Potion of Luck IV",
@@ -129,16 +131,15 @@
   "item.todecoins.lucky_fiber": "Lucky Fiber",
   "item.todecoins.lucky_thread": "Lucky Thread",
   "item.todecoins.lucky_fabric": "Lucky Fabric",
-
   "item.todecoins.lucky_boots": "Lucky Boots",
   "item.todecoins.lucky_pants": "Lucky Pants",
   "item.todecoins.lucky_shirt": "Lucky Shirt",
   "item.todecoins.lucky_hat": "Lucky Hat",
-
   "block.todecoins.copper_coin_bag": "Bag of Copper Coins",
   "block.todecoins.iron_coin_bag": "Bag of Iron Coins",
   "block.todecoins.gold_coin_bag": "Bag of Gold Coins",
   "block.todecoins.netherite_coin_bag": "Bag of Netherite Coins",
+  "block.todecoins.nether_gold_coin_bag": "Bag of Nether Gold Coins",
   "block.todecoins.emerald_bank_note_bag": "Bag of Emerald Notes",
   "block.todecoins.emerald_quarter_bank_note_bag": "Bag of Emerald Quarter Notes",
   "block.todecoins.emerald_half_bank_note_bag": "Bag of Emerald Half Notes",
@@ -153,6 +154,5 @@
   "advancement.root.desc": "Tode Coins Advancement Description",
 
   "subtitles.todecoins.coin_press_use": "Coin Press Used",
-  "subtitles.todecoins.coin_press_take": "Coin Press Cashes Out",
-  "container.todecoins.coin_press": "Coin Press Recipes"
+  "subtitles.todecoins.coin_press_take": "Coin Press Cashes Out"
 }

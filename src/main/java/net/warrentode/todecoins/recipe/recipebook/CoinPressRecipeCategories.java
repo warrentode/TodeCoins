@@ -19,7 +19,7 @@ public class CoinPressRecipeCategories {
     public static final Supplier<RecipeBookCategories> COINPRESS_SEARCH = Suppliers.memoize(() -> RecipeBookCategories.create("COINPRESS_SEARCH", new ItemStack(Items.COMPASS)));
     public static final Supplier<RecipeBookCategories> COINPRESS_COINS = Suppliers.memoize(() -> RecipeBookCategories.create("COINPRESS_COINS", new ItemStack(ModItems.COPPER_COIN.get())));
     public static final Supplier<RecipeBookCategories> COINPRESS_BANK_NOTES = Suppliers.memoize(() -> RecipeBookCategories.create("COINPRESS_BANK_NOTES", new ItemStack(ModItems.EMERALD_BANK_NOTE.get())));
-    public static final Supplier<RecipeBookCategories> COINPRESS_MISC = Suppliers.memoize(() -> RecipeBookCategories.create("COINPRESS_MISC", new ItemStack(ModItems.CURRENCY_STAMP.get())));
+    public static final Supplier<RecipeBookCategories> COINPRESS_MISC = Suppliers.memoize(() -> RecipeBookCategories.create("COINPRESS_MISC", new ItemStack(ModItems.CURRENCY_STAMP.get()), new ItemStack(ModItems.NETHER_CURRENCY_STAMP.get())));
 
     public static void init(@NotNull RegisterRecipeBookCategoriesEvent event) {
         event.registerBookCategories(ModRecipes.COINPRESS_BOOK, ImmutableList.of(COINPRESS_SEARCH.get(), COINPRESS_COINS.get(), COINPRESS_BANK_NOTES.get(), COINPRESS_MISC.get()));

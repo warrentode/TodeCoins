@@ -7,7 +7,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -25,7 +24,6 @@ import net.warrentode.todecoins.potion.ModPotions;
 import net.warrentode.todecoins.recipe.ModRecipes;
 import net.warrentode.todecoins.recipe.recipebook.CoinPressRecipeCategories;
 import net.warrentode.todecoins.sounds.ModSounds;
-import net.warrentode.todecoins.util.customtabs.ModCreativeModeTab;
 import net.warrentode.todecoins.villager.ModVillagers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -54,10 +52,6 @@ public class TodeCoins {
         ModPotions.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
-    }
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-        ModCreativeModeTab.preInit();
     }
 
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
