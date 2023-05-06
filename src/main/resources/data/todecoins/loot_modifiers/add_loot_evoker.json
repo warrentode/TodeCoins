@@ -1,0 +1,10 @@
+{
+  "type": "todecoins:add_loot_table",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/evoker"
+    }
+  ],
+  "lootTable": "todecoins:currency/todecoins_boss_currency_drops"
+}

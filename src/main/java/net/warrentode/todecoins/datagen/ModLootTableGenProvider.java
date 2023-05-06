@@ -10,7 +10,8 @@ import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.warrentode.todecoins.datagen.loot.ModChestLootTablesGen;
+import net.warrentode.todecoins.datagen.loot.*;
+import net.warrentode.todecoins.loot.ModLootContextParamSets;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -21,7 +22,13 @@ import java.util.function.Supplier;
 
 public class ModLootTableGenProvider extends LootTableProvider {
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>>
-            loot_tables = ImmutableList.of(Pair.of(ModChestLootTablesGen::new, LootContextParamSets.CHEST));
+            loot_tables = ImmutableList.of(
+            Pair.of(ModChestLootTablesGen::new, LootContextParamSets.CHEST),
+            Pair.of(ModBlockLootTablesGen::new, LootContextParamSets.BLOCK),
+            Pair.of(ModGiftLootGen::new, LootContextParamSets.GIFT),
+            Pair.of(CurrencyLootTablesGen::new, ModLootContextParamSets.CURRENCY),
+            Pair.of(NetherGoldCoinPiglinBarterLootGen::new, ModLootContextParamSets.NETHER_GOLD_COIN_BARTER)
+    );
 
     public ModLootTableGenProvider(DataGenerator generator) {
         super(generator);

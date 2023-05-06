@@ -1,0 +1,10 @@
+{
+  "type": "todecoins:add_loot_table",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/ghast"
+    }
+  ],
+  "lootTable": "todecoins:currency/todecoins_currency_drops"
+}
