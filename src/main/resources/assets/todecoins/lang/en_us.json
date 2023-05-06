@@ -152,7 +152,8 @@
   "container.recipe_book.coin_press": "Coin Press Recipe Book",
   "advancement.root": "Tode Coins Advancements",
   "advancement.root.desc": "Tode Coins Advancement Description",
-
   "subtitles.todecoins.coin_press_use": "Coin Press Used",
-  "subtitles.todecoins.coin_press_take": "Coin Press Cashes Out"
+  "subtitles.todecoins.coin_press_take": "Coin Press Cashes Out",
+  "subtitles.todecoins.work_banker": "Banker Works",
+  "subtitles.todecoins.work_leprechaun": "Leprechaun Works"
 }

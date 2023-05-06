@@ -7,21 +7,28 @@ import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.util.tags.CuriosTags;
 import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.Nullable;
 
-public class ItemTags extends ItemTagsProvider {
-    public ItemTags(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+public class ItemTagsGen extends ItemTagsProvider {
+    public ItemTagsGen(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
         super(pGenerator, pBlockTagsProvider, modId, existingFileHelper);
     }
 
     @Override
     protected void addTags() {
         this.registerModTags();
+        this.registerCuriosTags();
         this.registerMinecraftTags();
         this.registerForgeTags();
     }
+
+    private void registerCuriosTags() {
+        tag(CuriosTags.Items.CHARM).add(ModItems.LUCKY_COIN.get());
+    }
+
     private void registerMinecraftTags() {
         tag(net.minecraft.tags.ItemTags.PIGLIN_LOVED).add(
                 ModItems.GOLD_COIN.get(),

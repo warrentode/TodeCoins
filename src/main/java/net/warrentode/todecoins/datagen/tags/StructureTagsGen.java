@@ -7,10 +7,11 @@ import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.Nullable;
 
-public class StructureTags extends StructureTagsProvider {
-    public StructureTags(DataGenerator pGenerator, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+public class StructureTagsGen extends StructureTagsProvider {
+    public StructureTagsGen(DataGenerator pGenerator, String modId, @Nullable ExistingFileHelper existingFileHelper) {
         super(pGenerator, modId, existingFileHelper);
     }
+
     @Override
     protected void addTags() {
         this.registerModTags();
