@@ -76,6 +76,7 @@ public class TodeCoins {
 
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(ModVillagers::registerPOIs);
+        event.enqueueWork(ModVillagers::init);
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
