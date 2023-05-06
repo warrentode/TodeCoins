@@ -27,7 +27,7 @@ mixin {
     showMessageTypes = true
 }
 
-version = '1.19.2-1.2.5'
+version = '1.19.2-1.2.6'
 group = 'net.warrentode.todecoins'
 archivesBaseName = 'todecoins'
 
