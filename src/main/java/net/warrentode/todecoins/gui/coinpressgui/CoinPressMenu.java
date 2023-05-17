@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.gui;
+package net.warrentode.todecoins.gui.coinpressgui;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,7 +15,8 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.block.entity.CoinPressBlockEntity;
-import net.warrentode.todecoins.block.entity.container.CoinPressResultSlot;
+import net.warrentode.todecoins.block.entity.container.slot.CoinPressResultSlot;
+import net.warrentode.todecoins.gui.ModMenuTypes;
 import net.warrentode.todecoins.recipe.ModRecipes;
 import org.jetbrains.annotations.NotNull;
 

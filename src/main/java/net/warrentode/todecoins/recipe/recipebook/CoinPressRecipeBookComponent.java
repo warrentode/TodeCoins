@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.gui;
+package net.warrentode.todecoins.recipe.recipebook;
 
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
 import net.minecraft.core.NonNullList;

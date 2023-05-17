@@ -149,7 +149,12 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ForgeTags.Items.NETHER_STAR)
                 .addTag(ForgeTags.Items.PRISMARINE)
                 .addTag(ForgeTags.Items.QUARTZ)
-                .addTag(ForgeTags.Items.REDSTONE);
+                .addTag(ForgeTags.Items.REDSTONE)
+                .add(Items.SEA_LANTERN)
+                .add(Items.SHULKER_SHELL)
+                .add(Items.BLAZE_ROD)
+                .add(Items.BLAZE_POWDER)
+                .add(Items.GHAST_TEAR);
         tag(ForgeTags.Items.AMETHYST).add(
                 Items.AMETHYST_BLOCK,
                 Items.AMETHYST_CLUSTER,

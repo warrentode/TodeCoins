@@ -12,6 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.sounds.ModSounds;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -44,7 +45,7 @@ public class ModVillagers {
         setHeroGifts(new ResourceLocation(MODID, "leprechaun_gift"), LEPRECHAUN.get());
     }
 
-    public static void setHeroGifts(ResourceLocation name, VillagerProfession profession) {
+    public static void setHeroGifts(@NotNull ResourceLocation name, VillagerProfession profession) {
         GiveGiftToHero.GIFTS.put(profession, new ResourceLocation(name.getNamespace(), "gameplay/hero_of_the_village/" + name.getPath()));
     }
 
