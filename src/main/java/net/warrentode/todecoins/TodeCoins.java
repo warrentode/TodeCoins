@@ -100,8 +100,10 @@ public class TodeCoins {
 
     public static ItemStack setCurioSlots(Player player) {
         AtomicReference<ItemStack> charm = new AtomicReference<>(ItemStack.EMPTY);
+        AtomicReference<ItemStack> belt = new AtomicReference<>(ItemStack.EMPTY);
         if (curiosLoaded) {
             charm.set(Curios.getCharmSlot(player));
+            belt.set(Curios.getBeltSlot(player));
         }
         return charm.get();
     }

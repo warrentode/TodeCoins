@@ -48,7 +48,7 @@ public class Curios {
         return charm.get();
     }
 
-    public static ICapabilityProvider createCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createLuckyCoinCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -98,5 +98,20 @@ public class Curios {
                 return DropRule.ALWAYS_KEEP;
             }
         });
+    }
+
+    public static ItemStack getBeltSlot(Player player) {
+        AtomicReference<ItemStack> belt = new AtomicReference<>(ItemStack.EMPTY);
+        LazyOptional<ICuriosItemHandler> optional = CuriosApi.getCuriosHelper().getCuriosHandler(player);
+        optional.ifPresent(itemHandler -> {
+            Optional<ICurioStacksHandler> stacksOptional = itemHandler.getStacksHandler(SlotTypePreset.BELT.getIdentifier());
+            stacksOptional.ifPresent(stacksHandler -> {
+                ItemStack stack = stacksHandler.getStacks().getStackInSlot(0);
+                if (!stack.isEmpty()) {
+                    belt.set(stack);
+                }
+            });
+        });
+        return belt.get();
     }
 }
