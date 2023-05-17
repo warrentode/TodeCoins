@@ -10,6 +10,7 @@ import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.util.tags.CuriosTags;
 import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
+import net.warrentode.todecoins.util.tags.SupplementariesTags;
 import org.jetbrains.annotations.Nullable;
 
 public class ItemTagsGen extends ItemTagsProvider {
@@ -20,9 +21,15 @@ public class ItemTagsGen extends ItemTagsProvider {
     @Override
     protected void addTags() {
         this.registerModTags();
-        this.registerCuriosTags();
         this.registerMinecraftTags();
         this.registerForgeTags();
+        this.registerCuriosTags();
+        this.registerSupplementariesTags();
+    }
+
+    private void registerSupplementariesTags() {
+        tag(SupplementariesTags.Items.COOKIES)
+                .addTag(ForgeTags.Items.CURRENCY);
     }
 
     private void registerCuriosTags() {

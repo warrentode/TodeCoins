@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-17T08:27:50.8357924	Tags for minecraft:item
+// 1.19.2	2023-05-17T12:41:14.977936	Tags for minecraft:item
 07afe5b82d4526b131b02c23b0f2d53d4fbac6ef data/curios/tags/items/belt.json
 a4b7db3e57be75cbb95c68a2223fc692fdb2484d data/curios/tags/items/charm.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
@@ -39,6 +39,7 @@ c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.j
 6bb01ece43dc060b7f6e508c68ea0179c30e853f data/forge/tags/items/textiles/string.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/thread.json
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
+032c735a8c4f80091dcc03cdc40d3ac4d04161ae data/supplementaries/tags/items/cookies.json
 cf1df0d5a329f4fa356f884d2a699cf3be188c4d data/todecoins/tags/items/banknotes.json
 8549b762563fb8215853150344ef3a20278898f9 data/todecoins/tags/items/bundles.json
 1c62b4ebcef45b60c8cb4e6f065d402997d745f5 data/todecoins/tags/items/coins.json
