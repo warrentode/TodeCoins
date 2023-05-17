@@ -1,0 +1,10 @@
+{
+  "type": "todecoins:add_loot_table",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:gameplay/hero_of_the_village/weaponsmith_gift"
+    }
+  ],
+  "lootTable": "todecoins:gameplay/hero_of_the_village/todecoins_hero_coin_loot"
+}

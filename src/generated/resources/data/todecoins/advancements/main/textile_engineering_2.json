@@ -1,36 +1,36 @@
 {
-  "parent": "todecoins:main/textile_engineering_1",
+  "parent": "todecoins:main/lucky_penny",
   "criteria": {
-    "craft_emerald_bank_note": {
+    "craft_lucky_fabric": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:emerald_bank_note"
+              "todecoins:lucky_fabric"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "craft_emerald_half_bank_note": {
+    "craft_lucky_fiber": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:emerald_half_bank_note"
+              "todecoins:lucky_fiber"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "craft_emerald_quarter_bank_note": {
+    "craft_lucky_thread": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:emerald_quarter_bank_note"
+              "todecoins:lucky_thread"
             ]
           }
         ]
@@ -41,23 +41,23 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.printingMoney.desc"
+      "translate": "advancement.textileEngineering2.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:emerald_bank_note"
+      "item": "todecoins:lucky_thread"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.printingMoney"
+      "translate": "advancement.textileEngineering2"
     }
   },
   "requirements": [
     [
-      "craft_emerald_quarter_bank_note",
-      "craft_emerald_half_bank_note",
-      "craft_emerald_bank_note"
+      "craft_lucky_fiber",
+      "craft_lucky_thread",
+      "craft_lucky_fabric"
     ]
   ]
 }

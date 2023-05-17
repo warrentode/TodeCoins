@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/bagging_dough",
   "criteria": {
     "craft_pot_of_gold": {
       "conditions": {
@@ -19,7 +19,7 @@
     "description": {
       "translate": "advancement.rainbowEnd.desc"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
       "item": "todecoins:pot_of_gold"

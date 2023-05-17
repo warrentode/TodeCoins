@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/craft_coinpress",
   "criteria": {
     "craft_coin_press": {
       "conditions": {
@@ -82,7 +82,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:gold_coin"
+      "item": "todecoins:currency_stamp",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

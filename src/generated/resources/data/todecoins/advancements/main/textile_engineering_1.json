@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/craft_coinpress",
   "criteria": {
     "craft_coarse_wove_paper": {
       "conditions": {
@@ -48,58 +48,21 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "craft_lucky_fabric": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:lucky_fabric"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "craft_lucky_fiber": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:lucky_fiber"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "craft_lucky_thread": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:lucky_thread"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.textileEngineering.desc"
+      "translate": "advancement.textileEngineering1.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:lucky_shirt",
-      "nbt": "{Damage:0}"
+      "item": "todecoins:emerald_fiber"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.textileEngineering"
+      "translate": "advancement.textileEngineering1"
     }
   },
   "requirements": [
@@ -107,10 +70,7 @@
       "craft_emerald_fiber",
       "craft_coarse_wove_paper",
       "craft_emerald_wove_paper",
-      "craft_emerald_smooth_paper",
-      "craft_lucky_fiber",
-      "craft_lucky_thread",
-      "craft_lucky_fabric"
+      "craft_emerald_smooth_paper"
     ]
   ]
 }

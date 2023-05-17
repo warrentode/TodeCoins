@@ -1,12 +1,12 @@
 {
   "parent": "todecoins:main/root",
   "criteria": {
-    "find_four_leaf_clover": {
+    "craft_coinpress": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:four_leaf_clover"
+              "todecoins:coin_press"
             ]
           }
         ]
@@ -17,21 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.luckyClover.desc"
+      "translate": "advancement.craftCoinPress.desc"
     },
-    "frame": "challenge",
+    "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:four_leaf_clover"
+      "item": "todecoins:coin_press"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.luckyClover"
+      "translate": "advancement.craftCoinPress"
     }
   },
   "requirements": [
     [
-      "find_four_leaf_clover"
+      "craft_coinpress"
     ]
   ]
 }

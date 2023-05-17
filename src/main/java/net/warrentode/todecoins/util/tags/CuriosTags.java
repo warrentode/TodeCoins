@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 public class CuriosTags {
     public static class Items {
         public static final TagKey<Item> CHARM = curiosItemTag("charm");
+        public static final TagKey<Item> BELT = curiosItemTag("belt");
     }
 
     private static @NotNull TagKey<Item> curiosItemTag(String path) {

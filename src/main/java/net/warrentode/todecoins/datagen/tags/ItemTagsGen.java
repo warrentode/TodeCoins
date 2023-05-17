@@ -27,6 +27,8 @@ public class ItemTagsGen extends ItemTagsProvider {
 
     private void registerCuriosTags() {
         tag(CuriosTags.Items.CHARM).add(ModItems.LUCKY_COIN.get());
+        tag(CuriosTags.Items.BELT)
+                .addTag(ModTags.Items.BUNDLES);
     }
 
     private void registerMinecraftTags() {
@@ -39,6 +41,8 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.BUNDLES)
+                .add(Items.BUNDLE);
         tag(ModTags.Items.BANKNOTES).add(
                 ModItems.EMERALD_QUARTER_BANK_NOTE.get(),
                 ModItems.EMERALD_HALF_BANK_NOTE.get(),

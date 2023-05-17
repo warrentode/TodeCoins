@@ -114,4 +114,30 @@ public class Curios {
         });
         return belt.get();
     }
+
+    public static ICapabilityProvider createBundleBeltSlotProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 1.5F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.ALWAYS_KEEP;
+            }
+        });
+    }
 }

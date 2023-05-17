@@ -1,48 +1,48 @@
 {
-  "parent": "todecoins:main/textile_engineering_2",
+  "parent": "todecoins:main/root",
   "criteria": {
-    "craft_lucky_boots": {
+    "find_copper_hero_coin": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:lucky_boots"
+              "todecoins:copper_hero_coin"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "craft_lucky_hat": {
+    "find_gold_hero_coin": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:lucky_hat"
+              "todecoins:gold_hero_coin"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "craft_lucky_pants": {
+    "find_iron_hero_coin": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:lucky_pants"
+              "todecoins:iron_hero_coin"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "craft_lucky_shirt": {
+    "find_netherite_hero_coin": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:lucky_shirt"
+              "todecoins:netherite_hero_coin"
             ]
           }
         ]
@@ -53,25 +53,24 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.luckyArmor.desc"
+      "translate": "advancement.collectibleCoins.desc"
     },
-    "frame": "goal",
+    "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "todecoins:lucky_shirt",
-      "nbt": "{Damage:0}"
+      "item": "todecoins:copper_hero_coin"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.luckyArmor"
+      "translate": "advancement.collectibleCoins"
     }
   },
   "requirements": [
     [
-      "craft_lucky_shirt",
-      "craft_lucky_pants",
-      "craft_lucky_hat",
-      "craft_lucky_boots"
+      "find_copper_hero_coin",
+      "find_iron_hero_coin",
+      "find_gold_hero_coin",
+      "find_netherite_hero_coin"
     ]
   ]
 }

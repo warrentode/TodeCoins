@@ -95,6 +95,7 @@ public class TodeCoins {
     private void onIMEnqueueEvent(InterModEnqueueEvent event) {
         if (curiosLoaded) {
             InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
+            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
         }
     }
 

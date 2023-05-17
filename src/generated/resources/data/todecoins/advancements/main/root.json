@@ -7,7 +7,7 @@
   },
   "display": {
     "announce_to_chat": false,
-    "background": "minecraft:textures/block/emerald_block.png",
+    "background": "todecoins:textures/block/pot.png",
     "description": {
       "translate": "advancement.root.desc"
     },
