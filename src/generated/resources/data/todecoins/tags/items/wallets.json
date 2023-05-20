@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:bundle",
+    "#todecoins:shulker_boxes",
+    "#forge:barrels",
+    "#forge:chests",
+    "#forge:chests/ender"
+  ]
+}

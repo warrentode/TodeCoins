@@ -4,6 +4,8 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
@@ -35,7 +37,7 @@ public class ItemTagsGen extends ItemTagsProvider {
     private void registerCuriosTags() {
         tag(CuriosTags.Items.CHARM).add(ModItems.LUCKY_COIN.get());
         tag(CuriosTags.Items.BELT)
-                .addTag(ModTags.Items.BUNDLES);
+                .addTag(ModTags.Items.WALLETS);
     }
 
     private void registerMinecraftTags() {
@@ -48,21 +50,50 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
-        tag(ModTags.Items.BUNDLES)
-                .add(Items.BUNDLE);
-        tag(ModTags.Items.BANKNOTES).add(
-                ModItems.EMERALD_QUARTER_BANK_NOTE.get(),
-                ModItems.EMERALD_HALF_BANK_NOTE.get(),
-                ModItems.EMERALD_BANK_NOTE.get()
-        );
-        tag(ModTags.Items.COINS).add(
-                ModItems.COPPER_COIN.get(),
-                ModItems.IRON_COIN.get(),
-                ModItems.GOLD_COIN.get(),
-                ModItems.NETHER_GOLD_COIN.get(),
-                ModItems.NETHERITE_COIN.get(),
-                ModItems.LUCKY_COIN.get()
-        );
+        tag(ModTags.Items.SHULKER_BOXES)
+                .add(Blocks.SHULKER_BOX.asItem())
+                .add(Blocks.BLACK_SHULKER_BOX.asItem())
+                .add(Blocks.BLUE_SHULKER_BOX.asItem())
+                .add(Blocks.BROWN_SHULKER_BOX.asItem())
+                .add(Blocks.CYAN_SHULKER_BOX.asItem())
+                .add(Blocks.GRAY_SHULKER_BOX.asItem())
+                .add(Blocks.GREEN_SHULKER_BOX.asItem())
+                .add(Blocks.LIGHT_BLUE_SHULKER_BOX.asItem())
+                .add(Blocks.LIGHT_GRAY_SHULKER_BOX.asItem())
+                .add(Blocks.LIME_SHULKER_BOX.asItem())
+                .add(Blocks.MAGENTA_SHULKER_BOX.asItem())
+                .add(Blocks.ORANGE_SHULKER_BOX.asItem())
+                .add(Blocks.PINK_SHULKER_BOX.asItem())
+                .add(Blocks.PURPLE_SHULKER_BOX.asItem())
+                .add(Blocks.RED_SHULKER_BOX.asItem())
+                .add(Blocks.WHITE_SHULKER_BOX.asItem())
+                .add(Blocks.YELLOW_SHULKER_BOX.asItem());
+        tag(ModTags.Items.WALLETS)
+                .add(Items.BUNDLE)
+                .addTag(ModTags.Items.SHULKER_BOXES)
+                .addTag(Tags.Items.BARRELS)
+                .addTag(Tags.Items.CHESTS)
+                .addTag(Tags.Items.CHESTS_ENDER);
+        tag(ModTags.Items.BANKNOTES)
+                .add(ModItems.EMERALD_BANK_NOTE.get())
+                .add(ModItems.EMERALD_HALF_BANK_NOTE.get())
+                .add(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
+                .add(ModBlocks.EMERALD_BANK_NOTE_BAG.get().asItem())
+                .add(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get().asItem())
+                .add(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get().asItem());
+        tag(ModTags.Items.COINS)
+                .add(ModItems.COPPER_COIN.get())
+                .add(ModItems.IRON_COIN.get())
+                .add(ModItems.GOLD_COIN.get())
+                .add(ModItems.NETHER_GOLD_COIN.get())
+                .add(ModItems.NETHERITE_COIN.get())
+                .add(ModItems.LUCKY_COIN.get())
+                .add(ModBlocks.COPPER_COIN_BAG.get().asItem())
+                .add(ModBlocks.IRON_COIN_BAG.get().asItem())
+                .add(ModBlocks.GOLD_COIN_BAG.get().asItem())
+                .add(ModBlocks.POT_OF_GOLD.get().asItem())
+                .add(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem())
+                .add(ModBlocks.NETHERITE_COIN_BAG.get().asItem());
         tag(ModTags.Items.CURRENCY)
                 .addTag(ModTags.Items.BANKNOTES)
                 .addTag(ModTags.Items.COINS)

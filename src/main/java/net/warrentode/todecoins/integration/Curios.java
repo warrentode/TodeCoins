@@ -61,8 +61,6 @@ public class Curios {
                 attribute.put(Attributes.LUCK,
                         new AttributeModifier(uuid, MODID + ":luck_bonus", 1,
                                 AttributeModifier.Operation.ADDITION));
-                CuriosApi.getCuriosHelper()
-                        .addSlotModifier(attribute, "charm", uuid, 1, AttributeModifier.Operation.ADDITION);
                 return attribute;
             }
 
@@ -115,7 +113,7 @@ public class Curios {
         return belt.get();
     }
 
-    public static ICapabilityProvider createBundleBeltSlotProvider(ItemStack stack) {
+    public static ICapabilityProvider createWalletBeltProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -125,7 +123,7 @@ public class Curios {
             @Nonnull
             @Override
             public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 1.5F);
+                return new SoundInfo(SoundEvents.ARMOR_EQUIP_GENERIC, 1.0F, 1.5F);
             }
 
             @Override

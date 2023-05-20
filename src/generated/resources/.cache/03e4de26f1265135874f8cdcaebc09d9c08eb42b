@@ -1,5 +1,5 @@
-// 1.19.2	2023-05-17T12:41:14.977936	Tags for minecraft:item
-07afe5b82d4526b131b02c23b0f2d53d4fbac6ef data/curios/tags/items/belt.json
+// 1.19.2	2023-05-19T01:52:53.0310776	Tags for minecraft:item
+2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 a4b7db3e57be75cbb95c68a2223fc692fdb2484d data/curios/tags/items/charm.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
 e952b93ecec2f37e4be0794cb7eed3c68da248d0 data/forge/tags/items/currency_materials.json
@@ -41,7 +41,6 @@ c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.j
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
 032c735a8c4f80091dcc03cdc40d3ac4d04161ae data/supplementaries/tags/items/cookies.json
 cf1df0d5a329f4fa356f884d2a699cf3be188c4d data/todecoins/tags/items/banknotes.json
-8549b762563fb8215853150344ef3a20278898f9 data/todecoins/tags/items/bundles.json
 1c62b4ebcef45b60c8cb4e6f065d402997d745f5 data/todecoins/tags/items/coins.json
 b22e9683697ad4d36d1b0678d079245f21ad0448 data/todecoins/tags/items/currency.json
 e2df2d2c78102e2bf23013433e3c46d8c05bea8f data/todecoins/tags/items/currency_materials.json
@@ -57,9 +56,11 @@ ab1a45ae0b76cfdab8aa19e990af266825f9e610 data/todecoins/tags/items/nuggets/coppe
 a600f08f3b82ea64e2da4220752cea0537967e95 data/todecoins/tags/items/nuggets/iron.json
 9f63c23d399e20ac5adf7f4b684c2189e5458d4b data/todecoins/tags/items/nuggets/lucky.json
 f0a2de5fa3e49648a06ea5638dbacc4a7d1c02d8 data/todecoins/tags/items/nuggets/netherite.json
+e2feff85afb7e4871204d6f5d72b8760e2780187 data/todecoins/tags/items/shulker_boxes.json
 cd9c93fa4302eb30ddd58d13a9ec40603a6ce651 data/todecoins/tags/items/textiles.json
 e189f29a4d97932a310f6d36f9d8c79982a77384 data/todecoins/tags/items/textiles/currency_fiber.json
 8819ca23a68e1dd64cdb4a243f5889202f0f2167 data/todecoins/tags/items/textiles/currency_paper.json
 aba2458564760bf7bb9b9bd73acb591e86a2866c data/todecoins/tags/items/textiles/fabric.json
 9eea9f12406ff56cc773d53efa24608fcbb30ec1 data/todecoins/tags/items/textiles/fibre.json
 68edbe0549d6bd293d6cf50077773c1b8abb3677 data/todecoins/tags/items/textiles/thread.json
+5a86071b5077280a246f5372744c71acfb2e4133 data/todecoins/tags/items/wallets.json

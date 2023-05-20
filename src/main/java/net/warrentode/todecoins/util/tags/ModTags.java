@@ -18,7 +18,8 @@ public class ModTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> BUNDLES = modItemTag("bundles");
+        public static final TagKey<Item> WALLETS = modItemTag("wallets");
+        public static final TagKey<Item> SHULKER_BOXES = modItemTag("shulker_boxes");
         public static final TagKey<Item> BANKNOTES = modItemTag("banknotes");
         public static final TagKey<Item> COINS = modItemTag("coins");
         public static final TagKey<Item> CURRENCY = modItemTag("currency");

@@ -45,7 +45,6 @@ public class TodeCoins {
     public static final String MODID = "todecoins";
     public static final Logger LOGGER = LogManager.getLogger();
     private static boolean curiosLoaded = false;
-    private static boolean supplementariesLoaded = false;
 
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -69,15 +68,10 @@ public class TodeCoins {
         ModLootModifiers.register(modEventBus);
 
         curiosLoaded = ModList.get().isLoaded("curios");
-        supplementariesLoaded = ModList.get().isLoaded("supplementaries");
     }
 
     public static boolean isCuriosLoaded() {
         return curiosLoaded;
-    }
-
-    public static boolean isSupplementariesLoaded() {
-        return supplementariesLoaded;
     }
 
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
