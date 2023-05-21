@@ -80,6 +80,8 @@ public class ModCreativeModeTabs extends CreativeModeTab {
 
             items.add((ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance()));
             items.add((ModBlocks.COINPRESSBLOCK.get().asItem().getDefaultInstance()));
+
+            items.add(ModItems.NUMISMATIST_SPAWN_EGG.get().getDefaultInstance());
         }
     };
 

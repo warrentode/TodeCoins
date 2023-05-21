@@ -16,7 +16,6 @@ import net.warrentode.todecoins.block.custom.PotOfGoldBlock;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.util.customtabs.ModCreativeModeTabs;
 
-import java.util.Collection;
 import java.util.function.Supplier;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
@@ -72,10 +71,5 @@ public class ModBlocks {
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
-    }
-
-    /** @return A collection of this mod's block items in the order of their registration. **/
-    public static Collection<RegistryObject<Item>> orderedItems() {
-        return ModItems.ITEMS.getEntries();
     }
 }

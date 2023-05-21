@@ -1,6 +1,6 @@
 {
   "values": [
-    "minecraft:bundle",
+    "#todecoins:bundles",
     "#todecoins:shulker_boxes",
     "#forge:barrels",
     "#forge:chests",

@@ -5,7 +5,8 @@
   "refmap": "mixins.todecoins.refmap.json",
   "mixins": [
     "PiglinBarterMixin",
-    "RecipeManagerAccessor"
+    "RecipeManagerAccessor",
+    "VillagerMixin"
   ],
   "client": [
   ],

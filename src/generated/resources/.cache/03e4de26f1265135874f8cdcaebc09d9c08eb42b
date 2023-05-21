@@ -1,8 +1,11 @@
-// 1.19.2	2023-05-19T01:52:53.0310776	Tags for minecraft:item
+// 1.19.2	2023-05-21T09:32:13.9637966	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
-a4b7db3e57be75cbb95c68a2223fc692fdb2484d data/curios/tags/items/charm.json
+81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
+3ad69b90df59e931502fe3825cf9304c44859afb data/forge/tags/items/banknotes.json
+b6a0083ec60ef18029fbe10df3b3371c34349db3 data/forge/tags/items/coins.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
 e952b93ecec2f37e4be0794cb7eed3c68da248d0 data/forge/tags/items/currency_materials.json
+e696f402dd807aff108bcdbf82e9cfaf00b8dadc data/forge/tags/items/currency_stamps.json
 2e568aa5c18c99533dd4ae3a50f2d2a5636f5112 data/forge/tags/items/gems.json
 d8dc68294ba0bb69c51e2d77203706ddc8bd16ba data/forge/tags/items/gems/amethyst.json
 9299b02b724108ee9a7e847ff93cdbacab45fb76 data/forge/tags/items/gems/diamond.json
@@ -40,11 +43,15 @@ c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.j
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/thread.json
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
 032c735a8c4f80091dcc03cdc40d3ac4d04161ae data/supplementaries/tags/items/cookies.json
-cf1df0d5a329f4fa356f884d2a699cf3be188c4d data/todecoins/tags/items/banknotes.json
-1c62b4ebcef45b60c8cb4e6f065d402997d745f5 data/todecoins/tags/items/coins.json
+6e1bba552c6a9722a324eafa93960525ca7e9e94 data/todecoins/tags/items/banknotes.json
+8549b762563fb8215853150344ef3a20278898f9 data/todecoins/tags/items/bundles.json
+f585fdf456be538a14a81d536e6dd2f2a04c0e07 data/todecoins/tags/items/coins.json
+178468a77fe220bf895018332453d694997d9698 data/todecoins/tags/items/collectible_coins.json
 b22e9683697ad4d36d1b0678d079245f21ad0448 data/todecoins/tags/items/currency.json
 e2df2d2c78102e2bf23013433e3c46d8c05bea8f data/todecoins/tags/items/currency_materials.json
 cddace66cb2ea4e34d8e33a075d1f50ca7eb24a8 data/todecoins/tags/items/currency_stamps.json
+790a0e710eba0bb16c6e3bc1bdd3724093227240 data/todecoins/tags/items/gems.json
+2fe1b409323552faf434677546192fd132c569b3 data/todecoins/tags/items/hero_coin_set.json
 cfe2e5ef3b57ae29f40107bd306d90a85c87d827 data/todecoins/tags/items/ingots.json
 6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/todecoins/tags/items/ingots/copper.json
 f2aa87f54e7951ea0cf81ac252c2abe279b0c936 data/todecoins/tags/items/ingots/gold.json
@@ -63,4 +70,4 @@ e189f29a4d97932a310f6d36f9d8c79982a77384 data/todecoins/tags/items/textiles/curr
 aba2458564760bf7bb9b9bd73acb591e86a2866c data/todecoins/tags/items/textiles/fabric.json
 9eea9f12406ff56cc773d53efa24608fcbb30ec1 data/todecoins/tags/items/textiles/fibre.json
 68edbe0549d6bd293d6cf50077773c1b8abb3677 data/todecoins/tags/items/textiles/thread.json
-5a86071b5077280a246f5372744c71acfb2e4133 data/todecoins/tags/items/wallets.json
+5ec9179b0860ba6bb4ffbd3c5fa2d1c11fc38c2a data/todecoins/tags/items/wallets.json

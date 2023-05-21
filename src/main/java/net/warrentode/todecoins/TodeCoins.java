@@ -1,10 +1,14 @@
 package net.warrentode.todecoins;
 
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,8 +22,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.warrentode.todecoins.attribute.ModAttributes;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.block.entity.ModBlockEntities;
+import net.warrentode.todecoins.entity.ModEntityTypes;
+import net.warrentode.todecoins.entity.villager.ModVillagers;
+import net.warrentode.todecoins.entity.villager.renderer.NumismatistRenderer;
 import net.warrentode.todecoins.gui.ModMenuTypes;
 import net.warrentode.todecoins.gui.coinpressgui.CoinPressScreen;
 import net.warrentode.todecoins.integration.Curios;
@@ -30,7 +38,6 @@ import net.warrentode.todecoins.potion.ModPotions;
 import net.warrentode.todecoins.recipe.ModRecipes;
 import net.warrentode.todecoins.recipe.recipebook.CoinPressRecipeCategories;
 import net.warrentode.todecoins.sounds.ModSounds;
-import net.warrentode.todecoins.villager.ModVillagers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -54,11 +61,13 @@ public class TodeCoins {
         modEventBus.addListener(this::setup);
 
         ModSounds.SOUNDS.register(modEventBus);
+        ModAttributes.ATTRIBUTES.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
 
+        ModEntityTypes.register(modEventBus);
         ModVillagers.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
@@ -77,6 +86,13 @@ public class TodeCoins {
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(ModVillagers::registerPOIs);
         event.enqueueWork(ModVillagers::init);
+        event.enqueueWork(() -> {
+            //noinspection deprecation
+            SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Mob::checkMobSpawnRules);
+        });
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -84,6 +100,7 @@ public class TodeCoins {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new));
+            EntityRenderers.register(ModEntityTypes.NUMISMATIST.get(), NumismatistRenderer::new);
         }
 
         @SubscribeEvent

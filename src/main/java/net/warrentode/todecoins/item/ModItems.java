@@ -2,20 +2,20 @@ package net.warrentode.todecoins.item;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.warrentode.todecoins.entity.ModEntityTypes;
 import net.warrentode.todecoins.item.custom.*;
+import net.warrentode.todecoins.item.custom.collectiblecoins.HeroCoinItem;
 import net.warrentode.todecoins.util.customtabs.ModCreativeModeTabs;
-
-import java.util.Collection;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModItems {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
     public static final RegistryObject<Item> FOUR_LEAF_CLOVER = ITEMS.register("four_leaf_clover",
             () -> new FourLeafCloverItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.TODECOINSTAB)));
@@ -83,28 +83,23 @@ public class ModItems {
             () -> new ModArmorItem(ModArmorMaterials.LUCKY, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModCreativeModeTabs.TODECOINSTAB)));
 
+    // SPAWN EGGS
+    public static final RegistryObject<ForgeSpawnEggItem> NUMISMATIST_SPAWN_EGG = ITEMS.register("numismatist_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.NUMISMATIST, 0xFFDC0A, 0x562300,
+                    new Item.Properties().tab(ModCreativeModeTabs.TODECOINSTAB)));
+
     // COLLECTIBLE COIN SETS
-    // copper series
+    // hero set
     public static final RegistryObject<Item> COPPER_HERO_COIN = ITEMS.register("copper_hero_coin",
-            () -> new CollectibleCoin(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    // iron series
+            () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> IRON_HERO_COIN = ITEMS.register("iron_hero_coin",
-            () -> new CollectibleCoin(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    // gold series
+            () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> GOLD_HERO_COIN = ITEMS.register("gold_hero_coin",
-            () -> new CollectibleCoin(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    // netherite series
+            () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_HERO_COIN = ITEMS.register("netherite_hero_coin",
-            () -> new CollectibleCoin(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+            () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
-    }
-
-    /**
-     * @return A collection of this mod's items in the order of their registration.
-     **/
-    public static Collection<RegistryObject<Item>> orderedItems() {
-        return ITEMS.getEntries();
     }
 }

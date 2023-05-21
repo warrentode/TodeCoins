@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.villager;
+package net.warrentode.todecoins.entity.villager;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.resources.ResourceLocation;
@@ -19,10 +19,8 @@ import java.lang.reflect.InvocationTargetException;
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModVillagers {
-    public static final DeferredRegister<PoiType> POI_TYPES =
-            DeferredRegister.create(ForgeRegistries.POI_TYPES, MODID);
-    public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS =
-            DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, MODID);
+    public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES, MODID);
+    public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS = DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, MODID);
 
     public static final RegistryObject<PoiType> BANKER_POI = POI_TYPES.register("banker_poi",
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.COINPRESSBLOCK.get().getStateDefinition().getPossibleStates()),

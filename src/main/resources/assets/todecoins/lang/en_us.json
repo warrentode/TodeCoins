@@ -25,6 +25,7 @@
   "advancement.textileEngineering1.desc": "Craft all the Emerald Fibers and Papers",
   "advancement.textileEngineering2": "Lucky Textile Engineering",
   "advancement.textileEngineering2.desc": "Craft the Lucky Fiber and Fabric",
+  "attribute.name.todecoins.charisma": "Charisma",
   "block.todecoins.coin_press": "Coin Press",
   "block.todecoins.copper_coin_bag": "Bag of Copper Coins",
   "block.todecoins.emerald_bank_note_bag": "Bag of Emerald Notes",
@@ -39,6 +40,7 @@
   "container.recipe_book.coin_press": "Coin Press Recipe Book",
   "entity.minecraft.villager.todecoins.banker": "Banker",
   "entity.minecraft.villager.todecoins.leprechaun": "Leprechaun",
+  "entity.minecraft.villager.todecoins.numismatist": "Numismatist",
   "item.minecraft.lingering_potion.effect.long_luck_potion": "Lingering Potion of Extended Luck",
   "item.minecraft.lingering_potion.effect.long_luck_potion_2": "Lingering Potion of Extended Luck II",
   "item.minecraft.lingering_potion.effect.long_luck_potion_3": "Lingering Potion of Extended Luck III",
@@ -160,6 +162,7 @@
   "item.todecoins.netherite_coin": "Netherite Coin",
   "item.todecoins.netherite_hero_coin": "Collectible Netherite Hero Coin",
   "item.todecoins.netherite_nugget": "Netherite Nugget",
+  "item.todecoins.numismatist_spawn_egg": "Numismatist Spawn Egg",
   "itemGroup.collectorcoinstab": "Collectible Coins",
   "itemGroup.todecoinstab": "Tode Coins",
   "subtitles.todecoins.coin_press_take": "Coin Press Cashes Out",
@@ -172,6 +175,7 @@
   "tooltips.coin_stamp.hover": "This is for stamping currency in a press.",
   "tooltips.collectible_coin.hover": "These types of coins aren't used as currency, but are instead collected and traded for their unique value",
   "tooltips.fourleafclover.hover": "Many people believe this is a lucky charm.",
+  "tooltips.hero_coin.hover": "A gift from a grateful villager",
   "tooltips.lucky_coin.hover": "Smells like fresh clover, what an unusual coin...",
   "tooltips.textile_item.hover": "Textiles are used to make materials like paper and fabric."
 }

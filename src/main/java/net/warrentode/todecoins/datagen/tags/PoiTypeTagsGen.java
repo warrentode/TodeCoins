@@ -3,7 +3,7 @@ package net.warrentode.todecoins.datagen.tags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.PoiTypeTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.warrentode.todecoins.villager.ModVillagers;
+import net.warrentode.todecoins.entity.villager.ModVillagers;
 import org.jetbrains.annotations.Nullable;
 
 public class PoiTypeTagsGen extends PoiTypeTagsProvider {
