@@ -53,7 +53,13 @@ public class ItemTagsGen extends ItemTagsProvider {
 
     private void registerModTags() {
         tag(ModTags.Items.COLLECTIBLE_COINS)
-                .addTag(ModTags.Items.HERO_COIN_SET);
+                .addTag(ModTags.Items.HERO_COIN_SET)
+                .addTag(ModTags.Items.PIGLIN_COIN_SET);
+        tag(ModTags.Items.PIGLIN_COIN_SET)
+                .add(ModItems.COPPER_PIGLIN_COIN.get())
+                .add(ModItems.IRON_PIGLIN_COIN.get())
+                .add(ModItems.GOLD_PIGLIN_COIN.get())
+                .add(ModItems.NETHERITE_PIGLIN_COIN.get());
         tag(ModTags.Items.HERO_COIN_SET)
                 .add(ModItems.COPPER_HERO_COIN.get())
                 .add(ModItems.IRON_HERO_COIN.get())

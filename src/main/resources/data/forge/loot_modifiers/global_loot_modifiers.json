@@ -94,6 +94,7 @@
     "todecoins:add_loot_mason_gift",
     "todecoins:add_loot_shepherd_gift",
     "todecoins:add_loot_toolsmith_gift",
-    "todecoins:add_loot_weaponsmith_gift"
+    "todecoins:add_loot_weaponsmith_gift",
+    "todecoins:add_loot_enderman_coins"
   ]
 }

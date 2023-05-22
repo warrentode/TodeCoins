@@ -29,6 +29,8 @@ public class ModTags {
 
         public static final TagKey<Item> COLLECTIBLE_COINS = modItemTag("collectible_coins");
         public static final TagKey<Item> HERO_COIN_SET = modItemTag("hero_coin_set");
+        public static final TagKey<Item> PIGLIN_COIN_SET = modItemTag("piglin_coin_set");
+        public static final TagKey<Item> ENDERMAN_COIN_SET = modItemTag("enderman_coin_set");
 
         public static final TagKey<Item> TEXTILES = modItemTag("textiles");
         public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");

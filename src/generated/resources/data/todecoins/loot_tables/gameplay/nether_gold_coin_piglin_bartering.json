@@ -5,6 +5,29 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "todecoins:netherite_piglin_coin",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:gold_piglin_coin",
+          "quality": 3,
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:iron_piglin_coin",
+          "quality": 2,
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:copper_piglin_coin",
+          "quality": 1,
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:lodestone",
           "weight": 5
         },

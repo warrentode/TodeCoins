@@ -172,6 +172,14 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_iron_hero_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_HERO_COIN.get()))
                     .addCriterion("find_gold_hero_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_HERO_COIN.get()))
                     .addCriterion("find_netherite_hero_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_HERO_COIN.get()))
+                    .addCriterion("find_copper_piglin_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIGLIN_COIN.get()))
+                    .addCriterion("find_iron_piglin_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PIGLIN_COIN.get()))
+                    .addCriterion("find_gold_piglin_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PIGLIN_COIN.get()))
+                    .addCriterion("find_netherite_piglin_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIGLIN_COIN.get()))
+                    .addCriterion("find_copper_enderman_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ENDERMAN_COIN.get()))
+                    .addCriterion("find_iron_enderman_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ENDERMAN_COIN.get()))
+                    .addCriterion("find_gold_enderman_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ENDERMAN_COIN.get()))
+                    .addCriterion("find_netherite_enderman_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ENDERMAN_COIN.get()))
                     .requirements(RequirementsStrategy.OR).save(consumer, getPath("main/collectible_coins"));
         }
 

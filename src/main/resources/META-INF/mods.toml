@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/toadie-odie/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "1.19.2-1.2.8"
+version = "1.19.2-1.2.9"
 displayName = "Tode Coins"
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 displayURL = "https://github.com/toadie-odie/TodeCoins"
@@ -28,7 +28,7 @@ ordering = "NONE"
 side = "BOTH"
 [[dependencies.todecoins]]
 modId = "curios"
-mandatory = false
+mandatory = true
 versionRange = "[1.19.2-5.1.4.0,)"
 ordering = "NONE"
 side = "BOTH"

@@ -1,12 +1,48 @@
 {
   "parent": "todecoins:main/root",
   "criteria": {
+    "find_copper_enderman_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:copper_enderman_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_copper_hero_coin": {
       "conditions": {
         "items": [
           {
             "items": [
               "todecoins:copper_hero_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_copper_piglin_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:copper_piglin_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_gold_enderman_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:gold_enderman_coin"
             ]
           }
         ]
@@ -25,6 +61,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_gold_piglin_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:gold_piglin_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_iron_enderman_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:iron_enderman_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_iron_hero_coin": {
       "conditions": {
         "items": [
@@ -37,12 +97,48 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_iron_piglin_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:iron_piglin_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_netherite_enderman_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:netherite_enderman_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_netherite_hero_coin": {
       "conditions": {
         "items": [
           {
             "items": [
               "todecoins:netherite_hero_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_netherite_piglin_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:netherite_piglin_coin"
             ]
           }
         ]
@@ -70,7 +166,15 @@
       "find_copper_hero_coin",
       "find_iron_hero_coin",
       "find_gold_hero_coin",
-      "find_netherite_hero_coin"
+      "find_netherite_hero_coin",
+      "find_copper_piglin_coin",
+      "find_iron_piglin_coin",
+      "find_gold_piglin_coin",
+      "find_netherite_piglin_coin",
+      "find_copper_enderman_coin",
+      "find_iron_enderman_coin",
+      "find_gold_enderman_coin",
+      "find_netherite_enderman_coin"
     ]
   ]
 }

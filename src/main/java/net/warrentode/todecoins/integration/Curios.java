@@ -8,6 +8,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -35,6 +36,50 @@ import static net.warrentode.todecoins.attribute.ModAttributes.CHR_MODIFIER_NAME
 import static net.warrentode.todecoins.attribute.ModAttributes.CHR_MODIFIER_UUID;
 
 public class Curios {
+    /**
+     * Gets the stack in the Belt Slot
+     **/
+    public static ItemStack getBeltSlot(Player player) {
+        AtomicReference<ItemStack> belt = new AtomicReference<>(ItemStack.EMPTY);
+        LazyOptional<ICuriosItemHandler> optional = CuriosApi.getCuriosHelper().getCuriosHandler(player);
+        optional.ifPresent(itemHandler -> {
+            Optional<ICurioStacksHandler> stacksOptional = itemHandler.getStacksHandler(SlotTypePreset.BELT.getIdentifier());
+            stacksOptional.ifPresent(stacksHandler -> {
+                ItemStack stack = stacksHandler.getStacks().getStackInSlot(0);
+                if (!stack.isEmpty()) {
+                    belt.set(stack);
+                }
+            });
+        });
+        return belt.get();
+    }
+
+    public static ICapabilityProvider createWalletBeltProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.ARMOR_EQUIP_GENERIC, 1.0F, 1.5F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
     /**
      * Gets the stack in the Charm Slot
      **/
@@ -198,36 +243,127 @@ public class Curios {
         });
     }
 
-    public static ItemStack getBeltSlot(Player player) {
-        AtomicReference<ItemStack> belt = new AtomicReference<>(ItemStack.EMPTY);
-        LazyOptional<ICuriosItemHandler> optional = CuriosApi.getCuriosHelper().getCuriosHandler(player);
-        optional.ifPresent(itemHandler -> {
-            Optional<ICurioStacksHandler> stacksOptional = itemHandler.getStacksHandler(SlotTypePreset.BELT.getIdentifier());
-            stacksOptional.ifPresent(stacksHandler -> {
-                ItemStack stack = stacksHandler.getStacks().getStackInSlot(0);
-                if (!stack.isEmpty()) {
-                    belt.set(stack);
-                }
-            });
-        });
-        return belt.get();
-    }
-
-    public static ICapabilityProvider createWalletBeltProvider(ItemStack stack) {
+    public static ICapabilityProvider createPiglinCoinCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
                 return stack;
             }
 
+            @Override
+            public boolean makesPiglinsNeutral(SlotContext slotContext) {
+                return true;
+            }
+
+            @Override
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                if (stack.is(ModItems.COPPER_PIGLIN_COIN.get())) {
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.armor", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModItems.IRON_PIGLIN_COIN.get())) {
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.armor", 2,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModItems.GOLD_PIGLIN_COIN.get())) {
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.armor", 3,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModItems.NETHERITE_PIGLIN_COIN.get())) {
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.armor", 4,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                return attribute;
+            }
+
             @Nonnull
             @Override
             public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.ARMOR_EQUIP_GENERIC, 1.0F, 1.5F);
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
             }
 
             @Override
             public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createEndermanCoinCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public boolean isEnderMask(SlotContext slotContext, EnderMan enderMan) {
+                return true;
+            }
+
+            @Override
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                if (stack.is(ModItems.COPPER_ENDERMAN_COIN.get())) {
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.1,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModItems.IRON_ENDERMAN_COIN.get())) {
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.2,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModItems.GOLD_ENDERMAN_COIN.get())) {
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.3,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModItems.NETHERITE_ENDERMAN_COIN.get())) {
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.4,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                return attribute;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
                 return true;
             }
 

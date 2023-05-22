@@ -10,6 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.entity.ModEntityTypes;
 import net.warrentode.todecoins.item.custom.*;
 import net.warrentode.todecoins.item.custom.collectiblecoins.HeroCoinItem;
+import net.warrentode.todecoins.item.custom.collectiblecoins.PiglinCoinItem;
 import net.warrentode.todecoins.util.customtabs.ModCreativeModeTabs;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
@@ -98,6 +99,24 @@ public class ModItems {
             () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_HERO_COIN = ITEMS.register("netherite_hero_coin",
             () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // piglin set
+    public static final RegistryObject<Item> COPPER_PIGLIN_COIN = ITEMS.register("copper_piglin_coin",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_PIGLIN_COIN = ITEMS.register("iron_piglin_coin",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_PIGLIN_COIN = ITEMS.register("gold_piglin_coin",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_PIGLIN_COIN = ITEMS.register("netherite_piglin_coin",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // enderman set
+    public static final RegistryObject<Item> COPPER_ENDERMAN_COIN = ITEMS.register("copper_enderman_coin",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_ENDERMAN_COIN = ITEMS.register("iron_enderman_coin",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_ENDERMAN_COIN = ITEMS.register("gold_enderman_coin",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_ENDERMAN_COIN = ITEMS.register("netherite_enderman_coin",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -13,6 +13,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModBuiltInLootTables;
 
 import java.util.function.BiConsumer;
@@ -27,6 +28,14 @@ public class NetherGoldCoinPiglinBarterLootGen extends PiglinBarterLoot {
                 LootTable.lootTable().withPool(
                         LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_COIN.get()).setQuality(4)
+                                        .setWeight(1))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_PIGLIN_COIN.get()).setQuality(3)
+                                        .setWeight(2))
+                                .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_COIN.get()).setQuality(2)
+                                        .setWeight(3))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_COIN.get()).setQuality(1)
+                                        .setWeight(4))
                                 .add(LootItem.lootTableItem(Items.LODESTONE)
                                         .setWeight(5))
                                 .add(LootItem.lootTableItem(Items.BOOK).setWeight(5)
