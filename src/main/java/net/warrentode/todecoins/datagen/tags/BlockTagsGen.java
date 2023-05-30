@@ -2,6 +2,7 @@ package net.warrentode.todecoins.datagen.tags;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.util.tags.ForgeTags;
@@ -41,6 +42,9 @@ public class BlockTagsGen extends BlockTagsProvider {
                 .addTag(ModTags.Blocks.CURRENCY_BLOCKS);
     }
     protected void registerModTags() {
+        tag(ModTags.Blocks.DROPS_FOUR_LEAF_CLOVER)
+                .add(Blocks.GRASS)
+                .add(Blocks.TALL_GRASS);
         tag(ModTags.Blocks.STORAGE_BLOCKS)
                 .addTag(ModTags.Blocks.CURRENCY_BLOCKS);
         tag(ModTags.Blocks.CURRENCY_BLOCKS).add(

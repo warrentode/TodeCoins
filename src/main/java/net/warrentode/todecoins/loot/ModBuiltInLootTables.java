@@ -11,26 +11,84 @@ import static net.warrentode.todecoins.TodeCoins.MODID;
 public class ModBuiltInLootTables {
     private static final Set<ResourceLocation> LOCATIONS = Sets.newHashSet();
     private static final Set<ResourceLocation> IMMUTABLE_LOCATIONS = Collections.unmodifiableSet(LOCATIONS);
+
+    // currency chest loot tables
+    public static final ResourceLocation TODECOINS_COPPER_COIN_LOOT = register(MODID + ":" + "chests/currency/todecoins_copper_coin_loot");
+    public static final ResourceLocation TODECOINS_IRON_COIN_LOOT = register(MODID + ":" + "chests/currency/todecoins_iron_coin_loot");
+    public static final ResourceLocation TODECOINS_GOLD_COIN_LOOT = register(MODID + ":" + "chests/currency/todecoins_gold_coin_loot");
+    public static final ResourceLocation TODECOINS_LUCKY_COIN_LOOT = register(MODID + ":" + "chests/currency/todecoins_lucky_coin_loot");
+    public static final ResourceLocation TODECOINS_NETHERITE_COIN_LOOT = register(MODID + ":" + "chests/currency/todecoins_netherite_coin_loot");
+    public static final ResourceLocation TODECOINS_NETHER_GOLD_COIN_LOOT = register(MODID + ":" + "chests/currency/todecoins_nether_gold_coin_loot");
+    public static final ResourceLocation TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT = register(MODID + ":" + "chests/currency/todecoins_emerald_quarter_bank_note_loot");
+    public static final ResourceLocation TODECOINS_EMERALD_HALF_BANK_NOTE_LOOT = register(MODID + ":" + "chests/currency/todecoins_emerald_half_bank_note_loot");
+    public static final ResourceLocation TODECOINS_EMERALD_BANK_NOTE_LOOT = register(MODID + ":" + "chests/currency/todecoins_emerald_bank_note_loot");
+    public static final ResourceLocation TODECOINS_BIRTHDAY_COIN_LOOT = register(MODID + ":" + "chests/collectible/todecoins_birthday_coin_loot");
+    public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_LOOT = register(MODID + ":" + "chests/collectible/todecoins_halloween_coin_loot");
+    public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_LOOT = register(MODID + ":" + "chests/collectible/todecoins_christmas_coin_loot");
+    public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_LOOT = register(MODID + ":" + "chests/collectible/todecoins_anniversary_coin_loot");
+
+    // injected chest loot table
     public static final ResourceLocation TODECOINS_CHEST_LOOT = register(MODID + ":" + "chests/todecoins_chest");
+
+    // villager chest loot
     public static final ResourceLocation BANKER_CHEST = register(MODID + ":" + "chests/village/villager_banker");
     public static final ResourceLocation LEPRECHAUN_CHEST = register(MODID + ":" + "chests/village/villager_leprechaun");
+
+    // villager gift loot
+    public static final ResourceLocation TODECOINS_HERO_COIN_LOOT = register(MODID + ":" + "gameplay/hero_of_the_village/todecoins_hero_coin_loot");
+    public static final ResourceLocation TODECOINS_COIN_GIFT_LOOT = register(MODID + ":" + "gameplay/hero_of_the_village/todecoins_coin_gift_loot");
     public static final ResourceLocation BANKER_GIFT = register(MODID + ":" + "gameplay/hero_of_the_village/banker_gift");
     public static final ResourceLocation LEPRECHAUN_GIFT = register(MODID + ":" + "gameplay/hero_of_the_village/leprechaun_gift");
-    public static final ResourceLocation TODECOINS_HERO_COIN_LOOT = register(MODID + ":" + "gameplay/hero_of_the_village/todecoins_hero_coin_loot");
-    public static final ResourceLocation NETHER_GOLD_COIN_PIGLIN_BARTERING = register(MODID + ":" + "gameplay/nether_gold_coin_piglin_bartering");
-    public static final ResourceLocation TODECOINS_CURRENCY_DROPS = register(MODID + ":" + "currency/todecoins_currency_drops");
-    public static final ResourceLocation TODECOINS_BOSS_CURRENCY_DROPS = register(MODID + ":" + "currency/todecoins_boss_currency_drops");
 
-    private static ResourceLocation register(String pId) {
-        return register(new ResourceLocation(pId));
+    // piglin bartering loot tables
+    public static final ResourceLocation NETHER_GOLD_COIN_PIGLIN_BARTERING = register(MODID + ":" + "gameplay/bartering/nether_gold_coin_piglin_bartering");
+    public static final ResourceLocation NETHERITE_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/netherite_piglin_coin_barter_loot");
+    public static final ResourceLocation GOLD_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/gold_piglin_coin_barter_loot");
+    public static final ResourceLocation IRON_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/iron_piglin_coin_barter_loot");
+    public static final ResourceLocation COPPER_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/copper_piglin_coin_barter_loot");
+    public static final ResourceLocation PIGLIN_EVENT_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/piglin_event_barter_loot");
+
+    // currency entity drop loot tables
+    public static final ResourceLocation TODECOINS_CURRENCY_DROPS = register(MODID + ":" + "entity/todecoins_currency_drops");
+    public static final ResourceLocation TODECOINS_COPPER_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_copper_coin_drops");
+    public static final ResourceLocation TODECOINS_IRON_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_iron_coin_drops");
+    public static final ResourceLocation TODECOINS_GOLD_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_gold_coin_drops");
+    public static final ResourceLocation TODECOINS_NETHERITE_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_netherite_coin_drops");
+    public static final ResourceLocation TODECOINS_NETHER_GOLD_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_nether_gold_coin_drops");
+    public static final ResourceLocation TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_emerald_quarter_bank_note_drops");
+    public static final ResourceLocation TODECOINS_EMERALD_HALF_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_emerald_half_bank_note_drops");
+    public static final ResourceLocation TODECOINS_EMERALD_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_emerald_bank_note_drops");
+    public static final ResourceLocation TODECOINS_LUCKY_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_lucky_coin_drops");
+
+    // boss specific currency entity drop loot tables
+    public static final ResourceLocation TODECOINS_BOSS_CURRENCY_DROPS = register(MODID + ":" + "entity/todecoins_boss_currency_drops");
+    public static final ResourceLocation TODECOINS_BOSS_COPPER_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_boss_copper_coin_drops");
+    public static final ResourceLocation TODECOINS_BOSS_IRON_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_boss_copper_iron_drops");
+    public static final ResourceLocation TODECOINS_BOSS_GOLD_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_boss_gold_coin_drops");
+    public static final ResourceLocation TODECOINS_BOSS_NETHERITE_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_boss_netherite_coin_drops");
+    public static final ResourceLocation TODECOINS_BOSS_NETHER_GOLD_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_boss_nether_gold_coin_drops");
+    public static final ResourceLocation TODECOINS_BOSS_EMERALD_QUARTER_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_quarter_bank_note_drops");
+    public static final ResourceLocation TODECOINS_BOSS_EMERALD_HALF_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_half_bank_note_drops");
+    public static final ResourceLocation TODECOINS_BOSS_EMERALD_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_bank_note_drops");
+
+    // entity specific collectible coin drop loot tables
+    public static final ResourceLocation TODECOINS_ENDERMAN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_enderman_coin_drops");
+
+    // event dependent collectible coin entity drop loot tables
+    public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_halloween_coin_drops");
+    public static final ResourceLocation TODECOINS_BIRTHDAY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_birthday_coin_drops");
+    public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_christmas_coin_drops");
+    public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_anniversary_coin_drops");
+
+    private static ResourceLocation register(String path) {
+        return register(new ResourceLocation(path));
     }
 
-    private static ResourceLocation register(ResourceLocation pId) {
-        if (LOCATIONS.add(pId)) {
-            return pId;
-        }
-        else {
-            throw new IllegalArgumentException(pId + " is already a registered built-in loot table");
+    private static ResourceLocation register(ResourceLocation path) {
+        if (LOCATIONS.add(path)) {
+            return path;
+        } else {
+            throw new IllegalArgumentException(path + " is already a registered built-in loot table");
         }
     }
 

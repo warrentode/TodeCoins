@@ -1,0 +1,95 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cake"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pumpkin_pie"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cookie"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:birthday_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/todecoins_birthday_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:halloween_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/todecoins_halloween_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/todecoins_christmas_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/todecoins_anniversary_coin_loot"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_netherite"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_copper",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_gold",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_netherite",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:nether_currency_stamp",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_slow_falling"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strong_healing"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_fire_resistance"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:ghast_tear"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lodestone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:piglin_banner_pattern",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_pigstep",
+          "quality": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "minecraft:smite"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:iron_axe",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "minecraft:quick_charge"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:crossbow",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "minecraft:looting"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:iron_sword",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "minecraft:soul_speed"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:iron_boots",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "minecraft:thorns"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:iron_helmet",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "minecraft:swift_sneak"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:iron_leggings",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "enchantments": [
+                "minecraft:thorns"
+              ],
+              "function": "minecraft:enchant_randomly"
+            }
+          ],
+          "name": "minecraft:iron_chestplate",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:netherite_nugget",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_star",
+          "quality": 6
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

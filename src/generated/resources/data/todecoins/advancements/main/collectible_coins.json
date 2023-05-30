@@ -1,144 +1,228 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/lucky_penny",
   "criteria": {
-    "find_copper_enderman_coin": {
+    "find_collectible_coin_birthday": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:copper_enderman_coin"
+              "todecoins:collectible_coin_birthday_2023"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_copper_hero_coin": {
+    "find_collectible_coin_carnation_marshall_nash": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:copper_hero_coin"
+              "todecoins:collectible_coin_carnation_marshall_nash"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_copper_piglin_coin": {
+    "find_collectible_coin_carnation_trevor_brannigan": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:copper_piglin_coin"
+              "todecoins:collectible_coin_carnation_trevor_brannigan"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_gold_enderman_coin": {
+    "find_collectible_coin_christmas": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:gold_enderman_coin"
+              "todecoins:collectible_coin_christmas_2023"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_gold_hero_coin": {
+    "find_collectible_coin_cosmos_marshall_nash": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:gold_hero_coin"
+              "todecoins:collectible_coin_cosmos_marshall_nash"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_gold_piglin_coin": {
+    "find_collectible_coin_cosmos_trevor_brannigan": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:gold_piglin_coin"
+              "todecoins:collectible_coin_cosmos_trevor_brannigan"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_iron_enderman_coin": {
+    "find_collectible_coin_enderman_copper": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:iron_enderman_coin"
+              "todecoins:collectible_coin_enderman_copper"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_iron_hero_coin": {
+    "find_collectible_coin_enderman_gold": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:iron_hero_coin"
+              "todecoins:collectible_coin_enderman_gold"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_iron_piglin_coin": {
+    "find_collectible_coin_enderman_iron": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:iron_piglin_coin"
+              "todecoins:collectible_coin_enderman_iron"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_netherite_enderman_coin": {
+    "find_collectible_coin_enderman_netherite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:netherite_enderman_coin"
+              "todecoins:collectible_coin_enderman_netherite"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_netherite_hero_coin": {
+    "find_collectible_coin_halloween_copper": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:netherite_hero_coin"
+              "todecoins:collectible_coin_halloween_2023"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_netherite_piglin_coin": {
+    "find_collectible_coin_hero_copper": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:netherite_piglin_coin"
+              "todecoins:collectible_coin_hero_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_collectible_coin_hero_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_hero_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_collectible_coin_hero_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_hero_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_collectible_coin_hero_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_hero_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_collectible_coin_piglin_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_collectible_coin_piglin_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_collectible_coin_piglin_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_collectible_coin_piglin_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_netherite"
             ]
           }
         ]
@@ -154,7 +238,7 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "todecoins:copper_hero_coin"
+      "item": "todecoins:collectible_coin_hero_copper"
     },
     "show_toast": true,
     "title": {
@@ -163,18 +247,61 @@
   },
   "requirements": [
     [
-      "find_copper_hero_coin",
-      "find_iron_hero_coin",
-      "find_gold_hero_coin",
-      "find_netherite_hero_coin",
-      "find_copper_piglin_coin",
-      "find_iron_piglin_coin",
-      "find_gold_piglin_coin",
-      "find_netherite_piglin_coin",
-      "find_copper_enderman_coin",
-      "find_iron_enderman_coin",
-      "find_gold_enderman_coin",
-      "find_netherite_enderman_coin"
+      "find_collectible_coin_birthday"
+    ],
+    [
+      "find_collectible_coin_hero_copper"
+    ],
+    [
+      "find_collectible_coin_hero_iron"
+    ],
+    [
+      "find_collectible_coin_hero_gold"
+    ],
+    [
+      "find_collectible_coin_hero_netherite"
+    ],
+    [
+      "find_collectible_coin_piglin_copper"
+    ],
+    [
+      "find_collectible_coin_piglin_iron"
+    ],
+    [
+      "find_collectible_coin_piglin_gold"
+    ],
+    [
+      "find_collectible_coin_piglin_netherite"
+    ],
+    [
+      "find_collectible_coin_enderman_copper"
+    ],
+    [
+      "find_collectible_coin_enderman_iron"
+    ],
+    [
+      "find_collectible_coin_enderman_gold"
+    ],
+    [
+      "find_collectible_coin_enderman_netherite"
+    ],
+    [
+      "find_collectible_coin_halloween_copper"
+    ],
+    [
+      "find_collectible_coin_christmas"
+    ],
+    [
+      "find_collectible_coin_carnation_marshall_nash"
+    ],
+    [
+      "find_collectible_coin_cosmos_marshall_nash"
+    ],
+    [
+      "find_collectible_coin_carnation_trevor_brannigan"
+    ],
+    [
+      "find_collectible_coin_cosmos_trevor_brannigan"
     ]
   ]
 }

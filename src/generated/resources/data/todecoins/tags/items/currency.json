@@ -1,7 +1,7 @@
 {
   "values": [
-    "#todecoins:banknotes",
-    "#todecoins:coins",
+    "#todecoins:currency/banknotes",
+    "#todecoins:currency/coins",
     "#forge:piglin_barter_items"
   ]
 }

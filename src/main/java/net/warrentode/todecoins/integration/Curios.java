@@ -2,8 +2,11 @@ package net.warrentode.todecoins.integration;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -16,7 +19,8 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.warrentode.todecoins.attribute.ModAttributes;
 import net.warrentode.todecoins.attribute.PlayerCharisma;
-import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.util.CalendarUtil;
+import net.warrentode.todecoins.util.tags.ModTags;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.SlotTypePreset;
@@ -158,27 +162,14 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModItems.COPPER_HERO_COIN.get())) {
+                if (stack.is(ModTags.Items.HERO_COIN_SET)) {
                     attribute.put(ModAttributes.CHARISMA.get(),
                             new AttributeModifier(CHR_MODIFIER_UUID, CHR_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
                     return attribute;
-                }
-                else if (stack.is(ModItems.IRON_HERO_COIN.get())) {
+                } else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
                     attribute.put(ModAttributes.CHARISMA.get(),
-                            new AttributeModifier(CHR_MODIFIER_UUID, CHR_MODIFIER_NAME, 2,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModItems.GOLD_HERO_COIN.get())) {
-                    attribute.put(ModAttributes.CHARISMA.get(),
-                            new AttributeModifier(CHR_MODIFIER_UUID, CHR_MODIFIER_NAME, 3,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModItems.NETHERITE_HERO_COIN.get())) {
-                    attribute.put(ModAttributes.CHARISMA.get(),
-                            new AttributeModifier(CHR_MODIFIER_UUID, CHR_MODIFIER_NAME, 4,
+                            new AttributeModifier(CHR_MODIFIER_UUID, CHR_MODIFIER_NAME, 5,
                                     AttributeModifier.Operation.ADDITION));
                     return attribute;
                 }
@@ -194,34 +185,20 @@ public class Curios {
             @Override
             public void onEquip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onEquip(slotContext, prevStack);
-                if (stack.is(ModItems.COPPER_HERO_COIN.get())) {
+                if (stack.is(ModTags.Items.HERO_COIN_SET)) {
                     PlayerCharisma.addCharisma(1);
-                }
-                else if (stack.is(ModItems.IRON_HERO_COIN.get())) {
-                    PlayerCharisma.addCharisma(2);
-                }
-                else if (stack.is(ModItems.GOLD_HERO_COIN.get())) {
-                    PlayerCharisma.addCharisma(3);
-                }
-                else if (stack.is(ModItems.NETHERITE_HERO_COIN.get())) {
-                    PlayerCharisma.addCharisma(4);
+                } else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
+                    PlayerCharisma.addCharisma(5);
                 }
             }
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onEquip(slotContext, prevStack);
-                if (stack.is(ModItems.COPPER_HERO_COIN.get())) {
+                if (stack.is(ModTags.Items.HERO_COIN_SET)) {
                     PlayerCharisma.subtractCharisma(1);
-                }
-                else if (stack.is(ModItems.IRON_HERO_COIN.get())) {
-                    PlayerCharisma.subtractCharisma(2);
-                }
-                else if (stack.is(ModItems.GOLD_HERO_COIN.get())) {
-                    PlayerCharisma.subtractCharisma(3);
-                }
-                else if (stack.is(ModItems.NETHERITE_HERO_COIN.get())) {
-                    PlayerCharisma.subtractCharisma(4);
+                } else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
+                    PlayerCharisma.subtractCharisma(5);
                 }
             }
 
@@ -258,27 +235,9 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModItems.COPPER_PIGLIN_COIN.get())) {
+                if (stack.is(ModTags.Items.PIGLIN_COIN_SET)) {
                     attribute.put(Attributes.ARMOR,
                             new AttributeModifier(uuid, "generic.armor", 1,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModItems.IRON_PIGLIN_COIN.get())) {
-                    attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.armor", 2,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModItems.GOLD_PIGLIN_COIN.get())) {
-                    attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.armor", 3,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModItems.NETHERITE_PIGLIN_COIN.get())) {
-                    attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.armor", 4,
                                     AttributeModifier.Operation.ADDITION));
                     return attribute;
                 }
@@ -324,31 +283,102 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModItems.COPPER_ENDERMAN_COIN.get())) {
+                if (stack.is(ModTags.Items.ENDERMAN_COIN_SET)) {
                     attribute.put(Attributes.ARMOR,
                             new AttributeModifier(uuid, "generic.movement_speed", 0.1,
                                     AttributeModifier.Operation.ADDITION));
                     return attribute;
                 }
-                else if (stack.is(ModItems.IRON_ENDERMAN_COIN.get())) {
-                    attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.2,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModItems.GOLD_ENDERMAN_COIN.get())) {
-                    attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.3,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModItems.NETHERITE_ENDERMAN_COIN.get())) {
-                    attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.4,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
                 return attribute;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createHalloweenCoinCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public void curioTick(SlotContext slotContext) {
+                Player player = Minecraft.getInstance().player;
+                if (stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
+                    if (player != null) {
+                        player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
+                                false, false, true));
+                    }
+                }
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createGiftCoinCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public void curioTick(SlotContext slotContext) {
+                Player player = Minecraft.getInstance().player;
+                if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) && CalendarUtil.Season.isBirthday()) {
+                    if (player != null) {
+                        player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                false, false, false));
+                    }
+                } else if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && CalendarUtil.Season.isChristmas()) {
+                    if (player != null) {
+                        player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                false, false, false));
+                    }
+                }
             }
 
             @Nonnull

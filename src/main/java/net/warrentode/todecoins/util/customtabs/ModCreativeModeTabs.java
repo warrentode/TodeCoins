@@ -93,6 +93,13 @@ public class ModCreativeModeTabs extends CreativeModeTab {
 
         @Override
         public void fillItemList(final @NotNull NonNullList<ItemStack> items) {
+            // LUCKY COIN
+            items.add(ModItems.LUCKY_COIN.get().getDefaultInstance());
+            // PATRON COIN SET
+            items.add(ModItems.MARSHALL_NASH_CARNATION_COIN.get().getDefaultInstance());
+            items.add(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDefaultInstance());
+            items.add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDefaultInstance());
+            items.add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().getDefaultInstance());
             // HERO COIN SET
             items.add(ModItems.COPPER_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_HERO_COIN.get().getDefaultInstance());
@@ -108,6 +115,12 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_ENDERMAN_COIN.get().getDefaultInstance());
+            // BIRTHDAY COIN
+            items.add(ModItems.BIRTHDAY_COIN_2023.get().getDefaultInstance());
+            // HALLOWEEN COIN SET
+            items.add(ModItems.HALLOWEEN_COIN_2023.get().getDefaultInstance());
+            // CHRISTMAS COIN
+            items.add(ModItems.CHRISTMAS_COIN_2023.get().getDefaultInstance());
         }
     };
 }

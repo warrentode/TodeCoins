@@ -7,6 +7,7 @@ public class CalendarUtil {
 
     public enum Season {
         NONE,
+        PATREON_ANNIVERSARY,
         BIRTHDAY,
         CHRISTMAS,
         HALLOWEEN,
@@ -43,40 +44,42 @@ public class CalendarUtil {
             return get() == BIRTHDAY;
         }
 
+        public static boolean isAnniversary() {
+            return get() == PATREON_ANNIVERSARY;
+        }
+
         private static Season get() {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
-            if ((month == Calendar.DECEMBER && date >= 21) && (month == Calendar.MARCH && date <= 20)) {
+            // seasons
+            if ((month == Calendar.DECEMBER && date >= 20) && (month == Calendar.MARCH && date <= 20)) {
                 return WINTER;
-            }
-            else if ((month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20)) {
+            } else if ((month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20)) {
                 return SPRING;
-            }
-            else if ((month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 22)) {
+            } else if ((month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 20)) {
                 return SUMMER;
-            }
-            else if ((month == Calendar.SEPTEMBER && date >= 22) && (month == Calendar.DECEMBER && date <= 21)) {
+            } else if ((month == Calendar.SEPTEMBER && date >= 20) && (month == Calendar.DECEMBER && date <= 20)) {
                 return AUTUMN;
             }
+
+            // holidays
             if ((month == Calendar.DECEMBER && date >= 1) && (month == Calendar.DECEMBER && date <= 31)) {
                 return CHRISTMAS;
-            }
-            else if ((month == Calendar.OCTOBER && date >= 1) && (month == Calendar.OCTOBER && date <= 31)) {
+            } else if ((month == Calendar.OCTOBER && date >= 1) && (month == Calendar.OCTOBER && date <= 31)) {
                 return HALLOWEEN;
             }
-            if ((month == Calendar.SEPTEMBER && date <= 28) && (month == Calendar.OCTOBER && date >= 4)) {
+
+            // yearly built-in events
+            if ((month == Calendar.DECEMBER && date >= 19) && (month == Calendar.DECEMBER && date <= 21)) {
+                // mod's birthday is built-in
                 return BIRTHDAY;
             }
-            else if ((month == Calendar.APRIL && date <= 10) && (month == Calendar.APRIL && date >= 16)) {
-                return BIRTHDAY;
+            if ((month == Calendar.JANUARY && date >= 21) && (month == Calendar.JANUARY && date <= 27)) {
+                // anniversary of patreon site
+                return PATREON_ANNIVERSARY;
             }
-            else if ((month == Calendar.SEPTEMBER && date <= 17) && (month == Calendar.APRIL && date >= 24)) {
-                return BIRTHDAY;
-            }
-            else if ((month == Calendar.MARCH && date <= 29) && (month == Calendar.APRIL && date >= 4)) {
-                return BIRTHDAY;
-            }
+
             return NONE;
         }
     }

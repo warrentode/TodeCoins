@@ -27,7 +27,7 @@ public class PiglinCoinItem extends CollectibleCoin {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.piglin_coin.hover").withStyle(ChatFormatting.RED));
+        tooltips.add(Component.translatable("tooltips.collectible_piglin_coin.hover").withStyle(ChatFormatting.RED));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

@@ -1,0 +1,162 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_copper",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_iron",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_gold",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:nether_currency_stamp",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_slow_falling"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strong_healing"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_fire_resistance"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:ghast_tear",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lodestone",
+          "weight": 0
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:piglin_banner_pattern"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_pigstep"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:netherite_nugget",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ancient_debris",
+          "quality": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_ingot",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_sword",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_boots",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_helmet",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_leggings",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_chestplate",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_star",
+          "quality": 6
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}
