@@ -228,6 +228,18 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "obtain_lucky_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:lucky_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -246,6 +258,9 @@
     }
   },
   "requirements": [
+    [
+      "obtain_lucky_coin"
+    ],
     [
       "find_collectible_coin_birthday"
     ],
