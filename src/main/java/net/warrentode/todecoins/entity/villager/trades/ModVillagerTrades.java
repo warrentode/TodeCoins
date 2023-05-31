@@ -21,70 +21,70 @@ import static net.warrentode.todecoins.TodeCoins.MODID;
 import static net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsSaleSetForItemsTrade.*;
 
 public class ModVillagerTrades {
-    static int villagerLevel1 = 1;
-    static int villagerLevel2 = 2;
-    static int villagerLevel3 = 3;
-    static int villagerLevel4 = 4;
-    static int villagerLevel5 = 5;
+    static int novice = 1;
+    static int apprentice = 2;
+    static int journeyman = 3;
+    static int expert = 4;
+    static int master = 5;
 
     @Mod.EventBusSubscriber(modid = MODID)
     public static class ForgeEvents {
         @SubscribeEvent
         public static void addCustomTrades(VillagerTradesEvent event) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+
             // BANKER TRADES SET
             if (event.getType() == ModVillagers.BANKER.get()) {
-                Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-
-                trades.get(villagerLevel1).add(new ItemsForItemsTrade(
+                trades.get(novice).add(new ItemsForItemsTrade(
                         ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
                         Items.EMERALD.getDefaultInstance(), 1,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_1_SELL, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel1).add(new ItemsForItemsTrade(
+                trades.get(novice).add(new ItemsForItemsTrade(
                         Items.EMERALD.getDefaultInstance(), 1,
                         ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_1_BUY, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
 
-                trades.get(villagerLevel2).add(new ItemsForItemsTrade(
+                trades.get(apprentice).add(new ItemsForItemsTrade(
                         ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 1,
                         ModItems.COPPER_COIN.get().asItem().getDefaultInstance(), 2,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_2_SELL, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel2).add(new ItemsForItemsTrade(
+                trades.get(apprentice).add(new ItemsForItemsTrade(
                         ModItems.COPPER_COIN.get().asItem().getDefaultInstance(), 2,
                         ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 1,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_2_BUY, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
 
-                trades.get(villagerLevel3).add(new ItemsForItemsTrade(
+                trades.get(journeyman).add(new ItemsForItemsTrade(
                         ModItems.GOLD_COIN.get().asItem().getDefaultInstance(), 1,
                         ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 2,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_3_SELL, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel3).add(new ItemsForItemsTrade(
+                trades.get(journeyman).add(new ItemsForItemsTrade(
                         ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 2,
                         ModItems.GOLD_COIN.get().asItem().getDefaultInstance(), 1,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_3_BUY, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
 
-                trades.get(villagerLevel3).add(new ItemsForItemsTrade(
+                trades.get(journeyman).add(new ItemsForItemsTrade(
                         ModItems.GOLD_COIN.get().asItem().getDefaultInstance(), 1,
                         ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 2,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_3_SELL, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel3).add(new ItemsForItemsTrade(
+                trades.get(journeyman).add(new ItemsForItemsTrade(
                         ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 2,
                         ModItems.GOLD_COIN.get().asItem().getDefaultInstance(), 1,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_3_BUY, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
 
-                trades.get(villagerLevel4).add(new ItemsForItemsTrade(
+                trades.get(expert).add(new ItemsForItemsTrade(
                         ModItems.EMERALD_BANK_NOTE.get().asItem().getDefaultInstance(), 1,
                         Items.EMERALD.asItem().getDefaultInstance(), 64,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_4_SELL, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel4).add(new ItemsForItemsTrade(
+                trades.get(expert).add(new ItemsForItemsTrade(
                         Items.EMERALD.asItem().getDefaultInstance(), 64,
                         ModItems.EMERALD_BANK_NOTE.get().asItem().getDefaultInstance(), 1,
                         COMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_4_BUY, ItemsForItemsTrade.LOW_TIER_PRICE_MULTIPLIER));
 
-                trades.get(villagerLevel5).add(new ItemsForItemsTrade(
+                trades.get(master).add(new ItemsForItemsTrade(
                         ModItems.NETHERITE_COIN.get().asItem().getDefaultInstance(), 2,
                         ModItems.EMERALD_BANK_NOTE.get().asItem().getDefaultInstance(), 1,
                         UNCOMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_5_TRADE, ItemsForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel5).add(new ItemsForItemsTrade(
+                trades.get(master).add(new ItemsForItemsTrade(
                         ModItems.EMERALD_BANK_NOTE.get().asItem().getDefaultInstance(), 1,
                         ModItems.NETHERITE_COIN.get().asItem().getDefaultInstance(), 1,
                         UNCOMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_5_TRADE, ItemsForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER));
@@ -92,41 +92,40 @@ public class ModVillagerTrades {
 
             // LEPRECHAUN TRADES SET
             if (event.getType() == ModVillagers.LEPRECHAUN.get()) {
-                Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-                trades.get(villagerLevel1).add(new ItemsForItemsTrade(ModItems.EMERALD_QUARTER_BANK_NOTE.get().getDefaultInstance(), 1,
+                trades.get(novice).add(new ItemsForItemsTrade(ModItems.EMERALD_QUARTER_BANK_NOTE.get().getDefaultInstance(), 1,
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 11,
                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_1_BUY, ItemsForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER
                 ));
-                trades.get(villagerLevel1).add(new ItemsForItemsTrade(ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 11,
+                trades.get(novice).add(new ItemsForItemsTrade(ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 11,
                         ModItems.EMERALD_QUARTER_BANK_NOTE.get().getDefaultInstance(), 1,
                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_1_SELL, ItemsForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER
                 ));
 
-                trades.get(villagerLevel2).add(new ItemsForItemsTrade(ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 1,
+                trades.get(apprentice).add(new ItemsForItemsTrade(ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 1,
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 21,
                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_2_BUY, ItemsForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER
                 ));
-                trades.get(villagerLevel2).add(new ItemsForItemsTrade(ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 21,
+                trades.get(apprentice).add(new ItemsForItemsTrade(ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 21,
                         ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 1,
                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_2_SELL, ItemsForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER
                 ));
 
-                trades.get(villagerLevel3).add(new ItemsForItemsTrade(ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 1,
+                trades.get(journeyman).add(new ItemsForItemsTrade(ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 1,
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 43,
                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_3_BUY, ItemsForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER
                 ));
-                trades.get(villagerLevel3).add(new ItemsForItemsTrade(ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 43,
+                trades.get(journeyman).add(new ItemsForItemsTrade(ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 43,
                         ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 1,
                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY, ItemsForItemsTrade.XP_LEVEL_3_SELL, ItemsForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER
                 ));
 
-                trades.get(villagerLevel4).add(new ItemsSaleSetForItemsTrade(ImmutableSet.of(Items.PRISMARINE_SHARD, Items.NAME_TAG), 1,
+                trades.get(expert).add(new ItemsSaleSetForItemsTrade(ImmutableSet.of(Items.PRISMARINE_SHARD, Items.NAME_TAG), 1,
                         ModItems.EMERALD_QUARTER_BANK_NOTE.get().asItem().getDefaultInstance(), 1,
                         UNCOMMON_ITEMS_SUPPLY, XP_LEVEL_4_SELL, HIGH_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel4).add(new ItemsForItemsTrade(Items.REDSTONE_BLOCK.getDefaultInstance(), 2,
+                trades.get(expert).add(new ItemsForItemsTrade(Items.REDSTONE_BLOCK.getDefaultInstance(), 2,
                         ModItems.EMERALD_QUARTER_BANK_NOTE.get().getDefaultInstance(), 2,
                         UNCOMMON_ITEMS_SUPPLY, XP_LEVEL_4_SELL, HIGH_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel4).add(new ItemsSaleSetForItemsTrade(
+                trades.get(expert).add(new ItemsSaleSetForItemsTrade(
                         ImmutableSet.of(
                                 Items.PRISMARINE_CRYSTALS,
                                 Items.BELL,
@@ -137,22 +136,22 @@ public class ModVillagerTrades {
                         ), 1,
                         ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 1,
                         UNCOMMON_ITEMS_SUPPLY, XP_LEVEL_4_SELL, HIGH_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel4).add(new ItemsForItemsTrade(Items.PRISMARINE.getDefaultInstance(), 1,
+                trades.get(expert).add(new ItemsForItemsTrade(Items.PRISMARINE.getDefaultInstance(), 1,
                         ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 4,
                         UNCOMMON_ITEMS_SUPPLY, XP_LEVEL_4_SELL, HIGH_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel4).add(new ItemsAndItemsForItemsTrade(
+                trades.get(expert).add(new ItemsAndItemsForItemsTrade(
                         Blocks.SEA_LANTERN.asItem().getDefaultInstance(), 1,
                         ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 3,
                         ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 1,
                         UNCOMMON_ITEMS_SUPPLY, XP_LEVEL_4_SELL, HIGH_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel4).add(new ItemsSaleSetForItemsTrade(
+                trades.get(expert).add(new ItemsSaleSetForItemsTrade(
                         ImmutableSet.of(Items.NETHER_STAR, Items.NETHERITE_INGOT), 1,
                         ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 9,
                         UNCOMMON_ITEMS_SUPPLY, XP_LEVEL_4_SELL, HIGH_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel5).add(new ItemsForItemsTrade(ModItems.LUCKY_COIN.get().getDefaultInstance(), 1,
+                trades.get(master).add(new ItemsForItemsTrade(ModItems.LUCKY_COIN.get().getDefaultInstance(), 1,
                         ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 3,
                         1, XP_LEVEL_4_SELL, HIGH_TIER_PRICE_MULTIPLIER));
-                trades.get(villagerLevel5).add(new ItemsForItemsTrade(ModItems.NETHERITE_COIN.get().getDefaultInstance(), 1,
+                trades.get(master).add(new ItemsForItemsTrade(ModItems.NETHERITE_COIN.get().getDefaultInstance(), 1,
                         ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 1,
                         UNCOMMON_ITEMS_SUPPLY, XP_LEVEL_4_SELL, HIGH_TIER_PRICE_MULTIPLIER));
             }

@@ -2,7 +2,7 @@
   "type": "todecoins:add_four_leaf_clover",
   "conditions": [
     {
-      "condition": "todecoins:blocktag",
+      "condition": "minecraft:blocktag",
       "block": "todecoins:drops_four_leaf_clover"
     }
   ],
