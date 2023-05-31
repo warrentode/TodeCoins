@@ -28,8 +28,8 @@ public class AddFourLeafCloverModifier extends LootModifier {
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, @NotNull LootContext context) {
-        if (context.getRandom().nextFloat() >= 0.5f) {
-            generatedLoot.add(new ItemStack(item));
+        if (context.getRandom().nextFloat() >= 0.99f) {
+            generatedLoot.add(new ItemStack(item, 1));
         }
 
         return generatedLoot;
