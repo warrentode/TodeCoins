@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-30T15:49:23.4938373	LootTables
+// 1.19.2	2023-06-07T22:57:59.8689522	LootTables
 b8db3795527ad4f7b05c2b0ef327f40a3e615c7e data/todecoins/loot_tables/blocks/coin_press.json
 d779866a4ec560311f2219e1fbc548fa51b1ed20 data/todecoins/loot_tables/blocks/copper_coin_bag.json
 e15dc48a880448b70f0a47c600b2a51e9cf0acfe data/todecoins/loot_tables/blocks/emerald_bank_note_bag.json
@@ -57,5 +57,5 @@ acb80bd512e1fa418552b518a64502dcce192dd9 data/todecoins/loot_tables/gameplay/bar
 c4b6193a2bc15095fa9e0060b4b9b8cb2c29f11f data/todecoins/loot_tables/gameplay/bartering/piglin_event_barter_loot.json
 d4e993134e9efb94012ababd3c8dd5ec14e801a2 data/todecoins/loot_tables/gameplay/hero_of_the_village/banker_gift.json
 a50ae575ada011bf9c3d706804655ef2b6132236 data/todecoins/loot_tables/gameplay/hero_of_the_village/leprechaun_gift.json
-8c89d9d6a8e29ae7c0667ce043d73fcfcf25d5e7 data/todecoins/loot_tables/gameplay/hero_of_the_village/todecoins_coin_gift_loot.json
+739db973057ddc255f4f273e3fe95604a91a82e6 data/todecoins/loot_tables/gameplay/hero_of_the_village/todecoins_coin_gift_loot.json
 1a9f6489f47ece6ceb8267d3cc660e5d2e2d5fde data/todecoins/loot_tables/gameplay/hero_of_the_village/todecoins_hero_coin_loot.json

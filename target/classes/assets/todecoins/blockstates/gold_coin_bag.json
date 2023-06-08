@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "todecoins:block/gold_coin_bag"
+        }
+    }
+}

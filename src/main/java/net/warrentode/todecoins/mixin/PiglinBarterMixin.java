@@ -100,15 +100,20 @@ public abstract class PiglinBarterMixin {
                 }
                 if (netherGoldCoin) {
                     throwItems(piglin, todecoins_getNetherGoldCoinBarterResponseItems(piglin));
-                } else if (shouldBarter && isWearingNetheritePiglinCoin(player)) {
+                }
+                else if (shouldBarter && isWearingNetheritePiglinCoin(player)) {
                     throwItems(piglin, todecoins_getNetheritePiglinCoinBarterResponseItems(piglin));
-                } else if (shouldBarter && isWearingGoldPiglinCoin(player)) {
+                }
+                else if (shouldBarter && isWearingGoldPiglinCoin(player)) {
                     throwItems(piglin, todecoins_getGoldPiglinCoinBarterResponseItems(piglin));
-                } else if (shouldBarter && isWearingIronPiglinCoin(player)) {
+                }
+                else if (shouldBarter && isWearingIronPiglinCoin(player)) {
                     throwItems(piglin, todecoins_getIronPiglinCoinBarterResponseItems(piglin));
-                } else if (shouldBarter && isWearingCopperPiglinCoin(player)) {
+                }
+                else if (shouldBarter && isWearingCopperPiglinCoin(player)) {
                     throwItems(piglin, todecoins_getCopperPiglinCoinBarterResponseItems(piglin));
-                } else {
+                }
+                else {
                     throwItems(piglin, getBarterResponseItems(piglin));
                 }
                 ci.cancel();

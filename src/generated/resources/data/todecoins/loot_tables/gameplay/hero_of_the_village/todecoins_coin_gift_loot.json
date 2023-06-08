@@ -18,23 +18,32 @@
           "name": "todecoins:chests/collectible/todecoins_birthday_coin_loot"
         },
         {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:anniversary_condition"
-            }
-          ],
-          "name": "todecoins:chests/collectible/todecoins_anniversary_coin_loot"
+            "type": "minecraft:loot_table",
+            "conditions": [
+                {
+                    "condition": "todecoins:anniversary_condition"
+                }
+            ],
+            "name": "todecoins:chests/collectible/todecoins_anniversary_coin_loot"
         },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:christmas_condition"
-            }
-          ],
-          "name": "todecoins:chests/collectible/todecoins_christmas_coin_loot"
-        }
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:christmas_condition"
+                  }
+              ],
+              "name": "todecoins:chests/collectible/todecoins_halloween_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:christmas_condition"
+                  }
+              ],
+              "name": "todecoins:chests/collectible/todecoins_christmas_coin_loot"
+          }
       ],
       "rolls": 1.0
     }

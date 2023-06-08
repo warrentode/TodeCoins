@@ -1,0 +1,113 @@
+{
+    "coin_press_use": {
+        "subtitle": "subtitles.todecoins.coin_press_use",
+        "sounds": [
+            {
+                "name": "minecraft:random/anvil_use",
+                "weight": 10,
+                "pitch": 2
+            },
+            {
+                "name": "todecoins:coin_press_use"
+            }
+        ]
+    },
+    "coin_press_take": {
+        "subtitle": "subtitles.todecoins.coin_press_take",
+        "sounds": [
+            {
+                "name": "todecoins:coin_press_take"
+            },
+            {
+                "name": "minecraft:block/chain/break1",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/break2",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/break3",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/break4",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:note/icechime",
+                "weight": 3
+            }
+        ]
+    },
+    "work_banker": {
+        "subtitle": "subtitles.todecoins.work_banker",
+        "sounds": [
+            {
+                "name": "todecoins:work_banker"
+            },
+            {
+                "name": "minecraft:block/chain/step1",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/step2",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/step3",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/step4",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/step5",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/step6",
+                "weight": 3,
+                "pitch": 1.5
+            }
+        ]
+    },
+    "work_leprechaun": {
+        "subtitle": "subtitles.todecoins.work_leprechaun",
+        "sounds": [
+            {
+                "name": "todecoins:work_leprechaun"
+            },
+            {
+                "name": "minecraft:block/chain/break1",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/break2",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/break3",
+                "weight": 3,
+                "pitch": 1.5
+            },
+            {
+                "name": "minecraft:block/chain/break4",
+                "weight": 3,
+                "pitch": 1.5
+            }
+        ]
+    }
+}

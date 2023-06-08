@@ -36,10 +36,8 @@ public class ModItems {
             () -> new CoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.TODECOINSTAB)));
     public static final RegistryObject<Item> IRON_COIN = ITEMS.register("iron_coin",
             () -> new CoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.TODECOINSTAB)));
-    public static final RegistryObject<Item> GOLD_COIN = ITEMS.register("gold_coin",
-            () -> new CoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.TODECOINSTAB)));
-    public static final RegistryObject<Item> NETHERITE_COIN = ITEMS.register("netherite_coin",
-            () -> new BankNoteItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.TODECOINSTAB)));
+    public static final RegistryObject<Item> GOLD_COIN = ITEMS.register("gold_coin", () -> new CoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.TODECOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_COIN = ITEMS.register("netherite_coin", () -> new CoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.TODECOINSTAB)));
 
     public static final RegistryObject<Item> LUCKY_COIN = ITEMS.register("lucky_coin",
             () -> new LuckyCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.TODECOINSTAB)));

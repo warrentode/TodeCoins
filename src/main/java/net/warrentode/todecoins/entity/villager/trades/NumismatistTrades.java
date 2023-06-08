@@ -8,8 +8,8 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.warrentode.todecoins.block.ModBlocks;
+import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemForItemTrade;
 import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsForItemsBuySetTrade;
-import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsForItemsTrade;
 import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsSaleSetForItemsBuySetTrade;
 import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsSaleSetForItemsTrade;
 import net.warrentode.todecoins.item.ModItems;
@@ -56,48 +56,18 @@ public class NumismatistTrades {
                 ImmutableMap.of(
                         rarityLevel1, new VillagerTrades.ItemListing[]{
                                 // newest coins - buy with copper coins
-                                new ItemsForItemsTrade(
-                                        ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1, ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // newest coins - buy with other coins
-                                new ItemsForItemsBuySetTrade(
-                                        ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ImmutableSet.of(
-                                                ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                new ItemsForItemsBuySetTrade(ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1, ImmutableSet.of(ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance().getItem(), ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem()), 1, ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY, ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // old coins - all old coins in one pool - buy with copper coins
-                                new ItemsForItemsTrade(
-                                        ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1, ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // old coins - all old coins in one pool - buy with other coins
-                                new ItemsForItemsBuySetTrade(
-                                        ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ImmutableSet.of(
-                                                ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                new ItemsForItemsBuySetTrade(ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1, ImmutableSet.of(ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -112,41 +82,13 @@ public class NumismatistTrades {
                         },
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // bundle for new coin
-                                new ItemsForItemsTrade(
-                                        Items.BUNDLE.asItem().getDefaultInstance(), 1,
-                                        ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(Items.BUNDLE.asItem().getDefaultInstance(), 1, ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // ender chest for new coin
-                                new ItemsForItemsTrade(
-                                        Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1,
-                                        ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1, ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // shulker boxes for new coin
-                                new ItemsSaleSetForItemsTrade(
-                                        ImmutableSet.of(
-                                                Blocks.SHULKER_BOX.asItem(),
-                                                Blocks.BLACK_SHULKER_BOX.asItem(),
-                                                Blocks.BLUE_SHULKER_BOX.asItem(),
-                                                Blocks.BROWN_SHULKER_BOX.asItem(),
-                                                Blocks.CYAN_SHULKER_BOX.asItem(),
-                                                Blocks.GRAY_SHULKER_BOX.asItem(),
-                                                Blocks.GREEN_SHULKER_BOX.asItem(),
+                                new ItemsSaleSetForItemsTrade(ImmutableSet.of(Blocks.SHULKER_BOX.asItem(), Blocks.BLACK_SHULKER_BOX.asItem(), Blocks.BLUE_SHULKER_BOX.asItem(), Blocks.BROWN_SHULKER_BOX.asItem(), Blocks.CYAN_SHULKER_BOX.asItem(), Blocks.GRAY_SHULKER_BOX.asItem(), Blocks.GREEN_SHULKER_BOX.asItem(),
                                                 Blocks.LIGHT_BLUE_SHULKER_BOX.asItem(),
-                                                Blocks.LIGHT_GRAY_SHULKER_BOX.asItem(),
-                                                Blocks.LIME_SHULKER_BOX.asItem(),
-                                                Blocks.MAGENTA_SHULKER_BOX.asItem(),
-                                                Blocks.ORANGE_SHULKER_BOX.asItem(),
-                                                Blocks.PINK_SHULKER_BOX.asItem(),
-                                                Blocks.PURPLE_SHULKER_BOX.asItem(),
-                                                Blocks.RED_SHULKER_BOX.asItem(),
-                                                Blocks.WHITE_SHULKER_BOX.asItem(),
-                                                Blocks.YELLOW_SHULKER_BOX.asItem()
-                                        ), 1,
-                                        ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0)
+                                                Blocks.LIGHT_GRAY_SHULKER_BOX.asItem(), Blocks.LIME_SHULKER_BOX.asItem(), Blocks.MAGENTA_SHULKER_BOX.asItem(), Blocks.ORANGE_SHULKER_BOX.asItem(), Blocks.PINK_SHULKER_BOX.asItem(), Blocks.PURPLE_SHULKER_BOX.asItem(), Blocks.RED_SHULKER_BOX.asItem(), Blocks.WHITE_SHULKER_BOX.asItem(), Blocks.YELLOW_SHULKER_BOX.asItem()), 1, ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0)
                         }
                 )
         );
@@ -157,48 +99,18 @@ public class NumismatistTrades {
                 ImmutableMap.of(
                         rarityLevel1, new VillagerTrades.ItemListing[]{
                                 // newest coins - buy with copper coins
-                                new ItemsForItemsTrade(
-                                        ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1, ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // newest coins - buy with other coins
-                                new ItemsForItemsBuySetTrade(
-                                        ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ImmutableSet.of(
-                                                ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                new ItemsForItemsBuySetTrade(ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1, ImmutableSet.of(ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance().getItem(), ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem()), 1, ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY, ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // old coins - all old coins in one pool - buy with copper coins
-                                new ItemsForItemsTrade(
-                                        ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1, ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // old coins - all old coins in one pool - buy with other coins
-                                new ItemsForItemsBuySetTrade(
-                                        ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ImmutableSet.of(
-                                                ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                new ItemsForItemsBuySetTrade(ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1, ImmutableSet.of(ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -213,41 +125,13 @@ public class NumismatistTrades {
                         },
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // bundle for new coin
-                                new ItemsForItemsTrade(
-                                        Items.BUNDLE.asItem().getDefaultInstance(), 1,
-                                        ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(Items.BUNDLE.asItem().getDefaultInstance(), 1, ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // ender chest for new coin
-                                new ItemsForItemsTrade(
-                                        Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1,
-                                        ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1, ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // shulker boxes for new coin
-                                new ItemsSaleSetForItemsTrade(
-                                        ImmutableSet.of(
-                                                Blocks.SHULKER_BOX.asItem(),
-                                                Blocks.BLACK_SHULKER_BOX.asItem(),
-                                                Blocks.BLUE_SHULKER_BOX.asItem(),
-                                                Blocks.BROWN_SHULKER_BOX.asItem(),
-                                                Blocks.CYAN_SHULKER_BOX.asItem(),
-                                                Blocks.GRAY_SHULKER_BOX.asItem(),
-                                                Blocks.GREEN_SHULKER_BOX.asItem(),
+                                new ItemsSaleSetForItemsTrade(ImmutableSet.of(Blocks.SHULKER_BOX.asItem(), Blocks.BLACK_SHULKER_BOX.asItem(), Blocks.BLUE_SHULKER_BOX.asItem(), Blocks.BROWN_SHULKER_BOX.asItem(), Blocks.CYAN_SHULKER_BOX.asItem(), Blocks.GRAY_SHULKER_BOX.asItem(), Blocks.GREEN_SHULKER_BOX.asItem(),
                                                 Blocks.LIGHT_BLUE_SHULKER_BOX.asItem(),
-                                                Blocks.LIGHT_GRAY_SHULKER_BOX.asItem(),
-                                                Blocks.LIME_SHULKER_BOX.asItem(),
-                                                Blocks.MAGENTA_SHULKER_BOX.asItem(),
-                                                Blocks.ORANGE_SHULKER_BOX.asItem(),
-                                                Blocks.PINK_SHULKER_BOX.asItem(),
-                                                Blocks.PURPLE_SHULKER_BOX.asItem(),
-                                                Blocks.RED_SHULKER_BOX.asItem(),
-                                                Blocks.WHITE_SHULKER_BOX.asItem(),
-                                                Blocks.YELLOW_SHULKER_BOX.asItem()
-                                        ), 1,
-                                        ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0)
+                                                Blocks.LIGHT_GRAY_SHULKER_BOX.asItem(), Blocks.LIME_SHULKER_BOX.asItem(), Blocks.MAGENTA_SHULKER_BOX.asItem(), Blocks.ORANGE_SHULKER_BOX.asItem(), Blocks.PINK_SHULKER_BOX.asItem(), Blocks.PURPLE_SHULKER_BOX.asItem(), Blocks.RED_SHULKER_BOX.asItem(), Blocks.WHITE_SHULKER_BOX.asItem(), Blocks.YELLOW_SHULKER_BOX.asItem()), 1, ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0)
                         }
                 )
         );
@@ -389,48 +273,18 @@ public class NumismatistTrades {
                 ImmutableMap.of(
                         rarityLevel1, new VillagerTrades.ItemListing[]{
                                 // newest coins - buy with copper coins
-                                new ItemsForItemsTrade(
-                                        ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1, ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // newest coins - buy with other coins
-                                new ItemsForItemsBuySetTrade(
-                                        ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ImmutableSet.of(
-                                                ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                new ItemsForItemsBuySetTrade(ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1, ImmutableSet.of(ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance().getItem(), ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance().getItem()), 1, ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY, ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // old coins - all old coins in one pool - buy with copper coins
-                                new ItemsForItemsTrade(
-                                        ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1, ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // old coins - all old coins in one pool - buy with other coins
-                                new ItemsForItemsBuySetTrade(
-                                        ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ImmutableSet.of(
-                                                ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                new ItemsForItemsBuySetTrade(ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1, ImmutableSet.of(ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(), ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -445,41 +299,13 @@ public class NumismatistTrades {
                         },
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // bundle for new coin
-                                new ItemsForItemsTrade(
-                                        Items.BUNDLE.asItem().getDefaultInstance(), 1,
-                                        ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(Items.BUNDLE.asItem().getDefaultInstance(), 1, ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // ender chest for new coin
-                                new ItemsForItemsTrade(
-                                        Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1,
-                                        ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemForItemTrade(Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1, ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0),
                                 // shulker boxes for new coin
-                                new ItemsSaleSetForItemsTrade(
-                                        ImmutableSet.of(
-                                                Blocks.SHULKER_BOX.asItem(),
-                                                Blocks.BLACK_SHULKER_BOX.asItem(),
-                                                Blocks.BLUE_SHULKER_BOX.asItem(),
-                                                Blocks.BROWN_SHULKER_BOX.asItem(),
-                                                Blocks.CYAN_SHULKER_BOX.asItem(),
-                                                Blocks.GRAY_SHULKER_BOX.asItem(),
-                                                Blocks.GREEN_SHULKER_BOX.asItem(),
+                                new ItemsSaleSetForItemsTrade(ImmutableSet.of(Blocks.SHULKER_BOX.asItem(), Blocks.BLACK_SHULKER_BOX.asItem(), Blocks.BLUE_SHULKER_BOX.asItem(), Blocks.BROWN_SHULKER_BOX.asItem(), Blocks.CYAN_SHULKER_BOX.asItem(), Blocks.GRAY_SHULKER_BOX.asItem(), Blocks.GREEN_SHULKER_BOX.asItem(),
                                                 Blocks.LIGHT_BLUE_SHULKER_BOX.asItem(),
-                                                Blocks.LIGHT_GRAY_SHULKER_BOX.asItem(),
-                                                Blocks.LIME_SHULKER_BOX.asItem(),
-                                                Blocks.MAGENTA_SHULKER_BOX.asItem(),
-                                                Blocks.ORANGE_SHULKER_BOX.asItem(),
-                                                Blocks.PINK_SHULKER_BOX.asItem(),
-                                                Blocks.PURPLE_SHULKER_BOX.asItem(),
-                                                Blocks.RED_SHULKER_BOX.asItem(),
-                                                Blocks.WHITE_SHULKER_BOX.asItem(),
-                                                Blocks.YELLOW_SHULKER_BOX.asItem()
-                                        ), 1,
-                                        ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1,
-                                        ItemsForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsForItemsTrade.XP_LEVEL_1_SELL, 0)
+                                                Blocks.LIGHT_GRAY_SHULKER_BOX.asItem(), Blocks.LIME_SHULKER_BOX.asItem(), Blocks.MAGENTA_SHULKER_BOX.asItem(), Blocks.ORANGE_SHULKER_BOX.asItem(), Blocks.PINK_SHULKER_BOX.asItem(), Blocks.PURPLE_SHULKER_BOX.asItem(), Blocks.RED_SHULKER_BOX.asItem(), Blocks.WHITE_SHULKER_BOX.asItem(), Blocks.YELLOW_SHULKER_BOX.asItem()), 1, ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance(), 1, ItemForItemTrade.UNCOMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_1_SELL, 0)
                         }
                 )
         );

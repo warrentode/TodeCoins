@@ -1,0 +1,10 @@
+{
+    "type": "todecoins:add_loot_table",
+    "conditions": [
+        {
+            "condition": "forge:loot_table_id",
+            "loot_table_id": "todecoins:chests/todecoins_emerald_half_bank_note_loot"
+        }
+    ],
+    "lootTable": "todecoins:chests/todecoins_emerald_half_bank_note_loot"
+}

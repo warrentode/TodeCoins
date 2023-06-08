@@ -53,6 +53,7 @@ public class TodeCoins {
     public static final String MODID = "todecoins";
     public static final Logger LOGGER = LogManager.getLogger();
     private static boolean curiosLoaded = false;
+    private static boolean bagOfHolding = false;
 
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -79,10 +80,15 @@ public class TodeCoins {
         ModLootItemConditions.register(modEventBus);
 
         curiosLoaded = ModList.get().isLoaded("curios");
+        bagOfHolding = ModList.get().isLoaded("bagofholding");
     }
 
     public static boolean isCuriosLoaded() {
         return curiosLoaded;
+    }
+
+    public static boolean isBagOfHoldingLoaded() {
+        return bagOfHolding;
     }
 
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
@@ -90,10 +96,7 @@ public class TodeCoins {
         event.enqueueWork(ModVillagers::init);
         event.enqueueWork(() -> {
             //noinspection deprecation
-            SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(),
-                    SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Mob::checkMobSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
         });
     }
 
@@ -126,6 +129,7 @@ public class TodeCoins {
         }
         return slot.get();
     }
+
 
     private void setup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {

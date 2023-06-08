@@ -8,7 +8,9 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ItemsForItemsTrade implements VillagerTrades.ItemListing {
+// MIT License Copyright (c) 2023 Warren Tode
+
+public class ItemForItemTrade implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;
     public static final int UNCOMMON_ITEMS_SUPPLY = 3;
@@ -32,7 +34,7 @@ public class ItemsForItemsTrade implements VillagerTrades.ItemListing {
     private final int xpValue;
     private final float priceMultiplier;
 
-    public ItemsForItemsTrade(ItemStack sellItem, int sellItemCount, ItemStack buyItem, int buyItemCount, int maxUses, int xpValue, float priceMultiplier) {
+    public ItemForItemTrade(ItemStack sellItem, int sellItemCount, ItemStack buyItem, int buyItemCount, int maxUses, int xpValue, float priceMultiplier) {
         this.sellItem = sellItem;
         this.sellItemCount = sellItemCount;
         this.buyItem = buyItem;

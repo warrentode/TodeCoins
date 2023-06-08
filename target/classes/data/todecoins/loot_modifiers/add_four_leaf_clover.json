@@ -1,0 +1,10 @@
+{
+    "conditions": [
+        {
+            "condition": "todecoins:blocktag_condition",
+            "blocktag": "todecoins:drops_four_leaf_clover"
+        }
+    ],
+    "type": "todecoins:add_four_leaf_clover",
+    "item": "todecoins:four_leaf_clover"
+}
