@@ -3,6 +3,7 @@ package net.warrentode.todecoins.datagen.tags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
@@ -14,6 +15,8 @@ import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
 import net.warrentode.todecoins.util.tags.SupplementariesTags;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class ItemTagsGen extends ItemTagsProvider {
     public ItemTagsGen(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
@@ -52,17 +55,27 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.SOUL_BINDER)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("cagerium:binding_gemstone")));
         tag(ModTags.Items.JAR_PLACEABLE)
                 .addTag(ModTags.Items.COLLECTIBLE_COINS)
                 .addTag(ForgeTags.Items.CURRENCY);
         tag(ModTags.Items.COLLECTIBLE_COINS)
-                .addTag(ModTags.Items.BIRTHDAY_COIN_SET)
-                .addTag(ModTags.Items.HALLOWEEN_COIN_SET)
-                .addTag(ModTags.Items.CHRISTMAS_COIN_SET)
+                .addTag(ModTags.Items.HOLIDAY_COIN_SET)
                 .addTag(ModTags.Items.PATRON_COIN_SET)
-                .addTag(ModTags.Items.HERO_COIN_SET)
-                .addTag(ModTags.Items.PIGLIN_COIN_SET)
-                .addTag(ModTags.Items.ENDERMAN_COIN_SET);
+                .addTag(ModTags.Items.GAMEPLAY_COIN_SET)
+                .addTag(ModTags.Items.ENTITY_COIN_SET);
+        tag(ModTags.Items.GAMEPLAY_COIN_SET)
+                .addTag(ModTags.Items.HERO_COIN_SET);
+        tag(ModTags.Items.HERO_COIN_SET)
+                .add(ModItems.COPPER_HERO_COIN.get())
+                .add(ModItems.IRON_HERO_COIN.get())
+                .add(ModItems.GOLD_HERO_COIN.get())
+                .add(ModItems.NETHERITE_HERO_COIN.get());
+        tag(ModTags.Items.HOLIDAY_COIN_SET)
+                .addTag(ModTags.Items.BIRTHDAY_COIN_SET)
+                .addTag(ModTags.Items.CHRISTMAS_COIN_SET)
+                .addTag(ModTags.Items.HALLOWEEN_COIN_SET);
         tag(ModTags.Items.CHRISTMAS_COIN_SET)
                 .add(ModItems.CHRISTMAS_COIN_2023.get());
         tag(ModTags.Items.HALLOWEEN_COIN_SET)
@@ -78,6 +91,51 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ModTags.Items.COSMOS_PATRON_COIN_SET)
                 .add(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
                 .add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
+        tag(ModTags.Items.ENTITY_COIN_SET)
+                .addTag(ModTags.Items.ALLAY_COIN_SET)
+                .addTag(ModTags.Items.AXOLOTL_COIN_SET)
+                .addTag(ModTags.Items.BAT_COIN_SET)
+                .addTag(ModTags.Items.BEE_COIN_SET)
+                .addTag(ModTags.Items.CAMEL_COIN_SET)
+                .addTag(ModTags.Items.CAT_COIN_SET)
+                .addTag(ModTags.Items.ENDERMAN_COIN_SET)
+                .addTag(ModTags.Items.OCELOT_COIN_SET)
+                .addTag(ModTags.Items.PIGLIN_COIN_SET);
+        tag(ModTags.Items.BEE_COIN_SET)
+                .add(ModItems.COPPER_BEE_COIN.get())
+                .add(ModItems.IRON_BEE_COIN.get())
+                .add(ModItems.GOLD_BEE_COIN.get())
+                .add(ModItems.NETHERITE_BEE_COIN.get());
+        tag(ModTags.Items.OCELOT_COIN_SET)
+                .add(ModItems.COPPER_OCELOT_COIN.get())
+                .add(ModItems.IRON_OCELOT_COIN.get())
+                .add(ModItems.GOLD_OCELOT_COIN.get())
+                .add(ModItems.NETHERITE_OCELOT_COIN.get());
+        tag(ModTags.Items.ALLAY_COIN_SET)
+                .add(ModItems.COPPER_ALLAY_COIN.get())
+                .add(ModItems.IRON_ALLAY_COIN.get())
+                .add(ModItems.GOLD_ALLAY_COIN.get())
+                .add(ModItems.NETHERITE_ALLAY_COIN.get());
+        tag(ModTags.Items.AXOLOTL_COIN_SET)
+                .add(ModItems.COPPER_AXOLOTL_COIN.get())
+                .add(ModItems.IRON_AXOLOTL_COIN.get())
+                .add(ModItems.GOLD_AXOLOTL_COIN.get())
+                .add(ModItems.NETHERITE_AXOLOTL_COIN.get());
+        tag(ModTags.Items.BAT_COIN_SET)
+                .add(ModItems.COPPER_BAT_COIN.get())
+                .add(ModItems.IRON_BAT_COIN.get())
+                .add(ModItems.GOLD_BAT_COIN.get())
+                .add(ModItems.NETHERITE_BAT_COIN.get());
+        tag(ModTags.Items.CAMEL_COIN_SET)
+                .add(ModItems.COPPER_CAMEL_COIN.get())
+                .add(ModItems.IRON_CAMEL_COIN.get())
+                .add(ModItems.GOLD_CAMEL_COIN.get())
+                .add(ModItems.NETHERITE_CAMEL_COIN.get());
+        tag(ModTags.Items.CAT_COIN_SET)
+                .add(ModItems.COPPER_CAT_COIN.get())
+                .add(ModItems.IRON_CAT_COIN.get())
+                .add(ModItems.GOLD_CAT_COIN.get())
+                .add(ModItems.NETHERITE_CAT_COIN.get());
         tag(ModTags.Items.ENDERMAN_COIN_SET)
                 .add(ModItems.COPPER_ENDERMAN_COIN.get())
                 .add(ModItems.IRON_ENDERMAN_COIN.get())
@@ -88,11 +146,6 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.IRON_PIGLIN_COIN.get())
                 .add(ModItems.GOLD_PIGLIN_COIN.get())
                 .add(ModItems.NETHERITE_PIGLIN_COIN.get());
-        tag(ModTags.Items.HERO_COIN_SET)
-                .add(ModItems.COPPER_HERO_COIN.get())
-                .add(ModItems.IRON_HERO_COIN.get())
-                .add(ModItems.GOLD_HERO_COIN.get())
-                .add(ModItems.NETHERITE_HERO_COIN.get());
         tag(ModTags.Items.SHULKER_BOXES)
                 .add(Blocks.SHULKER_BOX.asItem())
                 .add(Blocks.BLACK_SHULKER_BOX.asItem())
@@ -225,6 +278,11 @@ public class ItemTagsGen extends ItemTagsProvider {
         );
     }
     private void registerForgeTags() {
+        tag(Tags.Items.EGGS)
+                .add(Items.TURTLE_EGG)
+                .add(Items.EGG);
+        tag(Tags.Items.ENCHANTING_FUELS)
+                .add(Items.LAPIS_LAZULI);
         tag(ForgeTags.Items.GEMS)
                 .addTag(ForgeTags.Items.AMETHYST)
                 .addTag(ForgeTags.Items.DIAMOND)

@@ -1,0 +1,143 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:basalt_deltas"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:crimson_forest"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:nether_wastes"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_piglin_copper",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:basalt_deltas"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:crimson_forest"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:nether_wastes"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "condition": "todecoins:summer_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_piglin_iron",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:basalt_deltas"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:crimson_forest"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:nether_wastes"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_piglin_gold",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:basalt_deltas"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:crimson_forest"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:nether_wastes"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_piglin_netherite",
+                    "quality": 6
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

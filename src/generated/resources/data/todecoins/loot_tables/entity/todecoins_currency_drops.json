@@ -106,17 +106,97 @@
               "condition": "todecoins:christmas_condition"
             }
           ],
-          "name": "todecoins:entity/collectible/todecoins_christmas_coin_drops"
+            "name": "todecoins:entity/collectible/todecoins_christmas_coin_drops"
         },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:anniversary_condition"
-            }
-          ],
-          "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
-        }
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:anniversary_condition"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:allay"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_allay_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:axolotl"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_axolotl_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:bat"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_bat_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:bee"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_bee_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:camel"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_camel_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:cat"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_cat_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:enderman"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_enderman_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:piglin"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_piglin_coin_drops"
+          }
       ],
       "rolls": 1.0
     }

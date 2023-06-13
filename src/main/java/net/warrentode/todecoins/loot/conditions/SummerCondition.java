@@ -8,6 +8,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import net.warrentode.todecoins.util.CalendarUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +39,7 @@ public class SummerCondition implements LootItemCondition {
         @Nullable
         Boolean isSummer;
 
-        public SummerCondition.Builder setAnniversary(@Nullable Boolean isSummer) {
+        public SummerCondition.Builder setEvent(@Nullable Boolean isSummer) {
             this.isSummer = isSummer;
             return this;
         }

@@ -170,25 +170,9 @@ public class AdvancementsGen extends AdvancementProvider {
                     "collectibleCoins", FrameType.CHALLENGE, true, true, false)
                     .parent(luckyPenny)
                     .addCriterion("obtain_lucky_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.LUCKY_COIN.get()))
+
                     .addCriterion("find_collectible_coin_birthday", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRTHDAY_COIN_2023.get()))
-
-                    .addCriterion("find_collectible_coin_hero_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_HERO_COIN.get()))
-                    .addCriterion("find_collectible_coin_hero_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_HERO_COIN.get()))
-                    .addCriterion("find_collectible_coin_hero_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_HERO_COIN.get()))
-                    .addCriterion("find_collectible_coin_hero_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_HERO_COIN.get()))
-
-                    .addCriterion("find_collectible_coin_piglin_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIGLIN_COIN.get()))
-                    .addCriterion("find_collectible_coin_piglin_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PIGLIN_COIN.get()))
-                    .addCriterion("find_collectible_coin_piglin_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PIGLIN_COIN.get()))
-                    .addCriterion("find_collectible_coin_piglin_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIGLIN_COIN.get()))
-
-                    .addCriterion("find_collectible_coin_enderman_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ENDERMAN_COIN.get()))
-                    .addCriterion("find_collectible_coin_enderman_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ENDERMAN_COIN.get()))
-                    .addCriterion("find_collectible_coin_enderman_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ENDERMAN_COIN.get()))
-                    .addCriterion("find_collectible_coin_enderman_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ENDERMAN_COIN.get()))
-
                     .addCriterion("find_collectible_coin_halloween_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HALLOWEEN_COIN_2023.get()))
-
                     .addCriterion("find_collectible_coin_christmas", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHRISTMAS_COIN_2023.get()))
 
                     .addCriterion("find_collectible_coin_carnation_marshall_nash", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MARSHALL_NASH_CARNATION_COIN.get()))
@@ -196,6 +180,57 @@ public class AdvancementsGen extends AdvancementProvider {
 
                     .addCriterion("find_collectible_coin_carnation_trevor_brannigan", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get()))
                     .addCriterion("find_collectible_coin_cosmos_trevor_brannigan", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_hero_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_HERO_COIN.get()))
+                    .addCriterion("find_collectible_coin_hero_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_HERO_COIN.get()))
+                    .addCriterion("find_collectible_coin_hero_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_HERO_COIN.get()))
+                    .addCriterion("find_collectible_coin_hero_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_HERO_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_allay_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ALLAY_COIN.get()))
+                    .addCriterion("find_collectible_coin_allay_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ALLAY_COIN.get()))
+                    .addCriterion("find_collectible_coin_allay_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ALLAY_COIN.get()))
+                    .addCriterion("find_collectible_coin_allay_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ALLAY_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_axolotl_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_AXOLOTL_COIN.get()))
+                    .addCriterion("find_collectible_coin_axolotl_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_AXOLOTL_COIN.get()))
+                    .addCriterion("find_collectible_coin_axolotl_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_AXOLOTL_COIN.get()))
+                    .addCriterion("find_collectible_coin_axolotl_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_AXOLOTL_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_bat_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_BAT_COIN.get()))
+                    .addCriterion("find_collectible_coin_bat_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_BAT_COIN.get()))
+                    .addCriterion("find_collectible_coin_bat_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_BAT_COIN.get()))
+                    .addCriterion("find_collectible_coin_bat_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_BAT_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_bee_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_BEE_COIN.get()))
+                    .addCriterion("find_collectible_coin_bee_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_BEE_COIN.get()))
+                    .addCriterion("find_collectible_coin_bee_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_BEE_COIN.get()))
+                    .addCriterion("find_collectible_coin_bee_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_BEE_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_camel_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_CAMEL_COIN.get()))
+                    .addCriterion("find_collectible_coin_camel_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_CAMEL_COIN.get()))
+                    .addCriterion("find_collectible_coin_camel_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_CAMEL_COIN.get()))
+                    .addCriterion("find_collectible_coin_camel_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_CAMEL_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_cat_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_CAT_COIN.get()))
+                    .addCriterion("find_collectible_coin_cat_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_CAT_COIN.get()))
+                    .addCriterion("find_collectible_coin_cat_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_CAT_COIN.get()))
+                    .addCriterion("find_collectible_coin_cat_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_CAT_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_enderman_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ENDERMAN_COIN.get()))
+                    .addCriterion("find_collectible_coin_enderman_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ENDERMAN_COIN.get()))
+                    .addCriterion("find_collectible_coin_enderman_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ENDERMAN_COIN.get()))
+                    .addCriterion("find_collectible_coin_enderman_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ENDERMAN_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_ocelot_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_OCELOT_COIN.get()))
+                    .addCriterion("find_collectible_coin_ocelot_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_OCELOT_COIN.get()))
+                    .addCriterion("find_collectible_coin_ocelot_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_OCELOT_COIN.get()))
+                    .addCriterion("find_collectible_coin_ocelot_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_OCELOT_COIN.get()))
+
+                    .addCriterion("find_collectible_coin_piglin_copper", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIGLIN_COIN.get()))
+                    .addCriterion("find_collectible_coin_piglin_iron", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PIGLIN_COIN.get()))
+                    .addCriterion("find_collectible_coin_piglin_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PIGLIN_COIN.get()))
+                    .addCriterion("find_collectible_coin_piglin_netherite", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIGLIN_COIN.get()))
+
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_coins"));
         }
 

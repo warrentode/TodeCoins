@@ -8,6 +8,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import net.warrentode.todecoins.util.CalendarUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +39,7 @@ public class AnniversaryCondition implements LootItemCondition {
         @Nullable
         Boolean isAnniversary;
 
-        public AnniversaryCondition.Builder setAnniversary(@Nullable Boolean isAnniversary) {
+        public AnniversaryCondition.Builder setEvent(@Nullable Boolean isAnniversary) {
             this.isAnniversary = isAnniversary;
             return this;
         }

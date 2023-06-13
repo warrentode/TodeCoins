@@ -18,7 +18,7 @@ public class TextileItem extends Item {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.textile_item.hover").withStyle(ChatFormatting.GRAY));
+        tooltips.add(Component.translatable("tooltips.textile_item.hover").withStyle(ChatFormatting.DARK_GRAY));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

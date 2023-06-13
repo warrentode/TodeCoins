@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParam;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -24,6 +25,10 @@ public class BlockTagCondition implements LootItemCondition {
 
     public BlockTagCondition(TagKey<Block> blockTag) {
         this.blockTag = blockTag;
+    }
+
+    public static BlockTagCondition isTag(TagKey<Block> tag) {
+        return new BlockTagCondition(tag);
     }
 
     public @NotNull LootItemConditionType getType() {
@@ -60,7 +65,7 @@ public class BlockTagCondition implements LootItemCondition {
          * Serialize the value by putting its data into the JsonObject.
          */
         public void serialize(@NotNull JsonObject jsonObject, @NotNull BlockTagCondition condition, @NotNull JsonSerializationContext context) {
-            jsonObject.addProperty("blocktag", condition.blockTag.location().toString());
+            jsonObject.addProperty("tag", condition.blockTag.location().toString());
         }
 
         /**

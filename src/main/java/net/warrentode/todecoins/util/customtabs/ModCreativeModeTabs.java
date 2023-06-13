@@ -105,16 +105,51 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_HERO_COIN.get().getDefaultInstance());
-            // PIGLIN COIN SET
-            items.add(ModItems.COPPER_PIGLIN_COIN.get().getDefaultInstance());
-            items.add(ModItems.IRON_PIGLIN_COIN.get().getDefaultInstance());
-            items.add(ModItems.GOLD_PIGLIN_COIN.get().getDefaultInstance());
-            items.add(ModItems.NETHERITE_PIGLIN_COIN.get().getDefaultInstance());
+            // ALLAY COIN SET
+            items.add(ModItems.COPPER_ALLAY_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_ALLAY_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_ALLAY_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_ALLAY_COIN.get().getDefaultInstance());
+            // AXOLOTL COIN SET
+            items.add(ModItems.COPPER_AXOLOTL_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_AXOLOTL_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_AXOLOTL_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_AXOLOTL_COIN.get().getDefaultInstance());
+            // BAT COIN SET
+            items.add(ModItems.COPPER_BAT_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_BAT_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_BAT_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_BAT_COIN.get().getDefaultInstance());
+            // BEE COIN SET
+            items.add(ModItems.COPPER_BEE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_BEE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_BEE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_BEE_COIN.get().getDefaultInstance());
+            // CAMEL COIN SET
+            items.add(ModItems.COPPER_CAMEL_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_CAMEL_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_CAMEL_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_CAMEL_COIN.get().getDefaultInstance());
+            // CAT COIN SET
+            items.add(ModItems.COPPER_CAT_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_CAT_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_CAT_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_CAT_COIN.get().getDefaultInstance());
             // ENDERMAN COIN SET
             items.add(ModItems.COPPER_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_ENDERMAN_COIN.get().getDefaultInstance());
+            // OCELOT COIN SET
+            items.add(ModItems.COPPER_OCELOT_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_OCELOT_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_OCELOT_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_OCELOT_COIN.get().getDefaultInstance());
+            // PIGLIN COIN SET
+            items.add(ModItems.COPPER_PIGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PIGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PIGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PIGLIN_COIN.get().getDefaultInstance());
             // BIRTHDAY COIN
             items.add(ModItems.BIRTHDAY_COIN_2023.get().getDefaultInstance());
             // HALLOWEEN COIN SET

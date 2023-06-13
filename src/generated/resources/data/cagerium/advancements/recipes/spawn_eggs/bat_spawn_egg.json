@@ -1,0 +1,60 @@
+{
+    "advancements": [
+        {
+            "advancement": {
+                "parent": "cagerium:spawn_eggs/bat_spawn_egg",
+                "criteria": {
+                    "has_soul_binder": {
+                        "conditions": {
+                            "items": [
+                                {
+                                    "tag": "todecoins:soul_binder"
+                                }
+                            ]
+                        },
+                        "trigger": "minecraft:inventory_changed"
+                    }
+                },
+                "display": {
+                    "announce_to_chat": false,
+                    "description": {
+                        "text": "Optional Recipes for when Cagerium is Loaded"
+                    },
+                    "frame": "task",
+                    "hidden": false,
+                    "icon": {
+                        "item": "minecraft:pig_spawn_egg"
+                    },
+                    "show_toast": false,
+                    "title": {
+                        "text": "Spawn Egg Recipes"
+                    }
+                },
+                "requirements": [
+                    [
+                        "has_soul_binder"
+                    ]
+                ],
+                "rewards": {
+                    "recipes": [
+                        "cagerium:spawn_eggs/bat_spawn_egg"
+                    ]
+                }
+            },
+            "conditions": [
+                {
+                    "type": "forge:and",
+                    "values": [
+                        {
+                            "type": "forge:mod_loaded",
+                            "modid": "cagerium"
+                        },
+                        {
+                            "type": "forge:true"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -8,6 +8,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import net.warrentode.todecoins.util.CalendarUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +39,7 @@ public class BirthdayCondition implements LootItemCondition {
         @Nullable
         Boolean isBirthday;
 
-        public BirthdayCondition.Builder setBirthday(@Nullable Boolean isBirthday) {
+        public BirthdayCondition.Builder setEvent(@Nullable Boolean isBirthday) {
             this.isBirthday = isBirthday;
             return this;
         }

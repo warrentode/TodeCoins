@@ -3,11 +3,24 @@ package net.warrentode.todecoins.util.tags;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.structure.Structure;
 
 public class ForgeTags {
+    public static class EntityTypes {
+        public static final TagKey<EntityType<?>> ALLAY_TYPES = forgeEntityTypeTag("allay");
+        public static final TagKey<EntityType<?>> AXOLOTL_TYPES = forgeEntityTypeTag("axolotl");
+        public static final TagKey<EntityType<?>> BAT_TYPES = forgeEntityTypeTag("bat");
+        public static final TagKey<EntityType<?>> BEE_TYPES = forgeEntityTypeTag("bee");
+        public static final TagKey<EntityType<?>> CAMEL_TYPES = forgeEntityTypeTag("camel");
+        public static final TagKey<EntityType<?>> CAT_TYPES = forgeEntityTypeTag("cat");
+        public static final TagKey<EntityType<?>> ENDERMAN_TYPES = forgeEntityTypeTag("enderman");
+        public static final TagKey<EntityType<?>> OCELOT_TYPES = forgeEntityTypeTag("ocelot");
+        public static final TagKey<EntityType<?>> PIGLIN_TYPES = forgeEntityTypeTag("piglin");
+    }
+
     public static class Blocks {
         public static final TagKey<Block> STORAGE_BLOCKS = forgeBlockTag("storage_blocks");
         public static final TagKey<Block> CURRENCY_BLOCKS = forgeBlockTag("storage_blocks/currency_blocks");
@@ -81,12 +94,18 @@ public class ForgeTags {
         TagKey<Structure> ON_VILLAGE_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
     }
 
+    private static TagKey<EntityType<?>> forgeEntityTypeTag(String path) {
+        return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge", path));
+    }
+
     private static TagKey<Block> forgeBlockTag(String path) {
         return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("forge", path));
     }
+
     private static TagKey<Item> forgeItemTag(String path) {
         return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation("forge", path));
     }
+
     private static TagKey<Structure> forgeStructureTag(String path) {
         return TagKey.create(Registry.STRUCTURE_REGISTRY, new ResourceLocation("forge", path));
     }

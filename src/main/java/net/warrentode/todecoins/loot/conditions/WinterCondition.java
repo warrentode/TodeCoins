@@ -8,6 +8,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import net.warrentode.todecoins.util.CalendarUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +39,7 @@ public class WinterCondition implements LootItemCondition {
         @Nullable
         Boolean isWinter;
 
-        public WinterCondition.Builder setAnniversary(@Nullable Boolean isWinter) {
+        public WinterCondition.Builder setEvent(@Nullable Boolean isWinter) {
             this.isWinter = isWinter;
             return this;
         }

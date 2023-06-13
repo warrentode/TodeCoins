@@ -1,0 +1,12 @@
+// 1.19.2	2023-06-13T14:17:01.4314707	Tags for minecraft:entity_type
+70011fc296dd8a255dbdd79d17501368c0d7bd16 data/cagerium/tags/entity_types/bosses.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
+3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
+02aec88f31431075adfbe686a04413b122f9da98 data/forge/tags/entity_types/axolotl.json
+4cde89bfc4a145a3ba22cc55074c6c19ebbc6a09 data/forge/tags/entity_types/bat.json
+4c073b476785113705dfd3c6b286a337ddbd56b0 data/forge/tags/entity_types/bee.json
+3ccb6db5dd553b58514fc37d5cc36333c646c587 data/forge/tags/entity_types/camel.json
+69abcfe71fde77182196f7356eee4127eaf04a03 data/forge/tags/entity_types/cat.json
+6f8bc3eb93347d4d15c38a3b7cfbd2b796ac201c data/forge/tags/entity_types/enderman.json
+3e0f1c22c1e31318a7f8875c4b3ea72bd0fbc942 data/forge/tags/entity_types/ocelot.json
+fcf7bebab33ff2a152e0861b981a153d0a1e3af7 data/forge/tags/entity_types/piglin.json

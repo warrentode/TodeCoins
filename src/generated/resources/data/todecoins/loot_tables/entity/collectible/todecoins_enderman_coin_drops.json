@@ -12,36 +12,52 @@
         {
           "type": "minecraft:item",
           "conditions": [
-            {
-              "condition": "todecoins:spring_condition"
-            }
+              {
+                  "condition": "todecoins:entity_type_tag_condition",
+                  "tag": "forge:enderman"
+              },
+              {
+                  "condition": "todecoins:spring_condition"
+              }
           ],
           "name": "todecoins:collectible_coin_enderman_copper"
         },
         {
           "type": "minecraft:item",
           "conditions": [
-            {
-              "condition": "todecoins:summer_condition"
-            }
+              {
+                  "condition": "todecoins:entity_type_tag_condition",
+                  "tag": "forge:enderman"
+              },
+              {
+                  "condition": "todecoins:summer_condition"
+              }
           ],
           "name": "todecoins:collectible_coin_enderman_iron"
         },
         {
           "type": "minecraft:item",
           "conditions": [
-            {
-              "condition": "todecoins:spring_condition"
-            }
+              {
+                  "condition": "todecoins:entity_type_tag_condition",
+                  "tag": "forge:enderman"
+              },
+              {
+                  "condition": "todecoins:spring_condition"
+              }
           ],
           "name": "todecoins:collectible_coin_enderman_gold"
         },
         {
           "type": "minecraft:item",
           "conditions": [
-            {
-              "condition": "todecoins:spring_condition"
-            }
+              {
+                  "condition": "todecoins:entity_type_tag_condition",
+                  "tag": "forge:enderman"
+              },
+              {
+                  "condition": "todecoins:spring_condition"
+              }
           ],
           "name": "todecoins:collectible_coin_enderman_netherite"
         }

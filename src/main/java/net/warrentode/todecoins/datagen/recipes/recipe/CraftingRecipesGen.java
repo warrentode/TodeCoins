@@ -9,6 +9,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
 
 import java.util.function.Consumer;
@@ -101,14 +102,14 @@ public class CraftingRecipesGen {
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
-                .define('#', ModTags.Items.COPPER_NUGGET)
+                .define('#', ForgeTags.Items.COPPER_NUGGET)
                 .unlockedBy("has_copper_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_NUGGET.get()))
                 .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/copper_ingot"));
         ShapedRecipeBuilder.shaped(Items.NETHERITE_INGOT, 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
-                .define('#', ModTags.Items.NETHERITE_NUGGET)
+                .define('#', ForgeTags.Items.NETHERITE_NUGGET)
                 .unlockedBy("has_netherite_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_NUGGET.get()))
                 .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/netherite_ingot"));
 

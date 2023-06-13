@@ -322,17 +322,57 @@ public class NumismatistTrades {
                                                 ModItems.IRON_HERO_COIN.get().asItem(),
                                                 ModItems.GOLD_HERO_COIN.get().asItem(),
                                                 ModItems.NETHERITE_HERO_COIN.get().asItem()
-                                        ), 1,
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                                // copper piglin coin buy with other piglin coins
+                                // copper allay coin buy with other allay coins
                                 new ItemsForItemsBuySetTrade(
-                                        ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ModItems.COPPER_ALLAY_COIN.get().asItem().getDefaultInstance(), 1,
                                         ImmutableSet.of(
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
-                                                ModItems.GOLD_PIGLIN_COIN.get().asItem(),
-                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
-                                        ), 1,
+                                                ModItems.IRON_ALLAY_COIN.get().asItem(),
+                                                ModItems.GOLD_ALLAY_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ALLAY_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // copper axolotl coin buy with other axolotl coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.COPPER_AXOLOTL_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.IRON_AXOLOTL_COIN.get().asItem(),
+                                                ModItems.GOLD_AXOLOTL_COIN.get().asItem(),
+                                                ModItems.NETHERITE_AXOLOTL_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // copper bat coin buy with other bat coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.COPPER_BAT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.IRON_BAT_COIN.get().asItem(),
+                                                ModItems.GOLD_BAT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_BAT_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // copper camel coin buy with other camel coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.COPPER_CAMEL_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.IRON_CAMEL_COIN.get().asItem(),
+                                                ModItems.GOLD_CAMEL_COIN.get().asItem(),
+                                                ModItems.NETHERITE_CAMEL_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // copper cat coin buy with other cat coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.COPPER_CAT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.IRON_CAT_COIN.get().asItem(),
+                                                ModItems.GOLD_CAT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_CAT_COIN.get().asItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // copper enderman coin buy with other enderman coins
@@ -342,19 +382,45 @@ public class NumismatistTrades {
                                                 ModItems.IRON_ENDERMAN_COIN.get().asItem(),
                                                 ModItems.GOLD_ENDERMAN_COIN.get().asItem(),
                                                 ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
-                                        ), 1,
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                        },
+                                // copper ocelot coin buy with other ocelot coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.COPPER_OCELOT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.IRON_OCELOT_COIN.get().asItem(),
+                                                ModItems.GOLD_OCELOT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_OCELOT_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // copper piglin coin buy with other piglin coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                },
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // bundle buy with copper coins
                                 new ItemsForItemsBuySetTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ImmutableSet.of(
                                                 ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.COPPER_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0
                                 ),
@@ -363,9 +429,15 @@ public class NumismatistTrades {
                                         Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1,
                                         ImmutableSet.of(
                                                 ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.COPPER_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // shulker boxes buy with copper coins
@@ -391,9 +463,15 @@ public class NumismatistTrades {
                                         ), 1,
                                         ImmutableSet.of(
                                                 ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.COPPER_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0)
                         }
@@ -412,17 +490,57 @@ public class NumismatistTrades {
                                                 ModItems.COPPER_HERO_COIN.get().asItem(),
                                                 ModItems.GOLD_HERO_COIN.get().asItem(),
                                                 ModItems.NETHERITE_HERO_COIN.get().asItem()
-                                        ), 1,
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                                // iron piglin coin buy with other piglin coins
+                                // iron allay coin buy with other allay coins
                                 new ItemsForItemsBuySetTrade(
-                                        ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ModItems.IRON_ALLAY_COIN.get().asItem().getDefaultInstance(), 1,
                                         ImmutableSet.of(
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
-                                                ModItems.GOLD_PIGLIN_COIN.get().asItem(),
-                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
-                                        ), 1,
+                                                ModItems.COPPER_ALLAY_COIN.get().asItem(),
+                                                ModItems.GOLD_ALLAY_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ALLAY_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // iron axolotl coin buy with other axolotl coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.IRON_AXOLOTL_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_AXOLOTL_COIN.get().asItem(),
+                                                ModItems.GOLD_AXOLOTL_COIN.get().asItem(),
+                                                ModItems.NETHERITE_AXOLOTL_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // iron bat coin buy with other bat coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.IRON_BAT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_BAT_COIN.get().asItem(),
+                                                ModItems.GOLD_BAT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_BAT_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // iron camel coin buy with other camel coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.IRON_CAMEL_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_CAMEL_COIN.get().asItem(),
+                                                ModItems.GOLD_CAMEL_COIN.get().asItem(),
+                                                ModItems.NETHERITE_CAMEL_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // iron cat coin buy with other cat coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.IRON_CAT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_CAT_COIN.get().asItem(),
+                                                ModItems.GOLD_CAT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_CAT_COIN.get().asItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // iron enderman coin buy with other enderman coins
@@ -432,19 +550,45 @@ public class NumismatistTrades {
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
                                                 ModItems.GOLD_ENDERMAN_COIN.get().asItem(),
                                                 ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
-                                        ), 1,
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                        },
+                                // iron ocelot coin buy with other ocelot coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.IRON_OCELOT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_OCELOT_COIN.get().asItem(),
+                                                ModItems.GOLD_OCELOT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_OCELOT_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // iron piglin coin buy with other piglin coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                },
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // bundle buy with iron coins
                                 new ItemsForItemsBuySetTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ImmutableSet.of(
                                                 ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.IRON_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0
                                 ),
@@ -453,9 +597,15 @@ public class NumismatistTrades {
                                         Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1,
                                         ImmutableSet.of(
                                                 ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.IRON_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // shulker boxes buy with iron coins
@@ -481,9 +631,15 @@ public class NumismatistTrades {
                                         ), 1,
                                         ImmutableSet.of(
                                                 ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.IRON_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0)
                         }
@@ -502,17 +658,57 @@ public class NumismatistTrades {
                                                 ModItems.COPPER_HERO_COIN.get().asItem(),
                                                 ModItems.IRON_HERO_COIN.get().asItem(),
                                                 ModItems.NETHERITE_HERO_COIN.get().asItem()
-                                        ), 1,
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                                // gold piglin coin buy with other piglin coins
+                                // gold allay coin buy with other allay coins
                                 new ItemsForItemsBuySetTrade(
-                                        ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ModItems.GOLD_ALLAY_COIN.get().asItem().getDefaultInstance(), 1,
                                         ImmutableSet.of(
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
-                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
-                                        ), 1,
+                                                ModItems.COPPER_ALLAY_COIN.get().asItem(),
+                                                ModItems.IRON_ALLAY_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ALLAY_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // gold axolotl coin buy with other axolotl coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.GOLD_AXOLOTL_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_AXOLOTL_COIN.get().asItem(),
+                                                ModItems.IRON_AXOLOTL_COIN.get().asItem(),
+                                                ModItems.NETHERITE_AXOLOTL_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // gold bat coin buy with other bat coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.GOLD_BAT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_BAT_COIN.get().asItem(),
+                                                ModItems.IRON_BAT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_BAT_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // gold camel coin buy with other camel coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.GOLD_CAMEL_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_CAMEL_COIN.get().asItem(),
+                                                ModItems.IRON_CAMEL_COIN.get().asItem(),
+                                                ModItems.NETHERITE_CAMEL_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // gold cat coin buy with other cat coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.GOLD_CAT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_CAT_COIN.get().asItem(),
+                                                ModItems.IRON_CAT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_CAT_COIN.get().asItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // gold enderman coin buy with other enderman coins
@@ -522,19 +718,45 @@ public class NumismatistTrades {
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
                                                 ModItems.IRON_ENDERMAN_COIN.get().asItem(),
                                                 ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
-                                        ), 1,
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                        },
+                                // gold ocelot coin buy with other ocelot coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.GOLD_OCELOT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_OCELOT_COIN.get().asItem(),
+                                                ModItems.IRON_OCELOT_COIN.get().asItem(),
+                                                ModItems.NETHERITE_OCELOT_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // gold piglin coin buy with other piglin coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                },
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // bundle buy with gold coins
                                 new ItemsForItemsBuySetTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ImmutableSet.of(
                                                 ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.GOLD_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0
                                 ),
@@ -543,9 +765,15 @@ public class NumismatistTrades {
                                         Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1,
                                         ImmutableSet.of(
                                                 ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.GOLD_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // shulker boxes buy with gold coins
@@ -571,9 +799,15 @@ public class NumismatistTrades {
                                         ), 1,
                                         ImmutableSet.of(
                                                 ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.GOLD_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0)
                         }
@@ -592,17 +826,57 @@ public class NumismatistTrades {
                                                 ModItems.COPPER_HERO_COIN.get().asItem(),
                                                 ModItems.IRON_HERO_COIN.get().asItem(),
                                                 ModItems.GOLD_HERO_COIN.get().asItem()
-                                        ), 1,
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                                // netherite piglin coin buy with other piglin coins
+                                // netherite allay coin buy with other allay coins
                                 new ItemsForItemsBuySetTrade(
-                                        ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ModItems.NETHERITE_ALLAY_COIN.get().asItem().getDefaultInstance(), 1,
                                         ImmutableSet.of(
-                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
-                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
-                                                ModItems.GOLD_PIGLIN_COIN.get().asItem()
-                                        ), 1,
+                                                ModItems.COPPER_ALLAY_COIN.get().asItem(),
+                                                ModItems.IRON_ALLAY_COIN.get().asItem(),
+                                                ModItems.GOLD_ALLAY_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // netherite axolotl coin buy with other axolotl coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.NETHERITE_AXOLOTL_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_AXOLOTL_COIN.get().asItem(),
+                                                ModItems.IRON_AXOLOTL_COIN.get().asItem(),
+                                                ModItems.GOLD_AXOLOTL_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // netherite bat coin buy with other bat coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.NETHERITE_BAT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_BAT_COIN.get().asItem(),
+                                                ModItems.IRON_BAT_COIN.get().asItem(),
+                                                ModItems.GOLD_BAT_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // netherite camel coin buy with other camel coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.NETHERITE_CAMEL_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.IRON_CAMEL_COIN.get().asItem(),
+                                                ModItems.GOLD_CAMEL_COIN.get().asItem(),
+                                                ModItems.COPPER_CAMEL_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // netherite cat coin buy with other cat coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.NETHERITE_CAT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_CAT_COIN.get().asItem(),
+                                                ModItems.IRON_CAT_COIN.get().asItem(),
+                                                ModItems.GOLD_CAT_COIN.get().asItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // netherite enderman coin buy with other enderman coins
@@ -612,19 +886,46 @@ public class NumismatistTrades {
                                                 ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
                                                 ModItems.IRON_ENDERMAN_COIN.get().asItem(),
                                                 ModItems.GOLD_ENDERMAN_COIN.get().asItem()
-                                        ), 1,
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                        },
+                                // netherite ocelot coin buy with other ocelot coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.NETHERITE_OCELOT_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.IRON_OCELOT_COIN.get().asItem(),
+                                                ModItems.GOLD_OCELOT_COIN.get().asItem(),
+                                                ModItems.COPPER_OCELOT_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                // netherite piglin coin buy with other piglin coins
+                                new ItemsForItemsBuySetTrade(
+                                        ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem()
+                                                       ), 1,
+                                        ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                },
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // bundle buy with netherite coins
                                 new ItemsForItemsBuySetTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ImmutableSet.of(
                                                 ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.NETHERITE_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_BEE_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0
                                 ),
@@ -633,9 +934,16 @@ public class NumismatistTrades {
                                         Blocks.ENDER_CHEST.asItem().getDefaultInstance(), 1,
                                         ImmutableSet.of(
                                                 ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.NETHERITE_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_BEE_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
                                 // shulker boxes buy with netherite coins
@@ -661,9 +969,16 @@ public class NumismatistTrades {
                                         ), 1,
                                         ImmutableSet.of(
                                                 ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
-                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem()
-                                        ), 1,
+                                                ModItems.NETHERITE_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_BAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_BEE_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_CAMEL_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_OCELOT_COIN.get().asItem().getDefaultInstance().getItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance().getItem()
+                                                       ), 1,
                                         ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0)
                         }

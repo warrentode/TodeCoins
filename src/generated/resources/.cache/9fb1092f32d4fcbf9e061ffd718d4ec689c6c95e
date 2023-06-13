@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-01T20:08:59.6459898	Recipes
+// 1.19.2	2023-06-13T14:17:01.4334651	Recipes
 25561f49da0672c7be7c439a74615a3093703602 data/todecoins/advancements/recipes/misc/ingots/ingot_from_nuggets/copper_ingot.json
 22aec5fe4067583775201e82c0cb9046c61b2395 data/todecoins/advancements/recipes/misc/ingots/ingot_from_nuggets/netherite_ingot.json
 e0959ba3e75b37067194900940d1b4342225892a data/todecoins/advancements/recipes/misc/nuggets/nugget_from_coins/gold_nugget.json
@@ -64,8 +64,8 @@ d131b7ed4a6a57f0f0c801402ae39c744c8093ad data/todecoins/recipes/coinpress/nether
 a7f3293105311a3c46b9d84863df495d334721aa data/todecoins/recipes/coinpress/nether_gold_coin.json
 d6bfb1cf66db6ee07acee94b7bfe7248f959516d data/todecoins/recipes/currency_stamps/currency_stamp.json
 31eb84afe1dcc8d5d526c6bf26b5bf5b75be3095 data/todecoins/recipes/currency_stamps/nether_currency_stamp.json
-7f002a70e7ad8cda72d7e8eaba6545ecd19a979e data/todecoins/recipes/ingots/ingot_from_nuggets/copper_ingot.json
-7c0452479609762c253283a2562a3329ce31fbc7 data/todecoins/recipes/ingots/ingot_from_nuggets/netherite_ingot.json
+7efa720596678e21cfebcaa22b46f459acd4676b data/todecoins/recipes/ingots/ingot_from_nuggets/copper_ingot.json
+49a9c055b3ff0f473e035c22d5f75cfc3d50f4da data/todecoins/recipes/ingots/ingot_from_nuggets/netherite_ingot.json
 64dd30614521c1c645df4aee05a92b08dfad6ea0 data/todecoins/recipes/job_blocks/bags_of_gold_from_pot_of_gold.json
 e37aec09c95abf5ad05c86eedc7d6fbe3de3a9d5 data/todecoins/recipes/job_blocks/coin_press.json
 4c113497169f2f749c30a75b404d75f39169f635 data/todecoins/recipes/job_blocks/pot_of_gold.json

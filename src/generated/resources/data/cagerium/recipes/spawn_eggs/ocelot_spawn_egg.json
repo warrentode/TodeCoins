@@ -1,0 +1,44 @@
+{
+    "type": "forge:conditional",
+    "recipes": [
+        {
+            "conditions": [
+                {
+                    "type": "forge:and",
+                    "values": [
+                        {
+                            "type": "forge:mod_loaded",
+                            "modid": "cagerium"
+                        },
+                        {
+                            "type": "forge:true"
+                        }
+                    ]
+                }
+            ],
+            "recipe": {
+                "type": "minecraft:crafting_shapeless",
+                "ingredients": [
+                    {
+                        "tag": "forge:eggs"
+                    },
+                    {
+                        "item": "minecraft:heart_of_the_sea"
+                    },
+                    {
+                        "tag": "todecoins:soul_binder"
+                    },
+                    {
+                        "tag": "forge:nuggets/netherite"
+                    },
+                    {
+                        "tag": "todecoins:collectible_coins/entity_coins/ocelot_coin_set"
+                    }
+                ],
+                "result": {
+                    "item": "minecraft:ocelot_spawn_egg"
+                }
+            }
+        }
+    ]
+}
