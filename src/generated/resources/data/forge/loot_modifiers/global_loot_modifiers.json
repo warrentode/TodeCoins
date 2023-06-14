@@ -1,5 +1,6 @@
 {
     "entries": [
+        "todecoins:add_todecoins_chest",
         "todecoins:add_four_leaf_clover_drops"
     ],
     "replace": false

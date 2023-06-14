@@ -54,6 +54,7 @@ public class TodeCoins {
     public static final Logger LOGGER = LogManager.getLogger();
     private static boolean curiosLoaded = false;
     private static boolean cageriumLoaded = false;
+    private static boolean sereneseasonsLoaded = false;
 
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -81,6 +82,7 @@ public class TodeCoins {
 
         curiosLoaded = ModList.get().isLoaded("curios");
         cageriumLoaded = ModList.get().isLoaded("cagerium");
+        sereneseasonsLoaded = ModList.get().isLoaded("sereneseasons");
     }
 
     public static boolean isCuriosLoaded() {
@@ -89,6 +91,10 @@ public class TodeCoins {
 
     public static boolean isCageriumLoaded() {
         return cageriumLoaded;
+    }
+
+    public static boolean isSereneSeasonsLoaded() {
+        return sereneseasonsLoaded;
     }
 
     public static ItemStack setCurioSlots(Player player) {
