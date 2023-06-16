@@ -260,8 +260,10 @@
     "tooltips.textile_item.hover": "Textiles are used to make materials like paper and fabric.",
     "tooltips.collectible_camel_coin.hover": "A coin stamped with a Camel",
     "tooltips.collectible_cat_coin.hover": "Certain mobs don't like those wearing this coin...",
-    "tooltips.collectible_bee_coin.hover": "A coin for those busy as a Bee",
+    "tooltips.collectible_bee_coin.hover": "All your foes shall feel the sting of the Bee",
     "cagerium": "cagerium",
     "advancement.optional.spawn_egg_recipes": "Spawn Egg Recipes",
-    "advancement.optional.spawn_egg_recipes.desc": "Available when Cagerium is Loaded with this Mod"
+    "advancement.optional.spawn_egg_recipes.desc": "Available when Cagerium is Loaded with this Mod",
+    "tooltips.collectible_chicken_coin.hover": "Are they chickens, or are they ducks? Either way here's a coin for them.",
+    "tooltips.collectible_cave_spider_coin.hover": "A creepy coin as proof for those that have braved the abandoned mines."
 }

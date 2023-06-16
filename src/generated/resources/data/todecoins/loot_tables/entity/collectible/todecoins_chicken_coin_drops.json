@@ -1,0 +1,72 @@
+{
+    "type": "minecraft:entity",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:killed_by_player"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:entity_type_tag_condition",
+                            "tag": "forge:chicken"
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_chicken_copper",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:entity_type_tag_condition",
+                            "tag": "forge:chicken"
+                        },
+                        {
+                            "condition": "todecoins:summer_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_chicken_iron",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:entity_type_tag_condition",
+                            "tag": "forge:chicken"
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_chicken_gold",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:entity_type_tag_condition",
+                            "tag": "forge:chicken"
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_chicken_netherite",
+                    "quality": 6
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

@@ -122,15 +122,6 @@ jar {
     }
 }
 
-tasks.register('updateJson') {
-    file('update.json').withWriter { bufferedWriter ->
-        file('update_template.json').eachLine { line ->
-            bufferedWriter << line.replaceAll("version", project.version) + System.getProperty("line.separator")
-        }
-        bufferedWriter.close()
-    }
-}
-
 jar.finalizedBy('reobfJar')
 
 publishing {

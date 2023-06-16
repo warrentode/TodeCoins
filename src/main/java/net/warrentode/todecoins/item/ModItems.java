@@ -9,8 +9,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.entity.ModEntityTypes;
 import net.warrentode.todecoins.item.custom.*;
-import net.warrentode.todecoins.item.custom.collectiblecoins.entity.mob.EndermanCoinItem;
-import net.warrentode.todecoins.item.custom.collectiblecoins.entity.mob.PiglinCoinItem;
+import net.warrentode.todecoins.item.custom.collectiblecoins.entity.neutral.EndermanCoinItem;
+import net.warrentode.todecoins.item.custom.collectiblecoins.entity.neutral.PiglinCoinItem;
+import net.warrentode.todecoins.item.custom.collectiblecoins.entity.neutral.BeeCoinItem;
 import net.warrentode.todecoins.item.custom.collectiblecoins.entity.passive.*;
 import net.warrentode.todecoins.item.custom.collectiblecoins.gameplay.HeroCoinItem;
 import net.warrentode.todecoins.item.custom.collectiblecoins.holiday.BirthdayCoinItem;
@@ -181,6 +182,15 @@ public class ModItems {
             () -> new CatCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_CAT_COIN = ITEMS.register("collectible_coin_cat_netherite",
             () -> new CatCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // chicken set
+    public static final RegistryObject<Item> COPPER_CHICKEN_COIN = ITEMS.register("collectible_coin_chicken_copper",
+            () -> new ChickenCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_CHICKEN_COIN = ITEMS.register("collectible_coin_chicken_iron",
+            () -> new ChickenCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_CHICKEN_COIN = ITEMS.register("collectible_coin_chicken_gold",
+            () -> new ChickenCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_CHICKEN_COIN = ITEMS.register("collectible_coin_chicken_netherite",
+            () -> new ChickenCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // enderman set
     public static final RegistryObject<Item> COPPER_ENDERMAN_COIN = ITEMS.register("collectible_coin_enderman_copper",
             () -> new EndermanCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

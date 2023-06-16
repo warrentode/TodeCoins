@@ -2,7 +2,7 @@ package net.warrentode.todecoins.datagen.loot_tables;
 
 import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -25,11 +25,9 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
-    public static final LootItemCondition.Builder IN_NETHER_WASTES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.NETHER_WASTES));
-    public static final LootItemCondition.Builder IN_WARPED_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARPED_FOREST));
-    public static final LootItemCondition.Builder IN_CRIMSON_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.CRIMSON_FOREST));
-    public static final LootItemCondition.Builder IN_BASALT_DELTAS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BASALT_DELTAS));
-    public static final LootItemCondition.Builder IN_SOUL_SAND_VALLEY = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SOUL_SAND_VALLEY));
+    public static final LootItemCondition.Builder IN_NETHER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.NETHER));
+    public static final LootItemCondition.Builder DROPS_CURRENCY = EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.DROPS_CURRENCY).build();
+    public static final LootItemCondition.Builder DROPS_BOSS_CURRENCY = EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.BOSSES).build();
     public static final LootItemCondition.Builder BIRTHDAY_EVENT = BirthdayCondition.event();
     public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
     public static final LootItemCondition.Builder CHRISTMAS_EVENT = ChristmasCondition.event();
@@ -44,22 +42,21 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .setBonusRolls(ConstantValue.exactly(1.0F))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_COPPER_COIN_DROPS)
-                                                .setWeight(1).setQuality(1))
+                                                .when(DROPS_CURRENCY).setWeight(1).setQuality(1))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_IRON_COIN_DROPS)
-                                                .setWeight(1).setQuality(2))
+                                                .when(DROPS_CURRENCY).setWeight(1).setQuality(2))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_GOLD_COIN_DROPS)
-                                                .setWeight(1).setQuality(3))
+                                                .when(DROPS_CURRENCY).setWeight(1).setQuality(3))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_DROPS)
-                                                .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST).or(IN_BASALT_DELTAS).or(IN_SOUL_SAND_VALLEY))
-                                                .setWeight(1).setQuality(3))
+                                                .when(DROPS_CURRENCY).when(IN_NETHER).setWeight(1).setQuality(3))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS)
-                                                .setWeight(1).setQuality(4))
+                                                .when(DROPS_CURRENCY).setWeight(1).setQuality(4))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_DROPS)
-                                                .setWeight(1).setQuality(5))
+                                                .when(DROPS_CURRENCY).setWeight(1).setQuality(5))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_HALF_BANK_NOTE_DROPS)
-                                                .setWeight(1).setQuality(5))
+                                                .when(DROPS_CURRENCY).setWeight(1).setQuality(5))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_DROPS)
-                                                .setWeight(1).setQuality(6))
+                                                .when(DROPS_CURRENCY).setWeight(1).setQuality(6))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_DROPS)
                                                 .when(BIRTHDAY_EVENT))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_DROPS)
@@ -80,6 +77,8 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.CAMEL_TYPES).build()))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CAT_COIN_DROPS)
                                                 .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.CAT_TYPES).build()))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHICKEN_COIN_DROPS)
+                                                .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.CHICKEN_TYPES).build()))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ENDERMAN_COIN_DROPS)
                                                 .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDERMAN_TYPES).build()))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_PIGLIN_COIN_DROPS)
@@ -93,26 +92,25 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .setBonusRolls(ConstantValue.exactly(1.0F))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_COPPER_COIN_DROPS)
-                                                .setWeight(1).setQuality(-1))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(-1))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_IRON_COIN_DROPS)
-                                                .setWeight(1).setQuality(0))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(0))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_GOLD_COIN_DROPS)
-                                                .setWeight(1).setQuality(1))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(1))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_NETHER_GOLD_COIN_DROPS)
-                                                .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST).or(IN_BASALT_DELTAS).or(IN_SOUL_SAND_VALLEY))
-                                                .setWeight(1).setQuality(1))
+                                                .when(DROPS_BOSS_CURRENCY).when(IN_NETHER).setWeight(1).setQuality(1))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_EMERALD_QUARTER_BANK_NOTE_DROPS)
-                                                .setWeight(1).setQuality(2))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(2))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_NETHERITE_COIN_DROPS)
-                                                .setWeight(1).setQuality(3))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(3))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_EMERALD_HALF_BANK_NOTE_DROPS)
-                                                .setWeight(1).setQuality(3))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(3))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_EMERALD_BANK_NOTE_DROPS)
-                                                .setWeight(1).setQuality(4))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(4))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_NETHERITE_COIN_DROPS)
-                                                .setWeight(1).setQuality(5))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(5))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_LUCKY_COIN_DROPS)
-                                                .setWeight(1).setQuality(6))
+                                                .when(DROPS_BOSS_CURRENCY).setWeight(1).setQuality(6))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_DROPS)
                                                 .when(BIRTHDAY_EVENT))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_DROPS)
@@ -132,6 +130,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_COPPER_COIN_DROPS,
@@ -147,6 +146,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_BOSS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_IRON_COIN_DROPS,
@@ -158,6 +158,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_IRON_COIN_DROPS,
@@ -173,6 +174,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_BOSS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_GOLD_COIN_DROPS,
@@ -184,6 +186,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_GOLD_COIN_DROPS,
@@ -199,6 +202,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_BOSS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_DROPS,
@@ -210,7 +214,8 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                        .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST).or(IN_BASALT_DELTAS).or(IN_SOUL_SAND_VALLEY))
+                                        .when(IN_NETHER)
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_NETHER_GOLD_COIN_DROPS,
@@ -225,7 +230,8 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                        .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST).or(IN_BASALT_DELTAS).or(IN_SOUL_SAND_VALLEY))
+                                        .when(IN_NETHER)
+                                        .when(DROPS_BOSS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS,
@@ -237,6 +243,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_EMERALD_QUARTER_BANK_NOTE_DROPS,
@@ -252,6 +259,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_BOSS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_DROPS,
@@ -263,6 +271,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_NETHERITE_COIN_DROPS,
@@ -274,12 +283,13 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                        .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST).or(IN_BASALT_DELTAS).or(IN_SOUL_SAND_VALLEY))
+                                        .when(IN_NETHER)
                                         .add(LootItem.lootTableItem(ModBlocks.NETHERITE_COIN_BAG.get())
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                        .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST).or(IN_BASALT_DELTAS).or(IN_SOUL_SAND_VALLEY))
+                                        .when(IN_NETHER)
+                                        .when(DROPS_BOSS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_HALF_BANK_NOTE_DROPS,
@@ -291,6 +301,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_EMERALD_HALF_BANK_NOTE_DROPS,
@@ -306,6 +317,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_BOSS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_DROPS,
@@ -317,6 +329,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_EMERALD_BANK_NOTE_DROPS,
@@ -332,6 +345,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_BOSS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_LUCKY_COIN_DROPS,
@@ -342,6 +356,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .when(DROPS_CURRENCY)
                                  )
                        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_DROPS,
@@ -403,6 +418,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
                                                 .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F)))
                                                 .setQuality(0).setWeight(1))
+                                        .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                         .when(ANNIVERSARY_EVENT)
                                  )
                        );
@@ -569,6 +585,25 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                                 .when(SpringCondition.season()).setWeight(1).setQuality(6))
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_COIN.get())
                                                 .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.PIGLIN_TYPES).build())
+                                                .when(SpringCondition.season()).setWeight(1).setQuality(6))
+                                        .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                 )
+                       );
+        consumer.accept(ModBuiltInLootTables.TODECOINS_CHICKEN_COIN_DROPS,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_CHICKEN_COIN.get())
+                                                .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.CHICKEN_TYPES).build())
+                                                .when(SpringCondition.season()).setWeight(1).setQuality(6))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_CHICKEN_COIN.get())
+                                                .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.CHICKEN_TYPES).build())
+                                                .when(SummerCondition.season()).setWeight(1).setQuality(6))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_CHICKEN_COIN.get())
+                                                .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.CHICKEN_TYPES).build())
+                                                .when(SpringCondition.season()).setWeight(1).setQuality(6))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CHICKEN_COIN.get())
+                                                .when(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.CHICKEN_TYPES).build())
                                                 .when(SpringCondition.season()).setWeight(1).setQuality(6))
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                  )

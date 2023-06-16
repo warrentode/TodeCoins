@@ -123,16 +123,367 @@
           "name": "todecoins:chests/collectible/todecoins_christmas_coin_loot",
           "weight": 7
         },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:anniversary_condition"
-            }
-          ],
-          "name": "todecoins:chests/collectible/todecoins_anniversary_coin_loot",
-          "weight": 7
-        }
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:anniversary_condition"
+                  }
+              ],
+              "name": "todecoins:chests/collectible/todecoins_anniversary_coin_loot",
+              "weight": 7
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:mansion"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:pillager_outpost"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_allay_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:mineshaft"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:mineshaft_mesa"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:dripstone_caves"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:lush_caves"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_axolotl_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:swamp_hut"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:mineshaft"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:mineshaft_mesa"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:dripstone_caves"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:lush_caves"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:stronghold"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_bat_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:meadow"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:plains"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:sunflower_plains"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:mangrove_swamp"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:flower_forest"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:forest"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:birch_forest"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:old_growth_birch_forest"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_bee_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                          "biome": "minecraft:desert"
+                      }
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_camel_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_desert"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_plains"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_savanna"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_snowy"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_taiga"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:swamp_hut"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_cat_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_desert"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_plains"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_savanna"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_snowy"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:village_taiga"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:swamp_hut"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_chicken_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:warped_forest"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "dimension": "minecraft:the_end"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_enderman_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:jungle"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:sparse_jungle"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:bamboo_jungle"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_ocelot_coin_loot"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:basalt_deltas"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:crimson_forest"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:nether_wastes"
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_piglin_coin_loot"
+          }
       ],
       "rolls": 1.0
     }

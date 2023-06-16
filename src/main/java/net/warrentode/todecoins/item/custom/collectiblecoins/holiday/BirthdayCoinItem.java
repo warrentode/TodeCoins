@@ -22,7 +22,7 @@ public class BirthdayCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createGiftCoinCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createGiftingCharmProvider(stack);
     }
 
     @Override

@@ -1,0 +1,59 @@
+{
+    "advancements": [
+        {
+            "advancement": {
+                "criteria": {
+                    "has_chicken_coin": {
+                        "conditions": {
+                            "items": [
+                                {
+                                    "tag": "todecoins:collectible_coins/entity_coins/chicken_coin_set"
+                                }
+                            ]
+                        },
+                        "trigger": "minecraft:inventory_changed"
+                    }
+                },
+                "display": {
+                    "announce_to_chat": false,
+                    "description": {
+                        "text": "Optional Recipes for when Cagerium is Loaded"
+                    },
+                    "frame": "task",
+                    "hidden": false,
+                    "icon": {
+                        "item": "minecraft:chicken_spawn_egg"
+                    },
+                    "show_toast": false,
+                    "title": {
+                        "text": "Spawn Egg Recipes"
+                    }
+                },
+                "requirements": [
+                    [
+                        "has_chicken_coin"
+                    ]
+                ],
+                "rewards": {
+                    "recipes": [
+                        "cagerium:spawn_eggs/chicken_spawn_egg"
+                    ]
+                }
+            },
+            "conditions": [
+                {
+                    "type": "forge:and",
+                    "values": [
+                        {
+                            "type": "forge:mod_loaded",
+                            "modid": "cagerium"
+                        },
+                        {
+                            "type": "forge:true"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

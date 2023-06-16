@@ -22,7 +22,7 @@ public class CamelCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createCamelCoinCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createSaturationCharmProvider(stack);
     }
 
     @Override

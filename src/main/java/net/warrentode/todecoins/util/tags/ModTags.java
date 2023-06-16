@@ -51,6 +51,7 @@ public class ModTags {
         public static final TagKey<Item> BEE_COIN_SET = modItemTag("collectible_coins/entity_coins/bee_coin_set");
         public static final TagKey<Item> CAMEL_COIN_SET = modItemTag("collectible_coins/entity_coins/camel_coin_set");
         public static final TagKey<Item> CAT_COIN_SET = modItemTag("collectible_coins/entity_coins/cat_coin_set");
+        public static final TagKey<Item> CHICKEN_COIN_SET = modItemTag("collectible_coins/entity_coins/chicken_coin_set");
         public static final TagKey<Item> OCELOT_COIN_SET = modItemTag("collectible_coins/entity_coins/ocelot_coin_set");
         public static final TagKey<Item> PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/piglin_coin_set");
         public static final TagKey<Item> ENDERMAN_COIN_SET = modItemTag("collectible_coins/entity_coins/enderman_coin_set");

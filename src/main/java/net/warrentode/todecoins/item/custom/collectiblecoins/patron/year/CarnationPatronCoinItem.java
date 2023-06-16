@@ -22,7 +22,7 @@ public class CarnationPatronCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createHeroCoinCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createCHRCharmProvider(stack);
     }
 
     @Override

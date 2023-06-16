@@ -22,7 +22,7 @@ public class AllayCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createAllayCoinCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createSlowFallingCharmProvider(stack);
     }
 
     @Override

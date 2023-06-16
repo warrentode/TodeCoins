@@ -4,44 +4,19 @@
     {
       "bonus_rolls": 1.0,
       "conditions": [
-        {
-          "condition": "minecraft:killed_by_player"
-        },
-        {
-          "condition": "minecraft:alternative",
-          "terms": [
-            {
+          {
+              "condition": "minecraft:killed_by_player"
+          },
+          {
               "condition": "minecraft:location_check",
               "predicate": {
-                "biome": "minecraft:nether_wastes"
+                  "dimension": "minecraft:the_nether"
               }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:crimson_forest"
-              }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:warped_forest"
-              }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:basalt_deltas"
-              }
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:soul_sand_valley"
-              }
-            }
-          ]
-        }
+          },
+          {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+          }
       ],
       "entries": [
         {

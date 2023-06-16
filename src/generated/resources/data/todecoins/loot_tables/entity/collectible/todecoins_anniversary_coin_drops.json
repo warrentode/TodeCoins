@@ -4,9 +4,12 @@
     {
       "bonus_rolls": 1.0,
       "conditions": [
-        {
-          "condition": "todecoins:anniversary_condition"
-        }
+          {
+              "condition": "minecraft:killed_by_player"
+          },
+          {
+              "condition": "todecoins:anniversary_condition"
+          }
       ],
       "entries": [
         {

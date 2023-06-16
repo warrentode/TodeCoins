@@ -1,0 +1,211 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_desert"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_plains"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_savanna"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_snowy"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_taiga"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:swamp_hut"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_chicken_copper"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_desert"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_plains"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_savanna"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_snowy"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_taiga"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:swamp_hut"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "condition": "todecoins:summer_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_chicken_iron"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_desert"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_plains"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_savanna"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_snowy"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_taiga"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:swamp_hut"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_chicken_gold"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_desert"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_plains"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_savanna"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_snowy"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_taiga"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:swamp_hut"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_chicken_netherite"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

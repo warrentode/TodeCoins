@@ -21,9 +21,8 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.warrentode.todecoins.attribute.ModAttributes;
-import net.warrentode.todecoins.attribute.PlayerCharisma;
-import net.warrentode.todecoins.attribute.PlayerCharismaProvider;
+import net.warrentode.todecoins.TodeCoins;
+import net.warrentode.todecoins.attribute.*;
 import net.warrentode.todecoins.entity.ModEntityTypes;
 import net.warrentode.todecoins.item.ModItems;
 import org.jetbrains.annotations.NotNull;
@@ -84,11 +83,12 @@ public class ModEvents {
                     DamageSource damageSource = player.getLastDamageSource();
                     ItemStack luckyCoin = null;
 
-                    if (net.warrentode.todecoins.TodeCoins.isCuriosLoaded()) {
+                    if (TodeCoins.isCuriosLoaded()) {
                         Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.LUCKY_COIN.get());
                         if (optional.isPresent()) {
                             luckyCoin = optional.get().stack();
-                        } else {
+                        }
+                        else {
                             for (int i = 0; i < playerInventory.getContainerSize(); ++i) {
                                 ItemStack stack = playerInventory.getItem(i);
                                 if (stack.getItem().equals(ModItems.LUCKY_COIN.get())) {

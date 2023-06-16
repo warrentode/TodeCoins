@@ -34,6 +34,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_BEE_COIN_LOOT = register(MODID + ":" + "entity/collectible/todecoins_bee_coin_loot");
     public static final ResourceLocation TODECOINS_CAMEL_COIN_LOOT = register(MODID + ":" + "entity/collectible/todecoins_camel_coin_loot");
     public static final ResourceLocation TODECOINS_CAT_COIN_LOOT = register(MODID + ":" + "entity/collectible/todecoins_cat_coin_loot");
+    public static final ResourceLocation TODECOINS_CHICKEN_COIN_LOOT = register(MODID + ":" + "entity/collectible/todecoins_chicken_coin_loot");
     public static final ResourceLocation TODECOINS_ENDERMAN_COIN_LOOT = register(MODID + ":" + "entity/collectible/todecoins_enderman_coin_loot");
     public static final ResourceLocation TODECOINS_OCELOT_COIN_LOOT = register(MODID + ":" + "entity/collectible/todecoins_ocelot_coin_loot");
     public static final ResourceLocation TODECOINS_PIGLIN_COIN_LOOT = register(MODID + ":" + "entity/collectible/todecoins_piglin_coin_loot");
@@ -89,6 +90,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_BEE_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_bee_coin_drops");
     public static final ResourceLocation TODECOINS_CAMEL_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_camel_coin_drops");
     public static final ResourceLocation TODECOINS_CAT_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_cat_coin_drops");
+    public static final ResourceLocation TODECOINS_CHICKEN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_chicken_coin_drops");
     public static final ResourceLocation TODECOINS_ENDERMAN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_enderman_coin_drops");
     public static final ResourceLocation TODECOINS_OCELOT_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_ocelot_coin_drops");
     public static final ResourceLocation TODECOINS_PIGLIN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_piglin_coin_drops");

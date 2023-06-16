@@ -72,7 +72,7 @@ public class BlockTagCondition implements LootItemCondition {
          * Deserialize a value by reading it from the JsonObject.
          */
         public @NotNull BlockTagCondition deserialize(@NotNull JsonObject jsonObject, @NotNull JsonDeserializationContext context) {
-            ResourceLocation resourcelocation = new ResourceLocation(GsonHelper.getAsString(jsonObject, "blocktag"));
+            ResourceLocation resourcelocation = new ResourceLocation(GsonHelper.getAsString(jsonObject, "tag"));
             TagKey<Block> blockTag = TagKey.create(Registry.BLOCK_REGISTRY, resourcelocation);
             return new BlockTagCondition(blockTag);
         }

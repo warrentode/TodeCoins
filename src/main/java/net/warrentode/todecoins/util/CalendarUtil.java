@@ -90,6 +90,7 @@ public class CalendarUtil {
                 else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.LATE_AUTUMN)) {
                     return AUTUMN;
                 }
+                // winter season cycles
                 else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_WINTER)) {
                     return WINTER;
                 }
@@ -123,6 +124,20 @@ public class CalendarUtil {
                 }
                 if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET)) {
                     return WINTER;
+                }
+
+                // holiday cycles within serene season's calendar
+                if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_WINTER) || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET)) {
+                    return CHRISTMAS;
+                }
+                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_AUTUMN) || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_WET)) {
+                    return HALLOWEEN;
+                }
+                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_WINTER) || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_WET)) {
+                    return BIRTHDAY;
+                }
+                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_SPRING) || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_DRY)) {
+                    return PATREON_ANNIVERSARY;
                 }
             }
 

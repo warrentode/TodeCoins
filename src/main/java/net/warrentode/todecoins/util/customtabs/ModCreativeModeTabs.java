@@ -135,6 +135,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_CAT_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_CAT_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_CAT_COIN.get().getDefaultInstance());
+            // CHICKEN COIN SET
+            items.add(ModItems.COPPER_CHICKEN_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_CHICKEN_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_CHICKEN_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_CHICKEN_COIN.get().getDefaultInstance());
             // ENDERMAN COIN SET
             items.add(ModItems.COPPER_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_ENDERMAN_COIN.get().getDefaultInstance());

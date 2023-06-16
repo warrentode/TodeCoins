@@ -22,7 +22,7 @@ public class CatCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createCatCoinCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createCatEffectCharmProvider(stack);
     }
 
     @Override

@@ -58,7 +58,7 @@ public class Curios {
         return belt.get();
     }
 
-    public static ICapabilityProvider createWalletBeltProvider(ItemStack stack) {
+    public static ICapabilityProvider createBeltSlotProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -152,7 +152,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createHeroCoinCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createCHRCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -319,7 +319,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createHalloweenCoinCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createNightVisionCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -367,7 +367,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createGiftCoinCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createGiftingCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -415,7 +415,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createAllayCoinCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createSlowFallingCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -425,7 +425,7 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.ALLAY_COIN_SET)) {
+                if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET)) {
                     if (player != null) {
                         player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
                                 false, false, false));
@@ -457,7 +457,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createAxolotlCoinCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createRegenCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -499,7 +499,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createCamelCoinCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createSaturationCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -541,7 +541,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createCatCoinCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createCatEffectCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -572,7 +572,38 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createBeeCoinCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createBeeCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 1.5F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createSpiderCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -580,8 +611,14 @@ public class Curios {
             }
 
             @Override
-            public int getFortuneLevel(SlotContext slotContext, @Nullable LootContext lootContext) {
-                return 1;
+            public void curioTick(SlotContext slotContext) {
+                Player player = Minecraft.getInstance().player;
+                if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET)) {
+                    if (player != null) {
+                        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
+                                false, false, false));
+                    }
+                }
             }
 
             @Nonnull
