@@ -96,8 +96,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.AXOLOTL_COIN_SET)
                 .addTag(ModTags.Items.BAT_COIN_SET)
                 .addTag(ModTags.Items.BEE_COIN_SET)
+                .addTag(ModTags.Items.BLAZE_COIN_SET)
                 .addTag(ModTags.Items.CAMEL_COIN_SET)
                 .addTag(ModTags.Items.CAT_COIN_SET)
+                .addTag(ModTags.Items.CAVE_SPIDER_COIN_SET)
+                .addTag(ModTags.Items.CHICKEN_COIN_SET)
                 .addTag(ModTags.Items.ENDERMAN_COIN_SET)
                 .addTag(ModTags.Items.OCELOT_COIN_SET)
                 .addTag(ModTags.Items.PIGLIN_COIN_SET);
@@ -126,6 +129,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.IRON_BAT_COIN.get())
                 .add(ModItems.GOLD_BAT_COIN.get())
                 .add(ModItems.NETHERITE_BAT_COIN.get());
+        tag(ModTags.Items.BLAZE_COIN_SET)
+                .add(ModItems.COPPER_BLAZE_COIN.get())
+                .add(ModItems.IRON_BLAZE_COIN.get())
+                .add(ModItems.GOLD_BLAZE_COIN.get())
+                .add(ModItems.NETHERITE_BLAZE_COIN.get());
         tag(ModTags.Items.CAMEL_COIN_SET)
                 .add(ModItems.COPPER_CAMEL_COIN.get())
                 .add(ModItems.IRON_CAMEL_COIN.get())
@@ -136,6 +144,16 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.IRON_CAT_COIN.get())
                 .add(ModItems.GOLD_CAT_COIN.get())
                 .add(ModItems.NETHERITE_CAT_COIN.get());
+        tag(ModTags.Items.CAVE_SPIDER_COIN_SET)
+                .add(ModItems.COPPER_CAVE_SPIDER_COIN.get())
+                .add(ModItems.IRON_CAVE_SPIDER_COIN.get())
+                .add(ModItems.GOLD_CAVE_SPIDER_COIN.get())
+                .add(ModItems.NETHERITE_CAVE_SPIDER_COIN.get());
+        tag(ModTags.Items.CHICKEN_COIN_SET)
+                .add(ModItems.COPPER_CHICKEN_COIN.get())
+                .add(ModItems.IRON_CHICKEN_COIN.get())
+                .add(ModItems.GOLD_CHICKEN_COIN.get())
+                .add(ModItems.NETHERITE_CHICKEN_COIN.get());
         tag(ModTags.Items.ENDERMAN_COIN_SET)
                 .add(ModItems.COPPER_ENDERMAN_COIN.get())
                 .add(ModItems.IRON_ENDERMAN_COIN.get())

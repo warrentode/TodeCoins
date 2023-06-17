@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.item.custom.collectiblecoins.entity.neutral;
+package net.warrentode.todecoins.item.custom.collectiblecoins.entity.hostile;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -15,19 +15,19 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SpiderCoinItem extends CollectibleCoin {
-    public SpiderCoinItem(Properties pProperties) {
+public class BlazeCoinItem extends CollectibleCoin {
+    public BlazeCoinItem(Properties pProperties) {
         super(pProperties);
     }
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createSpiderCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createFlameCharmProvider(stack);
     }
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_cave_spider_coin.hover").withStyle(ChatFormatting.GRAY));
+        tooltips.add(Component.translatable("tooltips.collectible_blaze_coin.hover").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

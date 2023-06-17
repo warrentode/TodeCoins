@@ -1,0 +1,56 @@
+{
+    "type": "minecraft:entity",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:killed_by_player"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_blaze_copper",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:summer_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_blaze_iron",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:autumn_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_blaze_gold",
+                    "quality": 6
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:winter_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_blaze_netherite",
+                    "quality": 6
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

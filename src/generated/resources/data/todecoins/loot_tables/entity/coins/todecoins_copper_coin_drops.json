@@ -5,9 +5,6 @@
       "bonus_rolls": 1.0,
       "conditions": [
           {
-              "condition": "minecraft:killed_by_player"
-          },
-          {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
           }

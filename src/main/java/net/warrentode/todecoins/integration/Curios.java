@@ -541,7 +541,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createCatEffectCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createCatDisguiseCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -572,7 +572,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createBeeCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createPoisonCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -603,22 +603,11 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createSpiderCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createFlameCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
                 return stack;
-            }
-
-            @Override
-            public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
-                                false, false, false));
-                    }
-                }
             }
 
             @Nonnull

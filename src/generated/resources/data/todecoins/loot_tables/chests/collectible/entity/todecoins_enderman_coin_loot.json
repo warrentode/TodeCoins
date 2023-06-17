@@ -13,19 +13,13 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:jungle"
+                                        "biome": "minecraft:warped_forest"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:sparse_jungle"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "biome": "minecraft:bamboo_jungle"
+                                        "dimension": "minecraft:the_end"
                                     }
                                 }
                             ]
@@ -34,7 +28,8 @@
                             "condition": "todecoins:spring_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_ocelot_copper"
+                    "name": "todecoins:collectible_coin_enderman_copper",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -45,19 +40,13 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:jungle"
+                                        "biome": "minecraft:warped_forest"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:sparse_jungle"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "biome": "minecraft:bamboo_jungle"
+                                        "dimension": "minecraft:the_end"
                                     }
                                 }
                             ]
@@ -66,7 +55,8 @@
                             "condition": "todecoins:summer_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_ocelot_iron"
+                    "name": "todecoins:collectible_coin_enderman_iron",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -77,28 +67,23 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:jungle"
+                                        "biome": "minecraft:warped_forest"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:sparse_jungle"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "biome": "minecraft:bamboo_jungle"
+                                        "dimension": "minecraft:the_end"
                                     }
                                 }
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_ocelot_gold"
+                    "name": "todecoins:collectible_coin_enderman_gold",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -109,28 +94,23 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:jungle"
+                                        "biome": "minecraft:warped_forest"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:sparse_jungle"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "biome": "minecraft:bamboo_jungle"
+                                        "dimension": "minecraft:the_end"
                                     }
                                 }
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:winter_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_ocelot_netherite"
+                    "name": "todecoins:collectible_coin_enderman_netherite",
+                    "quality": 6
                 }
             ],
             "rolls": 1.0

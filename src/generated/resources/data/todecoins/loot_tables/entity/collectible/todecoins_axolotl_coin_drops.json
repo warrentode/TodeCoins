@@ -3,14 +3,15 @@
     "pools": [
         {
             "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:killed_by_player"
+                }
+            ],
             "entries": [
                 {
                     "type": "minecraft:item",
                     "conditions": [
-                        {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:axolotl"
-                        },
                         {
                             "condition": "todecoins:spring_condition"
                         }
@@ -21,10 +22,6 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:axolotl"
-                        },
-                        {
                             "condition": "todecoins:summer_condition"
                         }
                     ],
@@ -34,11 +31,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:axolotl"
-                        },
-                        {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_axolotl_gold"
@@ -47,11 +40,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:axolotl"
-                        },
-                        {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:winter_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_axolotl_netherite"

@@ -64,7 +64,8 @@
                             "condition": "todecoins:spring_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_bee_copper"
+                    "name": "todecoins:collectible_coin_bee_copper",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -126,7 +127,8 @@
                             "condition": "todecoins:summer_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_bee_iron"
+                    "name": "todecoins:collectible_coin_bee_iron",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -185,10 +187,11 @@
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_bee_gold"
+                    "name": "todecoins:collectible_coin_bee_gold",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -247,10 +250,11 @@
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:winter_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_bee_netherite"
+                    "name": "todecoins:collectible_coin_bee_netherite",
+                    "quality": 1
                 }
             ],
             "rolls": 1.0

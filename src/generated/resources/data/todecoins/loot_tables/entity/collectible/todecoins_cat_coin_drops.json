@@ -13,10 +13,6 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:cat"
-                        },
-                        {
                             "condition": "todecoins:spring_condition"
                         }
                     ],
@@ -25,10 +21,6 @@
                 {
                     "type": "minecraft:item",
                     "conditions": [
-                        {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:cat"
-                        },
                         {
                             "condition": "todecoins:summer_condition"
                         }
@@ -39,11 +31,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:cat"
-                        },
-                        {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_cat_gold"
@@ -52,11 +40,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:cat"
-                        },
-                        {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:winter_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_cat_netherite"

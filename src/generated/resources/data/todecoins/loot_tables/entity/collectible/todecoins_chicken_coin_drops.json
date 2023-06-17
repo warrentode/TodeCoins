@@ -13,57 +13,37 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:chicken"
-                        },
-                        {
                             "condition": "todecoins:spring_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_chicken_copper",
-                    "quality": 6
+                    "name": "todecoins:collectible_coin_chicken_copper"
                 },
                 {
                     "type": "minecraft:item",
                     "conditions": [
-                        {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:chicken"
-                        },
                         {
                             "condition": "todecoins:summer_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_chicken_iron",
-                    "quality": 6
+                    "name": "todecoins:collectible_coin_chicken_iron"
                 },
                 {
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:chicken"
-                        },
-                        {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_chicken_gold",
-                    "quality": 6
+                    "name": "todecoins:collectible_coin_chicken_gold"
                 },
                 {
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:entity_type_tag_condition",
-                            "tag": "forge:chicken"
-                        },
-                        {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:winter_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_chicken_netherite",
-                    "quality": 6
+                    "name": "todecoins:collectible_coin_chicken_netherite"
                 }
             ],
             "rolls": 1.0

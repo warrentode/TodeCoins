@@ -10,18 +10,19 @@ import org.jetbrains.annotations.NotNull;
 
 public class ModCreativeModeTabs extends CreativeModeTab {
     public ModCreativeModeTabs(String label) {
-        super(label);
+        super(-1, label);
     }
 
     public @NotNull ItemStack makeIcon() {
         return getIconItem();
     }
 
-    public static final CreativeModeTab TODECOINSTAB = new CreativeModeTab("todecoinstab") {
+    public static final CreativeModeTab TODECOINSTAB = new CreativeModeTab(-1, "todecoinstab") {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ModItems.COPPER_COIN.get());
         }
+
         @Override
         public void fillItemList(final @NotNull NonNullList<ItemStack> items) {
             items.add(ModItems.CURRENCY_STAMP.get().getDefaultInstance());
@@ -85,7 +86,7 @@ public class ModCreativeModeTabs extends CreativeModeTab {
         }
     };
 
-    public static final CreativeModeTab COLLECTORCOINSTAB = new CreativeModeTab("collectorcoinstab") {
+    public static final CreativeModeTab COLLECTORCOINSTAB = new CreativeModeTab(-1, "collectorcoinstab") {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ModItems.COPPER_HERO_COIN.get());
@@ -125,6 +126,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_BEE_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_BEE_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_BEE_COIN.get().getDefaultInstance());
+            // BLAZE COIN SET
+            items.add(ModItems.COPPER_BLAZE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_BLAZE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_BLAZE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_BLAZE_COIN.get().getDefaultInstance());
             // CAMEL COIN SET
             items.add(ModItems.COPPER_CAMEL_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_CAMEL_COIN.get().getDefaultInstance());
@@ -135,6 +141,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_CAT_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_CAT_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_CAT_COIN.get().getDefaultInstance());
+            // CAVE SPIDER COIN SET
+            items.add(ModItems.COPPER_CAVE_SPIDER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_CAVE_SPIDER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_CAVE_SPIDER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_CAVE_SPIDER_COIN.get().getDefaultInstance());
             // CHICKEN COIN SET
             items.add(ModItems.COPPER_CHICKEN_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_CHICKEN_COIN.get().getDefaultInstance());

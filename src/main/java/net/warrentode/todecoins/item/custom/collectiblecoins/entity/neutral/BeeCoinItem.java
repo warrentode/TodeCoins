@@ -22,7 +22,7 @@ public class BeeCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createBeeCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createPoisonCharmProvider(stack);
     }
 
     @Override

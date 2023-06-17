@@ -13,13 +13,13 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mansion"
+                                        "structure": "minecraft:mineshaft"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:pillager_outpost"
+                                        "structure": "minecraft:mineshaft_mesa"
                                     }
                                 }
                             ]
@@ -28,7 +28,8 @@
                             "condition": "todecoins:spring_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_allay_copper"
+                    "name": "todecoins:collectible_coin_cave_spider_copper",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -39,13 +40,13 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mansion"
+                                        "structure": "minecraft:mineshaft"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:pillager_outpost"
+                                        "structure": "minecraft:mineshaft_mesa"
                                     }
                                 }
                             ]
@@ -54,7 +55,8 @@
                             "condition": "todecoins:summer_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_allay_iron"
+                    "name": "todecoins:collectible_coin_cave_spider_iron",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -65,22 +67,23 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mansion"
+                                        "structure": "minecraft:mineshaft"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:pillager_outpost"
+                                        "structure": "minecraft:mineshaft_mesa"
                                     }
                                 }
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_allay_gold"
+                    "name": "todecoins:collectible_coin_cave_spider_gold",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -91,22 +94,23 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mansion"
+                                        "structure": "minecraft:mineshaft"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:pillager_outpost"
+                                        "structure": "minecraft:mineshaft_mesa"
                                     }
                                 }
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:winter_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_allay_netherite"
+                    "name": "todecoins:collectible_coin_cave_spider_netherite",
+                    "quality": 6
                 }
             ],
             "rolls": 1.0

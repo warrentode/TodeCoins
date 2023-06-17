@@ -25,39 +25,10 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:nether_wastes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warped_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
+                "condition": "minecraft:location_check",
+                "predicate": {
+                    "dimension": "minecraft:the_nether"
                 }
-              ]
             }
           ],
           "name": "todecoins:chests/currency/todecoins_nether_gold_coin_loot",
@@ -93,36 +64,36 @@
           "name": "todecoins:chests/currency/todecoins_lucky_coin_loot",
           "quality": 6
         },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:birthday_condition"
-            }
-          ],
-          "name": "todecoins:chests/collectible/todecoins_birthday_coin_loot",
-          "weight": 7
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:halloween_condition"
-            }
-          ],
-          "name": "todecoins:chests/collectible/todecoins_halloween_coin_loot",
-          "weight": 7
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:christmas_condition"
-            }
-          ],
-          "name": "todecoins:chests/collectible/todecoins_christmas_coin_loot",
-          "weight": 7
-        },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:birthday_condition"
+                  }
+              ],
+              "name": "todecoins:chests/collectible/seasonal/todecoins_birthday_coin_loot",
+              "weight": 7
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:halloween_condition"
+                  }
+              ],
+              "name": "todecoins:chests/collectible/seasonal/todecoins_halloween_coin_loot",
+              "weight": 7
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:christmas_condition"
+                  }
+              ],
+              "name": "todecoins:chests/collectible/seasonal/todecoins_christmas_coin_loot",
+              "weight": 7
+          },
           {
               "type": "minecraft:loot_table",
               "conditions": [
@@ -130,7 +101,7 @@
                       "condition": "todecoins:anniversary_condition"
                   }
               ],
-              "name": "todecoins:chests/collectible/todecoins_anniversary_coin_loot",
+              "name": "todecoins:chests/collectible/seasonal/todecoins_anniversary_coin_loot",
               "weight": 7
           },
           {
@@ -154,7 +125,8 @@
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_allay_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_allay_coin_loot",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -189,7 +161,8 @@
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_axolotl_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_axolotl_coin_loot",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -236,7 +209,8 @@
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_bat_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_bat_coin_loot",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -295,7 +269,8 @@
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_bee_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_bee_coin_loot",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -307,7 +282,7 @@
                       }
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_camel_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_camel_coin_loot"
           },
           {
               "type": "minecraft:loot_table",
@@ -354,7 +329,8 @@
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_cat_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_cat_coin_loot",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -401,7 +377,8 @@
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_chicken_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_chicken_coin_loot",
+              "quality": 6
           },
           {
               "type": "minecraft:loot_table",
@@ -424,7 +401,8 @@
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_enderman_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_enderman_coin_loot",
+              "quality": 6
           },
           {
               "type": "minecraft:loot_table",
@@ -453,7 +431,21 @@
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_ocelot_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_ocelot_coin_loot",
+              "quality": 1
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                          "dimension": "minecraft:the_nether"
+                      }
+                  }
+              ],
+              "name": "todecoins:chests/collectible/entity/todecoins_piglin_coin_loot",
+              "quality": 6
           },
           {
               "type": "minecraft:loot_table",
@@ -464,25 +456,33 @@
                           {
                               "condition": "minecraft:location_check",
                               "predicate": {
-                                  "biome": "minecraft:basalt_deltas"
+                                  "structure": "minecraft:mineshaft"
                               }
                           },
                           {
                               "condition": "minecraft:location_check",
                               "predicate": {
-                                  "biome": "minecraft:crimson_forest"
-                              }
-                          },
-                          {
-                              "condition": "minecraft:location_check",
-                              "predicate": {
-                                  "biome": "minecraft:nether_wastes"
+                                  "structure": "minecraft:mineshaft_mesa"
                               }
                           }
                       ]
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_piglin_coin_loot"
+              "name": "todecoins:chests/collectible/entity/todecoins_cave_spider_coin_loot",
+              "quality": 6
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                          "structure": "minecraft:fortress"
+                      }
+                  }
+              ],
+              "name": "todecoins:chests/collectible/entity/todecoins_blaze_coin_loot",
+              "quality": 6
           }
       ],
       "rolls": 1.0

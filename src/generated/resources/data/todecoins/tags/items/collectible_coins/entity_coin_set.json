@@ -4,8 +4,11 @@
         "#todecoins:collectible_coins/entity_coins/axolotl_coin_set",
         "#todecoins:collectible_coins/entity_coins/bat_coin_set",
         "#todecoins:collectible_coins/entity_coins/bee_coin_set",
+        "#todecoins:collectible_coins/entity_coins/blaze_coin_set",
         "#todecoins:collectible_coins/entity_coins/camel_coin_set",
         "#todecoins:collectible_coins/entity_coins/cat_coin_set",
+        "#todecoins:collectible_coins/entity_coins/cave_spider_coin_set",
+        "#todecoins:collectible_coins/entity_coins/chicken_coin_set",
         "#todecoins:collectible_coins/entity_coins/enderman_coin_set",
         "#todecoins:collectible_coins/entity_coins/ocelot_coin_set",
         "#todecoins:collectible_coins/entity_coins/piglin_coin_set"

@@ -37,23 +37,23 @@
               "name": "todecoins:entity/coins/todecoins_gold_coin_drops",
               "quality": 3
           },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-              {
-                  "condition": "todecoins:entity_type_tag_condition",
-                  "tag": "forge:drops_currency"
-              },
-              {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                      "dimension": "minecraft:the_nether"
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:drops_currency"
+                  },
+                  {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                          "dimension": "minecraft:the_nether"
+                      }
                   }
-              }
-          ],
-          "name": "todecoins:entity/coins/todecoins_nether_gold_coin_drops",
-          "quality": 3
-        },
+              ],
+              "name": "todecoins:entity/coins/todecoins_nether_gold_coin_drops",
+              "quality": 3
+          },
           {
               "type": "minecraft:loot_table",
               "conditions": [
@@ -98,24 +98,24 @@
               "name": "todecoins:entity/notes/todecoins_emerald_bank_note_drops",
               "quality": 6
           },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:birthday_condition"
-            }
-          ],
-          "name": "todecoins:entity/collectible/todecoins_birthday_coin_drops"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:halloween_condition"
-            }
-          ],
-          "name": "todecoins:entity/collectible/todecoins_halloween_coin_drops"
-        },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:birthday_condition"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_birthday_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:halloween_condition"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_halloween_coin_drops"
+          },
           {
               "type": "minecraft:loot_table",
               "conditions": [
@@ -222,7 +222,28 @@
                       "tag": "forge:piglin"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_piglin_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_piglin_coin_drops",
+              "quality": 6
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:cave_spider"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_cave_spider_coin_drops"
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:blaze"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_blaze_coin_drops"
           }
       ],
       "rolls": 1.0

@@ -15,19 +15,19 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CatCoinItem extends CollectibleCoin {
-    public CatCoinItem(Properties pProperties) {
+public class FelineCoinItem extends CollectibleCoin {
+    public FelineCoinItem(Properties pProperties) {
         super(pProperties);
     }
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createCatEffectCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createCatDisguiseCharmProvider(stack);
     }
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_cat_coin.hover").withStyle(ChatFormatting.GRAY));
+        tooltips.add(Component.translatable("tooltips.collectible_feline_coin.hover").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

@@ -23,9 +23,4 @@ public abstract class CreeperBehaviorMixin extends PathfinderMob {
         Player player = Minecraft.getInstance().player;
         this.goalSelector.addGoal(3, new AvoidPlayerWithCatDisguiseGoal<>(this, Player.class, 6.0F, 1.0D, 1.2D));
     }
-
-    @Override
-    public boolean alwaysAccepts() {
-        return super.alwaysAccepts();
-    }
 }

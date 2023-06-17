@@ -64,11 +64,9 @@ public abstract class PhantomBehaviorMixin {
             List<Player> playerList = this$0.level.getEntitiesOfClass(Player.class, this$0.getBoundingBox().inflate(16.0D), EntitySelector.ENTITY_STILL_ALIVE);
             List<Player> fakeCat = new ArrayList<>();
 
-            if (isWearingCatCoin(player)) {
-                if (player != null) {
-                    fakeCat.add(player);
-                    player.playSound(SoundEvents.CAT_HISS, 1.0F, 1.0F);
-                }
+            if (player != null && isWearingCatCoin(player) && !player.isCreative() && !player.isSpectator()) {
+                fakeCat.add(player);
+                player.playSound(SoundEvents.CAT_HISS, 1.0F, player.getVoicePitch());
 
                 this.isScaredOfCat = !fakeCat.isEmpty();
                 cir.setReturnValue(false);

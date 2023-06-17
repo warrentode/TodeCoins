@@ -17,7 +17,7 @@
                 "display": {
                     "announce_to_chat": false,
                     "description": {
-                        "translate": "advancement.optional.spawn_egg_recipes.desc"
+                        "translate": "advancement.dependency.condition.spawn_egg_recipes.desc"
                     },
                     "frame": "task",
                     "hidden": false,
@@ -26,7 +26,7 @@
                     },
                     "show_toast": false,
                     "title": {
-                        "translate": "advancement.optional.spawn_egg_recipes"
+                        "translate": "advancement.dependency.spawn_egg_recipes.axolotl_spawn_egg"
                     }
                 },
                 "requirements": [

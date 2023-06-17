@@ -5,9 +5,6 @@
       "bonus_rolls": 1.0,
       "conditions": [
           {
-              "condition": "minecraft:killed_by_player"
-          },
-          {
               "condition": "minecraft:location_check",
               "predicate": {
                   "dimension": "minecraft:the_nether"

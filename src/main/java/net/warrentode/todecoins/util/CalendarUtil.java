@@ -1,15 +1,30 @@
 package net.warrentode.todecoins.util;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.Holder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
 import net.warrentode.todecoins.TodeCoins;
 import sereneseasons.api.season.SeasonHelper;
 
 import java.util.Calendar;
 
 public class CalendarUtil {
+    private static Player player = Minecraft.getInstance().player;
+    private static Level level = Minecraft.getInstance().level;
+    private static Holder<Biome> biome;
+    private static Calendar calendar = Calendar.getInstance();
+    private static int month = calendar.get(Calendar.MONTH);
+    private static int date = calendar.get(Calendar.DATE);
+
+    static {
+        assert Minecraft.getInstance().level != null;
+        assert player != null;
+        biome = Minecraft.getInstance().level.getBiome(player.getOnPos());
+    }
+
     public CalendarUtil calendarUtil;
-    public static Level level = Minecraft.getInstance().level;
 
     public enum Season {
         NONE,
@@ -22,160 +37,89 @@ public class CalendarUtil {
         AUTUMN,
         WINTER;
 
-        public static boolean isSpring() {
-            return get() == SPRING;
-        }
-
-        public static boolean isSummer() {
-            return get() == SUMMER;
-        }
-
-        public static boolean isAutumn() {
-            return get() == AUTUMN;
-        }
-
-        public static boolean isWinter() {
-            return get() == AUTUMN;
-        }
 
         public static boolean isChristmas() {
-            return get() == CHRISTMAS;
+            if (TodeCoins.isSereneSeasonsLoaded()) {
+                return SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_WINTER)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET);
+            }
+            else {
+                return (month == Calendar.DECEMBER) && (date >= 1 && date <= 31);
+            }
         }
 
         public static boolean isHalloween() {
-            return get() == HALLOWEEN;
+            if (TodeCoins.isSereneSeasonsLoaded()) {
+                return SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_AUTUMN)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_WET);
+            }
+            else {
+                return (month == Calendar.OCTOBER) && (date >= 1 && date <= 31);
+            }
         }
 
         public static boolean isBirthday() {
-            return get() == BIRTHDAY;
+            if (TodeCoins.isSereneSeasonsLoaded()) {
+                return SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_WINTER)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_WET);
+            }
+            else {
+                return (month == Calendar.DECEMBER) && (date >= 19 && date <= 21);
+            }
         }
 
         public static boolean isAnniversary() {
-            return get() == PATREON_ANNIVERSARY;
+            if (TodeCoins.isSereneSeasonsLoaded()) {
+                return SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_SPRING)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_DRY);
+            }
+            else {
+                return (month == Calendar.JANUARY) && (date >= 21 && date <= 27);
+            }
         }
 
-        private static Season get() {
-            Calendar calendar = Calendar.getInstance();
-            int month = calendar.get(Calendar.MONTH);
-            int date = calendar.get(Calendar.DATE);
-
+        public static boolean isSpring() {
             if (TodeCoins.isSereneSeasonsLoaded()) {
-                // spring season cycles
-                if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_SPRING)) {
-                    return SPRING;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_SPRING)) {
-                    return SPRING;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.LATE_SPRING)) {
-                    return SPRING;
-                }
-                // summer season cycles
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_SUMMER)) {
-                    return SUMMER;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_SUMMER)) {
-                    return SUMMER;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.LATE_SUMMER)) {
-                    return SUMMER;
-                }
-                // autumn season cycles
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_AUTUMN)) {
-                    return AUTUMN;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_AUTUMN)) {
-                    return AUTUMN;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.LATE_AUTUMN)) {
-                    return AUTUMN;
-                }
-                // winter season cycles
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_WINTER)) {
-                    return WINTER;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_WINTER)) {
-                    return WINTER;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.LATE_WINTER)) {
-                    return WINTER;
-                }
-                // tropic seasons
-                else if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_DRY)) {
-                    return SPRING;
-                }
-                else if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_DRY)) {
-                    return SUMMER;
-                }
-                else if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_WET)) {
-                    return AUTUMN;
-                }
-                else if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_WET)) {
-                    return WINTER;
-                }
-                if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_DRY)) {
-                    return SPRING;
-                }
-                if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_DRY)) {
-                    return SUMMER;
-                }
-                if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET)) {
-                    return AUTUMN;
-                }
-                if (SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET)) {
-                    return WINTER;
-                }
-
-                // holiday cycles within serene season's calendar
-                if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_WINTER) || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET)) {
-                    return CHRISTMAS;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_AUTUMN) || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_WET)) {
-                    return HALLOWEEN;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_WINTER) || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_WET)) {
-                    return BIRTHDAY;
-                }
-                else if (SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_SPRING) || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_DRY)) {
-                    return PATREON_ANNIVERSARY;
-                }
+                return SeasonHelper.getSeasonState(level).getSeason().equals(sereneseasons.api.season.Season.SPRING)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_DRY)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_DRY);
             }
-
             else {
-                // seasonal cycles based on the computer calendar
-                if ((month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20)) {
-                    return SPRING;
-                }
-                else if ((month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 20)) {
-                    return SUMMER;
-                }
-                else if ((month == Calendar.SEPTEMBER && date >= 20) && (month == Calendar.DECEMBER && date <= 20)) {
-                    return AUTUMN;
-                }
-                else if ((month == Calendar.DECEMBER && date >= 20) && (month == Calendar.MARCH && date <= 20)) {
-                    return WINTER;
-                }
-
-                // holidays
-                if ((month == Calendar.DECEMBER && date >= 1) && (month == Calendar.DECEMBER && date <= 31)) {
-                    return CHRISTMAS;
-                }
-                else if ((month == Calendar.OCTOBER && date >= 1) && (month == Calendar.OCTOBER && date <= 31)) {
-                    return HALLOWEEN;
-                }
-
-                // yearly built-in events
-                if ((month == Calendar.DECEMBER && date >= 19) && (month == Calendar.DECEMBER && date <= 21)) {
-                    // mod's birthday is built-in
-                    return BIRTHDAY;
-                }
-                if ((month == Calendar.JANUARY && date >= 21) && (month == Calendar.JANUARY && date <= 27)) {
-                    // anniversary of patreon site
-                    return PATREON_ANNIVERSARY;
-                }
+                return (month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20);
             }
+        }
 
-            return NONE;
+        public static boolean isSummer() {
+            if (TodeCoins.isSereneSeasonsLoaded()) {
+                return SeasonHelper.getSeasonState(level).getSeason().equals(sereneseasons.api.season.Season.SUMMER)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_DRY)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_DRY);
+            }
+            else {
+                return (month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 20);
+            }
+        }
+
+        public static boolean isAutumn() {
+            if (TodeCoins.isSereneSeasonsLoaded()) {
+                return SeasonHelper.getSeasonState(level).getSeason().equals(sereneseasons.api.season.Season.AUTUMN)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_WET)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET);
+            }
+            else {
+                return (month == Calendar.SEPTEMBER && date >= 20) && (month == Calendar.DECEMBER && date <= 20);
+            }
+        }
+
+        public static boolean isWinter() {
+            if (TodeCoins.isSereneSeasonsLoaded()) {
+                return SeasonHelper.getSeasonState(level).getSeason().equals(sereneseasons.api.season.Season.WINTER)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_WET)
+                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET);
+            }
+            else {
+                return (month == Calendar.DECEMBER && date >= 20) && (month == Calendar.MARCH && date <= 20);
+            }
         }
     }
 }

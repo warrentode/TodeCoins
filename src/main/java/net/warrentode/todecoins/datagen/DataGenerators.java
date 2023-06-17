@@ -34,6 +34,8 @@ public class DataGenerators {
         StructureTagsGen structureTagsGen = new StructureTagsGen(generator, MODID, helper);
         generator.addProvider(event.includeServer(), structureTagsGen);
 
+        generator.addProvider(event.includeClient(), new LanguageFileGen(generator, MODID, "en_us"));
+
         generator.addProvider(event.includeServer(), new RecipesGen(generator));
         generator.addProvider(event.includeServer(), new ConditionalSpawnEggRecipes(generator));
         generator.addProvider(event.includeServer(), new AdvancementsGen(generator, helper));

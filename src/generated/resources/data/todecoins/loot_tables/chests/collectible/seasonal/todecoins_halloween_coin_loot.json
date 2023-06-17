@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 1.0,
+            "conditions": [
+                {
+                    "condition": "todecoins:halloween_condition"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "todecoins:collectible_coin_halloween_2023"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

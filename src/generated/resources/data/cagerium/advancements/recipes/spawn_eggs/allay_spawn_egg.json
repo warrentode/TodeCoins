@@ -17,7 +17,7 @@
                 "display": {
                     "announce_to_chat": false,
                     "description": {
-                        "text": "Optional Recipes for when Cagerium is Loaded"
+                        "translate": "advancement.dependency.condition.spawn_egg_recipes.desc"
                     },
                     "frame": "task",
                     "hidden": false,
@@ -26,7 +26,7 @@
                     },
                     "show_toast": false,
                     "title": {
-                        "text": "Spawn Egg Recipes"
+                        "translate": "advancement.dependency.spawn_egg_recipes.allay_spawn_egg"
                     }
                 },
                 "requirements": [

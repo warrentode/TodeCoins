@@ -13,19 +13,13 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:basalt_deltas"
+                                        "structure": "minecraft:mansion"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:crimson_forest"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "biome": "minecraft:nether_wastes"
+                                        "structure": "minecraft:pillager_outpost"
                                     }
                                 }
                             ]
@@ -34,8 +28,8 @@
                             "condition": "todecoins:spring_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_piglin_copper",
-                    "quality": 6
+                    "name": "todecoins:collectible_coin_allay_copper",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -46,19 +40,13 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:basalt_deltas"
+                                        "structure": "minecraft:mansion"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:crimson_forest"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "biome": "minecraft:nether_wastes"
+                                        "structure": "minecraft:pillager_outpost"
                                     }
                                 }
                             ]
@@ -67,8 +55,8 @@
                             "condition": "todecoins:summer_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_piglin_iron",
-                    "quality": 6
+                    "name": "todecoins:collectible_coin_allay_iron",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -79,29 +67,23 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:basalt_deltas"
+                                        "structure": "minecraft:mansion"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:crimson_forest"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "biome": "minecraft:nether_wastes"
+                                        "structure": "minecraft:pillager_outpost"
                                     }
                                 }
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_piglin_gold",
-                    "quality": 6
+                    "name": "todecoins:collectible_coin_allay_gold",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -112,29 +94,23 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:basalt_deltas"
+                                        "structure": "minecraft:mansion"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:crimson_forest"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "biome": "minecraft:nether_wastes"
+                                        "structure": "minecraft:pillager_outpost"
                                     }
                                 }
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:winter_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_piglin_netherite",
-                    "quality": 6
+                    "name": "todecoins:collectible_coin_allay_netherite",
+                    "quality": 1
                 }
             ],
             "rolls": 1.0

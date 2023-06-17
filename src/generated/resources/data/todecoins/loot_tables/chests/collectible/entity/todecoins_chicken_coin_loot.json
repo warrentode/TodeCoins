@@ -13,25 +13,37 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mineshaft"
+                                        "structure": "minecraft:village_desert"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mineshaft_mesa"
+                                        "structure": "minecraft:village_plains"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:dripstone_caves"
+                                        "structure": "minecraft:village_savanna"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:lush_caves"
+                                        "structure": "minecraft:village_snowy"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_taiga"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:swamp_hut"
                                     }
                                 }
                             ]
@@ -40,7 +52,8 @@
                             "condition": "todecoins:spring_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_axolotl_copper"
+                    "name": "todecoins:collectible_coin_chicken_copper",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -51,25 +64,37 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mineshaft"
+                                        "structure": "minecraft:village_desert"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mineshaft_mesa"
+                                        "structure": "minecraft:village_plains"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:dripstone_caves"
+                                        "structure": "minecraft:village_savanna"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:lush_caves"
+                                        "structure": "minecraft:village_snowy"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_taiga"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:swamp_hut"
                                     }
                                 }
                             ]
@@ -78,7 +103,8 @@
                             "condition": "todecoins:summer_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_axolotl_iron"
+                    "name": "todecoins:collectible_coin_chicken_iron",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -89,34 +115,47 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mineshaft"
+                                        "structure": "minecraft:village_desert"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mineshaft_mesa"
+                                        "structure": "minecraft:village_plains"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:dripstone_caves"
+                                        "structure": "minecraft:village_savanna"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:lush_caves"
+                                        "structure": "minecraft:village_snowy"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_taiga"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:swamp_hut"
                                     }
                                 }
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_axolotl_gold"
+                    "name": "todecoins:collectible_coin_chicken_gold",
+                    "quality": 6
                 },
                 {
                     "type": "minecraft:item",
@@ -127,34 +166,47 @@
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mineshaft"
+                                        "structure": "minecraft:village_desert"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "structure": "minecraft:mineshaft_mesa"
+                                        "structure": "minecraft:village_plains"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:dripstone_caves"
+                                        "structure": "minecraft:village_savanna"
                                     }
                                 },
                                 {
                                     "condition": "minecraft:location_check",
                                     "predicate": {
-                                        "biome": "minecraft:lush_caves"
+                                        "structure": "minecraft:village_snowy"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:village_taiga"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "structure": "minecraft:swamp_hut"
                                     }
                                 }
                             ]
                         },
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:winter_condition"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_axolotl_netherite"
+                    "name": "todecoins:collectible_coin_chicken_netherite",
+                    "quality": 6
                 }
             ],
             "rolls": 1.0
