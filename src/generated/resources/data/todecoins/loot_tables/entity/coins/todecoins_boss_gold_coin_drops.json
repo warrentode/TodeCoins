@@ -2,26 +2,26 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "bonus_rolls": 1.0,
-      "conditions": [
-          {
-              "condition": "todecoins:entity_type_tag_condition",
-              "tag": "forge:bosses"
-          }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
+        "bonus_rolls": 1.0,
+        "entries": [
             {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:set_count"
-            },
+                "type": "minecraft:item",
+                "conditions": [
+                    {
+                        "condition": "todecoins:entity_type_tag_condition",
+                        "tag": "forge:bosses"
+                    }
+                ],
+                "functions": [
+                    {
+                        "add": false,
+                        "count": {
+                            "type": "minecraft:uniform",
+                            "max": 1.0,
+                            "min": 0.0
+                        },
+                        "function": "minecraft:set_count"
+                    },
             {
               "count": {
                 "type": "minecraft:uniform",
@@ -33,18 +33,24 @@
           ],
           "name": "todecoins:gold_coin"
         },
-        {
-          "type": "minecraft:item",
-          "functions": [
             {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:set_count"
-            },
+                "type": "minecraft:item",
+                "conditions": [
+                    {
+                        "condition": "todecoins:entity_type_tag_condition",
+                        "tag": "forge:bosses"
+                    }
+                ],
+                "functions": [
+                    {
+                        "add": false,
+                        "count": {
+                            "type": "minecraft:uniform",
+                            "max": 1.0,
+                            "min": 0.0
+                        },
+                        "function": "minecraft:set_count"
+                    },
             {
               "count": {
                 "type": "minecraft:uniform",

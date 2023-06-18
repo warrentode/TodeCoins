@@ -1,29 +1,8 @@
 package net.warrentode.todecoins.util;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.Holder;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.biome.Biome;
-import net.warrentode.todecoins.TodeCoins;
-import sereneseasons.api.season.SeasonHelper;
-
 import java.util.Calendar;
 
 public class CalendarUtil {
-    private static Player player = Minecraft.getInstance().player;
-    private static Level level = Minecraft.getInstance().level;
-    private static Holder<Biome> biome;
-    private static Calendar calendar = Calendar.getInstance();
-    private static int month = calendar.get(Calendar.MONTH);
-    private static int date = calendar.get(Calendar.DATE);
-
-    static {
-        assert Minecraft.getInstance().level != null;
-        assert player != null;
-        biome = Minecraft.getInstance().level.getBiome(player.getOnPos());
-    }
-
     public CalendarUtil calendarUtil;
 
     public enum Season {
@@ -37,89 +16,75 @@ public class CalendarUtil {
         AUTUMN,
         WINTER;
 
-
-        public static boolean isChristmas() {
-            if (TodeCoins.isSereneSeasonsLoaded()) {
-                return SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_WINTER)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET);
-            }
-            else {
-                return (month == Calendar.DECEMBER) && (date >= 1 && date <= 31);
-            }
-        }
-
-        public static boolean isHalloween() {
-            if (TodeCoins.isSereneSeasonsLoaded()) {
-                return SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_AUTUMN)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_WET);
-            }
-            else {
-                return (month == Calendar.OCTOBER) && (date >= 1 && date <= 31);
-            }
-        }
-
-        public static boolean isBirthday() {
-            if (TodeCoins.isSereneSeasonsLoaded()) {
-                return SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.MID_WINTER)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_WET);
-            }
-            else {
-                return (month == Calendar.DECEMBER) && (date >= 19 && date <= 21);
-            }
-        }
-
-        public static boolean isAnniversary() {
-            if (TodeCoins.isSereneSeasonsLoaded()) {
-                return SeasonHelper.getSeasonState(level).getSubSeason().equals(sereneseasons.api.season.Season.SubSeason.EARLY_SPRING)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_DRY);
-            }
-            else {
-                return (month == Calendar.JANUARY) && (date >= 21 && date <= 27);
-            }
-        }
-
         public static boolean isSpring() {
-            if (TodeCoins.isSereneSeasonsLoaded()) {
-                return SeasonHelper.getSeasonState(level).getSeason().equals(sereneseasons.api.season.Season.SPRING)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_DRY)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_DRY);
-            }
-            else {
-                return (month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20);
-            }
+            return get() == SPRING;
         }
 
         public static boolean isSummer() {
-            if (TodeCoins.isSereneSeasonsLoaded()) {
-                return SeasonHelper.getSeasonState(level).getSeason().equals(sereneseasons.api.season.Season.SUMMER)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_DRY)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_DRY);
-            }
-            else {
-                return (month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 20);
-            }
+            return get() == SUMMER;
         }
 
         public static boolean isAutumn() {
-            if (TodeCoins.isSereneSeasonsLoaded()) {
-                return SeasonHelper.getSeasonState(level).getSeason().equals(sereneseasons.api.season.Season.AUTUMN)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.EARLY_WET)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET);
-            }
-            else {
-                return (month == Calendar.SEPTEMBER && date >= 20) && (month == Calendar.DECEMBER && date <= 20);
-            }
+            return get() == AUTUMN;
         }
 
         public static boolean isWinter() {
-            if (TodeCoins.isSereneSeasonsLoaded()) {
-                return SeasonHelper.getSeasonState(level).getSeason().equals(sereneseasons.api.season.Season.WINTER)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.LATE_WET)
-                       || SeasonHelper.getSeasonState(level).getTropicalSeason().equals(sereneseasons.api.season.Season.TropicalSeason.MID_WET);
+            return get() == AUTUMN;
+        }
+
+        public static boolean isChristmas() {
+            return get() == CHRISTMAS;
+        }
+
+        public static boolean isHalloween() {
+            return get() == HALLOWEEN;
+        }
+
+        public static boolean isBirthday() {
+            return get() == BIRTHDAY;
+        }
+
+        public static boolean isAnniversary() {
+            return get() == PATREON_ANNIVERSARY;
+        }
+
+        private static Season get() {
+            Calendar calendar = Calendar.getInstance();
+            int month = calendar.get(Calendar.MONTH);
+            int date = calendar.get(Calendar.DATE);
+            // seasons
+            if ((month == Calendar.DECEMBER && date >= 20) && (month == Calendar.MARCH && date <= 20)) {
+                return WINTER;
             }
-            else {
-                return (month == Calendar.DECEMBER && date >= 20) && (month == Calendar.MARCH && date <= 20);
+            else if ((month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20)) {
+                return SPRING;
             }
+            else if ((month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 20)) {
+                return SUMMER;
+            }
+            else if ((month == Calendar.SEPTEMBER && date >= 20) && (month == Calendar.DECEMBER && date <= 20)) {
+                return AUTUMN;
+            }
+
+            // holidays
+            if ((month == Calendar.DECEMBER && date >= 1) && (month == Calendar.DECEMBER && date <= 31)) {
+                return CHRISTMAS;
+            }
+            else if ((month == Calendar.OCTOBER && date >= 1) && (month == Calendar.OCTOBER && date <= 31)) {
+                return HALLOWEEN;
+            }
+
+            // yearly built-in events
+            if ((month == Calendar.DECEMBER && date >= 19) && (month == Calendar.DECEMBER && date <= 21)) {
+                // mod's birthday is built-in
+                return BIRTHDAY;
+            }
+            if ((month == Calendar.JANUARY && date >= 21) && (month == Calendar.JANUARY && date <= 27)) {
+                // anniversary of patreon site
+                return PATREON_ANNIVERSARY;
+            }
+
+            return NONE;
         }
     }
 }

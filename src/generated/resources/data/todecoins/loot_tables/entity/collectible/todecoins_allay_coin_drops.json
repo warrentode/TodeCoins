@@ -3,17 +3,15 @@
     "pools": [
         {
             "bonus_rolls": 0.0,
-            "conditions": [
-                {
-                    "condition": "minecraft:killed_by_player"
-                }
-            ],
             "entries": [
                 {
                     "type": "minecraft:item",
                     "conditions": [
                         {
                             "condition": "todecoins:spring_condition"
+                        },
+                        {
+                            "condition": "minecraft:killed_by_player"
                         }
                     ],
                     "name": "todecoins:collectible_coin_allay_copper"
@@ -23,6 +21,9 @@
                     "conditions": [
                         {
                             "condition": "todecoins:summer_condition"
+                        },
+                        {
+                            "condition": "minecraft:killed_by_player"
                         }
                     ],
                     "name": "todecoins:collectible_coin_allay_iron"
@@ -32,6 +33,9 @@
                     "conditions": [
                         {
                             "condition": "todecoins:autumn_condition"
+                        },
+                        {
+                            "condition": "minecraft:killed_by_player"
                         }
                     ],
                     "name": "todecoins:collectible_coin_allay_gold"
@@ -41,6 +45,9 @@
                     "conditions": [
                         {
                             "condition": "todecoins:winter_condition"
+                        },
+                        {
+                            "condition": "minecraft:killed_by_player"
                         }
                     ],
                     "name": "todecoins:collectible_coin_allay_netherite"
