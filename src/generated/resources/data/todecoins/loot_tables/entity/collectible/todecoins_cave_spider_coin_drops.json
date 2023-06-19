@@ -14,7 +14,8 @@
                             "condition": "minecraft:killed_by_player"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_cave_spider_copper"
+                    "name": "todecoins:collectible_coin_cave_spider_copper",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -26,7 +27,8 @@
                             "condition": "minecraft:killed_by_player"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_cave_spider_iron"
+                    "name": "todecoins:collectible_coin_cave_spider_iron",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -38,7 +40,8 @@
                             "condition": "minecraft:killed_by_player"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_cave_spider_gold"
+                    "name": "todecoins:collectible_coin_cave_spider_gold",
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -50,7 +53,8 @@
                             "condition": "minecraft:killed_by_player"
                         }
                     ],
-                    "name": "todecoins:collectible_coin_cave_spider_netherite"
+                    "name": "todecoins:collectible_coin_cave_spider_netherite",
+                    "quality": 1
                 }
             ],
             "rolls": 1.0

@@ -12,6 +12,12 @@ public class ModBuiltInLootTables {
     private static final Set<ResourceLocation> LOCATIONS = Sets.newHashSet();
     private static final Set<ResourceLocation> IMMUTABLE_LOCATIONS = Collections.unmodifiableSet(LOCATIONS);
 
+    // mystery coin pack loot tables
+    public static final ResourceLocation TODECOINS_EMPTY_COIN_PACK_LOOT = register(MODID + ":" + "gameplay/mystery_coin_packs/empty_coin_pack");
+    public static final ResourceLocation TODECOINS_MINI_MYSTERY_COIN_PACK_LOOT = register(MODID + ":" + "gameplay/mystery_coin_packs/mini_mystery_coin_pack");
+    public static final ResourceLocation TODECOINS_STANDARD_MYSTERY_COIN_PACK_LOOT = register(MODID + ":" + "gameplay/mystery_coin_packs/standard_mystery_coin_pack");
+    public static final ResourceLocation TODECOINS_DELUXE_MYSTERY_COIN_PACK_LOOT = register(MODID + ":" + "gameplay/mystery_coin_packs/deluxe_mystery_coin_pack");
+
     // currency chest loot tables
     public static final ResourceLocation TODECOINS_COPPER_COIN_LOOT = register(MODID + ":" + "chests/currency/todecoins_copper_coin_loot");
     public static final ResourceLocation TODECOINS_IRON_COIN_LOOT = register(MODID + ":" + "chests/currency/todecoins_iron_coin_loot");
@@ -28,6 +34,10 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_halloween_coin_loot");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_christmas_coin_loot");
     public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_anniversary_coin_loot");
+    public static final ResourceLocation TODECOINS_SPRING_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_spring_coin_loot");
+    public static final ResourceLocation TODECOINS_SUMMER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_summer_coin_loot");
+    public static final ResourceLocation TODECOINS_AUTUMN_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_autumn_coin_loot");
+    public static final ResourceLocation TODECOINS_WINTER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_winter_coin_loot");
 
     // entity specific collectible coin chest loot tables
     public static final ResourceLocation TODECOINS_ALLAY_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_allay_coin_loot");

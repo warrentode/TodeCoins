@@ -38,6 +38,18 @@ versionRange = "[1.19.2-8.1.0.24,)"
 ordering = "BEFORE"
 side = "BOTH"
 [[dependencies.todecoins]]
+modId = "puzzleslib"
+mandatory = false
+versionRange = "[1.19.2-4.4.2,)"
+ordering = "BEFORE"
+side = "BOTH"
+[[dependencies.todecoins]]
+modId = "bagofholding"
+mandatory = false
+versionRange = "[1.19.2-4.1.6,)"
+ordering = "BEFORE"
+side = "BOTH"
+[[dependencies.todecoins]]
 modId = "cagerium"
 mandatory = false
 versionRange = "[1.19.2-1.1.8,)"

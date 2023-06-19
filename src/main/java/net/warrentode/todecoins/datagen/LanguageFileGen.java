@@ -245,22 +245,22 @@ public class LanguageFileGen extends LanguageProvider {
     }
 
     private void addBlocks() {
-        add(ModBlocks.COPPER_COIN_BAG.get(), "copper_coin_bag");
-        add(ModBlocks.IRON_COIN_BAG.get(), "iron_coin_bag");
-        add(ModBlocks.GOLD_COIN_BAG.get(), "gold_coin_bag");
-        add(ModBlocks.NETHERITE_COIN_BAG.get(), "netherite_coin_bag");
-        add(ModBlocks.NETHER_GOLD_COIN_BAG.get(), "netherite_gold_coin_bag");
-        add(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(), "emerald_quarter_bank_note_bag");
-        add(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get(), "emerald_half_bank_note_bag");
-        add(ModBlocks.EMERALD_BANK_NOTE_BAG.get(), "emerald_bank_note_bag");
-        add(ModBlocks.POT_OF_GOLD.get(), "pot_of_gold");
-        add(ModBlocks.COINPRESSBLOCK.get(), "coin_press");
+        add(ModBlocks.COPPER_COIN_BAG.get(), "Copper Coin Bag");
+        add(ModBlocks.IRON_COIN_BAG.get(), "Iron Coin Bag");
+        add(ModBlocks.GOLD_COIN_BAG.get(), "Gold Coin Bag");
+        add(ModBlocks.NETHERITE_COIN_BAG.get(), "Netherite Coin Bag");
+        add(ModBlocks.NETHER_GOLD_COIN_BAG.get(), "Netherite Gold Coin Bag");
+        add(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(), "Emerald Quarter Bank Note Bag");
+        add(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get(), "Emerald Half Bank Note Bag");
+        add(ModBlocks.EMERALD_BANK_NOTE_BAG.get(), "Emerald Bank Note Bag");
+        add(ModBlocks.POT_OF_GOLD.get(), "Pot of Gold");
+        add(ModBlocks.COINPRESSBLOCK.get(), "Coin Press");
     }
 
     private void addVillagers() {
-        add(ModEntityTypes.NUMISMATIST.get(), "numismatist");
-        add(EntityType.VILLAGER + "." + ModVillagers.BANKER.get(), "banker");
-        add(EntityType.VILLAGER + "." + ModVillagers.LEPRECHAUN.get(), "leprechaun");
+        add(ModEntityTypes.NUMISMATIST.get(), "Numismatist");
+        add(EntityType.VILLAGER + "." + ModVillagers.BANKER.get(), "Banker");
+        add(EntityType.VILLAGER + "." + ModVillagers.LEPRECHAUN.get(), "Leprechaun");
     }
 
     private void addContainers() {

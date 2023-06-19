@@ -183,13 +183,12 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Blocks.WHITE_SHULKER_BOX.asItem())
                 .add(Blocks.YELLOW_SHULKER_BOX.asItem());
         tag(ModTags.Items.BUNDLES)
-                .add(Items.BUNDLE);
+                .add(Items.BUNDLE)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("bagofholding:leather_bag_of_holding")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("bagofholding:iron_bag_of_holding")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("bagofholding:golden_bag_of_holding")));
         tag(ModTags.Items.WALLETS)
-                .addTag(ModTags.Items.BUNDLES)
-                .addTag(ModTags.Items.SHULKER_BOXES)
-                .addTag(Tags.Items.BARRELS)
-                .addTag(Tags.Items.CHESTS)
-                .addTag(Tags.Items.CHESTS_ENDER);
+                .addTag(ModTags.Items.BUNDLES);
         tag(ModTags.Items.GEMS)
                 .addTag(ForgeTags.Items.GEMS);
         tag(ModTags.Items.BANKNOTES)

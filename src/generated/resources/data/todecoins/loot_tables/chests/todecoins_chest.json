@@ -25,10 +25,57 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-                "condition": "minecraft:location_check",
-                "predicate": {
-                    "dimension": "minecraft:the_nether"
-                }
+                "condition": "minecraft:alternative",
+                "terms": [
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "structure": "minecraft:fortress"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "structure": "minecraft:ruined_portal_nether"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "structure": "minecraft:bastion_remnant"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "biome": "minecraft:soul_sand_valley"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "biome": "minecraft:crimson_forest"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "biome": "minecraft:warped_forest"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "biome": "minecraft:nether_wastes"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:location_check",
+                        "predicate": {
+                            "biome": "minecraft:basalt_deltas"
+                        }
+                    }
+                ]
             }
           ],
           "name": "todecoins:chests/currency/todecoins_nether_gold_coin_loot",
@@ -54,16 +101,16 @@
           "weight": 3
         },
         {
-          "type": "minecraft:loot_table",
-          "name": "todecoins:chests/currency/todecoins_emerald_bank_note_loot",
-          "quality": 5,
-          "weight": 2
+            "type": "minecraft:loot_table",
+            "name": "todecoins:chests/currency/todecoins_emerald_bank_note_loot",
+            "quality": 5,
+            "weight": 2
         },
-        {
-          "type": "minecraft:loot_table",
-          "name": "todecoins:chests/currency/todecoins_lucky_coin_loot",
-          "quality": 6
-        },
+          {
+              "type": "minecraft:loot_table",
+              "name": "todecoins:chests/currency/todecoins_lucky_coin_loot",
+              "quality": 6
+          },
           {
               "type": "minecraft:loot_table",
               "conditions": [
@@ -438,10 +485,51 @@
               "type": "minecraft:loot_table",
               "conditions": [
                   {
-                      "condition": "minecraft:location_check",
-                      "predicate": {
-                          "dimension": "minecraft:the_nether"
-                      }
+                      "condition": "minecraft:alternative",
+                      "terms": [
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:fortress"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:ruined_portal_nether"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "structure": "minecraft:bastion_remnant"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:soul_sand_valley"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:crimson_forest"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:nether_wastes"
+                              }
+                          },
+                          {
+                              "condition": "minecraft:location_check",
+                              "predicate": {
+                                  "biome": "minecraft:basalt_deltas"
+                              }
+                          }
+                      ]
                   }
               ],
               "name": "todecoins:chests/collectible/entity/todecoins_piglin_coin_loot",

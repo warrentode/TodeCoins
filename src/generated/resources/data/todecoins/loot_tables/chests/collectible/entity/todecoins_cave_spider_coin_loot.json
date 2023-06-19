@@ -29,7 +29,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_cave_spider_copper",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -56,7 +56,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_cave_spider_iron",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -83,7 +83,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_cave_spider_gold",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -110,7 +110,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_cave_spider_netherite",
-                    "quality": 6
+                    "quality": 1
                 }
             ],
             "rolls": 1.0

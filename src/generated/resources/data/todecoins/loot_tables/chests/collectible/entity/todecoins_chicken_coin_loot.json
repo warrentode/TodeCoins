@@ -53,7 +53,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_chicken_copper",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -104,7 +104,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_chicken_iron",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -155,7 +155,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_chicken_gold",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -206,7 +206,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_chicken_netherite",
-                    "quality": 6
+                    "quality": 1
                 }
             ],
             "rolls": 1.0

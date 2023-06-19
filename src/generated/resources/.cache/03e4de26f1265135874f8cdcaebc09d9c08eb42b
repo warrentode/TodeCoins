@@ -1,4 +1,4 @@
-// 1.19.2	2023-06-16T21:42:32.3044814	Tags for minecraft:item
+// 1.19.2	2023-06-19T17:39:45.8231809	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -45,7 +45,7 @@ c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.j
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/thread.json
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
 8831b7a7c1903bfd62992756333c08ecd55f796b data/supplementaries/tags/items/cookies.json
-8549b762563fb8215853150344ef3a20278898f9 data/todecoins/tags/items/bundles.json
+1b64b170d75ce337e2786496d5c6024a2f8e6a28 data/todecoins/tags/items/bundles.json
 3fa68285540a9cacb458f465ee22db3e72f6c567 data/todecoins/tags/items/collectible_coins.json
 b74804da44b21600616a426b5c564679e59fa962 data/todecoins/tags/items/collectible_coins/entity_coins/allay_coin_set.json
 6d41bc32e07634fd0dab19d0cbdc1eff7d8c8d5c data/todecoins/tags/items/collectible_coins/entity_coins/axolotl_coin_set.json
@@ -95,4 +95,4 @@ e189f29a4d97932a310f6d36f9d8c79982a77384 data/todecoins/tags/items/textiles/curr
 aba2458564760bf7bb9b9bd73acb591e86a2866c data/todecoins/tags/items/textiles/fabric.json
 9eea9f12406ff56cc773d53efa24608fcbb30ec1 data/todecoins/tags/items/textiles/fibre.json
 68edbe0549d6bd293d6cf50077773c1b8abb3677 data/todecoins/tags/items/textiles/thread.json
-5ec9179b0860ba6bb4ffbd3c5fa2d1c11fc38c2a data/todecoins/tags/items/wallets.json
+07afe5b82d4526b131b02c23b0f2d53d4fbac6ef data/todecoins/tags/items/wallets.json

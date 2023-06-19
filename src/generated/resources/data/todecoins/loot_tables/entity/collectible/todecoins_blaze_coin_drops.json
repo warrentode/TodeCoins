@@ -15,7 +15,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_blaze_copper",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -28,7 +28,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_blaze_iron",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -41,7 +41,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_blaze_gold",
-                    "quality": 6
+                    "quality": 1
                 },
                 {
                     "type": "minecraft:item",
@@ -54,7 +54,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_blaze_netherite",
-                    "quality": 6
+                    "quality": 1
                 }
             ],
             "rolls": 1.0

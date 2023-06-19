@@ -15,7 +15,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_piglin_copper",
-                    "quality": 6
+                    "quality": 2
                 },
                 {
                     "type": "minecraft:item",
@@ -28,7 +28,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_piglin_iron",
-                    "quality": 6
+                    "quality": 2
                 },
                 {
                     "type": "minecraft:item",
@@ -41,7 +41,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_piglin_gold",
-                    "quality": 6
+                    "quality": 2
                 },
                 {
                     "type": "minecraft:item",
@@ -54,7 +54,7 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_piglin_netherite",
-                    "quality": 6
+                    "quality": 2
                 }
             ],
             "rolls": 1.0
