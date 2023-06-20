@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.loot.conditions;
+package net.warrentode.todecoins.loot.conditions.tag;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gson.JsonDeserializationContext;

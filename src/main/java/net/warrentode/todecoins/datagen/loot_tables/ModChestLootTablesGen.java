@@ -24,7 +24,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModBuiltInLootTables;
-import net.warrentode.todecoins.loot.conditions.*;
+import net.warrentode.todecoins.loot.conditions.season.*;
 
 import java.util.function.BiConsumer;
 
@@ -64,10 +64,19 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder IN_OLD_GROWTH_BIRCH_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OLD_GROWTH_BIRCH_FOREST));
     public static final LootItemCondition.Builder IN_DRIPSTONE_CAVES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DRIPSTONE_CAVES));
     public static final LootItemCondition.Builder IN_LUSH_CAVES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.LUSH_CAVES));
-
+    public static final LootItemCondition.Builder IN_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OCEAN));
+    public static final LootItemCondition.Builder IN_DEEP_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_OCEAN));
+    public static final LootItemCondition.Builder IN_LUKEWARM_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.LUKEWARM_OCEAN));
+    public static final LootItemCondition.Builder IN_DEEP_LUKEWARM_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_LUKEWARM_OCEAN));
+    public static final LootItemCondition.Builder IN_COLD_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.COLD_OCEAN));
+    public static final LootItemCondition.Builder IN_DEEP_COLD_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_COLD_OCEAN));
+    public static final LootItemCondition.Builder IN_RIVER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.RIVER));
+    public static final LootItemCondition.Builder IN_FROZEN_RIVER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_RIVER));
+    public static final LootItemCondition.Builder IN_FROZEN_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_OCEAN));
+    public static final LootItemCondition.Builder IN_DEEP_FROZEN_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_FROZEN_OCEAN));
+    public static final LootItemCondition.Builder IN_WARM_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARM_OCEAN));
     // dimension/level checks
     public static final LootItemCondition.Builder IN_THE_END = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.END));
-
     // event/holiday/season checks
     public static final LootItemCondition.Builder BIRTHDAY_EVENT = BirthdayCondition.event();
     public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
@@ -83,31 +92,26 @@ public class ModChestLootTablesGen extends ChestLoot {
         consumer.accept(ModBuiltInLootTables.LEPRECHAUN_CHEST,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(Items.MAP)
-                                                .apply(ExplorationMapFunction.makeExplorationMap()
-                                                        .setDestination(StructureTags.ON_TREASURE_MAPS)
-                                                        .setMapDecoration(MapDecoration.Type.RED_X)
-                                                        .setZoom((byte) 1)
-                                                        .setSkipKnownStructures(false))
-                                                .apply(SetNameFunction.setName(Component.translatable("filled_map.buried_treasure"))))
-                                 )
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(Items.MAP).apply(ExplorationMapFunction.makeExplorationMap()
+                                                .setDestination(StructureTags.ON_TREASURE_MAPS)
+                                                .setMapDecoration(MapDecoration.Type.RED_X)
+                                                .setZoom((byte) 1)
+                                                .setSkipKnownStructures(false))
+                                        .apply(SetNameFunction.setName(Component.translatable("filled_map.buried_treasure")))))
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHEST_LOOT))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.BANKER_CHEST,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(ModItems.CURRENCY_STAMP.get()))
-                                 )
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.CURRENCY_STAMP.get())))
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHEST_LOOT))
-                                 )
-                       );
+                                 ));
         // injected loot table
         consumer.accept(ModBuiltInLootTables.TODECOINS_CHEST_LOOT,
                 LootTable.lootTable()
@@ -120,9 +124,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .setWeight(6).setQuality(1))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_GOLD_COIN_LOOT)
                                                 .setWeight(5).setQuality(2))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_LOOT)
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_LOOT).setWeight(5).setQuality(2)
                                                 .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS).or(IN_SOUL_SAND_VALLEY)
-                                                        .or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST).or(IN_NETHER_WASTES).or(IN_BASALT_DELTAS)).setWeight(5).setQuality(2))
+                                                        .or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST).or(IN_NETHER_WASTES).or(IN_BASALT_DELTAS)))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT)
                                                 .setWeight(4).setQuality(3))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_LOOT)
@@ -143,34 +147,30 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .when(ANNIVERSARY_EVENT).setWeight(7).setQuality(0))
                                         .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ALLAY_COIN_LOOT)
                                                 .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)).setWeight(1).setQuality(1))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_AXOLOTL_COIN_LOOT)
-                                                .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)).setWeight(1).setQuality(1))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BAT_COIN_LOOT)
-                                                .when(IN_SWAMP_HUT.or(IN_MINESHAFT).or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES)
-                                                        .or(IN_LUSH_CAVES).or(IN_STRONGHOLD)).setWeight(1).setQuality(1))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BEE_COIN_LOOT)
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_AXOLOTL_COIN_LOOT).setWeight(1).setQuality(1)
+                                                .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BAT_COIN_LOOT).setWeight(1).setQuality(1)
+                                                .when(IN_SWAMP_HUT.or(IN_MINESHAFT).or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES).or(IN_STRONGHOLD)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BEE_COIN_LOOT).setWeight(1).setQuality(1)
                                                 .when(IN_MEADOW.or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS).or(IN_MANGROVE_SWAMP)
-                                                        .or(IN_FLOWER_FOREST).or(IN_FOREST).or(IN_BIRCH_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST)).setWeight(1).setQuality(1))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CAMEL_COIN_LOOT).when(IN_DESERT).setWeight(1))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CAT_COIN_LOOT)
-                                                .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_PLAINS).or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_SNOWY)
-                                                        .or(IN_VILLAGE_TAIGA).or(IN_SWAMP_HUT)).setWeight(1).setQuality(1))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHICKEN_COIN_LOOT)
-                                                .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_PLAINS).or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_SNOWY)
-                                                        .or(IN_VILLAGE_TAIGA).or(IN_SWAMP_HUT)).setWeight(1).setQuality(6))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ENDERMAN_COIN_LOOT)
-                                                .when(IN_WARPED_FOREST.or(IN_THE_END)).setWeight(1).setQuality(6))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_OCELOT_COIN_LOOT)
-                                                .when(IN_JUNGLE.or(IN_SPARSE_JUNGLE).or(IN_BAMBOO_JUNGLE)).setWeight(1).setQuality(1))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_PIGLIN_COIN_LOOT)
+                                                        .or(IN_FLOWER_FOREST).or(IN_FOREST).or(IN_BIRCH_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CAMEL_COIN_LOOT).setWeight(1).when(IN_DESERT))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CAT_COIN_LOOT).setWeight(1).setQuality(1)
+                                                .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_PLAINS).or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA).or(IN_SWAMP_HUT)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHICKEN_COIN_LOOT).setWeight(1).setQuality(6)
+                                                .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_PLAINS).or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA).or(IN_SWAMP_HUT)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ENDERMAN_COIN_LOOT).setWeight(1).setQuality(6)
+                                                .when(IN_WARPED_FOREST.or(IN_THE_END)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_OCELOT_COIN_LOOT).setWeight(1).setQuality(1)
+                                                .when(IN_JUNGLE.or(IN_SPARSE_JUNGLE).or(IN_BAMBOO_JUNGLE)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_PIGLIN_COIN_LOOT).setWeight(1).setQuality(6)
                                                 .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS).or(IN_SOUL_SAND_VALLEY)
-                                                        .or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES).or(IN_BASALT_DELTAS)).setWeight(1).setQuality(6))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CAVE_SPIDER_COIN_LOOT)
-                                                .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA)).setWeight(1).setQuality(6))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BLAZE_COIN_LOOT)
-                                                .when(IN_NETHER_FORTRESS).setWeight(1).setQuality(6))
-                                 )
-                       );
+                                                        .or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES).or(IN_BASALT_DELTAS)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CAVE_SPIDER_COIN_LOOT).setWeight(1).setQuality(6)
+                                                .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA)))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BLAZE_COIN_LOOT).setWeight(1).setQuality(6)
+                                                .when(IN_NETHER_FORTRESS))
+                                 ));
         // tables used in other chest loot tables
         consumer.accept(ModBuiltInLootTables.TODECOINS_COPPER_COIN_LOOT,
                 LootTable.lootTable()
@@ -180,8 +180,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.COPPER_COIN.get()).setWeight(1)
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 7.0F))))
                                         .add(LootItem.lootTableItem(ModBlocks.COPPER_COIN_BAG.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_IRON_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -190,8 +189,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.IRON_COIN.get()).setWeight(1)
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 6.0F))))
                                         .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_GOLD_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -200,8 +198,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.GOLD_COIN.get()).setWeight(1)
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
                                         .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -210,8 +207,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).setWeight(1)
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
                                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -220,8 +216,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get()).setWeight(1)
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))))
                                         .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -230,8 +225,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).setWeight(1)
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
                                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_HALF_BANK_NOTE_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -240,8 +234,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get()).setWeight(1)
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F))))
                                         .add(LootItem.lootTableItem(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -250,15 +243,13 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get()).setWeight(1)
                                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
                                         .add(LootItem.lootTableItem(ModBlocks.EMERALD_BANK_NOTE_BAG.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_LUCKY_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -266,8 +257,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .setBonusRolls(ConstantValue.exactly(1.0F))
                                         .when(BIRTHDAY_EVENT)
                                         .add(LootItem.lootTableItem(ModItems.BIRTHDAY_COIN_2023.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -275,8 +265,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .setBonusRolls(ConstantValue.exactly(1.0F))
                                         .when(CHRISTMAS_EVENT)
                                         .add(LootItem.lootTableItem(ModItems.CHRISTMAS_COIN_2023.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -284,8 +273,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .setBonusRolls(ConstantValue.exactly(1.0F))
                                         .when(HALLOWEEN_EVENT)
                                         .add(LootItem.lootTableItem(ModItems.HALLOWEEN_COIN_2023.get()))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -302,8 +290,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .setQuality(0).setWeight(1))
                                         .add(LootItem.lootTableItem(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get())
                                                 .setQuality(0).setWeight(1))
-                                 )
-                       );
+                                 ));
         // entity themed chest loot
         consumer.accept(ModBuiltInLootTables.TODECOINS_ALLAY_COIN_LOOT,
                 LootTable.lootTable()
@@ -317,8 +304,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)).when(AUTUMN).setWeight(1).setQuality(1))
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_ALLAY_COIN.get())
                                                 .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AXOLOTL_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -335,8 +321,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_AXOLOTL_COIN.get())
                                                 .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA)
                                                         .or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_BAT_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -353,8 +338,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_BAT_COIN.get())
                                                 .when(IN_SWAMP_HUT.or(IN_MINESHAFT).or(IN_MINESHAFT_MESA)
                                                         .or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES).or(IN_STRONGHOLD)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_BEE_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -375,8 +359,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .when(IN_MEADOW.or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS)
                                                         .or(IN_MANGROVE_SWAMP).or(IN_FLOWER_FOREST).or(IN_FOREST)
                                                         .or(IN_BIRCH_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_CAMEL_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -389,8 +372,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .when(IN_DESERT).when(AUTUMN).setWeight(1).setQuality(1))
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_CAMEL_COIN.get())
                                                 .when(IN_DESERT).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_CAT_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -407,8 +389,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_CAT_COIN.get())
                                                 .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_PLAINS).or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_SNOWY)
                                                         .or(IN_VILLAGE_TAIGA).or(IN_SWAMP_HUT)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_CHICKEN_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -425,8 +406,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_CHICKEN_COIN.get())
                                                 .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_PLAINS).or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_SNOWY)
                                                         .or(IN_VILLAGE_TAIGA).or(IN_SWAMP_HUT)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_ENDERMAN_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -439,8 +419,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .when(IN_WARPED_FOREST.or(IN_THE_END)).when(AUTUMN).setWeight(1).setQuality(1))
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMAN_COIN.get())
                                                 .when(IN_WARPED_FOREST.or(IN_THE_END)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_OCELOT_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -453,8 +432,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .when(IN_JUNGLE.or(IN_SPARSE_JUNGLE).or(IN_BAMBOO_JUNGLE)).when(AUTUMN).setWeight(1).setQuality(1))
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_OCELOT_COIN.get())
                                                 .when(IN_JUNGLE.or(IN_SPARSE_JUNGLE).or(IN_BAMBOO_JUNGLE)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_PIGLIN_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -471,8 +449,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_COIN.get())
                                                 .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS).or(IN_SOUL_SAND_VALLEY)
                                                         .or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES).or(IN_BASALT_DELTAS)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_CAVE_SPIDER_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -485,8 +462,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA)).when(AUTUMN).setWeight(1).setQuality(1))
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_CAVE_SPIDER_COIN.get())
                                                 .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_BLAZE_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -499,8 +475,75 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER)).when(AUTUMN).setWeight(1).setQuality(1))
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_BLAZE_COIN.get())
                                                 .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER)).when(WINTER).setWeight(1).setQuality(1))
-                                 )
-                       );
+                                 ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_COD_COIN_LOOT,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_COD_COIN.get()).when(SPRING)
+                                                .when(IN_OCEAN.or(IN_DEEP_OCEAN).or(IN_LUKEWARM_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_COD_COIN.get()).when(SUMMER)
+                                                .when(IN_OCEAN.or(IN_DEEP_OCEAN).or(IN_LUKEWARM_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_COD_COIN.get()).when(AUTUMN)
+                                                .when(IN_OCEAN.or(IN_DEEP_OCEAN).or(IN_LUKEWARM_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COD_COIN.get()).when(WINTER)
+                                                .when(IN_OCEAN.or(IN_DEEP_OCEAN).or(IN_LUKEWARM_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                 ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_SALMON_COIN_LOOT,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_SALMON_COIN.get()).when(SPRING)
+                                                .when(IN_COLD_OCEAN.or(IN_DEEP_COLD_OCEAN).or(IN_RIVER).or(IN_FROZEN_RIVER).or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_SALMON_COIN.get()).when(SUMMER)
+                                                .when(IN_COLD_OCEAN.or(IN_DEEP_COLD_OCEAN).or(IN_RIVER).or(IN_FROZEN_RIVER).or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_SALMON_COIN.get()).when(AUTUMN)
+                                                .when(IN_COLD_OCEAN.or(IN_DEEP_COLD_OCEAN).or(IN_RIVER).or(IN_FROZEN_RIVER).or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_SALMON_COIN.get()).when(WINTER)
+                                                .when(IN_COLD_OCEAN.or(IN_DEEP_COLD_OCEAN).or(IN_RIVER).or(IN_FROZEN_RIVER).or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                 ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_PUFFERFISH_COIN_LOOT,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_PUFFERFISH_COIN.get()).when(SPRING)
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_PUFFERFISH_COIN.get()).when(SUMMER)
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_PUFFERFISH_COIN.get()).when(AUTUMN)
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_PUFFERFISH_COIN.get()).when(WINTER)
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN))
+                                                .setWeight(1).setQuality(1))
+                                 ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_TROPICAL_FISH_COIN_LOOT,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                        .setRolls(ConstantValue.exactly(1.0F))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_TROPICAL_FISH_COIN.get()).when(SPRING)
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN).or(IN_MANGROVE_SWAMP).or(IN_LUSH_CAVES))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_TROPICAL_FISH_COIN.get()).when(SUMMER)
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN).or(IN_MANGROVE_SWAMP).or(IN_LUSH_CAVES))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_TROPICAL_FISH_COIN.get()).when(AUTUMN)
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN).or(IN_MANGROVE_SWAMP).or(IN_LUSH_CAVES))
+                                                .setWeight(1).setQuality(1))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_TROPICAL_FISH_COIN.get()).when(WINTER)
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN).or(IN_MANGROVE_SWAMP).or(IN_LUSH_CAVES))
+                                                .setWeight(1).setQuality(1))
+                                 ));
         // entity coins by seasons
         consumer.accept(ModBuiltInLootTables.TODECOINS_SPRING_COIN_LOOT,
                 LootTable.lootTable()
@@ -518,57 +561,73 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .add(LootItem.lootTableItem(ModItems.COPPER_ENDERMAN_COIN.get()).when(SPRING))
                                         .add(LootItem.lootTableItem(ModItems.COPPER_OCELOT_COIN.get()).when(SPRING))
                                         .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_COIN.get()).when(SPRING))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_COD_COIN.get()).when(SPRING))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_PUFFERFISH_COIN.get()).when(SPRING))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_SALMON_COIN.get()).when(SPRING))
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_TROPICAL_FISH_COIN.get()).when(SPRING))
                                  ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_ALLAY_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_AXOLOTL_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_BAT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_BEE_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_BLAZE_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_CAMEL_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_CAT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_CAVE_SPIDER_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_CHICKEN_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_ENDERMAN_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_OCELOT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_COIN.get()).when(SPRING))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_ALLAY_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_AXOLOTL_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_BAT_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_BEE_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_BLAZE_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_CAMEL_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_CAT_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_CAVE_SPIDER_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_CHICKEN_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_ENDERMAN_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_OCELOT_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_COD_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_PUFFERFISH_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_SALMON_COIN.get()).when(SUMMER))
+                                        .add(LootItem.lootTableItem(ModItems.IRON_TROPICAL_FISH_COIN.get()).when(SUMMER))
                                  ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_ALLAY_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_AXOLOTL_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_BAT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_BEE_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_BLAZE_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_CAMEL_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_CAT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_CAVE_SPIDER_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_CHICKEN_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_ENDERMAN_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_OCELOT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_PIGLIN_COIN.get()).when(SPRING))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_ALLAY_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_AXOLOTL_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_BAT_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_BEE_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_BLAZE_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_CAMEL_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_CAT_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_CAVE_SPIDER_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_CHICKEN_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_ENDERMAN_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_OCELOT_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_PIGLIN_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_COD_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_PUFFERFISH_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_SALMON_COIN.get()).when(AUTUMN))
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_TROPICAL_FISH_COIN.get()).when(AUTUMN))
                                  ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_ALLAY_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_AXOLOTL_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_BAT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_BEE_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_BLAZE_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CAMEL_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CAT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CAVE_SPIDER_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CHICKEN_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMAN_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_OCELOT_COIN.get()).when(SPRING))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_COIN.get()).when(SPRING))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_ALLAY_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_AXOLOTL_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_BAT_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_BEE_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_BLAZE_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CAMEL_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CAT_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CAVE_SPIDER_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CHICKEN_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMAN_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_OCELOT_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COD_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_PUFFERFISH_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_SALMON_COIN.get()).when(WINTER))
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_TROPICAL_FISH_COIN.get()).when(WINTER))
                                  ));
     }
 }

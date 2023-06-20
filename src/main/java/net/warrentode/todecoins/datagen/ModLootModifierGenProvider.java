@@ -9,7 +9,7 @@ import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModBuiltInLootTables;
-import net.warrentode.todecoins.loot.conditions.BlockTagCondition;
+import net.warrentode.todecoins.loot.conditions.tag.BlockTagCondition;
 import net.warrentode.todecoins.loot.modifiers.AddItemLootModifier;
 import net.warrentode.todecoins.loot.modifiers.AddLootTableModifier;
 import net.warrentode.todecoins.util.tags.ModTags;
@@ -32,6 +32,18 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                         LootTableIdCondition.builder(ModBuiltInLootTables.TODECOINS_CHEST_LOOT).build()
                 },
                 ModBuiltInLootTables.TODECOINS_CHEST_LOOT
+        ));
+        add("add_todecoins_bonus_fishing_table", new AddLootTableModifier(
+                new LootItemCondition[]{
+                        LootTableIdCondition.builder(ModBuiltInLootTables.TODECOINS_BONUS_FISHING).build()
+                },
+                BuiltInLootTables.FISHING
+        ));
+        add("add_todecoins_fishing_coins", new AddLootTableModifier(
+                new LootItemCondition[]{
+                        LootTableIdCondition.builder(ModBuiltInLootTables.TODECOINS_FISHING_COINS).build()
+                },
+                BuiltInLootTables.FISHING_TREASURE
         ));
         add("add_loot_chest_currency", new AddLootTableModifier(
                 new LootItemCondition[]{

@@ -111,6 +111,42 @@
                         }
                     ],
                     "name": "todecoins:collectible_coin_piglin_copper"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_cod_copper"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_pufferfish_copper"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_salmon_copper"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:spring_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_tropical_fish_copper"
                 }
             ],
             "rolls": 1.0

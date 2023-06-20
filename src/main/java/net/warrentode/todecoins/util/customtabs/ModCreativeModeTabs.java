@@ -94,18 +94,45 @@ public class ModCreativeModeTabs extends CreativeModeTab {
 
         @Override
         public void fillItemList(final @NotNull NonNullList<ItemStack> items) {
-            // LUCKY COIN
-            items.add(ModItems.LUCKY_COIN.get().getDefaultInstance());
+            // holiday coins
+            // BIRTHDAY COIN
+            items.add(ModItems.BIRTHDAY_COIN_2023.get().getDefaultInstance());
+            // HALLOWEEN COIN SET
+            items.add(ModItems.HALLOWEEN_COIN_2023.get().getDefaultInstance());
+            // CHRISTMAS COIN
+            items.add(ModItems.CHRISTMAS_COIN_2023.get().getDefaultInstance());
             // PATRON COIN SET
             items.add(ModItems.MARSHALL_NASH_CARNATION_COIN.get().getDefaultInstance());
             items.add(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDefaultInstance());
             items.add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDefaultInstance());
             items.add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().getDefaultInstance());
+            // gameplay coins
+            // COD COIN SET
+            items.add(ModItems.COPPER_COD_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_COD_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_COD_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_COD_COIN.get().getDefaultInstance());
             // HERO COIN SET
             items.add(ModItems.COPPER_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_HERO_COIN.get().getDefaultInstance());
+            // PUFFERFISH COIN SET
+            items.add(ModItems.COPPER_PUFFERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PUFFERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PUFFERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PUFFERFISH_COIN.get().getDefaultInstance());
+            // SALMON COIN SET
+            items.add(ModItems.COPPER_SALMON_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SALMON_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SALMON_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SALMON_COIN.get().getDefaultInstance());
+            // TROPICAL FISH COIN SET
+            items.add(ModItems.COPPER_TROPICAL_FISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_TROPICAL_FISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_TROPICAL_FISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_TROPICAL_FISH_COIN.get().getDefaultInstance());
+            // entity coins
             // ALLAY COIN SET
             items.add(ModItems.COPPER_ALLAY_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_ALLAY_COIN.get().getDefaultInstance());
@@ -166,12 +193,6 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_PIGLIN_COIN.get().getDefaultInstance());
-            // BIRTHDAY COIN
-            items.add(ModItems.BIRTHDAY_COIN_2023.get().getDefaultInstance());
-            // HALLOWEEN COIN SET
-            items.add(ModItems.HALLOWEEN_COIN_2023.get().getDefaultInstance());
-            // CHRISTMAS COIN
-            items.add(ModItems.CHRISTMAS_COIN_2023.get().getDefaultInstance());
         }
     };
 }

@@ -42,6 +42,7 @@ public class ModTags {
         public static final TagKey<Item> COSMOS_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/cosmos_patron_coin_set");
         // gameplay coins
         public static final TagKey<Item> GAMEPLAY_COIN_SET = modItemTag("collectible_coins/gameplay_coin_set");
+        public static final TagKey<Item> FISHING_COIN_SET = modItemTag("collectible_coins/gameplay_coins/fishing_coin_set");
         public static final TagKey<Item> HERO_COIN_SET = modItemTag("collectible_coins/gameplay_coins/hero_coin_set");
         //entity coins
         public static final TagKey<Item> ENTITY_COIN_SET = modItemTag("collectible_coins/entity_coin_set");
@@ -54,9 +55,13 @@ public class ModTags {
         public static final TagKey<Item> CAT_COIN_SET = modItemTag("collectible_coins/entity_coins/cat_coin_set");
         public static final TagKey<Item> CAVE_SPIDER_COIN_SET = modItemTag("collectible_coins/entity_coins/cave_spider_coin_set");
         public static final TagKey<Item> CHICKEN_COIN_SET = modItemTag("collectible_coins/entity_coins/chicken_coin_set");
+        public static final TagKey<Item> COD_COIN_SET = modItemTag("collectible_coins/entity_coins/cod_coin_set");
+        public static final TagKey<Item> ENDERMAN_COIN_SET = modItemTag("collectible_coins/entity_coins/enderman_coin_set");
         public static final TagKey<Item> OCELOT_COIN_SET = modItemTag("collectible_coins/entity_coins/ocelot_coin_set");
         public static final TagKey<Item> PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/piglin_coin_set");
-        public static final TagKey<Item> ENDERMAN_COIN_SET = modItemTag("collectible_coins/entity_coins/enderman_coin_set");
+        public static final TagKey<Item> PUFFERFISH_COIN_SET = modItemTag("collectible_coins/entity_coins/pufferfish_coin_set");
+        public static final TagKey<Item> SALMON_COIN_SET = modItemTag("collectible_coins/entity_coins/salmon_coin_set");
+        public static final TagKey<Item> TROPICAL_FISH_COIN_SET = modItemTag("collectible_coins/entity_coins/tropical_fish_coin_set");
 
         public static final TagKey<Item> TEXTILES = modItemTag("textiles");
         public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");

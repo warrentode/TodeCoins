@@ -1,0 +1,105 @@
+{
+    "type": "minecraft:fishing",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:weather_check",
+                            "raining": false
+                        },
+                        {
+                            "condition": "minecraft:time_check",
+                            "value": {
+                                "max": 12000.0,
+                                "min": 6000.0
+                            }
+                        },
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_frozen_ocean"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "minecraft:salmon",
+                    "weight": 50
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "minecraft:weather_check",
+                            "raining": false
+                        },
+                        {
+                            "condition": "minecraft:time_check",
+                            "value": {
+                                "max": 12000.0,
+                                "min": 6000.0
+                            }
+                        },
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_cold_ocean"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "minecraft:cod",
+                    "weight": 10
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

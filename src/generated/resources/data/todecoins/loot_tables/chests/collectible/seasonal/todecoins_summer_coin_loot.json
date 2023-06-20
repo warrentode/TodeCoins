@@ -8,7 +8,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_allay_iron"
@@ -17,7 +17,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_axolotl_iron"
@@ -26,7 +26,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_bat_iron"
@@ -35,7 +35,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_bee_iron"
@@ -44,7 +44,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_blaze_iron"
@@ -53,7 +53,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_camel_iron"
@@ -62,7 +62,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_cat_iron"
@@ -71,7 +71,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_cave_spider_iron"
@@ -80,7 +80,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_chicken_iron"
@@ -89,7 +89,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_enderman_iron"
@@ -98,7 +98,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_ocelot_iron"
@@ -107,10 +107,46 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:summer_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_piglin_iron"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:summer_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_cod_iron"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:summer_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_pufferfish_iron"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:summer_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_salmon_iron"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:summer_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_tropical_fish_iron"
                 }
             ],
             "rolls": 1.0

@@ -6,13 +6,27 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemConditions;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-import net.warrentode.todecoins.loot.conditions.*;
+import net.warrentode.todecoins.loot.conditions.curio.CodFishCharmCondition;
+import net.warrentode.todecoins.loot.conditions.curio.PufferfishCharmCondition;
+import net.warrentode.todecoins.loot.conditions.curio.SalmonFishCharmCondition;
+import net.warrentode.todecoins.loot.conditions.curio.TropicalFishCharmCondition;
+import net.warrentode.todecoins.loot.conditions.season.*;
+import net.warrentode.todecoins.loot.conditions.tag.BlockTagCondition;
+import net.warrentode.todecoins.loot.conditions.tag.EntityTypeTagCondition;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModLootItemConditions extends LootItemConditions {
     private static final DeferredRegister<LootItemConditionType> REGISTER = DeferredRegister.create(Registry.LOOT_ITEM_REGISTRY, MODID);
 
+    public static final RegistryObject<LootItemConditionType> COD_FISH_CHARM_CONDITION = REGISTER.register("cod_fish_charm_condition",
+            () -> new LootItemConditionType(new CodFishCharmCondition.Serializer()));
+    public static final RegistryObject<LootItemConditionType> PUFFERFISH_CHARM_CONDITION = REGISTER.register("pufferfish_charm_condition",
+            () -> new LootItemConditionType(new PufferfishCharmCondition.Serializer()));
+    public static final RegistryObject<LootItemConditionType> SALMON_FISH_CHARM_CONDITION = REGISTER.register("salmon_fish_charm_condition",
+            () -> new LootItemConditionType(new SalmonFishCharmCondition.Serializer()));
+    public static final RegistryObject<LootItemConditionType> TROPICAL_FISH_CHARM_CONDITION = REGISTER.register("tropical_fish_charm_condition",
+            () -> new LootItemConditionType(new TropicalFishCharmCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> BLOCKTAG_CONDITION = REGISTER.register("blocktag_condition",
             () -> new LootItemConditionType(new BlockTagCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> ENTITY_TYPE_TAG_CONDITION = REGISTER.register("entity_type_tag_condition",

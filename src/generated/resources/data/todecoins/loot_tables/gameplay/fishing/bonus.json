@@ -1,0 +1,47 @@
+{
+    "type": "minecraft:fishing",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:loot_table",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:cod_fish_charm_condition"
+                        }
+                    ],
+                    "name": "todecoins:gameplay/fishing/cod_coin"
+                },
+                {
+                    "type": "minecraft:loot_table",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:salmon_fish_charm_condition"
+                        }
+                    ],
+                    "name": "todecoins:gameplay/fishing/salmon_coin"
+                },
+                {
+                    "type": "minecraft:loot_table",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:pufferfish_charm_condition"
+                        }
+                    ],
+                    "name": "todecoins:gameplay/fishing/pufferfish_coin"
+                },
+                {
+                    "type": "minecraft:loot_table",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:tropical_fish_charm_condition"
+                        }
+                    ],
+                    "name": "todecoins:gameplay/fishing/tropical_fish_coin"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

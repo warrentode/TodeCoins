@@ -17,7 +17,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModBuiltInLootTables;
-import net.warrentode.todecoins.loot.conditions.*;
+import net.warrentode.todecoins.loot.conditions.season.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;

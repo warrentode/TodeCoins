@@ -26,7 +26,8 @@ public class ModLootTableGenProvider extends LootTableProvider {
             Pair.of(ModBlockLootTablesGen::new, LootContextParamSets.BLOCK),
             Pair.of(ModGiftLootGen::new, LootContextParamSets.GIFT),
             Pair.of(CurrencyDropLootTablesGen::new, LootContextParamSets.ENTITY),
-            Pair.of(CustomPiglinBarterLootGen::new, LootContextParamSets.PIGLIN_BARTER)
+            Pair.of(CustomPiglinBarterLootGen::new, LootContextParamSets.PIGLIN_BARTER),
+            Pair.of(ModFishingLootGen::new, LootContextParamSets.FISHING)
                                           );
 
     public ModLootTableGenProvider(DataGenerator generator) {

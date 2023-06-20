@@ -8,7 +8,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_allay_gold"
@@ -17,7 +17,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_axolotl_gold"
@@ -26,7 +26,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_bat_gold"
@@ -35,7 +35,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_bee_gold"
@@ -44,7 +44,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_blaze_gold"
@@ -53,7 +53,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_camel_gold"
@@ -62,7 +62,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_cat_gold"
@@ -71,7 +71,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_cave_spider_gold"
@@ -80,7 +80,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_chicken_gold"
@@ -89,7 +89,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_enderman_gold"
@@ -98,7 +98,7 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_ocelot_gold"
@@ -107,10 +107,46 @@
                     "type": "minecraft:item",
                     "conditions": [
                         {
-                            "condition": "todecoins:spring_condition"
+                            "condition": "todecoins:autumn_condition"
                         }
                     ],
                     "name": "todecoins:collectible_coin_piglin_gold"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:autumn_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_cod_gold"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:autumn_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_pufferfish_gold"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:autumn_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_salmon_gold"
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:autumn_condition"
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_tropical_fish_gold"
                 }
             ],
             "rolls": 1.0

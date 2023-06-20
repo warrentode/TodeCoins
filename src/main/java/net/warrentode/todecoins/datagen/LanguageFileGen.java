@@ -54,11 +54,33 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDescriptionId(), "Marshall Nash Carnation Coin");
         addCollectibleCoins(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDescriptionId(), "Trevor Brannigan Carnation Coin");
         addCollectibleCoins(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().getDescriptionId(), "Trevor Brannigan Cosmos Coin");
+
         // gameplay coins
+        addCollectibleCoins(ModItems.COPPER_COD_COIN.get().getDescriptionId(), "Copper Cod Coin");
+        addCollectibleCoins(ModItems.IRON_COD_COIN.get().getDescriptionId(), "Iron Cod Coin");
+        addCollectibleCoins(ModItems.GOLD_COD_COIN.get().getDescriptionId(), "Gold Cod Coin");
+        addCollectibleCoins(ModItems.NETHERITE_COD_COIN.get().getDescriptionId(), "Netherite Cod Coin");
+
         addCollectibleCoins(ModItems.COPPER_HERO_COIN.get().getDescriptionId(), "Copper Hero Coin");
         addCollectibleCoins(ModItems.IRON_HERO_COIN.get().getDescriptionId(), "Iron Hero Coin");
         addCollectibleCoins(ModItems.GOLD_HERO_COIN.get().getDescriptionId(), "Gold Hero Coin");
         addCollectibleCoins(ModItems.NETHERITE_HERO_COIN.get().getDescriptionId(), "Netherite Hero Coin");
+
+        addCollectibleCoins(ModItems.COPPER_PUFFERFISH_COIN.get().getDescriptionId(), "Copper Pufferfish Coin");
+        addCollectibleCoins(ModItems.IRON_PUFFERFISH_COIN.get().getDescriptionId(), "Iron Pufferfish Coin");
+        addCollectibleCoins(ModItems.GOLD_PUFFERFISH_COIN.get().getDescriptionId(), "Gold Pufferfish Coin");
+        addCollectibleCoins(ModItems.NETHERITE_PUFFERFISH_COIN.get().getDescriptionId(), "Netherite Pufferfish Coin");
+
+        addCollectibleCoins(ModItems.COPPER_SALMON_COIN.get().getDescriptionId(), "Copper Salmon Coin");
+        addCollectibleCoins(ModItems.IRON_SALMON_COIN.get().getDescriptionId(), "Iron Salmon Coin");
+        addCollectibleCoins(ModItems.GOLD_SALMON_COIN.get().getDescriptionId(), "Gold Salmon Coin");
+        addCollectibleCoins(ModItems.NETHERITE_SALMON_COIN.get().getDescriptionId(), "Netherite Salmon Coin");
+
+        addCollectibleCoins(ModItems.COPPER_TROPICAL_FISH_COIN.get().getDescriptionId(), "Copper Tropical Fish Coin");
+        addCollectibleCoins(ModItems.IRON_TROPICAL_FISH_COIN.get().getDescriptionId(), "Iron Tropical Fish Coin");
+        addCollectibleCoins(ModItems.GOLD_TROPICAL_FISH_COIN.get().getDescriptionId(), "Gold Tropical Fish Coin");
+        addCollectibleCoins(ModItems.NETHERITE_TROPICAL_FISH_COIN.get().getDescriptionId(), "Netherite Tropical Fish Coin");
+
         // entity coins
         addCollectibleCoins(ModItems.COPPER_ALLAY_COIN.get().getDescriptionId(), "Copper Allay Coin");
         addCollectibleCoins(ModItems.IRON_ALLAY_COIN.get().getDescriptionId(), "Iron Allay Coin");
@@ -196,9 +218,13 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.dependency.spawn_egg_recipes.cat_spawn_egg", "Cat Spawn Egg Recipe");
         add("advancement.dependency.spawn_egg_recipes.cave_spider_spawn_egg", "Cave Spider Spawn Egg Recipe");
         add("advancement.dependency.spawn_egg_recipes.chicken_spawn_egg", "Chicken Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.cod_spawn_egg", "Cod Spawn Egg Recipe");
         add("advancement.dependency.spawn_egg_recipes.enderman_spawn_egg", "Enderman Spawn Egg Recipe");
         add("advancement.dependency.spawn_egg_recipes.ocelot_spawn_egg", "Ocelot Spawn Egg Recipe");
         add("advancement.dependency.spawn_egg_recipes.piglin_spawn_egg", "Piglin Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.pufferfish_spawn_egg", "Pufferfish Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.salmon_spawn_egg", "Salmon Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.tropical_fish_spawn_egg", "Tropical Fish Spawn Egg Recipe");
     }
 
     private void addTooltips() {
@@ -229,6 +255,7 @@ public class LanguageFileGen extends LanguageProvider {
 
         // gameplay collectible coin bases
         add("tooltips.collectible_hero_coin.hover", "One of Four Hero Seasonal Coins");
+        add("tooltips.collectible_fish_coin.hover", "One of Sixteen Fishing Seasonal Coins");
 
         // holiday collectible coin bases
         add("tooltips.collectible_birthday_coin.hover", "A Birthday Seasonal Coin");

@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.loot.conditions;
+package net.warrentode.todecoins.loot.conditions.season;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;

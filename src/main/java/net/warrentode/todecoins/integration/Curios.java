@@ -19,10 +19,12 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.warrentode.todecoins.attribute.ModAttributes;
 import net.warrentode.todecoins.attribute.PlayerCharisma;
+import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.util.CalendarUtil;
 import net.warrentode.todecoins.util.tags.ModTags;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
+import top.theillusivec4.curios.api.SlotResult;
 import top.theillusivec4.curios.api.SlotTypePreset;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
@@ -632,5 +634,91 @@ public class Curios {
                 return DropRule.DEFAULT;
             }
         });
+    }
+
+    public static ICapabilityProvider createFishCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public void curioTick(SlotContext slotContext) {
+                Player player = Minecraft.getInstance().player;
+                if (stack.is(ModTags.Items.COD_COIN_SET)) {
+                    if (player != null) {
+                        player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
+                                false, false, true));
+                    }
+                }
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static Boolean matchCodFishCharm(ItemStack isCodFishCharm) {
+        Player player = Minecraft.getInstance().player;
+        ItemStack stack = ItemStack.EMPTY;
+        if (player != null) {
+            Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, isCodFishCharm.getItem());
+            return (isCodFishCharm.getItem() == ModItems.COPPER_COD_COIN.get()) || (isCodFishCharm.getItem() == ModItems.IRON_COD_COIN.get())
+                   || (isCodFishCharm.getItem() == ModItems.GOLD_COD_COIN.get()) || (isCodFishCharm.getItem() == ModItems.NETHERITE_COD_COIN.get());
+        }
+        return false;
+    }
+
+    public static Boolean matchSalmonFishCharm(ItemStack isSalmonFishCharm) {
+        Player player = Minecraft.getInstance().player;
+        ItemStack stack = ItemStack.EMPTY;
+        if (player != null) {
+            Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, isSalmonFishCharm.getItem());
+            return (isSalmonFishCharm.getItem() == ModItems.COPPER_SALMON_COIN.get()) || (isSalmonFishCharm.getItem() == ModItems.IRON_SALMON_COIN.get())
+                   || (isSalmonFishCharm.getItem() == ModItems.GOLD_SALMON_COIN.get()) || (isSalmonFishCharm.getItem() == ModItems.NETHERITE_SALMON_COIN.get());
+        }
+        return false;
+    }
+
+    public static Boolean matchPufferfishCharm(ItemStack isPufferfishCharm) {
+        Player player = Minecraft.getInstance().player;
+        ItemStack stack = ItemStack.EMPTY;
+        if (player != null) {
+            Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, isPufferfishCharm.getItem());
+            return (isPufferfishCharm.getItem() == ModItems.COPPER_PUFFERFISH_COIN.get()) || (isPufferfishCharm.getItem() == ModItems.IRON_PUFFERFISH_COIN.get())
+                   || (isPufferfishCharm.getItem() == ModItems.GOLD_PUFFERFISH_COIN.get()) || (isPufferfishCharm.getItem() == ModItems.NETHERITE_PUFFERFISH_COIN.get());
+        }
+        return false;
+    }
+
+    public static Boolean matchTropicalFishCharm(ItemStack isTropicalFishCharm) {
+        Player player = Minecraft.getInstance().player;
+        ItemStack stack = ItemStack.EMPTY;
+        if (player != null) {
+            Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, isTropicalFishCharm.getItem());
+            return (isTropicalFishCharm.getItem() == ModItems.COPPER_TROPICAL_FISH_COIN.get()) || (isTropicalFishCharm.getItem() == ModItems.IRON_TROPICAL_FISH_COIN.get())
+                   || (isTropicalFishCharm.getItem() == ModItems.GOLD_TROPICAL_FISH_COIN.get()) || (isTropicalFishCharm.getItem() == ModItems.NETHERITE_TROPICAL_FISH_COIN.get());
+        }
+        return false;
     }
 }

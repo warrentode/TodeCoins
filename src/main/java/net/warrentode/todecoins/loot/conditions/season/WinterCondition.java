@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.loot.conditions;
+package net.warrentode.todecoins.loot.conditions.season;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
@@ -16,60 +16,60 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class SummerCondition implements LootItemCondition {
+public class WinterCondition implements LootItemCondition {
     @Nullable
-    Boolean isSummer;
+    Boolean isWinter;
 
-    SummerCondition(@Nullable Boolean isSeason) {
-        this.isSummer = isSeason;
+    WinterCondition(@Nullable Boolean isSeason) {
+        this.isWinter = isSeason;
     }
 
     public @NotNull LootItemConditionType getType() {
-        return ModLootItemConditions.SUMMER_CONDITION.get();
+        return ModLootItemConditions.WINTER_CONDITION.get();
     }
 
     public boolean test(@NotNull LootContext context) {
         ServerLevel serverlevel = context.getLevel();
         if (TodeCoins.isSereneSeasonsLoaded()) {
-            return this.isSummer = SereneSeasons.Season.isSummer();
+            return this.isWinter = SereneSeasons.Season.isWinter();
         }
         else {
-            return this.isSummer = CalendarUtil.Season.isSummer();
+            return this.isWinter = CalendarUtil.Season.isWinter();
         }
     }
 
-    public static SummerCondition.Builder season() {
-        return new SummerCondition.Builder();
+    public static WinterCondition.Builder season() {
+        return new WinterCondition.Builder();
     }
 
     public static class Builder implements LootItemCondition.Builder {
         @Nullable
-        Boolean isSummer;
+        Boolean isWinter;
 
-        public SummerCondition.Builder setEvent(@Nullable Boolean isSummer) {
-            this.isSummer = isSummer;
+        public WinterCondition.Builder setEvent(@Nullable Boolean isWinter) {
+            this.isWinter = isWinter;
             return this;
         }
 
-        public @NotNull SummerCondition build() {
-            return new SummerCondition(this.isSummer);
+        public @NotNull WinterCondition build() {
+            return new WinterCondition(this.isWinter);
         }
     }
 
-    public static class Serializer implements net.minecraft.world.level.storage.loot.Serializer<SummerCondition> {
+    public static class Serializer implements net.minecraft.world.level.storage.loot.Serializer<WinterCondition> {
         /**
          * Serialize the value by putting its data into the JsonObject.
          */
-        public void serialize(@NotNull JsonObject jsonObject, @NotNull SummerCondition check, @NotNull JsonSerializationContext context) {
-            jsonObject.addProperty("summer", check.isSummer);
+        public void serialize(@NotNull JsonObject jsonObject, @NotNull WinterCondition check, @NotNull JsonSerializationContext context) {
+            jsonObject.addProperty("winter", check.isWinter);
         }
 
         /**
          * Deserialize a value by reading it from the JsonObject.
          */
-        public @NotNull SummerCondition deserialize(@NotNull JsonObject jsonObject, @NotNull JsonDeserializationContext context) {
-            Boolean booleanValue = jsonObject.has("summer") ? GsonHelper.getAsBoolean(jsonObject, "summer") : null;
-            return new SummerCondition(booleanValue);
+        public @NotNull WinterCondition deserialize(@NotNull JsonObject jsonObject, @NotNull JsonDeserializationContext context) {
+            Boolean booleanValue = jsonObject.has("winter") ? GsonHelper.getAsBoolean(jsonObject, "winter") : null;
+            return new WinterCondition(booleanValue);
         }
     }
 }

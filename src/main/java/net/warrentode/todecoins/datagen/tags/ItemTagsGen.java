@@ -66,7 +66,13 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.GAMEPLAY_COIN_SET)
                 .addTag(ModTags.Items.ENTITY_COIN_SET);
         tag(ModTags.Items.GAMEPLAY_COIN_SET)
+                .addTag(ModTags.Items.FISHING_COIN_SET)
                 .addTag(ModTags.Items.HERO_COIN_SET);
+        tag(ModTags.Items.FISHING_COIN_SET)
+                .addTag(ModTags.Items.COD_COIN_SET)
+                .addTag(ModTags.Items.PUFFERFISH_COIN_SET)
+                .addTag(ModTags.Items.SALMON_COIN_SET)
+                .addTag(ModTags.Items.TROPICAL_FISH_COIN_SET);
         tag(ModTags.Items.HERO_COIN_SET)
                 .add(ModItems.COPPER_HERO_COIN.get())
                 .add(ModItems.IRON_HERO_COIN.get())
@@ -104,16 +110,6 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.ENDERMAN_COIN_SET)
                 .addTag(ModTags.Items.OCELOT_COIN_SET)
                 .addTag(ModTags.Items.PIGLIN_COIN_SET);
-        tag(ModTags.Items.BEE_COIN_SET)
-                .add(ModItems.COPPER_BEE_COIN.get())
-                .add(ModItems.IRON_BEE_COIN.get())
-                .add(ModItems.GOLD_BEE_COIN.get())
-                .add(ModItems.NETHERITE_BEE_COIN.get());
-        tag(ModTags.Items.OCELOT_COIN_SET)
-                .add(ModItems.COPPER_OCELOT_COIN.get())
-                .add(ModItems.IRON_OCELOT_COIN.get())
-                .add(ModItems.GOLD_OCELOT_COIN.get())
-                .add(ModItems.NETHERITE_OCELOT_COIN.get());
         tag(ModTags.Items.ALLAY_COIN_SET)
                 .add(ModItems.COPPER_ALLAY_COIN.get())
                 .add(ModItems.IRON_ALLAY_COIN.get())
@@ -129,6 +125,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.IRON_BAT_COIN.get())
                 .add(ModItems.GOLD_BAT_COIN.get())
                 .add(ModItems.NETHERITE_BAT_COIN.get());
+        tag(ModTags.Items.BEE_COIN_SET)
+                .add(ModItems.COPPER_BEE_COIN.get())
+                .add(ModItems.IRON_BEE_COIN.get())
+                .add(ModItems.GOLD_BEE_COIN.get())
+                .add(ModItems.NETHERITE_BEE_COIN.get());
         tag(ModTags.Items.BLAZE_COIN_SET)
                 .add(ModItems.COPPER_BLAZE_COIN.get())
                 .add(ModItems.IRON_BLAZE_COIN.get())
@@ -154,16 +155,41 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.IRON_CHICKEN_COIN.get())
                 .add(ModItems.GOLD_CHICKEN_COIN.get())
                 .add(ModItems.NETHERITE_CHICKEN_COIN.get());
+        tag(ModTags.Items.COD_COIN_SET)
+                .add(ModItems.COPPER_COD_COIN.get())
+                .add(ModItems.IRON_COD_COIN.get())
+                .add(ModItems.GOLD_COD_COIN.get())
+                .add(ModItems.NETHERITE_COD_COIN.get());
         tag(ModTags.Items.ENDERMAN_COIN_SET)
                 .add(ModItems.COPPER_ENDERMAN_COIN.get())
                 .add(ModItems.IRON_ENDERMAN_COIN.get())
                 .add(ModItems.GOLD_ENDERMAN_COIN.get())
                 .add(ModItems.NETHERITE_ENDERMAN_COIN.get());
+        tag(ModTags.Items.OCELOT_COIN_SET)
+                .add(ModItems.COPPER_OCELOT_COIN.get())
+                .add(ModItems.IRON_OCELOT_COIN.get())
+                .add(ModItems.GOLD_OCELOT_COIN.get())
+                .add(ModItems.NETHERITE_OCELOT_COIN.get());
         tag(ModTags.Items.PIGLIN_COIN_SET)
                 .add(ModItems.COPPER_PIGLIN_COIN.get())
                 .add(ModItems.IRON_PIGLIN_COIN.get())
                 .add(ModItems.GOLD_PIGLIN_COIN.get())
                 .add(ModItems.NETHERITE_PIGLIN_COIN.get());
+        tag(ModTags.Items.PUFFERFISH_COIN_SET)
+                .add(ModItems.COPPER_PUFFERFISH_COIN.get())
+                .add(ModItems.IRON_PUFFERFISH_COIN.get())
+                .add(ModItems.GOLD_PUFFERFISH_COIN.get())
+                .add(ModItems.NETHERITE_PUFFERFISH_COIN.get());
+        tag(ModTags.Items.SALMON_COIN_SET)
+                .add(ModItems.COPPER_SALMON_COIN.get())
+                .add(ModItems.IRON_SALMON_COIN.get())
+                .add(ModItems.GOLD_SALMON_COIN.get())
+                .add(ModItems.NETHERITE_SALMON_COIN.get());
+        tag(ModTags.Items.TROPICAL_FISH_COIN_SET)
+                .add(ModItems.COPPER_TROPICAL_FISH_COIN.get())
+                .add(ModItems.IRON_TROPICAL_FISH_COIN.get())
+                .add(ModItems.GOLD_TROPICAL_FISH_COIN.get())
+                .add(ModItems.NETHERITE_TROPICAL_FISH_COIN.get());
         tag(ModTags.Items.SHULKER_BOXES)
                 .add(Blocks.SHULKER_BOX.asItem())
                 .add(Blocks.BLACK_SHULKER_BOX.asItem())

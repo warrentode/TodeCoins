@@ -1,0 +1,215 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:spring_condition"
+                        },
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_frozen_ocean"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_salmon_copper",
+                    "quality": 1
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:summer_condition"
+                        },
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_frozen_ocean"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_salmon_iron",
+                    "quality": 1
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:autumn_condition"
+                        },
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_frozen_ocean"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_salmon_gold",
+                    "quality": 1
+                },
+                {
+                    "type": "minecraft:item",
+                    "conditions": [
+                        {
+                            "condition": "todecoins:winter_condition"
+                        },
+                        {
+                            "condition": "minecraft:alternative",
+                            "terms": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_cold_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_river"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:frozen_ocean"
+                                    }
+                                },
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:deep_frozen_ocean"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "todecoins:collectible_coin_salmon_netherite",
+                    "quality": 1
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

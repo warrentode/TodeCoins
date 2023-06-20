@@ -142,7 +142,8 @@
                       "tag": "forge:allay"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_allay_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_allay_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -152,7 +153,8 @@
                       "tag": "forge:axolotl"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_axolotl_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_axolotl_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -162,7 +164,8 @@
                       "tag": "forge:bat"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_bat_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_bat_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -172,7 +175,8 @@
                       "tag": "forge:bee"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_bee_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_bee_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -182,7 +186,8 @@
                       "tag": "forge:camel"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_camel_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_camel_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -192,7 +197,8 @@
                       "tag": "forge:cat"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_cat_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_cat_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -202,7 +208,8 @@
                       "tag": "forge:chicken"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_chicken_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_chicken_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -212,7 +219,8 @@
                       "tag": "forge:enderman"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_enderman_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_enderman_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -223,7 +231,7 @@
                   }
               ],
               "name": "todecoins:entity/collectible/todecoins_piglin_coin_drops",
-              "quality": 6
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -233,7 +241,8 @@
                       "tag": "forge:cave_spider"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_cave_spider_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_cave_spider_coin_drops",
+              "quality": 1
           },
           {
               "type": "minecraft:loot_table",
@@ -243,7 +252,52 @@
                       "tag": "forge:blaze"
                   }
               ],
-              "name": "todecoins:entity/collectible/todecoins_blaze_coin_drops"
+              "name": "todecoins:entity/collectible/todecoins_blaze_coin_drops",
+              "quality": 1
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:cod"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_cod_coin_drops",
+              "quality": 1
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:salmon"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_salmon_coin_drops",
+              "quality": 1
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:pufferfish"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_pufferfish_coin_drops",
+              "quality": 1
+          },
+          {
+              "type": "minecraft:loot_table",
+              "conditions": [
+                  {
+                      "condition": "todecoins:entity_type_tag_condition",
+                      "tag": "forge:tropical_fish"
+                  }
+              ],
+              "name": "todecoins:entity/collectible/todecoins_tropical_fish_coin_drops",
+              "quality": 1
           }
       ],
       "rolls": 1.0
