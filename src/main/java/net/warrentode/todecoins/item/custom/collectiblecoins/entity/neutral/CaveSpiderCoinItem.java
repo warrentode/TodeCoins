@@ -22,7 +22,7 @@ public class CaveSpiderCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createPoisonCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createPoisonAttackCharmProvider(stack);
     }
 
     @Override

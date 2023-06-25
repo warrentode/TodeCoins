@@ -5,6 +5,7 @@ import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.warrentode.todecoins.entity.ModEntityTypes;
 import net.warrentode.todecoins.util.tags.CageriumTags;
 import net.warrentode.todecoins.util.tags.ForgeTags;
 import org.jetbrains.annotations.Nullable;
@@ -116,6 +117,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.GOAT);
         tag(ForgeTags.EntityTypes.GUARDIAN_TYPES)
                 .add(EntityType.GUARDIAN);
+        tag(ForgeTags.EntityTypes.HOGLIN_TYPES)
+                .add(EntityType.HOGLIN);
         tag(ForgeTags.EntityTypes.HORSE_TYPES)
                 .add(EntityType.HORSE);
         tag(ForgeTags.EntityTypes.HUSK_TYPES)
@@ -130,8 +133,12 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.MAGMA_CUBE);
         tag(ForgeTags.EntityTypes.MULE_TYPES)
                 .add(EntityType.MULE);
+        tag(ForgeTags.EntityTypes.MOOBLOOM_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:moobloom")));
         tag(ForgeTags.EntityTypes.MOOSHROOM_TYPES)
                 .add(EntityType.MOOSHROOM);
+        tag(ForgeTags.EntityTypes.NUMISMATIST_TYPES)
+                .add(ModEntityTypes.NUMISMATIST.get());
         tag(ForgeTags.EntityTypes.OCELOT_TYPES)
                 .add(EntityType.OCELOT);
         tag(ForgeTags.EntityTypes.PANDA_TYPES)
@@ -144,6 +151,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.PIG);
         tag(ForgeTags.EntityTypes.PIGLIN_TYPES)
                 .add(EntityType.PIGLIN);
+        tag(ForgeTags.EntityTypes.PIGLIN_BRUTE_TYPES)
+                .add(EntityType.PIGLIN_BRUTE);
         tag(ForgeTags.EntityTypes.PILLAGER_TYPES)
                 .add(EntityType.PILLAGER);
         tag(ForgeTags.EntityTypes.POLAR_BEAR_TYPES)
@@ -168,6 +177,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.SKELETON_HORSE);
         tag(ForgeTags.EntityTypes.SLIME_TYPES)
                 .add(EntityType.SLIME);
+        tag(ForgeTags.EntityTypes.SNIFFER_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:sniffer")));
         tag(ForgeTags.EntityTypes.SNOW_GOLEM_TYPES)
                 .add(EntityType.SNOW_GOLEM);
         tag(ForgeTags.EntityTypes.SPIDER_TYPES)
@@ -208,10 +219,6 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.ZOMBIE_HORSE);
         tag(ForgeTags.EntityTypes.ZOMBIFIED_PIGLIN_TYPES)
                 .add(EntityType.ZOMBIFIED_PIGLIN);
-        tag(ForgeTags.EntityTypes.HOGLIN_TYPES)
-                .add(EntityType.HOGLIN);
-        tag(ForgeTags.EntityTypes.PIGLIN_BRUTE_TYPES)
-                .add(EntityType.PIGLIN_BRUTE);
         tag(ForgeTags.EntityTypes.ZOMBIE_VILLAGER_TYPES)
                 .add(EntityType.ZOMBIE_VILLAGER);
     }

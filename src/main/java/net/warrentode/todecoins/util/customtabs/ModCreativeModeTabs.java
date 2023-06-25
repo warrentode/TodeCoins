@@ -4,6 +4,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
 import org.jetbrains.annotations.NotNull;
@@ -83,6 +84,9 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add((ModBlocks.COINPRESSBLOCK.get().asItem().getDefaultInstance()));
 
             items.add(ModItems.NUMISMATIST_SPAWN_EGG.get().getDefaultInstance());
+            if (TodeCoins.isCageriumLoaded()) {
+                items.add(ModItems.SNOW_GOLEM_SPAWN_EGG.get().getDefaultInstance());
+            }
         }
     };
 
@@ -178,21 +182,141 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_CHICKEN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_CHICKEN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_CHICKEN_COIN.get().getDefaultInstance());
+            // COW COIN SET
+            items.add(ModItems.COPPER_COW_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_COW_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_COW_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_COW_COIN.get().getDefaultInstance());
+            // DONKEY COIN SET
+            items.add(ModItems.COPPER_DONKEY_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_DONKEY_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_DONKEY_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_DONKEY_COIN.get().getDefaultInstance());
             // ENDERMAN COIN SET
             items.add(ModItems.COPPER_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_ENDERMAN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_ENDERMAN_COIN.get().getDefaultInstance());
+            // FOX COIN SET
+            items.add(ModItems.COPPER_FOX_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_FOX_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_FOX_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_FOX_COIN.get().getDefaultInstance());
+            // FROG COIN SET
+            items.add(ModItems.COPPER_FROG_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_FROG_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_FROG_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_FROG_COIN.get().getDefaultInstance());
+            // GLOW SQUID COIN SET
+            items.add(ModItems.COPPER_GLOW_SQUID_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_GLOW_SQUID_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_GLOW_SQUID_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_GLOW_SQUID_COIN.get().getDefaultInstance());
+            // HOGLIN COIN SET
+            items.add(ModItems.COPPER_HOGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_HOGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_HOGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_HOGLIN_COIN.get().getDefaultInstance());
+            // HORSE COIN SET
+            items.add(ModItems.COPPER_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_HORSE_COIN.get().getDefaultInstance());
+            // MOOBLOOM COIN SET
+            items.add(ModItems.COPPER_MOOBLOOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_MOOBLOOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_MOOBLOOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_MOOBLOOM_COIN.get().getDefaultInstance());
+            // MOOSHROOM COIN SET
+            items.add(ModItems.COPPER_MOOSHROOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_MOOSHROOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_MOOSHROOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_MOOSHROOM_COIN.get().getDefaultInstance());
+            // MULE COIN SET
+            items.add(ModItems.COPPER_MULE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_MULE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_MULE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_MULE_COIN.get().getDefaultInstance());
+            // NUMISMATIST COIN SET
+            items.add(ModItems.COPPER_NUMISMATIST_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_NUMISMATIST_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_NUMISMATIST_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_NUMISMATIST_COIN.get().getDefaultInstance());
             // OCELOT COIN SET
             items.add(ModItems.COPPER_OCELOT_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_OCELOT_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_OCELOT_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_OCELOT_COIN.get().getDefaultInstance());
+            // PIG COIN SET
+            items.add(ModItems.COPPER_PIG_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PIG_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PIG_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PIG_COIN.get().getDefaultInstance());
             // PIGLIN COIN SET
             items.add(ModItems.COPPER_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_PIGLIN_COIN.get().getDefaultInstance());
+            // RABBIT COIN SET
+            items.add(ModItems.COPPER_RABBIT_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_RABBIT_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_RABBIT_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_RABBIT_COIN.get().getDefaultInstance());
+            // SHEEP COIN SET
+            items.add(ModItems.COPPER_SHEEP_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SHEEP_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SHEEP_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SHEEP_COIN.get().getDefaultInstance());
+            // SKELETON HORSE COIN SET
+            items.add(ModItems.COPPER_SKELETON_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SKELETON_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SKELETON_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SKELETON_HORSE_COIN.get().getDefaultInstance());
+            // SNIFFER COIN SET
+            items.add(ModItems.COPPER_SNIFFER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SNIFFER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SNIFFER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SNIFFER_COIN.get().getDefaultInstance());
+            // SNOW GOLEM COIN SET
+            items.add(ModItems.COPPER_SNOW_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SNOW_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SNOW_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SNOW_GOLEM_COIN.get().getDefaultInstance());
+            // STRIDER COIN SET
+            items.add(ModItems.COPPER_STRIDER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_STRIDER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_STRIDER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_STRIDER_COIN.get().getDefaultInstance());
+            // SQUID COIN SET
+            items.add(ModItems.COPPER_SQUID_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SQUID_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SQUID_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SQUID_COIN.get().getDefaultInstance());
+            // TADPOLE COIN SET
+            items.add(ModItems.COPPER_TADPOLE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_TADPOLE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_TADPOLE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_TADPOLE_COIN.get().getDefaultInstance());
+            // TURTLE COIN SET
+            items.add(ModItems.COPPER_TURTLE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_TURTLE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_TURTLE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_TURTLE_COIN.get().getDefaultInstance());
+            // VILLAGER COIN SET
+            items.add(ModItems.COPPER_VILLAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_VILLAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_VILLAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_VILLAGER_COIN.get().getDefaultInstance());
+            // WANDERING TRADER COIN SET
+            items.add(ModItems.COPPER_WANDERING_TRADER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_WANDERING_TRADER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_WANDERING_TRADER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_WANDERING_TRADER_COIN.get().getDefaultInstance());
+            // ZOMBIE HORSE COIN SET
+            items.add(ModItems.COPPER_ZOMBIE_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_ZOMBIE_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_ZOMBIE_HORSE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get().getDefaultInstance());
         }
     };
 }

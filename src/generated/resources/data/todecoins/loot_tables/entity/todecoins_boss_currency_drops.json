@@ -5,120 +5,120 @@
       "bonus_rolls": 1.0,
       "entries": [
         {
-            "type": "minecraft:loot_table",
-            "conditions": [
-                {
-                    "condition": "todecoins:entity_type_tag_condition",
-                    "tag": "forge:bosses"
-                }
-            ],
-            "name": "todecoins:entity/coins/todecoins_boss_copper_coin_drops",
-            "quality": -1
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_boss_copper_coin_drops",
+          "quality": -1
         },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:bosses"
-                  }
-              ],
-              "name": "todecoins:entity/coins/todecoins_boss_copper_iron_drops"
-          },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:bosses"
-                  }
-              ],
-              "name": "todecoins:entity/coins/todecoins_boss_gold_coin_drops",
-              "quality": 1
-          },
         {
           "type": "minecraft:loot_table",
           "conditions": [
-              {
-                  "condition": "todecoins:entity_type_tag_condition",
-                  "tag": "forge:bosses"
-              },
-              {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                      "dimension": "minecraft:the_nether"
-                  }
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_boss_copper_iron_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_boss_gold_coin_drops",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
               }
+            }
           ],
           "name": "todecoins:entity/coins/todecoins_boss_nether_gold_coin_drops",
           "quality": 1
         },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:bosses"
-                  }
-              ],
-              "name": "todecoins:entity/notes/todecoins_boss_emerald_quarter_bank_note_drops",
-              "quality": 2
-          },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:bosses"
-                  }
-              ],
-              "name": "todecoins:entity/coins/todecoins_boss_netherite_coin_drops",
-              "quality": 3
-          },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:bosses"
-                  }
-              ],
-              "name": "todecoins:entity/notes/todecoins_boss_emerald_half_bank_note_drops",
-              "quality": 3
-          },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:bosses"
-                  }
-              ],
-              "name": "todecoins:entity/notes/todecoins_boss_emerald_bank_note_drops",
-              "quality": 4
-          },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:bosses"
-                  }
-              ],
-              "name": "todecoins:entity/coins/todecoins_boss_netherite_coin_drops",
-              "quality": 5
-          },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:bosses"
-                  }
-              ],
-              "name": "todecoins:entity/coins/todecoins_lucky_coin_drops",
-              "quality": 6
-          },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/notes/todecoins_boss_emerald_quarter_bank_note_drops",
+          "quality": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_boss_netherite_coin_drops",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/notes/todecoins_boss_emerald_half_bank_note_drops",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/notes/todecoins_boss_emerald_bank_note_drops",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_boss_netherite_coin_drops",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_lucky_coin_drops",
+          "quality": 6
+        },
         {
           "type": "minecraft:loot_table",
           "conditions": [
@@ -154,6 +154,42 @@
             }
           ],
           "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/seasonal/todecoins_spring_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/seasonal/todecoins_summer_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/seasonal/todecoins_autumn_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/seasonal/todecoins_winter_coin_drops"
         }
       ],
       "rolls": 1.0

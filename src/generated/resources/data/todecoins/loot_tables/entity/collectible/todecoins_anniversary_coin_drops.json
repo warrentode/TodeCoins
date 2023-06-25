@@ -5,25 +5,29 @@
       "bonus_rolls": 1.0,
       "entries": [
         {
-            "type": "minecraft:item",
-            "conditions": [
-                {
-                    "condition": "todecoins:anniversary_condition"
-                },
-                {
-                    "condition": "minecraft:killed_by_player"
-                }
-            ],
-            "functions": [
-                {
-                    "add": false,
-                    "count": 1.0,
-                    "function": "minecraft:set_count"
-                },
-                {
-                    "count": {
-                        "type": "minecraft:uniform",
-                        "max": 2.0,
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
                 "min": 1.0
               },
               "function": "minecraft:looting_enchant"
@@ -32,26 +36,30 @@
           "name": "todecoins:collectible_coin_cosmos_marshall_nash",
           "weight": 4
         },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:anniversary_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
                 "min": 1.0
               },
               "function": "minecraft:looting_enchant"
@@ -60,26 +68,30 @@
           "name": "todecoins:collectible_coin_cosmos_trevor_brannigan",
           "weight": 4
         },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:anniversary_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
                 "min": 1.0
               },
               "function": "minecraft:looting_enchant"
@@ -87,26 +99,30 @@
           ],
           "name": "todecoins:collectible_coin_carnation_marshall_nash"
         },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:anniversary_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
                 "min": 1.0
               },
               "function": "minecraft:looting_enchant"

@@ -44,8 +44,10 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> LLAMA_TYPES = forgeEntityTypeTag("llama");
         public static final TagKey<EntityType<?>> MAGMA_CUBE_TYPES = forgeEntityTypeTag("magma_cube");
         public static final TagKey<EntityType<?>> MULE_TYPES = forgeEntityTypeTag("mule");
+        public static final TagKey<EntityType<?>> MOOBLOOM_TYPES = forgeEntityTypeTag("moobloom");
         public static final TagKey<EntityType<?>> MOOSHROOM_TYPES = forgeEntityTypeTag("mooshroom");
         public static final TagKey<EntityType<?>> OCELOT_TYPES = forgeEntityTypeTag("ocelot");
+        public static final TagKey<EntityType<?>> NUMISMATIST_TYPES = forgeEntityTypeTag("numismatist");
         public static final TagKey<EntityType<?>> PANDA_TYPES = forgeEntityTypeTag("panda");
         public static final TagKey<EntityType<?>> PARROT_TYPES = forgeEntityTypeTag("parrot");
         public static final TagKey<EntityType<?>> PHANTOM_TYPES = forgeEntityTypeTag("phantom");
@@ -59,6 +61,7 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> SALMON_TYPES = forgeEntityTypeTag("salmon");
         public static final TagKey<EntityType<?>> SHEEP_TYPES = forgeEntityTypeTag("sheep");
         public static final TagKey<EntityType<?>> SHULKER_TYPES = forgeEntityTypeTag("shulker");
+        public static final TagKey<EntityType<?>> SNIFFER_TYPES = forgeEntityTypeTag("sniffer");
         public static final TagKey<EntityType<?>> SILVERFISH_TYPES = forgeEntityTypeTag("silverfish");
         public static final TagKey<EntityType<?>> SKELETON_TYPES = forgeEntityTypeTag("skeleton");
         public static final TagKey<EntityType<?>> SKELETON_HORSE_TYPES = forgeEntityTypeTag("skeleton_horse");

@@ -14,6 +14,7 @@ import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemForItemTra
 import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsAndItemsForItemsTrade;
 import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsSaleSetForItemsTrade;
 import net.warrentode.todecoins.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class ModVillagerTrades {
     @Mod.EventBusSubscriber(modid = MODID)
     public static class ForgeEvents {
         @SubscribeEvent
-        public static void addCustomTrades(VillagerTradesEvent event) {
+        public static void addCustomTrades(@NotNull VillagerTradesEvent event) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             // BANKER TRADES SET

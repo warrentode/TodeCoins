@@ -27,7 +27,7 @@ public class ChristmasCoinItem extends CollectibleCoin {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_christmas_coin.hover").withStyle(ChatFormatting.DARK_GREEN));
+        tooltips.add(Component.translatable("tooltips.collectible_christmas_coin.hover").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

@@ -1,44 +1,44 @@
 {
-    "type": "forge:conditional",
-    "recipes": [
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
         {
-            "conditions": [
-                {
-                    "type": "forge:and",
-                    "values": [
-                        {
-                            "type": "forge:mod_loaded",
-                            "modid": "cagerium"
-                        },
-                        {
-                            "type": "forge:true"
-                        }
-                    ]
-                }
-            ],
-            "recipe": {
-                "type": "minecraft:crafting_shapeless",
-                "ingredients": [
-                    {
-                        "tag": "forge:eggs"
-                    },
-                    {
-                        "item": "minecraft:heart_of_the_sea"
-                    },
-                    {
-                        "tag": "todecoins:soul_binder"
-                    },
-                    {
-                        "tag": "forge:nuggets/netherite"
-                    },
-                    {
-                        "tag": "todecoins:collectible_coins/entity_coins/salmon_coin_set"
-                    }
-                ],
-                "result": {
-                    "item": "minecraft:salmon_spawn_egg"
-                }
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "cagerium"
+            },
+            {
+              "type": "forge:true"
             }
+          ]
         }
-    ]
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "item": "minecraft:heart_of_the_sea"
+          },
+          {
+            "tag": "todecoins:soul_binder"
+          },
+          {
+            "tag": "forge:nuggets/netherite"
+          },
+          {
+            "tag": "todecoins:collectible_coins/entity_coins/salmon_coin_set"
+          }
+        ],
+        "result": {
+          "item": "minecraft:salmon_spawn_egg"
+        }
+      }
+    }
+  ]
 }

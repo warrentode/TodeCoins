@@ -14,6 +14,8 @@ public class ModBuiltInLootTables {
 
     // bonus fishing loot tables
     public static final ResourceLocation TODECOINS_BONUS_FISHING = register(MODID + ":" + "gameplay/fishing/bonus");
+    public static final ResourceLocation TODECOINS_FISHING_EXTRA_JUNK = register(MODID + ":" + "gameplay/fishing/extra_junk");
+    public static final ResourceLocation TODECOINS_FISHING_EXTRA_TREASURE = register(MODID + ":" + "gameplay/fishing/extra_treasure");
     public static final ResourceLocation TODECOINS_FISHING_COINS = register(MODID + ":" + "gameplay/fishing/coins");
     public static final ResourceLocation TODECOINS_COD_COIN_FISHING = register(MODID + ":" + "gameplay/fishing/cod_coin");
     public static final ResourceLocation TODECOINS_SALMON_COIN_FISHING = register(MODID + ":" + "gameplay/fishing/salmon_coin");
@@ -40,24 +42,6 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_SUMMER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_summer_coin_loot");
     public static final ResourceLocation TODECOINS_AUTUMN_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_autumn_coin_loot");
     public static final ResourceLocation TODECOINS_WINTER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_winter_coin_loot");
-
-    // entity specific collectible coin chest loot tables
-    public static final ResourceLocation TODECOINS_ALLAY_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_allay_coin_loot");
-    public static final ResourceLocation TODECOINS_AXOLOTL_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_axolotl_coin_loot");
-    public static final ResourceLocation TODECOINS_BAT_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_bat_coin_loot");
-    public static final ResourceLocation TODECOINS_BEE_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_bee_coin_loot");
-    public static final ResourceLocation TODECOINS_BLAZE_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_blaze_coin_loot");
-    public static final ResourceLocation TODECOINS_CAMEL_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_camel_coin_loot");
-    public static final ResourceLocation TODECOINS_CAT_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_cat_coin_loot");
-    public static final ResourceLocation TODECOINS_CAVE_SPIDER_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_cave_spider_coin_loot");
-    public static final ResourceLocation TODECOINS_CHICKEN_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_chicken_coin_loot");
-    public static final ResourceLocation TODECOINS_COD_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_cod_coin_loot");
-    public static final ResourceLocation TODECOINS_ENDERMAN_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_enderman_coin_loot");
-    public static final ResourceLocation TODECOINS_OCELOT_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_ocelot_coin_loot");
-    public static final ResourceLocation TODECOINS_PIGLIN_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_piglin_coin_loot");
-    public static final ResourceLocation TODECOINS_PUFFERFISH_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_pufferfish_coin_loot");
-    public static final ResourceLocation TODECOINS_SALMON_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_salmon_coin_loot");
-    public static final ResourceLocation TODECOINS_TROPICAL_FISH_COIN_LOOT = register(MODID + ":" + "chests/collectible/entity/todecoins_tropical_fish_coin_loot");
 
     // injected chest loot table
     public static final ResourceLocation TODECOINS_CHEST_LOOT = register(MODID + ":" + "chests/todecoins_chest");
@@ -107,29 +91,16 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_BOSS_EMERALD_HALF_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_half_bank_note_drops");
     public static final ResourceLocation TODECOINS_BOSS_EMERALD_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_bank_note_drops");
 
-    // entity specific collectible coin drop loot tables - added to the master tables
-    public static final ResourceLocation TODECOINS_ALLAY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_allay_coin_drops");
-    public static final ResourceLocation TODECOINS_AXOLOTL_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_axolotl_coin_drops");
-    public static final ResourceLocation TODECOINS_BAT_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_bat_coin_drops");
-    public static final ResourceLocation TODECOINS_BEE_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_bee_coin_drops");
-    public static final ResourceLocation TODECOINS_BLAZE_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_blaze_coin_drops");
-    public static final ResourceLocation TODECOINS_CAMEL_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_camel_coin_drops");
-    public static final ResourceLocation TODECOINS_CAT_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_cat_coin_drops");
-    public static final ResourceLocation TODECOINS_CAVE_SPIDER_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_cave_spider_coin_drops");
-    public static final ResourceLocation TODECOINS_CHICKEN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_chicken_coin_drops");
-    public static final ResourceLocation TODECOINS_COD_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_cod_coin_drops");
-    public static final ResourceLocation TODECOINS_ENDERMAN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_enderman_coin_drops");
-    public static final ResourceLocation TODECOINS_OCELOT_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_ocelot_coin_drops");
-    public static final ResourceLocation TODECOINS_PIGLIN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_piglin_coin_drops");
-    public static final ResourceLocation TODECOINS_PUFFERFISH_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_pufferfish_coin_drops");
-    public static final ResourceLocation TODECOINS_SALMON_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_salmon_coin_drops");
-    public static final ResourceLocation TODECOINS_TROPICAL_FISH_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_tropical_fish_coin_drops");
-
-    // event dependent collectible coin entity drop loot tables - added to the master tables
+    // seasonal collectible coin entity drop loot tables - added to the master tables
     public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_halloween_coin_drops");
     public static final ResourceLocation TODECOINS_BIRTHDAY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_birthday_coin_drops");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_christmas_coin_drops");
     public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_anniversary_coin_drops");
+    public static final ResourceLocation TODECOINS_SPRING_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_spring_coin_drops");
+    public static final ResourceLocation TODECOINS_SUMMER_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_summer_coin_drops");
+    public static final ResourceLocation TODECOINS_AUTUMN_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_autumn_coin_drops");
+    public static final ResourceLocation TODECOINS_WINTER_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_winter_coin_drops");
+
 
     private static ResourceLocation register(String path) {
         return register(new ResourceLocation(path));

@@ -22,7 +22,7 @@ public class BlazeCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createFlameCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createFireAspectCharmProvider(stack);
     }
 
     @Override

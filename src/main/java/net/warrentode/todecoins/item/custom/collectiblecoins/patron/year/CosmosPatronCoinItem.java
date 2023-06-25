@@ -27,7 +27,7 @@ public class CosmosPatronCoinItem extends CollectibleCoin {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_coin_cosmos.hover").withStyle(ChatFormatting.YELLOW));
+        tooltips.add(Component.translatable("tooltips.collectible_coin_cosmos.hover").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

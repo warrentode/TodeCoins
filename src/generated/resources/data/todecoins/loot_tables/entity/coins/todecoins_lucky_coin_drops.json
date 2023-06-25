@@ -2,29 +2,33 @@
   "type": "minecraft:entity",
   "pools": [
     {
-        "bonus_rolls": 0.0,
-        "entries": [
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
             {
-                "type": "minecraft:item",
-                "conditions": [
-                    {
-                        "condition": "todecoins:entity_type_tag_condition",
-                        "tag": "forge:drops_currency"
-                    },
-                    {
-                        "condition": "minecraft:killed_by_player"
-                    }
-                ],
-                "functions": [
-                    {
-                        "add": false,
-                        "count": {
-                            "type": "minecraft:uniform",
-                            "max": 1.0,
-                            "min": 0.0
-                        },
-                        "function": "minecraft:set_count"
-                    },
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
             {
               "count": {
                 "type": "minecraft:uniform",

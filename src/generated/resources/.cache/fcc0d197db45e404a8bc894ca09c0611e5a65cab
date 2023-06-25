@@ -1,4 +1,4 @@
-// 1.19.2	2023-06-14T20:33:57.7184098	Tags for minecraft:entity_type
+// 1.19.2	2023-06-24T21:19:06.1243159	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
@@ -33,8 +33,10 @@ e2e5633d9261e4ff3f7d07edc9901471b3586a5a data/forge/tags/entity_types/husk.json
 29671cfa11d074462c259806e9d60468451e3cdb data/forge/tags/entity_types/iron_golem.json
 5c5afd5d1064c82ba6697a1f869a9f972b777fe5 data/forge/tags/entity_types/llama.json
 699d8d2c92e77a66cc1875b9f29493cd201096d6 data/forge/tags/entity_types/magma_cube.json
+bfd7955ca93367b7c5f1407ff787ae757f514224 data/forge/tags/entity_types/moobloom.json
 1ef430c55d1de22917fabe28a7b13acd1ccbc2cc data/forge/tags/entity_types/mooshroom.json
 ef1c5d18260fdc41c65d55fa72ccc0b26a7946af data/forge/tags/entity_types/mule.json
+2039264a6532d0f398d8cb42a3e4492cf9737195 data/forge/tags/entity_types/numismatist.json
 3e0f1c22c1e31318a7f8875c4b3ea72bd0fbc942 data/forge/tags/entity_types/ocelot.json
 c746f381c0e6276ea07e055e96b0283d2f5f1689 data/forge/tags/entity_types/panda.json
 76a9eca4a8126ef7ff60c275ffd0a2ac3ffbbbfb data/forge/tags/entity_types/parrot.json
@@ -54,6 +56,7 @@ b00bb14b18cad08531c36fa0fe4a1245f1508277 data/forge/tags/entity_types/shulker.js
 bd27b5f11343b9260f5a83921d3d558297304a4f data/forge/tags/entity_types/skeleton.json
 40c845e0977cd1a35d82ba144c8eb0204852c876 data/forge/tags/entity_types/skeleton_horse.json
 5e2d6dbd339cdc162f1bd13fa83d0ece1b6014d8 data/forge/tags/entity_types/slime.json
+c168b812eee72897cc6999f30de326a7bdc87fc2 data/forge/tags/entity_types/sniffer.json
 ee75b90db1cfb03a8ce6da87690f062a665055c4 data/forge/tags/entity_types/snow_golem.json
 19719ab6cbbe130100c219c7b7932fba9c13e922 data/forge/tags/entity_types/spider.json
 ec37878cff30b80bbb786b0bb951975b572e0a56 data/forge/tags/entity_types/squid.json

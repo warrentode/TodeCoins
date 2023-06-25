@@ -168,7 +168,6 @@ public class AdvancementsGen extends AdvancementProvider {
             // Collectible Coins
             Advancement collectibleCoins = getAdvancement(todeCoins, ModItems.COPPER_HERO_COIN.get(),
                     "collectibleCoins", FrameType.CHALLENGE, true, true, false)
-
                     // holiday coins
                     .addCriterion("find_" + ModItems.BIRTHDAY_COIN_2023.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRTHDAY_COIN_2023.get()))
                     .addCriterion("find_" + ModItems.HALLOWEEN_COIN_2023.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HALLOWEEN_COIN_2023.get()))
@@ -185,26 +184,6 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.IRON_HERO_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_HERO_COIN.get()))
                     .addCriterion("find_" + ModItems.GOLD_HERO_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_HERO_COIN.get()))
                     .addCriterion("find_" + ModItems.NETHERITE_HERO_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_HERO_COIN.get()))
-
-                    .addCriterion("find_" + ModItems.COPPER_COD_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_COD_COIN.get()))
-                    .addCriterion("find_" + ModItems.IRON_COD_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_COD_COIN.get()))
-                    .addCriterion("find_" + ModItems.GOLD_COD_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_COD_COIN.get()))
-                    .addCriterion("find_" + ModItems.NETHERITE_COD_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_COD_COIN.get()))
-
-                    .addCriterion("find_" + ModItems.COPPER_PUFFERFISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PUFFERFISH_COIN.get()))
-                    .addCriterion("find_" + ModItems.IRON_PUFFERFISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PUFFERFISH_COIN.get()))
-                    .addCriterion("find_" + ModItems.GOLD_PUFFERFISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PUFFERFISH_COIN.get()))
-                    .addCriterion("find_" + ModItems.NETHERITE_PUFFERFISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PUFFERFISH_COIN.get()))
-
-                    .addCriterion("find_" + ModItems.COPPER_SALMON_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SALMON_COIN.get()))
-                    .addCriterion("find_" + ModItems.IRON_SALMON_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SALMON_COIN.get()))
-                    .addCriterion("find_" + ModItems.GOLD_SALMON_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SALMON_COIN.get()))
-                    .addCriterion("find_" + ModItems.NETHERITE_SALMON_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SALMON_COIN.get()))
-
-                    .addCriterion("find_" + ModItems.COPPER_TROPICAL_FISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_TROPICAL_FISH_COIN.get()))
-                    .addCriterion("find_" + ModItems.IRON_TROPICAL_FISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_TROPICAL_FISH_COIN.get()))
-                    .addCriterion("find_" + ModItems.GOLD_TROPICAL_FISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_TROPICAL_FISH_COIN.get()))
-                    .addCriterion("find_" + ModItems.NETHERITE_TROPICAL_FISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_TROPICAL_FISH_COIN.get()))
 
                     // entity coins
                     .addCriterion("find_" + ModItems.COPPER_ALLAY_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ALLAY_COIN.get()))
@@ -252,20 +231,165 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.GOLD_CHICKEN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_CHICKEN_COIN.get()))
                     .addCriterion("find_" + ModItems.NETHERITE_CHICKEN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_CHICKEN_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_COD_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_COD_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_COD_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_COD_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_COD_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_COD_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_COD_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_COD_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_COW_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_COW_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_COW_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_COW_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_COW_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_COW_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_COW_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_COW_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_DONKEY_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_DONKEY_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_DONKEY_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_DONKEY_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_DONKEY_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_DONKEY_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_DONKEY_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_DONKEY_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_ENDERMAN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ENDERMAN_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_ENDERMAN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ENDERMAN_COIN.get()))
                     .addCriterion("find_" + ModItems.GOLD_ENDERMAN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ENDERMAN_COIN.get()))
                     .addCriterion("find_" + ModItems.NETHERITE_ENDERMAN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ENDERMAN_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_FOX_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_FOX_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_FOX_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_FOX_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_FOX_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_FOX_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_FOX_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_FOX_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_FROG_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_FROG_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_FROG_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_FROG_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_FROG_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_FROG_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_FROG_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_FROG_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_GLOW_SQUID_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GLOW_SQUID_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_GLOW_SQUID_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_GLOW_SQUID_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_GLOW_SQUID_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_GLOW_SQUID_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_GLOW_SQUID_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GLOW_SQUID_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_HOGLIN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_HOGLIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_HOGLIN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_HOGLIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_HOGLIN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_HOGLIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_HOGLIN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_HOGLIN_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_HORSE_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_MOOBLOOM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_MOOBLOOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_MOOBLOOM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_MOOBLOOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_MOOBLOOM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_MOOBLOOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_MOOBLOOM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_MOOBLOOM_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_MOOSHROOM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_MOOSHROOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_MOOSHROOM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_MOOSHROOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_MOOSHROOM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_MOOSHROOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_MOOSHROOM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_MOOSHROOM_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_MULE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_MULE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_MULE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_MULE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_MULE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_MULE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_MULE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_MULE_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_NUMISMATIST_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_NUMISMATIST_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_NUMISMATIST_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_NUMISMATIST_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_NUMISMATIST_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_NUMISMATIST_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_NUMISMATIST_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_NUMISMATIST_COIN.get()))
 
                     .addCriterion("find_" + ModItems.COPPER_OCELOT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_OCELOT_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_OCELOT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_OCELOT_COIN.get()))
                     .addCriterion("find_" + ModItems.GOLD_OCELOT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_OCELOT_COIN.get()))
                     .addCriterion("find_" + ModItems.NETHERITE_OCELOT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_OCELOT_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_PARROT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PARROT_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_PARROT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PARROT_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_PARROT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PARROT_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_PARROT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PARROT_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_PIG_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIG_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_PIG_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PIG_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_PIG_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PIG_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_PIG_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIG_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_PIGLIN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIGLIN_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_PIGLIN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PIGLIN_COIN.get()))
                     .addCriterion("find_" + ModItems.GOLD_PIGLIN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PIGLIN_COIN.get()))
                     .addCriterion("find_" + ModItems.NETHERITE_PIGLIN_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIGLIN_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_PUFFERFISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PUFFERFISH_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_PUFFERFISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PUFFERFISH_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_PUFFERFISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PUFFERFISH_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_PUFFERFISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PUFFERFISH_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_RABBIT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_RABBIT_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_RABBIT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_RABBIT_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_RABBIT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_RABBIT_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_RABBIT_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_RABBIT_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_SALMON_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SALMON_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SALMON_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SALMON_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SALMON_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SALMON_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SALMON_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SALMON_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_SHEEP_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SHEEP_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SHEEP_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SHEEP_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SHEEP_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SHEEP_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SHEEP_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SHEEP_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_SKELETON_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SKELETON_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SKELETON_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SKELETON_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SKELETON_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SKELETON_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SKELETON_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SKELETON_HORSE_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_SNIFFER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SNIFFER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SNIFFER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SNIFFER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SNIFFER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SNIFFER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SNIFFER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SNIFFER_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_SNOW_GOLEM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SNOW_GOLEM_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SNOW_GOLEM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SNOW_GOLEM_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SNOW_GOLEM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SNOW_GOLEM_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SNOW_GOLEM_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SNOW_GOLEM_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_SQUID_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SQUID_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SQUID_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SQUID_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SQUID_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SQUID_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SQUID_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SQUID_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_STRIDER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_STRIDER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_STRIDER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_STRIDER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_STRIDER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_STRIDER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_STRIDER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_STRIDER_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_TADPOLE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_TADPOLE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_TADPOLE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_TADPOLE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_TADPOLE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_TADPOLE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_TADPOLE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_TADPOLE_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_TROPICAL_FISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_TROPICAL_FISH_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_TROPICAL_FISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_TROPICAL_FISH_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_TROPICAL_FISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_TROPICAL_FISH_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_TROPICAL_FISH_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_TROPICAL_FISH_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_TURTLE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_TURTLE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_TURTLE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_TURTLE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_TURTLE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_TURTLE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_TURTLE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_TURTLE_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_VILLAGER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_VILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_VILLAGER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_VILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_VILLAGER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_VILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_VILLAGER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_VILLAGER_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_WANDERING_TRADER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_WANDERING_TRADER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_WANDERING_TRADER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_WANDERING_TRADER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_WANDERING_TRADER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_WANDERING_TRADER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_WANDERING_TRADER_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_WANDERING_TRADER_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_ZOMBIE_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ZOMBIE_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ZOMBIE_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ZOMBIE_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ZOMBIE_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ZOMBIE_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get().getDescriptionId(), InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get()))
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_coins"));
         }
