@@ -11,6 +11,7 @@ import net.warrentode.todecoins.item.ModItems;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -26,12 +27,17 @@ public abstract class PhantomBehaviorMixin {
     @Shadow
     @Final
     Phantom this$0;
-    private final Phantom.PhantomSweepAttackGoal phantomSweepAttackGoal = (Phantom.PhantomSweepAttackGoal) (Object) this;
-    private int tickCount;
-    private boolean isScaredOfCat;
-    private int catSearchTick;
+    @Unique
+    private final Phantom.PhantomSweepAttackGoal todeCoins$phantomSweepAttackGoal = (Phantom.PhantomSweepAttackGoal) (Object) this;
+    @Unique
+    private int todeCoins$tickCount;
+    @Unique
+    private boolean todeCoins$isScaredOfCat;
+    @Unique
+    private int todeCoins$catSearchTick;
 
-    private static boolean isWearingCatCoin(Player player) {
+    @Unique
+    private static boolean todeCoins$isWearingCatCoin(Player player) {
         Optional<SlotResult> optional1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_CAT_COIN.get());
         Optional<SlotResult> optional2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_CAT_COIN.get());
         Optional<SlotResult> optional3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_CAT_COIN.get());
@@ -56,19 +62,19 @@ public abstract class PhantomBehaviorMixin {
     }
 
     @Inject(at = @At("HEAD"), method = "canContinueToUse()Z", cancellable = true)
-    private void canContinueToUse(CallbackInfoReturnable<Boolean> cir) {
+    private void todecoins_canContinueToUse(CallbackInfoReturnable<Boolean> cir) {
         Player player = Minecraft.getInstance().player;
 
-        if (this$0.tickCount > this.catSearchTick) {
-            this.catSearchTick = this$0.tickCount + 20;
+        if (this$0.tickCount > this.todeCoins$catSearchTick) {
+            this.todeCoins$catSearchTick = this$0.tickCount + 20;
             List<Player> playerList = this$0.level.getEntitiesOfClass(Player.class, this$0.getBoundingBox().inflate(16.0D), EntitySelector.ENTITY_STILL_ALIVE);
             List<Player> fakeCat = new ArrayList<>();
 
-            if (player != null && isWearingCatCoin(player) && !player.isCreative() && !player.isSpectator()) {
+            if (player != null && todeCoins$isWearingCatCoin(player) && !player.isCreative() && !player.isSpectator()) {
                 fakeCat.add(player);
                 player.playSound(SoundEvents.CAT_HISS, 1.0F, player.getVoicePitch());
 
-                this.isScaredOfCat = !fakeCat.isEmpty();
+                this.todeCoins$isScaredOfCat = !fakeCat.isEmpty();
                 cir.setReturnValue(false);
                 cir.cancel();
             }

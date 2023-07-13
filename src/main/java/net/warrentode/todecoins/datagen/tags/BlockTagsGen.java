@@ -23,17 +23,14 @@ public class BlockTagsGen extends BlockTagsProvider {
     }
 
     protected void registerBlockMineables() {
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(
-                ModBlocks.POT_OF_GOLD.get()
-        );
+        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.POT_OF_GOLD.get())
+                .add(ModBlocks.COINPRESSBLOCK.get());
     }
     protected void registerMinecraftTags() {
-        tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(
-                ModBlocks.POT_OF_GOLD.get()
-        );
-        tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(
-                ModBlocks.POT_OF_GOLD.get()
-        );
+        tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.POT_OF_GOLD.get())
+                .add(ModBlocks.COINPRESSBLOCK.get());
     }
     protected void registerForgeTags() {
         tag(ForgeTags.Blocks.STORAGE_BLOCKS)

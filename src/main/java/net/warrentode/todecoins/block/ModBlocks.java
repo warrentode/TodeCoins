@@ -55,8 +55,8 @@ public class ModBlocks {
             () -> new PotOfGoldBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(8f)
                     .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTabs.TODECOINSTAB);
     public static final RegistryObject<Block> COINPRESSBLOCK = registerBlock("coin_press",
-            () -> new CoinPressBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.ANVIL).strength(6f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            () -> new CoinPressBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.ANVIL).strength(8f)
+                    .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTabs.TODECOINSTAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, @SuppressWarnings("SameParameterValue") CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

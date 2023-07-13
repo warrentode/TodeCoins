@@ -1,11 +1,8 @@
 package net.warrentode.todecoins.integration;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.biome.Biome;
 import sereneseasons.api.season.SeasonHelper;
 
 import static sereneseasons.api.season.Season.SubSeason.*;
@@ -13,15 +10,7 @@ import static sereneseasons.api.season.Season.TropicalSeason.*;
 
 public class SereneSeasons {
     static RandomSource random = RandomSource.create();
-    private static Player player = Minecraft.getInstance().player;
     private static Level level = Minecraft.getInstance().level;
-    private static Holder<Biome> biome;
-
-    static {
-        assert Minecraft.getInstance().level != null;
-        assert player != null;
-        biome = Minecraft.getInstance().level.getBiome(player.getOnPos());
-    }
 
     public enum Season {
         NONE,
@@ -71,54 +60,54 @@ public class SereneSeasons {
             sereneseasons.api.season.Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
 
             // regular seasons
-            if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == EARLY_WINTER) {
+            if (subSeason == EARLY_WINTER) {
                 return WINTER;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == MID_WINTER) {
+            else if (subSeason == MID_WINTER) {
                 return WINTER;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == LATE_WINTER) {
+            else if (subSeason == LATE_WINTER) {
                 return WINTER;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == EARLY_SPRING) {
+            else if (subSeason == EARLY_SPRING) {
                 return SPRING;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == MID_SPRING) {
+            else if (subSeason == MID_SPRING) {
                 return SPRING;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == LATE_SPRING) {
+            else if (subSeason == LATE_SPRING) {
                 return SPRING;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == EARLY_SUMMER) {
+            else if (subSeason == EARLY_SUMMER) {
                 return SUMMER;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == MID_SUMMER) {
+            else if (subSeason == MID_SUMMER) {
                 return SUMMER;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == LATE_SUMMER) {
+            else if (subSeason == LATE_SUMMER) {
                 return SUMMER;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == EARLY_AUTUMN) {
+            else if (subSeason == EARLY_AUTUMN) {
                 return AUTUMN;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == MID_AUTUMN) {
+            else if (subSeason == MID_AUTUMN) {
                 return AUTUMN;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == LATE_AUTUMN) {
+            else if (subSeason == LATE_AUTUMN) {
                 return AUTUMN;
             }
 
             // holiday regular seasons
-            if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == EARLY_WINTER) {
+            if (subSeason == EARLY_WINTER) {
                 return CHRISTMAS;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == MID_WINTER) {
+            if (subSeason == MID_WINTER) {
                 return PATREON_ANNIVERSARY;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == MID_AUTUMN) {
+            if (subSeason == MID_AUTUMN) {
                 return HALLOWEEN;
             }
-            else if (!SeasonHelper.usesTropicalSeasons(biome) && subSeason == LATE_AUTUMN) {
+            if (subSeason == LATE_AUTUMN) {
                 return BIRTHDAY;
             }
 
@@ -156,14 +145,8 @@ public class SereneSeasons {
             if (tropicalSeason == EARLY_WET) {
                 return CHRISTMAS;
             }
-            else if (tropicalSeason == MID_WET) {
-                return PATREON_ANNIVERSARY;
-            }
-            else if (tropicalSeason == MID_DRY) {
+            if (tropicalSeason == MID_DRY) {
                 return HALLOWEEN;
-            }
-            else if (tropicalSeason == LATE_DRY) {
-                return BIRTHDAY;
             }
 
             return NONE;

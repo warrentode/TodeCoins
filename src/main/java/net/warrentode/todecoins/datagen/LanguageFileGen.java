@@ -4,12 +4,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.warrentode.todecoins.attribute.ModAttributes;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.entity.ModEntityTypes;
-import net.warrentode.todecoins.entity.villager.ModVillagers;
 import net.warrentode.todecoins.item.ModItems;
 
 import java.util.Map;
@@ -437,8 +435,8 @@ public class LanguageFileGen extends LanguageProvider {
 
     private void addVillagers() {
         add(ModEntityTypes.NUMISMATIST.get(), "Numismatist");
-        add(EntityType.VILLAGER + "." + ModVillagers.BANKER.get(), "Banker");
-        add(EntityType.VILLAGER + "." + ModVillagers.LEPRECHAUN.get(), "Leprechaun");
+        add("entity.minecraft.villager.todecoins.banker", "Banker");
+        add("entity.minecraft.villager.todecoins.leprechaun", "Leprechaun");
     }
 
     private void addContainers() {
