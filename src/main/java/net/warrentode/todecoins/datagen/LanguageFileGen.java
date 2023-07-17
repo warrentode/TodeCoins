@@ -130,15 +130,45 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_COW_COIN.get().getDescriptionId(), "Gold Cow Coin");
         addCollectibleCoins(ModItems.NETHERITE_COW_COIN.get().getDescriptionId(), "Netherite Cow Coin");
 
+        addCollectibleCoins(ModItems.COPPER_CREEPER_COIN.get().getDescriptionId(), "Copper Creeper Coin");
+        addCollectibleCoins(ModItems.IRON_CREEPER_COIN.get().getDescriptionId(), "Iron Creeper Coin");
+        addCollectibleCoins(ModItems.GOLD_CREEPER_COIN.get().getDescriptionId(), "Gold Creeper Coin");
+        addCollectibleCoins(ModItems.NETHERITE_CREEPER_COIN.get().getDescriptionId(), "Netherite Creeper Coin");
+
+        addCollectibleCoins(ModItems.COPPER_DOLPHIN_COIN.get().getDescriptionId(), "Copper Dolphin Coin");
+        addCollectibleCoins(ModItems.IRON_DOLPHIN_COIN.get().getDescriptionId(), "Iron Dolphin Coin");
+        addCollectibleCoins(ModItems.GOLD_DOLPHIN_COIN.get().getDescriptionId(), "Gold Dolphin Coin");
+        addCollectibleCoins(ModItems.NETHERITE_DOLPHIN_COIN.get().getDescriptionId(), "Netherite Dolphin Coin");
+
         addCollectibleCoins(ModItems.COPPER_DONKEY_COIN.get().getDescriptionId(), "Copper Donkey Coin");
         addCollectibleCoins(ModItems.IRON_DONKEY_COIN.get().getDescriptionId(), "Iron Donkey Coin");
         addCollectibleCoins(ModItems.GOLD_DONKEY_COIN.get().getDescriptionId(), "Gold Donkey Coin");
         addCollectibleCoins(ModItems.NETHERITE_DONKEY_COIN.get().getDescriptionId(), "Netherite Donkey Coin");
 
+        addCollectibleCoins(ModItems.COPPER_DROWNED_COIN.get().getDescriptionId(), "Copper Drowned Coin");
+        addCollectibleCoins(ModItems.IRON_DROWNED_COIN.get().getDescriptionId(), "Iron Drowned Coin");
+        addCollectibleCoins(ModItems.GOLD_DROWNED_COIN.get().getDescriptionId(), "Gold Drowned Coin");
+        addCollectibleCoins(ModItems.NETHERITE_DROWNED_COIN.get().getDescriptionId(), "Netherite Drowned Coin");
+
+        addCollectibleCoins(ModItems.COPPER_ELDER_GUARDIAN_COIN.get().getDescriptionId(), "Copper Elder Guardian Coin");
+        addCollectibleCoins(ModItems.IRON_ELDER_GUARDIAN_COIN.get().getDescriptionId(), "Iron Elder Guardian Coin");
+        addCollectibleCoins(ModItems.GOLD_ELDER_GUARDIAN_COIN.get().getDescriptionId(), "Gold Elder Guardian Coin");
+        addCollectibleCoins(ModItems.NETHERITE_ELDER_GUARDIAN_COIN.get().getDescriptionId(), "Netherite Elder Guardian Coin");
+
         addCollectibleCoins(ModItems.COPPER_ENDERMAN_COIN.get().getDescriptionId(), "Copper Enderman Coin");
         addCollectibleCoins(ModItems.IRON_ENDERMAN_COIN.get().getDescriptionId(), "Iron Enderman Coin");
         addCollectibleCoins(ModItems.GOLD_ENDERMAN_COIN.get().getDescriptionId(), "Gold Enderman Coin");
         addCollectibleCoins(ModItems.NETHERITE_ENDERMAN_COIN.get().getDescriptionId(), "Netherite Enderman Coin");
+
+        addCollectibleCoins(ModItems.COPPER_ENDERMITE_COIN.get().getDescriptionId(), "Copper Endermite Coin");
+        addCollectibleCoins(ModItems.IRON_ENDERMITE_COIN.get().getDescriptionId(), "Iron Endermite Coin");
+        addCollectibleCoins(ModItems.GOLD_ENDERMITE_COIN.get().getDescriptionId(), "Gold Endermite Coin");
+        addCollectibleCoins(ModItems.NETHERITE_ENDERMITE_COIN.get().getDescriptionId(), "Netherite Endermite Coin");
+
+        addCollectibleCoins(ModItems.COPPER_EVOKER_COIN.get().getDescriptionId(), "Copper Evoker Coin");
+        addCollectibleCoins(ModItems.IRON_EVOKER_COIN.get().getDescriptionId(), "Iron Evoker Coin");
+        addCollectibleCoins(ModItems.GOLD_EVOKER_COIN.get().getDescriptionId(), "Gold Evoker Coin");
+        addCollectibleCoins(ModItems.NETHERITE_EVOKER_COIN.get().getDescriptionId(), "Netherite Evoker Coin");
 
         addCollectibleCoins(ModItems.COPPER_FOX_COIN.get().getDescriptionId(), "Copper Fox Coin");
         addCollectibleCoins(ModItems.IRON_FOX_COIN.get().getDescriptionId(), "Iron Fox Coin");
@@ -155,10 +185,35 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_GLOW_SQUID_COIN.get().getDescriptionId(), "Gold Glow Squid Coin");
         addCollectibleCoins(ModItems.NETHERITE_GLOW_SQUID_COIN.get().getDescriptionId(), "Netherite Glow Squid Coin");
 
+        addCollectibleCoins(ModItems.COPPER_GOAT_COIN.get().getDescriptionId(), "Copper Goat Coin");
+        addCollectibleCoins(ModItems.IRON_GOAT_COIN.get().getDescriptionId(), "Iron Goat Coin");
+        addCollectibleCoins(ModItems.GOLD_GOAT_COIN.get().getDescriptionId(), "Gold Goat Coin");
+        addCollectibleCoins(ModItems.NETHERITE_GOAT_COIN.get().getDescriptionId(), "Netherite Goat Coin");
+
+        addCollectibleCoins(ModItems.COPPER_GUARDIAN_COIN.get().getDescriptionId(), "Copper Guardian Coin");
+        addCollectibleCoins(ModItems.IRON_GUARDIAN_COIN.get().getDescriptionId(), "Iron Guardian Coin");
+        addCollectibleCoins(ModItems.GOLD_GUARDIAN_COIN.get().getDescriptionId(), "Gold Guardian Coin");
+        addCollectibleCoins(ModItems.NETHERITE_GUARDIAN_COIN.get().getDescriptionId(), "Netherite Guardian Coin");
+
+        addCollectibleCoins(ModItems.COPPER_HOGLIN_COIN.get().getDescriptionId(), "Copper Hoglin Coin");
+        addCollectibleCoins(ModItems.IRON_HOGLIN_COIN.get().getDescriptionId(), "Iron Hoglin Coin");
+        addCollectibleCoins(ModItems.GOLD_HOGLIN_COIN.get().getDescriptionId(), "Gold Hoglin Coin");
+        addCollectibleCoins(ModItems.NETHERITE_HOGLIN_COIN.get().getDescriptionId(), "Netherite Hoglin Coin");
+
         addCollectibleCoins(ModItems.COPPER_HORSE_COIN.get().getDescriptionId(), "Copper Horse Coin");
         addCollectibleCoins(ModItems.IRON_HORSE_COIN.get().getDescriptionId(), "Iron Horse Coin");
         addCollectibleCoins(ModItems.GOLD_HORSE_COIN.get().getDescriptionId(), "Gold Horse Coin");
         addCollectibleCoins(ModItems.NETHERITE_HORSE_COIN.get().getDescriptionId(), "Netherite Horse Coin");
+
+        addCollectibleCoins(ModItems.COPPER_IRON_GOLEM_COIN.get().getDescriptionId(), "Copper Iron Golem Coin");
+        addCollectibleCoins(ModItems.IRON_IRON_GOLEM_COIN.get().getDescriptionId(), "Iron Iron Golem Coin");
+        addCollectibleCoins(ModItems.GOLD_IRON_GOLEM_COIN.get().getDescriptionId(), "Gold Iron Golem Coin");
+        addCollectibleCoins(ModItems.NETHERITE_IRON_GOLEM_COIN.get().getDescriptionId(), "Netherite Iron Golem Coin");
+
+        addCollectibleCoins(ModItems.COPPER_LLAMA_COIN.get().getDescriptionId(), "Copper Llama Coin");
+        addCollectibleCoins(ModItems.IRON_LLAMA_COIN.get().getDescriptionId(), "Iron Llama Coin");
+        addCollectibleCoins(ModItems.GOLD_LLAMA_COIN.get().getDescriptionId(), "Gold Llama Coin");
+        addCollectibleCoins(ModItems.NETHERITE_LLAMA_COIN.get().getDescriptionId(), "Netherite Llama Coin");
 
         addCollectibleCoins(ModItems.COPPER_MOOBLOOM_COIN.get().getDescriptionId(), "Copper Moobloom Coin");
         addCollectibleCoins(ModItems.IRON_MOOBLOOM_COIN.get().getDescriptionId(), "Iron Moobloom Coin");
@@ -185,6 +240,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_OCELOT_COIN.get().getDescriptionId(), "Gold Ocelot Coin");
         addCollectibleCoins(ModItems.NETHERITE_OCELOT_COIN.get().getDescriptionId(), "Netherite Ocelot Coin");
 
+        addCollectibleCoins(ModItems.COPPER_PANDA_COIN.get().getDescriptionId(), "Copper Panda Coin");
+        addCollectibleCoins(ModItems.IRON_PANDA_COIN.get().getDescriptionId(), "Iron Panda Coin");
+        addCollectibleCoins(ModItems.GOLD_PANDA_COIN.get().getDescriptionId(), "Gold Panda Coin");
+        addCollectibleCoins(ModItems.NETHERITE_PANDA_COIN.get().getDescriptionId(), "Netherite Panda Coin");
+
         addCollectibleCoins(ModItems.COPPER_PARROT_COIN.get().getDescriptionId(), "Copper Parrot Coin");
         addCollectibleCoins(ModItems.IRON_PARROT_COIN.get().getDescriptionId(), "Iron Parrot Coin");
         addCollectibleCoins(ModItems.GOLD_PARROT_COIN.get().getDescriptionId(), "Gold Parrot Coin");
@@ -194,6 +254,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.IRON_PIGLIN_COIN.get().getDescriptionId(), "Iron Piglin Coin");
         addCollectibleCoins(ModItems.GOLD_PIGLIN_COIN.get().getDescriptionId(), "Gold Piglin Coin");
         addCollectibleCoins(ModItems.NETHERITE_PIGLIN_COIN.get().getDescriptionId(), "Netherite Piglin Coin");
+
+        addCollectibleCoins(ModItems.COPPER_POLAR_BEAR_COIN.get().getDescriptionId(), "Copper Polar Bear Coin");
+        addCollectibleCoins(ModItems.IRON_POLAR_BEAR_COIN.get().getDescriptionId(), "Iron Polar Bear Coin");
+        addCollectibleCoins(ModItems.GOLD_POLAR_BEAR_COIN.get().getDescriptionId(), "Gold Polar Bear Coin");
+        addCollectibleCoins(ModItems.NETHERITE_POLAR_BEAR_COIN.get().getDescriptionId(), "Netherite Polar Bear Coin");
 
         addCollectibleCoins(ModItems.COPPER_SHEEP_COIN.get().getDescriptionId(), "Copper Sheep Coin");
         addCollectibleCoins(ModItems.IRON_SHEEP_COIN.get().getDescriptionId(), "Iron Sheep Coin");
@@ -215,6 +280,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_SNOW_GOLEM_COIN.get().getDescriptionId(), "Gold Snow Golem Coin");
         addCollectibleCoins(ModItems.NETHERITE_SNOW_GOLEM_COIN.get().getDescriptionId(), "Netherite Snow Golem Coin");
 
+        addCollectibleCoins(ModItems.COPPER_SPIDER_COIN.get().getDescriptionId(), "Copper Spider Coin");
+        addCollectibleCoins(ModItems.IRON_SPIDER_COIN.get().getDescriptionId(), "Iron Spider Coin");
+        addCollectibleCoins(ModItems.GOLD_SPIDER_COIN.get().getDescriptionId(), "Gold Spider Coin");
+        addCollectibleCoins(ModItems.NETHERITE_SPIDER_COIN.get().getDescriptionId(), "Netherite Spider Coin");
+
         addCollectibleCoins(ModItems.COPPER_SQUID_COIN.get().getDescriptionId(), "Copper Squid Coin");
         addCollectibleCoins(ModItems.IRON_SQUID_COIN.get().getDescriptionId(), "Iron Squid Coin");
         addCollectibleCoins(ModItems.GOLD_SQUID_COIN.get().getDescriptionId(), "Gold Squid Coin");
@@ -229,6 +299,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.IRON_TADPOLE_COIN.get().getDescriptionId(), "Iron Tadpole Coin");
         addCollectibleCoins(ModItems.GOLD_TADPOLE_COIN.get().getDescriptionId(), "Gold Tadpole Coin");
         addCollectibleCoins(ModItems.NETHERITE_TADPOLE_COIN.get().getDescriptionId(), "Netherite Tadpole Coin");
+
+        addCollectibleCoins(ModItems.COPPER_TRADER_LLAMA_COIN.get().getDescriptionId(), "Copper Trader Llama Coin");
+        addCollectibleCoins(ModItems.IRON_TRADER_LLAMA_COIN.get().getDescriptionId(), "Iron Trader Llama Coin");
+        addCollectibleCoins(ModItems.GOLD_TRADER_LLAMA_COIN.get().getDescriptionId(), "Gold Trader Llama Coin");
+        addCollectibleCoins(ModItems.NETHERITE_TRADER_LLAMA_COIN.get().getDescriptionId(), "Netherite Trader Llama Coin");
 
         addCollectibleCoins(ModItems.COPPER_TURTLE_COIN.get().getDescriptionId(), "Copper Turtle Coin");
         addCollectibleCoins(ModItems.IRON_TURTLE_COIN.get().getDescriptionId(), "Iron Turtle Coin");
@@ -245,10 +320,20 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_WANDERING_TRADER_COIN.get().getDescriptionId(), "Gold Wandering Trader Coin");
         addCollectibleCoins(ModItems.NETHERITE_WANDERING_TRADER_COIN.get().getDescriptionId(), "Netherite Wandering Trader Coin");
 
+        addCollectibleCoins(ModItems.COPPER_WOLF_COIN.get().getDescriptionId(), "Copper Wolf Coin");
+        addCollectibleCoins(ModItems.IRON_WOLF_COIN.get().getDescriptionId(), "Iron Wolf Coin");
+        addCollectibleCoins(ModItems.GOLD_WOLF_COIN.get().getDescriptionId(), "Gold Wolf Coin");
+        addCollectibleCoins(ModItems.NETHERITE_WOLF_COIN.get().getDescriptionId(), "Netherite Wolf Coin");
+
         addCollectibleCoins(ModItems.COPPER_ZOMBIE_HORSE_COIN.get().getDescriptionId(), "Copper Zombie Horse Coin");
         addCollectibleCoins(ModItems.IRON_ZOMBIE_HORSE_COIN.get().getDescriptionId(), "Iron Zombie Horse Coin");
         addCollectibleCoins(ModItems.GOLD_ZOMBIE_HORSE_COIN.get().getDescriptionId(), "Gold Zombie Horse Coin");
         addCollectibleCoins(ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get().getDescriptionId(), "Netherite Zombie Horse Coin");
+
+        addCollectibleCoins(ModItems.COPPER_ZOMBIFIED_PIGLIN_COIN.get().getDescriptionId(), "Copper Zombified Piglin Coin");
+        addCollectibleCoins(ModItems.IRON_ZOMBIFIED_PIGLIN_COIN.get().getDescriptionId(), "Iron Zombified Piglin Coin");
+        addCollectibleCoins(ModItems.GOLD_ZOMBIFIED_PIGLIN_COIN.get().getDescriptionId(), "Gold Zombified Piglin Coin");
+        addCollectibleCoins(ModItems.NETHERITE_ZOMBIFIED_PIGLIN_COIN.get().getDescriptionId(), "Netherite Zombified Piglin Coin");
 
         // regular mod items
         add(ModItems.NUMISMATIST_SPAWN_EGG.get(), "Numismatist Spawn Egg");
@@ -355,6 +440,21 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.dependency.spawn_egg_recipes.villager_spawn_egg", "Villager Spawn Egg Recipe");
         add("advancement.dependency.spawn_egg_recipes.wandering_trader_spawn_egg", "Wandering Trader Spawn Egg Recipe");
         add("advancement.dependency.spawn_egg_recipes.zombie_horse_spawn_egg", "Zombie Horse Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.dolphin_spawn_egg", "Dolphin Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.goat_spawn_egg", "Goat Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.iron_golem_spawn_egg", "Iron Golem Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.llama_spawn_egg", "Llama Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.trader_llama_spawn_egg", "Trader Llama Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.polar_bear_spawn_egg", "Polar Bear Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.spider_spawn_egg", "Spider Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.wolf_spawn_egg", "Wolf Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.zombified_piglin_spawn_egg", "Zombified Piglin Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.creeper_spawn_egg", "Creeper Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.drowned_spawn_egg", "Drowned Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.guardian_spawn_egg", "Guardian Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.elder_guardian_spawn_egg", "Elder Guardian Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.endermite_spawn_egg", "Endermite Spawn Egg Recipe");
+        add("advancement.dependency.spawn_egg_recipes.evoker_spawn_egg", "Evoker Spawn Egg Recipe");
     }
 
     private void addTooltips() {
@@ -366,41 +466,50 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.coin_item.hover", "Since ancient times, coins were either stamped or forged into molds.");
         add("tooltips.coin_stamp.hover", "This is for stamping currency in a press.");
 
-        // passive entity collectible coin bases
+        // entity collectible coin bases
         add("tooltips.collectible_feline_coin.hover", "One of Eight Feline Seasonal Coins");
+        add("tooltips.collectible_llama_coin.hover", "One of Eight Llama Seasonal Coins");
         add("tooltips.collectible_squid_coin.hover", "One of Eight Squid Seasonal Coins");
         add("tooltips.collectible_golem_coin.hover", "One of Eight Sheep Seasonal Coins");
         add("tooltips.collectible_trader_coin.hover", "One of Eight Trader Seasonal Coins");
+        add("tooltips.collectible_guardian_coin.hover", "One of Eight Guardian Seasonal Coins");
 
         add("tooltips.collectible_bovine_coin.hover", "One of Twelve Bovine Seasonal Coins");
+        add("tooltips.collectible_piglin_coin.hover", "One of Twelve Piglin Seasonal Coins");
+
         add("tooltips.collectible_equine_coin.hover", "One of Twenty Equine Seasonal Coins");
 
         add("tooltips.collectible_allay_coin.hover", "One of Four Allay Seasonal Coins");
         add("tooltips.collectible_axolotl_coin.hover", "One of Four Axolotl Seasonal Coins");
         add("tooltips.collectible_bat_coin.hover", "One of Four Bat Seasonal Coins");
+        add("tooltips.collectible_bee_coin.hover", "One of Four Bee Seasonal Coins");
+        add("tooltips.collectible_blaze_coin.hover", "One of Four Blaze Seasonal Coins");
         add("tooltips.collectible_camel_coin.hover", "One of Four Camel Seasonal Coins");
+        add("tooltips.collectible_cave_spider_coin.hover", "One of Four Cave Spider Seasonal Coins");
+        add("tooltips.collectible_creeper_coin.hover", "One of Four Creeper Seasonal Coins");
         add("tooltips.collectible_chicken_coin.hover", "One of Four Chicken Seasonal Coins");
+        add("tooltips.collectible_dolphin_coin.hover", "One of Four Dolphin Seasonal Coins");
+        add("tooltips.collectible_drowned_coin.hover", "One of Four Drowned Seasonal Coins");
+        add("tooltips.collectible_enderman_coin.hover", "One of Four Enderman Seasonal Coins");
+        add("tooltips.collectible_endermite_coin.hover", "One of Four Endermite Seasonal Coins");
+        add("tooltips.collectible_evoker_coin.hover", "One of Four Evoker Seasonal Coins");
         add("tooltips.collectible_fox_coin.hover", "One of Four Fox Seasonal Coins");
         add("tooltips.collectible_frog_coin.hover", "One of Four Frog Seasonal Coins");
+        add("tooltips.collectible_goat_coin.hover", "One of Four Goat Seasonal Coins");
+        add("tooltips.collectible_hoglin_coin.hover", "One of Four Hoglin Seasonal Coins");
+        add("tooltips.collectible_iron_golem_coin.hover", "One of Four Iron Golem Seasonal Coins");
         add("tooltips.collectible_parrot_coin.hover", "One of Four Parrot Seasonal Coins");
         add("tooltips.collectible_pig_coin.hover", "One of Four Pig Seasonal Coins");
+        add("tooltips.collectible_polar_bear_coin.hover", "One of Four Polar Bear Seasonal Coins");
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
         add("tooltips.collectible_sheep_coin.hover", "One of Four Sheep Seasonal Coins");
         add("tooltips.collectible_sniffer_coin.hover", "One of Four Sniffer Seasonal Coins");
+        add("tooltips.collectible_spider_coin.hover", "One of Four Spider Seasonal Coins");
         add("tooltips.collectible_strider_coin.hover", "One of Four Strider Seasonal Coins");
         add("tooltips.collectible_tadpole_coin.hover", "One of Four Tadpole Seasonal Coins");
         add("tooltips.collectible_turtle_coin.hover", "One of Four Turtle Seasonal Coins");
+        add("tooltips.collectible_wolf_coin.hover", "One of Four Wolf Seasonal Coins");
         add("tooltips.collectible_villager_coin.hover", "One of Four Villager Seasonal Coins");
-
-        // neutral entity collectible coin bases
-        add("tooltips.collectible_bee_coin.hover", "One of Four Bee Seasonal Coins");
-        add("tooltips.collectible_cave_spider_coin.hover", "One of Four Cave Spider Seasonal Coins");
-        add("tooltips.collectible_enderman_coin.hover", "One of Four Enderman Seasonal Coins");
-        add("tooltips.collectible_piglin_coin.hover", "One of Four Piglin Seasonal Coins");
-
-        // hostile entity collectible coin bases
-        add("tooltips.collectible_blaze_coin.hover", "One of Four Blaze Seasonal Coins");
-        add("tooltips.collectible_hoglin_coin.hover", "One of Four Hoglin Seasonal Coins");
 
         // gameplay collectible coin bases
         add("tooltips.collectible_hero_coin.hover", "One of Four Hero Seasonal Coins");

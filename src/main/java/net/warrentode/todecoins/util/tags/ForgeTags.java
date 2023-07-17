@@ -12,6 +12,7 @@ public class ForgeTags {
     public static class EntityTypes {
         public static final TagKey<EntityType<?>> BOSSES = forgeEntityTypeTag("bosses");
         public static final TagKey<EntityType<?>> DROPS_CURRENCY = forgeEntityTypeTag("drops_currency");
+        public static final TagKey<EntityType<?>> ILLAGERS = forgeEntityTypeTag("illagers");
 
         public static final TagKey<EntityType<?>> ALLAY_TYPES = forgeEntityTypeTag("allay");
         public static final TagKey<EntityType<?>> AXOLOTL_TYPES = forgeEntityTypeTag("axolotl");
@@ -28,6 +29,8 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> DOLPHIN_TYPES = forgeEntityTypeTag("dolphin");
         public static final TagKey<EntityType<?>> DONKEY_TYPES = forgeEntityTypeTag("donkey");
         public static final TagKey<EntityType<?>> DROWNED_TYPES = forgeEntityTypeTag("drowned");
+        public static final TagKey<EntityType<?>> ELDER_GUARDIAN_TYPES = forgeEntityTypeTag("elder_guardian");
+        public static final TagKey<EntityType<?>> ENDER_DRAGON_TYPES = forgeEntityTypeTag("ender_dragon");
         public static final TagKey<EntityType<?>> ENDERMAN_TYPES = forgeEntityTypeTag("enderman");
         public static final TagKey<EntityType<?>> ENDERMITES_TYPES = forgeEntityTypeTag("endermites");
         public static final TagKey<EntityType<?>> EVOKER_TYPES = forgeEntityTypeTag("evoker");
@@ -78,8 +81,10 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> VEX_TYPES = forgeEntityTypeTag("vex");
         public static final TagKey<EntityType<?>> VILLAGER_TYPES = forgeEntityTypeTag("villager");
         public static final TagKey<EntityType<?>> VINDICATOR_TYPES = forgeEntityTypeTag("vindicator");
+        public static final TagKey<EntityType<?>> WARDEN_TYPES = forgeEntityTypeTag("warden");
         public static final TagKey<EntityType<?>> WANDERING_TRADER_TYPES = forgeEntityTypeTag("wandering_trader");
         public static final TagKey<EntityType<?>> WITCH_TYPES = forgeEntityTypeTag("witch");
+        public static final TagKey<EntityType<?>> WITHER_TYPES = forgeEntityTypeTag("wither");
         public static final TagKey<EntityType<?>> WITHER_SKELETON_TYPES = forgeEntityTypeTag("wither_skeleton");
         public static final TagKey<EntityType<?>> WOLF_TYPES = forgeEntityTypeTag("wolf");
         public static final TagKey<EntityType<?>> ZOGLIN_TYPES = forgeEntityTypeTag("zoglin");

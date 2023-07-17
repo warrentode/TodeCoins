@@ -62,6 +62,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation GOLD_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/gold_piglin_coin_barter_loot");
     public static final ResourceLocation IRON_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/iron_piglin_coin_barter_loot");
     public static final ResourceLocation COPPER_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/copper_piglin_coin_barter_loot");
+    public static final ResourceLocation ZOMBIE_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/zombie_piglin_barter_loot");
     public static final ResourceLocation PIGLIN_EVENT_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/piglin_event_barter_loot");
 
     // injected currency entity drop loot table

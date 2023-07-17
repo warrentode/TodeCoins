@@ -1,0 +1,59 @@
+{
+    "advancements": [
+        {
+            "advancement": {
+                "criteria": {
+                    "has_llama_coin": {
+                        "conditions": {
+                            "items": [
+                                {
+                                    "tag": "todecoins:collectible_coins/entity_coins/llama_coin_set"
+                                }
+                            ]
+                        },
+                        "trigger": "minecraft:inventory_changed"
+                    }
+                },
+                "display": {
+                    "announce_to_chat": false,
+                    "description": {
+                        "translate": "advancement.dependency.condition.spawn_egg_recipes.desc"
+                    },
+                    "frame": "task",
+                    "hidden": false,
+                    "icon": {
+                        "item": "minecraft:llama_spawn_egg"
+                    },
+                    "show_toast": false,
+                    "title": {
+                        "translate": "advancement.dependency.spawn_egg_recipes.llama_spawn_egg"
+                    }
+                },
+                "requirements": [
+                    [
+                        "has_llama_coin"
+                    ]
+                ],
+                "rewards": {
+                    "recipes": [
+                        "cagerium:spawn_eggs/llama_spawn_egg"
+                    ]
+                }
+            },
+            "conditions": [
+                {
+                    "type": "forge:and",
+                    "values": [
+                        {
+                            "type": "forge:mod_loaded",
+                            "modid": "cagerium"
+                        },
+                        {
+                            "type": "forge:true"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

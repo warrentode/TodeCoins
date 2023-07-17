@@ -4,6 +4,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.EntityDamageSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -13,12 +15,14 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,7 +32,9 @@ import net.warrentode.todecoins.attribute.ModAttributes;
 import net.warrentode.todecoins.attribute.PlayerCharisma;
 import net.warrentode.todecoins.attribute.PlayerCharismaProvider;
 import net.warrentode.todecoins.entity.ModEntityTypes;
+import net.warrentode.todecoins.integration.Curios;
 import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;
@@ -143,6 +149,7 @@ public class ModEvents {
                     DamageSource damageSource = player.getLastDamageSource();
                     ItemStack poisonCharm = null;
                     ItemStack flameCharm = null;
+                    ItemStack slownessCharm = null;
 
                     if (TodeCoins.isCuriosLoaded()) {
                         Optional<SlotResult> poisonOption1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_BEE_COIN.get());
@@ -231,10 +238,85 @@ public class ModEvents {
                                 }
 
                                 if (i > 0) {
-                                    target.setSecondsOnFire(i * 4);
+                                    target.setSecondsOnFire(i * 20);
                                 }
                             }
                         }
+                    }
+
+
+                    Optional<SlotResult> slownessOption1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_SPIDER_COIN.get());
+                    Optional<SlotResult> slownessOption2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_SPIDER_COIN.get());
+                    Optional<SlotResult> slownessOption3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_SPIDER_COIN.get());
+                    Optional<SlotResult> slownessOption4 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_SPIDER_COIN.get());
+
+                    MobEffect effect = MobEffects.MOVEMENT_SLOWDOWN;
+
+                    if (slownessOption1.isPresent()) {
+                        slownessCharm = slownessOption1.get().stack();
+                    }
+                    else if (slownessOption2.isPresent()) {
+                        slownessCharm = slownessOption2.get().stack();
+                    }
+                    else if (slownessOption3.isPresent()) {
+                        slownessCharm = slownessOption3.get().stack();
+                    }
+                    else if (slownessOption4.isPresent()) {
+                        slownessCharm = slownessOption4.get().stack();
+                    }
+
+                    if (slownessCharm != null && target != null) {
+                        if (target instanceof LivingEntity) {
+                            int i = 0;
+                            if (player.level.getDifficulty() == Difficulty.EASY) {
+                                i = 5;
+                            }
+                            else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                i = 10;
+                            }
+                            else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                i = 20;
+                            }
+
+                            if (i > 0) {
+                                if (i > 0) {
+                                    ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, i * 20, 0), target);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        public boolean onLivingHurt(LivingHurtEvent event) {
+            LivingEntity entity = event.getEntity();
+            LivingEntity attacker = event.getEntity();
+            DamageSource source = entity.getLastDamageSource();
+            Level level = entity.getCommandSenderWorld();
+            ItemStack stack = ItemStack.EMPTY;
+
+            if (!level.isClientSide) {
+                if (entity instanceof ServerPlayer player && source instanceof EntityDamageSource) {
+                    Curios.getCharmSlot(player);
+                    if (stack.is(ModTags.Items.EVOKER_COIN_SET)) {
+                        @SuppressWarnings("DataFlowIssue")
+                        ThornsEnchantment thornsEnchantment = (ThornsEnchantment) (Object) this;
+
+                        int i = 0;
+
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 5;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 10;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 20;
+                        }
+
+                        thornsEnchantment.doPostHurt(player, attacker, i);
                     }
                 }
             }

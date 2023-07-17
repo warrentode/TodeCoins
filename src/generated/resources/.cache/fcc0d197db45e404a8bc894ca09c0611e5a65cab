@@ -1,4 +1,4 @@
-// 1.19.2	2023-06-24T21:19:06.1243159	Tags for minecraft:entity_type
+// 1.19.2	2023-07-16T21:26:26.4652481	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
@@ -6,7 +6,7 @@ a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.
 4cde89bfc4a145a3ba22cc55074c6c19ebbc6a09 data/forge/tags/entity_types/bat.json
 4c073b476785113705dfd3c6b286a337ddbd56b0 data/forge/tags/entity_types/bee.json
 76c0522664726c09461ad4565b6fba80b4f816b2 data/forge/tags/entity_types/blaze.json
-99ad1594d62a481705cff9306d08a094a759efe4 data/forge/tags/entity_types/bosses.json
+426f3d2081f0e68db3d5fd0843139e396feac857 data/forge/tags/entity_types/bosses.json
 3ccb6db5dd553b58514fc37d5cc36333c646c587 data/forge/tags/entity_types/camel.json
 69abcfe71fde77182196f7356eee4127eaf04a03 data/forge/tags/entity_types/cat.json
 d94d11636ca37bedaaf4c31c9bdfbc3be7289e6a data/forge/tags/entity_types/cave_spider.json
@@ -15,10 +15,12 @@ d94d11636ca37bedaaf4c31c9bdfbc3be7289e6a data/forge/tags/entity_types/cave_spide
 dd79f519e750876b485633e3e26baefd29fa6ccf data/forge/tags/entity_types/cow.json
 da9ec5f7ed64a0d225e00ee60b8e6d6408b431fb data/forge/tags/entity_types/creeper.json
 2498290842377d8d9f3182ef2b7ecb2adb660cb0 data/forge/tags/entity_types/dolphin.json
-a8cd01d220d43b9750d5ed4928fa920eeef9696e data/forge/tags/entity_types/drops_currency.json
+c351698d9f9ee2f8c7eeefe1a1249a54bb0ef25d data/forge/tags/entity_types/drops_currency.json
 a15d44b6e4cb2744c21fd173d65bb9858de283b1 data/forge/tags/entity_types/drowned.json
+10173428ff8a63550e9c0bbedd2ad68d7acf158b data/forge/tags/entity_types/elder_guardian.json
 6f8bc3eb93347d4d15c38a3b7cfbd2b796ac201c data/forge/tags/entity_types/enderman.json
 edf64deed56924f50118492f25104511eb052cab data/forge/tags/entity_types/endermites.json
+e00f2931577049b9a4400a87ed9c249373be376c data/forge/tags/entity_types/ender_dragon.json
 f60c3aa2adefe93f28eb08cff81788380b9f4c12 data/forge/tags/entity_types/evoker.json
 d6579e4bdc95064a373ff2e4145bbb7fd13131cf data/forge/tags/entity_types/fox.json
 f2e3fd139c263703841c245359d5e0340562b3e9 data/forge/tags/entity_types/frog.json
@@ -29,6 +31,7 @@ ec24edf6d1ea9189a4dc1a29a781bc696fb575d3 data/forge/tags/entity_types/guardian.j
 f7cc9e720867f2fea58d5b0840bdce7a253ca3fe data/forge/tags/entity_types/hoglin.json
 813a5e82a124f244206efa3c974874c17f57957d data/forge/tags/entity_types/horse.json
 e2e5633d9261e4ff3f7d07edc9901471b3586a5a data/forge/tags/entity_types/husk.json
+84e89f9af3063e7205153bc854b2d4865133c8c3 data/forge/tags/entity_types/illagers.json
 3f7f728e824b94d2b07880f63a920a98bc41e6f0 data/forge/tags/entity_types/illusioner.json
 29671cfa11d074462c259806e9d60468451e3cdb data/forge/tags/entity_types/iron_golem.json
 5c5afd5d1064c82ba6697a1f869a9f972b777fe5 data/forge/tags/entity_types/llama.json
@@ -70,7 +73,9 @@ b2d421aaabc2ac8cdc738025bad1bbec55005b8d data/forge/tags/entity_types/trader_lla
 01c3f5cebabec10bf259b13ce1d6ce40be8bda20 data/forge/tags/entity_types/villager.json
 0aed464d8ae22a655cf72b4d50ac03e4b6acfc59 data/forge/tags/entity_types/vindicator.json
 7e2661730003ad88c58e395a21357dfe7a534093 data/forge/tags/entity_types/wandering_trader.json
+70011fc296dd8a255dbdd79d17501368c0d7bd16 data/forge/tags/entity_types/warden.json
 1e0f7b9f0f098a5ca25b5d2af1cf710cc8f8d89e data/forge/tags/entity_types/witch.json
+65ca45c69365d0c6890ba45795a5e19e77d25d7d data/forge/tags/entity_types/wither.json
 191bfcfff8cba8050e2a128cc1f12c23e91dbf0d data/forge/tags/entity_types/wither_skeleton.json
 7de65935b0b39ff2ffe91074550ac77e9fae7a84 data/forge/tags/entity_types/wolf.json
 6480e3e9049a6265fc29cc3414d49a6fa3e12b4e data/forge/tags/entity_types/zoglin.json

@@ -101,7 +101,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.2-43.2.17'
+    minecraft 'net.minecraftforge:forge:1.19.2-43.2.19'
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0")
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:serene-seasons-291874:4037228")

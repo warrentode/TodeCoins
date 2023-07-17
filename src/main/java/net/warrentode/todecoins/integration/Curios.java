@@ -289,12 +289,9 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModTags.Items.ENDERMAN_COIN_SET)) {
-                    attribute.put(Attributes.MOVEMENT_SPEED,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.1,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
+                attribute.put(Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(uuid, "generic.movement_speed", 0.05,
+                                AttributeModifier.Operation.ADDITION));
                 return attribute;
             }
 
@@ -332,13 +329,9 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModTags.Items.COW_COIN_SET) || stack.is(ModTags.Items.MOOBLOOM_COIN_SET)
-                        || stack.is(ModTags.Items.MOOSHROOM_COIN_SET)) {
-                    attribute.put(Attributes.MAX_HEALTH,
-                            new AttributeModifier(uuid, "generic.max_health", 10,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
+                attribute.put(Attributes.MAX_HEALTH,
+                        new AttributeModifier(uuid, "generic.max_health", 10,
+                                AttributeModifier.Operation.ADDITION));
                 return attribute;
             }
 
@@ -366,7 +359,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createMovementSpeedCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createMountMovementSpeedCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -376,13 +369,49 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModTags.Items.HORSE_COIN_SET) || stack.is(ModTags.Items.DONKEY_COIN_SET) || stack.is(ModTags.Items.MULE_COIN_SET)
-                        || stack.is(ModTags.Items.SKELETON_HORSE_COIN_SET) || stack.is(ModTags.Items.ZOMBIE_HORSE_COIN_SET)) {
-                    attribute.put(Attributes.MOVEMENT_SPEED,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.2,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
+                attribute.put(Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(uuid, "generic.movement_speed", 0.2,
+                                AttributeModifier.Operation.ADDITION));
+                return attribute;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createMinorMovementSpeedCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                attribute.put(Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(uuid, "generic.movement_speed", 0.05,
+                                AttributeModifier.Operation.ADDITION));
                 return attribute;
             }
 
@@ -420,17 +449,14 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && CalendarUtil.Season.isHalloween()) {
+                if ((stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && CalendarUtil.Season.isHalloween()) || stack.is(ModTags.Items.BAT_COIN_SET)) {
                     if (player != null) {
                         player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
                                 false, false, true));
                     }
                 }
-                if (stack.is(ModTags.Items.BAT_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
-                                false, false, true));
-                    }
+                else if (player != null && (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && !CalendarUtil.Season.isHalloween())) {
+                    player.removeEffect(MobEffects.NIGHT_VISION);
                 }
             }
 
@@ -481,11 +507,18 @@ public class Curios {
                         player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, false));
                     }
-                } else if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && CalendarUtil.Season.isChristmas()) {
+                }
+                else if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && CalendarUtil.Season.isChristmas()) {
                     if (player != null) {
                         player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, false));
                     }
+                }
+                else if (player != null && (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) && !CalendarUtil.Season.isBirthday())) {
+                    player.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                }
+                else if (player != null && (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && !CalendarUtil.Season.isChristmas())) {
+                    player.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
                 }
             }
 
@@ -702,7 +735,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createFoxCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createPowderedSnowCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -810,7 +843,7 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET)) {
+                if (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.GOAT_COIN_SET)) {
                     if (player != null) {
                         player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 0,
                                 false, false, true));
@@ -821,7 +854,7 @@ public class Curios {
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET))) {
+                if (player != null && (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.GOAT_COIN_SET))) {
                     player.removeEffect(MobEffects.JUMP);
                 }
             }
@@ -932,14 +965,20 @@ public class Curios {
                 return stack;
             }
 
+            @SuppressWarnings("deprecation")
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET) || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)) {
-                    //noinspection deprecation
-                    if (player != null && player.isEyeInFluid(FluidTags.WATER)) {
+                if ((stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
+                     || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
+                     || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET))
+                    && player != null) {
+                    if (player.isEyeInFluid(FluidTags.WATER)) {
                         player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
                                 false, false, true));
+                    }
+                    else if (!player.isEyeInFluid(FluidTags.WATER)) {
+                        player.removeEffect(MobEffects.WATER_BREATHING);
                     }
                 }
             }
@@ -947,7 +986,10 @@ public class Curios {
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
-                if ((stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET) || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)) && player != null) {
+                if ((stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
+                     || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
+                     || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET))
+                    && player != null) {
                     player.removeEffect(MobEffects.WATER_BREATHING);
                 }
             }
@@ -986,12 +1028,9 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModTags.Items.HOGLIN_COIN_SET) || stack.is(ModTags.Items.SNOW_GOLEM_COIN_SET)) {
-                    attribute.put(Attributes.ATTACK_KNOCKBACK,
-                            new AttributeModifier(uuid, "generic.attack_knockback", 1,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
+                attribute.put(Attributes.ATTACK_KNOCKBACK,
+                        new AttributeModifier(uuid, "generic.attack_knockback", 1,
+                                AttributeModifier.Operation.ADDITION));
                 return attribute;
             }
 
@@ -1069,7 +1108,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createInvisibilityCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createNightTimeInvisibilityCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -1082,7 +1121,8 @@ public class Curios {
                 if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (player.level.getDayTime() >= 12000)) {
                     player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0,
                             false, false, true));
-                } else if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (player.level.getDayTime() < 12000)) {
+                }
+                else if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (player.level.getDayTime() < 12000)) {
                     player.removeEffect(MobEffects.INVISIBILITY);
                 }
             }
@@ -1119,7 +1159,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createNightSpeedCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createNightTimeSpeedCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -1193,6 +1233,169 @@ public class Curios {
                 if (player != null && stack.is(ModTags.Items.SNIFFER_COIN_SET)) {
                     player.removeEffect(MobEffects.DIG_SPEED);
                 }
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createDolphinGraceCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @SuppressWarnings("deprecation")
+            @Override
+            public void curioTick(SlotContext slotContext) {
+                Player player = Minecraft.getInstance().player;
+                if (stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
+                    if (player != null) {
+                        player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, 0,
+                                false, false, true));
+                        if (player.isEyeInFluid(FluidTags.WATER)) {
+                            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
+                                    false, false, true));
+                        }
+                        else if (!player.isEyeInFluid(FluidTags.WATER)) {
+                            player.removeEffect(MobEffects.WATER_BREATHING);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
+                Player player = Minecraft.getInstance().player;
+                if (player != null && stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
+                    player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, 0,
+                            false, false, true));
+                    player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
+                            false, false, true));
+                }
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createSlownessAttackCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 1.5F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createAttackStrengthCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                attribute.put(Attributes.ATTACK_DAMAGE,
+                        new AttributeModifier(uuid, "generic.attack_damage", 1,
+                                AttributeModifier.Operation.ADDITION));
+                return attribute;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createMobHeadCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
             }
 
             @Nonnull

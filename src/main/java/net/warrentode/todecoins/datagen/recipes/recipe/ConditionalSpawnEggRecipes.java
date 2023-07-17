@@ -1,5 +1,6 @@
 package net.warrentode.todecoins.datagen.recipes.recipe;
 
+import net.mehvahdjukaar.cagerium.Cagerium;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.FrameType;
@@ -911,8 +912,392 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
                                                         null, FrameType.TASK, false, false, false)
                                                 .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + ModItems.NUMISMATIST_SPAWN_EGG.get())))
                                                 .addCriterion("has_numismatist_coin", has(ModTags.Items.NUMISMATIST_COIN_SET))
-                                )
-                )
+                                               )
+                               )
                 .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + ModItems.NUMISMATIST_SPAWN_EGG.get()));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.DOLPHIN_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.DOLPHIN_COIN_SET)
+                        .unlockedBy("has_dolphin_coin", has(ModTags.Items.DOLPHIN_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.DOLPHIN_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.DOLPHIN_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.DOLPHIN_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.DOLPHIN_SPAWN_EGG)))
+                                                .addCriterion("has_dolphin_coin", has(ModTags.Items.DOLPHIN_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.DOLPHIN_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.GOAT_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.GOAT_COIN_SET)
+                        .unlockedBy("has_goat_coin", has(ModTags.Items.GOAT_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.GOAT_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.GOAT_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.GOAT_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.GOAT_SPAWN_EGG)))
+                                                .addCriterion("has_goat_coin", has(ModTags.Items.GOAT_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.GOAT_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Cagerium.IRON_GOLEM_SPAWN_EGG.get(), 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.IRON_GOLEM_COIN_SET)
+                        .unlockedBy("has_iron_golem_coin", has(ModTags.Items.IRON_GOLEM_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Cagerium.IRON_GOLEM_SPAWN_EGG.get()),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Cagerium.IRON_GOLEM_SPAWN_EGG.get(),
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Cagerium.IRON_GOLEM_SPAWN_EGG.get()),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Cagerium.IRON_GOLEM_SPAWN_EGG.get())))
+                                                .addCriterion("has_iron_golem_coin", has(ModTags.Items.IRON_GOLEM_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Cagerium.IRON_GOLEM_SPAWN_EGG.get()));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.LLAMA_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.LLAMA_COIN_SET)
+                        .unlockedBy("has_llama_coin", has(ModTags.Items.LLAMA_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.LLAMA_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.LLAMA_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.LLAMA_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.LLAMA_SPAWN_EGG)))
+                                                .addCriterion("has_llama_coin", has(ModTags.Items.LLAMA_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.LLAMA_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.TRADER_LLAMA_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.TRADER_LLAMA_COIN_SET)
+                        .unlockedBy("has_trader_lama_coin", has(ModTags.Items.TRADER_LLAMA_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.TRADER_LLAMA_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.TRADER_LLAMA_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.TRADER_LLAMA_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.TRADER_LLAMA_SPAWN_EGG)))
+                                                .addCriterion("has_trader_lama_coin", has(ModTags.Items.TRADER_LLAMA_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.TRADER_LLAMA_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.PANDA_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.PANDA_COIN_SET)
+                        .unlockedBy("has_panda_coin", has(ModTags.Items.PANDA_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.PANDA_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.PANDA_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.PANDA_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.PANDA_SPAWN_EGG)))
+                                                .addCriterion("has_panda_coin", has(ModTags.Items.PANDA_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.PANDA_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.POLAR_BEAR_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.POLAR_BEAR_COIN_SET)
+                        .unlockedBy("has_polar_bear_coin", has(ModTags.Items.POLAR_BEAR_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.POLAR_BEAR_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.POLAR_BEAR_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.POLAR_BEAR_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.POLAR_BEAR_SPAWN_EGG)))
+                                                .addCriterion("has_polar_bear_coin", has(ModTags.Items.POLAR_BEAR_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.POLAR_BEAR_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.SPIDER_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.SPIDER_COIN_SET)
+                        .unlockedBy("has_spider_coin", has(ModTags.Items.SPIDER_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.SPIDER_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.SPIDER_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.SPIDER_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.SPIDER_SPAWN_EGG)))
+                                                .addCriterion("has_spider_coin", has(ModTags.Items.SPIDER_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.SPIDER_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.WOLF_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.WOLF_COIN_SET)
+                        .unlockedBy("has_wolf_coin", has(ModTags.Items.WOLF_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.WOLF_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.WOLF_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.WOLF_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.WOLF_SPAWN_EGG)))
+                                                .addCriterion("has_wolf_coin", has(ModTags.Items.WOLF_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.WOLF_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.ZOMBIFIED_PIGLIN_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
+                        .unlockedBy("has_zombified_piglin_coin", has(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.ZOMBIFIED_PIGLIN_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.ZOMBIFIED_PIGLIN_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.ZOMBIFIED_PIGLIN_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.ZOMBIFIED_PIGLIN_SPAWN_EGG)))
+                                                .addCriterion("has_zombified_piglin_coin", has(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.ZOMBIFIED_PIGLIN_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.CREEPER_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.CREEPER_COIN_SET)
+                        .unlockedBy("has_creeper_coin", has(ModTags.Items.CREEPER_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.CREEPER_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.CREEPER_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.CREEPER_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.CREEPER_SPAWN_EGG)))
+                                                .addCriterion("has_creeper_coin", has(ModTags.Items.CREEPER_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.CREEPER_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.DROWNED_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.DROWNED_COIN_SET)
+                        .unlockedBy("has_drowned_coin", has(ModTags.Items.DROWNED_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.DROWNED_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.DROWNED_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.DROWNED_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.DROWNED_SPAWN_EGG)))
+                                                .addCriterion("has_drowned_coin", has(ModTags.Items.DROWNED_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.DROWNED_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.ELDER_GUARDIAN_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
+                        .unlockedBy("has_elder_guardian_coin", has(ModTags.Items.ELDER_GUARDIAN_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.ELDER_GUARDIAN_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.ELDER_GUARDIAN_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.ELDER_GUARDIAN_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.ELDER_GUARDIAN_SPAWN_EGG)))
+                                                .addCriterion("has_elder_guardian_coin", has(ModTags.Items.ELDER_GUARDIAN_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.ELDER_GUARDIAN_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.GUARDIAN_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.GUARDIAN_COIN_SET)
+                        .unlockedBy("has_guardian_coin", has(ModTags.Items.GUARDIAN_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.GUARDIAN_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.GUARDIAN_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.GUARDIAN_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.GUARDIAN_SPAWN_EGG)))
+                                                .addCriterion("has_guardian_coin", has(ModTags.Items.GUARDIAN_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.GUARDIAN_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.ENDERMITE_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.ENDERMITE_COIN_SET)
+                        .unlockedBy("has_endermite_coin", has(ModTags.Items.ENDERMITE_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.ENDERMITE_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.ENDERMITE_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.ENDERMITE_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.ENDERMITE_SPAWN_EGG)))
+                                                .addCriterion("has_endermite_coin", has(ModTags.Items.ENDERMITE_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.ENDERMITE_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.EVOKER_SPAWN_EGG, 1)
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.EVOKER_COIN_SET)
+                        .unlockedBy("has_evoker_coin", has(ModTags.Items.EVOKER_COIN_SET))
+                        ::save)
+                .setAdvancement(new ResourceLocation("cagerium", "recipes/spawn_eggs/" + Items.EVOKER_SPAWN_EGG),
+                        ConditionalAdvancement.builder()
+                                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                                .addAdvancement(
+                                        Advancement.Builder.advancement().display(Items.EVOKER_SPAWN_EGG,
+                                                        Component.translatable("advancement.dependency.spawn_egg_recipes." + Items.EVOKER_SPAWN_EGG),
+                                                        Component.translatable("advancement.dependency.condition.spawn_egg_recipes.desc"),
+                                                        null, FrameType.TASK, false, false, false)
+                                                .rewards(AdvancementRewards.Builder.recipe(new ResourceLocation("cagerium", "spawn_eggs/" + Items.EVOKER_SPAWN_EGG)))
+                                                .addCriterion("has_evoker_coin", has(ModTags.Items.EVOKER_COIN_SET))
+                                               )
+                               )
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.EVOKER_SPAWN_EGG));
     }
 }

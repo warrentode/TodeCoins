@@ -31,6 +31,8 @@ import java.util.function.BiConsumer;
 
 public class ModChestLootTablesGen extends ChestLoot {
     // structure checks
+    public static final LootItemCondition.Builder IN_RUINED_PORTAL_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_OCEAN.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_OCEAN_MONUMENT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_MONUMENT.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_OCEAN_RUIN_WARM = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_RUIN_WARM.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_OCEAN_RUIN_COLD = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_RUIN_COLD.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_ANCIENT_CITY = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.ANCIENT_CITY.unwrapKey().orElseThrow()));
@@ -72,6 +74,9 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder IN_SAVANNA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SAVANNA));
     public static final LootItemCondition.Builder IN_SAVANNA_PLATEAU = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SAVANNA_PLATEAU));
     public static final LootItemCondition.Builder IN_WINDSWEPT_SAVANNA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_SAVANNA));
+    public static final LootItemCondition.Builder IN_WINDSWEPT_HILLS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_HILLS));
+    public static final LootItemCondition.Builder IN_WINDSWEPT_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_FOREST));
+    public static final LootItemCondition.Builder IN_WINDSWEPT_GRAVELLY_HILLS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_GRAVELLY_HILLS));
     public static final LootItemCondition.Builder IN_SUNFLOWER_PLAINS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SUNFLOWER_PLAINS));
     public static final LootItemCondition.Builder IN_SWAMP = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SWAMP));
     public static final LootItemCondition.Builder IN_MANGROVE_SWAMP = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MANGROVE_SWAMP));
@@ -102,6 +107,8 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder IN_WARM_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARM_OCEAN));
     // dimension/level checks
     public static final LootItemCondition.Builder IN_THE_END = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.END));
+    public static final LootItemCondition.Builder IN_OVERWORLD = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.OVERWORLD));
+    public static final LootItemCondition.Builder IN_NETHER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.NETHER));
     // event/holiday/season checks
     public static final LootItemCondition.Builder BIRTHDAY_EVENT = BirthdayCondition.event();
     public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
@@ -495,6 +502,72 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                         .add(LootItem.lootTableItem(ModItems.COPPER_TURTLE_COIN.get())
                                                 .when(IN_BEACH).when(SPRING))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_DOLPHIN_COIN.get())
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_OCEAN)
+                                                        .or(IN_DEEP_OCEAN).or(IN_WARM_OCEAN)).when(SPRING))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_GOAT_COIN.get())
+                                                .when(IN_FROZEN_PEAKS.or(IN_JAGGED_PEAKS).or(IN_SNOWY_SLOPES)).when(SPRING))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_IRON_GOLEM_COIN.get())
+                                                .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                        .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)).when(SPRING))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_LLAMA_COIN.get()).when(SPRING)
+                                                .when(IN_WINDSWEPT_HILLS.or(IN_WINDSWEPT_FOREST)
+                                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_SAVANNA_PLATEAU)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_TRADER_LLAMA_COIN.get()).when(SPRING)
+                                                .when(IN_WINDSWEPT_HILLS.or(IN_WINDSWEPT_FOREST)
+                                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_SAVANNA_PLATEAU)
+                                                        .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_PLAINS)
+                                                        .or(IN_VILLAGE_DESERT).or(IN_VILLAGE_SAVANNA)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_PANDA_COIN.get()).when(SPRING)
+                                                .when(IN_JUNGLE.or(IN_BAMBOO_JUNGLE).or(IN_SPARSE_JUNGLE)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_POLAR_BEAR_COIN.get()).when(SPRING)
+                                                .when(IN_SNOWY_PLAINS.or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_SPIDER_COIN.get()).when(SPRING)
+                                                .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES)
+                                                        .or(IN_LUSH_CAVES).or(IN_STRONGHOLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_WOLF_COIN.get()).when(SPRING)
+                                                .when(IN_GROVE.or(IN_SNOWY_TAIGA).or(IN_OLD_GROWTH_PINE_TAIGA)
+                                                        .or(IN_OLD_GROWTH_SPRUCE_TAIGA).or(IN_TAIGA).or(IN_FOREST)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_ZOMBIFIED_PIGLIN_COIN.get())
+                                                .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_NETHER_FORTRESS)
+                                                        .or(IN_RUINED_PORTAL_NETHER)).when(SPRING))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_CREEPER_COIN.get())
+                                                .when(IN_OVERWORLD).when(SPRING))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_DROWNED_COIN.get()).when(SPRING)
+                                                .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
+                                                        .or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN).or(IN_LUKEWARM_OCEAN)
+                                                        .or(IN_DEEP_LUKEWARM_OCEAN).or(IN_OCEAN).or(IN_DEEP_OCEAN)
+                                                        .or(IN_WARM_OCEAN).or(IN_DRIPSTONE_CAVES)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_ELDER_GUARDIAN_COIN.get()).when(SPRING)
+                                                .when(IN_OCEAN_MONUMENT.or(IN_DEEP_OCEAN).or(IN_DEEP_FROZEN_OCEAN)
+                                                        .or(IN_DEEP_COLD_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN)
+                                                        .or(IN_RUINED_PORTAL_OCEAN).or(IN_OCEAN_RUIN_WARM)
+                                                        .or(IN_OCEAN_RUIN_COLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_GUARDIAN_COIN.get()).when(SPRING)
+                                                .when(IN_OCEAN_MONUMENT.or(IN_DEEP_OCEAN).or(IN_DEEP_FROZEN_OCEAN)
+                                                        .or(IN_DEEP_COLD_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN)
+                                                        .or(IN_RUINED_PORTAL_OCEAN).or(IN_OCEAN_RUIN_WARM)
+                                                        .or(IN_OCEAN_RUIN_COLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_ENDERMITE_COIN.get()).when(SPRING)
+                                                .when(IN_THE_END))
+
+                                        .add(LootItem.lootTableItem(ModItems.COPPER_EVOKER_COIN.get()).when(SPRING)
+                                                .when(IN_MANSION))
                                  ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
@@ -685,6 +758,72 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                         .add(LootItem.lootTableItem(ModItems.IRON_TURTLE_COIN.get())
                                                 .when(IN_BEACH).when(SUMMER))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_DOLPHIN_COIN.get())
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_OCEAN)
+                                                        .or(IN_DEEP_OCEAN).or(IN_WARM_OCEAN)).when(SUMMER))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_GOAT_COIN.get())
+                                                .when(IN_FROZEN_PEAKS.or(IN_JAGGED_PEAKS).or(IN_SNOWY_SLOPES)).when(SUMMER))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_IRON_GOLEM_COIN.get())
+                                                .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                        .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)).when(SUMMER))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_LLAMA_COIN.get()).when(SUMMER)
+                                                .when(IN_WINDSWEPT_HILLS.or(IN_WINDSWEPT_FOREST)
+                                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_SAVANNA_PLATEAU)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_TRADER_LLAMA_COIN.get()).when(SUMMER)
+                                                .when(IN_WINDSWEPT_HILLS.or(IN_WINDSWEPT_FOREST)
+                                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_SAVANNA_PLATEAU)
+                                                        .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_PLAINS)
+                                                        .or(IN_VILLAGE_DESERT).or(IN_VILLAGE_SAVANNA)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_PANDA_COIN.get()).when(SUMMER)
+                                                .when(IN_JUNGLE.or(IN_BAMBOO_JUNGLE).or(IN_SPARSE_JUNGLE)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_POLAR_BEAR_COIN.get()).when(SUMMER)
+                                                .when(IN_SNOWY_PLAINS.or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_SPIDER_COIN.get()).when(SUMMER)
+                                                .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES)
+                                                        .or(IN_LUSH_CAVES).or(IN_STRONGHOLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_WOLF_COIN.get()).when(SUMMER)
+                                                .when(IN_GROVE.or(IN_SNOWY_TAIGA).or(IN_OLD_GROWTH_PINE_TAIGA)
+                                                        .or(IN_OLD_GROWTH_SPRUCE_TAIGA).or(IN_TAIGA).or(IN_FOREST)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_ZOMBIFIED_PIGLIN_COIN.get())
+                                                .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_NETHER_FORTRESS)
+                                                        .or(IN_RUINED_PORTAL_NETHER)).when(SUMMER))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_CREEPER_COIN.get())
+                                                .when(IN_OVERWORLD).when(SUMMER))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_DROWNED_COIN.get()).when(SUMMER)
+                                                .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
+                                                        .or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN).or(IN_LUKEWARM_OCEAN)
+                                                        .or(IN_DEEP_LUKEWARM_OCEAN).or(IN_OCEAN).or(IN_DEEP_OCEAN)
+                                                        .or(IN_WARM_OCEAN).or(IN_DRIPSTONE_CAVES)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_ELDER_GUARDIAN_COIN.get()).when(SUMMER)
+                                                .when(IN_OCEAN_MONUMENT.or(IN_DEEP_OCEAN).or(IN_DEEP_FROZEN_OCEAN)
+                                                        .or(IN_DEEP_COLD_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN)
+                                                        .or(IN_RUINED_PORTAL_OCEAN).or(IN_OCEAN_RUIN_WARM)
+                                                        .or(IN_OCEAN_RUIN_COLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_GUARDIAN_COIN.get()).when(SUMMER)
+                                                .when(IN_OCEAN_MONUMENT.or(IN_DEEP_OCEAN).or(IN_DEEP_FROZEN_OCEAN)
+                                                        .or(IN_DEEP_COLD_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN)
+                                                        .or(IN_RUINED_PORTAL_OCEAN).or(IN_OCEAN_RUIN_WARM)
+                                                        .or(IN_OCEAN_RUIN_COLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_ENDERMITE_COIN.get()).when(SUMMER)
+                                                .when(IN_THE_END))
+
+                                        .add(LootItem.lootTableItem(ModItems.IRON_EVOKER_COIN.get()).when(SUMMER)
+                                                .when(IN_MANSION))
                                  ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
@@ -875,6 +1014,72 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                         .add(LootItem.lootTableItem(ModItems.GOLD_TURTLE_COIN.get())
                                                 .when(IN_BEACH).when(AUTUMN))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_DOLPHIN_COIN.get())
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_OCEAN)
+                                                        .or(IN_DEEP_OCEAN).or(IN_WARM_OCEAN)).when(AUTUMN))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_GOAT_COIN.get())
+                                                .when(IN_FROZEN_PEAKS.or(IN_JAGGED_PEAKS).or(IN_SNOWY_SLOPES)).when(AUTUMN))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_IRON_GOLEM_COIN.get())
+                                                .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                        .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)).when(AUTUMN))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_LLAMA_COIN.get()).when(AUTUMN)
+                                                .when(IN_WINDSWEPT_HILLS.or(IN_WINDSWEPT_FOREST)
+                                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_SAVANNA_PLATEAU)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_TRADER_LLAMA_COIN.get()).when(AUTUMN)
+                                                .when(IN_WINDSWEPT_HILLS.or(IN_WINDSWEPT_FOREST)
+                                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_SAVANNA_PLATEAU)
+                                                        .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_PLAINS)
+                                                        .or(IN_VILLAGE_DESERT).or(IN_VILLAGE_SAVANNA)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_PANDA_COIN.get()).when(AUTUMN)
+                                                .when(IN_JUNGLE.or(IN_BAMBOO_JUNGLE).or(IN_SPARSE_JUNGLE)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_POLAR_BEAR_COIN.get()).when(AUTUMN)
+                                                .when(IN_SNOWY_PLAINS.or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_SPIDER_COIN.get()).when(AUTUMN)
+                                                .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES)
+                                                        .or(IN_LUSH_CAVES).or(IN_STRONGHOLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_WOLF_COIN.get()).when(AUTUMN)
+                                                .when(IN_GROVE.or(IN_SNOWY_TAIGA).or(IN_OLD_GROWTH_PINE_TAIGA)
+                                                        .or(IN_OLD_GROWTH_SPRUCE_TAIGA).or(IN_TAIGA).or(IN_FOREST)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_ZOMBIFIED_PIGLIN_COIN.get())
+                                                .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_NETHER_FORTRESS)
+                                                        .or(IN_RUINED_PORTAL_NETHER)).when(AUTUMN))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_CREEPER_COIN.get())
+                                                .when(IN_OVERWORLD).when(AUTUMN))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_DROWNED_COIN.get()).when(AUTUMN)
+                                                .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
+                                                        .or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN).or(IN_LUKEWARM_OCEAN)
+                                                        .or(IN_DEEP_LUKEWARM_OCEAN).or(IN_OCEAN).or(IN_DEEP_OCEAN)
+                                                        .or(IN_WARM_OCEAN).or(IN_DRIPSTONE_CAVES)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_ELDER_GUARDIAN_COIN.get()).when(AUTUMN)
+                                                .when(IN_OCEAN_MONUMENT.or(IN_DEEP_OCEAN).or(IN_DEEP_FROZEN_OCEAN)
+                                                        .or(IN_DEEP_COLD_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN)
+                                                        .or(IN_RUINED_PORTAL_OCEAN).or(IN_OCEAN_RUIN_WARM)
+                                                        .or(IN_OCEAN_RUIN_COLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_GUARDIAN_COIN.get()).when(AUTUMN)
+                                                .when(IN_OCEAN_MONUMENT.or(IN_DEEP_OCEAN).or(IN_DEEP_FROZEN_OCEAN)
+                                                        .or(IN_DEEP_COLD_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN)
+                                                        .or(IN_RUINED_PORTAL_OCEAN).or(IN_OCEAN_RUIN_WARM)
+                                                        .or(IN_OCEAN_RUIN_COLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_ENDERMITE_COIN.get()).when(AUTUMN)
+                                                .when(IN_THE_END))
+
+                                        .add(LootItem.lootTableItem(ModItems.GOLD_EVOKER_COIN.get()).when(AUTUMN)
+                                                .when(IN_MANSION))
                                  ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1065,6 +1270,72 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                         .add(LootItem.lootTableItem(ModItems.NETHERITE_TURTLE_COIN.get())
                                                 .when(IN_BEACH).when(WINTER))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_DOLPHIN_COIN.get())
+                                                .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_OCEAN)
+                                                        .or(IN_DEEP_OCEAN).or(IN_WARM_OCEAN)).when(WINTER))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_GOAT_COIN.get())
+                                                .when(IN_FROZEN_PEAKS.or(IN_JAGGED_PEAKS).or(IN_SNOWY_SLOPES)).when(WINTER))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_IRON_GOLEM_COIN.get())
+                                                .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                        .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)).when(WINTER))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_LLAMA_COIN.get()).when(WINTER)
+                                                .when(IN_WINDSWEPT_HILLS.or(IN_WINDSWEPT_FOREST)
+                                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_SAVANNA_PLATEAU)))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_TRADER_LLAMA_COIN.get()).when(WINTER)
+                                                .when(IN_WINDSWEPT_HILLS.or(IN_WINDSWEPT_FOREST)
+                                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_SAVANNA_PLATEAU)
+                                                        .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_PLAINS)
+                                                        .or(IN_VILLAGE_DESERT).or(IN_VILLAGE_SAVANNA)))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_PANDA_COIN.get()).when(WINTER)
+                                                .when(IN_JUNGLE.or(IN_BAMBOO_JUNGLE).or(IN_SPARSE_JUNGLE)))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_POLAR_BEAR_COIN.get()).when(WINTER)
+                                                .when(IN_SNOWY_PLAINS.or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN)))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_SPIDER_COIN.get()).when(WINTER)
+                                                .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES)
+                                                        .or(IN_LUSH_CAVES).or(IN_STRONGHOLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_WOLF_COIN.get()).when(WINTER)
+                                                .when(IN_GROVE.or(IN_SNOWY_TAIGA).or(IN_OLD_GROWTH_PINE_TAIGA)
+                                                        .or(IN_OLD_GROWTH_SPRUCE_TAIGA).or(IN_TAIGA).or(IN_FOREST)))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIFIED_PIGLIN_COIN.get())
+                                                .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_NETHER_FORTRESS)
+                                                        .or(IN_RUINED_PORTAL_NETHER)).when(WINTER))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_CREEPER_COIN.get())
+                                                .when(IN_OVERWORLD).when(WINTER))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_DROWNED_COIN.get())
+                                                .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
+                                                        .or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN).or(IN_LUKEWARM_OCEAN)
+                                                        .or(IN_DEEP_LUKEWARM_OCEAN).or(IN_OCEAN).or(IN_DEEP_OCEAN)
+                                                        .or(IN_WARM_OCEAN).or(IN_DRIPSTONE_CAVES)).when(WINTER))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_ELDER_GUARDIAN_COIN.get()).when(WINTER)
+                                                .when(IN_OCEAN_MONUMENT.or(IN_DEEP_OCEAN).or(IN_DEEP_FROZEN_OCEAN)
+                                                        .or(IN_DEEP_COLD_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN)
+                                                        .or(IN_RUINED_PORTAL_OCEAN).or(IN_OCEAN_RUIN_WARM)
+                                                        .or(IN_OCEAN_RUIN_COLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_GUARDIAN_COIN.get()).when(WINTER)
+                                                .when(IN_OCEAN_MONUMENT.or(IN_DEEP_OCEAN).or(IN_DEEP_FROZEN_OCEAN)
+                                                        .or(IN_DEEP_COLD_OCEAN).or(IN_DEEP_LUKEWARM_OCEAN)
+                                                        .or(IN_RUINED_PORTAL_OCEAN).or(IN_OCEAN_RUIN_WARM)
+                                                        .or(IN_OCEAN_RUIN_COLD)))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMITE_COIN.get()).when(WINTER)
+                                                .when(IN_THE_END))
+
+                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_EVOKER_COIN.get()).when(WINTER)
+                                                .when(IN_MANSION))
                                  ));
     }
 }

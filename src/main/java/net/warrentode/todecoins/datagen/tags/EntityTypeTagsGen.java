@@ -32,15 +32,23 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
 
     private void registerForgeTags() {
         tag(ForgeTags.EntityTypes.BOSSES)
-                .add(EntityType.ELDER_GUARDIAN)
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WARDEN)
                 .add(EntityType.WITHER);
+        tag(ForgeTags.EntityTypes.ILLAGERS)
+                .addTag(ForgeTags.EntityTypes.PILLAGER_TYPES)
+                .addTag(ForgeTags.EntityTypes.VINDICATOR_TYPES)
+                .addTag(ForgeTags.EntityTypes.EVOKER_TYPES)
+                .addTag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
+                .addTag(ForgeTags.EntityTypes.VEX_TYPES)
+                .addTag(ForgeTags.EntityTypes.WITCH_TYPES)
+                .addTag(ForgeTags.EntityTypes.RAVAGER_TYPES);
         tag(ForgeTags.EntityTypes.DROPS_CURRENCY)
                 .addTag(ForgeTags.EntityTypes.BOSSES)
                 .addTag(ForgeTags.EntityTypes.BLAZE_TYPES)
                 .addTag(ForgeTags.EntityTypes.CAVE_SPIDER_TYPES)
                 .addTag(ForgeTags.EntityTypes.CREEPER_TYPES)
+                .addTag(ForgeTags.EntityTypes.ELDER_GUARDIAN_TYPES)
                 .addTag(ForgeTags.EntityTypes.DROWNED_TYPES)
                 .addTag(ForgeTags.EntityTypes.ENDERMAN_TYPES)
                 .addTag(ForgeTags.EntityTypes.ENDERMITES_TYPES)
@@ -99,6 +107,10 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.DOLPHIN);
         tag(ForgeTags.EntityTypes.DROWNED_TYPES)
                 .add(EntityType.DROWNED);
+        tag(ForgeTags.EntityTypes.ELDER_GUARDIAN_TYPES)
+                .add(EntityType.ELDER_GUARDIAN);
+        tag(ForgeTags.EntityTypes.ENDER_DRAGON_TYPES)
+                .add(EntityType.ENDER_DRAGON);
         tag(ForgeTags.EntityTypes.ENDERMAN_TYPES)
                 .add(EntityType.ENDERMAN);
         tag(ForgeTags.EntityTypes.ENDERMITES_TYPES)
@@ -205,8 +217,12 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.VINDICATOR);
         tag(ForgeTags.EntityTypes.WANDERING_TRADER_TYPES)
                 .add(EntityType.WANDERING_TRADER);
+        tag(ForgeTags.EntityTypes.WARDEN_TYPES)
+                .add(EntityType.WARDEN);
         tag(ForgeTags.EntityTypes.WITCH_TYPES)
                 .add(EntityType.WITCH);
+        tag(ForgeTags.EntityTypes.WITHER_TYPES)
+                .add(EntityType.WITHER);
         tag(ForgeTags.EntityTypes.WITHER_SKELETON_TYPES)
                 .add(EntityType.WITHER_SKELETON);
         tag(ForgeTags.EntityTypes.WOLF_TYPES)
