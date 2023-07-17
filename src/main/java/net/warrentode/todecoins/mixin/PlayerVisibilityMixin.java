@@ -23,8 +23,6 @@ public abstract class PlayerVisibilityMixin {
         Player player = Minecraft.getInstance().player;
         EntityType<?> entitytype = lookingEntity.getType();
 
-        // TODO
-        //  further testing of mob head visibility function with coins needed
         if (lookingEntity != null && player != null) {
             ItemStack stack = Curios.getCharmSlot(player);
             if (entitytype == EntityType.CREEPER && (stack != null && stack.is(ModTags.Items.CREEPER_COIN_SET))) {
