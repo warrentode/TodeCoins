@@ -89,11 +89,8 @@ public class CraftingRecipesGen {
                 .define('#', ModBlocks.GOLD_COIN_BAG.get())
                 .unlockedBy("has_gold_coin_bag", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.GOLD_COIN_BAG.get()))
                 .save(consumer, new ResourceLocation(MODID, "job_blocks/pot_of_gold"));
-        ShapedRecipeBuilder.shaped(ModBlocks.GOLD_COIN_BAG.get(), 9)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModBlocks.POT_OF_GOLD.get())
+        ShapelessRecipeBuilder.shapeless(ModBlocks.GOLD_COIN_BAG.get(), 9)
+                .requires(ModBlocks.POT_OF_GOLD.get())
                 .unlockedBy("has_pot_of_gold", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.POT_OF_GOLD.get()))
                 .save(consumer, new ResourceLocation(MODID, "job_blocks/bags_of_gold_from_pot_of_gold"));
     }
