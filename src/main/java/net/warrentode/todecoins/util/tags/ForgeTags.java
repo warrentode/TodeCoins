@@ -150,23 +150,26 @@ public class ForgeTags {
     }
 
     public interface StructureTags {
-        TagKey<Structure> ON_ANCIENT_CITY_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_BASTION_REMNANT_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_DESERT_PYRAMID_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_END_CITY_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_IGLOO_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_JUNGLE_TEMPLE_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_MINESHAFT_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_NETHER_FORTRESS_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_NETHER_FOSSIL_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_NETHER_RUINED_PORTAL_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_OCEAN_RUIN_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_PILLAGER_OUTPOST_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_SHIPWRECK_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_STRONGHOLD_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_SWAMP_HUT_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
-        TagKey<Structure> ON_VILLAGE_EXPLORER_MAPS = forgeStructureTag("worldgen/structure");
+        TagKey<Structure> ON_ANCIENT_CITY_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/ancient_city");
+        TagKey<Structure> ON_BASTION_REMNANT_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/bastion_remnant");
+        TagKey<Structure> ON_DESERT_PYRAMID_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/desert_pyramid");
+        TagKey<Structure> ON_END_CITY_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/end_city");
+        TagKey<Structure> ON_IGLOO_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/igloo");
+        TagKey<Structure> ON_JUNGLE_TEMPLE_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/jungle_temple");
+        TagKey<Structure> ON_MINESHAFT_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/mineshaft");
+        TagKey<Structure> ON_NETHER_FORTRESS_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/nether_fortress");
+        TagKey<Structure> ON_NETHER_FOSSIL_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/nether_fossil");
+        TagKey<Structure> ON_NETHER_RUINED_PORTAL_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/nether_ruined_portal");
+        TagKey<Structure> ON_OCEAN_RUIN_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/ocean_ruin");
+        TagKey<Structure> ON_OCEAN_MONUMENT_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/monument");
+        TagKey<Structure> ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/overworld_ruined_portal");
+        TagKey<Structure> ON_PILLAGER_OUTPOST_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/pillager_outpost");
+        TagKey<Structure> ON_WOODLAND_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/mansion");
+        TagKey<Structure> ON_SHIPWRECK_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/shipwreck");
+        TagKey<Structure> ON_STRONGHOLD_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/stronghold");
+        TagKey<Structure> ON_SWAMP_HUT_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/swamp_hut");
+        TagKey<Structure> ON_VILLAGE_EXPLORER_MAPS = forgeStructureTag("worldgen/structure/village");
+        TagKey<Structure> ON_TREASURE_MAPS = forgeStructureTag("worldgen/structure/treasure");
     }
 
     private static TagKey<EntityType<?>> forgeEntityTypeTag(String path) {

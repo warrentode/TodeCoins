@@ -1,3 +1,20 @@
-// 1.19.2	2023-06-08T00:56:44.6090464	Tags for minecraft:worldgen/structure
-d36b607eb988cbeedef1733934885329f883185a data/forge/tags/worldgen/structure/worldgen/structure.json
-d36b607eb988cbeedef1733934885329f883185a data/todecoins/tags/worldgen/structure/worldgen/structure.json
+// 1.19.2	2023-07-20T22:32:51.7965556	Tags for minecraft:worldgen/structure
+9255f5bb041a060c7b38b753dda0b0b77bfdf7b0 data/forge/tags/worldgen/structure/worldgen/structure/ancient_city.json
+67de4047e1e3aab40c5318c5cb39d89e58e90fce data/forge/tags/worldgen/structure/worldgen/structure/bastion_remnant.json
+7d144e52b87edf090c249af45d654d5019ff4f50 data/forge/tags/worldgen/structure/worldgen/structure/desert_pyramid.json
+896efc85d20c07f3cbc8091e7d861aaa16c90a27 data/forge/tags/worldgen/structure/worldgen/structure/end_city.json
+c1840810510fd0a60fb3393d838b95658442cdb8 data/forge/tags/worldgen/structure/worldgen/structure/igloo.json
+bbbe24f27529eaf42c8a9b3684400be25962ba11 data/forge/tags/worldgen/structure/worldgen/structure/jungle_temple.json
+f2401a25b1b014422c676d22732df78913b05497 data/forge/tags/worldgen/structure/worldgen/structure/mansion.json
+f2fcdb1c324a7e0da59584ee097fe514ea673fc4 data/forge/tags/worldgen/structure/worldgen/structure/mineshaft.json
+10b1898acda29c4c4a22d0c8f51524c06baf697f data/forge/tags/worldgen/structure/worldgen/structure/nether_fortress.json
+d05dfefb5136b97f3a015165b3e6dfc353d32f6f data/forge/tags/worldgen/structure/worldgen/structure/nether_fossil.json
+ee9de1076ea87dfdef1aa1d9fbd860908a0fcb51 data/forge/tags/worldgen/structure/worldgen/structure/nether_ruined_portal.json
+e3890fb1680dc1cdb9ec2e9426f040b98c385201 data/forge/tags/worldgen/structure/worldgen/structure/ocean_ruin.json
+73cb9a20df5494abba6c8f8c6191a25e55bdd601 data/forge/tags/worldgen/structure/worldgen/structure/overworld_ruined_portal.json
+013d1e338a30e0fc2fe787eb6a0987c565dfe8a2 data/forge/tags/worldgen/structure/worldgen/structure/pillager_outpost.json
+a124e2034270a8639a98494959c2524661377ecc data/forge/tags/worldgen/structure/worldgen/structure/shipwreck.json
+bdbef1e5398bebdc50384225edce07692966829c data/forge/tags/worldgen/structure/worldgen/structure/stronghold.json
+4d92943fafdfded03126ec0627466acbb025902d data/forge/tags/worldgen/structure/worldgen/structure/swamp_hut.json
+db7acc9f9e931ed7a41f2b2c96466edd7e528acc data/forge/tags/worldgen/structure/worldgen/structure/treasure.json
+ae4c1144459e8f9b4d657cbb09cb1c757d09cb63 data/forge/tags/worldgen/structure/worldgen/structure/village.json
