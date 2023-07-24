@@ -43,6 +43,8 @@ public class StructureTagsGen extends StructureTagsProvider {
         tag(ForgeTags.StructureTags.ON_OCEAN_RUIN_EXPLORER_MAPS)
                 .add(OCEAN_RUIN_WARM)
                 .add(OCEAN_RUIN_COLD);
+        tag(ForgeTags.StructureTags.ON_OCEAN_MONUMENT_EXPLORER_MAPS)
+                .add(OCEAN_MONUMENT);
         tag(ForgeTags.StructureTags.ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS)
                 .add(RUINED_PORTAL_STANDARD)
                 .add(RUINED_PORTAL_DESERT)

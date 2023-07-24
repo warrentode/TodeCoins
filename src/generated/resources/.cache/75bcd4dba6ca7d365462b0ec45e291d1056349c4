@@ -1,9 +1,9 @@
-// 1.19.2	2023-07-05T12:20:51.8195832	Tags for minecraft:block
+// 1.19.2	2023-07-22T13:27:51.081871	Tags for minecraft:block
 dfc09374db7ba9d79c7bb24fcb6f0b81acc08970 data/forge/tags/blocks/storage_blocks.json
 2d1f05f45721975d46ba587824f0444d95470751 data/forge/tags/blocks/storage_blocks/currency_blocks.json
 7639b85c2be2e400ef6514456fb71d112678de01 data/minecraft/tags/blocks/mineable/pickaxe.json
 7639b85c2be2e400ef6514456fb71d112678de01 data/minecraft/tags/blocks/needs_stone_tool.json
-cc6c4dd720759813c820ec3a3ed876c9697b332c data/todecoins/tags/blocks/drops_four_leaf_clover.json
+4cc083fb4612f2f7256e139ffa3685223ee8dbae data/todecoins/tags/blocks/drops_four_leaf_clover.json
 e50e9ab0faaf46836afb493d6b7fbb678465e3da data/todecoins/tags/blocks/job_blocks.json
 2d1f05f45721975d46ba587824f0444d95470751 data/todecoins/tags/blocks/storage_blocks.json
 1e446fca55ad4f41b2912ac6c5f02526044081e5 data/todecoins/tags/blocks/storage_blocks/currency_blocks.json

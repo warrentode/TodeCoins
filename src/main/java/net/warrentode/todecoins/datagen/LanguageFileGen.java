@@ -573,73 +573,73 @@ public class LanguageFileGen extends LanguageProvider {
         add(MobEffects.LUCK, "Luck");
         add(MobEffects.UNLUCK, "Bad Luck");
 
-        addPotionEffects(MobEffects.LUCK.getDescriptionId(), "Luck");
-        addPotionEffects(MobEffects.UNLUCK.getDescriptionId(), "Bad Luck");
+        addPotionEffects("luck_potion", "Luck");
+        addPotionEffects("unluck_potion", "Bad Luck");
     }
 
     private void addPotionEffects(String id, String name) {
         // regular potion of normal effect
-        add("item.minecraft.potion." + id, "Potion of " + name);
-        add("item.minecraft.potion." + id + "_2", "Potion of " + name + " II");
-        add("item.minecraft.potion." + id + "_3", "Potion of " + name + " III");
-        add("item.minecraft.potion." + id + "_4", "Potion of " + name + " IV");
-        add("item.minecraft.potion." + id + "_5", "Potion of " + name + " V");
-        add("item.minecraft.potion." + id + "_6", "Potion of " + name + " VI");
+        add("item.minecraft.potion.effect." + id, "Potion of " + name);
+        add("item.minecraft.potion.effect." + id + "_2", "Potion of " + name + " II");
+        add("item.minecraft.potion.effect." + id + "_3", "Potion of " + name + " III");
+        add("item.minecraft.potion.effect." + id + "_4", "Potion of " + name + " IV");
+        add("item.minecraft.potion.effect." + id + "_5", "Potion of " + name + " V");
+        add("item.minecraft.potion.effect." + id + "_6", "Potion of " + name + " VI");
 
         // regular potion of extended effect
-        add("item.minecraft.potion.long_" + id, "Potion of Extended " + name);
-        add("item.minecraft.potion.long_" + id + "_2", "Potion of Extended " + name + " II");
-        add("item.minecraft.potion.long_" + id + "_3", "Potion of Extended " + name + " III");
-        add("item.minecraft.potion.long_" + id + "_4", "Potion of Extended " + name + " IV");
-        add("item.minecraft.potion.long_" + id + "_5", "Potion of Extended " + name + " V");
-        add("item.minecraft.potion.long_" + id + "_6", "Potion of Extended " + name + " VI");
+        add("item.minecraft.potion.effect.long_" + id, "Potion of Extended " + name);
+        add("item.minecraft.potion.effect.long_" + id + "_2", "Potion of Extended " + name + " II");
+        add("item.minecraft.potion.effect.long_" + id + "_3", "Potion of Extended " + name + " III");
+        add("item.minecraft.potion.effect.long_" + id + "_4", "Potion of Extended " + name + " IV");
+        add("item.minecraft.potion.effect.long_" + id + "_5", "Potion of Extended " + name + " V");
+        add("item.minecraft.potion.effect.long_" + id + "_6", "Potion of Extended " + name + " VI");
 
         // splash potion of normal effect
-        add("item.minecraft.splash_potion." + id, "Splash Potion of " + name);
-        add("item.minecraft.splash_potion." + id + "_2", "Splash Potion of " + name + " II");
-        add("item.minecraft.splash_potion." + id + "_3", "Splash Potion of " + name + " III");
-        add("item.minecraft.splash_potion." + id + "_4", "Splash Potion of " + name + " IV");
-        add("item.minecraft.splash_potion." + id + "_5", "Splash Potion of " + name + " V");
-        add("item.minecraft.splash_potion." + id + "_6", "Splash Potion of " + name + " VI");
+        add("item.minecraft.splash_potion.effect." + id, "Splash Potion of " + name);
+        add("item.minecraft.splash_potion.effect." + id + "_2", "Splash Potion of " + name + " II");
+        add("item.minecraft.splash_potion.effect." + id + "_3", "Splash Potion of " + name + " III");
+        add("item.minecraft.splash_potion.effect." + id + "_4", "Splash Potion of " + name + " IV");
+        add("item.minecraft.splash_potion.effect." + id + "_5", "Splash Potion of " + name + " V");
+        add("item.minecraft.splash_potion.effect." + id + "_6", "Splash Potion of " + name + " VI");
 
         // splash potion of extended effect
-        add("item.minecraft.splash_potion.long_" + id, "Splash Potion of Extended " + name);
-        add("item.minecraft.splash_potion.long_" + id + "_2", "Splash Potion of Extended " + name + " II");
-        add("item.minecraft.splash_potion.long_" + id + "_3", "Splash Potion of Extended " + name + " III");
-        add("item.minecraft.splash_potion.long_" + id + "_4", "Splash Potion of Extended " + name + " IV");
-        add("item.minecraft.splash_potion.long_" + id + "_5", "Splash Potion of Extended " + name + " V");
-        add("item.minecraft.splash_potion.long_" + id + "_6", "Splash Potion of Extended " + name + " VI");
+        add("item.minecraft.splash_potion.effect.long_" + id, "Splash Potion of Extended " + name);
+        add("item.minecraft.splash_potion.effect.long_" + id + "_2", "Splash Potion of Extended " + name + " II");
+        add("item.minecraft.splash_potion.effect.long_" + id + "_3", "Splash Potion of Extended " + name + " III");
+        add("item.minecraft.splash_potion.effect.long_" + id + "_4", "Splash Potion of Extended " + name + " IV");
+        add("item.minecraft.splash_potion.effect.long_" + id + "_5", "Splash Potion of Extended " + name + " V");
+        add("item.minecraft.splash_potion.effect.long_" + id + "_6", "Splash Potion of Extended " + name + " VI");
 
         // lingering potion of normal effect
-        add("item.minecraft.lingering_potion." + id, "Lingering Potion of " + name);
-        add("item.minecraft.lingering_potion." + id + "_2", "Lingering Potion of " + name + " II");
-        add("item.minecraft.lingering_potion." + id + "_3", "Lingering Potion of " + name + " III");
-        add("item.minecraft.lingering_potion." + id + "_4", "Lingering Potion of " + name + " IV");
-        add("item.minecraft.lingering_potion." + id + "_5", "Lingering Potion of " + name + " V");
-        add("item.minecraft.lingering_potion." + id + "_6", "Lingering Potion of " + name + " VI");
+        add("item.minecraft.lingering_potion.effect." + id, "Lingering Potion of " + name);
+        add("item.minecraft.lingering_potion.effect." + id + "_2", "Lingering Potion of " + name + " II");
+        add("item.minecraft.lingering_potion.effect." + id + "_3", "Lingering Potion of " + name + " III");
+        add("item.minecraft.lingering_potion.effect." + id + "_4", "Lingering Potion of " + name + " IV");
+        add("item.minecraft.lingering_potion.effect." + id + "_5", "Lingering Potion of " + name + " V");
+        add("item.minecraft.lingering_potion.effect." + id + "_6", "Lingering Potion of " + name + " VI");
 
         // lingering potion of extended effect
-        add("item.minecraft.lingering_potion.long_" + id, "Lingering Potion of Extended " + name);
-        add("item.minecraft.lingering_potion.long_" + id + "_2", "Lingering Potion of Extended " + name + " II");
-        add("item.minecraft.lingering_potion.long_" + id + "_3", "Lingering Potion of Extended " + name + " III");
-        add("item.minecraft.lingering_potion.long_" + id + "_4", "Lingering Potion of Extended " + name + " IV");
-        add("item.minecraft.lingering_potion.long_" + id + "_5", "Lingering Potion of Extended " + name + " V");
-        add("item.minecraft.lingering_potion.long_" + id + "_6", "Lingering Potion of Extended " + name + " VI");
+        add("item.minecraft.lingering_potion.effect.long_" + id, "Lingering Potion of Extended " + name);
+        add("item.minecraft.lingering_potion.effect.long_" + id + "_2", "Lingering Potion of Extended " + name + " II");
+        add("item.minecraft.lingering_potion.effect.long_" + id + "_3", "Lingering Potion of Extended " + name + " III");
+        add("item.minecraft.lingering_potion.effect.long_" + id + "_4", "Lingering Potion of Extended " + name + " IV");
+        add("item.minecraft.lingering_potion.effect.long_" + id + "_5", "Lingering Potion of Extended " + name + " V");
+        add("item.minecraft.lingering_potion.effect.long_" + id + "_6", "Lingering Potion of Extended " + name + " VI");
 
         // tipped arrow of normal effect
-        add("item.minecraft.tipped_arrow." + id, "Arrow of " + name);
-        add("item.minecraft.tipped_arrow." + id + "_2", "Arrow of " + name + " II");
-        add("item.minecraft.tipped_arrow." + id + "_3", "Arrow of " + name + " III");
-        add("item.minecraft.tipped_arrow." + id + "_4", "Arrow of " + name + " IV");
-        add("item.minecraft.tipped_arrow." + id + "_5", "Arrow of " + name + " V");
-        add("item.minecraft.tipped_arrow." + id + "_6", "Arrow of " + name + " VI");
+        add("item.minecraft.tipped_arrow.effect." + id, "Arrow of " + name);
+        add("item.minecraft.tipped_arrow.effect." + id + "_2", "Arrow of " + name + " II");
+        add("item.minecraft.tipped_arrow.effect." + id + "_3", "Arrow of " + name + " III");
+        add("item.minecraft.tipped_arrow.effect." + id + "_4", "Arrow of " + name + " IV");
+        add("item.minecraft.tipped_arrow.effect." + id + "_5", "Arrow of " + name + " V");
+        add("item.minecraft.tipped_arrow.effect." + id + "_6", "Arrow of " + name + " VI");
 
         // tipped arrow of extended effect
-        add("item.minecraft.tipped_arrow.long_" + id, "Arrow of Extended " + name);
-        add("item.minecraft.tipped_arrow.long_" + id + "_2", "Arrow of Extended " + name + " II");
-        add("item.minecraft.tipped_arrow.long_" + id + "_3", "Arrow of Extended " + name + " III");
-        add("item.minecraft.tipped_arrow.long_" + id + "_4", "Arrow of Extended " + name + " IV");
-        add("item.minecraft.tipped_arrow.long_" + id + "_5", "Arrow of Extended " + name + " V");
-        add("item.minecraft.tipped_arrow.long_" + id + "_6", "Arrow of Extended " + name + " VI");
+        add("item.minecraft.tipped_arrow.effect.long_" + id, "Arrow of Extended " + name);
+        add("item.minecraft.tipped_arrow.effect.long_" + id + "_2", "Arrow of Extended " + name + " II");
+        add("item.minecraft.tipped_arrow.effect.long_" + id + "_3", "Arrow of Extended " + name + " III");
+        add("item.minecraft.tipped_arrow.effect.long_" + id + "_4", "Arrow of Extended " + name + " IV");
+        add("item.minecraft.tipped_arrow.effect.long_" + id + "_5", "Arrow of Extended " + name + " V");
+        add("item.minecraft.tipped_arrow.effect.long_" + id + "_6", "Arrow of Extended " + name + " VI");
     }
 }

@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-20T22:32:51.7965556	Tags for minecraft:worldgen/structure
+// 1.19.2	2023-07-20T22:44:11.8423616	Tags for minecraft:worldgen/structure
 9255f5bb041a060c7b38b753dda0b0b77bfdf7b0 data/forge/tags/worldgen/structure/worldgen/structure/ancient_city.json
 67de4047e1e3aab40c5318c5cb39d89e58e90fce data/forge/tags/worldgen/structure/worldgen/structure/bastion_remnant.json
 7d144e52b87edf090c249af45d654d5019ff4f50 data/forge/tags/worldgen/structure/worldgen/structure/desert_pyramid.json
@@ -7,6 +7,7 @@ c1840810510fd0a60fb3393d838b95658442cdb8 data/forge/tags/worldgen/structure/worl
 bbbe24f27529eaf42c8a9b3684400be25962ba11 data/forge/tags/worldgen/structure/worldgen/structure/jungle_temple.json
 f2401a25b1b014422c676d22732df78913b05497 data/forge/tags/worldgen/structure/worldgen/structure/mansion.json
 f2fcdb1c324a7e0da59584ee097fe514ea673fc4 data/forge/tags/worldgen/structure/worldgen/structure/mineshaft.json
+2e3ef883a0d81134c688c5a78b72dcc44dfa15be data/forge/tags/worldgen/structure/worldgen/structure/monument.json
 10b1898acda29c4c4a22d0c8f51524c06baf697f data/forge/tags/worldgen/structure/worldgen/structure/nether_fortress.json
 d05dfefb5136b97f3a015165b3e6dfc353d32f6f data/forge/tags/worldgen/structure/worldgen/structure/nether_fossil.json
 ee9de1076ea87dfdef1aa1d9fbd860908a0fcb51 data/forge/tags/worldgen/structure/worldgen/structure/nether_ruined_portal.json

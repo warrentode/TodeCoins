@@ -34,6 +34,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_EMERALD_BANK_NOTE_LOOT = register(MODID + ":" + "chests/currency/todecoins_emerald_bank_note_loot");
 
     // seasonal event collectible coin chest loot tables
+    public static final ResourceLocation TODECOINS_COLLECTIBLE_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_collectible_coin_loot");
     public static final ResourceLocation TODECOINS_BIRTHDAY_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_birthday_coin_loot");
     public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_halloween_coin_loot");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_christmas_coin_loot");
