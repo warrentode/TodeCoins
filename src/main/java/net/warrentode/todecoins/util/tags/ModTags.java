@@ -18,6 +18,7 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> TOOLS_CARVING = modItemTag("tools/carving");
         public static final TagKey<Item> WALLETS = modItemTag("wallets");
         public static final TagKey<Item> BUNDLES = modItemTag("bundles");
         public static final TagKey<Item> SHULKER_BOXES = modItemTag("shulker_boxes");
@@ -120,12 +121,14 @@ public class ModTags {
         public static final TagKey<Item> GOLD_NUGGET = modItemTag("nuggets/gold");
         public static final TagKey<Item> LUCKY_NUGGET = modItemTag("nuggets/lucky");
         public static final TagKey<Item> NETHERITE_NUGGET = modItemTag("nuggets/netherite");
+        public static final TagKey<Item> ENDONIAN_NUGGET = modItemTag("nuggets/endonian_nugget");
 
         public static final TagKey<Item> INGOTS = modItemTag("ingots");
         public static final TagKey<Item> COPPER_INGOT = modItemTag("ingots/copper");
         public static final TagKey<Item> IRON_INGOT = modItemTag("ingots/iron");
         public static final TagKey<Item> GOLD_INGOT = modItemTag("ingots/gold");
         public static final TagKey<Item> NETHERITE_INGOT = modItemTag("ingots/netherite");
+        public static final TagKey<Item> ENDONIAN_INGOT = modItemTag("ingots/endonian_ingot");
     }
 
     private static @NotNull TagKey<Block> modBlockTag(String path) {

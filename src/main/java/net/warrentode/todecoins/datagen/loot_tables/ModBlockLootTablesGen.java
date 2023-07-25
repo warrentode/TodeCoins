@@ -17,11 +17,14 @@ public class ModBlockLootTablesGen extends BlockLoot {
         this.dropSelf(ModBlocks.COINPRESSBLOCK.get());
         this.dropSelf(ModBlocks.POT_OF_GOLD.get());
 
+        this.dropSelf(ModBlocks.ENDONIAN_BLOCK.get());
+
         this.dropSelf(ModBlocks.COPPER_COIN_BAG.get());
         this.dropSelf(ModBlocks.IRON_COIN_BAG.get());
         this.dropSelf(ModBlocks.GOLD_COIN_BAG.get());
         this.dropSelf(ModBlocks.NETHER_GOLD_COIN_BAG.get());
         this.dropSelf(ModBlocks.NETHERITE_COIN_BAG.get());
+        this.dropSelf(ModBlocks.ENDONIAN_COIN_BAG.get());
 
         this.dropSelf(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get());
         this.dropSelf(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get());

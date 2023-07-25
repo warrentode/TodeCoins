@@ -40,6 +40,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> NETHER_GOLD_COIN_BAG = registerBlock("nether_gold_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
             ModCreativeModeTabs.TODECOINSTAB);
+    public static final RegistryObject<Block> ENDONIAN_COIN_BAG = registerBlock("endonian_coin_bag",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
+            ModCreativeModeTabs.TODECOINSTAB);
 
     public static final RegistryObject<Block> EMERALD_QUARTER_BANK_NOTE_BAG = registerBlock("emerald_quarter_bank_note_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
@@ -50,6 +53,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> EMERALD_BANK_NOTE_BAG = registerBlock("emerald_bank_note_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
             ModCreativeModeTabs.TODECOINSTAB);
+
+    public static final RegistryObject<Block> ENDONIAN_BLOCK = registerBlock("endonian_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.CHAIN).strength(0.4F)
+                    .sound(SoundType.WOOD).noOcclusion()), ModCreativeModeTabs.TODECOINSTAB);
 
     public static final RegistryObject<Block> POT_OF_GOLD = registerBlock("pot_of_gold",
             () -> new PotOfGoldBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(8f)

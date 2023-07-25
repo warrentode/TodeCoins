@@ -341,13 +341,17 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModItems.FOUR_LEAF_CLOVER.get(), "Four Leaf Clover");
         add(ModItems.CURRENCY_STAMP.get(), "Currency Stamp");
         add(ModItems.NETHER_CURRENCY_STAMP.get(), "Nether Currency Stamp");
+        add(ModItems.ENDONIAN_CURRENCY_STAMP.get(), "Endonian Currency Stamp");
         add(ModItems.COPPER_NUGGET.get(), "Copper Nugget");
         add(ModItems.NETHERITE_NUGGET.get(), "Netherite Nugget");
+        add(ModItems.ENDONIAN_NUGGET.get(), "Endonian Nugget");
+        add(ModItems.ENDONIAN_INGOT.get(), "Endonian Ingot");
         add(ModItems.LUCKY_NUGGET.get(), "Lucky Nugget");
         add(ModItems.COPPER_COIN.get(), "Copper Coin");
         add(ModItems.IRON_COIN.get(), "Iron Coin");
         add(ModItems.GOLD_COIN.get(), "Gold Coin");
         add(ModItems.NETHERITE_COIN.get(), "Netherite Coin");
+        add(ModItems.ENDONIAN_COIN.get(), "Endonian Coin");
         add(ModItems.LUCKY_COIN.get(), "Lucky Coin");
         add(ModItems.NETHER_GOLD_COIN.get(), "Nether Gold Coin");
         add(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), "Emerald Quarter Bank Note");
@@ -401,67 +405,15 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("advancement.collectibleCoins", "Collectible Coins");
         add("advancement.collectibleCoins.desc", "Find All the Collectible Coins!");
-
-        add("advancement.dependency.condition.spawn_egg_recipes", "Conditional Spawn Egg Recipes for the Cagerium Mod");
-        add("advancement.dependency.condition.spawn_egg_recipes.desc", "Available Only when the Cagerium mod is Loaded");
-
-        add("advancement.dependency.spawn_egg_recipes.allay_spawn_egg", "Allay Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.axolotl_spawn_egg", "Axolotl Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.bat_spawn_egg", "Bat Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.blaze_spawn_egg", "Blaze Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.cat_spawn_egg", "Cat Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.cave_spider_spawn_egg", "Cave Spider Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.chicken_spawn_egg", "Chicken Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.cod_spawn_egg", "Cod Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.cow_spawn_egg", "Cow Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.donkey_spawn_egg", "Donkey Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.enderman_spawn_egg", "Enderman Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.fox_spawn_egg", "Fox Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.frog_spawn_egg", "Frog Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.glow_squid_spawn_egg", "Glow Squid Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.hoglin_spawn_egg", "Hoglin Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.horse_spawn_egg", "Horse Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.mooshroom_spawn_egg", "Mooshroom Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.mule_spawn_egg", "Mule Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.numismatist_spawn_egg", "Numismatist Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.ocelot_spawn_egg", "Ocelot Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.parrot_spawn_egg", "Parrot Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.pig_spawn_egg", "Pig Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.piglin_spawn_egg", "Piglin Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.pufferfish_spawn_egg", "Pufferfish Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.rabbit_spawn_egg", "Rabbit Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.salmon_spawn_egg", "Salmon Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.sheep_spawn_egg", "Sheep Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.skeleton_horse_spawn_egg", "Skeleton Horse Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.strider_spawn_egg", "Strider Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.squid_spawn_egg", "Squid Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.tadpole_spawn_egg", "Tadpole Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.tropical_fish_spawn_egg", "Tropical Fish Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.villager_spawn_egg", "Villager Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.wandering_trader_spawn_egg", "Wandering Trader Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.zombie_horse_spawn_egg", "Zombie Horse Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.dolphin_spawn_egg", "Dolphin Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.goat_spawn_egg", "Goat Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.iron_golem_spawn_egg", "Iron Golem Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.llama_spawn_egg", "Llama Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.trader_llama_spawn_egg", "Trader Llama Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.polar_bear_spawn_egg", "Polar Bear Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.spider_spawn_egg", "Spider Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.wolf_spawn_egg", "Wolf Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.zombified_piglin_spawn_egg", "Zombified Piglin Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.creeper_spawn_egg", "Creeper Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.drowned_spawn_egg", "Drowned Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.guardian_spawn_egg", "Guardian Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.elder_guardian_spawn_egg", "Elder Guardian Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.endermite_spawn_egg", "Endermite Spawn Egg Recipe");
-        add("advancement.dependency.spawn_egg_recipes.evoker_spawn_egg", "Evoker Spawn Egg Recipe");
     }
 
     private void addTooltips() {
         add("tooltips.textile_item.hover", "Textiles are used to make materials like paper and fabric.");
         add("tooltips.lucky_coin.hover", "Smells like fresh clover, what an unusual coin...");
         add("tooltips.four_leaf_clover.hover", "Many people believe this is a lucky charm...");
+        add("tooltips.lucky_armor_item.hover", "Just wearing this garment makes you feel luckier...");
         add("tooltips.barter_coin_item.hover", "Anthropological evidence suggests bartering actually occurs when currency isn't readily available.");
+        add("tooltips.endonian_coin_item.hover", "An otherworldly coin for interdimensional trading.");
         add("tooltips.bank_note_item.hover", "The original bank notes were created by China and worked much like our debit cards today.");
         add("tooltips.coin_item.hover", "Since ancient times, coins were either stamped or forged into molds.");
         add("tooltips.coin_stamp.hover", "This is for stamping currency in a press.");
@@ -498,6 +450,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_goat_coin.hover", "One of Four Goat Seasonal Coins");
         add("tooltips.collectible_hoglin_coin.hover", "One of Four Hoglin Seasonal Coins");
         add("tooltips.collectible_iron_golem_coin.hover", "One of Four Iron Golem Seasonal Coins");
+        add("tooltips.collectible_panda_coin.hover", "One of Four Panda Seasonal Coins");
         add("tooltips.collectible_parrot_coin.hover", "One of Four Parrot Seasonal Coins");
         add("tooltips.collectible_pig_coin.hover", "One of Four Pig Seasonal Coins");
         add("tooltips.collectible_polar_bear_coin.hover", "One of Four Polar Bear Seasonal Coins");
@@ -535,9 +488,11 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModBlocks.GOLD_COIN_BAG.get(), "Gold Coin Bag");
         add(ModBlocks.NETHERITE_COIN_BAG.get(), "Netherite Coin Bag");
         add(ModBlocks.NETHER_GOLD_COIN_BAG.get(), "Netherite Gold Coin Bag");
+        add(ModBlocks.ENDONIAN_COIN_BAG.get(), "Endonian Coin Bag");
         add(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(), "Emerald Quarter Bank Note Bag");
         add(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get(), "Emerald Half Bank Note Bag");
         add(ModBlocks.EMERALD_BANK_NOTE_BAG.get(), "Emerald Bank Note Bag");
+        add(ModBlocks.ENDONIAN_BLOCK.get(), "Endonian Block");
         add(ModBlocks.POT_OF_GOLD.get(), "Pot of Gold");
         add(ModBlocks.COINPRESSBLOCK.get(), "Coin Press");
     }

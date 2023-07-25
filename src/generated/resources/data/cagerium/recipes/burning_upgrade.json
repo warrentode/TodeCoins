@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "cagerium"
+            },
+            {
+              "type": "forge:true"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "cagerium:skeleton_key"
+          },
+          {
+            "item": "minecraft:blaze_powder"
+          },
+          {
+            "item": "minecraft:slime_ball"
+          }
+        ],
+        "result": {
+          "item": "cagerium:burning_upgrade"
+        }
+      }
+    }
+  ]
+}

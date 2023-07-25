@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "todecoins:endonian_coin"
+    },
+    {
+      "item": "todecoins:endonian_coin"
+    }
+  ],
+  "result": {
+    "item": "todecoins:endonian_nugget"
+  }
+}

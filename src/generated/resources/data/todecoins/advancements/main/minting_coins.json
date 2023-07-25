@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "todecoins:currency_stamp"
+              "todecoins:coin_press"
             ]
           }
         ]
@@ -31,6 +31,18 @@
           {
             "items": [
               "todecoins:currency_stamp"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_endonian_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:endonian_coin"
             ]
           }
         ]
@@ -97,7 +109,8 @@
       "craft_copper_coin",
       "craft_iron_coin",
       "craft_gold_coin",
-      "craft_netherite_coin"
+      "craft_netherite_coin",
+      "craft_endonian_coin"
     ]
   ]
 }

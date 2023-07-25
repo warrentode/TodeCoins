@@ -28,19 +28,25 @@ public class ModCreativeModeTabs extends CreativeModeTab {
         public void fillItemList(final @NotNull NonNullList<ItemStack> items) {
             items.add(ModItems.CURRENCY_STAMP.get().getDefaultInstance());
             items.add(ModItems.NETHER_CURRENCY_STAMP.get().getDefaultInstance());
+            items.add(ModItems.ENDONIAN_CURRENCY_STAMP.get().getDefaultInstance());
 
             items.add(ModItems.COPPER_NUGGET.get().getDefaultInstance());
             items.add(Items.IRON_NUGGET.getDefaultInstance());
             items.add(Items.GOLD_NUGGET.getDefaultInstance());
             items.add(ModItems.NETHERITE_NUGGET.get().getDefaultInstance());
+            items.add(ModItems.ENDONIAN_NUGGET.get().getDefaultInstance());
             items.add(ModItems.LUCKY_NUGGET.get().getDefaultInstance());
 
             items.add(Items.GOLD_INGOT.getDefaultInstance());
+            items.add(ModItems.ENDONIAN_INGOT.get().getDefaultInstance());
+
+            items.add((ModBlocks.ENDONIAN_BLOCK.get().asItem().getDefaultInstance()));
 
             items.add(ModItems.COPPER_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_COIN.get().getDefaultInstance());
+            items.add(ModItems.ENDONIAN_COIN.get().getDefaultInstance());
             items.add(ModItems.LUCKY_COIN.get().getDefaultInstance());
 
             items.add(ModItems.NETHER_GOLD_COIN.get().getDefaultInstance());
@@ -75,6 +81,7 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add((ModBlocks.NETHERITE_COIN_BAG.get().asItem().getDefaultInstance()));
 
             items.add((ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.ENDONIAN_COIN_BAG.get().asItem().getDefaultInstance()));
 
             items.add((ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));
             items.add((ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));

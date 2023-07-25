@@ -19,7 +19,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 
 public class ItemTagsGen extends ItemTagsProvider {
-    public ItemTagsGen(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+    public ItemTagsGen(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId,
+                       @Nullable ExistingFileHelper existingFileHelper) {
         super(pGenerator, pBlockTagsProvider, modId, existingFileHelper);
     }
 
@@ -46,15 +47,19 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerMinecraftTags() {
-        tag(net.minecraft.tags.ItemTags.PIGLIN_LOVED).add(
-                ModItems.GOLD_COIN.get(),
-                ModItems.NETHER_GOLD_COIN.get(),
-                ModBlocks.GOLD_COIN_BAG.get().asItem(),
-                ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem()
-        ).addTag(ForgeTags.Items.PIGLIN_BARTER_ITEMS);
+        tag(net.minecraft.tags.ItemTags.PIGLIN_LOVED)
+                .add(ModItems.GOLD_COIN.get())
+                .add(ModItems.NETHER_GOLD_COIN.get())
+                .add(ModBlocks.GOLD_COIN_BAG.get().asItem())
+                .add(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem())
+                .addTag(ForgeTags.Items.PIGLIN_BARTER_ITEMS);
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.TOOLS_CARVING)
+                .addTag(Tags.Items.TOOLS_PICKAXES)
+                .addTag(ForgeTags.Items.TOOLS_KNIVES)
+                .addTag(ForgeTags.Items.TOOLS_CHISELS);
         tag(ModTags.Items.SOUL_BINDER)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("cagerium:binding_gemstone")));
         tag(ModTags.Items.JAR_PLACEABLE)
@@ -480,13 +485,15 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.GOLD_COIN.get())
                 .add(ModItems.NETHER_GOLD_COIN.get())
                 .add(ModItems.NETHERITE_COIN.get())
+                .add(ModItems.ENDONIAN_COIN.get())
                 .add(ModItems.LUCKY_COIN.get())
                 .add(ModBlocks.COPPER_COIN_BAG.get().asItem())
                 .add(ModBlocks.IRON_COIN_BAG.get().asItem())
                 .add(ModBlocks.GOLD_COIN_BAG.get().asItem())
                 .add(ModBlocks.POT_OF_GOLD.get().asItem())
                 .add(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem())
-                .add(ModBlocks.NETHERITE_COIN_BAG.get().asItem());
+                .add(ModBlocks.NETHERITE_COIN_BAG.get().asItem())
+                .add(ModBlocks.ENDONIAN_COIN_BAG.get().asItem());
         tag(ModTags.Items.CURRENCY)
                 .addTag(ModTags.Items.BANKNOTES)
                 .addTag(ModTags.Items.COINS)
@@ -496,81 +503,76 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.IRON_NUGGET)
                 .addTag(ModTags.Items.GOLD_NUGGET)
                 .addTag(ModTags.Items.NETHERITE_NUGGET)
+                .addTag(ModTags.Items.ENDONIAN_NUGGET)
                 .addTag(ModTags.Items.CURRENCY_FIBER)
                 .addTag(ModTags.Items.CURRENCY_PAPER);
-        tag(ModTags.Items.CURRENCY_STAMPS).add(
-                ModItems.CURRENCY_STAMP.get(),
-                ModItems.NETHER_CURRENCY_STAMP.get()
-        );
+        tag(ModTags.Items.CURRENCY_STAMPS)
+                .add(ModItems.CURRENCY_STAMP.get())
+                .add(ModItems.NETHER_CURRENCY_STAMP.get());
         tag(ModTags.Items.TEXTILES)
                 .addTag(ModTags.Items.CURRENCY_FIBER)
                 .addTag(ModTags.Items.CURRENCY_PAPER)
                 .addTag(ModTags.Items.FABRIC)
                 .addTag(ModTags.Items.FIBRE)
                 .addTag(ModTags.Items.THREAD);
-        tag(ModTags.Items.CURRENCY_FIBER).add(
-                Items.PAPER,
-                Items.STRING
-        )
+        tag(ModTags.Items.CURRENCY_FIBER)
+                .add(Items.PAPER)
+                .add(Items.STRING)
                 .addTag(ForgeTags.Items.FIBRE)
                 .addTag(ForgeTags.Items.BARK)
                 .addTag(ForgeTags.Items.STRING)
                 .addTag(ForgeTags.Items.PAPER);
-        tag(ModTags.Items.CURRENCY_PAPER).add(
-                ModItems.EMERALD_COARSE_WOVE_PAPER.get(),
-                ModItems.EMERALD_WOVE_PAPER.get(),
-                ModItems.EMERALD_SMOOTH_WOVE_PAPER.get()
-        );
-        tag(ModTags.Items.FABRIC).add(
-                ModItems.LUCKY_FABRIC.get()
-        );
-        tag(ModTags.Items.FIBRE).add(
-                ModItems.EMERALD_FIBER.get(),
-                ModItems.LUCKY_FIBER.get()
-        );
-        tag(ModTags.Items.THREAD).add(
-                ModItems.LUCKY_THREAD.get()
-        );
+        tag(ModTags.Items.CURRENCY_PAPER)
+                .add(ModItems.EMERALD_COARSE_WOVE_PAPER.get())
+                .add(ModItems.EMERALD_WOVE_PAPER.get())
+                .add(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get());
+        tag(ModTags.Items.FABRIC)
+                .add(ModItems.LUCKY_FABRIC.get());
+        tag(ModTags.Items.FIBRE)
+                .add(ModItems.EMERALD_FIBER.get())
+                .add(ModItems.LUCKY_FIBER.get());
+        tag(ModTags.Items.THREAD)
+                .add(ModItems.LUCKY_THREAD.get());
         tag(ModTags.Items.NUGGETS)
                 .addTag(ModTags.Items.COPPER_NUGGET)
                 .addTag(ModTags.Items.IRON_NUGGET)
                 .addTag(ModTags.Items.GOLD_NUGGET)
                 .addTag(ModTags.Items.LUCKY_NUGGET)
-                .addTag(ModTags.Items.NETHERITE_NUGGET);
-        tag(ModTags.Items.COPPER_NUGGET).add(
-                ModItems.COPPER_NUGGET.get()
-        );
-        tag(ModTags.Items.IRON_NUGGET).add(
-                Items.IRON_NUGGET
-        );
-        tag(ModTags.Items.GOLD_NUGGET).add(
-                Items.GOLD_NUGGET
-        );
-        tag(ModTags.Items.LUCKY_NUGGET).add(
-                ModItems.LUCKY_NUGGET.get()
-        );
-        tag(ModTags.Items.NETHERITE_NUGGET).add(
-                ModItems.NETHERITE_NUGGET.get()
-        );
+                .addTag(ModTags.Items.NETHERITE_NUGGET)
+                .addTag(ModTags.Items.ENDONIAN_NUGGET);
+        tag(ModTags.Items.COPPER_NUGGET)
+                .add(ModItems.COPPER_NUGGET.get());
+        tag(ModTags.Items.IRON_NUGGET)
+                .add(Items.IRON_NUGGET);
+        tag(ModTags.Items.GOLD_NUGGET)
+                .add(Items.GOLD_NUGGET);
+        tag(ModTags.Items.LUCKY_NUGGET)
+                .add(ModItems.LUCKY_NUGGET.get());
+        tag(ModTags.Items.NETHERITE_NUGGET)
+                .add(ModItems.NETHERITE_NUGGET.get());
+        tag(ModTags.Items.ENDONIAN_NUGGET)
+                .add(ModItems.ENDONIAN_NUGGET.get());
         tag(ModTags.Items.INGOTS)
                 .addTag(ForgeTags.Items.COPPER_INGOT)
                 .addTag(ForgeTags.Items.IRON_INGOT)
                 .addTag(ForgeTags.Items.GOLD_INGOT)
-                .addTag(ForgeTags.Items.NETHERITE_INGOT);
-        tag(ModTags.Items.COPPER_INGOT).add(
-                Items.COPPER_INGOT
-        );
-        tag(ModTags.Items.IRON_INGOT).add(
-                Items.IRON_INGOT
-        );
-        tag(ModTags.Items.GOLD_INGOT).add(
-                Items.GOLD_INGOT
-        );
-        tag(ModTags.Items.NETHERITE_INGOT).add(
-                Items.NETHERITE_INGOT
-        );
+                .addTag(ForgeTags.Items.NETHERITE_INGOT)
+                .addTag(ForgeTags.Items.ENDONIAN_INGOT);
+        tag(ModTags.Items.COPPER_INGOT)
+                .add(Items.COPPER_INGOT);
+        tag(ModTags.Items.IRON_INGOT)
+                .add(Items.IRON_INGOT);
+        tag(ModTags.Items.GOLD_INGOT)
+                .add(Items.GOLD_INGOT);
+        tag(ModTags.Items.NETHERITE_INGOT)
+                .add(Items.NETHERITE_INGOT);
+        tag(ModTags.Items.NETHERITE_INGOT)
+                .add(ModItems.ENDONIAN_INGOT.get());
     }
+
     private void registerForgeTags() {
+        tag(ForgeTags.Items.TOOLS_KNIVES);
+        tag(ForgeTags.Items.TOOLS_CHISELS);
         tag(Tags.Items.EGGS)
                 .add(Items.TURTLE_EGG)
                 .add(Items.EGG);
@@ -653,7 +655,8 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ForgeTags.Items.IRON_NUGGET)
                 .addTag(ForgeTags.Items.GOLD_NUGGET)
                 .addTag(ForgeTags.Items.LUCKY_NUGGET)
-                .addTag(ForgeTags.Items.NETHERITE_NUGGET);
+                .addTag(ForgeTags.Items.NETHERITE_NUGGET)
+                .addTag(ForgeTags.Items.ENDONIAN_NUGGET);
         tag(ForgeTags.Items.COPPER_NUGGET)
                 .addTag(ModTags.Items.COPPER_NUGGET);
         tag(ForgeTags.Items.IRON_NUGGET)
@@ -664,11 +667,14 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.LUCKY_NUGGET);
         tag(ForgeTags.Items.NETHERITE_NUGGET)
                 .addTag(ModTags.Items.NETHERITE_NUGGET);
+        tag(ForgeTags.Items.ENDONIAN_NUGGET)
+                .addTag(ModTags.Items.ENDONIAN_NUGGET);
         tag(ForgeTags.Items.INGOTS)
                 .addTag(ForgeTags.Items.COPPER_INGOT)
                 .addTag(ForgeTags.Items.IRON_INGOT)
                 .addTag(ForgeTags.Items.GOLD_INGOT)
-                .addTag(ForgeTags.Items.NETHERITE_INGOT);
+                .addTag(ForgeTags.Items.NETHERITE_INGOT)
+                .addTag(ForgeTags.Items.ENDONIAN_INGOT);
         tag(ForgeTags.Items.COPPER_INGOT).add(
                 Items.COPPER_INGOT
         );
@@ -681,11 +687,14 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ForgeTags.Items.NETHERITE_INGOT).add(
                 Items.NETHERITE_INGOT
         );
+        tag(ForgeTags.Items.ENDONIAN_INGOT).add(
+                ModItems.ENDONIAN_INGOT.get());
         tag(ForgeTags.Items.CURRENCY_MATERIALS)
                 .addTag(ForgeTags.Items.COPPER_NUGGET)
                 .addTag(ForgeTags.Items.IRON_NUGGET)
                 .addTag(ForgeTags.Items.GOLD_NUGGET)
                 .addTag(ModTags.Items.NETHERITE_NUGGET)
+                .addTag(ModTags.Items.ENDONIAN_NUGGET)
                 .addTag(ModTags.Items.CURRENCY_FIBER)
                 .addTag(ModTags.Items.CURRENCY_PAPER);
         tag(ForgeTags.Items.TEXTILES)

@@ -1,10 +1,10 @@
-// 1.19.2	2023-07-16T18:41:39.7433905	Tags for minecraft:item
+// 1.19.2	2023-07-25T03:37:14.4411655	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
 d5cf70c1c1570594208821e2af44e7225918bc4f data/forge/tags/items/coins.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
-e952b93ecec2f37e4be0794cb7eed3c68da248d0 data/forge/tags/items/currency_materials.json
+49d871134517203e4311ad7c144a5a4f85ea511e data/forge/tags/items/currency_materials.json
 e696f402dd807aff108bcdbf82e9cfaf00b8dadc data/forge/tags/items/currency_stamps.json
 fe91d9df301382872a3e254eb22768784d8932b1 data/forge/tags/items/eggs.json
 056929b7ab3fd6b71312bcc7bae8661d4f4a5df0 data/forge/tags/items/enchanting_fuels.json
@@ -22,13 +22,15 @@ d9fa8492b3cf95f697b9823051abd6f56771b81b data/forge/tags/items/gems/nether_star.
 6803ae6ef49e9bcc2a6143b51148c5b5e5c538d9 data/forge/tags/items/gems/prismarine.json
 d85fd810d52948017ca841f5fd1c863fa3a37d51 data/forge/tags/items/gems/quartz.json
 dd472552ed4619d6fb342240882d609489514b70 data/forge/tags/items/gems/redstone.json
-cfe2e5ef3b57ae29f40107bd306d90a85c87d827 data/forge/tags/items/ingots.json
+6bbf2021a2f6b6a21fc45c80637b7cfb6dbd79f5 data/forge/tags/items/ingots.json
 6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/forge/tags/items/ingots/copper.json
+666c1ccba339cca0c11121d875e645753a838d48 data/forge/tags/items/ingots/endonian_ingot.json
 f2aa87f54e7951ea0cf81ac252c2abe279b0c936 data/forge/tags/items/ingots/gold.json
 736f4ef35696340b932cdb679c5a32e7b28db783 data/forge/tags/items/ingots/iron.json
 f7a8c659163fbac23438e07049cc42e0aa39eb9a data/forge/tags/items/ingots/netherite.json
-782dd5d91ede4f1042c1e291d84c3c4014126056 data/forge/tags/items/nuggets.json
+f4a0b0c5aaced26af71ac410b796b06a90c5df73 data/forge/tags/items/nuggets.json
 8f8e1fd13824046404f22367dfb5b42f23421603 data/forge/tags/items/nuggets/copper.json
+9252b139bab820c2ab92e7c798f11d0bccd04238 data/forge/tags/items/nuggets/endonian_nugget.json
 9aeb1094ee401ce68fa4cdc111cd2a4f7dfd0659 data/forge/tags/items/nuggets/gold.json
 e6aa1463fc9f3d6a23a6fdb9c8ad3273bd5abf55 data/forge/tags/items/nuggets/iron.json
 32869cad7dc791d67f1b6ab0aa58945df28b6aae data/forge/tags/items/nuggets/lucky.json
@@ -43,6 +45,8 @@ c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.j
 886e5e1db1abef8583882d996f8600275f839c37 data/forge/tags/items/textiles/paper.json
 6bb01ece43dc060b7f6e508c68ea0179c30e853f data/forge/tags/items/textiles/string.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/thread.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/tools/chisels.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/tools/knives.json
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
 8831b7a7c1903bfd62992756333c08ecd55f796b data/supplementaries/tags/items/cookies.json
 1b64b170d75ce337e2786496d5c6024a2f8e6a28 data/todecoins/tags/items/bundles.json
@@ -117,18 +121,19 @@ b3e5ed9594b60446913824741c72b0e07e5268c2 data/todecoins/tags/items/collectible_c
 656a3fa03311669d4d4b1dcae8cfc206a48157d7 data/todecoins/tags/items/collectible_coins/patron_coin_set.json
 be62e171e8f5010cfe7db3e2a1fe33d7e96d6d34 data/todecoins/tags/items/currency.json
 6e1bba552c6a9722a324eafa93960525ca7e9e94 data/todecoins/tags/items/currency/banknotes.json
-f585fdf456be538a14a81d536e6dd2f2a04c0e07 data/todecoins/tags/items/currency/coins.json
-e2df2d2c78102e2bf23013433e3c46d8c05bea8f data/todecoins/tags/items/currency_materials.json
+f04960c86353f26abb0c4a476a4d3f3e838ec5f8 data/todecoins/tags/items/currency/coins.json
+97d2351c3c030b0cd75aee14b97cebfc6e47136d data/todecoins/tags/items/currency_materials.json
 cddace66cb2ea4e34d8e33a075d1f50ca7eb24a8 data/todecoins/tags/items/currency_stamps.json
 790a0e710eba0bb16c6e3bc1bdd3724093227240 data/todecoins/tags/items/gems.json
-cfe2e5ef3b57ae29f40107bd306d90a85c87d827 data/todecoins/tags/items/ingots.json
+6bbf2021a2f6b6a21fc45c80637b7cfb6dbd79f5 data/todecoins/tags/items/ingots.json
 6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/todecoins/tags/items/ingots/copper.json
 f2aa87f54e7951ea0cf81ac252c2abe279b0c936 data/todecoins/tags/items/ingots/gold.json
 736f4ef35696340b932cdb679c5a32e7b28db783 data/todecoins/tags/items/ingots/iron.json
-f7a8c659163fbac23438e07049cc42e0aa39eb9a data/todecoins/tags/items/ingots/netherite.json
+70c7b129eaaed403ba88c0e9de930fab8c9d587c data/todecoins/tags/items/ingots/netherite.json
 4f6a635cbe52bff1d51f79b07da2aad2e033851f data/todecoins/tags/items/jar_placeable.json
-854032d05e7cb56e2aa2b50f72ef8d61d9511425 data/todecoins/tags/items/nuggets.json
+63e4a7b81004b8a539f69be3a9cbdcfc9d7a060c data/todecoins/tags/items/nuggets.json
 ab1a45ae0b76cfdab8aa19e990af266825f9e610 data/todecoins/tags/items/nuggets/copper.json
+c3840d2cc4f4ae12e640c48c209d672f85071710 data/todecoins/tags/items/nuggets/endonian_nugget.json
 6b543a792f7797a87724ed58025370e8f0a85150 data/todecoins/tags/items/nuggets/gold.json
 a600f08f3b82ea64e2da4220752cea0537967e95 data/todecoins/tags/items/nuggets/iron.json
 9f63c23d399e20ac5adf7f4b684c2189e5458d4b data/todecoins/tags/items/nuggets/lucky.json
@@ -141,4 +146,5 @@ e189f29a4d97932a310f6d36f9d8c79982a77384 data/todecoins/tags/items/textiles/curr
 aba2458564760bf7bb9b9bd73acb591e86a2866c data/todecoins/tags/items/textiles/fabric.json
 9eea9f12406ff56cc773d53efa24608fcbb30ec1 data/todecoins/tags/items/textiles/fibre.json
 68edbe0549d6bd293d6cf50077773c1b8abb3677 data/todecoins/tags/items/textiles/thread.json
+248d2cc48006d5fc334bc67bbe237e12527a7920 data/todecoins/tags/items/tools/carving.json
 07afe5b82d4526b131b02c23b0f2d53d4fbac6ef data/todecoins/tags/items/wallets.json

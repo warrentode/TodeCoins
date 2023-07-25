@@ -28,6 +28,7 @@ import java.util.function.Consumer;
 
 public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
     public static final LootItemCondition.Builder IN_NETHER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.NETHER));
+    public static final LootItemCondition.Builder IN_THE_END = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.END));
     public static final LootItemCondition.Builder DROPS_CURRENCY = EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.DROPS_CURRENCY).build();
     public static final LootItemCondition.Builder DROPS_BOSS_CURRENCY = EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.BOSSES).build();
     public static final LootItemCondition.Builder BIRTHDAY_EVENT = BirthdayCondition.event();
@@ -47,37 +48,57 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .setBonusRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_COPPER_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_COPPER_COIN_DROPS)
                                                 .setWeight(1).setQuality(1).when(DROPS_CURRENCY))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_IRON_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_IRON_COIN_DROPS)
                                                 .setWeight(1).setQuality(2).when(DROPS_CURRENCY))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_GOLD_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_GOLD_COIN_DROPS)
                                                 .setWeight(1).setQuality(3).when(DROPS_CURRENCY))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_DROPS)
                                                 .setWeight(1).setQuality(3).when(DROPS_CURRENCY).when(IN_NETHER))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_ENDONIAN_COIN_DROPS)
+                                                .setWeight(1).setQuality(3).when(DROPS_CURRENCY).when(IN_THE_END
+                                                        .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDERMAN_TYPES).build())))
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS)
                                                 .setWeight(1).setQuality(4).when(DROPS_CURRENCY))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_DROPS)
                                                 .setWeight(1).setQuality(5).when(DROPS_CURRENCY))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_HALF_BANK_NOTE_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_HALF_BANK_NOTE_DROPS)
                                                 .setWeight(1).setQuality(5).when(DROPS_CURRENCY))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_DROPS)
                                                 .setWeight(1).setQuality(6).when(DROPS_CURRENCY))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_DROPS)
                                                 .when(BIRTHDAY_EVENT))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_DROPS)
                                                 .when(HALLOWEEN_EVENT))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_DROPS)
                                                 .when(CHRISTMAS_EVENT))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_DROPS)
                                                 .when(ANNIVERSARY_EVENT))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SPRING_ENTITY_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_SPRING_ENTITY_COIN_DROPS)
                                                 .when(SPRING))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SUMMER_ENTITY_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_SUMMER_ENTITY_COIN_DROPS)
                                                 .when(SUMMER))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_AUTUMN_ENTITY_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_AUTUMN_ENTITY_COIN_DROPS)
                                                 .when(AUTUMN))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_WINTER_ENTITY_COIN_DROPS)
+                                        .add(LootTableReference
+                                                .lootTableReference(ModBuiltInLootTables.TODECOINS_WINTER_ENTITY_COIN_DROPS)
                                                 .when(WINTER))
                                  ));
         // injected entity loot table
@@ -198,24 +219,57 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_NETHER_GOLD_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                        .setRolls(UniformGenerator.between(1.0F, 4.0F))
-                                        .setBonusRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER).when(DROPS_BOSS_CURRENCY)
-                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
-                                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
-                                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER).when(DROPS_BOSS_CURRENCY)
-                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
-                                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
-                                 ));
+                                .setRolls(UniformGenerator.between(1.0F, 4.0F))
+                                .setBonusRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER).when(DROPS_BOSS_CURRENCY)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                        .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER).when(DROPS_BOSS_CURRENCY)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                        .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
+                        ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_ENDONIAN_COIN_DROPS,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setBonusRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDER_DRAGON_TYPES).build())
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDERMAN_TYPES).build())
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDERMITES_TYPES).build())
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.PHANTOM_TYPES).build()))
+                                        .when(DROPS_BOSS_CURRENCY)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                        .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
+                        ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_ENDONIAN_COIN_DROPS,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(UniformGenerator.between(1.0F, 4.0F))
+                                .setBonusRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDER_DRAGON_TYPES).build())
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDERMAN_TYPES).build())
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDERMITES_TYPES).build())
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.PHANTOM_TYPES).build()))
+                                        .when(DROPS_BOSS_CURRENCY)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                        .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
+                                .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END
+                                                .or(EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.ENDERMAN_TYPES).build()))
+                                        .when(DROPS_BOSS_CURRENCY)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                        .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
+                        ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .setBonusRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get()).when(DROPS_CURRENCY)
-                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
-                                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
-                                 ));
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setBonusRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get()).when(DROPS_CURRENCY)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                        .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
+                        ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_EMERALD_QUARTER_BANK_NOTE_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()

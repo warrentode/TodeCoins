@@ -102,6 +102,8 @@ public class ForgeTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> TOOLS_KNIVES = forgeItemTag("tools/knives");
+        public static final TagKey<Item> TOOLS_CHISELS = forgeItemTag("tools/chisels");
         public static final TagKey<Item> BANKNOTES = forgeItemTag("banknotes");
         public static final TagKey<Item> COINS = forgeItemTag("coins");
         public static final TagKey<Item> CURRENCY = forgeItemTag("currency");
@@ -141,12 +143,14 @@ public class ForgeTags {
         public static final TagKey<Item> GOLD_NUGGET = forgeItemTag("nuggets/gold");
         public static final TagKey<Item> LUCKY_NUGGET = forgeItemTag("nuggets/lucky");
         public static final TagKey<Item> NETHERITE_NUGGET = forgeItemTag("nuggets/netherite");
+        public static final TagKey<Item> ENDONIAN_NUGGET = forgeItemTag("nuggets/endonian_nugget");
 
         public static final TagKey<Item> INGOTS = forgeItemTag("ingots");
         public static final TagKey<Item> COPPER_INGOT = forgeItemTag("ingots/copper");
         public static final TagKey<Item> IRON_INGOT = forgeItemTag("ingots/iron");
         public static final TagKey<Item> GOLD_INGOT = forgeItemTag("ingots/gold");
         public static final TagKey<Item> NETHERITE_INGOT = forgeItemTag("ingots/netherite");
+        public static final TagKey<Item> ENDONIAN_INGOT = forgeItemTag("ingots/endonian_ingot");
     }
 
     public interface StructureTags {

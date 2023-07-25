@@ -49,6 +49,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "craft_endonian_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:endonian_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "craft_gold_coin_bag": {
       "conditions": {
         "items": [
@@ -122,7 +134,8 @@
       "craft_emerald_quarter_bank_note_bag",
       "craft_emerald_half_bank_note_bag",
       "craft_emerald_bank_note_bag",
-      "craft_nether_gold_coin_bag"
+      "craft_nether_gold_coin_bag",
+      "craft_endonian_coin_bag"
     ]
   ]
 }

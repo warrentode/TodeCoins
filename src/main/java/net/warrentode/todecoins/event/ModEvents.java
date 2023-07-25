@@ -290,6 +290,7 @@ public class ModEvents {
             return false;
         }
 
+        @SuppressWarnings("SameReturnValue")
         public boolean onLivingHurt(LivingHurtEvent event) {
             LivingEntity entity = event.getEntity();
             LivingEntity attacker = event.getEntity();

@@ -30,6 +30,9 @@
           },
           {
             "tag": "forge:nuggets/netherite"
+          },
+          {
+            "tag": "todecoins:collectible_coins/entity_coins/allay_coin_set"
           }
         ],
         "result": {

@@ -60,6 +60,32 @@
             {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:the_end"
+                  }
+                },
+                {
+                  "condition": "todecoins:entity_type_tag_condition",
+                  "tag": "forge:enderman"
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_endonian_coin_drops",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
             }
           ],
           "name": "todecoins:entity/notes/todecoins_emerald_quarter_bank_note_drops",
