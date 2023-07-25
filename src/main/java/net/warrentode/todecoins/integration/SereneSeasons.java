@@ -24,38 +24,38 @@ public class SereneSeasons {
         WINTER;
 
         public static boolean isSpring() {
-            return get() == SPRING;
+            return get(level) == SPRING;
         }
 
         public static boolean isSummer() {
-            return get() == SUMMER;
+            return get(level) == SUMMER;
         }
 
         public static boolean isAutumn() {
-            return get() == AUTUMN;
+            return get(level) == AUTUMN;
         }
 
         public static boolean isWinter() {
-            return get() == WINTER;
+            return get(level) == WINTER;
         }
 
         public static boolean isChristmas() {
-            return get() == CHRISTMAS;
+            return get(level) == CHRISTMAS;
         }
 
         public static boolean isHalloween() {
-            return get() == HALLOWEEN;
+            return get(level) == HALLOWEEN;
         }
 
         public static boolean isBirthday() {
-            return get() == BIRTHDAY;
+            return get(level) == BIRTHDAY;
         }
 
         public static boolean isAnniversary() {
-            return get() == PATREON_ANNIVERSARY;
+            return get(level) == PATREON_ANNIVERSARY;
         }
 
-        private static Season get() {
+        private static Season get(Level level) {
             sereneseasons.api.season.Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
             sereneseasons.api.season.Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
 
