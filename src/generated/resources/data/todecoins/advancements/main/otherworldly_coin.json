@@ -1,0 +1,50 @@
+{
+  "parent": "todecoins:main/minting_coins",
+  "criteria": {
+    "craft_endonian_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:endonian_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_endonian_currency_stamp": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:endonian_currency_stamp"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.otherworldlyCoin.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:endonian_coin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.otherworldlyCoin"
+    }
+  },
+  "requirements": [
+    [
+      "craft_endonian_currency_stamp",
+      "craft_endonian_coin"
+    ]
+  ]
+}

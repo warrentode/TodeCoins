@@ -40,16 +40,14 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(Items.GOLD_INGOT.getDefaultInstance());
             items.add(ModItems.ENDONIAN_INGOT.get().getDefaultInstance());
 
-            items.add((ModBlocks.ENDONIAN_BLOCK.get().asItem().getDefaultInstance()));
-
             items.add(ModItems.COPPER_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_COIN.get().getDefaultInstance());
-            items.add(ModItems.ENDONIAN_COIN.get().getDefaultInstance());
             items.add(ModItems.LUCKY_COIN.get().getDefaultInstance());
 
             items.add(ModItems.NETHER_GOLD_COIN.get().getDefaultInstance());
+            items.add(ModItems.ENDONIAN_COIN.get().getDefaultInstance());
 
             items.add(ModItems.EMERALD_QUARTER_BANK_NOTE.get().getDefaultInstance());
             items.add(ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance());
@@ -86,6 +84,8 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add((ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));
             items.add((ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));
             items.add((ModBlocks.EMERALD_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));
+
+            items.add((ModBlocks.ENDONIAN_BLOCK.get().asItem().getDefaultInstance()));
 
             items.add((ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance()));
             items.add((ModBlocks.COINPRESSBLOCK.get().asItem().getDefaultInstance()));

@@ -1,5 +1,6 @@
 package net.warrentode.todecoins.event;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
@@ -54,6 +55,15 @@ public class ModEvents {
 
     @Mod.EventBusSubscriber(modid = MODID)
     public static class ForgeEvents {
+        @SubscribeEvent
+        public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
+            ItemStack stack = event.getCrafting();
+            if (stack.is(ModTags.Items.NO_AI_EGGS)) {
+                final CompoundTag entityTag = stack.getOrCreateTagElement("EntityTag");
+                entityTag.putBoolean("NoAI", true);
+            }
+        }
+
         @SubscribeEvent
         public static void onAttachCapabilitiesPlayer(@NotNull AttachCapabilitiesEvent<Entity> event) {
             if (event.getObject() instanceof Player) {
@@ -291,6 +301,7 @@ public class ModEvents {
         }
 
         @SuppressWarnings("SameReturnValue")
+        @SubscribeEvent
         public boolean onLivingHurt(LivingHurtEvent event) {
             LivingEntity entity = event.getEntity();
             LivingEntity attacker = event.getEntity();

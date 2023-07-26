@@ -1,5 +1,6 @@
 package net.warrentode.todecoins.datagen.tags;
 
+import net.mehvahdjukaar.cagerium.Cagerium;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -56,6 +57,42 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.NO_AI_EGGS)
+                .add(Items.BLAZE_SPAWN_EGG)
+                .add(Items.CAVE_SPIDER_SPAWN_EGG)
+                .add(Items.CREEPER_SPAWN_EGG)
+                .add(Items.DROWNED_SPAWN_EGG)
+                .add(Items.ELDER_GUARDIAN_SPAWN_EGG)
+                .add(Cagerium.ENDER_DRAGON_SPAWN_EGG.get())
+                .add(Items.ENDERMAN_SPAWN_EGG)
+                .add(Items.ENDERMITE_SPAWN_EGG)
+                .add(Items.EVOKER_SPAWN_EGG)
+                .add(Items.GHAST_SPAWN_EGG)
+                .add(Items.GUARDIAN_SPAWN_EGG)
+                .add(Items.HOGLIN_SPAWN_EGG)
+                .add(Items.HUSK_SPAWN_EGG)
+                .add(Items.MAGMA_CUBE_SPAWN_EGG)
+                .add(Items.PHANTOM_SPAWN_EGG)
+                .add(Items.PIGLIN_SPAWN_EGG)
+                .add(Items.PIGLIN_BRUTE_SPAWN_EGG)
+                .add(Items.PILLAGER_SPAWN_EGG)
+                .add(Items.RAVAGER_SPAWN_EGG)
+                .add(Items.SHULKER_SPAWN_EGG)
+                .add(Items.SILVERFISH_SPAWN_EGG)
+                .add(Items.SKELETON_SPAWN_EGG)
+                .add(Items.SLIME_SPAWN_EGG)
+                .add(Items.STRAY_SPAWN_EGG)
+                .add(Items.SPIDER_SPAWN_EGG)
+                .add(Items.VEX_SPAWN_EGG)
+                .add(Items.VINDICATOR_SPAWN_EGG)
+                .add(Items.WARDEN_SPAWN_EGG)
+                .add(Items.WITCH_SPAWN_EGG)
+                .add(Cagerium.WITHER_SPAWN_EGG.get())
+                .add(Items.WITHER_SKELETON_SPAWN_EGG)
+                .add(Items.ZOGLIN_SPAWN_EGG)
+                .add(Items.ZOMBIE_SPAWN_EGG)
+                .add(Items.ZOMBIFIED_PIGLIN_SPAWN_EGG)
+                .add(Items.ZOMBIE_VILLAGER_SPAWN_EGG);
         tag(ModTags.Items.TOOLS_CARVING)
                 .addTag(Tags.Items.TOOLS_PICKAXES)
                 .addTag(ForgeTags.Items.TOOLS_KNIVES)
@@ -508,7 +545,8 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.CURRENCY_PAPER);
         tag(ModTags.Items.CURRENCY_STAMPS)
                 .add(ModItems.CURRENCY_STAMP.get())
-                .add(ModItems.NETHER_CURRENCY_STAMP.get());
+                .add(ModItems.NETHER_CURRENCY_STAMP.get())
+                .add(ModItems.ENDONIAN_CURRENCY_STAMP.get());
         tag(ModTags.Items.TEXTILES)
                 .addTag(ModTags.Items.CURRENCY_FIBER)
                 .addTag(ModTags.Items.CURRENCY_PAPER)

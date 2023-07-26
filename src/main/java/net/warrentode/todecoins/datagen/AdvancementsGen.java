@@ -173,14 +173,14 @@ public class AdvancementsGen extends AdvancementProvider {
                     .requirements(RequirementsStrategy.OR).save(consumer, getPath("main/nether_dough"));
 
             // Heavenly Coin
-            Advancement heavenlyCoin = getAdvancement(todeCoins, ModItems.ENDONIAN_COIN.get(),
-                    "heavenlyCoin", FrameType.TASK, true, true, false)
+            Advancement otherworldlyCoin = getAdvancement(todeCoins, ModItems.ENDONIAN_COIN.get(),
+                    "otherworldlyCoin", FrameType.TASK, true, true, false)
                     .parent(mintingCoins)
                     .addCriterion("craft_endonian_currency_stamp",
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_CURRENCY_STAMP.get()))
                     .addCriterion("craft_endonian_coin",
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_COIN.get()))
-                    .requirements(RequirementsStrategy.OR).save(consumer, getPath("main/heavenly_coin"));
+                    .requirements(RequirementsStrategy.OR).save(consumer, getPath("main/otherworldly_coin"));
 
             // Money to Burn
             Advancement baggingDough = getAdvancement(todeCoins, ModBlocks.GOLD_COIN_BAG.get(),

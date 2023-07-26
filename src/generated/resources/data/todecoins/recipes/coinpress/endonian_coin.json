@@ -1,0 +1,17 @@
+{
+  "type": "todecoins:coinpress",
+  "experience": 0.95,
+  "ingredients": [
+    {
+      "item": "todecoins:endonian_currency_stamp"
+    },
+    {
+      "tag": "forge:nuggets/endonian_nugget"
+    }
+  ],
+  "recipe_book_tab": "coins",
+  "result": {
+    "item": "todecoins:endonian_coin"
+  },
+  "stampingTime": 100
+}

@@ -30,6 +30,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
+        "group": "spawn_eggs",
         "ingredients": [
           {
             "tag": "forge:eggs"

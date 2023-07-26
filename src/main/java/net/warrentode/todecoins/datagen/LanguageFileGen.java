@@ -392,6 +392,8 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.rainbowEnd.desc", "Obtain a Pot of Gold");
         add("advancement.netherDough", "Nether Dough");
         add("advancement.netherDough.desc", "Obtain a Nether Coin");
+        add("advancement.otherworldlyCoin", "Otherworldly Coin");
+        add("advancement.otherworldlyCoin.desc", "Obtain an Endonian Coin");
         add("advancement.luckyClover", "Lucky Clover");
         add("advancement.luckyClover.desc", "Find a Four-Leaf Clover");
         add("advancement.luckyPenny", "Lucky Penny");

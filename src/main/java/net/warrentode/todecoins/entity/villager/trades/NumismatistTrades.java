@@ -11,7 +11,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsSaleSetForItemsBuySetTrade;
-import net.warrentode.todecoins.integration.SereneSeasons;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.util.CalendarUtil;
 
@@ -296,115 +295,58 @@ public class NumismatistTrades {
     static int rarityLevel2 = 2;
 
     private static ImmutableSet<ItemLike> getOfferedCurrentSeasonCoin() {
-        if (TodeCoins.isSereneSeasonsLoaded()) {
-            if (SereneSeasons.Season.isBirthday()) {
-                OfferedCurrentSeasonCoin = BirthdaySeasonCoins;
-            }
-            else if (SereneSeasons.Season.isAnniversary()) {
-                OfferedCurrentSeasonCoin = AnniversarySeasonCoins;
-            }
-            else if (SereneSeasons.Season.isHalloween()) {
-                OfferedCurrentSeasonCoin = HalloweenSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isChristmas()) {
-                OfferedCurrentSeasonCoin = ChristmasSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isSpring()) {
-                OfferedCurrentSeasonCoin = SpringSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isSummer()) {
-                OfferedCurrentSeasonCoin = SummerSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isAutumn()) {
-                OfferedCurrentSeasonCoin = AutumnSeasonCoins;
-            }
-            else {
-                OfferedCurrentSeasonCoin = WinterSeasonCoins;
-            }
+        if (CalendarUtil.Season.isBirthday()) {
+            OfferedCurrentSeasonCoin = BirthdaySeasonCoins;
+        }
+        else if (CalendarUtil.Season.isAnniversary()) {
+            OfferedCurrentSeasonCoin = AnniversarySeasonCoins;
+        }
+        else if (CalendarUtil.Season.isHalloween()) {
+            OfferedCurrentSeasonCoin = HalloweenSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isChristmas()) {
+            OfferedCurrentSeasonCoin = ChristmasSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isSpring()) {
+            OfferedCurrentSeasonCoin = SpringSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isSummer()) {
+            OfferedCurrentSeasonCoin = SummerSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isAutumn()) {
+            OfferedCurrentSeasonCoin = AutumnSeasonCoins;
         }
         else {
-            if (CalendarUtil.Season.isBirthday()) {
-                OfferedCurrentSeasonCoin = BirthdaySeasonCoins;
-            }
-            else if (CalendarUtil.Season.isAnniversary()) {
-                OfferedCurrentSeasonCoin = AnniversarySeasonCoins;
-            }
-            else if (CalendarUtil.Season.isHalloween()) {
-                OfferedCurrentSeasonCoin = HalloweenSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isChristmas()) {
-                OfferedCurrentSeasonCoin = ChristmasSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isSpring()) {
-                OfferedCurrentSeasonCoin = SpringSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isSummer()) {
-                OfferedCurrentSeasonCoin = SummerSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isAutumn()) {
-                OfferedCurrentSeasonCoin = AutumnSeasonCoins;
-            }
-            else {
-                OfferedCurrentSeasonCoin = WinterSeasonCoins;
-            }
+            OfferedCurrentSeasonCoin = WinterSeasonCoins;
         }
         return OfferedCurrentSeasonCoin;
     }
 
     private static ImmutableSet<ItemLike> getRequestedCurrentSeasonCoin() {
-        if (TodeCoins.isSereneSeasonsLoaded()) {
-            if (SereneSeasons.Season.isBirthday()) {
-                RequestedCurrentSeasonCoin = AutumnSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isAnniversary()) {
-                RequestedCurrentSeasonCoin = WinterSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isHalloween()) {
-                RequestedCurrentSeasonCoin = AutumnSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isChristmas()) {
-                RequestedCurrentSeasonCoin = WinterSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isSpring()) {
-                RequestedCurrentSeasonCoin = SpringSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isSummer()) {
-                RequestedCurrentSeasonCoin = SummerSeasonCoins;
-            }
-            else if (SereneSeasons.Season.isAutumn()) {
-                RequestedCurrentSeasonCoin = AutumnSeasonCoins;
-            }
-            else {
-                RequestedCurrentSeasonCoin = WinterSeasonCoins;
-            }
+        if (CalendarUtil.Season.isBirthday()) {
+            RequestedCurrentSeasonCoin = WinterSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isAnniversary()) {
+            RequestedCurrentSeasonCoin = WinterSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isHalloween()) {
+            RequestedCurrentSeasonCoin = AutumnSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isChristmas()) {
+            RequestedCurrentSeasonCoin = WinterSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isSpring()) {
+            RequestedCurrentSeasonCoin = SpringSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isSummer()) {
+            RequestedCurrentSeasonCoin = SummerSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isAutumn()) {
+            RequestedCurrentSeasonCoin = AutumnSeasonCoins;
         }
         else {
-            if (CalendarUtil.Season.isBirthday()) {
-                RequestedCurrentSeasonCoin = WinterSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isAnniversary()) {
-                RequestedCurrentSeasonCoin = WinterSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isHalloween()) {
-                RequestedCurrentSeasonCoin = AutumnSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isChristmas()) {
-                RequestedCurrentSeasonCoin = WinterSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isSpring()) {
-                RequestedCurrentSeasonCoin = SpringSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isSummer()) {
-                RequestedCurrentSeasonCoin = SummerSeasonCoins;
-            }
-            else if (CalendarUtil.Season.isAutumn()) {
-                RequestedCurrentSeasonCoin = AutumnSeasonCoins;
-            }
-            else {
-                RequestedCurrentSeasonCoin = WinterSeasonCoins;
-            }
+            RequestedCurrentSeasonCoin = WinterSeasonCoins;
         }
-
         return RequestedCurrentSeasonCoin;
     }
 

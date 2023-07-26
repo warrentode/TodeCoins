@@ -14,7 +14,6 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.integration.Curios;
-import net.warrentode.todecoins.integration.SereneSeasons;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModBuiltInLootTables;
 import net.warrentode.todecoins.util.CalendarUtil;
@@ -103,8 +102,8 @@ public abstract class PiglinBarterMixin {
 
     @Unique
     private static boolean todeCoins$isGiftEvent() {
-        return CalendarUtil.Season.isChristmas() || CalendarUtil.Season.isHalloween() || CalendarUtil.Season.isBirthday()
-               || CalendarUtil.Season.isAnniversary() || SereneSeasons.Season.isChristmas() || SereneSeasons.Season.isHalloween();
+        return CalendarUtil.Season.isChristmas() || CalendarUtil.Season.isHalloween() ||
+                CalendarUtil.Season.isBirthday() || CalendarUtil.Season.isAnniversary();
     }
 
     @Inject(at = @At("HEAD"), method = "stopHoldingOffHandItem", cancellable = true)

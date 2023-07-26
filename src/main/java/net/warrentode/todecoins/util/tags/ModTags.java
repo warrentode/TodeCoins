@@ -18,6 +18,7 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> NO_AI_EGGS = modItemTag("no_ai_spawn_eggs");
         public static final TagKey<Item> TOOLS_CARVING = modItemTag("tools/carving");
         public static final TagKey<Item> WALLETS = modItemTag("wallets");
         public static final TagKey<Item> BUNDLES = modItemTag("bundles");

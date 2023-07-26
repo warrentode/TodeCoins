@@ -8,8 +8,6 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
-import net.warrentode.todecoins.TodeCoins;
-import net.warrentode.todecoins.integration.SereneSeasons;
 import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import net.warrentode.todecoins.util.CalendarUtil;
 import org.jetbrains.annotations.NotNull;
@@ -30,12 +28,7 @@ public class HalloweenCondition implements LootItemCondition {
 
     public boolean test(@NotNull LootContext context) {
         ServerLevel serverlevel = context.getLevel();
-        if (TodeCoins.isSereneSeasonsLoaded()) {
-            return this.isHalloween = SereneSeasons.Season.isHalloween();
-        }
-        else {
-            return this.isHalloween = CalendarUtil.Season.isHalloween();
-        }
+        return this.isHalloween = CalendarUtil.Season.isHalloween();
     }
 
     public static HalloweenCondition.Builder event() {
