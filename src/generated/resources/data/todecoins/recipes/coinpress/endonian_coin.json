@@ -11,6 +11,7 @@
   ],
   "recipe_book_tab": "coins",
   "result": {
+    "count": 2,
     "item": "todecoins:endonian_coin"
   },
   "stampingTime": 100

@@ -62,7 +62,7 @@ public class CoinPressRecipesGen {
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
                 .unlockedBy("has_nether_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHER_CURRENCY_STAMP.get()))
                 .build(consumer);
-        coinPressRecipe(ModItems.ENDONIAN_COIN.get(), 1, ENDONIAN_STAMP_TIME, ENDONIAN_XP)
+        coinPressRecipe(ModItems.ENDONIAN_COIN.get(), 2, ENDONIAN_STAMP_TIME, ENDONIAN_XP)
                 .addIngredient(ModItems.ENDONIAN_CURRENCY_STAMP.get())
                 .addIngredient(ForgeTags.Items.ENDONIAN_NUGGET)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)

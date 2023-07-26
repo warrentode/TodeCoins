@@ -9,7 +9,6 @@
         "PhantomBehaviorMixin",
         "PiglinBarterMixin",
         "PlayerVisibilityMixin",
-        "RecipeManagerAccessor",
         "VillagerMixin",
         "WalkThroughBerryBushMixin"
     ],
