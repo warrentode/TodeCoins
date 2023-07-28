@@ -211,6 +211,13 @@ public class CraftingRecipesGen {
                 .define('#', ModItems.NETHER_GOLD_COIN.get())
                 .unlockedBy("has_nether_gold_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHER_GOLD_COIN.get()))
                 .save(consumer, new ResourceLocation(MODID, "storage_blocks/coins_to_bags/nether_gold_bag"));
+        ShapedRecipeBuilder.shaped(ModBlocks.LUCKY_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.LUCKY_COIN.get())
+                .unlockedBy("has_lucky_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EMERALD_BANK_NOTE.get()))
+                .save(consumer, new ResourceLocation(MODID, "storage_blocks/coin_to_bags/lucky_coin_bag"));
         ShapedRecipeBuilder.shaped(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(), 1)
                 .pattern("###")
                 .pattern("###")
@@ -265,6 +272,10 @@ public class CraftingRecipesGen {
                 .requires(ModBlocks.NETHER_GOLD_COIN_BAG.get())
                 .unlockedBy("has_nether_gold_bag", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.NETHER_GOLD_COIN_BAG.get()))
                 .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/nether_gold_coins"));
+        ShapelessRecipeBuilder.shapeless(ModItems.LUCKY_COIN.get(), 9)
+                .requires(ModBlocks.LUCKY_COIN_BAG.get())
+                .unlockedBy("has_lucky_coin_bag", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.LUCKY_COIN_BAG.get()))
+                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/lucky_coins"));
         ShapelessRecipeBuilder.shapeless(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), 9)
                 .requires(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
                 .unlockedBy("has_emerald_quarter_note_bag", InventoryChangeTrigger.TriggerInstance.hasItems(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get()))

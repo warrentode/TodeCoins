@@ -5,7 +5,7 @@ issueTrackerURL = "https://github.com/toadie-odie/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "1.19.2-1.3.10"
+version = "1.19.2-1.3.11"
 displayName = "Tode Coins"
 displayURL = "https://github.com/toadie-odie/TodeCoins"
 logoFile = "logo.png"

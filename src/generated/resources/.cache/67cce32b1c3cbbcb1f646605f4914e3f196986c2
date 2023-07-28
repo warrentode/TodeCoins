@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-24T19:11:53.7163988	LootTables
+// 1.19.2	2023-07-28T00:01:18.9022781	LootTables
 b8db3795527ad4f7b05c2b0ef327f40a3e615c7e data/todecoins/loot_tables/blocks/coin_press.json
 d779866a4ec560311f2219e1fbc548fa51b1ed20 data/todecoins/loot_tables/blocks/copper_coin_bag.json
 e15dc48a880448b70f0a47c600b2a51e9cf0acfe data/todecoins/loot_tables/blocks/emerald_bank_note_bag.json
@@ -8,6 +8,7 @@ d6f117bb7a229b6c6a04c29f35fe063cb84e3d32 data/todecoins/loot_tables/blocks/endon
 c51e8edee84697f61ffd993fe3f528d6a87267d6 data/todecoins/loot_tables/blocks/endonian_coin_bag.json
 ede1ae8b40281bc81d018757bdaf0aca052ba0d4 data/todecoins/loot_tables/blocks/gold_coin_bag.json
 f203ecc66a6758abf83e0a73fe63aa204446a3de data/todecoins/loot_tables/blocks/iron_coin_bag.json
+76bfa2ba5e2f1f349d385843fb8a45e7d7e26853 data/todecoins/loot_tables/blocks/lucky_coin_bag.json
 aa2c86201a1c9a382c4bf48c72e5d406350f1e04 data/todecoins/loot_tables/blocks/netherite_coin_bag.json
 4b8b367d5ec5e92d4655db1201a4614a7e4dba10 data/todecoins/loot_tables/blocks/nether_gold_coin_bag.json
 8d34025bde123883f86a8f02c27ac3f4abac22ba data/todecoins/loot_tables/blocks/pot_of_gold.json

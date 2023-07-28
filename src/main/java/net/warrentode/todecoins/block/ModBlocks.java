@@ -43,6 +43,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> ENDONIAN_COIN_BAG = registerBlock("endonian_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
             ModCreativeModeTabs.TODECOINSTAB);
+    public static final RegistryObject<Block> LUCKY_COIN_BAG = registerBlock("lucky_coin_bag",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
+            ModCreativeModeTabs.TODECOINSTAB);
 
     public static final RegistryObject<Block> EMERALD_QUARTER_BANK_NOTE_BAG = registerBlock("emerald_quarter_bank_note_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
