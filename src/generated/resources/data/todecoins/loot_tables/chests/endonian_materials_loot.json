@@ -6,19 +6,23 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "todecoins:endonian_currency_stamp"
+          "name": "todecoins:endonian_currency_stamp",
+          "quality": 1
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:endonian_nugget"
+          "name": "todecoins:endonian_nugget",
+          "quality": 4
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:endonian_ingot"
+          "name": "todecoins:endonian_ingot",
+          "quality": 5
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:endonian_block"
+          "name": "todecoins:endonian_block",
+          "quality": 6
         },
         {
           "type": "minecraft:item",
@@ -33,7 +37,8 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:chorus_flower"
+          "name": "minecraft:chorus_flower",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -48,7 +53,8 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:ender_pearl"
+          "name": "minecraft:ender_pearl",
+          "weight": 10
         }
       ],
       "rolls": {
