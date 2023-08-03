@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-26T13:11:40.1316531	Tags for minecraft:item
+// 1.19.2	2023-07-30T17:00:13.332217	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -72,11 +72,13 @@ a549a89c3aa68643b4f794ebab7de751325b290f data/todecoins/tags/items/collectible_c
 e430643a810a9fbc22dcc79114249a19982681d9 data/todecoins/tags/items/collectible_coins/entity_coins/evoker_coin_set.json
 623a47c7834c2addb7588088caa003c5415517a8 data/todecoins/tags/items/collectible_coins/entity_coins/fox_coin_set.json
 8af9c7f288cf6f12169bdfe70142234e158f5935 data/todecoins/tags/items/collectible_coins/entity_coins/frog_coin_set.json
+f27ffa312d45e4383e4159d7386adab3a10b4768 data/todecoins/tags/items/collectible_coins/entity_coins/ghast_coin_set.json
 94f145c7837f7e1a59304dd797636cced60de6ab data/todecoins/tags/items/collectible_coins/entity_coins/glow_squid_coin_set.json
 d4735311dce29bd4941b665e684830d1ca8cf666 data/todecoins/tags/items/collectible_coins/entity_coins/goat_coin_set.json
 f1a23467f2fe757da936a6e9da920f9a0f5e2c21 data/todecoins/tags/items/collectible_coins/entity_coins/guardian_coin_set.json
 a8122e8513b5fb6c1b165bdfbd3c12201b2e54b6 data/todecoins/tags/items/collectible_coins/entity_coins/hoglin_coin_set.json
 f518a36d5f47db7d70ef406d44b35656e71cccc7 data/todecoins/tags/items/collectible_coins/entity_coins/horse_coin_set.json
+e011e4144a3127b59f8ae6fa9cc6a9ec8c49caed data/todecoins/tags/items/collectible_coins/entity_coins/husk_coin_set.json
 16f91eb2704181b97041b88fede82c59b0365a80 data/todecoins/tags/items/collectible_coins/entity_coins/iron_golem_coin_set.json
 ae4fa25aa8aafec6f9e4efa842a8255bb3d8951f data/todecoins/tags/items/collectible_coins/entity_coins/llama_coin_set.json
 98ab3c74454e3f7683c8b789885e2f52dfbe9f39 data/todecoins/tags/items/collectible_coins/entity_coins/moobloom_coin_set.json
@@ -108,7 +110,7 @@ d7cfb19ba68be710a817234d46c60de108ddc64f data/todecoins/tags/items/collectible_c
 dd219853d6d66e6d9b54dea59cc73c7d887129a5 data/todecoins/tags/items/collectible_coins/entity_coins/wolf_coin_set.json
 8272379d4d1bbd26cd5bc0becbbc3e93272c2e94 data/todecoins/tags/items/collectible_coins/entity_coins/zombie_horse_coin_set.json
 40b72318e1c4abd7bf483e932a2b01b1af83f01a data/todecoins/tags/items/collectible_coins/entity_coins/zombified_piglin_coin_set.json
-a2f32a976263001b78515f726986ae1892620fea data/todecoins/tags/items/collectible_coins/entity_coin_set.json
+ca3744f24294405cc16b137ca6e743458f7f057d data/todecoins/tags/items/collectible_coins/entity_coin_set.json
 a1bda6f17fa29264786ba7d4ac0a3086ba6f5d7e data/todecoins/tags/items/collectible_coins/gameplay_coins/fishing_coin_set.json
 09034aeb43660d605371c1304aa88a09b81286cd data/todecoins/tags/items/collectible_coins/gameplay_coins/hero_coin_set.json
 269fd06fc2a4c3ac662023e453de20fda55ec2c6 data/todecoins/tags/items/collectible_coins/gameplay_coin_set.json

@@ -1,6 +1,7 @@
 package net.warrentode.todecoins.mixin;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -12,8 +13,9 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.integration.Curios;
+import net.warrentode.todecoins.integration.ModListHandler;
+import net.warrentode.todecoins.integration.SereneSeasonsCompat;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModBuiltInLootTables;
 import net.warrentode.todecoins.util.CalendarUtil;
@@ -26,12 +28,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotResult;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 import static net.minecraft.world.entity.monster.piglin.PiglinAi.*;
 
@@ -47,75 +46,52 @@ public abstract class PiglinBarterMixin {
     @Unique
     private static boolean todeCoins$isWearingZombiePiglinCoin(Player player) {
         ItemStack stack = Curios.getCharmSlot(player);
-
-        return stack != null && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        return stack != null && ModListHandler.curiosLoaded && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
     }
 
     @Unique
     private static boolean todeCoins$isWearingNetheritePiglinCoin(Player player) {
-        Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_PIGLIN_COIN.get());
-        ItemStack netheritePiglinCoin = null;
-
-        if (TodeCoins.isCuriosLoaded()) {
-            if (optional.isPresent()) {
-                netheritePiglinCoin = optional.get().stack();
-            }
-        }
-        return netheritePiglinCoin != null;
+        ItemStack stack = Curios.getCharmSlot(player);
+        return stack != null && ModListHandler.curiosLoaded && stack.getItem().equals(ModItems.NETHERITE_PIGLIN_COIN.get());
     }
     @Unique
     private static boolean todeCoins$isWearingGoldPiglinCoin(Player player) {
-        Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_PIGLIN_COIN.get());
-        ItemStack goldPiglinCoin = null;
-
-        if (TodeCoins.isCuriosLoaded()) {
-            if (optional.isPresent()) {
-                goldPiglinCoin = optional.get().stack();
-            }
-        }
-        return goldPiglinCoin != null;
+        ItemStack stack = Curios.getCharmSlot(player);
+        return stack != null && ModListHandler.curiosLoaded && stack.getItem().equals(ModItems.GOLD_PIGLIN_COIN.get());
     }
     @Unique
     private static boolean todeCoins$isWearingIronPiglinCoin(Player player) {
-        Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_PIGLIN_COIN.get());
-        ItemStack ironPiglinCoin = null;
-
-        if (TodeCoins.isCuriosLoaded()) {
-            if (optional.isPresent()) {
-                ironPiglinCoin = optional.get().stack();
-            }
-        }
-        return ironPiglinCoin != null;
+        ItemStack stack = Curios.getCharmSlot(player);
+        return stack != null && ModListHandler.curiosLoaded && stack.getItem().equals(ModItems.IRON_PIGLIN_COIN.get());
     }
     @Unique
     private static boolean todeCoins$isWearingCopperPiglinCoin(Player player) {
-        Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_PIGLIN_COIN.get());
-        ItemStack copperPiglinCoin = null;
-
-        if (TodeCoins.isCuriosLoaded()) {
-            if (optional.isPresent()) {
-                copperPiglinCoin = optional.get().stack();
-            }
-        }
-        return copperPiglinCoin != null;
+        ItemStack stack = Curios.getCharmSlot(player);
+        return stack != null && ModListHandler.curiosLoaded && stack.getItem().equals(ModItems.COPPER_PIGLIN_COIN.get());
     }
 
     @Unique
-    private static boolean todeCoins$isGiftEvent() {
-        return CalendarUtil.Season.isChristmas() || CalendarUtil.Season.isHalloween() ||
-                CalendarUtil.Season.isBirthday() || CalendarUtil.Season.isAnniversary();
+    private static boolean todeCoins$isGiftEvent(ServerLevel serverLevel) {
+        if (ModListHandler.sereneseasonsLoaded) {
+            return SereneSeasonsCompat.SeasonCompat.isChristmas(serverLevel) || SereneSeasonsCompat.SeasonCompat.isHalloween(serverLevel) ||
+                    SereneSeasonsCompat.SeasonCompat.isBirthday(serverLevel) || SereneSeasonsCompat.SeasonCompat.isAnniversary(serverLevel);
+        }
+        return CalendarUtil.Season.isChristmas() || CalendarUtil.Season.isHalloween()
+                || CalendarUtil.Season.isBirthday() || CalendarUtil.Season.isAnniversary();
     }
 
     @Inject(at = @At("HEAD"), method = "stopHoldingOffHandItem", cancellable = true)
     private static void todecoins_stopHoldingOffHandItem(@NotNull Piglin piglin, boolean shouldBarter, CallbackInfo ci) {
         Player player = Minecraft.getInstance().player;
+        MinecraftServer server = player != null ? player.getServer() : null;
+        ServerLevel serverLevel = server != null ? server.getLevel(player.level.dimension()) : null;
         if (piglin.isAdult()) {
             ItemStack offHandItem = piglin.getItemInHand(InteractionHand.OFF_HAND);
             boolean barterItem = PiglinAi.isBarterCurrency(offHandItem);
             boolean netherGoldCoin = piglin.getItemInHand(InteractionHand.OFF_HAND).is(ModItems.NETHER_GOLD_COIN.get());
             if (shouldBarter && barterItem) {
                 piglin.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
-                if (shouldBarter && todeCoins$giftChance >= todeCoins$giftRate && todeCoins$isGiftEvent()) {
+                if (shouldBarter && todeCoins$giftChance >= todeCoins$giftRate && todeCoins$isGiftEvent(serverLevel)) {
                     throwItems(piglin, todecoins_getEventGiftLootResponseItems(piglin));
                 }
                 if (netherGoldCoin) {

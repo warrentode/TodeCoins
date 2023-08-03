@@ -164,8 +164,10 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.GLOW_SQUID_COIN_SET)
                 .addTag(ModTags.Items.GOAT_COIN_SET)
                 .addTag(ModTags.Items.GUARDIAN_COIN_SET)
+                .addTag(ModTags.Items.GHAST_COIN_SET)
                 .addTag(ModTags.Items.HOGLIN_COIN_SET)
                 .addTag(ModTags.Items.HORSE_COIN_SET)
+                .addTag(ModTags.Items.HUSK_COIN_SET)
                 .addTag(ModTags.Items.IRON_GOLEM_COIN_SET)
                 .addTag(ModTags.Items.LLAMA_COIN_SET)
                 .addTag(ModTags.Items.MOOBLOOM_COIN_SET)
@@ -197,6 +199,16 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.WOLF_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        tag(ModTags.Items.HUSK_COIN_SET)
+                .add(ModItems.COPPER_HUSK_COIN.get())
+                .add(ModItems.IRON_HUSK_COIN.get())
+                .add(ModItems.GOLD_HUSK_COIN.get())
+                .add(ModItems.NETHERITE_HUSK_COIN.get());
+        tag(ModTags.Items.GHAST_COIN_SET)
+                .add(ModItems.COPPER_GHAST_COIN.get())
+                .add(ModItems.IRON_GHAST_COIN.get())
+                .add(ModItems.GOLD_GHAST_COIN.get())
+                .add(ModItems.NETHERITE_GHAST_COIN.get());
         tag(ModTags.Items.EVOKER_COIN_SET)
                 .add(ModItems.COPPER_EVOKER_COIN.get())
                 .add(ModItems.IRON_EVOKER_COIN.get())

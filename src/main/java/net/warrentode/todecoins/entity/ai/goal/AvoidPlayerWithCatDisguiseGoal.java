@@ -12,14 +12,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
-import net.warrentode.todecoins.TodeCoins;
-import net.warrentode.todecoins.item.ModItems;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotResult;
+import net.warrentode.todecoins.integration.Curios;
+import net.warrentode.todecoins.integration.ModListHandler;
+import net.warrentode.todecoins.util.tags.ModTags;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
-import java.util.Optional;
 import java.util.function.Predicate;
 
 public class AvoidPlayerWithCatDisguiseGoal<T extends LivingEntity> extends Goal {
@@ -71,27 +69,10 @@ public class AvoidPlayerWithCatDisguiseGoal<T extends LivingEntity> extends Goal
     }
 
     private static boolean isWearingCatCoin(Player player) {
-        Optional<SlotResult> optional1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_CAT_COIN.get());
-        Optional<SlotResult> optional2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_CAT_COIN.get());
-        Optional<SlotResult> optional3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_CAT_COIN.get());
-        Optional<SlotResult> optional4 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_CAT_COIN.get());
-        ItemStack catCoin = null;
+        ItemStack stack = Curios.getCharmSlot(player);
 
-        if (TodeCoins.isCuriosLoaded()) {
-            if (optional1.isPresent()) {
-                catCoin = optional1.get().stack();
-            }
-            else if (optional2.isPresent()) {
-                catCoin = optional2.get().stack();
-            }
-            else if (optional3.isPresent()) {
-                catCoin = optional3.get().stack();
-            }
-            else if (optional4.isPresent()) {
-                catCoin = optional4.get().stack();
-            }
-        }
-        return catCoin != null;
+        return ModListHandler.curiosLoaded && (stack != null && stack.is(ModTags.Items.CAT_COIN_SET)
+                || stack != null && stack.is(ModTags.Items.OCELOT_COIN_SET));
     }
 
     /**

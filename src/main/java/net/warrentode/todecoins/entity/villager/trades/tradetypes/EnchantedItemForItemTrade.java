@@ -1,16 +1,17 @@
 package net.warrentode.todecoins.entity.villager.trades.tradetypes;
 
-import com.google.common.collect.ImmutableSet;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ItemsSaleSetForItemsTrade implements VillagerTrades.ItemListing {
+// MIT License Copyright (c) 2023 Warren Tode
+
+public class EnchantedItemForItemTrade implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;
     public static final int UNCOMMON_ITEMS_SUPPLY = 3;
@@ -26,21 +27,17 @@ public class ItemsSaleSetForItemsTrade implements VillagerTrades.ItemListing {
     public static final float LOW_TIER_PRICE_MULTIPLIER = 0.05F;
     public static final float HIGH_TIER_PRICE_MULTIPLIER = 0.2F;
 
-    private final ImmutableSet<ItemLike> sellItems;
-    private final int sellItemsCount;
+    private final ItemStack sellItem;
+    private final int sellItemCount;
     private final ItemStack buyingItem;
     private final int buyingItemCount;
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
 
-    public ItemsSaleSetForItemsTrade(ImmutableSet<ItemLike> sellItem, int sellItemCount, ItemStack buyItems, int buyItemsCount, int maxUses, int xpValue) {
-        this(sellItem, sellItemCount, buyItems, buyItemsCount, maxUses, xpValue, xpValue);
-    }
-
-    public ItemsSaleSetForItemsTrade(ImmutableSet<ItemLike> sellItems, int sellItemsCount, ItemStack buyingItem, int buyingItemCount, int maxUses, int xpValue, float priceMultiplier) {
-        this.sellItems = sellItems;
-        this.sellItemsCount = sellItemsCount;
+    public EnchantedItemForItemTrade(ItemStack sellItem, int sellItemCount, ItemStack buyingItem, int buyingItemCount, int maxUses, int xpValue, float priceMultiplier) {
+        this.sellItem = sellItem;
+        this.sellItemCount = sellItemCount;
         this.buyingItem = buyingItem;
         this.buyingItemCount = buyingItemCount;
         this.maxUses = maxUses;
@@ -49,10 +46,12 @@ public class ItemsSaleSetForItemsTrade implements VillagerTrades.ItemListing {
     }
 
     @Nullable
-    @Override
     public MerchantOffer getOffer(@NotNull Entity trader, @NotNull RandomSource source) {
-        ItemStack sellSet = new ItemStack(this.sellItems.asList().get(source.nextInt(sellItems.size() - 1)).asItem(), this.sellItemsCount);
-        ItemStack buyStack = new ItemStack(this.buyingItem.getItem(), this.buyingItemCount);
-        return new MerchantOffer(buyStack, sellSet, this.maxUses, this.xpValue, this.priceMultiplier);
+        int i = 5 + source.nextInt(15);
+        int j = Math.min(this.buyingItemCount + i, 64);
+        ItemStack buyStack = new ItemStack(this.buyingItem.getItem(), j);
+        ItemStack itemStack = EnchantmentHelper.enchantItem(source, new ItemStack(this.sellItem.getItem()), i, false);
+        ItemStack sellStack = new ItemStack(itemStack.getItem(), this.sellItemCount);
+        return new MerchantOffer(sellStack, buyStack, this.maxUses, this.xpValue, this.priceMultiplier);
     }
 }

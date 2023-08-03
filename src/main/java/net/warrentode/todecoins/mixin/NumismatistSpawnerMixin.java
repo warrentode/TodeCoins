@@ -62,43 +62,25 @@ public abstract class NumismatistSpawnerMixin {
                     cir.setReturnValue(false);
                 }
 
-                Numismatist trader = ModEntityTypes.NUMISMATIST.get().spawn(serverLevel, null,
-                        null, null, pos2, MobSpawnType.EVENT, false, false);
-
-                WanderingTrader wanderingtrader = EntityType.WANDERING_TRADER.spawn(serverLevel, null,
+                Numismatist numismatist = ModEntityTypes.NUMISMATIST.get().spawn(serverLevel, null,
                         null, null, pos2, MobSpawnType.EVENT, false, false);
 
                 if (this.random.nextInt(10) >= 8) {
-                    todeCoins$merchant = String.valueOf(trader);
-                }
-                else {
-                    todeCoins$merchant = String.valueOf(wanderingtrader);
+                    todeCoins$merchant = String.valueOf(numismatist);
                 }
 
-                if (Objects.equals(todeCoins$merchant, String.valueOf(trader))) {
-                    if (trader != null) {
+                if (Objects.equals(todeCoins$merchant, String.valueOf(numismatist))) {
+                    if (numismatist != null) {
                         for (int j = 0; j < 2; ++j) {
-                            this.todeCoins$tryToSpawnLlamaForTrader(serverLevel, trader, 4);
+                            this.todeCoins$tryToSpawnLlamaForTrader(serverLevel, numismatist, 4);
                         }
 
-                        this.serverLevelData.setWanderingTraderId(trader.getUUID());
-                        trader.setDespawnDelay(48000);
-                        trader.setWanderTarget(pos1);
-                        trader.restrictTo(pos1, 16);
+                        this.serverLevelData.setWanderingTraderId(numismatist.getUUID());
+                        numismatist.setDespawnDelay(48000);
+                        numismatist.setWanderTarget(pos1);
+                        numismatist.restrictTo(pos1, 16);
                         cir.setReturnValue(true);
-                    }
-                }
-                else {
-                    if (wanderingtrader != null) {
-                        for (int j = 0; j < 2; ++j) {
-                            this.tryToSpawnLlamaFor(serverLevel, wanderingtrader, 4);
-                        }
-
-                        this.serverLevelData.setWanderingTraderId(wanderingtrader.getUUID());
-                        wanderingtrader.setDespawnDelay(48000);
-                        wanderingtrader.setWanderTarget(pos1);
-                        wanderingtrader.restrictTo(pos1, 16);
-                        cir.setReturnValue(true);
+                        cir.cancel();
                     }
                 }
             }

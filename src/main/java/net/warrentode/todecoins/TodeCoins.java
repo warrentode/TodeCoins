@@ -16,7 +16,6 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -31,6 +30,7 @@ import net.warrentode.todecoins.entity.villager.renderer.NumismatistRenderer;
 import net.warrentode.todecoins.gui.ModMenuTypes;
 import net.warrentode.todecoins.gui.coinpressgui.CoinPressScreen;
 import net.warrentode.todecoins.integration.Curios;
+import net.warrentode.todecoins.integration.ModListHandler;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import net.warrentode.todecoins.loot.serializers.ModLootModifiers;
@@ -52,10 +52,6 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TodeCoins {
     public static final String MODID = "todecoins";
     public static final Logger LOGGER = LogManager.getLogger();
-    private static boolean curiosLoaded = false;
-    private static boolean cageriumLoaded = false;
-    private static boolean sereneseasonsLoaded = false;
-    private static boolean bagofholdingLoaded = false;
 
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -80,32 +76,11 @@ public class TodeCoins {
 
         ModLootModifiers.register(modEventBus);
         ModLootItemConditions.register(modEventBus);
-
-        curiosLoaded = ModList.get().isLoaded("curios");
-        cageriumLoaded = ModList.get().isLoaded("cagerium");
-        sereneseasonsLoaded = ModList.get().isLoaded("sereneseasons");
-        bagofholdingLoaded = ModList.get().isLoaded("bagofholding");
-    }
-
-    public static boolean isCuriosLoaded() {
-        return curiosLoaded;
-    }
-
-    public static boolean isCageriumLoaded() {
-        return cageriumLoaded;
-    }
-
-    public static boolean isSereneSeasonsLoaded() {
-        return sereneseasonsLoaded;
-    }
-
-    public static boolean isBagofholdingLoaded() {
-        return bagofholdingLoaded;
     }
 
     public static ItemStack setCurioSlots(Player player) {
         AtomicReference<ItemStack> slot = new AtomicReference<>(ItemStack.EMPTY);
-        if (curiosLoaded) {
+        if (ModListHandler.curiosLoaded) {
             slot.set(Curios.getCharmSlot(player));
             slot.set(Curios.getBeltSlot(player));
         }
@@ -123,7 +98,7 @@ public class TodeCoins {
     }
 
     private void onIMEnqueueEvent(InterModEnqueueEvent event) {
-        if (curiosLoaded) {
+        if (ModListHandler.curiosLoaded) {
             InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
             InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
         }

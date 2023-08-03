@@ -8,6 +8,8 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.warrentode.todecoins.integration.ModListHandler;
+import net.warrentode.todecoins.integration.SereneSeasonsCompat;
 import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import net.warrentode.todecoins.util.CalendarUtil;
 import org.jetbrains.annotations.NotNull;
@@ -27,8 +29,13 @@ public class BirthdayCondition implements LootItemCondition {
     }
 
     public boolean test(@NotNull LootContext context) {
-        ServerLevel serverlevel = context.getLevel();
-        return this.isBirthday = CalendarUtil.Season.isBirthday();
+        ServerLevel level = context.getLevel();
+        if (ModListHandler.sereneseasonsLoaded) {
+            return this.isBirthday = SereneSeasonsCompat.SeasonCompat.isBirthday(level);
+        }
+        else {
+            return this.isBirthday = CalendarUtil.Season.isBirthday();
+        }
     }
 
     public static BirthdayCondition.Builder event() {

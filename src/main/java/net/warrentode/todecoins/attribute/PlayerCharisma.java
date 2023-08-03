@@ -30,6 +30,7 @@ public class PlayerCharisma {
                 EntitySelector.NO_SPECTATORS);
 
         int charismaBonus = 0;
+        //noinspection UnusedAssignment
         for (LivingEntity entity : list) {
             charismaBonus += 10 * getCharisma();
         }

@@ -6,30 +6,62 @@ import fuzs.bagofholding.init.ForgeModRegistry;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.mehvahdjukaar.cagerium.Cagerium;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
-import net.warrentode.todecoins.TodeCoins;
-import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsSaleSetForItemsBuySetTrade;
+import net.warrentode.todecoins.entity.villager.trades.tradetypes.LootBoxForTwoRequestSetsTrade;
+import net.warrentode.todecoins.entity.villager.trades.tradetypes.OneSetForOneSetTrade;
+import net.warrentode.todecoins.entity.villager.trades.tradetypes.OneSetForTwoSetsTrade;
+import net.warrentode.todecoins.integration.ModListHandler;
 import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.loot.ModBuiltInLootTables;
 import net.warrentode.todecoins.util.CalendarUtil;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.BACKPACK;
+
 public class NumismatistTrades {
+    static RandomSource source = RandomSource.create();
+    static int rarityLevel1 = 1;
+    static int rarityLevel2 = 2;
     private static ImmutableSet<ItemLike> CageriumList = ImmutableSet.of(
             Cagerium.PLATE_GEM.get().asItem().getDefaultInstance().getItem(),
             Cagerium.CAGE_KEY.get().asItem().getDefaultInstance().getItem(),
             Cagerium.FIRE_UPGRADE.get().asItem().getDefaultInstance().getItem());
-    private static ImmutableSet<ItemLike> CageriumBackupList = ImmutableSet.of(
+    private static ImmutableSet<ItemLike> VanillaContainerList = ImmutableSet.of(
+            Items.BUNDLE.asItem().getDefaultInstance().getItem(),
             Items.SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.BLUE_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.BLACK_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.BROWN_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.CYAN_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.GRAY_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.GREEN_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.LIGHT_BLUE_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.LIGHT_GRAY_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.LIME_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.MAGENTA_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.ORANGE_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.PINK_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.PURPLE_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.RED_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.WHITE_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
+            Items.YELLOW_SHULKER_BOX.asItem().getDefaultInstance().getItem(),
             Items.ENDER_CHEST.asItem().getDefaultInstance().getItem());
-    private static ImmutableSet<ItemLike> VanillaWalletList = ImmutableSet.of(
-            Items.BUNDLE.asItem().getDefaultInstance().getItem(),
-            Items.BUNDLE.asItem().getDefaultInstance().getItem());
-    private static ImmutableSet<ItemLike> BagOfHoldingWalletList = ImmutableSet.of(
-            Items.BUNDLE.asItem().getDefaultInstance().getItem(),
+    private static ImmutableSet<ItemLike> BagOfHoldingList = ImmutableSet.of(
             ForgeModRegistry.LEATHER_BAG_OF_HOLDING_ITEM.get().asItem().getDefaultInstance().getItem(),
             ForgeModRegistry.IRON_BAG_OF_HOLDING_ITEM.get().asItem().getDefaultInstance().getItem(),
             ForgeModRegistry.GOLDEN_BAG_OF_HOLDING_ITEM.get().asItem().getDefaultInstance().getItem());
+    private static ImmutableSet<ItemLike> SophisticatedBackpacksList = ImmutableSet.of(
+            BACKPACK.get().asItem().getDefaultInstance().getItem()
+    );
+    private static ImmutableSet.Builder<Object> SelectedContainersList = setContainerOffers();
+    private static ImmutableSet<ItemLike> ContainerOffers = getContainerOffers();
+
     private static ImmutableSet<ItemLike> BirthdaySeasonCoins = ImmutableSet.of(
             ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem(),
             ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem());
@@ -102,8 +134,10 @@ public class NumismatistTrades {
             ModItems.COPPER_GUARDIAN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_ELDER_GUARDIAN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_ENDERMITE_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.COPPER_EVOKER_COIN.get().asItem().getDefaultInstance().getItem()
-                                                                             );
+            ModItems.COPPER_EVOKER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_GHAST_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_HUSK_COIN.get().asItem().getDefaultInstance().getItem()
+    );
     private static ImmutableSet<ItemLike> SummerSeasonCoins = ImmutableSet.of(
             ModItems.IRON_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -162,8 +196,10 @@ public class NumismatistTrades {
             ModItems.IRON_GUARDIAN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_ELDER_GUARDIAN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_ENDERMITE_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.IRON_EVOKER_COIN.get().asItem().getDefaultInstance().getItem()
-                                                                             );
+            ModItems.IRON_EVOKER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_GHAST_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_HUSK_COIN.get().asItem().getDefaultInstance().getItem()
+    );
     private static ImmutableSet<ItemLike> AutumnSeasonCoins = ImmutableSet.of(
             ModItems.GOLD_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -222,8 +258,10 @@ public class NumismatistTrades {
             ModItems.GOLD_GUARDIAN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_ELDER_GUARDIAN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_ENDERMITE_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.GOLD_EVOKER_COIN.get().asItem().getDefaultInstance().getItem()
-                                                                             );
+            ModItems.GOLD_EVOKER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_GHAST_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_HUSK_COIN.get().asItem().getDefaultInstance().getItem()
+    );
     private static ImmutableSet<ItemLike> WinterSeasonCoins = ImmutableSet.of(
             ModItems.NETHERITE_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -282,30 +320,29 @@ public class NumismatistTrades {
             ModItems.NETHERITE_GUARDIAN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_ELDER_GUARDIAN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_ENDERMITE_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.NETHERITE_EVOKER_COIN.get().asItem().getDefaultInstance().getItem()
-                                                                             );
+            ModItems.NETHERITE_EVOKER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_GHAST_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_HUSK_COIN.get().asItem().getDefaultInstance().getItem()
+    );
+
     private static ImmutableSet<ItemLike> OfferedCurrentSeasonCoin = getOfferedCurrentSeasonCoin();
     private static ImmutableSet<ItemLike> RequestedCurrentSeasonCoin = getRequestedCurrentSeasonCoin();
     private static ImmutableSet<ItemLike> OfferedOffSeasonCoin = getOfferedOffSeasonCoin();
     private static ImmutableSet<ItemLike> RequestedOffSeasonCoin = getRequestedOffSeasonCoin();
-    private static ImmutableSet<ItemLike> OfferedWallets = getOfferedWallets();
     private static ImmutableSet<ItemLike> CageriumOffers = getCageriumOffers();
-
-    static int rarityLevel1 = 1;
-    static int rarityLevel2 = 2;
 
     private static ImmutableSet<ItemLike> getOfferedCurrentSeasonCoin() {
         if (CalendarUtil.Season.isBirthday()) {
             OfferedCurrentSeasonCoin = BirthdaySeasonCoins;
+        }
+        else if (CalendarUtil.Season.isChristmas()) {
+            OfferedCurrentSeasonCoin = ChristmasSeasonCoins;
         }
         else if (CalendarUtil.Season.isAnniversary()) {
             OfferedCurrentSeasonCoin = AnniversarySeasonCoins;
         }
         else if (CalendarUtil.Season.isHalloween()) {
             OfferedCurrentSeasonCoin = HalloweenSeasonCoins;
-        }
-        else if (CalendarUtil.Season.isChristmas()) {
-            OfferedCurrentSeasonCoin = ChristmasSeasonCoins;
         }
         else if (CalendarUtil.Season.isSpring()) {
             OfferedCurrentSeasonCoin = SpringSeasonCoins;
@@ -324,6 +361,9 @@ public class NumismatistTrades {
 
     private static ImmutableSet<ItemLike> getRequestedCurrentSeasonCoin() {
         if (CalendarUtil.Season.isBirthday()) {
+            RequestedCurrentSeasonCoin = ChristmasSeasonCoins;
+        }
+        else if (CalendarUtil.Season.isChristmas()) {
             RequestedCurrentSeasonCoin = WinterSeasonCoins;
         }
         else if (CalendarUtil.Season.isAnniversary()) {
@@ -331,9 +371,6 @@ public class NumismatistTrades {
         }
         else if (CalendarUtil.Season.isHalloween()) {
             RequestedCurrentSeasonCoin = AutumnSeasonCoins;
-        }
-        else if (CalendarUtil.Season.isChristmas()) {
-            RequestedCurrentSeasonCoin = WinterSeasonCoins;
         }
         else if (CalendarUtil.Season.isSpring()) {
             RequestedCurrentSeasonCoin = SpringSeasonCoins;
@@ -352,6 +389,9 @@ public class NumismatistTrades {
 
     private static ImmutableSet<ItemLike> getRequestedOffSeasonCoin() {
         if (OfferedCurrentSeasonCoin == BirthdaySeasonCoins) {
+            RequestedOffSeasonCoin = ChristmasSeasonCoins;
+        }
+        else if (OfferedCurrentSeasonCoin == ChristmasSeasonCoins) {
             RequestedOffSeasonCoin = WinterSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == AnniversarySeasonCoins) {
@@ -359,9 +399,6 @@ public class NumismatistTrades {
         }
         else if (OfferedCurrentSeasonCoin == HalloweenSeasonCoins) {
             RequestedOffSeasonCoin = AutumnSeasonCoins;
-        }
-        else if (OfferedCurrentSeasonCoin == ChristmasSeasonCoins) {
-            RequestedOffSeasonCoin = WinterSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == SpringSeasonCoins) {
             RequestedOffSeasonCoin = WinterSeasonCoins;
@@ -380,6 +417,9 @@ public class NumismatistTrades {
 
     private static ImmutableSet<ItemLike> getOfferedOffSeasonCoin() {
         if (OfferedCurrentSeasonCoin == BirthdaySeasonCoins) {
+            OfferedOffSeasonCoin = ChristmasSeasonCoins;
+        }
+        else if (OfferedCurrentSeasonCoin == ChristmasSeasonCoins) {
             OfferedOffSeasonCoin = WinterSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == AnniversarySeasonCoins) {
@@ -387,9 +427,6 @@ public class NumismatistTrades {
         }
         else if (OfferedCurrentSeasonCoin == HalloweenSeasonCoins) {
             OfferedOffSeasonCoin = AutumnSeasonCoins;
-        }
-        else if (OfferedCurrentSeasonCoin == ChristmasSeasonCoins) {
-            OfferedOffSeasonCoin = WinterSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == SpringSeasonCoins) {
             OfferedOffSeasonCoin = AutumnSeasonCoins;
@@ -406,22 +443,33 @@ public class NumismatistTrades {
         return OfferedOffSeasonCoin;
     }
 
-    private static ImmutableSet<ItemLike> getOfferedWallets() {
-        if (TodeCoins.isBagofholdingLoaded()) {
-            OfferedWallets = BagOfHoldingWalletList;
+    private static ImmutableSet.Builder<Object> setContainerOffers() {
+        if (ModListHandler.sophisticatedbackpacksLoaded) {
+            SelectedContainersList = ImmutableSet.builder().addAll(SophisticatedBackpacksList);
         }
-        else {
-            OfferedWallets = VanillaWalletList;
+        if (ModListHandler.bagofholdingLoaded) {
+            SelectedContainersList = ImmutableSet.builder().addAll(BagOfHoldingList);
         }
-        return OfferedWallets;
+        SelectedContainersList = ImmutableSet.builder().addAll(VanillaContainerList);
+
+        //noinspection SuspiciousToArrayCall
+        List<ItemLike> list = new ArrayList<>(Arrays.asList(SelectedContainersList.build().asList().toArray(new ItemLike[0])));
+
+        ContainerOffers = ImmutableSet.copyOf(list);
+
+        return SelectedContainersList;
+    }
+
+    private static ImmutableSet<ItemLike> getContainerOffers() {
+        return ContainerOffers;
     }
 
     private static ImmutableSet<ItemLike> getCageriumOffers() {
-        if (TodeCoins.isCageriumLoaded()) {
+        if (ModListHandler.cageriumLoaded) {
             CageriumOffers = CageriumList;
         }
         else {
-            CageriumOffers = CageriumBackupList;
+            CageriumOffers = VanillaContainerList;
         }
 
         return CageriumOffers;
@@ -439,46 +487,49 @@ public class NumismatistTrades {
                 ImmutableMap.of(
                         // 5 normal, season based trades
                         rarityLevel1, new VillagerTrades.ItemListing[]{
-                                // TODO create a coin box with randomize loot table to offer as a trade
                                 // offer a current season coin for an off season coin
-                                new ItemsSaleSetForItemsBuySetTrade(
+                                new OneSetForOneSetTrade(
                                         OfferedCurrentSeasonCoin, 1,
                                         RequestedOffSeasonCoin, 1,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                        OneSetForOneSetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        OneSetForOneSetTrade.XP_LEVEL_1_SELL, 0),
                                 // offer a current season coin for an off season coin
-                                new ItemsSaleSetForItemsBuySetTrade(
+                                new OneSetForOneSetTrade(
                                         OfferedCurrentSeasonCoin, 1,
                                         RequestedOffSeasonCoin, 1,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
+                                        OneSetForOneSetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        OneSetForOneSetTrade.XP_LEVEL_1_SELL, 0),
                                 // offer an off season coin for a current season coin
-                                new ItemsSaleSetForItemsBuySetTrade(
+                                new OneSetForOneSetTrade(
                                         OfferedOffSeasonCoin, 1,
                                         RequestedCurrentSeasonCoin, 1,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                                // offer a wallet for a current season coin
-                                new ItemsSaleSetForItemsBuySetTrade(
-                                        OfferedWallets, 1,
-                                        RequestedCurrentSeasonCoin, 2,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0),
-                                // offer a wallet for an off season coin
-                                new ItemsSaleSetForItemsBuySetTrade(
-                                        OfferedWallets, 1,
-                                        RequestedOffSeasonCoin, 2,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0)
+                                        OneSetForOneSetTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        OneSetForOneSetTrade.XP_LEVEL_1_SELL, 0),
+                                // offer a container for 2 current season coins
+                                new OneSetForTwoSetsTrade(
+                                        ContainerOffers, 1,
+                                        OfferedCurrentSeasonCoin, 1,
+                                        RequestedCurrentSeasonCoin, 1,
+                                        OneSetForTwoSetsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        OneSetForTwoSetsTrade.XP_LEVEL_1_SELL, 0),
+                                // offer a coin pack for 2 off season coins
+                                new LootBoxForTwoRequestSetsTrade(
+                                        Items.TRAPPED_CHEST.getDefaultInstance(), "tooltips.collectible_coin_pack",
+                                        ModBuiltInLootTables.MYSTERY_COIN_PACK,
+                                        OfferedOffSeasonCoin, 1,
+                                        RequestedOffSeasonCoin, 1,
+                                        LootBoxForTwoRequestSetsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        LootBoxForTwoRequestSetsTrade.XP_LEVEL_1_SELL, 0)
                         },
                         // 1 rare, season based trade
                         rarityLevel2, new VillagerTrades.ItemListing[]{
-                                // offer a wallet for a current season coin
-                                new ItemsSaleSetForItemsBuySetTrade(
+                                // offer a Cagerium listing item for a current season coin
+                                new OneSetForTwoSetsTrade(
                                         CageriumOffers, 1,
-                                        RequestedCurrentSeasonCoin, 10,
-                                        ItemsSaleSetForItemsBuySetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        ItemsSaleSetForItemsBuySetTrade.XP_LEVEL_1_SELL, 0)
+                                        RequestedCurrentSeasonCoin, 1,
+                                        RequestedOffSeasonCoin, 1,
+                                        OneSetForTwoSetsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        OneSetForTwoSetsTrade.XP_LEVEL_1_SELL, 0)
                         }));
     }
 }

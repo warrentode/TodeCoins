@@ -6,6 +6,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemConditions;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import net.warrentode.todecoins.loot.conditions.ModCheckCondition;
 import net.warrentode.todecoins.loot.conditions.curio.CodFishCharmCondition;
 import net.warrentode.todecoins.loot.conditions.curio.PufferfishCharmCondition;
 import net.warrentode.todecoins.loot.conditions.curio.SalmonFishCharmCondition;
@@ -27,6 +28,10 @@ public class ModLootItemConditions extends LootItemConditions {
             () -> new LootItemConditionType(new SalmonFishCharmCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> TROPICAL_FISH_CHARM_CONDITION = REGISTER.register("tropical_fish_charm_condition",
             () -> new LootItemConditionType(new TropicalFishCharmCondition.Serializer()));
+
+    public static final RegistryObject<LootItemConditionType> MODLOADED_CONDITION = REGISTER.register("modloaded_condition",
+            () -> new LootItemConditionType(new ModCheckCondition.Serializer()));
+
     public static final RegistryObject<LootItemConditionType> BLOCKTAG_CONDITION = REGISTER.register("blocktag_condition",
             () -> new LootItemConditionType(new BlockTagCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> ENTITY_TYPE_TAG_CONDITION = REGISTER.register("entity_type_tag_condition",

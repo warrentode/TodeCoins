@@ -43,6 +43,7 @@ import static net.warrentode.todecoins.attribute.ModAttributes.CHR_MODIFIER_NAME
 import static net.warrentode.todecoins.attribute.ModAttributes.CHR_MODIFIER_UUID;
 
 public class Curios {
+
     /**
      * Gets the stack in the Belt Slot
      **/

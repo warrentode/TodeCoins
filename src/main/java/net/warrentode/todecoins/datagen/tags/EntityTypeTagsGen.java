@@ -35,6 +35,21 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WARDEN)
                 .add(EntityType.WITHER);
+        tag(ForgeTags.EntityTypes.ILLAGERS)
+                .addTag(ForgeTags.EntityTypes.WITCH_TYPES)
+                .addTag(ForgeTags.EntityTypes.VEX_TYPES)
+                .addTag(ForgeTags.EntityTypes.RAVAGER_TYPES)
+                .addTag(ForgeTags.EntityTypes.EVOKER_TYPES)
+                .addTag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
+                .addTag(ForgeTags.EntityTypes.PILLAGER_TYPES)
+                .addTag(ForgeTags.EntityTypes.RAVAGER_TYPES)
+                .addTag(ForgeTags.EntityTypes.VINDICATOR_TYPES);
+        tag(ForgeTags.EntityTypes.ZOMBIES)
+                .addTag(ForgeTags.EntityTypes.ZOMBIE_TYPES)
+                .addTag(ForgeTags.EntityTypes.ZOMBIE_VILLAGER_TYPES)
+                .addTag(ForgeTags.EntityTypes.DROWNED_TYPES)
+                .addTag(ForgeTags.EntityTypes.HUSK_TYPES)
+                .addTag(ForgeTags.EntityTypes.ZOGLIN_TYPES);
         tag(ForgeTags.EntityTypes.DROPS_CURRENCY)
                 .addTag(ForgeTags.EntityTypes.BOSSES)
                 .addTag(ForgeTags.EntityTypes.BLAZE_TYPES)
