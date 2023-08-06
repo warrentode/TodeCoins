@@ -15,22 +15,31 @@ public class ModTags {
         public static final TagKey<Block> STORAGE_BLOCKS = modBlockTag("storage_blocks");
         public static final TagKey<Block> CURRENCY_BLOCKS = modBlockTag("storage_blocks/currency_blocks");
         public static final TagKey<Block> JOB_BLOCKS = modBlockTag("job_blocks");
+        public static final TagKey<Block> DROPS_FOUR_LEAF_CLOVER = modBlockTag("drops_four_leaf_clover");
     }
 
     public static class Items {
         public static final TagKey<Item> WALLETS = modItemTag("wallets");
         public static final TagKey<Item> BUNDLES = modItemTag("bundles");
         public static final TagKey<Item> SHULKER_BOXES = modItemTag("shulker_boxes");
-        public static final TagKey<Item> BANKNOTES = modItemTag("banknotes");
-        public static final TagKey<Item> COINS = modItemTag("coins");
+
         public static final TagKey<Item> CURRENCY = modItemTag("currency");
+        public static final TagKey<Item> BANKNOTES = modItemTag("currency/banknotes");
+        public static final TagKey<Item> COINS = modItemTag("currency/coins");
+
         public static final TagKey<Item> CURRENCY_MATERIALS = modItemTag("currency_materials");
         public static final TagKey<Item> CURRENCY_STAMPS = modItemTag("currency_stamps");
 
         public static final TagKey<Item> COLLECTIBLE_COINS = modItemTag("collectible_coins");
-        public static final TagKey<Item> HERO_COIN_SET = modItemTag("hero_coin_set");
-        public static final TagKey<Item> PIGLIN_COIN_SET = modItemTag("piglin_coin_set");
-        public static final TagKey<Item> ENDERMAN_COIN_SET = modItemTag("enderman_coin_set");
+        public static final TagKey<Item> BIRTHDAY_COIN_SET = modItemTag("collectible_coins/birthday_coin_set");
+        public static final TagKey<Item> CHRISTMAS_COIN_SET = modItemTag("collectible_coins/christmas_coin_set");
+        public static final TagKey<Item> HALLOWEEN_COIN_SET = modItemTag("collectible_coins/halloween_coin_set");
+        public static final TagKey<Item> PATRON_COIN_SET = modItemTag("collectible_coins/patron_coin_set");
+        public static final TagKey<Item> CARNATION_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/carnation_patron_coin_set");
+        public static final TagKey<Item> COSMOS_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/cosmos_patron_coin_set");
+        public static final TagKey<Item> HERO_COIN_SET = modItemTag("collectible_coins/hero_coin_set");
+        public static final TagKey<Item> PIGLIN_COIN_SET = modItemTag("collectible_coins/piglin_coin_set");
+        public static final TagKey<Item> ENDERMAN_COIN_SET = modItemTag("collectible_coins/enderman_coin_set");
 
         public static final TagKey<Item> TEXTILES = modItemTag("textiles");
         public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");
@@ -40,6 +49,7 @@ public class ModTags {
         public static final TagKey<Item> CURRENCY_PAPER = modItemTag("textiles/currency_paper");
 
         public static final TagKey<Item> GEMS = modItemTag("gems");
+        public static final TagKey<Item> JAR_PLACEABLE = modItemTag("jar_placeable");
 
         public static final TagKey<Item> NUGGETS = modItemTag("nuggets");
         public static final TagKey<Item> COPPER_NUGGET = modItemTag("nuggets/copper");

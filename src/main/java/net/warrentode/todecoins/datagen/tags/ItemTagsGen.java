@@ -31,7 +31,7 @@ public class ItemTagsGen extends ItemTagsProvider {
 
     private void registerSupplementariesTags() {
         tag(SupplementariesTags.Items.COOKIES)
-                .addTag(ForgeTags.Items.CURRENCY);
+                .addTag(ModTags.Items.JAR_PLACEABLE);
     }
 
     private void registerCuriosTags() {
@@ -52,9 +52,37 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.JAR_PLACEABLE)
+                .addTag(ModTags.Items.COLLECTIBLE_COINS)
+                .addTag(ForgeTags.Items.CURRENCY);
         tag(ModTags.Items.COLLECTIBLE_COINS)
+                .addTag(ModTags.Items.BIRTHDAY_COIN_SET)
+                .addTag(ModTags.Items.HALLOWEEN_COIN_SET)
+                .addTag(ModTags.Items.CHRISTMAS_COIN_SET)
+                .addTag(ModTags.Items.PATRON_COIN_SET)
                 .addTag(ModTags.Items.HERO_COIN_SET)
-                .addTag(ModTags.Items.PIGLIN_COIN_SET);
+                .addTag(ModTags.Items.PIGLIN_COIN_SET)
+                .addTag(ModTags.Items.ENDERMAN_COIN_SET);
+        tag(ModTags.Items.CHRISTMAS_COIN_SET)
+                .add(ModItems.CHRISTMAS_COIN_2023.get());
+        tag(ModTags.Items.HALLOWEEN_COIN_SET)
+                .add(ModItems.HALLOWEEN_COIN_2023.get());
+        tag(ModTags.Items.BIRTHDAY_COIN_SET)
+                .add(ModItems.BIRTHDAY_COIN_2023.get());
+        tag(ModTags.Items.PATRON_COIN_SET)
+                .addTag(ModTags.Items.CARNATION_PATRON_COIN_SET)
+                .addTag(ModTags.Items.COSMOS_PATRON_COIN_SET);
+        tag(ModTags.Items.CARNATION_PATRON_COIN_SET)
+                .add(ModItems.MARSHALL_NASH_CARNATION_COIN.get())
+                .add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get());
+        tag(ModTags.Items.COSMOS_PATRON_COIN_SET)
+                .add(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
+                .add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
+        tag(ModTags.Items.ENDERMAN_COIN_SET)
+                .add(ModItems.COPPER_ENDERMAN_COIN.get())
+                .add(ModItems.IRON_ENDERMAN_COIN.get())
+                .add(ModItems.GOLD_ENDERMAN_COIN.get())
+                .add(ModItems.NETHERITE_ENDERMAN_COIN.get());
         tag(ModTags.Items.PIGLIN_COIN_SET)
                 .add(ModItems.COPPER_PIGLIN_COIN.get())
                 .add(ModItems.IRON_PIGLIN_COIN.get())
@@ -340,7 +368,8 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ForgeTags.Items.COINS)
                 .addTag(ModTags.Items.COINS);
         tag(ForgeTags.Items.PIGLIN_BARTER_ITEMS).add(
-                ModItems.NETHER_GOLD_COIN.get()
+                ModItems.NETHER_GOLD_COIN.get(),
+                ModItems.NETHERITE_PIGLIN_COIN.get()
         );
     }
 }

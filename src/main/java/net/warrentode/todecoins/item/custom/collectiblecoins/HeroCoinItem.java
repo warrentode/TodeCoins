@@ -27,7 +27,7 @@ public class HeroCoinItem extends CollectibleCoin {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.hero_coin.hover").withStyle(ChatFormatting.BLUE));
+        tooltips.add(Component.translatable("tooltips.collectible_hero_coin.hover").withStyle(ChatFormatting.BLUE));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

@@ -11,7 +11,6 @@ import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.warrentode.todecoins.datagen.loot.*;
-import net.warrentode.todecoins.loot.ModLootContextParamSets;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -26,8 +25,8 @@ public class ModLootTableGenProvider extends LootTableProvider {
             Pair.of(ModChestLootTablesGen::new, LootContextParamSets.CHEST),
             Pair.of(ModBlockLootTablesGen::new, LootContextParamSets.BLOCK),
             Pair.of(ModGiftLootGen::new, LootContextParamSets.GIFT),
-            Pair.of(CurrencyLootTablesGen::new, ModLootContextParamSets.CURRENCY),
-            Pair.of(NetherGoldCoinPiglinBarterLootGen::new, ModLootContextParamSets.NETHER_GOLD_COIN_BARTER)
+            Pair.of(CurrencyLootTablesGen::new, LootContextParamSets.ENTITY),
+            Pair.of(CustomPiglinBarterLootGen::new, LootContextParamSets.PIGLIN_BARTER)
     );
 
     public ModLootTableGenProvider(DataGenerator generator) {

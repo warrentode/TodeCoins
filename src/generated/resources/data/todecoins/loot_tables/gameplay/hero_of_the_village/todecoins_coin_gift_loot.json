@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:gameplay/hero_of_the_village/todecoins_hero_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:birthday_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/todecoins_birthday_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/todecoins_anniversary_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/todecoins_christmas_coin_loot"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

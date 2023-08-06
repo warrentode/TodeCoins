@@ -1,0 +1,200 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_iron",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_gold",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_netherite",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:nether_currency_stamp",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:piglin_banner_pattern",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_pigstep",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_strength"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strong_regeneration"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:invisibility"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strong_strength"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:swiftness"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_regeneration"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_slow_falling"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strong_healing"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_fire_resistance"
+            }
+          ],
+          "name": "minecraft:potion",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:ghast_tear",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:luck"
+            }
+          ],
+          "name": "minecraft:potion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:netherite_nugget",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_star",
+          "quality": 6
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

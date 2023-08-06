@@ -11,6 +11,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import java.util.function.Supplier;
@@ -31,11 +32,12 @@ public class AddLootTableModifier extends LootModifier {
     @SuppressWarnings("deprecation")
     @Nonnull
     @Override
-    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-		LootTable extraTable = context.getLootTable(this.lootTable);
-		extraTable.getRandomItems(context, generatedLoot::add);
+    protected ObjectArrayList<ItemStack> doApply(@NotNull ObjectArrayList<ItemStack> generatedLoot, @NotNull LootContext context) {
+        LootTable extraTable = context.getLootTable(this.lootTable);
+        extraTable.getRandomItems(context, generatedLoot::add);
         return generatedLoot;
     }
+
     @Override
     public Codec<? extends IGlobalLootModifier> codec() {
         return CODEC.get();

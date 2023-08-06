@@ -5,31 +5,41 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.loot.ModBuiltInLootTables;
+import net.warrentode.todecoins.loot.conditions.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-import static net.warrentode.todecoins.TodeCoins.MODID;
-
 public class ModGiftLootGen extends GiftLoot {
-    private static final ResourceLocation BANKER_GIFT = new ResourceLocation(MODID, "gameplay/hero_of_the_village/banker_gift");
-    private static final ResourceLocation LEPRECHAUN_GIFT = new ResourceLocation(MODID, "gameplay/hero_of_the_village/leprechaun_gift");
-    private static final ResourceLocation TODECOINS_HERO_COIN_LOOT = new ResourceLocation(MODID, "gameplay/hero_of_the_village/todecoins_hero_coin_loot");
-
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
-        consumer.accept(TODECOINS_HERO_COIN_LOOT,
+        // injected gift loot table
+        consumer.accept(ModBuiltInLootTables.TODECOINS_HERO_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(ModItems.COPPER_HERO_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.IRON_HERO_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.GOLD_HERO_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.NETHERITE_HERO_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_HERO_COIN.get()).when(SpringCondition.season()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_HERO_COIN.get()).when(SummerCondition.season()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_HERO_COIN.get()).when(AutumnCondition.season()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_HERO_COIN.get()).when(WinterCondition.season()))
                         )
         );
-        consumer.accept(BANKER_GIFT,
+        // injected gift loot table
+        consumer.accept(ModBuiltInLootTables.TODECOINS_COIN_GIFT_LOOT,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HERO_COIN_LOOT))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_LOOT).when(BirthdayCondition.event()))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT).when(AnniversaryCondition.event()))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT).when(ChristmasCondition.event()))
+                        )
+        );
+        // gift loot for mod villagers
+        consumer.accept(ModBuiltInLootTables.BANKER_GIFT,
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
@@ -43,13 +53,10 @@ public class ModGiftLootGen extends GiftLoot {
                                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get()))
                                         .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get()))
                                         .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get()))
-                                        .add(LootItem.lootTableItem(ModItems.COPPER_HERO_COIN.get()))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_HERO_COIN.get()))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_HERO_COIN.get()))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_HERO_COIN.get()))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_COIN_GIFT_LOOT))
                         )
         );
-        consumer.accept(LEPRECHAUN_GIFT,
+        consumer.accept(ModBuiltInLootTables.LEPRECHAUN_GIFT,
                 LootTable.lootTable()
                         .withPool(
                                 LootPool.lootPool()
@@ -62,10 +69,7 @@ public class ModGiftLootGen extends GiftLoot {
                                         .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get()))
                                         .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get()))
                                         .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get()))
-                                        .add(LootItem.lootTableItem(ModItems.COPPER_HERO_COIN.get()))
-                                        .add(LootItem.lootTableItem(ModItems.IRON_HERO_COIN.get()))
-                                        .add(LootItem.lootTableItem(ModItems.GOLD_HERO_COIN.get()))
-                                        .add(LootItem.lootTableItem(ModItems.NETHERITE_HERO_COIN.get()))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_COIN_GIFT_LOOT))
                         )
         );
     }

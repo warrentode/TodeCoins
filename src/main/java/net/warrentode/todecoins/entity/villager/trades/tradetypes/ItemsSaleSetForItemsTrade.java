@@ -34,8 +34,8 @@ public class ItemsSaleSetForItemsTrade implements VillagerTrades.ItemListing {
     private final int xpValue;
     private final float priceMultiplier;
 
-    public ItemsSaleSetForItemsTrade(ImmutableSet<ItemLike> sellItems, int sellItemsCount, ItemStack buyingItem, int buyingItemCount, int maxUses, int xpValue) {
-        this(sellItems, sellItemsCount, buyingItem, buyingItemCount, maxUses, xpValue, xpValue);
+    public ItemsSaleSetForItemsTrade(ImmutableSet<ItemLike> sellItem, int sellItemCount, ItemStack buyItems, int buyItemsCount, int maxUses, int xpValue) {
+        this(sellItem, sellItemCount, buyItems, buyItemsCount, maxUses, xpValue, xpValue);
     }
 
     public ItemsSaleSetForItemsTrade(ImmutableSet<ItemLike> sellItems, int sellItemsCount, ItemStack buyingItem, int buyingItemCount, int maxUses, int xpValue, float priceMultiplier) {

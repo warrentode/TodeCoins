@@ -1,6 +1,11 @@
 {
   "values": [
-    "#todecoins:hero_coin_set",
-    "#todecoins:piglin_coin_set"
+    "#todecoins:collectible_coins/birthday_coin_set",
+    "#todecoins:collectible_coins/halloween_coin_set",
+    "#todecoins:collectible_coins/christmas_coin_set",
+    "#todecoins:collectible_coins/patron_coin_set",
+    "#todecoins:collectible_coins/hero_coin_set",
+    "#todecoins:collectible_coins/piglin_coin_set",
+    "#todecoins:collectible_coins/enderman_coin_set"
   ]
 }

@@ -6,19 +6,39 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "todecoins:copper_hero_coin"
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_hero_copper"
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:iron_hero_coin"
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_hero_iron"
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:gold_hero_coin"
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_hero_gold"
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:netherite_hero_coin"
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_hero_netherite"
         }
       ],
       "rolls": 1.0

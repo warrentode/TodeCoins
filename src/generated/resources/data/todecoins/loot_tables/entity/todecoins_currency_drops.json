@@ -1,0 +1,124 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:entity/coins/todecoins_copper_coin_drops",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:entity/coins/todecoins_iron_coin_drops",
+          "quality": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:entity/coins/todecoins_gold_coin_drops",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:warped_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_nether_gold_coin_drops",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:entity/notes/todecoins_emerald_quarter_bank_note_drops",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:entity/coins/todecoins_netherite_coin_drops",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:entity/notes/todecoins_emerald_half_bank_note_drops",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:entity/notes/todecoins_emerald_bank_note_drops",
+          "quality": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:birthday_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_birthday_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:halloween_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_halloween_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_christmas_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

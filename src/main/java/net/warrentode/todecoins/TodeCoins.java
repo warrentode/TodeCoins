@@ -33,6 +33,7 @@ import net.warrentode.todecoins.gui.coinpressgui.CoinPressScreen;
 import net.warrentode.todecoins.integration.Curios;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModLootModifiers;
+import net.warrentode.todecoins.loot.conditions.ModLootItemConditions;
 import net.warrentode.todecoins.potion.BetterBrewingRecipe;
 import net.warrentode.todecoins.potion.ModPotions;
 import net.warrentode.todecoins.recipe.ModRecipes;
@@ -75,6 +76,7 @@ public class TodeCoins {
         ModPotions.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
+        ModLootItemConditions.register(modEventBus);
 
         curiosLoaded = ModList.get().isLoaded("curios");
     }

@@ -9,8 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.entity.ModEntityTypes;
 import net.warrentode.todecoins.item.custom.*;
-import net.warrentode.todecoins.item.custom.collectiblecoins.HeroCoinItem;
-import net.warrentode.todecoins.item.custom.collectiblecoins.PiglinCoinItem;
+import net.warrentode.todecoins.item.custom.collectiblecoins.*;
 import net.warrentode.todecoins.util.customtabs.ModCreativeModeTabs;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
@@ -90,33 +89,53 @@ public class ModItems {
                     new Item.Properties().tab(ModCreativeModeTabs.TODECOINSTAB)));
 
     // COLLECTIBLE COIN SETS
+    // birthday coin
+    public static final RegistryObject<Item> BIRTHDAY_COIN_2023 = ITEMS.register("collectible_coin_birthday_2023",
+            () -> new BirthdayCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // hero set
-    public static final RegistryObject<Item> COPPER_HERO_COIN = ITEMS.register("copper_hero_coin",
+    public static final RegistryObject<Item> COPPER_HERO_COIN = ITEMS.register("collectible_coin_hero_copper",
             () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> IRON_HERO_COIN = ITEMS.register("iron_hero_coin",
+    public static final RegistryObject<Item> IRON_HERO_COIN = ITEMS.register("collectible_coin_hero_iron",
             () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> GOLD_HERO_COIN = ITEMS.register("gold_hero_coin",
+    public static final RegistryObject<Item> GOLD_HERO_COIN = ITEMS.register("collectible_coin_hero_gold",
             () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> NETHERITE_HERO_COIN = ITEMS.register("netherite_hero_coin",
+    public static final RegistryObject<Item> NETHERITE_HERO_COIN = ITEMS.register("collectible_coin_hero_netherite",
             () -> new HeroCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // piglin set
-    public static final RegistryObject<Item> COPPER_PIGLIN_COIN = ITEMS.register("copper_piglin_coin",
+    public static final RegistryObject<Item> COPPER_PIGLIN_COIN = ITEMS.register("collectible_coin_piglin_copper",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> IRON_PIGLIN_COIN = ITEMS.register("iron_piglin_coin",
+    public static final RegistryObject<Item> IRON_PIGLIN_COIN = ITEMS.register("collectible_coin_piglin_iron",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> GOLD_PIGLIN_COIN = ITEMS.register("gold_piglin_coin",
+    public static final RegistryObject<Item> GOLD_PIGLIN_COIN = ITEMS.register("collectible_coin_piglin_gold",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> NETHERITE_PIGLIN_COIN = ITEMS.register("netherite_piglin_coin",
+    public static final RegistryObject<Item> NETHERITE_PIGLIN_COIN = ITEMS.register("collectible_coin_piglin_netherite",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // enderman set
-    public static final RegistryObject<Item> COPPER_ENDERMAN_COIN = ITEMS.register("copper_enderman_coin",
-            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> IRON_ENDERMAN_COIN = ITEMS.register("iron_enderman_coin",
-            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> GOLD_ENDERMAN_COIN = ITEMS.register("gold_enderman_coin",
-            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> NETHERITE_ENDERMAN_COIN = ITEMS.register("netherite_enderman_coin",
-            () -> new PiglinCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> COPPER_ENDERMAN_COIN = ITEMS.register("collectible_coin_enderman_copper",
+            () -> new EndermanCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_ENDERMAN_COIN = ITEMS.register("collectible_coin_enderman_iron",
+            () -> new EndermanCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_ENDERMAN_COIN = ITEMS.register("collectible_coin_enderman_gold",
+            () -> new EndermanCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_ENDERMAN_COIN = ITEMS.register("collectible_coin_enderman_netherite",
+            () -> new EndermanCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // halloween set
+    public static final RegistryObject<Item> HALLOWEEN_COIN_2023 = ITEMS.register("collectible_coin_halloween_2023",
+            () -> new HalloweenCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // christmas coin
+    public static final RegistryObject<Item> CHRISTMAS_COIN_2023 = ITEMS.register("collectible_coin_christmas_2023",
+            () -> new ChristmasCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // patron carnation anniversary set
+    public static final RegistryObject<Item> MARSHALL_NASH_CARNATION_COIN = ITEMS.register("collectible_coin_carnation_marshall_nash",
+            () -> new CarnationPatronCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> TREVOR_BRANNIGAN_CARNATION_COIN = ITEMS.register("collectible_coin_carnation_trevor_brannigan",
+            () -> new CarnationPatronCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // patron cosmos anniversary set
+    public static final RegistryObject<Item> MARSHALL_NASH_COSMOS_COIN = ITEMS.register("collectible_coin_cosmos_marshall_nash",
+            () -> new CosmosPatronCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> TREVOR_BRANNIGAN_COSMOS_COIN = ITEMS.register("collectible_coin_cosmos_trevor_brannigan",
+            () -> new CosmosPatronCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
