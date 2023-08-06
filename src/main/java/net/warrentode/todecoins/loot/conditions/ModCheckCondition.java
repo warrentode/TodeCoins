@@ -3,7 +3,6 @@ package net.warrentode.todecoins.loot.conditions;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -28,7 +27,6 @@ public class ModCheckCondition implements LootItemCondition {
     }
 
     public boolean test(@NotNull LootContext context) {
-        ServerLevel level = context.getLevel();
         return ModListHandler.isModLoaded(modid);
     }
 

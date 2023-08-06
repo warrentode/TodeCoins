@@ -247,6 +247,14 @@ public class CraftingRecipesGen {
                 .define('#', ForgeTags.Items.ENDONIAN_INGOT)
                 .unlockedBy("has_endonian_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_INGOT.get()))
                 .save(consumer, new ResourceLocation(MODID, "blocks/blocks_from_ingots/endonian_block"));
+        ShapedRecipeBuilder.shaped(ModBlocks.ENDONIAN_BLOCK.get(), 1)
+                .pattern("# #")
+                .pattern(" P ")
+                .pattern("# #")
+                .define('#', Items.CHORUS_FLOWER)
+                .define('P', Items.ENDER_PEARL)
+                .unlockedBy("has_chorus_flower", InventoryChangeTrigger.TriggerInstance.hasItems(Items.CHORUS_FLOWER))
+                .save(consumer, new ResourceLocation(MODID, "blocks/blocks_from_other/endonian_block"));
 
         ShapelessRecipeBuilder.shapeless(ModItems.COPPER_COIN.get(), 9)
                 .requires(ModBlocks.COPPER_COIN_BAG.get())
