@@ -3,11 +3,12 @@
   <groupId>com.github.warrentode</groupId>
   <artifactId>TodeCoins</artifactId>
   <versioning>
-    <latest>1.19.2-1.5.0</latest>
-    <release>1.19.2-1.5.0</release>
+    <latest>1.19.2-1.05.01-ALPHA</latest>
+    <release>1.19.2-1.05.01-ALPHA</release>
     <versions>
       <version>1.19.2-1.5.0</version>
+      <version>1.19.2-1.05.01-ALPHA</version>
     </versions>
-    <lastUpdated>20230806150949</lastUpdated>
+    <lastUpdated>20230806180432</lastUpdated>
   </versioning>
 </metadata>
