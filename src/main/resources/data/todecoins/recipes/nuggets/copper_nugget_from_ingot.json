@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "todecoins:ingots/copper"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "todecoins:copper_nugget"
+  }
+}

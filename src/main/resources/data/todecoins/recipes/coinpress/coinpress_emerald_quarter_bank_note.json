@@ -1,0 +1,17 @@
+{
+  "type": "todecoins:coinpress",
+  "category": "standard_currency",
+  "group": "banknotes",
+  "ingredients": [
+    {
+      "item": "todecoins:currency_stamp"
+    },
+    {
+      "item": "todecoins:emerald_coarse_wove_paper"
+    }
+  ],
+  "result": {
+    "item": "todecoins:emerald_quarter_bank_note",
+    "count": 1
+  }
+}

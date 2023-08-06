@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "currency_block",
+  "ingredients": [
+    {
+      "item": "todecoins:pot_of_gold"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "todecoins:gold_coin_bag"
+  }
+}

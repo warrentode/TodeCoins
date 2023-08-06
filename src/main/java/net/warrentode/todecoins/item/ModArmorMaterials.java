@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
+@SuppressWarnings("SameParameterValue")
 public enum ModArmorMaterials implements ArmorMaterial {
     LUCKY("lucky", 20, new int[]{2, 4, 6, 2}, 25, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F,
             () -> Ingredient.of(ModItems.LUCKY_COIN.get()));
@@ -23,8 +24,10 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final SoundEvent sound;
     private final float toughness;
     private final float knockbackResistance;
+    @SuppressWarnings("deprecation")
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
+   @SuppressWarnings("deprecation")
    ModArmorMaterials(String pName, int pDurabilityMultiplier, int[] pSlotProtections, int pEnchantmentValue, SoundEvent pSound, float pToughness, float pKnockbackResistance, Supplier<Ingredient> pRepairIngredient) {
         this.name = pName;
         this.durabilityMultiplier = pDurabilityMultiplier;

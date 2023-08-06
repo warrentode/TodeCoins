@@ -1,0 +1,17 @@
+{
+  "type": "todecoins:coinpress",
+  "category": "standard_currency",
+  "group": "coins",
+  "ingredients": [
+    {
+      "item": "todecoins:currency_stamp"
+    },
+    {
+      "tag": "todecoins:nuggets/copper"
+    }
+  ],
+  "result": {
+    "item": "todecoins:copper_coin",
+    "count": 2
+  }
+}

@@ -1,17 +1,8 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "todecoins:banknotes",
-      "required": false
-    },
-    {
-      "id": "todecoins:coins",
-      "required": false
-    },
-    {
-      "id": "forge:gems",
-      "required": false
-    }
+    "#todecoins:banknotes",
+    "#todecoins:coins",
+    "#forge:gems"
   ]
 }

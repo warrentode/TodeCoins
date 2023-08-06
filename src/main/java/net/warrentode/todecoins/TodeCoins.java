@@ -23,6 +23,7 @@ import net.warrentode.todecoins.screen.CoinPressScreen;
 import net.warrentode.todecoins.screen.ModMenuTypes;
 import net.warrentode.todecoins.util.BetterBrewingRecipe;
 import net.warrentode.todecoins.villager.ModVillagers;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 @SuppressWarnings("ALL")
@@ -53,7 +54,7 @@ public class TodeCoins {
     }
 
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(()-> {
            ModVillagers.registerPOIs();
         });
@@ -69,7 +70,7 @@ public class TodeCoins {
         }
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
+    private void setup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(()-> {
             // Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,

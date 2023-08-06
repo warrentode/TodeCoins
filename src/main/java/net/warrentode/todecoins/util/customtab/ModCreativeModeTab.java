@@ -3,6 +3,7 @@ package net.warrentode.todecoins.util.customtab;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
 import org.jetbrains.annotations.NotNull;
@@ -26,6 +27,9 @@ public class ModCreativeModeTab extends CreativeModeTab {
         public void fillItemList(final NonNullList<ItemStack> items) {
             items.add(ModItems.FOUR_LEAF_CLOVER.get().getDefaultInstance());
             items.add(ModItems.COPPER_NUGGET.get().getDefaultInstance());
+            items.add(Items.IRON_NUGGET.getDefaultInstance());
+            items.add(Items.GOLD_NUGGET.getDefaultInstance());
+            items.add(ModItems.NETHERITE_NUGGET.get().getDefaultInstance());
             items.add(ModItems.LUCKY_NUGGET.get().getDefaultInstance());
 
             items.add(ModItems.CURRENCY_STAMP.get().getDefaultInstance());
