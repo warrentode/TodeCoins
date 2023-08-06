@@ -1,13 +1,13 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
 license = "GNU_GPL.3"
-issueTrackerURL = "https://github.com/toadie-odie/TodeCoins/issues"
+issueTrackerURL = "https://github.com/warrentode/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "1.19.2-1.4.0"
-displayName = "Tode Coins"
-displayURL = "https://github.com/toadie-odie/TodeCoins"
+version = "1.19.2-1.5.0"
+displayName = "TodeCoins"
+displayURL = "https://github.com/warrentode/TodeCoins"
 logoFile = "logo.png"
 credits = '''
 Special thanks to my sons, and my supporters:

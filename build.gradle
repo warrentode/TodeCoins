@@ -20,6 +20,8 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'maven-publish'
+
 
 mixin {
     add sourceSets.main, "mixins.todecoins.refmap.json"
@@ -27,8 +29,8 @@ mixin {
     showMessageTypes = true
 }
 
-version = '1.19.2-1.4.0'
-group = 'net.warrentode.todecoins'
+version = '1.19.2-1.5.0'
+group = 'com.github.warrentode'
 archivesBaseName = 'todecoins'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -149,4 +151,9 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+wrapper {
+    gradleVersion = "8.1.1"
+    distributionType = Wrapper.DistributionType.ALL
 }
