@@ -7,27 +7,27 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.integration.Curios;
+import net.warrentode.todecoins.integration.ModListHandler;
 import net.warrentode.todecoins.item.custom.CollectibleCoin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class EvokerCoinItem extends CollectibleCoin {
-    public EvokerCoinItem(Properties pProperties) {
+public class IllagerCoinItem extends CollectibleCoin {
+    public IllagerCoinItem(Properties pProperties) {
         super(pProperties);
     }
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createMobHeadCharmProvider(stack);
+        return !ModListHandler.curiosLoaded ? null : Curios.createMobHeadCharmProvider(stack);
     }
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_evoker_coin.hover").withStyle(ChatFormatting.GRAY));
+        tooltips.add(Component.translatable("tooltips.collectible_illager_coin.hover").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

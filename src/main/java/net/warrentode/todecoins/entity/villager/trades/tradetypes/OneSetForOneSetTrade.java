@@ -1,14 +1,16 @@
 package net.warrentode.todecoins.entity.villager.trades.tradetypes;
 
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ItemsForItemsAndItemsTrade implements VillagerTrades.ItemListing {
+public class OneSetForOneSetTrade implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;
     public static final int UNCOMMON_ITEMS_SUPPLY = 3;
@@ -24,23 +26,23 @@ public class ItemsForItemsAndItemsTrade implements VillagerTrades.ItemListing {
     public static final float LOW_TIER_PRICE_MULTIPLIER = 0.05F;
     public static final float HIGH_TIER_PRICE_MULTIPLIER = 0.2F;
 
-    private final ItemStack sellItem;
-    private final int sellItemCount;
-    private final ItemStack buyingItemA;
-    private final int buyingItemCountA;
-    private final ItemStack buyingItemB;
-    private final int buyingItemCountB;
+    private final ImmutableSet<ItemLike> sellItems;
+    private final int sellItemsCount;
+    private final ImmutableSet<ItemLike> buyItems;
+    private final int buyItemsCount;
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
 
-    public ItemsForItemsAndItemsTrade(ItemStack sellItem, int sellItemCount, ItemStack buyingItemA, int buyingItemCountA, ItemStack buyingItemB, int buyingItemCountB, int maxUses, int xpValue, float priceMultiplier) {
-        this.sellItem = sellItem;
-        this.sellItemCount = sellItemCount;
-        this.buyingItemA = buyingItemA;
-        this.buyingItemCountA = buyingItemCountA;
-        this.buyingItemB = buyingItemB;
-        this.buyingItemCountB = buyingItemCountB;
+    public OneSetForOneSetTrade(ImmutableSet<ItemLike> sellItems, int sellingItemCount, ImmutableSet<ItemLike> buyItems, int buyItemsCount, int maxUses, int xpValue) {
+        this(sellItems, sellingItemCount, buyItems, buyItemsCount, maxUses, xpValue, xpValue);
+    }
+
+    public OneSetForOneSetTrade(ImmutableSet<ItemLike> sellItems, int sellingItemCount, ImmutableSet<ItemLike> buyItems, int buyItemsCount, int maxUses, int xpValue, float priceMultiplier) {
+        this.sellItems = sellItems;
+        this.sellItemsCount = sellingItemCount;
+        this.buyItems = buyItems;
+        this.buyItemsCount = buyItemsCount;
         this.maxUses = maxUses;
         this.xpValue = xpValue;
         this.priceMultiplier = priceMultiplier;
@@ -49,9 +51,8 @@ public class ItemsForItemsAndItemsTrade implements VillagerTrades.ItemListing {
     @Nullable
     @Override
     public MerchantOffer getOffer(@NotNull Entity trader, @NotNull RandomSource source) {
-        ItemStack sellStack = new ItemStack(this.sellItem.getItem(), this.sellItemCount);
-        ItemStack buyStackA = new ItemStack(this.buyingItemA.getItem(), this.buyingItemCountA);
-        ItemStack buyStackB = new ItemStack(this.buyingItemB.getItem(), this.buyingItemCountB);
-        return new MerchantOffer(buyStackA, buyStackB, sellStack, this.maxUses, this.xpValue, this.priceMultiplier);
+        ItemStack sellSet = new ItemStack(this.sellItems.asList().get(source.nextInt(sellItems.size() - 1)).asItem(), this.sellItemsCount);
+        ItemStack buySet = new ItemStack(this.buyItems.asList().get(source.nextInt(buyItems.size() - 1)).asItem(), this.buyItemsCount);
+        return new MerchantOffer(buySet, sellSet, this.maxUses, this.xpValue, this.priceMultiplier);
     }
 }

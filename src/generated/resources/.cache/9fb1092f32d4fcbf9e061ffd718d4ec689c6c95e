@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-30T02:09:11.2674139	Recipes
+// 1.19.2	2023-08-03T13:38:55.9030021	Recipes
 25561f49da0672c7be7c439a74615a3093703602 data/todecoins/advancements/recipes/misc/ingots/ingot_from_nuggets/copper_ingot.json
 22aec5fe4067583775201e82c0cb9046c61b2395 data/todecoins/advancements/recipes/misc/ingots/ingot_from_nuggets/netherite_ingot.json
 e0959ba3e75b37067194900940d1b4342225892a data/todecoins/advancements/recipes/misc/nuggets/nugget_from_coins/gold_nugget.json
@@ -8,6 +8,7 @@ e0959ba3e75b37067194900940d1b4342225892a data/todecoins/advancements/recipes/mis
 4573f36d7bca079979b25e6f20f70a3aac891a65 data/todecoins/advancements/recipes/todecoinstab/armor/lucky_fabric/lucky_pants.json
 74ff9225dd492819edc20aac089079d1b01f2df3 data/todecoins/advancements/recipes/todecoinstab/armor/lucky_fabric/lucky_shirt.json
 61674df4cf3b0ca98f8f24bee7131508baaf7132 data/todecoins/advancements/recipes/todecoinstab/blocks/blocks_from_ingots/endonian_block.json
+6d280776d72123e715a15dab414ee9bb244f63d9 data/todecoins/advancements/recipes/todecoinstab/blocks/blocks_from_other/endonian_block.json
 e53db7341152e59f043adbfbdcad6c9d75928a86 data/todecoins/advancements/recipes/todecoinstab/coinpress/copper_coin.json
 922b820265a9756bc21cd67527c03aad00971a88 data/todecoins/advancements/recipes/todecoinstab/coinpress/emerald_bank_note.json
 fb22264790260aff61f1ae0917744833a3e47c98 data/todecoins/advancements/recipes/todecoinstab/coinpress/emerald_half_bank_note.json
@@ -65,6 +66,7 @@ a6e376e369b3e6be32a9ad8ec356357552a4f61b data/todecoins/advancements/recipes/tod
 9c48223cf68dcf156d980ff1d9994a5673822dbf data/todecoins/recipes/armor/lucky_fabric/lucky_pants.json
 011ef8bb9baa5f272d66540b3d15089aa32cff73 data/todecoins/recipes/armor/lucky_fabric/lucky_shirt.json
 5e7fe97bd1bb7612f17eaaacffb61260b992e418 data/todecoins/recipes/blocks/blocks_from_ingots/endonian_block.json
+a87168102c1178b54626be5d56c65a90663bf6d2 data/todecoins/recipes/blocks/blocks_from_other/endonian_block.json
 6131608fb20de9cd897a00d7b0a77ba5af319307 data/todecoins/recipes/coinpress/copper_coin.json
 aab85accfc56462031b59d5091f594b2cfe9b16d data/todecoins/recipes/coinpress/emerald_bank_note.json
 2de29676570581dbd1c6eabe82f1bc547add0114 data/todecoins/recipes/coinpress/emerald_half_bank_note.json

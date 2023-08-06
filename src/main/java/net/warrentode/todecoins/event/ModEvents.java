@@ -1,7 +1,9 @@
 package net.warrentode.todecoins.event;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
@@ -17,6 +19,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -27,23 +30,22 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.attribute.ModAttributes;
 import net.warrentode.todecoins.attribute.PlayerCharisma;
 import net.warrentode.todecoins.attribute.PlayerCharismaProvider;
 import net.warrentode.todecoins.entity.ModEntityTypes;
 import net.warrentode.todecoins.integration.Curios;
+import net.warrentode.todecoins.integration.ModListHandler;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.NotNull;
-import top.theillusivec4.curios.api.CuriosApi;
-import top.theillusivec4.curios.api.SlotResult;
 
-import java.util.Optional;
+import java.util.List;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
@@ -61,10 +63,29 @@ public class ModEvents {
         @SubscribeEvent
         public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
             ItemStack stack = event.getCrafting();
+            Player player = event.getEntity();
             if (stack.is(ModTags.Items.NO_AI_EGGS)) {
                 final CompoundTag entityTag = stack.getOrCreateTagElement("EntityTag");
                 entityTag.putBoolean("NoAI", true);
             }
+        }
+
+        @SubscribeEvent
+        public static ItemTooltipEvent onItemTooltip(ItemTooltipEvent event) {
+            ItemStack stack = event.getItemStack();
+            Player player = event.getEntity();
+            List<Component> tooltip = event.getToolTip();
+
+            if (stack.getItem() instanceof SpawnEggItem) {
+
+                final CompoundTag stackTag = stack.getTagElement("EntityTag");
+
+                if (player != null && stackTag != null && stackTag.getBoolean("NoAI")) {
+                    tooltip.add(Component.translatable("tooltips.no_ai_spawn_egg")
+                            .withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
+                }
+            }
+            return event;
         }
 
         @SubscribeEvent
@@ -77,16 +98,21 @@ public class ModEvents {
                 ItemStack stack = Curios.getCharmSlot(player);
                 EntityType<?> entitytype = lookingEntity.getType();
                 if (entitytype.is(ForgeTags.EntityTypes.CREEPER_TYPES) && (stack != null && stack.is(ModTags.Items.CREEPER_COIN_SET))) {
-                    event.modifyVisibility(0.5D);
-                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0), lookingEntity);
+                    event.modifyVisibility(0.25D);
+                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
                 }
-                else if (entitytype.is(ForgeTags.EntityTypes.DROWNED_TYPES) && (stack != null && stack.is(ModTags.Items.DROWNED_COIN_SET))) {
-                    event.modifyVisibility(0.5D);
-                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0), lookingEntity);
+                else if (entitytype.is(ForgeTags.EntityTypes.ZOMBIES) && (stack != null &&
+                        (stack.is(ModTags.Items.DROWNED_COIN_SET) || stack.is(ModTags.Items.HUSK_COIN_SET)))) {
+                    event.modifyVisibility(0.25D);
+                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
                 }
-                else if (entitytype.is(ForgeTags.EntityTypes.EVOKER_TYPES) && (stack != null && stack.is(ModTags.Items.EVOKER_COIN_SET))) {
-                    event.modifyVisibility(0.5D);
-                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0), lookingEntity);
+                else if (entitytype.is(ForgeTags.EntityTypes.ILLAGERS) && (stack != null && stack.is(ModTags.Items.EVOKER_COIN_SET))) {
+                    event.modifyVisibility(0.25D);
+                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
+                }
+                else if (entitytype.is(ForgeTags.EntityTypes.GHAST_TYPES) && (stack != null && stack.is(ModTags.Items.GHAST_COIN_SET))) {
+                    event.modifyVisibility(0.25D);
+                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
                 }
             }
         }
@@ -130,16 +156,16 @@ public class ModEvents {
                     DamageSource damageSource = player.getLastDamageSource();
                     ItemStack luckyCoin = null;
 
-                    if (TodeCoins.isCuriosLoaded()) {
-                        Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.LUCKY_COIN.get());
-                        if (optional.isPresent()) {
-                            luckyCoin = optional.get().stack();
+                    if (ModListHandler.curiosLoaded) {
+                        ItemStack stack = Curios.getCharmSlot(player);
+                        if (stack != null && stack.getItem().equals(ModItems.LUCKY_COIN.get())) {
+                            luckyCoin = stack;
                         }
                         else {
                             for (int i = 0; i < playerInventory.getContainerSize(); ++i) {
-                                ItemStack stack = playerInventory.getItem(i);
-                                if (stack.getItem().equals(ModItems.LUCKY_COIN.get())) {
-                                    luckyCoin = stack;
+                                ItemStack inventoryItem = playerInventory.getItem(i);
+                                if (inventoryItem.getItem().equals(ModItems.LUCKY_COIN.get())) {
+                                    luckyCoin = inventoryItem;
                                     break;
                                 }
                             }
@@ -147,9 +173,9 @@ public class ModEvents {
                     }
                     else {
                         for (int i = 0; i < playerInventory.getContainerSize(); ++i) {
-                            ItemStack stack = playerInventory.getItem(i);
-                            if (stack.getItem().equals(ModItems.LUCKY_COIN.get())) {
-                                luckyCoin = stack;
+                            ItemStack inventoryItem = playerInventory.getItem(i);
+                            if (inventoryItem.getItem().equals(ModItems.LUCKY_COIN.get())) {
+                                luckyCoin = inventoryItem;
                                 break;
                             }
                         }
@@ -184,43 +210,22 @@ public class ModEvents {
                 if (entity instanceof ServerPlayer player) {
                     Inventory playerInventory = player.getInventory();
                     DamageSource damageSource = player.getLastDamageSource();
+                    ItemStack stack = Curios.getCharmSlot(player);
                     ItemStack poisonCharm = null;
                     ItemStack flameCharm = null;
                     ItemStack slownessCharm = null;
 
-                    if (TodeCoins.isCuriosLoaded()) {
-                        Optional<SlotResult> poisonOption1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_BEE_COIN.get());
-                        Optional<SlotResult> poisonOption2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_BEE_COIN.get());
-                        Optional<SlotResult> poisonOption3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_BEE_COIN.get());
-                        Optional<SlotResult> poisonOption4 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_BEE_COIN.get());
-                        Optional<SlotResult> poisonOption5 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_CAVE_SPIDER_COIN.get());
-                        Optional<SlotResult> poisonOption6 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_CAVE_SPIDER_COIN.get());
-                        Optional<SlotResult> poisonOption7 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_CAVE_SPIDER_COIN.get());
-                        Optional<SlotResult> poisonOption8 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_CAVE_SPIDER_COIN.get());
-
-                        if (poisonOption1.isPresent()) {
-                            poisonCharm = poisonOption1.get().stack();
-                        }
-                        else if (poisonOption2.isPresent()) {
-                            poisonCharm = poisonOption2.get().stack();
-                        }
-                        else if (poisonOption3.isPresent()) {
-                            poisonCharm = poisonOption3.get().stack();
-                        }
-                        else if (poisonOption4.isPresent()) {
-                            poisonCharm = poisonOption4.get().stack();
-                        }
-                        else if (poisonOption5.isPresent()) {
-                            poisonCharm = poisonOption5.get().stack();
-                        }
-                        else if (poisonOption6.isPresent()) {
-                            poisonCharm = poisonOption6.get().stack();
-                        }
-                        else if (poisonOption7.isPresent()) {
-                            poisonCharm = poisonOption7.get().stack();
-                        }
-                        else if (poisonOption8.isPresent()) {
-                            poisonCharm = poisonOption8.get().stack();
+                    if (ModListHandler.curiosLoaded) {
+                        if (stack != null) {
+                            if (stack.is(ModTags.Items.BEE_COIN_SET) || stack.is(ModTags.Items.CAVE_SPIDER_COIN_SET)) {
+                                poisonCharm = stack;
+                            }
+                            if (stack.is(ModTags.Items.BLAZE_COIN_SET)) {
+                                flameCharm = stack;
+                            }
+                            if (stack.is(ModTags.Items.SPIDER_COIN_SET)) {
+                                slownessCharm = stack;
+                            }
                         }
 
                         if (poisonCharm != null && target != null) {
@@ -241,26 +246,6 @@ public class ModEvents {
                                 }
                             }
                         }
-
-
-                        Optional<SlotResult> flameOption1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_BLAZE_COIN.get());
-                        Optional<SlotResult> flameOption2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_BLAZE_COIN.get());
-                        Optional<SlotResult> flameOption3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_BLAZE_COIN.get());
-                        Optional<SlotResult> flameOption4 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_BLAZE_COIN.get());
-
-                        if (flameOption1.isPresent()) {
-                            flameCharm = flameOption1.get().stack();
-                        }
-                        else if (flameOption2.isPresent()) {
-                            flameCharm = flameOption2.get().stack();
-                        }
-                        else if (flameOption3.isPresent()) {
-                            flameCharm = flameOption3.get().stack();
-                        }
-                        else if (flameOption4.isPresent()) {
-                            flameCharm = flameOption4.get().stack();
-                        }
-
                         if (flameCharm != null && target != null) {
                             if (target instanceof LivingEntity) {
                                 int i = 0;
@@ -279,45 +264,25 @@ public class ModEvents {
                                 }
                             }
                         }
-                    }
+                        if (slownessCharm != null && target != null) {
+                            MobEffect slowEffect = MobEffects.MOVEMENT_SLOWDOWN;
 
+                            if (target instanceof LivingEntity) {
+                                int i = 0;
+                                if (player.level.getDifficulty() == Difficulty.EASY) {
+                                    i = 5;
+                                }
+                                else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                    i = 10;
+                                }
+                                else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                    i = 20;
+                                }
 
-                    Optional<SlotResult> slownessOption1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_SPIDER_COIN.get());
-                    Optional<SlotResult> slownessOption2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_SPIDER_COIN.get());
-                    Optional<SlotResult> slownessOption3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_SPIDER_COIN.get());
-                    Optional<SlotResult> slownessOption4 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_SPIDER_COIN.get());
-
-                    MobEffect effect = MobEffects.MOVEMENT_SLOWDOWN;
-
-                    if (slownessOption1.isPresent()) {
-                        slownessCharm = slownessOption1.get().stack();
-                    }
-                    else if (slownessOption2.isPresent()) {
-                        slownessCharm = slownessOption2.get().stack();
-                    }
-                    else if (slownessOption3.isPresent()) {
-                        slownessCharm = slownessOption3.get().stack();
-                    }
-                    else if (slownessOption4.isPresent()) {
-                        slownessCharm = slownessOption4.get().stack();
-                    }
-
-                    if (slownessCharm != null && target != null) {
-                        if (target instanceof LivingEntity) {
-                            int i = 0;
-                            if (player.level.getDifficulty() == Difficulty.EASY) {
-                                i = 5;
-                            }
-                            else if (player.level.getDifficulty() == Difficulty.NORMAL) {
-                                i = 10;
-                            }
-                            else if (player.level.getDifficulty() == Difficulty.HARD) {
-                                i = 20;
-                            }
-
-                            if (i > 0) {
                                 if (i > 0) {
-                                    ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, i * 20, 0), target);
+                                    if (i > 0) {
+                                        ((LivingEntity) target).addEffect(new MobEffectInstance(slowEffect, i * 20, 0), target);
+                                    }
                                 }
                             }
                         }

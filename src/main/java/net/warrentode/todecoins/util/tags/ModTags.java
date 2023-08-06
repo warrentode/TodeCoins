@@ -71,8 +71,10 @@ public class ModTags {
         public static final TagKey<Item> GLOW_SQUID_COIN_SET = modItemTag("collectible_coins/entity_coins/glow_squid_coin_set");
         public static final TagKey<Item> GOAT_COIN_SET = modItemTag("collectible_coins/entity_coins/goat_coin_set");
         public static final TagKey<Item> GUARDIAN_COIN_SET = modItemTag("collectible_coins/entity_coins/guardian_coin_set");
+        public static final TagKey<Item> GHAST_COIN_SET = modItemTag("collectible_coins/entity_coins/ghast_coin_set");
         public static final TagKey<Item> HOGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/hoglin_coin_set");
         public static final TagKey<Item> HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/horse_coin_set");
+        public static final TagKey<Item> HUSK_COIN_SET = modItemTag("collectible_coins/entity_coins/husk_coin_set");
         public static final TagKey<Item> IRON_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/iron_golem_coin_set");
         public static final TagKey<Item> LLAMA_COIN_SET = modItemTag("collectible_coins/entity_coins/llama_coin_set");
         public static final TagKey<Item> MOOBLOOM_COIN_SET = modItemTag("collectible_coins/entity_coins/moobloom_coin_set");

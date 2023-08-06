@@ -35,15 +35,15 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
         ));
         add("add_todecoins_bonus_fishing_table", new AddLootTableModifier(
                 new LootItemCondition[]{
-                        LootTableIdCondition.builder(ModBuiltInLootTables.TODECOINS_BONUS_FISHING).build()
+                        LootTableIdCondition.builder(BuiltInLootTables.FISHING).build()
                 },
-                BuiltInLootTables.FISHING
+                ModBuiltInLootTables.TODECOINS_BONUS_FISHING
         ));
         add("add_todecoins_fishing_coins", new AddLootTableModifier(
                 new LootItemCondition[]{
-                        LootTableIdCondition.builder(ModBuiltInLootTables.TODECOINS_FISHING_COINS).build()
+                        LootTableIdCondition.builder(BuiltInLootTables.FISHING_TREASURE).build()
                 },
-                BuiltInLootTables.FISHING_TREASURE
+                ModBuiltInLootTables.TODECOINS_FISHING_COINS
         ));
         add("add_loot_chest_currency", new AddLootTableModifier(
                 new LootItemCondition[]{

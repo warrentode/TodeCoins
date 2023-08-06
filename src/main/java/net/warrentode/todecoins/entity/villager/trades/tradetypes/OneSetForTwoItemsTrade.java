@@ -10,7 +10,7 @@ import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ItemsSaleSetForItemsAndItemsTrade implements VillagerTrades.ItemListing {
+public class OneSetForTwoItemsTrade implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;
     public static final int UNCOMMON_ITEMS_SUPPLY = 3;
@@ -36,11 +36,11 @@ public class ItemsSaleSetForItemsAndItemsTrade implements VillagerTrades.ItemLis
     private final int xpValue;
     private final float priceMultiplier;
 
-    public ItemsSaleSetForItemsAndItemsTrade(ImmutableSet<ItemLike> sellItems, int sellItemsCount, ItemStack buyItemA, int buyItemCountA, ItemStack buyItemB, int buyItemCountB, int maxUses, int xpValue) {
+    public OneSetForTwoItemsTrade(ImmutableSet<ItemLike> sellItems, int sellItemsCount, ItemStack buyItemA, int buyItemCountA, ItemStack buyItemB, int buyItemCountB, int maxUses, int xpValue) {
         this(sellItems, sellItemsCount, buyItemA, buyItemCountA, buyItemB, buyItemCountB, maxUses, xpValue, xpValue);
     }
 
-    public ItemsSaleSetForItemsAndItemsTrade(ImmutableSet<ItemLike> sellItems, int sellItemsCount, ItemStack buyItemA, int buyItemCountA, ItemStack buyItemB, int buyItemCountB, int maxUses, int xpValue, float priceMultiplier) {
+    public OneSetForTwoItemsTrade(ImmutableSet<ItemLike> sellItems, int sellItemsCount, ItemStack buyItemA, int buyItemCountA, ItemStack buyItemB, int buyItemCountB, int maxUses, int xpValue, float priceMultiplier) {
         this.sellItems = sellItems;
         this.sellItemsCount = sellItemsCount;
         this.buyItemA = buyItemA;

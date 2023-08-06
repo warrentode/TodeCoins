@@ -12,6 +12,8 @@ public class ForgeTags {
     public static class EntityTypes {
         public static final TagKey<EntityType<?>> BOSSES = forgeEntityTypeTag("bosses");
         public static final TagKey<EntityType<?>> DROPS_CURRENCY = forgeEntityTypeTag("drops_currency");
+        public static final TagKey<EntityType<?>> ILLAGERS = forgeEntityTypeTag("illagers");
+        public static final TagKey<EntityType<?>> ZOMBIES = forgeEntityTypeTag("zombies");
 
         public static final TagKey<EntityType<?>> ALLAY_TYPES = forgeEntityTypeTag("allay");
         public static final TagKey<EntityType<?>> AXOLOTL_TYPES = forgeEntityTypeTag("axolotl");

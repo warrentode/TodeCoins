@@ -1505,593 +1505,665 @@
               "function": "minecraft:set_count"
             },
             {
-                "count": {
-                    "type": "minecraft:uniform",
-                    "max": 2.0,
-                    "min": 1.0
-                },
-                "function": "minecraft:looting_enchant"
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
             }
           ],
-            "name": "todecoins:collectible_coin_wandering_trader_gold",
-            "quality": 1
+          "name": "todecoins:collectible_coin_wandering_trader_gold",
+          "quality": 1
         },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:dolphin"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_dolphin_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:goat"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_goat_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:iron_golem"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_iron_golem_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:llama"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_llama_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:trader_llama"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_trader_llama_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:panda"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_panda_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:polar_bear"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_polar_bear_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:spider"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_spider_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:wolf"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_wolf_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:zombified_piglin"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_zombified_piglin_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:creeper"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_creeper_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:drowned"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_drowned_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:elder_guardian"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_elder_guardian_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:guardian"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_guardian_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:endermites"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_endermite_gold",
-              "quality": 1
-          },
-          {
-              "type": "minecraft:item",
-              "conditions": [
-                  {
-                      "condition": "todecoins:autumn_condition"
-                  },
-                  {
-                      "condition": "minecraft:killed_by_player"
-                  },
-                  {
-                      "chance": 0.1,
-                      "condition": "minecraft:random_chance"
-                  },
-                  {
-                      "condition": "todecoins:entity_type_tag_condition",
-                      "tag": "forge:evoker"
-                  }
-              ],
-              "functions": [
-                  {
-                      "add": false,
-                      "count": 1.0,
-                      "function": "minecraft:set_count"
-                  },
-                  {
-                      "count": {
-                          "type": "minecraft:uniform",
-                          "max": 2.0,
-                          "min": 1.0
-                      },
-                      "function": "minecraft:looting_enchant"
-                  }
-              ],
-              "name": "todecoins:collectible_coin_evoker_gold",
-              "quality": 1
-          }
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:dolphin"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_dolphin_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:goat"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_goat_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:iron_golem"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_iron_golem_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:llama"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_llama_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:trader_llama"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_trader_llama_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:panda"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_panda_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:polar_bear"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_polar_bear_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:spider"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_spider_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wolf"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wolf_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zombified_piglin"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombified_piglin_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:creeper"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_creeper_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drowned"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_drowned_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:elder_guardian"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_elder_guardian_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:guardian"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_guardian_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:endermites"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_endermite_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:evoker"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_evoker_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:ghast"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_ghast_gold",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:husk"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_husk_gold",
+          "quality": 1
+        }
       ],
       "rolls": 1.0
     }

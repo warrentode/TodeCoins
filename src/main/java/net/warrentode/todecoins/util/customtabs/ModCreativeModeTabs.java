@@ -4,7 +4,6 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
 import org.jetbrains.annotations.NotNull;
@@ -92,9 +91,7 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add((ModBlocks.COINPRESSBLOCK.get().asItem().getDefaultInstance()));
 
             items.add(ModItems.NUMISMATIST_SPAWN_EGG.get().getDefaultInstance());
-            if (TodeCoins.isCageriumLoaded()) {
-                items.add(ModItems.SNOW_GOLEM_SPAWN_EGG.get().getDefaultInstance());
-            }
+            items.add(ModItems.SNOW_GOLEM_SPAWN_EGG.get().getDefaultInstance());
         }
     };
 
@@ -260,6 +257,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_GUARDIAN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_GUARDIAN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_GUARDIAN_COIN.get().getDefaultInstance());
+            // GHAST COIN SET
+            items.add(ModItems.COPPER_GHAST_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_GHAST_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_GHAST_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_GHAST_COIN.get().getDefaultInstance());
             // HOGLIN COIN SET
             items.add(ModItems.COPPER_HOGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_HOGLIN_COIN.get().getDefaultInstance());
@@ -270,6 +272,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_HORSE_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_HORSE_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_HORSE_COIN.get().getDefaultInstance());
+            // HUSK COIN SET
+            items.add(ModItems.COPPER_HUSK_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_HUSK_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_HUSK_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_HUSK_COIN.get().getDefaultInstance());
             // IRON GOLEM COIN SET
             items.add(ModItems.COPPER_IRON_GOLEM_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_IRON_GOLEM_COIN.get().getDefaultInstance());

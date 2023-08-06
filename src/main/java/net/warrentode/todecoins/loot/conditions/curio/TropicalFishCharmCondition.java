@@ -11,8 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
-import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.integration.Curios;
+import net.warrentode.todecoins.integration.ModListHandler;
 import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import org.jetbrains.annotations.NotNull;
 
@@ -33,7 +33,7 @@ public class TropicalFishCharmCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel serverlevel = context.getLevel();
         Player player = Minecraft.getInstance().player;
-        if (TodeCoins.isCuriosLoaded()) {
+        if (ModListHandler.curiosLoaded) {
             ItemStack isTropicalFishCharm = Curios.getCharmSlot(player);
             return this.isTropicalFishCharm = Curios.matchTropicalFishCharm(isTropicalFishCharm);
         }

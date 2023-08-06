@@ -55,7 +55,7 @@ public class ModVillagers {
                     "registerBlockStates", PoiType.class).invoke(null, LEPRECHAUN_POI.get());
         }
         catch (InvocationTargetException | IllegalAccessException exception) {
-            exception.printStackTrace();
+            exception.getLocalizedMessage();
         }
     }
 
