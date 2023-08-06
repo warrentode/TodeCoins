@@ -4,12 +4,15 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.util.tags.CuriosTags;
 import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
+import net.warrentode.todecoins.util.tags.SupplementariesTags;
 import org.jetbrains.annotations.Nullable;
 
 public class ItemTagsGen extends ItemTagsProvider {
@@ -20,13 +23,23 @@ public class ItemTagsGen extends ItemTagsProvider {
     @Override
     protected void addTags() {
         this.registerModTags();
-        this.registerCuriosTags();
         this.registerMinecraftTags();
         this.registerForgeTags();
+        this.registerCuriosTags();
+        this.registerSupplementariesTags();
+    }
+
+    private void registerSupplementariesTags() {
+        tag(SupplementariesTags.Items.COOKIES)
+                .addTag(ForgeTags.Items.CURRENCY);
     }
 
     private void registerCuriosTags() {
-        tag(CuriosTags.Items.CHARM).add(ModItems.LUCKY_COIN.get());
+        tag(CuriosTags.Items.CHARM)
+                .add(ModItems.LUCKY_COIN.get())
+                .addTag(ModTags.Items.COLLECTIBLE_COINS);
+        tag(CuriosTags.Items.BELT)
+                .addTag(ModTags.Items.WALLETS);
     }
 
     private void registerMinecraftTags() {
@@ -39,19 +52,61 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
-        tag(ModTags.Items.BANKNOTES).add(
-                ModItems.EMERALD_QUARTER_BANK_NOTE.get(),
-                ModItems.EMERALD_HALF_BANK_NOTE.get(),
-                ModItems.EMERALD_BANK_NOTE.get()
-        );
-        tag(ModTags.Items.COINS).add(
-                ModItems.COPPER_COIN.get(),
-                ModItems.IRON_COIN.get(),
-                ModItems.GOLD_COIN.get(),
-                ModItems.NETHER_GOLD_COIN.get(),
-                ModItems.NETHERITE_COIN.get(),
-                ModItems.LUCKY_COIN.get()
-        );
+        tag(ModTags.Items.COLLECTIBLE_COINS)
+                .addTag(ModTags.Items.HERO_COIN_SET);
+        tag(ModTags.Items.HERO_COIN_SET)
+                .add(ModItems.COPPER_HERO_COIN.get())
+                .add(ModItems.IRON_HERO_COIN.get())
+                .add(ModItems.GOLD_HERO_COIN.get())
+                .add(ModItems.NETHERITE_HERO_COIN.get());
+        tag(ModTags.Items.SHULKER_BOXES)
+                .add(Blocks.SHULKER_BOX.asItem())
+                .add(Blocks.BLACK_SHULKER_BOX.asItem())
+                .add(Blocks.BLUE_SHULKER_BOX.asItem())
+                .add(Blocks.BROWN_SHULKER_BOX.asItem())
+                .add(Blocks.CYAN_SHULKER_BOX.asItem())
+                .add(Blocks.GRAY_SHULKER_BOX.asItem())
+                .add(Blocks.GREEN_SHULKER_BOX.asItem())
+                .add(Blocks.LIGHT_BLUE_SHULKER_BOX.asItem())
+                .add(Blocks.LIGHT_GRAY_SHULKER_BOX.asItem())
+                .add(Blocks.LIME_SHULKER_BOX.asItem())
+                .add(Blocks.MAGENTA_SHULKER_BOX.asItem())
+                .add(Blocks.ORANGE_SHULKER_BOX.asItem())
+                .add(Blocks.PINK_SHULKER_BOX.asItem())
+                .add(Blocks.PURPLE_SHULKER_BOX.asItem())
+                .add(Blocks.RED_SHULKER_BOX.asItem())
+                .add(Blocks.WHITE_SHULKER_BOX.asItem())
+                .add(Blocks.YELLOW_SHULKER_BOX.asItem());
+        tag(ModTags.Items.BUNDLES)
+                .add(Items.BUNDLE);
+        tag(ModTags.Items.WALLETS)
+                .addTag(ModTags.Items.BUNDLES)
+                .addTag(ModTags.Items.SHULKER_BOXES)
+                .addTag(Tags.Items.BARRELS)
+                .addTag(Tags.Items.CHESTS)
+                .addTag(Tags.Items.CHESTS_ENDER);
+        tag(ModTags.Items.GEMS)
+                .addTag(ForgeTags.Items.GEMS);
+        tag(ModTags.Items.BANKNOTES)
+                .add(ModItems.EMERALD_BANK_NOTE.get())
+                .add(ModItems.EMERALD_HALF_BANK_NOTE.get())
+                .add(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
+                .add(ModBlocks.EMERALD_BANK_NOTE_BAG.get().asItem())
+                .add(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get().asItem())
+                .add(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get().asItem());
+        tag(ModTags.Items.COINS)
+                .add(ModItems.COPPER_COIN.get())
+                .add(ModItems.IRON_COIN.get())
+                .add(ModItems.GOLD_COIN.get())
+                .add(ModItems.NETHER_GOLD_COIN.get())
+                .add(ModItems.NETHERITE_COIN.get())
+                .add(ModItems.LUCKY_COIN.get())
+                .add(ModBlocks.COPPER_COIN_BAG.get().asItem())
+                .add(ModBlocks.IRON_COIN_BAG.get().asItem())
+                .add(ModBlocks.GOLD_COIN_BAG.get().asItem())
+                .add(ModBlocks.POT_OF_GOLD.get().asItem())
+                .add(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem())
+                .add(ModBlocks.NETHERITE_COIN_BAG.get().asItem());
         tag(ModTags.Items.CURRENCY)
                 .addTag(ModTags.Items.BANKNOTES)
                 .addTag(ModTags.Items.COINS)
@@ -149,7 +204,12 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ForgeTags.Items.NETHER_STAR)
                 .addTag(ForgeTags.Items.PRISMARINE)
                 .addTag(ForgeTags.Items.QUARTZ)
-                .addTag(ForgeTags.Items.REDSTONE);
+                .addTag(ForgeTags.Items.REDSTONE)
+                .add(Items.SEA_LANTERN)
+                .add(Items.SHULKER_SHELL)
+                .add(Items.BLAZE_ROD)
+                .add(Items.BLAZE_POWDER)
+                .add(Items.GHAST_TEAR);
         tag(ForgeTags.Items.AMETHYST).add(
                 Items.AMETHYST_BLOCK,
                 Items.AMETHYST_CLUSTER,
@@ -265,7 +325,14 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ForgeTags.Items.STRING).add(
                 Items.STRING
         );
-        tag(ForgeTags.Items.CURRENCY).addTag(ModTags.Items.CURRENCY);
+        tag(ForgeTags.Items.CURRENCY_STAMPS)
+                .addTag(ModTags.Items.CURRENCY_STAMPS);
+        tag(ForgeTags.Items.CURRENCY)
+                .addTag(ModTags.Items.CURRENCY);
+        tag(ForgeTags.Items.BANKNOTES)
+                .addTag(ModTags.Items.BANKNOTES);
+        tag(ForgeTags.Items.COINS)
+                .addTag(ModTags.Items.COINS);
         tag(ForgeTags.Items.PIGLIN_BARTER_ITEMS).add(
                 ModItems.NETHER_GOLD_COIN.get()
         );

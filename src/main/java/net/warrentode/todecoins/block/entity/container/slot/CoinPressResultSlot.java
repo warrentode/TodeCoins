@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.block.entity.container;
+package net.warrentode.todecoins.block.entity.container.slot;
 
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;

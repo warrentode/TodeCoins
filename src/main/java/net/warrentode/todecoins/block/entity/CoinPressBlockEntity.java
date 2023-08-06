@@ -41,7 +41,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
 import net.warrentode.todecoins.block.custom.CoinPressBlock;
 import net.warrentode.todecoins.block.entity.container.inventory.CoinPressItemHandler;
-import net.warrentode.todecoins.gui.CoinPressMenu;
+import net.warrentode.todecoins.gui.coinpressgui.CoinPressMenu;
 import net.warrentode.todecoins.mixin.RecipeManagerAccessor;
 import net.warrentode.todecoins.recipe.CoinPressRecipe;
 import net.warrentode.todecoins.recipe.ModRecipes;

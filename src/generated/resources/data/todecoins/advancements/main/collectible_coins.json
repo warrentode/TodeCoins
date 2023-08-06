@@ -1,0 +1,76 @@
+{
+  "parent": "todecoins:main/root",
+  "criteria": {
+    "find_copper_hero_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:copper_hero_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_gold_hero_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:gold_hero_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_iron_hero_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:iron_hero_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_netherite_hero_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:netherite_hero_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.collectibleCoins.desc"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:copper_hero_coin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.collectibleCoins"
+    }
+  },
+  "requirements": [
+    [
+      "find_copper_hero_coin",
+      "find_iron_hero_coin",
+      "find_gold_hero_coin",
+      "find_netherite_hero_coin"
+    ]
+  ]
+}

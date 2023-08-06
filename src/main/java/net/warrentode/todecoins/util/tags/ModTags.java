@@ -18,11 +18,17 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> WALLETS = modItemTag("wallets");
+        public static final TagKey<Item> BUNDLES = modItemTag("bundles");
+        public static final TagKey<Item> SHULKER_BOXES = modItemTag("shulker_boxes");
         public static final TagKey<Item> BANKNOTES = modItemTag("banknotes");
         public static final TagKey<Item> COINS = modItemTag("coins");
         public static final TagKey<Item> CURRENCY = modItemTag("currency");
         public static final TagKey<Item> CURRENCY_MATERIALS = modItemTag("currency_materials");
         public static final TagKey<Item> CURRENCY_STAMPS = modItemTag("currency_stamps");
+
+        public static final TagKey<Item> COLLECTIBLE_COINS = modItemTag("collectible_coins");
+        public static final TagKey<Item> HERO_COIN_SET = modItemTag("hero_coin_set");
 
         public static final TagKey<Item> TEXTILES = modItemTag("textiles");
         public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");

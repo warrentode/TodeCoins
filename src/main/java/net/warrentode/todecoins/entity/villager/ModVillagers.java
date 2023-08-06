@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.villager;
+package net.warrentode.todecoins.entity.villager;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.resources.ResourceLocation;
@@ -12,16 +12,15 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.sounds.ModSounds;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModVillagers {
-    public static final DeferredRegister<PoiType> POI_TYPES =
-            DeferredRegister.create(ForgeRegistries.POI_TYPES, MODID);
-    public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS =
-            DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, MODID);
+    public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES, MODID);
+    public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS = DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, MODID);
 
     public static final RegistryObject<PoiType> BANKER_POI = POI_TYPES.register("banker_poi",
             () -> new PoiType(ImmutableSet.copyOf(ModBlocks.COINPRESSBLOCK.get().getStateDefinition().getPossibleStates()),
@@ -44,7 +43,7 @@ public class ModVillagers {
         setHeroGifts(new ResourceLocation(MODID, "leprechaun_gift"), LEPRECHAUN.get());
     }
 
-    public static void setHeroGifts(ResourceLocation name, VillagerProfession profession) {
+    public static void setHeroGifts(@NotNull ResourceLocation name, VillagerProfession profession) {
         GiveGiftToHero.GIFTS.put(profession, new ResourceLocation(name.getNamespace(), "gameplay/hero_of_the_village/" + name.getPath()));
     }
 

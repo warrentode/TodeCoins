@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/textile_engineering_2",
   "criteria": {
     "craft_lucky_boots": {
       "conditions": {
@@ -55,7 +55,7 @@
     "description": {
       "translate": "advancement.luckyArmor.desc"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
       "item": "todecoins:lucky_shirt",

@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/nether_dough",
   "criteria": {
     "craft_copper_coin_bag": {
       "conditions": {

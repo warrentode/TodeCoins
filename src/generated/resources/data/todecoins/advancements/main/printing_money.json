@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/textile_engineering_1",
   "criteria": {
     "craft_emerald_bank_note": {
       "conditions": {

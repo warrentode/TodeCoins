@@ -1,0 +1,37 @@
+{
+  "parent": "todecoins:main/root",
+  "criteria": {
+    "craft_coinpress": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:coin_press"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.craftCoinPress.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:coin_press"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.craftCoinPress"
+    }
+  },
+  "requirements": [
+    [
+      "craft_coinpress"
+    ]
+  ]
+}

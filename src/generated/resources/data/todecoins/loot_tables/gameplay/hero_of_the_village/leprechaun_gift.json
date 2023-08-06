@@ -35,6 +35,22 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:lucky_coin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:copper_hero_coin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:iron_hero_coin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:gold_hero_coin"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:netherite_hero_coin"
         }
       ],
       "rolls": 1.0

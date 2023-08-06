@@ -1,0 +1,63 @@
+{
+  "parent": "todecoins:main/lucky_penny",
+  "criteria": {
+    "craft_lucky_fabric": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:lucky_fabric"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_lucky_fiber": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:lucky_fiber"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_lucky_thread": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:lucky_thread"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.textileEngineering2.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:lucky_thread"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.textileEngineering2"
+    }
+  },
+  "requirements": [
+    [
+      "craft_lucky_fiber",
+      "craft_lucky_thread",
+      "craft_lucky_fabric"
+    ]
+  ]
+}

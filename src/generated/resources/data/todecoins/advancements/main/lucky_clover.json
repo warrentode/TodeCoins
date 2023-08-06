@@ -19,8 +19,8 @@
     "description": {
       "translate": "advancement.luckyClover.desc"
     },
-    "frame": "task",
-    "hidden": true,
+    "frame": "challenge",
+    "hidden": false,
     "icon": {
       "item": "todecoins:four_leaf_clover"
     },

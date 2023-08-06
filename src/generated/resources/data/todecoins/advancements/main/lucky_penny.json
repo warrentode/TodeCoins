@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/lucky_clover",
   "criteria": {
     "craft_lucky_coin": {
       "conditions": {
@@ -19,7 +19,7 @@
     "description": {
       "translate": "advancement.luckyPenny.desc"
     },
-    "frame": "task",
+    "frame": "challenge",
     "hidden": false,
     "icon": {
       "item": "todecoins:lucky_coin"

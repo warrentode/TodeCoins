@@ -1,4 +1,4 @@
-package net.warrentode.todecoins.gui;
+package net.warrentode.todecoins.gui.coinpressgui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
+import net.warrentode.todecoins.recipe.recipebook.CoinPressRecipeBookComponent;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;

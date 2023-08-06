@@ -27,7 +27,7 @@ import static net.minecraft.world.entity.monster.piglin.PiglinAi.*;
 @Mixin(PiglinAi.class)
 public abstract class PiglinBarterMixin {
     @Inject(at = @At("HEAD"), method = "stopHoldingOffHandItem", cancellable = true)
-    private static void stopHoldingOffHandItem(@NotNull Piglin piglin, boolean shouldBarter, CallbackInfo ci) {
+    private static void todecoins_stopHoldingOffHandItem(@NotNull Piglin piglin, boolean shouldBarter, CallbackInfo ci) {
         if (piglin.isAdult()) {
             ItemStack offHandItem = piglin.getItemInHand(InteractionHand.OFF_HAND);
             boolean barterItem = PiglinAi.isBarterCurrency(offHandItem);
@@ -35,7 +35,7 @@ public abstract class PiglinBarterMixin {
             if (shouldBarter && barterItem) {
                 piglin.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
                 if (netherGoldCoin) {
-                    throwItems(piglin, getNetherGoldCoinBarterResponseItems(piglin));
+                    throwItems(piglin, todecoins_getNetherGoldCoinBarterResponseItems(piglin));
                 }
                 else {
                     throwItems(piglin, getBarterResponseItems(piglin));
@@ -45,13 +45,13 @@ public abstract class PiglinBarterMixin {
         }
     }
 
-    private static List<ItemStack> getNetherGoldCoinBarterResponseItems(@NotNull Piglin piglin) {
+    private static List<ItemStack> todecoins_getNetherGoldCoinBarterResponseItems(@NotNull Piglin piglin) {
         LootTable lootTable = Objects.requireNonNull(piglin.level.getServer()).getLootTables().get(ModBuiltInLootTables.NETHER_GOLD_COIN_PIGLIN_BARTERING);
         return lootTable.getRandomItems((new LootContext.Builder((ServerLevel) piglin.level)).withParameter(LootContextParams.THIS_ENTITY, piglin).withRandom(piglin.level.random).create(LootContextParamSets.PIGLIN_BARTER));
     }
 
     @Inject(at = @At("HEAD"), method = "wantsToPickup", cancellable = true)
-    private static void wantsToPickup(Piglin piglin, @NotNull ItemStack pStack, CallbackInfoReturnable<Boolean> cir) {
+    private static void todecoins_wantsToPickup(Piglin piglin, @NotNull ItemStack pStack, CallbackInfoReturnable<Boolean> cir) {
         if (pStack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS) && isNotHoldingLovedItemInOffHand(piglin)) {
             cir.setReturnValue(true);
             cir.cancel();
@@ -59,7 +59,7 @@ public abstract class PiglinBarterMixin {
     }
 
     @Inject(at = @At("HEAD"), method = "canAdmire", cancellable = true)
-    private static void canAdmire(Piglin piglin, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+    private static void todecoins_canAdmire(Piglin piglin, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (!isAdmiringDisabled(piglin) && !isAdmiringItem(piglin) && piglin.isAdult() && (stack.isPiglinCurrency() || stack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS))) {
             cir.setReturnValue(true);
             cir.cancel();
@@ -67,7 +67,7 @@ public abstract class PiglinBarterMixin {
     }
 
     @Inject(at = @At("HEAD"), method = "isBarterCurrency", cancellable = true)
-    private static void isBarterCurrency(@NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+    private static void todecoins_isBarterCurrency(@NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (stack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS)) {
             cir.setReturnValue(true);
             cir.cancel();

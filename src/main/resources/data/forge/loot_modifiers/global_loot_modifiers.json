@@ -81,6 +81,19 @@
     "todecoins:add_loot_wither_skeleton",
     "todecoins:add_loot_zombie",
     "todecoins:add_loot_zombie_villager",
-    "todecoins:add_loot_zombified_piglin"
+    "todecoins:add_loot_zombified_piglin",
+    "todecoins:add_loot_armorer_gift",
+    "todecoins:add_loot_butcher_gift",
+    "todecoins:add_loot_cartographer_gift",
+    "todecoins:add_loot_cleric_gift",
+    "todecoins:add_loot_farmer_gift",
+    "todecoins:add_loot_fisherman_gift",
+    "todecoins:add_loot_fletcher_gift",
+    "todecoins:add_loot_leatherworker_gift",
+    "todecoins:add_loot_librarian_gift",
+    "todecoins:add_loot_mason_gift",
+    "todecoins:add_loot_shepherd_gift",
+    "todecoins:add_loot_toolsmith_gift",
+    "todecoins:add_loot_weaponsmith_gift"
   ]
 }

@@ -23,7 +23,7 @@ public class LuckyCoinItem extends CoinItem implements Wearable {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isCuriosLoaded() ? null : Curios.createCharmProvider(stack);
+        return !TodeCoins.isCuriosLoaded() ? null : Curios.createLuckyCoinCharmProvider(stack);
     }
 
     @Override

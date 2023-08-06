@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:main/minting_coins",
   "criteria": {
     "craft_nether_currency_stamp": {
       "conditions": {

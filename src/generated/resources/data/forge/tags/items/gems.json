@@ -12,6 +12,11 @@
     "#forge:gems/nether_star",
     "#forge:gems/prismarine",
     "#forge:gems/quartz",
-    "#forge:gems/redstone"
+    "#forge:gems/redstone",
+    "minecraft:sea_lantern",
+    "minecraft:shulker_shell",
+    "minecraft:blaze_rod",
+    "minecraft:blaze_powder",
+    "minecraft:ghast_tear"
   ]
 }
