@@ -1,4 +1,4 @@
-// 1.19.2	2023-05-21T09:32:13.9637966	Tags for minecraft:item
+// 1.19.2	2023-05-21T10:27:51.7982583	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 3ad69b90df59e931502fe3825cf9304c44859afb data/forge/tags/items/banknotes.json
@@ -46,7 +46,7 @@ ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.
 6e1bba552c6a9722a324eafa93960525ca7e9e94 data/todecoins/tags/items/banknotes.json
 8549b762563fb8215853150344ef3a20278898f9 data/todecoins/tags/items/bundles.json
 f585fdf456be538a14a81d536e6dd2f2a04c0e07 data/todecoins/tags/items/coins.json
-178468a77fe220bf895018332453d694997d9698 data/todecoins/tags/items/collectible_coins.json
+80e1673d980367d07d011eae386b132d4d7a79a4 data/todecoins/tags/items/collectible_coins.json
 b22e9683697ad4d36d1b0678d079245f21ad0448 data/todecoins/tags/items/currency.json
 e2df2d2c78102e2bf23013433e3c46d8c05bea8f data/todecoins/tags/items/currency_materials.json
 cddace66cb2ea4e34d8e33a075d1f50ca7eb24a8 data/todecoins/tags/items/currency_stamps.json
@@ -63,6 +63,7 @@ ab1a45ae0b76cfdab8aa19e990af266825f9e610 data/todecoins/tags/items/nuggets/coppe
 a600f08f3b82ea64e2da4220752cea0537967e95 data/todecoins/tags/items/nuggets/iron.json
 9f63c23d399e20ac5adf7f4b684c2189e5458d4b data/todecoins/tags/items/nuggets/lucky.json
 f0a2de5fa3e49648a06ea5638dbacc4a7d1c02d8 data/todecoins/tags/items/nuggets/netherite.json
+f2b61cc9b44c41e0742339028e1ae9e87ee0be0d data/todecoins/tags/items/piglin_coin_set.json
 e2feff85afb7e4871204d6f5d72b8760e2780187 data/todecoins/tags/items/shulker_boxes.json
 cd9c93fa4302eb30ddd58d13a9ec40603a6ce651 data/todecoins/tags/items/textiles.json
 e189f29a4d97932a310f6d36f9d8c79982a77384 data/todecoins/tags/items/textiles/currency_fiber.json

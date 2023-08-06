@@ -16,6 +16,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -48,9 +49,10 @@ public class CurrencyLootTablesGen implements Consumer<BiConsumer<ResourceLocati
     private static final ResourceLocation TODECOINS_BOSS_EMERALD_HALF_BANK_NOTE_DROPS = new ResourceLocation(MODID, "currency/todecoins_boss_emerald_half_bank_note_drops");
     private static final ResourceLocation TODECOINS_EMERALD_BANK_NOTE_DROPS = new ResourceLocation(MODID, "currency/todecoins_emerald_bank_note_drops");
     private static final ResourceLocation TODECOINS_BOSS_EMERALD_BANK_NOTE_DROPS = new ResourceLocation(MODID, "currency/todecoins_boss_emerald_bank_note_drops");
+    private static final ResourceLocation TODECOINS_ENDERMAN_COIN_DROPS = new ResourceLocation(MODID, "currency/collectible/todecoins_enderman_coin_drops");
 
     @Override
-    public void accept(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
+    public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(TODECOINS_CURRENCY_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -316,6 +318,17 @@ public class CurrencyLootTablesGen implements Consumer<BiConsumer<ResourceLocati
                                 .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get())
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))
+                                .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                        )
+        );
+        consumer.accept(TODECOINS_ENDERMAN_COIN_DROPS,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ENDERMAN_COIN.get()).setQuality(1).setWeight(4))
+                                .add(LootItem.lootTableItem(ModItems.IRON_ENDERMAN_COIN.get()).setQuality(2).setWeight(3))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ENDERMAN_COIN.get()).setQuality(3).setWeight(2))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMAN_COIN.get()).setQuality(4).setWeight(1))
                                 .when(LootItemKilledByPlayerCondition.killedByPlayer())
                         )
         );

@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsForItemsTrade;
 import net.warrentode.todecoins.entity.villager.trades.tradetypes.ItemsSaleSetForItemsTrade;
 import net.warrentode.todecoins.item.ModItems;
@@ -45,6 +46,32 @@ public class NumismatistTrades {
         return NUMISMATIST_TRADES = toIntMap(
                 ImmutableMap.of(
                         rarityLevel1, new VillagerTrades.ItemListing[]{
+                                // birthday cake
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                Blocks.CANDLE_CAKE.asItem(),
+                                                Blocks.BROWN_CANDLE_CAKE.asItem(),
+                                                Blocks.BLUE_CANDLE_CAKE.asItem(),
+                                                Blocks.CYAN_CANDLE_CAKE.asItem(),
+                                                Blocks.GREEN_CANDLE_CAKE.asItem(),
+                                                Blocks.GRAY_CANDLE_CAKE.asItem(),
+                                                Blocks.LIME_CANDLE_CAKE.asItem(),
+                                                Blocks.LIGHT_GRAY_CANDLE_CAKE.asItem(),
+                                                Blocks.LIGHT_BLUE_CANDLE_CAKE.asItem(),
+                                                Blocks.MAGENTA_CANDLE_CAKE.asItem(),
+                                                Blocks.ORANGE_CANDLE_CAKE.asItem(),
+                                                Blocks.PINK_CANDLE_CAKE.asItem(),
+                                                Blocks.PURPLE_CANDLE_CAKE.asItem(),
+                                                Blocks.RED_CANDLE_CAKE.asItem(),
+                                                Blocks.WHITE_CANDLE_CAKE.asItem(),
+                                                Blocks.YELLOW_CANDLE_CAKE.asItem()
+                                        ), 1,
+                                        ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
+                                        ItemsSaleSetForItemsTrade.COMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL,
+                                        ItemsSaleSetForItemsTrade.LOW_TIER_PRICE_MULTIPLIER
+                                ),
+                                // hero set
                                 new ItemsSaleSetForItemsTrade(
                                         ImmutableSet.of(
                                                 ModItems.IRON_HERO_COIN.get().asItem(),
@@ -81,6 +108,81 @@ public class NumismatistTrades {
                                         ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance(), 1,
                                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // piglin set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // enderman set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // bundle
                                 new ItemsForItemsTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance(), 1,
@@ -125,6 +227,7 @@ public class NumismatistTrades {
         return NUMISMATIST_TRADES = toIntMap(
                 ImmutableMap.of(
                         rarityLevel1, new VillagerTrades.ItemListing[]{
+                                // hero set
                                 new ItemsSaleSetForItemsTrade(
                                         ImmutableSet.of(
                                                 ModItems.IRON_HERO_COIN.get().asItem(),
@@ -134,6 +237,27 @@ public class NumismatistTrades {
                                         ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance(), 1,
                                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // piglin set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.COPPER_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // enderman set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.COPPER_ENDERMAN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // bundle
                                 new ItemsForItemsTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ModItems.COPPER_HERO_COIN.get().asItem().getDefaultInstance(), 1,
@@ -178,15 +302,37 @@ public class NumismatistTrades {
         return NUMISMATIST_TRADES = toIntMap(
                 ImmutableMap.of(
                         rarityLevel1, new VillagerTrades.ItemListing[]{
+                                // hero set
                                 new ItemsSaleSetForItemsTrade(
                                         ImmutableSet.of(
-                                                ModItems.COPPER_COIN.get().asItem(),
+                                                ModItems.COPPER_HERO_COIN.get().asItem(),
                                                 ModItems.GOLD_HERO_COIN.get().asItem(),
                                                 ModItems.NETHERITE_HERO_COIN.get().asItem()
                                         ), 1,
                                         ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance(), 1,
                                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // piglin set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.IRON_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // enderman set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.IRON_ENDERMAN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // bundle
                                 new ItemsForItemsTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ModItems.IRON_HERO_COIN.get().asItem().getDefaultInstance(), 1,
@@ -231,15 +377,37 @@ public class NumismatistTrades {
         return NUMISMATIST_TRADES = toIntMap(
                 ImmutableMap.of(
                         rarityLevel1, new VillagerTrades.ItemListing[]{
+                                // hero set
                                 new ItemsSaleSetForItemsTrade(
                                         ImmutableSet.of(
-                                                ModItems.COPPER_COIN.get().asItem(),
+                                                ModItems.COPPER_HERO_COIN.get().asItem(),
                                                 ModItems.IRON_HERO_COIN.get().asItem(),
                                                 ModItems.NETHERITE_HERO_COIN.get().asItem()
                                         ), 1,
                                         ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance(), 1,
                                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // piglin set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_PIGLIN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.GOLD_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // enderman set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.NETHERITE_ENDERMAN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.GOLD_ENDERMAN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // bundle
                                 new ItemsForItemsTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ModItems.GOLD_HERO_COIN.get().asItem().getDefaultInstance(), 1,
@@ -284,15 +452,37 @@ public class NumismatistTrades {
         return NUMISMATIST_TRADES = toIntMap(
                 ImmutableMap.of(
                         rarityLevel1, new VillagerTrades.ItemListing[]{
+                                // hero set
                                 new ItemsSaleSetForItemsTrade(
                                         ImmutableSet.of(
-                                                ModItems.COPPER_COIN.get().asItem(),
+                                                ModItems.COPPER_HERO_COIN.get().asItem(),
                                                 ModItems.IRON_HERO_COIN.get().asItem(),
                                                 ModItems.GOLD_HERO_COIN.get().asItem()
                                         ), 1,
                                         ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance(), 1,
                                         ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
                                         ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // piglin set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_PIGLIN_COIN.get().asItem(),
+                                                ModItems.IRON_PIGLIN_COIN.get().asItem(),
+                                                ModItems.GOLD_PIGLIN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.NETHERITE_PIGLIN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // enderman set
+                                new ItemsSaleSetForItemsTrade(
+                                        ImmutableSet.of(
+                                                ModItems.COPPER_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.IRON_ENDERMAN_COIN.get().asItem(),
+                                                ModItems.GOLD_ENDERMAN_COIN.get().asItem()
+                                        ), 1,
+                                        ModItems.NETHERITE_ENDERMAN_COIN.get().asItem().getDefaultInstance(), 1,
+                                        ItemsSaleSetForItemsTrade.UNCOMMON_ITEMS_SUPPLY,
+                                        ItemsSaleSetForItemsTrade.XP_LEVEL_1_SELL, 0),
+                                // bundle
                                 new ItemsForItemsTrade(
                                         Items.BUNDLE.getDefaultInstance(), 1,
                                         ModItems.NETHERITE_HERO_COIN.get().asItem().getDefaultInstance(), 1,

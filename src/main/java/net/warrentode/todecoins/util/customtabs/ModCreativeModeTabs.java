@@ -98,6 +98,16 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_HERO_COIN.get().getDefaultInstance());
+            // PIGLIN COIN SET
+            items.add(ModItems.COPPER_PIGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PIGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PIGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PIGLIN_COIN.get().getDefaultInstance());
+            // ENDERMAN COIN SET
+            items.add(ModItems.COPPER_ENDERMAN_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_ENDERMAN_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_ENDERMAN_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_ENDERMAN_COIN.get().getDefaultInstance());
         }
     };
 }
