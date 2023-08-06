@@ -6,7 +6,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.block.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
-public class ModBlockLootTables extends BlockLoot {
+public class ModBlockLootTablesGen extends BlockLoot {
     @Override
     protected void addTables() {
         this.dropSelf(ModBlocks.COINPRESSBLOCK.get());

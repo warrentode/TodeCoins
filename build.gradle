@@ -1,4 +1,5 @@
 //file:noinspection GroovyAssignabilityCheck
+//file:noinspection GrUnresolvedAccess
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net/' }
@@ -21,12 +22,12 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 mixin {
-    add sourceSets.main, "todecoins.refmap.json"
-    config "todecoins.mixins.json"
+    add sourceSets.main, "mixins.todecoins.refmap.json"
+    config "mixins.todecoins.json"
     showMessageTypes = true
 }
 
-version = '1.19.2-1.2.4'
+version = '1.19.2-1.2.5'
 group = 'net.warrentode.todecoins'
 archivesBaseName = 'todecoins'
 
@@ -99,10 +100,9 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.2-43.2.8'
+    minecraft 'net.minecraftforge:forge:1.19.2-43.2.10'
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0:api")
 }
 
 jar {

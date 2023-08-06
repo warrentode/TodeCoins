@@ -10,7 +10,7 @@ import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.warrentode.todecoins.datagen.loot.ModChestLootTables;
+import net.warrentode.todecoins.datagen.loot.ModChestLootTablesGen;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -19,10 +19,11 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class ModLootTableProvider extends LootTableProvider {
+public class ModLootTableGenProvider extends LootTableProvider {
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>>
-            loot_tables = ImmutableList.of(Pair.of(ModChestLootTables::new, LootContextParamSets.CHEST));
-    public ModLootTableProvider(DataGenerator generator) {
+            loot_tables = ImmutableList.of(Pair.of(ModChestLootTablesGen::new, LootContextParamSets.CHEST));
+
+    public ModLootTableGenProvider(DataGenerator generator) {
         super(generator);
     }
 

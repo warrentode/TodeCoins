@@ -5,3 +5,8 @@ Additional Credits:
  * BetterBrewingRecipe Class by CAS-ual-TY from https://github.com/CAS-ual-TY/Extra-Potions
  * QuickMove method by diesieben07 | https://github.com/diesieben07/SevenCommons
  * Overall help with figuring things out by Kaupunjoe https://github.com/Tutorials-By-Kaupenjoe
+ * Botania's dev team for the implementation of the RecipeManagerAccessor
+ * Help figuring out and understanding how the recipe book is set up came from the following sources:
+    - https://github.com/MinecraftForge/MinecraftForge/tree/1.19.x/src/test/java/net/minecraftforge/debug/recipe/recipebook
+    - https://github.com/vectorwing/FarmersDelight/tree/1.19
+    - https://forums.minecraftforge.net/forum/70-modder-support/

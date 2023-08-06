@@ -15,4 +15,8 @@ public class ModSounds {
             () -> new SoundEvent(new ResourceLocation("todecoins", "coin_press_use")));
     public static final RegistryObject<SoundEvent> COINPRESS_TAKE_RESULT = SOUNDS.register("coin_press_take",
             () -> new SoundEvent(new ResourceLocation("todecoins", "coin_press_take")));
+    public static final RegistryObject<SoundEvent> WORK_BANKER = SOUNDS.register("work_banker",
+            () -> new SoundEvent(new ResourceLocation("todecoins", "work_banker")));
+    public static final RegistryObject<SoundEvent> WORK_LEPRECHAUN = SOUNDS.register("work_leprechaun",
+            () -> new SoundEvent(new ResourceLocation("todecoins", "work_leprechaun")));
 }

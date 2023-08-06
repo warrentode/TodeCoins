@@ -20,7 +20,7 @@ import java.util.function.BiConsumer;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
-public class ModChestLootTables extends ChestLoot {
+public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder IN_NETHER_WASTES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.NETHER_WASTES));
     public static final LootItemCondition.Builder IN_WARPED_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARPED_FOREST));
     public static final LootItemCondition.Builder IN_CRIMSON_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.CRIMSON_FOREST));

@@ -8,10 +8,11 @@ import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.Nullable;
 
-public class BlockTags extends BlockTagsProvider {
-    public BlockTags(DataGenerator pGenerator, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+public class BlockTagsGen extends BlockTagsProvider {
+    public BlockTagsGen(DataGenerator pGenerator, String modId, @Nullable ExistingFileHelper existingFileHelper) {
         super(pGenerator, modId, existingFileHelper);
     }
+
     @Override
     protected void addTags() {
         this.registerModTags();
@@ -19,6 +20,7 @@ public class BlockTags extends BlockTagsProvider {
         this.registerForgeTags();
         this.registerBlockMineables();
     }
+
     protected void registerBlockMineables() {
         tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(
                 ModBlocks.POT_OF_GOLD.get()

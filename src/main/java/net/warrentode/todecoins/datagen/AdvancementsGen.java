@@ -28,10 +28,10 @@ import static net.warrentode.todecoins.TodeCoins.MODID;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class Advancements extends AdvancementProvider {
+public class AdvancementsGen extends AdvancementProvider {
     private final Path PATH;
 
-    public Advancements(DataGenerator generatorIn, ExistingFileHelper fileHelperIn) {
+    public AdvancementsGen(DataGenerator generatorIn, ExistingFileHelper fileHelperIn) {
         super(generatorIn, fileHelperIn);
         PATH = generatorIn.getOutputFolder();
     }

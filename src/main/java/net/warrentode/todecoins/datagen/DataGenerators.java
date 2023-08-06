@@ -5,11 +5,11 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.warrentode.todecoins.datagen.recipes.Recipes;
-import net.warrentode.todecoins.datagen.tags.BlockTags;
-import net.warrentode.todecoins.datagen.tags.ItemTags;
-import net.warrentode.todecoins.datagen.tags.PoiTypeTags;
-import net.warrentode.todecoins.datagen.tags.StructureTags;
+import net.warrentode.todecoins.datagen.recipes.RecipesGen;
+import net.warrentode.todecoins.datagen.tags.BlockTagsGen;
+import net.warrentode.todecoins.datagen.tags.ItemTagsGen;
+import net.warrentode.todecoins.datagen.tags.PoiTypeTagsGen;
+import net.warrentode.todecoins.datagen.tags.StructureTagsGen;
 import org.jetbrains.annotations.NotNull;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
@@ -21,20 +21,20 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper helper = event.getExistingFileHelper();
 
-        BlockTags blockTags = new BlockTags(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), blockTags);
+        BlockTagsGen blockTagsGen = new BlockTagsGen(generator, MODID, helper);
+        generator.addProvider(event.includeServer(), blockTagsGen);
 
-        ItemTags itemTags = new ItemTags(generator, blockTags, MODID, helper);
-        generator.addProvider(event.includeServer(), itemTags);
+        ItemTagsGen itemTagsGen = new ItemTagsGen(generator, blockTagsGen, MODID, helper);
+        generator.addProvider(event.includeServer(), itemTagsGen);
 
-        PoiTypeTags poiTypeTags = new PoiTypeTags(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), poiTypeTags);
+        PoiTypeTagsGen poiTypeTagsGen = new PoiTypeTagsGen(generator, MODID, helper);
+        generator.addProvider(event.includeServer(), poiTypeTagsGen);
 
-        StructureTags structureTags = new StructureTags(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), structureTags);
+        StructureTagsGen structureTagsGen = new StructureTagsGen(generator, MODID, helper);
+        generator.addProvider(event.includeServer(), structureTagsGen);
 
-        generator.addProvider(event.includeServer(), new Recipes(generator));
-        generator.addProvider(event.includeServer(), new Advancements(generator, helper));
-        generator.addProvider(event.validate(), new ModLootTableProvider(generator));
+        generator.addProvider(event.includeServer(), new RecipesGen(generator));
+        generator.addProvider(event.includeServer(), new AdvancementsGen(generator, helper));
+        generator.addProvider(event.includeServer(), new ModLootTableGenProvider(generator));
     }
 }

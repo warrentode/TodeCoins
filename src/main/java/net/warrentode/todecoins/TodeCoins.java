@@ -1,23 +1,38 @@
 package net.warrentode.todecoins;
 
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.block.entity.ModBlockEntities;
+import net.warrentode.todecoins.datagen.AdvancementsGen;
+import net.warrentode.todecoins.datagen.ModLootTableGenProvider;
+import net.warrentode.todecoins.datagen.recipes.RecipesGen;
+import net.warrentode.todecoins.datagen.tags.BlockTagsGen;
+import net.warrentode.todecoins.datagen.tags.ItemTagsGen;
+import net.warrentode.todecoins.datagen.tags.PoiTypeTagsGen;
+import net.warrentode.todecoins.datagen.tags.StructureTagsGen;
 import net.warrentode.todecoins.gui.CoinPressScreen;
 import net.warrentode.todecoins.gui.ModMenuTypes;
+import net.warrentode.todecoins.integration.Curios;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.loot.ModLootModifiers;
 import net.warrentode.todecoins.potion.BetterBrewingRecipe;
@@ -25,19 +40,27 @@ import net.warrentode.todecoins.potion.ModPotions;
 import net.warrentode.todecoins.recipe.ModRecipes;
 import net.warrentode.todecoins.recipe.recipebook.CoinPressRecipeCategories;
 import net.warrentode.todecoins.sounds.ModSounds;
-import net.warrentode.todecoins.util.customtabs.ModCreativeModeTab;
 import net.warrentode.todecoins.villager.ModVillagers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotTypeMessage;
+import top.theillusivec4.curios.api.SlotTypePreset;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 @Mod(TodeCoins.MODID)
 public class TodeCoins {
     public static final String MODID = "todecoins";
     public static final Logger LOGGER = LogManager.getLogger();
+    private static boolean curiosLoaded = false;
+
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::onIMEnqueueEvent);
+        modEventBus.addListener(this::onGatherData);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setup);
 
@@ -54,26 +77,66 @@ public class TodeCoins {
         ModPotions.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
+
+        curiosLoaded = ModList.get().isLoaded("curios");
     }
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-        ModCreativeModeTab.preInit();
+
+    public static boolean isCuriosLoaded() {
+        return curiosLoaded;
     }
 
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(ModVillagers::registerPOIs);
     }
+
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new));
         }
+
         @SubscribeEvent
         public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
             CoinPressRecipeCategories.init(event);
         }
     }
+
+    private void onIMEnqueueEvent(InterModEnqueueEvent event) {
+        if (curiosLoaded) {
+            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
+        }
+    }
+
+    public static ItemStack setCurioSlots(Player player) {
+        AtomicReference<ItemStack> charm = new AtomicReference<>(ItemStack.EMPTY);
+        if (TodeCoins.isCuriosLoaded()) {
+            charm.set(Curios.getCharmSlot(player));
+        }
+        return charm.get();
+    }
+
+    public void onGatherData(@NotNull GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        ExistingFileHelper helper = event.getExistingFileHelper();
+
+        BlockTagsGen blockTagsGen = new BlockTagsGen(generator, MODID, helper);
+        generator.addProvider(event.includeServer(), blockTagsGen);
+
+        ItemTagsGen itemTagsGen = new ItemTagsGen(generator, blockTagsGen, MODID, helper);
+        generator.addProvider(event.includeServer(), itemTagsGen);
+
+        PoiTypeTagsGen poiTypeTagsGen = new PoiTypeTagsGen(generator, MODID, helper);
+        generator.addProvider(event.includeServer(), poiTypeTagsGen);
+
+        StructureTagsGen structureTagsGen = new StructureTagsGen(generator, MODID, helper);
+        generator.addProvider(event.includeServer(), structureTagsGen);
+
+        generator.addProvider(event.includeServer(), new RecipesGen(generator));
+        generator.addProvider(event.includeServer(), new AdvancementsGen(generator, helper));
+        generator.addProvider(event.includeServer(), new ModLootTableGenProvider(generator));
+    }
+
     private void setup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             // Potions

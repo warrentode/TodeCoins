@@ -2,15 +2,12 @@ package net.warrentode.todecoins.util.customtabs;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 public class ModCreativeModeTab extends CreativeModeTab {
-    private static ItemSorter itemSorter = new ItemSorter();
     public ModCreativeModeTab(String label) {
         super(label);
     }
@@ -25,18 +22,54 @@ public class ModCreativeModeTab extends CreativeModeTab {
         }
         @Override
         public void fillItemList(final @NotNull NonNullList<ItemStack> items) {
-            items.sort(itemSorter);
-            super.fillItemList(items);
+            items.add(ModItems.FOUR_LEAF_CLOVER.get().getDefaultInstance());
+
+            items.add(ModItems.CURRENCY_STAMP.get().getDefaultInstance());
+            items.add(ModItems.NETHER_CURRENCY_STAMP.get().getDefaultInstance());
+
+            items.add(ModItems.COPPER_NUGGET.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_NUGGET.get().getDefaultInstance());
+            items.add(ModItems.LUCKY_NUGGET.get().getDefaultInstance());
+
+            items.add(ModItems.COPPER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHER_GOLD_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_COIN.get().getDefaultInstance());
+            items.add(ModItems.LUCKY_COIN.get().getDefaultInstance());
+
+            items.add(ModItems.EMERALD_QUARTER_BANK_NOTE.get().getDefaultInstance());
+            items.add(ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance());
+            items.add(ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance());
+
+            items.add(ModItems.EMERALD_FIBER.get().getDefaultInstance());
+            items.add(ModItems.LUCKY_FIBER.get().getDefaultInstance());
+
+            items.add(ModItems.LUCKY_THREAD.get().getDefaultInstance());
+
+            items.add(ModItems.EMERALD_COARSE_WOVE_PAPER.get().getDefaultInstance());
+            items.add(ModItems.EMERALD_WOVE_PAPER.get().getDefaultInstance());
+            items.add(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get().getDefaultInstance());
+
+            items.add(ModItems.LUCKY_FABRIC.get().getDefaultInstance());
+
+            items.add(ModItems.LUCKY_HAT.get().getDefaultInstance());
+            items.add(ModItems.LUCKY_SHIRT.get().getDefaultInstance());
+            items.add(ModItems.LUCKY_PANTS.get().getDefaultInstance());
+            items.add(ModItems.LUCKY_BOOTS.get().getDefaultInstance());
+
+            items.add((ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.IRON_COIN_BAG.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.GOLD_COIN_BAG.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.NETHERITE_COIN_BAG.get().asItem().getDefaultInstance()));
+
+            items.add((ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.EMERALD_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));
+
+            items.add((ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.COINPRESSBLOCK.get().asItem().getDefaultInstance()));
         }
     };
-    public static void preInit() {
-        for (RegistryObject<Item> registryObject : ModItems.ITEMS.getEntries()) {
-            ItemStack itemStack = registryObject.get().asItem().getDefaultInstance();
-            itemSorter.getItemPriority(itemStack);
-        }
-        for (RegistryObject<Item> registryObject : ModBlocks.ITEMS.getEntries()) {
-            ItemStack itemStack = registryObject.get().asItem().getDefaultInstance();
-            itemSorter.getItemPriority(itemStack);
-        }
-    }
 }

@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
 
-public class CraftingRecipes {
+public class CraftingRecipesGen {
     public static void register(Consumer<FinishedRecipe> consumer) {
         armorRecipes(consumer);
         currencyStampsRecipes(consumer);
