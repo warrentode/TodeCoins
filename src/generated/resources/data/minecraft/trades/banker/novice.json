@@ -1,0 +1,47 @@
+{
+  "replace": false,
+  "trades": [
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 18,
+        "item": "todecoins:copper_coin_bag"
+      },
+      "payment_item": {
+        "count": 1,
+        "item": "minecraft:emerald"
+      },
+      "price_multiplier": 0.02
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 1,
+        "item": "minecraft:emerald"
+      },
+      "payment_item": {
+        "count": 18,
+        "item": "todecoins:copper_coin_bag"
+      },
+      "price_multiplier": 0.02
+    },
+    {
+      "type": "todecoins:basic",
+      "experience": 8,
+      "max_trades": 16,
+      "offer_item": {
+        "count": 11,
+        "item": "todecoins:pot_of_gold"
+      },
+      "payment_item": {
+        "count": 1,
+        "item": "todecoins:emerald_quarter_bank_note"
+      },
+      "price_multiplier": 0.02
+    }
+  ]
+}

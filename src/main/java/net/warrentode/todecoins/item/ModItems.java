@@ -12,7 +12,7 @@ import net.warrentode.todecoins.util.customtab.ModCreativeModeTab;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MODID);
 
     public static final RegistryObject<Item> CURRENCY_STAMP = ITEMS.register("currency_stamp",
             ()-> new CurrencyStampItem(new Item.Properties().tab(ModCreativeModeTab.TODECOINSTAB).defaultDurability(64).setNoRepair()));

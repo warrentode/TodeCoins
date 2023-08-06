@@ -8,14 +8,15 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.item.ModItems;
 import net.warrentode.todecoins.villager.ModVillagers;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = TodeCoins.MOD_ID)
+import static net.warrentode.todecoins.TodeCoins.MODID;
+
+@Mod.EventBusSubscriber(modid = MODID)
 public class ModEvents {
 
     @SubscribeEvent
@@ -124,9 +125,9 @@ public class ModEvents {
             int villagerLevel = 1;
             //price
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ModBlocks.POT_OF_GOLD.get(), 11),
-                    stack, 16, 8, 0.02F)
-            );
+                                                  new ItemStack(ModBlocks.POT_OF_GOLD.get(), 11),
+                                                  stack, 16, 8, 0.02F)
+                                         );
         }
         if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
@@ -301,9 +302,9 @@ public class ModEvents {
             int villagerLevel = 5;
             //price
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 3),
-                    stack, 16, 8, 0.02F)
-            );
+                                                  new ItemStack(ModItems.EMERALD_BANK_NOTE.get(), 3),
+                                                  stack, 16, 8, 0.02F)
+                                         );
         }
         if(event.getType() == ModVillagers.LEPRECHAUN.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();

@@ -11,7 +11,7 @@ import net.warrentode.todecoins.TodeCoins;
 
 public class ModPotions {
     public static final DeferredRegister<Potion> POTIONS
-            = DeferredRegister.create(ForgeRegistries.POTIONS, TodeCoins.MOD_ID);
+            = DeferredRegister.create(ForgeRegistries.POTIONS, TodeCoins.MODID);
 
     public static final RegistryObject<Potion> LUCK_POTION_2 = POTIONS.register("luck_potion_2",
             () -> new Potion(new MobEffectInstance(MobEffects.LUCK, 6000, 1)));

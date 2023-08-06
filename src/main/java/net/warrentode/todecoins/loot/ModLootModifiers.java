@@ -10,7 +10,7 @@ import net.warrentode.todecoins.TodeCoins;
 
 public class ModLootModifiers {
     public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, TodeCoins.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, TodeCoins.MODID);
 
     @SuppressWarnings("unused")
     public static final RegistryObject<Codec<? extends IGlobalLootModifier>> ADD_ITEM =

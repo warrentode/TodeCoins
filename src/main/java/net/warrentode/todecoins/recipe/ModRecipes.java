@@ -9,7 +9,7 @@ import net.warrentode.todecoins.TodeCoins;
 
 public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, TodeCoins.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, TodeCoins.MODID);
 
     @SuppressWarnings("unused")
     public static final RegistryObject<RecipeSerializer<CoinPressRecipe>> COINPRESS_SERIALIZER =

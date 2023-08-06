@@ -12,7 +12,7 @@ import net.warrentode.todecoins.TodeCoins;
 
 public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.MENU_TYPES, TodeCoins.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.MENU_TYPES, TodeCoins.MODID);
 
     public static final RegistryObject<MenuType<CoinPressMenu>> COIN_PRESS_MENU =
             registerMenuType(CoinPressMenu::new, "coin_press_menu");
