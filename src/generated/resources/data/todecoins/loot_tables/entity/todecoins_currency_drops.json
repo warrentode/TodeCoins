@@ -6,16 +6,34 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            }
+          ],
           "name": "todecoins:entity/coins/todecoins_copper_coin_drops",
           "quality": 1
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            }
+          ],
           "name": "todecoins:entity/coins/todecoins_iron_coin_drops",
           "quality": 2
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            }
+          ],
           "name": "todecoins:entity/coins/todecoins_gold_coin_drops",
           "quality": 3
         },
@@ -23,39 +41,14 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:nether_wastes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warped_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
-                }
-              ]
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
             }
           ],
           "name": "todecoins:entity/coins/todecoins_nether_gold_coin_drops",
@@ -63,21 +56,71 @@
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:the_end"
+                  }
+                },
+                {
+                  "condition": "todecoins:entity_type_tag_condition",
+                  "tag": "forge:enderman"
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_endonian_coin_drops",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            }
+          ],
           "name": "todecoins:entity/notes/todecoins_emerald_quarter_bank_note_drops",
           "quality": 4
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            }
+          ],
           "name": "todecoins:entity/coins/todecoins_netherite_coin_drops",
           "quality": 5
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            }
+          ],
           "name": "todecoins:entity/notes/todecoins_emerald_half_bank_note_drops",
           "quality": 5
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            }
+          ],
           "name": "todecoins:entity/notes/todecoins_emerald_bank_note_drops",
           "quality": 6
         },
@@ -116,6 +159,42 @@
             }
           ],
           "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/seasonal/todecoins_spring_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/seasonal/todecoins_summer_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/seasonal/todecoins_autumn_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/seasonal/todecoins_winter_coin_drops"
         }
       ],
       "rolls": 1.0

@@ -18,7 +18,7 @@ public class FourLeafCloverItem extends Item {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.fourleafclover.hover").withStyle(ChatFormatting.GOLD));
+        tooltips.add(Component.translatable("tooltips.four_leaf_clover.hover").withStyle(ChatFormatting.GOLD));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

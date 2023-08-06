@@ -8,10 +8,14 @@
           "type": "minecraft:item",
           "conditions": [
             {
+              "condition": "todecoins:halloween_condition"
+            },
+            {
               "condition": "minecraft:killed_by_player"
             },
             {
-              "condition": "todecoins:halloween_condition"
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
             }
           ],
           "functions": [

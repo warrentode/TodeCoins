@@ -3,14 +3,21 @@
   "pools": [
     {
       "bonus_rolls": 1.0,
-      "conditions": [
-        {
-          "condition": "todecoins:anniversary_condition"
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "functions": [
             {
               "add": false,
@@ -31,6 +38,18 @@
         },
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "functions": [
             {
               "add": false,
@@ -51,6 +70,18 @@
         },
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "functions": [
             {
               "add": false,
@@ -70,6 +101,18 @@
         },
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "functions": [
             {
               "add": false,

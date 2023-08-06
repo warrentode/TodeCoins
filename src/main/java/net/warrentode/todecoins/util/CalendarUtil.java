@@ -55,18 +55,22 @@ public class CalendarUtil {
             // seasons
             if ((month == Calendar.DECEMBER && date >= 20) && (month == Calendar.MARCH && date <= 20)) {
                 return WINTER;
-            } else if ((month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20)) {
+            }
+            else if ((month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20)) {
                 return SPRING;
-            } else if ((month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 20)) {
+            }
+            else if ((month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 20)) {
                 return SUMMER;
-            } else if ((month == Calendar.SEPTEMBER && date >= 20) && (month == Calendar.DECEMBER && date <= 20)) {
+            }
+            else if ((month == Calendar.SEPTEMBER && date >= 20) && (month == Calendar.DECEMBER && date <= 20)) {
                 return AUTUMN;
             }
 
             // holidays
             if ((month == Calendar.DECEMBER && date >= 1) && (month == Calendar.DECEMBER && date <= 31)) {
                 return CHRISTMAS;
-            } else if ((month == Calendar.OCTOBER && date >= 1) && (month == Calendar.OCTOBER && date <= 31)) {
+            }
+            else if ((month == Calendar.OCTOBER && date >= 1) && (month == Calendar.OCTOBER && date <= 31)) {
                 return HALLOWEEN;
             }
 

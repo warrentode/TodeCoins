@@ -1,5 +1,17 @@
 {
   "values": [
-    "minecraft:bundle"
+      "minecraft:bundle",
+      {
+          "id": "bagofholding:leather_bag_of_holding",
+          "required": false
+      },
+      {
+          "id": "bagofholding:iron_bag_of_holding",
+          "required": false
+      },
+      {
+          "id": "bagofholding:golden_bag_of_holding",
+          "required": false
+      }
   ]
 }

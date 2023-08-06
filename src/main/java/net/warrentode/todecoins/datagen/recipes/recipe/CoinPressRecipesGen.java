@@ -13,9 +13,11 @@ import static net.warrentode.todecoins.datagen.recipes.builder.CoinPressRecipeBu
 public class CoinPressRecipesGen {
     public static final int BASIC_STAMP_TIME = 50;
     public static final int NETHER_STAMP_TIME = 75;
+    public static final int ENDONIAN_STAMP_TIME = 100;
 
     public static final float BASIC_XP = 0.35F;
     public static final float NETHER_XP = 0.65F;
+    public static final float ENDONIAN_XP = 0.95F;
 
     public static void register(Consumer<FinishedRecipe> consumer) {
         stampCoins(consumer);
@@ -58,7 +60,13 @@ public class CoinPressRecipesGen {
                 .addIngredient(ModItems.NETHER_CURRENCY_STAMP.get())
                 .addIngredient(ForgeTags.Items.GOLD_INGOT)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
-                .unlockedBy("has_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CURRENCY_STAMP.get()))
+                .unlockedBy("has_nether_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHER_CURRENCY_STAMP.get()))
+                .build(consumer);
+        coinPressRecipe(ModItems.ENDONIAN_COIN.get(), 2, ENDONIAN_STAMP_TIME, ENDONIAN_XP)
+                .addIngredient(ModItems.ENDONIAN_CURRENCY_STAMP.get())
+                .addIngredient(ForgeTags.Items.ENDONIAN_NUGGET)
+                .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
+                .unlockedBy("has_endonian_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_CURRENCY_STAMP.get()))
                 .build(consumer);
     }
 

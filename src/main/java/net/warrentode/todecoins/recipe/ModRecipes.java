@@ -14,8 +14,8 @@ public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MODID);
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPE = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, MODID);
 
-    public static final RegistryObject<RecipeSerializer<CoinPressRecipe>> COINPRESS_SERIALIZER = SERIALIZERS.register("coinpress",
-            CoinPressRecipe.Serializer::new);
+    public static final RegistryObject<RecipeSerializer<CoinPressRecipe>> COINPRESS_SERIALIZER =
+            SERIALIZERS.register("coinpress", CoinPressRecipe.Serializer::new);
     public static final RegistryObject<RecipeType<CoinPressRecipe>> RECIPE_TYPE_COINPRESS =
             RECIPE_TYPE.register("coinpress", () -> CoinPressRecipe.Type.INSTANCE);
 

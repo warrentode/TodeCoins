@@ -6,10 +6,9 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.warrentode.todecoins.datagen.recipes.RecipesGen;
-import net.warrentode.todecoins.datagen.tags.BlockTagsGen;
-import net.warrentode.todecoins.datagen.tags.ItemTagsGen;
-import net.warrentode.todecoins.datagen.tags.PoiTypeTagsGen;
-import net.warrentode.todecoins.datagen.tags.StructureTagsGen;
+import net.warrentode.todecoins.datagen.recipes.recipe.ConditionalCageriumRecipes;
+import net.warrentode.todecoins.datagen.recipes.recipe.ConditionalSpawnEggRecipes;
+import net.warrentode.todecoins.datagen.tags.*;
 import org.jetbrains.annotations.NotNull;
 
 import static net.warrentode.todecoins.TodeCoins.MODID;
@@ -30,11 +29,19 @@ public class DataGenerators {
         PoiTypeTagsGen poiTypeTagsGen = new PoiTypeTagsGen(generator, MODID, helper);
         generator.addProvider(event.includeServer(), poiTypeTagsGen);
 
+        EntityTypeTagsGen entityTypeTagsGen = new EntityTypeTagsGen(generator, MODID, helper);
+        generator.addProvider(event.includeServer(), entityTypeTagsGen);
+
         StructureTagsGen structureTagsGen = new StructureTagsGen(generator, MODID, helper);
         generator.addProvider(event.includeServer(), structureTagsGen);
 
+        generator.addProvider(event.includeClient(), new LanguageFileGen(generator, MODID, "en_us"));
+
         generator.addProvider(event.includeServer(), new RecipesGen(generator));
+        generator.addProvider(event.includeServer(), new ConditionalSpawnEggRecipes(generator));
+        generator.addProvider(event.includeServer(), new ConditionalCageriumRecipes(generator));
         generator.addProvider(event.includeServer(), new AdvancementsGen(generator, helper));
         generator.addProvider(event.includeServer(), new ModLootTableGenProvider(generator));
+        generator.addProvider(event.includeServer(), new ModLootModifierGenProvider(generator, MODID));
     }
 }

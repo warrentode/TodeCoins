@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 1.0,
+            "conditions": [
+                {
+                    "condition": "todecoins:anniversary_condition"
+                }
+            ],
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "todecoins:collectible_coin_cosmos_marshall_nash",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "todecoins:collectible_coin_cosmos_trevor_brannigan",
+                    "weight": 4
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "todecoins:collectible_coin_carnation_marshall_nash"
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "todecoins:collectible_coin_carnation_trevor_brannigan"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

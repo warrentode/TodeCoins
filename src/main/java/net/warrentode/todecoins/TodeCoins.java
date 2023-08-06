@@ -32,8 +32,8 @@ import net.warrentode.todecoins.gui.ModMenuTypes;
 import net.warrentode.todecoins.gui.coinpressgui.CoinPressScreen;
 import net.warrentode.todecoins.integration.Curios;
 import net.warrentode.todecoins.item.ModItems;
-import net.warrentode.todecoins.loot.ModLootModifiers;
-import net.warrentode.todecoins.loot.conditions.ModLootItemConditions;
+import net.warrentode.todecoins.loot.serializers.ModLootItemConditions;
+import net.warrentode.todecoins.loot.serializers.ModLootModifiers;
 import net.warrentode.todecoins.potion.BetterBrewingRecipe;
 import net.warrentode.todecoins.potion.ModPotions;
 import net.warrentode.todecoins.recipe.ModRecipes;
@@ -53,6 +53,9 @@ public class TodeCoins {
     public static final String MODID = "todecoins";
     public static final Logger LOGGER = LogManager.getLogger();
     private static boolean curiosLoaded = false;
+    private static boolean cageriumLoaded = false;
+    private static boolean sereneseasonsLoaded = false;
+    private static boolean bagofholdingLoaded = false;
 
     public TodeCoins() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -79,43 +82,25 @@ public class TodeCoins {
         ModLootItemConditions.register(modEventBus);
 
         curiosLoaded = ModList.get().isLoaded("curios");
+        cageriumLoaded = ModList.get().isLoaded("cagerium");
+        sereneseasonsLoaded = ModList.get().isLoaded("sereneseasons");
+        bagofholdingLoaded = ModList.get().isLoaded("bagofholding");
     }
 
     public static boolean isCuriosLoaded() {
         return curiosLoaded;
     }
 
-    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
-        event.enqueueWork(ModVillagers::registerPOIs);
-        event.enqueueWork(ModVillagers::init);
-        event.enqueueWork(() -> {
-            //noinspection deprecation
-            SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(),
-                    SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Mob::checkMobSpawnRules);
-        });
+    public static boolean isCageriumLoaded() {
+        return cageriumLoaded;
     }
 
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new));
-            EntityRenderers.register(ModEntityTypes.NUMISMATIST.get(), NumismatistRenderer::new);
-        }
-
-        @SubscribeEvent
-        public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
-            CoinPressRecipeCategories.init(event);
-        }
+    public static boolean isSereneSeasonsLoaded() {
+        return sereneseasonsLoaded;
     }
 
-    private void onIMEnqueueEvent(InterModEnqueueEvent event) {
-        if (curiosLoaded) {
-            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
-            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
-        }
+    public static boolean isBagofholdingLoaded() {
+        return bagofholdingLoaded;
     }
 
     public static ItemStack setCurioSlots(Player player) {
@@ -125,6 +110,23 @@ public class TodeCoins {
             slot.set(Curios.getBeltSlot(player));
         }
         return slot.get();
+    }
+
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
+        event.enqueueWork(ModVillagers::registerPOIs);
+        event.enqueueWork(ModVillagers::init);
+        event.enqueueWork(() -> {
+            //noinspection deprecation
+            SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(), SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+        });
+    }
+
+    private void onIMEnqueueEvent(InterModEnqueueEvent event) {
+        if (curiosLoaded) {
+            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
+            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
+        }
     }
 
     private void setup(final @NotNull FMLCommonSetupEvent event) {
@@ -185,5 +187,19 @@ public class TodeCoins {
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.UNLUCK_POTION_6.get(),
                     Items.REDSTONE, ModPotions.LONG_UNLUCK_POTION_6.get()));
         });
+    }
+
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new));
+            EntityRenderers.register(ModEntityTypes.NUMISMATIST.get(), NumismatistRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void onRegisterRecipeBookCategories(RegisterRecipeBookCategoriesEvent event) {
+            CoinPressRecipeCategories.init(event);
+        }
     }
 }

@@ -9,6 +9,8 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+// MIT License Copyright (c) 2023 Warren Tode
+
 public class EnchantedItemForItems implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;

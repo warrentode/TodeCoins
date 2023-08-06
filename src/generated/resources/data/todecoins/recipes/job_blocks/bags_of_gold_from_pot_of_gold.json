@@ -1,14 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "key": {
-    "#": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "todecoins:pot_of_gold"
     }
-  },
-  "pattern": [
-    "###",
-    "###",
-    "###"
   ],
   "result": {
     "count": 9,

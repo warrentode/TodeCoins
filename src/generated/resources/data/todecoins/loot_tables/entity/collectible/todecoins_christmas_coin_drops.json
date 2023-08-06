@@ -3,17 +3,21 @@
   "pools": [
     {
       "bonus_rolls": 1.0,
-      "conditions": [
-        {
-          "condition": "minecraft:killed_by_player"
-        },
-        {
-          "condition": "todecoins:christmas_condition"
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "functions": [
             {
               "add": false,

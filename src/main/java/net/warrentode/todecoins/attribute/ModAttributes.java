@@ -13,7 +13,7 @@ import static net.warrentode.todecoins.TodeCoins.MODID;
 public class ModAttributes {
     public static final DeferredRegister<Attribute> ATTRIBUTES = DeferredRegister.create(ForgeRegistries.ATTRIBUTES, MODID);
 
-    public static final RegistryObject<Attribute> CHARISMA = ATTRIBUTES.register("todecoins.charisma",
+    public static final RegistryObject<Attribute> CHARISMA = ATTRIBUTES.register("charisma",
             () -> new RangedAttribute("attribute.name.todecoins.charisma",
                     0.0D, -1024.0D, 1024.0D).setSyncable(true));
     public static final UUID CHR_MODIFIER_UUID = UUID.fromString("e4c6b947-d382-4343-b687-c34ebf01dd9e");

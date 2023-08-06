@@ -27,6 +27,8 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -42,7 +44,6 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import net.warrentode.todecoins.block.custom.CoinPressBlock;
 import net.warrentode.todecoins.block.entity.container.inventory.CoinPressItemHandler;
 import net.warrentode.todecoins.gui.coinpressgui.CoinPressMenu;
-import net.warrentode.todecoins.mixin.RecipeManagerAccessor;
 import net.warrentode.todecoins.recipe.CoinPressRecipe;
 import net.warrentode.todecoins.recipe.ModRecipes;
 import net.warrentode.todecoins.util.tags.ModTags;
@@ -67,6 +68,8 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     private ItemStack lastItemCrafted;
     private boolean checkNewRecipe;
     public LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+    public RecipeType<CoinPressRecipe> recipeType = CoinPressRecipe.Type.INSTANCE;
+    private RecipeManager.CachedCheck<RecipeWrapper, CoinPressRecipe> quickCheck;
     private final ItemStackHandler itemHandler = new ItemStackHandler(INVENTORY_SIZE) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -105,6 +108,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         this.lastItemCrafted = ItemStack.EMPTY;
         this.usedRecipes = new Object2IntOpenHashMap<>();
         this.checkNewRecipe = true;
+        this.quickCheck = RecipeManager.createCheck(recipeType);
         this.coinpressData = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -349,12 +353,12 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         if (level == null) return Optional.empty();
 
         if (lastRecipeID != null) {
-            Recipe<RecipeWrapper> recipe = ((RecipeManagerAccessor) level.getRecipeManager()).getRecipeMap(ModRecipes.RECIPE_TYPE_COINPRESS.get()).get(lastRecipeID);
-            if (recipe instanceof CoinPressRecipe) {
-                if (recipe.matches(inventory, level)) {
-                    return Optional.of((CoinPressRecipe) recipe);
+            Optional<CoinPressRecipe> recipe = level.getRecipeManager().getRecipeFor(ModRecipes.RECIPE_TYPE_COINPRESS.get(), inventory, level);
+            if (recipe.isPresent()) {
+                if (recipe.get().matches(inventory, level)) {
+                    return recipe;
                 }
-                if (recipe.getResultItem().sameItem(lastItemCrafted)) {
+                if (recipe.get().getResultItem().sameItem(lastItemCrafted)) {
                     return Optional.empty();
                 }
             }

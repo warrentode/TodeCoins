@@ -2,12 +2,15 @@ package net.warrentode.todecoins.datagen.tags;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 public class BlockTagsGen extends BlockTagsProvider {
     public BlockTagsGen(DataGenerator pGenerator, String modId, @Nullable ExistingFileHelper existingFileHelper) {
@@ -23,17 +26,14 @@ public class BlockTagsGen extends BlockTagsProvider {
     }
 
     protected void registerBlockMineables() {
-        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE).add(
-                ModBlocks.POT_OF_GOLD.get()
-        );
+        tag(net.minecraft.tags.BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.POT_OF_GOLD.get())
+                .add(ModBlocks.COINPRESSBLOCK.get());
     }
     protected void registerMinecraftTags() {
-        tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(
-                ModBlocks.POT_OF_GOLD.get()
-        );
-        tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL).add(
-                ModBlocks.POT_OF_GOLD.get()
-        );
+        tag(net.minecraft.tags.BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.POT_OF_GOLD.get())
+                .add(ModBlocks.COINPRESSBLOCK.get());
     }
     protected void registerForgeTags() {
         tag(ForgeTags.Blocks.STORAGE_BLOCKS)
@@ -43,6 +43,8 @@ public class BlockTagsGen extends BlockTagsProvider {
     }
     protected void registerModTags() {
         tag(ModTags.Blocks.DROPS_FOUR_LEAF_CLOVER)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:clover")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:huge_clover_petal")))
                 .add(Blocks.GRASS)
                 .add(Blocks.TALL_GRASS);
         tag(ModTags.Blocks.STORAGE_BLOCKS)
@@ -52,7 +54,8 @@ public class BlockTagsGen extends BlockTagsProvider {
                 ModBlocks.IRON_COIN_BAG.get(),
                 ModBlocks.GOLD_COIN_BAG.get(),
                 ModBlocks.NETHERITE_COIN_BAG.get(),
-                ModBlocks.NETHERITE_COIN_BAG.get(),
+                ModBlocks.NETHER_GOLD_COIN_BAG.get(),
+                ModBlocks.ENDONIAN_COIN_BAG.get(),
                 ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(),
                 ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get(),
                 ModBlocks.EMERALD_BANK_NOTE_BAG.get(),

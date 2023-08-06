@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_currency_stamp": {
+    "has_nether_currency_stamp": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:currency_stamp"
+              "todecoins:nether_currency_stamp"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_currency_stamp",
+      "has_nether_currency_stamp",
       "has_the_recipe"
     ]
   ],
