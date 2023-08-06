@@ -52,6 +52,7 @@ public class TodeCoins {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(()-> {
            ModVillagers.registerPOIs();
@@ -127,5 +128,4 @@ public class TodeCoins {
                     Items.REDSTONE, ModPotions.LONG_UNLUCK_POTION_6.get()));
         });
     }
-
 }

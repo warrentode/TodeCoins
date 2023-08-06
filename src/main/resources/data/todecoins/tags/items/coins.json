@@ -4,6 +4,7 @@
     "todecoins:copper_coin",
     "todecoins:iron_coin",
     "todecoins:gold_coin",
-    "todecoins:netherite_coin"
+    "todecoins:netherite_coin",
+    "todecoins:lucky_coin"
   ]
 }

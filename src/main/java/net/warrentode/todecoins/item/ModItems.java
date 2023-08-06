@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.warrentode.todecoins.TodeCoins;
 import net.warrentode.todecoins.item.custom.*;
+import net.warrentode.todecoins.util.customtab.ModCreativeModeTab;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
