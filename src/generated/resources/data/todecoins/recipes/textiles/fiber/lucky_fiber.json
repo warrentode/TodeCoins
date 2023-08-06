@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "todecoins:textiles/currency_fiber"
+    },
+    "C": {
+      "item": "todecoins:lucky_coin"
+    }
+  },
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "item": "todecoins:lucky_fiber"
+  }
+}

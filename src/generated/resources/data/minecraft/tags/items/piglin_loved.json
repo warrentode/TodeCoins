@@ -1,0 +1,9 @@
+{
+  "values": [
+    "todecoins:gold_coin",
+    "todecoins:nether_gold_coin",
+    "todecoins:gold_coin_bag",
+    "todecoins:nether_gold_coin_bag",
+    "#forge:piglin_barter_items"
+  ]
+}

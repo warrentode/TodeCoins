@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "todecoins:emerald_fiber"
+    },
+    {
+      "item": "todecoins:emerald_fiber"
+    },
+    {
+      "item": "todecoins:emerald_fiber"
+    },
+    {
+      "item": "todecoins:emerald_fiber"
+    },
+    {
+      "item": "todecoins:emerald_fiber"
+    },
+    {
+      "item": "todecoins:emerald_fiber"
+    },
+    {
+      "item": "todecoins:emerald_fiber"
+    },
+    {
+      "item": "todecoins:emerald_fiber"
+    }
+  ],
+  "result": {
+    "item": "todecoins:emerald_smooth_wove_paper"
+  }
+}

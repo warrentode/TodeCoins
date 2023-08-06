@@ -1,21 +1,24 @@
 package net.warrentode.todecoins.item;
 
+import java.util.Collection;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.warrentode.todecoins.TodeCoins;
+import static net.warrentode.todecoins.TodeCoins.MODID;
 import net.warrentode.todecoins.item.custom.*;
-import net.warrentode.todecoins.util.customtab.ModCreativeModeTab;
+import net.warrentode.todecoins.util.customtabs.ModCreativeModeTab;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
     public static final RegistryObject<Item> CURRENCY_STAMP = ITEMS.register("currency_stamp",
             ()-> new CurrencyStampItem(new Item.Properties().tab(ModCreativeModeTab.TODECOINSTAB).defaultDurability(64).setNoRepair()));
+    public static final RegistryObject<Item> NETHER_CURRENCY_STAMP = ITEMS.register("nether_currency_stamp",
+           ()-> new CurrencyStampItem(new Item.Properties().tab(ModCreativeModeTab.TODECOINSTAB).defaultDurability(64).setNoRepair()));
 
     public static final RegistryObject<Item> FOUR_LEAF_CLOVER = ITEMS.register("four_leaf_clover",
             ()-> new FourLeafCloverItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
@@ -42,6 +45,9 @@ public class ModItems {
             ()-> new BankNoteItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
     public static final RegistryObject<Item> LUCKY_COIN = ITEMS.register("lucky_coin",
             ()-> new LuckyCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+
+    public static final RegistryObject<Item> NETHER_GOLD_COIN = ITEMS.register("nether_gold_coin",
+           ()-> new BarterCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
 
     public static final RegistryObject<Item> EMERALD_FIBER = ITEMS.register("emerald_fiber",
             ()-> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
@@ -73,5 +79,11 @@ public class ModItems {
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+    }
+    /**
+     @return A collection of this mod's items in the order of their registration.
+     **/
+    public static Collection<RegistryObject<Item>> orderedItems() {
+        return ITEMS.getEntries();
     }
 }

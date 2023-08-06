@@ -1,0 +1,17 @@
+{
+  "type": "todecoins:coinpress",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "todecoins:currency_stamp"
+    },
+    {
+      "item": "todecoins:emerald_coarse_wove_paper"
+    }
+  ],
+  "recipe_book_tab": "bank_notes",
+  "result": {
+    "item": "todecoins:emerald_quarter_bank_note"
+  },
+  "stampingTime": 50
+}

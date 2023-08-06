@@ -1,0 +1,18 @@
+{
+  "type": "todecoins:coinpress",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "todecoins:currency_stamp"
+    },
+    {
+      "tag": "forge:nuggets/copper"
+    }
+  ],
+  "recipe_book_tab": "coins",
+  "result": {
+    "count": 2,
+    "item": "todecoins:copper_coin"
+  },
+  "stampingTime": 50
+}

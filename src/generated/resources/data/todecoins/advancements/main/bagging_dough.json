@@ -1,0 +1,128 @@
+{
+  "parent": "todecoins:main/root",
+  "criteria": {
+    "craft_copper_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:copper_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_emerald_bank_note_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:emerald_bank_note_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_emerald_half_bank_note_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:emerald_half_bank_note_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_emerald_quarter_bank_note_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:emerald_quarter_bank_note_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_gold_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:gold_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_iron_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:iron_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_nether_gold_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:nether_gold_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_netherite_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:netherite_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.baggingDough.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:gold_coin_bag"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.baggingDough"
+    }
+  },
+  "requirements": [
+    [
+      "craft_copper_coin_bag",
+      "craft_iron_coin_bag",
+      "craft_gold_coin_bag",
+      "craft_netherite_coin_bag",
+      "craft_emerald_quarter_bank_note_bag",
+      "craft_emerald_half_bank_note_bag",
+      "craft_emerald_bank_note_bag",
+      "craft_nether_gold_coin_bag"
+    ]
+  ]
+}
