@@ -5,7 +5,7 @@ issueTrackerURL="https://github.com/toadie-odie/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "1.19.2-1.2.5"
+version = "1.19.2-1.2.6"
 displayName = "Tode Coins"
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 displayURL = "https://github.com/toadie-odie/TodeCoins"

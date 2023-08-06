@@ -6,18 +6,18 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins/todecoins_copper_coin_loot",
+          "name": "todecoins:chests/todecoins_copper_coin_loot",
           "weight": 7
         },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins/todecoins_iron_coin_loot",
+          "name": "todecoins:chests/todecoins_iron_coin_loot",
           "quality": 1,
           "weight": 6
         },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins/todecoins_gold_coin_loot",
+          "name": "todecoins:chests/todecoins_gold_coin_loot",
           "quality": 2,
           "weight": 5
         },
@@ -60,37 +60,37 @@
               ]
             }
           ],
-          "name": "todecoins:chests/todecoins/todecoins_nether_gold_coin_loot",
+          "name": "todecoins:chests/todecoins_nether_gold_coin_loot",
           "quality": 2,
           "weight": 5
         },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins/todecoins_emerald_quarter_bank_note_loot",
+          "name": "todecoins:chests/todecoins_emerald_quarter_bank_note_loot",
           "quality": 3,
           "weight": 4
         },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins/todecoins_netherite_coin_loot",
+          "name": "todecoins:chests/todecoins_netherite_coin_loot",
           "quality": 4,
           "weight": 4
         },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins/todecoins_emerald_half_bank_note_loot",
+          "name": "todecoins:chests/todecoins_emerald_half_bank_note_loot",
           "quality": 4,
           "weight": 3
         },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins/todecoins_emerald_bank_note_loot",
+          "name": "todecoins:chests/todecoins_emerald_bank_note_loot",
           "quality": 5,
           "weight": 2
         },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins/todecoins_lucky_coin_loot",
+          "name": "todecoins:chests/todecoins_lucky_coin_loot",
           "quality": 6
         }
       ],

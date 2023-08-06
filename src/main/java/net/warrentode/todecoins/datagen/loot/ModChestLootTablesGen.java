@@ -27,26 +27,26 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder IN_BASALT_DELTAS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BASALT_DELTAS));
     public static final LootItemCondition.Builder IN_SOUL_SAND_VALLEY = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SOUL_SAND_VALLEY));
 
-    private static final ResourceLocation TODECOINS_CHEST_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_chest");
-    private static final ResourceLocation TODECOINS_COPPER_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_copper_coin_loot");
-    private static final ResourceLocation TODECOINS_IRON_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_iron_coin_loot");
-    private static final ResourceLocation TODECOINS_GOLD_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_gold_coin_loot");
-    private static final ResourceLocation TODECOINS_LUCKY_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_lucky_coin_loot");
-    private static final ResourceLocation TODECOINS_NETHERITE_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_netherite_coin_loot");
-    private static final ResourceLocation TODECOINS_NETHER_GOLD_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_nether_gold_coin_loot");
-    private static final ResourceLocation TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_emerald_quarter_bank_note_loot");
-    private static final ResourceLocation TODECOINS_EMERALD_HALF_BANK_NOTE_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_emerald_half_bank_note_loot");
-    private static final ResourceLocation TODECOINS_EMERALD_BANK_NOTE_LOOT = new ResourceLocation(MODID, "chests/todecoins/todecoins_emerald_bank_note_loot");
+    private static final ResourceLocation TODECOINS_CHEST_LOOT = new ResourceLocation(MODID, "chests/todecoins_chest");
+    private static final ResourceLocation TODECOINS_COPPER_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins_copper_coin_loot");
+    private static final ResourceLocation TODECOINS_IRON_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins_iron_coin_loot");
+    private static final ResourceLocation TODECOINS_GOLD_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins_gold_coin_loot");
+    private static final ResourceLocation TODECOINS_LUCKY_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins_lucky_coin_loot");
+    private static final ResourceLocation TODECOINS_NETHERITE_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins_netherite_coin_loot");
+    private static final ResourceLocation TODECOINS_NETHER_GOLD_COIN_LOOT = new ResourceLocation(MODID, "chests/todecoins_nether_gold_coin_loot");
+    private static final ResourceLocation TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT = new ResourceLocation(MODID, "chests/todecoins_emerald_quarter_bank_note_loot");
+    private static final ResourceLocation TODECOINS_EMERALD_HALF_BANK_NOTE_LOOT = new ResourceLocation(MODID, "chests/todecoins_emerald_half_bank_note_loot");
+    private static final ResourceLocation TODECOINS_EMERALD_BANK_NOTE_LOOT = new ResourceLocation(MODID, "chests/todecoins_emerald_bank_note_loot");
 
     @Override
     public void accept(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(TODECOINS_CHEST_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                          .setRolls(ConstantValue.exactly(1.0F))
-                                          .setBonusRolls(ConstantValue.exactly(1.0F))
-                                          .add(LootTableReference.lootTableReference(TODECOINS_COPPER_COIN_LOOT)
-                                                       .setWeight(7).setQuality(0))
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setBonusRolls(ConstantValue.exactly(1.0F))
+                                .add(LootTableReference.lootTableReference(TODECOINS_COPPER_COIN_LOOT)
+                                        .setWeight(7).setQuality(0))
                                           .add(LootTableReference.lootTableReference(TODECOINS_IRON_COIN_LOOT)
                                                        .setWeight(6).setQuality(1))
                                           .add(LootTableReference.lootTableReference(TODECOINS_GOLD_COIN_LOOT)
