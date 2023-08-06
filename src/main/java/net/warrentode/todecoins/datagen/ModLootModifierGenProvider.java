@@ -93,8 +93,7 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
         add("add_loot_boss_currency_drops", new AddLootTableModifier(
                 new LootItemCondition[]{
                         AlternativeLootItemCondition
-                                .alternative(LootTableIdCondition.builder(EntityType.ELDER_GUARDIAN.getDefaultLootTable()))
-                                .or(LootTableIdCondition.builder(EntityType.ENDER_DRAGON.getDefaultLootTable()))
+                                .alternative(LootTableIdCondition.builder(EntityType.ENDER_DRAGON.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WARDEN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WITHER.getDefaultLootTable()))
                                 .build()
@@ -118,6 +117,7 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .or(LootTableIdCondition.builder(EntityType.DOLPHIN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.DONKEY.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.DROWNED.getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(EntityType.ELDER_GUARDIAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.ENDERMAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.ENDERMITE.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.EVOKER.getDefaultLootTable()))

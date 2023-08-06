@@ -352,7 +352,7 @@ public class NumismatistTrades {
 
     private static ImmutableSet<ItemLike> getRequestedOffSeasonCoin() {
         if (OfferedCurrentSeasonCoin == BirthdaySeasonCoins) {
-            RequestedOffSeasonCoin = AutumnSeasonCoins;
+            RequestedOffSeasonCoin = WinterSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == AnniversarySeasonCoins) {
             RequestedOffSeasonCoin = WinterSeasonCoins;
@@ -373,23 +373,23 @@ public class NumismatistTrades {
             RequestedOffSeasonCoin = SummerSeasonCoins;
         }
         else {
-            RequestedOffSeasonCoin = WinterSeasonCoins;
+            RequestedOffSeasonCoin = AutumnSeasonCoins;
         }
         return RequestedOffSeasonCoin;
     }
 
     private static ImmutableSet<ItemLike> getOfferedOffSeasonCoin() {
         if (OfferedCurrentSeasonCoin == BirthdaySeasonCoins) {
-            OfferedOffSeasonCoin = SpringSeasonCoins;
+            OfferedOffSeasonCoin = WinterSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == AnniversarySeasonCoins) {
-            OfferedOffSeasonCoin = SummerSeasonCoins;
+            OfferedOffSeasonCoin = WinterSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == HalloweenSeasonCoins) {
-            OfferedOffSeasonCoin = SpringSeasonCoins;
+            OfferedOffSeasonCoin = AutumnSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == ChristmasSeasonCoins) {
-            OfferedOffSeasonCoin = SummerSeasonCoins;
+            OfferedOffSeasonCoin = WinterSeasonCoins;
         }
         else if (OfferedCurrentSeasonCoin == SpringSeasonCoins) {
             OfferedOffSeasonCoin = AutumnSeasonCoins;

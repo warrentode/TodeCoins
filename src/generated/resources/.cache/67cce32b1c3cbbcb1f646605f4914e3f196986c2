@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-28T00:01:18.9022781	LootTables
+// 1.19.2	2023-07-29T20:58:27.8390347	LootTables
 b8db3795527ad4f7b05c2b0ef327f40a3e615c7e data/todecoins/loot_tables/blocks/coin_press.json
 d779866a4ec560311f2219e1fbc548fa51b1ed20 data/todecoins/loot_tables/blocks/copper_coin_bag.json
 e15dc48a880448b70f0a47c600b2a51e9cf0acfe data/todecoins/loot_tables/blocks/emerald_bank_note_bag.json
@@ -31,7 +31,7 @@ b5b4e2ee6bb7d6f37679a240c0045f8a0ad676e1 data/todecoins/loot_tables/chests/curre
 381f5ab4ceb311c42a98450c19c222d48f1eaedf data/todecoins/loot_tables/chests/currency/todecoins_lucky_coin_loot.json
 3230ab785d051b230205e84b7a614ea795666748 data/todecoins/loot_tables/chests/currency/todecoins_netherite_coin_loot.json
 27e0a45f964a13e8fa1574280375255c82763b2a data/todecoins/loot_tables/chests/currency/todecoins_nether_gold_coin_loot.json
-fd2f530c9a2fe742aff5c0c11ebf6fb6ddaeb85c data/todecoins/loot_tables/chests/endonian_materials_loot.json
+884458d92a2d8ca543bb9f92738a7799b1ef0280 data/todecoins/loot_tables/chests/endonian_materials_loot.json
 52934d2a1a34317cb6a3bd0555ba9b768197f8a3 data/todecoins/loot_tables/chests/todecoins_chest.json
 0833dbabc57e1f5bb6e5731a5fe9b42cce4cfdd0 data/todecoins/loot_tables/chests/village/villager_banker.json
 ab27d7159655e5650a73ef5008eda6b609f1e61e data/todecoins/loot_tables/chests/village/villager_leprechaun.json
