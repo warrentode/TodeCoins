@@ -25,6 +25,7 @@ public class ModBlockLootTablesGen extends BlockLoot {
         this.dropSelf(ModBlocks.NETHER_GOLD_COIN_BAG.get());
         this.dropSelf(ModBlocks.NETHERITE_COIN_BAG.get());
         this.dropSelf(ModBlocks.ENDONIAN_COIN_BAG.get());
+        this.dropSelf(ModBlocks.LUCKY_COIN_BAG.get());
 
         this.dropSelf(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get());
         this.dropSelf(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get());

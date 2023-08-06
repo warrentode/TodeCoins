@@ -1,5 +1,6 @@
 package net.warrentode.todecoins.event;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -23,6 +24,7 @@ import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -35,6 +37,7 @@ import net.warrentode.todecoins.attribute.PlayerCharismaProvider;
 import net.warrentode.todecoins.entity.ModEntityTypes;
 import net.warrentode.todecoins.integration.Curios;
 import net.warrentode.todecoins.item.ModItems;
+import net.warrentode.todecoins.util.tags.ForgeTags;
 import net.warrentode.todecoins.util.tags.ModTags;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -61,6 +64,30 @@ public class ModEvents {
             if (stack.is(ModTags.Items.NO_AI_EGGS)) {
                 final CompoundTag entityTag = stack.getOrCreateTagElement("EntityTag");
                 entityTag.putBoolean("NoAI", true);
+            }
+        }
+
+        @SubscribeEvent
+        public static void onPlayerSeen(LivingEvent.LivingVisibilityEvent event) {
+            Player player = Minecraft.getInstance().player;
+            LivingEntity lookingEntity = (LivingEntity) event.getLookingEntity();
+            double d0 = event.getVisibilityModifier();
+
+            if (lookingEntity != null && player != null) {
+                ItemStack stack = Curios.getCharmSlot(player);
+                EntityType<?> entitytype = lookingEntity.getType();
+                if (entitytype.is(ForgeTags.EntityTypes.CREEPER_TYPES) && (stack != null && stack.is(ModTags.Items.CREEPER_COIN_SET))) {
+                    event.modifyVisibility(0.5D);
+                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0), lookingEntity);
+                }
+                else if (entitytype.is(ForgeTags.EntityTypes.DROWNED_TYPES) && (stack != null && stack.is(ModTags.Items.DROWNED_COIN_SET))) {
+                    event.modifyVisibility(0.5D);
+                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0), lookingEntity);
+                }
+                else if (entitytype.is(ForgeTags.EntityTypes.EVOKER_TYPES) && (stack != null && stack.is(ModTags.Items.EVOKER_COIN_SET))) {
+                    event.modifyVisibility(0.5D);
+                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 200, 0), lookingEntity);
+                }
             }
         }
 

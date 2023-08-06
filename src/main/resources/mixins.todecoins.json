@@ -8,7 +8,6 @@
         "NumismatistSpawnerMixin",
         "PhantomBehaviorMixin",
         "PiglinBarterMixin",
-        "PlayerVisibilityMixin",
         "VillagerMixin",
         "WalkThroughBerryBushMixin"
     ],

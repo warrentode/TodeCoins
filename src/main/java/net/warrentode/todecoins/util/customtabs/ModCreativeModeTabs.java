@@ -80,6 +80,7 @@ public class ModCreativeModeTabs extends CreativeModeTab {
 
             items.add((ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem().getDefaultInstance()));
             items.add((ModBlocks.ENDONIAN_COIN_BAG.get().asItem().getDefaultInstance()));
+            items.add((ModBlocks.LUCKY_COIN_BAG.get().asItem().getDefaultInstance()));
 
             items.add((ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));
             items.add((ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get().asItem().getDefaultInstance()));

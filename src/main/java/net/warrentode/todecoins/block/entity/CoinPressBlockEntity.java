@@ -305,7 +305,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         }
 
         // check first input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
-        if (inventory.getStackInSlot(0).getDamageValue() == inventory.getStackInSlot(0).getMaxDamage()
+        if (inventory.getStackInSlot(0).getDamageValue() == (inventory.getStackInSlot(0).getMaxDamage() - 1)
                 && inventory.getStackInSlot(0).is(ModTags.Items.CURRENCY_STAMPS)) {
             inventory.extractItem(0, 1, false);
         }

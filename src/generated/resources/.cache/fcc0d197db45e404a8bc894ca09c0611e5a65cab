@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-16T21:26:26.4652481	Tags for minecraft:entity_type
+// 1.19.2	2023-07-26T18:49:11.7480807	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
@@ -31,7 +31,6 @@ ec24edf6d1ea9189a4dc1a29a781bc696fb575d3 data/forge/tags/entity_types/guardian.j
 f7cc9e720867f2fea58d5b0840bdce7a253ca3fe data/forge/tags/entity_types/hoglin.json
 813a5e82a124f244206efa3c974874c17f57957d data/forge/tags/entity_types/horse.json
 e2e5633d9261e4ff3f7d07edc9901471b3586a5a data/forge/tags/entity_types/husk.json
-84e89f9af3063e7205153bc854b2d4865133c8c3 data/forge/tags/entity_types/illagers.json
 3f7f728e824b94d2b07880f63a920a98bc41e6f0 data/forge/tags/entity_types/illusioner.json
 29671cfa11d074462c259806e9d60468451e3cdb data/forge/tags/entity_types/iron_golem.json
 5c5afd5d1064c82ba6697a1f869a9f972b777fe5 data/forge/tags/entity_types/llama.json

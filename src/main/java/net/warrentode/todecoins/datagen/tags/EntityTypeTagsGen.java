@@ -35,14 +35,6 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.WARDEN)
                 .add(EntityType.WITHER);
-        tag(ForgeTags.EntityTypes.ILLAGERS)
-                .addTag(ForgeTags.EntityTypes.PILLAGER_TYPES)
-                .addTag(ForgeTags.EntityTypes.VINDICATOR_TYPES)
-                .addTag(ForgeTags.EntityTypes.EVOKER_TYPES)
-                .addTag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
-                .addTag(ForgeTags.EntityTypes.VEX_TYPES)
-                .addTag(ForgeTags.EntityTypes.WITCH_TYPES)
-                .addTag(ForgeTags.EntityTypes.RAVAGER_TYPES);
         tag(ForgeTags.EntityTypes.DROPS_CURRENCY)
                 .addTag(ForgeTags.EntityTypes.BOSSES)
                 .addTag(ForgeTags.EntityTypes.BLAZE_TYPES)
@@ -77,7 +69,6 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .addTag(ForgeTags.EntityTypes.ZOMBIFIED_PIGLIN_TYPES)
                 .addTag(ForgeTags.EntityTypes.HOGLIN_TYPES)
                 .addTag(ForgeTags.EntityTypes.PIGLIN_BRUTE_TYPES);
-
         tag(ForgeTags.EntityTypes.ALLAY_TYPES)
                 .add(EntityType.ALLAY);
         tag(ForgeTags.EntityTypes.AXOLOTL_TYPES)
