@@ -1,7 +1,6 @@
 package net.warrentode.todecoins;
 
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -10,8 +9,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -23,13 +20,6 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.warrentode.todecoins.block.ModBlocks;
 import net.warrentode.todecoins.block.entity.ModBlockEntities;
-import net.warrentode.todecoins.datagen.AdvancementsGen;
-import net.warrentode.todecoins.datagen.ModLootTableGenProvider;
-import net.warrentode.todecoins.datagen.recipes.RecipesGen;
-import net.warrentode.todecoins.datagen.tags.BlockTagsGen;
-import net.warrentode.todecoins.datagen.tags.ItemTagsGen;
-import net.warrentode.todecoins.datagen.tags.PoiTypeTagsGen;
-import net.warrentode.todecoins.datagen.tags.StructureTagsGen;
 import net.warrentode.todecoins.gui.CoinPressScreen;
 import net.warrentode.todecoins.gui.ModMenuTypes;
 import net.warrentode.todecoins.integration.Curios;
@@ -60,7 +50,6 @@ public class TodeCoins {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::onIMEnqueueEvent);
-        modEventBus.addListener(this::onGatherData);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setup);
 
@@ -87,6 +76,7 @@ public class TodeCoins {
 
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
         event.enqueueWork(ModVillagers::registerPOIs);
+        event.enqueueWork(ModVillagers::init);
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -110,31 +100,10 @@ public class TodeCoins {
 
     public static ItemStack setCurioSlots(Player player) {
         AtomicReference<ItemStack> charm = new AtomicReference<>(ItemStack.EMPTY);
-        if (TodeCoins.isCuriosLoaded()) {
+        if (curiosLoaded) {
             charm.set(Curios.getCharmSlot(player));
         }
         return charm.get();
-    }
-
-    public void onGatherData(@NotNull GatherDataEvent event) {
-        DataGenerator generator = event.getGenerator();
-        ExistingFileHelper helper = event.getExistingFileHelper();
-
-        BlockTagsGen blockTagsGen = new BlockTagsGen(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), blockTagsGen);
-
-        ItemTagsGen itemTagsGen = new ItemTagsGen(generator, blockTagsGen, MODID, helper);
-        generator.addProvider(event.includeServer(), itemTagsGen);
-
-        PoiTypeTagsGen poiTypeTagsGen = new PoiTypeTagsGen(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), poiTypeTagsGen);
-
-        StructureTagsGen structureTagsGen = new StructureTagsGen(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), structureTagsGen);
-
-        generator.addProvider(event.includeServer(), new RecipesGen(generator));
-        generator.addProvider(event.includeServer(), new AdvancementsGen(generator, helper));
-        generator.addProvider(event.includeServer(), new ModLootTableGenProvider(generator));
     }
 
     private void setup(final @NotNull FMLCommonSetupEvent event) {

@@ -2,6 +2,7 @@ package net.warrentode.todecoins.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -334,9 +335,9 @@ public class ModEvents {
             LivingEntity entity = event.getEntity();
             Level level = entity.getCommandSenderWorld();
             if (!level.isClientSide) {
-                System.out.println("Level is Server Side");
                 if (entity instanceof ServerPlayer player) {
                     Inventory playerInventory = player.getInventory();
+                    DamageSource damageSource = player.getLastDamageSource();
                     ItemStack luckyCoin = null;
 
                     if (TodeCoins.isCuriosLoaded()) {
@@ -370,6 +371,9 @@ public class ModEvents {
                         player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
                         player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 800, 0));
                         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 900, 1));
+                        if (damageSource != null && damageSource == DamageSource.OUT_OF_WORLD) {
+                            player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 900, 0));
+                        }
                         level.broadcastEntityEvent(player, (byte) 35);
                         luckyCoin.shrink(1);
                         event.setCanceled(true);
