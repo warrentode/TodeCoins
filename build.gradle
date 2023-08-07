@@ -2,6 +2,7 @@
 //file:noinspection GrUnresolvedAccess
 buildscript {
     repositories {
+        mavenCentral()
         maven { url = 'https://maven.minecraftforge.net/' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
     }
@@ -19,19 +20,13 @@ plugins {
 }
 
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
-
-mixin {
-    add sourceSets.main, "mixins.todecoins.refmap.json"
-    config "mixins.todecoins.json"
-    showMessageTypes = true
-}
-
-version = '1.19.2-1.05.01-ALPHA'
 group = 'com.github.warrentode.todecoins'
 archivesBaseName = 'todecoins'
+version = '1.19.2-1.05.01-ALPHA'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -99,6 +94,12 @@ sourceSets.main.resources {
     srcDir 'src/generated/resources'
 }
 
+mixin {
+    add sourceSets.main, "mixins.todecoins.refmap.json"
+    config "mixins.todecoins.json"
+    showMessageTypes = true
+}
+
 repositories {
     mavenCentral()
     maven { url = "https://maven.theillusivec4.top/" }
@@ -149,32 +150,19 @@ tasks.register('updateJson') {
 
 jar.finalizedBy('reobfJar')
 
-java {
-    withSourcesJar()
-    withJavadocJar()
-}
-
 publishing {
     publications {
-        maven(MavenPublication) {
-            from components.java
+        mavenJava(MavenPublication) {
+            artifact jar
         }
     }
     repositories {
         maven {
-            url 'https://jitpack.io/warrentode/TodeCoins'
-        }
-        maven {
-            url "file://${project.projectDir}/mcmodsrepo"
+            url "file:///${project.projectDir}/mcmodsrepo"
         }
     }
 }
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
-}
-
-wrapper {
-    gradleVersion = "8.1.1"
-    distributionType = Wrapper.DistributionType.ALL
 }
