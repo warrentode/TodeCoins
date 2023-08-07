@@ -13,6 +13,7 @@ buildscript {
 }
 
 plugins {
+    id 'java'
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
@@ -20,6 +21,7 @@ plugins {
 }
 
 apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
@@ -28,7 +30,11 @@ group = 'com.github.warrentode.todecoins'
 archivesBaseName = 'todecoins'
 version = '1.19.2-1.05.01-ALPHA'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(19)
+    }
+}
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
@@ -149,19 +155,24 @@ tasks.register('updateJson') {
 
 jar.finalizedBy('reobfJar')
 
+java {
+    withSourcesJar()
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            from components.java
         }
     }
     repositories {
+        mavenLocal()
         maven {
             url "file:///${project.projectDir}/mcmodsrepo"
         }
     }
 }
 
-compileJava {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
 }
