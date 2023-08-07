@@ -30,7 +30,7 @@ mixin {
 }
 
 version = '1.19.2-1.05.01-ALPHA'
-group = 'com.github.warrentode'
+group = 'com.github.warrentode.todecoins'
 archivesBaseName = 'todecoins'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -100,6 +100,7 @@ sourceSets.main.resources {
 }
 
 repositories {
+    mavenCentral()
     maven { url = "https://maven.theillusivec4.top/" }
     maven {
         url = "https://cursemaven.com"
@@ -148,13 +149,21 @@ tasks.register('updateJson') {
 
 jar.finalizedBy('reobfJar')
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            artifact jar
+        maven(MavenPublication) {
+            from components.java
         }
     }
     repositories {
+        maven {
+            url 'https://jitpack.io/warrentode/TodeCoins'
+        }
         maven {
             url "file://${project.projectDir}/mcmodsrepo"
         }
