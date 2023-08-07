@@ -50,6 +50,7 @@ public abstract class PhantomBehaviorMixin {
     private void todecoins_canContinueToUse(CallbackInfoReturnable<Boolean> cir) {
         Player player = Minecraft.getInstance().player;
 
+        // TODO: fix random tick crash on Phantom with this
         if (this$0.tickCount > this.todeCoins$catSearchTick) {
             this.todeCoins$catSearchTick = this$0.tickCount + 20;
             List<Player> playerList = this$0.level.getEntitiesOfClass(Player.class, this$0.getBoundingBox().inflate(16.0D), EntitySelector.ENTITY_STILL_ALIVE);
