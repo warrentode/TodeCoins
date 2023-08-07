@@ -1,5 +1,6 @@
 //file:noinspection GroovyAssignabilityCheck
 //file:noinspection GrUnresolvedAccess
+//file:noinspection GroovyAccessibility
 buildscript {
     repositories {
         mavenCentral()
@@ -164,20 +165,22 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
         }
+        publishToMavenLocal(MavenPublication) {
+            from components.java
+        }
     }
     repositories {
-        mavenLocal()
         maven {
             url "file:///${project.projectDir}/mcmodsrepo"
         }
     }
 }
 
-def javaCompiler = javaToolchains.compilerFor {
-    languageVersion.set(JavaLanguageVersion.of(19))
-}
+tasks.publishToMavenLocal
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
-    javaCompiler
+    javaCompiler = javaToolchains.compilerFor {
+        languageVersion = JavaLanguageVersion.of(19)
+    }
 }
