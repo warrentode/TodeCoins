@@ -101,7 +101,6 @@ mixin {
 }
 
 repositories {
-    mavenCentral()
     maven { url = "https://maven.theillusivec4.top/" }
     maven {
         url = "https://cursemaven.com"
@@ -163,6 +162,6 @@ publishing {
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
+compileJava {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
