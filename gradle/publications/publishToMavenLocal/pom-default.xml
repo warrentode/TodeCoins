@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- This module was also published with a richer model, Gradle metadata,  -->
+    <!-- which should be used instead. Do not delete the following line which  -->
+    <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+    <!-- that they should prefer consuming it instead. -->
+    <!-- do_not_remove: published-with-gradle-metadata -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.warrentode</groupId>
+    <artifactId>TodeCoins</artifactId>
+    <version>1.19.2-1.05.01-ALPHA</version>
+    <dependencies>
+        <dependency>
+            <groupId>top.theillusivec4.curios</groupId>
+            <artifactId>curios-forge</artifactId>
+            <version>1.19.2-5.1.4.0_mapped_parchment_2022.11.27-1.19.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>curse.maven</groupId>
+            <artifactId>cagerium-709608</artifactId>
+            <version>4517775_mapped_parchment_2022.11.27-1.19.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>curse.maven</groupId>
+            <artifactId>puzzles-lib-495476</artifactId>
+            <version>4600775_mapped_parchment_2022.11.27-1.19.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>curse.maven</groupId>
+            <artifactId>bag-of-holding-forge-593996</artifactId>
+            <version>4111700_mapped_parchment_2022.11.27-1.19.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>curse.maven</groupId>
+            <artifactId>ecologics-570463</artifactId>
+            <version>4171285_mapped_parchment_2022.11.27-1.19.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>curse.maven</groupId>
+            <artifactId>serene-seasons-291874</artifactId>
+            <version>4037228_mapped_parchment_2022.11.27-1.19.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>curse.maven</groupId>
+            <artifactId>sophisticated-backpacks-422301</artifactId>
+            <version>4637293_mapped_parchment_2022.11.27-1.19.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>curse.maven</groupId>
+            <artifactId>sophisticated-core-618298</artifactId>
+            <version>4668694_mapped_parchment_2022.11.27-1.19.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.minecraftforge</groupId>
+            <artifactId>forge</artifactId>
+            <version>1.19.2-43.2.21_mapped_parchment_2022.11.27-1.19.2_at_58e5c78ecf2a8708fc462d3747132566e1acc022
+            </version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+</project>

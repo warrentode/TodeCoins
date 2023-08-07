@@ -1,0 +1,173 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.warrentode",
+    "module": "TodeCoins",
+    "version": "1.19.2-1.05.01-ALPHA",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.1.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "TodeCoins-1.19.2-1.05.01-ALPHA.jar",
+          "url": "TodeCoins-1.19.2-1.05.01-ALPHA.jar",
+          "size": 4372812,
+          "sha512": "051086305878e43c25efe707d434d0511ca3ccc673b4e953e4b34eb3b0079f76cc1bf9948a6ce36ef5fabd68f2e6ff4de0a4e43638953a0aff4cdaf942a84d33",
+          "sha256": "161c5c66008dac3a22f8828ca8b573351c19c79bfcd23321af127b4f3853aa9f",
+          "sha1": "81ee1367aae7717b797416a79f002a27bc229fa4",
+          "md5": "7b99427863188c0ea1767ce217767a51"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "top.theillusivec4.curios",
+          "module": "curios-forge",
+          "version": {
+            "strictly": "1.19.2-5.1.4.0_mapped_parchment_2022.11.27-1.19.2",
+            "requires": "1.19.2-5.1.4.0_mapped_parchment_2022.11.27-1.19.2"
+          }
+        },
+        {
+          "group": "curse.maven",
+          "module": "cagerium-709608",
+          "version": {
+            "strictly": "4517775_mapped_parchment_2022.11.27-1.19.2",
+            "requires": "4517775_mapped_parchment_2022.11.27-1.19.2"
+          }
+        },
+        {
+          "group": "curse.maven",
+          "module": "puzzles-lib-495476",
+          "version": {
+            "strictly": "4600775_mapped_parchment_2022.11.27-1.19.2",
+            "requires": "4600775_mapped_parchment_2022.11.27-1.19.2"
+          }
+        },
+        {
+          "group": "curse.maven",
+          "module": "bag-of-holding-forge-593996",
+          "version": {
+            "strictly": "4111700_mapped_parchment_2022.11.27-1.19.2",
+            "requires": "4111700_mapped_parchment_2022.11.27-1.19.2"
+          }
+        },
+        {
+          "group": "curse.maven",
+          "module": "ecologics-570463",
+          "version": {
+            "strictly": "4171285_mapped_parchment_2022.11.27-1.19.2",
+            "requires": "4171285_mapped_parchment_2022.11.27-1.19.2"
+          }
+        },
+        {
+          "group": "curse.maven",
+          "module": "serene-seasons-291874",
+          "version": {
+            "strictly": "4037228_mapped_parchment_2022.11.27-1.19.2",
+            "requires": "4037228_mapped_parchment_2022.11.27-1.19.2"
+          }
+        },
+        {
+          "group": "curse.maven",
+          "module": "sophisticated-backpacks-422301",
+          "version": {
+            "strictly": "4637293_mapped_parchment_2022.11.27-1.19.2",
+            "requires": "4637293_mapped_parchment_2022.11.27-1.19.2"
+          }
+        },
+        {
+          "group": "curse.maven",
+          "module": "sophisticated-core-618298",
+          "version": {
+            "strictly": "4668694_mapped_parchment_2022.11.27-1.19.2",
+            "requires": "4668694_mapped_parchment_2022.11.27-1.19.2"
+          }
+        },
+        {
+          "group": "net.minecraftforge",
+          "module": "forge",
+          "version": {
+            "requires": "1.19.2-43.2.21_mapped_parchment_2022.11.27-1.19.2_at_58e5c78ecf2a8708fc462d3747132566e1acc022"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "TodeCoins-1.19.2-1.05.01-ALPHA.jar",
+          "url": "TodeCoins-1.19.2-1.05.01-ALPHA.jar",
+          "size": 4372812,
+          "sha512": "051086305878e43c25efe707d434d0511ca3ccc673b4e953e4b34eb3b0079f76cc1bf9948a6ce36ef5fabd68f2e6ff4de0a4e43638953a0aff4cdaf942a84d33",
+          "sha256": "161c5c66008dac3a22f8828ca8b573351c19c79bfcd23321af127b4f3853aa9f",
+          "sha1": "81ee1367aae7717b797416a79f002a27bc229fa4",
+          "md5": "7b99427863188c0ea1767ce217767a51"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "TodeCoins-1.19.2-1.05.01-ALPHA-sources.jar",
+          "url": "TodeCoins-1.19.2-1.05.01-ALPHA-sources.jar",
+          "size": 4060825,
+          "sha512": "6c1e8c7333feeb4bb9c2cde94efe90580e628e5a78ef67987e0442d4d0da3a2da099b135af964bafd295ce33c8558f91584a415237de862c415f2eaf8d506f26",
+          "sha256": "aab3c838c82654d6b125536d6eed9ff94ed4c23188ca9cc30752ff5989f731db",
+          "sha1": "d827415d8b998c828d9bbf29adb0212c5adfe632",
+          "md5": "d5c2b2f25047c799b76d869b87957d40"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "TodeCoins-1.19.2-1.05.01-ALPHA-javadoc.jar",
+          "url": "TodeCoins-1.19.2-1.05.01-ALPHA-javadoc.jar",
+          "size": 1018568,
+          "sha512": "c20e232279c318ec74b673327dac4cbb69dd976ad3053933128af80e0988525df8e7cfeba836afbed302550d2a610f939ed6eeb6ed1b73907ce54097b08e8710",
+          "sha256": "dcf09f29b854ff5b123d84176f03ce8bc8fff25860dbddaf33c803893142e11d",
+          "sha1": "94b20daa91cbfeaddb58e16d0771007717f84406",
+          "md5": "a80a99ebce5698d2ae6f9b6f64478a27"
+        }
+      ]
+    }
+  ]
+}

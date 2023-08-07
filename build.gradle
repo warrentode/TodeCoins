@@ -165,9 +165,6 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
         }
-        publishToMavenLocal(MavenPublication) {
-            from components.java
-        }
     }
     repositories {
         maven {
