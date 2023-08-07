@@ -162,7 +162,7 @@ java {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        publishToMavenLocal(MavenPublication) {
             from components.java
         }
     }
