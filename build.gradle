@@ -24,19 +24,14 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-group = 'com.github.warrentode'
-archivesBaseName = 'todecoins'
-version = '1.19.2-1.5.1'
+group = GROUP
+archivesBaseName = ARTIFACT
+version = VERSION
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
@@ -157,10 +152,14 @@ tasks.register('updateJson') {
 
 jar.finalizedBy('reobfJar')
 
+java {
+    withSourcesJar()
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            from components.java
         }
     }
     repositories {

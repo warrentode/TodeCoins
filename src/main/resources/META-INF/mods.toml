@@ -5,7 +5,7 @@ issueTrackerURL = "https://github.com/warrentode/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "1.19.2-1.5.1"
+version = "${version}"
 displayName = "TodeCoins"
 updateJSONURL = "https://raw.githubusercontent.com/warrentode/TodeCoins/master/update.json"
 displayURL = "https://github.com/warrentode/TodeCoins"
