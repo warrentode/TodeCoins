@@ -34,11 +34,8 @@ jobs:
       - name: Build
         run: ./gradlew clean build
 
-      - name: Install
-        run: ./gradlew publishToMavenLocal
-
-      - name: mc-publish
-        uses: warrentode/upload-release-assets@v2.0.2
+      - name: Publish to GitHub
+        uses: actions/upload-artifact@v3
         with:
           files: build/libs/todecoins-${{env.VERSION}}.jar
           github-token: ${{env.TODECOINS_KEY}}
