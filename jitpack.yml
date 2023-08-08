@@ -1,6 +1,0 @@
-jdk:
-  - openjdk17
-
-install:
-  - echo "Publish to MavenLocal"
-  - ./gradlew build publishToMavenLocal
