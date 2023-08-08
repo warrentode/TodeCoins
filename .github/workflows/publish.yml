@@ -3,11 +3,7 @@ name: Publish
 on: [ pull_request, workflow_dispatch ]
 
 env:
-  MINECRAFT_VERSION: 1.19.2
-  JAVA_VERSION: 17
   VERSION: 1.19.2-1.5.1
-  GROUP: com.github.warrentode
-  RELEASE_NAME: TodeCoins 1.19.2-1.5.1
   GITHUB_TOKEN: ${{ secrets.TODECOINS_KEY }}
 
 permissions:
@@ -16,7 +12,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: "Build"
     steps:
       - name: Check Environment Variables
         run: env
@@ -41,6 +36,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: "todecoins"
+          path: build/libs/todecoins-${{env.VERSION}}.jar
 
       - name: Publish to GitHub
         uses: warrentode/upload-release-assets@v2.0.2
