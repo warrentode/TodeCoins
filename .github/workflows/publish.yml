@@ -16,6 +16,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: "Build"
     steps:
       - name: Check Environment Variables
         run: env
@@ -28,20 +29,19 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: gradle
+
+      - name: Gradle Wrapper Execute
+        run: chmod +x ./gradlew
+
+      - name: Build Gradle
+        run: ./gradlew clean build --no-daemon --refresh-dependencies --stacktrace
 
       - name: Print ChangeLog
         uses: git log --pretty="- %s" > CHANGELOG.md
 
-      - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1
-
-      - name: Build
-        run: ./gradlew clean build
-
-      - name: Install
-        run: ./gradlew publishToMavenLocal
-
-      - name: mc-publish
+      - name: Publish to MavenLocal
+        run: ./gradlew build publishToMavenLocal
         uses: ${{env.GROUP}}
         with:
           github-tag: ${{env.VERSION}}
