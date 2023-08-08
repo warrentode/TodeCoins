@@ -6,6 +6,7 @@ env:
   MINECRAFT_VERSION: 1.19.2
   JAVA_VERSION: 17
   VERSION: 1.19.2-1.5.1
+  GROUP: com.github.warrentode
   RELEASE_NAME: TodeCoins 1.19.2-1.5.1
   GITHUB_TOKEN: ${{ secrets.TODECOINS_KEY }}
 
@@ -43,8 +44,7 @@ jobs:
           github-tag: "v${{env.VERSION}}"
           github-token: "${{env.TODECOINS_KEY}}"
 
-          owner: "warrentode"
-          group: "com.github.warrentode"
+          group: "${{env.GROUP}}"
           name: "${{env.RELEASE_NAME}}"
           version: "${{env.VERSION}}"
           version-type: release
