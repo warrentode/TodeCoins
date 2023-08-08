@@ -37,21 +37,13 @@ jobs:
       - name: Build Gradle
         run: ./gradlew clean build --no-daemon --refresh-dependencies --stacktrace
 
-      - name: Print ChangeLog
-        uses: git log --pretty="- %s" > CHANGELOG.md
-
-      - name: Publish to MavenLocal
-        run: ./gradlew build publishToMavenLocal
-        uses: ${{env.GROUP}}
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
         with:
-          github-tag: ${{env.VERSION}}
+          name: "todecoins"
+
+      - name: Publish to GitHub
+        uses: warrentode/upload-release-assets@v2.0.2
+        with:
+          files: build/libs/todecoins-${{env.VERSION}}.jar
           github-token: ${{env.TODECOINS_KEY}}
-
-          name: ${{env.RELEASE_NAME}}
-          version: ${{env.VERSION}}
-          version-type: release
-          changelog-file: CHANGELOG.md
-
-          loaders: forge
-          game-versions: ${{env.MINECRAFT_VERSION}}
-          java: ${{env.JAVA_VERSION}}
