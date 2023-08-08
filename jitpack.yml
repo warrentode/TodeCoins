@@ -2,9 +2,5 @@ jdk:
   - openjdk17
 
 install:
-  - echo "Running a custom install command"
-  - ./gradlew clean install -xtest
-
-after_install:
   - echo "Publish to MavenLocal"
   - ./gradlew build publishToMavenLocal
