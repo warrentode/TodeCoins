@@ -33,10 +33,11 @@ jobs:
 
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
+
       - name: Build
         run: ./gradlew clean build
 
-      - name: Publish to GitHub
+      - name: mc-publish
         uses: Kir-Antipov/mc-publish@v3.2
         with:
           github-tag: "v${{env.VERSION}}"
