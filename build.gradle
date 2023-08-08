@@ -170,9 +170,6 @@ publishing {
     }
 }
 
-tasks.withType(JavaCompile).configureEach {
+compileJava {
     options.encoding = "UTF-8"
-    javaCompiler = javaToolchains.compilerFor {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
 }
