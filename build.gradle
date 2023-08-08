@@ -24,12 +24,13 @@ plugins {
 
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'java'
+apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-group = GROUP
-archivesBaseName = ARTIFACT
-version = VERSION
+group = "com.github.warrentode"
+archivesBaseName = "todecoins"
+version = "1.19.2-1.5.1"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
