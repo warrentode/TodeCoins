@@ -38,13 +38,15 @@ jobs:
       - name: Build
         run: ./gradlew clean build
 
+      - name: Install
+        run: ./gradlew publishToMavenLocal
+
       - name: mc-publish
-        uses: Kir-Antipov/mc-publish@v3.2
+        uses: ${{env.GROUP}}
         with:
           github-tag: ${{env.VERSION}}
           github-token: ${{env.TODECOINS_KEY}}
 
-          group: ${{env.GROUP}}
           name: ${{env.RELEASE_NAME}}
           version: ${{env.VERSION}}
           version-type: release
