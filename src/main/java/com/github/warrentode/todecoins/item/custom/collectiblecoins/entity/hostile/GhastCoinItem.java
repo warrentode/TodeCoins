@@ -22,7 +22,7 @@ public class GhastCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !ModListHandler.curiosLoaded ? null : Curios.createMobHeadCharmProvider(stack);
+        return !ModListHandler.curiosLoaded ? null : Curios.createDamageResistanceCharmProvider(stack);
     }
 
     @Override

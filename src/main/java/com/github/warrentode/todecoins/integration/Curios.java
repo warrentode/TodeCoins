@@ -1289,10 +1289,8 @@ public class Curios {
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
                 if (player != null && stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
-                    player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, 0,
-                            false, false, true));
-                    player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
-                            false, false, true));
+                    player.removeEffect(MobEffects.DOLPHINS_GRACE);
+                    player.removeEffect(MobEffects.WATER_BREATHING);
                 }
             }
 
@@ -1420,5 +1418,9 @@ public class Curios {
                 return DropRule.DEFAULT;
             }
         });
+    }
+
+    public static ICapabilityProvider createDamageResistanceCharmProvider(ItemStack stack) {
+        return null;
     }
 }
