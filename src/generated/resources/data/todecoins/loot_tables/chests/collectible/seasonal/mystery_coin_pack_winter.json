@@ -235,6 +235,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_husk_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_magma_cube_netherite"
         }
       ],
       "rolls": 1.0

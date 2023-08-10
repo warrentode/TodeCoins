@@ -402,24 +402,6 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_ELDER_GUARDIAN_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ELDER_GUARDIAN_COIN.get()))
 
-                    .addCriterion("find_" + ModItems.COPPER_GOAT_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GOAT_COIN.get()))
-                    .addCriterion("find_" + ModItems.IRON_GOAT_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_GOAT_COIN.get()))
-                    .addCriterion("find_" + ModItems.GOLD_GOAT_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_GOAT_COIN.get()))
-                    .addCriterion("find_" + ModItems.NETHERITE_GOAT_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GOAT_COIN.get()))
-
-                    .addCriterion("find_" + ModItems.COPPER_GUARDIAN_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GUARDIAN_COIN.get()))
-                    .addCriterion("find_" + ModItems.IRON_GUARDIAN_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_GUARDIAN_COIN.get()))
-                    .addCriterion("find_" + ModItems.GOLD_GUARDIAN_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_GUARDIAN_COIN.get()))
-                    .addCriterion("find_" + ModItems.NETHERITE_GUARDIAN_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GUARDIAN_COIN.get()))
-
                     .addCriterion("find_" + ModItems.COPPER_ENDERMAN_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ENDERMAN_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_ENDERMAN_COIN.get().getDescriptionId(),
@@ -465,6 +447,33 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_FROG_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_FROG_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_GHAST_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GHAST_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_GHAST_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_GHAST_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_GHAST_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_GHAST_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_GHAST_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GHAST_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_GOAT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GOAT_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_GOAT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_GOAT_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_GOAT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_GOAT_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_GOAT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GOAT_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_GUARDIAN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GUARDIAN_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_GUARDIAN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_GUARDIAN_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_GUARDIAN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_GUARDIAN_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_GUARDIAN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GUARDIAN_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_GLOW_SQUID_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GLOW_SQUID_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_GLOW_SQUID_COIN.get().getDescriptionId(),
@@ -492,6 +501,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_HORSE_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_HORSE_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_HUSK_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_HUSK_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_HUSK_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_HUSK_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_HUSK_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_HUSK_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_HUSK_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_HUSK_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_IRON_GOLEM_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_IRON_GOLEM_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_IRON_GOLEM_COIN.get().getDescriptionId(),
@@ -509,6 +527,15 @@ public class AdvancementsGen extends AdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_LLAMA_COIN.get()))
                     .addCriterion("find_" + ModItems.NETHERITE_LLAMA_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_LLAMA_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_MAGMA_CUBE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_MAGMA_CUBE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_MAGMA_CUBE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_MAGMA_CUBE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_MAGMA_CUBE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_MAGMA_CUBE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_MAGMA_CUBE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_MAGMA_CUBE_COIN.get()))
 
                     .addCriterion("find_" + ModItems.COPPER_MOOBLOOM_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_MOOBLOOM_COIN.get()))

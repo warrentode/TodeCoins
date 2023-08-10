@@ -235,6 +235,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_husk_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_magma_cube_iron"
         }
       ],
       "rolls": 1.0

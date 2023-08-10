@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-30T17:00:13.332217	Tags for minecraft:item
+// 1.19.2	2023-08-10T16:15:49.3475205	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -81,6 +81,7 @@ f518a36d5f47db7d70ef406d44b35656e71cccc7 data/todecoins/tags/items/collectible_c
 e011e4144a3127b59f8ae6fa9cc6a9ec8c49caed data/todecoins/tags/items/collectible_coins/entity_coins/husk_coin_set.json
 16f91eb2704181b97041b88fede82c59b0365a80 data/todecoins/tags/items/collectible_coins/entity_coins/iron_golem_coin_set.json
 ae4fa25aa8aafec6f9e4efa842a8255bb3d8951f data/todecoins/tags/items/collectible_coins/entity_coins/llama_coin_set.json
+c75a1681ce8d17db41fae78ce9cc35460ab63733 data/todecoins/tags/items/collectible_coins/entity_coins/magma_cube_coin_set.json
 98ab3c74454e3f7683c8b789885e2f52dfbe9f39 data/todecoins/tags/items/collectible_coins/entity_coins/moobloom_coin_set.json
 290ef2f887205297d3b8ab14b4365bbae79fd8ec data/todecoins/tags/items/collectible_coins/entity_coins/mooshroom_coin_set.json
 f24d2d850cf1c41c36974e9b8de69b441380b9f7 data/todecoins/tags/items/collectible_coins/entity_coins/mule_coin_set.json
@@ -110,7 +111,7 @@ d7cfb19ba68be710a817234d46c60de108ddc64f data/todecoins/tags/items/collectible_c
 dd219853d6d66e6d9b54dea59cc73c7d887129a5 data/todecoins/tags/items/collectible_coins/entity_coins/wolf_coin_set.json
 8272379d4d1bbd26cd5bc0becbbc3e93272c2e94 data/todecoins/tags/items/collectible_coins/entity_coins/zombie_horse_coin_set.json
 40b72318e1c4abd7bf483e932a2b01b1af83f01a data/todecoins/tags/items/collectible_coins/entity_coins/zombified_piglin_coin_set.json
-ca3744f24294405cc16b137ca6e743458f7f057d data/todecoins/tags/items/collectible_coins/entity_coin_set.json
+5bbb8e17adddb30a3d6a759c4d99a2e95df429de data/todecoins/tags/items/collectible_coins/entity_coin_set.json
 a1bda6f17fa29264786ba7d4ac0a3086ba6f5d7e data/todecoins/tags/items/collectible_coins/gameplay_coins/fishing_coin_set.json
 09034aeb43660d605371c1304aa88a09b81286cd data/todecoins/tags/items/collectible_coins/gameplay_coins/hero_coin_set.json
 269fd06fc2a4c3ac662023e453de20fda55ec2c6 data/todecoins/tags/items/collectible_coins/gameplay_coin_set.json

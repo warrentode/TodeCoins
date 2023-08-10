@@ -235,6 +235,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_husk_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_magma_cube_gold"
         }
       ],
       "rolls": 1.0

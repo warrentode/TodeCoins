@@ -235,6 +235,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_husk_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_magma_cube_copper"
         }
       ],
       "rolls": 1.0

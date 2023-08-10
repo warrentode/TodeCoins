@@ -224,6 +224,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_LLAMA_COIN.get().getDescriptionId(), "Gold Llama Coin");
         addCollectibleCoins(ModItems.NETHERITE_LLAMA_COIN.get().getDescriptionId(), "Netherite Llama Coin");
 
+        addCollectibleCoins(ModItems.COPPER_MAGMA_CUBE_COIN.get().getDescriptionId(), "Copper Magma Cube Coin");
+        addCollectibleCoins(ModItems.IRON_MAGMA_CUBE_COIN.get().getDescriptionId(), "Iron Magma Cube Coin");
+        addCollectibleCoins(ModItems.GOLD_MAGMA_CUBE_COIN.get().getDescriptionId(), "Gold Magma Cube Coin");
+        addCollectibleCoins(ModItems.NETHERITE_MAGMA_CUBE_COIN.get().getDescriptionId(), "Netherite Magma Cube Coin");
+
         addCollectibleCoins(ModItems.COPPER_MOOBLOOM_COIN.get().getDescriptionId(), "Copper Moobloom Coin");
         addCollectibleCoins(ModItems.IRON_MOOBLOOM_COIN.get().getDescriptionId(), "Iron Moobloom Coin");
         addCollectibleCoins(ModItems.GOLD_MOOBLOOM_COIN.get().getDescriptionId(), "Gold Moobloom Coin");
@@ -476,6 +481,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_hoglin_coin.hover", "One of Four Hoglin Seasonal Coins");
         add("tooltips.collectible_husk_coin.hover", "One of Four Husk Seasonal Coins");
         add("tooltips.collectible_iron_golem_coin.hover", "One of Four Iron Golem Seasonal Coins");
+        add("tooltips.collectible_magma_cube_coin.hover", "One of Four Magma Cube Seasonal Coins");
         add("tooltips.collectible_panda_coin.hover", "One of Four Panda Seasonal Coins");
         add("tooltips.collectible_parrot_coin.hover", "One of Four Parrot Seasonal Coins");
         add("tooltips.collectible_pig_coin.hover", "One of Four Pig Seasonal Coins");

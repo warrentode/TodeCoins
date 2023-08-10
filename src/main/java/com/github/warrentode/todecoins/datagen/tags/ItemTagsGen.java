@@ -171,6 +171,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.HUSK_COIN_SET)
                 .addTag(ModTags.Items.IRON_GOLEM_COIN_SET)
                 .addTag(ModTags.Items.LLAMA_COIN_SET)
+                .addTag(ModTags.Items.MAGMA_CUBE_COIN_SET)
                 .addTag(ModTags.Items.MOOBLOOM_COIN_SET)
                 .addTag(ModTags.Items.MOOSHROOM_COIN_SET)
                 .addTag(ModTags.Items.MULE_COIN_SET)
@@ -200,6 +201,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.WOLF_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        tag(ModTags.Items.MAGMA_CUBE_COIN_SET)
+                .add(ModItems.COPPER_MAGMA_CUBE_COIN.get())
+                .add(ModItems.IRON_MAGMA_CUBE_COIN.get())
+                .add(ModItems.GOLD_MAGMA_CUBE_COIN.get())
+                .add(ModItems.NETHERITE_MAGMA_CUBE_COIN.get());
         tag(ModTags.Items.HUSK_COIN_SET)
                 .add(ModItems.COPPER_HUSK_COIN.get())
                 .add(ModItems.IRON_HUSK_COIN.get())

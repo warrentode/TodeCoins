@@ -14,18 +14,6 @@
               "type": "forge:true"
             }
           ]
-        },
-        {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "forge:mod_loaded",
-              "modid": "ecologics"
-            },
-            {
-              "type": "forge:true"
-            }
-          ]
         }
       ],
       "recipe": {
@@ -33,7 +21,7 @@
         "group": "spawn_eggs",
         "ingredients": [
           {
-            "item": "ecologics:prickly_pear"
+            "tag": "forge:eggs"
           },
           {
             "item": "minecraft:heart_of_the_sea"
@@ -45,11 +33,11 @@
             "tag": "forge:nuggets/netherite"
           },
           {
-            "tag": "todecoins:collectible_coins/entity_coins/camel_coin_set"
+            "tag": "todecoins:collectible_coins/entity_coins/ghast_coin_set"
           }
         ],
         "result": {
-          "item": "ecologics:camel_spawn_egg"
+          "item": "minecraft:ghast_spawn_egg"
         }
       }
     }

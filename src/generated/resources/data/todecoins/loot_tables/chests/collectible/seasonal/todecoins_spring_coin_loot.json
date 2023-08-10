@@ -2829,6 +2829,44 @@
             }
           ],
           "name": "todecoins:collectible_coin_husk_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_magma_cube_copper"
         }
       ],
       "rolls": 1.0

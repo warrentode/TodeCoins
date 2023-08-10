@@ -681,6 +681,10 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_HUSK_COIN.get()).when(SPRING)
                                         .when(IN_DESERT))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_MAGMA_CUBE_COIN.get()).when(SPRING)
+                                        .when(IN_NETHER_WASTES.or(IN_BASALT_DELTAS).or(IN_NETHER_FORTRESS)
+                                                .or(IN_BASTION_REMNANTS)))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
@@ -943,6 +947,10 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_HUSK_COIN.get()).when(SUMMER)
                                         .when(IN_DESERT))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_MAGMA_CUBE_COIN.get()).when(SUMMER)
+                                        .when(IN_NETHER_WASTES.or(IN_BASALT_DELTAS).or(IN_NETHER_FORTRESS)
+                                                .or(IN_BASTION_REMNANTS)))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
@@ -1205,6 +1213,10 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_HUSK_COIN.get()).when(AUTUMN)
                                         .when(IN_DESERT))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_MAGMA_CUBE_COIN.get()).when(AUTUMN)
+                                        .when(IN_NETHER_WASTES.or(IN_BASALT_DELTAS).or(IN_NETHER_FORTRESS)
+                                                .or(IN_BASTION_REMNANTS)))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1467,6 +1479,10 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_HUSK_COIN.get()).when(WINTER)
                                         .when(IN_DESERT))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_MAGMA_CUBE_COIN.get()).when(WINTER)
+                                        .when(IN_NETHER_WASTES.or(IN_BASALT_DELTAS).or(IN_NETHER_FORTRESS)
+                                                .or(IN_BASTION_REMNANTS)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1531,6 +1547,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_EVOKER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_GHAST_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_HUSK_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_MAGMA_CUBE_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1595,6 +1612,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_EVOKER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_GHAST_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_HUSK_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_MAGMA_CUBE_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1659,6 +1677,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_EVOKER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_GHAST_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_HUSK_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_MAGMA_CUBE_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -1723,6 +1742,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_EVOKER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_GHAST_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_HUSK_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_MAGMA_CUBE_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,
