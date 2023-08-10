@@ -61,8 +61,8 @@ public abstract class PhantomBehaviorMixin {
                 player.playSound(SoundEvents.CAT_HISS, 1.0F, player.getVoicePitch());
 
                 this.todeCoins$isScaredOfCat = !fakeCat.isEmpty();
+                todeCoins$phantomSweepAttackGoal.stop();
                 cir.setReturnValue(false);
-                cir.cancel();
             }
         }
     }
