@@ -9,8 +9,10 @@ import com.github.warrentode.todecoins.util.tags.ModTags;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.client.Minecraft;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -239,12 +241,29 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModTags.Items.PIGLIN_COIN_SET)) {
+                Player player = Minecraft.getInstance().player;
+                if (player != null && stack.is(ModTags.Items.PIGLIN_COIN_SET)) {
+                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        attribute.put(Attributes.ARMOR,
+                                new AttributeModifier(uuid, "generic.armor", 1,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+
+                    int i = 0;
+                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                        i = 1;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        i = 2;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        i = 3;
+                    }
                     attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.armor", 1,
+                            new AttributeModifier(uuid, "generic.armor", 1 + i,
                                     AttributeModifier.Operation.ADDITION));
-                    return attribute;
                 }
+
                 return attribute;
             }
 
@@ -287,9 +306,29 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.MOVEMENT_SPEED,
-                        new AttributeModifier(uuid, "generic.movement_speed", 0.05,
-                                AttributeModifier.Operation.ADDITION));
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        attribute.put(Attributes.MOVEMENT_SPEED,
+                                new AttributeModifier(uuid, "generic.movement_speed", 0.05,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+
+                    double d = 0;
+                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                        d = 0.01;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        d = 0.02;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        d = 0.03;
+                    }
+                    attribute.put(Attributes.MOVEMENT_SPEED,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.05 + d,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
                 return attribute;
             }
 
@@ -327,9 +366,29 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.MAX_HEALTH,
-                        new AttributeModifier(uuid, "generic.max_health", 10,
-                                AttributeModifier.Operation.ADDITION));
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        attribute.put(Attributes.MAX_HEALTH,
+                                new AttributeModifier(uuid, "generic.max_health", 10,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+
+                    int i = 0;
+                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                        i = 5;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        i = 10;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        i = 15;
+                    }
+                    attribute.put(Attributes.MAX_HEALTH,
+                            new AttributeModifier(uuid, "generic.max_health", 10 + i,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
                 return attribute;
             }
 
@@ -367,9 +426,29 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.MOVEMENT_SPEED,
-                        new AttributeModifier(uuid, "generic.movement_speed", 0.2,
-                                AttributeModifier.Operation.ADDITION));
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        attribute.put(Attributes.MOVEMENT_SPEED,
+                                new AttributeModifier(uuid, "generic.movement_speed", 0.2,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+
+                    double d = 0;
+                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                        d = 0.01;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        d = 0.02;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        d = 0.03;
+                    }
+                    attribute.put(Attributes.MOVEMENT_SPEED,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.2 + d,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
                 return attribute;
             }
 
@@ -407,9 +486,29 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.MOVEMENT_SPEED,
-                        new AttributeModifier(uuid, "generic.movement_speed", 0.05,
-                                AttributeModifier.Operation.ADDITION));
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        attribute.put(Attributes.MOVEMENT_SPEED,
+                                new AttributeModifier(uuid, "generic.movement_speed", 0.05,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+
+                    double d = 0;
+                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                        d = 0.01;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        d = 0.02;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        d = 0.03;
+                    }
+                    attribute.put(Attributes.MOVEMENT_SPEED,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.05 + d,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
                 return attribute;
             }
 
@@ -500,23 +599,22 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) && CalendarUtil.Season.isBirthday()) {
-                    if (player != null) {
+                ServerLevel level = (ServerLevel) (player != null ? player.getLevel() : null);
+                if (player != null && level != null) {
+                    if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET)
+                            && (CalendarUtil.Season.isBirthday() || SereneSeasonsCompat.SeasonCompat.isBirthday(level))) {
                         player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, false));
                     }
-                }
-                else if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && CalendarUtil.Season.isChristmas()) {
-                    if (player != null) {
+                    else if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET)
+                            && (CalendarUtil.Season.isChristmas() || SereneSeasonsCompat.SeasonCompat.isChristmas(level))) {
                         player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, false));
                     }
-                }
-                else if (player != null && (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) && !CalendarUtil.Season.isBirthday())) {
-                    player.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
-                }
-                else if (player != null && (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && !CalendarUtil.Season.isChristmas())) {
-                    player.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                    else if ((!CalendarUtil.Season.isBirthday() || !SereneSeasonsCompat.SeasonCompat.isBirthday(level))
+                            && (!CalendarUtil.Season.isChristmas() || !SereneSeasonsCompat.SeasonCompat.isChristmas(level))) {
+                        player.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                    }
                 }
             }
 
@@ -562,9 +660,24 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET) || stack.is(ModTags.Items.PARROT_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
+                if (player != null) {
+                    if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET) || stack.is(ModTags.Items.PARROT_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
+                                    false, false, false));
+                        }
+
+                        int i = 0;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                        }
+                        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, i,
                                 false, false, false));
                     }
                 }
@@ -612,9 +725,24 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.AXOLOTL_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0,
+                if (player != null) {
+                    if (stack.is(ModTags.Items.AXOLOTL_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0,
+                                    false, false, false));
+                        }
+
+                        int i = 0;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                        }
+                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, i,
                                 false, false, false));
                     }
                 }
@@ -662,9 +790,24 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.CAMEL_COIN_SET) || stack.is(ModTags.Items.PIG_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, 3,
+                if (player != null) {
+                    if (stack.is(ModTags.Items.CAMEL_COIN_SET) || stack.is(ModTags.Items.PIG_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, 0,
+                                    false, false, false));
+                        }
+
+                        int i = 0;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                        }
+                        player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, i,
                                 false, false, false));
                     }
                 }
@@ -841,10 +984,25 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.GOAT_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 0,
-                                false, false, true));
+                if (player != null) {
+                    if (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.GOAT_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 0,
+                                    false, false, false));
+                        }
+
+                        int i = 0;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                        }
+                        player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, i,
+                                false, false, false));
                     }
                 }
             }
@@ -963,20 +1121,33 @@ public class Curios {
                 return stack;
             }
 
-            @SuppressWarnings("deprecation")
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if ((stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
-                     || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
-                     || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET))
-                    && player != null) {
-                    if (player.isEyeInFluid(FluidTags.WATER)) {
-                        player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
-                                false, false, true));
-                    }
-                    else if (!player.isEyeInFluid(FluidTags.WATER)) {
-                        player.removeEffect(MobEffects.WATER_BREATHING);
+                if (player != null) {
+                    if ((stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
+                            || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
+                            || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET))) {
+                        //noinspection deprecation
+                        if (player.isEyeInFluid(FluidTags.WATER)) {
+                            if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
+                                        false, false, false));
+                            }
+
+                            int i = 0;
+                            if (player.level.getDifficulty() == Difficulty.EASY) {
+                                i = 1;
+                            }
+                            else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                i = 2;
+                            }
+                            else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                i = 3;
+                            }
+                            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                                    false, false, false));
+                        }
                     }
                 }
             }
@@ -1026,9 +1197,29 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.ATTACK_KNOCKBACK,
-                        new AttributeModifier(uuid, "generic.attack_knockback", 1,
-                                AttributeModifier.Operation.ADDITION));
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        attribute.put(Attributes.ATTACK_KNOCKBACK,
+                                new AttributeModifier(uuid, "generic.attack_knockback", 1,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+
+                    int i = 0;
+                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                        i = 1;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        i = 2;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        i = 3;
+                    }
+                    attribute.put(Attributes.ATTACK_KNOCKBACK,
+                            new AttributeModifier(uuid, "generic.attack_knockback", i,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
                 return attribute;
             }
 
@@ -1066,11 +1257,26 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
-                        || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0,
-                                false, false, true));
+                if (player != null) {
+                    if (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
+                            || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0,
+                                    false, false, false));
+                        }
+
+                        int i = 0;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                        }
+                        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, i,
+                                false, false, false));
                     }
                 }
             }
@@ -1169,11 +1375,29 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.VILLAGER_COIN_SET) && (player.level.getDayTime() >= 12000)) {
-                    player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0,
-                            false, false, true));
-                } else if (player != null && stack.is(ModTags.Items.VILLAGER_COIN_SET) && (player.level.getDayTime() < 12000)) {
-                    player.removeEffect(MobEffects.MOVEMENT_SPEED);
+                if (player != null) {
+                    if (player != null && stack.is(ModTags.Items.VILLAGER_COIN_SET) && (player.level.getDayTime() >= 12000)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0,
+                                    false, false, false));
+                        }
+
+                        int i = 0;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                        }
+                        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, i,
+                                false, false, false));
+                    }
+                    else {
+                        player.removeEffect(MobEffects.MOVEMENT_SPEED);
+                    }
                 }
             }
 
@@ -1219,10 +1443,25 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.SNIFFER_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, 0,
-                                false, false, true));
+                if (player != null) {
+                    if (stack.is(ModTags.Items.SNIFFER_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, 0,
+                                    false, false, false));
+                        }
+
+                        int i = 0;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                        }
+                        player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, i,
+                                false, false, false));
                     }
                 }
             }
@@ -1266,19 +1505,37 @@ public class Curios {
                 return stack;
             }
 
-            @SuppressWarnings("deprecation")
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, 0,
-                                false, false, true));
+                if (player != null) {
+                    if (stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
+                        //noinspection deprecation
                         if (player.isEyeInFluid(FluidTags.WATER)) {
-                            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
+                            if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                                player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, 0,
+                                        false, false, true));
+                                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
+                                        false, false, false));
+                            }
+
+                            int i = 0;
+                            if (player.level.getDifficulty() == Difficulty.EASY) {
+                                i = 1;
+                            }
+                            else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                i = 2;
+                            }
+                            else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                i = 3;
+                            }
+                            player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, i,
                                     false, false, true));
+                            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                                    false, false, false));
                         }
-                        else if (!player.isEyeInFluid(FluidTags.WATER)) {
+                        else {
+                            player.removeEffect(MobEffects.DOLPHINS_GRACE);
                             player.removeEffect(MobEffects.WATER_BREATHING);
                         }
                     }
@@ -1359,9 +1616,29 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.ATTACK_DAMAGE,
-                        new AttributeModifier(uuid, "generic.attack_damage", 1,
-                                AttributeModifier.Operation.ADDITION));
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        attribute.put(Attributes.ATTACK_DAMAGE,
+                                new AttributeModifier(uuid, "generic.attack_damage", 1,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+
+                    int i = 0;
+                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                        i = 1;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        i = 2;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        i = 3;
+                    }
+                    attribute.put(Attributes.ATTACK_DAMAGE,
+                            new AttributeModifier(uuid, "generic.attack_damage", 1 + i,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
                 return attribute;
             }
 
@@ -1421,6 +1698,68 @@ public class Curios {
     }
 
     public static ICapabilityProvider createDamageResistanceCharmProvider(ItemStack stack) {
-        return null;
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public void curioTick(SlotContext slotContext) {
+                Player player = Minecraft.getInstance().player;
+                if (stack.is(ModTags.Items.GHAST_COIN_SET)) {
+                    if (player != null) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 0,
+                                    false, false, true));
+                        }
+
+                        int i = 0;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                        }
+
+                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, i,
+                                false, false, true));
+                    }
+                }
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
+                Player player = Minecraft.getInstance().player;
+                if (player != null && stack.is(ModTags.Items.GHAST_COIN_SET)) {
+                    player.removeEffect(MobEffects.DAMAGE_RESISTANCE);
+                }
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
     }
 }
