@@ -239,6 +239,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_magma_cube_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_slime_copper"
         }
       ],
       "rolls": 1.0

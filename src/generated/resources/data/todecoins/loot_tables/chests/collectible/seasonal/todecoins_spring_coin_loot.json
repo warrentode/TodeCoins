@@ -2867,6 +2867,32 @@
             }
           ],
           "name": "todecoins:collectible_coin_magma_cube_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:swamp"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:mangrove_swamp"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_slime_copper"
         }
       ],
       "rolls": 1.0

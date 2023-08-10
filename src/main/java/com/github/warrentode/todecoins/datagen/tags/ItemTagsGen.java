@@ -187,6 +187,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.SALMON_COIN_SET)
                 .addTag(ModTags.Items.SHEEP_COIN_SET)
                 .addTag(ModTags.Items.SKELETON_HORSE_COIN_SET)
+                .addTag(ModTags.Items.SLIME_COIN_SET)
                 .addTag(ModTags.Items.SNIFFER_COIN_SET)
                 .addTag(ModTags.Items.SNOW_GOLEM_COIN_SET)
                 .addTag(ModTags.Items.SPIDER_COIN_SET)
@@ -201,6 +202,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.WOLF_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        tag(ModTags.Items.SLIME_COIN_SET)
+                .add(ModItems.COPPER_SLIME_COIN.get())
+                .add(ModItems.IRON_SLIME_COIN.get())
+                .add(ModItems.GOLD_SLIME_COIN.get())
+                .add(ModItems.NETHERITE_SLIME_COIN.get());
         tag(ModTags.Items.MAGMA_CUBE_COIN_SET)
                 .add(ModItems.COPPER_MAGMA_CUBE_COIN.get())
                 .add(ModItems.IRON_MAGMA_CUBE_COIN.get())

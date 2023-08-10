@@ -239,6 +239,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_magma_cube_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_slime_gold"
         }
       ],
       "rolls": 1.0

@@ -239,6 +239,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_magma_cube_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_slime_netherite"
         }
       ],
       "rolls": 1.0

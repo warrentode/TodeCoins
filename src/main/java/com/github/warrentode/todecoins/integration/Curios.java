@@ -985,7 +985,8 @@ public class Curios {
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.GOAT_COIN_SET)) {
+                    if (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET)
+                            || stack.is(ModTags.Items.GOAT_COIN_SET) || stack.is(ModTags.Items.SLIME_COIN_SET)) {
                         if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
                             player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 0,
                                     false, false, false));
@@ -1010,7 +1011,8 @@ public class Curios {
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.GOAT_COIN_SET))) {
+                if (player != null && (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET)
+                        || stack.is(ModTags.Items.GOAT_COIN_SET) || stack.is(ModTags.Items.SLIME_COIN_SET))) {
                     player.removeEffect(MobEffects.JUMP);
                 }
             }

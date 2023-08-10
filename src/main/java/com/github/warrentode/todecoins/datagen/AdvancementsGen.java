@@ -672,6 +672,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_SKELETON_HORSE_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SKELETON_HORSE_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_SLIME_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SLIME_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SLIME_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SLIME_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SLIME_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SLIME_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SLIME_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SLIME_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_SNIFFER_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SNIFFER_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_SNIFFER_COIN.get().getDescriptionId(),

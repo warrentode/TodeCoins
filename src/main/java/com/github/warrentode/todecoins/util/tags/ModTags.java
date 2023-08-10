@@ -91,8 +91,9 @@ public class ModTags {
         public static final TagKey<Item> PUFFERFISH_COIN_SET = modItemTag("collectible_coins/entity_coins/pufferfish_coin_set");
         public static final TagKey<Item> RABBIT_COIN_SET = modItemTag("collectible_coins/entity_coins/rabbit_coin_set");
         public static final TagKey<Item> SALMON_COIN_SET = modItemTag("collectible_coins/entity_coins/salmon_coin_set");
-        public static final TagKey<Item> SKELETON_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/skeleton_horse_coin_set");
         public static final TagKey<Item> SHEEP_COIN_SET = modItemTag("collectible_coins/entity_coins/sheep_coin_set");
+        public static final TagKey<Item> SKELETON_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/skeleton_horse_coin_set");
+        public static final TagKey<Item> SLIME_COIN_SET = modItemTag("collectible_coins/entity_coins/slime_coin_set");
         public static final TagKey<Item> SNIFFER_COIN_SET = modItemTag("collectible_coins/entity_coins/sniffer_coin_set");
         public static final TagKey<Item> SNOW_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/snow_golem_coin_set");
         public static final TagKey<Item> SPIDER_COIN_SET = modItemTag("collectible_coins/entity_coins/spider_coin_set");

@@ -565,6 +565,15 @@ public class ModItems {
             () -> new EquineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_SKELETON_HORSE_COIN = ITEMS.register("collectible_coin_skeleton_horse_netherite",
             () -> new EquineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // slime set
+    public static final RegistryObject<Item> COPPER_SLIME_COIN = ITEMS.register("collectible_coin_slime_copper",
+            () -> new SlimeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_SLIME_COIN = ITEMS.register("collectible_coin_slime_iron",
+            () -> new SlimeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_SLIME_COIN = ITEMS.register("collectible_coin_slime_gold",
+            () -> new SlimeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_SLIME_COIN = ITEMS.register("collectible_coin_slime_netherite",
+            () -> new SlimeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // sniffer set
     public static final RegistryObject<Item> COPPER_SNIFFER_COIN = ITEMS.register("collectible_coin_sniffer_copper",
             () -> new SnifferCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

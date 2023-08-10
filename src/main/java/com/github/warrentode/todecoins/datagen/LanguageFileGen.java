@@ -279,6 +279,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_POLAR_BEAR_COIN.get().getDescriptionId(), "Gold Polar Bear Coin");
         addCollectibleCoins(ModItems.NETHERITE_POLAR_BEAR_COIN.get().getDescriptionId(), "Netherite Polar Bear Coin");
 
+        addCollectibleCoins(ModItems.COPPER_RABBIT_COIN.get().getDescriptionId(), "Copper Rabbit Coin");
+        addCollectibleCoins(ModItems.IRON_RABBIT_COIN.get().getDescriptionId(), "Iron Rabbit Coin");
+        addCollectibleCoins(ModItems.GOLD_RABBIT_COIN.get().getDescriptionId(), "Gold Rabbit Coin");
+        addCollectibleCoins(ModItems.NETHERITE_RABBIT_COIN.get().getDescriptionId(), "Netherite Rabbit Coin");
+
         addCollectibleCoins(ModItems.COPPER_SHEEP_COIN.get().getDescriptionId(), "Copper Sheep Coin");
         addCollectibleCoins(ModItems.IRON_SHEEP_COIN.get().getDescriptionId(), "Iron Sheep Coin");
         addCollectibleCoins(ModItems.GOLD_SHEEP_COIN.get().getDescriptionId(), "Gold Sheep Coin");
@@ -289,10 +294,10 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_SKELETON_HORSE_COIN.get().getDescriptionId(), "Gold Skeleton Horse Coin");
         addCollectibleCoins(ModItems.NETHERITE_SKELETON_HORSE_COIN.get().getDescriptionId(), "Netherite Skeleton Horse Coin");
 
-        addCollectibleCoins(ModItems.COPPER_RABBIT_COIN.get().getDescriptionId(), "Copper Rabbit Coin");
-        addCollectibleCoins(ModItems.IRON_RABBIT_COIN.get().getDescriptionId(), "Iron Rabbit Coin");
-        addCollectibleCoins(ModItems.GOLD_RABBIT_COIN.get().getDescriptionId(), "Gold Rabbit Coin");
-        addCollectibleCoins(ModItems.NETHERITE_RABBIT_COIN.get().getDescriptionId(), "Netherite Rabbit Coin");
+        addCollectibleCoins(ModItems.COPPER_SLIME_COIN.get().getDescriptionId(), "Copper Slime Coin");
+        addCollectibleCoins(ModItems.IRON_SLIME_COIN.get().getDescriptionId(), "Iron Slime Coin");
+        addCollectibleCoins(ModItems.GOLD_SLIME_COIN.get().getDescriptionId(), "Gold Slime Coin");
+        addCollectibleCoins(ModItems.NETHERITE_SLIME_COIN.get().getDescriptionId(), "Netherite Slime Coin");
 
         addCollectibleCoins(ModItems.COPPER_SNIFFER_COIN.get().getDescriptionId(), "Copper Sniffer Coin");
         addCollectibleCoins(ModItems.IRON_SNIFFER_COIN.get().getDescriptionId(), "Iron Sniffer Coin");
@@ -488,6 +493,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_polar_bear_coin.hover", "One of Four Polar Bear Seasonal Coins");
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
         add("tooltips.collectible_sheep_coin.hover", "One of Four Sheep Seasonal Coins");
+        add("tooltips.collectible_slime_coin.hover", "One of Four Slime Seasonal Coins");
         add("tooltips.collectible_sniffer_coin.hover", "One of Four Sniffer Seasonal Coins");
         add("tooltips.collectible_spider_coin.hover", "One of Four Spider Seasonal Coins");
         add("tooltips.collectible_strider_coin.hover", "One of Four Strider Seasonal Coins");

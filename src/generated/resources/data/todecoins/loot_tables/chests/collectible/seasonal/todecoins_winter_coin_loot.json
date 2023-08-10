@@ -2867,6 +2867,32 @@
             }
           ],
           "name": "todecoins:collectible_coin_magma_cube_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:swamp"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:mangrove_swamp"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_slime_netherite"
         }
       ],
       "rolls": 1.0

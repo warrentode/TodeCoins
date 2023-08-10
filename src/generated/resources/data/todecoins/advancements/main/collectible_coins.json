@@ -2341,6 +2341,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_slime_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_slime_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_slime_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_slime_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_slime_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_slime_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_slime_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_slime_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_sniffer_copper": {
       "conditions": {
         "items": [
@@ -3566,6 +3614,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_skeleton_horse_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_slime_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_slime_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_slime_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_slime_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_sniffer_copper"
