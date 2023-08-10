@@ -439,6 +439,15 @@ public class ModItems {
             () -> new LlamaCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_LLAMA_COIN = ITEMS.register("collectible_coin_llama_netherite",
             () -> new LlamaCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // magma cube set
+    public static final RegistryObject<Item> COPPER_MAGMA_CUBE_COIN = ITEMS.register("collectible_coin_magma_cube_copper",
+            () -> new MagmaCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_MAGMA_CUBE_COIN = ITEMS.register("collectible_coin_magma_cube_iron",
+            () -> new MagmaCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_MAGMA_CUBE_COIN = ITEMS.register("collectible_coin_magma_cube_gold",
+            () -> new MagmaCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_MAGMA_CUBE_COIN = ITEMS.register("collectible_coin_magma_cube_netherite",
+            () -> new MagmaCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // moobloom set
     public static final RegistryObject<Item> COPPER_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_copper",
             () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

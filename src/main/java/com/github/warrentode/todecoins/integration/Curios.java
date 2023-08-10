@@ -1066,7 +1066,8 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.STRIDER_COIN_SET)) {
+                if (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
+                        || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
                     if (player != null) {
                         player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0,
                                 false, false, true));
@@ -1077,7 +1078,8 @@ public class Curios {
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.STRIDER_COIN_SET)) {
+                if (player != null && (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
+                        || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET))) {
                     player.removeEffect(MobEffects.FIRE_RESISTANCE);
                 }
             }

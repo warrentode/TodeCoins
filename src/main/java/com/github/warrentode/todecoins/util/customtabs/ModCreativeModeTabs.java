@@ -287,6 +287,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_LLAMA_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_LLAMA_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_LLAMA_COIN.get().getDefaultInstance());
+            // MAGMA CUBE COIN SET
+            items.add(ModItems.COPPER_MAGMA_CUBE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_MAGMA_CUBE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_MAGMA_CUBE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_MAGMA_CUBE_COIN.get().getDefaultInstance());
             // MOOBLOOM COIN SET
             items.add(ModItems.COPPER_MOOBLOOM_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_MOOBLOOM_COIN.get().getDefaultInstance());

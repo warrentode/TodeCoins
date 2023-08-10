@@ -77,6 +77,7 @@ public class ModTags {
         public static final TagKey<Item> HUSK_COIN_SET = modItemTag("collectible_coins/entity_coins/husk_coin_set");
         public static final TagKey<Item> IRON_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/iron_golem_coin_set");
         public static final TagKey<Item> LLAMA_COIN_SET = modItemTag("collectible_coins/entity_coins/llama_coin_set");
+        public static final TagKey<Item> MAGMA_CUBE_COIN_SET = modItemTag("collectible_coins/entity_coins/magma_cube_coin_set");
         public static final TagKey<Item> MOOBLOOM_COIN_SET = modItemTag("collectible_coins/entity_coins/moobloom_coin_set");
         public static final TagKey<Item> MOOSHROOM_COIN_SET = modItemTag("collectible_coins/entity_coins/mooshroom_coin_set");
         public static final TagKey<Item> MULE_COIN_SET = modItemTag("collectible_coins/entity_coins/mule_coin_set");

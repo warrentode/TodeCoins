@@ -250,7 +250,7 @@ public class ModEvents {
                             if (stack.is(ModTags.Items.BEE_COIN_SET) || stack.is(ModTags.Items.CAVE_SPIDER_COIN_SET)) {
                                 poisonCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.BLAZE_COIN_SET)) {
+                            if (stack.is(ModTags.Items.BLAZE_COIN_SET) || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
                                 flameCharm = stack;
                             }
                             if (stack.is(ModTags.Items.SPIDER_COIN_SET)) {
