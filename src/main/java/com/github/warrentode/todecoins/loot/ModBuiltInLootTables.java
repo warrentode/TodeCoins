@@ -10,6 +10,7 @@ import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModBuiltInLootTables {
     private static final Set<ResourceLocation> LOCATIONS = Sets.newHashSet();
+
     // bonus fishing loot tables
     public static final ResourceLocation TODECOINS_BONUS_FISHING = register(MODID + ":" + "gameplay/fishing/bonus");
     public static final ResourceLocation TODECOINS_FISHING_EXTRA_JUNK = register(MODID + ":" + "gameplay/fishing/extra_junk");

@@ -36,7 +36,7 @@
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
-              "tag": "forge:bosses"
+              "tag": "forge:drops_currency"
             }
           ],
           "functions": [

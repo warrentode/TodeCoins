@@ -21,14 +21,15 @@ import java.util.function.Supplier;
 
 public class ModLootTableGenProvider extends LootTableProvider {
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>>
-            loot_tables = ImmutableList.of(
-            Pair.of(ModChestLootTablesGen::new, LootContextParamSets.CHEST),
-            Pair.of(ModBlockLootTablesGen::new, LootContextParamSets.BLOCK),
-            Pair.of(ModGiftLootGen::new, LootContextParamSets.GIFT),
-            Pair.of(CurrencyDropLootTablesGen::new, LootContextParamSets.ENTITY),
-            Pair.of(CustomPiglinBarterLootGen::new, LootContextParamSets.PIGLIN_BARTER),
-            Pair.of(ModFishingLootGen::new, LootContextParamSets.FISHING)
-                                          );
+            loot_tables = ImmutableList
+            .of(
+                    Pair.of(ModChestLootTablesGen::new, LootContextParamSets.CHEST),
+                    Pair.of(ModBlockLootTablesGen::new, LootContextParamSets.BLOCK),
+                    Pair.of(ModGiftLootGen::new, LootContextParamSets.GIFT),
+                    Pair.of(CurrencyDropLootTablesGen::new, LootContextParamSets.ENTITY),
+                    Pair.of(CustomPiglinBarterLootGen::new, LootContextParamSets.PIGLIN_BARTER),
+                    Pair.of(ModFishingLootGen::new, LootContextParamSets.FISHING)
+            );
 
     public ModLootTableGenProvider(DataGenerator generator) {
         super(generator);

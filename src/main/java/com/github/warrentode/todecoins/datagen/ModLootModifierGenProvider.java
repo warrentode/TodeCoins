@@ -8,6 +8,7 @@ import com.github.warrentode.todecoins.loot.modifiers.AddLootTableModifier;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.predicates.AlternativeLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -21,6 +22,12 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
+        add("add_egg_drops", new AddItemLootModifier(
+                new LootItemCondition[]{
+                        LootTableIdCondition.builder(EntityType.CHICKEN.getDefaultLootTable()).build()
+                },
+                Items.EGG, 0.5F
+        ));
         add("add_four_leaf_clover_drops", new AddItemLootModifier(
                 new LootItemCondition[]{
                         BlockTagCondition.isTag(ModTags.Blocks.DROPS_FOUR_LEAF_CLOVER)
@@ -94,6 +101,7 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                 new LootItemCondition[]{
                         AlternativeLootItemCondition
                                 .alternative(LootTableIdCondition.builder(EntityType.ENDER_DRAGON.getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(EntityType.ELDER_GUARDIAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WARDEN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WITHER.getDefaultLootTable()))
                                 .build()
@@ -117,7 +125,6 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .or(LootTableIdCondition.builder(EntityType.DOLPHIN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.DONKEY.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.DROWNED.getDefaultLootTable()))
-                                .or(LootTableIdCondition.builder(EntityType.ELDER_GUARDIAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.ENDERMAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.ENDERMITE.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.EVOKER.getDefaultLootTable()))

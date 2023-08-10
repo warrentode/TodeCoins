@@ -1,0 +1,11 @@
+{
+  "type": "todecoins:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/chicken"
+    }
+  ],
+  "dropChance": 0.5,
+  "item": "minecraft:egg"
+}

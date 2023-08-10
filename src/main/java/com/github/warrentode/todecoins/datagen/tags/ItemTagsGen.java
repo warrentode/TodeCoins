@@ -34,6 +34,7 @@ public class ItemTagsGen extends ItemTagsProvider {
         this.registerSupplementariesTags();
     }
 
+
     private void registerSupplementariesTags() {
         tag(SupplementariesTags.Items.COOKIES)
                 .addTag(ModTags.Items.JAR_PLACEABLE);

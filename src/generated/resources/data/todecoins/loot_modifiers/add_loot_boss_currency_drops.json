@@ -10,6 +10,10 @@
         },
         {
           "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/elder_guardian"
+        },
+        {
+          "condition": "forge:loot_table_id",
           "loot_table_id": "minecraft:entities/warden"
         },
         {

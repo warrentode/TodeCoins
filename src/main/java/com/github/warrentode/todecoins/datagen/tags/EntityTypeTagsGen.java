@@ -33,6 +33,7 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
     private void registerForgeTags() {
         tag(ForgeTags.EntityTypes.BOSSES)
                 .add(EntityType.ENDER_DRAGON)
+                .add(EntityType.ELDER_GUARDIAN)
                 .add(EntityType.WARDEN)
                 .add(EntityType.WITHER);
         tag(ForgeTags.EntityTypes.ILLAGERS)

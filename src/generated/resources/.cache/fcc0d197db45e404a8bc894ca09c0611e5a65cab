@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-01T23:24:57.5827865	Tags for minecraft:entity_type
+// 1.19.2	2023-08-10T01:02:11.530224	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
@@ -6,7 +6,7 @@ a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.
 4cde89bfc4a145a3ba22cc55074c6c19ebbc6a09 data/forge/tags/entity_types/bat.json
 4c073b476785113705dfd3c6b286a337ddbd56b0 data/forge/tags/entity_types/bee.json
 76c0522664726c09461ad4565b6fba80b4f816b2 data/forge/tags/entity_types/blaze.json
-426f3d2081f0e68db3d5fd0843139e396feac857 data/forge/tags/entity_types/bosses.json
+6e984fa8152096af861fd23b5a2b902147db76d5 data/forge/tags/entity_types/bosses.json
 3ccb6db5dd553b58514fc37d5cc36333c646c587 data/forge/tags/entity_types/camel.json
 69abcfe71fde77182196f7356eee4127eaf04a03 data/forge/tags/entity_types/cat.json
 d94d11636ca37bedaaf4c31c9bdfbc3be7289e6a data/forge/tags/entity_types/cave_spider.json
