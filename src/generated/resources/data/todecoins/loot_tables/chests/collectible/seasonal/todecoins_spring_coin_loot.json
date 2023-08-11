@@ -2927,6 +2927,62 @@
             }
           ],
           "name": "todecoins:collectible_coin_phantom_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_brute_copper"
         }
       ],
       "rolls": 1.0

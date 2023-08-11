@@ -618,6 +618,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_PIG_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIG_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_PIGLIN_BRUTE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIGLIN_BRUTE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_PIGLIN_BRUTE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PIGLIN_BRUTE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_PIGLIN_BRUTE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PIGLIN_BRUTE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_PIGLIN_BRUTE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIGLIN_BRUTE_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_PIGLIN_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIGLIN_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_PIGLIN_COIN.get().getDescriptionId(),

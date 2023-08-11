@@ -247,6 +247,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_phantom_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_piglin_brute_gold"
         }
       ],
       "rolls": 1.0

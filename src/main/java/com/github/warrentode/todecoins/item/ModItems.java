@@ -529,6 +529,15 @@ public class ModItems {
             () -> new PigCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_PIG_COIN = ITEMS.register("collectible_coin_pig_netherite",
             () -> new PigCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // piglin brute set
+    public static final RegistryObject<Item> COPPER_PIGLIN_BRUTE_COIN = ITEMS.register("collectible_coin_piglin_brute_copper",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_PIGLIN_BRUTE_COIN = ITEMS.register("collectible_coin_piglin_brute_iron",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_PIGLIN_BRUTE_COIN = ITEMS.register("collectible_coin_piglin_brute_gold",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_PIGLIN_BRUTE_COIN = ITEMS.register("collectible_coin_piglin_brute_netherite",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // piglin set
     public static final RegistryObject<Item> COPPER_PIGLIN_COIN = ITEMS.register("collectible_coin_piglin_copper",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

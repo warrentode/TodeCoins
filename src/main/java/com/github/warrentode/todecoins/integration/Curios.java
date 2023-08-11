@@ -242,7 +242,7 @@ public class Curios {
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.PIGLIN_COIN_SET)) {
+                if (player != null && (stack.is(ModTags.Items.PIGLIN_COIN_SET) || stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET))) {
                     if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
                         attribute.put(Attributes.ARMOR,
                                 new AttributeModifier(uuid, "generic.armor", 1,

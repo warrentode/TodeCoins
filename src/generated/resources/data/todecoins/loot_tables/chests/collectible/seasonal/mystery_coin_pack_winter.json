@@ -247,6 +247,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_phantom_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_piglin_brute_netherite"
         }
       ],
       "rolls": 1.0

@@ -274,6 +274,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_PIG_COIN.get().getDescriptionId(), "Gold Pig Coin");
         addCollectibleCoins(ModItems.NETHERITE_PIG_COIN.get().getDescriptionId(), "Netherite Pig Coin");
 
+        addCollectibleCoins(ModItems.COPPER_PIGLIN_BRUTE_COIN.get().getDescriptionId(), "Copper Piglin Brute Coin");
+        addCollectibleCoins(ModItems.IRON_PIGLIN_BRUTE_COIN.get().getDescriptionId(), "Iron Piglin Brute Coin");
+        addCollectibleCoins(ModItems.GOLD_PIGLIN_BRUTE_COIN.get().getDescriptionId(), "Gold Piglin Brute Coin");
+        addCollectibleCoins(ModItems.NETHERITE_PIGLIN_BRUTE_COIN.get().getDescriptionId(), "Netherite Piglin Brute Coin");
+
         addCollectibleCoins(ModItems.COPPER_PIGLIN_COIN.get().getDescriptionId(), "Copper Piglin Coin");
         addCollectibleCoins(ModItems.IRON_PIGLIN_COIN.get().getDescriptionId(), "Iron Piglin Coin");
         addCollectibleCoins(ModItems.GOLD_PIGLIN_COIN.get().getDescriptionId(), "Gold Piglin Coin");

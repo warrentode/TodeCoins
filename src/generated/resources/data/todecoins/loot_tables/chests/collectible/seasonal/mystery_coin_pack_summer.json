@@ -247,6 +247,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_phantom_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_piglin_brute_iron"
         }
       ],
       "rolls": 1.0

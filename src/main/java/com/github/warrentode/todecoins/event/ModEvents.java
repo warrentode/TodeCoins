@@ -23,7 +23,6 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -31,9 +30,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -51,7 +47,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 
 public class ModEvents {
     @Mod.EventBusSubscriber(modid = TodeCoins.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -210,19 +205,6 @@ public class ModEvents {
             int lootingLevel = event.getLootingLevel();
             boolean recentlyHit = event.isRecentlyHit();
             LivingEntity entity = event.getEntity();
-
-            // TODO why isn't the wither boss loot table working, does the dropCustomLoot method cancel it somehow
-            if (entity instanceof WitherBoss witherBoss) {
-                dropFromWitherLootTable(witherBoss, source, recentlyHit);
-            }
-        }
-
-        protected static void dropFromWitherLootTable(WitherBoss witherBoss, DamageSource pDamageSource, boolean pHitByPlayer) {
-            ResourceLocation resourcelocation = witherBoss.getLootTable();
-            LootTable loottable = Objects.requireNonNull(witherBoss.level.getServer()).getLootTables().get(EntityType.WITHER.getDefaultLootTable());
-            LootContext.Builder lootcontext$builder = witherBoss.createLootContext(pHitByPlayer, pDamageSource);
-            LootContext ctx = lootcontext$builder.create(LootContextParamSets.ENTITY);
-            loottable.getRandomItems(ctx).forEach(witherBoss::spawnAtLocation);
         }
 
 
