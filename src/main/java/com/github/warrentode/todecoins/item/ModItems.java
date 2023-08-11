@@ -547,6 +547,15 @@ public class ModItems {
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_PIGLIN_COIN = ITEMS.register("collectible_coin_piglin_netherite",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // pillager set
+    public static final RegistryObject<Item> COPPER_PILLAGER_COIN = ITEMS.register("collectible_coin_pillager_copper",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_PILLAGER_COIN = ITEMS.register("collectible_coin_pillager_iron",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_PILLAGER_COIN = ITEMS.register("collectible_coin_pillager_gold",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_PILLAGER_COIN = ITEMS.register("collectible_coin_pillager_netherite",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // polar bear set
     public static final RegistryObject<Item> COPPER_POLAR_BEAR_COIN = ITEMS.register("collectible_coin_polar_bear_copper",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

@@ -184,6 +184,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.PIG_COIN_SET)
                 .addTag(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
                 .addTag(ModTags.Items.PIGLIN_COIN_SET)
+                .addTag(ModTags.Items.PILLAGER_COIN_SET)
                 .addTag(ModTags.Items.POLAR_BEAR_COIN_SET)
                 .addTag(ModTags.Items.PUFFERFISH_COIN_SET)
                 .addTag(ModTags.Items.RABBIT_COIN_SET)
@@ -205,6 +206,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.WOLF_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        tag(ModTags.Items.PILLAGER_COIN_SET)
+                .add(ModItems.COPPER_PILLAGER_COIN.get())
+                .add(ModItems.IRON_PILLAGER_COIN.get())
+                .add(ModItems.GOLD_PILLAGER_COIN.get())
+                .add(ModItems.NETHERITE_PILLAGER_COIN.get());
         tag(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
                 .add(ModItems.COPPER_PIGLIN_BRUTE_COIN.get())
                 .add(ModItems.IRON_PIGLIN_BRUTE_COIN.get())

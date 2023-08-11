@@ -327,6 +327,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_PIGLIN_COIN.get().getDefaultInstance());
+            // PILLAGER COIN SET
+            items.add(ModItems.COPPER_PILLAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PILLAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PILLAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PILLAGER_COIN.get().getDefaultInstance());
             // POLAR BEAR COIN SET
             items.add(ModItems.COPPER_POLAR_BEAR_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_POLAR_BEAR_COIN.get().getDefaultInstance());

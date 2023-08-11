@@ -77,6 +77,7 @@ public class CageriumLootTablesGen implements Consumer<BiConsumer<ResourceLocati
         consumer.accept(CageriumLootTables.WOLF, LootTable.lootTable());
         consumer.accept(CageriumLootTables.PIGLIN, LootTable.lootTable());
         consumer.accept(CageriumLootTables.PIGLIN_BRUTE, LootTable.lootTable());
+        consumer.accept(CageriumLootTables.NUMISMATIST, LootTable.lootTable());
 
         consumer.accept(CageriumLootTables.ZOMBIE_VILLAGER,
                 LootTable.lootTable()

@@ -103,6 +103,7 @@ public class CageriumLootTables {
     public static final ResourceLocation PIGLIN = register("minecraft", "piglin");
     public static final ResourceLocation PIGLIN_BRUTE = register("minecraft", "piglin_brute");
     public static final ResourceLocation ZOMBIE_VILLAGER = register("minecraft", "zombie_villager");
+    public static final ResourceLocation NUMISMATIST = register("todecoins", "numismatist");
 
     private static ResourceLocation register(String modid, String entity) {
         return register(new ResourceLocation(modid, "cagerium/" + entity));

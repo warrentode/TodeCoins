@@ -2307,6 +2307,42 @@
           ],
           "name": "todecoins:collectible_coin_piglin_brute_copper",
           "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:pillager"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_pillager_copper",
+          "quality": 1
         }
       ],
       "rolls": 1.0

@@ -2983,6 +2983,21 @@
             }
           ],
           "name": "todecoins:collectible_coin_piglin_brute_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:pillager_outpost"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_pillager_copper"
         }
       ],
       "rolls": 1.0

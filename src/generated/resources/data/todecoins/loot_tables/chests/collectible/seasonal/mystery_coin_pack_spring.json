@@ -251,6 +251,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_piglin_brute_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_pillager_copper"
         }
       ],
       "rolls": 1.0

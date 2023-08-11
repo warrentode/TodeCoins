@@ -17,26 +17,22 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.AbstractIllager;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SpawnEggItem;
-import net.minecraft.world.item.enchantment.ThornsEnchantment;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -44,7 +40,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
 import java.util.List;
 
 public class ModEvents {
@@ -104,7 +99,8 @@ public class ModEvents {
                     event.modifyVisibility(0.25D);
                     lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
                 }
-                else if (entitytype.is(ForgeTags.EntityTypes.ILLAGERS) && (stack != null && stack.is(ModTags.Items.EVOKER_COIN_SET))) {
+                else if (entitytype.is(ForgeTags.EntityTypes.ILLAGERS) &&
+                        (stack != null && (stack.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.PILLAGER_COIN_SET)))) {
                     event.modifyVisibility(0.25D);
                     lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
                 }
@@ -197,15 +193,6 @@ public class ModEvents {
             return false;
         }
 
-        @SubscribeEvent
-        public static void onLivingDropsEvent(LivingDropsEvent event) {
-            DamageSource source = event.getSource();
-            Collection<ItemEntity> drops = event.getDrops();
-            int lootingLevel = event.getLootingLevel();
-            boolean recentlyHit = event.isRecentlyHit();
-            LivingEntity entity = event.getEntity();
-        }
-
 
         @SuppressWarnings("SameReturnValue")
         @SubscribeEvent
@@ -223,6 +210,7 @@ public class ModEvents {
                     ItemStack flameCharm = null;
                     ItemStack slownessCharm = null;
                     ItemStack smiteCharm = null;
+                    ItemStack illagerCharm = null;
 
                     if (TodeCoins.isModLoaded("curios")) {
                         if (stack != null) {
@@ -237,6 +225,9 @@ public class ModEvents {
                             }
                             if (stack.is(ModTags.Items.PHANTOM_COIN_SET)) {
                                 smiteCharm = stack;
+                            }
+                            if (stack.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.PILLAGER_COIN_SET)) {
+                                illagerCharm = stack;
                             }
                         }
 
@@ -307,9 +298,46 @@ public class ModEvents {
                         if (smiteCharm != null && target != null) {
                             MobEffect slowEffect = MobEffects.MOVEMENT_SLOWDOWN;
 
-                            if (((LivingEntity) target).getMobType() == MobType.UNDEAD) {
+                            if (target instanceof LivingEntity) {
+                                if (((LivingEntity) target).getMobType() == MobType.UNDEAD) {
+                                    int i = 0;
+                                    int j = 0;
+                                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                                        i = 5;
+                                        j = 1;
+                                    }
+                                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                        i = 10;
+                                        j = 2;
+                                    }
+                                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                        i = 20;
+                                        j = 3;
+                                    }
+
+                                    if (i > 0 && j > 0) {
+                                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, i * 20, j));
+                                        ((LivingEntity) target).addEffect(new MobEffectInstance(slowEffect, i * 20, j), target);
+                                    }
+                                }
+                            }
+                        }
+                        if (illagerCharm != null && target != null) {
+                            if (target instanceof AbstractIllager) {
                                 int i = 0;
                                 int j = 0;
+                                int p = 0;
+
+                                // illusioner = 5
+                                // iceologer = 4
+                                // vindicator = 2
+                                if (illagerCharm.is(ModTags.Items.EVOKER_COIN_SET)) {
+                                    p = 3;
+                                }
+                                else if (illagerCharm.is(ModTags.Items.PILLAGER_COIN_SET)) {
+                                    p = 1;
+                                }
+
                                 if (player.level.getDifficulty() == Difficulty.EASY) {
                                     i = 5;
                                     j = 1;
@@ -324,46 +352,10 @@ public class ModEvents {
                                 }
 
                                 if (i > 0 && j > 0) {
-                                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, i * 20, j));
-                                    ((LivingEntity) target).addEffect(new MobEffectInstance(slowEffect, i * 20, j), target);
+                                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, (i + p) * 20, j));
                                 }
                             }
                         }
-                    }
-                }
-            }
-            return false;
-        }
-
-        @SuppressWarnings("SameReturnValue")
-        @SubscribeEvent
-        public boolean onLivingHurt(LivingHurtEvent event) {
-            LivingEntity entity = event.getEntity();
-            LivingEntity attacker = event.getEntity();
-            DamageSource source = entity.getLastDamageSource();
-            Level level = entity.getCommandSenderWorld();
-            ItemStack stack = ItemStack.EMPTY;
-
-            if (!level.isClientSide) {
-                if (entity instanceof ServerPlayer player && source instanceof EntityDamageSource) {
-                    Curios.getCharmSlot(player);
-                    if (stack.is(ModTags.Items.EVOKER_COIN_SET)) {
-                        @SuppressWarnings("DataFlowIssue")
-                        ThornsEnchantment thornsEnchantment = (ThornsEnchantment) (Object) this;
-
-                        int i = 0;
-
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
-                            i = 5;
-                        }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
-                            i = 10;
-                        }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
-                            i = 20;
-                        }
-
-                        thornsEnchantment.doPostHurt(player, attacker, i);
                     }
                 }
             }

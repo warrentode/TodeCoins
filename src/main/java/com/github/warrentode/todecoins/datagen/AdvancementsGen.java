@@ -636,6 +636,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_PIGLIN_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIGLIN_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_PILLAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_PILLAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_PILLAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_PILLAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PILLAGER_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_POLAR_BEAR_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_POLAR_BEAR_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_POLAR_BEAR_COIN.get().getDescriptionId(),

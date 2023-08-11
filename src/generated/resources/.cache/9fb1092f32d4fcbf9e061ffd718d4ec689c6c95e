@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-11T10:09:26.8297065	Recipes
+// 1.19.2	2023-08-11T11:34:12.2049218	Recipes
 7fd403ece17053b8d10a9b662acc659bec8f5558 data/cagerium/recipes/spawn_eggs/allay_spawn_egg.json
 6d15e5d7178773020b1c5b8cc8600e346386dcfd data/cagerium/recipes/spawn_eggs/axolotl_spawn_egg.json
 29519438d8537e8d83f7288e846712b2123b4496 data/cagerium/recipes/spawn_eggs/bat_spawn_egg.json
@@ -40,6 +40,7 @@ d0b39030cd38ffb3de7fa6235f5d7a3d30340341 data/cagerium/recipes/spawn_eggs/parrot
 14495a6ef7c8d5f16abf93cfd4a6649f4d2ef81e data/cagerium/recipes/spawn_eggs/piglin_brute_spawn_egg.json
 b5258f1250a3262dc10a83fe860a20e82c67a380 data/cagerium/recipes/spawn_eggs/piglin_spawn_egg.json
 d34dbd8853618a1dc5bf8630e7d5feff28c3a606 data/cagerium/recipes/spawn_eggs/pig_spawn_egg.json
+84293821dd1810c3e362d8e1a8a76b5e766ff83c data/cagerium/recipes/spawn_eggs/pillager_spawn_egg.json
 d80b1403b4c9bfdd1a9fd2ab30167037f140d15d data/cagerium/recipes/spawn_eggs/polar_bear_spawn_egg.json
 fbde2a28154575ac48a05b15f290e30a1f0dd41f data/cagerium/recipes/spawn_eggs/pufferfish_spawn_egg.json
 4114cc4fd2a2e3a37d5539823869284c0f30f31e data/cagerium/recipes/spawn_eggs/rabbit_spawn_egg.json

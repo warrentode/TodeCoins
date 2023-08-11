@@ -2149,6 +2149,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_pillager_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_pillager_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_pillager_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_pillager_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_polar_bear_copper": {
       "conditions": {
         "items": [
@@ -3662,6 +3710,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_piglin_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pillager_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pillager_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pillager_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pillager_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_polar_bear_copper"
