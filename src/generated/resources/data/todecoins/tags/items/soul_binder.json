@@ -1,8 +1,9 @@
 {
-    "values": [
-        {
-            "id": "cagerium:binding_gemstone",
-            "required": false
-        }
-    ]
+  "values": [
+    "minecraft:echo_shard",
+    {
+      "id": "cagerium:binding_gemstone",
+      "required": false
+    }
+  ]
 }

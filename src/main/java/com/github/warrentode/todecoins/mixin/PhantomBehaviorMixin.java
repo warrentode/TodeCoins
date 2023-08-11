@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.mixin;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundEvents;
@@ -38,7 +38,7 @@ public abstract class PhantomBehaviorMixin {
         ItemStack stack = Curios.getCharmSlot(player);
         ItemStack catCoin = null;
 
-        if (ModListHandler.curiosLoaded) {
+        if (TodeCoins.isModLoaded("curios")) {
             if (stack != null && (stack.is(ModTags.Items.CAT_COIN_SET) || stack.is(ModTags.Items.OCELOT_COIN_SET))) {
                 catCoin = stack;
             }
@@ -50,7 +50,6 @@ public abstract class PhantomBehaviorMixin {
     private void todecoins_canContinueToUse(CallbackInfoReturnable<Boolean> cir) {
         Player player = Minecraft.getInstance().player;
 
-        // TODO: fix random tick crash on Phantom with this
         if (this$0.tickCount > this.todeCoins$catSearchTick) {
             this.todeCoins$catSearchTick = this$0.tickCount + 20;
             List<Player> playerList = this$0.level.getEntitiesOfClass(Player.class, this$0.getBoundingBox().inflate(16.0D), EntitySelector.ENTITY_STILL_ALIVE);

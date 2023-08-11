@@ -29,7 +29,7 @@ public abstract class WitherLootMixin extends LivingEntity {
             ResourceLocation resourcelocation = this.getLootTable();
             LootTable lootTable = this.level.getServer().getLootTables().get(resourcelocation);
             LootContext.Builder lootcontext$builder = this.createLootContext(hitByPlayer, source);
-            lootTable.getRandomItemsRaw(lootcontext$builder.create(LootContextParamSets.ENTITY), (stack) -> {
+            lootTable.getRandomItemsRaw(lootcontext$builder.create(LootContextParamSets.ALL_PARAMS), (stack) -> {
                 ItemEntity itemEntity = new ItemEntity(this.level, this.getX(), this.getY(), this.getZ(), stack);
                 itemEntity.setDefaultPickUpDelay();
                 itemEntity.setExtendedLifetime();

@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.mixin;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
@@ -46,33 +46,33 @@ public abstract class PiglinBarterMixin {
     @Unique
     private static boolean todeCoins$isWearingZombiePiglinCoin(Player player) {
         ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModListHandler.curiosLoaded && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        return stack != null && TodeCoins.isModLoaded("curios") && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
     }
 
     @Unique
     private static boolean todeCoins$isWearingNetheritePiglinCoin(Player player) {
         ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModListHandler.curiosLoaded && stack.getItem().equals(ModItems.NETHERITE_PIGLIN_COIN.get());
+        return stack != null && TodeCoins.isModLoaded("curios") && stack.getItem().equals(ModItems.NETHERITE_PIGLIN_COIN.get());
     }
     @Unique
     private static boolean todeCoins$isWearingGoldPiglinCoin(Player player) {
         ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModListHandler.curiosLoaded && stack.getItem().equals(ModItems.GOLD_PIGLIN_COIN.get());
+        return stack != null && TodeCoins.isModLoaded("curios") && stack.getItem().equals(ModItems.GOLD_PIGLIN_COIN.get());
     }
     @Unique
     private static boolean todeCoins$isWearingIronPiglinCoin(Player player) {
         ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModListHandler.curiosLoaded && stack.getItem().equals(ModItems.IRON_PIGLIN_COIN.get());
+        return stack != null && TodeCoins.isModLoaded("curios") && stack.getItem().equals(ModItems.IRON_PIGLIN_COIN.get());
     }
     @Unique
     private static boolean todeCoins$isWearingCopperPiglinCoin(Player player) {
         ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModListHandler.curiosLoaded && stack.getItem().equals(ModItems.COPPER_PIGLIN_COIN.get());
+        return stack != null && TodeCoins.isModLoaded("curios") && stack.getItem().equals(ModItems.COPPER_PIGLIN_COIN.get());
     }
 
     @Unique
     private static boolean todeCoins$isGiftEvent(ServerLevel serverLevel) {
-        if (ModListHandler.sereneseasonsLoaded) {
+        if (TodeCoins.isModLoaded("sereneseasons")) {
             return SereneSeasonsCompat.SeasonCompat.isChristmas(serverLevel) || SereneSeasonsCompat.SeasonCompat.isHalloween(serverLevel) ||
                     SereneSeasonsCompat.SeasonCompat.isBirthday(serverLevel) || SereneSeasonsCompat.SeasonCompat.isAnniversary(serverLevel);
         }

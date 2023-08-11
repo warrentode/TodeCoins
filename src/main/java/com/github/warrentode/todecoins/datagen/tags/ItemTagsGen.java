@@ -99,6 +99,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ForgeTags.Items.TOOLS_KNIVES)
                 .addTag(ForgeTags.Items.TOOLS_CHISELS);
         tag(ModTags.Items.SOUL_BINDER)
+                .add(Items.ECHO_SHARD)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("cagerium:binding_gemstone")));
         tag(ModTags.Items.JAR_PLACEABLE)
                 .addTag(ModTags.Items.COLLECTIBLE_COINS)

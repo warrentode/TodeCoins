@@ -1,6 +1,6 @@
 package com.github.warrentode.todecoins.loot.conditions.season;
 
-import com.github.warrentode.todecoins.integration.ModListHandler;
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.github.warrentode.todecoins.util.CalendarUtil;
@@ -30,7 +30,7 @@ public class SpringCondition implements LootItemCondition {
 
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
-        if (ModListHandler.sereneseasonsLoaded) {
+        if (TodeCoins.isModLoaded("sereneseasons")) {
             return this.isSpring = SereneSeasonsCompat.SeasonCompat.isSpring(level);
         }
         else {

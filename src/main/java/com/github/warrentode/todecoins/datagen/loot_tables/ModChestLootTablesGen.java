@@ -3,7 +3,6 @@ package com.github.warrentode.todecoins.datagen.loot_tables;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
-import com.github.warrentode.todecoins.loot.conditions.ModCheckCondition;
 import com.github.warrentode.todecoins.loot.conditions.season.*;
 import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.data.loot.ChestLoot;
@@ -199,8 +198,6 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder SUMMER = SummerCondition.season();
     public static final LootItemCondition.Builder AUTUMN = AutumnCondition.season();
     public static final LootItemCondition.Builder WINTER = WinterCondition.season();
-    // mod loaded check
-    public static final LootItemCondition.Builder MODCHECK = ModCheckCondition.check();
 
     @Override
     public void accept(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {

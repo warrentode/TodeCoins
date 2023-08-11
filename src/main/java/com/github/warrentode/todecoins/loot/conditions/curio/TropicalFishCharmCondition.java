@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.loot.conditions.curio;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
@@ -33,7 +33,7 @@ public class TropicalFishCharmCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel serverlevel = context.getLevel();
         Player player = Minecraft.getInstance().player;
-        if (ModListHandler.curiosLoaded) {
+        if (TodeCoins.isModLoaded("curios")) {
             ItemStack isTropicalFishCharm = Curios.getCharmSlot(player);
             return this.isTropicalFishCharm = Curios.matchTropicalFishCharm(isTropicalFishCharm);
         }

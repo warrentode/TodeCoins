@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.mixin;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -24,7 +24,7 @@ public abstract class WalkThroughBerryBushMixin {
     private void todecoins_injectEntityInside(BlockState state, Level level, BlockPos pos, Entity entity, CallbackInfo ci) {
         Player player = Minecraft.getInstance().player;
         if (entity instanceof LivingEntity && entity.getType() == EntityType.PLAYER && player != null) {
-            if (ModListHandler.curiosLoaded) {
+            if (TodeCoins.isModLoaded("curios")) {
                 ItemStack stack = Curios.getCharmSlot(player);
                 if (stack != null && stack.is(ModTags.Items.FOX_COIN_SET)) {
                     ci.cancel();

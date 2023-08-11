@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.item.custom;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -23,7 +23,7 @@ public class LuckyCoinItem extends CoinItem implements Wearable {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !ModListHandler.curiosLoaded ? null : Curios.createLuckyCoinCharmProvider(stack);
+        return !TodeCoins.isModLoaded("curios") ? null : Curios.createLuckyCoinCharmProvider(stack);
     }
 
     @Override

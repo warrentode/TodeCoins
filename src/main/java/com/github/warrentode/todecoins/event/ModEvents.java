@@ -6,7 +6,6 @@ import com.github.warrentode.todecoins.attribute.PlayerCharisma;
 import com.github.warrentode.todecoins.attribute.PlayerCharismaProvider;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.github.warrentode.todecoins.util.tags.ModTags;
@@ -155,7 +154,7 @@ public class ModEvents {
                     DamageSource damageSource = player.getLastDamageSource();
                     ItemStack luckyCoin = null;
 
-                    if (ModListHandler.curiosLoaded) {
+                    if (TodeCoins.isModLoaded("curios")) {
                         ItemStack stack = Curios.getCharmSlot(player);
                         if (stack != null && stack.getItem().equals(ModItems.LUCKY_COIN.get())) {
                             luckyCoin = stack;
@@ -225,7 +224,7 @@ public class ModEvents {
                     ItemStack slownessCharm = null;
                     ItemStack smiteCharm = null;
 
-                    if (ModListHandler.curiosLoaded) {
+                    if (TodeCoins.isModLoaded("curios")) {
                         if (stack != null) {
                             if (stack.is(ModTags.Items.BEE_COIN_SET) || stack.is(ModTags.Items.CAVE_SPIDER_COIN_SET)) {
                                 poisonCharm = stack;

@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.neutral;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -22,7 +22,7 @@ public class SpiderCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !ModListHandler.curiosLoaded ? null : Curios.createSlownessAttackCharmProvider(stack);
+        return !TodeCoins.isModLoaded("curios") ? null : Curios.createSlownessAttackCharmProvider(stack);
     }
 
     @Override

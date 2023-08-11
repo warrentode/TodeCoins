@@ -1,9 +1,9 @@
 package com.github.warrentode.todecoins.entity.villager.trades;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.LootBoxForTwoRequestSetsTrade;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.OneSetForOneSetTrade;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.OneSetForTwoSetsTrade;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.util.CalendarUtil;
@@ -460,10 +460,10 @@ public class NumismatistTrades {
     }
 
     private static ImmutableSet.Builder<Object> setContainerOffers() {
-        if (ModListHandler.sophisticatedbackpacksLoaded) {
+        if (TodeCoins.isModLoaded("sophisticatedbackpacks")) {
             SelectedContainersList = ImmutableSet.builder().addAll(SophisticatedBackpacksList);
         }
-        if (ModListHandler.bagofholdingLoaded) {
+        if (TodeCoins.isModLoaded("bagofholding")) {
             SelectedContainersList = ImmutableSet.builder().addAll(BagOfHoldingList);
         }
         SelectedContainersList = ImmutableSet.builder().addAll(VanillaContainerList);
@@ -481,7 +481,7 @@ public class NumismatistTrades {
     }
 
     private static ImmutableSet<ItemLike> getCageriumOffers() {
-        if (ModListHandler.cageriumLoaded) {
+        if (TodeCoins.isModLoaded("cagerium")) {
             CageriumOffers = CageriumList;
         }
         else {
