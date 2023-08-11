@@ -1218,7 +1218,7 @@ public class Curios {
                         i = 3;
                     }
                     attribute.put(Attributes.ATTACK_KNOCKBACK,
-                            new AttributeModifier(uuid, "generic.attack_knockback", i,
+                            new AttributeModifier(uuid, "generic.attack_knockback", 1 + i,
                                     AttributeModifier.Operation.ADDITION));
                 }
 

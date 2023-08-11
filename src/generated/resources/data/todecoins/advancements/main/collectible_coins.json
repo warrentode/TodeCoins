@@ -2341,6 +2341,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_ravager_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ravager_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ravager_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ravager_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_salmon_copper": {
       "conditions": {
         "items": [
@@ -3758,6 +3806,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_rabbit_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ravager_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ravager_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ravager_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ravager_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_salmon_copper"

@@ -347,6 +347,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_RABBIT_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_RABBIT_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_RABBIT_COIN.get().getDefaultInstance());
+            // RAVAGER COIN SET
+            items.add(ModItems.COPPER_RAVAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_RAVAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_RAVAGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_RAVAGER_COIN.get().getDefaultInstance());
             // SALMON COIN SET
             items.add(ModItems.COPPER_SALMON_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_SALMON_COIN.get().getDefaultInstance());

@@ -672,6 +672,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_RABBIT_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_RABBIT_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_RAVAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_RAVAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_RAVAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_RAVAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_RAVAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_RAVAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_RAVAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_RAVAGER_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_SALMON_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SALMON_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_SALMON_COIN.get().getDescriptionId(),

@@ -574,6 +574,15 @@ public class ModItems {
             () -> new RabbitCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_RABBIT_COIN = ITEMS.register("collectible_coin_rabbit_netherite",
             () -> new RabbitCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // ravager set
+    public static final RegistryObject<Item> COPPER_RAVAGER_COIN = ITEMS.register("collectible_coin_ravager_copper",
+            () -> new RavagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_RAVAGER_COIN = ITEMS.register("collectible_coin_ravager_iron",
+            () -> new RavagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_RAVAGER_COIN = ITEMS.register("collectible_coin_ravager_gold",
+            () -> new RavagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_RAVAGER_COIN = ITEMS.register("collectible_coin_ravager_netherite",
+            () -> new RavagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // sheep set
     public static final RegistryObject<Item> COPPER_SHEEP_COIN = ITEMS.register("collectible_coin_sheep_copper",
             () -> new SheepCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

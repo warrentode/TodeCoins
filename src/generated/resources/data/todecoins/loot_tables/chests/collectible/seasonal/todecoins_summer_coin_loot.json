@@ -2998,6 +2998,21 @@
             }
           ],
           "name": "todecoins:collectible_coin_pillager_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:pillager_outpost"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_ravager_iron"
         }
       ],
       "rolls": 1.0

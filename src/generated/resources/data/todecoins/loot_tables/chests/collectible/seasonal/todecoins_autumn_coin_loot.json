@@ -2998,6 +2998,21 @@
             }
           ],
           "name": "todecoins:collectible_coin_pillager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:pillager_outpost"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_ravager_gold"
         }
       ],
       "rolls": 1.0

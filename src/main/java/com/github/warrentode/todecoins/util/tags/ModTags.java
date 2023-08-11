@@ -93,6 +93,7 @@ public class ModTags {
         public static final TagKey<Item> POLAR_BEAR_COIN_SET = modItemTag("collectible_coins/entity_coins/polar_bear_coin_set");
         public static final TagKey<Item> PUFFERFISH_COIN_SET = modItemTag("collectible_coins/entity_coins/pufferfish_coin_set");
         public static final TagKey<Item> RABBIT_COIN_SET = modItemTag("collectible_coins/entity_coins/rabbit_coin_set");
+        public static final TagKey<Item> RAVAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/ravager_coin_set");
         public static final TagKey<Item> SALMON_COIN_SET = modItemTag("collectible_coins/entity_coins/salmon_coin_set");
         public static final TagKey<Item> SHEEP_COIN_SET = modItemTag("collectible_coins/entity_coins/sheep_coin_set");
         public static final TagKey<Item> SKELETON_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/skeleton_horse_coin_set");

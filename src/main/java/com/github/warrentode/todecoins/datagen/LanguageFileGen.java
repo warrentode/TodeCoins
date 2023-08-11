@@ -299,6 +299,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_RABBIT_COIN.get().getDescriptionId(), "Gold Rabbit Coin");
         addCollectibleCoins(ModItems.NETHERITE_RABBIT_COIN.get().getDescriptionId(), "Netherite Rabbit Coin");
 
+        addCollectibleCoins(ModItems.COPPER_RAVAGER_COIN.get().getDescriptionId(), "Copper Ravager Coin");
+        addCollectibleCoins(ModItems.IRON_RAVAGER_COIN.get().getDescriptionId(), "Iron Ravager Coin");
+        addCollectibleCoins(ModItems.GOLD_RAVAGER_COIN.get().getDescriptionId(), "Gold Ravager Coin");
+        addCollectibleCoins(ModItems.NETHERITE_RAVAGER_COIN.get().getDescriptionId(), "Netherite Ravager Coin");
+
         addCollectibleCoins(ModItems.COPPER_SHEEP_COIN.get().getDescriptionId(), "Copper Sheep Coin");
         addCollectibleCoins(ModItems.IRON_SHEEP_COIN.get().getDescriptionId(), "Iron Sheep Coin");
         addCollectibleCoins(ModItems.GOLD_SHEEP_COIN.get().getDescriptionId(), "Gold Sheep Coin");
@@ -508,6 +513,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_pig_coin.hover", "One of Four Pig Seasonal Coins");
         add("tooltips.collectible_polar_bear_coin.hover", "One of Four Polar Bear Seasonal Coins");
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
+        add("tooltips.collectible_ravager_coin.hover", "One of Four Ravager Seasonal Coins");
         add("tooltips.collectible_sheep_coin.hover", "One of Four Sheep Seasonal Coins");
         add("tooltips.collectible_slime_coin.hover", "One of Four Slime Seasonal Coins");
         add("tooltips.collectible_sniffer_coin.hover", "One of Four Sniffer Seasonal Coins");

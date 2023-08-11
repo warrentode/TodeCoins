@@ -700,6 +700,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PILLAGER_COIN.get()).when(SPRING)
                                         .when(IN_PILLAGER_OUTPOST))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_RAVAGER_COIN.get()).when(SPRING)
+                                        .when(IN_PILLAGER_OUTPOST))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
@@ -979,6 +982,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_BASALT_DELTAS)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_PILLAGER_COIN.get()).when(SUMMER)
+                                        .when(IN_PILLAGER_OUTPOST))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_RAVAGER_COIN.get()).when(SUMMER)
                                         .when(IN_PILLAGER_OUTPOST))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
@@ -1260,6 +1266,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_PILLAGER_COIN.get()).when(AUTUMN)
                                         .when(IN_PILLAGER_OUTPOST))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_RAVAGER_COIN.get()).when(AUTUMN)
+                                        .when(IN_PILLAGER_OUTPOST))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1540,6 +1549,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PILLAGER_COIN.get()).when(WINTER)
                                         .when(IN_PILLAGER_OUTPOST))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_RAVAGER_COIN.get()).when(WINTER)
+                                        .when(IN_PILLAGER_OUTPOST))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1609,6 +1621,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PHANTOM_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_BRUTE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PILLAGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_RAVAGER_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1678,6 +1691,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_PHANTOM_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_BRUTE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_PILLAGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_RAVAGER_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1747,6 +1761,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_PHANTOM_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_PIGLIN_BRUTE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_PILLAGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_RAVAGER_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -1816,6 +1831,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PHANTOM_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_BRUTE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PILLAGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_RAVAGER_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,
