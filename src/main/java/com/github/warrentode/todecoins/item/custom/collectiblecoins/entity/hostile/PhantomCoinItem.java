@@ -27,7 +27,7 @@ public class PhantomCoinItem extends CollectibleCoin {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_ghast_coin.hover").withStyle(ChatFormatting.GRAY));
+        tooltips.add(Component.translatable("tooltips.collectible_phantom_coin.hover").withStyle(ChatFormatting.GRAY));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

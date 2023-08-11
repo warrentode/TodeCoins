@@ -1,12 +1,15 @@
 package com.github.warrentode.todecoins.entity.villager.trades;
 
 import com.github.warrentode.todecoins.TodeCoins;
+import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.LootBoxForTwoRequestSetsTrade;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.OneSetForOneSetTrade;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.OneSetForTwoSetsTrade;
+import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.TreasureMapForItemsTrade;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.util.CalendarUtil;
+import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import fuzs.bagofholding.init.ForgeModRegistry;
@@ -17,6 +20,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.saveddata.maps.MapDecoration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -511,12 +515,13 @@ public class NumismatistTrades {
                 ImmutableMap.of(
                         // 5 normal, season based trades
                         rarityLevel1, new VillagerTrades.ItemListing[]{
-                                // offer a current season coin for an off season coin
-                                new OneSetForOneSetTrade(
-                                        OfferedCurrentSeasonCoin, 1,
-                                        RequestedOffSeasonCoin, 1,
-                                        OneSetForOneSetTrade.UNCOMMON_ITEMS_SUPPLY,
-                                        OneSetForOneSetTrade.XP_LEVEL_1_SELL, 0),
+                                new TreasureMapForItemsTrade(ModBlocks.COPPER_COIN_BAG.get().asItem().getDefaultInstance(), 18,
+                                        ModItems.BIRTHDAY_COIN_2023.get().getDefaultInstance(), 1,
+                                        ForgeTags.StructureTags.ON_ANCIENT_CITY_EXPLORER_MAPS,
+                                        "Deep Dark Exploration Map", MapDecoration.Type.TARGET_X,
+                                        TreasureMapForItemsTrade.COMMON_ITEMS_SUPPLY,
+                                        TreasureMapForItemsTrade.XP_LEVEL_1_SELL,
+                                        TreasureMapForItemsTrade.HIGH_TIER_PRICE_MULTIPLIER),
                                 // offer a current season coin for an off season coin
                                 new OneSetForOneSetTrade(
                                         OfferedCurrentSeasonCoin, 1,
