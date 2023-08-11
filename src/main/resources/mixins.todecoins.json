@@ -9,7 +9,8 @@
     "PhantomBehaviorMixin",
     "PiglinBarterMixin",
     "VillagerMixin",
-    "WalkThroughBerryBushMixin"
+    "WalkThroughBerryBushMixin",
+    "WitherLootMixin"
   ],
   "client": [
   ],

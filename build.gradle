@@ -115,6 +115,8 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.21'
+    runtimeOnly fg.deobf("curse.maven:configured-457570:4462837")
+    runtimeOnly fg.deobf("curse.maven:catalogue-459701:4171024")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0")
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:puzzles-lib-495476:4600775")
