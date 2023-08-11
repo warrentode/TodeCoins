@@ -15,6 +15,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.saveddata.maps.MapDecoration;
+import net.minecraft.world.level.storage.loot.IntRange;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -22,15 +23,18 @@ import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.functions.ExplorationMapFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetNameFunction;
-import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.function.BiConsumer;
 
 public class ModChestLootTablesGen extends ChestLoot {
+    // time checks
+    public static final LootItemCondition.Builder IS_NIGHT = TimeCheck.time(IntRange.range(12000, 23000));
+    // weather checks
+    public static final LootItemCondition.Builder IS_THUNDERING = WeatherCheck.weather().setThundering(true);
+
     // structure checks
     public static final LootItemCondition.Builder IN_RUINED_PORTAL_OCEAN =
             LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_OCEAN.unwrapKey().orElseThrow()));
@@ -688,6 +692,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SLIME_COIN.get()).when(SPRING)
                                         .when(IN_SWAMP.or(IN_MANGROVE_SWAMP)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_PHANTOM_COIN.get()).when(SPRING)
+                                        .when(IS_NIGHT.or(IS_THUNDERING).or(IN_NETHER).invert()))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
@@ -957,6 +964,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_SLIME_COIN.get()).when(SUMMER)
                                         .when(IN_SWAMP.or(IN_MANGROVE_SWAMP)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_PHANTOM_COIN.get()).when(SUMMER)
+                                        .when(IS_NIGHT.or(IS_THUNDERING).or(IN_NETHER).invert()))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
@@ -1226,6 +1236,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SLIME_COIN.get()).when(AUTUMN)
                                         .when(IN_SWAMP.or(IN_MANGROVE_SWAMP)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_PHANTOM_COIN.get()).when(AUTUMN)
+                                        .when(IS_NIGHT.or(IS_THUNDERING).or(IN_NETHER).invert()))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1495,6 +1508,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SLIME_COIN.get()).when(WINTER)
                                         .when(IN_SWAMP.or(IN_MANGROVE_SWAMP)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_PHANTOM_COIN.get()).when(WINTER)
+                                        .when(IS_NIGHT.or(IS_THUNDERING).or(IN_NETHER).invert()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1561,6 +1577,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_HUSK_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_MAGMA_CUBE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SLIME_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_PHANTOM_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1627,6 +1644,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_HUSK_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_MAGMA_CUBE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_SLIME_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_PHANTOM_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1693,6 +1711,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_HUSK_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_MAGMA_CUBE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SLIME_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_PHANTOM_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -1759,6 +1778,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_HUSK_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_MAGMA_CUBE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SLIME_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_PHANTOM_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

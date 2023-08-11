@@ -243,6 +243,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_slime_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_phantom_gold"
         }
       ],
       "rolls": 1.0

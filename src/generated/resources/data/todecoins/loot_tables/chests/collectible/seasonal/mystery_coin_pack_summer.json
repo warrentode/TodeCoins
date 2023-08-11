@@ -243,6 +243,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_slime_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_phantom_iron"
         }
       ],
       "rolls": 1.0

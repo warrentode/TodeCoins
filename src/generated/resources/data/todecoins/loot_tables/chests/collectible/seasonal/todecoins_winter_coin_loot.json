@@ -2893,6 +2893,40 @@
             }
           ],
           "name": "todecoins:collectible_coin_slime_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:alternative",
+                "terms": [
+                  {
+                    "condition": "minecraft:time_check",
+                    "value": {
+                      "max": 23000.0,
+                      "min": 12000.0
+                    }
+                  },
+                  {
+                    "condition": "minecraft:weather_check",
+                    "thundering": true
+                  },
+                  {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "dimension": "minecraft:the_nether"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_phantom_netherite"
         }
       ],
       "rolls": 1.0

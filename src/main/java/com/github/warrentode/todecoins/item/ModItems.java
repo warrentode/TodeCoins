@@ -511,6 +511,15 @@ public class ModItems {
             () -> new ParrotCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_PARROT_COIN = ITEMS.register("collectible_coin_parrot_netherite",
             () -> new ParrotCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // phantom set
+    public static final RegistryObject<Item> COPPER_PHANTOM_COIN = ITEMS.register("collectible_coin_phantom_copper",
+            () -> new PhantomCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_PHANTOM_COIN = ITEMS.register("collectible_coin_phantom_iron",
+            () -> new PhantomCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_PHANTOM_COIN = ITEMS.register("collectible_coin_phantom_gold",
+            () -> new PhantomCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_PHANTOM_COIN = ITEMS.register("collectible_coin_phantom_netherite",
+            () -> new PhantomCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // pig set
     public static final RegistryObject<Item> COPPER_PIG_COIN = ITEMS.register("collectible_coin_pig_copper",
             () -> new PigCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

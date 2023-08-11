@@ -22,10 +22,7 @@ import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -244,6 +241,7 @@ public class ModEvents {
                     ItemStack poisonCharm = null;
                     ItemStack flameCharm = null;
                     ItemStack slownessCharm = null;
+                    ItemStack smiteCharm = null;
 
                     if (ModListHandler.curiosLoaded) {
                         if (stack != null) {
@@ -256,23 +254,30 @@ public class ModEvents {
                             if (stack.is(ModTags.Items.SPIDER_COIN_SET)) {
                                 slownessCharm = stack;
                             }
+                            if (stack.is(ModTags.Items.PHANTOM_COIN_SET)) {
+                                smiteCharm = stack;
+                            }
                         }
 
                         if (poisonCharm != null && target != null) {
                             if (target instanceof LivingEntity) {
                                 int i = 0;
+                                int j = 0;
                                 if (player.level.getDifficulty() == Difficulty.EASY) {
                                     i = 5;
+                                    j = 1;
                                 }
                                 else if (player.level.getDifficulty() == Difficulty.NORMAL) {
                                     i = 10;
+                                    j = 2;
                                 }
                                 else if (player.level.getDifficulty() == Difficulty.HARD) {
                                     i = 20;
+                                    j = 3;
                                 }
 
-                                if (i > 0) {
-                                    ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.POISON, i * 20, 0), target);
+                                if (i > 0 && j > 0) {
+                                    ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.POISON, i * 20, j), target);
                                 }
                             }
                         }
@@ -299,20 +304,47 @@ public class ModEvents {
 
                             if (target instanceof LivingEntity) {
                                 int i = 0;
+                                int j = 0;
                                 if (player.level.getDifficulty() == Difficulty.EASY) {
                                     i = 5;
+                                    j = 1;
                                 }
                                 else if (player.level.getDifficulty() == Difficulty.NORMAL) {
                                     i = 10;
+                                    j = 2;
                                 }
                                 else if (player.level.getDifficulty() == Difficulty.HARD) {
                                     i = 20;
+                                    j = 3;
                                 }
 
-                                if (i > 0) {
-                                    if (i > 0) {
-                                        ((LivingEntity) target).addEffect(new MobEffectInstance(slowEffect, i * 20, 0), target);
-                                    }
+                                if (i > 0 && j > 0) {
+                                    ((LivingEntity) target).addEffect(new MobEffectInstance(slowEffect, i * 20, j), target);
+                                }
+                            }
+                        }
+                        if (smiteCharm != null && target != null) {
+                            MobEffect slowEffect = MobEffects.MOVEMENT_SLOWDOWN;
+
+                            if (((LivingEntity) target).getMobType() == MobType.UNDEAD) {
+                                int i = 0;
+                                int j = 0;
+                                if (player.level.getDifficulty() == Difficulty.EASY) {
+                                    i = 5;
+                                    j = 1;
+                                }
+                                else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                    i = 10;
+                                    j = 2;
+                                }
+                                else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                    i = 20;
+                                    j = 3;
+                                }
+
+                                if (i > 0 && j > 0) {
+                                    player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, i * 20, j));
+                                    ((LivingEntity) target).addEffect(new MobEffectInstance(slowEffect, i * 20, j), target);
                                 }
                             }
                         }

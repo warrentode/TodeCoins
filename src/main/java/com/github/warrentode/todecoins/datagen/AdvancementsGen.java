@@ -600,6 +600,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_PARROT_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PARROT_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_PHANTOM_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PHANTOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_PHANTOM_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PHANTOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_PHANTOM_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PHANTOM_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_PHANTOM_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PHANTOM_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_PIG_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIG_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_PIG_COIN.get().getDescriptionId(),

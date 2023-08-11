@@ -243,6 +243,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_slime_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_phantom_netherite"
         }
       ],
       "rolls": 1.0

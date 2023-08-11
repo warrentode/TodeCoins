@@ -116,31 +116,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDefaultInstance());
             items.add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().getDefaultInstance());
             // gameplay coins
-            // COD COIN SET
-            items.add(ModItems.COPPER_COD_COIN.get().getDefaultInstance());
-            items.add(ModItems.IRON_COD_COIN.get().getDefaultInstance());
-            items.add(ModItems.GOLD_COD_COIN.get().getDefaultInstance());
-            items.add(ModItems.NETHERITE_COD_COIN.get().getDefaultInstance());
             // HERO COIN SET
             items.add(ModItems.COPPER_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_HERO_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_HERO_COIN.get().getDefaultInstance());
-            // PUFFERFISH COIN SET
-            items.add(ModItems.COPPER_PUFFERFISH_COIN.get().getDefaultInstance());
-            items.add(ModItems.IRON_PUFFERFISH_COIN.get().getDefaultInstance());
-            items.add(ModItems.GOLD_PUFFERFISH_COIN.get().getDefaultInstance());
-            items.add(ModItems.NETHERITE_PUFFERFISH_COIN.get().getDefaultInstance());
-            // SALMON COIN SET
-            items.add(ModItems.COPPER_SALMON_COIN.get().getDefaultInstance());
-            items.add(ModItems.IRON_SALMON_COIN.get().getDefaultInstance());
-            items.add(ModItems.GOLD_SALMON_COIN.get().getDefaultInstance());
-            items.add(ModItems.NETHERITE_SALMON_COIN.get().getDefaultInstance());
-            // TROPICAL FISH COIN SET
-            items.add(ModItems.COPPER_TROPICAL_FISH_COIN.get().getDefaultInstance());
-            items.add(ModItems.IRON_TROPICAL_FISH_COIN.get().getDefaultInstance());
-            items.add(ModItems.GOLD_TROPICAL_FISH_COIN.get().getDefaultInstance());
-            items.add(ModItems.NETHERITE_TROPICAL_FISH_COIN.get().getDefaultInstance());
             // entity coins
             // ALLAY COIN SET
             items.add(ModItems.COPPER_ALLAY_COIN.get().getDefaultInstance());
@@ -187,6 +167,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_CHICKEN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_CHICKEN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_CHICKEN_COIN.get().getDefaultInstance());
+            // COD COIN SET
+            items.add(ModItems.COPPER_COD_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_COD_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_COD_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_COD_COIN.get().getDefaultInstance());
             // COW COIN SET
             items.add(ModItems.COPPER_COW_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_COW_COIN.get().getDefaultInstance());
@@ -322,6 +307,16 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_PANDA_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_PANDA_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_PANDA_COIN.get().getDefaultInstance());
+            // PARROT COIN SET
+            items.add(ModItems.COPPER_PARROT_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PARROT_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PARROT_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PARROT_COIN.get().getDefaultInstance());
+            // PHANTOM COIN SET
+            items.add(ModItems.COPPER_PHANTOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PHANTOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PHANTOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PHANTOM_COIN.get().getDefaultInstance());
             // PIG COIN SET
             items.add(ModItems.COPPER_PIG_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_PIG_COIN.get().getDefaultInstance());
@@ -337,11 +332,21 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_POLAR_BEAR_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_POLAR_BEAR_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_POLAR_BEAR_COIN.get().getDefaultInstance());
+            // PUFFERFISH COIN SET
+            items.add(ModItems.COPPER_PUFFERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PUFFERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PUFFERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PUFFERFISH_COIN.get().getDefaultInstance());
             // RABBIT COIN SET
             items.add(ModItems.COPPER_RABBIT_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_RABBIT_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_RABBIT_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_RABBIT_COIN.get().getDefaultInstance());
+            // SALMON COIN SET
+            items.add(ModItems.COPPER_SALMON_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SALMON_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SALMON_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SALMON_COIN.get().getDefaultInstance());
             // SHEEP COIN SET
             items.add(ModItems.COPPER_SHEEP_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_SHEEP_COIN.get().getDefaultInstance());
@@ -392,6 +397,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_TRADER_LLAMA_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_TRADER_LLAMA_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_TRADER_LLAMA_COIN.get().getDefaultInstance());
+            // TROPICAL FISH COIN SET
+            items.add(ModItems.COPPER_TROPICAL_FISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_TROPICAL_FISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_TROPICAL_FISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_TROPICAL_FISH_COIN.get().getDefaultInstance());
             // TURTLE COIN SET
             items.add(ModItems.COPPER_TURTLE_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_TURTLE_COIN.get().getDefaultInstance());
