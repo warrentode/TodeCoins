@@ -3202,6 +3202,21 @@
             }
           ],
           "name": "todecoins:collectible_coin_stray_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:deep_dark"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_warden_gold"
         }
       ],
       "rolls": 1.0

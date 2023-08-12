@@ -3202,6 +3202,21 @@
             }
           ],
           "name": "todecoins:collectible_coin_stray_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:deep_dark"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_warden_copper"
         }
       ],
       "rolls": 1.0

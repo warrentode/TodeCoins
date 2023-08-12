@@ -35,162 +35,86 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder IS_THUNDERING = WeatherCheck.weather().setThundering(true);
 
     // structure checks
-    public static final LootItemCondition.Builder IN_IGLOO =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.IGLOO.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_RUINED_PORTAL_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_OCEAN.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_OCEAN_MONUMENT =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_MONUMENT.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_OCEAN_RUIN_WARM =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_RUIN_WARM.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_OCEAN_RUIN_COLD =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_RUIN_COLD.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_ANCIENT_CITY =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.ANCIENT_CITY.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_DESERT_PYRAMID =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.DESERT_PYRAMID.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_JUNGLE_TEMPLE =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.JUNGLE_TEMPLE.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_VILLAGE_DESERT =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_DESERT.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_VILLAGE_PLAINS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_PLAINS.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_VILLAGE_SAVANNA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_SAVANNA.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_VILLAGE_SNOWY =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_SNOWY.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_VILLAGE_TAIGA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_TAIGA.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_MINESHAFT =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.MINESHAFT.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_MINESHAFT_MESA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.MINESHAFT_MESA.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_STRONGHOLD =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.STRONGHOLD.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_SWAMP_HUT =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.SWAMP_HUT.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_PILLAGER_OUTPOST =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.PILLAGER_OUTPOST.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_MANSION =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.WOODLAND_MANSION.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_NETHER_FORTRESS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.FORTRESS.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_BASTION_REMNANTS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.BASTION_REMNANT.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_RUINED_PORTAL_NETHER =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_NETHER.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_IGLOO = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.IGLOO.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_RUINED_PORTAL_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_OCEAN.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_OCEAN_MONUMENT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_MONUMENT.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_OCEAN_RUIN_WARM = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_RUIN_WARM.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_OCEAN_RUIN_COLD = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_RUIN_COLD.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_ANCIENT_CITY = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.ANCIENT_CITY.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_DESERT_PYRAMID = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.DESERT_PYRAMID.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_JUNGLE_TEMPLE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.JUNGLE_TEMPLE.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_VILLAGE_DESERT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_DESERT.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_VILLAGE_PLAINS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_PLAINS.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_VILLAGE_SAVANNA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_SAVANNA.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_VILLAGE_SNOWY = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_SNOWY.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_VILLAGE_TAIGA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.VILLAGE_TAIGA.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_MINESHAFT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.MINESHAFT.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_MINESHAFT_MESA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.MINESHAFT_MESA.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_STRONGHOLD = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.STRONGHOLD.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_SWAMP_HUT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.SWAMP_HUT.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_PILLAGER_OUTPOST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.PILLAGER_OUTPOST.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_MANSION = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.WOODLAND_MANSION.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_NETHER_FORTRESS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.FORTRESS.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_BASTION_REMNANTS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.BASTION_REMNANT.unwrapKey().orElseThrow()));
+    public static final LootItemCondition.Builder IN_RUINED_PORTAL_NETHER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_NETHER.unwrapKey().orElseThrow()));
     // biome checks
-    public static final LootItemCondition.Builder IN_STONY_PEAKS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.STONY_PEAKS));
-    public static final LootItemCondition.Builder IN_FROZEN_PEAKS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_PEAKS));
-    public static final LootItemCondition.Builder IN_JAGGED_PEAKS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.JAGGED_PEAKS));
-    public static final LootItemCondition.Builder IN_SNOWY_SLOPES =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SNOWY_SLOPES));
-    public static final LootItemCondition.Builder IN_ICE_SPIKES =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.ICE_SPIKES));
-    public static final LootItemCondition.Builder IN_SNOWY_PLAINS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SNOWY_PLAINS));
-    public static final LootItemCondition.Builder IN_MUSHROOM_FIELDS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MUSHROOM_FIELDS));
-    public static final LootItemCondition.Builder IN_NETHER_WASTES =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.NETHER_WASTES));
-    public static final LootItemCondition.Builder IN_WARPED_FOREST =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARPED_FOREST));
-    public static final LootItemCondition.Builder IN_CRIMSON_FOREST =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.CRIMSON_FOREST));
-    public static final LootItemCondition.Builder IN_BASALT_DELTAS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BASALT_DELTAS));
-    public static final LootItemCondition.Builder IN_SOUL_SAND_VALLEY =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SOUL_SAND_VALLEY));
-    public static final LootItemCondition.Builder IN_JUNGLE =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.JUNGLE));
-    public static final LootItemCondition.Builder IN_SPARSE_JUNGLE =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SPARSE_JUNGLE));
-    public static final LootItemCondition.Builder IN_BAMBOO_JUNGLE =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BAMBOO_JUNGLE));
-    public static final LootItemCondition.Builder IN_DESERT =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DESERT));
-    public static final LootItemCondition.Builder IN_MEADOW =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MEADOW));
-    public static final LootItemCondition.Builder IN_PLAINS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.PLAINS));
-    public static final LootItemCondition.Builder IN_SAVANNA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SAVANNA));
-    public static final LootItemCondition.Builder IN_SAVANNA_PLATEAU =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SAVANNA_PLATEAU));
-    public static final LootItemCondition.Builder IN_WINDSWEPT_SAVANNA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_SAVANNA));
-    public static final LootItemCondition.Builder IN_WINDSWEPT_HILLS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_HILLS));
-    public static final LootItemCondition.Builder IN_WINDSWEPT_FOREST =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_FOREST));
-    public static final LootItemCondition.Builder IN_WINDSWEPT_GRAVELLY_HILLS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_GRAVELLY_HILLS));
-    public static final LootItemCondition.Builder IN_SUNFLOWER_PLAINS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SUNFLOWER_PLAINS));
-    public static final LootItemCondition.Builder IN_SWAMP =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SWAMP));
-    public static final LootItemCondition.Builder IN_MANGROVE_SWAMP =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MANGROVE_SWAMP));
-    public static final LootItemCondition.Builder IN_GROVE =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.GROVE));
-    public static final LootItemCondition.Builder IN_SNOWY_TAIGA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SNOWY_TAIGA));
-    public static final LootItemCondition.Builder IN_TAIGA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.TAIGA));
-    public static final LootItemCondition.Builder IN_OLD_GROWTH_PINE_TAIGA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OLD_GROWTH_PINE_TAIGA));
-    public static final LootItemCondition.Builder IN_OLD_GROWTH_SPRUCE_TAIGA =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OLD_GROWTH_SPRUCE_TAIGA));
-    public static final LootItemCondition.Builder IN_FLOWER_FOREST =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FLOWER_FOREST));
-    public static final LootItemCondition.Builder IN_FOREST =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FOREST));
-    public static final LootItemCondition.Builder IN_BIRCH_FOREST =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BIRCH_FOREST));
-    public static final LootItemCondition.Builder IN_OLD_GROWTH_BIRCH_FOREST =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OLD_GROWTH_BIRCH_FOREST));
-    public static final LootItemCondition.Builder IN_DRIPSTONE_CAVES =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DRIPSTONE_CAVES));
-    public static final LootItemCondition.Builder IN_LUSH_CAVES =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.LUSH_CAVES));
-    public static final LootItemCondition.Builder IN_BEACH =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BEACH));
-    public static final LootItemCondition.Builder IN_STONY_SHORE =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.STONY_SHORE));
-    public static final LootItemCondition.Builder IN_SNOWY_BEACH =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SNOWY_BEACH));
-    public static final LootItemCondition.Builder IN_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OCEAN));
-    public static final LootItemCondition.Builder IN_DEEP_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_OCEAN));
-    public static final LootItemCondition.Builder IN_LUKEWARM_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.LUKEWARM_OCEAN));
-    public static final LootItemCondition.Builder IN_DEEP_LUKEWARM_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_LUKEWARM_OCEAN));
-    public static final LootItemCondition.Builder IN_COLD_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.COLD_OCEAN));
-    public static final LootItemCondition.Builder IN_DEEP_COLD_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_COLD_OCEAN));
-    public static final LootItemCondition.Builder IN_RIVER =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.RIVER));
-    public static final LootItemCondition.Builder IN_FROZEN_RIVER =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_RIVER));
-    public static final LootItemCondition.Builder IN_FROZEN_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_OCEAN));
-    public static final LootItemCondition.Builder IN_DEEP_FROZEN_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_FROZEN_OCEAN));
-    public static final LootItemCondition.Builder IN_WARM_OCEAN =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARM_OCEAN));
+    public static final LootItemCondition.Builder IN_STONY_PEAKS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.STONY_PEAKS));
+    public static final LootItemCondition.Builder IN_FROZEN_PEAKS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_PEAKS));
+    public static final LootItemCondition.Builder IN_JAGGED_PEAKS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.JAGGED_PEAKS));
+    public static final LootItemCondition.Builder IN_SNOWY_SLOPES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SNOWY_SLOPES));
+    public static final LootItemCondition.Builder IN_ICE_SPIKES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.ICE_SPIKES));
+    public static final LootItemCondition.Builder IN_SNOWY_PLAINS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SNOWY_PLAINS));
+    public static final LootItemCondition.Builder IN_MUSHROOM_FIELDS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MUSHROOM_FIELDS));
+    public static final LootItemCondition.Builder IN_NETHER_WASTES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.NETHER_WASTES));
+    public static final LootItemCondition.Builder IN_WARPED_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARPED_FOREST));
+    public static final LootItemCondition.Builder IN_CRIMSON_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.CRIMSON_FOREST));
+    public static final LootItemCondition.Builder IN_BASALT_DELTAS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BASALT_DELTAS));
+    public static final LootItemCondition.Builder IN_SOUL_SAND_VALLEY = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SOUL_SAND_VALLEY));
+    public static final LootItemCondition.Builder IN_JUNGLE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.JUNGLE));
+    public static final LootItemCondition.Builder IN_SPARSE_JUNGLE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SPARSE_JUNGLE));
+    public static final LootItemCondition.Builder IN_BAMBOO_JUNGLE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BAMBOO_JUNGLE));
+    public static final LootItemCondition.Builder IN_DESERT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DESERT));
+    public static final LootItemCondition.Builder IN_MEADOW = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MEADOW));
+    public static final LootItemCondition.Builder IN_PLAINS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.PLAINS));
+    public static final LootItemCondition.Builder IN_SAVANNA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SAVANNA));
+    public static final LootItemCondition.Builder IN_SAVANNA_PLATEAU = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SAVANNA_PLATEAU));
+    public static final LootItemCondition.Builder IN_WINDSWEPT_SAVANNA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_SAVANNA));
+    public static final LootItemCondition.Builder IN_WINDSWEPT_HILLS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_HILLS));
+    public static final LootItemCondition.Builder IN_WINDSWEPT_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_FOREST));
+    public static final LootItemCondition.Builder IN_WINDSWEPT_GRAVELLY_HILLS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WINDSWEPT_GRAVELLY_HILLS));
+    public static final LootItemCondition.Builder IN_SUNFLOWER_PLAINS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SUNFLOWER_PLAINS));
+    public static final LootItemCondition.Builder IN_SWAMP = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SWAMP));
+    public static final LootItemCondition.Builder IN_MANGROVE_SWAMP = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MANGROVE_SWAMP));
+    public static final LootItemCondition.Builder IN_GROVE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.GROVE));
+    public static final LootItemCondition.Builder IN_SNOWY_TAIGA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SNOWY_TAIGA));
+    public static final LootItemCondition.Builder IN_TAIGA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.TAIGA));
+    public static final LootItemCondition.Builder IN_OLD_GROWTH_PINE_TAIGA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OLD_GROWTH_PINE_TAIGA));
+    public static final LootItemCondition.Builder IN_OLD_GROWTH_SPRUCE_TAIGA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OLD_GROWTH_SPRUCE_TAIGA));
+    public static final LootItemCondition.Builder IN_FLOWER_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FLOWER_FOREST));
+    public static final LootItemCondition.Builder IN_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FOREST));
+    public static final LootItemCondition.Builder IN_BIRCH_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BIRCH_FOREST));
+    public static final LootItemCondition.Builder IN_OLD_GROWTH_BIRCH_FOREST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OLD_GROWTH_BIRCH_FOREST));
+    public static final LootItemCondition.Builder IN_DRIPSTONE_CAVES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DRIPSTONE_CAVES));
+    public static final LootItemCondition.Builder IN_LUSH_CAVES = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.LUSH_CAVES));
+    public static final LootItemCondition.Builder IN_DEEP_DARK = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_DARK));
+    public static final LootItemCondition.Builder IN_BEACH = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BEACH));
+    public static final LootItemCondition.Builder IN_STONY_SHORE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.STONY_SHORE));
+    public static final LootItemCondition.Builder IN_SNOWY_BEACH = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SNOWY_BEACH));
+    public static final LootItemCondition.Builder IN_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OCEAN));
+    public static final LootItemCondition.Builder IN_DEEP_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_OCEAN));
+    public static final LootItemCondition.Builder IN_LUKEWARM_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.LUKEWARM_OCEAN));
+    public static final LootItemCondition.Builder IN_DEEP_LUKEWARM_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_LUKEWARM_OCEAN));
+    public static final LootItemCondition.Builder IN_COLD_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.COLD_OCEAN));
+    public static final LootItemCondition.Builder IN_DEEP_COLD_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_COLD_OCEAN));
+    public static final LootItemCondition.Builder IN_RIVER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.RIVER));
+    public static final LootItemCondition.Builder IN_FROZEN_RIVER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_RIVER));
+    public static final LootItemCondition.Builder IN_FROZEN_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_OCEAN));
+    public static final LootItemCondition.Builder IN_DEEP_FROZEN_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_FROZEN_OCEAN));
+    public static final LootItemCondition.Builder IN_WARM_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARM_OCEAN));
     // dimension/level checks
-    public static final LootItemCondition.Builder IN_THE_END =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.END));
-    public static final LootItemCondition.Builder IN_OVERWORLD =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.OVERWORLD));
-    public static final LootItemCondition.Builder IN_NETHER =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.NETHER));
+    public static final LootItemCondition.Builder IN_THE_END = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.END));
+    public static final LootItemCondition.Builder IN_OVERWORLD = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.OVERWORLD));
+    public static final LootItemCondition.Builder IN_NETHER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.NETHER));
     // event/holiday/season checks
     public static final LootItemCondition.Builder BIRTHDAY_EVENT = BirthdayCondition.event();
     public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
@@ -732,6 +656,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_STRAY_COIN.get()).when(SPRING)
                                         .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_WARDEN_COIN.get()).when(SPRING)
+                                        .when(IN_DEEP_DARK))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1036,6 +963,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_STRAY_COIN.get()).when(SUMMER)
                                         .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_WARDEN_COIN.get()).when(SUMMER)
+                                        .when(IN_DEEP_DARK))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
@@ -1340,6 +1270,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_STRAY_COIN.get()).when(AUTUMN)
                                         .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_WARDEN_COIN.get()).when(AUTUMN)
+                                        .when(IN_DEEP_DARK))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1644,6 +1577,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_STRAY_COIN.get()).when(WINTER)
                                         .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_WARDEN_COIN.get()).when(WINTER)
+                                        .when(IN_DEEP_DARK))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1720,6 +1656,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_STRAY_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_VEX_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_VINDICATOR_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_WARDEN_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1796,6 +1733,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_STRAY_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_VEX_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_VINDICATOR_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_WARDEN_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1872,6 +1810,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_STRAY_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_VEX_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_VINDICATOR_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_WARDEN_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -1948,6 +1887,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_STRAY_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_VEX_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_VINDICATOR_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_WARDEN_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

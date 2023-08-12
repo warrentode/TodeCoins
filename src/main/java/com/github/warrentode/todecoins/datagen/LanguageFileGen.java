@@ -402,6 +402,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_WANDERING_TRADER_COIN.get().getDescriptionId(), "Gold Wandering Trader Coin");
         addCollectibleCoins(ModItems.NETHERITE_WANDERING_TRADER_COIN.get().getDescriptionId(), "Netherite Wandering Trader Coin");
 
+        addCollectibleCoins(ModItems.COPPER_WARDEN_COIN.get().getDescriptionId(), "Copper Warden Coin");
+        addCollectibleCoins(ModItems.IRON_WARDEN_COIN.get().getDescriptionId(), "Iron Warden Coin");
+        addCollectibleCoins(ModItems.GOLD_WARDEN_COIN.get().getDescriptionId(), "Gold Warden Coin");
+        addCollectibleCoins(ModItems.NETHERITE_WARDEN_COIN.get().getDescriptionId(), "Netherite Warden Coin");
+
         addCollectibleCoins(ModItems.COPPER_WOLF_COIN.get().getDescriptionId(), "Copper Wolf Coin");
         addCollectibleCoins(ModItems.IRON_WOLF_COIN.get().getDescriptionId(), "Iron Wolf Coin");
         addCollectibleCoins(ModItems.GOLD_WOLF_COIN.get().getDescriptionId(), "Gold Wolf Coin");
@@ -521,6 +526,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_arthropod_coin.hover", "One of Twenty Arthropod Seasonal Coins");
 
         add("tooltips.collectible_bear_coin.hover", "One of Eight Bear Seasonal Coins");
+        add("tooltips.collectible_boss_coin.hover", "One of Twelve Boss Seasonal Coins");
         add("tooltips.collectible_blaze_coin.hover", "One of Four Blaze Seasonal Coins");
         add("tooltips.collectible_bovine_coin.hover", "One of Twenty-Four Bovine Seasonal Coins");
 

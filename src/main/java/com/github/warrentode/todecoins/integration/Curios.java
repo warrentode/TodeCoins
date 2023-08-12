@@ -253,8 +253,7 @@ public class Curios {
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.PIGLIN_COIN_SET) || stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
-                        || stack.is(ModTags.Items.SHULKER_COIN_SET))) {
+                if (player != null && (stack.is(ModTags.Items.PIGLIN_COIN_SET) || stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET))) {
 
                     int i = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1409,18 +1408,18 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
 
-                    double d = 0;
+                    int i = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
-                        d = 1;
+                        i = 1;
                     }
                     else if (player.level.getDifficulty() == Difficulty.NORMAL) {
-                        d = 2;
+                        i = 2;
                     }
                     else if (player.level.getDifficulty() == Difficulty.HARD) {
-                        d = 3;
+                        i = 3;
                     }
-                    attribute.put(Attributes.MOVEMENT_SPEED,
-                            new AttributeModifier(uuid, "generic.movement_speed", 1 + d,
+                    attribute.put(Attributes.ARMOR_TOUGHNESS,
+                            new AttributeModifier(uuid, "generic.armor_toughness", 1 + i,
                                     AttributeModifier.Operation.ADDITION));
                 }
 
@@ -1474,6 +1473,145 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null && stack.is(ModTags.Items.SHULKER_COIN_SET)) {
                     player.removeEffect(MobEffects.LEVITATION);
+                }
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createBossCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (stack.is(ModTags.Items.WARDEN_COIN_SET) || stack.is(ModTags.Items.SHULKER_COIN_SET)) {
+                        int i = 0;
+                        int b = 0;
+
+                        if (player.level.getDifficulty() == Difficulty.EASY && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            i = 1;
+                            b = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            i = 2;
+                            b = 3;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            i = 3;
+                            b = 4;
+                        }
+                        attribute.put(Attributes.ARMOR,
+                                new AttributeModifier(uuid, "generic.armor", (1 + i) + b,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                    if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        int i = 5;
+                        int b = 10;
+
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 10;
+                            b = 15;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 15;
+                            b = 25;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 20;
+                            b = 30;
+                        }
+                        attribute.put(Attributes.MAX_HEALTH,
+                                new AttributeModifier(uuid, "generic.max_health", (10 + i) + b,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                    if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        int i = 0;
+                        int b = 1;
+
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                            b = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                            b = 3;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                            b = 4;
+                        }
+                        attribute.put(Attributes.KNOCKBACK_RESISTANCE,
+                                new AttributeModifier(uuid, "generic.knockback_resistance", (1 + i) + b,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                    if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        int i = 0;
+                        int b = 1;
+
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            i = 1;
+                            b = 2;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            i = 2;
+                            b = 3;
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            i = 3;
+                            b = 4;
+                        }
+                        attribute.put(Attributes.ATTACK_DAMAGE,
+                                new AttributeModifier(uuid, "generic.attack_damage", (1 + i) + b,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                }
+                return attribute;
+            }
+
+            @Override
+            public void curioTick(SlotContext slotContext) {
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 200, 1,
+                                false, false, true));
+                    }
+                }
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
+                Player player = Minecraft.getInstance().player;
+                if (player != null && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                    player.removeEffect(MobEffects.HEALTH_BOOST);
                 }
             }
 

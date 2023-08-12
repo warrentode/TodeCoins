@@ -761,6 +761,15 @@ public class ModItems {
             () -> new MerchantCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_WANDERING_TRADER_COIN = ITEMS.register("collectible_coin_wandering_trader_netherite",
             () -> new MerchantCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // warden set
+    public static final RegistryObject<Item> COPPER_WARDEN_COIN = ITEMS.register("collectible_coin_warden_copper",
+            () -> new BossCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_WARDEN_COIN = ITEMS.register("collectible_coin_warden_iron",
+            () -> new BossCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_WARDEN_COIN = ITEMS.register("collectible_coin_warden_gold",
+            () -> new BossCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_WARDEN_COIN = ITEMS.register("collectible_coin_warden_netherite",
+            () -> new BossCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // wolf set
     public static final RegistryObject<Item> COPPER_WOLF_COIN = ITEMS.register("collectible_coin_wolf_copper",
             () -> new CanineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

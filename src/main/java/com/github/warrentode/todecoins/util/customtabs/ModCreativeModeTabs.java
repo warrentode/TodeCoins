@@ -460,6 +460,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_WANDERING_TRADER_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_WANDERING_TRADER_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_WANDERING_TRADER_COIN.get().getDefaultInstance());
+            // WARDEN COIN SET
+            items.add(ModItems.COPPER_WARDEN_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_WARDEN_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_WARDEN_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_WARDEN_COIN.get().getDefaultInstance());
             // WOLF COIN SET
             items.add(ModItems.COPPER_WOLF_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_WOLF_COIN.get().getDefaultInstance());

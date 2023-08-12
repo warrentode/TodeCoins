@@ -15,3 +15,4 @@ insight, suggestions, and input with this mod regarding features, testing, game 
 project to learn about the history of currency in a fun, interactive way and it has become so much more.
 
 * All images used for the coins were either edited textures from vanilla Minecraft or are edited images from Pixabay.com
+** except for the Warden Coins, for that I intentionally chose to draw the circle-squared symbol

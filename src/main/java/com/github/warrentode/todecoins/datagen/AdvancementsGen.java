@@ -834,6 +834,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_WANDERING_TRADER_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_WANDERING_TRADER_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_WARDEN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_WARDEN_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_WARDEN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_WARDEN_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_WARDEN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_WARDEN_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_WARDEN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_WARDEN_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_WOLF_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_WOLF_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_WOLF_COIN.get().getDescriptionId(),

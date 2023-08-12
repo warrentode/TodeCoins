@@ -283,6 +283,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_vindicator_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_warden_gold"
         }
       ],
       "rolls": 1.0
