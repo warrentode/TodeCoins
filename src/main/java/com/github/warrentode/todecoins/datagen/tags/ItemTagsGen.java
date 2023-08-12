@@ -133,8 +133,13 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ModTags.Items.BIRTHDAY_COIN_SET)
                 .add(ModItems.BIRTHDAY_COIN_2023.get());
         tag(ModTags.Items.PATRON_COIN_SET)
+                .addTag(ModTags.Items.LIFETIME_PATRON_COIN_SET)
                 .addTag(ModTags.Items.CARNATION_PATRON_COIN_SET)
                 .addTag(ModTags.Items.COSMOS_PATRON_COIN_SET);
+        tag(ModTags.Items.LIFETIME_PATRON_COIN_SET)
+                .add(ModItems.SCHOLAR_OWL_COIN.get())
+                .add(ModItems.TUXEDO_CAT_COIN.get())
+                .add(ModItems.LITTLE_BEAR_COIN.get());
         tag(ModTags.Items.CARNATION_PATRON_COIN_SET)
                 .add(ModItems.MARSHALL_NASH_CARNATION_COIN.get())
                 .add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get());

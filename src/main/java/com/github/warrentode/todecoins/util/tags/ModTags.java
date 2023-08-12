@@ -39,6 +39,8 @@ public class ModTags {
         public static final TagKey<Item> CHRISTMAS_COIN_SET = modItemTag("collectible_coins/holiday_coins/christmas_coin_set");
         // sponsor perk coins
         public static final TagKey<Item> PATRON_COIN_SET = modItemTag("collectible_coins/patron_coin_set");
+        public static final TagKey<Item> LIFETIME_PATRON_COIN_SET = modItemTag(
+                "collectible_coins/patron_coins/lifetime_patron_coin_set");
         public static final TagKey<Item> CARNATION_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/carnation_patron_coin_set");
         public static final TagKey<Item> COSMOS_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/cosmos_patron_coin_set");
         // gameplay coins

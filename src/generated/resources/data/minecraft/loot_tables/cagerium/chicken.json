@@ -26,21 +26,6 @@
             }
           ],
           "name": "minecraft:feather"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:egg"
         }
       ],
       "rolls": 1.0

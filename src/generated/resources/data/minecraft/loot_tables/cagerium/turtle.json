@@ -44,18 +44,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:scute"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:turtle_egg"
+            "name": "minecraft:bowl"
         }
       ],
-      "rolls": {
-        "type": "minecraft:uniform",
-        "max": 1.0,
-        "min": 0.0
-      }
+        "rolls": 1.0
     }
   ]
 }

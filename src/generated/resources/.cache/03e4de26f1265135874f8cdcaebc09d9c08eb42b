@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-12T01:02:24.494943	Tags for minecraft:item
+// 1.19.2	2023-08-12T11:39:16.3904603	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -129,7 +129,8 @@ d37a7203f9136fb6890ac090e2c78b14f4eaeddb data/todecoins/tags/items/collectible_c
 f5bc38e73a86b4d2564c37f79bae8ab94cd95039 data/todecoins/tags/items/collectible_coins/holiday_coin_set.json
 fd537ef35c3d0f43456dfb7025e21e4f299672b1 data/todecoins/tags/items/collectible_coins/patron_coins/carnation_patron_coin_set.json
 b3e5ed9594b60446913824741c72b0e07e5268c2 data/todecoins/tags/items/collectible_coins/patron_coins/cosmos_patron_coin_set.json
-656a3fa03311669d4d4b1dcae8cfc206a48157d7 data/todecoins/tags/items/collectible_coins/patron_coin_set.json
+ac5a647332e752333515bc85b9aaa00726374454 data/todecoins/tags/items/collectible_coins/patron_coins/lifetime_patron_coin_set.json
+fc8184f285b31d86ff7a68d364b6ca6292624eba data/todecoins/tags/items/collectible_coins/patron_coin_set.json
 be62e171e8f5010cfe7db3e2a1fe33d7e96d6d34 data/todecoins/tags/items/currency.json
 6e1bba552c6a9722a324eafa93960525ca7e9e94 data/todecoins/tags/items/currency/banknotes.json
 f04960c86353f26abb0c4a476a4d3f3e838ec5f8 data/todecoins/tags/items/currency/coins.json
