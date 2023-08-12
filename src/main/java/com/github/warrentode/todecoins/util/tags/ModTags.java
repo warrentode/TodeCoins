@@ -114,6 +114,7 @@ public class ModTags {
         public static final TagKey<Item> TURTLE_COIN_SET = modItemTag("collectible_coins/entity_coins/turtle_coin_set");
         public static final TagKey<Item> VEX_COIN_SET = modItemTag("collectible_coins/entity_coins/vex_coin_set");
         public static final TagKey<Item> VILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/villager_coin_set");
+        public static final TagKey<Item> VINDICATOR_COIN_SET = modItemTag("collectible_coins/entity_coins/vindicator_coin_set");
         public static final TagKey<Item> WANDERING_TRADER_COIN_SET = modItemTag("collectible_coins/entity_coins/wandering_trader_coin_set");
         public static final TagKey<Item> WOLF_COIN_SET = modItemTag("collectible_coins/entity_coins/wolf_coin_set");
         public static final TagKey<Item> ZOMBIE_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_horse_coin_set");

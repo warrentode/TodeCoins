@@ -743,6 +743,15 @@ public class ModItems {
             () -> new MerchantCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_VILLAGER_COIN = ITEMS.register("collectible_coin_villager_netherite",
             () -> new MerchantCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // vindicator set
+    public static final RegistryObject<Item> COPPER_VINDICATOR_COIN = ITEMS.register("collectible_coin_vindicator_copper",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_VINDICATOR_COIN = ITEMS.register("collectible_coin_vindicator_iron",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_VINDICATOR_COIN = ITEMS.register("collectible_coin_vindicator_gold",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_VINDICATOR_COIN = ITEMS.register("collectible_coin_vindicator_netherite",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // wandering trader set
     public static final RegistryObject<Item> COPPER_WANDERING_TRADER_COIN = ITEMS.register("collectible_coin_wandering_trader_copper",
             () -> new MerchantCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

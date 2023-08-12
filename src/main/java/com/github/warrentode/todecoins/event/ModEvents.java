@@ -307,9 +307,11 @@ public class ModEvents {
 
                                 // illusioner = 5
                                 // iceologer = 4
-                                // vindicator = 2
                                 if (illagerCharm.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
                                     p = 3;
+                                }
+                                else if (illagerCharm.is(ModTags.Items.VINDICATOR_COIN_SET)) {
+                                    p = 2;
                                 }
                                 else if (illagerCharm.is(ModTags.Items.PILLAGER_COIN_SET) || illagerCharm.is(ModTags.Items.VEX_COIN_SET)) {
                                     p = 1;

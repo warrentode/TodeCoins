@@ -849,6 +849,19 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
 
         ConditionalRecipe.builder()
                 .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.VINDICATOR_SPAWN_EGG, 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.VINDICATOR_COIN_SET)
+                        .unlockedBy("has_vindicator_coin", has(ModTags.Items.VINDICATOR_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.VINDICATOR_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
                 .addRecipe(ShapelessRecipeBuilder.shapeless(Items.WANDERING_TRADER_SPAWN_EGG, 1)
                         .group("spawn_eggs")
                         .requires(Tags.Items.EGGS)

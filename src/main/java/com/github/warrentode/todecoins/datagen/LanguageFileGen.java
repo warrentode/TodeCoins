@@ -392,6 +392,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_VILLAGER_COIN.get().getDescriptionId(), "Gold Villager Coin");
         addCollectibleCoins(ModItems.NETHERITE_VILLAGER_COIN.get().getDescriptionId(), "Netherite Villager Coin");
 
+        addCollectibleCoins(ModItems.COPPER_VINDICATOR_COIN.get().getDescriptionId(), "Copper Vindicator Coin");
+        addCollectibleCoins(ModItems.IRON_VINDICATOR_COIN.get().getDescriptionId(), "Iron Vindicator Coin");
+        addCollectibleCoins(ModItems.GOLD_VINDICATOR_COIN.get().getDescriptionId(), "Gold Vindicator Coin");
+        addCollectibleCoins(ModItems.NETHERITE_VINDICATOR_COIN.get().getDescriptionId(), "Netherite Vindicator Coin");
+
         addCollectibleCoins(ModItems.COPPER_WANDERING_TRADER_COIN.get().getDescriptionId(), "Copper Wandering Trader Coin");
         addCollectibleCoins(ModItems.IRON_WANDERING_TRADER_COIN.get().getDescriptionId(), "Iron Wandering Trader Coin");
         addCollectibleCoins(ModItems.GOLD_WANDERING_TRADER_COIN.get().getDescriptionId(), "Gold Wandering Trader Coin");

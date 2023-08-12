@@ -2813,6 +2813,21 @@
               }
             }
           ],
+          "name": "todecoins:collectible_coin_vindicator_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:mansion"
+              }
+            }
+          ],
           "name": "todecoins:collectible_coin_vex_netherite"
         },
         {

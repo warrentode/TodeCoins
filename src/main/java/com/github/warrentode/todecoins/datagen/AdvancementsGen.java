@@ -816,6 +816,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_VILLAGER_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_VILLAGER_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_VINDICATOR_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_VINDICATOR_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_VINDICATOR_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_VINDICATOR_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_VINDICATOR_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_VINDICATOR_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_VINDICATOR_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_VINDICATOR_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_WANDERING_TRADER_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_WANDERING_TRADER_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_WANDERING_TRADER_COIN.get().getDescriptionId(),

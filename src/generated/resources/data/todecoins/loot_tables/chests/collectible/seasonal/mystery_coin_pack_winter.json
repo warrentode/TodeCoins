@@ -279,6 +279,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_vex_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vindicator_netherite"
         }
       ],
       "rolls": 1.0

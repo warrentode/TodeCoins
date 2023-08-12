@@ -279,6 +279,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_vex_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vindicator_copper"
         }
       ],
       "rolls": 1.0

@@ -13,3 +13,5 @@ Additional Credits:
 * Special thanks to my sons: MinePika94, MikieSteve, and EnderDragonRobot (known as Scholar Owl, Tuxedo Cat, and Little Bear on my blog) for all their
 insight, suggestions, and input with this mod regarding features, testing, game play and balance! This mod started out as a homeschooling
 project to learn about the history of currency in a fun, interactive way and it has become so much more.
+
+* All images used for the coins were either edited textures from vanilla Minecraft or are edited images from Pixabay.com

@@ -212,10 +212,16 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.TROPICAL_FISH_COIN_SET)
                 .addTag(ModTags.Items.VEX_COIN_SET)
                 .addTag(ModTags.Items.VILLAGER_COIN_SET)
+                .addTag(ModTags.Items.VINDICATOR_COIN_SET)
                 .addTag(ModTags.Items.WANDERING_TRADER_COIN_SET)
                 .addTag(ModTags.Items.WOLF_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        tag(ModTags.Items.VINDICATOR_COIN_SET)
+                .add(ModItems.COPPER_VINDICATOR_COIN.get())
+                .add(ModItems.IRON_VINDICATOR_COIN.get())
+                .add(ModItems.GOLD_VINDICATOR_COIN.get())
+                .add(ModItems.NETHERITE_VINDICATOR_COIN.get());
         tag(ModTags.Items.VEX_COIN_SET)
                 .add(ModItems.COPPER_VEX_COIN.get())
                 .add(ModItems.IRON_VEX_COIN.get())

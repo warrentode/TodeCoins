@@ -450,6 +450,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_VILLAGER_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_VILLAGER_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_VILLAGER_COIN.get().getDefaultInstance());
+            // VINDICATOR COIN SET
+            items.add(ModItems.COPPER_VINDICATOR_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_VINDICATOR_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_VINDICATOR_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_VINDICATOR_COIN.get().getDefaultInstance());
             // WANDERING TRADER COIN SET
             items.add(ModItems.COPPER_WANDERING_TRADER_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_WANDERING_TRADER_COIN.get().getDefaultInstance());

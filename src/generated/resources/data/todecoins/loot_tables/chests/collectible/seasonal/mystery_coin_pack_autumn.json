@@ -279,6 +279,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_vex_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vindicator_gold"
         }
       ],
       "rolls": 1.0
