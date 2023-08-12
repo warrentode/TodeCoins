@@ -3113,51 +3113,6 @@
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "structure": "minecraft:village_desert"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "structure": "minecraft:village_plains"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "structure": "minecraft:village_savanna"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "structure": "minecraft:village_snowy"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "structure": "minecraft:village_taiga"
-                    }
-                  }
-                },
-                {
                   "condition": "minecraft:location_check",
                   "predicate": {
                     "structure": "minecraft:fortress"
@@ -3173,6 +3128,50 @@
             }
           ],
           "name": "todecoins:collectible_coin_skeleton_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:frozen_river"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:snowy_plains"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:ice_spikes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:frozen_ocean"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:deep_frozen_ocean"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_stray_netherite"
         }
       ],
       "rolls": 1.0

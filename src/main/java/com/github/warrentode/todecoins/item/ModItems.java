@@ -11,6 +11,7 @@ import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.Chri
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.HalloweenCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.CarnationPatronCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.CosmosPatronCoinItem;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.LifetimePatronCoinItem;
 import com.github.warrentode.todecoins.util.customtabs.ModCreativeModeTabs;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -22,6 +23,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModItems {
+    // TODO learn how to make Item Capabilities work - either with Curios or not - to make a functional wallet for these coins
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MODID);
 
     public static final RegistryObject<Item> FOUR_LEAF_CLOVER = ITEMS.register("four_leaf_clover",
@@ -119,6 +121,13 @@ public class ModItems {
     public static final RegistryObject<Item> CHRISTMAS_COIN_2023 = ITEMS.register("collectible_coin_christmas_2023",
             () -> new ChristmasCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // patron collection
+    // patron lifetime anniversary set
+    public static final RegistryObject<Item> SCHOLAR_OWL_COIN = ITEMS.register("collectible_coin_scholar_owl",
+            () -> new LifetimePatronCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> TUXEDO_CAT_COIN = ITEMS.register("collectible_coin_tuxedo_cat",
+            () -> new LifetimePatronCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> LITTLE_BEAR_COIN = ITEMS.register("collectible_coin_little_bear",
+            () -> new LifetimePatronCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // patron carnation anniversary set
     public static final RegistryObject<Item> MARSHALL_NASH_CARNATION_COIN = ITEMS.register("collectible_coin_carnation_marshall_nash",
             () -> new CarnationPatronCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
@@ -671,6 +680,15 @@ public class ModItems {
             () -> new AquaticCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_SQUID_COIN = ITEMS.register("collectible_coin_squid_netherite",
             () -> new AquaticCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // stray set
+    public static final RegistryObject<Item> COPPER_STRAY_COIN = ITEMS.register("collectible_coin_stray_copper",
+            () -> new UndeadCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_STRAY_COIN = ITEMS.register("collectible_coin_stray_iron",
+            () -> new UndeadCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_STRAY_COIN = ITEMS.register("collectible_coin_stray_gold",
+            () -> new UndeadCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_STRAY_COIN = ITEMS.register("collectible_coin_stray_netherite",
+            () -> new UndeadCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // strider set
     public static final RegistryObject<Item> COPPER_STRIDER_COIN = ITEMS.register("collectible_coin_strider_copper",
             () -> new StriderCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

@@ -29,6 +29,8 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class CageriumLootTablesGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
+    // TODO for balance purposes, these tables need to be changed to be strictly the default vanilla tables and just let
+    // the datapack and modpack makers edit these however they see fit
     protected static final EntityPredicate.Builder ENTITY_ON_FIRE = EntityPredicate.Builder.entity().flags(EntityFlagsPredicate.Builder.flags().setOnFire(true).build());
     public static final LootItemCondition.Builder CAGERIUM_LOADED = ModCheckCondition.mod().isLoaded("cagerium");
 

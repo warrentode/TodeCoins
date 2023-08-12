@@ -104,6 +104,7 @@ public class ModTags {
         public static final TagKey<Item> SNIFFER_COIN_SET = modItemTag("collectible_coins/entity_coins/sniffer_coin_set");
         public static final TagKey<Item> SNOW_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/snow_golem_coin_set");
         public static final TagKey<Item> SPIDER_COIN_SET = modItemTag("collectible_coins/entity_coins/spider_coin_set");
+        public static final TagKey<Item> STRAY_COIN_SET = modItemTag("collectible_coins/entity_coins/stray_coin_set");
         public static final TagKey<Item> STRIDER_COIN_SET = modItemTag("collectible_coins/entity_coins/strider_coin_set");
         public static final TagKey<Item> SQUID_COIN_SET = modItemTag("collectible_coins/entity_coins/squid_coin_set");
         public static final TagKey<Item> TADPOLE_COIN_SET = modItemTag("collectible_coins/entity_coins/tadpole_coin_set");

@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 
 public class Numismatist extends WanderingTrader {
-    // alter the number of total trades this merchant has to offer here
+    // TODO create custom sound file with the correct subtitles for Numismatist
+    // the number of total trades this merchant has to offer can be altered here - default is 5 for Wandering Trader
     private static final int maxOFFERS = 5;
     @Nullable
     private BlockPos wanderTarget;

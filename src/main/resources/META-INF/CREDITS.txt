@@ -10,3 +10,6 @@ Additional Credits:
     - https://github.com/MinecraftForge/MinecraftForge/tree/1.19.x/src/test/java/net/minecraftforge/debug/recipe/recipebook
     - https://github.com/vectorwing/FarmersDelight/tree/1.19
     - https://forums.minecraftforge.net/forum/70-modder-support/
+* Special thanks to my sons: MinePika94, MikieSteve, and EnderDragonRobot (known as Scholar Owl, Tuxedo Cat, and Little Bear on my blog) for all their
+insight, suggestions, and input with this mod regarding features, testing, game play and balance! This mod started out as a homeschooling
+project to learn about the history of currency in a fun, interactive way and it has become so much more.

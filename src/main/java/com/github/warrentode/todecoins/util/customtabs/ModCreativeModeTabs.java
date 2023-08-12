@@ -111,6 +111,9 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             // CHRISTMAS COIN
             items.add(ModItems.CHRISTMAS_COIN_2023.get().getDefaultInstance());
             // PATRON COIN SET
+            items.add(ModItems.SCHOLAR_OWL_COIN.get().getDefaultInstance());
+            items.add(ModItems.TUXEDO_CAT_COIN.get().getDefaultInstance());
+            items.add(ModItems.LITTLE_BEAR_COIN.get().getDefaultInstance());
             items.add(ModItems.MARSHALL_NASH_CARNATION_COIN.get().getDefaultInstance());
             items.add(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDefaultInstance());
             items.add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDefaultInstance());
@@ -402,6 +405,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_SPIDER_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_SPIDER_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_SPIDER_COIN.get().getDefaultInstance());
+            // STRAY COIN SET
+            items.add(ModItems.COPPER_STRAY_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_STRAY_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_STRAY_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_STRAY_COIN.get().getDefaultInstance());
             // STRIDER COIN SET
             items.add(ModItems.COPPER_STRIDER_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_STRIDER_COIN.get().getDefaultInstance());

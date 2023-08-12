@@ -7,10 +7,11 @@ import com.github.warrentode.todecoins.attribute.PlayerCharismaProvider;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.ArthropodCoinItem;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.IllagerCoinItem;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.UndeadCoinItem;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -32,7 +33,6 @@ import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -79,22 +79,6 @@ public class ModEvents {
                 }
             }
             return event;
-        }
-
-        @SubscribeEvent
-        public static void onPlayerSeen(LivingEvent.LivingVisibilityEvent event) {
-            Player player = Minecraft.getInstance().player;
-            LivingEntity lookingEntity = (LivingEntity) event.getLookingEntity();
-            double d0 = event.getVisibilityModifier();
-
-            if (lookingEntity != null && player != null) {
-                ItemStack stack = Curios.getCharmSlot(player);
-                EntityType<?> entitytype = lookingEntity.getType();
-                if (entitytype.is(ForgeTags.EntityTypes.CREEPER_TYPES) && (stack != null && stack.is(ModTags.Items.CREEPER_COIN_SET))) {
-                    event.modifyVisibility(0.25D);
-                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
-                }
-            }
         }
 
         @SubscribeEvent
@@ -177,9 +161,6 @@ public class ModEvents {
                         event.setCanceled(true);
                     }
                 }
-                else if (dyingEntity.getLastHurtByMob() instanceof ServerPlayer player) {
-                    Inventory playerInventory = player.getInventory();
-                }
             }
             return false;
         }
@@ -212,19 +193,17 @@ public class ModEvents {
                             if (stack.is(ModTags.Items.BLAZE_COIN_SET) || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
                                 flameCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.SPIDER_COIN_SET)) {
+                            if (stack.is(ModTags.Items.SPIDER_COIN_SET) || stack.is(ModTags.Items.STRAY_COIN_SET)) {
                                 slownessCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.PHANTOM_COIN_SET) || stack.is(ModTags.Items.DROWNED_COIN_SET)
-                                    || stack.is(ModTags.Items.HUSK_COIN_SET) || stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
+                            if (stack.getItem() instanceof UndeadCoinItem || stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
                                     || stack.is(ModTags.Items.ZOMBIE_HORSE_COIN_SET)) {
                                 smiteCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.PILLAGER_COIN_SET)
-                                    || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
+                            if (stack.getItem() instanceof IllagerCoinItem || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
                                 illagerCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.ENDERMITE_COIN_SET) || stack.is(ModTags.Items.SILVERFISH_COIN_SET)) {
+                            if (stack.getItem() instanceof ArthropodCoinItem) {
                                 arthropodCharm = stack;
                             }
                         }

@@ -47,6 +47,9 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.BIRTHDAY_COIN_2023.get().getDescriptionId(), "Birthday Coin 2023");
         addCollectibleCoins(ModItems.HALLOWEEN_COIN_2023.get().getDescriptionId(), "Halloween Coin 2023");
         addCollectibleCoins(ModItems.CHRISTMAS_COIN_2023.get().getDescriptionId(), "Christmas Coin 2023");
+        addCollectibleCoins(ModItems.SCHOLAR_OWL_COIN.get().getDescriptionId(), "Scholar Owl Lifetime Coin");
+        addCollectibleCoins(ModItems.TUXEDO_CAT_COIN.get().getDescriptionId(), "Tuxedo Cat Lifetime Coin");
+        addCollectibleCoins(ModItems.LITTLE_BEAR_COIN.get().getDescriptionId(), "Little Bear Lifetime Coin");
         addCollectibleCoins(ModItems.MARSHALL_NASH_CARNATION_COIN.get().getDescriptionId(), "Marshall Nash Carnation Coin");
         addCollectibleCoins(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDescriptionId(), "Marshall Nash Carnation Coin");
         addCollectibleCoins(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDescriptionId(), "Trevor Brannigan Carnation Coin");
@@ -354,6 +357,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_SQUID_COIN.get().getDescriptionId(), "Gold Squid Coin");
         addCollectibleCoins(ModItems.NETHERITE_SQUID_COIN.get().getDescriptionId(), "Netherite Squid Coin");
 
+        addCollectibleCoins(ModItems.COPPER_STRAY_COIN.get().getDescriptionId(), "Copper Stray Coin");
+        addCollectibleCoins(ModItems.IRON_STRAY_COIN.get().getDescriptionId(), "Iron Stray Coin");
+        addCollectibleCoins(ModItems.GOLD_STRAY_COIN.get().getDescriptionId(), "Gold Stray Coin");
+        addCollectibleCoins(ModItems.NETHERITE_STRAY_COIN.get().getDescriptionId(), "Netherite Stray Coin");
+
         addCollectibleCoins(ModItems.COPPER_STRIDER_COIN.get().getDescriptionId(), "Copper Strider Coin");
         addCollectibleCoins(ModItems.IRON_STRIDER_COIN.get().getDescriptionId(), "Iron Strider Coin");
         addCollectibleCoins(ModItems.GOLD_STRIDER_COIN.get().getDescriptionId(), "Gold Strider Coin");
@@ -469,8 +477,17 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.luckyArmor", "Feeling Lucky?");
         add("advancement.luckyArmor.desc", "Obtain a full set of Lucky Armor");
 
-        add("advancement.collectibleCoins", "Collectible Coins");
-        add("advancement.collectibleCoins.desc", "Find All the Collectible Coins!");
+        add("advancement.collectibleCoins", "Collectible Vanilla Coins");
+        add("advancement.collectibleCoins.desc", "Find All the Vanilla Collectible Coins!");
+
+        add("advancement.collectibleEcologicsCoins", "Collectible Ecologics Coins");
+        add("advancement.collectibleEcologicsCoins.desc", "Find All the Ecologics Collectible Coins!");
+
+        add("advancement.collectibleFriendsAndFoesCoins", "Collectible Friends and Foes Coins");
+        add("advancement.collectibleFriendsAndFoesCoins.desc", "Find All the Friends and Foes Collectible Coins!");
+
+        add("advancement.collectibleUpcomingCoins", "Collectible Up Coming Vanilla Version Coins");
+        add("advancement.collectibleUpcomingCoins.desc", "Find All the Up Coming Vanilla Version Collectible Coins!");
     }
 
     private void addTooltips() {
@@ -535,6 +552,7 @@ public class LanguageFileGen extends LanguageProvider {
 
         // annual patron coin bases
         add("tooltips.collectible_patron_coin.hover", "A collectible coin to publicly honor, acknowledge, and appreciate those that support my work");
+        add("tooltips.collectible_coin_lifetime.hover", "This coin celebrates a special champion in my life");
         add("tooltips.collectible_coin_carnation.hover", "This coin celebrates the 1st year anniversary of this supporter");
         add("tooltips.collectible_coin_cosmos.hover", "This coin celebrates the 2nd year anniversary of this supporter");
 

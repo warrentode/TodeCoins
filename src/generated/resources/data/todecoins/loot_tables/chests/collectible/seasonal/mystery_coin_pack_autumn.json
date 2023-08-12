@@ -271,6 +271,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_skeleton_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_stray_gold"
         }
       ],
       "rolls": 1.0

@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class ModVillagerTrades {
+    // TODO still want to learn how to successfully write up a JSON reader to create customizable trades via datapacks
     // TODO try to streamline the custom trade types into a more universal trade method system, which should be useful
     // later for integration and datapack building - maybe even figure out how to stream item tag contents into an array list?
     static int novice = 1;
