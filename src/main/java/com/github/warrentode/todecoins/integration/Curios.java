@@ -1506,24 +1506,32 @@ public class Curios {
                 return stack;
             }
 
+            /**
+             * shulker is not actually a boss, I just needed to put it in the armor attribute method here is all to save
+             * me on space and sanity - sorry if it's a bit confusing, no other reason for it
+             **/
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (stack.is(ModTags.Items.WARDEN_COIN_SET) || stack.is(ModTags.Items.SHULKER_COIN_SET)) {
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) || stack.is(ModTags.Items.WARDEN_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET) || stack.is(ModTags.Items.SHULKER_COIN_SET)) {
                         int i = 0;
                         int b = 0;
 
-                        if (player.level.getDifficulty() == Difficulty.EASY && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.EASY &&
+                                (stack.is(ModTags.Items.WARDEN_COIN_SET) || stack.is(ModTags.Items.WITHER_COIN_SET))) {
                             i = 1;
                             b = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL &&
+                                (stack.is(ModTags.Items.WARDEN_COIN_SET) || stack.is(ModTags.Items.WITHER_COIN_SET))) {
                             i = 2;
                             b = 3;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        else if (player.level.getDifficulty() == Difficulty.HARD &&
+                                (stack.is(ModTags.Items.WARDEN_COIN_SET) || stack.is(ModTags.Items.WITHER_COIN_SET))) {
                             i = 3;
                             b = 4;
                         }
@@ -1531,19 +1539,20 @@ public class Curios {
                                 new AttributeModifier(uuid, "generic.armor", (1 + i) + b,
                                         AttributeModifier.Operation.ADDITION));
                     }
-                    if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) || stack.is(ModTags.Items.WARDEN_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET)) {
                         int i = 5;
                         int b = 10;
 
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (player.level.getDifficulty() == Difficulty.EASY && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                             i = 10;
                             b = 15;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                             i = 15;
                             b = 25;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (player.level.getDifficulty() == Difficulty.HARD && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                             i = 20;
                             b = 30;
                         }
@@ -1551,7 +1560,8 @@ public class Curios {
                                 new AttributeModifier(uuid, "generic.max_health", (10 + i) + b,
                                         AttributeModifier.Operation.ADDITION));
                     }
-                    if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) || stack.is(ModTags.Items.WARDEN_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET)) {
                         int i = 0;
                         int b = 1;
 
@@ -1571,19 +1581,20 @@ public class Curios {
                                 new AttributeModifier(uuid, "generic.knockback_resistance", (1 + i) + b,
                                         AttributeModifier.Operation.ADDITION));
                     }
-                    if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) || stack.is(ModTags.Items.WARDEN_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET)) {
                         int i = 0;
                         int b = 1;
 
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (player.level.getDifficulty() == Difficulty.EASY && stack.is(ModTags.Items.WITHER_COIN_SET)) {
                             i = 1;
                             b = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL && stack.is(ModTags.Items.WITHER_COIN_SET)) {
                             i = 2;
                             b = 3;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (player.level.getDifficulty() == Difficulty.HARD && stack.is(ModTags.Items.WITHER_COIN_SET)) {
                             i = 3;
                             b = 4;
                         }

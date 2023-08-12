@@ -852,6 +852,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_WITCH_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_WITCH_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_WITHER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_WITHER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_WITHER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_WITHER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_WITHER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_WITHER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_WITHER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_WITHER_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_WITHER_SKELETON_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_WITHER_SKELETON_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_WITHER_SKELETON_COIN.get().getDescriptionId(),

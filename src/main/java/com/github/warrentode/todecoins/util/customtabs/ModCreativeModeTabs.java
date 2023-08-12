@@ -470,6 +470,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_WITCH_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_WITCH_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_WITCH_COIN.get().getDefaultInstance());
+            // WITHER COIN SET
+            items.add(ModItems.COPPER_WITHER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_WITHER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_WITHER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_WITHER_COIN.get().getDefaultInstance());
             // WITHER SKELETON COIN SET
             items.add(ModItems.COPPER_WITHER_SKELETON_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_WITHER_SKELETON_COIN.get().getDefaultInstance());

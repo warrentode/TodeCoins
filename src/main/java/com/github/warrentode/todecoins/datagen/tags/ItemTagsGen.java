@@ -217,9 +217,15 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.WARDEN_COIN_SET)
                 .addTag(ModTags.Items.WITCH_COIN_SET)
                 .addTag(ModTags.Items.WITHER_SKELETON_COIN_SET)
+                .addTag(ModTags.Items.WITHER_COIN_SET)
                 .addTag(ModTags.Items.WOLF_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        tag(ModTags.Items.WITHER_COIN_SET)
+                .add(ModItems.COPPER_WITHER_COIN.get())
+                .add(ModItems.IRON_WITHER_COIN.get())
+                .add(ModItems.GOLD_WITHER_COIN.get())
+                .add(ModItems.NETHERITE_WITHER_COIN.get());
         tag(ModTags.Items.WITHER_SKELETON_COIN_SET)
                 .add(ModItems.COPPER_WITHER_SKELETON_COIN.get())
                 .add(ModItems.IRON_WITHER_SKELETON_COIN.get())

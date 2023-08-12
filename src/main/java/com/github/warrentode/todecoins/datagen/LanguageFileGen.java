@@ -417,6 +417,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_WITHER_SKELETON_COIN.get().getDescriptionId(), "Gold Wither Skeleton Coin");
         addCollectibleCoins(ModItems.NETHERITE_WITHER_SKELETON_COIN.get().getDescriptionId(), "Netherite Wither Skeleton Coin");
 
+        addCollectibleCoins(ModItems.COPPER_WITHER_COIN.get().getDescriptionId(), "Copper Wither Coin");
+        addCollectibleCoins(ModItems.IRON_WITHER_COIN.get().getDescriptionId(), "Iron Wither Coin");
+        addCollectibleCoins(ModItems.GOLD_WITHER_COIN.get().getDescriptionId(), "Gold Wither Coin");
+        addCollectibleCoins(ModItems.NETHERITE_WITHER_COIN.get().getDescriptionId(), "Netherite Wither Coin");
+
         addCollectibleCoins(ModItems.COPPER_WOLF_COIN.get().getDescriptionId(), "Copper Wolf Coin");
         addCollectibleCoins(ModItems.IRON_WOLF_COIN.get().getDescriptionId(), "Iron Wolf Coin");
         addCollectibleCoins(ModItems.GOLD_WOLF_COIN.get().getDescriptionId(), "Gold Wolf Coin");
@@ -532,11 +537,11 @@ public class LanguageFileGen extends LanguageProvider {
         // entity collectible coin bases
         add("tooltips.collectible_aerial_coin.hover", "One of Twenty Aerial Seasonal Coins");
         add("tooltips.collectible_amphibian_coin.hover", "One of Sixteen Amphibian Seasonal Coins");
-        add("tooltips.collectible_aquatic_coin.hover", "One of Twenty Aquatic Seasonal Coins");
+        add("tooltips.collectible_aquatic_coin.hover", "One of Sixteen Aquatic Seasonal Coins");
         add("tooltips.collectible_arthropod_coin.hover", "One of Twenty Arthropod Seasonal Coins");
 
         add("tooltips.collectible_bear_coin.hover", "One of Eight Bear Seasonal Coins");
-        add("tooltips.collectible_boss_coin.hover", "One of Twelve Boss Seasonal Coins");
+        add("tooltips.collectible_boss_coin.hover", "One of Sixteen Boss Seasonal Coins");
         add("tooltips.collectible_blaze_coin.hover", "One of Four Blaze Seasonal Coins");
         add("tooltips.collectible_bovine_coin.hover", "One of Twenty-Four Bovine Seasonal Coins");
 

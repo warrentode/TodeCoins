@@ -209,7 +209,7 @@ public class ModEvents {
                             if (stack.getItem() instanceof ArthropodCoinItem) {
                                 arthropodCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.WITHER_SKELETON_COIN_SET)) {
+                            if (stack.is(ModTags.Items.WITHER_SKELETON_COIN_SET) || stack.is(ModTags.Items.WITHER_COIN_SET)) {
                                 witheringCharm = stack;
                             }
                         }

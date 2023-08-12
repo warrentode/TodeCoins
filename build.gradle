@@ -135,9 +135,9 @@ jar {
                 "Specification-Title"     : "todecoins",
                 "Specification-Vendor"    : "WarrenTode",
                 "Specification-Version"   : project.jar.archiveVersion,
-                "Implementation-Title": "Forge",
-                "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "WarrenTode",
+                "Implementation-Title"  : "Forge",
+                "Implementation-Version": "43.2.21",
+                "Implementation-Vendor" : "Forge",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs"            : "mixins.todecoins.json"
         ])
@@ -158,7 +158,11 @@ jar.finalizedBy('reobfJar')
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            groupId = "com.github.warrentode"
+            artifactId = "todecoins"
+            version = "1.19.2-1.5.2"
+
+            from components.java
         }
     }
     repositories {
