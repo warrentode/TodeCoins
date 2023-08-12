@@ -3096,6 +3096,83 @@
             }
           ],
           "name": "todecoins:collectible_coin_silverfish_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:overworld"
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "structure": "minecraft:village_desert"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "structure": "minecraft:village_plains"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "structure": "minecraft:village_savanna"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "structure": "minecraft:village_snowy"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "structure": "minecraft:village_taiga"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_skeleton_gold"
         }
       ],
       "rolls": 1.0

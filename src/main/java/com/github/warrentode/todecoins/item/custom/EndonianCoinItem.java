@@ -16,7 +16,7 @@ public class EndonianCoinItem extends CoinItem {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
         tooltips.add(Component.translatable("tooltips.endonian_coin_item.hover").withStyle(ChatFormatting.DARK_GRAY));
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }

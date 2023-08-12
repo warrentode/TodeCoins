@@ -2581,6 +2581,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_skeleton_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_skeleton_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_skeleton_horse_copper": {
       "conditions": {
         "items": [
@@ -2623,6 +2647,30 @@
           {
             "items": [
               "todecoins:collectible_coin_skeleton_horse_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_skeleton_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_skeleton_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_netherite"
             ]
           }
         ]
@@ -3962,6 +4010,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_silverfish_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_skeleton_horse_copper"

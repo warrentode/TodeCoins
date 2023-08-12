@@ -267,6 +267,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_silverfish_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_skeleton_gold"
         }
       ],
       "rolls": 1.0

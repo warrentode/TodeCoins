@@ -267,6 +267,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_silverfish_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_skeleton_netherite"
         }
       ],
       "rolls": 1.0

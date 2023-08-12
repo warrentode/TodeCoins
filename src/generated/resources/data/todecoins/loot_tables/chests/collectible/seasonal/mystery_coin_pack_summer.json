@@ -267,6 +267,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_silverfish_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_skeleton_iron"
         }
       ],
       "rolls": 1.0
