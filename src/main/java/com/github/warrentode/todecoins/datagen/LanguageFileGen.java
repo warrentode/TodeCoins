@@ -412,6 +412,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_WITCH_COIN.get().getDescriptionId(), "Gold Witch Coin");
         addCollectibleCoins(ModItems.NETHERITE_WITCH_COIN.get().getDescriptionId(), "Netherite Witch Coin");
 
+        addCollectibleCoins(ModItems.COPPER_WITHER_SKELETON_COIN.get().getDescriptionId(), "Copper Wither Skeleton Coin");
+        addCollectibleCoins(ModItems.IRON_WITHER_SKELETON_COIN.get().getDescriptionId(), "Iron Wither Skeleton Coin");
+        addCollectibleCoins(ModItems.GOLD_WITHER_SKELETON_COIN.get().getDescriptionId(), "Gold Wither Skeleton Coin");
+        addCollectibleCoins(ModItems.NETHERITE_WITHER_SKELETON_COIN.get().getDescriptionId(), "Netherite Wither Skeleton Coin");
+
         addCollectibleCoins(ModItems.COPPER_WOLF_COIN.get().getDescriptionId(), "Copper Wolf Coin");
         addCollectibleCoins(ModItems.IRON_WOLF_COIN.get().getDescriptionId(), "Iron Wolf Coin");
         addCollectibleCoins(ModItems.GOLD_WOLF_COIN.get().getDescriptionId(), "Gold Wolf Coin");

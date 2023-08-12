@@ -3301,6 +3301,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_wither_skeleton_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_skeleton_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_skeleton_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_skeleton_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_skeleton_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_skeleton_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_skeleton_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_skeleton_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_wolf_copper": {
       "conditions": {
         "items": [
@@ -4286,6 +4334,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_witch_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_skeleton_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_skeleton_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_skeleton_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_skeleton_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_wolf_copper"

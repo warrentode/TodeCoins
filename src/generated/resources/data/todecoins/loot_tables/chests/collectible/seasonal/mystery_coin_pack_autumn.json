@@ -291,6 +291,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_witch_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_skeleton_gold"
         }
       ],
       "rolls": 1.0

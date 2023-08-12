@@ -3232,6 +3232,21 @@
             }
           ],
           "name": "todecoins:collectible_coin_witch_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:fortress"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_skeleton_gold"
         }
       ],
       "rolls": 1.0

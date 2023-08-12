@@ -779,6 +779,15 @@ public class ModItems {
             () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_WITCH_COIN = ITEMS.register("collectible_coin_witch_netherite",
             () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // wither_skeleton set
+    public static final RegistryObject<Item> COPPER_WITHER_SKELETON_COIN = ITEMS.register("collectible_coin_wither_skeleton_copper",
+            () -> new UndeadCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_WITHER_SKELETON_COIN = ITEMS.register("collectible_coin_wither_skeleton_iron",
+            () -> new UndeadCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_WITHER_SKELETON_COIN = ITEMS.register("collectible_coin_wither_skeleton_gold",
+            () -> new UndeadCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_WITHER_SKELETON_COIN = ITEMS.register("collectible_coin_wither_skeleton_netherite",
+            () -> new UndeadCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // wolf set
     public static final RegistryObject<Item> COPPER_WOLF_COIN = ITEMS.register("collectible_coin_wolf_copper",
             () -> new CanineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

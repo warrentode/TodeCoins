@@ -3232,6 +3232,21 @@
             }
           ],
           "name": "todecoins:collectible_coin_witch_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:fortress"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_skeleton_netherite"
         }
       ],
       "rolls": 1.0

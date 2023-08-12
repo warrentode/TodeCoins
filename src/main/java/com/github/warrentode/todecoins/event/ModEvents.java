@@ -184,6 +184,7 @@ public class ModEvents {
                     ItemStack smiteCharm = null;
                     ItemStack illagerCharm = null;
                     ItemStack arthropodCharm = null;
+                    ItemStack witheringCharm = null;
 
                     if (TodeCoins.isModLoaded("curios")) {
                         if (stack != null) {
@@ -207,6 +208,9 @@ public class ModEvents {
                             }
                             if (stack.getItem() instanceof ArthropodCoinItem) {
                                 arthropodCharm = stack;
+                            }
+                            if (stack.is(ModTags.Items.WITHER_SKELETON_COIN_SET)) {
+                                witheringCharm = stack;
                             }
                         }
 
@@ -361,6 +365,28 @@ public class ModEvents {
                                         player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, i * 20, j));
                                         ((LivingEntity) target).addEffect(new MobEffectInstance(slowEffect, i * 20, j), target);
                                     }
+                                }
+                            }
+                        }
+                        if (witheringCharm != null && target != null) {
+                            if (target instanceof LivingEntity) {
+                                int i = 0;
+                                int j = 0;
+                                if (player.level.getDifficulty() == Difficulty.EASY) {
+                                    i = 5;
+                                    j = 1;
+                                }
+                                else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                    i = 10;
+                                    j = 2;
+                                }
+                                else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                    i = 20;
+                                    j = 3;
+                                }
+
+                                if (i > 0 && j > 0) {
+                                    ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.WITHER, i * 20, j), target);
                                 }
                             }
                         }

@@ -291,6 +291,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_witch_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_skeleton_copper"
         }
       ],
       "rolls": 1.0

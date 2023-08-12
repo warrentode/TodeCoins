@@ -888,6 +888,19 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
 
         ConditionalRecipe.builder()
                 .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.WITHER_SKELETON_SPAWN_EGG, 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.WITHER_SKELETON_COIN_SET)
+                        .unlockedBy("has_wither_skeletoncoin", has(ModTags.Items.WITHER_SKELETON_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.WITHER_SKELETON_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
                 .addRecipe(ShapelessRecipeBuilder.shapeless(Items.WANDERING_TRADER_SPAWN_EGG, 1)
                         .group("spawn_eggs")
                         .requires(Tags.Items.EGGS)

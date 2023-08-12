@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-12T17:37:34.1770576	Tags for minecraft:item
+// 1.19.2	2023-08-12T18:42:43.6519311	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -120,10 +120,11 @@ be0a6e335701afa67fd137ee95da16bc4e766d89 data/todecoins/tags/items/collectible_c
 48de6bda5cec16526a98d10846e13c1405985b73 data/todecoins/tags/items/collectible_coins/entity_coins/wandering_trader_coin_set.json
 242952ac7fd6432013bd2c64bc7024218fe94666 data/todecoins/tags/items/collectible_coins/entity_coins/warden_coin_set.json
 0d410e5c9feb06bac7014f45eac5990fc209939b data/todecoins/tags/items/collectible_coins/entity_coins/witch_coin_set.json
+9e4cb8fb6ec2a06dadbe315869f6f9dda9aef547 data/todecoins/tags/items/collectible_coins/entity_coins/wither_skeleton_coin_set.json
 dd219853d6d66e6d9b54dea59cc73c7d887129a5 data/todecoins/tags/items/collectible_coins/entity_coins/wolf_coin_set.json
 8272379d4d1bbd26cd5bc0becbbc3e93272c2e94 data/todecoins/tags/items/collectible_coins/entity_coins/zombie_horse_coin_set.json
 40b72318e1c4abd7bf483e932a2b01b1af83f01a data/todecoins/tags/items/collectible_coins/entity_coins/zombified_piglin_coin_set.json
-0b846b34a379c4e3cc9a2cdb8c81044b94e9147f data/todecoins/tags/items/collectible_coins/entity_coin_set.json
+7b3450885fff0d3c14a769d31e661f02315b63e7 data/todecoins/tags/items/collectible_coins/entity_coin_set.json
 a1bda6f17fa29264786ba7d4ac0a3086ba6f5d7e data/todecoins/tags/items/collectible_coins/gameplay_coins/fishing_coin_set.json
 09034aeb43660d605371c1304aa88a09b81286cd data/todecoins/tags/items/collectible_coins/gameplay_coins/hero_coin_set.json
 269fd06fc2a4c3ac662023e453de20fda55ec2c6 data/todecoins/tags/items/collectible_coins/gameplay_coin_set.json

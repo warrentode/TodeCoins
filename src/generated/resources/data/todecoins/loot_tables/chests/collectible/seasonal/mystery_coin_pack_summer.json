@@ -291,6 +291,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_witch_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_skeleton_iron"
         }
       ],
       "rolls": 1.0
