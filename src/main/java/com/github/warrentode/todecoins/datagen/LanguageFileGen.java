@@ -309,6 +309,16 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_SHEEP_COIN.get().getDescriptionId(), "Gold Sheep Coin");
         addCollectibleCoins(ModItems.NETHERITE_SHEEP_COIN.get().getDescriptionId(), "Netherite Sheep Coin");
 
+        addCollectibleCoins(ModItems.COPPER_SHULKER_COIN.get().getDescriptionId(), "Copper Shulker Coin");
+        addCollectibleCoins(ModItems.IRON_SHULKER_COIN.get().getDescriptionId(), "Iron Shulker Coin");
+        addCollectibleCoins(ModItems.GOLD_SHULKER_COIN.get().getDescriptionId(), "Gold Shulker Coin");
+        addCollectibleCoins(ModItems.NETHERITE_SHULKER_COIN.get().getDescriptionId(), "Netherite Shulker Coin");
+
+        addCollectibleCoins(ModItems.COPPER_SILVERFISH_COIN.get().getDescriptionId(), "Copper Silverfish Coin");
+        addCollectibleCoins(ModItems.IRON_SILVERFISH_COIN.get().getDescriptionId(), "Iron Silverfish Coin");
+        addCollectibleCoins(ModItems.GOLD_SILVERFISH_COIN.get().getDescriptionId(), "Gold Silverfish Coin");
+        addCollectibleCoins(ModItems.NETHERITE_SILVERFISH_COIN.get().getDescriptionId(), "Netherite Silverfish Coin");
+
         addCollectibleCoins(ModItems.COPPER_SKELETON_HORSE_COIN.get().getDescriptionId(), "Copper Skeleton Horse Coin");
         addCollectibleCoins(ModItems.IRON_SKELETON_HORSE_COIN.get().getDescriptionId(), "Iron Skeleton Horse Coin");
         addCollectibleCoins(ModItems.GOLD_SKELETON_HORSE_COIN.get().getDescriptionId(), "Gold Skeleton Horse Coin");
@@ -515,6 +525,8 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
         add("tooltips.collectible_ravager_coin.hover", "One of Four Ravager Seasonal Coins");
         add("tooltips.collectible_sheep_coin.hover", "One of Four Sheep Seasonal Coins");
+        add("tooltips.collectible_shulker_coin.hover", "One of Four Shulker Seasonal Coins");
+        add("tooltips.collectible_silverfish_coin.hover", "One of Four Silverfish Seasonal Coins");
         add("tooltips.collectible_slime_coin.hover", "One of Four Slime Seasonal Coins");
         add("tooltips.collectible_sniffer_coin.hover", "One of Four Sniffer Seasonal Coins");
         add("tooltips.collectible_spider_coin.hover", "One of Four Spider Seasonal Coins");

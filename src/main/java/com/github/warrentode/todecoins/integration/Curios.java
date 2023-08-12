@@ -242,7 +242,8 @@ public class Curios {
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.PIGLIN_COIN_SET) || stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET))) {
+                if (player != null && (stack.is(ModTags.Items.PIGLIN_COIN_SET) || stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
+                        || stack.is(ModTags.Items.SHULKER_COIN_SET))) {
                     if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
                         attribute.put(Attributes.ARMOR,
                                 new AttributeModifier(uuid, "generic.armor", 1,
@@ -1770,6 +1771,56 @@ public class Curios {
             @Override
             public ItemStack getStack() {
                 return stack;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createLevitateCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public void curioTick(SlotContext slotContext) {
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+                    if (stack.is(ModTags.Items.SHULKER_COIN_SET)) {
+                        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 0,
+                                false, false, true));
+                    }
+                }
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
+                Player player = Minecraft.getInstance().player;
+                if (player != null && stack.is(ModTags.Items.SHULKER_COIN_SET)) {
+                    player.removeEffect(MobEffects.LEVITATION);
+                }
             }
 
             @Nonnull

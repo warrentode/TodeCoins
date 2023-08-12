@@ -2485,6 +2485,102 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_shulker_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_shulker_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_shulker_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_shulker_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_shulker_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_shulker_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_shulker_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_shulker_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_silverfish_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_silverfish_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_silverfish_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_silverfish_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_silverfish_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_silverfish_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_silverfish_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_silverfish_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_skeleton_horse_copper": {
       "conditions": {
         "items": [
@@ -3842,6 +3938,30 @@
     ],
     [
       "find_item.todecoins.collectible_coin_sheep_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_shulker_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_shulker_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_shulker_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_shulker_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_silverfish_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_silverfish_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_silverfish_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_silverfish_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_skeleton_horse_copper"

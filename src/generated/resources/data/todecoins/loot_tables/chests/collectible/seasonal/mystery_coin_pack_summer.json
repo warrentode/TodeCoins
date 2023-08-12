@@ -259,6 +259,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_ravager_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_shulker_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_silverfish_iron"
         }
       ],
       "rolls": 1.0

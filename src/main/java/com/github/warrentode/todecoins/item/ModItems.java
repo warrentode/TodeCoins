@@ -592,6 +592,24 @@ public class ModItems {
             () -> new SheepCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_SHEEP_COIN = ITEMS.register("collectible_coin_sheep_netherite",
             () -> new SheepCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // shulker set
+    public static final RegistryObject<Item> COPPER_SHULKER_COIN = ITEMS.register("collectible_coin_shulker_copper",
+            () -> new ShulkerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_SHULKER_COIN = ITEMS.register("collectible_coin_shulker_iron",
+            () -> new ShulkerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_SHULKER_COIN = ITEMS.register("collectible_coin_shulker_gold",
+            () -> new ShulkerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_SHULKER_COIN = ITEMS.register("collectible_coin_shulker_netherite",
+            () -> new ShulkerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // silverfish set
+    public static final RegistryObject<Item> COPPER_SILVERFISH_COIN = ITEMS.register("collectible_coin_silverfish_copper",
+            () -> new SilverfishCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_SILVERFISH_COIN = ITEMS.register("collectible_coin_silverfish_iron",
+            () -> new SilverfishCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_SILVERFISH_COIN = ITEMS.register("collectible_coin_silverfish_gold",
+            () -> new SilverfishCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_SILVERFISH_COIN = ITEMS.register("collectible_coin_silverfish_netherite",
+            () -> new SilverfishCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // skeleton horse set
     public static final RegistryObject<Item> COPPER_SKELETON_HORSE_COIN = ITEMS.register("collectible_coin_skeleton_horse_copper",
             () -> new EquineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

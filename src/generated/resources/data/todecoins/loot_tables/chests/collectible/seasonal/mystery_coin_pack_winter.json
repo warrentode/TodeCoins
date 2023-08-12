@@ -259,6 +259,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_ravager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_shulker_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_silverfish_netherite"
         }
       ],
       "rolls": 1.0

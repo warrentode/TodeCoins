@@ -1,7 +1,6 @@
 {
   "entries": [
     "todecoins:add_todecoins_chest",
-    "todecoins:add_egg_drops",
     "todecoins:add_todecoins_fishing_coins",
     "todecoins:add_loot_currency_drops",
     "todecoins:add_loot_chest_currency",

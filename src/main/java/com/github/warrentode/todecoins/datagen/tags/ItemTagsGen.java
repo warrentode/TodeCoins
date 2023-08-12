@@ -191,6 +191,8 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.RAVAGER_COIN_SET)
                 .addTag(ModTags.Items.SALMON_COIN_SET)
                 .addTag(ModTags.Items.SHEEP_COIN_SET)
+                .addTag(ModTags.Items.SHULKER_COIN_SET)
+                .addTag(ModTags.Items.SILVERFISH_COIN_SET)
                 .addTag(ModTags.Items.SKELETON_HORSE_COIN_SET)
                 .addTag(ModTags.Items.SLIME_COIN_SET)
                 .addTag(ModTags.Items.SNIFFER_COIN_SET)
@@ -207,6 +209,16 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.WOLF_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        tag(ModTags.Items.SILVERFISH_COIN_SET)
+                .add(ModItems.COPPER_SILVERFISH_COIN.get())
+                .add(ModItems.IRON_SILVERFISH_COIN.get())
+                .add(ModItems.GOLD_SILVERFISH_COIN.get())
+                .add(ModItems.NETHERITE_SILVERFISH_COIN.get());
+        tag(ModTags.Items.SHULKER_COIN_SET)
+                .add(ModItems.COPPER_SHULKER_COIN.get())
+                .add(ModItems.IRON_SHULKER_COIN.get())
+                .add(ModItems.GOLD_SHULKER_COIN.get())
+                .add(ModItems.NETHERITE_SHULKER_COIN.get());
         tag(ModTags.Items.RAVAGER_COIN_SET)
                 .add(ModItems.COPPER_RAVAGER_COIN.get())
                 .add(ModItems.IRON_RAVAGER_COIN.get())

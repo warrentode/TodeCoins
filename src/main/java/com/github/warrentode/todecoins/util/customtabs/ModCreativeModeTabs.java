@@ -362,6 +362,16 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_SHEEP_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_SHEEP_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_SHEEP_COIN.get().getDefaultInstance());
+            // SHULKER COIN SET
+            items.add(ModItems.COPPER_SHULKER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SHULKER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SHULKER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SHULKER_COIN.get().getDefaultInstance());
+            // SILVERFISH COIN SET
+            items.add(ModItems.COPPER_SILVERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SILVERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SILVERFISH_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SILVERFISH_COIN.get().getDefaultInstance());
             // SKELETON HORSE COIN SET
             items.add(ModItems.COPPER_SKELETON_HORSE_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_SKELETON_HORSE_COIN.get().getDefaultInstance());

@@ -8,7 +8,6 @@ import com.github.warrentode.todecoins.loot.modifiers.AddLootTableModifier;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.predicates.AlternativeLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -22,12 +21,6 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        add("add_egg_drops", new AddItemLootModifier(
-                new LootItemCondition[]{
-                        LootTableIdCondition.builder(EntityType.CHICKEN.getDefaultLootTable()).build()
-                },
-                Items.EGG, 0.5F
-        ));
         add("add_four_leaf_clover_drops", new AddItemLootModifier(
                 new LootItemCondition[]{
                         BlockTagCondition.isTag(ModTags.Blocks.DROPS_FOUR_LEAF_CLOVER)

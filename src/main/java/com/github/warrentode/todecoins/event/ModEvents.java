@@ -94,20 +94,6 @@ public class ModEvents {
                     event.modifyVisibility(0.25D);
                     lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
                 }
-                else if (entitytype.is(ForgeTags.EntityTypes.ZOMBIES) && (stack != null &&
-                        (stack.is(ModTags.Items.DROWNED_COIN_SET) || stack.is(ModTags.Items.HUSK_COIN_SET)))) {
-                    event.modifyVisibility(0.25D);
-                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
-                }
-                else if (entitytype.is(ForgeTags.EntityTypes.ILLAGERS) &&
-                        (stack != null && (stack.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.PILLAGER_COIN_SET)))) {
-                    event.modifyVisibility(0.25D);
-                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
-                }
-                else if (entitytype.is(ForgeTags.EntityTypes.GHAST_TYPES) && (stack != null && stack.is(ModTags.Items.GHAST_COIN_SET))) {
-                    event.modifyVisibility(0.25D);
-                    lookingEntity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 20, 0), lookingEntity);
-                }
             }
         }
 
@@ -142,10 +128,12 @@ public class ModEvents {
         @SuppressWarnings("SameReturnValue")
         @SubscribeEvent
         public static boolean onLivingDeath(@NotNull LivingDeathEvent event) {
-            LivingEntity entity = event.getEntity();
-            Level level = entity.getCommandSenderWorld();
+            LivingEntity dyingEntity = event.getEntity();
+            Level level = dyingEntity.getCommandSenderWorld();
+            DamageSource source = event.getSource();
+            LivingEntity target = event.getEntity();
             if (!level.isClientSide) {
-                if (entity instanceof ServerPlayer player) {
+                if (dyingEntity instanceof ServerPlayer player) {
                     Inventory playerInventory = player.getInventory();
                     DamageSource damageSource = player.getLastDamageSource();
                     ItemStack luckyCoin = null;
@@ -189,6 +177,9 @@ public class ModEvents {
                         event.setCanceled(true);
                     }
                 }
+                else if (dyingEntity.getLastHurtByMob() instanceof ServerPlayer player) {
+                    Inventory playerInventory = player.getInventory();
+                }
             }
             return false;
         }
@@ -211,6 +202,7 @@ public class ModEvents {
                     ItemStack slownessCharm = null;
                     ItemStack smiteCharm = null;
                     ItemStack illagerCharm = null;
+                    ItemStack arthropodCharm = null;
 
                     if (TodeCoins.isModLoaded("curios")) {
                         if (stack != null) {
@@ -223,11 +215,17 @@ public class ModEvents {
                             if (stack.is(ModTags.Items.SPIDER_COIN_SET)) {
                                 slownessCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.PHANTOM_COIN_SET)) {
+                            if (stack.is(ModTags.Items.PHANTOM_COIN_SET) || stack.is(ModTags.Items.DROWNED_COIN_SET)
+                                    || stack.is(ModTags.Items.HUSK_COIN_SET) || stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
+                                    || stack.is(ModTags.Items.ZOMBIE_HORSE_COIN_SET)) {
                                 smiteCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.PILLAGER_COIN_SET)) {
+                            if (stack.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.PILLAGER_COIN_SET)
+                                    || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
                                 illagerCharm = stack;
+                            }
+                            if (stack.is(ModTags.Items.ENDERMITE_COIN_SET) || stack.is(ModTags.Items.SILVERFISH_COIN_SET)) {
+                                arthropodCharm = stack;
                             }
                         }
 
@@ -331,7 +329,7 @@ public class ModEvents {
                                 // illusioner = 5
                                 // iceologer = 4
                                 // vindicator = 2
-                                if (illagerCharm.is(ModTags.Items.EVOKER_COIN_SET)) {
+                                if (illagerCharm.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
                                     p = 3;
                                 }
                                 else if (illagerCharm.is(ModTags.Items.PILLAGER_COIN_SET)) {
@@ -353,6 +351,33 @@ public class ModEvents {
 
                                 if (i > 0 && j > 0) {
                                     player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, (i + p) * 20, j));
+                                }
+                            }
+                        }
+                        if (arthropodCharm != null && target != null) {
+                            MobEffect slowEffect = MobEffects.MOVEMENT_SLOWDOWN;
+
+                            if (target instanceof LivingEntity) {
+                                if (((LivingEntity) target).getMobType() == MobType.ARTHROPOD) {
+                                    int i = 0;
+                                    int j = 0;
+                                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                                        i = 5;
+                                        j = 1;
+                                    }
+                                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                        i = 10;
+                                        j = 2;
+                                    }
+                                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                        i = 20;
+                                        j = 3;
+                                    }
+
+                                    if (i > 0 && j > 0) {
+                                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, i * 20, j));
+                                        ((LivingEntity) target).addEffect(new MobEffectInstance(slowEffect, i * 20, j), target);
+                                    }
                                 }
                             }
                         }

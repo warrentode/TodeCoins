@@ -259,6 +259,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_ravager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_shulker_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_silverfish_gold"
         }
       ],
       "rolls": 1.0
