@@ -275,6 +275,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_stray_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vex_copper"
         }
       ],
       "rolls": 1.0

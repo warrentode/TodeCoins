@@ -725,6 +725,15 @@ public class ModItems {
             () -> new AmphibianCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_TURTLE_COIN = ITEMS.register("collectible_coin_turtle_netherite",
             () -> new AmphibianCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // vex set
+    public static final RegistryObject<Item> COPPER_VEX_COIN = ITEMS.register("collectible_coin_vex_copper",
+            () -> new AerialCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_VEX_COIN = ITEMS.register("collectible_coin_vex_iron",
+            () -> new AerialCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_VEX_COIN = ITEMS.register("collectible_coin_vex_gold",
+            () -> new AerialCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_VEX_COIN = ITEMS.register("collectible_coin_vex_netherite",
+            () -> new AerialCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // villager set
     public static final RegistryObject<Item> COPPER_VILLAGER_COIN = ITEMS.register("collectible_coin_villager_copper",
             () -> new MerchantCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

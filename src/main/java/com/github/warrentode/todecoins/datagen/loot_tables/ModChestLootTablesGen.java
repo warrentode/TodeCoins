@@ -685,6 +685,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_EVOKER_COIN.get()).when(SPRING)
                                         .when(IN_MANSION))
 
+                                .add(LootItem.lootTableItem(ModItems.COPPER_VEX_COIN.get()).when(SPRING)
+                                        .when(IN_MANSION))
+
                                 .add(LootItem.lootTableItem(ModItems.COPPER_GHAST_COIN.get()).when(SPRING)
                                         .when(IN_NETHER))
 
@@ -981,6 +984,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_THE_END))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_EVOKER_COIN.get()).when(SUMMER)
+                                        .when(IN_MANSION))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_VEX_COIN.get()).when(SUMMER)
                                         .when(IN_MANSION))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_GHAST_COIN.get()).when(SUMMER)
@@ -1281,6 +1287,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_EVOKER_COIN.get()).when(AUTUMN)
                                         .when(IN_MANSION))
 
+                                .add(LootItem.lootTableItem(ModItems.GOLD_VEX_COIN.get()).when(AUTUMN)
+                                        .when(IN_MANSION))
+
                                 .add(LootItem.lootTableItem(ModItems.GOLD_GHAST_COIN.get()).when(AUTUMN)
                                         .when(IN_NETHER))
 
@@ -1579,6 +1588,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_EVOKER_COIN.get()).when(WINTER)
                                         .when(IN_MANSION))
 
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_VEX_COIN.get()).when(WINTER)
+                                        .when(IN_MANSION))
+
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_GHAST_COIN.get()).when(WINTER)
                                         .when(IN_NETHER))
 
@@ -1694,6 +1706,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SILVERFISH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_STRAY_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_VEX_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1768,6 +1781,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_SILVERFISH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_STRAY_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_VEX_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1842,6 +1856,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SILVERFISH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_STRAY_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_VEX_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -1916,6 +1931,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SILVERFISH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_STRAY_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_VEX_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

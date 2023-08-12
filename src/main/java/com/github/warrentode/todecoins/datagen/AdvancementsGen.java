@@ -798,6 +798,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_TURTLE_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_TURTLE_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_VEX_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_VEX_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_VEX_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_VEX_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_VEX_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_VEX_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_VEX_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_VEX_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_VILLAGER_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_VILLAGER_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_VILLAGER_COIN.get().getDescriptionId(),

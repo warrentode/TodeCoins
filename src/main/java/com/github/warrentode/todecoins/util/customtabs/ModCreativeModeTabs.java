@@ -440,6 +440,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_TURTLE_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_TURTLE_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_TURTLE_COIN.get().getDefaultInstance());
+            // VEX COIN SET
+            items.add(ModItems.COPPER_VEX_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_VEX_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_VEX_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_VEX_COIN.get().getDefaultInstance());
             // VILLAGER COIN SET
             items.add(ModItems.COPPER_VILLAGER_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_VILLAGER_COIN.get().getDefaultInstance());

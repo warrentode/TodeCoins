@@ -2809,6 +2809,21 @@
             {
               "condition": "minecraft:location_check",
               "predicate": {
+                "structure": "minecraft:mansion"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_vex_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
                 "dimension": "minecraft:the_nether"
               }
             }

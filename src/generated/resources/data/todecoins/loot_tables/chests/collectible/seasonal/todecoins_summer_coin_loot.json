@@ -2809,6 +2809,21 @@
             {
               "condition": "minecraft:location_check",
               "predicate": {
+                "structure": "minecraft:mansion"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_vex_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
                 "dimension": "minecraft:the_nether"
               }
             }

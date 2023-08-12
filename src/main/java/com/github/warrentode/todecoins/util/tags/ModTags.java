@@ -39,8 +39,7 @@ public class ModTags {
         public static final TagKey<Item> CHRISTMAS_COIN_SET = modItemTag("collectible_coins/holiday_coins/christmas_coin_set");
         // sponsor perk coins
         public static final TagKey<Item> PATRON_COIN_SET = modItemTag("collectible_coins/patron_coin_set");
-        public static final TagKey<Item> LIFETIME_PATRON_COIN_SET = modItemTag(
-                "collectible_coins/patron_coins/lifetime_patron_coin_set");
+        public static final TagKey<Item> LIFETIME_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/lifetime_patron_coin_set");
         public static final TagKey<Item> CARNATION_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/carnation_patron_coin_set");
         public static final TagKey<Item> COSMOS_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/cosmos_patron_coin_set");
         // gameplay coins
@@ -113,6 +112,7 @@ public class ModTags {
         public static final TagKey<Item> TRADER_LLAMA_COIN_SET = modItemTag("collectible_coins/entity_coins/trader_llama_coin_set");
         public static final TagKey<Item> TROPICAL_FISH_COIN_SET = modItemTag("collectible_coins/entity_coins/tropical_fish_coin_set");
         public static final TagKey<Item> TURTLE_COIN_SET = modItemTag("collectible_coins/entity_coins/turtle_coin_set");
+        public static final TagKey<Item> VEX_COIN_SET = modItemTag("collectible_coins/entity_coins/vex_coin_set");
         public static final TagKey<Item> VILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/villager_coin_set");
         public static final TagKey<Item> WANDERING_TRADER_COIN_SET = modItemTag("collectible_coins/entity_coins/wandering_trader_coin_set");
         public static final TagKey<Item> WOLF_COIN_SET = modItemTag("collectible_coins/entity_coins/wolf_coin_set");

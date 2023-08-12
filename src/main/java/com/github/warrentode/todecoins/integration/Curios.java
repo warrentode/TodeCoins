@@ -52,6 +52,7 @@ public class Curios {
     // TODO can the splash potion radius be changed for the Witch coin?
     // TODO the Warden coin should have a HUGE health bonus since it can only be found in the Ancient City or off the Warden
     // TODO the Sniffer coin influence what you find while digging?
+    // TODO since the coins do not stack in inventory, I may need to make them breakable and repairable in some fashion to reduce clutter
 
     /**
      * Gets the stack in the Belt Slot
@@ -838,7 +839,7 @@ public class Curios {
             public boolean canWalkOnPowderedSnow(SlotContext slotContext) {
                 return stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.FOX_COIN_SET)
                         || stack.is(ModTags.Items.ENDERMITE_COIN_SET) || stack.is(ModTags.Items.SILVERFISH_COIN_SET)
-                        || stack.is(ModTags.Items.SHULKER_COIN_SET);
+                        || stack.is(ModTags.Items.SHULKER_COIN_SET) || stack.is(ModTags.Items.VEX_COIN_SET);
             }
 
             @Nonnull
@@ -991,9 +992,9 @@ public class Curios {
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
                 if ((stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
-                     || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
-                     || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET))
-                    && player != null) {
+                        || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
+                        || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET))
+                        && player != null) {
                     player.removeEffect(MobEffects.WATER_BREATHING);
                 }
             }
