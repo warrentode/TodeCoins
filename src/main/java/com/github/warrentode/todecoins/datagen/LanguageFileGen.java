@@ -319,6 +319,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_SILVERFISH_COIN.get().getDescriptionId(), "Gold Silverfish Coin");
         addCollectibleCoins(ModItems.NETHERITE_SILVERFISH_COIN.get().getDescriptionId(), "Netherite Silverfish Coin");
 
+        addCollectibleCoins(ModItems.COPPER_SKELETON_COIN.get().getDescriptionId(), "Copper Skeleton Coin");
+        addCollectibleCoins(ModItems.IRON_SKELETON_COIN.get().getDescriptionId(), "Iron Skeleton Coin");
+        addCollectibleCoins(ModItems.GOLD_SKELETON_COIN.get().getDescriptionId(), "Gold Skeleton Coin");
+        addCollectibleCoins(ModItems.NETHERITE_SKELETON_COIN.get().getDescriptionId(), "Netherite Skeleton Coin");
+
         addCollectibleCoins(ModItems.COPPER_SKELETON_HORSE_COIN.get().getDescriptionId(), "Copper Skeleton Horse Coin");
         addCollectibleCoins(ModItems.IRON_SKELETON_HORSE_COIN.get().getDescriptionId(), "Iron Skeleton Horse Coin");
         addCollectibleCoins(ModItems.GOLD_SKELETON_HORSE_COIN.get().getDescriptionId(), "Gold Skeleton Horse Coin");
@@ -483,58 +488,41 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.coin_stamp.hover", "This is for stamping currency in a press.");
 
         // entity collectible coin bases
-        add("tooltips.collectible_feline_coin.hover", "One of Eight Feline Seasonal Coins");
-        add("tooltips.collectible_llama_coin.hover", "One of Eight Llama Seasonal Coins");
-        add("tooltips.collectible_squid_coin.hover", "One of Eight Squid Seasonal Coins");
-        add("tooltips.collectible_golem_coin.hover", "One of Eight Sheep Seasonal Coins");
-        add("tooltips.collectible_trader_coin.hover", "One of Eight Trader Seasonal Coins");
-        add("tooltips.collectible_guardian_coin.hover", "One of Eight Guardian Seasonal Coins");
+        add("tooltips.collectible_aerial_coin.hover", "One of Twenty Aerial Seasonal Coins");
+        add("tooltips.collectible_amphibian_coin.hover", "One of Sixteen Amphibian Seasonal Coins");
+        add("tooltips.collectible_aquatic_coin.hover", "One of Twenty Aquatic Seasonal Coins");
+        add("tooltips.collectible_arthropod_coin.hover", "One of Twenty Arthropod Seasonal Coins");
 
-        add("tooltips.collectible_bovine_coin.hover", "One of Twelve Bovine Seasonal Coins");
-        add("tooltips.collectible_piglin_coin.hover", "One of Twelve Piglin Seasonal Coins");
+        add("tooltips.collectible_bear_coin.hover", "One of Eight Bear Seasonal Coins");
+        add("tooltips.collectible_blaze_coin.hover", "One of Four Blaze Seasonal Coins");
+        add("tooltips.collectible_bovine_coin.hover", "One of Twenty-Four Bovine Seasonal Coins");
 
+        add("tooltips.collectible_camelid_coin.hover", "One of Twelve Camelid Seasonal Coins");
+        add("tooltips.collectible_canine_coin.hover", "One of Eight Canine Seasonal Coins");
+        add("tooltips.collectible_creeper_coin.hover", "One of Four Creeper Seasonal Coins");
+        add("tooltips.collectible_cube_coin.hover", "One of Eight Cuboid Seasonal Coins");
+
+        add("tooltips.collectible_enderman_coin.hover", "One of Four Enderman Seasonal Coins");
         add("tooltips.collectible_equine_coin.hover", "One of Twenty Equine Seasonal Coins");
+
+        add("tooltips.collectible_feline_coin.hover", "One of Eight Feline Seasonal Coins");
+
+        add("tooltips.collectible_golem_coin.hover", "One of Eight Golem Seasonal Coins");
+
         add("tooltips.collectible_illager_coin.hover", "One of Twenty Illager Seasonal Coins");
 
-        add("tooltips.collectible_allay_coin.hover", "One of Four Allay Seasonal Coins");
-        add("tooltips.collectible_axolotl_coin.hover", "One of Four Axolotl Seasonal Coins");
-        add("tooltips.collectible_bat_coin.hover", "One of Four Bat Seasonal Coins");
-        add("tooltips.collectible_bee_coin.hover", "One of Four Bee Seasonal Coins");
-        add("tooltips.collectible_blaze_coin.hover", "One of Four Blaze Seasonal Coins");
-        add("tooltips.collectible_camel_coin.hover", "One of Four Camel Seasonal Coins");
-        add("tooltips.collectible_cave_spider_coin.hover", "One of Four Cave Spider Seasonal Coins");
-        add("tooltips.collectible_creeper_coin.hover", "One of Four Creeper Seasonal Coins");
-        add("tooltips.collectible_chicken_coin.hover", "One of Four Chicken Seasonal Coins");
-        add("tooltips.collectible_dolphin_coin.hover", "One of Four Dolphin Seasonal Coins");
-        add("tooltips.collectible_drowned_coin.hover", "One of Four Drowned Seasonal Coins");
-        add("tooltips.collectible_enderman_coin.hover", "One of Four Enderman Seasonal Coins");
-        add("tooltips.collectible_endermite_coin.hover", "One of Four Endermite Seasonal Coins");
-        add("tooltips.collectible_fox_coin.hover", "One of Four Fox Seasonal Coins");
-        add("tooltips.collectible_frog_coin.hover", "One of Four Frog Seasonal Coins");
-        add("tooltips.collectible_goat_coin.hover", "One of Four Goat Seasonal Coins");
-        add("tooltips.collectible_ghast_coin.hover", "One of Four Ghast Seasonal Coins");
-        add("tooltips.collectible_hoglin_coin.hover", "One of Four Hoglin Seasonal Coins");
-        add("tooltips.collectible_husk_coin.hover", "One of Four Husk Seasonal Coins");
-        add("tooltips.collectible_iron_golem_coin.hover", "One of Four Iron Golem Seasonal Coins");
-        add("tooltips.collectible_magma_cube_coin.hover", "One of Four Magma Cube Seasonal Coins");
-        add("tooltips.collectible_panda_coin.hover", "One of Four Panda Seasonal Coins");
-        add("tooltips.collectible_parrot_coin.hover", "One of Four Parrot Seasonal Coins");
-        add("tooltips.collectible_phantom_coin.hover", "One of Four Phantom Seasonal Coins");
-        add("tooltips.collectible_pig_coin.hover", "One of Four Pig Seasonal Coins");
-        add("tooltips.collectible_polar_bear_coin.hover", "One of Four Polar Bear Seasonal Coins");
+        add("tooltips.collectible_merchant_coin.hover", "One of Twelve Merchant Seasonal Coins");
+
+        add("tooltips.collectible_piglin_coin.hover", "One of Twelve Piglin Seasonal Coins");
+
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
-        add("tooltips.collectible_ravager_coin.hover", "One of Four Ravager Seasonal Coins");
-        add("tooltips.collectible_sheep_coin.hover", "One of Four Sheep Seasonal Coins");
+
         add("tooltips.collectible_shulker_coin.hover", "One of Four Shulker Seasonal Coins");
-        add("tooltips.collectible_silverfish_coin.hover", "One of Four Silverfish Seasonal Coins");
-        add("tooltips.collectible_slime_coin.hover", "One of Four Slime Seasonal Coins");
         add("tooltips.collectible_sniffer_coin.hover", "One of Four Sniffer Seasonal Coins");
-        add("tooltips.collectible_spider_coin.hover", "One of Four Spider Seasonal Coins");
         add("tooltips.collectible_strider_coin.hover", "One of Four Strider Seasonal Coins");
-        add("tooltips.collectible_tadpole_coin.hover", "One of Four Tadpole Seasonal Coins");
-        add("tooltips.collectible_turtle_coin.hover", "One of Four Turtle Seasonal Coins");
-        add("tooltips.collectible_wolf_coin.hover", "One of Four Wolf Seasonal Coins");
-        add("tooltips.collectible_villager_coin.hover", "One of Four Villager Seasonal Coins");
+        add("tooltips.collectible_swine_coin.hover", "One of Eight Pig Seasonal Coins");
+
+        add("tooltips.collectible_undead_coin.hover", "One of Thirty-Six Undead Seasonal Coins");
 
         // gameplay collectible coin bases
         add("tooltips.collectible_hero_coin.hover", "One of Four Hero Seasonal Coins");

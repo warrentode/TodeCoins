@@ -713,6 +713,12 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
                                                 .or(IN_SNOWY_SLOPES).or(IN_JAGGED_PEAKS).or(IN_FROZEN_PEAKS)
                                                 .or(IN_STONY_PEAKS)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_SKELETON_COIN.get()).when(SPRING)
+                                        .when(IN_OVERWORLD.or(IN_VILLAGE_DESERT.invert()).or(IN_VILLAGE_PLAINS.invert())
+                                                .or(IN_VILLAGE_SAVANNA.invert()).or(IN_VILLAGE_SNOWY.invert())
+                                                .or(IN_VILLAGE_TAIGA.invert()).or(IN_NETHER_FORTRESS)
+                                                .or(IN_SOUL_SAND_VALLEY)))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1004,6 +1010,12 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
                                                 .or(IN_SNOWY_SLOPES).or(IN_JAGGED_PEAKS).or(IN_FROZEN_PEAKS)
                                                 .or(IN_STONY_PEAKS)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_SKELETON_COIN.get()).when(SUMMER)
+                                        .when(IN_OVERWORLD.or(IN_VILLAGE_DESERT.invert()).or(IN_VILLAGE_PLAINS.invert())
+                                                .or(IN_VILLAGE_SAVANNA.invert()).or(IN_VILLAGE_SNOWY.invert())
+                                                .or(IN_VILLAGE_TAIGA.invert()).or(IN_NETHER_FORTRESS)
+                                                .or(IN_SOUL_SAND_VALLEY)))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
@@ -1295,6 +1307,12 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
                                                 .or(IN_SNOWY_SLOPES).or(IN_JAGGED_PEAKS).or(IN_FROZEN_PEAKS)
                                                 .or(IN_STONY_PEAKS)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_SKELETON_COIN.get()).when(AUTUMN)
+                                        .when(IN_OVERWORLD.or(IN_VILLAGE_DESERT.invert()).or(IN_VILLAGE_PLAINS.invert())
+                                                .or(IN_VILLAGE_SAVANNA.invert()).or(IN_VILLAGE_SNOWY.invert())
+                                                .or(IN_VILLAGE_TAIGA.invert()).or(IN_NETHER_FORTRESS)
+                                                .or(IN_SOUL_SAND_VALLEY)))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1586,6 +1604,12 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
                                                 .or(IN_SNOWY_SLOPES).or(IN_JAGGED_PEAKS).or(IN_FROZEN_PEAKS)
                                                 .or(IN_STONY_PEAKS)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_SKELETON_COIN.get()).when(WINTER)
+                                        .when(IN_OVERWORLD.or(IN_VILLAGE_DESERT.invert()).or(IN_VILLAGE_PLAINS.invert())
+                                                .or(IN_VILLAGE_SAVANNA.invert()).or(IN_VILLAGE_SNOWY.invert())
+                                                .or(IN_VILLAGE_TAIGA.invert()).or(IN_NETHER_FORTRESS)
+                                                .or(IN_SOUL_SAND_VALLEY)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1658,6 +1682,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_RAVAGER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SHULKER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SILVERFISH_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_SKELETON_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1730,6 +1755,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_RAVAGER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_SHULKER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_SILVERFISH_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_SKELETON_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1802,6 +1828,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_RAVAGER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SHULKER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SILVERFISH_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_SKELETON_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -1874,6 +1901,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_RAVAGER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SHULKER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SILVERFISH_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_SKELETON_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

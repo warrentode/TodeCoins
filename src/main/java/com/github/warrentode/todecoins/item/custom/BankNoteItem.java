@@ -1,6 +1,7 @@
 package com.github.warrentode.todecoins.item.custom;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,8 +18,10 @@ public class BankNoteItem extends Item {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.bank_note_item.hover").withStyle(ChatFormatting.DARK_GRAY));
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
+        if (Screen.hasShiftDown()) {
+            tooltips.add(Component.translatable("tooltips.bank_note_item.hover").withStyle(ChatFormatting.DARK_GRAY));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

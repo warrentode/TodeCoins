@@ -3,7 +3,7 @@ package com.github.warrentode.todecoins.integration;
 import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.attribute.PlayerCharisma;
-import com.github.warrentode.todecoins.item.ModItems;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.FelineCoinItem;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import com.google.common.collect.LinkedHashMultimap;
@@ -28,7 +28,6 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.SlotResult;
 import top.theillusivec4.curios.api.SlotTypePreset;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
@@ -244,11 +243,6 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null && (stack.is(ModTags.Items.PIGLIN_COIN_SET) || stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
                         || stack.is(ModTags.Items.SHULKER_COIN_SET))) {
-                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                        attribute.put(Attributes.ARMOR,
-                                new AttributeModifier(uuid, "generic.armor", 1,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
 
                     int i = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -309,11 +303,6 @@ public class Curios {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                        attribute.put(Attributes.MOVEMENT_SPEED,
-                                new AttributeModifier(uuid, "generic.movement_speed", 0.05,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
 
                     double d = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -369,11 +358,6 @@ public class Curios {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                        attribute.put(Attributes.MAX_HEALTH,
-                                new AttributeModifier(uuid, "generic.max_health", 10,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
 
                     int i = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -429,11 +413,6 @@ public class Curios {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                        attribute.put(Attributes.MOVEMENT_SPEED,
-                                new AttributeModifier(uuid, "generic.movement_speed", 0.2,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
 
                     double d = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -489,11 +468,6 @@ public class Curios {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                        attribute.put(Attributes.MOVEMENT_SPEED,
-                                new AttributeModifier(uuid, "generic.movement_speed", 0.05,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
 
                     double d = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -537,7 +511,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createNightVisionCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createHalloweenCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -662,12 +636,9 @@ public class Curios {
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET) || stack.is(ModTags.Items.PARROT_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
-                                    false, false, false));
-                        }
-
+                    if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.BAT_COIN_SET)
+                            || stack.is(ModTags.Items.CHICKEN_COIN_SET) || stack.is(ModTags.Items.GHAST_COIN_SET)
+                            || stack.is(ModTags.Items.PARROT_COIN_SET) || stack.is(ModTags.Items.PHANTOM_COIN_SET)) {
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
@@ -681,13 +652,20 @@ public class Curios {
                         player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, i,
                                 false, false, false));
                     }
+                    if (stack.getItem() instanceof FelineCoinItem) {
+                        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
+                                false, false, false));
+                    }
                 }
             }
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET) || stack.is(ModTags.Items.PARROT_COIN_SET))) {
+                if (player != null && (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.BAT_COIN_SET)
+                        || stack.is(ModTags.Items.CAT_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET)
+                        || stack.is(ModTags.Items.GHAST_COIN_SET) || stack.is(ModTags.Items.OCELOT_COIN_SET)
+                        || stack.is(ModTags.Items.PARROT_COIN_SET) || stack.is(ModTags.Items.PHANTOM_COIN_SET))) {
                     player.removeEffect(MobEffects.SLOW_FALLING);
                 }
             }
@@ -728,10 +706,6 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
                     if (stack.is(ModTags.Items.AXOLOTL_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0,
-                                    false, false, false));
-                        }
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -793,10 +767,6 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
                     if (stack.is(ModTags.Items.CAMEL_COIN_SET) || stack.is(ModTags.Items.PIG_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, 0,
-                                    false, false, false));
-                        }
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -846,37 +816,6 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createCatDisguiseCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
     public static ICapabilityProvider createPowderedSnowCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
@@ -886,75 +825,15 @@ public class Curios {
 
             @Override
             public boolean canWalkOnPowderedSnow(SlotContext slotContext) {
-                return true;
+                return stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.FOX_COIN_SET)
+                        || stack.is(ModTags.Items.ENDERMITE_COIN_SET) || stack.is(ModTags.Items.SILVERFISH_COIN_SET)
+                        || stack.is(ModTags.Items.SHULKER_COIN_SET);
             }
 
             @Nonnull
             @Override
             public SoundInfo getEquipSound(SlotContext context) {
                 return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
-    public static ICapabilityProvider createPoisonAttackCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 1.5F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
-    public static ICapabilityProvider createFireAspectCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 1.5F);
             }
 
             @Override
@@ -987,12 +866,8 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
                     if (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET)
-                            || stack.is(ModTags.Items.GOAT_COIN_SET) || stack.is(ModTags.Items.SLIME_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 0,
-                                    false, false, false));
-                        }
-
+                            || stack.is(ModTags.Items.GOAT_COIN_SET) || stack.is(ModTags.Items.SLIME_COIN_SET)
+                            || stack.is(ModTags.Items.SLIME_COIN_SET)) {
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
@@ -1013,7 +888,8 @@ public class Curios {
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
                 if (player != null && (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET)
-                        || stack.is(ModTags.Items.GOAT_COIN_SET) || stack.is(ModTags.Items.SLIME_COIN_SET))) {
+                        || stack.is(ModTags.Items.GOAT_COIN_SET) || stack.is(ModTags.Items.SLIME_COIN_SET)
+                        || stack.is(ModTags.Items.SLIME_COIN_SET))) {
                     player.removeEffect(MobEffects.JUMP);
                 }
             }
@@ -1042,81 +918,6 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createFishCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
-    public static Boolean matchCodFishCharm(ItemStack isCodFishCharm) {
-        Player player = Minecraft.getInstance().player;
-        ItemStack stack = ItemStack.EMPTY;
-        if (player != null) {
-            Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, isCodFishCharm.getItem());
-            return (isCodFishCharm.getItem() == ModItems.COPPER_COD_COIN.get()) || (isCodFishCharm.getItem() == ModItems.IRON_COD_COIN.get())
-                   || (isCodFishCharm.getItem() == ModItems.GOLD_COD_COIN.get()) || (isCodFishCharm.getItem() == ModItems.NETHERITE_COD_COIN.get());
-        }
-        return false;
-    }
-
-    public static Boolean matchSalmonFishCharm(ItemStack isSalmonFishCharm) {
-        Player player = Minecraft.getInstance().player;
-        ItemStack stack = ItemStack.EMPTY;
-        if (player != null) {
-            Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, isSalmonFishCharm.getItem());
-            return (isSalmonFishCharm.getItem() == ModItems.COPPER_SALMON_COIN.get()) || (isSalmonFishCharm.getItem() == ModItems.IRON_SALMON_COIN.get())
-                   || (isSalmonFishCharm.getItem() == ModItems.GOLD_SALMON_COIN.get()) || (isSalmonFishCharm.getItem() == ModItems.NETHERITE_SALMON_COIN.get());
-        }
-        return false;
-    }
-
-    public static Boolean matchPufferfishCharm(ItemStack isPufferfishCharm) {
-        Player player = Minecraft.getInstance().player;
-        ItemStack stack = ItemStack.EMPTY;
-        if (player != null) {
-            Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, isPufferfishCharm.getItem());
-            return (isPufferfishCharm.getItem() == ModItems.COPPER_PUFFERFISH_COIN.get()) || (isPufferfishCharm.getItem() == ModItems.IRON_PUFFERFISH_COIN.get())
-                   || (isPufferfishCharm.getItem() == ModItems.GOLD_PUFFERFISH_COIN.get()) || (isPufferfishCharm.getItem() == ModItems.NETHERITE_PUFFERFISH_COIN.get());
-        }
-        return false;
-    }
-
-    public static Boolean matchTropicalFishCharm(ItemStack isTropicalFishCharm) {
-        Player player = Minecraft.getInstance().player;
-        ItemStack stack = ItemStack.EMPTY;
-        if (player != null) {
-            Optional<SlotResult> optional = CuriosApi.getCuriosHelper().findFirstCurio(player, isTropicalFishCharm.getItem());
-            return (isTropicalFishCharm.getItem() == ModItems.COPPER_TROPICAL_FISH_COIN.get()) || (isTropicalFishCharm.getItem() == ModItems.IRON_TROPICAL_FISH_COIN.get())
-                    || (isTropicalFishCharm.getItem() == ModItems.GOLD_TROPICAL_FISH_COIN.get()) || (isTropicalFishCharm.getItem() == ModItems.NETHERITE_TROPICAL_FISH_COIN.get());
-        }
-        return false;
-    }
-
     public static ICapabilityProvider createWaterBreathingCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
@@ -1128,15 +929,14 @@ public class Curios {
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if ((stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
+                    if (stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
                             || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
-                            || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET))) {
+                            || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
+                            || stack.is(ModTags.Items.COD_COIN_SET) || stack.is(ModTags.Items.SALMON_COIN_SET)
+                            || stack.is(ModTags.Items.PUFFERFISH_COIN_SET) || stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)
+                            || stack.is(ModTags.Items.DOLPHIN_COIN_SET) || stack.is(ModTags.Items.DROWNED_COIN_SET)) {
                         //noinspection deprecation
                         if (player.isEyeInFluid(FluidTags.WATER)) {
-                            if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
-                                        false, false, false));
-                            }
 
                             int i = 0;
                             if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1150,6 +950,27 @@ public class Curios {
                             }
                             player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
                                     false, false, false));
+                        }
+                    }
+                    if (stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
+                        //noinspection deprecation
+                        if (player.isEyeInFluid(FluidTags.WATER)) {
+
+                            int i = 0;
+                            if (player.level.getDifficulty() == Difficulty.EASY) {
+                                i = 1;
+                            }
+                            else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                                i = 2;
+                            }
+                            else if (player.level.getDifficulty() == Difficulty.HARD) {
+                                i = 3;
+                            }
+                            player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, i,
+                                    false, false, true));
+                        }
+                        else {
+                            player.removeEffect(MobEffects.DOLPHINS_GRACE);
                         }
                     }
                 }
@@ -1202,11 +1023,6 @@ public class Curios {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                        attribute.put(Attributes.ATTACK_KNOCKBACK,
-                                new AttributeModifier(uuid, "generic.attack_knockback", 1,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
 
                     int i = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1262,11 +1078,7 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
                     if (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
-                            || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0,
-                                    false, false, false));
-                        }
+                            || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET) || stack.is(ModTags.Items.GHAST_COIN_SET)) {
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1317,58 +1129,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createNightTimeInvisibilityCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Override
-            public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (player.level.getDayTime() >= 12000)) {
-                    player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0,
-                            false, false, true));
-                }
-                else if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (player.level.getDayTime() < 12000)) {
-                    player.removeEffect(MobEffects.INVISIBILITY);
-                }
-            }
-
-            @Override
-            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET))) {
-                    player.removeEffect(MobEffects.INVISIBILITY);
-                }
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
-    public static ICapabilityProvider createNightTimeSpeedCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createMerchantCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -1379,11 +1140,16 @@ public class Curios {
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
+                    if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET)
+                            || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (player.level.getDayTime() >= 12000)) {
+                        player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0,
+                                false, false, true));
+                    }
+                    else if (player != null && player.level.getDayTime() < 12000) {
+                        player.removeEffect(MobEffects.INVISIBILITY);
+                    }
+
                     if (player != null && stack.is(ModTags.Items.VILLAGER_COIN_SET) && (player.level.getDayTime() >= 12000)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0,
-                                    false, false, false));
-                        }
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1407,8 +1173,12 @@ public class Curios {
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.VILLAGER_COIN_SET)) {
+
+                if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET)
+                        || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)
+                        || player != null && stack.is(ModTags.Items.VILLAGER_COIN_SET))) {
                     player.removeEffect(MobEffects.MOVEMENT_SPEED);
+                    player.removeEffect(MobEffects.INVISIBILITY);
                 }
             }
 
@@ -1448,10 +1218,6 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
                     if (stack.is(ModTags.Items.SNIFFER_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, 0,
-                                    false, false, false));
-                        }
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1501,114 +1267,6 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createDolphinGraceCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Override
-            public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
-                    if (stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
-                        //noinspection deprecation
-                        if (player.isEyeInFluid(FluidTags.WATER)) {
-                            if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                                player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, 0,
-                                        false, false, true));
-                                player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
-                                        false, false, false));
-                            }
-
-                            int i = 0;
-                            if (player.level.getDifficulty() == Difficulty.EASY) {
-                                i = 1;
-                            }
-                            else if (player.level.getDifficulty() == Difficulty.NORMAL) {
-                                i = 2;
-                            }
-                            else if (player.level.getDifficulty() == Difficulty.HARD) {
-                                i = 3;
-                            }
-                            player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, i,
-                                    false, false, true));
-                            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
-                                    false, false, false));
-                        }
-                        else {
-                            player.removeEffect(MobEffects.DOLPHINS_GRACE);
-                            player.removeEffect(MobEffects.WATER_BREATHING);
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
-                    player.removeEffect(MobEffects.DOLPHINS_GRACE);
-                    player.removeEffect(MobEffects.WATER_BREATHING);
-                }
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
-    public static ICapabilityProvider createSlownessAttackCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 1.5F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
     public static ICapabilityProvider createAttackStrengthCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
@@ -1621,11 +1279,6 @@ public class Curios {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                        attribute.put(Attributes.ATTACK_DAMAGE,
-                                new AttributeModifier(uuid, "generic.attack_damage", 1,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
 
                     int i = 0;
                     if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1669,37 +1322,6 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createMobHeadCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
     public static ICapabilityProvider createDamageResistanceCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
@@ -1710,12 +1332,8 @@ public class Curios {
             @Override
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
-                if (stack.is(ModTags.Items.GHAST_COIN_SET)) {
+                if (stack.is(ModTags.Items.GHAST_COIN_SET) || stack.is(ModTags.Items.CREEPER_COIN_SET)) {
                     if (player != null) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 0,
-                                    false, false, true));
-                        }
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1737,7 +1355,7 @@ public class Curios {
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.GHAST_COIN_SET)) {
+                if (player != null && (stack.is(ModTags.Items.GHAST_COIN_SET) || stack.is(ModTags.Items.CREEPER_COIN_SET))) {
                     player.removeEffect(MobEffects.DAMAGE_RESISTANCE);
                 }
             }
@@ -1771,6 +1389,30 @@ public class Curios {
             @Override
             public ItemStack getStack() {
                 return stack;
+            }
+
+            @Override
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                Player player = Minecraft.getInstance().player;
+                if (player != null) {
+
+                    double d = 0;
+                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                        d = 1;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        d = 2;
+                    }
+                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        d = 3;
+                    }
+                    attribute.put(Attributes.MOVEMENT_SPEED,
+                            new AttributeModifier(uuid, "generic.movement_speed", 1 + d,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
+                return attribute;
             }
 
             @Nonnull

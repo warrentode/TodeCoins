@@ -1,6 +1,6 @@
 package com.github.warrentode.todecoins.mixin;
 
-import com.github.warrentode.todecoins.entity.ai.goal.AvoidPlayerWithCatDisguiseGoal;
+import com.github.warrentode.todecoins.entity.ai.goal.AvoidPlayerCatCoinGoal;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
@@ -21,6 +21,6 @@ public abstract class CreeperBehaviorMixin extends PathfinderMob {
     @Inject(at = @At("HEAD"), method = "registerGoals()V")
     private void todecoins_registerGoals(CallbackInfo ci) {
         Player player = Minecraft.getInstance().player;
-        this.goalSelector.addGoal(3, new AvoidPlayerWithCatDisguiseGoal<>(this, Player.class, 6.0F, 1.0D, 1.2D));
+        this.goalSelector.addGoal(3, new AvoidPlayerCatCoinGoal<>(this, Player.class, 6.0F, 1.0D, 1.2D));
     }
 }

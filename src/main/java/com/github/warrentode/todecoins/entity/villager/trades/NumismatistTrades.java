@@ -148,7 +148,8 @@ public class NumismatistTrades {
             ModItems.COPPER_PILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_RAVAGER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_SHULKER_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.COPPER_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.COPPER_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_SKELETON_COIN.get().asItem().getDefaultInstance().getItem()
     );
     private static ImmutableSet<ItemLike> SummerSeasonCoins = ImmutableSet.of(
             ModItems.IRON_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -218,7 +219,8 @@ public class NumismatistTrades {
             ModItems.IRON_PILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_RAVAGER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_SHULKER_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.IRON_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.IRON_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_SKELETON_COIN.get().asItem().getDefaultInstance().getItem()
     );
     private static ImmutableSet<ItemLike> AutumnSeasonCoins = ImmutableSet.of(
             ModItems.GOLD_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -288,7 +290,8 @@ public class NumismatistTrades {
             ModItems.GOLD_PILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_RAVAGER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_SHULKER_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.GOLD_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.GOLD_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_SKELETON_COIN.get().asItem().getDefaultInstance().getItem()
     );
     private static ImmutableSet<ItemLike> WinterSeasonCoins = ImmutableSet.of(
             ModItems.NETHERITE_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -358,7 +361,8 @@ public class NumismatistTrades {
             ModItems.NETHERITE_PILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_RAVAGER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_SHULKER_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.NETHERITE_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.NETHERITE_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_SKELETON_COIN.get().asItem().getDefaultInstance().getItem()
     );
 
     private static ImmutableSet<ItemLike> OfferedCurrentSeasonCoin = getOfferedCurrentSeasonCoin();

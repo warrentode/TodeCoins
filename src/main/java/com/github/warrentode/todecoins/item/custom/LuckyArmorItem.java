@@ -3,6 +3,7 @@ package com.github.warrentode.todecoins.item.custom;
 import com.github.warrentode.todecoins.item.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -29,8 +30,10 @@ public class LuckyArmorItem extends ArmorItem {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.lucky_armor_item.hover").withStyle(ChatFormatting.DARK_GRAY));
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
+        if (Screen.hasShiftDown()) {
+            tooltips.add(Component.translatable("tooltips.lucky_armor_item.hover").withStyle(ChatFormatting.DARK_GRAY));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

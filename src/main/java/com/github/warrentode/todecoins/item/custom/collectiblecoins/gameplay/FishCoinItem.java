@@ -22,7 +22,7 @@ public class FishCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isModLoaded("curios") ? null : Curios.createFishCharmProvider(stack);
+        return !TodeCoins.isModLoaded("curios") ? null : Curios.createWaterBreathingCharmProvider(stack);
     }
 
     @Override

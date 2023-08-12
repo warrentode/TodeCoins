@@ -717,6 +717,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_SILVERFISH_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SILVERFISH_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_SKELETON_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SKELETON_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SKELETON_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SKELETON_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SKELETON_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SKELETON_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SKELETON_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SKELETON_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_SKELETON_HORSE_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SKELETON_HORSE_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_SKELETON_HORSE_COIN.get().getDescriptionId(),

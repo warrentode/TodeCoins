@@ -22,7 +22,7 @@ public class HalloweenCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isModLoaded("curios") ? null : Curios.createNightVisionCharmProvider(stack);
+        return !TodeCoins.isModLoaded("curios") ? null : Curios.createHalloweenCharmProvider(stack);
     }
 
     @Override

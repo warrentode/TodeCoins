@@ -3,6 +3,7 @@ package com.github.warrentode.todecoins.loot.conditions.curio;
 import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
+import com.github.warrentode.todecoins.util.tags.ModTags;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
@@ -34,10 +35,12 @@ public class SalmonFishCharmCondition implements LootItemCondition {
         ServerLevel serverlevel = context.getLevel();
         Player player = Minecraft.getInstance().player;
         if (TodeCoins.isModLoaded("curios")) {
-            ItemStack isSalmonFishCharm = Curios.getCharmSlot(player);
-            return this.isSalmonFishCharm = Curios.matchSalmonFishCharm(isSalmonFishCharm);
+            ItemStack stack = Curios.getCharmSlot(player);
+            return this.isSalmonFishCharm = stack.is(ModTags.Items.SALMON_COIN_SET);
         }
-        else {return false;}
+        else {
+            return false;
+        }
     }
 
     public static SalmonFishCharmCondition.Builder matches() {

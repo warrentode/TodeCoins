@@ -3,6 +3,7 @@ package com.github.warrentode.todecoins.item.custom;
 import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -28,7 +29,9 @@ public class LuckyCoinItem extends CoinItem implements Wearable {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.lucky_coin.hover").withStyle(ChatFormatting.GOLD));
+        if (Screen.hasShiftDown()) {
+            tooltips.add(Component.translatable("tooltips.lucky_coin.hover").withStyle(ChatFormatting.GOLD));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

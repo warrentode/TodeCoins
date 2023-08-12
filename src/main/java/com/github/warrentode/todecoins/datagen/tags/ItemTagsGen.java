@@ -193,6 +193,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.SHEEP_COIN_SET)
                 .addTag(ModTags.Items.SHULKER_COIN_SET)
                 .addTag(ModTags.Items.SILVERFISH_COIN_SET)
+                .addTag(ModTags.Items.SKELETON_COIN_SET)
                 .addTag(ModTags.Items.SKELETON_HORSE_COIN_SET)
                 .addTag(ModTags.Items.SLIME_COIN_SET)
                 .addTag(ModTags.Items.SNIFFER_COIN_SET)
@@ -209,6 +210,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.WOLF_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        tag(ModTags.Items.SKELETON_COIN_SET)
+                .add(ModItems.COPPER_SKELETON_COIN.get())
+                .add(ModItems.IRON_SKELETON_COIN.get())
+                .add(ModItems.GOLD_SKELETON_COIN.get())
+                .add(ModItems.NETHERITE_SKELETON_COIN.get());
         tag(ModTags.Items.SILVERFISH_COIN_SET)
                 .add(ModItems.COPPER_SILVERFISH_COIN.get())
                 .add(ModItems.IRON_SILVERFISH_COIN.get())
