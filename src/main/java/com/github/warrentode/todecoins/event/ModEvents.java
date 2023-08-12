@@ -187,7 +187,8 @@ public class ModEvents {
 
                     if (TodeCoins.isModLoaded("curios")) {
                         if (stack != null) {
-                            if (stack.is(ModTags.Items.BEE_COIN_SET) || stack.is(ModTags.Items.CAVE_SPIDER_COIN_SET)) {
+                            if (stack.is(ModTags.Items.BEE_COIN_SET) || stack.is(ModTags.Items.CAVE_SPIDER_COIN_SET)
+                                    || stack.is(ModTags.Items.WITCH_COIN_SET)) {
                                 poisonCharm = stack;
                             }
                             if (stack.is(ModTags.Items.BLAZE_COIN_SET) || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
@@ -200,7 +201,8 @@ public class ModEvents {
                                     || stack.is(ModTags.Items.ZOMBIE_HORSE_COIN_SET)) {
                                 smiteCharm = stack;
                             }
-                            if (stack.getItem() instanceof IllagerCoinItem || stack.is(ModTags.Items.RAVAGER_COIN_SET) || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
+                            if (stack.getItem() instanceof IllagerCoinItem || stack.is(ModTags.Items.WITCH_COIN_SET)
+                                    || stack.is(ModTags.Items.RAVAGER_COIN_SET) || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
                                 illagerCharm = stack;
                             }
                             if (stack.getItem() instanceof ArthropodCoinItem) {
@@ -310,7 +312,7 @@ public class ModEvents {
                                 if (illagerCharm.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
                                     p = 3;
                                 }
-                                else if (illagerCharm.is(ModTags.Items.VINDICATOR_COIN_SET)) {
+                                else if (illagerCharm.is(ModTags.Items.VINDICATOR_COIN_SET) || stack.is(ModTags.Items.WITCH_COIN_SET)) {
                                     p = 2;
                                 }
                                 else if (illagerCharm.is(ModTags.Items.PILLAGER_COIN_SET) || illagerCharm.is(ModTags.Items.VEX_COIN_SET)) {

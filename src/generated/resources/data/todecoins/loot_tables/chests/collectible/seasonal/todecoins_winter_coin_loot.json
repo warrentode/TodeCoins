@@ -3217,6 +3217,21 @@
             }
           ],
           "name": "todecoins:collectible_coin_warden_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:swamp_hut"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_witch_netherite"
         }
       ],
       "rolls": 1.0

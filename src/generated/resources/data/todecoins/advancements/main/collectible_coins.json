@@ -3253,6 +3253,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_witch_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_witch_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_witch_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_witch_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_wolf_copper": {
       "conditions": {
         "items": [
@@ -4226,6 +4274,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_warden_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_witch_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_witch_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_witch_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_witch_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_wolf_copper"

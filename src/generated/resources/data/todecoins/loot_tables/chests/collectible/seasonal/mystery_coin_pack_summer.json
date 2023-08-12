@@ -287,6 +287,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_warden_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_witch_iron"
         }
       ],
       "rolls": 1.0

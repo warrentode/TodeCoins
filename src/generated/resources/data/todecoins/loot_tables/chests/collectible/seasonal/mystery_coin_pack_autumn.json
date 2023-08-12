@@ -287,6 +287,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_warden_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_witch_gold"
         }
       ],
       "rolls": 1.0

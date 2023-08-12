@@ -43,14 +43,13 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Curios {
     // TODO is there a better, more streamlined way to organize all this? does each effect really need a separate method
     // or can that be managed with if-else checks within just a couple of methods?
-    // TODO learn how custom enhancements work and how enchantments apply to Curio items in order to expand the variety
+    // TODO learn how custom enchantments work and how enchantments apply to Curio items in order to expand the variety
     // of equipped effects of these coins since it feels very repetitive to me right now
     // [LittleBear suggestions:]
     // TODO look into how bone meal works and how that can be altered for the bee coin
     // TODO look into adding Loyalty effect for the Drowned coin
     // TODO look into adding Frost Walker effect for Iceologer, Stray, Snow Golem coins
     // TODO can the splash potion radius be changed for the Witch coin?
-    // TODO the Warden coin should have a HUGE health bonus since it can only be found in the Ancient City or off the Warden
     // TODO the Sniffer coin influence what you find while digging?
     // TODO since the coins do not stack in inventory, I may need to make them breakable and repairable in some fashion to reduce clutter
 
