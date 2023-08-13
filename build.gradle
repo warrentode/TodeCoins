@@ -10,16 +10,15 @@ buildscript {
         maven { url = 'https://jitpack.io' }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0,6.2', changing: true
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
 plugins {
     id 'eclipse'
-    id 'java-library'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
@@ -138,12 +137,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"   : project.name,
+                "Specification-Title"     : project.name,
                 "Specification-Vendor"    : "WarrenTode",
                 "Specification-Version"   : project.jar.archiveVersion,
-                "Implementation-Title"  : project.name,
-                "Implementation-Version": project.jar.archiveVersion,
-                "Implementation-Vendor" : "WarrenTode",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : "WarrenTode",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs"            : "mixins.todecoins.json"
         ])

@@ -121,6 +121,7 @@ public class ModTags {
         public static final TagKey<Item> WITHER_COIN_SET = modItemTag("collectible_coins/entity_coins/wither_coin_set");
         public static final TagKey<Item> WITHER_SKELETON_COIN_SET = modItemTag("collectible_coins/entity_coins/wither_skeleton_coin_set");
         public static final TagKey<Item> WOLF_COIN_SET = modItemTag("collectible_coins/entity_coins/wolf_coin_set");
+        public static final TagKey<Item> ZOGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/zoglin_coin_set");
         public static final TagKey<Item> ZOMBIE_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_horse_coin_set");
         public static final TagKey<Item> ZOMBIFIED_PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/zombified_piglin_coin_set");
 
