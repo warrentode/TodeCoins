@@ -48,3 +48,8 @@ jobs:
         uses: bash ./gradlew publish
         with:
           arguments: build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Package
+          path: build/libs
