@@ -5,16 +5,18 @@ issueTrackerURL = "https://github.com/warrentode/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "${file.jarVersion}"
+version = "1.19.2-1.5.2"
 displayName = "TodeCoins"
 updateJSONURL = "https://raw.githubusercontent.com/warrentode/TodeCoins/master/update.json"
 displayURL = "https://github.com/warrentode/TodeCoins"
 logoFile = "logo.png"
-credits = '''Special thanks to my sons, and my supporters:
-Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!'''
+credits = '''Special thanks to my sons, and my supporters: Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!'''
 authors = "Warren Tode (ToadieOdie)"
-description = '''Adds currency, collectible coins, a collectible coin trader, a banker and leprechaun villager with trades,
-an armor set with set effects, and luck potions to the game.'''
+description = '''Adds currency, collectible coins, a collectible coin trader, a banker and leprechaun villager with trades, an armor set with set effects, and luck potions to the game.'''
+
+[modproperties.todecoins]
+catalogueItemIcon = "todecoins:currency_stamp" #Support for Catalogue mod
+configuredBackground = "todecoins:textures/block/pot.png" #Support for Configured mod
 
 [[dependencies.todecoins]]
 modId = "forge"
@@ -82,19 +84,3 @@ mandatory = false
 versionRange = "[1.8.5,)"
 ordering = "BEFORE"
 side = "BOTH"
-[[dependencies.todecoins]]
-modId = "configured"
-mandatory = false
-versionRange = "[2.1.1,)"
-ordering = "NONE"
-side = "CLIENT"
-[[dependencies.todecoins]]
-modId = "catalogue"
-mandatory = false
-versionRange = "[1.7.0,)"
-ordering = "NONE"
-side = "CLIENT"
-
-[modproperties.todecoins]
-catalogueItemIcon = "todecoins:currency_stamp" #Support for Catalogue mod
-configuredBackground = "todecoins:textures/block/pot.png" #Support for Configured mod

@@ -7,18 +7,19 @@ buildscript {
         mavenCentral()
         maven { url = 'https://maven.minecraftforge.net/' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
-        maven { url 'https://jitpack.io' }
+        maven { url = 'https://jitpack.io' }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0,6.2)', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
 plugins {
     id 'eclipse'
+    id 'java-library'
     id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'net.minecraftforge.gradle' version '5.1.+'
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
@@ -29,16 +30,17 @@ apply plugin: 'org.spongepowered.mixin'
 
 group = "com.github.warrentode"
 archivesBaseName = "todecoins"
-version = "${mc_version}-${mod_version}"
+version = "1.19.2-1.5.2"
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(20)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '20'
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '17'
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: 'parchment', version: '2022.11.27-1.19.2'
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    // Currently, this location cannot be changed from the default.
 
     runs {
         client {
@@ -117,6 +119,7 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.2.21'
+
     runtimeOnly fg.deobf("curse.maven:configured-457570:4462837")
     runtimeOnly fg.deobf("curse.maven:catalogue-459701:4171024")
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0")
@@ -128,6 +131,7 @@ dependencies {
     implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4637293")
     implementation fg.deobf("curse.maven:sophisticated-core-618298:4668694")
     implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4639223")
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
@@ -177,5 +181,5 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
-    options.release = 20
+    options.release = 17
 }
