@@ -29,9 +29,11 @@ apply plugin: 'org.spongepowered.mixin'
 
 group = "com.github.warrentode"
 archivesBaseName = "todecoins"
-version = "1.19.2-1.5.2"
+version = "${mc_version}-${mod_version}"
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+java.toolchain.languageVersion = JavaLanguageVersion.of(20)
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '20'
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
@@ -132,12 +134,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "todecoins",
+                "Specification-Title"   : project.name,
                 "Specification-Vendor"    : "WarrenTode",
                 "Specification-Version"   : project.jar.archiveVersion,
-                "Implementation-Title"  : "Forge",
-                "Implementation-Version": "43.2.21",
-                "Implementation-Vendor" : "Forge",
+                "Implementation-Title"  : project.name,
+                "Implementation-Version": project.jar.archiveVersion,
+                "Implementation-Vendor" : "WarrenTode",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs"            : "mixins.todecoins.json"
         ])
@@ -175,4 +177,5 @@ publishing {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.release = 20
 }
