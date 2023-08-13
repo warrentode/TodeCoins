@@ -668,6 +668,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITHER_COIN.get()).when(SPRING)
                                         .when(IN_NETHER_FORTRESS))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ZOGLIN_COIN.get()).when(SPRING)
+                                        .when(IN_OVERWORLD))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
@@ -984,6 +987,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITHER_COIN.get()).when(SUMMER)
                                         .when(IN_NETHER_FORTRESS))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_ZOGLIN_COIN.get()).when(SUMMER)
+                                        .when(IN_OVERWORLD))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
@@ -1300,6 +1306,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITHER_COIN.get()).when(AUTUMN)
                                         .when(IN_NETHER_FORTRESS))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ZOGLIN_COIN.get()).when(AUTUMN)
+                                        .when(IN_OVERWORLD))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1616,6 +1625,9 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITHER_COIN.get()).when(WINTER)
                                         .when(IN_NETHER_FORTRESS))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOGLIN_COIN.get()).when(WINTER)
+                                        .when(IN_OVERWORLD))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1696,6 +1708,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITCH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITHER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITHER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_HOGLIN_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1776,6 +1789,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITCH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITHER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITHER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_HOGLIN_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1856,6 +1870,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITCH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITHER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITHER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_HOGLIN_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -1936,6 +1951,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITCH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITHER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITHER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_HOGLIN_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

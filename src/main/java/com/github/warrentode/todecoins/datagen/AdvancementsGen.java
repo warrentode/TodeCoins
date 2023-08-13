@@ -879,6 +879,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_WOLF_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_WOLF_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_ZOGLIN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ZOGLIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ZOGLIN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ZOGLIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ZOGLIN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ZOGLIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ZOGLIN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ZOGLIN_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ZOMBIE_HORSE_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_ZOMBIE_HORSE_COIN.get().getDescriptionId(),

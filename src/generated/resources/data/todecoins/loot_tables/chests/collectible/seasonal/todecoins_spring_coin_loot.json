@@ -3247,6 +3247,36 @@
             }
           ],
           "name": "todecoins:collectible_coin_wither_skeleton_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:fortress"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_zoglin_copper"
         }
       ],
       "rolls": 1.0

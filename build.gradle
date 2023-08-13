@@ -1,7 +1,7 @@
 //file:noinspection GroovyAssignabilityCheck
 //file:noinspection GrUnresolvedAccess
 //file:noinspection GroovyAccessibility
-// TODO figure out how to get this project to publish to JitPack/GitHub correctly to be used as a dependency
+// TODO figure out how to get this mod setup correctly somewhere to be used as a dependency
 buildscript {
     repositories {
         mavenCentral()

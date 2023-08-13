@@ -199,7 +199,7 @@ public class ModEvents {
                                 slownessCharm = stack;
                             }
                             if (stack.getItem() instanceof UndeadCoinItem || stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
-                                    || stack.is(ModTags.Items.ZOMBIE_HORSE_COIN_SET)) {
+                                    || stack.is(ModTags.Items.ZOMBIE_HORSE_COIN_SET) || stack.is(ModTags.Items.ZOGLIN_COIN_SET)) {
                                 smiteCharm = stack;
                             }
                             if (stack.getItem() instanceof IllagerCoinItem || stack.is(ModTags.Items.WITCH_COIN_SET)

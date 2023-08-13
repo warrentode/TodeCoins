@@ -295,6 +295,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_wither_skeleton_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_hoglin_iron"
         }
       ],
       "rolls": 1.0

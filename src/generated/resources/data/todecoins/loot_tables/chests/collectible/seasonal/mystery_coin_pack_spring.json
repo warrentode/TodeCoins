@@ -295,6 +295,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_wither_skeleton_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_hoglin_copper"
         }
       ],
       "rolls": 1.0

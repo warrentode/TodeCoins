@@ -295,6 +295,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_wither_skeleton_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_hoglin_netherite"
         }
       ],
       "rolls": 1.0

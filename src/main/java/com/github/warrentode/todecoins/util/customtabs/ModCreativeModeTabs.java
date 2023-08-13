@@ -485,6 +485,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_WOLF_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_WOLF_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_WOLF_COIN.get().getDefaultInstance());
+            // ZOGLIN COIN SET
+            items.add(ModItems.COPPER_ZOGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_ZOGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_ZOGLIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_ZOGLIN_COIN.get().getDefaultInstance());
             // ZOMBIE HORSE COIN SET
             items.add(ModItems.COPPER_ZOMBIE_HORSE_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_ZOMBIE_HORSE_COIN.get().getDefaultInstance());

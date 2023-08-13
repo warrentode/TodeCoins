@@ -33,6 +33,9 @@ public class NumismatistTrades {
     static RandomSource source = RandomSource.create();
     static int rarityLevel1 = 1;
     static int rarityLevel2 = 2;
+
+    // TODO actually I think there needs to be a rare vanilla offers list to mix with the cagerium items,
+    // perhaps related to auto farming if the mod is loaded and if the mod isn't, a different rare item pool entirely?
     private static ImmutableSet<ItemLike> CageriumList = ImmutableSet.of(
             Cagerium.PLATE_GEM.get().asItem().getDefaultInstance().getItem(),
             Cagerium.CAGE_KEY.get().asItem().getDefaultInstance().getItem(),

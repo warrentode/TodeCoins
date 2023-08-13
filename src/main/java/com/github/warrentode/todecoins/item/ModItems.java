@@ -806,6 +806,15 @@ public class ModItems {
             () -> new CanineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_WOLF_COIN = ITEMS.register("collectible_coin_wolf_netherite",
             () -> new CanineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // zoglin set
+    public static final RegistryObject<Item> COPPER_ZOGLIN_COIN = ITEMS.register("collectible_coin_zoglin_copper",
+            () -> new SwineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_ZOGLIN_COIN = ITEMS.register("collectible_coin_zoglin_iron",
+            () -> new SwineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_ZOGLIN_COIN = ITEMS.register("collectible_coin_zoglin_gold",
+            () -> new SwineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_ZOGLIN_COIN = ITEMS.register("collectible_coin_zoglin_netherite",
+            () -> new SwineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // zombie horse set
     public static final RegistryObject<Item> COPPER_ZOMBIE_HORSE_COIN = ITEMS.register("collectible_coin_zombie_horse_copper",
             () -> new EquineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
