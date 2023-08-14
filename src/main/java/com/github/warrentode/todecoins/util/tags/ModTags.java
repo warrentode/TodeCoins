@@ -64,19 +64,22 @@ public class ModTags {
         public static final TagKey<Item> DONKEY_COIN_SET = modItemTag("collectible_coins/entity_coins/donkey_coin_set");
         public static final TagKey<Item> DROWNED_COIN_SET = modItemTag("collectible_coins/entity_coins/drowned_coin_set");
         public static final TagKey<Item> ELDER_GUARDIAN_COIN_SET = modItemTag("collectible_coins/entity_coins/elder_guardian_coin_set");
+        public static final TagKey<Item> ENDER_DRAGON_COIN_SET = modItemTag("collectible_coins/entity_coins/ender_dragon_coin_set");
         public static final TagKey<Item> ENDERMAN_COIN_SET = modItemTag("collectible_coins/entity_coins/enderman_coin_set");
         public static final TagKey<Item> ENDERMITE_COIN_SET = modItemTag("collectible_coins/entity_coins/endermite_coin_set");
         public static final TagKey<Item> EVOKER_COIN_SET = modItemTag("collectible_coins/entity_coins/evoker_coin_set");
         public static final TagKey<Item> FOX_COIN_SET = modItemTag("collectible_coins/entity_coins/fox_coin_set");
         public static final TagKey<Item> FROG_COIN_SET = modItemTag("collectible_coins/entity_coins/frog_coin_set");
+        public static final TagKey<Item> GHAST_COIN_SET = modItemTag("collectible_coins/entity_coins/ghast_coin_set");
+        public static final TagKey<Item> GIANT_COIN_SET = modItemTag("collectible_coins/entity_coins/giant_coin_set");
         public static final TagKey<Item> GLOW_SQUID_COIN_SET = modItemTag("collectible_coins/entity_coins/glow_squid_coin_set");
         public static final TagKey<Item> GOAT_COIN_SET = modItemTag("collectible_coins/entity_coins/goat_coin_set");
         public static final TagKey<Item> GUARDIAN_COIN_SET = modItemTag("collectible_coins/entity_coins/guardian_coin_set");
-        public static final TagKey<Item> GHAST_COIN_SET = modItemTag("collectible_coins/entity_coins/ghast_coin_set");
         public static final TagKey<Item> HOGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/hoglin_coin_set");
         public static final TagKey<Item> HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/horse_coin_set");
         public static final TagKey<Item> HUSK_COIN_SET = modItemTag("collectible_coins/entity_coins/husk_coin_set");
         public static final TagKey<Item> IRON_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/iron_golem_coin_set");
+        public static final TagKey<Item> ILLUSIONER_COIN_SET = modItemTag("collectible_coins/entity_coins/illusioner_coin_set");
         public static final TagKey<Item> LLAMA_COIN_SET = modItemTag("collectible_coins/entity_coins/llama_coin_set");
         public static final TagKey<Item> MAGMA_CUBE_COIN_SET = modItemTag("collectible_coins/entity_coins/magma_cube_coin_set");
         public static final TagKey<Item> MOOBLOOM_COIN_SET = modItemTag("collectible_coins/entity_coins/moobloom_coin_set");
@@ -122,7 +125,9 @@ public class ModTags {
         public static final TagKey<Item> WITHER_SKELETON_COIN_SET = modItemTag("collectible_coins/entity_coins/wither_skeleton_coin_set");
         public static final TagKey<Item> WOLF_COIN_SET = modItemTag("collectible_coins/entity_coins/wolf_coin_set");
         public static final TagKey<Item> ZOGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/zoglin_coin_set");
+        public static final TagKey<Item> ZOMBIE_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_coin_set");
         public static final TagKey<Item> ZOMBIE_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_horse_coin_set");
+        public static final TagKey<Item> ZOMBIE_VILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_villager_coin_set");
         public static final TagKey<Item> ZOMBIFIED_PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/zombified_piglin_coin_set");
 
         public static final TagKey<Item> TEXTILES = modItemTag("textiles");
@@ -155,6 +160,7 @@ public class ModTags {
     private static @NotNull TagKey<Block> modBlockTag(String path) {
         return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MODID, path));
     }
+
     private static @NotNull TagKey<Item> modItemTag(String path) {
         return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MODID, path));
     }

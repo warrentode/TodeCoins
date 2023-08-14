@@ -8,31 +8,10 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                },
-                {
-                  "condition": "todecoins:entity_type_tag_condition",
-                  "tag": "forge:ender_dragon"
-                },
-                {
-                  "condition": "todecoins:entity_type_tag_condition",
-                  "tag": "forge:enderman"
-                },
-                {
-                  "condition": "todecoins:entity_type_tag_condition",
-                  "tag": "forge:endermites"
-                },
-                {
-                  "condition": "todecoins:entity_type_tag_condition",
-                  "tag": "forge:phantom"
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -64,19 +43,10 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                },
-                {
-                  "condition": "todecoins:entity_type_tag_condition",
-                  "tag": "forge:enderman"
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
             },
             {
               "condition": "todecoins:entity_type_tag_condition",

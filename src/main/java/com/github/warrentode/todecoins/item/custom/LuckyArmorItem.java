@@ -34,6 +34,9 @@ public class LuckyArmorItem extends ArmorItem {
         if (Screen.hasShiftDown()) {
             tooltips.add(Component.translatable("tooltips.lucky_armor_item.hover").withStyle(ChatFormatting.DARK_GRAY));
         }
+        else {
+            tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

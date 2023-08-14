@@ -1,6 +1,54 @@
 {
   "parent": "todecoins:main/collectible_coins",
   "criteria": {
+    "find_item.todecoins.collectible_coin_illusioner_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_illusioner_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_illusioner_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_illusioner_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_moobloom_copper": {
       "conditions": {
         "items": [
@@ -66,6 +114,18 @@
     }
   },
   "requirements": [
+    [
+      "find_item.todecoins.collectible_coin_illusioner_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_illusioner_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_illusioner_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_illusioner_netherite"
+    ],
     [
       "find_item.todecoins.collectible_coin_moobloom_copper"
     ],

@@ -302,7 +302,23 @@
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:collectible_coin_hoglin_gold"
+          "name": "todecoins:collectible_coin_zoglin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_villager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ender_dragon_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_giant_gold"
         }
       ],
       "rolls": 1.0

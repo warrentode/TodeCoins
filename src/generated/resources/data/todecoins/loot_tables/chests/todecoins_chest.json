@@ -25,10 +25,33 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "dimension": "minecraft:the_nether"
-              }
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:the_nether"
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "dimension": "minecraft:overworld"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "dimension": "minecraft:the_end"
+                    }
+                  }
+                }
+              ]
             }
           ],
           "name": "todecoins:chests/currency/todecoins_nether_gold_coin_loot",
@@ -39,10 +62,33 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "dimension": "minecraft:the_end"
-              }
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:the_end"
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "dimension": "minecraft:the_nether"
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "dimension": "minecraft:overworld"
+                    }
+                  }
+                }
+              ]
             }
           ],
           "name": "todecoins:chests/currency/todecoins_endonian_coin_loot",

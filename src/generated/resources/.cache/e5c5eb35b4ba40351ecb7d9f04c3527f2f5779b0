@@ -1,9 +1,9 @@
-// 1.19.2	2023-08-13T18:30:07.0078505	Advancements
+// 1.19.2	2023-08-14T03:27:54.1576607	Advancements
 19dfee6e968eb5937375eccad715a9a5789f2ec7 data/todecoins/advancements/main/bagging_dough.json
-4620a19d603d6611803adc948839bdf28b67bfde data/todecoins/advancements/main/collectible_coins.json
+65ea17d8670efbd98bf7b36b6fa161de21f00099 data/todecoins/advancements/main/collectible_coins.json
 6518a1b000a78205b31aacdd0470eaf7629f21ea data/todecoins/advancements/main/collectible_ecologics_coins.json
-d6730d09b1d0085c193d0f3619326abcc9cd12bb data/todecoins/advancements/main/collectible_friendsandfoes_coins.json
-8452264c87c6d32328be1607a234fdde99cf9536 data/todecoins/advancements/main/collectible_upcoming_coins.json
+7d002409a203c1929dff9e242778f052b2b8bc3e data/todecoins/advancements/main/collectible_friendsandfoes_coins.json
+4941e159fcbbf5cb26ff7f6e9b6d0fd9b0757c27 data/todecoins/advancements/main/collectible_unused_upcoming_coins.json
 91cffb0845472cec35e00626814d218780842008 data/todecoins/advancements/main/craft_coinpress.json
 56a1aa742c0b340076403fd29f2e32fec15d5376 data/todecoins/advancements/main/lucky_armor.json
 92894a51e32052b581d12af791feb96a17e3dd77 data/todecoins/advancements/main/lucky_clover.json

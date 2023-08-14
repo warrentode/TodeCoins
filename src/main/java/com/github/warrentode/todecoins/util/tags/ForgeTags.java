@@ -38,6 +38,7 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> FOX_TYPES = forgeEntityTypeTag("fox");
         public static final TagKey<EntityType<?>> FROG_TYPES = forgeEntityTypeTag("frog");
         public static final TagKey<EntityType<?>> GHAST_TYPES = forgeEntityTypeTag("ghast");
+        public static final TagKey<EntityType<?>> GIANT_TYPES = forgeEntityTypeTag("giant");
         public static final TagKey<EntityType<?>> GLOW_SQUID_TYPES = forgeEntityTypeTag("glow_squid");
         public static final TagKey<EntityType<?>> GOAT_TYPES = forgeEntityTypeTag("goat");
         public static final TagKey<EntityType<?>> GUARDIAN_TYPES = forgeEntityTypeTag("guardian");

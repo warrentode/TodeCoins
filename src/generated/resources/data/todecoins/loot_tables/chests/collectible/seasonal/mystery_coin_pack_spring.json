@@ -302,7 +302,23 @@
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:collectible_coin_hoglin_copper"
+          "name": "todecoins:collectible_coin_zoglin_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_villager_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ender_dragon_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_giant_copper"
         }
       ],
       "rolls": 1.0

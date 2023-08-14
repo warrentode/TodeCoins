@@ -302,7 +302,23 @@
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:collectible_coin_hoglin_iron"
+          "name": "todecoins:collectible_coin_zoglin_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_villager_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ender_dragon_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_giant_iron"
         }
       ],
       "rolls": 1.0

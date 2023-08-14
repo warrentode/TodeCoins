@@ -22,7 +22,7 @@ public class UndeadCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isModLoaded("curios") ? null : Curios.createSmiteCharmProvider(stack);
+        return !TodeCoins.isModLoaded("curios") ? null : Curios.createUndeadCharmProvider(stack);
     }
 
     @Override

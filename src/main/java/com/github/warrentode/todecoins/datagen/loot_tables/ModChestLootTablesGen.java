@@ -179,9 +179,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_GOLD_COIN_LOOT)
                                         .setWeight(5).setQuality(2))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_LOOT)
-                                        .setWeight(5).setQuality(2).when(IN_NETHER))
+                                        .setWeight(5).setQuality(2).when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ENDONIAN_COIN_LOOT)
-                                        .setWeight(5).setQuality(2).when(IN_THE_END))
+                                        .setWeight(5).setQuality(2).when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT)
                                         .setWeight(4).setQuality(3))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_LOOT)
@@ -250,18 +250,22 @@ public class ModChestLootTablesGen extends ChestLoot {
                         .withPool(LootPool.lootPool()
                                 .setRolls(UniformGenerator.between(1.0F, 5.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).setWeight(1).when(IN_NETHER)
+                                .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).setWeight(1)
+                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert()))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
-                                .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).setWeight(1).when(IN_NETHER))
+                                .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).setWeight(1)
+                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_ENDONIAN_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(UniformGenerator.between(1.0F, 5.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).setWeight(1).when(IN_THE_END)
+                                .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).setWeight(1)
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert()))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
-                                .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).setWeight(1).when(IN_THE_END))
+                                .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).setWeight(1)
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT,
                 LootTable.lootTable()
@@ -582,8 +586,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_NETHER_FORTRESS)
                                                 .or(IN_RUINED_PORTAL_NETHER)).when(SPRING))
 
-                                .add(LootItem.lootTableItem(ModItems.COPPER_CREEPER_COIN.get())
-                                        .when(IN_OVERWORLD).when(SPRING))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_CREEPER_COIN.get()).when(SPRING)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_DROWNED_COIN.get()).when(SPRING)
                                         .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
@@ -604,7 +608,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_OCEAN_RUIN_COLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ENDERMITE_COIN.get()).when(SPRING)
-                                        .when(IN_THE_END))
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_EVOKER_COIN.get()).when(SPRING)
                                         .when(IN_MANSION))
@@ -616,7 +620,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_MANSION))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_GHAST_COIN.get()).when(SPRING)
-                                        .when(IN_NETHER))
+                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_HUSK_COIN.get()).when(SPRING)
                                         .when(IN_DESERT))
@@ -643,7 +647,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_PILLAGER_OUTPOST))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SHULKER_COIN.get()).when(SPRING)
-                                        .when(IN_THE_END))
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SILVERFISH_COIN.get()).when(SPRING)
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
@@ -670,7 +674,19 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ZOGLIN_COIN.get()).when(SPRING)
-                                        .when(IN_OVERWORLD))
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ZOMBIE_COIN.get()).when(SPRING)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ZOMBIE_VILLAGER_COIN.get()).when(SPRING)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ENDER_DRAGON_COIN.get()).when(SPRING)
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_GIANT_COIN.get()).when(SPRING)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
@@ -901,8 +917,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_NETHER_FORTRESS)
                                                 .or(IN_RUINED_PORTAL_NETHER)).when(SUMMER))
 
-                                .add(LootItem.lootTableItem(ModItems.IRON_CREEPER_COIN.get())
-                                        .when(IN_OVERWORLD).when(SUMMER))
+                                .add(LootItem.lootTableItem(ModItems.IRON_CREEPER_COIN.get()).when(SUMMER)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_DROWNED_COIN.get()).when(SUMMER)
                                         .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
@@ -923,7 +939,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_OCEAN_RUIN_COLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_ENDERMITE_COIN.get()).when(SUMMER)
-                                        .when(IN_THE_END))
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_EVOKER_COIN.get()).when(SUMMER)
                                         .when(IN_MANSION))
@@ -935,7 +951,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_MANSION))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_GHAST_COIN.get()).when(SUMMER)
-                                        .when(IN_NETHER))
+                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_HUSK_COIN.get()).when(SUMMER)
                                         .when(IN_DESERT))
@@ -962,7 +978,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_PILLAGER_OUTPOST))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_SHULKER_COIN.get()).when(SUMMER)
-                                        .when(IN_THE_END))
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_SILVERFISH_COIN.get()).when(SUMMER)
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
@@ -989,7 +1005,19 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_ZOGLIN_COIN.get()).when(SUMMER)
-                                        .when(IN_OVERWORLD))
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_ZOMBIE_COIN.get()).when(SUMMER)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_ZOMBIE_VILLAGER_COIN.get()).when(SUMMER)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_ENDER_DRAGON_COIN.get()).when(SUMMER)
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_GIANT_COIN.get()).when(SUMMER)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
@@ -1220,8 +1248,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_NETHER_FORTRESS)
                                                 .or(IN_RUINED_PORTAL_NETHER)).when(AUTUMN))
 
-                                .add(LootItem.lootTableItem(ModItems.GOLD_CREEPER_COIN.get())
-                                        .when(IN_OVERWORLD).when(AUTUMN))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_CREEPER_COIN.get()).when(AUTUMN)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_DROWNED_COIN.get()).when(AUTUMN)
                                         .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
@@ -1242,7 +1270,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_OCEAN_RUIN_COLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ENDERMITE_COIN.get()).when(AUTUMN)
-                                        .when(IN_THE_END))
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_EVOKER_COIN.get()).when(AUTUMN)
                                         .when(IN_MANSION))
@@ -1281,7 +1309,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_PILLAGER_OUTPOST))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SHULKER_COIN.get()).when(AUTUMN)
-                                        .when(IN_THE_END))
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SILVERFISH_COIN.get()).when(AUTUMN)
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
@@ -1308,7 +1336,19 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ZOGLIN_COIN.get()).when(AUTUMN)
-                                        .when(IN_OVERWORLD))
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ZOMBIE_COIN.get()).when(AUTUMN)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ZOMBIE_VILLAGER_COIN.get()).when(AUTUMN)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ENDER_DRAGON_COIN.get()).when(AUTUMN)
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_GIANT_COIN.get()).when(AUTUMN)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -1539,8 +1579,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_NETHER_FORTRESS)
                                                 .or(IN_RUINED_PORTAL_NETHER)).when(WINTER))
 
-                                .add(LootItem.lootTableItem(ModItems.NETHERITE_CREEPER_COIN.get())
-                                        .when(IN_OVERWORLD).when(WINTER))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_CREEPER_COIN.get()).when(WINTER)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_DROWNED_COIN.get())
                                         .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
@@ -1561,7 +1601,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_OCEAN_RUIN_COLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMITE_COIN.get()).when(WINTER)
-                                        .when(IN_THE_END))
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_EVOKER_COIN.get()).when(WINTER)
                                         .when(IN_MANSION))
@@ -1600,7 +1640,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_PILLAGER_OUTPOST))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SHULKER_COIN.get()).when(WINTER)
-                                        .when(IN_THE_END))
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SILVERFISH_COIN.get()).when(WINTER)
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
@@ -1627,7 +1667,19 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOGLIN_COIN.get()).when(WINTER)
-                                        .when(IN_OVERWORLD))
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIE_COIN.get()).when(WINTER)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIE_VILLAGER_COIN.get()).when(WINTER)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDER_DRAGON_COIN.get()).when(WINTER)
+                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_GIANT_COIN.get()).when(WINTER)
+                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1708,7 +1760,11 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITCH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITHER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITHER_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.COPPER_HOGLIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ZOGLIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ZOMBIE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ZOMBIE_VILLAGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ENDER_DRAGON_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_GIANT_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1789,7 +1845,11 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITCH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITHER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITHER_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.IRON_HOGLIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_ZOGLIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_ZOMBIE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_ZOMBIE_VILLAGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_ENDER_DRAGON_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_GIANT_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1870,7 +1930,11 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITCH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITHER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITHER_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.GOLD_HOGLIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ZOGLIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ZOMBIE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ZOMBIE_VILLAGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ENDER_DRAGON_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_GIANT_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -1951,7 +2015,11 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITCH_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITHER_SKELETON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITHER_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.NETHERITE_HOGLIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOGLIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIE_VILLAGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDER_DRAGON_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_GIANT_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

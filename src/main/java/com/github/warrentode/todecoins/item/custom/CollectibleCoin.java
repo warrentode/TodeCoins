@@ -19,7 +19,7 @@ public class CollectibleCoin extends CoinItem {
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
-            tooltips.add(Component.translatable("tooltips.collectible_coin.hover").withStyle(ChatFormatting.DARK_GRAY));
+            tooltips.add(Component.translatable("tooltips.collectible_coin.hover").withStyle(ChatFormatting.DARK_GRAY).withStyle(ChatFormatting.ITALIC));
         }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }

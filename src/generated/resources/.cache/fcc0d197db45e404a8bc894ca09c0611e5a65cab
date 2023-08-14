@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-10T01:02:11.530224	Tags for minecraft:entity_type
+// 1.19.2	2023-08-14T03:27:54.150679	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
@@ -25,7 +25,8 @@ f60c3aa2adefe93f28eb08cff81788380b9f4c12 data/forge/tags/entity_types/evoker.jso
 d6579e4bdc95064a373ff2e4145bbb7fd13131cf data/forge/tags/entity_types/fox.json
 f2e3fd139c263703841c245359d5e0340562b3e9 data/forge/tags/entity_types/frog.json
 bfa5943a99eb5bf10495ae60b03df16794502725 data/forge/tags/entity_types/ghast.json
-95c73c3d030ab6cd70ecb01325ac329923f6f128 data/forge/tags/entity_types/glow_squid.json
+95c73c3d030ab6cd70ecb01325ac329923f6f128 data/forge/tags/entity_types/giant.json
+6d219ea908619838e2981c35fe65ec4bcf27bf34 data/forge/tags/entity_types/glow_squid.json
 8402c24b8872a973f5f97bfec0ac81ef2b167b89 data/forge/tags/entity_types/goat.json
 ec24edf6d1ea9189a4dc1a29a781bc696fb575d3 data/forge/tags/entity_types/guardian.json
 f7cc9e720867f2fea58d5b0840bdce7a253ca3fe data/forge/tags/entity_types/hoglin.json

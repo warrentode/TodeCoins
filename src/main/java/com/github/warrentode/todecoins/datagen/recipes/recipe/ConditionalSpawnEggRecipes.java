@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.datagen.recipes.recipe;
 
+import com.faboslav.friendsandfoes.init.FriendsAndFoesItems;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.github.warrentode.todecoins.util.tags.ModTags;
@@ -91,20 +92,6 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
                         .unlockedBy("has_blaze_coin", has(ModTags.Items.BLAZE_COIN_SET))
                         ::save)
                 .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.BLAZE_SPAWN_EGG));
-
-        ConditionalRecipe.builder()
-                .addCondition(and(modLoaded("cagerium"), TRUE()))
-                .addCondition(and(modLoaded("ecologics"), TRUE()))
-                .addRecipe(ShapelessRecipeBuilder.shapeless(CAMEL_SPAWN_EGG.get(), 1)
-                        .group("spawn_eggs")
-                        .requires(PRICKLY_PEAR.get())
-                        .requires(Items.HEART_OF_THE_SEA)
-                        .requires(ModTags.Items.SOUL_BINDER)
-                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
-                        .requires(ModTags.Items.CAMEL_COIN_SET)
-                        .unlockedBy("has_camel_coin", has(ModTags.Items.CAMEL_COIN_SET))
-                        ::save)
-                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + CAMEL_SPAWN_EGG.get()));
 
         ConditionalRecipe.builder()
                 .addCondition(and(modLoaded("cagerium"), TRUE()))
@@ -238,6 +225,19 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
 
         ConditionalRecipe.builder()
                 .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Cagerium.ENDER_DRAGON_SPAWN_EGG.get(), 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.ENDER_DRAGON_COIN_SET)
+                        .unlockedBy("has_ender_dragon_coin", has(ModTags.Items.ENDER_DRAGON_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Cagerium.ENDER_DRAGON_SPAWN_EGG.get()));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
                 .addRecipe(ShapelessRecipeBuilder.shapeless(Items.ENDERMAN_SPAWN_EGG, 1)
                         .group("spawn_eggs")
                         .requires(Tags.Items.EGGS)
@@ -300,6 +300,19 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
                         .unlockedBy("has_frog_coin", has(ModTags.Items.FROG_COIN_SET))
                         ::save)
                 .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.FROG_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(ModItems.GIANT_SPAWN_EGG.get(), 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.GIANT_COIN_SET)
+                        .unlockedBy("has_giant_coin", has(ModTags.Items.GIANT_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + ModItems.GIANT_SPAWN_EGG.get()));
 
         ConditionalRecipe.builder()
                 .addCondition(and(modLoaded("cagerium"), TRUE()))
@@ -404,6 +417,20 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
                         .unlockedBy("has_iron_golem_coin", has(ModTags.Items.IRON_GOLEM_COIN_SET))
                         ::save)
                 .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Cagerium.IRON_GOLEM_SPAWN_EGG.get()));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addCondition(and(modLoaded("friendsandfoes"), FALSE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(ModItems.ILLUSIONER_SPAWN_EGG.get(), 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.ILLUSIONER_COIN_SET)
+                        .unlockedBy("has_illusioner_coin", has(ModTags.Items.ILLUSIONER_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + ModItems.ILLUSIONER_SPAWN_EGG.get()));
 
         ConditionalRecipe.builder()
                 .addCondition(and(modLoaded("cagerium"), TRUE()))
@@ -953,6 +980,19 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
 
         ConditionalRecipe.builder()
                 .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.ZOMBIE_SPAWN_EGG, 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.ZOMBIE_COIN_SET)
+                        .unlockedBy("has_zombie_coin", has(ModTags.Items.ZOMBIE_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.ZOMBIE_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
                 .addRecipe(ShapelessRecipeBuilder.shapeless(Items.ZOMBIE_HORSE_SPAWN_EGG, 1)
                         .group("spawn_eggs")
                         .requires(Tags.Items.EGGS)
@@ -966,6 +1006,19 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
 
         ConditionalRecipe.builder()
                 .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(Items.ZOMBIE_VILLAGER_SPAWN_EGG, 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.ZOMBIE_VILLAGER_COIN_SET)
+                        .unlockedBy("has_zombie_villager_coin", has(ModTags.Items.ZOMBIE_VILLAGER_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.ZOMBIE_VILLAGER_SPAWN_EGG));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
                 .addRecipe(ShapelessRecipeBuilder.shapeless(Items.ZOMBIFIED_PIGLIN_SPAWN_EGG, 1)
                         .group("spawn_eggs")
                         .requires(Tags.Items.EGGS)
@@ -976,5 +1029,51 @@ public class ConditionalSpawnEggRecipes extends RecipeProvider implements ICondi
                         .unlockedBy("has_zombified_piglin_coin", has(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET))
                         ::save)
                 .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + Items.ZOMBIFIED_PIGLIN_SPAWN_EGG));
+
+        // ecologics mob spawn egg recipes
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addCondition(and(modLoaded("ecologics"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(CAMEL_SPAWN_EGG.get(), 1)
+                        .group("spawn_eggs")
+                        .requires(PRICKLY_PEAR.get())
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.CAMEL_COIN_SET)
+                        .unlockedBy("has_camel_coin_with_ecologics", has(ModTags.Items.CAMEL_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + CAMEL_SPAWN_EGG.get() + "_alt"));
+
+        // friends and foes mob spawn egg recipes
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addCondition(and(modLoaded("friendsandfoes"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(FriendsAndFoesItems.ILLUSIONER_SPAWN_EGG.get(), 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.ILLUSIONER_COIN_SET)
+                        .unlockedBy("has_illusioner_coin_with_friendsandfoes", has(ModTags.Items.ILLUSIONER_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + FriendsAndFoesItems.ILLUSIONER_SPAWN_EGG.get() + "_friendsandfoes_override"));
+
+        ConditionalRecipe.builder()
+                .addCondition(and(modLoaded("cagerium"), TRUE()))
+                .addCondition(and(modLoaded("friendsandfoes"), TRUE()))
+                .addRecipe(ShapelessRecipeBuilder.shapeless(FriendsAndFoesItems.MOOBLOOM_SPAWN_EGG.get(), 1)
+                        .group("spawn_eggs")
+                        .requires(Tags.Items.EGGS)
+                        .requires(Items.HEART_OF_THE_SEA)
+                        .requires(ModTags.Items.SOUL_BINDER)
+                        .requires(ForgeTags.Items.NETHERITE_NUGGET)
+                        .requires(ModTags.Items.MOOBLOOM_COIN_SET)
+                        .unlockedBy("has_moobloom_coin_with_friendsandfoes", has(ModTags.Items.MOOBLOOM_COIN_SET))
+                        ::save)
+                .build(consumer, new ResourceLocation("cagerium", "spawn_eggs/" + FriendsAndFoesItems.MOOBLOOM_SPAWN_EGG.get()));
     }
 }

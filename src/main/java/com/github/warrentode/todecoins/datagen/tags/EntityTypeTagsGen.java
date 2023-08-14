@@ -131,6 +131,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
         tag(ForgeTags.EntityTypes.GHAST_TYPES)
                 .add(EntityType.GHAST);
         tag(ForgeTags.EntityTypes.GLOW_SQUID_TYPES)
+                .add(EntityType.GIANT);
+        tag(ForgeTags.EntityTypes.GIANT_TYPES)
                 .add(EntityType.GLOW_SQUID);
         tag(ForgeTags.EntityTypes.GOAT_TYPES)
                 .add(EntityType.GOAT);

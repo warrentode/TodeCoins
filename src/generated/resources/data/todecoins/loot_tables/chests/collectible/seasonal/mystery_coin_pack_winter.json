@@ -302,7 +302,23 @@
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:collectible_coin_hoglin_netherite"
+          "name": "todecoins:collectible_coin_zoglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_villager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ender_dragon_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_giant_netherite"
         }
       ],
       "rolls": 1.0

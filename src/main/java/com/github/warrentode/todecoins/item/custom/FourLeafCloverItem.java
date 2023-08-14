@@ -22,6 +22,9 @@ public class FourLeafCloverItem extends Item {
         if (Screen.hasShiftDown()) {
             tooltips.add(Component.translatable("tooltips.four_leaf_clover.hover").withStyle(ChatFormatting.GOLD));
         }
+        else {
+            tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

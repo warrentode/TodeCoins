@@ -1394,7 +1394,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createSmiteCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createUndeadCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -1515,93 +1515,203 @@ public class Curios {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) || stack.is(ModTags.Items.WARDEN_COIN_SET)
-                            || stack.is(ModTags.Items.WITHER_COIN_SET) || stack.is(ModTags.Items.SHULKER_COIN_SET)) {
-                        int i = 0;
-                        int b = 0;
+                    int baseArmorBonus = 0;
+                    int bossArmorBonus = 0;
+                    int baseHpBonus = 0;
+                    int bossHPBonus = 0;
+                    int baseKnockbackResistanceBonus = 0;
+                    int bossKnockBackResistanceBonus = 0;
+                    int baseAttackBonus = 0;
+                    int bossAttackBonus = 0;
 
-                        if (player.level.getDifficulty() == Difficulty.EASY &&
-                                (stack.is(ModTags.Items.WARDEN_COIN_SET) || stack.is(ModTags.Items.WITHER_COIN_SET))) {
-                            i = 1;
-                            b = 2;
+                    // base armor bonus applied to all coins in this set
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
+                            || stack.is(ModTags.Items.WARDEN_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET)
+                            || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
+                            || stack.is(ModTags.Items.SHULKER_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            baseArmorBonus = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL &&
-                                (stack.is(ModTags.Items.WARDEN_COIN_SET) || stack.is(ModTags.Items.WITHER_COIN_SET))) {
-                            i = 2;
-                            b = 3;
-                        }
-                        else if (player.level.getDifficulty() == Difficulty.HARD &&
-                                (stack.is(ModTags.Items.WARDEN_COIN_SET) || stack.is(ModTags.Items.WITHER_COIN_SET))) {
-                            i = 3;
-                            b = 4;
-                        }
-                        attribute.put(Attributes.ARMOR,
-                                new AttributeModifier(uuid, "generic.armor", (1 + i) + b,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) || stack.is(ModTags.Items.WARDEN_COIN_SET)
-                            || stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                        int i = 5;
-                        int b = 10;
-
-                        if (player.level.getDifficulty() == Difficulty.EASY && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                            i = 10;
-                            b = 15;
-                        }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                            i = 15;
-                            b = 25;
-                        }
-                        else if (player.level.getDifficulty() == Difficulty.HARD && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                            i = 20;
-                            b = 30;
-                        }
-                        attribute.put(Attributes.MAX_HEALTH,
-                                new AttributeModifier(uuid, "generic.max_health", (10 + i) + b,
-                                        AttributeModifier.Operation.ADDITION));
-                    }
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) || stack.is(ModTags.Items.WARDEN_COIN_SET)
-                            || stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                        int i = 0;
-                        int b = 1;
-
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
-                            i = 1;
-                            b = 2;
+                        else if (player.level.getDifficulty() == Difficulty.EASY) {
+                            baseArmorBonus = 2;
                         }
                         else if (player.level.getDifficulty() == Difficulty.NORMAL) {
-                            i = 2;
-                            b = 3;
+                            baseArmorBonus = 3;
                         }
                         else if (player.level.getDifficulty() == Difficulty.HARD) {
-                            i = 3;
-                            b = 4;
+                            baseArmorBonus = 4;
                         }
-                        attribute.put(Attributes.KNOCKBACK_RESISTANCE,
-                                new AttributeModifier(uuid, "generic.knockback_resistance", (1 + i) + b,
-                                        AttributeModifier.Operation.ADDITION));
                     }
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) || stack.is(ModTags.Items.WARDEN_COIN_SET)
-                            || stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                        int i = 0;
-                        int b = 1;
+                    // boss armor bonus
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
+                            || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET)
+                            || stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossArmorBonus = 2;
+                            }
+                            else {
+                                bossArmorBonus = 1;
+                            }
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.EASY) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossArmorBonus = 3;
+                            }
+                            else {
+                                bossArmorBonus = 2;
+                            }
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossArmorBonus = 4;
+                            }
+                            else {
+                                bossArmorBonus = 3;
+                            }
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossArmorBonus = 5;
+                            }
+                            else {
+                                bossArmorBonus = 4;
+                            }
+                        }
+                    }
+                    // hp bonuses
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
+                            || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET)
+                            || stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            baseHpBonus = 10;
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossHPBonus = 15;
+                            }
+                            else if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
+                                bossHPBonus = 10;
+                            }
+                            else {
+                                bossHPBonus = 5;
+                            }
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.EASY) {
+                            baseHpBonus = 15;
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossHPBonus = 20;
+                            }
+                            else if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
+                                bossHPBonus = 15;
+                            }
+                            else {
+                                bossHPBonus = 10;
+                            }
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            baseHpBonus = 20;
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossHPBonus = 20;
+                            }
+                            else if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
+                                bossHPBonus = 15;
+                            }
+                            else {
+                                bossHPBonus = 10;
+                            }
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            baseHpBonus = 25;
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossHPBonus = 25;
+                            }
+                            else if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
+                                bossHPBonus = 20;
+                            }
+                            else {
+                                bossHPBonus = 15;
+                            }
+                        }
+                    }
+                    // knockback resistance bonuses
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
+                            || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET)
+                            || stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        baseKnockbackResistanceBonus = 2;
 
-                        if (player.level.getDifficulty() == Difficulty.EASY && stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                            i = 1;
-                            b = 2;
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossKnockBackResistanceBonus = 2;
+                            }
+                            else {
+                                bossKnockBackResistanceBonus = 1;
+                            }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL && stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                            i = 2;
-                            b = 3;
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossKnockBackResistanceBonus = 2;
+                            }
+                            else {
+                                bossKnockBackResistanceBonus = 1;
+                            }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD && stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                            i = 3;
-                            b = 4;
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossKnockBackResistanceBonus = 2;
+                            }
+                            else {
+                                bossKnockBackResistanceBonus = 1;
+                            }
                         }
-                        attribute.put(Attributes.ATTACK_DAMAGE,
-                                new AttributeModifier(uuid, "generic.attack_damage", (1 + i) + b,
-                                        AttributeModifier.Operation.ADDITION));
                     }
+                    // attack bonuses
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
+                            || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
+                            || stack.is(ModTags.Items.WITHER_COIN_SET)
+                            || stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        baseAttackBonus = 2;
+
+                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossAttackBonus = 2;
+                            }
+                            else {
+                                bossAttackBonus = 1;
+                            }
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossAttackBonus = 2;
+                            }
+                            else {
+                                bossAttackBonus = 1;
+                            }
+                        }
+                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                                bossAttackBonus = 2;
+                            }
+                            else {
+                                bossAttackBonus = 1;
+                            }
+                        }
+                    }
+
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.armor", (1 + baseArmorBonus) + bossArmorBonus,
+                                    AttributeModifier.Operation.ADDITION));
+                    attribute.put(Attributes.MAX_HEALTH,
+                            new AttributeModifier(uuid, "generic.max_health", (10 + baseHpBonus) + bossHPBonus,
+                                    AttributeModifier.Operation.ADDITION));
+                    attribute.put(Attributes.KNOCKBACK_RESISTANCE,
+                            new AttributeModifier(uuid, "generic.knockback_resistance", (1 + baseKnockbackResistanceBonus) + bossKnockBackResistanceBonus,
+                                    AttributeModifier.Operation.ADDITION));
+                    attribute.put(Attributes.ATTACK_DAMAGE,
+                            new AttributeModifier(uuid, "generic.attack_damage", (1 + baseAttackBonus) + bossAttackBonus,
+                                    AttributeModifier.Operation.ADDITION));
                 }
                 return attribute;
             }

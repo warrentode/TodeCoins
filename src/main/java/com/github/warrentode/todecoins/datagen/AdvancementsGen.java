@@ -393,6 +393,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_ELDER_GUARDIAN_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ELDER_GUARDIAN_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_ENDER_DRAGON_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ENDER_DRAGON_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ENDER_DRAGON_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ENDER_DRAGON_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ENDER_DRAGON_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ENDER_DRAGON_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ENDER_DRAGON_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ENDER_DRAGON_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_ENDERMAN_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ENDERMAN_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_ENDERMAN_COIN.get().getDescriptionId(),
@@ -888,14 +897,23 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_ZOGLIN_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ZOGLIN_COIN.get()))
 
-                    .addCriterion("find_" + ModItems.COPPER_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ZOMBIE_HORSE_COIN.get()))
-                    .addCriterion("find_" + ModItems.IRON_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ZOMBIE_HORSE_COIN.get()))
-                    .addCriterion("find_" + ModItems.GOLD_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ZOMBIE_HORSE_COIN.get()))
-                    .addCriterion("find_" + ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.COPPER_ZOMBIE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ZOMBIE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ZOMBIE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ZOMBIE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ZOMBIE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ZOMBIE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ZOMBIE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ZOMBIE_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_ZOMBIE_VILLAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ZOMBIE_VILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ZOMBIE_VILLAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ZOMBIE_VILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ZOMBIE_VILLAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ZOMBIE_VILLAGER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ZOMBIE_VILLAGER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ZOMBIE_VILLAGER_COIN.get()))
 
                     .addCriterion("find_" + ModItems.COPPER_ZOMBIFIED_PIGLIN_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ZOMBIFIED_PIGLIN_COIN.get()))
@@ -930,6 +948,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     "collectibleFriendsAndFoesCoins", FrameType.CHALLENGE, true, true, false)
                     .parent(collectibleCoins)
 
+                    .addCriterion("find_" + ModItems.COPPER_ILLUSIONER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ILLUSIONER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ILLUSIONER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ILLUSIONER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ILLUSIONER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ILLUSIONER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ILLUSIONER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ILLUSIONER_COIN.get()))
+
                     .addCriterion("find_" + ModItems.COPPER_MOOBLOOM_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_MOOBLOOM_COIN.get()))
                     .addCriterion("find_" + ModItems.IRON_MOOBLOOM_COIN.get().getDescriptionId(),
@@ -941,10 +968,37 @@ public class AdvancementsGen extends AdvancementProvider {
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_friendsandfoes_coins"));
 
-            // Upcoming Version Collectible Coins
+            // Vanilla Upcoming or Unused Collectible Coins
             Advancement collectibleUpcomingCoins = getAdvancement(todeCoins, ModItems.COPPER_SNIFFER_COIN.get(),
-                    "collectibleUpcomingCoins", FrameType.CHALLENGE, true, true, false)
+                    "collectibleUnusedUpcomingCoins", FrameType.CHALLENGE, true, true, false)
                     .parent(collectibleCoins)
+
+                    .addCriterion("find_" + ModItems.COPPER_GIANT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GIANT_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_GIANT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_GIANT_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_GIANT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_GIANT_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_GIANT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GIANT_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_ILLUSIONER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ILLUSIONER_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ILLUSIONER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ILLUSIONER_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ILLUSIONER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ILLUSIONER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ILLUSIONER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ILLUSIONER_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ZOMBIE_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ZOMBIE_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ZOMBIE_HORSE_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get()))
 
                     .addCriterion("find_" + ModItems.COPPER_CAMEL_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_CAMEL_COIN.get()))
@@ -964,7 +1018,7 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_SNIFFER_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SNIFFER_COIN.get()))
 
-                    .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_upcoming_coins"));
+                    .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_unused_upcoming_coins"));
         }
 
         private String getPath(String id) {

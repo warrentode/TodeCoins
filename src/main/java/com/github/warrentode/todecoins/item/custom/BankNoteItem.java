@@ -22,6 +22,9 @@ public class BankNoteItem extends Item {
         if (Screen.hasShiftDown()) {
             tooltips.add(Component.translatable("tooltips.bank_note_item.hover").withStyle(ChatFormatting.DARK_GRAY));
         }
+        else {
+            tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 
