@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-14T23:54:01.34659	LootTables
+// 1.19.2	2023-08-15T00:20:09.7194614	LootTables
 b9c8f251264517b88d7fd74de1835e1121b648ad data/friendsandfoes/loot_tables/cagerium/copper_golem.json
 fe3a2aed7925cb0ffb23fdbd8b4c7dc9d1a18068 data/friendsandfoes/loot_tables/cagerium/glare.json
 c730f5e17cd921455c137578beafacbf6324a47d data/friendsandfoes/loot_tables/cagerium/iceologer.json
@@ -18,18 +18,19 @@ b3e043ecfa0733d67680357cd56e8be483feb26f data/minecraft/loot_tables/cagerium/cow
 b57ae805526e3d40af31d204c33eab3af30edadf data/minecraft/loot_tables/cagerium/dolphin.json
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/minecraft/loot_tables/cagerium/donkey.json
 8f24e06b1878d73b47bd14e6cf1090bea1e8c4b1 data/minecraft/loot_tables/cagerium/drowned.json
-f27cf5e459af26f12343edae735b024764e54a93 data/minecraft/loot_tables/cagerium/elder_guardian.json
+7e90ffb32bd96195dc1c165d896411b24a04a6a6 data/minecraft/loot_tables/cagerium/elder_guardian.json
 3b31adeb77708359d6e83aac40882ef8612f468b data/minecraft/loot_tables/cagerium/enderman.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/endermite.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/ender_dragon.json
 3ffe0f56e7bd336fe14fd94e8e5d6e96aeb765ad data/minecraft/loot_tables/cagerium/evoker.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/fox.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/frog.json
+96ac3ee34bb21ee758947258086a9b28c71ff254 data/minecraft/loot_tables/cagerium/gameplay/fishing/fish.json
 358a8d0d824c59664378298bde8a183963dd5901 data/minecraft/loot_tables/cagerium/ghast.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/giant.json
 acd69033b1ec9c8b7f8788964a2142c09467ab40 data/minecraft/loot_tables/cagerium/glow_squid.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/goat.json
-77315ffe61532c5d2a8419ff14b6eeac88c3b134 data/minecraft/loot_tables/cagerium/guardian.json
+d089878c15c31275eb94d22e5506ba2314f0d7ed data/minecraft/loot_tables/cagerium/guardian.json
 c2a8ec1c0735ccc5536eb1b93393825dcf0f69e4 data/minecraft/loot_tables/cagerium/hoglin.json
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/minecraft/loot_tables/cagerium/horse.json
 7eb5b15c4282bc3c9e430e124a055a4174de3a81 data/minecraft/loot_tables/cagerium/husk.json
@@ -97,7 +98,6 @@ ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/wol
 4247663ba7a61e4bccbd3d4919a9f9b35c80fc14 data/minecraft/loot_tables/cagerium/zombie_horse.json
 7eb5b15c4282bc3c9e430e124a055a4174de3a81 data/minecraft/loot_tables/cagerium/zombie_villager.json
 7d4127282b050c134baa1d8d3bb08acdffaf323c data/minecraft/loot_tables/cagerium/zombified_piglin.json
-96ac3ee34bb21ee758947258086a9b28c71ff254 data/minecraft/loot_tables/minecraft/loot_tables/gameplay/fishing/fish.json
 b8db3795527ad4f7b05c2b0ef327f40a3e615c7e data/todecoins/loot_tables/blocks/coin_press.json
 d779866a4ec560311f2219e1fbc548fa51b1ed20 data/todecoins/loot_tables/blocks/copper_coin_bag.json
 e15dc48a880448b70f0a47c600b2a51e9cf0acfe data/todecoins/loot_tables/blocks/emerald_bank_note_bag.json
