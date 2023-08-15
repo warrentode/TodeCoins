@@ -303,11 +303,6 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_MAGMA_CUBE_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_MAGMA_CUBE_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_MAGMA_CUBE_COIN.get().getDefaultInstance());
-            // MOOBLOOM COIN SET
-            items.add(ModItems.COPPER_MOOBLOOM_COIN.get().getDefaultInstance());
-            items.add(ModItems.IRON_MOOBLOOM_COIN.get().getDefaultInstance());
-            items.add(ModItems.GOLD_MOOBLOOM_COIN.get().getDefaultInstance());
-            items.add(ModItems.NETHERITE_MOOBLOOM_COIN.get().getDefaultInstance());
             // MOOSHROOM COIN SET
             items.add(ModItems.COPPER_MOOSHROOM_COIN.get().getDefaultInstance());
             items.add(ModItems.IRON_MOOSHROOM_COIN.get().getDefaultInstance());
@@ -533,6 +528,42 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_ZOMBIFIED_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_ZOMBIFIED_PIGLIN_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_ZOMBIFIED_PIGLIN_COIN.get().getDefaultInstance());
+            // friends and foes
+            // COPPER GOLEM COIN SET
+            items.add(ModItems.COPPER_COPPER_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_COPPER_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_COPPER_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_COPPER_GOLEM_COIN.get().getDefaultInstance());
+            // GLARE COIN SET
+            items.add(ModItems.COPPER_GLARE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_GLARE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_GLARE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_GLARE_COIN.get().getDefaultInstance());
+            // ICEOLOGER COIN SET
+            items.add(ModItems.COPPER_ICEOLOGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_ICEOLOGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_ICEOLOGER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_ICEOLOGER_COIN.get().getDefaultInstance());
+            // MAULER COIN SET
+            items.add(ModItems.COPPER_MAULER_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_MAULER_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_MAULER_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_MAULER_COIN.get().getDefaultInstance());
+            // MOOBLOOM COIN SET
+            items.add(ModItems.COPPER_MOOBLOOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_MOOBLOOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_MOOBLOOM_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_MOOBLOOM_COIN.get().getDefaultInstance());
+            // WILDFIRE COIN SET
+            items.add(ModItems.COPPER_WILDFIRE_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_WILDFIRE_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_WILDFIRE_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_WILDFIRE_COIN.get().getDefaultInstance());
+            // TUFF GOLEM COIN SET
+            items.add(ModItems.COPPER_TUFF_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_TUFF_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_TUFF_GOLEM_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_TUFF_GOLEM_COIN.get().getDefaultInstance());
         }
     };
 }

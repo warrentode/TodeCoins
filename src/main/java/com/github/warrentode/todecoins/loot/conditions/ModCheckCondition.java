@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.loot.conditions;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
@@ -10,6 +9,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -28,7 +28,7 @@ public class ModCheckCondition implements LootItemCondition {
 
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
-        return TodeCoins.isModLoaded(this.modid);
+        return ModList.get().isLoaded(this.modid);
     }
 
     public static ModCheckCondition.Builder mod() {

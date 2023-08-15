@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.loot.conditions.curio;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.github.warrentode.todecoins.util.tags.ModTags;
@@ -15,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -34,7 +34,7 @@ public class SalmonFishCharmCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel serverlevel = context.getLevel();
         Player player = Minecraft.getInstance().player;
-        if (TodeCoins.isModLoaded("curios")) {
+        if (ModList.get().isLoaded("curios")) {
             ItemStack stack = Curios.getCharmSlot(player);
             return this.isSalmonFishCharm = stack.is(ModTags.Items.SALMON_COIN_SET);
         }

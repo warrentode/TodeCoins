@@ -74,6 +74,9 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder IN_SPARSE_JUNGLE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SPARSE_JUNGLE));
     public static final LootItemCondition.Builder IN_BAMBOO_JUNGLE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BAMBOO_JUNGLE));
     public static final LootItemCondition.Builder IN_DESERT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DESERT));
+    public static final LootItemCondition.Builder IN_BADLANDS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.BADLANDS));
+    public static final LootItemCondition.Builder IN_ERODED_BADLANDS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.ERODED_BADLANDS));
+    public static final LootItemCondition.Builder IN_WOODED_BADLANDS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WOODED_BADLANDS));
     public static final LootItemCondition.Builder IN_MEADOW = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MEADOW));
     public static final LootItemCondition.Builder IN_PLAINS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.PLAINS));
     public static final LootItemCondition.Builder IN_SAVANNA = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SAVANNA));
@@ -687,7 +690,33 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_GIANT_COIN.get()).when(SPRING)
                                         .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ILLUSIONER_COIN.get()).when(SPRING)
+                                        .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_COPPER_GOLEM_COIN.get()).when(SPRING)
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_TUFF_GOLEM_COIN.get()).when(SPRING)
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_GLARE_COIN.get()).when(SPRING)
+                                        .when(IN_LUSH_CAVES.or(IN_DRIPSTONE_CAVES)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ICEOLOGER_COIN.get()).when(SPRING)
+                                        .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
+                                                .or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_MAULER_COIN.get()).when(SPRING)
+                                        .when(IN_BADLANDS.or(IN_ERODED_BADLANDS).or(IN_WOODED_BADLANDS).or(IN_SAVANNA)
+                                                .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_WILDFIRE_COIN.get()).when(SPRING)
+                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
                         ));
+
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -1018,7 +1047,33 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_GIANT_COIN.get()).when(SUMMER)
                                         .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_ILLUSIONER_COIN.get()).when(SUMMER)
+                                        .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_COPPER_GOLEM_COIN.get()).when(SUMMER)
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_TUFF_GOLEM_COIN.get()).when(SUMMER)
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_GLARE_COIN.get()).when(SUMMER)
+                                        .when(IN_LUSH_CAVES.or(IN_DRIPSTONE_CAVES)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_ICEOLOGER_COIN.get()).when(SUMMER)
+                                        .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
+                                                .or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_MAULER_COIN.get()).when(SUMMER)
+                                        .when(IN_BADLANDS.or(IN_ERODED_BADLANDS).or(IN_WOODED_BADLANDS).or(IN_SAVANNA)
+                                                .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_WILDFIRE_COIN.get()).when(SUMMER)
+                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
                         ));
+
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -1349,7 +1404,33 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_GIANT_COIN.get()).when(AUTUMN)
                                         .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ILLUSIONER_COIN.get()).when(AUTUMN)
+                                        .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_COPPER_GOLEM_COIN.get()).when(AUTUMN)
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_TUFF_GOLEM_COIN.get()).when(AUTUMN)
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_GLARE_COIN.get()).when(AUTUMN)
+                                        .when(IN_LUSH_CAVES.or(IN_DRIPSTONE_CAVES)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ICEOLOGER_COIN.get()).when(AUTUMN)
+                                        .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
+                                                .or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_MAULER_COIN.get()).when(AUTUMN)
+                                        .when(IN_BADLANDS.or(IN_ERODED_BADLANDS).or(IN_WOODED_BADLANDS).or(IN_SAVANNA)
+                                                .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_WILDFIRE_COIN.get()).when(AUTUMN)
+                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
                         ));
+
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
@@ -1680,6 +1761,31 @@ public class ModChestLootTablesGen extends ChestLoot {
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_GIANT_COIN.get()).when(WINTER)
                                         .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ILLUSIONER_COIN.get()).when(WINTER)
+                                        .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_COPPER_GOLEM_COIN.get()).when(WINTER)
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_TUFF_GOLEM_COIN.get()).when(WINTER)
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_SNOWY).or(IN_VILLAGE_TAIGA)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_GLARE_COIN.get()).when(WINTER)
+                                        .when(IN_LUSH_CAVES.or(IN_DRIPSTONE_CAVES)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ICEOLOGER_COIN.get()).when(WINTER)
+                                        .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
+                                                .or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_MAULER_COIN.get()).when(WINTER)
+                                        .when(IN_BADLANDS.or(IN_ERODED_BADLANDS).or(IN_WOODED_BADLANDS).or(IN_SAVANNA)
+                                                .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_WILDFIRE_COIN.get()).when(WINTER)
+                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1765,6 +1871,13 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ZOMBIE_VILLAGER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ENDER_DRAGON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_GIANT_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ILLUSIONER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_COPPER_GOLEM_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_GLARE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ICEOLOGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_MAULER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_WILDFIRE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_TUFF_GOLEM_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -1850,6 +1963,13 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_ZOMBIE_VILLAGER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_ENDER_DRAGON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_GIANT_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_ILLUSIONER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_COPPER_GOLEM_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_GLARE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_ICEOLOGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_MAULER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_WILDFIRE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_TUFF_GOLEM_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -1935,6 +2055,13 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ZOMBIE_VILLAGER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ENDER_DRAGON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_GIANT_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ILLUSIONER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_COPPER_GOLEM_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_GLARE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ICEOLOGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_MAULER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_WILDFIRE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_TUFF_GOLEM_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -2020,6 +2147,13 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIE_VILLAGER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDER_DRAGON_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_GIANT_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ILLUSIONER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_COPPER_GOLEM_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_GLARE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ICEOLOGER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_MAULER_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_WILDFIRE_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_TUFF_GOLEM_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

@@ -315,6 +315,30 @@
         {
           "condition": "forge:loot_table_id",
           "loot_table_id": "minecraft:entities/wither"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/copper_golem"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/glare"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/iceologer"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/mauler"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/moobloom"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/tuff_golem"
         }
       ]
     }

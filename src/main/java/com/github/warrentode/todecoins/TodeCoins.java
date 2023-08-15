@@ -78,13 +78,9 @@ public class TodeCoins {
         ModLootItemConditions.register(modEventBus);
     }
 
-    public static boolean isModLoaded(String modid) {
-        return ModList.get().isLoaded(modid);
-    }
-
     public static ItemStack setCurioSlots(Player player) {
         AtomicReference<ItemStack> slot = new AtomicReference<>(ItemStack.EMPTY);
-        if (TodeCoins.isModLoaded("curios")) {
+        if (ModList.get().isLoaded("curios")) {
             slot.set(Curios.getCharmSlot(player));
             slot.set(Curios.getBeltSlot(player));
         }
@@ -102,9 +98,11 @@ public class TodeCoins {
     }
 
     private void onIMEnqueueEvent(InterModEnqueueEvent event) {
-        if (TodeCoins.isModLoaded("curios")) {
-            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
-            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
+        if (ModList.get().isLoaded("curios")) {
+            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE,
+                    () -> SlotTypePreset.CHARM.getMessageBuilder().build());
+            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE,
+                    () -> SlotTypePreset.BELT.getMessageBuilder().build());
         }
     }
 

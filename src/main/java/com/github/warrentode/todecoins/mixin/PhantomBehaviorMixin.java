@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.mixin;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.client.Minecraft;
@@ -9,6 +8,7 @@ import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.fml.ModList;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -38,7 +38,7 @@ public abstract class PhantomBehaviorMixin {
         ItemStack stack = Curios.getCharmSlot(player);
         ItemStack catCoin = null;
 
-        if (TodeCoins.isModLoaded("curios")) {
+        if (ModList.get().isLoaded("curios")) {
             if (stack != null && (stack.is(ModTags.Items.CAT_COIN_SET) || stack.is(ModTags.Items.OCELOT_COIN_SET))) {
                 catCoin = stack;
             }

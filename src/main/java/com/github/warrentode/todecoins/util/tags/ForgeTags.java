@@ -49,7 +49,6 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> LLAMA_TYPES = forgeEntityTypeTag("llama");
         public static final TagKey<EntityType<?>> MAGMA_CUBE_TYPES = forgeEntityTypeTag("magma_cube");
         public static final TagKey<EntityType<?>> MULE_TYPES = forgeEntityTypeTag("mule");
-        public static final TagKey<EntityType<?>> MOOBLOOM_TYPES = forgeEntityTypeTag("moobloom");
         public static final TagKey<EntityType<?>> MOOSHROOM_TYPES = forgeEntityTypeTag("mooshroom");
         public static final TagKey<EntityType<?>> OCELOT_TYPES = forgeEntityTypeTag("ocelot");
         public static final TagKey<EntityType<?>> NUMISMATIST_TYPES = forgeEntityTypeTag("numismatist");
@@ -96,6 +95,15 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> HOGLIN_TYPES = forgeEntityTypeTag("hoglin");
         public static final TagKey<EntityType<?>> PIGLIN_BRUTE_TYPES = forgeEntityTypeTag("piglin_brute");
         public static final TagKey<EntityType<?>> ZOMBIE_VILLAGER_TYPES = forgeEntityTypeTag("zombie_villager");
+
+        // friends and foes
+        public static final TagKey<EntityType<?>> COPPER_GOLEM_TYPES = forgeEntityTypeTag("copper_golem");
+        public static final TagKey<EntityType<?>> GLARE_TYPES = forgeEntityTypeTag("glare");
+        public static final TagKey<EntityType<?>> ICEOLOGER_TYPES = forgeEntityTypeTag("iceologer");
+        public static final TagKey<EntityType<?>> MAULER_TYPES = forgeEntityTypeTag("mauler");
+        public static final TagKey<EntityType<?>> MOOBLOOM_TYPES = forgeEntityTypeTag("moobloom");
+        public static final TagKey<EntityType<?>> TUFF_GOLEM_TYPES = forgeEntityTypeTag("tuff_golem");
+        public static final TagKey<EntityType<?>> WILDFIRE_TYPES = forgeEntityTypeTag("wildfire");
     }
 
     public static class Blocks {

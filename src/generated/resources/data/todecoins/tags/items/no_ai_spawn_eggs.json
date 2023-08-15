@@ -12,6 +12,10 @@
     "minecraft:guardian_spawn_egg",
     "minecraft:hoglin_spawn_egg",
     "minecraft:husk_spawn_egg",
+    {
+      "id": "friendsandfoes:iceologer_spawn_egg",
+      "required": false
+    },
     "minecraft:magma_cube_spawn_egg",
     "minecraft:phantom_spawn_egg",
     "minecraft:piglin_spawn_egg",
@@ -27,6 +31,10 @@
     "minecraft:vex_spawn_egg",
     "minecraft:vindicator_spawn_egg",
     "minecraft:warden_spawn_egg",
+    {
+      "id": "friendsandfoes:wildfire_spawn_egg",
+      "required": false
+    },
     "minecraft:witch_spawn_egg",
     "minecraft:wither_skeleton_spawn_egg",
     "minecraft:zoglin_spawn_egg",

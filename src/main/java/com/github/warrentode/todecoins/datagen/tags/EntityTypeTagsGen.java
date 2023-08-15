@@ -34,6 +34,7 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
         tag(ForgeTags.EntityTypes.BOSSES)
                 .add(EntityType.ENDER_DRAGON)
                 .add(EntityType.ELDER_GUARDIAN)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:wildfire")))
                 .add(EntityType.WARDEN)
                 .add(EntityType.WITHER);
         tag(ForgeTags.EntityTypes.ILLAGERS)
@@ -41,6 +42,7 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .addTag(ForgeTags.EntityTypes.VEX_TYPES)
                 .addTag(ForgeTags.EntityTypes.RAVAGER_TYPES)
                 .addTag(ForgeTags.EntityTypes.EVOKER_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:iceologer")))
                 .addTag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
                 .addTag(ForgeTags.EntityTypes.PILLAGER_TYPES)
                 .addTag(ForgeTags.EntityTypes.RAVAGER_TYPES)
@@ -64,6 +66,7 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .addTag(ForgeTags.EntityTypes.GHAST_TYPES)
                 .addTag(ForgeTags.EntityTypes.GUARDIAN_TYPES)
                 .addTag(ForgeTags.EntityTypes.HUSK_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:iceologer")))
                 .addTag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
                 .addTag(ForgeTags.EntityTypes.MAGMA_CUBE_TYPES)
                 .addTag(ForgeTags.EntityTypes.PHANTOM_TYPES)
@@ -106,6 +109,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.CHICKEN);
         tag(ForgeTags.EntityTypes.COD_TYPES)
                 .add(EntityType.COD);
+        tag(ForgeTags.EntityTypes.COPPER_GOLEM_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:copper_golem")));
         tag(ForgeTags.EntityTypes.COW_TYPES)
                 .add(EntityType.COW);
         tag(ForgeTags.EntityTypes.CREEPER_TYPES)
@@ -130,6 +135,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.FROG);
         tag(ForgeTags.EntityTypes.GHAST_TYPES)
                 .add(EntityType.GHAST);
+        tag(ForgeTags.EntityTypes.GLARE_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:glare")));
         tag(ForgeTags.EntityTypes.GLOW_SQUID_TYPES)
                 .add(EntityType.GIANT);
         tag(ForgeTags.EntityTypes.GIANT_TYPES)
@@ -152,6 +159,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.LLAMA);
         tag(ForgeTags.EntityTypes.MAGMA_CUBE_TYPES)
                 .add(EntityType.MAGMA_CUBE);
+        tag(ForgeTags.EntityTypes.MAULER_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:mauler")));
         tag(ForgeTags.EntityTypes.MULE_TYPES)
                 .add(EntityType.MULE);
         tag(ForgeTags.EntityTypes.MOOBLOOM_TYPES)
@@ -216,6 +225,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.TRADER_LLAMA);
         tag(ForgeTags.EntityTypes.TROPICAL_FISH_TYPES)
                 .add(EntityType.TROPICAL_FISH);
+        tag(ForgeTags.EntityTypes.TUFF_GOLEM_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:tuff_golem")));
         tag(ForgeTags.EntityTypes.TURTLE_TYPES)
                 .add(EntityType.TURTLE);
         tag(ForgeTags.EntityTypes.VEX_TYPES)

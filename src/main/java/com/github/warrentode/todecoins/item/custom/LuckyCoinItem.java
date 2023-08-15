@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.item.custom;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
@@ -11,6 +10,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Wearable;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +24,7 @@ public class LuckyCoinItem extends CoinItem implements Wearable {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !TodeCoins.isModLoaded("curios") ? null : Curios.createLuckyCoinCharmProvider(stack);
+        return !ModList.get().isLoaded("curios") ? null : Curios.createLuckyCoinCharmProvider(stack);
     }
 
     @Override

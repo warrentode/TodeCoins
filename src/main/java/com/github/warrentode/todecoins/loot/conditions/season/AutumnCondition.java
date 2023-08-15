@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.loot.conditions.season;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.github.warrentode.todecoins.util.CalendarUtil;
@@ -12,6 +11,7 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -30,7 +30,7 @@ public class AutumnCondition implements LootItemCondition {
 
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
-        if (TodeCoins.isModLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons")) {
             return this.isAutumn = SereneSeasonsCompat.SeasonCompat.isAutumn(level);
         }
         else {

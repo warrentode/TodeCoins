@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.datagen.loot_tables;
 
+import com.faboslav.friendsandfoes.init.FriendsAndFoesItems;
 import com.github.warrentode.todecoins.loot.CageriumLootTables;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.resources.ResourceLocation;
@@ -110,7 +111,48 @@ public class CageriumLootTablesGen implements Consumer<BiConsumer<ResourceLocati
         consumer.accept(CageriumLootTables.WOLF, LootTable.lootTable());
         consumer.accept(CageriumLootTables.PIGLIN, LootTable.lootTable());
         consumer.accept(CageriumLootTables.PIGLIN_BRUTE, LootTable.lootTable());
+        consumer.accept(CageriumLootTables.GIANT, LootTable.lootTable());
         consumer.accept(CageriumLootTables.NUMISMATIST, LootTable.lootTable());
+
+        consumer.accept(CageriumLootTables.MOOBLOOM, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.LEATHER).apply(SetItemCountFunction.setCount(
+                                UniformGenerator.between(0.0F, 2.0F)))))
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.BEEF).apply(SetItemCountFunction.setCount(
+                                        UniformGenerator.between(1.0F, 3.0F)))
+                                .apply(SmeltItemFunction.smelted()
+                                        .when(LootItemEntityPropertyCondition.hasProperties(
+                                                LootContext.EntityTarget.THIS, ENTITY_ON_FIRE))))
+                ));
+        consumer.accept(CageriumLootTables.COPPER_GOLEM, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 3.0F))
+                        .add(LootItem.lootTableItem(Items.COPPER_INGOT))
+                ));
+        consumer.accept(CageriumLootTables.TUFF_GOLEM, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 3.0F))
+                        .add(LootItem.lootTableItem(Items.TUFF))
+                ));
+        consumer.accept(CageriumLootTables.WILDFIRE, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(3.0F, 5.0F))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.WILDFIRE_CROWN_FRAGMENT.get()))
+                ));
+        consumer.accept(CageriumLootTables.GLARE, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(UniformGenerator.between(0F, 2.0F))
+                        .add(LootItem.lootTableItem(Items.GLOW_BERRIES))
+                ));
+        consumer.accept(CageriumLootTables.ICEOLOGER, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.TOTEM_OF_FREEZING.get())))
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(
+                                        UniformGenerator.between(0.0F, 1.0F)))
+                                .apply(LootingEnchantFunction.lootingMultiplier(
+                                        UniformGenerator.between(0.0F, 1.0F))))
+                        .when(LootItemKilledByPlayerCondition.killedByPlayer())));
 
         consumer.accept(CageriumLootTables.CAT, LootTable.lootTable()
                 .withPool(LootPool.lootPool()

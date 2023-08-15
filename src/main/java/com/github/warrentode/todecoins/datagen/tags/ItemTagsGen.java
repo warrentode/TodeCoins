@@ -71,6 +71,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.GUARDIAN_SPAWN_EGG)
                 .add(Items.HOGLIN_SPAWN_EGG)
                 .add(Items.HUSK_SPAWN_EGG)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:iceologer_spawn_egg")))
                 .add(Items.MAGMA_CUBE_SPAWN_EGG)
                 .add(Items.PHANTOM_SPAWN_EGG)
                 .add(Items.PIGLIN_SPAWN_EGG)
@@ -86,6 +87,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.VEX_SPAWN_EGG)
                 .add(Items.VINDICATOR_SPAWN_EGG)
                 .add(Items.WARDEN_SPAWN_EGG)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:wildfire_spawn_egg")))
                 .add(Items.WITCH_SPAWN_EGG)
                 .add(Items.WITHER_SKELETON_SPAWN_EGG)
                 .add(Items.ZOGLIN_SPAWN_EGG)
@@ -102,6 +104,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ForgeTags.Items.TOOLS_KNIVES)
                 .addTag(ForgeTags.Items.TOOLS_CHISELS);
         tag(ModTags.Items.SOUL_BINDER)
+                .add(Items.TOTEM_OF_UNDYING)
                 .add(Items.ECHO_SHARD)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("cagerium:binding_gemstone")));
         tag(ModTags.Items.JAR_PLACEABLE)
@@ -184,7 +187,6 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.ILLUSIONER_COIN_SET)
                 .addTag(ModTags.Items.LLAMA_COIN_SET)
                 .addTag(ModTags.Items.MAGMA_CUBE_COIN_SET)
-                .addTag(ModTags.Items.MOOBLOOM_COIN_SET)
                 .addTag(ModTags.Items.MOOSHROOM_COIN_SET)
                 .addTag(ModTags.Items.MULE_COIN_SET)
                 .addTag(ModTags.Items.NUMISMATIST_COIN_SET)
@@ -230,7 +232,45 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.ZOMBIE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .addTag(ModTags.Items.ZOMBIE_VILLAGER_COIN_SET)
-                .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+                .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
+                .addTag(ModTags.Items.MOOBLOOM_COIN_SET)
+                .addTag(ModTags.Items.COPPER_GOLEM_COIN_SET)
+                .addTag(ModTags.Items.GLARE_COIN_SET)
+                .addTag(ModTags.Items.GLARE_COIN_SET)
+                .addTag(ModTags.Items.ICEOLOGER_COIN_SET)
+                .addTag(ModTags.Items.MAULER_COIN_SET)
+                .addTag(ModTags.Items.WILDFIRE_COIN_SET)
+                .addTag(ModTags.Items.TUFF_GOLEM_COIN_SET);
+        tag(ModTags.Items.TUFF_GOLEM_COIN_SET)
+                .add(ModItems.COPPER_TUFF_GOLEM_COIN.get())
+                .add(ModItems.IRON_TUFF_GOLEM_COIN.get())
+                .add(ModItems.GOLD_TUFF_GOLEM_COIN.get())
+                .add(ModItems.NETHERITE_TUFF_GOLEM_COIN.get());
+        tag(ModTags.Items.WILDFIRE_COIN_SET)
+                .add(ModItems.COPPER_WILDFIRE_COIN.get())
+                .add(ModItems.IRON_WILDFIRE_COIN.get())
+                .add(ModItems.GOLD_WILDFIRE_COIN.get())
+                .add(ModItems.NETHERITE_WILDFIRE_COIN.get());
+        tag(ModTags.Items.MAULER_COIN_SET)
+                .add(ModItems.COPPER_MAULER_COIN.get())
+                .add(ModItems.IRON_MAULER_COIN.get())
+                .add(ModItems.GOLD_MAULER_COIN.get())
+                .add(ModItems.NETHERITE_MAULER_COIN.get());
+        tag(ModTags.Items.ICEOLOGER_COIN_SET)
+                .add(ModItems.COPPER_ICEOLOGER_COIN.get())
+                .add(ModItems.IRON_ICEOLOGER_COIN.get())
+                .add(ModItems.GOLD_ICEOLOGER_COIN.get())
+                .add(ModItems.NETHERITE_ICEOLOGER_COIN.get());
+        tag(ModTags.Items.COPPER_GOLEM_COIN_SET)
+                .add(ModItems.COPPER_COPPER_GOLEM_COIN.get())
+                .add(ModItems.IRON_COPPER_GOLEM_COIN.get())
+                .add(ModItems.GOLD_COPPER_GOLEM_COIN.get())
+                .add(ModItems.NETHERITE_COPPER_GOLEM_COIN.get());
+        tag(ModTags.Items.GLARE_COIN_SET)
+                .add(ModItems.COPPER_GLARE_COIN.get())
+                .add(ModItems.IRON_GLARE_COIN.get())
+                .add(ModItems.GOLD_GLARE_COIN.get())
+                .add(ModItems.NETHERITE_GLARE_COIN.get());
         tag(ModTags.Items.GIANT_COIN_SET)
                 .add(ModItems.COPPER_GIANT_COIN.get())
                 .add(ModItems.IRON_GIANT_COIN.get())

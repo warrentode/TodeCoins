@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.entity.ai.goal;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.client.Minecraft;
@@ -15,6 +14,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.fml.ModList;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -71,7 +71,7 @@ public class AvoidPlayerCatCoinGoal<T extends LivingEntity> extends Goal {
     private static boolean isWearingCatCoin(Player player) {
         ItemStack stack = Curios.getCharmSlot(player);
 
-        return TodeCoins.isModLoaded("curios") && (stack != null && stack.is(ModTags.Items.CAT_COIN_SET)
+        return ModList.get().isLoaded("curios") && (stack != null && stack.is(ModTags.Items.CAT_COIN_SET)
                 || stack != null && stack.is(ModTags.Items.OCELOT_COIN_SET));
     }
 

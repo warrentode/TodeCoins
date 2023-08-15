@@ -10,7 +10,6 @@ public class CageriumLootTables {
     private static final Set<ResourceLocation> LOCATIONS = Sets.newHashSet();
     private static final Set<ResourceLocation> IMMUTABLE_LOCATIONS = Collections.unmodifiableSet(LOCATIONS);
 
-
     public static final ResourceLocation ALLAY = register("minecraft", "allay");
     public static final ResourceLocation AXOLOTL = register("minecraft", "axolotl");
     public static final ResourceLocation BAT = register("minecraft", "bat");
@@ -103,7 +102,16 @@ public class CageriumLootTables {
     public static final ResourceLocation PIGLIN = register("minecraft", "piglin");
     public static final ResourceLocation PIGLIN_BRUTE = register("minecraft", "piglin_brute");
     public static final ResourceLocation ZOMBIE_VILLAGER = register("minecraft", "zombie_villager");
+    public static final ResourceLocation GIANT = register("minecraft", "giant");
+    // todecoins
     public static final ResourceLocation NUMISMATIST = register("todecoins", "numismatist");
+    // friends and foes
+    public static final ResourceLocation MOOBLOOM = register("friendsandfoes", "moobloom");
+    public static final ResourceLocation COPPER_GOLEM = register("friendsandfoes", "copper_golem");
+    public static final ResourceLocation GLARE = register("friendsandfoes", "glare");
+    public static final ResourceLocation ICEOLOGER = register("friendsandfoes", "iceologer");
+    public static final ResourceLocation TUFF_GOLEM = register("friendsandfoes", "tuff_golem");
+    public static final ResourceLocation WILDFIRE = register("friendsandfoes", "wildfire");
 
     private static ResourceLocation register(String modid, String entity) {
         return register(new ResourceLocation(modid, "cagerium/" + entity));

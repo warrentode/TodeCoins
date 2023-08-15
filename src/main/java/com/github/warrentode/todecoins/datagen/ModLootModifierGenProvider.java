@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.datagen;
 
+import com.faboslav.friendsandfoes.init.FriendsAndFoesEntityTypes;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.loot.conditions.tag.BlockTagCondition;
@@ -97,6 +98,7 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .or(LootTableIdCondition.builder(EntityType.ELDER_GUARDIAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WARDEN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WITHER.getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.WILDFIRE.get().getDefaultLootTable()))
                                 .build()
                 },
                 ModBuiltInLootTables.TODECOINS_BOSS_CURRENCY_DROPS
@@ -182,6 +184,12 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .or(LootTableIdCondition.builder(EntityType.ENDER_DRAGON.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WARDEN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WITHER.getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.COPPER_GOLEM.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.GLARE.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.ICEOLOGER.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.MAULER.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.MOOBLOOM.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.TUFF_GOLEM.get().getDefaultLootTable()))
                                 .build()
 
                 },

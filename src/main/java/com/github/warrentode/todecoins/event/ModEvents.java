@@ -37,6 +37,7 @@ import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 
@@ -122,7 +123,7 @@ public class ModEvents {
                     DamageSource damageSource = player.getLastDamageSource();
                     ItemStack luckyCoin = null;
 
-                    if (TodeCoins.isModLoaded("curios")) {
+                    if (ModList.get().isLoaded("curios")) {
                         ItemStack stack = Curios.getCharmSlot(player);
                         if (stack != null && stack.getItem().equals(ModItems.LUCKY_COIN.get())) {
                             luckyCoin = stack;
@@ -186,16 +187,18 @@ public class ModEvents {
                     ItemStack arthropodCharm = null;
                     ItemStack witheringCharm = null;
 
-                    if (TodeCoins.isModLoaded("curios")) {
+                    if (ModList.get().isLoaded("curios")) {
                         if (stack != null) {
                             if (stack.is(ModTags.Items.BEE_COIN_SET) || stack.is(ModTags.Items.CAVE_SPIDER_COIN_SET)
                                     || stack.is(ModTags.Items.WITCH_COIN_SET)) {
                                 poisonCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.BLAZE_COIN_SET) || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
+                            if (stack.is(ModTags.Items.BLAZE_COIN_SET) || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)
+                                    || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
                                 flameCharm = stack;
                             }
-                            if (stack.is(ModTags.Items.SPIDER_COIN_SET) || stack.is(ModTags.Items.STRAY_COIN_SET)) {
+                            if (stack.is(ModTags.Items.SPIDER_COIN_SET) || stack.is(ModTags.Items.STRAY_COIN_SET)
+                                    || stack.is(ModTags.Items.ICEOLOGER_COIN_SET)) {
                                 slownessCharm = stack;
                             }
                             if (stack.getItem() instanceof UndeadCoinItem || stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
@@ -203,7 +206,7 @@ public class ModEvents {
                                 smiteCharm = stack;
                             }
                             if (stack.getItem() instanceof IllagerCoinItem || stack.is(ModTags.Items.WITCH_COIN_SET)
-                                    || stack.is(ModTags.Items.RAVAGER_COIN_SET) || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
+                                    || stack.is(ModTags.Items.RAVAGER_COIN_SET) || stack.is(ModTags.Items.VEX_COIN_SET)) {
                                 illagerCharm = stack;
                             }
                             if (stack.getItem() instanceof ArthropodCoinItem) {
@@ -239,6 +242,12 @@ public class ModEvents {
                         if (flameCharm != null && target != null) {
                             if (target instanceof LivingEntity) {
                                 int i = 0;
+                                int p = 0;
+
+                                if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
+                                    p = 4;
+                                }
+
                                 if (player.level.getDifficulty() == Difficulty.EASY) {
                                     i = 5;
                                 }
@@ -250,7 +259,7 @@ public class ModEvents {
                                 }
 
                                 if (i > 0) {
-                                    target.setSecondsOnFire(i * 20);
+                                    target.setSecondsOnFire((i + p) * 20);
                                 }
                             }
                         }
@@ -311,8 +320,7 @@ public class ModEvents {
                                 int j = 0;
                                 int p = 0;
 
-                                // iceologer = 4
-                                if (illagerCharm.is(ModTags.Items.ILLUSIONER_COIN_SET)) {
+                                if (illagerCharm.is(ModTags.Items.ILLUSIONER_COIN_SET) || stack.is(ModTags.Items.ICEOLOGER_COIN_SET)) {
                                     p = 4;
                                 }
                                 else if (illagerCharm.is(ModTags.Items.EVOKER_COIN_SET) || stack.is(ModTags.Items.RAVAGER_COIN_SET)) {

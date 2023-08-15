@@ -82,7 +82,6 @@ public class ModTags {
         public static final TagKey<Item> ILLUSIONER_COIN_SET = modItemTag("collectible_coins/entity_coins/illusioner_coin_set");
         public static final TagKey<Item> LLAMA_COIN_SET = modItemTag("collectible_coins/entity_coins/llama_coin_set");
         public static final TagKey<Item> MAGMA_CUBE_COIN_SET = modItemTag("collectible_coins/entity_coins/magma_cube_coin_set");
-        public static final TagKey<Item> MOOBLOOM_COIN_SET = modItemTag("collectible_coins/entity_coins/moobloom_coin_set");
         public static final TagKey<Item> MOOSHROOM_COIN_SET = modItemTag("collectible_coins/entity_coins/mooshroom_coin_set");
         public static final TagKey<Item> MULE_COIN_SET = modItemTag("collectible_coins/entity_coins/mule_coin_set");
         public static final TagKey<Item> NUMISMATIST_COIN_SET = modItemTag("collectible_coins/entity_coins/numismatist_coin_set");
@@ -129,6 +128,14 @@ public class ModTags {
         public static final TagKey<Item> ZOMBIE_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_horse_coin_set");
         public static final TagKey<Item> ZOMBIE_VILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_villager_coin_set");
         public static final TagKey<Item> ZOMBIFIED_PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/zombified_piglin_coin_set");
+        // friends and foes theme
+        public static final TagKey<Item> MOOBLOOM_COIN_SET = modItemTag("collectible_coins/entity_coins/moobloom_coin_set");
+        public static final TagKey<Item> COPPER_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/copper_golem_coin_set");
+        public static final TagKey<Item> GLARE_COIN_SET = modItemTag("collectible_coins/entity_coins/glare_coin_set");
+        public static final TagKey<Item> ICEOLOGER_COIN_SET = modItemTag("collectible_coins/entity_coins/iceologer_coin_set");
+        public static final TagKey<Item> MAULER_COIN_SET = modItemTag("collectible_coins/entity_coins/mauler_coin_set");
+        public static final TagKey<Item> WILDFIRE_COIN_SET = modItemTag("collectible_coins/entity_coins/wildfire_coin_set");
+        public static final TagKey<Item> TUFF_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/tuff_golem_coin_set");
 
         public static final TagKey<Item> TEXTILES = modItemTag("textiles");
         public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");

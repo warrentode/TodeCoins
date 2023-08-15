@@ -1,5 +1,6 @@
 {
   "values": [
+    "minecraft:totem_of_undying",
     "minecraft:echo_shard",
     {
       "id": "cagerium:binding_gemstone",

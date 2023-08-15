@@ -489,15 +489,6 @@ public class ModItems {
             () -> new CubeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_MAGMA_CUBE_COIN = ITEMS.register("collectible_coin_magma_cube_netherite",
             () -> new CubeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    // moobloom set
-    public static final RegistryObject<Item> COPPER_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_copper",
-            () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> IRON_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_iron",
-            () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> GOLD_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_gold",
-            () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> NETHERITE_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_netherite",
-            () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // mooshroom set
     public static final RegistryObject<Item> COPPER_MOOSHROOM_COIN = ITEMS.register("collectible_coin_mooshroom_copper",
             () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
@@ -885,6 +876,71 @@ public class ModItems {
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_ZOMBIFIED_PIGLIN_COIN = ITEMS.register("collectible_coin_zombified_piglin_netherite",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+
+    // friends and foes
+    // moobloom set
+    public static final RegistryObject<Item> COPPER_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_copper",
+            () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_iron",
+            () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_gold",
+            () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_MOOBLOOM_COIN = ITEMS.register("collectible_coin_moobloom_netherite",
+            () -> new BovineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // copper golem set
+    public static final RegistryObject<Item> COPPER_COPPER_GOLEM_COIN = ITEMS.register("collectible_coin_copper_golem_copper",
+            () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_COPPER_GOLEM_COIN = ITEMS.register("collectible_coin_copper_golem_iron",
+            () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_COPPER_GOLEM_COIN = ITEMS.register("collectible_coin_copper_golem_gold",
+            () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_COPPER_GOLEM_COIN = ITEMS.register("collectible_coin_copper_golem_netherite",
+            () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // glare set
+    public static final RegistryObject<Item> COPPER_GLARE_COIN = ITEMS.register("collectible_coin_glare_copper",
+            () -> new GlareCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_GLARE_COIN = ITEMS.register("collectible_coin_glare_iron",
+            () -> new GlareCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_GLARE_COIN = ITEMS.register("collectible_coin_glare_gold",
+            () -> new GlareCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_GLARE_COIN = ITEMS.register("collectible_coin_glare_netherite",
+            () -> new GlareCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // iceologer set
+    public static final RegistryObject<Item> COPPER_ICEOLOGER_COIN = ITEMS.register("collectible_coin_iceologer_copper",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_ICEOLOGER_COIN = ITEMS.register("collectible_coin_iceologer_iron",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_ICEOLOGER_COIN = ITEMS.register("collectible_coin_iceologer_gold",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_ICEOLOGER_COIN = ITEMS.register("collectible_coin_iceologer_netherite",
+            () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // mauler set
+    public static final RegistryObject<Item> COPPER_MAULER_COIN = ITEMS.register("collectible_coin_mauler_copper",
+            () -> new MaulerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_MAULER_COIN = ITEMS.register("collectible_coin_mauler_iron",
+            () -> new MaulerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_MAULER_COIN = ITEMS.register("collectible_coin_mauler_gold",
+            () -> new MaulerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_MAULER_COIN = ITEMS.register("collectible_coin_mauler_netherite",
+            () -> new MaulerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // tuff_golem set
+    public static final RegistryObject<Item> COPPER_TUFF_GOLEM_COIN = ITEMS.register("collectible_coin_tuff_golem_copper",
+            () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_TUFF_GOLEM_COIN = ITEMS.register("collectible_coin_tuff_golem_iron",
+            () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_TUFF_GOLEM_COIN = ITEMS.register("collectible_coin_tuff_golem_gold",
+            () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_TUFF_GOLEM_COIN = ITEMS.register("collectible_coin_tuff_golem_netherite",
+            () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // wildfire set
+    public static final RegistryObject<Item> COPPER_WILDFIRE_COIN = ITEMS.register("collectible_coin_wildfire_copper",
+            () -> new BlazeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_WILDFIRE_COIN = ITEMS.register("collectible_coin_wildfire_iron",
+            () -> new BlazeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_WILDFIRE_COIN = ITEMS.register("collectible_coin_wildfire_gold",
+            () -> new BlazeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_WILDFIRE_COIN = ITEMS.register("collectible_coin_wildfire_netherite",
+            () -> new BlazeCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
 
 
     public static void register(IEventBus eventBus) {

@@ -45,13 +45,18 @@ public class Curios {
     // or can that be managed with if-else checks within just a couple of methods?
     // TODO learn how custom enchantments work and how enchantments apply to Curio items in order to expand the variety
     // of equipped effects of these coins since it feels very repetitive to me right now
+    // TODO since the coins do not stack in inventory, I may need to make them breakable and repairable in some fashion to reduce clutter
     // [LittleBear suggestions:]
     // TODO look into how bone meal works and how that can be altered for the bee coin
     // TODO look into adding Loyalty effect for the Drowned coin
     // TODO look into adding Frost Walker effect for Iceologer, Stray, Snow Golem coins
     // TODO can the splash potion radius be changed for the Witch coin?
     // TODO the Sniffer coin influence what you find while digging?
-    // TODO since the coins do not stack in inventory, I may need to make them breakable and repairable in some fashion to reduce clutter
+    // [ScholarOwl suggestions:]
+    // TODO look into giving Elder Guardian coin Depth Strider and Thorns
+    // TODO look into increase buff duration for Witch coin
+    // TODO look into giving immunity to poison for Cave Spider
+
 
     /**
      * Gets the stack in the Belt Slot
@@ -648,7 +653,8 @@ public class Curios {
                 if (player != null) {
                     if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.BAT_COIN_SET)
                             || stack.is(ModTags.Items.CHICKEN_COIN_SET) || stack.is(ModTags.Items.GHAST_COIN_SET)
-                            || stack.is(ModTags.Items.PARROT_COIN_SET) || stack.is(ModTags.Items.PHANTOM_COIN_SET)) {
+                            || stack.is(ModTags.Items.PARROT_COIN_SET) || stack.is(ModTags.Items.PHANTOM_COIN_SET)
+                            || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
@@ -776,7 +782,8 @@ public class Curios {
             public void curioTick(SlotContext slotContext) {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
-                    if (stack.is(ModTags.Items.CAMEL_COIN_SET) || stack.is(ModTags.Items.PIG_COIN_SET)) {
+                    if (stack.is(ModTags.Items.CAMEL_COIN_SET) || stack.is(ModTags.Items.PIG_COIN_SET)
+                            || stack.is(ModTags.Items.MAULER_COIN_SET)) {
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -837,7 +844,8 @@ public class Curios {
             public boolean canWalkOnPowderedSnow(SlotContext slotContext) {
                 return stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.FOX_COIN_SET)
                         || stack.is(ModTags.Items.ENDERMITE_COIN_SET) || stack.is(ModTags.Items.SILVERFISH_COIN_SET)
-                        || stack.is(ModTags.Items.SHULKER_COIN_SET) || stack.is(ModTags.Items.VEX_COIN_SET);
+                        || stack.is(ModTags.Items.SHULKER_COIN_SET) || stack.is(ModTags.Items.VEX_COIN_SET)
+                        || stack.is(ModTags.Items.ICEOLOGER_COIN_SET);
             }
 
             @Nonnull
@@ -1088,7 +1096,8 @@ public class Curios {
                 Player player = Minecraft.getInstance().player;
                 if (player != null) {
                     if (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
-                            || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET) || stack.is(ModTags.Items.GHAST_COIN_SET)) {
+                            || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET) || stack.is(ModTags.Items.GHAST_COIN_SET)
+                            || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1159,7 +1168,8 @@ public class Curios {
                         player.removeEffect(MobEffects.INVISIBILITY);
                     }
 
-                    if (player != null && stack.is(ModTags.Items.VILLAGER_COIN_SET) && (player.level.getDayTime() >= 12000)) {
+                    if (player != null && (stack.is(ModTags.Items.VILLAGER_COIN_SET) || stack.is(ModTags.Items.GLARE_COIN_SET))
+                            && (player.level.getDayTime() >= 12000)) {
 
                         int i = 0;
                         if (player.level.getDifficulty() == Difficulty.EASY) {
@@ -1529,7 +1539,8 @@ public class Curios {
                             || stack.is(ModTags.Items.WARDEN_COIN_SET)
                             || stack.is(ModTags.Items.WITHER_COIN_SET)
                             || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
-                            || stack.is(ModTags.Items.SHULKER_COIN_SET)) {
+                            || stack.is(ModTags.Items.SHULKER_COIN_SET)
+                            || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
                         if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
                             baseArmorBonus = 1;
                         }
@@ -1585,7 +1596,8 @@ public class Curios {
                     if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
                             || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
                             || stack.is(ModTags.Items.WITHER_COIN_SET)
-                            || stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            || stack.is(ModTags.Items.WARDEN_COIN_SET)
+                            || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
                         if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
                             baseHpBonus = 10;
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
@@ -1639,11 +1651,12 @@ public class Curios {
                     if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
                             || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
                             || stack.is(ModTags.Items.WITHER_COIN_SET)
-                            || stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            || stack.is(ModTags.Items.WARDEN_COIN_SET)
+                            || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
                         baseKnockbackResistanceBonus = 2;
 
                         if (player.level.getDifficulty() == Difficulty.EASY) {
-                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                                 bossKnockBackResistanceBonus = 2;
                             }
                             else {
@@ -1651,7 +1664,7 @@ public class Curios {
                             }
                         }
                         else if (player.level.getDifficulty() == Difficulty.NORMAL) {
-                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                                 bossKnockBackResistanceBonus = 2;
                             }
                             else {
@@ -1659,7 +1672,7 @@ public class Curios {
                             }
                         }
                         else if (player.level.getDifficulty() == Difficulty.HARD) {
-                            if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                                 bossKnockBackResistanceBonus = 2;
                             }
                             else {
@@ -1671,7 +1684,8 @@ public class Curios {
                     if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
                             || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
                             || stack.is(ModTags.Items.WITHER_COIN_SET)
-                            || stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                            || stack.is(ModTags.Items.WARDEN_COIN_SET)
+                            || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
                         baseAttackBonus = 2;
 
                         if (player.level.getDifficulty() == Difficulty.EASY) {

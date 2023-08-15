@@ -247,11 +247,6 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_MAGMA_CUBE_COIN.get().getDescriptionId(), "Gold Magma Cube Coin");
         addCollectibleCoins(ModItems.NETHERITE_MAGMA_CUBE_COIN.get().getDescriptionId(), "Netherite Magma Cube Coin");
 
-        addCollectibleCoins(ModItems.COPPER_MOOBLOOM_COIN.get().getDescriptionId(), "Copper Moobloom Coin");
-        addCollectibleCoins(ModItems.IRON_MOOBLOOM_COIN.get().getDescriptionId(), "Iron Moobloom Coin");
-        addCollectibleCoins(ModItems.GOLD_MOOBLOOM_COIN.get().getDescriptionId(), "Gold Moobloom Coin");
-        addCollectibleCoins(ModItems.NETHERITE_MOOBLOOM_COIN.get().getDescriptionId(), "Netherite Moobloom Coin");
-
         addCollectibleCoins(ModItems.COPPER_MOOSHROOM_COIN.get().getDescriptionId(), "Copper Mooshroom Coin");
         addCollectibleCoins(ModItems.IRON_MOOSHROOM_COIN.get().getDescriptionId(), "Iron Mooshroom Coin");
         addCollectibleCoins(ModItems.GOLD_MOOSHROOM_COIN.get().getDescriptionId(), "Gold Mooshroom Coin");
@@ -467,6 +462,42 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_ZOMBIFIED_PIGLIN_COIN.get().getDescriptionId(), "Gold Zombified Piglin Coin");
         addCollectibleCoins(ModItems.NETHERITE_ZOMBIFIED_PIGLIN_COIN.get().getDescriptionId(), "Netherite Zombified Piglin Coin");
 
+        // friends and foes theme coins
+        addCollectibleCoins(ModItems.COPPER_MOOBLOOM_COIN.get().getDescriptionId(), "Copper Moobloom Coin");
+        addCollectibleCoins(ModItems.IRON_MOOBLOOM_COIN.get().getDescriptionId(), "Iron Moobloom Coin");
+        addCollectibleCoins(ModItems.GOLD_MOOBLOOM_COIN.get().getDescriptionId(), "Gold Moobloom Coin");
+        addCollectibleCoins(ModItems.NETHERITE_MOOBLOOM_COIN.get().getDescriptionId(), "Netherite Moobloom Coin");
+
+        addCollectibleCoins(ModItems.COPPER_COPPER_GOLEM_COIN.get().getDescriptionId(), "Copper Copper Golem Coin");
+        addCollectibleCoins(ModItems.IRON_COPPER_GOLEM_COIN.get().getDescriptionId(), "Iron Copper Golem Coin");
+        addCollectibleCoins(ModItems.GOLD_COPPER_GOLEM_COIN.get().getDescriptionId(), "Gold Copper Golem Coin");
+        addCollectibleCoins(ModItems.NETHERITE_COPPER_GOLEM_COIN.get().getDescriptionId(), "Netherite Copper Golem Coin");
+
+        addCollectibleCoins(ModItems.COPPER_GLARE_COIN.get().getDescriptionId(), "Copper Glare Coin");
+        addCollectibleCoins(ModItems.IRON_GLARE_COIN.get().getDescriptionId(), "Iron Glare Coin");
+        addCollectibleCoins(ModItems.GOLD_GLARE_COIN.get().getDescriptionId(), "Gold Glare Coin");
+        addCollectibleCoins(ModItems.NETHERITE_GLARE_COIN.get().getDescriptionId(), "Netherite Glare Coin");
+
+        addCollectibleCoins(ModItems.COPPER_ICEOLOGER_COIN.get().getDescriptionId(), "Copper Iceologer Coin");
+        addCollectibleCoins(ModItems.IRON_ICEOLOGER_COIN.get().getDescriptionId(), "Iron Iceologer Coin");
+        addCollectibleCoins(ModItems.GOLD_ICEOLOGER_COIN.get().getDescriptionId(), "Gold Iceologer Coin");
+        addCollectibleCoins(ModItems.NETHERITE_ICEOLOGER_COIN.get().getDescriptionId(), "Netherite Iceologer Coin");
+
+        addCollectibleCoins(ModItems.COPPER_MAULER_COIN.get().getDescriptionId(), "Copper Mauler Coin");
+        addCollectibleCoins(ModItems.IRON_MAULER_COIN.get().getDescriptionId(), "Iron Mauler Coin");
+        addCollectibleCoins(ModItems.GOLD_MAULER_COIN.get().getDescriptionId(), "Gold Mauler Coin");
+        addCollectibleCoins(ModItems.NETHERITE_MAULER_COIN.get().getDescriptionId(), "Netherite Mauler Coin");
+
+        addCollectibleCoins(ModItems.COPPER_WILDFIRE_COIN.get().getDescriptionId(), "Copper Wildfire Coin");
+        addCollectibleCoins(ModItems.IRON_WILDFIRE_COIN.get().getDescriptionId(), "Iron Wildfire Coin");
+        addCollectibleCoins(ModItems.GOLD_WILDFIRE_COIN.get().getDescriptionId(), "Gold Wildfire Coin");
+        addCollectibleCoins(ModItems.NETHERITE_WILDFIRE_COIN.get().getDescriptionId(), "Netherite Wildfire Coin");
+
+        addCollectibleCoins(ModItems.COPPER_TUFF_GOLEM_COIN.get().getDescriptionId(), "Copper Tuff Golem Coin");
+        addCollectibleCoins(ModItems.IRON_TUFF_GOLEM_COIN.get().getDescriptionId(), "Iron Tuff Golem Coin");
+        addCollectibleCoins(ModItems.GOLD_TUFF_GOLEM_COIN.get().getDescriptionId(), "Gold Tuff Golem Coin");
+        addCollectibleCoins(ModItems.NETHERITE_TUFF_GOLEM_COIN.get().getDescriptionId(), "Netherite Tuff Golem Coin");
+
         // regular mod items
         add(ModItems.NUMISMATIST_SPAWN_EGG.get(), "Numismatist Spawn Egg");
         add(ModItems.SNOW_GOLEM_SPAWN_EGG.get(), "Snow Golem Spawn Egg");
@@ -574,7 +605,7 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("tooltips.collectible_bear_coin.hover", "One of Eight Bear Seasonal Coins");
         add("tooltips.collectible_boss_coin.hover", "One of Sixteen Boss Seasonal Coins");
-        add("tooltips.collectible_blaze_coin.hover", "One of Four Blaze Seasonal Coins");
+        add("tooltips.collectible_blaze_coin.hover", "One of Eight Blaze Seasonal Coins");
         add("tooltips.collectible_bovine_coin.hover", "One of Twenty-Four Bovine Seasonal Coins");
 
         add("tooltips.collectible_camelid_coin.hover", "One of Twelve Camelid Seasonal Coins");
@@ -587,9 +618,9 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("tooltips.collectible_feline_coin.hover", "One of Eight Feline Seasonal Coins");
 
-        add("tooltips.collectible_golem_coin.hover", "One of Eight Golem Seasonal Coins");
+        add("tooltips.collectible_golem_coin.hover", "One of Sixteen Golem Seasonal Coins");
 
-        add("tooltips.collectible_illager_coin.hover", "One of Twenty Illager Seasonal Coins");
+        add("tooltips.collectible_illager_coin.hover", "One of Twenty-Four Illager Seasonal Coins");
 
         add("tooltips.collectible_merchant_coin.hover", "One of Twelve Merchant Seasonal Coins");
 
@@ -603,6 +634,10 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_swine_coin.hover", "One of Eight Pig Seasonal Coins");
 
         add("tooltips.collectible_undead_coin.hover", "One of Thirty-Six Undead Seasonal Coins");
+
+        // friends and foes specific theme bases
+        add("tooltips.collectible_glare_coin.hover", "One of Four Glare Seasonal Coins");
+        add("tooltips.collectible_mauler_coin.hover", "One of Four Mauler Seasonal Coins");
 
         // gameplay collectible coin bases
         add("tooltips.collectible_hero_coin.hover", "One of Four Hero Seasonal Coins");

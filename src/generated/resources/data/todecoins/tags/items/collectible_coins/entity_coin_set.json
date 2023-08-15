@@ -34,7 +34,6 @@
     "#todecoins:collectible_coins/entity_coins/illusioner_coin_set",
     "#todecoins:collectible_coins/entity_coins/llama_coin_set",
     "#todecoins:collectible_coins/entity_coins/magma_cube_coin_set",
-    "#todecoins:collectible_coins/entity_coins/moobloom_coin_set",
     "#todecoins:collectible_coins/entity_coins/mooshroom_coin_set",
     "#todecoins:collectible_coins/entity_coins/mule_coin_set",
     "#todecoins:collectible_coins/entity_coins/numismatist_coin_set",
@@ -80,6 +79,14 @@
     "#todecoins:collectible_coins/entity_coins/zombie_coin_set",
     "#todecoins:collectible_coins/entity_coins/zombie_horse_coin_set",
     "#todecoins:collectible_coins/entity_coins/zombie_villager_coin_set",
-    "#todecoins:collectible_coins/entity_coins/zombified_piglin_coin_set"
+    "#todecoins:collectible_coins/entity_coins/zombified_piglin_coin_set",
+    "#todecoins:collectible_coins/entity_coins/moobloom_coin_set",
+    "#todecoins:collectible_coins/entity_coins/copper_golem_coin_set",
+    "#todecoins:collectible_coins/entity_coins/glare_coin_set",
+    "#todecoins:collectible_coins/entity_coins/glare_coin_set",
+    "#todecoins:collectible_coins/entity_coins/iceologer_coin_set",
+    "#todecoins:collectible_coins/entity_coins/mauler_coin_set",
+    "#todecoins:collectible_coins/entity_coins/wildfire_coin_set",
+    "#todecoins:collectible_coins/entity_coins/tuff_golem_coin_set"
   ]
 }
