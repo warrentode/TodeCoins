@@ -85,11 +85,11 @@
     },
     {
       "bonus_rolls": 0.0,
-        "conditions": [
-            {
-                "condition": "minecraft:killed_by_player"
-            }
-        ],
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -100,19 +100,19 @@
     },
     {
       "bonus_rolls": 0.0,
-        "conditions": [
-            {
-                "condition": "minecraft:killed_by_player"
-            },
-            {
-                "chance": 0.025,
-                "condition": "minecraft:random_chance_with_looting",
-                "looting_multiplier": 0.01
-            }
-        ],
-        "entries": [
+      "conditions": [
         {
-            "type": "minecraft:loot_table",
+          "condition": "minecraft:killed_by_player"
+        },
+        {
+          "chance": 0.025,
+          "condition": "minecraft:random_chance_with_looting",
+          "looting_multiplier": 0.01
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
           "functions": [
             {
               "conditions": [
@@ -129,7 +129,7 @@
               "function": "minecraft:furnace_smelt"
             }
           ],
-            "name": "minecraft:minecraft/loot_tables/gameplay/fishing/fish"
+          "name": "minecraft:gameplay/fishing/fish"
         }
       ],
       "rolls": 1.0

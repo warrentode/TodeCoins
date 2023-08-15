@@ -37,10 +37,10 @@ public class CageriumLootTablesGen implements Consumer<BiConsumer<ResourceLocati
     // balance and this needs to be hardcoded into this class to prevent GLM from accidentally landing in these tables
     protected static final EntityPredicate.Builder ENTITY_ON_FIRE = EntityPredicate.Builder.entity()
             .flags(EntityFlagsPredicate.Builder.flags().setOnFire(true).build());
-    private static final ResourceLocation FISHING_FISH = path("minecraft/loot_tables/gameplay/fishing/fish");
+    private static final ResourceLocation FISHING_FISH = path("minecraft", "gameplay/fishing/fish");
 
-    static ResourceLocation path(String path) {
-        return new ResourceLocation(path);
+    static ResourceLocation path(String modid, String path) {
+        return new ResourceLocation(modid, path);
     }
 
     private static LootTable.Builder createSheepTable(ItemLike pWool) {
