@@ -2067,31 +2067,13 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "biome": "minecraft:nether_wastes"
+                    "biome": "minecraft:mangrove_swamp"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warped_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
+                    "biome": "minecraft:swamp"
                   }
                 }
               ]
@@ -2557,25 +2539,49 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:overworld"
+                    "structure": "minecraft:mineshaft"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_end"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
                   }
                 }
               ]
@@ -2800,33 +2806,10 @@
               "condition": "todecoins:winter_condition"
             },
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:overworld"
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:end_city"
+              }
             }
           ],
           "name": "todecoins:collectible_coin_endermite_netherite"
@@ -3097,33 +3080,10 @@
               "condition": "todecoins:winter_condition"
             },
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:overworld"
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:end_city"
+              }
             }
           ],
           "name": "todecoins:collectible_coin_shulker_netherite"
@@ -3208,7 +3168,49 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:overworld"
+                    "structure": "minecraft:mineshaft"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
                   }
                 },
                 {
@@ -3279,10 +3281,21 @@
               "condition": "todecoins:winter_condition"
             },
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:deep_dark"
-              }
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:deep_dark"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                }
+              ]
             }
           ],
           "name": "todecoins:collectible_coin_warden_netherite"
@@ -3294,10 +3307,27 @@
               "condition": "todecoins:winter_condition"
             },
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:swamp_hut"
-              }
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:swamp_hut"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:swamp"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:mangrove_swamp"
+                  }
+                }
+              ]
             }
           ],
           "name": "todecoins:collectible_coin_witch_netherite"
@@ -3344,25 +3374,43 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:overworld"
+                    "structure": "minecraft:fortress"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_end"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
                   }
                 }
               ]
@@ -3382,25 +3430,49 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:overworld"
+                    "structure": "minecraft:mineshaft"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_end"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
                   }
                 }
               ]
@@ -3420,25 +3492,49 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:overworld"
+                    "structure": "minecraft:mineshaft"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_end"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
                   }
                 }
               ]
@@ -3453,33 +3549,10 @@
               "condition": "todecoins:winter_condition"
             },
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:overworld"
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:end_city"
+              }
             }
           ],
           "name": "todecoins:collectible_coin_ender_dragon_netherite"
@@ -3496,25 +3569,49 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:overworld"
+                    "structure": "minecraft:mineshaft"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_end"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
                   }
                 }
               ]
@@ -3774,25 +3871,43 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:the_nether"
+                    "structure": "minecraft:fortress"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:overworld"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_end"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
                   }
                 }
               ]

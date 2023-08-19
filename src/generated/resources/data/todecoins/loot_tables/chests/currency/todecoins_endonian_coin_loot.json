@@ -8,33 +8,10 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:overworld"
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:end_city"
+              }
             }
           ],
           "functions": [
@@ -54,33 +31,10 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:overworld"
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:end_city"
+              }
             }
           ],
           "name": "todecoins:nether_gold_coin_bag"

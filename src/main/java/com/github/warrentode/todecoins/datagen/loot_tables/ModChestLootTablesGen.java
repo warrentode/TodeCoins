@@ -34,7 +34,7 @@ public class ModChestLootTablesGen extends ChestLoot {
     // weather checks
     public static final LootItemCondition.Builder IS_THUNDERING = WeatherCheck.weather().setThundering(true);
 
-    // structure checks
+    // overworld structure checks
     public static final LootItemCondition.Builder IN_IGLOO = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.IGLOO.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_RUINED_PORTAL_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_OCEAN.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_OCEAN_MONUMENT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_MONUMENT.unwrapKey().orElseThrow()));
@@ -54,9 +54,12 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder IN_SWAMP_HUT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.SWAMP_HUT.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_PILLAGER_OUTPOST = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.PILLAGER_OUTPOST.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_MANSION = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.WOODLAND_MANSION.unwrapKey().orElseThrow()));
+    // nether structure checks
     public static final LootItemCondition.Builder IN_NETHER_FORTRESS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.FORTRESS.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_BASTION_REMNANTS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.BASTION_REMNANT.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_RUINED_PORTAL_NETHER = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_NETHER.unwrapKey().orElseThrow()));
+    // end structure checks
+    public static final LootItemCondition.Builder IN_END_CITY = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.END_CITY.unwrapKey().orElseThrow()));
     // biome checks
     public static final LootItemCondition.Builder IN_STONY_PEAKS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.STONY_PEAKS));
     public static final LootItemCondition.Builder IN_FROZEN_PEAKS = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_PEAKS));
@@ -182,9 +185,11 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_GOLD_COIN_LOOT)
                                         .setWeight(5).setQuality(2))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_LOOT)
-                                        .setWeight(5).setQuality(2).when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
+                                        .setWeight(5).setQuality(2).when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ENDONIAN_COIN_LOOT)
-                                        .setWeight(5).setQuality(2).when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .setWeight(5).setQuality(2).when(IN_END_CITY))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT)
                                         .setWeight(4).setQuality(3))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_LOOT)
@@ -254,10 +259,14 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .setRolls(UniformGenerator.between(1.0F, 5.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).setWeight(1)
-                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert()))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
                                 .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).setWeight(1)
-                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_ENDONIAN_COIN_LOOT,
                 LootTable.lootTable()
@@ -265,10 +274,10 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .setRolls(UniformGenerator.between(1.0F, 5.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).setWeight(1)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert()))
+                                        .when(IN_END_CITY)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
                                 .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).setWeight(1)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT,
                 LootTable.lootTable()
@@ -544,8 +553,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_TADPOLE_COIN.get())
-                                        .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST)
-                                                .or(IN_SOUL_SAND_VALLEY).or(IN_BASALT_DELTAS)).when(SPRING))
+                                        .when(IN_MANGROVE_SWAMP.or(IN_SWAMP)).when(SPRING))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_TURTLE_COIN.get())
                                         .when(IN_BEACH).when(SPRING))
@@ -590,7 +598,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_RUINED_PORTAL_NETHER)).when(SPRING))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_CREEPER_COIN.get()).when(SPRING)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_DROWNED_COIN.get()).when(SPRING)
                                         .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
@@ -611,7 +620,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_OCEAN_RUIN_COLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ENDERMITE_COIN.get()).when(SPRING)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_EVOKER_COIN.get()).when(SPRING)
                                         .when(IN_MANSION))
@@ -623,7 +632,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_MANSION))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_GHAST_COIN.get()).when(SPRING)
-                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_HUSK_COIN.get()).when(SPRING)
                                         .when(IN_DESERT))
@@ -639,9 +650,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IS_NIGHT.or(IS_THUNDERING).or(IN_NETHER).invert()))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_BRUTE_COIN.get()).when(SPRING)
-                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
-                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
-                                                .or(IN_BASALT_DELTAS)))
+                                        .when(IN_BASTION_REMNANTS))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PILLAGER_COIN.get()).when(SPRING)
                                         .when(IN_PILLAGER_OUTPOST))
@@ -650,7 +659,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_PILLAGER_OUTPOST))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SHULKER_COIN.get()).when(SPRING)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SILVERFISH_COIN.get()).when(SPRING)
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
@@ -658,17 +667,19 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_STONY_PEAKS)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SKELETON_COIN.get()).when(SPRING)
-                                        .when(IN_OVERWORLD.or(IN_NETHER_FORTRESS).or(IN_SOUL_SAND_VALLEY)))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID)
+                                                .or(IN_STRONGHOLD).or(IN_NETHER_FORTRESS).or(IN_SOUL_SAND_VALLEY)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_STRAY_COIN.get()).when(SPRING)
                                         .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WARDEN_COIN.get()).when(SPRING)
-                                        .when(IN_DEEP_DARK))
+                                        .when(IN_DEEP_DARK.or(IN_ANCIENT_CITY)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITCH_COIN.get()).when(SPRING)
-                                        .when(IN_SWAMP_HUT))
+                                        .when(IN_SWAMP_HUT.or(IN_SWAMP).or(IN_MANGROVE_SWAMP)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WITHER_SKELETON_COIN.get()).when(SPRING)
                                         .when(IN_NETHER_FORTRESS))
@@ -677,19 +688,24 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ZOGLIN_COIN.get()).when(SPRING)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ZOMBIE_COIN.get()).when(SPRING)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_DESERT_PYRAMID).or(IN_JUNGLE_TEMPLE)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ZOMBIE_VILLAGER_COIN.get()).when(SPRING)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_DESERT_PYRAMID).or(IN_JUNGLE_TEMPLE)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ENDER_DRAGON_COIN.get()).when(SPRING)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_GIANT_COIN.get()).when(SPRING)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_ILLUSIONER_COIN.get()).when(SPRING)
                                         .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)))
@@ -714,7 +730,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
 
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WILDFIRE_COIN.get()).when(SPRING)
-                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
@@ -901,8 +919,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_TADPOLE_COIN.get())
-                                        .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST)
-                                                .or(IN_SOUL_SAND_VALLEY).or(IN_BASALT_DELTAS)).when(SUMMER))
+                                        .when(IN_MANGROVE_SWAMP.or(IN_SWAMP)).when(SUMMER))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_TURTLE_COIN.get())
                                         .when(IN_BEACH).when(SUMMER))
@@ -947,7 +964,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_RUINED_PORTAL_NETHER)).when(SUMMER))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_CREEPER_COIN.get()).when(SUMMER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_DROWNED_COIN.get()).when(SUMMER)
                                         .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
@@ -968,7 +986,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_OCEAN_RUIN_COLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_ENDERMITE_COIN.get()).when(SUMMER)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_EVOKER_COIN.get()).when(SUMMER)
                                         .when(IN_MANSION))
@@ -980,7 +998,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_MANSION))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_GHAST_COIN.get()).when(SUMMER)
-                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_HUSK_COIN.get()).when(SUMMER)
                                         .when(IN_DESERT))
@@ -1007,7 +1027,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_PILLAGER_OUTPOST))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_SHULKER_COIN.get()).when(SUMMER)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_SILVERFISH_COIN.get()).when(SUMMER)
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
@@ -1015,17 +1035,19 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_STONY_PEAKS)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_SKELETON_COIN.get()).when(SUMMER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER_FORTRESS).or(IN_SOUL_SAND_VALLEY)))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID)
+                                                .or(IN_STRONGHOLD).or(IN_NETHER_FORTRESS).or(IN_SOUL_SAND_VALLEY)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_STRAY_COIN.get()).when(SUMMER)
                                         .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_WARDEN_COIN.get()).when(SUMMER)
-                                        .when(IN_DEEP_DARK))
+                                        .when(IN_DEEP_DARK.or(IN_ANCIENT_CITY)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITCH_COIN.get()).when(SUMMER)
-                                        .when(IN_SWAMP_HUT))
+                                        .when(IN_SWAMP_HUT.or(IN_SWAMP).or(IN_MANGROVE_SWAMP)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_WITHER_SKELETON_COIN.get()).when(SUMMER)
                                         .when(IN_NETHER_FORTRESS))
@@ -1034,19 +1056,24 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_ZOGLIN_COIN.get()).when(SUMMER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_ZOMBIE_COIN.get()).when(SUMMER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_ZOMBIE_VILLAGER_COIN.get()).when(SUMMER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_ENDER_DRAGON_COIN.get()).when(SUMMER)
                                         .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_GIANT_COIN.get()).when(SUMMER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_ILLUSIONER_COIN.get()).when(SUMMER)
                                         .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)))
@@ -1071,7 +1098,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
 
                                 .add(LootItem.lootTableItem(ModItems.IRON_WILDFIRE_COIN.get()).when(SUMMER)
-                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
@@ -1258,8 +1287,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_TADPOLE_COIN.get())
-                                        .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST)
-                                                .or(IN_SOUL_SAND_VALLEY).or(IN_BASALT_DELTAS)).when(AUTUMN))
+                                        .when(IN_MANGROVE_SWAMP.or(IN_SWAMP)).when(AUTUMN))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_TURTLE_COIN.get())
                                         .when(IN_BEACH).when(AUTUMN))
@@ -1304,7 +1332,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_RUINED_PORTAL_NETHER)).when(AUTUMN))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_CREEPER_COIN.get()).when(AUTUMN)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_DROWNED_COIN.get()).when(AUTUMN)
                                         .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
@@ -1325,7 +1354,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_OCEAN_RUIN_COLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ENDERMITE_COIN.get()).when(AUTUMN)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_EVOKER_COIN.get()).when(AUTUMN)
                                         .when(IN_MANSION))
@@ -1364,7 +1393,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_PILLAGER_OUTPOST))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SHULKER_COIN.get()).when(AUTUMN)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SILVERFISH_COIN.get()).when(AUTUMN)
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
@@ -1372,17 +1401,19 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_STONY_PEAKS)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SKELETON_COIN.get()).when(AUTUMN)
-                                        .when(IN_OVERWORLD.or(IN_NETHER_FORTRESS).or(IN_SOUL_SAND_VALLEY)))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID)
+                                                .or(IN_STRONGHOLD).or(IN_NETHER_FORTRESS).or(IN_SOUL_SAND_VALLEY)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_STRAY_COIN.get()).when(AUTUMN)
                                         .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WARDEN_COIN.get()).when(AUTUMN)
-                                        .when(IN_DEEP_DARK))
+                                        .when(IN_DEEP_DARK.or(IN_ANCIENT_CITY)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITCH_COIN.get()).when(AUTUMN)
-                                        .when(IN_SWAMP_HUT))
+                                        .when(IN_SWAMP_HUT.or(IN_SWAMP).or(IN_MANGROVE_SWAMP)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WITHER_SKELETON_COIN.get()).when(AUTUMN)
                                         .when(IN_NETHER_FORTRESS))
@@ -1391,19 +1422,24 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ZOGLIN_COIN.get()).when(AUTUMN)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ZOMBIE_COIN.get()).when(AUTUMN)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ZOMBIE_VILLAGER_COIN.get()).when(AUTUMN)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ENDER_DRAGON_COIN.get()).when(AUTUMN)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_GIANT_COIN.get()).when(AUTUMN)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_ILLUSIONER_COIN.get()).when(AUTUMN)
                                         .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)))
@@ -1428,7 +1464,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
 
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WILDFIRE_COIN.get()).when(AUTUMN)
-                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
@@ -1615,8 +1653,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_TADPOLE_COIN.get())
-                                        .when(IN_NETHER_WASTES.or(IN_CRIMSON_FOREST).or(IN_WARPED_FOREST)
-                                                .or(IN_SOUL_SAND_VALLEY).or(IN_BASALT_DELTAS)).when(WINTER))
+                                        .when(IN_MANGROVE_SWAMP.or(IN_SWAMP)).when(WINTER))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_TURTLE_COIN.get())
                                         .when(IN_BEACH).when(WINTER))
@@ -1661,7 +1698,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_RUINED_PORTAL_NETHER)).when(WINTER))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_CREEPER_COIN.get()).when(WINTER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_DROWNED_COIN.get())
                                         .when(IN_RIVER.or(IN_FROZEN_RIVER).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)
@@ -1682,7 +1720,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_OCEAN_RUIN_COLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMITE_COIN.get()).when(WINTER)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_EVOKER_COIN.get()).when(WINTER)
                                         .when(IN_MANSION))
@@ -1721,7 +1759,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_PILLAGER_OUTPOST))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SHULKER_COIN.get()).when(WINTER)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SILVERFISH_COIN.get()).when(WINTER)
                                         .when(IN_STRONGHOLD.or(IN_IGLOO).or(IN_MANSION).or(IN_MEADOW).or(IN_GROVE)
@@ -1729,17 +1767,19 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_STONY_PEAKS)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SKELETON_COIN.get()).when(WINTER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER_FORTRESS).or(IN_SOUL_SAND_VALLEY)))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID)
+                                                .or(IN_STRONGHOLD).or(IN_NETHER_FORTRESS).or(IN_SOUL_SAND_VALLEY)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_STRAY_COIN.get()).when(WINTER)
                                         .when(IN_FROZEN_RIVER.or(IN_SNOWY_PLAINS).or(IN_ICE_SPIKES).or(IN_FROZEN_OCEAN)
                                                 .or(IN_DEEP_FROZEN_OCEAN)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WARDEN_COIN.get()).when(WINTER)
-                                        .when(IN_DEEP_DARK))
+                                        .when(IN_DEEP_DARK.or(IN_ANCIENT_CITY)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITCH_COIN.get()).when(WINTER)
-                                        .when(IN_SWAMP_HUT))
+                                        .when(IN_SWAMP_HUT.or(IN_SWAMP).or(IN_MANGROVE_SWAMP)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITHER_SKELETON_COIN.get()).when(WINTER)
                                         .when(IN_NETHER_FORTRESS))
@@ -1748,19 +1788,24 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOGLIN_COIN.get()).when(WINTER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIE_COIN.get()).when(WINTER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIE_VILLAGER_COIN.get()).when(WINTER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDER_DRAGON_COIN.get()).when(WINTER)
-                                        .when(IN_THE_END.or(IN_NETHER.invert()).or(IN_OVERWORLD.invert())))
+                                        .when(IN_END_CITY))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_GIANT_COIN.get()).when(WINTER)
-                                        .when(IN_OVERWORLD.or(IN_NETHER.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_DRIPSTONE_CAVES).or(IN_LUSH_CAVES)
+                                                .or(IN_ANCIENT_CITY).or(IN_JUNGLE_TEMPLE).or(IN_DESERT_PYRAMID).or(IN_STRONGHOLD)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ILLUSIONER_COIN.get()).when(WINTER)
                                         .when(IN_MANSION.or(IN_PILLAGER_OUTPOST)))
@@ -1785,7 +1830,9 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WILDFIRE_COIN.get()).when(WINTER)
-                                        .when(IN_NETHER.or(IN_OVERWORLD.invert()).or(IN_THE_END.invert())))
+                                        .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
+                                                .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
+                                                .or(IN_BASALT_DELTAS)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,

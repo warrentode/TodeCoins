@@ -13,25 +13,43 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:the_nether"
+                    "structure": "minecraft:fortress"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:overworld"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_end"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
                   }
                 }
               ]
@@ -59,25 +77,43 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "dimension": "minecraft:the_nether"
+                    "structure": "minecraft:fortress"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:overworld"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_end"
-                    }
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
                   }
                 }
               ]

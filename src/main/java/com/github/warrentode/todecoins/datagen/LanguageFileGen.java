@@ -668,6 +668,7 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(), "Emerald Quarter Bank Note Bag");
         add(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get(), "Emerald Half Bank Note Bag");
         add(ModBlocks.EMERALD_BANK_NOTE_BAG.get(), "Emerald Bank Note Bag");
+        add(ModBlocks.LUCKY_COIN_BAG.get(), "Lucky Coin Bag");
         add(ModBlocks.ENDONIAN_BLOCK.get(), "Endonian Block");
         add(ModBlocks.POT_OF_GOLD.get(), "Pot of Gold");
         add(ModBlocks.COINPRESSBLOCK.get(), "Coin Press");

@@ -29,7 +29,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 group = "com.github.warrentode"
 archivesBaseName = "todecoins"
-version = "1.19.2-1.5.2"
+version = "1.19.2-1.5.3"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -165,7 +165,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = "com.github.warrentode"
             artifactId = "todecoins"
-            version = "1.19.2-1.5.2"
+            version = "1.19.2-1.5.3"
 
             from components.java
         }
