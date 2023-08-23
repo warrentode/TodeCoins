@@ -39,8 +39,8 @@ public class Numismatist extends WanderingTrader {
     private BlockPos wanderTarget;
     private int despawnDelay;
 
-    public Numismatist(EntityType<? extends WanderingTrader> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
+    public Numismatist(EntityType<? extends WanderingTrader> entityType, Level level) {
+        super(entityType, level);
     }
 
     protected void registerGoals() {
@@ -66,10 +66,10 @@ public class Numismatist extends WanderingTrader {
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 8.0F));
     }
 
-    public @NotNull InteractionResult mobInteract(@NotNull Player pPlayer, @NotNull InteractionHand pHand) {
-        ItemStack itemstack = pPlayer.getItemInHand(pHand);
-        if (!itemstack.is(Items.VILLAGER_SPAWN_EGG) && this.isAlive() && !this.isTrading() && !this.isBaby()) {
-            if (pHand == InteractionHand.MAIN_HAND) {
+    public @NotNull InteractionResult mobInteract(@NotNull Player pPlayer, @NotNull InteractionHand hand) {
+        ItemStack stack = pPlayer.getItemInHand(hand);
+        if (!stack.is(Items.VILLAGER_SPAWN_EGG) && this.isAlive() && !this.isTrading() && !this.isBaby()) {
+            if (hand == InteractionHand.MAIN_HAND) {
                 pPlayer.awardStat(Stats.TALKED_TO_VILLAGER);
             }
 
@@ -82,7 +82,7 @@ public class Numismatist extends WanderingTrader {
             return InteractionResult.sidedSuccess(this.level.isClientSide);
         }
         else {
-            return super.mobInteract(pPlayer, pHand);
+            return super.mobInteract(pPlayer, hand);
         }
     }
 
@@ -126,8 +126,8 @@ public class Numismatist extends WanderingTrader {
     }
 
     @Override
-    protected @NotNull SoundEvent getDrinkingSound(@NotNull ItemStack pStack) {
-        return pStack.is(Items.MILK_BUCKET) ? SoundEvents.WANDERING_TRADER_DRINK_MILK : SoundEvents.WANDERING_TRADER_DRINK_POTION;
+    protected @NotNull SoundEvent getDrinkingSound(@NotNull ItemStack stack) {
+        return stack.is(Items.MILK_BUCKET) ? SoundEvents.WANDERING_TRADER_DRINK_MILK : SoundEvents.WANDERING_TRADER_DRINK_POTION;
     }
 
     @Override
@@ -141,8 +141,8 @@ public class Numismatist extends WanderingTrader {
     }
 
     @Override
-    public void setDespawnDelay(int pDespawnDelay) {
-        this.despawnDelay = pDespawnDelay;
+    public void setDespawnDelay(int despawnDelay) {
+        this.despawnDelay = despawnDelay;
     }
 
     @Override
@@ -165,8 +165,8 @@ public class Numismatist extends WanderingTrader {
     }
 
     @Override
-    public void setWanderTarget(@Nullable BlockPos pWanderTarget) {
-        this.wanderTarget = pWanderTarget;
+    public void setWanderTarget(@Nullable BlockPos wanderTarget) {
+        this.wanderTarget = wanderTarget;
     }
 
     @Nullable
@@ -186,10 +186,10 @@ public class Numismatist extends WanderingTrader {
         final double stopDistance;
         final double speedModifier;
 
-        WanderToPositionGoal(Numismatist numismatist, double pStopDistance, double pSpeedModifier) {
+        WanderToPositionGoal(Numismatist numismatist, double stopDistance, double speedModifier) {
             this.trader = numismatist;
-            this.stopDistance = pStopDistance;
-            this.speedModifier = pSpeedModifier;
+            this.stopDistance = stopDistance;
+            this.speedModifier = speedModifier;
             this.setFlags(EnumSet.of(Goal.Flag.MOVE));
         }
 
@@ -206,29 +206,29 @@ public class Numismatist extends WanderingTrader {
          * method as well.
          */
         public boolean canUse() {
-            BlockPos blockpos = this.trader.getWanderTarget();
-            return blockpos != null && this.isTooFarAway(blockpos, this.stopDistance);
+            BlockPos blockPos = this.trader.getWanderTarget();
+            return blockPos != null && this.isTooFarAway(blockPos, this.stopDistance);
         }
 
         /**
          * Keep ticking a continuous task that has already been started
          */
         public void tick() {
-            BlockPos blockpos = this.trader.getWanderTarget();
-            if (blockpos != null && Numismatist.this.navigation.isDone()) {
-                if (this.isTooFarAway(blockpos, 10.0D)) {
-                    Vec3 vec3 = (new Vec3((double) blockpos.getX() - this.trader.getX(), (double) blockpos.getY() - this.trader.getY(), (double) blockpos.getZ() - this.trader.getZ())).normalize();
+            BlockPos blockPos = this.trader.getWanderTarget();
+            if (blockPos != null && Numismatist.this.navigation.isDone()) {
+                if (this.isTooFarAway(blockPos, 10.0D)) {
+                    Vec3 vec3 = (new Vec3((double) blockPos.getX() - this.trader.getX(), (double) blockPos.getY() - this.trader.getY(), (double) blockPos.getZ() - this.trader.getZ())).normalize();
                     Vec3 vec31 = vec3.scale(10.0D).add(this.trader.getX(), this.trader.getY(), this.trader.getZ());
                     Numismatist.this.navigation.moveTo(vec31.x, vec31.y, vec31.z, this.speedModifier);
                 }
                 else {
-                    Numismatist.this.navigation.moveTo(blockpos.getX(), blockpos.getY(), blockpos.getZ(), this.speedModifier);
+                    Numismatist.this.navigation.moveTo(blockPos.getX(), blockPos.getY(), blockPos.getZ(), this.speedModifier);
                 }
             }
         }
 
-        private boolean isTooFarAway(@NotNull BlockPos pPos, double pDistance) {
-            return !pPos.closerToCenterThan(this.trader.position(), pDistance);
+        private boolean isTooFarAway(@NotNull BlockPos blockPos, double distance) {
+            return !blockPos.closerToCenterThan(this.trader.position(), distance);
         }
     }
 }

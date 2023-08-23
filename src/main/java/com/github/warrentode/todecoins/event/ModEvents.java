@@ -5,6 +5,8 @@ import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.attribute.PlayerCharisma;
 import com.github.warrentode.todecoins.attribute.PlayerCharismaProvider;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
+import com.github.warrentode.todecoins.entity.ai.goal.AvoidPlayerCatCoinGoal;
+import com.github.warrentode.todecoins.entity.spawners.numismatist.NumismatistSpawner;
 import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.ArthropodCoinItem;
@@ -15,6 +17,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
@@ -23,25 +27,39 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.monster.AbstractIllager;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.event.server.ServerStoppedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModEvents {
     @Mod.EventBusSubscriber(modid = TodeCoins.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -165,7 +183,6 @@ public class ModEvents {
             }
             return false;
         }
-
 
         @SuppressWarnings("SameReturnValue")
         @SubscribeEvent
@@ -404,6 +421,86 @@ public class ModEvents {
                 }
             }
             return false;
+        }
+
+        @SuppressWarnings("SameReturnValue")
+        @SubscribeEvent
+        public static boolean onLivingChangeTargetAttack(@NotNull LivingChangeTargetEvent event) {
+            LivingEntity entity = event.getEntity();
+            Entity target = event.getOriginalTarget();
+            Level level = entity.getCommandSenderWorld();
+
+            if (!level.isClientSide) {
+                //noinspection UnusedAssignment
+                if (entity instanceof Phantom phantom && target instanceof ServerPlayer player) {
+                    ItemStack stack = Curios.getCharmSlot(player);
+                    if (stack.is(ModTags.Items.CAT_COIN_SET) || stack.is(ModTags.Items.OCELOT_COIN_SET)) {
+                        event.setCanceled(true);
+                    }
+                }
+            }
+            return false;
+        }
+
+        @SubscribeEvent
+        public static boolean onLivingDamage(@NotNull LivingDamageEvent event) {
+            LivingEntity entity = event.getEntity();
+            DamageSource source = event.getSource();
+            Level level = entity.getCommandSenderWorld();
+
+            if (!level.isClientSide) {
+                if (entity instanceof ServerPlayer player) {
+                    Inventory playerInventory = player.getInventory();
+                    ItemStack stack = Curios.getCharmSlot(player);
+
+                    if (source == DamageSource.SWEET_BERRY_BUSH && stack.is(ModTags.Items.FOX_COIN_SET)) {
+                        event.setCanceled(true);
+                    }
+                }
+            }
+            return false;
+        }
+
+        @SubscribeEvent
+        public static boolean onEntityJoinLevelEvent(@NotNull EntityJoinLevelEvent event) {
+            Entity entity = event.getEntity();
+            if (entity instanceof Creeper) {
+                Creeper creeper = (Creeper) event.getEntity();
+                creeper.goalSelector.addGoal(3, new AvoidPlayerCatCoinGoal<>(creeper, Player.class, 16.0F, 1.0D, 1.2D));
+            }
+            return false;
+        }
+    }
+
+    @Mod.EventBusSubscriber(modid = MODID)
+    public static class CustomSpawnerHandler {
+        private static Map<ResourceLocation, NumismatistSpawner> numismatistSpawner = new HashMap<>();
+
+        @SubscribeEvent
+        public static void onWorldLoad(@NotNull ServerStartingEvent event) {
+            MinecraftServer server = event.getServer();
+            numismatistSpawner.put(BuiltinDimensionTypes.OVERWORLD.location(), new NumismatistSpawner(server, "Numismatist", ModEntityTypes.NUMISMATIST.get()));
+        }
+
+        @SubscribeEvent
+        public static void onServerStopped(ServerStoppedEvent event) {
+            numismatistSpawner.clear();
+        }
+
+        @SubscribeEvent
+        public static void onWorldTick(TickEvent.@NotNull LevelTickEvent event) {
+            if (event.phase != TickEvent.Phase.START) {
+                return;
+            }
+
+            if (event.side != LogicalSide.SERVER) {
+                return;
+            }
+
+            NumismatistSpawner spawner = numismatistSpawner.get(event.level.dimension().location());
+            if (spawner != null) {
+                spawner.tick((ServerLevel) event.level, true, true);
+            }
         }
     }
 }

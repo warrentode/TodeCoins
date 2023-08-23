@@ -7,7 +7,6 @@ import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.github.warrentode.todecoins.util.tags.ModTags;
-import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -82,9 +81,9 @@ public abstract class PiglinBarterMixin {
 
     @Inject(at = @At("HEAD"), method = "stopHoldingOffHandItem", cancellable = true)
     private static void todecoins_stopHoldingOffHandItem(@NotNull Piglin piglin, boolean shouldBarter, CallbackInfo ci) {
-        Player player = Minecraft.getInstance().player;
-        MinecraftServer server = player != null ? player.getServer() : null;
-        ServerLevel serverLevel = server != null ? server.getLevel(player.level.dimension()) : null;
+        MinecraftServer server = piglin != null ? piglin.getServer() : null;
+        ServerLevel serverLevel = server != null ? server.getLevel(piglin.level.dimension()) : null;
+        Player player = server != null ? server.createCommandSourceStack().getPlayer() : null;
         if (piglin.isAdult()) {
             ItemStack offHandItem = piglin.getItemInHand(InteractionHand.OFF_HAND);
             boolean barterItem = PiglinAi.isBarterCurrency(offHandItem);

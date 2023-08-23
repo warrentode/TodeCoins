@@ -129,7 +129,7 @@ dependencies {
     implementation fg.deobf("curse.maven:serene-seasons-291874:4037228")
     implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4637293")
     implementation fg.deobf("curse.maven:sophisticated-core-618298:4668694")
-    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4639223")
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4711959")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
