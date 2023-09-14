@@ -733,6 +733,20 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
                                                 .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
                                                 .or(IN_BASALT_DELTAS)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_CRAB_COIN.get()).when(SPRING)
+                                        .when(IN_BEACH))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_SQUIRREL_COIN.get()).when(SPRING)
+                                        .when(IN_PLAINS))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_PENGUIN_COIN.get()).when(SPRING)
+                                        .when(IN_FROZEN_OCEAN.or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_GUARD_COIN.get()).when(SPRING)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
@@ -1101,6 +1115,20 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
                                                 .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
                                                 .or(IN_BASALT_DELTAS)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_CRAB_COIN.get()).when(SUMMER)
+                                        .when(IN_BEACH))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_SQUIRREL_COIN.get()).when(SUMMER)
+                                        .when(IN_PLAINS))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_PENGUIN_COIN.get()).when(SUMMER)
+                                        .when(IN_FROZEN_OCEAN.or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_GUARD_COIN.get()).when(SUMMER)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
@@ -1467,6 +1495,20 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
                                                 .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
                                                 .or(IN_BASALT_DELTAS)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_CRAB_COIN.get()).when(AUTUMN)
+                                        .when(IN_BEACH))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_SQUIRREL_COIN.get()).when(AUTUMN)
+                                        .when(IN_PLAINS))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_PENGUIN_COIN.get()).when(AUTUMN)
+                                        .when(IN_FROZEN_OCEAN.or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_GUARD_COIN.get()).when(AUTUMN)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
@@ -1833,6 +1875,21 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_NETHER_FORTRESS.or(IN_RUINED_PORTAL_NETHER).or(IN_BASTION_REMNANTS)
                                                 .or(IN_SOUL_SAND_VALLEY).or(IN_CRIMSON_FOREST).or(IN_NETHER_WASTES)
                                                 .or(IN_BASALT_DELTAS)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_CRAB_COIN.get()).when(WINTER)
+                                        .when(IN_BEACH))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_SQUIRREL_COIN.get()).when(WINTER)
+                                        .when(IN_PLAINS))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_PENGUIN_COIN.get()).when(WINTER)
+                                        .when(IN_FROZEN_OCEAN.or(IN_DEEP_FROZEN_OCEAN)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_GUARD_COIN.get()).when(WINTER)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
+                                                .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY)))
+
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -1925,6 +1982,10 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_MAULER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_WILDFIRE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_TUFF_GOLEM_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_CRAB_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_GUARD_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_PENGUIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_SQUIRREL_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -2017,6 +2078,10 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_MAULER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_WILDFIRE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_TUFF_GOLEM_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_CRAB_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_GUARD_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_PENGUIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_SQUIRREL_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -2109,6 +2174,10 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_MAULER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_WILDFIRE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_TUFF_GOLEM_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_CRAB_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_GUARD_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_PENGUIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_SQUIRREL_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -2201,6 +2270,10 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_MAULER_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WILDFIRE_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_TUFF_GOLEM_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_CRAB_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_GUARD_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_PENGUIN_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_SQUIRREL_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

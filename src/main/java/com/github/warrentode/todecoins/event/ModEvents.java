@@ -1,9 +1,7 @@
 package com.github.warrentode.todecoins.event;
 
 import com.github.warrentode.todecoins.TodeCoins;
-import com.github.warrentode.todecoins.attribute.ModAttributes;
-import com.github.warrentode.todecoins.attribute.PlayerCharisma;
-import com.github.warrentode.todecoins.attribute.PlayerCharismaProvider;
+import com.github.warrentode.todecoins.attribute.*;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.ai.goal.AvoidPlayerCatCoinGoal;
 import com.github.warrentode.todecoins.entity.spawners.numismatist.NumismatistSpawner;
@@ -42,7 +40,6 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -62,6 +59,7 @@ import java.util.Map;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModEvents {
+
     @Mod.EventBusSubscriber(modid = TodeCoins.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEventBusEvents {
         @SubscribeEvent
@@ -106,12 +104,28 @@ public class ModEvents {
                 if (!event.getObject().getCapability(PlayerCharismaProvider.PLAYER_CHARISMA).isPresent()) {
                     event.addCapability(new ResourceLocation(TodeCoins.MODID, "player_charisma"), new PlayerCharismaProvider());
                 }
+                if (!event.getObject().getCapability(PlayerCodProvider.PLAYER_COD_BONUS).isPresent()) {
+                    event.addCapability(new ResourceLocation(TodeCoins.MODID, "player_cod_bonus"), new PlayerCodProvider());
+                }
+                if (!event.getObject().getCapability(PlayerPufferfishProvider.PLAYER_PUFFERFISH_BONUS).isPresent()) {
+                    event.addCapability(new ResourceLocation(TodeCoins.MODID, "player_pufferfish_bonus"), new PlayerPufferfishProvider());
+                }
+                if (!event.getObject().getCapability(PlayerSalmonProvider.PLAYER_SALMON_BONUS).isPresent()) {
+                    event.addCapability(new ResourceLocation(TodeCoins.MODID, "player_salmon_bonus"), new PlayerSalmonProvider());
+                }
+                if (!event.getObject().getCapability(PlayerTropicalFishProvider.PLAYER_TROPICAL_FISH_BONUS).isPresent()) {
+                    event.addCapability(new ResourceLocation(TodeCoins.MODID, "player_tropical_fish_bonus"), new PlayerTropicalFishProvider());
+                }
             }
         }
 
         @SubscribeEvent
         public static void onEntityAttributeModificationEvent(final EntityAttributeModificationEvent event) {
             event.add(EntityType.PLAYER, ModAttributes.CHARISMA.get());
+            event.add(EntityType.PLAYER, ModAttributes.COD_BONUS.get());
+            event.add(EntityType.PLAYER, ModAttributes.PUFFERFISH_BONUS.get());
+            event.add(EntityType.PLAYER, ModAttributes.SALMON_BONUS.get());
+            event.add(EntityType.PLAYER, ModAttributes.TROPICAL_FISH_BONUS.get());
         }
 
         @SubscribeEvent
@@ -119,6 +133,18 @@ public class ModEvents {
             if (event.isWasDeath()) {
                 event.getOriginal().getCapability(PlayerCharismaProvider.PLAYER_CHARISMA)
                         .ifPresent(oldStore -> event.getOriginal().getCapability(PlayerCharismaProvider.PLAYER_CHARISMA)
+                                .ifPresent(newStore -> newStore.copyFrom(oldStore)));
+                event.getOriginal().getCapability(PlayerCodProvider.PLAYER_COD_BONUS)
+                        .ifPresent(oldStore -> event.getOriginal().getCapability(PlayerCodProvider.PLAYER_COD_BONUS)
+                                .ifPresent(newStore -> newStore.copyFrom(oldStore)));
+                event.getOriginal().getCapability(PlayerPufferfishProvider.PLAYER_PUFFERFISH_BONUS)
+                        .ifPresent(oldStore -> event.getOriginal().getCapability(PlayerPufferfishProvider.PLAYER_PUFFERFISH_BONUS)
+                                .ifPresent(newStore -> newStore.copyFrom(oldStore)));
+                event.getOriginal().getCapability(PlayerSalmonProvider.PLAYER_SALMON_BONUS)
+                        .ifPresent(oldStore -> event.getOriginal().getCapability(PlayerSalmonProvider.PLAYER_SALMON_BONUS)
+                                .ifPresent(newStore -> newStore.copyFrom(oldStore)));
+                event.getOriginal().getCapability(PlayerTropicalFishProvider.PLAYER_TROPICAL_FISH_BONUS)
+                        .ifPresent(oldStore -> event.getOriginal().getCapability(PlayerTropicalFishProvider.PLAYER_TROPICAL_FISH_BONUS)
                                 .ifPresent(newStore -> newStore.copyFrom(oldStore)));
             }
         }
@@ -442,25 +468,7 @@ public class ModEvents {
             return false;
         }
 
-        @SubscribeEvent
-        public static boolean onLivingDamage(@NotNull LivingDamageEvent event) {
-            LivingEntity entity = event.getEntity();
-            DamageSource source = event.getSource();
-            Level level = entity.getCommandSenderWorld();
-
-            if (!level.isClientSide) {
-                if (entity instanceof ServerPlayer player) {
-                    Inventory playerInventory = player.getInventory();
-                    ItemStack stack = Curios.getCharmSlot(player);
-
-                    if (source == DamageSource.SWEET_BERRY_BUSH && stack.is(ModTags.Items.FOX_COIN_SET)) {
-                        event.setCanceled(true);
-                    }
-                }
-            }
-            return false;
-        }
-
+        @SuppressWarnings("SameReturnValue")
         @SubscribeEvent
         public static boolean onEntityJoinLevelEvent(@NotNull EntityJoinLevelEvent event) {
             Entity entity = event.getEntity();

@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.datagen.loot_tables;
 
+import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.loot.conditions.curio.CodFishCharmCondition;
@@ -20,11 +21,9 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
-import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.TimeCheck;
-import net.minecraft.world.level.storage.loot.predicates.WeatherCheck;
+import net.minecraft.world.level.storage.loot.predicates.*;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
@@ -118,11 +117,45 @@ public class ModFishingLootGen extends FishingLoot {
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHEST_LOOT))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_COIN.get()).setWeight(15).setQuality(0))
+                                .add(LootItem.lootTableItem(ModItems.IRON_COIN.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.6F)).setWeight(7).setQuality(1))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_COIN.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.5F)).setWeight(6).setQuality(2))
+                                .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.4F)).setWeight(5).setQuality(3))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.3F)).setWeight(4).setQuality(4))
+                                .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.2F)).setWeight(3).setQuality(5))
+                                .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F)).setWeight(2).setQuality(6))
+                                .add(LootItem.lootTableItem(ModBlocks.COPPER_COIN_BAG.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.8F)).setWeight(1).setQuality(0))
+                                .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.7F)).setWeight(1).setQuality(1))
+                                .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.6F)).setWeight(1).setQuality(1))
+                                .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.5F)).setWeight(1).setQuality(2))
+                                .add(LootItem.lootTableItem(ModBlocks.NETHERITE_COIN_BAG.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.4F)).setWeight(1).setQuality(3))
+                                .add(LootItem.lootTableItem(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.3F)).setWeight(1).setQuality(4))
+                                .add(LootItem.lootTableItem(ModBlocks.EMERALD_BANK_NOTE_BAG.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.2F)).setWeight(1).setQuality(5))
+                                .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get())
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F)).setWeight(1).setQuality(6))
                                 .when(COD_CHARM.or(SALMON_CHARM).or(PUFFERFISH_CHARM.or(TROPICAL_FISH_CHARM)))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_COD_COIN_FISHING,
                 LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(UniformGenerator.between(0, 1))
+                                .add(LootItem.lootTableItem(Items.COD)
+                                        .when(IN_OCEAN.or(IN_DEEP_OCEAN).or(IN_LUKEWARM_OCEAN)
+                                                .or(IN_DEEP_LUKEWARM_OCEAN).or(IN_COLD_OCEAN).or(IN_DEEP_COLD_OCEAN)))
+                        )
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootItem.lootTableItem(Items.COD).setWeight(50).when(WeatherCheck.weather().setRaining(false))
@@ -146,6 +179,12 @@ public class ModFishingLootGen extends FishingLoot {
         consumer.accept(ModBuiltInLootTables.TODECOINS_SALMON_COIN_FISHING,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
+                                .setRolls(UniformGenerator.between(0, 1))
+                                .add(LootItem.lootTableItem(Items.SALMON)
+                                        .when(IN_COLD_OCEAN.or(IN_DEEP_COLD_OCEAN).or(IN_RIVER).or(IN_FROZEN_RIVER)
+                                                .or(IN_FROZEN_OCEAN).or(IN_DEEP_FROZEN_OCEAN)))
+                        )
+                        .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootItem.lootTableItem(Items.SALMON).setWeight(50).when(WeatherCheck.weather().setRaining(false))
                                                 .when(TimeCheck.time(IntRange.range(6000, 12000)))
@@ -161,6 +200,11 @@ public class ModFishingLootGen extends FishingLoot {
                                  ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_PUFFERFISH_COIN_FISHING,
                 LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(UniformGenerator.between(0, 1))
+                                .add(LootItem.lootTableItem(Items.PUFFERFISH)
+                                        .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN)))
+                        )
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootItem.lootTableItem(Items.PUFFERFISH).setWeight(50).when(WeatherCheck.weather().setRaining(false))
@@ -179,6 +223,12 @@ public class ModFishingLootGen extends FishingLoot {
                                  ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_TROPICAL_FISH_COIN_FISHING,
                 LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(UniformGenerator.between(0, 1))
+                                .add(LootItem.lootTableItem(Items.TROPICAL_FISH)
+                                        .when(IN_LUKEWARM_OCEAN.or(IN_DEEP_LUKEWARM_OCEAN).or(IN_WARM_OCEAN)
+                                        .or(IN_MANGROVE_SWAMP).or(IN_LUSH_CAVES)))
+                        )
                         .withPool(LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
                                         .add(LootItem.lootTableItem(Items.TROPICAL_FISH).setWeight(50).when(WeatherCheck.weather().setRaining(false))

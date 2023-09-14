@@ -498,10 +498,31 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_TUFF_GOLEM_COIN.get().getDescriptionId(), "Gold Tuff Golem Coin");
         addCollectibleCoins(ModItems.NETHERITE_TUFF_GOLEM_COIN.get().getDescriptionId(), "Netherite Tuff Golem Coin");
 
+        addCollectibleCoins(ModItems.COPPER_CRAB_COIN.get().getDescriptionId(), "Copper Crab Coin");
+        addCollectibleCoins(ModItems.IRON_CRAB_COIN.get().getDescriptionId(), "Iron Crab Coin");
+        addCollectibleCoins(ModItems.GOLD_CRAB_COIN.get().getDescriptionId(), "Gold Crab Coin");
+        addCollectibleCoins(ModItems.NETHERITE_CRAB_COIN.get().getDescriptionId(), "Netherite Crab Coin");
+
+        addCollectibleCoins(ModItems.COPPER_SQUIRREL_COIN.get().getDescriptionId(), "Copper Squirrel Coin");
+        addCollectibleCoins(ModItems.IRON_SQUIRREL_COIN.get().getDescriptionId(), "Iron Squirrel Coin");
+        addCollectibleCoins(ModItems.GOLD_SQUIRREL_COIN.get().getDescriptionId(), "Gold Squirrel Coin");
+        addCollectibleCoins(ModItems.NETHERITE_SQUIRREL_COIN.get().getDescriptionId(), "Netherite Squirrel Coin");
+
+        addCollectibleCoins(ModItems.COPPER_PENGUIN_COIN.get().getDescriptionId(), "Copper Penguin Coin");
+        addCollectibleCoins(ModItems.IRON_PENGUIN_COIN.get().getDescriptionId(), "Iron Penguin Coin");
+        addCollectibleCoins(ModItems.GOLD_PENGUIN_COIN.get().getDescriptionId(), "Gold Penguin Coin");
+        addCollectibleCoins(ModItems.NETHERITE_PENGUIN_COIN.get().getDescriptionId(), "Netherite Penguin Coin");
+
+        addCollectibleCoins(ModItems.COPPER_GUARD_COIN.get().getDescriptionId(), "Copper Guard Coin");
+        addCollectibleCoins(ModItems.IRON_GUARD_COIN.get().getDescriptionId(), "Iron Guard Coin");
+        addCollectibleCoins(ModItems.GOLD_GUARD_COIN.get().getDescriptionId(), "Gold Guard Coin");
+        addCollectibleCoins(ModItems.NETHERITE_GUARD_COIN.get().getDescriptionId(), "Netherite Guard Coin");
+
         // regular mod items
         add(ModItems.NUMISMATIST_SPAWN_EGG.get(), "Numismatist Spawn Egg");
         add(ModItems.SNOW_GOLEM_SPAWN_EGG.get(), "Snow Golem Spawn Egg");
         add(ModItems.ILLUSIONER_SPAWN_EGG.get(), "Illusioner Spawn Egg");
+        add(ModItems.GIANT_SPAWN_EGG.get(), "Giant Spawn Egg");
         add(ModItems.FOUR_LEAF_CLOVER.get(), "Four Leaf Clover");
         add(ModItems.CURRENCY_STAMP.get(), "Currency Stamp");
         add(ModItems.NETHER_CURRENCY_STAMP.get(), "Nether Currency Stamp");
@@ -578,6 +599,9 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.collectibleFriendsAndFoesCoins", "Collectible Friends and Foes Coins");
         add("advancement.collectibleFriendsAndFoesCoins.desc", "Find All the Friends and Foes Collectible Coins!");
 
+        add("advancement.collectibleGuardVillagerCoins", "Collectible Guard Villager Coins");
+        add("advancement.collectibleGuardVillagerCoins.desc", "Find All the Guard Villager Collectible Coins!");
+
         add("advancement.collectibleUnusedUpcomingCoins", "Collectible Unused or Upcoming Vanilla Mob Coins");
         add("advancement.collectibleUnusedUpcomingCoins.desc", "Find All the Collectible Coins for the Unused or Upcoming Mobs!");
     }
@@ -599,7 +623,7 @@ public class LanguageFileGen extends LanguageProvider {
 
         // entity collectible coin bases
         add("tooltips.collectible_aerial_coin.hover", "One of Twenty Aerial Seasonal Coins");
-        add("tooltips.collectible_amphibian_coin.hover", "One of Sixteen Amphibian Seasonal Coins");
+        add("tooltips.collectible_amphibian_coin.hover", "One of Twenty-Four Amphibian Seasonal Coins");
         add("tooltips.collectible_aquatic_coin.hover", "One of Sixteen Aquatic Seasonal Coins");
         add("tooltips.collectible_arthropod_coin.hover", "One of Twenty Arthropod Seasonal Coins");
 
@@ -622,11 +646,12 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("tooltips.collectible_illager_coin.hover", "One of Twenty-Four Illager Seasonal Coins");
 
-        add("tooltips.collectible_merchant_coin.hover", "One of Twelve Merchant Seasonal Coins");
+        add("tooltips.collectible_villager_coin.hover", "One of Sixteen Villager Seasonal Coins");
 
         add("tooltips.collectible_piglin_coin.hover", "One of Twelve Piglin Seasonal Coins");
 
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
+        add("tooltips.collectible_rodent_coin.hover", "One of Four Rodent Seasonal Coins");
 
         add("tooltips.collectible_shulker_coin.hover", "One of Four Shulker Seasonal Coins");
         add("tooltips.collectible_sniffer_coin.hover", "One of Four Sniffer Seasonal Coins");
@@ -694,6 +719,10 @@ public class LanguageFileGen extends LanguageProvider {
 
     private void addAttributes() {
         add(ModAttributes.CHARISMA.get().getDescriptionId(), "Charisma");
+        add(ModAttributes.COD_BONUS.get().getDescriptionId(), "Cod Chance");
+        add(ModAttributes.PUFFERFISH_BONUS.get().getDescriptionId(), "Pufferfish Chance");
+        add(ModAttributes.SALMON_BONUS.get().getDescriptionId(), "Salmon Chance");
+        add(ModAttributes.TROPICAL_FISH_BONUS.get().getDescriptionId(), "Tropical Fish Chance");
     }
 
     private void addItemGroups() {

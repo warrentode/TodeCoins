@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "todecoins:copper_nugget"
-            ]
+            "tag": "forge:nuggets/copper"
           }
         ]
       },

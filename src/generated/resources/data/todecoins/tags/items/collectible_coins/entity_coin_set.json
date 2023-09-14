@@ -87,6 +87,10 @@
     "#todecoins:collectible_coins/entity_coins/iceologer_coin_set",
     "#todecoins:collectible_coins/entity_coins/mauler_coin_set",
     "#todecoins:collectible_coins/entity_coins/wildfire_coin_set",
-    "#todecoins:collectible_coins/entity_coins/tuff_golem_coin_set"
+    "#todecoins:collectible_coins/entity_coins/tuff_golem_coin_set",
+    "#todecoins:collectible_coins/entity_coins/squirrel_coin_set",
+    "#todecoins:collectible_coins/entity_coins/penguin_coin_set",
+    "#todecoins:collectible_coins/entity_coins/guard_coin_set",
+    "#todecoins:collectible_coins/entity_coins/crab_coin_set"
   ]
 }

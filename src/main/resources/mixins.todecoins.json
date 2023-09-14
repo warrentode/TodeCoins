@@ -6,6 +6,7 @@
   "mixins": [
     "PiglinBarterMixin",
     "VillagerMixin",
+    "WalkThroughBerryBushMixin",
     "WitherLootMixin"
   ],
   "client": [

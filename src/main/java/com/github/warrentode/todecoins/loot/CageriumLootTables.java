@@ -112,6 +112,13 @@ public class CageriumLootTables {
     public static final ResourceLocation ICEOLOGER = register("friendsandfoes", "iceologer");
     public static final ResourceLocation TUFF_GOLEM = register("friendsandfoes", "tuff_golem");
     public static final ResourceLocation WILDFIRE = register("friendsandfoes", "wildfire");
+    // ecologics
+    public static final ResourceLocation CAMEL = register("ecologics", "camel");
+    public static final ResourceLocation CRAB = register("ecologics", "coconut_crab");
+    public static final ResourceLocation PENGUIN = register("ecologics", "penguin");
+    public static final ResourceLocation SQUIRREL = register("ecologics", "squirrel");
+    // guard villagers
+    public static final ResourceLocation GUARD = register("guardvillagers", "guard");
 
     private static ResourceLocation register(String modid, String entity) {
         return register(new ResourceLocation(modid, "cagerium/" + entity));
