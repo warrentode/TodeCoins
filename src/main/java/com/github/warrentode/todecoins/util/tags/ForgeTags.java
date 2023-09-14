@@ -20,7 +20,6 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> BAT_TYPES = forgeEntityTypeTag("bat");
         public static final TagKey<EntityType<?>> BEE_TYPES = forgeEntityTypeTag("bee");
         public static final TagKey<EntityType<?>> BLAZE_TYPES = forgeEntityTypeTag("blaze");
-        public static final TagKey<EntityType<?>> CAMEL_TYPES = forgeEntityTypeTag("camel");
         public static final TagKey<EntityType<?>> CAT_TYPES = forgeEntityTypeTag("cat");
         public static final TagKey<EntityType<?>> CAVE_SPIDER_TYPES = forgeEntityTypeTag("cave_spider");
         public static final TagKey<EntityType<?>> CHICKEN_TYPES = forgeEntityTypeTag("chicken");
@@ -38,6 +37,7 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> FOX_TYPES = forgeEntityTypeTag("fox");
         public static final TagKey<EntityType<?>> FROG_TYPES = forgeEntityTypeTag("frog");
         public static final TagKey<EntityType<?>> GHAST_TYPES = forgeEntityTypeTag("ghast");
+        public static final TagKey<EntityType<?>> GIANT_TYPES = forgeEntityTypeTag("giant");
         public static final TagKey<EntityType<?>> GLOW_SQUID_TYPES = forgeEntityTypeTag("glow_squid");
         public static final TagKey<EntityType<?>> GOAT_TYPES = forgeEntityTypeTag("goat");
         public static final TagKey<EntityType<?>> GUARDIAN_TYPES = forgeEntityTypeTag("guardian");
@@ -48,7 +48,6 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> LLAMA_TYPES = forgeEntityTypeTag("llama");
         public static final TagKey<EntityType<?>> MAGMA_CUBE_TYPES = forgeEntityTypeTag("magma_cube");
         public static final TagKey<EntityType<?>> MULE_TYPES = forgeEntityTypeTag("mule");
-        public static final TagKey<EntityType<?>> MOOBLOOM_TYPES = forgeEntityTypeTag("moobloom");
         public static final TagKey<EntityType<?>> MOOSHROOM_TYPES = forgeEntityTypeTag("mooshroom");
         public static final TagKey<EntityType<?>> OCELOT_TYPES = forgeEntityTypeTag("ocelot");
         public static final TagKey<EntityType<?>> NUMISMATIST_TYPES = forgeEntityTypeTag("numismatist");
@@ -65,7 +64,6 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> SALMON_TYPES = forgeEntityTypeTag("salmon");
         public static final TagKey<EntityType<?>> SHEEP_TYPES = forgeEntityTypeTag("sheep");
         public static final TagKey<EntityType<?>> SHULKER_TYPES = forgeEntityTypeTag("shulker");
-        public static final TagKey<EntityType<?>> SNIFFER_TYPES = forgeEntityTypeTag("sniffer");
         public static final TagKey<EntityType<?>> SILVERFISH_TYPES = forgeEntityTypeTag("silverfish");
         public static final TagKey<EntityType<?>> SKELETON_TYPES = forgeEntityTypeTag("skeleton");
         public static final TagKey<EntityType<?>> SKELETON_HORSE_TYPES = forgeEntityTypeTag("skeleton_horse");
@@ -95,6 +93,27 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> HOGLIN_TYPES = forgeEntityTypeTag("hoglin");
         public static final TagKey<EntityType<?>> PIGLIN_BRUTE_TYPES = forgeEntityTypeTag("piglin_brute");
         public static final TagKey<EntityType<?>> ZOMBIE_VILLAGER_TYPES = forgeEntityTypeTag("zombie_villager");
+
+        // friends and foes
+        public static final TagKey<EntityType<?>> COPPER_GOLEM_TYPES = forgeEntityTypeTag("copper_golem");
+        public static final TagKey<EntityType<?>> GLARE_TYPES = forgeEntityTypeTag("glare");
+        public static final TagKey<EntityType<?>> ICEOLOGER_TYPES = forgeEntityTypeTag("iceologer");
+        public static final TagKey<EntityType<?>> MAULER_TYPES = forgeEntityTypeTag("mauler");
+        public static final TagKey<EntityType<?>> MOOBLOOM_TYPES = forgeEntityTypeTag("moobloom");
+        public static final TagKey<EntityType<?>> TUFF_GOLEM_TYPES = forgeEntityTypeTag("tuff_golem");
+        public static final TagKey<EntityType<?>> WILDFIRE_TYPES = forgeEntityTypeTag("wildfire");
+
+        // ecologics
+        public static final TagKey<EntityType<?>> CAMEL_TYPES = forgeEntityTypeTag("camel");
+        public static final TagKey<EntityType<?>> CRAB_TYPES = forgeEntityTypeTag("crab");
+        public static final TagKey<EntityType<?>> SQUIRREL_TYPES = forgeEntityTypeTag("squirrel");
+        public static final TagKey<EntityType<?>> PENGUIN_TYPES = forgeEntityTypeTag("penguin");
+
+        // guard villagers
+        public static final TagKey<EntityType<?>> GUARD_TYPES = forgeEntityTypeTag("guard");
+
+        // vanilla sneak peek
+        public static final TagKey<EntityType<?>> SNIFFER_TYPES = forgeEntityTypeTag("sniffer");
     }
 
     public static class Blocks {

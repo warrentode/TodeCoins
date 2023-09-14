@@ -7,6 +7,10 @@ in learning some random stuff like we have.
 This mod adds a coin press, trade-able currency, and collectible coins, along with the Banker and Leprechaun villager
 professions as well as the Numismatist to the game.
 
+*** 
+Special thanks to my sons: MinePika94, MikieSteve, and EnderDragonRobot (known as Scholar Owl, Tuxedo Cat, and Little
+Bear on my blog) for all their insight, suggestions, and input with this mod regarding features, testing, game play, and
+balance!
 ***
 If you like this mod, you can support my work by either subscribing or tipping in the following ways:
 

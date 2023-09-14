@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "todecoins:endonian_nugget"
-            ]
+            "tag": "forge:nuggets/endonian_nugget"
           }
         ]
       },

@@ -235,6 +235,134 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_husk_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_magma_cube_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_slime_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_phantom_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_piglin_brute_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_pillager_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ravager_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_shulker_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_silverfish_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_skeleton_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_stray_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vex_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vindicator_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_warden_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_witch_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_skeleton_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zoglin_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_villager_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ender_dragon_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_giant_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_illusioner_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_copper_golem_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_glare_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_iceologer_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_mauler_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wildfire_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_tuff_golem_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_crab_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_guard_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_penguin_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_squirrel_iron"
         }
       ],
       "rolls": 1.0

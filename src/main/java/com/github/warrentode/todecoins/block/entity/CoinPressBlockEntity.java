@@ -201,23 +201,22 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     @Override
     protected void saveAdditional(@NotNull CompoundTag nbt) {
         super.saveAdditional(nbt);
-        nbt.put("inventory", inventory.serializeNBT());
-        nbt.putInt("stampingTime", this.stampingTime);
-        nbt.putInt("totalStampingTime", totalStampingTime);
-        lastItemCrafted = ItemStack.of(nbt.getCompound("lastRecipeUsed"));
         if (customName != null) {
             nbt.putString("CustomName", Component.Serializer.toJson(customName));
         }
+        nbt.put("inventory", inventory.serializeNBT());
+        nbt.putInt("stampingTime", this.stampingTime);
+        nbt.putInt("totalStampingTime", totalStampingTime);
+        lastItemCrafted = ItemStack.of(nbt.getCompound("lastItemCrafted"));
         CompoundTag compoundRecipes = new CompoundTag();
         usedRecipes.forEach((recipeId, craftedAmount) -> compoundRecipes.putInt(recipeId.toString(), craftedAmount));
         nbt.put("usedRecipes", compoundRecipes);
-
     }
 
     private CompoundTag writeItems(CompoundTag nbt) {
         super.saveAdditional(nbt);
-        nbt.put("lastRecipeUsed", lastItemCrafted.serializeNBT());
         nbt.put("inventory", inventory.serializeNBT());
+        nbt.put("lastItemCrafted", lastItemCrafted.serializeNBT());
         return nbt;
     }
 
@@ -229,13 +228,13 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     @Override
     public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
-        inventory.deserializeNBT(nbt.getCompound("inventory"));
-        stampingTime = nbt.getInt("stampingTime");
-        totalStampingTime = nbt.getInt("totalStampingTime");
-        nbt.put("lastRecipeUsed", lastItemCrafted.serializeNBT());
         if (nbt.contains("CustomName", 8)) {
             customName = Component.Serializer.fromJson(nbt.getString("CustomName"));
         }
+        inventory.deserializeNBT(nbt.getCompound("inventory"));
+        stampingTime = nbt.getInt("stampingTime");
+        totalStampingTime = nbt.getInt("totalStampingTime");
+        nbt.put("lastItemCrafted", lastItemCrafted.serializeNBT());
         CompoundTag compoundRecipes = nbt.getCompound("usedRecipes");
         for (String key : compoundRecipes.getAllKeys()) {
             usedRecipes.put(new ResourceLocation(key), compoundRecipes.getInt(key));
@@ -461,7 +460,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     }
 
     @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
+    public void onDataPacket(Connection net, @NotNull ClientboundBlockEntityDataPacket pkt) {
         load(Objects.requireNonNull(pkt.getTag()));
     }
 }

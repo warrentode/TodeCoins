@@ -235,6 +235,134 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_husk_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_magma_cube_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_slime_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_phantom_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_piglin_brute_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_pillager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ravager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_shulker_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_silverfish_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_skeleton_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_stray_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vex_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vindicator_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_warden_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_witch_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_skeleton_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zoglin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_villager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ender_dragon_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_giant_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_illusioner_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_copper_golem_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_glare_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_iceologer_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_mauler_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wildfire_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_tuff_golem_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_crab_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_guard_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_penguin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_squirrel_gold"
         }
       ],
       "rolls": 1.0

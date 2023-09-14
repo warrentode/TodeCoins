@@ -235,6 +235,134 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_husk_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_magma_cube_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_slime_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_phantom_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_piglin_brute_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_pillager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ravager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_shulker_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_silverfish_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_skeleton_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_stray_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vex_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vindicator_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_warden_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_witch_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_skeleton_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zoglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_villager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ender_dragon_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_giant_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_illusioner_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_copper_golem_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_glare_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_iceologer_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_mauler_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wildfire_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_tuff_golem_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_crab_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_guard_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_penguin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_squirrel_netherite"
         }
       ],
       "rolls": 1.0

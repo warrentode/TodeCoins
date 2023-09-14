@@ -3,20 +3,26 @@ package com.github.warrentode.todecoins.datagen.recipes.recipe;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
-import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.function.Consumer;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
-public class CraftingRecipesGen {
+public class CraftingRecipesGen extends RecipeProvider implements IConditionBuilder {
+    public CraftingRecipesGen(DataGenerator pGenerator) {
+        super(pGenerator);
+    }
+
     public static void register(Consumer<FinishedRecipe> consumer) {
         armorRecipes(consumer);
         currencyStampsRecipes(consumer);
@@ -27,6 +33,7 @@ public class CraftingRecipesGen {
     }
 
     private static void armorRecipes(Consumer<FinishedRecipe> consumer) {
+
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_HAT.get(), 1)
                 .pattern("CCC")
                 .pattern("C C")
@@ -54,6 +61,7 @@ public class CraftingRecipesGen {
                 .unlockedBy("has_lucky_fabric", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.LUCKY_FABRIC.get()))
                 .save(consumer, new ResourceLocation(MODID, "armor/lucky_fabric/lucky_pants"));
     }
+
     private static void currencyStampsRecipes(Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(ModItems.CURRENCY_STAMP.get(), 1)
                 .pattern(" S ")
@@ -108,21 +116,21 @@ public class CraftingRecipesGen {
                 .pattern("###")
                 .pattern("###")
                 .define('#', ForgeTags.Items.COPPER_NUGGET)
-                .unlockedBy("has_copper_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_NUGGET.get()))
+                .unlockedBy("has_copper_nugget", has(ForgeTags.Items.COPPER_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/copper_ingot"));
         ShapedRecipeBuilder.shaped(Items.NETHERITE_INGOT, 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
                 .define('#', ForgeTags.Items.NETHERITE_NUGGET)
-                .unlockedBy("has_netherite_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_NUGGET.get()))
+                .unlockedBy("has_netherite_nugget", has(ForgeTags.Items.NETHERITE_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/netherite_ingot"));
         ShapedRecipeBuilder.shaped(ModItems.ENDONIAN_INGOT.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
                 .define('#', ForgeTags.Items.ENDONIAN_NUGGET)
-                .unlockedBy("has_endonian_nugget", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_NUGGET.get()))
+                .unlockedBy("has_endonian_nugget", has(ForgeTags.Items.ENDONIAN_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/endonian_ingot"));
 
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_NUGGET.get(), 1)
@@ -135,37 +143,37 @@ public class CraftingRecipesGen {
 
         ShapelessRecipeBuilder.shapeless(ModItems.COPPER_NUGGET.get(), 9)
                 .requires(ForgeTags.Items.COPPER_INGOT)
-                .unlockedBy("has_copper_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COPPER_INGOT))
+                .unlockedBy("has_copper_ingot", has(ForgeTags.Items.COPPER_INGOT))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nuggets_from_ingots/copper_nugget"));
         ShapelessRecipeBuilder.shapeless(ModItems.NETHERITE_NUGGET.get(), 9)
                 .requires(ForgeTags.Items.NETHERITE_INGOT)
-                .unlockedBy("has_netherite_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHERITE_INGOT))
+                .unlockedBy("has_netherite_ingot", has(ForgeTags.Items.NETHERITE_INGOT))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nuggets_from_ingots/netherite_nugget"));
         ShapelessRecipeBuilder.shapeless(ModItems.ENDONIAN_NUGGET.get(), 9)
                 .requires(ForgeTags.Items.ENDONIAN_INGOT)
-                .unlockedBy("has_endonian_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_INGOT.get()))
+                .unlockedBy("has_endonian_ingot", has(ForgeTags.Items.ENDONIAN_INGOT))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nuggets_from_ingots/endonian_nugget"));
 
 
         ShapelessRecipeBuilder.shapeless(ModItems.COPPER_NUGGET.get())
                 .requires(ModItems.COPPER_COIN.get(), 2)
-                .unlockedBy("has_copper_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_NUGGET.get()))
+                .unlockedBy("has_copper_coin", has(ForgeTags.Items.COPPER_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/copper_nugget"));
         ShapelessRecipeBuilder.shapeless(Items.IRON_NUGGET)
                 .requires(ModItems.IRON_COIN.get(), 2)
-                .unlockedBy("has_iron_coin", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_NUGGET))
+                .unlockedBy("has_iron_coin", has(ForgeTags.Items.IRON_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/iron_nugget"));
         ShapelessRecipeBuilder.shapeless(Items.GOLD_NUGGET)
                 .requires(ModItems.GOLD_COIN.get(), 2)
-                .unlockedBy("has_gold_coin", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GOLD_NUGGET))
+                .unlockedBy("has_gold_coin", has(ForgeTags.Items.GOLD_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/gold_nugget"));
         ShapelessRecipeBuilder.shapeless(ModItems.NETHERITE_NUGGET.get())
                 .requires(ModItems.NETHERITE_COIN.get(), 2)
-                .unlockedBy("has_netherite_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_NUGGET.get()))
+                .unlockedBy("has_netherite_coin", has(ForgeTags.Items.NETHERITE_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/netherite_nugget"));
         ShapelessRecipeBuilder.shapeless(ModItems.ENDONIAN_NUGGET.get())
                 .requires(ModItems.ENDONIAN_COIN.get(), 2)
-                .unlockedBy("has_endonian_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_COIN.get()))
+                .unlockedBy("has_endonian_coin", has(ForgeTags.Items.ENDONIAN_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/endonian_nugget"));
     }
     private static void storageBlockRecipes(Consumer<FinishedRecipe> consumer) {
@@ -245,7 +253,7 @@ public class CraftingRecipesGen {
                 .pattern("###")
                 .pattern("###")
                 .define('#', ForgeTags.Items.ENDONIAN_INGOT)
-                .unlockedBy("has_endonian_ingot", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_INGOT.get()))
+                .unlockedBy("has_endonian_ingot", has(ForgeTags.Items.ENDONIAN_INGOT))
                 .save(consumer, new ResourceLocation(MODID, "blocks/blocks_from_ingots/endonian_block"));
         ShapedRecipeBuilder.shaped(ModBlocks.ENDONIAN_BLOCK.get(), 1)
                 .pattern("# #")
@@ -307,17 +315,17 @@ public class CraftingRecipesGen {
                 .pattern("###")
                 .pattern("#E#")
                 .pattern("###")
-                .define('#', ModTags.Items.CURRENCY_FIBER)
+                .define('#', ForgeTags.Items.CURRENCY_FIBER)
                 .define('E', Items.EMERALD)
-                .unlockedBy("has_emerald", InventoryChangeTrigger.TriggerInstance.hasItems(Items.EMERALD))
+                .unlockedBy("has_emerald", has(ForgeTags.Items.CURRENCY_FIBER))
                 .save(consumer, new ResourceLocation(MODID, "textiles/fiber/emerald_fiber"));
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_FIBER.get(), 1)
                 .pattern("###")
                 .pattern("#C#")
                 .pattern("###")
-                .define('#', ModTags.Items.CURRENCY_FIBER)
+                .define('#', ForgeTags.Items.CURRENCY_FIBER)
                 .define('C', ModItems.LUCKY_COIN.get())
-                .unlockedBy("has_lucky_coin", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.LUCKY_COIN.get()))
+                .unlockedBy("has_lucky_coin", has(ModItems.LUCKY_COIN.get()))
                 .save(consumer, new ResourceLocation(MODID, "textiles/fiber/lucky_fiber"));
 
         ShapelessRecipeBuilder.shapeless(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get(), 1)

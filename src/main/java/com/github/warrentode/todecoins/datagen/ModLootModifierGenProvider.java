@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.datagen;
 
+import com.faboslav.friendsandfoes.init.FriendsAndFoesEntityTypes;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.loot.conditions.tag.BlockTagCondition;
@@ -13,6 +14,8 @@ import net.minecraft.world.level.storage.loot.predicates.AlternativeLootItemCond
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
+import samebutdifferent.ecologics.registry.ModEntityTypes;
+import tallestegg.guardvillagers.GuardEntityType;
 
 public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
     public ModLootModifierGenProvider(DataGenerator gen, String modid) {
@@ -94,8 +97,10 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                 new LootItemCondition[]{
                         AlternativeLootItemCondition
                                 .alternative(LootTableIdCondition.builder(EntityType.ENDER_DRAGON.getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(EntityType.ELDER_GUARDIAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WARDEN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WITHER.getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.WILDFIRE.get().getDefaultLootTable()))
                                 .build()
                 },
                 ModBuiltInLootTables.TODECOINS_BOSS_CURRENCY_DROPS
@@ -117,7 +122,6 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .or(LootTableIdCondition.builder(EntityType.DOLPHIN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.DONKEY.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.DROWNED.getDefaultLootTable()))
-                                .or(LootTableIdCondition.builder(EntityType.ELDER_GUARDIAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.ENDERMAN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.ENDERMITE.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.EVOKER.getDefaultLootTable()))
@@ -182,6 +186,17 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .or(LootTableIdCondition.builder(EntityType.ENDER_DRAGON.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WARDEN.getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(EntityType.WITHER.getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.COPPER_GOLEM.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.GLARE.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.ICEOLOGER.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.MAULER.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.MOOBLOOM.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.TUFF_GOLEM.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(ModEntityTypes.COCONUT_CRAB.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(ModEntityTypes.CAMEL.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(ModEntityTypes.SQUIRREL.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(ModEntityTypes.PENGUIN.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(GuardEntityType.GUARD.get().getDefaultLootTable()))
                                 .build()
 
                 },

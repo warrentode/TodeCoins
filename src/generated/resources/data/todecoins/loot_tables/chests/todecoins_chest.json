@@ -25,10 +25,51 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "dimension": "minecraft:the_nether"
-              }
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
+                  }
+                }
+              ]
             }
           ],
           "name": "todecoins:chests/currency/todecoins_nether_gold_coin_loot",
@@ -41,7 +82,7 @@
             {
               "condition": "minecraft:location_check",
               "predicate": {
-                "dimension": "minecraft:the_end"
+                "structure": "minecraft:end_city"
               }
             }
           ],

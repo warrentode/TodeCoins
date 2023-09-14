@@ -9,7 +9,6 @@ import com.github.warrentode.todecoins.entity.villager.renderer.NumismatistRende
 import com.github.warrentode.todecoins.gui.ModMenuTypes;
 import com.github.warrentode.todecoins.gui.coinpressgui.CoinPressScreen;
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.github.warrentode.todecoins.loot.serializers.ModLootModifiers;
@@ -34,6 +33,7 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -80,7 +80,7 @@ public class TodeCoins {
 
     public static ItemStack setCurioSlots(Player player) {
         AtomicReference<ItemStack> slot = new AtomicReference<>(ItemStack.EMPTY);
-        if (ModListHandler.curiosLoaded) {
+        if (ModList.get().isLoaded("curios")) {
             slot.set(Curios.getCharmSlot(player));
             slot.set(Curios.getBeltSlot(player));
         }
@@ -98,9 +98,11 @@ public class TodeCoins {
     }
 
     private void onIMEnqueueEvent(InterModEnqueueEvent event) {
-        if (ModListHandler.curiosLoaded) {
-            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.CHARM.getMessageBuilder().build());
-            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BELT.getMessageBuilder().build());
+        if (ModList.get().isLoaded("curios")) {
+            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE,
+                    () -> SlotTypePreset.CHARM.getMessageBuilder().build());
+            InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE,
+                    () -> SlotTypePreset.BELT.getMessageBuilder().build());
         }
     }
 

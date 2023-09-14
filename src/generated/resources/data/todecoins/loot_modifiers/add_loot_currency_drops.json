@@ -62,10 +62,6 @@
         },
         {
           "condition": "forge:loot_table_id",
-          "loot_table_id": "minecraft:entities/elder_guardian"
-        },
-        {
-          "condition": "forge:loot_table_id",
           "loot_table_id": "minecraft:entities/enderman"
         },
         {
@@ -319,6 +315,50 @@
         {
           "condition": "forge:loot_table_id",
           "loot_table_id": "minecraft:entities/wither"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/copper_golem"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/glare"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/iceologer"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/mauler"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/moobloom"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/tuff_golem"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "ecologics:entities/coconut_crab"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "ecologics:entities/camel"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "ecologics:entities/squirrel"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "ecologics:entities/penguin"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "guardvillagers:entities/guard"
         }
       ]
     }

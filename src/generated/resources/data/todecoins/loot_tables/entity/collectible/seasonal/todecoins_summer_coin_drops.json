@@ -2163,6 +2163,1158 @@
           ],
           "name": "todecoins:collectible_coin_husk_iron",
           "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:magma_cube"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_magma_cube_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:slime"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_slime_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:phantom"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_phantom_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:piglin_brute"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_brute_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:pillager"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_pillager_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:ravager"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_ravager_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:shulker"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_shulker_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:silverfish"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_silverfish_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:skeleton"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_skeleton_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:stray"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_stray_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:vex"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_vex_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:vindicator"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_vindicator_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:warden"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_warden_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:witch"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_witch_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wither_skeleton"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_skeleton_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wither"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zoglin"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zoglin_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zombie"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zombie_villager"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_villager_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:ender_dragon"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_ender_dragon_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:giant"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_giant_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:illusioner"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_illusioner_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:copper_golem"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_copper_golem_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:glare"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_glare_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:iceologer"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_iceologer_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:mauler"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_mauler_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wildfire"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wildfire_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:tuff_golem"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_tuff_golem_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:crab"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_crab_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:squirrel"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_squirrel_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:penguin"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_penguin_iron",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:guard"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_guard_iron",
+          "quality": 1
         }
       ],
       "rolls": 1.0

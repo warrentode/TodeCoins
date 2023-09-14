@@ -35,16 +35,17 @@ public class ModTags {
         // holiday coins
         public static final TagKey<Item> HOLIDAY_COIN_SET = modItemTag("collectible_coins/holiday_coin_set");
         public static final TagKey<Item> BIRTHDAY_COIN_SET = modItemTag("collectible_coins/holiday_coins/birthday_coin_set");
-        public static final TagKey<Item> CHRISTMAS_COIN_SET = modItemTag("collectible_coins/holiday_coins/christmas_coin_set");
         public static final TagKey<Item> HALLOWEEN_COIN_SET = modItemTag("collectible_coins/holiday_coins/halloween_coin_set");
+        public static final TagKey<Item> CHRISTMAS_COIN_SET = modItemTag("collectible_coins/holiday_coins/christmas_coin_set");
         // sponsor perk coins
         public static final TagKey<Item> PATRON_COIN_SET = modItemTag("collectible_coins/patron_coin_set");
+        public static final TagKey<Item> LIFETIME_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/lifetime_patron_coin_set");
         public static final TagKey<Item> CARNATION_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/carnation_patron_coin_set");
         public static final TagKey<Item> COSMOS_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/cosmos_patron_coin_set");
         // gameplay coins
         public static final TagKey<Item> GAMEPLAY_COIN_SET = modItemTag("collectible_coins/gameplay_coin_set");
-        public static final TagKey<Item> FISHING_COIN_SET = modItemTag("collectible_coins/gameplay_coins/fishing_coin_set");
         public static final TagKey<Item> HERO_COIN_SET = modItemTag("collectible_coins/gameplay_coins/hero_coin_set");
+        public static final TagKey<Item> FISHING_COIN_SET = modItemTag("collectible_coins/gameplay_coins/fishing_coin_set");
         //entity coins
         public static final TagKey<Item> ENTITY_COIN_SET = modItemTag("collectible_coins/entity_coin_set");
         public static final TagKey<Item> ALLAY_COIN_SET = modItemTag("collectible_coins/entity_coins/allay_coin_set");
@@ -52,7 +53,6 @@ public class ModTags {
         public static final TagKey<Item> BAT_COIN_SET = modItemTag("collectible_coins/entity_coins/bat_coin_set");
         public static final TagKey<Item> BEE_COIN_SET = modItemTag("collectible_coins/entity_coins/bee_coin_set");
         public static final TagKey<Item> BLAZE_COIN_SET = modItemTag("collectible_coins/entity_coins/blaze_coin_set");
-        public static final TagKey<Item> CAMEL_COIN_SET = modItemTag("collectible_coins/entity_coins/camel_coin_set");
         public static final TagKey<Item> CAT_COIN_SET = modItemTag("collectible_coins/entity_coins/cat_coin_set");
         public static final TagKey<Item> CAVE_SPIDER_COIN_SET = modItemTag("collectible_coins/entity_coins/cave_spider_coin_set");
         public static final TagKey<Item> CHICKEN_COIN_SET = modItemTag("collectible_coins/entity_coins/chicken_coin_set");
@@ -63,49 +63,85 @@ public class ModTags {
         public static final TagKey<Item> DONKEY_COIN_SET = modItemTag("collectible_coins/entity_coins/donkey_coin_set");
         public static final TagKey<Item> DROWNED_COIN_SET = modItemTag("collectible_coins/entity_coins/drowned_coin_set");
         public static final TagKey<Item> ELDER_GUARDIAN_COIN_SET = modItemTag("collectible_coins/entity_coins/elder_guardian_coin_set");
+        public static final TagKey<Item> ENDER_DRAGON_COIN_SET = modItemTag("collectible_coins/entity_coins/ender_dragon_coin_set");
         public static final TagKey<Item> ENDERMAN_COIN_SET = modItemTag("collectible_coins/entity_coins/enderman_coin_set");
         public static final TagKey<Item> ENDERMITE_COIN_SET = modItemTag("collectible_coins/entity_coins/endermite_coin_set");
         public static final TagKey<Item> EVOKER_COIN_SET = modItemTag("collectible_coins/entity_coins/evoker_coin_set");
         public static final TagKey<Item> FOX_COIN_SET = modItemTag("collectible_coins/entity_coins/fox_coin_set");
         public static final TagKey<Item> FROG_COIN_SET = modItemTag("collectible_coins/entity_coins/frog_coin_set");
+        public static final TagKey<Item> GHAST_COIN_SET = modItemTag("collectible_coins/entity_coins/ghast_coin_set");
+        public static final TagKey<Item> GIANT_COIN_SET = modItemTag("collectible_coins/entity_coins/giant_coin_set");
         public static final TagKey<Item> GLOW_SQUID_COIN_SET = modItemTag("collectible_coins/entity_coins/glow_squid_coin_set");
         public static final TagKey<Item> GOAT_COIN_SET = modItemTag("collectible_coins/entity_coins/goat_coin_set");
         public static final TagKey<Item> GUARDIAN_COIN_SET = modItemTag("collectible_coins/entity_coins/guardian_coin_set");
-        public static final TagKey<Item> GHAST_COIN_SET = modItemTag("collectible_coins/entity_coins/ghast_coin_set");
         public static final TagKey<Item> HOGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/hoglin_coin_set");
         public static final TagKey<Item> HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/horse_coin_set");
         public static final TagKey<Item> HUSK_COIN_SET = modItemTag("collectible_coins/entity_coins/husk_coin_set");
         public static final TagKey<Item> IRON_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/iron_golem_coin_set");
+        public static final TagKey<Item> ILLUSIONER_COIN_SET = modItemTag("collectible_coins/entity_coins/illusioner_coin_set");
         public static final TagKey<Item> LLAMA_COIN_SET = modItemTag("collectible_coins/entity_coins/llama_coin_set");
-        public static final TagKey<Item> MOOBLOOM_COIN_SET = modItemTag("collectible_coins/entity_coins/moobloom_coin_set");
+        public static final TagKey<Item> MAGMA_CUBE_COIN_SET = modItemTag("collectible_coins/entity_coins/magma_cube_coin_set");
         public static final TagKey<Item> MOOSHROOM_COIN_SET = modItemTag("collectible_coins/entity_coins/mooshroom_coin_set");
         public static final TagKey<Item> MULE_COIN_SET = modItemTag("collectible_coins/entity_coins/mule_coin_set");
         public static final TagKey<Item> NUMISMATIST_COIN_SET = modItemTag("collectible_coins/entity_coins/numismatist_coin_set");
         public static final TagKey<Item> OCELOT_COIN_SET = modItemTag("collectible_coins/entity_coins/ocelot_coin_set");
         public static final TagKey<Item> PANDA_COIN_SET = modItemTag("collectible_coins/entity_coins/panda_coin_set");
         public static final TagKey<Item> PARROT_COIN_SET = modItemTag("collectible_coins/entity_coins/parrot_coin_set");
+        public static final TagKey<Item> PHANTOM_COIN_SET = modItemTag("collectible_coins/entity_coins/phantom_coin_set");
         public static final TagKey<Item> PIG_COIN_SET = modItemTag("collectible_coins/entity_coins/pig_coin_set");
+        public static final TagKey<Item> PIGLIN_BRUTE_COIN_SET = modItemTag("collectible_coins/entity_coins/piglin_brute_coin_set");
         public static final TagKey<Item> PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/piglin_coin_set");
+        public static final TagKey<Item> PILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/pillager_coin_set");
         public static final TagKey<Item> POLAR_BEAR_COIN_SET = modItemTag("collectible_coins/entity_coins/polar_bear_coin_set");
         public static final TagKey<Item> PUFFERFISH_COIN_SET = modItemTag("collectible_coins/entity_coins/pufferfish_coin_set");
         public static final TagKey<Item> RABBIT_COIN_SET = modItemTag("collectible_coins/entity_coins/rabbit_coin_set");
+        public static final TagKey<Item> RAVAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/ravager_coin_set");
         public static final TagKey<Item> SALMON_COIN_SET = modItemTag("collectible_coins/entity_coins/salmon_coin_set");
-        public static final TagKey<Item> SKELETON_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/skeleton_horse_coin_set");
         public static final TagKey<Item> SHEEP_COIN_SET = modItemTag("collectible_coins/entity_coins/sheep_coin_set");
+        public static final TagKey<Item> SHULKER_COIN_SET = modItemTag("collectible_coins/entity_coins/shulker_coin_set");
+        public static final TagKey<Item> SILVERFISH_COIN_SET = modItemTag("collectible_coins/entity_coins/silverfish_coin_set");
+        public static final TagKey<Item> SKELETON_COIN_SET = modItemTag("collectible_coins/entity_coins/skeleton_coin_set");
+        public static final TagKey<Item> SKELETON_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/skeleton_horse_coin_set");
+        public static final TagKey<Item> SLIME_COIN_SET = modItemTag("collectible_coins/entity_coins/slime_coin_set");
         public static final TagKey<Item> SNIFFER_COIN_SET = modItemTag("collectible_coins/entity_coins/sniffer_coin_set");
         public static final TagKey<Item> SNOW_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/snow_golem_coin_set");
         public static final TagKey<Item> SPIDER_COIN_SET = modItemTag("collectible_coins/entity_coins/spider_coin_set");
+        public static final TagKey<Item> STRAY_COIN_SET = modItemTag("collectible_coins/entity_coins/stray_coin_set");
         public static final TagKey<Item> STRIDER_COIN_SET = modItemTag("collectible_coins/entity_coins/strider_coin_set");
         public static final TagKey<Item> SQUID_COIN_SET = modItemTag("collectible_coins/entity_coins/squid_coin_set");
         public static final TagKey<Item> TADPOLE_COIN_SET = modItemTag("collectible_coins/entity_coins/tadpole_coin_set");
         public static final TagKey<Item> TRADER_LLAMA_COIN_SET = modItemTag("collectible_coins/entity_coins/trader_llama_coin_set");
         public static final TagKey<Item> TROPICAL_FISH_COIN_SET = modItemTag("collectible_coins/entity_coins/tropical_fish_coin_set");
         public static final TagKey<Item> TURTLE_COIN_SET = modItemTag("collectible_coins/entity_coins/turtle_coin_set");
+        public static final TagKey<Item> VEX_COIN_SET = modItemTag("collectible_coins/entity_coins/vex_coin_set");
         public static final TagKey<Item> VILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/villager_coin_set");
+        public static final TagKey<Item> VINDICATOR_COIN_SET = modItemTag("collectible_coins/entity_coins/vindicator_coin_set");
         public static final TagKey<Item> WANDERING_TRADER_COIN_SET = modItemTag("collectible_coins/entity_coins/wandering_trader_coin_set");
+        public static final TagKey<Item> WARDEN_COIN_SET = modItemTag("collectible_coins/entity_coins/warden_coin_set");
+        public static final TagKey<Item> WITCH_COIN_SET = modItemTag("collectible_coins/entity_coins/witch_coin_set");
+        public static final TagKey<Item> WITHER_COIN_SET = modItemTag("collectible_coins/entity_coins/wither_coin_set");
+        public static final TagKey<Item> WITHER_SKELETON_COIN_SET = modItemTag("collectible_coins/entity_coins/wither_skeleton_coin_set");
         public static final TagKey<Item> WOLF_COIN_SET = modItemTag("collectible_coins/entity_coins/wolf_coin_set");
+        public static final TagKey<Item> ZOGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/zoglin_coin_set");
+        public static final TagKey<Item> ZOMBIE_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_coin_set");
         public static final TagKey<Item> ZOMBIE_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_horse_coin_set");
+        public static final TagKey<Item> ZOMBIE_VILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_villager_coin_set");
         public static final TagKey<Item> ZOMBIFIED_PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/zombified_piglin_coin_set");
+        // ecologics theme
+        public static final TagKey<Item> CAMEL_COIN_SET = modItemTag("collectible_coins/entity_coins/camel_coin_set");
+        public static final TagKey<Item> CRAB_COIN_SET = modItemTag("collectible_coins/entity_coins/crab_coin_set");
+        public static final TagKey<Item> SQUIRREL_COIN_SET = modItemTag("collectible_coins/entity_coins/squirrel_coin_set");
+        public static final TagKey<Item> PENGUIN_COIN_SET = modItemTag("collectible_coins/entity_coins/penguin_coin_set");
+        // guard villagers theme
+        public static final TagKey<Item> GUARD_COIN_SET = modItemTag("collectible_coins/entity_coins/guard_coin_set");
+        // friends and foes theme
+        public static final TagKey<Item> MOOBLOOM_COIN_SET = modItemTag("collectible_coins/entity_coins/moobloom_coin_set");
+        public static final TagKey<Item> COPPER_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/copper_golem_coin_set");
+        public static final TagKey<Item> GLARE_COIN_SET = modItemTag("collectible_coins/entity_coins/glare_coin_set");
+        public static final TagKey<Item> ICEOLOGER_COIN_SET = modItemTag("collectible_coins/entity_coins/iceologer_coin_set");
+        public static final TagKey<Item> MAULER_COIN_SET = modItemTag("collectible_coins/entity_coins/mauler_coin_set");
+        public static final TagKey<Item> WILDFIRE_COIN_SET = modItemTag("collectible_coins/entity_coins/wildfire_coin_set");
+        public static final TagKey<Item> TUFF_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/tuff_golem_coin_set");
 
         public static final TagKey<Item> TEXTILES = modItemTag("textiles");
         public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");
@@ -137,6 +173,7 @@ public class ModTags {
     private static @NotNull TagKey<Block> modBlockTag(String path) {
         return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MODID, path));
     }
+
     private static @NotNull TagKey<Item> modItemTag(String path) {
         return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MODID, path));
     }

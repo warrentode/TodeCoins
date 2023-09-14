@@ -1,19 +1,16 @@
 package com.github.warrentode.todecoins.loot.conditions.curio;
 
-import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
+import com.github.warrentode.todecoins.attribute.PlayerCodBonus;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import net.minecraft.client.Minecraft;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -31,13 +28,13 @@ public class CodFishCharmCondition implements LootItemCondition {
     }
 
     public boolean test(@NotNull LootContext context) {
-        ServerLevel serverlevel = context.getLevel();
-        Player player = Minecraft.getInstance().player;
-        if (ModListHandler.curiosLoaded) {
-            ItemStack isCodFishCharm = Curios.getCharmSlot(player);
-            return this.isCodFishCharm = Curios.matchCodFishCharm(isCodFishCharm);
+        Level level = context.getLevel();
+        if (ModList.get().isLoaded("curios")) {
+            return this.isCodFishCharm = (PlayerCodBonus.getBonus() > 0);
         }
-        else {return false;}
+        else {
+            return false;
+        }
     }
 
     public static CodFishCharmCondition.Builder matches() {

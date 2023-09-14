@@ -1,7 +1,6 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday;
 
 import com.github.warrentode.todecoins.integration.Curios;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -10,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,7 +22,7 @@ public class ChristmasCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !ModListHandler.curiosLoaded ? null : Curios.createGiftingCharmProvider(stack);
+        return !ModList.get().isLoaded("curios") ? null : Curios.createGiftingCharmProvider(stack);
     }
 
     @Override

@@ -2067,31 +2067,13 @@
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "biome": "minecraft:nether_wastes"
+                    "biome": "minecraft:mangrove_swamp"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warped_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
+                    "biome": "minecraft:swamp"
                   }
                 }
               ]
@@ -2549,13 +2531,60 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "dimension": "minecraft:overworld"
-              }
+              "condition": "todecoins:winter_condition"
             },
             {
-              "condition": "todecoins:winter_condition"
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
+                  }
+                }
+              ]
             }
           ],
           "name": "todecoins:collectible_coin_creeper_netherite"
@@ -2779,7 +2808,7 @@
             {
               "condition": "minecraft:location_check",
               "predicate": {
-                "dimension": "minecraft:the_end"
+                "structure": "minecraft:end_city"
               }
             }
           ],
@@ -2799,6 +2828,36 @@
             }
           ],
           "name": "todecoins:collectible_coin_evoker_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:mansion"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_vindicator_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:mansion"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_vex_netherite"
         },
         {
           "type": "minecraft:item",
@@ -2829,6 +2888,1136 @@
             }
           ],
           "name": "todecoins:collectible_coin_husk_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_magma_cube_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:swamp"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:mangrove_swamp"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_slime_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:alternative",
+                "terms": [
+                  {
+                    "condition": "minecraft:time_check",
+                    "value": {
+                      "max": 23000.0,
+                      "min": 12000.0
+                    }
+                  },
+                  {
+                    "condition": "minecraft:weather_check",
+                    "thundering": true
+                  },
+                  {
+                    "condition": "minecraft:location_check",
+                    "predicate": {
+                      "dimension": "minecraft:the_nether"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_phantom_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_brute_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:pillager_outpost"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_pillager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:pillager_outpost"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_ravager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:end_city"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_shulker_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:igloo"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mansion"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:meadow"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:grove"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:snowy_slopes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:jagged_peaks"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:frozen_peaks"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:stony_peaks"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_silverfish_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_skeleton_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:frozen_river"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:snowy_plains"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:ice_spikes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:frozen_ocean"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:deep_frozen_ocean"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_stray_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:deep_dark"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_warden_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:swamp_hut"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:swamp"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:mangrove_swamp"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_witch_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:fortress"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_skeleton_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:fortress"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_zoglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_villager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:end_city"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_ender_dragon_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mineshaft_mesa"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ancient_city"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:jungle_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:desert_pyramid"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:stronghold"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_giant_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:mansion"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:pillager_outpost"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_illusioner_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_desert"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_savanna"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_plains"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_snowy"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_taiga"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_copper_golem_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_desert"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_savanna"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_plains"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_snowy"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_taiga"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_tuff_golem_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:lush_caves"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:dripstone_caves"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_glare_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:frozen_river"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:snowy_plains"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:ice_spikes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:frozen_ocean"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:deep_frozen_ocean"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_iceologer_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:badlands"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:eroded_badlands"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:wooded_badlands"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:savanna"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:savanna_plateau"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:windswept_savanna"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_savanna"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_mauler_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:fortress"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:ruined_portal_nether"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:bastion_remnant"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:soul_sand_valley"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:crimson_forest"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:nether_wastes"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:basalt_deltas"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_wildfire_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:beach"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_crab_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:plains"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_squirrel_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:frozen_ocean"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:deep_frozen_ocean"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_penguin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_desert"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_savanna"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_plains"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_taiga"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "structure": "minecraft:village_snowy"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_guard_netherite"
         }
       ],
       "rolls": 1.0

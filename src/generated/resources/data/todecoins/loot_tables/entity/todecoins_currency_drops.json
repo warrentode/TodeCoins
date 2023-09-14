@@ -3,6 +3,11 @@
   "pools": [
     {
       "bonus_rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:loot_table",
@@ -13,7 +18,8 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_copper_coin_drops",
-          "quality": 1
+          "quality": 1,
+          "weight": 10
         },
         {
           "type": "minecraft:loot_table",
@@ -24,7 +30,8 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_iron_coin_drops",
-          "quality": 2
+          "quality": 2,
+          "weight": 9
         },
         {
           "type": "minecraft:loot_table",
@@ -35,7 +42,8 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_gold_coin_drops",
-          "quality": 3
+          "quality": 3,
+          "weight": 8
         },
         {
           "type": "minecraft:loot_table",
@@ -52,7 +60,8 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_nether_gold_coin_drops",
-          "quality": 3
+          "quality": 3,
+          "weight": 7
         },
         {
           "type": "minecraft:loot_table",
@@ -62,23 +71,15 @@
               "tag": "forge:drops_currency"
             },
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                },
-                {
-                  "condition": "todecoins:entity_type_tag_condition",
-                  "tag": "forge:enderman"
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
             }
           ],
           "name": "todecoins:entity/coins/todecoins_endonian_coin_drops",
-          "quality": 3
+          "quality": 3,
+          "weight": 6
         },
         {
           "type": "minecraft:loot_table",
@@ -89,7 +90,8 @@
             }
           ],
           "name": "todecoins:entity/notes/todecoins_emerald_quarter_bank_note_drops",
-          "quality": 4
+          "quality": 4,
+          "weight": 5
         },
         {
           "type": "minecraft:loot_table",
@@ -100,7 +102,8 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_netherite_coin_drops",
-          "quality": 5
+          "quality": 5,
+          "weight": 4
         },
         {
           "type": "minecraft:loot_table",
@@ -111,7 +114,8 @@
             }
           ],
           "name": "todecoins:entity/notes/todecoins_emerald_half_bank_note_drops",
-          "quality": 5
+          "quality": 5,
+          "weight": 3
         },
         {
           "type": "minecraft:loot_table",
@@ -122,7 +126,8 @@
             }
           ],
           "name": "todecoins:entity/notes/todecoins_emerald_bank_note_drops",
-          "quality": 6
+          "quality": 6,
+          "weight": 2
         },
         {
           "type": "minecraft:loot_table",

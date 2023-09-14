@@ -235,6 +235,134 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_husk_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_magma_cube_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_slime_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_phantom_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_piglin_brute_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_pillager_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ravager_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_shulker_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_silverfish_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_skeleton_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_stray_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vex_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_vindicator_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_warden_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_witch_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_skeleton_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wither_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zoglin_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_zombie_villager_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_ender_dragon_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_giant_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_illusioner_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_copper_golem_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_glare_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_iceologer_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_mauler_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_wildfire_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_tuff_golem_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_crab_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_guard_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_penguin_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_squirrel_copper"
         }
       ],
       "rolls": 1.0

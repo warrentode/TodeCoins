@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "tag": "todecoins:textiles/currency_fiber"
+      "tag": "forge:textiles/currency_fiber"
     },
     "C": {
       "item": "todecoins:lucky_coin"

@@ -10,7 +10,7 @@
             {
               "condition": "minecraft:location_check",
               "predicate": {
-                "dimension": "minecraft:the_end"
+                "structure": "minecraft:end_city"
               }
             }
           ],
@@ -33,7 +33,7 @@
             {
               "condition": "minecraft:location_check",
               "predicate": {
-                "dimension": "minecraft:the_end"
+                "structure": "minecraft:end_city"
               }
             }
           ],

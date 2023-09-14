@@ -253,54 +253,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_camel_copper": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:collectible_coin_camel_copper"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "find_item.todecoins.collectible_coin_camel_gold": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:collectible_coin_camel_gold"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "find_item.todecoins.collectible_coin_camel_iron": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:collectible_coin_camel_iron"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "find_item.todecoins.collectible_coin_camel_netherite": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:collectible_coin_camel_netherite"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "find_item.todecoins.collectible_coin_carnation_marshall_nash": {
       "conditions": {
         "items": [
@@ -587,121 +539,121 @@
           }
         ]
       },
-        "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
     },
-      "find_item.todecoins.collectible_coin_cow_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_cow_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+    "find_item.todecoins.collectible_coin_cow_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_cow_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_creeper_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_creeper_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_creeper_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_creeper_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_creeper_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_creeper_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_creeper_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_creeper_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_creeper_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_creeper_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_creeper_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_creeper_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_creeper_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_creeper_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_creeper_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_creeper_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_dolphin_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_dolphin_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_dolphin_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_dolphin_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_dolphin_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_dolphin_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_dolphin_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_dolphin_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_dolphin_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_dolphin_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_dolphin_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_dolphin_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_dolphin_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_dolphin_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_dolphin_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_dolphin_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_donkey_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_donkey_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
               "todecoins:collectible_coin_donkey_copper"
             ]
           }
@@ -733,122 +685,170 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-      "find_item.todecoins.collectible_coin_donkey_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_donkey_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+    "find_item.todecoins.collectible_coin_donkey_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_donkey_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_drowned_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_drowned_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_drowned_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_drowned_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_drowned_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_drowned_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_drowned_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_drowned_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_drowned_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_drowned_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_drowned_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_drowned_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_drowned_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_drowned_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_drowned_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_drowned_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_elder_guardian_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_elder_guardian_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_elder_guardian_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_elder_guardian_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_elder_guardian_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_elder_guardian_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_elder_guardian_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_elder_guardian_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_elder_guardian_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_elder_guardian_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_elder_guardian_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_elder_guardian_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_elder_guardian_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_elder_guardian_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_elder_guardian_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_elder_guardian_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_enderman_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_enderman_copper"
-                      ]
-                  }
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ender_dragon_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ender_dragon_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ender_dragon_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ender_dragon_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ender_dragon_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ender_dragon_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ender_dragon_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ender_dragon_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_enderman_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_enderman_copper"
+            ]
+          }
         ]
       },
       "trigger": "minecraft:inventory_changed"
@@ -877,122 +877,122 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-      "find_item.todecoins.collectible_coin_enderman_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_enderman_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+    "find_item.todecoins.collectible_coin_enderman_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_enderman_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_endermite_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_endermite_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_endermite_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_endermite_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_endermite_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_endermite_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_endermite_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_endermite_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_endermite_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_endermite_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_endermite_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_endermite_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_endermite_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_endermite_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_endermite_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_endermite_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_evoker_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_evoker_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_evoker_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_evoker_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_evoker_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_evoker_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_evoker_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_evoker_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_evoker_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_evoker_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_evoker_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_evoker_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_evoker_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_evoker_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_evoker_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_evoker_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_fox_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_fox_copper"
-                      ]
-                  }
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_fox_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_fox_copper"
+            ]
+          }
         ]
       },
       "trigger": "minecraft:inventory_changed"
@@ -1081,6 +1081,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_ghast_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ghast_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ghast_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ghast_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ghast_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ghast_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ghast_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ghast_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_glow_squid_copper": {
       "conditions": {
         "items": [
@@ -1117,122 +1165,122 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-      "find_item.todecoins.collectible_coin_glow_squid_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_glow_squid_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+    "find_item.todecoins.collectible_coin_glow_squid_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_glow_squid_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_goat_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_goat_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_goat_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_goat_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_goat_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_goat_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_goat_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_goat_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_goat_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_goat_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_goat_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_goat_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_goat_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_goat_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_goat_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_goat_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_guardian_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_guardian_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_guardian_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_guardian_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_guardian_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_guardian_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_guardian_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_guardian_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_guardian_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_guardian_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_guardian_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_guardian_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_guardian_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_guardian_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_guardian_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_guardian_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_halloween_2023": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_halloween_2023"
-                      ]
-                  }
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_halloween_2023": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_halloween_2023"
+            ]
+          }
         ]
       },
       "trigger": "minecraft:inventory_changed"
@@ -1371,154 +1419,250 @@
     },
     "find_item.todecoins.collectible_coin_horse_netherite": {
       "conditions": {
-          "items": [
-              {
-                  "items": [
-                      "todecoins:collectible_coin_horse_netherite"
-                  ]
-              }
-          ]
-      },
-        "trigger": "minecraft:inventory_changed"
-    },
-      "find_item.todecoins.collectible_coin_iron_golem_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_iron_golem_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_iron_golem_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_iron_golem_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_iron_golem_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_iron_golem_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_iron_golem_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_iron_golem_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_llama_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_llama_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_llama_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_llama_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_llama_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_llama_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_llama_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_llama_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_moobloom_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_moobloom_copper"
-                      ]
-                  }
-              ]
-          },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "find_item.todecoins.collectible_coin_moobloom_gold": {
-      "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_moobloom_gold"
+              "todecoins:collectible_coin_horse_netherite"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_moobloom_iron": {
+    "find_item.todecoins.collectible_coin_husk_copper": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_moobloom_iron"
+              "todecoins:collectible_coin_husk_copper"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_moobloom_netherite": {
+    "find_item.todecoins.collectible_coin_husk_gold": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_moobloom_netherite"
+              "todecoins:collectible_coin_husk_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_husk_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_husk_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_husk_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_husk_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_illusioner_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_illusioner_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_illusioner_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_illusioner_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_iron_golem_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_iron_golem_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_iron_golem_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_iron_golem_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_iron_golem_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_iron_golem_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_iron_golem_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_iron_golem_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_llama_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_llama_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_llama_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_llama_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_llama_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_llama_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_llama_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_llama_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_magma_cube_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_magma_cube_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_magma_cube_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_magma_cube_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_magma_cube_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_magma_cube_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_magma_cube_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_magma_cube_netherite"
             ]
           }
         ]
@@ -1707,74 +1851,74 @@
     },
     "find_item.todecoins.collectible_coin_ocelot_netherite": {
       "conditions": {
-          "items": [
-              {
-                  "items": [
-                      "todecoins:collectible_coin_ocelot_netherite"
-                  ]
-              }
-          ]
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ocelot_netherite"
+            ]
+          }
+        ]
       },
-        "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
     },
-      "find_item.todecoins.collectible_coin_panda_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_panda_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+    "find_item.todecoins.collectible_coin_panda_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_panda_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_panda_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_panda_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_panda_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_panda_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_panda_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_panda_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_panda_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_panda_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_panda_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_panda_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_panda_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_panda_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_parrot_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_parrot_copper"
-                      ]
-                  }
-              ]
-          },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_parrot_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_parrot_copper"
+            ]
+          }
+        ]
+      },
       "trigger": "minecraft:inventory_changed"
     },
     "find_item.todecoins.collectible_coin_parrot_gold": {
@@ -1807,6 +1951,54 @@
           {
             "items": [
               "todecoins:collectible_coin_parrot_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_phantom_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_phantom_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_phantom_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_phantom_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_phantom_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_phantom_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_phantom_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_phantom_netherite"
             ]
           }
         ]
@@ -1861,6 +2053,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_piglin_brute_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_brute_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_piglin_brute_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_brute_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_piglin_brute_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_brute_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_piglin_brute_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_brute_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_piglin_copper": {
       "conditions": {
         "items": [
@@ -1899,74 +2139,122 @@
     },
     "find_item.todecoins.collectible_coin_piglin_netherite": {
       "conditions": {
-          "items": [
-              {
-                  "items": [
-                      "todecoins:collectible_coin_piglin_netherite"
-                  ]
-              }
-          ]
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_netherite"
+            ]
+          }
+        ]
       },
-        "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
     },
-      "find_item.todecoins.collectible_coin_polar_bear_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_polar_bear_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+    "find_item.todecoins.collectible_coin_pillager_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_polar_bear_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_polar_bear_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_pillager_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_polar_bear_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_polar_bear_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_pillager_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_polar_bear_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_polar_bear_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_pillager_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_pufferfish_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_pufferfish_copper"
-                      ]
-                  }
-              ]
-          },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_polar_bear_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_polar_bear_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_polar_bear_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_polar_bear_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_polar_bear_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_polar_bear_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_polar_bear_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_polar_bear_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_pufferfish_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pufferfish_copper"
+            ]
+          }
+        ]
+      },
       "trigger": "minecraft:inventory_changed"
     },
     "find_item.todecoins.collectible_coin_pufferfish_gold": {
@@ -2047,6 +2335,54 @@
           {
             "items": [
               "todecoins:collectible_coin_rabbit_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ravager_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ravager_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ravager_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_ravager_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_netherite"
             ]
           }
         ]
@@ -2149,6 +2485,126 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_shulker_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_shulker_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_shulker_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_shulker_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_shulker_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_shulker_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_shulker_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_shulker_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_silverfish_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_silverfish_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_silverfish_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_silverfish_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_silverfish_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_silverfish_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_silverfish_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_silverfish_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_skeleton_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_skeleton_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_skeleton_horse_copper": {
       "conditions": {
         "items": [
@@ -2197,48 +2653,72 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_sniffer_copper": {
+    "find_item.todecoins.collectible_coin_skeleton_iron": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_sniffer_copper"
+              "todecoins:collectible_coin_skeleton_iron"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_sniffer_gold": {
+    "find_item.todecoins.collectible_coin_skeleton_netherite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_sniffer_gold"
+              "todecoins:collectible_coin_skeleton_netherite"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_sniffer_iron": {
+    "find_item.todecoins.collectible_coin_slime_copper": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_sniffer_iron"
+              "todecoins:collectible_coin_slime_copper"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_sniffer_netherite": {
+    "find_item.todecoins.collectible_coin_slime_gold": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_sniffer_netherite"
+              "todecoins:collectible_coin_slime_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_slime_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_slime_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_slime_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_slime_netherite"
             ]
           }
         ]
@@ -2341,6 +2821,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_stray_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_stray_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_stray_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_stray_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_stray_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_stray_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_stray_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_stray_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_strider_copper": {
       "conditions": {
         "items": [
@@ -2427,74 +2955,74 @@
     },
     "find_item.todecoins.collectible_coin_tadpole_netherite": {
       "conditions": {
-          "items": [
-              {
-                  "items": [
-                      "todecoins:collectible_coin_tadpole_netherite"
-                  ]
-              }
-          ]
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_tadpole_netherite"
+            ]
+          }
+        ]
       },
-        "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
     },
-      "find_item.todecoins.collectible_coin_trader_llama_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_trader_llama_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+    "find_item.todecoins.collectible_coin_trader_llama_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_trader_llama_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_trader_llama_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_trader_llama_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_trader_llama_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_trader_llama_gold"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_trader_llama_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_trader_llama_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_trader_llama_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_trader_llama_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_trader_llama_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_trader_llama_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_trader_llama_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_trader_llama_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_tropical_fish_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_tropical_fish_copper"
-                      ]
-                  }
-              ]
-          },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_tropical_fish_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_tropical_fish_copper"
+            ]
+          }
+        ]
+      },
       "trigger": "minecraft:inventory_changed"
     },
     "find_item.todecoins.collectible_coin_tropical_fish_gold": {
@@ -2581,6 +3109,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_vex_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vex_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_vex_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vex_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_vex_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vex_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_vex_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vex_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_villager_copper": {
       "conditions": {
         "items": [
@@ -2629,6 +3205,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_vindicator_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vindicator_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_vindicator_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vindicator_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_vindicator_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vindicator_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_vindicator_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vindicator_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_wandering_trader_copper": {
       "conditions": {
         "items": [
@@ -2667,160 +3291,448 @@
     },
     "find_item.todecoins.collectible_coin_wandering_trader_netherite": {
       "conditions": {
-          "items": [
-              {
-                  "items": [
-                      "todecoins:collectible_coin_wandering_trader_netherite"
-                  ]
-              }
-          ]
-      },
-        "trigger": "minecraft:inventory_changed"
-    },
-      "find_item.todecoins.collectible_coin_wolf_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_wolf_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_wolf_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_wolf_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_wolf_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_wolf_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_wolf_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_wolf_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      },
-      "find_item.todecoins.collectible_coin_zombie_horse_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_zombie_horse_copper"
-                      ]
-                  }
-              ]
-          },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "find_item.todecoins.collectible_coin_zombie_horse_gold": {
-      "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_zombie_horse_gold"
+              "todecoins:collectible_coin_wandering_trader_netherite"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_zombie_horse_iron": {
+    "find_item.todecoins.collectible_coin_warden_copper": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_zombie_horse_iron"
+              "todecoins:collectible_coin_warden_copper"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_zombie_horse_netherite": {
-        "conditions": {
+    "find_item.todecoins.collectible_coin_warden_gold": {
+      "conditions": {
+        "items": [
+          {
             "items": [
-                {
-                    "items": [
-                        "todecoins:collectible_coin_zombie_horse_netherite"
-                    ]
-                }
+              "todecoins:collectible_coin_warden_gold"
             ]
-        },
-        "trigger": "minecraft:inventory_changed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
-      "find_item.todecoins.collectible_coin_zombified_piglin_copper": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_zombified_piglin_copper"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+    "find_item.todecoins.collectible_coin_warden_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_warden_iron"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_zombified_piglin_gold": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_zombified_piglin_gold"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_warden_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_warden_netherite"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_zombified_piglin_iron": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_zombified_piglin_iron"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_witch_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_copper"
+            ]
+          }
+        ]
       },
-      "find_item.todecoins.collectible_coin_zombified_piglin_netherite": {
-          "conditions": {
-              "items": [
-                  {
-                      "items": [
-                          "todecoins:collectible_coin_zombified_piglin_netherite"
-                      ]
-                  }
-              ]
-          },
-          "trigger": "minecraft:inventory_changed"
-      }
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_witch_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_witch_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_witch_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_skeleton_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_skeleton_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_skeleton_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_skeleton_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_skeleton_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_skeleton_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wither_skeleton_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wither_skeleton_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wolf_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wolf_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wolf_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wolf_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wolf_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wolf_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_wolf_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wolf_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zoglin_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zoglin_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zoglin_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zoglin_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zoglin_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zoglin_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zoglin_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zoglin_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombie_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombie_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombie_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombie_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombie_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombie_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombie_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombie_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombie_villager_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombie_villager_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombie_villager_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombie_villager_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombie_villager_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombie_villager_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombie_villager_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombie_villager_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombified_piglin_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombified_piglin_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombified_piglin_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombified_piglin_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombified_piglin_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombified_piglin_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_zombified_piglin_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombified_piglin_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
   },
   "display": {
     "announce_to_chat": true,
@@ -2932,18 +3844,6 @@
       "find_item.todecoins.collectible_coin_blaze_netherite"
     ],
     [
-      "find_item.todecoins.collectible_coin_camel_copper"
-    ],
-    [
-      "find_item.todecoins.collectible_coin_camel_iron"
-    ],
-    [
-      "find_item.todecoins.collectible_coin_camel_gold"
-    ],
-    [
-      "find_item.todecoins.collectible_coin_camel_netherite"
-    ],
-    [
       "find_item.todecoins.collectible_coin_cat_copper"
     ],
     [
@@ -2994,146 +3894,134 @@
     [
       "find_item.todecoins.collectible_coin_cow_copper"
     ],
-      [
-          "find_item.todecoins.collectible_coin_cow_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_cow_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_cow_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_creeper_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_creeper_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_creeper_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_creeper_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_dolphin_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_dolphin_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_dolphin_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_dolphin_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_donkey_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_donkey_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_donkey_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_donkey_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_drowned_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_drowned_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_drowned_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_drowned_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_elder_guardian_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_elder_guardian_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_elder_guardian_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_elder_guardian_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_goat_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_goat_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_goat_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_goat_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_guardian_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_guardian_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_guardian_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_guardian_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_enderman_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_enderman_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_enderman_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_enderman_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_endermite_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_endermite_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_endermite_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_endermite_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_evoker_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_evoker_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_evoker_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_evoker_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_fox_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_fox_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_fox_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_fox_netherite"
+    [
+      "find_item.todecoins.collectible_coin_cow_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_cow_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_cow_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_creeper_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_creeper_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_creeper_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_creeper_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_dolphin_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_dolphin_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_dolphin_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_dolphin_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_donkey_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_donkey_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_donkey_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_donkey_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_drowned_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_drowned_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_drowned_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_drowned_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_elder_guardian_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_elder_guardian_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_elder_guardian_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_elder_guardian_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ender_dragon_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ender_dragon_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ender_dragon_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ender_dragon_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_enderman_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_enderman_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_enderman_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_enderman_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_endermite_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_endermite_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_endermite_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_endermite_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_evoker_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_evoker_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_evoker_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_evoker_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_fox_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_fox_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_fox_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_fox_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_frog_copper"
@@ -3146,6 +4034,42 @@
     ],
     [
       "find_item.todecoins.collectible_coin_frog_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ghast_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ghast_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ghast_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ghast_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_goat_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_goat_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_goat_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_goat_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_guardian_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_guardian_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_guardian_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_guardian_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_glow_squid_copper"
@@ -3174,50 +4098,74 @@
     [
       "find_item.todecoins.collectible_coin_horse_copper"
     ],
-      [
-          "find_item.todecoins.collectible_coin_horse_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_horse_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_horse_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_iron_golem_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_iron_golem_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_iron_golem_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_iron_golem_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_llama_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_llama_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_llama_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_llama_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_moobloom_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_moobloom_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_moobloom_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_moobloom_netherite"
+    [
+      "find_item.todecoins.collectible_coin_horse_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_horse_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_horse_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_husk_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_husk_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_husk_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_husk_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_illusioner_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_illusioner_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_illusioner_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_illusioner_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_iron_golem_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_iron_golem_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_iron_golem_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_iron_golem_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_llama_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_llama_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_llama_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_llama_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_magma_cube_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_magma_cube_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_magma_cube_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_magma_cube_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_mooshroom_copper"
@@ -3258,38 +4206,50 @@
     [
       "find_item.todecoins.collectible_coin_ocelot_copper"
     ],
-      [
-          "find_item.todecoins.collectible_coin_ocelot_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_ocelot_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_ocelot_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_panda_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_panda_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_panda_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_panda_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_parrot_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_parrot_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_parrot_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_parrot_netherite"
+    [
+      "find_item.todecoins.collectible_coin_ocelot_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ocelot_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ocelot_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_panda_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_panda_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_panda_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_panda_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_parrot_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_parrot_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_parrot_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_parrot_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_phantom_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_phantom_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_phantom_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_phantom_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_pig_copper"
@@ -3304,40 +4264,64 @@
       "find_item.todecoins.collectible_coin_pig_netherite"
     ],
     [
+      "find_item.todecoins.collectible_coin_piglin_brute_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_piglin_brute_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_piglin_brute_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_piglin_brute_netherite"
+    ],
+    [
       "find_item.todecoins.collectible_coin_piglin_copper"
     ],
-      [
-          "find_item.todecoins.collectible_coin_piglin_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_piglin_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_piglin_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_polar_bear_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_polar_bear_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_polar_bear_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_polar_bear_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_pufferfish_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_pufferfish_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_pufferfish_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_pufferfish_netherite"
+    [
+      "find_item.todecoins.collectible_coin_piglin_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_piglin_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_piglin_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pillager_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pillager_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pillager_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pillager_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_polar_bear_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_polar_bear_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_polar_bear_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_polar_bear_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pufferfish_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pufferfish_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pufferfish_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_pufferfish_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_rabbit_copper"
@@ -3350,6 +4334,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_rabbit_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ravager_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ravager_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ravager_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_ravager_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_salmon_copper"
@@ -3376,6 +4372,42 @@
       "find_item.todecoins.collectible_coin_sheep_netherite"
     ],
     [
+      "find_item.todecoins.collectible_coin_shulker_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_shulker_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_shulker_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_shulker_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_silverfish_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_silverfish_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_silverfish_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_silverfish_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_netherite"
+    ],
+    [
       "find_item.todecoins.collectible_coin_skeleton_horse_copper"
     ],
     [
@@ -3388,16 +4420,16 @@
       "find_item.todecoins.collectible_coin_skeleton_horse_netherite"
     ],
     [
-      "find_item.todecoins.collectible_coin_sniffer_copper"
+      "find_item.todecoins.collectible_coin_slime_copper"
     ],
     [
-      "find_item.todecoins.collectible_coin_sniffer_iron"
+      "find_item.todecoins.collectible_coin_slime_iron"
     ],
     [
-      "find_item.todecoins.collectible_coin_sniffer_gold"
+      "find_item.todecoins.collectible_coin_slime_gold"
     ],
     [
-      "find_item.todecoins.collectible_coin_sniffer_netherite"
+      "find_item.todecoins.collectible_coin_slime_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_snow_golem_copper"
@@ -3424,6 +4456,18 @@
       "find_item.todecoins.collectible_coin_squid_netherite"
     ],
     [
+      "find_item.todecoins.collectible_coin_stray_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_stray_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_stray_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_stray_netherite"
+    ],
+    [
       "find_item.todecoins.collectible_coin_strider_copper"
     ],
     [
@@ -3438,38 +4482,38 @@
     [
       "find_item.todecoins.collectible_coin_tadpole_copper"
     ],
-      [
-          "find_item.todecoins.collectible_coin_tadpole_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_tadpole_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_tadpole_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_trader_llama_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_trader_llama_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_trader_llama_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_trader_llama_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_tropical_fish_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_tropical_fish_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_tropical_fish_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_tropical_fish_netherite"
+    [
+      "find_item.todecoins.collectible_coin_tadpole_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_tadpole_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_tadpole_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_trader_llama_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_trader_llama_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_trader_llama_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_trader_llama_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_tropical_fish_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_tropical_fish_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_tropical_fish_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_tropical_fish_netherite"
     ],
     [
       "find_item.todecoins.collectible_coin_turtle_copper"
@@ -3484,6 +4528,18 @@
       "find_item.todecoins.collectible_coin_turtle_netherite"
     ],
     [
+      "find_item.todecoins.collectible_coin_vex_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_vex_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_vex_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_vex_netherite"
+    ],
+    [
       "find_item.todecoins.collectible_coin_villager_copper"
     ],
     [
@@ -3496,52 +4552,136 @@
       "find_item.todecoins.collectible_coin_villager_netherite"
     ],
     [
+      "find_item.todecoins.collectible_coin_vindicator_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_vindicator_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_vindicator_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_vindicator_netherite"
+    ],
+    [
       "find_item.todecoins.collectible_coin_wandering_trader_copper"
     ],
-      [
-          "find_item.todecoins.collectible_coin_wandering_trader_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_wandering_trader_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_wandering_trader_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_wolf_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_wolf_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_wolf_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_wolf_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_zombie_horse_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_zombie_horse_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_zombie_horse_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_zombie_horse_netherite"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_zombified_piglin_copper"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_zombified_piglin_iron"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_zombified_piglin_gold"
-      ],
-      [
-          "find_item.todecoins.collectible_coin_zombified_piglin_netherite"
-      ]
+    [
+      "find_item.todecoins.collectible_coin_wandering_trader_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wandering_trader_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wandering_trader_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_warden_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_warden_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_warden_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_warden_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_witch_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_witch_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_witch_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_witch_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_skeleton_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_skeleton_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_skeleton_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wither_skeleton_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wolf_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wolf_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wolf_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_wolf_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zoglin_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zoglin_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zoglin_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zoglin_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombie_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombie_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombie_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombie_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombie_villager_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombie_villager_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombie_villager_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombie_villager_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombified_piglin_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombified_piglin_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombified_piglin_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_zombified_piglin_netherite"
+    ]
   ]
 }

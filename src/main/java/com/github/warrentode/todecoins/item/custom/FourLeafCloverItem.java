@@ -1,6 +1,7 @@
 package com.github.warrentode.todecoins.item.custom;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +19,12 @@ public class FourLeafCloverItem extends Item {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.four_leaf_clover.hover").withStyle(ChatFormatting.GOLD));
+        if (Screen.hasShiftDown()) {
+            tooltips.add(Component.translatable("tooltips.four_leaf_clover.hover").withStyle(ChatFormatting.GOLD));
+        }
+        else {
+            tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 

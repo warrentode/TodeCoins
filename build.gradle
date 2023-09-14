@@ -1,21 +1,21 @@
 //file:noinspection GroovyAssignabilityCheck
 //file:noinspection GrUnresolvedAccess
 //file:noinspection GroovyAccessibility
-// TODO figure out how to get this project to publish to JitPack/GitHub correctly to be used as a dependency
+// TODO figure out how to get this mod setup correctly somewhere to be used as a dependency
 buildscript {
     repositories {
         mavenCentral()
         maven { url = 'https://maven.minecraftforge.net/' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url = 'https://jitpack.io' }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0,6.2)', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0,6.2', changing: true
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
 plugins {
-    id 'java'
     id 'eclipse'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
@@ -23,25 +23,23 @@ plugins {
 }
 
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-group = 'com.github.warrentode'
-archivesBaseName = 'todecoins'
-version = '1.19.2-1.5.1'
+group = "com.github.warrentode"
+archivesBaseName = "todecoins"
+version = "1.19.2-1.5.6"
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '17'
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: 'parchment', version: '2022.11.27-1.19.2'
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    // Currently, this location cannot be changed from the default.
 
     runs {
         client {
@@ -109,7 +107,6 @@ mixin {
 }
 
 repositories {
-    maven { url = "https://maven.theillusivec4.top/" }
     maven {
         url = "https://cursemaven.com"
         content {
@@ -119,8 +116,14 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.2-43.2.21'
-    implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0")
+    minecraft 'net.minecraftforge:forge:1.19.2-43.2.23'
+
+    implementation 'io.netty:netty-codec:4.1.86.Final'
+    implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
+
+    runtimeOnly fg.deobf("curse.maven:configured-457570:4462837")
+    runtimeOnly fg.deobf("curse.maven:catalogue-459701:4171024")
+    implementation fg.deobf("curse.maven:curios-309927:4523009")
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:puzzles-lib-495476:4600775")
     implementation fg.deobf("curse.maven:bag-of-holding-forge-593996:4111700")
@@ -128,16 +131,19 @@ dependencies {
     implementation fg.deobf("curse.maven:serene-seasons-291874:4037228")
     implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4637293")
     implementation fg.deobf("curse.maven:sophisticated-core-618298:4668694")
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4711959")
+    implementation fg.deobf("curse.maven:guard-villagers-360203:4701400")
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "todecoins",
+                "Specification-Title"     : project.name,
                 "Specification-Vendor"    : "WarrenTode",
                 "Specification-Version"   : project.jar.archiveVersion,
-                "Implementation-Title": "Forge",
+                "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "WarrenTode",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
@@ -160,16 +166,22 @@ jar.finalizedBy('reobfJar')
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact jar
+            groupId = "com.github.warrentode"
+            artifactId = "todecoins"
+            version = "1.19.2-1.5.6"
+
+            from components.java
         }
     }
     repositories {
         maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
+            url "file://${project.projectDir}/mcmodsrepo"
         }
+        mavenLocal()
     }
 }
 
-compileJava {
-    options.encoding = "UTF-8"
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.release = 17
 }

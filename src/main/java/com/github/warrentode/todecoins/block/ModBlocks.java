@@ -20,6 +20,8 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+    // TODO learn how to make a block entity similar to the shulker box that saves its contents to serve as a collectors pack
+    // TODO possibly learn how to create a larger item frame to store and display collectible coins
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TodeCoins.MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MODID);
 

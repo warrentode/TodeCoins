@@ -1,9 +1,9 @@
-// 1.19.2	2023-08-01T16:50:47.5769148	Global Loot Modifiers : todecoins
+// 1.19.2	2023-09-14T05:42:27.9792409	Global Loot Modifiers : todecoins
 c45af9213c3f4902ba20c08b558bfaa8f51267d3 data/forge/loot_modifiers/global_loot_modifiers.json
 f7069603a04057ade995a85f3680655d102508cb data/todecoins/loot_modifiers/add_four_leaf_clover_drops.json
-15ba741cde553ca6a6438b1ad7f8830fd48e9ac6 data/todecoins/loot_modifiers/add_loot_boss_currency_drops.json
+5f830314e46c9b85b05590df7ec9f32adf4835e3 data/todecoins/loot_modifiers/add_loot_boss_currency_drops.json
 147b27846171629d6c35a7d3026708f47757f71a data/todecoins/loot_modifiers/add_loot_chest_currency.json
-1d6383ec57a51b0bf77e988fda6b6e206298317b data/todecoins/loot_modifiers/add_loot_currency_drops.json
+8f6ea57b4712ec06b723dd09c3ca79f76b215925 data/todecoins/loot_modifiers/add_loot_currency_drops.json
 e1dd691bb4a79b56a0f39fc4a78ecc32ceac18e3 data/todecoins/loot_modifiers/add_loot_hero_gift_coins.json
 26cd3c6f15055940fae0d3a1dcf30e4de6680ce0 data/todecoins/loot_modifiers/add_todecoins_bonus_fishing_table.json
 8ed699bc7434eba633fa718922102338d8393828 data/todecoins/loot_modifiers/add_todecoins_chest.json

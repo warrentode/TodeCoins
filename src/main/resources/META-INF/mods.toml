@@ -1,3 +1,4 @@
+#@formatter:off
 modLoader = "javafml"
 loaderVersion = "[43,)"
 license = "GNU_GPL.3"
@@ -5,90 +6,82 @@ issueTrackerURL = "https://github.com/warrentode/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "1.19.2-1.5.1"
+version = "1.19.2-1.5.3"
 displayName = "TodeCoins"
 updateJSONURL = "https://raw.githubusercontent.com/warrentode/TodeCoins/master/update.json"
 displayURL = "https://github.com/warrentode/TodeCoins"
 logoFile = "logo.png"
-credits = '''Special thanks to my sons, and my supporters:
-Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!'''
+credits = '''Special thanks to my sons, and my supporters: Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!'''
 authors = "Warren Tode (ToadieOdie)"
-description = '''Adds currency, collectible coins, a collectible coin trader, a banker and leprechaun villager with trades,
-an armor set with set effects, and luck potions to the game.'''
-
-[[dependencies.todecoins]]
-modId = "forge"
-mandatory = true
-versionRange = "[43,)"
-ordering = "NONE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "minecraft"
-mandatory = true
-versionRange = "[1.19.2,1.20)"
-ordering = "NONE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "curios"
-mandatory = true
-versionRange = "[1.19.2-5.1.4.0,)"
-ordering = "BEFORE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "sereneseasons"
-mandatory = false
-versionRange = "[1.19.2-8.1.0.24,)"
-ordering = "BEFORE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "sophisticatedcore"
-mandatory = false
-versionRange = "[1.19.2-0.5.83.394,)"
-ordering = "BEFORE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "sophisticatedbackpacks"
-mandatory = false
-versionRange = "[1.19.2-3.18.55.889,)"
-ordering = "BEFORE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "puzzleslib"
-mandatory = false
-versionRange = "[1.19.2-4.4.3,)"
-ordering = "BEFORE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "bagofholding"
-mandatory = false
-versionRange = "[1.19.2-4.1.6,)"
-ordering = "BEFORE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "cagerium"
-mandatory = false
-versionRange = "[1.19.2-1.1.8,)"
-ordering = "BEFORE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "ecologics"
-mandatory = false
-versionRange = "[2.1.11,)"
-ordering = "BEFORE"
-side = "BOTH"
-[[dependencies.todecoins]]
-modId = "configured"
-mandatory = false
-versionRange = "[2.1.1,)"
-ordering = "NONE"
-side = "CLIENT"
-[[dependencies.todecoins]]
-modId = "catalogue"
-mandatory = false
-versionRange = "[1.7.0,)"
-ordering = "NONE"
-side = "CLIENT"
+description = '''Adds currency, collectible coins, a collectible coin trader, a banker and leprechaun villager with trades, an armor set with set effects, and luck potions to the game.'''
 
 [modproperties.todecoins]
-catalogueItemIcon = "todecoins:currency_stamp" #Support for Catalogue mod
-configuredBackground = "todecoins:textures/block/pot.png" #Support for Configured mod
+    catalogueItemIcon = "todecoins:currency_stamp" #Support for Catalogue mod
+    configuredBackground = "todecoins:textures/block/pot.png" #Support for Configured mod
+
+[[dependencies.todecoins]]
+    modId = "forge"
+    mandatory = true
+    versionRange = "[43,)"
+    ordering = "NONE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "minecraft"
+    mandatory = true
+    versionRange = "[1.19.2,1.20)"
+    ordering = "NONE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "curios"
+    mandatory = true
+    versionRange = "[1.19.2-5.1.4.0,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "sereneseasons"
+    mandatory = false
+    versionRange = "[1.19.2-8.1.0.24,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "sophisticatedcore"
+    mandatory = false
+    versionRange = "[1.19.2-0.5.83.394,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "sophisticatedbackpacks"
+    mandatory = false
+    versionRange = "[1.19.2-3.18.55.889,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "puzzleslib"
+    mandatory = false
+    versionRange = "[1.19.2-4.4.3,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "bagofholding"
+    mandatory = false
+    versionRange = "[1.19.2-4.1.6,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "cagerium"
+    mandatory = false
+    versionRange = "[1.19.2-1.1.8,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "ecologics"
+    mandatory = false
+    versionRange = "[2.1.11,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "friendsandfoes"
+    mandatory = false
+    versionRange = "[1.8.6,)"
+    ordering = "BEFORE"
+    side = "BOTH"

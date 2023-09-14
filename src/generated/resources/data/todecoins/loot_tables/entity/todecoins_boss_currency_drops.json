@@ -3,6 +3,11 @@
   "pools": [
     {
       "bonus_rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:loot_table",
@@ -23,7 +28,8 @@
               "tag": "forge:bosses"
             }
           ],
-          "name": "todecoins:entity/coins/todecoins_boss_copper_iron_drops"
+          "name": "todecoins:entity/coins/todecoins_boss_copper_iron_drops",
+          "weight": 2
         },
         {
           "type": "minecraft:loot_table",
@@ -34,7 +40,8 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_boss_gold_coin_drops",
-          "quality": 1
+          "quality": 1,
+          "weight": 3
         },
         {
           "type": "minecraft:loot_table",
@@ -51,7 +58,26 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_boss_nether_gold_coin_drops",
-          "quality": 1
+          "quality": 1,
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_boss_endonian_coin_drops",
+          "quality": 3,
+          "weight": 5
         },
         {
           "type": "minecraft:loot_table",
@@ -62,7 +88,8 @@
             }
           ],
           "name": "todecoins:entity/notes/todecoins_boss_emerald_quarter_bank_note_drops",
-          "quality": 2
+          "quality": 2,
+          "weight": 6
         },
         {
           "type": "minecraft:loot_table",
@@ -73,7 +100,8 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_boss_netherite_coin_drops",
-          "quality": 3
+          "quality": 3,
+          "weight": 7
         },
         {
           "type": "minecraft:loot_table",
@@ -84,7 +112,8 @@
             }
           ],
           "name": "todecoins:entity/notes/todecoins_boss_emerald_half_bank_note_drops",
-          "quality": 3
+          "quality": 3,
+          "weight": 8
         },
         {
           "type": "minecraft:loot_table",
@@ -95,7 +124,8 @@
             }
           ],
           "name": "todecoins:entity/notes/todecoins_boss_emerald_bank_note_drops",
-          "quality": 4
+          "quality": 4,
+          "weight": 9
         },
         {
           "type": "minecraft:loot_table",
@@ -106,7 +136,8 @@
             }
           ],
           "name": "todecoins:entity/coins/todecoins_boss_netherite_coin_drops",
-          "quality": 5
+          "quality": 5,
+          "weight": 10
         },
         {
           "type": "minecraft:loot_table",
@@ -192,7 +223,11 @@
           "name": "todecoins:entity/collectible/seasonal/todecoins_winter_coin_drops"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 8.0,
+        "min": 4.0
+      }
     }
   ]
 }

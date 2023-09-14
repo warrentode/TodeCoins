@@ -1,9 +1,9 @@
 package com.github.warrentode.todecoins.entity.villager.trades;
 
+import com.faboslav.friendsandfoes.init.FriendsAndFoesItems;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.LootBoxForTwoRequestSetsTrade;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.OneSetForOneSetTrade;
 import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.OneSetForTwoSetsTrade;
-import com.github.warrentode.todecoins.integration.ModListHandler;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.util.CalendarUtil;
@@ -17,6 +17,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.fml.ModList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,6 +26,7 @@ import java.util.List;
 import static net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.BACKPACK;
 
 public class NumismatistTrades {
+    // TODO for each mod I add integration for, I should consider adding trades their items for here?
     static RandomSource source = RandomSource.create();
     static int rarityLevel1 = 1;
     static int rarityLevel2 = 2;
@@ -32,6 +34,21 @@ public class NumismatistTrades {
             Cagerium.PLATE_GEM.get().asItem().getDefaultInstance().getItem(),
             Cagerium.CAGE_KEY.get().asItem().getDefaultInstance().getItem(),
             Cagerium.FIRE_UPGRADE.get().asItem().getDefaultInstance().getItem());
+
+    private static ImmutableSet<ItemLike> VanillaRareItemsList = ImmutableSet.of(
+            Items.HEART_OF_THE_SEA.asItem().getDefaultInstance().getItem(),
+            Items.ECHO_SHARD.asItem().getDefaultInstance().getItem(),
+            Items.ENCHANTED_GOLDEN_APPLE.asItem().getDefaultInstance().getItem(),
+            Items.MOJANG_BANNER_PATTERN.asItem().getDefaultInstance().getItem(),
+            Items.TOTEM_OF_UNDYING.asItem().getDefaultInstance().getItem()
+    );
+
+    private static ImmutableSet<ItemLike> FriendsAndFoesList = ImmutableSet.of(
+            FriendsAndFoesItems.WILDFIRE_CROWN_FRAGMENT.get().asItem().getDefaultInstance().getItem(),
+            FriendsAndFoesItems.TOTEM_OF_FREEZING.get().asItem().getDefaultInstance().getItem(),
+            FriendsAndFoesItems.TOTEM_OF_ILLUSION.get().asItem().getDefaultInstance().getItem()
+    );
+
     private static ImmutableSet<ItemLike> VanillaContainerList = ImmutableSet.of(
             Items.BUNDLE.asItem().getDefaultInstance().getItem(),
             Items.SHULKER_BOX.asItem().getDefaultInstance().getItem(),
@@ -66,6 +83,9 @@ public class NumismatistTrades {
             ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem(),
             ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem());
     private static ImmutableSet<ItemLike> AnniversarySeasonCoins = ImmutableSet.of(
+            ModItems.LITTLE_BEAR_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.TUXEDO_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.SCHOLAR_OWL_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.MARSHALL_NASH_CARNATION_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.MARSHALL_NASH_COSMOS_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -96,7 +116,6 @@ public class NumismatistTrades {
             ModItems.COPPER_TROPICAL_FISH_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_COW_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_MOOSHROOM_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.COPPER_MOOBLOOM_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_HORSE_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_DONKEY_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_MULE_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -136,7 +155,36 @@ public class NumismatistTrades {
             ModItems.COPPER_ENDERMITE_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_EVOKER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_GHAST_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.COPPER_HUSK_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.COPPER_HUSK_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_MAGMA_CUBE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_SLIME_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_PHANTOM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_PIGLIN_BRUTE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_PILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_RAVAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_SHULKER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_SKELETON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_STRAY_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_VEX_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_VINDICATOR_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_WARDEN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_WITCH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_WITHER_SKELETON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_WITHER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_ZOGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_ZOMBIE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_ZOMBIE_VILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_ENDER_DRAGON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_ILLUSIONER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_GIANT_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_MOOBLOOM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_COPPER_GOLEM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_GLARE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_ICEOLOGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_MAULER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_WILDFIRE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_TUFF_GOLEM_COIN.get().asItem().getDefaultInstance().getItem()
     );
     private static ImmutableSet<ItemLike> SummerSeasonCoins = ImmutableSet.of(
             ModItems.IRON_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -158,7 +206,6 @@ public class NumismatistTrades {
             ModItems.IRON_TROPICAL_FISH_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_COW_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_MOOSHROOM_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.IRON_MOOBLOOM_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_HORSE_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_DONKEY_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_MULE_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -198,7 +245,36 @@ public class NumismatistTrades {
             ModItems.IRON_ENDERMITE_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_EVOKER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_GHAST_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.IRON_HUSK_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.IRON_HUSK_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_MAGMA_CUBE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_SLIME_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_PHANTOM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_PIGLIN_BRUTE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_PILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_RAVAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_SHULKER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_SKELETON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_STRAY_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_VEX_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_VINDICATOR_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_WARDEN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_WITCH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_WITHER_SKELETON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_WITHER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_ZOGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_ZOMBIE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_ZOMBIE_VILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_ENDER_DRAGON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_ILLUSIONER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_GIANT_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_MOOBLOOM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_COPPER_GOLEM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_GLARE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_ICEOLOGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_MAULER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_WILDFIRE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_TUFF_GOLEM_COIN.get().asItem().getDefaultInstance().getItem()
     );
     private static ImmutableSet<ItemLike> AutumnSeasonCoins = ImmutableSet.of(
             ModItems.GOLD_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -220,7 +296,6 @@ public class NumismatistTrades {
             ModItems.GOLD_TROPICAL_FISH_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_COW_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_MOOSHROOM_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.GOLD_MOOBLOOM_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_HORSE_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_DONKEY_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_MULE_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -260,7 +335,36 @@ public class NumismatistTrades {
             ModItems.GOLD_ENDERMITE_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_EVOKER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_GHAST_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.GOLD_HUSK_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.GOLD_HUSK_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_MAGMA_CUBE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_SLIME_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_PHANTOM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_PIGLIN_BRUTE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_PILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_RAVAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_SHULKER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_SKELETON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_STRAY_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_VEX_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_VINDICATOR_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_WARDEN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_WITCH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_WITHER_SKELETON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_WITHER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_ZOGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_ZOMBIE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_ZOMBIE_VILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_ENDER_DRAGON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_ILLUSIONER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_GIANT_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_MOOBLOOM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_COPPER_GOLEM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_GLARE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_ICEOLOGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_MAULER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_WILDFIRE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_TUFF_GOLEM_COIN.get().asItem().getDefaultInstance().getItem()
     );
     private static ImmutableSet<ItemLike> WinterSeasonCoins = ImmutableSet.of(
             ModItems.NETHERITE_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -282,7 +386,6 @@ public class NumismatistTrades {
             ModItems.NETHERITE_TROPICAL_FISH_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_COW_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_MOOSHROOM_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.NETHERITE_MOOBLOOM_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_HORSE_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_DONKEY_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_MULE_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -322,14 +425,46 @@ public class NumismatistTrades {
             ModItems.NETHERITE_ENDERMITE_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_EVOKER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_GHAST_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.NETHERITE_HUSK_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.NETHERITE_HUSK_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_MAGMA_CUBE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_SLIME_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_PHANTOM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_PIGLIN_BRUTE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_PILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_RAVAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_SHULKER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_SILVERFISH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_SKELETON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_STRAY_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_VEX_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_VINDICATOR_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_WARDEN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_WITCH_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_WITHER_SKELETON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_WITHER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_ZOGLIN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_ZOMBIE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_ZOMBIE_VILLAGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_ENDER_DRAGON_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_ILLUSIONER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_GIANT_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_MOOBLOOM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_COPPER_GOLEM_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_GLARE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_ICEOLOGER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_MAULER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_WILDFIRE_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_TUFF_GOLEM_COIN.get().asItem().getDefaultInstance().getItem()
     );
 
     private static ImmutableSet<ItemLike> OfferedCurrentSeasonCoin = getOfferedCurrentSeasonCoin();
     private static ImmutableSet<ItemLike> RequestedCurrentSeasonCoin = getRequestedCurrentSeasonCoin();
     private static ImmutableSet<ItemLike> OfferedOffSeasonCoin = getOfferedOffSeasonCoin();
     private static ImmutableSet<ItemLike> RequestedOffSeasonCoin = getRequestedOffSeasonCoin();
-    private static ImmutableSet<ItemLike> CageriumOffers = getCageriumOffers();
+
+    private static ImmutableSet.Builder<Object> SelectedRareItemsList = setRareOffers();
+
+    private static ImmutableSet<ItemLike> RareOffers = getRareOffers();
 
     private static ImmutableSet<ItemLike> getOfferedCurrentSeasonCoin() {
         if (CalendarUtil.Season.isBirthday()) {
@@ -444,10 +579,10 @@ public class NumismatistTrades {
     }
 
     private static ImmutableSet.Builder<Object> setContainerOffers() {
-        if (ModListHandler.sophisticatedbackpacksLoaded) {
+        if (ModList.get().isLoaded("sophisticatedbackpacks")) {
             SelectedContainersList = ImmutableSet.builder().addAll(SophisticatedBackpacksList);
         }
-        if (ModListHandler.bagofholdingLoaded) {
+        if (ModList.get().isLoaded("bagofholding")) {
             SelectedContainersList = ImmutableSet.builder().addAll(BagOfHoldingList);
         }
         SelectedContainersList = ImmutableSet.builder().addAll(VanillaContainerList);
@@ -464,15 +599,25 @@ public class NumismatistTrades {
         return ContainerOffers;
     }
 
-    private static ImmutableSet<ItemLike> getCageriumOffers() {
-        if (ModListHandler.cageriumLoaded) {
-            CageriumOffers = CageriumList;
+    private static ImmutableSet.Builder<Object> setRareOffers() {
+        if (ModList.get().isLoaded("cagerium")) {
+            SelectedRareItemsList = ImmutableSet.builder().addAll(CageriumList);
         }
-        else {
-            CageriumOffers = VanillaContainerList;
+        if (ModList.get().isLoaded("friendsandfoes")) {
+            SelectedRareItemsList = ImmutableSet.builder().addAll(FriendsAndFoesList);
         }
+        SelectedRareItemsList = ImmutableSet.builder().addAll(VanillaRareItemsList);
 
-        return CageriumOffers;
+        //noinspection SuspiciousToArrayCall
+        List<ItemLike> list = new ArrayList<>(Arrays.asList(SelectedRareItemsList.build().asList().toArray(new ItemLike[0])));
+
+        RareOffers = ImmutableSet.copyOf(list);
+
+        return SelectedRareItemsList;
+    }
+
+    private static ImmutableSet<ItemLike> getRareOffers() {
+        return RareOffers;
     }
 
     private static Int2ObjectMap<VillagerTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ItemListing[]> pMap) {
@@ -514,7 +659,8 @@ public class NumismatistTrades {
                                         OneSetForTwoSetsTrade.XP_LEVEL_1_SELL, 0),
                                 // offer a coin pack for 2 off season coins
                                 new LootBoxForTwoRequestSetsTrade(
-                                        Items.TRAPPED_CHEST.getDefaultInstance(), "tooltips.collectible_coin_pack",
+                                        Items.SHULKER_BOX.getDefaultInstance(),
+                                        "tooltips.collectible_coin_pack",
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         OfferedOffSeasonCoin, 1,
                                         RequestedOffSeasonCoin, 1,
@@ -525,7 +671,7 @@ public class NumismatistTrades {
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // offer a Cagerium listing item for a current season coin
                                 new OneSetForTwoSetsTrade(
-                                        CageriumOffers, 1,
+                                        RareOffers, 1,
                                         RequestedCurrentSeasonCoin, 1,
                                         RequestedOffSeasonCoin, 1,
                                         OneSetForTwoSetsTrade.UNCOMMON_ITEMS_SUPPLY,
