@@ -211,7 +211,6 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         CompoundTag compoundRecipes = new CompoundTag();
         usedRecipes.forEach((recipeId, craftedAmount) -> compoundRecipes.putInt(recipeId.toString(), craftedAmount));
         nbt.put("usedRecipes", compoundRecipes);
-
     }
 
     private CompoundTag writeItems(CompoundTag nbt) {
