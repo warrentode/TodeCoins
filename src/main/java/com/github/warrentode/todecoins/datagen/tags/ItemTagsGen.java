@@ -240,7 +240,31 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.ICEOLOGER_COIN_SET)
                 .addTag(ModTags.Items.MAULER_COIN_SET)
                 .addTag(ModTags.Items.WILDFIRE_COIN_SET)
-                .addTag(ModTags.Items.TUFF_GOLEM_COIN_SET);
+                .addTag(ModTags.Items.TUFF_GOLEM_COIN_SET)
+                .addTag(ModTags.Items.SQUIRREL_COIN_SET)
+                .addTag(ModTags.Items.PENGUIN_COIN_SET)
+                .addTag(ModTags.Items.GUARD_COIN_SET)
+                .addTag(ModTags.Items.CRAB_COIN_SET);
+        tag(ModTags.Items.GUARD_COIN_SET)
+                .add(ModItems.COPPER_GUARD_COIN.get())
+                .add(ModItems.IRON_GUARD_COIN.get())
+                .add(ModItems.GOLD_GUARD_COIN.get())
+                .add(ModItems.NETHERITE_GUARD_COIN.get());
+        tag(ModTags.Items.PENGUIN_COIN_SET)
+                .add(ModItems.COPPER_PENGUIN_COIN.get())
+                .add(ModItems.IRON_PENGUIN_COIN.get())
+                .add(ModItems.GOLD_PENGUIN_COIN.get())
+                .add(ModItems.NETHERITE_PENGUIN_COIN.get());
+        tag(ModTags.Items.SQUIRREL_COIN_SET)
+                .add(ModItems.COPPER_SQUIRREL_COIN.get())
+                .add(ModItems.IRON_SQUIRREL_COIN.get())
+                .add(ModItems.GOLD_SQUIRREL_COIN.get())
+                .add(ModItems.NETHERITE_SQUIRREL_COIN.get());
+        tag(ModTags.Items.CRAB_COIN_SET)
+                .add(ModItems.COPPER_CRAB_COIN.get())
+                .add(ModItems.IRON_CRAB_COIN.get())
+                .add(ModItems.GOLD_CRAB_COIN.get())
+                .add(ModItems.NETHERITE_CRAB_COIN.get());
         tag(ModTags.Items.TUFF_GOLEM_COIN_SET)
                 .add(ModItems.COPPER_TUFF_GOLEM_COIN.get())
                 .add(ModItems.IRON_TUFF_GOLEM_COIN.get())

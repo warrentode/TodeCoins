@@ -29,8 +29,168 @@
       ],
       "entries": [
         {
-          "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins_chest"
+          "type": "minecraft:item",
+          "name": "todecoins:copper_coin",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.6,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:iron_coin",
+          "quality": 1,
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.5,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:gold_coin",
+          "quality": 2,
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.4,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:emerald_quarter_bank_note",
+          "quality": 3,
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.3,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:netherite_coin",
+          "quality": 4,
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:emerald_half_bank_note",
+          "quality": 5,
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:emerald_bank_note",
+          "quality": 6,
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.8,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:copper_coin_bag"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.7,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:iron_coin_bag",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.6,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:gold_coin_bag",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.5,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:emerald_quarter_bank_note_bag",
+          "quality": 2
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.4,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:netherite_coin_bag",
+          "quality": 3
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.3,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:emerald_half_bank_note_bag",
+          "quality": 4
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:emerald_bank_note_bag",
+          "quality": 5
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:lucky_coin",
+          "quality": 6
         }
       ],
       "rolls": 1.0

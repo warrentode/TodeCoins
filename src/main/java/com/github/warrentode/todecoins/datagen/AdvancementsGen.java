@@ -935,9 +935,8 @@ public class AdvancementsGen extends AdvancementProvider {
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_coins"));
 
-            // TODO change the icon for this to the crab coin when it's made and added to represent this achievement tree
             // Ecologics Collectible Coins
-            Advancement collectibleEcologicsCoins = getAdvancement(todeCoins, ModItems.COPPER_CAMEL_COIN.get(),
+            Advancement collectibleEcologicsCoins = getAdvancement(todeCoins, ModItems.COPPER_CRAB_COIN.get(),
                     "collectibleEcologicsCoins", FrameType.CHALLENGE, true, true, false)
                     .parent(collectibleCoins)
 
@@ -949,6 +948,33 @@ public class AdvancementsGen extends AdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_CAMEL_COIN.get()))
                     .addCriterion("find_" + ModItems.NETHERITE_CAMEL_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_CAMEL_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_CRAB_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_CRAB_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_CRAB_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_CRAB_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_CRAB_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_CRAB_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_CRAB_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_CRAB_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_SQUIRREL_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_SQUIRREL_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_SQUIRREL_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_SQUIRREL_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_SQUIRREL_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SQUIRREL_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_SQUIRREL_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SQUIRREL_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_PENGUIN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PENGUIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_PENGUIN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PENGUIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_PENGUIN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PENGUIN_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_PENGUIN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PENGUIN_COIN.get()))
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_ecologics_coins"));
 
@@ -1021,6 +1047,22 @@ public class AdvancementsGen extends AdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_WILDFIRE_COIN.get()))
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_friendsandfoes_coins"));
+
+            // Guard Villagers Collectible Coins
+            Advancement collectibleGuardVillagerCoins = getAdvancement(todeCoins, ModItems.COPPER_GUARD_COIN.get(),
+                    "collectibleGuardVillagerCoins", FrameType.CHALLENGE, true, true, false)
+                    .parent(collectibleCoins)
+
+                    .addCriterion("find_" + ModItems.COPPER_GUARD_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_GUARD_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_GUARD_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_GUARD_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_GUARD_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_GUARD_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_GUARD_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_GUARD_COIN.get()))
+
+                    .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_guardvillagers_coins"));
 
             // Vanilla Upcoming or Unused Collectible Coins
             Advancement collectibleUpcomingCoins = getAdvancement(todeCoins, ModItems.COPPER_SNIFFER_COIN.get(),

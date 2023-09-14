@@ -9,11 +9,11 @@ import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.monster.piglin.Piglin;
 import net.minecraft.world.entity.monster.piglin.PiglinAi;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -43,30 +43,45 @@ public abstract class PiglinBarterMixin {
     private static final int todeCoins$giftRate = 50;
 
     @Unique
-    private static boolean todeCoins$isWearingZombiePiglinCoin(Player player) {
-        ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModList.get().isLoaded("curios") && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+    private static boolean todeCoins$isWearingZombiePiglinCoin(ServerPlayer player) {
+        if (player != null && ModList.get().isLoaded("curios")) {
+            ItemStack stack = Curios.getCharmSlot(player);
+            return stack != null  && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+        }
+        return false;
     }
 
     @Unique
-    private static boolean todeCoins$isWearingNetheritePiglinCoin(Player player) {
-        ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModList.get().isLoaded("curios") && stack.getItem().equals(ModItems.NETHERITE_PIGLIN_COIN.get());
+    private static boolean todeCoins$isWearingNetheritePiglinCoin(ServerPlayer player) {
+        if (player != null && ModList.get().isLoaded("curios")) {
+            ItemStack stack = Curios.getCharmSlot(player);
+            return stack != null  && stack.is(ModItems.NETHERITE_PIGLIN_COIN.get());
+        }
+        return false;
     }
     @Unique
-    private static boolean todeCoins$isWearingGoldPiglinCoin(Player player) {
-        ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModList.get().isLoaded("curios") && stack.getItem().equals(ModItems.GOLD_PIGLIN_COIN.get());
+    private static boolean todeCoins$isWearingGoldPiglinCoin(ServerPlayer player) {
+        if (player != null && ModList.get().isLoaded("curios")) {
+            ItemStack stack = Curios.getCharmSlot(player);
+            return stack != null  && stack.is(ModItems.GOLD_PIGLIN_COIN.get());
+        }
+        return false;
     }
     @Unique
-    private static boolean todeCoins$isWearingIronPiglinCoin(Player player) {
-        ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModList.get().isLoaded("curios") && stack.getItem().equals(ModItems.IRON_PIGLIN_COIN.get());
+    private static boolean todeCoins$isWearingIronPiglinCoin(ServerPlayer player) {
+        if (player != null && ModList.get().isLoaded("curios")) {
+            ItemStack stack = Curios.getCharmSlot(player);
+            return stack != null  && stack.is(ModItems.IRON_PIGLIN_COIN.get());
+        }
+        return false;
     }
     @Unique
-    private static boolean todeCoins$isWearingCopperPiglinCoin(Player player) {
-        ItemStack stack = Curios.getCharmSlot(player);
-        return stack != null && ModList.get().isLoaded("curios") && stack.getItem().equals(ModItems.COPPER_PIGLIN_COIN.get());
+    private static boolean todeCoins$isWearingCopperPiglinCoin(ServerPlayer player) {
+        if (player != null && ModList.get().isLoaded("curios")) {
+            ItemStack stack = Curios.getCharmSlot(player);
+            return stack != null  && stack.is(ModItems.COPPER_PIGLIN_COIN.get());
+        }
+        return false;
     }
 
     @Unique
@@ -83,7 +98,7 @@ public abstract class PiglinBarterMixin {
     private static void todecoins_stopHoldingOffHandItem(@NotNull Piglin piglin, boolean shouldBarter, CallbackInfo ci) {
         MinecraftServer server = piglin != null ? piglin.getServer() : null;
         ServerLevel serverLevel = server != null ? server.getLevel(piglin.level.dimension()) : null;
-        Player player = server != null ? server.createCommandSourceStack().getPlayer() : null;
+        ServerPlayer player = server != null ? server.createCommandSourceStack().getPlayer() : null;
         if (piglin.isAdult()) {
             ItemStack offHandItem = piglin.getItemInHand(InteractionHand.OFF_HAND);
             boolean barterItem = PiglinAi.isBarterCurrency(offHandItem);

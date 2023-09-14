@@ -347,6 +347,22 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_tuff_golem_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_crab_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_guard_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_penguin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_squirrel_gold"
         }
       ],
       "rolls": 1.0

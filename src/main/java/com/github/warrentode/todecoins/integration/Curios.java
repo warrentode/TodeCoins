@@ -1,14 +1,12 @@
 package com.github.warrentode.todecoins.integration;
 
 import com.github.warrentode.todecoins.TodeCoins;
-import com.github.warrentode.todecoins.attribute.ModAttributes;
-import com.github.warrentode.todecoins.attribute.PlayerCharisma;
+import com.github.warrentode.todecoins.attribute.*;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.FelineCoinItem;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
@@ -182,13 +180,19 @@ public class Curios {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 if (stack.is(ModTags.Items.HERO_COIN_SET)) {
                     attribute.put(ModAttributes.CHARISMA.get(),
+                            new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 4,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
+                    attribute.put(ModAttributes.CHARISMA.get(),
                             new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
                     return attribute;
                 }
                 else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
                     attribute.put(ModAttributes.CHARISMA.get(),
-                            new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 5,
+                            new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 8,
                                     AttributeModifier.Operation.ADDITION));
                     return attribute;
                 }
@@ -205,10 +209,13 @@ public class Curios {
             public void onEquip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onEquip(slotContext, prevStack);
                 if (stack.is(ModTags.Items.HERO_COIN_SET)) {
-                    PlayerCharisma.addCharisma(1);
+                    PlayerCharisma.addCharisma(4);
                 }
                 else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
-                    PlayerCharisma.addCharisma(5);
+                    PlayerCharisma.addCharisma(8);
+                }
+                else if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
+                    PlayerCharisma.addCharisma(1);
                 }
             }
 
@@ -216,10 +223,13 @@ public class Curios {
             public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onEquip(slotContext, prevStack);
                 if (stack.is(ModTags.Items.HERO_COIN_SET)) {
-                    PlayerCharisma.subtractCharisma(1);
+                    PlayerCharisma.subtractCharisma(4);
                 }
                 else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
-                    PlayerCharisma.subtractCharisma(5);
+                    PlayerCharisma.subtractCharisma(8);
+                }
+                else if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
+                    PlayerCharisma.subtractCharisma(1);
                 }
             }
 
@@ -256,17 +266,20 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.PIGLIN_COIN_SET) || stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET))) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.PIGLIN_COIN_SET)
+                        || stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
+                        || stack.is(ModTags.Items.GUARD_COIN_SET)
+                )) {
 
                     int i = 0;
-                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                         i = 1;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                         i = 2;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                         i = 3;
                     }
                     attribute.put(Attributes.ARMOR,
@@ -316,17 +329,17 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
 
                     double d = 0;
-                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                         d = 0.01;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                         d = 0.02;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                         d = 0.03;
                     }
                     attribute.put(Attributes.MOVEMENT_SPEED,
@@ -371,17 +384,17 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
 
                     int i = 0;
-                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                         i = 5;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                         i = 10;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                         i = 15;
                     }
                     attribute.put(Attributes.MAX_HEALTH,
@@ -426,17 +439,17 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
 
                     double d = 0;
-                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                         d = 0.01;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                         d = 0.02;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                         d = 0.03;
                     }
                     attribute.put(Attributes.MOVEMENT_SPEED,
@@ -481,17 +494,17 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
 
                     double d = 0;
-                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                         d = 0.01;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                         d = 0.02;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                         d = 0.03;
                     }
                     attribute.put(Attributes.MOVEMENT_SPEED,
@@ -535,23 +548,23 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
+                LivingEntity livingEntity = slotContext.entity();
                 if ((stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && CalendarUtil.Season.isHalloween()) || stack.is(ModTags.Items.BAT_COIN_SET)) {
-                    if (player != null) {
-                        player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
+                    if (livingEntity != null) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
                                 false, false, true));
                     }
                 }
-                else if (player != null && (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && !CalendarUtil.Season.isHalloween())) {
-                    player.removeEffect(MobEffects.NIGHT_VISION);
+                else if (livingEntity != null && (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && !CalendarUtil.Season.isHalloween())) {
+                    livingEntity.removeEffect(MobEffects.NIGHT_VISION);
                 }
             }
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) || stack.is(ModTags.Items.BAT_COIN_SET))) {
-                    player.removeEffect(MobEffects.NIGHT_VISION);
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) || stack.is(ModTags.Items.BAT_COIN_SET))) {
+                    livingEntity.removeEffect(MobEffects.NIGHT_VISION);
                 }
             }
 
@@ -588,31 +601,31 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                ServerLevel level = (ServerLevel) (player != null ? player.getLevel() : null);
-                if (player != null && level != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                ServerLevel level = (ServerLevel) (livingEntity != null ? livingEntity.getLevel() : null);
+                if (livingEntity != null && level != null) {
                     if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET)
                             && (CalendarUtil.Season.isBirthday() || SereneSeasonsCompat.SeasonCompat.isBirthday(level))) {
-                        player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, false));
                     }
                     else if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET)
                             && (CalendarUtil.Season.isChristmas() || SereneSeasonsCompat.SeasonCompat.isChristmas(level))) {
-                        player.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, false));
                     }
                     else if ((!CalendarUtil.Season.isBirthday() || !SereneSeasonsCompat.SeasonCompat.isBirthday(level))
                             && (!CalendarUtil.Season.isChristmas() || !SereneSeasonsCompat.SeasonCompat.isChristmas(level))) {
-                        player.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                        livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
                     }
                 }
             }
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) || stack.is(ModTags.Items.CHRISTMAS_COIN_SET))) {
-                    player.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) || stack.is(ModTags.Items.CHRISTMAS_COIN_SET))) {
+                    livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
                 }
             }
 
@@ -649,27 +662,27 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     if (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.BAT_COIN_SET)
                             || stack.is(ModTags.Items.CHICKEN_COIN_SET) || stack.is(ModTags.Items.GHAST_COIN_SET)
                             || stack.is(ModTags.Items.PARROT_COIN_SET) || stack.is(ModTags.Items.PHANTOM_COIN_SET)
                             || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                         int i = 0;
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             i = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
-                        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, i,
                                 false, false, false));
                     }
                     if (stack.getItem() instanceof FelineCoinItem) {
-                        player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
                                 false, false, false));
                     }
                 }
@@ -677,12 +690,12 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.BAT_COIN_SET)
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.ALLAY_COIN_SET) || stack.is(ModTags.Items.BAT_COIN_SET)
                         || stack.is(ModTags.Items.CAT_COIN_SET) || stack.is(ModTags.Items.CHICKEN_COIN_SET)
                         || stack.is(ModTags.Items.GHAST_COIN_SET) || stack.is(ModTags.Items.OCELOT_COIN_SET)
                         || stack.is(ModTags.Items.PARROT_COIN_SET) || stack.is(ModTags.Items.PHANTOM_COIN_SET))) {
-                    player.removeEffect(MobEffects.SLOW_FALLING);
+                    livingEntity.removeEffect(MobEffects.SLOW_FALLING);
                 }
             }
 
@@ -719,21 +732,21 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
-                    if (stack.is(ModTags.Items.AXOLOTL_COIN_SET)) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
+                    if (stack.is(ModTags.Items.AXOLOTL_COIN_SET) || stack.is(ModTags.Items.PENGUIN_COIN_SET)) {
 
                         int i = 0;
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             i = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
-                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, i,
                                 false, false, false));
                     }
                 }
@@ -741,9 +754,9 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.AXOLOTL_COIN_SET)) {
-                    player.removeEffect(MobEffects.REGENERATION);
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.AXOLOTL_COIN_SET) || stack.is(ModTags.Items.PENGUIN_COIN_SET))) {
+                    livingEntity.removeEffect(MobEffects.REGENERATION);
                 }
             }
 
@@ -780,22 +793,22 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     if (stack.is(ModTags.Items.CAMEL_COIN_SET) || stack.is(ModTags.Items.PIG_COIN_SET)
                             || stack.is(ModTags.Items.MAULER_COIN_SET)) {
 
                         int i = 0;
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             i = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
-                        player.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 200, i,
                                 false, false, false));
                     }
                 }
@@ -803,9 +816,9 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.CAMEL_COIN_SET) || stack.is(ModTags.Items.PIG_COIN_SET))) {
-                    player.removeEffect(MobEffects.SATURATION);
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.CAMEL_COIN_SET) || stack.is(ModTags.Items.PIG_COIN_SET))) {
+                    livingEntity.removeEffect(MobEffects.SATURATION);
                 }
             }
 
@@ -845,7 +858,7 @@ public class Curios {
                 return stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.FOX_COIN_SET)
                         || stack.is(ModTags.Items.ENDERMITE_COIN_SET) || stack.is(ModTags.Items.SILVERFISH_COIN_SET)
                         || stack.is(ModTags.Items.SHULKER_COIN_SET) || stack.is(ModTags.Items.VEX_COIN_SET)
-                        || stack.is(ModTags.Items.ICEOLOGER_COIN_SET);
+                        || stack.is(ModTags.Items.PENGUIN_COIN_SET) || stack.is(ModTags.Items.ICEOLOGER_COIN_SET);
             }
 
             @Nonnull
@@ -881,22 +894,22 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     if (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET)
                             || stack.is(ModTags.Items.GOAT_COIN_SET) || stack.is(ModTags.Items.SLIME_COIN_SET)
                             || stack.is(ModTags.Items.SLIME_COIN_SET)) {
                         int i = 0;
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             i = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
-                        player.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, i,
                                 false, false, false));
                     }
                 }
@@ -904,11 +917,11 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET)
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.FROG_COIN_SET) || stack.is(ModTags.Items.RABBIT_COIN_SET)
                         || stack.is(ModTags.Items.GOAT_COIN_SET) || stack.is(ModTags.Items.SLIME_COIN_SET)
                         || stack.is(ModTags.Items.SLIME_COIN_SET))) {
-                    player.removeEffect(MobEffects.JUMP);
+                    livingEntity.removeEffect(MobEffects.JUMP);
                 }
             }
 
@@ -945,50 +958,51 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     if (stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
+                            || stack.is(ModTags.Items.AXOLOTL_COIN_SET) || stack.is(ModTags.Items.CRAB_COIN_SET)
                             || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
                             || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
                             || stack.is(ModTags.Items.COD_COIN_SET) || stack.is(ModTags.Items.SALMON_COIN_SET)
                             || stack.is(ModTags.Items.PUFFERFISH_COIN_SET) || stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)
-                            || stack.is(ModTags.Items.DOLPHIN_COIN_SET) || stack.is(ModTags.Items.DROWNED_COIN_SET)) {
+                            || stack.is(ModTags.Items.DROWNED_COIN_SET)) {
                         //noinspection deprecation
-                        if (player.isEyeInFluid(FluidTags.WATER)) {
+                        if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
 
                             int i = 0;
-                            if (player.level.getDifficulty() == Difficulty.EASY) {
+                            if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                                 i = 1;
                             }
-                            else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                                 i = 2;
                             }
-                            else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                                 i = 3;
                             }
-                            player.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
                                     false, false, false));
                         }
                     }
                     if (stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
                         //noinspection deprecation
-                        if (player.isEyeInFluid(FluidTags.WATER)) {
+                        if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
 
                             int i = 0;
-                            if (player.level.getDifficulty() == Difficulty.EASY) {
+                            if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                                 i = 1;
                             }
-                            else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                            else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                                 i = 2;
                             }
-                            else if (player.level.getDifficulty() == Difficulty.HARD) {
+                            else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                                 i = 3;
                             }
-                            player.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, i,
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, i,
                                     false, false, true));
                         }
                         else {
-                            player.removeEffect(MobEffects.DOLPHINS_GRACE);
+                            livingEntity.removeEffect(MobEffects.DOLPHINS_GRACE);
                         }
                     }
                 }
@@ -996,12 +1010,12 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
+                LivingEntity livingEntity = slotContext.entity();
                 if ((stack.is(ModTags.Items.SQUID_COIN_SET) || stack.is(ModTags.Items.GLOW_SQUID_COIN_SET)
                         || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)
                         || stack.is(ModTags.Items.GUARDIAN_COIN_SET) || stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET))
-                        && player != null) {
-                    player.removeEffect(MobEffects.WATER_BREATHING);
+                        && livingEntity != null) {
+                    livingEntity.removeEffect(MobEffects.WATER_BREATHING);
                 }
             }
 
@@ -1039,17 +1053,17 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
 
                     int i = 0;
-                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                         i = 1;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                         i = 2;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                         i = 3;
                     }
                     attribute.put(Attributes.ATTACK_KNOCKBACK,
@@ -1093,23 +1107,23 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     if (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
                             || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET) || stack.is(ModTags.Items.GHAST_COIN_SET)
                             || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
 
                         int i = 0;
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             i = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
-                        player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, i,
                                 false, false, false));
                     }
                 }
@@ -1117,10 +1131,10 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.STRIDER_COIN_SET) || stack.is(ModTags.Items.BLAZE_COIN_SET)
                         || stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET))) {
-                    player.removeEffect(MobEffects.FIRE_RESISTANCE);
+                    livingEntity.removeEffect(MobEffects.FIRE_RESISTANCE);
                 }
             }
 
@@ -1148,7 +1162,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createMerchantCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createVillagerCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -1157,48 +1171,52 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
-                    if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET)
-                            || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (player.level.getDayTime() >= 12000)) {
-                        player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0,
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
+                    if (livingEntity != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET)
+                            || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (livingEntity.level.getDayTime() >= 12000)) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0,
                                 false, false, true));
                     }
-                    else if (player != null && player.level.getDayTime() < 12000) {
-                        player.removeEffect(MobEffects.INVISIBILITY);
+                    else {
+                        livingEntity.removeEffect(MobEffects.INVISIBILITY);
                     }
 
-                    if (player != null && (stack.is(ModTags.Items.VILLAGER_COIN_SET) || stack.is(ModTags.Items.GLARE_COIN_SET))
-                            && (player.level.getDayTime() >= 12000)) {
+                    if (livingEntity != null && (stack.is(ModTags.Items.VILLAGER_COIN_SET)
+                            || stack.is(ModTags.Items.GUARD_COIN_SET)
+                            || stack.is(ModTags.Items.GLARE_COIN_SET))
+                            && (livingEntity.level.getDayTime() >= 12000)) {
 
                         int i = 0;
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             i = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
-                        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, i,
                                 false, false, false));
                     }
                     else {
-                        player.removeEffect(MobEffects.MOVEMENT_SPEED);
+                        livingEntity.removeEffect(MobEffects.MOVEMENT_SPEED);
                     }
                 }
             }
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
+                LivingEntity livingEntity = slotContext.entity();
 
-                if (player != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET)
+                if (livingEntity != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET)
+                        || stack.is(ModTags.Items.GUARD_COIN_SET)
+                        || stack.is(ModTags.Items.GLARE_COIN_SET)
                         || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)
-                        || player != null && stack.is(ModTags.Items.VILLAGER_COIN_SET))) {
-                    player.removeEffect(MobEffects.MOVEMENT_SPEED);
-                    player.removeEffect(MobEffects.INVISIBILITY);
+                        || stack.is(ModTags.Items.VILLAGER_COIN_SET))) {
+                    livingEntity.removeEffect(MobEffects.MOVEMENT_SPEED);
+                    livingEntity.removeEffect(MobEffects.INVISIBILITY);
                 }
             }
 
@@ -1235,21 +1253,21 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     if (stack.is(ModTags.Items.SNIFFER_COIN_SET)) {
 
                         int i = 0;
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             i = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
-                        player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 200, i,
                                 false, false, false));
                     }
                 }
@@ -1257,9 +1275,9 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.SNIFFER_COIN_SET)) {
-                    player.removeEffect(MobEffects.DIG_SPEED);
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && stack.is(ModTags.Items.SNIFFER_COIN_SET)) {
+                    livingEntity.removeEffect(MobEffects.DIG_SPEED);
                 }
             }
 
@@ -1297,17 +1315,17 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
 
                     int i = 0;
-                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                         i = 1;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                         i = 2;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                         i = 3;
                     }
                     attribute.put(Attributes.ATTACK_DAMAGE,
@@ -1351,22 +1369,21 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
                 if (stack.is(ModTags.Items.GHAST_COIN_SET) || stack.is(ModTags.Items.CREEPER_COIN_SET)) {
-                    if (player != null) {
-
+                    LivingEntity livingEntity = slotContext.entity();
+                    if (livingEntity != null) {
                         int i = 0;
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             i = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             i = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
 
-                        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, i,
                                 false, false, true));
                     }
                 }
@@ -1374,9 +1391,9 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && (stack.is(ModTags.Items.GHAST_COIN_SET) || stack.is(ModTags.Items.CREEPER_COIN_SET))) {
-                    player.removeEffect(MobEffects.DAMAGE_RESISTANCE);
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && (stack.is(ModTags.Items.GHAST_COIN_SET) || stack.is(ModTags.Items.CREEPER_COIN_SET))) {
+                    livingEntity.removeEffect(MobEffects.DAMAGE_RESISTANCE);
                 }
             }
 
@@ -1414,17 +1431,17 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
 
                     int i = 0;
-                    if (player.level.getDifficulty() == Difficulty.EASY) {
+                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                         i = 1;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                         i = 2;
                     }
-                    else if (player.level.getDifficulty() == Difficulty.HARD) {
+                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                         i = 3;
                     }
                     attribute.put(Attributes.ARMOR_TOUGHNESS,
@@ -1468,10 +1485,10 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     if (stack.is(ModTags.Items.SHULKER_COIN_SET)) {
-                        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 0,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 0,
                                 false, false, true));
                     }
                 }
@@ -1479,9 +1496,9 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.SHULKER_COIN_SET)) {
-                    player.removeEffect(MobEffects.LEVITATION);
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && stack.is(ModTags.Items.SHULKER_COIN_SET)) {
+                    livingEntity.removeEffect(MobEffects.LEVITATION);
                 }
             }
 
@@ -1523,8 +1540,8 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     int baseArmorBonus = 0;
                     int bossArmorBonus = 0;
                     int baseHpBonus = 0;
@@ -1541,16 +1558,16 @@ public class Curios {
                             || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
                             || stack.is(ModTags.Items.SHULKER_COIN_SET)
                             || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
                             baseArmorBonus = 1;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.EASY) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             baseArmorBonus = 2;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             baseArmorBonus = 3;
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             baseArmorBonus = 4;
                         }
                     }
@@ -1559,7 +1576,7 @@ public class Curios {
                             || stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)
                             || stack.is(ModTags.Items.WITHER_COIN_SET)
                             || stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossArmorBonus = 2;
                             }
@@ -1567,7 +1584,7 @@ public class Curios {
                                 bossArmorBonus = 1;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.EASY) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossArmorBonus = 3;
                             }
@@ -1575,7 +1592,7 @@ public class Curios {
                                 bossArmorBonus = 2;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossArmorBonus = 4;
                             }
@@ -1583,7 +1600,7 @@ public class Curios {
                                 bossArmorBonus = 3;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossArmorBonus = 5;
                             }
@@ -1598,7 +1615,7 @@ public class Curios {
                             || stack.is(ModTags.Items.WITHER_COIN_SET)
                             || stack.is(ModTags.Items.WARDEN_COIN_SET)
                             || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
-                        if (player.level.getDifficulty() == Difficulty.PEACEFUL) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
                             baseHpBonus = 10;
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossHPBonus = 15;
@@ -1610,7 +1627,7 @@ public class Curios {
                                 bossHPBonus = 5;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.EASY) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             baseHpBonus = 15;
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossHPBonus = 20;
@@ -1622,7 +1639,7 @@ public class Curios {
                                 bossHPBonus = 10;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             baseHpBonus = 20;
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossHPBonus = 20;
@@ -1634,7 +1651,7 @@ public class Curios {
                                 bossHPBonus = 10;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             baseHpBonus = 25;
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossHPBonus = 25;
@@ -1655,7 +1672,7 @@ public class Curios {
                             || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
                         baseKnockbackResistanceBonus = 2;
 
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                                 bossKnockBackResistanceBonus = 2;
                             }
@@ -1663,7 +1680,7 @@ public class Curios {
                                 bossKnockBackResistanceBonus = 1;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                                 bossKnockBackResistanceBonus = 2;
                             }
@@ -1671,7 +1688,7 @@ public class Curios {
                                 bossKnockBackResistanceBonus = 1;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                                 bossKnockBackResistanceBonus = 2;
                             }
@@ -1688,7 +1705,7 @@ public class Curios {
                             || stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
                         baseAttackBonus = 2;
 
-                        if (player.level.getDifficulty() == Difficulty.EASY) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossAttackBonus = 2;
                             }
@@ -1696,7 +1713,7 @@ public class Curios {
                                 bossAttackBonus = 1;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.NORMAL) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossAttackBonus = 2;
                             }
@@ -1704,7 +1721,7 @@ public class Curios {
                                 bossAttackBonus = 1;
                             }
                         }
-                        else if (player.level.getDifficulty() == Difficulty.HARD) {
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                                 bossAttackBonus = 2;
                             }
@@ -1732,10 +1749,10 @@ public class Curios {
 
             @Override
             public void curioTick(SlotContext slotContext) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null) {
                     if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                        player.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 200, 1,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 200, 1,
                                 false, false, true));
                     }
                 }
@@ -1743,9 +1760,9 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                Player player = Minecraft.getInstance().player;
-                if (player != null && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                    player.removeEffect(MobEffects.HEALTH_BOOST);
+                LivingEntity livingEntity = slotContext.entity();
+                if (livingEntity != null && stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                    livingEntity.removeEffect(MobEffects.HEALTH_BOOST);
                 }
             }
 
@@ -1753,6 +1770,105 @@ public class Curios {
             @Override
             public SoundInfo getEquipSound(SlotContext context) {
                 return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public boolean canEquipFromUse(SlotContext context) {
+                return true;
+            }
+
+            @Override
+            public boolean canSync(SlotContext context) {
+                return true;
+            }
+
+            @Nonnull
+            @Override
+            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
+                return DropRule.DEFAULT;
+            }
+        });
+    }
+
+    public static ICapabilityProvider createFishingCharmProvider(ItemStack stack) {
+        return CurioItemCapability.createProvider(new ICurio() {
+            @Override
+            public ItemStack getStack() {
+                return stack;
+            }
+
+            @Override
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                if (stack.is(ModTags.Items.COD_COIN_SET)) {
+                    attribute.put(ModAttributes.COD_BONUS.get(),
+                            new AttributeModifier(ModAttributes.COD_BONUS_MODIFIER_UUID,
+                                    ModAttributes.COD_BONUS_MODIFIER_NAME, 1,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModTags.Items.PUFFERFISH_COIN_SET)) {
+                    attribute.put(ModAttributes.PUFFERFISH_BONUS.get(),
+                            new AttributeModifier(ModAttributes.PUFFERFISH_BONUS_MODIFIER_UUID,
+                                    ModAttributes.PUFFERFISH_BONUS_MODIFIER_NAME, 1,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModTags.Items.SALMON_COIN_SET)) {
+                    attribute.put(ModAttributes.SALMON_BONUS.get(),
+                            new AttributeModifier(ModAttributes.SALMON_BONUS_MODIFIER_UUID,
+                                    ModAttributes.SALMON_BONUS_MODIFIER_NAME, 1,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                else if (stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)) {
+                    attribute.put(ModAttributes.TROPICAL_FISH_BONUS.get(),
+                            new AttributeModifier(ModAttributes.TROPICAL_FISH_BONUS_MODIFIER_UUID,
+                                    ModAttributes.TROPICAL_FISH_BONUS_MODIFIER_NAME, 1,
+                                    AttributeModifier.Operation.ADDITION));
+                    return attribute;
+                }
+                return attribute;
+            }
+
+            @Nonnull
+            @Override
+            public SoundInfo getEquipSound(SlotContext context) {
+                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public void onEquip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onEquip(slotContext, prevStack);
+                if (stack.is(ModTags.Items.COD_COIN_SET)) {
+                    PlayerCodBonus.addBonus(1);
+                }
+                if (stack.is(ModTags.Items.PUFFERFISH_COIN_SET)) {
+                    PlayerPufferfishBonus.addBonus(1);
+                }
+                if (stack.is(ModTags.Items.SALMON_COIN_SET)) {
+                    PlayerSalmonBonus.addBonus(1);
+                }
+                if (stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)) {
+                    PlayerTropicalFishBonus.addBonus(1);
+                }
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onEquip(slotContext, prevStack);
+                if (stack.is(ModTags.Items.COD_COIN_SET)) {
+                    PlayerCodBonus.subtractBonus(1);
+                }
+                if (stack.is(ModTags.Items.PUFFERFISH_COIN_SET)) {
+                    PlayerPufferfishBonus.subtractBonus(1);
+                }
+                if (stack.is(ModTags.Items.SALMON_COIN_SET)) {
+                    PlayerSalmonBonus.subtractBonus(1);
+                }
+                if (stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)) {
+                    PlayerTropicalFishBonus.subtractBonus(1);
+                }
             }
 
             @Override

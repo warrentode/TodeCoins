@@ -339,6 +339,26 @@
         {
           "condition": "forge:loot_table_id",
           "loot_table_id": "friendsandfoes:entities/tuff_golem"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "ecologics:entities/coconut_crab"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "ecologics:entities/camel"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "ecologics:entities/squirrel"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "ecologics:entities/penguin"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "guardvillagers:entities/guard"
         }
       ]
     }

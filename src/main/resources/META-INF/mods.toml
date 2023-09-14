@@ -6,14 +6,24 @@ issueTrackerURL = "https://github.com/warrentode/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "1.19.2-1.5.3"
+version = "1.19.2-1.5.5"
 displayName = "TodeCoins"
 updateJSONURL = "https://raw.githubusercontent.com/warrentode/TodeCoins/master/update.json"
 displayURL = "https://github.com/warrentode/TodeCoins"
 logoFile = "logo.png"
-credits = '''Special thanks to my sons, and my supporters: Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!'''
+credits = """
+Special thanks to my sons, and my supporters: \
+Marshal Nash and Trevor Brannigan, \
+for supporting my blog and my various projects!
+"""
 authors = "Warren Tode (ToadieOdie)"
-description = '''Adds currency, collectible coins, a collectible coin trader, a banker and leprechaun villager with trades, an armor set with set effects, and luck potions to the game.'''
+description = """
+Adds currency, collectible coins, \
+a collectible coin trader, \
+a banker, and a leprechaun villager with \
+trades, an armor set with set effects, \
+and luck potions to the game.
+"""
 
 [modproperties.todecoins]
     catalogueItemIcon = "todecoins:currency_stamp" #Support for Catalogue mod
@@ -34,7 +44,7 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
 [[dependencies.todecoins]]
     modId = "curios"
     mandatory = true
-    versionRange = "[1.19.2-5.1.4.0,)"
+    versionRange = "[1.19.2-5.1.4.1,)"
     ordering = "BEFORE"
     side = "BOTH"
 [[dependencies.todecoins]]
@@ -83,5 +93,11 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
     modId = "friendsandfoes"
     mandatory = false
     versionRange = "[1.8.6,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "guardvillagers"
+    mandatory = false
+    versionRange = "[1.19.2-1.5.7,)"
     ordering = "BEFORE"
     side = "BOTH"

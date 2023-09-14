@@ -37,8 +37,8 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new LanguageFileGen(generator, TodeCoins.MODID, "en_us"));
 
         generator.addProvider(event.includeServer(), new RecipesGen(generator));
-        generator.addProvider(event.includeServer(), new ConditionalSpawnEggRecipes(generator));
         generator.addProvider(event.includeServer(), new ConditionalCageriumRecipes(generator));
+        generator.addProvider(event.includeServer(), new ConditionalSpawnEggRecipes(generator));
         generator.addProvider(event.includeServer(), new AdvancementsGen(generator, helper));
         generator.addProvider(event.includeServer(), new ModLootTableGenProvider(generator));
         generator.addProvider(event.includeServer(), new ModLootModifierGenProvider(generator, TodeCoins.MODID));

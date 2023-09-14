@@ -564,6 +564,26 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_TUFF_GOLEM_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_TUFF_GOLEM_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_TUFF_GOLEM_COIN.get().getDefaultInstance());
+            // CRAB COIN SET
+            items.add(ModItems.COPPER_CRAB_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_CRAB_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_CRAB_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_CRAB_COIN.get().getDefaultInstance());
+            // SQUIRREL COIN SET
+            items.add(ModItems.COPPER_SQUIRREL_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_SQUIRREL_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_SQUIRREL_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_SQUIRREL_COIN.get().getDefaultInstance());
+            // PENGUIN COIN SET
+            items.add(ModItems.COPPER_PENGUIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PENGUIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PENGUIN_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PENGUIN_COIN.get().getDefaultInstance());
+            // GUARD COIN SET
+            items.add(ModItems.COPPER_GUARD_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_GUARD_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_GUARD_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_GUARD_COIN.get().getDefaultInstance());
         }
     };
 }

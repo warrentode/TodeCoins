@@ -113,6 +113,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:copper_golem")));
         tag(ForgeTags.EntityTypes.COW_TYPES)
                 .add(EntityType.COW);
+        tag(ForgeTags.EntityTypes.CRAB_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("ecologics:coconut_crab")));
         tag(ForgeTags.EntityTypes.CREEPER_TYPES)
                 .add(EntityType.CREEPER);
         tag(ForgeTags.EntityTypes.DOLPHIN_TYPES)
@@ -143,6 +145,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.GLOW_SQUID);
         tag(ForgeTags.EntityTypes.GOAT_TYPES)
                 .add(EntityType.GOAT);
+        tag(ForgeTags.EntityTypes.GUARD_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("guardvillagers:guard")));
         tag(ForgeTags.EntityTypes.GUARDIAN_TYPES)
                 .add(EntityType.GUARDIAN);
         tag(ForgeTags.EntityTypes.HOGLIN_TYPES)
@@ -175,6 +179,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.PANDA);
         tag(ForgeTags.EntityTypes.PARROT_TYPES)
                 .add(EntityType.PARROT);
+        tag(ForgeTags.EntityTypes.PENGUIN_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("ecologics:penguin")));
         tag(ForgeTags.EntityTypes.PHANTOM_TYPES)
                 .add(EntityType.PHANTOM);
         tag(ForgeTags.EntityTypes.PIG_TYPES)
@@ -215,6 +221,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.SPIDER);
         tag(ForgeTags.EntityTypes.SQUID_TYPES)
                 .add(EntityType.SQUID);
+        tag(ForgeTags.EntityTypes.SQUIRREL_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("ecologics:squirrel")));
         tag(ForgeTags.EntityTypes.STRAY_TYPES)
                 .add(EntityType.STRAY);
         tag(ForgeTags.EntityTypes.STRIDER_TYPES)

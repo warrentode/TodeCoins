@@ -14,6 +14,8 @@ import net.minecraft.world.level.storage.loot.predicates.AlternativeLootItemCond
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 import net.minecraftforge.common.loot.LootTableIdCondition;
+import samebutdifferent.ecologics.registry.ModEntityTypes;
+import tallestegg.guardvillagers.GuardEntityType;
 
 public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
     public ModLootModifierGenProvider(DataGenerator gen, String modid) {
@@ -190,6 +192,11 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.MAULER.get().getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.MOOBLOOM.get().getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.TUFF_GOLEM.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(ModEntityTypes.COCONUT_CRAB.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(ModEntityTypes.CAMEL.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(ModEntityTypes.SQUIRREL.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(ModEntityTypes.PENGUIN.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(GuardEntityType.GUARD.get().getDefaultLootTable()))
                                 .build()
 
                 },

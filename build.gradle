@@ -29,7 +29,7 @@ apply plugin: 'org.spongepowered.mixin'
 
 group = "com.github.warrentode"
 archivesBaseName = "todecoins"
-version = "1.19.2-1.5.3"
+version = "1.19.2-1.5.6"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -107,7 +107,6 @@ mixin {
 }
 
 repositories {
-    maven { url = "https://maven.theillusivec4.top/" }
     maven {
         url = "https://cursemaven.com"
         content {
@@ -117,11 +116,14 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.2-43.2.21'
+    minecraft 'net.minecraftforge:forge:1.19.2-43.2.23'
+
+    implementation 'io.netty:netty-codec:4.1.86.Final'
+    implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
 
     runtimeOnly fg.deobf("curse.maven:configured-457570:4462837")
     runtimeOnly fg.deobf("curse.maven:catalogue-459701:4171024")
-    implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.4.0")
+    implementation fg.deobf("curse.maven:curios-309927:4523009")
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:puzzles-lib-495476:4600775")
     implementation fg.deobf("curse.maven:bag-of-holding-forge-593996:4111700")
@@ -130,6 +132,7 @@ dependencies {
     implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4637293")
     implementation fg.deobf("curse.maven:sophisticated-core-618298:4668694")
     implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4711959")
+    implementation fg.deobf("curse.maven:guard-villagers-360203:4701400")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
@@ -165,7 +168,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = "com.github.warrentode"
             artifactId = "todecoins"
-            version = "1.19.2-1.5.3"
+            version = "1.19.2-1.5.6"
 
             from components.java
         }
