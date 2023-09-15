@@ -23,17 +23,6 @@ jobs:
         with:
           java-version: 17
           distribution: 'temurin'
-<<<<<<< HEAD
-      - name: Build with Gradle
-        uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
-        with:
-          arguments: build
-      - name: Upload mod artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: jars
-          path: ./build/libs/**/*
-=======
       - name: Make Gradle executable
         run: chmod +x ./gradlew
       - name: Unit tests
@@ -42,4 +31,3 @@ jobs:
         uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
         with:
           arguments: build
->>>>>>> 1.5.6
