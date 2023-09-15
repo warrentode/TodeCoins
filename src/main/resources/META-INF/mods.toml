@@ -6,7 +6,7 @@ issueTrackerURL = "https://github.com/warrentode/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
-version = "1.19.2-1.5.3"
+version = "1.19.2-1.5.6"
 displayName = "TodeCoins"
 updateJSONURL = "https://raw.githubusercontent.com/warrentode/TodeCoins/master/update.json"
 displayURL = "https://github.com/warrentode/TodeCoins"
@@ -83,5 +83,11 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
     modId = "friendsandfoes"
     mandatory = false
     versionRange = "[1.8.6,)"
+    ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "guardvillagers"
+    mandatory = false
+    versionRange = "[1.19.2-1.5.7,)"
     ordering = "BEFORE"
     side = "BOTH"
