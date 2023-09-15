@@ -70,10 +70,13 @@ public class AvoidPlayerCatCoinGoal<T extends LivingEntity> extends Goal {
     }
 
     private static boolean isWearingCatCoin(ServerPlayer player) {
-        ItemStack stack = Curios.getCharmSlot(player);
+        if (player != null) {
+            ItemStack stack = Curios.getCharmSlot(player);
 
-        return ModList.get().isLoaded("curios") && (stack != null && stack.is(ModTags.Items.CAT_COIN_SET)
-                || stack != null && stack.is(ModTags.Items.OCELOT_COIN_SET));
+            return ModList.get().isLoaded("curios") && (stack != null && stack.is(ModTags.Items.CAT_COIN_SET)
+                    || stack != null && stack.is(ModTags.Items.OCELOT_COIN_SET));
+        }
+        return false;
     }
 
     /**
