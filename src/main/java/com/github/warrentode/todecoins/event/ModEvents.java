@@ -457,7 +457,6 @@ public class ModEvents {
             Level level = entity.getCommandSenderWorld();
 
             if (!level.isClientSide) {
-                //noinspection UnusedAssignment
                 if (entity instanceof Phantom phantom && target instanceof ServerPlayer player) {
                     ItemStack stack = Curios.getCharmSlot(player);
                     if (stack.is(ModTags.Items.CAT_COIN_SET) || stack.is(ModTags.Items.OCELOT_COIN_SET)) {

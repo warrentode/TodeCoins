@@ -26,7 +26,6 @@ import java.util.List;
 import static net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.BACKPACK;
 
 public class NumismatistTrades {
-    // TODO for each mod I add integration for, I should consider adding trades their items for here?
     static RandomSource source = RandomSource.create();
     static int rarityLevel1 = 1;
     static int rarityLevel2 = 2;
