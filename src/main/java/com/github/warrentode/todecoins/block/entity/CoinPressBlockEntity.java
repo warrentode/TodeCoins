@@ -366,7 +366,11 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         if (checkNewRecipe) {
             Optional<CoinPressRecipe> recipe = level.getRecipeManager().getRecipeFor(ModRecipes.RECIPE_TYPE_COINPRESS.get(), inventory, level);
             if (recipe.isPresent()) {
-                lastRecipeID = recipe.get().getId();
+                ResourceLocation newRecipeID = recipe.get().getId();
+                if (lastRecipeID != null && !lastRecipeID.equals(newRecipeID)) {
+                    stampingTime = 0;
+                }
+                lastRecipeID = newRecipeID;
                 return recipe;
             }
         }

@@ -27,15 +27,14 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-group = "com.github.warrentode"
+version = "${project.minecraft_version}-${project.mod_version}"
+group = "${project.mod_domain}"
 archivesBaseName = "todecoins"
-version = "1.19.2-1.5.7"
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '17'
-
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+
 minecraft {
     mappings channel: 'parchment', version: '2022.11.27-1.19.2'
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -121,8 +120,6 @@ dependencies {
     implementation 'io.netty:netty-codec:4.1.86.Final'
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
 
-    runtimeOnly fg.deobf("curse.maven:configured-457570:4462837")
-    runtimeOnly fg.deobf("curse.maven:catalogue-459701:4171024")
     implementation fg.deobf("curse.maven:curios-309927:4523009")
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:puzzles-lib-495476:4600775")
@@ -140,12 +137,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : project.name,
-                "Specification-Vendor"    : "WarrenTode",
-                "Specification-Version"   : project.jar.archiveVersion,
-                "Implementation-Title"    : project.name,
+                "Specification-Title"  : project.modid,
+                "Specification-Vendor" : project.mod_author,
+                "Specification-Version": "1",
+                "Implementation-Title" : project.modid,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "WarrenTode",
+                "Implementation-Vendor": project.mod_author,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs"            : "mixins.todecoins.json"
         ])
@@ -161,14 +158,30 @@ tasks.register('updateJson') {
     }
 }
 
+tasks.register('deobfJar', Jar) { // Generate deobfuscated
+    from sourceSets.main.output
+    archiveClassifier = 'deobf'
+}
+
+tasks.register('sourceJar', Jar) { // Generate sources
+    from sourceSets.main.allSource
+    archiveClassifier = 'sources'
+}
+
+artifacts {
+    archives deobfJar
+    archives sourceJar
+    archives jar
+}
+
 jar.finalizedBy('reobfJar')
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = "com.github.warrentode"
-            artifactId = "todecoins"
-            version = "1.19.2-1.5.7"
+            groupId = "${project.mod_domain}"
+            artifactId = "${project.mod_author}"
+            version = "${project.jar.archiveVersion}"
 
             from components.java
         }
@@ -177,7 +190,6 @@ publishing {
         maven {
             url "file://${project.projectDir}/mcmodsrepo"
         }
-        mavenLocal()
     }
 }
 
