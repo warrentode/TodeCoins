@@ -115,7 +115,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.2-43.2.23'
+    minecraft 'net.minecraftforge:forge:1.19.2-43.3.0'
 
     implementation 'io.netty:netty-codec:4.1.86.Final'
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
@@ -180,8 +180,8 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = "${project.mod_domain}"
-            artifactId = "${project.modid}"
-            version = "${project.jar.archiveVersion}"
+            artifactId = "${project.name}"
+            version = "${project.minecraft_version}-${project.mod_version}"
 
             from components.java
         }
