@@ -659,7 +659,7 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("tooltips.collectible_villager_coin.hover", "One of Sixteen Villager Seasonal Coins");
 
-        add("tooltips.collectible_piglin_coin.hover", "One of Sixteen Piglin Seasonal Coins");
+        add("tooltips.collectible_piglin_coin.hover", "One of Twelve Piglin Seasonal Coins");
 
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
         add("tooltips.collectible_rodent_coin.hover", "One of Four Rodent Seasonal Coins");
