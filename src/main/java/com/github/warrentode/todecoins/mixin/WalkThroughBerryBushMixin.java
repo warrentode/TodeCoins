@@ -3,10 +3,10 @@ package com.github.warrentode.todecoins.mixin;
 import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
@@ -21,14 +21,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class WalkThroughBerryBushMixin {
     @Inject(at = @At("HEAD"), method = "entityInside", cancellable = true)
     private void todecoins_injectEntityInside(BlockState state, Level level, BlockPos pos, Entity entity, CallbackInfo ci) {
-        if (entity instanceof LivingEntity && entity.getType() != EntityType.FOX && entity.getType() != EntityType.BEE) {
-            if (entity instanceof ServerPlayer player) {
-                if (ModList.get().isLoaded("curios")) {
-                    ItemStack stack = Curios.getCharmSlot(player);
-                    if (stack != null && stack.is(ModTags.Items.FOX_COIN_SET)) {
-                        ci.cancel();
-                    }
-                }
+        if (entity instanceof LivingEntity && entity.getType() == EntityType.PLAYER && ModList.get().isLoaded("curios")) {
+            ItemStack stack = Curios.getCharmSlot((Player) entity);
+            if (stack != null && stack.is(ModTags.Items.FOX_COIN_SET)) {
+                ci.cancel();
             }
         }
     }
