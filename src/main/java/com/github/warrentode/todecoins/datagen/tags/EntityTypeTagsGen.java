@@ -189,6 +189,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.PIGLIN);
         tag(ForgeTags.EntityTypes.PIGLIN_BRUTE_TYPES)
                 .add(EntityType.PIGLIN_BRUTE);
+        tag(ForgeTags.EntityTypes.PIGLIN_MERCHANT_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("todepiglins:todepiglinmerchant")));
         tag(ForgeTags.EntityTypes.PILLAGER_TYPES)
                 .add(EntityType.PILLAGER);
         tag(ForgeTags.EntityTypes.POLAR_BEAR_TYPES)

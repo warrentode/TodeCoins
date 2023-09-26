@@ -1048,6 +1048,22 @@ public class AdvancementsGen extends AdvancementProvider {
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_friendsandfoes_coins"));
 
+            // TodePiglins Collectible Coins
+            Advancement collectibleTodePiglinCoins = getAdvancement(todeCoins, ModItems.COPPER_PIGLIN_MERCHANT_COIN.get(),
+                    "collectibleTodePiglinCoins", FrameType.CHALLENGE, true, true, false)
+                    .parent(collectibleCoins)
+
+                    .addCriterion("find_" + ModItems.COPPER_PIGLIN_MERCHANT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_PIGLIN_MERCHANT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_PIGLIN_MERCHANT_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_PIGLIN_MERCHANT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get()))
+
+                    .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_todepiglins_coins"));
+
             // Guard Villagers Collectible Coins
             Advancement collectibleGuardVillagerCoins = getAdvancement(todeCoins, ModItems.COPPER_GUARD_COIN.get(),
                     "collectibleGuardVillagerCoins", FrameType.CHALLENGE, true, true, false)

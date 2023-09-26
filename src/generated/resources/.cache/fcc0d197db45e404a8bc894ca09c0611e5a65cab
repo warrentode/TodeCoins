@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-14T05:52:03.4697014	Tags for minecraft:entity_type
+// 1.19.2	2023-09-26T14:33:33.9655287	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
@@ -54,6 +54,7 @@ c1f0bbae21bdd12146775bbc29d67adcd3e28fb9 data/forge/tags/entity_types/penguin.js
 6fd0d49783f4b5ea2362c1ab12f404e430115e8e data/forge/tags/entity_types/pig.json
 fcf7bebab33ff2a152e0861b981a153d0a1e3af7 data/forge/tags/entity_types/piglin.json
 c3e2f24ee727b4294a30221f004f1a1be39f3430 data/forge/tags/entity_types/piglin_brute.json
+a9066bd882a188fe9fcd7595c827a12a1c2eea53 data/forge/tags/entity_types/piglin_merchant.json
 95c17b23e11bd7043dc871efdd5ca281a1917c1c data/forge/tags/entity_types/pillager.json
 1524d30a78de2df7d23a5d101c5662ac77752040 data/forge/tags/entity_types/polar_bear.json
 58748f381d8f3508e8f58a62b0d64e706b06bc78 data/forge/tags/entity_types/pufferfish.json

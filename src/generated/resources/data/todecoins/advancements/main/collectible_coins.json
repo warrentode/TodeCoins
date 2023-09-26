@@ -3742,7 +3742,8 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_hero_copper"
+      "item": "todecoins:collectible_coin_hero_copper",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

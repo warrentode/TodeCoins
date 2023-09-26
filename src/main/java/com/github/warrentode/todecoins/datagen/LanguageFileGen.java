@@ -498,6 +498,7 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_TUFF_GOLEM_COIN.get().getDescriptionId(), "Gold Tuff Golem Coin");
         addCollectibleCoins(ModItems.NETHERITE_TUFF_GOLEM_COIN.get().getDescriptionId(), "Netherite Tuff Golem Coin");
 
+        // ecologics theme coins
         addCollectibleCoins(ModItems.COPPER_CRAB_COIN.get().getDescriptionId(), "Copper Crab Coin");
         addCollectibleCoins(ModItems.IRON_CRAB_COIN.get().getDescriptionId(), "Iron Crab Coin");
         addCollectibleCoins(ModItems.GOLD_CRAB_COIN.get().getDescriptionId(), "Gold Crab Coin");
@@ -513,10 +514,17 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_PENGUIN_COIN.get().getDescriptionId(), "Gold Penguin Coin");
         addCollectibleCoins(ModItems.NETHERITE_PENGUIN_COIN.get().getDescriptionId(), "Netherite Penguin Coin");
 
+        // guard villagers theme coins
         addCollectibleCoins(ModItems.COPPER_GUARD_COIN.get().getDescriptionId(), "Copper Guard Coin");
         addCollectibleCoins(ModItems.IRON_GUARD_COIN.get().getDescriptionId(), "Iron Guard Coin");
         addCollectibleCoins(ModItems.GOLD_GUARD_COIN.get().getDescriptionId(), "Gold Guard Coin");
         addCollectibleCoins(ModItems.NETHERITE_GUARD_COIN.get().getDescriptionId(), "Netherite Guard Coin");
+
+        // todepiglins theme coins
+        addCollectibleCoins(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get().getDescriptionId(), "Copper Piglin Merchant Coin");
+        addCollectibleCoins(ModItems.IRON_PIGLIN_MERCHANT_COIN.get().getDescriptionId(), "Iron Piglin Merchant Coin");
+        addCollectibleCoins(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get().getDescriptionId(), "Gold Piglin Merchant Coin");
+        addCollectibleCoins(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get().getDescriptionId(), "Netherite Piglin Merchant Coin");
 
         // regular mod items
         add(ModItems.NUMISMATIST_SPAWN_EGG.get(), "Numismatist Spawn Egg");
@@ -602,6 +610,9 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.collectibleGuardVillagerCoins", "Collectible Guard Villager Coins");
         add("advancement.collectibleGuardVillagerCoins.desc", "Find All the Guard Villager Collectible Coins!");
 
+        add("advancement.collectibleTodePiglinCoins", "Collectible TodePiglin Coins");
+        add("advancement.collectibleTodePiglinCoins.desc", "Find All the TodePiglin Collectible Coins!");
+
         add("advancement.collectibleUnusedUpcomingCoins", "Collectible Unused or Upcoming Vanilla Mob Coins");
         add("advancement.collectibleUnusedUpcomingCoins.desc", "Find All the Collectible Coins for the Unused or Upcoming Mobs!");
     }
@@ -648,7 +659,7 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("tooltips.collectible_villager_coin.hover", "One of Sixteen Villager Seasonal Coins");
 
-        add("tooltips.collectible_piglin_coin.hover", "One of Twelve Piglin Seasonal Coins");
+        add("tooltips.collectible_piglin_coin.hover", "One of Sixteen Piglin Seasonal Coins");
 
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
         add("tooltips.collectible_rodent_coin.hover", "One of Four Rodent Seasonal Coins");

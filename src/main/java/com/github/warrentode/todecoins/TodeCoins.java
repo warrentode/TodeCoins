@@ -8,7 +8,6 @@ import com.github.warrentode.todecoins.entity.villager.ModVillagers;
 import com.github.warrentode.todecoins.entity.villager.renderer.NumismatistRenderer;
 import com.github.warrentode.todecoins.gui.ModMenuTypes;
 import com.github.warrentode.todecoins.gui.coinpressgui.CoinPressScreen;
-import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.github.warrentode.todecoins.loot.serializers.ModLootModifiers;
@@ -21,8 +20,6 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -45,8 +42,6 @@ import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
-
-import java.util.concurrent.atomic.AtomicReference;
 
 @Mod(TodeCoins.MODID)
 public class TodeCoins {
@@ -76,15 +71,6 @@ public class TodeCoins {
 
         ModLootModifiers.register(modEventBus);
         ModLootItemConditions.register(modEventBus);
-    }
-
-    public static ItemStack setCurioSlots(Player player) {
-        AtomicReference<ItemStack> slot = new AtomicReference<>(ItemStack.EMPTY);
-        if (ModList.get().isLoaded("curios")) {
-            slot.set(Curios.getCharmSlot(player));
-            slot.set(Curios.getBeltSlot(player));
-        }
-        return slot.get();
     }
 
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {

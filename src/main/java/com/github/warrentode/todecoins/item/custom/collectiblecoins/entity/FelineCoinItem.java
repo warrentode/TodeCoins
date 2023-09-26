@@ -22,7 +22,7 @@ public class FelineCoinItem extends CollectibleCoin {
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return !ModList.get().isLoaded("curios") ? null : Curios.createSlowFallingCharmProvider(stack);
+        return !ModList.get().isLoaded("curios") ? null : Curios.createCoinCharmProvider(stack);
     }
 
     @Override

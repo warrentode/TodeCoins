@@ -1,7 +1,6 @@
 //file:noinspection GroovyAssignabilityCheck
 //file:noinspection GrUnresolvedAccess
 //file:noinspection GroovyAccessibility
-// TODO figure out how to get this mod setup correctly somewhere to be used as a dependency
 buildscript {
     repositories {
         mavenCentral()
@@ -128,7 +127,7 @@ dependencies {
     implementation fg.deobf("curse.maven:serene-seasons-291874:4037228")
     implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4637293")
     implementation fg.deobf("curse.maven:sophisticated-core-618298:4668694")
-    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4711959")
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4754596")
     implementation fg.deobf("curse.maven:guard-villagers-360203:4701400")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

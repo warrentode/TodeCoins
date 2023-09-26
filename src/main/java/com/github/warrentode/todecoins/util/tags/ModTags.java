@@ -127,6 +127,7 @@ public class ModTags {
         public static final TagKey<Item> ZOMBIE_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_horse_coin_set");
         public static final TagKey<Item> ZOMBIE_VILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/zombie_villager_coin_set");
         public static final TagKey<Item> ZOMBIFIED_PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/zombified_piglin_coin_set");
+        public static final TagKey<Item> PIGLIN_MERCHANT_COIN_SET = modItemTag("collectible_coins/entity_coins/piglin_merchant_coin_set");
         // ecologics theme
         public static final TagKey<Item> CAMEL_COIN_SET = modItemTag("collectible_coins/entity_coins/camel_coin_set");
         public static final TagKey<Item> CRAB_COIN_SET = modItemTag("collectible_coins/entity_coins/crab_coin_set");
