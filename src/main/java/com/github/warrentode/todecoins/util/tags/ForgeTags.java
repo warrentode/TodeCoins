@@ -92,7 +92,6 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> ZOMBIFIED_PIGLIN_TYPES = forgeEntityTypeTag("zombified_piglin");
         public static final TagKey<EntityType<?>> HOGLIN_TYPES = forgeEntityTypeTag("hoglin");
         public static final TagKey<EntityType<?>> PIGLIN_BRUTE_TYPES = forgeEntityTypeTag("piglin_brute");
-        public static final TagKey<EntityType<?>> PIGLIN_MERCHANT_TYPES = forgeEntityTypeTag("piglin_merchant");
         public static final TagKey<EntityType<?>> ZOMBIE_VILLAGER_TYPES = forgeEntityTypeTag("zombie_villager");
 
         // friends and foes

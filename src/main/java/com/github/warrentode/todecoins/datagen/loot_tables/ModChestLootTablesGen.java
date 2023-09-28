@@ -37,11 +37,6 @@ public class ModChestLootTablesGen extends ChestLoot {
     // overworld structure checks
     public static final LootItemCondition.Builder IN_IGLOO = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.IGLOO.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_RUINED_PORTAL_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_OCEAN.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_RUINED_PORTAL_DESERT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_DESERT.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_RUINED_PORTAL_JUNGLE = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_JUNGLE.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_RUINED_PORTAL_MOUNTAIN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_MOUNTAIN.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_RUINED_PORTAL_SWAMP = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_SWAMP.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_RUINED_PORTAL_STANDARD = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.RUINED_PORTAL_STANDARD.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_OCEAN_MONUMENT = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_MONUMENT.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_OCEAN_RUIN_WARM = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_RUIN_WARM.unwrapKey().orElseThrow()));
     public static final LootItemCondition.Builder IN_OCEAN_RUIN_COLD = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.OCEAN_RUIN_COLD.unwrapKey().orElseThrow()));
@@ -752,12 +747,6 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(LootItemRandomChanceCondition.randomChance(0.1F))
                                         .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
                                                 .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY)))
-
-                                .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get()).when(SPRING)
-                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                        .when(IN_RUINED_PORTAL_NETHER.or(IN_RUINED_PORTAL_DESERT).or(IN_RUINED_PORTAL_JUNGLE)
-                                                .or(IN_RUINED_PORTAL_MOUNTAIN).or(IN_RUINED_PORTAL_SWAMP).or(IN_RUINED_PORTAL_OCEAN)
-                                                .or(IN_RUINED_PORTAL_STANDARD)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
@@ -1140,12 +1129,6 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(LootItemRandomChanceCondition.randomChance(0.1F))
                                         .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
                                                 .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY)))
-
-                                .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_MERCHANT_COIN.get()).when(SUMMER)
-                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                        .when(IN_RUINED_PORTAL_NETHER.or(IN_RUINED_PORTAL_DESERT).or(IN_RUINED_PORTAL_JUNGLE)
-                                                .or(IN_RUINED_PORTAL_MOUNTAIN).or(IN_RUINED_PORTAL_SWAMP).or(IN_RUINED_PORTAL_OCEAN)
-                                                .or(IN_RUINED_PORTAL_STANDARD)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
@@ -1526,12 +1509,6 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(LootItemRandomChanceCondition.randomChance(0.1F))
                                         .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
                                                 .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY)))
-
-                                .add(LootItem.lootTableItem(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get()).when(AUTUMN)
-                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                        .when(IN_RUINED_PORTAL_NETHER.or(IN_RUINED_PORTAL_DESERT).or(IN_RUINED_PORTAL_JUNGLE)
-                                                .or(IN_RUINED_PORTAL_MOUNTAIN).or(IN_RUINED_PORTAL_SWAMP).or(IN_RUINED_PORTAL_OCEAN)
-                                                .or(IN_RUINED_PORTAL_STANDARD)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
@@ -1913,12 +1890,6 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_VILLAGE_DESERT.or(IN_VILLAGE_SAVANNA).or(IN_VILLAGE_PLAINS)
                                                 .or(IN_VILLAGE_TAIGA).or(IN_VILLAGE_SNOWY)))
 
-                                .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get()).when(WINTER)
-                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                        .when(IN_RUINED_PORTAL_NETHER.or(IN_RUINED_PORTAL_DESERT).or(IN_RUINED_PORTAL_JUNGLE)
-                                                .or(IN_RUINED_PORTAL_MOUNTAIN).or(IN_RUINED_PORTAL_SWAMP).or(IN_RUINED_PORTAL_OCEAN)
-                                                .or(IN_RUINED_PORTAL_STANDARD)))
-
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -2015,7 +1986,6 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_GUARD_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PENGUIN_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SQUIRREL_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -2112,7 +2082,6 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_GUARD_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_PENGUIN_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_SQUIRREL_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_MERCHANT_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -2209,7 +2178,6 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_GUARD_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_PENGUIN_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SQUIRREL_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -2306,7 +2274,6 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_GUARD_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PENGUIN_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SQUIRREL_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,

@@ -58,8 +58,7 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_guard_copper",
-      "nbt": "{Damage:0}"
+      "item": "todecoins:collectible_coin_guard_copper"
     },
     "show_toast": true,
     "title": {

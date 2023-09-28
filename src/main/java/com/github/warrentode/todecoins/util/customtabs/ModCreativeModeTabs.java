@@ -584,11 +584,6 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_GUARD_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_GUARD_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_GUARD_COIN.get().getDefaultInstance());
-            // PIGLIN MERCHANT COIN SET
-            items.add(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get().getDefaultInstance());
-            items.add(ModItems.IRON_PIGLIN_MERCHANT_COIN.get().getDefaultInstance());
-            items.add(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get().getDefaultInstance());
-            items.add(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get().getDefaultInstance());
         }
     };
 }

@@ -3994,66 +3994,6 @@
             }
           ],
           "name": "todecoins:collectible_coin_guard_copper"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:spring_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_mountain"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_piglin_merchant_copper"
         }
       ],
       "rolls": 1.0

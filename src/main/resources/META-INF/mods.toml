@@ -34,7 +34,7 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
 [[dependencies.todecoins]]
     modId = "curios"
     mandatory = true
-    versionRange = "[1.19.2-5.1.4.0,)"
+    versionRange = "[1.19.2-5.1.4.1,)"
     ordering = "BEFORE"
     side = "BOTH"
 [[dependencies.todecoins]]
@@ -82,7 +82,7 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
 [[dependencies.todecoins]]
     modId = "friendsandfoes"
     mandatory = false
-    versionRange = "[1.8.7,)"
+    versionRange = "[1.8.6,)"
     ordering = "BEFORE"
     side = "BOTH"
 [[dependencies.todecoins]]

@@ -5,14 +5,13 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.Wearable;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class CollectibleCoin extends CoinItem implements Wearable {
+public class CollectibleCoin extends CoinItem {
     public CollectibleCoin(Properties pProperties) {
         super(pProperties);
     }

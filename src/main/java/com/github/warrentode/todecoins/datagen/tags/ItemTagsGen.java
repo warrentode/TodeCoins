@@ -197,7 +197,6 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.PIG_COIN_SET)
                 .addTag(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
                 .addTag(ModTags.Items.PIGLIN_COIN_SET)
-                .addTag(ModTags.Items.PIGLIN_MERCHANT_COIN_SET)
                 .addTag(ModTags.Items.PILLAGER_COIN_SET)
                 .addTag(ModTags.Items.POLAR_BEAR_COIN_SET)
                 .addTag(ModTags.Items.PUFFERFISH_COIN_SET)
@@ -246,11 +245,6 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.PENGUIN_COIN_SET)
                 .addTag(ModTags.Items.GUARD_COIN_SET)
                 .addTag(ModTags.Items.CRAB_COIN_SET);
-        tag(ModTags.Items.PIGLIN_MERCHANT_COIN_SET)
-                .add(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get())
-                .add(ModItems.IRON_PIGLIN_MERCHANT_COIN.get())
-                .add(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get())
-                .add(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get());
         tag(ModTags.Items.GUARD_COIN_SET)
                 .add(ModItems.COPPER_GUARD_COIN.get())
                 .add(ModItems.IRON_GUARD_COIN.get())

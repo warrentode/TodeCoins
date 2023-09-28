@@ -363,10 +363,6 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_squirrel_netherite"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:collectible_coin_piglin_merchant_netherite"
         }
       ],
       "rolls": 1.0

@@ -363,10 +363,6 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_squirrel_iron"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:collectible_coin_piglin_merchant_iron"
         }
       ],
       "rolls": 1.0

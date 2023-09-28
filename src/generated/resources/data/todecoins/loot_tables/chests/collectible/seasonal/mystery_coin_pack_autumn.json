@@ -363,10 +363,6 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_squirrel_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:collectible_coin_piglin_merchant_gold"
         }
       ],
       "rolls": 1.0
