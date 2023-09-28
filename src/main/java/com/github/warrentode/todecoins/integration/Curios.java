@@ -221,7 +221,7 @@ public class Curios {
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
-                ICurio.super.onEquip(slotContext, prevStack);
+                ICurio.super.onUnequip(slotContext, prevStack);
                 if (stack.is(ModTags.Items.HERO_COIN_SET)) {
                     PlayerCharisma.subtractCharisma(4);
                 }
