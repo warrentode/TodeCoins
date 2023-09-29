@@ -614,8 +614,20 @@ public class Curios {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, false));
                     }
+                    else if (stack.is(ModTags.Items.HALLOWEEN_COIN_SET)
+                            && (CalendarUtil.Season.isChristmas() || SereneSeasonsCompat.SeasonCompat.isChristmas(level))) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                false, false, false));
+                    }
+                    else if (stack.is(ModTags.Items.PATRON_COIN_SET)
+                            && (CalendarUtil.Season.isAnniversary() || SereneSeasonsCompat.SeasonCompat.isAnniversary(level))) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                false, false, false));
+                    }
                     else if ((!CalendarUtil.Season.isBirthday() || !SereneSeasonsCompat.SeasonCompat.isBirthday(level))
-                            && (!CalendarUtil.Season.isChristmas() || !SereneSeasonsCompat.SeasonCompat.isChristmas(level))) {
+                            && (!CalendarUtil.Season.isAnniversary() || !SereneSeasonsCompat.SeasonCompat.isAnniversary(level))
+                            && (!CalendarUtil.Season.isChristmas() || !SereneSeasonsCompat.SeasonCompat.isChristmas(level))
+                            && (!CalendarUtil.Season.isHalloween() || !SereneSeasonsCompat.SeasonCompat.isHalloween(level))) {
                         livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
                     }
                 }

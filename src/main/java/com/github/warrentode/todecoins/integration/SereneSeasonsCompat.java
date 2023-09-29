@@ -51,45 +51,38 @@ public class SereneSeasonsCompat {
         }
 
         private static SeasonCompat get(ServerLevel level) {
+            Season season = SeasonHelper.getSeasonState(level).getSeason();
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
             Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
 
-            // seasons
-            if ((subSeason == Season.SubSeason.EARLY_WINTER && tropicalSeason == Season.TropicalSeason.EARLY_WET)
-                    || (subSeason == Season.SubSeason.MID_WINTER && tropicalSeason == Season.TropicalSeason.EARLY_WET)
-                    || (subSeason == Season.SubSeason.LATE_WINTER && tropicalSeason == Season.TropicalSeason.MID_WET)) {
-                return WINTER;
-            }
-            else if ((subSeason == Season.SubSeason.EARLY_SPRING && tropicalSeason == Season.TropicalSeason.MID_WET)
-                    || (subSeason == Season.SubSeason.MID_SPRING && tropicalSeason == Season.TropicalSeason.LATE_WET)
-                    || (subSeason == Season.SubSeason.LATE_SPRING && tropicalSeason == Season.TropicalSeason.LATE_WET)) {
-                return SPRING;
-            }
-            else if ((subSeason == Season.SubSeason.EARLY_SUMMER && tropicalSeason == Season.TropicalSeason.EARLY_DRY)
-                    || (subSeason == Season.SubSeason.MID_SUMMER && tropicalSeason == Season.TropicalSeason.EARLY_DRY)
-                    || (subSeason == Season.SubSeason.LATE_SUMMER && tropicalSeason == Season.TropicalSeason.MID_DRY)) {
-                return SUMMER;
-            }
-            else if ((subSeason == Season.SubSeason.EARLY_AUTUMN && tropicalSeason == Season.TropicalSeason.MID_DRY)
-                    || (subSeason == Season.SubSeason.MID_AUTUMN && tropicalSeason == Season.TropicalSeason.LATE_DRY)
-                    || (subSeason == Season.SubSeason.LATE_AUTUMN && tropicalSeason == Season.TropicalSeason.LATE_DRY)) {
-                return AUTUMN;
-            }
-
             // holidays
-            if (subSeason == Season.SubSeason.MID_AUTUMN && tropicalSeason == Season.TropicalSeason.LATE_DRY) {
+            if (subSeason == Season.SubSeason.MID_AUTUMN || tropicalSeason == Season.TropicalSeason.LATE_DRY) {
                 return HALLOWEEN;
             }
-            if (subSeason == Season.SubSeason.EARLY_WINTER && tropicalSeason == Season.TropicalSeason.EARLY_WET) {
+            if (subSeason == Season.SubSeason.EARLY_WINTER || tropicalSeason == Season.TropicalSeason.EARLY_WET) {
                 return CHRISTMAS;
             }
 
             // yearly built-in events
-            if (subSeason == Season.SubSeason.MID_WINTER && tropicalSeason == Season.TropicalSeason.EARLY_WET) {
+            if (subSeason == Season.SubSeason.MID_WINTER || tropicalSeason == Season.TropicalSeason.MID_WET) {
                 return BIRTHDAY;
             }
-            if (subSeason == Season.SubSeason.LATE_WINTER && tropicalSeason == Season.TropicalSeason.MID_WET) {
+            if (subSeason == Season.SubSeason.LATE_WINTER || tropicalSeason == Season.TropicalSeason.LATE_WET) {
                 return PATREON_ANNIVERSARY;
+            }
+
+            // seasons
+            if (season == Season.WINTER) {
+                return WINTER;
+            }
+            else if (season == Season.SPRING) {
+                return SPRING;
+            }
+            else if (season == Season.SUMMER) {
+                return SUMMER;
+            }
+            else if (season == Season.AUTUMN) {
+                return AUTUMN;
             }
 
             return NONE;

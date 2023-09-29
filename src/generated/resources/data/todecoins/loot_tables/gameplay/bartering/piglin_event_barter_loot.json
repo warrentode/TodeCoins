@@ -17,6 +17,22 @@
           "name": "minecraft:cookie"
         },
         {
+          "type": "minecraft:item",
+          "name": "todecoins:chocolate_coin_ultimate_dark"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:chocolate_coin_milk_bone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:chocolate_coin_warped_spice"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:chocolate_coin_crimson_spore"
+        },
+        {
           "type": "minecraft:loot_table",
           "conditions": [
             {
@@ -32,7 +48,7 @@
               "condition": "todecoins:halloween_condition"
             }
           ],
-            "name": "todecoins:chests/collectible/seasonal/todecoins_halloween_coin_loot"
+          "name": "todecoins:chests/collectible/seasonal/todecoins_halloween_coin_loot"
         },
         {
           "type": "minecraft:loot_table",
@@ -41,7 +57,7 @@
               "condition": "todecoins:christmas_condition"
             }
           ],
-            "name": "todecoins:chests/collectible/seasonal/todecoins_christmas_coin_loot"
+          "name": "todecoins:chests/collectible/seasonal/todecoins_christmas_coin_loot"
         },
         {
           "type": "minecraft:loot_table",
@@ -50,7 +66,7 @@
               "condition": "todecoins:anniversary_condition"
             }
           ],
-            "name": "todecoins:chests/collectible/seasonal/todecoins_anniversary_coin_loot"
+          "name": "todecoins:chests/collectible/seasonal/todecoins_anniversary_coin_loot"
         },
         {
           "type": "minecraft:item",

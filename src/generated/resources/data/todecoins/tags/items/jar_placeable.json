@@ -1,5 +1,8 @@
 {
   "values": [
+    "#forge:sweets",
+    "#forge:candy",
+    "#forge:chocolate",
     "#todecoins:collectible_coins",
     "#forge:currency"
   ]

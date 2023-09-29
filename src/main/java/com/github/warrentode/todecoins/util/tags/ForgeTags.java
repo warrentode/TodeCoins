@@ -92,6 +92,7 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> ZOMBIFIED_PIGLIN_TYPES = forgeEntityTypeTag("zombified_piglin");
         public static final TagKey<EntityType<?>> HOGLIN_TYPES = forgeEntityTypeTag("hoglin");
         public static final TagKey<EntityType<?>> PIGLIN_BRUTE_TYPES = forgeEntityTypeTag("piglin_brute");
+        public static final TagKey<EntityType<?>> PIGLIN_MERCHANT_TYPES = forgeEntityTypeTag("piglin_merchant");
         public static final TagKey<EntityType<?>> ZOMBIE_VILLAGER_TYPES = forgeEntityTypeTag("zombie_villager");
 
         // friends and foes
@@ -122,6 +123,9 @@ public class ForgeTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> CHOCOLATE = forgeItemTag("chocolate");
+        public static final TagKey<Item> CANDY = forgeItemTag("candy");
+        public static final TagKey<Item> SWEETS = forgeItemTag("sweets");
         public static final TagKey<Item> TOOLS_KNIVES = forgeItemTag("tools/knives");
         public static final TagKey<Item> TOOLS_CHISELS = forgeItemTag("tools/chisels");
         public static final TagKey<Item> BANKNOTES = forgeItemTag("banknotes");
