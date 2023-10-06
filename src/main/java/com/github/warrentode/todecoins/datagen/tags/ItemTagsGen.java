@@ -108,9 +108,9 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.ECHO_SHARD)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("cagerium:binding_gemstone")));
         tag(ModTags.Items.JAR_PLACEABLE)
-                .addTag(ForgeTags.Items.SWEETS)
-                .addTag(ForgeTags.Items.CANDY)
-                .addTag(ForgeTags.Items.CHOCOLATE)
+                .addTag(SupplementariesTags.Items.SWEETS)
+                .addTag(SupplementariesTags.Items.CANDY)
+                .addTag(SupplementariesTags.Items.CHOCOLATE)
                 .addTag(ModTags.Items.COLLECTIBLE_COINS)
                 .addTag(ForgeTags.Items.CURRENCY);
         tag(ModTags.Items.COLLECTIBLE_COINS)
@@ -836,11 +836,11 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
-        tag(ForgeTags.Items.CANDY)
-                .addTag(ForgeTags.Items.CHOCOLATE);
-        tag(ForgeTags.Items.SWEETS)
-                .addTag(ForgeTags.Items.CHOCOLATE);
-        tag(ForgeTags.Items.CHOCOLATE)
+        tag(SupplementariesTags.Items.CANDY)
+                .addTag(SupplementariesTags.Items.CHOCOLATE);
+        tag(SupplementariesTags.Items.SWEETS)
+                .addTag(SupplementariesTags.Items.CANDY);
+        tag(SupplementariesTags.Items.CHOCOLATE)
                 .add(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get())
                 .add(ModItems.MILK_BONE_CHOCOLATE_COIN.get())
                 .add(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get())

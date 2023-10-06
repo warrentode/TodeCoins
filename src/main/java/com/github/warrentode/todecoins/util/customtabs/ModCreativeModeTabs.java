@@ -10,15 +10,16 @@ import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 public class ModCreativeModeTabs extends CreativeModeTab {
+
     public ModCreativeModeTabs(String label) {
-        super(-1, label);
+        super(label);
     }
 
     public @NotNull ItemStack makeIcon() {
         return getIconItem();
     }
 
-    public static final CreativeModeTab TODECOINSTAB = new CreativeModeTab(-1, "todecoinstab") {
+    public static final ModCreativeModeTabs TODECOINSTAB = new ModCreativeModeTabs("todecoinstab") {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ModItems.COPPER_COIN.get());
@@ -108,7 +109,7 @@ public class ModCreativeModeTabs extends CreativeModeTab {
         }
     };
 
-    public static final CreativeModeTab COLLECTORCOINSTAB = new CreativeModeTab(-1, "collectorcoinstab") {
+    public static final ModCreativeModeTabs COLLECTORCOINSTAB = new ModCreativeModeTabs("collectorcoinstab") {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ModItems.COPPER_HERO_COIN.get());

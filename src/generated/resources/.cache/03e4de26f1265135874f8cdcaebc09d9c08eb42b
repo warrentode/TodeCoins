@@ -1,9 +1,7 @@
-// 1.19.2	2023-09-29T01:40:01.6560712	Tags for minecraft:item
+// 1.19.2	2023-10-06T05:51:56.2493069	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
-d5906318c5440b26518838add68e4f83560e7b5a data/forge/tags/items/candy.json
-57186dd80d3d435c2ad5ca0bb7a67b89a5f05663 data/forge/tags/items/chocolate.json
 d5cf70c1c1570594208821e2af44e7225918bc4f data/forge/tags/items/coins.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
 49d871134517203e4311ad7c144a5a4f85ea511e data/forge/tags/items/currency_materials.json
@@ -38,7 +36,6 @@ e6aa1463fc9f3d6a23a6fdb9c8ad3273bd5abf55 data/forge/tags/items/nuggets/iron.json
 32869cad7dc791d67f1b6ab0aa58945df28b6aae data/forge/tags/items/nuggets/lucky.json
 63a509a34d34dbba0491705310d0f3b73e029bad data/forge/tags/items/nuggets/netherite.json
 eceb115142137119185191b64ef142dbcb53a9dd data/forge/tags/items/piglin_barter_items.json
-d5906318c5440b26518838add68e4f83560e7b5a data/forge/tags/items/sweets.json
 d4a1d913e420ba2dce1249dbcc08b4625f482d75 data/forge/tags/items/textiles.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/bark.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/currency_fiber.json
@@ -50,7 +47,10 @@ c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.j
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/thread.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/tools/chisels.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/tools/knives.json
+e199d3ab5411e637e6ee5c576a46d7f243cfeba4 data/hauntedharvest/tags/items/candy.json
+771a6a57c6423ef7bfde3dc7197a239176ecb4e8 data/hauntedharvest/tags/items/sweets.json
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
+57186dd80d3d435c2ad5ca0bb7a67b89a5f05663 data/supplementaries/tags/items/chocolate_bars.json
 8831b7a7c1903bfd62992756333c08ecd55f796b data/supplementaries/tags/items/cookies.json
 1b64b170d75ce337e2786496d5c6024a2f8e6a28 data/todecoins/tags/items/bundles.json
 3fa68285540a9cacb458f465ee22db3e72f6c567 data/todecoins/tags/items/collectible_coins.json
@@ -169,7 +169,7 @@ f04960c86353f26abb0c4a476a4d3f3e838ec5f8 data/todecoins/tags/items/currency/coin
 f2aa87f54e7951ea0cf81ac252c2abe279b0c936 data/todecoins/tags/items/ingots/gold.json
 736f4ef35696340b932cdb679c5a32e7b28db783 data/todecoins/tags/items/ingots/iron.json
 70c7b129eaaed403ba88c0e9de930fab8c9d587c data/todecoins/tags/items/ingots/netherite.json
-19e4028a27e402a468059817ef36e09281bc3e21 data/todecoins/tags/items/jar_placeable.json
+67728f750f934894bfd9bbdd7363b5b8a01e1b4e data/todecoins/tags/items/jar_placeable.json
 be1fe153c84ea38f0f8ff031db72aa44b97174ef data/todecoins/tags/items/no_ai_spawn_eggs.json
 63e4a7b81004b8a539f69be3a9cbdcfc9d7a060c data/todecoins/tags/items/nuggets.json
 ab1a45ae0b76cfdab8aa19e990af266825f9e610 data/todecoins/tags/items/nuggets/copper.json

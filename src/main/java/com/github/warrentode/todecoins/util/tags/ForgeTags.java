@@ -123,9 +123,6 @@ public class ForgeTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> CHOCOLATE = forgeItemTag("chocolate");
-        public static final TagKey<Item> CANDY = forgeItemTag("candy");
-        public static final TagKey<Item> SWEETS = forgeItemTag("sweets");
         public static final TagKey<Item> TOOLS_KNIVES = forgeItemTag("tools/knives");
         public static final TagKey<Item> TOOLS_CHISELS = forgeItemTag("tools/chisels");
         public static final TagKey<Item> BANKNOTES = forgeItemTag("banknotes");
