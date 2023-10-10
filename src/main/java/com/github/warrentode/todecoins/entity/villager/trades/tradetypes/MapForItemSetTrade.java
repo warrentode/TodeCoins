@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class TreasureMapForItemSetTrade implements VillagerTrades.ItemListing {
+public class MapForItemSetTrade implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;
     public static final int UNCOMMON_ITEMS_SUPPLY = 3;
@@ -46,9 +46,9 @@ public class TreasureMapForItemSetTrade implements VillagerTrades.ItemListing {
     private final int xpValue;
     private final float priceMultiplier;
 
-    public TreasureMapForItemSetTrade(ImmutableSet<ItemLike> requestedItemSet, int requestedItemSetCount, ItemStack requestedItemB, int requestedItemCountB,
-                                      TagKey<Structure> mapStructure, String mapName, MapDecoration.Type mapMarker,
-                                      int maxUses, int xpValue, float priceMultiplier) {
+    public MapForItemSetTrade(ImmutableSet<ItemLike> requestedItemSet, int requestedItemSetCount, ItemStack requestedItemB, int requestedItemCountB,
+                              TagKey<Structure> mapStructure, String mapName, MapDecoration.Type mapMarker,
+                              int maxUses, int xpValue, float priceMultiplier) {
         this.requestedItemSet = requestedItemSet;
         this.requestedItemSetCount = requestedItemSetCount;
         this.requestedItemB = requestedItemB;
