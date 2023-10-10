@@ -10,35 +10,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "todecoins:nether_currency_stamp"
-        },
-        {
-          "type": "minecraft:item",
           "name": "todecoins:copper_coin"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:iron_coin"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:gold_coin"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:netherite_coin"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:emerald_quarter_bank_note"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:emerald_half_bank_note"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "todecoins:emerald_bank_note"
         },
         {
           "type": "minecraft:loot_table",
