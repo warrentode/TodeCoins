@@ -57,7 +57,6 @@ public class Curios {
     // TODO look into increase buff duration for Witch coin
     // TODO look into giving immunity to poison for Cave Spider
 
-
     /**
      * Gets the stack in the Belt Slot
      **/
@@ -541,7 +540,7 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createHalloweenCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createNightVisionCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
@@ -555,26 +554,8 @@ public class Curios {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (stack.is(ModTags.Items.BAT_COIN_SET)) {
+                    if (stack.is(ModTags.Items.BAT_COIN_SET) || stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
-                                false, false, true));
-                    }
-
-                    if (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && CalendarUtil.Season.isHalloween()) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
-                                false, false, true));
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
-                                false, false, true));
-                    }
-                    else if (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isHalloween(serverLevel)) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
-                                false, false, true));
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
-                                false, false, true));
-                    }
-                    else if (livingEntity != null && (stack.is(ModTags.Items.HALLOWEEN_COIN_SET) && !CalendarUtil.Season.isHalloween() && !SereneSeasonsCompat.SeasonCompat.isHalloween(serverLevel))) {
-                        livingEntity.removeEffect(MobEffects.NIGHT_VISION);
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
                 }
@@ -588,7 +569,6 @@ public class Curios {
                 }
                 if (livingEntity != null && stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.NIGHT_VISION);
-                    livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
                 }
             }
 
@@ -630,30 +610,47 @@ public class Curios {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) && CalendarUtil.Season.isBirthday()) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
-                                false, false, true));
-                    }
-                    else if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) && ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isBirthday(serverLevel)) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
-                                false, false, true));
-                    }
-                    else if (livingEntity != null && (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) && !CalendarUtil.Season.isBirthday() && !SereneSeasonsCompat.SeasonCompat.isBirthday(serverLevel))) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
-                                false, false, true));
+
+                    if (stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
+                        if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isHalloween(serverLevel)) {
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                    false, false, true));
+                        }
+                        else if (CalendarUtil.Season.isHalloween()) {
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                    false, false, true));
+                        }
+                        else {
+                            livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                        }
                     }
 
-                    if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && CalendarUtil.Season.isChristmas()) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
-                                false, false, true));
+                    if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET)) {
+                        if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isBirthday(serverLevel)) {
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                    false, false, true));
+                        }
+                        else if (CalendarUtil.Season.isBirthday()) {
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                    false, false, true));
+                        }
+                        else {
+                            livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                        }
                     }
-                    else if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isChristmas(serverLevel)) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
-                                false, false, true));
-                    }
-                    else if (livingEntity != null && (stack.is(ModTags.Items.CHRISTMAS_COIN_SET) && !CalendarUtil.Season.isBirthday() && !SereneSeasonsCompat.SeasonCompat.isChristmas(serverLevel))) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
-                                false, false, true));
+
+                    if (stack.is(ModTags.Items.CHRISTMAS_COIN_SET)) {
+                        if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isChristmas(serverLevel)) {
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                    false, false, true));
+                        }
+                        else if (CalendarUtil.Season.isChristmas()) {
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                                    false, false, true));
+                        }
+                        else {
+                            livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                        }
                     }
                 }
             }
@@ -661,7 +658,10 @@ public class Curios {
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 LivingEntity livingEntity = slotContext.entity();
-                if (livingEntity != null && (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) || stack.is(ModTags.Items.CHRISTMAS_COIN_SET))) {
+                if (livingEntity != null
+                        && (stack.is(ModTags.Items.HALLOWEEN_COIN_SET)
+                        || stack.is(ModTags.Items.BIRTHDAY_COIN_SET)
+                        || stack.is(ModTags.Items.CHRISTMAS_COIN_SET))) {
                     livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
                 }
             }
