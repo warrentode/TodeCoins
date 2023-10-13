@@ -115,6 +115,20 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(() -> EntityType.GIANT, 7969893, 44975,
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
+    // CANDY COINS FOR HOLIDAY EVENTS
+    public static final RegistryObject<Item> CRIMSON_SPORE_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_crimson_spore",
+            () -> new Item(new Item.Properties().food(ModFoods.CRIMSON_SPORE_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTabs.TODECOINSTAB)));
+    public static final RegistryObject<Item> WARPED_SPICE_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_warped_spice",
+            () -> new Item(new Item.Properties().food(ModFoods.WARPED_SPICE_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTabs.TODECOINSTAB)));
+    public static final RegistryObject<Item> MILK_BONE_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_milk_bone",
+            () -> new Item(new Item.Properties().food(ModFoods.MILK_BONE_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTabs.TODECOINSTAB)));
+    public static final RegistryObject<Item> ULTIMATE_DARK_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_ultimate_dark",
+            () -> new Item(new Item.Properties().food(ModFoods.ULTIMATE_DARK_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTabs.TODECOINSTAB)));
+
     // COLLECTIBLE COIN SETS
     // holiday collection
     // birthday set
@@ -560,6 +574,15 @@ public class ModItems {
             () -> new SwineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_PIG_COIN = ITEMS.register("collectible_coin_pig_netherite",
             () -> new SwineCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    // piglin merchant set
+    public static final RegistryObject<Item> COPPER_PIGLIN_MERCHANT_COIN = ITEMS.register("collectible_coin_piglin_merchant_copper",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_PIGLIN_MERCHANT_COIN = ITEMS.register("collectible_coin_piglin_merchant_iron",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_PIGLIN_MERCHANT_COIN = ITEMS.register("collectible_coin_piglin_merchant_gold",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_PIGLIN_MERCHANT_COIN = ITEMS.register("collectible_coin_piglin_merchant_netherite",
+            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // piglin brute set
     public static final RegistryObject<Item> COPPER_PIGLIN_BRUTE_COIN = ITEMS.register("collectible_coin_piglin_brute_copper",
             () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
@@ -589,13 +612,13 @@ public class ModItems {
             () -> new IllagerCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // polar bear set
     public static final RegistryObject<Item> COPPER_POLAR_BEAR_COIN = ITEMS.register("collectible_coin_polar_bear_copper",
-            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+            () -> new BearCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> IRON_POLAR_BEAR_COIN = ITEMS.register("collectible_coin_polar_bear_iron",
-            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+            () -> new BearCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> GOLD_POLAR_BEAR_COIN = ITEMS.register("collectible_coin_polar_bear_gold",
-            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+            () -> new BearCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_POLAR_BEAR_COIN = ITEMS.register("collectible_coin_polar_bear_netherite",
-            () -> new PiglinCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
+            () -> new BearCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));
     // rabbit set
     public static final RegistryObject<Item> COPPER_RABBIT_COIN = ITEMS.register("collectible_coin_rabbit_copper",
             () -> new RabbitCoinItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTabs.COLLECTORCOINSTAB)));

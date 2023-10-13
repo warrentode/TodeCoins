@@ -498,6 +498,7 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_TUFF_GOLEM_COIN.get().getDescriptionId(), "Gold Tuff Golem Coin");
         addCollectibleCoins(ModItems.NETHERITE_TUFF_GOLEM_COIN.get().getDescriptionId(), "Netherite Tuff Golem Coin");
 
+        // ecologics theme coins
         addCollectibleCoins(ModItems.COPPER_CRAB_COIN.get().getDescriptionId(), "Copper Crab Coin");
         addCollectibleCoins(ModItems.IRON_CRAB_COIN.get().getDescriptionId(), "Iron Crab Coin");
         addCollectibleCoins(ModItems.GOLD_CRAB_COIN.get().getDescriptionId(), "Gold Crab Coin");
@@ -513,10 +514,17 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_PENGUIN_COIN.get().getDescriptionId(), "Gold Penguin Coin");
         addCollectibleCoins(ModItems.NETHERITE_PENGUIN_COIN.get().getDescriptionId(), "Netherite Penguin Coin");
 
+        // guard villagers theme coins
         addCollectibleCoins(ModItems.COPPER_GUARD_COIN.get().getDescriptionId(), "Copper Guard Coin");
         addCollectibleCoins(ModItems.IRON_GUARD_COIN.get().getDescriptionId(), "Iron Guard Coin");
         addCollectibleCoins(ModItems.GOLD_GUARD_COIN.get().getDescriptionId(), "Gold Guard Coin");
         addCollectibleCoins(ModItems.NETHERITE_GUARD_COIN.get().getDescriptionId(), "Netherite Guard Coin");
+
+        // todepiglins theme coins
+        addCollectibleCoins(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get().getDescriptionId(), "Copper Piglin Merchant Coin");
+        addCollectibleCoins(ModItems.IRON_PIGLIN_MERCHANT_COIN.get().getDescriptionId(), "Iron Piglin Merchant Coin");
+        addCollectibleCoins(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get().getDescriptionId(), "Gold Piglin Merchant Coin");
+        addCollectibleCoins(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get().getDescriptionId(), "Netherite Piglin Merchant Coin");
 
         // regular mod items
         add(ModItems.NUMISMATIST_SPAWN_EGG.get(), "Numismatist Spawn Egg");
@@ -553,6 +561,12 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModItems.LUCKY_PANTS.get(), "Lucky Pants");
         add(ModItems.LUCKY_SHIRT.get(), "Lucky Shirt");
         add(ModItems.LUCKY_HAT.get(), "Lucky Hat");
+
+        // candy coin items
+        add(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get(), "Warped Spice Chocolate Coin");
+        add(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get(), "Crimson Spore Chocolate Coin");
+        add(ModItems.MILK_BONE_CHOCOLATE_COIN.get(), "Milk Bone Chocolate Coin");
+        add(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get(), "Ultimate Dark Chocolate Coin");
     }
 
     private void addCollectibleCoins(String id, String name) {
@@ -648,7 +662,7 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("tooltips.collectible_villager_coin.hover", "One of Sixteen Villager Seasonal Coins");
 
-        add("tooltips.collectible_piglin_coin.hover", "One of Twelve Piglin Seasonal Coins");
+        add("tooltips.collectible_piglin_coin.hover", "One of Sixteen Piglin Seasonal Coins");
 
         add("tooltips.collectible_rabbit_coin.hover", "One of Four Rabbit Seasonal Coins");
         add("tooltips.collectible_rodent_coin.hover", "One of Four Rodent Seasonal Coins");

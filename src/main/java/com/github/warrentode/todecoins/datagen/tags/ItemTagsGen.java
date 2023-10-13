@@ -108,6 +108,9 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.ECHO_SHARD)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("cagerium:binding_gemstone")));
         tag(ModTags.Items.JAR_PLACEABLE)
+                .addTag(SupplementariesTags.Items.SWEETS)
+                .addTag(SupplementariesTags.Items.CANDY)
+                .addTag(SupplementariesTags.Items.CHOCOLATE)
                 .addTag(ModTags.Items.COLLECTIBLE_COINS)
                 .addTag(ForgeTags.Items.CURRENCY);
         tag(ModTags.Items.COLLECTIBLE_COINS)
@@ -197,6 +200,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.PIG_COIN_SET)
                 .addTag(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
                 .addTag(ModTags.Items.PIGLIN_COIN_SET)
+                .addTag(ModTags.Items.PIGLIN_MERCHANT_COIN_SET)
                 .addTag(ModTags.Items.PILLAGER_COIN_SET)
                 .addTag(ModTags.Items.POLAR_BEAR_COIN_SET)
                 .addTag(ModTags.Items.PUFFERFISH_COIN_SET)
@@ -245,6 +249,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.PENGUIN_COIN_SET)
                 .addTag(ModTags.Items.GUARD_COIN_SET)
                 .addTag(ModTags.Items.CRAB_COIN_SET);
+        tag(ModTags.Items.PIGLIN_MERCHANT_COIN_SET)
+                .add(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get())
+                .add(ModItems.IRON_PIGLIN_MERCHANT_COIN.get())
+                .add(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get())
+                .add(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get());
         tag(ModTags.Items.GUARD_COIN_SET)
                 .add(ModItems.COPPER_GUARD_COIN.get())
                 .add(ModItems.IRON_GUARD_COIN.get())
@@ -827,6 +836,15 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(SupplementariesTags.Items.CANDY)
+                .addTag(SupplementariesTags.Items.CHOCOLATE);
+        tag(SupplementariesTags.Items.SWEETS)
+                .addTag(SupplementariesTags.Items.CANDY);
+        tag(SupplementariesTags.Items.CHOCOLATE)
+                .add(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get())
+                .add(ModItems.MILK_BONE_CHOCOLATE_COIN.get())
+                .add(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get())
+                .add(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get());
         tag(ForgeTags.Items.TOOLS_KNIVES);
         tag(ForgeTags.Items.TOOLS_CHISELS);
         tag(Tags.Items.EGGS)

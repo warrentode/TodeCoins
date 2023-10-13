@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.trades.tradetypes;
 
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -10,6 +11,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.MapItem;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.saveddata.maps.MapDecoration;
 import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
@@ -17,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class TreasureMapForItemsTrade implements VillagerTrades.ItemListing {
+public class MapForItemSetTrade implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;
     public static final int UNCOMMON_ITEMS_SUPPLY = 3;
@@ -33,8 +35,8 @@ public class TreasureMapForItemsTrade implements VillagerTrades.ItemListing {
     public static final float LOW_TIER_PRICE_MULTIPLIER = 0.05F;
     public static final float HIGH_TIER_PRICE_MULTIPLIER = 0.2F;
 
-    private final ItemStack requestedItemA;
-    private final int requestedItemCountA;
+    private final ImmutableSet<ItemLike> requestedItemSet;
+    private final int requestedItemSetCount;
     private final ItemStack requestedItemB;
     private final int requestedItemCountB;
     private final TagKey<Structure> mapStructure;
@@ -44,11 +46,11 @@ public class TreasureMapForItemsTrade implements VillagerTrades.ItemListing {
     private final int xpValue;
     private final float priceMultiplier;
 
-    public TreasureMapForItemsTrade(ItemStack requestedItemA, int requestedItemCountA, ItemStack requestedItemB, int requestedItemCountB,
-                                    TagKey<Structure> mapStructure, String mapName, MapDecoration.Type mapMarker,
-                                    int maxUses, int xpValue, float priceMultiplier) {
-        this.requestedItemA = requestedItemA;
-        this.requestedItemCountA = requestedItemCountA;
+    public MapForItemSetTrade(ImmutableSet<ItemLike> requestedItemSet, int requestedItemSetCount, ItemStack requestedItemB, int requestedItemCountB,
+                              TagKey<Structure> mapStructure, String mapName, MapDecoration.Type mapMarker,
+                              int maxUses, int xpValue, float priceMultiplier) {
+        this.requestedItemSet = requestedItemSet;
+        this.requestedItemSetCount = requestedItemSetCount;
         this.requestedItemB = requestedItemB;
         this.requestedItemCountB = requestedItemCountB;
         this.mapStructure = mapStructure;
@@ -72,7 +74,7 @@ public class TreasureMapForItemsTrade implements VillagerTrades.ItemListing {
                 MapItem.renderBiomePreviewMap(serverlevel, offeredMap);
                 MapItemSavedData.addTargetDecoration(offeredMap, blockpos, "+", this.mapMarker);
                 offeredMap.setHoverName(Component.translatable(this.mapName));
-                return new MerchantOffer(new ItemStack(this.requestedItemA.getItem(), this.requestedItemCountA),
+                return new MerchantOffer(new ItemStack(this.requestedItemSet.asList().get(source.nextInt(requestedItemSet.size() - 1)).asItem(), this.requestedItemSetCount),
                         new ItemStack(this.requestedItemB.getItem(), this.requestedItemCountB), offeredMap, this.maxUses, this.xpValue, this.priceMultiplier);
             }
             else {

@@ -91,6 +91,7 @@ public class ModTags {
         public static final TagKey<Item> PIG_COIN_SET = modItemTag("collectible_coins/entity_coins/pig_coin_set");
         public static final TagKey<Item> PIGLIN_BRUTE_COIN_SET = modItemTag("collectible_coins/entity_coins/piglin_brute_coin_set");
         public static final TagKey<Item> PIGLIN_COIN_SET = modItemTag("collectible_coins/entity_coins/piglin_coin_set");
+        public static final TagKey<Item> PIGLIN_MERCHANT_COIN_SET = modItemTag("collectible_coins/entity_coins/piglin_merchant_coin_set");
         public static final TagKey<Item> PILLAGER_COIN_SET = modItemTag("collectible_coins/entity_coins/pillager_coin_set");
         public static final TagKey<Item> POLAR_BEAR_COIN_SET = modItemTag("collectible_coins/entity_coins/polar_bear_coin_set");
         public static final TagKey<Item> PUFFERFISH_COIN_SET = modItemTag("collectible_coins/entity_coins/pufferfish_coin_set");

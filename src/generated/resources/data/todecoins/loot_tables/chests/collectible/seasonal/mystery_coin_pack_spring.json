@@ -363,6 +363,10 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_squirrel_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_piglin_merchant_copper"
         }
       ],
       "rolls": 1.0

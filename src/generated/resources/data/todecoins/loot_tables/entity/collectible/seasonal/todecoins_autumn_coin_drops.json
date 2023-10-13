@@ -3315,6 +3315,42 @@
           ],
           "name": "todecoins:collectible_coin_guard_gold",
           "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:piglin_merchant"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2.0,
+                "min": 1.0
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_merchant_gold",
+          "quality": 1
         }
       ],
       "rolls": 1.0

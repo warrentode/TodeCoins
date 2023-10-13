@@ -10,15 +10,16 @@ import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 public class ModCreativeModeTabs extends CreativeModeTab {
+
     public ModCreativeModeTabs(String label) {
-        super(-1, label);
+        super(label);
     }
 
     public @NotNull ItemStack makeIcon() {
         return getIconItem();
     }
 
-    public static final CreativeModeTab TODECOINSTAB = new CreativeModeTab(-1, "todecoinstab") {
+    public static final ModCreativeModeTabs TODECOINSTAB = new ModCreativeModeTabs("todecoinstab") {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ModItems.COPPER_COIN.get());
@@ -91,6 +92,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add((ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance()));
             items.add((ModBlocks.COINPRESSBLOCK.get().asItem().getDefaultInstance()));
 
+            items.add((ModItems.WARPED_SPICE_CHOCOLATE_COIN.get().getDefaultInstance()));
+            items.add((ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get().getDefaultInstance()));
+            items.add((ModItems.MILK_BONE_CHOCOLATE_COIN.get().getDefaultInstance()));
+            items.add((ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get().getDefaultInstance()));
+
             items.add(ModItems.NUMISMATIST_SPAWN_EGG.get().getDefaultInstance());
 
             if (ModList.get().isLoaded("cagerium")) {
@@ -103,7 +109,7 @@ public class ModCreativeModeTabs extends CreativeModeTab {
         }
     };
 
-    public static final CreativeModeTab COLLECTORCOINSTAB = new CreativeModeTab(-1, "collectorcoinstab") {
+    public static final ModCreativeModeTabs COLLECTORCOINSTAB = new ModCreativeModeTabs("collectorcoinstab") {
         @Override
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(ModItems.COPPER_HERO_COIN.get());
@@ -584,6 +590,11 @@ public class ModCreativeModeTabs extends CreativeModeTab {
             items.add(ModItems.IRON_GUARD_COIN.get().getDefaultInstance());
             items.add(ModItems.GOLD_GUARD_COIN.get().getDefaultInstance());
             items.add(ModItems.NETHERITE_GUARD_COIN.get().getDefaultInstance());
+            // PIGLIN MERCHANT COIN SET
+            items.add(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get().getDefaultInstance());
+            items.add(ModItems.IRON_PIGLIN_MERCHANT_COIN.get().getDefaultInstance());
+            items.add(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get().getDefaultInstance());
+            items.add(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get().getDefaultInstance());
         }
     };
 }

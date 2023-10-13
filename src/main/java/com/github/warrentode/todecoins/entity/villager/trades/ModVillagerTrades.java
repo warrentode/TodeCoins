@@ -87,11 +87,12 @@ public class ModVillagerTrades {
                         Blocks.SEA_LANTERN.asItem().getDefaultInstance(), 1,
                         ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 3,
                         ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 1,
-                        OneSetForItemTrade.UNCOMMON_ITEMS_SUPPLY, OneSetForItemTrade.XP_LEVEL_4_SELL, OneSetForItemTrade.HIGH_TIER_PRICE_MULTIPLIER));
+                        TwoItemsForItemTrade.UNCOMMON_ITEMS_SUPPLY, TwoItemsForItemTrade.XP_LEVEL_4_SELL, TwoItemsForItemTrade.HIGH_TIER_PRICE_MULTIPLIER));
                 trades.get(expert).add(new OneSetForItemTrade(
                         ImmutableSet.of(Items.NETHER_STAR, Items.NETHERITE_INGOT), 1,
                         ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 9,
                         OneSetForItemTrade.UNCOMMON_ITEMS_SUPPLY, OneSetForItemTrade.XP_LEVEL_4_SELL, OneSetForItemTrade.HIGH_TIER_PRICE_MULTIPLIER));
+
                 trades.get(master).add(new ItemForItemTrade(ModItems.LUCKY_COIN.get().getDefaultInstance(), 1, ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 3, 1, OneSetForItemTrade.XP_LEVEL_4_SELL, OneSetForItemTrade.HIGH_TIER_PRICE_MULTIPLIER));
                 trades.get(master).add(new ItemForItemTrade(ModItems.NETHERITE_COIN.get().getDefaultInstance(), 1, ModItems.EMERALD_HALF_BANK_NOTE.get().getDefaultInstance(), 1, OneSetForItemTrade.UNCOMMON_ITEMS_SUPPLY, OneSetForItemTrade.XP_LEVEL_4_SELL, OneSetForItemTrade.HIGH_TIER_PRICE_MULTIPLIER));
             }

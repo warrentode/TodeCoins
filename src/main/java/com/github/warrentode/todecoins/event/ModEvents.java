@@ -71,7 +71,7 @@ public class ModEvents {
     @Mod.EventBusSubscriber(modid = TodeCoins.MODID)
     public static class ForgeEvents {
         @SubscribeEvent
-        public static void onItemCrafted(PlayerEvent.ItemCraftedEvent event) {
+        public static void onItemCrafted(@NotNull PlayerEvent.ItemCraftedEvent event) {
             ItemStack stack = event.getCrafting();
             Player player = event.getEntity();
             if (stack.is(ModTags.Items.NO_AI_EGGS)) {
@@ -81,7 +81,7 @@ public class ModEvents {
         }
 
         @SubscribeEvent
-        public static ItemTooltipEvent onItemTooltip(ItemTooltipEvent event) {
+        public static ItemTooltipEvent onItemTooltip(@NotNull ItemTooltipEvent event) {
             ItemStack stack = event.getItemStack();
             Player player = event.getEntity();
             List<Component> tooltip = event.getToolTip();
@@ -120,7 +120,7 @@ public class ModEvents {
         }
 
         @SubscribeEvent
-        public static void onEntityAttributeModificationEvent(final EntityAttributeModificationEvent event) {
+        public static void onEntityAttributeModificationEvent(@NotNull final EntityAttributeModificationEvent event) {
             event.add(EntityType.PLAYER, ModAttributes.CHARISMA.get());
             event.add(EntityType.PLAYER, ModAttributes.COD_BONUS.get());
             event.add(EntityType.PLAYER, ModAttributes.PUFFERFISH_BONUS.get());
@@ -129,7 +129,7 @@ public class ModEvents {
         }
 
         @SubscribeEvent
-        public static void onPlayerCloned(PlayerEvent.@NotNull Clone event) {
+        public static void onPlayerCloned(@NotNull PlayerEvent.Clone event) {
             if (event.isWasDeath()) {
                 event.getOriginal().getCapability(PlayerCharismaProvider.PLAYER_CHARISMA)
                         .ifPresent(oldStore -> event.getOriginal().getCapability(PlayerCharismaProvider.PLAYER_CHARISMA)
@@ -495,7 +495,7 @@ public class ModEvents {
         }
 
         @SubscribeEvent
-        public static void onWorldTick(TickEvent.@NotNull LevelTickEvent event) {
+        public static void onWorldTick(@NotNull TickEvent.LevelTickEvent event) {
             if (event.phase != TickEvent.Phase.START) {
                 return;
             }
