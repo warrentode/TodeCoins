@@ -16,6 +16,10 @@
             {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
+            },
+            {
+              "chance": 0.5,
+              "condition": "minecraft:random_chance"
             }
           ],
           "functions": [
@@ -40,7 +44,11 @@
           "name": "todecoins:nether_gold_coin"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 0.0
+      }
     }
   ]
 }

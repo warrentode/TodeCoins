@@ -28,7 +28,7 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                 new LootItemCondition[]{
                         BlockTagCondition.isTag(ModTags.Blocks.DROPS_FOUR_LEAF_CLOVER)
                 },
-                ModItems.FOUR_LEAF_CLOVER.get(), 0.01F
+                ModItems.FOUR_LEAF_CLOVER.get(), 0.001F
         ));
         add("add_todecoins_chest", new AddLootTableModifier(
                 new LootItemCondition[]{

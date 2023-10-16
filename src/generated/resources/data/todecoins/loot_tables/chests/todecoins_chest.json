@@ -6,17 +6,35 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "chance": 0.8,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/currency/todecoins_copper_coin_loot",
           "weight": 7
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "chance": 0.7,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/currency/todecoins_iron_coin_loot",
           "quality": 1,
           "weight": 6
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "chance": 0.6,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/currency/todecoins_gold_coin_loot",
           "quality": 2,
           "weight": 5
@@ -70,6 +88,10 @@
                   }
                 }
               ]
+            },
+            {
+              "chance": 0.5,
+              "condition": "minecraft:random_chance"
             }
           ],
           "name": "todecoins:chests/currency/todecoins_nether_gold_coin_loot",
@@ -84,6 +106,10 @@
               "predicate": {
                 "structure": "minecraft:end_city"
               }
+            },
+            {
+              "chance": 0.4,
+              "condition": "minecraft:random_chance"
             }
           ],
           "name": "todecoins:chests/currency/todecoins_endonian_coin_loot",
@@ -92,34 +118,76 @@
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "chance": 0.3,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/currency/todecoins_emerald_quarter_bank_note_loot",
           "quality": 3,
           "weight": 4
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            },
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/currency/todecoins_netherite_coin_loot",
           "quality": 4,
           "weight": 4
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "chance": 0.3,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/currency/todecoins_emerald_half_bank_note_loot",
           "quality": 4,
           "weight": 3
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/currency/todecoins_emerald_bank_note_loot",
           "quality": 5,
           "weight": 2
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/collectible/seasonal/todecoins_collectible_coin_loot"
         },
         {
           "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "chance": 0.001,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "name": "todecoins:chests/currency/todecoins_lucky_coin_loot",
           "quality": 6
         }

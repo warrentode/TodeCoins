@@ -62,7 +62,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS)
                                         .setWeight(5).setQuality(4).when(DROPS_CURRENCY))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_DROPS)
-                                        .setWeight(4).setQuality(5).when(DROPS_CURRENCY))
+                                        .setWeight(4).setQuality(5).when(DROPS_CURRENCY).when(IN_NETHER))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_HALF_BANK_NOTE_DROPS)
                                         .setWeight(3).setQuality(5).when(DROPS_CURRENCY))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_DROPS)
@@ -133,9 +133,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_COPPER_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_COIN.get()).when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.8F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -154,9 +155,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_IRON_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.IRON_COIN.get()).when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.7F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -175,9 +177,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_GOLD_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_COIN.get()).when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.6F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -196,9 +199,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_NETHER_GOLD_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER).when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.5F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -217,10 +221,11 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_ENDONIAN_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
                                         .when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.4F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -241,9 +246,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get()).when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.3F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -262,9 +268,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_NETHERITE_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -283,9 +290,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_HALF_BANK_NOTE_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get()).when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.2F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -304,9 +312,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get()).when(DROPS_CURRENCY)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.01F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));
@@ -325,10 +334,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
         consumer.accept(ModBuiltInLootTables.TODECOINS_LUCKY_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get()).when(DROPS_CURRENCY)
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
-                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(LootItemRandomChanceCondition.randomChance(0.001F))
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));

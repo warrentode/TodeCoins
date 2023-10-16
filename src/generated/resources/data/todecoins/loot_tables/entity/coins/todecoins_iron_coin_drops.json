@@ -2,26 +2,30 @@
   "type": "minecraft:entity",
   "pools": [
     {
-        "bonus_rolls": 1.0,
-        "entries": [
+      "bonus_rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
             {
-                "type": "minecraft:item",
-                "conditions": [
-                    {
-                        "condition": "todecoins:entity_type_tag_condition",
-                        "tag": "forge:drops_currency"
-                    }
-                ],
-                "functions": [
-                    {
-                        "add": false,
-                        "count": {
-                            "type": "minecraft:uniform",
-                            "max": 1.0,
-                            "min": 0.0
-                        },
-                        "function": "minecraft:set_count"
-                    },
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drops_currency"
+            },
+            {
+              "chance": 0.7,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
             {
               "count": {
                 "type": "minecraft:uniform",
@@ -34,7 +38,11 @@
           "name": "todecoins:iron_coin"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 0.0
+      }
     }
   ]
 }

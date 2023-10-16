@@ -1,6 +1,6 @@
-// 1.19.2	2023-09-14T05:42:27.9792409	Global Loot Modifiers : todecoins
+// 1.19.2	2023-10-16T10:35:24.6308235	Global Loot Modifiers : todecoins
 c45af9213c3f4902ba20c08b558bfaa8f51267d3 data/forge/loot_modifiers/global_loot_modifiers.json
-f7069603a04057ade995a85f3680655d102508cb data/todecoins/loot_modifiers/add_four_leaf_clover_drops.json
+50191fd9145229de7d74ad0af34fd06849ca36a1 data/todecoins/loot_modifiers/add_four_leaf_clover_drops.json
 5f830314e46c9b85b05590df7ec9f32adf4835e3 data/todecoins/loot_modifiers/add_loot_boss_currency_drops.json
 147b27846171629d6c35a7d3026708f47757f71a data/todecoins/loot_modifiers/add_loot_chest_currency.json
 8f6ea57b4712ec06b723dd09c3ca79f76b215925 data/todecoins/loot_modifiers/add_loot_currency_drops.json

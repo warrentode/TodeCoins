@@ -99,6 +99,12 @@
             {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
             }
           ],
           "name": "todecoins:entity/coins/todecoins_netherite_coin_drops",
