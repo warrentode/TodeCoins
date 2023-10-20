@@ -1,26 +1,14 @@
-### 2023-09-28
+### 2023-10-20
 
-- [revert]:
-    - rolled back the build to version 1.5.6 to fix the creative menu search bar
+- collectible coins should now work properly if more than one charm slot has been enabled
+- Christmas coin now gives "walk on powdered snow" ability
+- Birthday coin now has Luck +1 attribute
 
-### 2023-09-23
+### 2023-10-16
 
-- [build]:
-    - updated to forge 43.3.0
-- [patch]:
-    - finally took care of the slightly wonky quickMoveStack method in the CoinPress, and added a script to get the
-      deobf jar I need for dependency use via JitPack
-- [test]:
-    - hoping to fix a crash dealing with living entity is null in the curios capabilities for the cat coins
-- [build]:
-    - updated to forge 43.3.0
+- re-balanced the injected currency loot tables
 
-### 2023-09-15
+### 2023-10-10
 
-- [feature]:
-    - updated Numismatist trades to include all currently added collectible coins
-
-### 2023-09-14
-
-- [fix]:
-    - mod actually connects the server now
+- the coins the Numismatist offers and requests in trades are completely randomized now
+- rebalanced the gift loot for Banker and Leprechaun
