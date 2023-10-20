@@ -877,7 +877,8 @@ public class Curios {
                 return stack.is(ModTags.Items.RABBIT_COIN_SET) || stack.is(ModTags.Items.FOX_COIN_SET)
                         || stack.is(ModTags.Items.ENDERMITE_COIN_SET) || stack.is(ModTags.Items.SILVERFISH_COIN_SET)
                         || stack.is(ModTags.Items.SHULKER_COIN_SET) || stack.is(ModTags.Items.VEX_COIN_SET)
-                        || stack.is(ModTags.Items.PENGUIN_COIN_SET) || stack.is(ModTags.Items.ICEOLOGER_COIN_SET);
+                        || stack.is(ModTags.Items.PENGUIN_COIN_SET) || stack.is(ModTags.Items.ICEOLOGER_COIN_SET)
+                        || stack.is(ModTags.Items.CHRISTMAS_COIN_SET);
             }
 
             @Nonnull
