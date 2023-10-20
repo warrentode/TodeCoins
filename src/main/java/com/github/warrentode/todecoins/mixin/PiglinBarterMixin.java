@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.mixin;
 
-import com.github.warrentode.todecoins.integration.Curios;
 import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
@@ -27,9 +26,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotResult;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import static net.minecraft.world.entity.monster.piglin.PiglinAi.*;
 
@@ -45,8 +47,27 @@ public abstract class PiglinBarterMixin {
     @Unique
     private static boolean todeCoins$isWearingZombiePiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
-            ItemStack stack = Curios.getCharmSlot(player);
-            return stack != null  && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+            ItemStack stack = null;
+
+            Optional<SlotResult> zombiePiglinCoin1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_ZOMBIFIED_PIGLIN_COIN.get());
+            Optional<SlotResult> zombiePiglinCoin2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_ZOMBIFIED_PIGLIN_COIN.get());
+            Optional<SlotResult> zombiePiglinCoin3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_ZOMBIFIED_PIGLIN_COIN.get());
+            Optional<SlotResult> zombiePiglinCoin4 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_ZOMBIFIED_PIGLIN_COIN.get());
+
+            if (zombiePiglinCoin1.isPresent()) {
+                stack = zombiePiglinCoin1.get().stack();
+            }
+            else if (zombiePiglinCoin2.isPresent()) {
+                stack = zombiePiglinCoin2.get().stack();
+            }
+            else if (zombiePiglinCoin3.isPresent()) {
+                stack = zombiePiglinCoin3.get().stack();
+            }
+            else if (zombiePiglinCoin4.isPresent()) {
+                stack = zombiePiglinCoin4.get().stack();
+            }
+
+            return stack != null && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
         }
         return false;
     }
@@ -54,7 +75,14 @@ public abstract class PiglinBarterMixin {
     @Unique
     private static boolean todeCoins$isWearingNetheritePiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
-            ItemStack stack = Curios.getCharmSlot(player);
+            ItemStack stack = null;
+
+            Optional<SlotResult> piglinCoin = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_PIGLIN_COIN.get());
+
+            if (piglinCoin.isPresent()) {
+                stack = piglinCoin.get().stack();
+            }
+
             return stack != null  && stack.is(ModItems.NETHERITE_PIGLIN_COIN.get());
         }
         return false;
@@ -62,7 +90,14 @@ public abstract class PiglinBarterMixin {
     @Unique
     private static boolean todeCoins$isWearingGoldPiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
-            ItemStack stack = Curios.getCharmSlot(player);
+            ItemStack stack = null;
+
+            Optional<SlotResult> piglinCoin = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_PIGLIN_COIN.get());
+
+            if (piglinCoin.isPresent()) {
+                stack = piglinCoin.get().stack();
+            }
+
             return stack != null  && stack.is(ModItems.GOLD_PIGLIN_COIN.get());
         }
         return false;
@@ -70,7 +105,14 @@ public abstract class PiglinBarterMixin {
     @Unique
     private static boolean todeCoins$isWearingIronPiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
-            ItemStack stack = Curios.getCharmSlot(player);
+            ItemStack stack = null;
+
+            Optional<SlotResult> piglinCoin = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_PIGLIN_COIN.get());
+
+            if (piglinCoin.isPresent()) {
+                stack = piglinCoin.get().stack();
+            }
+
             return stack != null  && stack.is(ModItems.IRON_PIGLIN_COIN.get());
         }
         return false;
@@ -78,7 +120,14 @@ public abstract class PiglinBarterMixin {
     @Unique
     private static boolean todeCoins$isWearingCopperPiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
-            ItemStack stack = Curios.getCharmSlot(player);
+            ItemStack stack = null;
+
+            Optional<SlotResult> piglinCoin = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_PIGLIN_COIN.get());
+
+            if (piglinCoin.isPresent()) {
+                stack = piglinCoin.get().stack();
+            }
+
             return stack != null  && stack.is(ModItems.COPPER_PIGLIN_COIN.get());
         }
         return false;

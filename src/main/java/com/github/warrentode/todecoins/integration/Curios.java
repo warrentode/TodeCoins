@@ -101,24 +101,6 @@ public class Curios {
         });
     }
 
-    /**
-     * Gets the stack in the Charm Slot
-     **/
-    public static ItemStack getCharmSlot(Player player) {
-        AtomicReference<ItemStack> charm = new AtomicReference<>(ItemStack.EMPTY);
-        LazyOptional<ICuriosItemHandler> optional = CuriosApi.getCuriosHelper().getCuriosHandler(player);
-        optional.ifPresent(itemHandler -> {
-            Optional<ICurioStacksHandler> stacksOptional = itemHandler.getStacksHandler(SlotTypePreset.CHARM.getIdentifier());
-            stacksOptional.ifPresent(stacksHandler -> {
-                ItemStack stack = stacksHandler.getStacks().getStackInSlot(0);
-                if (!stack.isEmpty()) {
-                    charm.set(stack);
-                }
-            });
-        });
-        return charm.get();
-    }
-
     public static ICapabilityProvider createLuckyCoinCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override

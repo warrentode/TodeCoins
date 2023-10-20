@@ -81,7 +81,6 @@ public class TodeCoins {
     public static ItemStack setCurioSlots(Player player) {
         AtomicReference<ItemStack> slot = new AtomicReference<>(ItemStack.EMPTY);
         if (ModList.get().isLoaded("curios")) {
-            slot.set(Curios.getCharmSlot(player));
             slot.set(Curios.getBeltSlot(player));
         }
         return slot.get();

@@ -1,6 +1,6 @@
 package com.github.warrentode.todecoins.entity.ai.goal;
 
-import com.github.warrentode.todecoins.integration.Curios;
+import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -16,9 +16,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fml.ModList;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotResult;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 public class AvoidPlayerCatCoinGoal<T extends LivingEntity> extends Goal {
@@ -71,10 +74,45 @@ public class AvoidPlayerCatCoinGoal<T extends LivingEntity> extends Goal {
 
     private static boolean isWearingCatCoin(ServerPlayer player) {
         if (player != null) {
-            ItemStack stack = Curios.getCharmSlot(player);
+            ItemStack catCharm = null;
 
-            return ModList.get().isLoaded("curios") && (stack != null && stack.is(ModTags.Items.CAT_COIN_SET)
-                    || stack != null && stack.is(ModTags.Items.OCELOT_COIN_SET));
+            Optional<SlotResult> catCoin1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_CAT_COIN.get());
+            Optional<SlotResult> catCoin2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_CAT_COIN.get());
+            Optional<SlotResult> catCoin3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_CAT_COIN.get());
+            Optional<SlotResult> catCoin4 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_CAT_COIN.get());
+
+            Optional<SlotResult> ocelotCoin1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_OCELOT_COIN.get());
+            Optional<SlotResult> ocelotCoin2 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.IRON_OCELOT_COIN.get());
+            Optional<SlotResult> ocelotCoin3 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.GOLD_OCELOT_COIN.get());
+            Optional<SlotResult> ocelotCoin4 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.NETHERITE_OCELOT_COIN.get());
+
+            if (catCoin1.isPresent()) {
+                catCharm = catCoin1.get().stack();
+            }
+            else if (catCoin2.isPresent()) {
+                catCharm = catCoin2.get().stack();
+            }
+            else if (catCoin3.isPresent()) {
+                catCharm = catCoin3.get().stack();
+            }
+            else if (catCoin4.isPresent()) {
+                catCharm = catCoin4.get().stack();
+            }
+            else if (ocelotCoin1.isPresent()) {
+                catCharm = ocelotCoin1.get().stack();
+            }
+            else if (ocelotCoin2.isPresent()) {
+                catCharm = ocelotCoin2.get().stack();
+            }
+            else if (ocelotCoin3.isPresent()) {
+                catCharm = ocelotCoin3.get().stack();
+            }
+            else if (ocelotCoin4.isPresent()) {
+                catCharm = ocelotCoin4.get().stack();
+            }
+
+            return ModList.get().isLoaded("curios") && (catCharm != null && catCharm.is(ModTags.Items.CAT_COIN_SET)
+                    || catCharm != null && catCharm.is(ModTags.Items.OCELOT_COIN_SET));
         }
         return false;
     }

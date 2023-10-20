@@ -65,7 +65,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation COPPER_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/copper_piglin_coin_barter_loot");
     public static final ResourceLocation ZOMBIE_PIGLIN_COIN_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/zombie_piglin_barter_loot");
     public static final ResourceLocation PIGLIN_EVENT_BARTER_LOOT = register(MODID + ":" + "gameplay/bartering/piglin_event_barter_loot");
-    // injected currency entity drop loot table
+    // injected currency entity drop loot table - master table
     public static final ResourceLocation TODECOINS_CURRENCY_DROPS = register(MODID + ":" + "entity/todecoins_currency_drops");
     // base currency entity drop loot tables - added to the master table
     public static final ResourceLocation TODECOINS_COPPER_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_copper_coin_drops");
@@ -78,7 +78,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_EMERALD_HALF_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_emerald_half_bank_note_drops");
     public static final ResourceLocation TODECOINS_EMERALD_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_emerald_bank_note_drops");
     public static final ResourceLocation TODECOINS_LUCKY_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_lucky_coin_drops");
-    // injected boss specific currency entity drop loot table
+    // injected boss specific currency entity drop loot table - master table
     public static final ResourceLocation TODECOINS_BOSS_CURRENCY_DROPS = register(MODID + ":" + "entity/todecoins_boss_currency_drops");
     // base boss specific currency entity drop loot tables - added to the master table
     public static final ResourceLocation TODECOINS_BOSS_COPPER_COIN_DROPS = register(MODID + ":" + "entity/coins/todecoins_boss_copper_coin_drops");
