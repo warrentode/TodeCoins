@@ -540,7 +540,7 @@ public class Curios {
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
                     if (stack.is(ModTags.Items.BAT_COIN_SET) || stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 0,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2000, 0,
                                 false, false, true));
                     }
                 }
