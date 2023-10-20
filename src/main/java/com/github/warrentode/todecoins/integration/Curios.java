@@ -2,6 +2,7 @@ package com.github.warrentode.todecoins.integration;
 
 import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.attribute.*;
+import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.FelineCoinItem;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.github.warrentode.todecoins.util.tags.ModTags;
@@ -111,9 +112,11 @@ public class Curios {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.LUCK,
-                        new AttributeModifier(uuid, TodeCoins.MODID + ":luck_bonus", 1,
-                                AttributeModifier.Operation.ADDITION));
+                if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) || stack.is(ModItems.LUCKY_COIN.get())) {
+                    attribute.put(Attributes.LUCK,
+                            new AttributeModifier(uuid, TodeCoins.MODID + ":luck_bonus", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
                 return attribute;
             }
 
