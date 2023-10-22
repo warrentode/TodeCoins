@@ -1,4 +1,9 @@
-### 2023-10-20
+### 2023-10-20 - 1.6.17.beta
+
+- bonus rolls for all collectible coin loot tables have been set to 0
+- bonus rolls have been set to 0 and looting effects on all coins have been removed on non-boss entity loot tables
+
+### 2023-10-20 - 1.6.16.beta
 
 - collectible coins should now work properly if more than one charm slot has been enabled
 - Christmas coin now gives "walk on powdered snow" ability
