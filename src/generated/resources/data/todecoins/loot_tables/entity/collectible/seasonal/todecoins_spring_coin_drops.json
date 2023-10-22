@@ -27,14 +27,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_allay_copper",
@@ -63,14 +55,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_axolotl_copper",
@@ -99,14 +83,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_bat_copper",
@@ -135,14 +111,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_blaze_copper",
@@ -171,14 +139,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_bee_copper",
@@ -207,14 +167,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_camel_copper",
@@ -243,14 +195,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cat_copper",
@@ -279,14 +223,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cave_spider_copper",
@@ -315,14 +251,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_chicken_copper",
@@ -351,14 +279,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cod_copper",
@@ -387,14 +307,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cow_copper",
@@ -423,14 +335,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_enderman_copper",
@@ -459,14 +363,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_moobloom_copper",
@@ -495,14 +391,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mooshroom_copper",
@@ -531,14 +419,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ocelot_copper",
@@ -567,14 +447,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_copper",
@@ -603,14 +475,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pufferfish_copper",
@@ -639,14 +503,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_salmon_copper",
@@ -675,14 +531,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tropical_fish_copper",
@@ -711,14 +559,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_horse_copper",
@@ -747,14 +587,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_donkey_copper",
@@ -783,14 +615,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mule_copper",
@@ -819,14 +643,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_skeleton_horse_copper",
@@ -855,14 +671,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_horse_copper",
@@ -891,14 +699,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_fox_copper",
@@ -927,14 +727,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_frog_copper",
@@ -963,14 +755,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_glow_squid_copper",
@@ -999,14 +783,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_squid_copper",
@@ -1035,14 +811,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_parrot_copper",
@@ -1071,14 +839,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_hoglin_copper",
@@ -1107,14 +867,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pig_copper",
@@ -1143,14 +895,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_rabbit_copper",
@@ -1179,14 +923,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sheep_copper",
@@ -1215,14 +951,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_numismatist_copper",
@@ -1251,14 +979,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sniffer_copper",
@@ -1287,14 +1007,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_snow_golem_copper",
@@ -1323,14 +1035,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_strider_copper",
@@ -1359,14 +1063,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sniffer_copper",
@@ -1395,14 +1091,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tadpole_copper",
@@ -1431,14 +1119,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_turtle_copper",
@@ -1467,14 +1147,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_villager_copper",
@@ -1503,14 +1175,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wandering_trader_copper",
@@ -1539,14 +1203,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_dolphin_copper",
@@ -1575,14 +1231,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_goat_copper",
@@ -1611,14 +1259,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_iron_golem_copper",
@@ -1647,14 +1287,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_llama_copper",
@@ -1683,14 +1315,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_trader_llama_copper",
@@ -1719,14 +1343,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_panda_copper",
@@ -1755,14 +1371,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_polar_bear_copper",
@@ -1791,14 +1399,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_spider_copper",
@@ -1827,14 +1427,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wolf_copper",
@@ -1863,14 +1455,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombified_piglin_copper",
@@ -1899,14 +1483,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_creeper_copper",
@@ -1935,14 +1511,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_drowned_copper",
@@ -1971,14 +1539,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_elder_guardian_copper",
@@ -2007,14 +1567,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_guardian_copper",
@@ -2043,14 +1595,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_endermite_copper",
@@ -2079,14 +1623,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_evoker_copper",
@@ -2115,14 +1651,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ghast_copper",
@@ -2151,14 +1679,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_husk_copper",
@@ -2187,14 +1707,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_magma_cube_copper",
@@ -2223,14 +1735,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_slime_copper",
@@ -2259,14 +1763,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_phantom_copper",
@@ -2295,14 +1791,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_brute_copper",
@@ -2331,14 +1819,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pillager_copper",
@@ -2367,14 +1847,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ravager_copper",
@@ -2403,14 +1875,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_shulker_copper",
@@ -2439,14 +1903,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_silverfish_copper",
@@ -2475,14 +1931,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_skeleton_copper",
@@ -2511,14 +1959,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_stray_copper",
@@ -2547,14 +1987,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_vex_copper",
@@ -2583,14 +2015,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_vindicator_copper",
@@ -2619,14 +2043,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_warden_copper",
@@ -2655,14 +2071,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_witch_copper",
@@ -2691,14 +2099,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wither_skeleton_copper",
@@ -2727,14 +2127,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wither_copper",
@@ -2763,14 +2155,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zoglin_copper",
@@ -2799,14 +2183,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_copper",
@@ -2835,14 +2211,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_villager_copper",
@@ -2871,14 +2239,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ender_dragon_copper",
@@ -2907,14 +2267,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_giant_copper",
@@ -2943,14 +2295,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_illusioner_copper",
@@ -2979,14 +2323,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_copper_golem_copper",
@@ -3015,14 +2351,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_glare_copper",
@@ -3051,14 +2379,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_iceologer_copper",
@@ -3087,14 +2407,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mauler_copper",
@@ -3123,14 +2435,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wildfire_copper",
@@ -3159,14 +2463,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tuff_golem_copper",
@@ -3195,14 +2491,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_crab_copper",
@@ -3231,14 +2519,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_squirrel_copper",
@@ -3267,14 +2547,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_penguin_copper",
@@ -3303,14 +2575,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_guard_copper",
@@ -3339,14 +2603,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_merchant_copper",

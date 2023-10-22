@@ -27,14 +27,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_allay_netherite",
@@ -63,14 +55,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_axolotl_netherite",
@@ -99,14 +83,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_bat_netherite",
@@ -135,14 +111,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_blaze_netherite",
@@ -171,14 +139,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_bee_netherite",
@@ -207,14 +167,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_camel_netherite",
@@ -243,14 +195,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cat_netherite",
@@ -279,14 +223,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cave_spider_netherite",
@@ -315,14 +251,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_chicken_netherite",
@@ -351,14 +279,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cod_netherite",
@@ -387,14 +307,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cow_netherite",
@@ -423,14 +335,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_enderman_netherite",
@@ -459,14 +363,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_moobloom_netherite",
@@ -495,14 +391,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mooshroom_netherite",
@@ -531,14 +419,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ocelot_netherite",
@@ -567,14 +447,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_netherite",
@@ -603,14 +475,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pufferfish_netherite",
@@ -639,14 +503,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_salmon_netherite",
@@ -675,14 +531,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tropical_fish_netherite",
@@ -711,14 +559,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_horse_netherite",
@@ -747,14 +587,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_donkey_netherite",
@@ -783,14 +615,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mule_netherite",
@@ -819,14 +643,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_skeleton_horse_netherite",
@@ -855,14 +671,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_horse_netherite",
@@ -891,14 +699,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_fox_netherite",
@@ -927,14 +727,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_frog_netherite",
@@ -963,14 +755,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_glow_squid_netherite",
@@ -999,14 +783,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_squid_netherite",
@@ -1035,14 +811,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_parrot_netherite",
@@ -1071,14 +839,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_hoglin_netherite",
@@ -1107,14 +867,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pig_netherite",
@@ -1143,14 +895,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_rabbit_netherite",
@@ -1179,14 +923,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sheep_netherite",
@@ -1215,14 +951,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_numismatist_netherite",
@@ -1251,14 +979,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sniffer_netherite",
@@ -1287,14 +1007,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_snow_golem_netherite",
@@ -1323,14 +1035,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_strider_netherite",
@@ -1359,14 +1063,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sniffer_netherite",
@@ -1395,14 +1091,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tadpole_netherite",
@@ -1431,14 +1119,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_turtle_netherite",
@@ -1467,14 +1147,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_villager_netherite",
@@ -1503,14 +1175,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wandering_trader_netherite",
@@ -1539,14 +1203,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_dolphin_netherite",
@@ -1575,14 +1231,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_goat_netherite",
@@ -1611,14 +1259,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_iron_golem_netherite",
@@ -1647,14 +1287,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_llama_netherite",
@@ -1683,14 +1315,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_trader_llama_netherite",
@@ -1719,14 +1343,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_panda_netherite",
@@ -1755,14 +1371,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_polar_bear_netherite",
@@ -1791,14 +1399,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_spider_netherite",
@@ -1827,14 +1427,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wolf_netherite",
@@ -1863,14 +1455,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombified_piglin_netherite",
@@ -1899,14 +1483,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_creeper_netherite",
@@ -1935,14 +1511,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_drowned_netherite",
@@ -1971,14 +1539,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_elder_guardian_netherite",
@@ -2007,14 +1567,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_guardian_netherite",
@@ -2043,14 +1595,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_endermite_netherite",
@@ -2079,14 +1623,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_evoker_netherite",
@@ -2115,14 +1651,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ghast_netherite",
@@ -2151,14 +1679,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_husk_netherite",
@@ -2187,14 +1707,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_magma_cube_netherite",
@@ -2223,14 +1735,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_slime_netherite",
@@ -2259,14 +1763,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_phantom_netherite",
@@ -2295,14 +1791,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_brute_netherite",
@@ -2331,14 +1819,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pillager_netherite",
@@ -2367,14 +1847,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ravager_netherite",
@@ -2403,14 +1875,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_shulker_netherite",
@@ -2439,14 +1903,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_silverfish_netherite",
@@ -2475,14 +1931,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_skeleton_netherite",
@@ -2511,14 +1959,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_stray_netherite",
@@ -2547,14 +1987,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_vex_netherite",
@@ -2583,14 +2015,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_vindicator_netherite",
@@ -2619,14 +2043,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_warden_netherite",
@@ -2655,14 +2071,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_witch_netherite",
@@ -2691,14 +2099,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wither_skeleton_netherite",
@@ -2727,14 +2127,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wither_netherite",
@@ -2763,14 +2155,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zoglin_netherite",
@@ -2799,14 +2183,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_netherite",
@@ -2835,14 +2211,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_villager_netherite",
@@ -2871,14 +2239,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ender_dragon_netherite",
@@ -2907,14 +2267,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_giant_netherite",
@@ -2943,14 +2295,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_illusioner_netherite",
@@ -2979,14 +2323,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_copper_golem_netherite",
@@ -3015,14 +2351,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_glare_netherite",
@@ -3051,14 +2379,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_iceologer_netherite",
@@ -3087,14 +2407,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mauler_netherite",
@@ -3123,14 +2435,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wildfire_netherite",
@@ -3159,14 +2463,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tuff_golem_netherite",
@@ -3195,14 +2491,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_crab_netherite",
@@ -3231,14 +2519,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_squirrel_netherite",
@@ -3267,14 +2547,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_penguin_netherite",
@@ -3303,14 +2575,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_guard_netherite",
@@ -3339,14 +2603,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_merchant_netherite",

@@ -27,14 +27,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_allay_gold",
@@ -63,14 +55,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_axolotl_gold",
@@ -99,14 +83,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_bat_gold",
@@ -135,14 +111,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_blaze_gold",
@@ -171,14 +139,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_bee_gold",
@@ -207,14 +167,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_camel_gold",
@@ -243,14 +195,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cat_gold",
@@ -279,14 +223,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cave_spider_gold",
@@ -315,14 +251,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_chicken_gold",
@@ -351,14 +279,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cod_gold",
@@ -387,14 +307,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_cow_gold",
@@ -423,14 +335,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_enderman_gold",
@@ -459,14 +363,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_moobloom_gold",
@@ -495,14 +391,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mooshroom_gold",
@@ -531,14 +419,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ocelot_gold",
@@ -567,14 +447,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_gold",
@@ -603,14 +475,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pufferfish_gold",
@@ -639,14 +503,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_salmon_gold",
@@ -675,14 +531,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tropical_fish_gold",
@@ -711,14 +559,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_horse_gold",
@@ -747,14 +587,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_donkey_gold",
@@ -783,14 +615,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mule_gold",
@@ -819,14 +643,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_skeleton_horse_gold",
@@ -855,14 +671,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_horse_gold",
@@ -891,14 +699,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_fox_gold",
@@ -927,14 +727,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_frog_gold",
@@ -963,14 +755,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_glow_squid_gold",
@@ -999,14 +783,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_squid_gold",
@@ -1035,14 +811,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_parrot_gold",
@@ -1071,14 +839,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_hoglin_gold",
@@ -1107,14 +867,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pig_gold",
@@ -1143,14 +895,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_rabbit_gold",
@@ -1179,14 +923,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sheep_gold",
@@ -1215,14 +951,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_numismatist_gold",
@@ -1251,14 +979,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sniffer_gold",
@@ -1287,14 +1007,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_snow_golem_gold",
@@ -1323,14 +1035,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_strider_gold",
@@ -1359,14 +1063,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_sniffer_gold",
@@ -1395,14 +1091,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tadpole_gold",
@@ -1431,14 +1119,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_turtle_gold",
@@ -1467,14 +1147,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_villager_gold",
@@ -1503,14 +1175,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wandering_trader_gold",
@@ -1539,14 +1203,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_dolphin_gold",
@@ -1575,14 +1231,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_goat_gold",
@@ -1611,14 +1259,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_iron_golem_gold",
@@ -1647,14 +1287,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_llama_gold",
@@ -1683,14 +1315,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_trader_llama_gold",
@@ -1719,14 +1343,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_panda_gold",
@@ -1755,14 +1371,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_polar_bear_gold",
@@ -1791,14 +1399,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_spider_gold",
@@ -1827,14 +1427,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wolf_gold",
@@ -1863,14 +1455,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombified_piglin_gold",
@@ -1899,14 +1483,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_creeper_gold",
@@ -1935,14 +1511,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_drowned_gold",
@@ -1971,14 +1539,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_elder_guardian_gold",
@@ -2007,14 +1567,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_guardian_gold",
@@ -2043,14 +1595,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_endermite_gold",
@@ -2079,14 +1623,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_evoker_gold",
@@ -2115,14 +1651,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ghast_gold",
@@ -2151,14 +1679,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_husk_gold",
@@ -2187,14 +1707,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_magma_cube_gold",
@@ -2223,14 +1735,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_slime_gold",
@@ -2259,14 +1763,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_phantom_gold",
@@ -2295,14 +1791,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_brute_gold",
@@ -2331,14 +1819,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_pillager_gold",
@@ -2367,14 +1847,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ravager_gold",
@@ -2403,14 +1875,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_shulker_gold",
@@ -2439,14 +1903,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_silverfish_gold",
@@ -2475,14 +1931,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_skeleton_gold",
@@ -2511,14 +1959,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_stray_gold",
@@ -2547,14 +1987,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_vex_gold",
@@ -2583,14 +2015,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_vindicator_gold",
@@ -2619,14 +2043,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_warden_gold",
@@ -2655,14 +2071,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_witch_gold",
@@ -2691,14 +2099,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wither_skeleton_gold",
@@ -2727,14 +2127,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wither_gold",
@@ -2763,14 +2155,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zoglin_gold",
@@ -2799,14 +2183,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_gold",
@@ -2835,14 +2211,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_zombie_villager_gold",
@@ -2871,14 +2239,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_ender_dragon_gold",
@@ -2907,14 +2267,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_giant_gold",
@@ -2943,14 +2295,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_illusioner_gold",
@@ -2979,14 +2323,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_copper_golem_gold",
@@ -3015,14 +2351,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_glare_gold",
@@ -3051,14 +2379,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_iceologer_gold",
@@ -3087,14 +2407,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_mauler_gold",
@@ -3123,14 +2435,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_wildfire_gold",
@@ -3159,14 +2463,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_tuff_golem_gold",
@@ -3195,14 +2491,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_crab_gold",
@@ -3231,14 +2519,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_squirrel_gold",
@@ -3267,14 +2547,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_penguin_gold",
@@ -3303,14 +2575,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_guard_gold",
@@ -3339,14 +2603,6 @@
               "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:looting_enchant"
             }
           ],
           "name": "todecoins:collectible_coin_piglin_merchant_gold",
