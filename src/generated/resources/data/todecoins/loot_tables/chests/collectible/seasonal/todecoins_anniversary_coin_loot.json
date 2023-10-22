@@ -2,7 +2,7 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "bonus_rolls": 1.0,
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "todecoins:anniversary_condition"

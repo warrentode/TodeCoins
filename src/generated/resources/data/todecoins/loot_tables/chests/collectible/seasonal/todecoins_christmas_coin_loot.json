@@ -1,20 +1,20 @@
 {
-    "type": "minecraft:chest",
-    "pools": [
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
         {
-            "bonus_rolls": 1.0,
-            "conditions": [
-                {
-                    "condition": "todecoins:christmas_condition"
-                }
-            ],
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "todecoins:collectible_coin_christmas_2023"
-                }
-            ],
-            "rolls": 1.0
+          "condition": "todecoins:christmas_condition"
         }
-    ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_christmas_2023"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
 }
