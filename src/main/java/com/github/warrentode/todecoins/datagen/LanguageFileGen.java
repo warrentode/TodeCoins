@@ -635,6 +635,46 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.coin_item.hover", "Since ancient times, coins were either stamped or forged into molds.");
         add("tooltips.coin_stamp.hover", "This is for stamping currency in a press.");
 
+        // coin effects
+        add("tooltips.coin_effects", "Coin Effects:");
+
+        add("tooltips.fortune_1", "Fortune I");
+        add("tooltips.looting_1", "Looting I");
+
+        add("tooltips.night_vision", "Night Vision");
+        add("tooltips.water_breathing", "Water Breathing");
+        add("tooltips.saturation", "Increases Saturation");
+        add("tooltips.fire_resist", "Increases Fire Resistance");
+        add("tooltips.damage_resist", "Increases Damage Resistance");
+        add("tooltips.dig_speed", "Increases Dig Speed");
+        add("tooltips.levitation", "Levitation");
+        add("tooltips.jump_boost", "Jump Boost");
+        add("tooltips.slow_fall", "Slow Falling");
+        add("tooltips.health_boost", "Health Boost");
+        add("tooltips.dolphin_grace", "Dolphin's Grace");
+        add("tooltips.regen", "Regeneration");
+
+        add("tooltips.snow_walk", "Can Walk on Powdered Snow");
+        add("tooltips.berry_walk", "Can Walk in Berry Bushes Unharmed");
+        add("tooltips.piglin_neutral", "Makes Piglins Neutral");
+        add("tooltips.enderman_neutral", "Makes Endermen Neutral");
+
+        add("tooltips.undying", "Functions as a Totem of Undying while Equipped or in Inventory");
+        add("tooltips.halloween_hero", "Hero of the Village during Halloween Event");
+        add("tooltips.christmas_hero", "Hero of the Village during Christmas Event");
+        add("tooltips.birthday_hero", "Hero of the Village during Birthday Event");
+        add("tooltips.fishing_loot", "Unlocks Additional Sub Loot Tables for Fishing");
+        add("tooltips.night_invisibility", "Invisibility at Night");
+        add("tooltips.night_movement", "Increased Movement Speed at Night");
+        add("tooltips.cat_intimidation", "Intimidates Creepers and Phantoms");
+        add("tooltips.undead_damage", "Increased Damage vs. Undead");
+        add("tooltips.illager_damage", "Increased Damage vs. Illagers");
+        add("tooltips.arthropod_damage", "Increased Damage vs. Arthropods");
+        add("tooltips.slow_attack", "Attacks Inflict Slowness");
+        add("tooltips.poison_attack", "Attacks Inflict Poison");
+        add("tooltips.wither_attack", "Attacks Inflict Wither");
+        add("tooltips.burning_attack", "Attacks Inflict Burning");
+
         // entity collectible coin bases
         add("tooltips.collectible_aerial_coin.hover", "One of Twenty Aerial Seasonal Coins");
         add("tooltips.collectible_amphibian_coin.hover", "One of Twenty-Four Amphibian Seasonal Coins");

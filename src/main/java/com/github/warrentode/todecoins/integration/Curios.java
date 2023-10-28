@@ -2,7 +2,6 @@ package com.github.warrentode.todecoins.integration;
 
 import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.attribute.*;
-import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.FelineCoinItem;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.github.warrentode.todecoins.util.tags.ModTags;
@@ -23,7 +22,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fml.ModList;
@@ -36,7 +34,6 @@ import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
 import top.theillusivec4.curios.common.capability.CurioItemCapability;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
@@ -58,9 +55,6 @@ public class Curios {
     // TODO look into increase buff duration for Witch coin
     // TODO look into giving immunity to poison for Cave Spider
 
-    /**
-     * Gets the stack in the Belt Slot
-     **/
     public static ItemStack getBeltSlot(Player player) {
         AtomicReference<ItemStack> belt = new AtomicReference<>(ItemStack.EMPTY);
         LazyOptional<ICuriosItemHandler> optional = CuriosApi.getCuriosHelper().getCuriosHandler(player);
@@ -75,7 +69,6 @@ public class Curios {
         });
         return belt.get();
     }
-
     public static ICapabilityProvider createBeltSlotProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
@@ -91,141 +84,6 @@ public class Curios {
 
             @Override
             public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
-    public static ICapabilityProvider createLuckyCoinCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Override
-            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
-                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) || stack.is(ModItems.LUCKY_COIN.get())) {
-                    attribute.put(Attributes.LUCK,
-                            new AttributeModifier(uuid, TodeCoins.MODID + ":luck_bonus", 1,
-                                    AttributeModifier.Operation.ADDITION));
-                }
-                return attribute;
-            }
-
-            @Override
-            public int getFortuneLevel(SlotContext slotContext, @Nullable LootContext lootContext) {
-                return 1;
-            }
-
-            @Override
-            public int getLootingLevel(SlotContext slotContext, DamageSource source, LivingEntity target, int baseLooting) {
-                return 1;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 1.5F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-        });
-    }
-
-    public static ICapabilityProvider createCHRCharmProvider(ItemStack stack) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Override
-            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
-                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                if (stack.is(ModTags.Items.HERO_COIN_SET)) {
-                    attribute.put(ModAttributes.CHARISMA.get(),
-                            new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 4,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
-                    attribute.put(ModAttributes.CHARISMA.get(),
-                            new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 1,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
-                    attribute.put(ModAttributes.CHARISMA.get(),
-                            new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 8,
-                                    AttributeModifier.Operation.ADDITION));
-                    return attribute;
-                }
-                return attribute;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
-            }
-
-            @Override
-            public void onEquip(SlotContext slotContext, ItemStack prevStack) {
-                ICurio.super.onEquip(slotContext, prevStack);
-                if (stack.is(ModTags.Items.HERO_COIN_SET)) {
-                    PlayerCharisma.addCharisma(4);
-                }
-                else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
-                    PlayerCharisma.addCharisma(8);
-                }
-                else if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
-                    PlayerCharisma.addCharisma(1);
-                }
-            }
-
-            @Override
-            public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
-                ICurio.super.onUnequip(slotContext, prevStack);
-                if (stack.is(ModTags.Items.HERO_COIN_SET)) {
-                    PlayerCharisma.subtractCharisma(4);
-                }
-                else if (stack.is(ModTags.Items.PATRON_COIN_SET)) {
-                    PlayerCharisma.subtractCharisma(8);
-                }
-                else if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
-                    PlayerCharisma.subtractCharisma(1);
-                }
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
                 return true;
             }
 
@@ -539,7 +397,7 @@ public class Curios {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (stack.is(ModTags.Items.BAT_COIN_SET) || stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
+                    if (stack.is(ModTags.Items.BAT_COIN_SET)) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2000, 0,
                                 false, false, true));
                     }
@@ -550,9 +408,6 @@ public class Curios {
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 LivingEntity livingEntity = slotContext.entity();
                 if (livingEntity != null && stack.is(ModTags.Items.BAT_COIN_SET)) {
-                    livingEntity.removeEffect(MobEffects.NIGHT_VISION);
-                }
-                if (livingEntity != null && stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.NIGHT_VISION);
                 }
             }
@@ -581,11 +436,27 @@ public class Curios {
         });
     }
 
-    public static ICapabilityProvider createGiftingCharmProvider(ItemStack stack) {
+    public static ICapabilityProvider createHolidayCoinCharmProvider(ItemStack stack) {
         return CurioItemCapability.createProvider(new ICurio() {
             @Override
             public ItemStack getStack() {
                 return stack;
+            }
+
+            @Override
+            public boolean canWalkOnPowderedSnow(SlotContext slotContext) {
+                return stack.is(ModTags.Items.CHRISTMAS_COIN_SET);
+            }
+
+            @Override
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                if (stack.is(ModTags.Items.BIRTHDAY_COIN_SET)) {
+                    attribute.put(Attributes.LUCK,
+                            new AttributeModifier(uuid, TodeCoins.MODID + ":luck_bonus", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                return attribute;
             }
 
             @Override
@@ -597,6 +468,9 @@ public class Curios {
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
 
                     if (stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2000, 0,
+                                false, false, true));
+
                         if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isHalloween(serverLevel)) {
                             livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                     false, false, true));
@@ -643,10 +517,12 @@ public class Curios {
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 LivingEntity livingEntity = slotContext.entity();
-                if (livingEntity != null
-                        && (stack.is(ModTags.Items.HALLOWEEN_COIN_SET)
-                        || stack.is(ModTags.Items.BIRTHDAY_COIN_SET)
-                        || stack.is(ModTags.Items.CHRISTMAS_COIN_SET))) {
+
+                if (livingEntity != null && stack.is(ModTags.Items.HALLOWEEN_COIN_SET)) {
+                    livingEntity.removeEffect(MobEffects.NIGHT_VISION);
+                    livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                }
+                if (livingEntity != null && (stack.is(ModTags.Items.BIRTHDAY_COIN_SET) || stack.is(ModTags.Items.CHRISTMAS_COIN_SET))) {
                     livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
                 }
             }

@@ -4,7 +4,7 @@ import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.block.custom.CoinPressBlock;
 import com.github.warrentode.todecoins.block.custom.PotOfGoldBlock;
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.customtabs.ModCreativeModeTabs;
+import com.github.warrentode.todecoins.util.customtabs.ModCreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -27,47 +27,47 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> COPPER_COIN_BAG = registerBlock("copper_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> IRON_COIN_BAG = registerBlock("iron_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> GOLD_COIN_BAG = registerBlock("gold_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> NETHERITE_COIN_BAG = registerBlock("netherite_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> NETHER_GOLD_COIN_BAG = registerBlock("nether_gold_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> ENDONIAN_COIN_BAG = registerBlock("endonian_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> LUCKY_COIN_BAG = registerBlock("lucky_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> EMERALD_QUARTER_BANK_NOTE_BAG = registerBlock("emerald_quarter_bank_note_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> EMERALD_HALF_BANK_NOTE_BAG = registerBlock("emerald_half_bank_note_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> EMERALD_BANK_NOTE_BAG = registerBlock("emerald_bank_note_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.DECORATION).sound(SoundType.WOOL).strength(2f)),
-            ModCreativeModeTabs.TODECOINSTAB);
+            ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> ENDONIAN_BLOCK = registerBlock("endonian_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.CHAIN).strength(0.4F)
-                    .sound(SoundType.WOOD).noOcclusion()), ModCreativeModeTabs.TODECOINSTAB);
+                    .sound(SoundType.WOOD).noOcclusion()), ModCreativeModeTab.TODECOINSTAB);
 
     public static final RegistryObject<Block> POT_OF_GOLD = registerBlock("pot_of_gold",
             () -> new PotOfGoldBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(8f)
-                    .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTabs.TODECOINSTAB);
+                    .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.TODECOINSTAB);
     public static final RegistryObject<Block> COINPRESSBLOCK = registerBlock("coin_press",
             () -> new CoinPressBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.ANVIL).strength(8f)
-                    .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTabs.TODECOINSTAB);
+                    .requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.TODECOINSTAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, @SuppressWarnings("SameParameterValue") CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

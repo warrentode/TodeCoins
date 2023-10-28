@@ -56,18 +56,18 @@ public class SereneSeasonsCompat {
             Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
 
             // holidays
-            if (subSeason == Season.SubSeason.MID_AUTUMN || tropicalSeason == Season.TropicalSeason.LATE_DRY) {
+            if (subSeason == Season.SubSeason.MID_AUTUMN) {
                 return HALLOWEEN;
             }
-            if (subSeason == Season.SubSeason.EARLY_WINTER || tropicalSeason == Season.TropicalSeason.EARLY_WET) {
+            if (subSeason == Season.SubSeason.EARLY_WINTER) {
                 return CHRISTMAS;
             }
 
             // yearly built-in events
-            if (subSeason == Season.SubSeason.MID_WINTER || tropicalSeason == Season.TropicalSeason.MID_WET) {
+            if (subSeason == Season.SubSeason.MID_WINTER) {
                 return BIRTHDAY;
             }
-            if (subSeason == Season.SubSeason.LATE_WINTER || tropicalSeason == Season.TropicalSeason.LATE_WET) {
+            if (subSeason == Season.SubSeason.LATE_WINTER) {
                 return PATREON_ANNIVERSARY;
             }
 
