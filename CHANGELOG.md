@@ -4,6 +4,11 @@
   applied
   - please back up your worlds before updating
 - added tooltips for the collectible coin and candy coin effects
+- added a server token coin for server admins to add and use however way they'd like
+  - not otherwise available in gameplay
+  - my thought behind this was more along the lines of a simple universal reward coin that could be exchanged for other
+    currency or items
+    - quest rewards, login rewards, server prizes, etc
 
 ### 2023-10-20 - 1.6.17.beta
 
