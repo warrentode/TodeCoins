@@ -547,6 +547,7 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModItems.ENDONIAN_COIN.get(), "Endonian Coin");
         add(ModItems.LUCKY_COIN.get(), "Lucky Coin");
         add(ModItems.NETHER_GOLD_COIN.get(), "Nether Gold Coin");
+        add(ModItems.SERVER_TOKEN_COIN.get(), "Server Token Coin");
         add(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), "Emerald Quarter Bank Note");
         add(ModItems.EMERALD_HALF_BANK_NOTE.get(), "Emerald Half Bank Note");
         add(ModItems.EMERALD_BANK_NOTE.get(), "Emerald Bank Note");
