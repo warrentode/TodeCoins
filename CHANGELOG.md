@@ -3,7 +3,7 @@
 - BREAKING CHANGE: re-organized how the coin effects are coded to (hopefully) ensure all intended effects are actually
   applied
   - please back up your worlds before updating
-- added tooltips for coin effects
+- added tooltips for the collectible coin and candy coin effects
 
 ### 2023-10-20 - 1.6.17.beta
 
