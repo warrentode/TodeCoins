@@ -1,3 +1,10 @@
+### 2023-10-57 - 1.6.18.beta
+
+- BREAKING CHANGE: re-organized how the coin effects are coded to (hopefully) ensure all intended effects are actually
+  applied
+  - please back up your worlds before updating
+- added tooltips for coin effects
+
 ### 2023-10-20 - 1.6.17.beta
 
 - bonus rolls for all collectible coin loot tables have been set to 0

@@ -82,13 +82,32 @@ public class ModEvents {
             Player player = event.getEntity();
             List<Component> tooltip = event.getToolTip();
 
+            if (stack.is(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips.crimson_spore_chocolate_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+
+            if (stack.is(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips.warped_spice_chocolate_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+
+            if (stack.is(ModItems.MILK_BONE_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips.milk_bone_chocolate_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+
+            if (stack.is(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips.ultimate_dark_chocolate_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+
             if (stack.getItem() instanceof SpawnEggItem) {
 
                 final CompoundTag stackTag = stack.getTagElement("EntityTag");
 
                 if (player != null && stackTag != null && stackTag.getBoolean("NoAI")) {
-                    tooltip.add(Component.translatable("tooltips.no_ai_spawn_egg")
-                            .withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
+                    tooltip.add(Component.translatable("tooltips.no_ai_spawn_egg").withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
                 }
             }
             return event;

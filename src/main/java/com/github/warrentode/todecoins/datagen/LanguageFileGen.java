@@ -616,6 +616,9 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.collectibleGuardVillagerCoins", "Collectible Guard Villager Coins");
         add("advancement.collectibleGuardVillagerCoins.desc", "Find All the Guard Villager Collectible Coins!");
 
+        add("advancement.collectibleTodePiglinsCoins", "Collectible TodePiglins Coins");
+        add("advancement.collectibleTodePiglinsCoins.desc", "Find All the TodePiglins Collectible Coins!");
+
         add("advancement.collectibleUnusedUpcomingCoins", "Collectible Unused or Upcoming Vanilla Mob Coins");
         add("advancement.collectibleUnusedUpcomingCoins.desc", "Find All the Collectible Coins for the Unused or Upcoming Mobs!");
     }
@@ -674,6 +677,12 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.poison_attack", "Attacks Inflict Poison");
         add("tooltips.wither_attack", "Attacks Inflict Wither");
         add("tooltips.burning_attack", "Attacks Inflict Burning");
+
+        // food tooltips
+        add("tooltips.crimson_spore_chocolate_effects", "90% Chance of Fire Resistance, 10% Chance of Hunger");
+        add("tooltips.warped_spice_chocolate_effects", "90% Chance of Increased Movement Speed, 10% Chance of Confusion");
+        add("tooltips.milk_bone_chocolate_effects", "90% Chance of Damage Resistance, 10% Chance of Slowness");
+        add("tooltips.ultimate_dark_chocolate_effects", "90% Chance of Hero of the Village, 10% Chance of Darkness");
 
         // entity collectible coin bases
         add("tooltips.collectible_aerial_coin.hover", "One of Twenty Aerial Seasonal Coins");
