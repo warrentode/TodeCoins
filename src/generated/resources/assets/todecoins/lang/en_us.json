@@ -1043,6 +1043,7 @@
   "tooltips.poison_attack": "Attacks Inflict Poison",
   "tooltips.regen": "Regeneration",
   "tooltips.saturation": "Increases Saturation",
+  "tooltips.server_token_coin.hover": "A special coin for server use.",
   "tooltips.shift.hover": "Press SHIFT for more info...",
   "tooltips.slow_attack": "Attacks Inflict Slowness",
   "tooltips.slow_fall": "Slow Falling",

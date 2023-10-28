@@ -102,5 +102,7 @@ public class ModCreativeModeTab extends CreativeModeTab {
             }
             items.add(ModItems.SNOW_GOLEM_SPAWN_EGG.get().getDefaultInstance());
         }
+
+        items.add(ModItems.SERVER_TOKEN_COIN.get().getDefaultInstance());
     }
 }

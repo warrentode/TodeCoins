@@ -60,6 +60,9 @@ public class ModItems {
     public static final RegistryObject<Item> ENDONIAN_COIN = ITEMS.register("endonian_coin",
             () -> new CoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
 
+    public static final RegistryObject<Item> SERVER_TOKEN_COIN = ITEMS.register("server_token_coin",
+            () -> new ServerTokenCoin(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+
     public static final RegistryObject<Item> LUCKY_COIN = ITEMS.register("lucky_coin",
             () -> new LuckyCoinItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
     public static final RegistryObject<Item> NETHER_GOLD_COIN = ITEMS.register("nether_gold_coin",

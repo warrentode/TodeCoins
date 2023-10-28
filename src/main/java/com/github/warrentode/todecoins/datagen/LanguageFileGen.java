@@ -637,6 +637,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.bank_note_item.hover", "The original bank notes were created by China and worked much like our debit cards today.");
         add("tooltips.coin_item.hover", "Since ancient times, coins were either stamped or forged into molds.");
         add("tooltips.coin_stamp.hover", "This is for stamping currency in a press.");
+        add("tooltips.server_token_coin.hover", "A special coin for server use.");
 
         // coin effects
         add("tooltips.coin_effects", "Coin Effects:");
