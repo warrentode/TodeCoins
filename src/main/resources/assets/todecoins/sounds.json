@@ -109,5 +109,221 @@
         "pitch": 1.5
       }
     ]
+  },
+  "numismatist_drink_milk": {
+    "subtitle": "subtitles.todecoins.numismatist_drink_milk",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/drink_milk1",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/drink_milk2",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/drink_milk3",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/drink_milk4",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/drink_milk5",
+        "weight": 20
+      },
+      {
+        "name": "todecoins:numismatist_drink_milk"
+      }
+    ]
+  },
+  "numismatist_drink_potion": {
+    "subtitle": "subtitles.todecoins.numismatist_drink_potion",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/drink_potion",
+        "weight": 99
+      },
+      {
+        "name": "todecoins:numismatist_drink_potion"
+      }
+    ]
+  },
+  "numismatist_haggle": {
+    "subtitle": "subtitles.todecoins.numismatist_haggle",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/haggle1",
+        "weight": 40
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/haggle2",
+        "weight": 40
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/haggle3",
+        "weight": 40
+      },
+      {
+        "name": "todecoins:numismatist_haggle"
+      }
+    ]
+  },
+  "numismatist_no": {
+    "subtitle": "subtitles.todecoins.numismatist_no",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/no1",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/no2",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/no3",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/no4",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/no5",
+        "weight": 20
+      },
+      {
+        "name": "todecoins:numismatist_no"
+      }
+    ]
+  },
+  "numismatist_yes": {
+    "subtitle": "subtitles.todecoins.numismatist_yes",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/yes1",
+        "weight": 30
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/yes2",
+        "weight": 30
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/yes3",
+        "weight": 30
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/yes4",
+        "weight": 30
+      },
+      {
+        "name": "todecoins:numismatist_yes"
+      }
+    ]
+  },
+  "numismatist_idle": {
+    "subtitle": "subtitles.todecoins.numismatist_idle",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/idle1",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/idle2",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/idle3",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/idle4",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/idle5",
+        "weight": 20
+      },
+      {
+        "name": "todecoins:numismatist_idle"
+      }
+    ]
+  },
+  "numismatist_hurt": {
+    "subtitle": "subtitles.todecoins.numismatist_hurt",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/hurt1",
+        "weight": 30
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/hurt2",
+        "weight": 30
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/hurt3",
+        "weight": 30
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/hurt4",
+        "weight": 30
+      },
+      {
+        "name": "todecoins:numismatist_hurt"
+      }
+    ]
+  },
+  "numismatist_death": {
+    "subtitle": "subtitles.todecoins.numismatist_death",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/death",
+        "weight": 99
+      },
+      {
+        "name": "todecoins:numismatist_death"
+      }
+    ]
+  },
+  "numismatist_appeared": {
+    "subtitle": "subtitles.todecoins.numismatist_appeared",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/appeared1",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/appeared2",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/reappeared1",
+        "weight": 20
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/reappeared2",
+        "weight": 20
+      },
+      {
+        "name": "todecoins:numismatist_appeared"
+      }
+    ]
+  },
+  "numismatist_disappeared": {
+    "subtitle": "subtitles.todecoins.numismatist_disappeared",
+    "sounds": [
+      {
+        "name": "minecraft:mob/wandering_trader/disappeared1",
+        "weight": 50
+      },
+      {
+        "name": "minecraft:mob/wandering_trader/disappeared2",
+        "weight": 50
+      },
+      {
+        "name": "todecoins:numismatist_disappeared"
+      }
+    ]
   }
 }

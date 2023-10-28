@@ -780,6 +780,15 @@ public class LanguageFileGen extends LanguageProvider {
         add("subtitles.todecoins.work_leprechaun", "Leprechaun Works");
         add("subtitles.todecoins.coin_press_take", "Coin Press Cashes Out");
         add("subtitles.todecoins.coin_press_use", "Coin Press Used");
+
+        add("subtitles.todecoins.numismatist_drink_milk", "Numismatist Drinks Milk");
+        add("subtitles.todecoins.numismatist_drink_potion", "Numismatist Drinks Potion");
+        add("subtitles.todecoins.numismatist_haggle", "Numismatist Haggles with You");
+        add("subtitles.todecoins.numismatist_no", "Numismatist Disagrees");
+        add("subtitles.todecoins.numismatist_yes", "Numismatist Agrees");
+        add("subtitles.todecoins.numismatist_idle", "Numismatist Mumbles");
+        add("subtitles.todecoins.numismatist_hurt", "Numismatist Hurt");
+        add("subtitles.todecoins.numismatist_death", "Numismatist Dies");
     }
 
     private void addAttributes() {

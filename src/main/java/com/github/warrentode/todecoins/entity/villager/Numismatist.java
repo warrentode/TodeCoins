@@ -1,14 +1,15 @@
 package com.github.warrentode.todecoins.entity.villager;
 
 import com.github.warrentode.todecoins.entity.villager.trades.NumismatistTrades;
+import com.github.warrentode.todecoins.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.*;
@@ -30,7 +31,6 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 
 public class Numismatist extends WanderingTrader {
-    // TODO create custom sound file with the correct subtitles for Numismatist
     /**
      * the number of total trades this merchant has to offer can be altered here - default is 5 for Wandering Trader
      **/
@@ -46,9 +46,9 @@ public class Numismatist extends WanderingTrader {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(0, new UseItemGoal<>(this, PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.INVISIBILITY),
-                SoundEvents.WANDERING_TRADER_DISAPPEARED, (numismatist) -> this.level.isNight() && !numismatist.isInvisible()));
+                ModSounds.NUMISMATIST_DISAPPEARED.get(), (numismatist) -> this.level.isNight() && !numismatist.isInvisible()));
         this.goalSelector.addGoal(0, new UseItemGoal<>(this, new ItemStack(Items.MILK_BUCKET),
-                SoundEvents.WANDERING_TRADER_REAPPEARED, (numismatist) -> this.level.isDay() && numismatist.isInvisible()));
+                ModSounds.NUMISMATIST_APPEARED.get(), (numismatist) -> this.level.isDay() && numismatist.isInvisible()));
         this.goalSelector.addGoal(1, new TradeWithPlayerGoal(this));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Zombie.class, 8.0F, 0.5D, 0.5D));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Evoker.class, 12.0F, 0.5D, 0.5D));
@@ -127,17 +127,35 @@ public class Numismatist extends WanderingTrader {
 
     @Override
     protected @NotNull SoundEvent getDrinkingSound(@NotNull ItemStack stack) {
-        return stack.is(Items.MILK_BUCKET) ? SoundEvents.WANDERING_TRADER_DRINK_MILK : SoundEvents.WANDERING_TRADER_DRINK_POTION;
+        return stack.is(Items.MILK_BUCKET) ? ModSounds.NUMISMATIST_DRINK_MILK.get() : ModSounds.NUMISMATIST_DRINK_POTION.get();
     }
 
     @Override
     protected @NotNull SoundEvent getTradeUpdatedSound(boolean pGetYesSound) {
-        return pGetYesSound ? SoundEvents.WANDERING_TRADER_YES : SoundEvents.WANDERING_TRADER_NO;
+        return pGetYesSound ? ModSounds.NUMISMATIST_HAGGLE.get() : ModSounds.NUMISMATIST_NO.get();
     }
 
     @Override
     public @NotNull SoundEvent getNotifyTradeSound() {
-        return SoundEvents.WANDERING_TRADER_YES;
+        return ModSounds.NUMISMATIST_YES.get();
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        super.getAmbientSound();
+        return ModSounds.NUMISMATIST_IDLE.get();
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
+        super.getHurtSound(pDamageSource);
+        return ModSounds.NUMISMATIST_HURT.get();
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        super.getDeathSound();
+        return ModSounds.NUMISMATIST_DEATH.get();
     }
 
     @Override
@@ -174,13 +192,6 @@ public class Numismatist extends WanderingTrader {
         return this.wanderTarget;
     }
 
-    // WHY IS THIS NOT A SEPARATE FILE?! Wouldn't this be better as a reusable goal in terms of overall AI/Brain building?
-    // I really do not understand why they have built their entities the way they have in many cases
-    // then I remember how easy it was to build a bot for a certain game ages ago and wonder if that is a big reason why
-    // I mean... that bot was really just a very long series of IF/THAN statements in XML, which in retrospect, for an online game should not be possible
-    // and granted, all I did was create the means to control more than one character at the same time, but still
-    // even if you need to put in place anti-cheating measures, it doesn't explain some of this weird and seemingly lazy organization
-    // if I decide to use this particular goal for another entity, I will be moving it to a unique file and editing it for generic use
     class WanderToPositionGoal extends Goal {
         final Numismatist trader;
         final double stopDistance;
