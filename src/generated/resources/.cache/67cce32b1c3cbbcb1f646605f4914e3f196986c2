@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-29T00:06:11.1975846	LootTables
+// 1.19.2	2023-10-29T01:02:38.6717772	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -117,7 +117,7 @@ aa2c86201a1c9a382c4bf48c72e5d406350f1e04 data/todecoins/loot_tables/blocks/nethe
 4b8b367d5ec5e92d4655db1201a4614a7e4dba10 data/todecoins/loot_tables/blocks/nether_gold_coin_bag.json
 8d34025bde123883f86a8f02c27ac3f4abac22ba data/todecoins/loot_tables/blocks/pot_of_gold.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/todecoins/loot_tables/cagerium/numismatist.json
-50d3b1768f53993c289842f70a9b38a3b218162b data/todecoins/loot_tables/chests/collectible/seasonal/mystery_coin_pack.json
+c78b5a236356078908ac0cc3fa364108246a9678 data/todecoins/loot_tables/chests/collectible/seasonal/mystery_coin_pack.json
 7349829a4146e0c84198d8d7ca00fa2c2feaf7ce data/todecoins/loot_tables/chests/collectible/seasonal/mystery_coin_pack_autumn.json
 623109762b039653f42e8c91789db5be2b94d3ad data/todecoins/loot_tables/chests/collectible/seasonal/mystery_coin_pack_spring.json
 4101560b5871e2df8ebb591892d1b2e1ebcfc368 data/todecoins/loot_tables/chests/collectible/seasonal/mystery_coin_pack_summer.json

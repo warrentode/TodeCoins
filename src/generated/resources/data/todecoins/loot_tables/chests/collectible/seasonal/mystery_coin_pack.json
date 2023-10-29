@@ -78,7 +78,15 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "todecoins:autumn_condition"
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "todecoins:autumn_condition"
+                },
+                {
+                  "condition": "todecoins:halloween_condition"
+                }
+              ]
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/mystery_coin_pack_autumn"
@@ -87,7 +95,21 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "todecoins:winter_condition"
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "todecoins:winter_condition"
+                },
+                {
+                  "condition": "todecoins:christmas_condition"
+                },
+                {
+                  "condition": "todecoins:birthday_condition"
+                },
+                {
+                  "condition": "todecoins:anniversary_condition"
+                }
+              ]
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/mystery_coin_pack_winter"
