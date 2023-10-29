@@ -4,8 +4,8 @@
     64
   ],
   "textures": {
-    "0": "todecoins:item/collectible_coin_shulker_copper",
-    "particle": "todecoins:item/collectible_coin_shulker_copper"
+    "0": "todecoins:item/collectible_coin_shulker_netherite",
+    "particle": "todecoins:item/collectible_coin_shulker_netherite"
   },
   "elements": [
     {
@@ -514,7 +514,7 @@
   },
   "groups": [
     {
-      "name": "collectible_coin_shulker_copper",
+      "name": "collectible_coin_shulker_netherite",
       "origin": [
         0,
         0,
