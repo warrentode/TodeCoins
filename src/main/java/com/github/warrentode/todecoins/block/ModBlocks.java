@@ -20,8 +20,12 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
-    // TODO learn how to make a block entity similar to the shulker box that saves its contents to serve as a collectors pack
-    // TODO possibly learn how to create a larger item frame to store and display collectible coins
+    // TODO design coin collection display blocks
+    // something that doesn't count as an entity so it doesn't tick
+    // probably best if done by sets? recipes to make and unmake?
+    // most of the coins already come in sets of four
+    // probably means I need to redesign the textures and models of these coins so they look nice on a block
+    // as it is, I feel they are hard to see in the gui right now
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TodeCoins.MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MODID);
 

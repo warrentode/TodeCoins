@@ -68,7 +68,7 @@ public class BirthdayCoinItem extends CollectibleCoin implements ICurioItem {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
-                    else if (CalendarUtil.Season.isBirthday()) {
+                    else if (CalendarUtil.Season.isBirthday() && !ModList.get().isLoaded("sereneseasons")) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }

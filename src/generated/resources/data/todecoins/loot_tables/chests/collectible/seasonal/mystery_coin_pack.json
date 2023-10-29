@@ -9,6 +9,10 @@
           "conditions": [
             {
               "condition": "todecoins:birthday_condition"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/todecoins_birthday_coin_loot"
@@ -18,6 +22,10 @@
           "conditions": [
             {
               "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/todecoins_anniversary_coin_loot"
@@ -27,6 +35,10 @@
           "conditions": [
             {
               "condition": "todecoins:halloween_condition"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/todecoins_halloween_coin_loot"
@@ -36,6 +48,10 @@
           "conditions": [
             {
               "condition": "todecoins:christmas_condition"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/todecoins_christmas_coin_loot"

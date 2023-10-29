@@ -57,7 +57,7 @@ public class ChristmasCoinItem extends CollectibleCoin implements ICurioItem {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
-                    else if (CalendarUtil.Season.isChristmas()) {
+                    else if (CalendarUtil.Season.isChristmas() && !ModList.get().isLoaded("sereneseasons")) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }

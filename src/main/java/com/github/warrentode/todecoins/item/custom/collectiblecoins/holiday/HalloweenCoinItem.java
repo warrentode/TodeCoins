@@ -52,7 +52,7 @@ public class HalloweenCoinItem extends CollectibleCoin implements ICurioItem {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
-                    else if (CalendarUtil.Season.isHalloween()) {
+                    else if (CalendarUtil.Season.isHalloween() && !ModList.get().isLoaded("sereneseasons")) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
