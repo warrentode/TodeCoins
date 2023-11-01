@@ -2607,6 +2607,62 @@
           ],
           "name": "todecoins:collectible_coin_piglin_merchant_copper",
           "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:rascal"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:collectible_coin_rascal_copper",
+          "quality": 1
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:armadillo"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:collectible_coin_armadillo_copper",
+          "quality": 1
         }
       ],
       "rolls": 1.0

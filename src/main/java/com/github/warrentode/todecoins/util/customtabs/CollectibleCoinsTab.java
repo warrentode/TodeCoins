@@ -21,12 +21,14 @@ public class CollectibleCoinsTab extends CreativeModeTab {
     @Override
     public void fillItemList(final @NotNull NonNullList<ItemStack> items) {
         // holiday coins
-        // BIRTHDAY COIN
-        items.add(ModItems.BIRTHDAY_COIN_2023.get().getDefaultInstance());
+        // EASTER COIN SET
+        items.add(ModItems.EASTER_COIN_2023.get().getDefaultInstance());
         // HALLOWEEN COIN SET
         items.add(ModItems.HALLOWEEN_COIN_2023.get().getDefaultInstance());
-        // CHRISTMAS COIN
+        // CHRISTMAS COIN SET
         items.add(ModItems.CHRISTMAS_COIN_2023.get().getDefaultInstance());
+        // BIRTHDAY COIN SET
+        items.add(ModItems.BIRTHDAY_COIN_2023.get().getDefaultInstance());
         // PATRON COIN SET
         items.add(ModItems.SCHOLAR_OWL_COIN.get().getDefaultInstance());
         items.add(ModItems.TUXEDO_CAT_COIN.get().getDefaultInstance());
@@ -327,6 +329,11 @@ public class CollectibleCoinsTab extends CreativeModeTab {
         items.add(ModItems.IRON_SNIFFER_COIN.get().getDefaultInstance());
         items.add(ModItems.GOLD_SNIFFER_COIN.get().getDefaultInstance());
         items.add(ModItems.NETHERITE_SNIFFER_COIN.get().getDefaultInstance());
+        // ARMADILLO COIN SET
+        items.add(ModItems.COPPER_ARMADILLO_COIN.get().getDefaultInstance());
+        items.add(ModItems.IRON_ARMADILLO_COIN.get().getDefaultInstance());
+        items.add(ModItems.GOLD_ARMADILLO_COIN.get().getDefaultInstance());
+        items.add(ModItems.NETHERITE_ARMADILLO_COIN.get().getDefaultInstance());
         // SNOW GOLEM COIN SET
         items.add(ModItems.COPPER_SNOW_GOLEM_COIN.get().getDefaultInstance());
         items.add(ModItems.IRON_SNOW_GOLEM_COIN.get().getDefaultInstance());
@@ -479,6 +486,11 @@ public class CollectibleCoinsTab extends CreativeModeTab {
         items.add(ModItems.IRON_TUFF_GOLEM_COIN.get().getDefaultInstance());
         items.add(ModItems.GOLD_TUFF_GOLEM_COIN.get().getDefaultInstance());
         items.add(ModItems.NETHERITE_TUFF_GOLEM_COIN.get().getDefaultInstance());
+        // RASCAL COIN SET
+        items.add(ModItems.COPPER_RASCAL_COIN.get().getDefaultInstance());
+        items.add(ModItems.IRON_RASCAL_COIN.get().getDefaultInstance());
+        items.add(ModItems.GOLD_RASCAL_COIN.get().getDefaultInstance());
+        items.add(ModItems.NETHERITE_RASCAL_COIN.get().getDefaultInstance());
 
         //ecologics
         // CRAB COIN SET

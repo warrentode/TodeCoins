@@ -367,6 +367,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_piglin_merchant_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_rascal_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_armadillo_gold"
         }
       ],
       "rolls": 1.0

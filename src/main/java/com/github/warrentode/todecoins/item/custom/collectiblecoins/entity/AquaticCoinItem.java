@@ -118,11 +118,11 @@ public class AquaticCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 if (!stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.water_breathing").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.water_breathing").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.dolphin_grace").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.dolphin_grace").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

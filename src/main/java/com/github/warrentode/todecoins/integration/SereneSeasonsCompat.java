@@ -11,6 +11,7 @@ public class SereneSeasonsCompat {
         NONE,
         PATREON_ANNIVERSARY,
         BIRTHDAY,
+        EASTER,
         CHRISTMAS,
         HALLOWEEN,
         SPRING,
@@ -32,6 +33,10 @@ public class SereneSeasonsCompat {
 
         public static boolean isWinter(ServerLevel level) {
             return get(level) == WINTER;
+        }
+
+        public static boolean isEaster(ServerLevel level) {
+            return get(level) == EASTER;
         }
 
         public static boolean isChristmas(ServerLevel level) {
@@ -56,6 +61,9 @@ public class SereneSeasonsCompat {
             Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
 
             // holidays
+            if (subSeason == Season.SubSeason.EARLY_SPRING) {
+                return EASTER;
+            }
             if (subSeason == Season.SubSeason.MID_AUTUMN) {
                 return HALLOWEEN;
             }

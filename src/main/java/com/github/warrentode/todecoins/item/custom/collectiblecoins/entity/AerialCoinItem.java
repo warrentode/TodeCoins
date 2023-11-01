@@ -115,13 +115,13 @@ public class AerialCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.slow_fall").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.slow_fall").withStyle(ChatFormatting.BLUE));
                 if (stack.is(ModTags.Items.BAT_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.night_vision").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.night_vision").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.GHAST_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.fire_resist").withStyle(ChatFormatting.BLUE));
-                    tooltips.add(Component.translatable("tooltips.damage_resist").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.fire_resist").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.damage_resist").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

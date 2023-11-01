@@ -55,6 +55,8 @@ public class ModLootItemConditions extends LootItemConditions {
             () -> new LootItemConditionType(new HalloweenCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> CHRISTMAS_CONDITION = REGISTER.register("christmas_condition",
             () -> new LootItemConditionType(new ChristmasCondition.Serializer()));
+    public static final RegistryObject<LootItemConditionType> EASTER_CONDITION = REGISTER.register("easter_condition",
+            () -> new LootItemConditionType(new EasterCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> ANNIVERSARY_CONDITION = REGISTER.register("anniversary_condition",
             () -> new LootItemConditionType(new AnniversaryCondition.Serializer()));
 

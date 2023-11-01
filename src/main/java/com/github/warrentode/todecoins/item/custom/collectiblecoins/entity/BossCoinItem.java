@@ -8,7 +8,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -49,100 +48,131 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 LivingEntity livingEntity = slotContext.entity();
+
                 if (livingEntity != null) {
-                    int baseArmorBonus = 1;
-                    int baseHpBonus = 10;
-                    int baseKnockbackResistanceBonus = 2;
-                    int baseAttackBonus = 2;
+                    int armorBonus = 0;
+                    int hpBonus = 0;
+                    int bossHPBonus = 0;
+                    int knockbackResistanceBonus = 0;
+                    int bossKnockBackResistanceBonus = 0;
+                    int attackBonus = 0;
+                    int bossAttackBonus = 0;
 
-                    int extraArmorBonus = 0;
-                    int extraHPBonus = 0;
-                    int extraKnockBackResistanceBonus = 0;
-                    int extraAttackBonus = 0;
-
-
-                    if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
-                        if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                            extraAttackBonus = 2;
-                            extraArmorBonus = 2;
-                            extraHPBonus = 15;
+                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            armorBonus = 1;
+                            hpBonus = 20;
+                            knockbackResistanceBonus = 1;
                         }
-                        if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                            extraHPBonus = 10;
+                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
+                            armorBonus = 2;
+                            hpBonus = 24;
+                            knockbackResistanceBonus = 1;
                         }
-                        if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
-                            extraKnockBackResistanceBonus = 2;
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
+                            armorBonus = 3;
+                            hpBonus = 30;
+                            knockbackResistanceBonus = 1;
+                        }
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
+                            armorBonus = 4;
+                            hpBonus = 34;
+                            knockbackResistanceBonus = 1;
                         }
                     }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                            extraAttackBonus = 2;
-                            extraArmorBonus = 3;
-                            extraHPBonus = 20;
+
+                    if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            armorBonus = 2;
+                            hpBonus = 24;
+                            knockbackResistanceBonus = 4;
+                            attackBonus = 3;
                         }
-                        if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                            extraHPBonus = 15;
+                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
+                            armorBonus = 4;
+                            hpBonus = 30;
+                            knockbackResistanceBonus = 4;
+                            attackBonus = 4;
                         }
-                        if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
-                            extraKnockBackResistanceBonus = 2;
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
+                            armorBonus = 6;
+                            hpBonus = 34;
+                            knockbackResistanceBonus = 4;
+                            attackBonus = 5;
                         }
-                        else {
-                            extraAttackBonus = 1;
-                            extraHPBonus = 5;
-                            extraArmorBonus = 2;
-                            extraKnockBackResistanceBonus = 1;
-                        }
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                            extraAttackBonus = 2;
-                            extraArmorBonus = 4;
-                            extraHPBonus = 20;
-                        }
-                        if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                            extraHPBonus = 15;
-                        }
-                        if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
-                            extraKnockBackResistanceBonus = 3;
-                        }
-                        else {
-                            extraAttackBonus = 2;
-                            extraHPBonus = 10;
-                            extraArmorBonus = 4;
-                            extraKnockBackResistanceBonus = 1;
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
+                            armorBonus = 8;
+                            hpBonus = 40;
+                            knockbackResistanceBonus = 4;
+                            attackBonus = 6;
                         }
                     }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                            extraAttackBonus = 2;
-                            extraArmorBonus = 5;
-                            extraHPBonus = 25;
+
+                    if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            armorBonus = 2;
+                            hpBonus = 30;
+                            knockbackResistanceBonus = 2;
+                            attackBonus = 3;
                         }
-                        if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
-                            extraHPBonus = 20;
+                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
+                            armorBonus = 4;
+                            hpBonus = 34;
+                            knockbackResistanceBonus = 2;
+                            attackBonus = 4;
                         }
-                        if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
-                            extraKnockBackResistanceBonus = 4;
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
+                            armorBonus = 6;
+                            hpBonus = 40;
+                            knockbackResistanceBonus = 2;
+                            attackBonus = 5;
                         }
-                        else {
-                            extraAttackBonus = 3;
-                            extraHPBonus = 15;
-                            extraArmorBonus = 5;
-                            extraKnockBackResistanceBonus = 1;
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
+                            armorBonus = 8;
+                            hpBonus = 44;
+                            knockbackResistanceBonus = 2;
+                            attackBonus = 6;
+                        }
+                    }
+
+                    if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
+                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            armorBonus = 2;
+                            hpBonus = 34;
+                            knockbackResistanceBonus = 2;
+                            attackBonus = 5;
+                        }
+                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
+                            armorBonus = 4;
+                            hpBonus = 40;
+                            knockbackResistanceBonus = 2;
+                            attackBonus = 6;
+                        }
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
+                            armorBonus = 6;
+                            hpBonus = 44;
+                            knockbackResistanceBonus = 2;
+                            attackBonus = 7;
+                        }
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
+                            armorBonus = 8;
+                            hpBonus = 50;
+                            knockbackResistanceBonus = 2;
+                            attackBonus = 8;
                         }
                     }
 
                     attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.armor", baseArmorBonus + extraArmorBonus,
+                            new AttributeModifier(uuid, "generic.armor", armorBonus,
                                     AttributeModifier.Operation.ADDITION));
                     attribute.put(Attributes.MAX_HEALTH,
-                            new AttributeModifier(uuid, "generic.max_health", baseHpBonus + extraHPBonus,
+                            new AttributeModifier(uuid, "generic.max_health", hpBonus,
                                     AttributeModifier.Operation.ADDITION));
                     attribute.put(Attributes.KNOCKBACK_RESISTANCE,
-                            new AttributeModifier(uuid, "generic.knockback_resistance", baseKnockbackResistanceBonus + extraKnockBackResistanceBonus,
+                            new AttributeModifier(uuid, "generic.knockback_resistance", knockbackResistanceBonus,
                                     AttributeModifier.Operation.ADDITION));
                     attribute.put(Attributes.ATTACK_DAMAGE,
-                            new AttributeModifier(uuid, "generic.attack_damage", baseAttackBonus + extraAttackBonus,
+                            new AttributeModifier(uuid, "generic.attack_damage", attackBonus,
                                     AttributeModifier.Operation.ADDITION));
                 }
                 return attribute;
@@ -152,44 +182,39 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
 
+                int i = 0;
+                if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
+                    i = 1;
+                }
+                else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
+                    i = 2;
+                }
+                else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
+                    i = 3;
+                }
+                else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
+                    i = 4;
+                }
+
                 if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 200, 1,
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2000, i,
+                            false, false, true));
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, i,
                             false, false, true));
                 }
 
                 if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
-
-                    int i = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 1;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 2;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 3;
-                    }
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, i,
+                            false, false, false));
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, i,
                             false, false, false));
                 }
 
                 if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
-                    //noinspection deprecation
-                    if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
-
-                        int i = 0;
-                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                            i = 1;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                            i = 2;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                            i = 3;
-                        }
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
-                                false, false, false));
-                    }
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                            false, false, false));
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 200, i,
+                            false, false, false));
                 }
             }
 
@@ -198,12 +223,15 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
                 if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.SLOW_FALLING);
+                    livingEntity.removeEffect(MobEffects.DAMAGE_RESISTANCE);
                 }
                 if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.WATER_BREATHING);
+                    livingEntity.removeEffect(MobEffects.DOLPHINS_GRACE);
                 }
                 if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                    livingEntity.removeEffect(MobEffects.HEALTH_BOOST);
+                    livingEntity.removeEffect(MobEffects.DAMAGE_RESISTANCE);
+                    livingEntity.removeEffect(MobEffects.DAMAGE_BOOST);
                 }
             }
 
@@ -233,20 +261,23 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.slow_fall").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.slow_fall").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.damage_resist").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.water_breathing").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.water_breathing").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.conduit").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.health_boost").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.damage_resist").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.damage_boost").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.wither_attack").withStyle(ChatFormatting.BLUE));
-                    tooltips.add(Component.translatable("tooltips.undead_damage").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.wither_attack").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.undead_damage").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

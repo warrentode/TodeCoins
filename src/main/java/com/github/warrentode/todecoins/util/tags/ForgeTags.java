@@ -103,6 +103,7 @@ public class ForgeTags {
         public static final TagKey<EntityType<?>> MOOBLOOM_TYPES = forgeEntityTypeTag("moobloom");
         public static final TagKey<EntityType<?>> TUFF_GOLEM_TYPES = forgeEntityTypeTag("tuff_golem");
         public static final TagKey<EntityType<?>> WILDFIRE_TYPES = forgeEntityTypeTag("wildfire");
+        public static final TagKey<EntityType<?>> RASCAL_TYPES = forgeEntityTypeTag("rascal");
 
         // ecologics
         public static final TagKey<EntityType<?>> CAMEL_TYPES = forgeEntityTypeTag("camel");
@@ -115,6 +116,7 @@ public class ForgeTags {
 
         // vanilla sneak peek
         public static final TagKey<EntityType<?>> SNIFFER_TYPES = forgeEntityTypeTag("sniffer");
+        public static final TagKey<EntityType<?>> ARMADILLO_TYPES = forgeEntityTypeTag("armadillo");
     }
 
     public static class Blocks {

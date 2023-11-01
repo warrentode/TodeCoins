@@ -1,7 +1,8 @@
-// 1.19.2	2023-09-28T02:03:43.6636838	Tags for minecraft:entity_type
+// 1.19.2	2023-10-30T17:21:30.9706297	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
+4920fad4cb9fa98628efe59cf256a48cf12cba9f data/forge/tags/entity_types/armadillo.json
 02aec88f31431075adfbe686a04413b122f9da98 data/forge/tags/entity_types/axolotl.json
 4cde89bfc4a145a3ba22cc55074c6c19ebbc6a09 data/forge/tags/entity_types/bat.json
 4c073b476785113705dfd3c6b286a337ddbd56b0 data/forge/tags/entity_types/bee.json
@@ -59,6 +60,7 @@ a9066bd882a188fe9fcd7595c827a12a1c2eea53 data/forge/tags/entity_types/piglin_mer
 1524d30a78de2df7d23a5d101c5662ac77752040 data/forge/tags/entity_types/polar_bear.json
 58748f381d8f3508e8f58a62b0d64e706b06bc78 data/forge/tags/entity_types/pufferfish.json
 676cee16d107d62d62093f32df13eb8e934c7db9 data/forge/tags/entity_types/rabbit.json
+7eaa7e87fe29331968a92c28d695168585eb728d data/forge/tags/entity_types/rascal.json
 ba55b9047ed4c049a3b6ee7000e9f44648a23339 data/forge/tags/entity_types/ravager.json
 3fe6df0882f02c83c296f5dfaed148dab475c556 data/forge/tags/entity_types/salmon.json
 1e4517ded3e37d807293db51af74f730d10aab84 data/forge/tags/entity_types/sheep.json

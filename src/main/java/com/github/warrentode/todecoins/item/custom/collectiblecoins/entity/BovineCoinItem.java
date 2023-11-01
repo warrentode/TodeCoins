@@ -139,11 +139,11 @@ public class BovineCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 if (stack.is(ModTags.Items.GOAT_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.jump_boost").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.jump_boost").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.illager_damage").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.illager_damage").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

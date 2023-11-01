@@ -241,6 +241,54 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "find_item.todecoins.collectible_coin_rascal_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_rascal_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_rascal_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_rascal_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_rascal_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_rascal_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_rascal_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_rascal_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_tuff_golem_copper": {
       "conditions": {
         "items": [
@@ -437,6 +485,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_wildfire_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_rascal_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_rascal_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_rascal_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_rascal_netherite"
     ]
   ]
 }

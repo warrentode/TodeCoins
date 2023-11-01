@@ -98,8 +98,8 @@ public class HalloweenCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.night_vision").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.halloween_hero").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.night_vision").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.halloween_hero").withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });

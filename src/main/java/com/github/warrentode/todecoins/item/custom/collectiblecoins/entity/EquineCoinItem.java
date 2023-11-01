@@ -92,7 +92,7 @@ public class EquineCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 if (stack.is(ModTags.Items.ZOMBIE_HORSE_COIN_SET) || stack.is(ModTags.Items.SKELETON_HORSE_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.undead_damage").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.undead_damage").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

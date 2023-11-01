@@ -70,6 +70,9 @@ public class NumismatistTrades {
             // CHRISTMAS COINS
             ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance().getItem(),
 
+            // EASTER COINS
+            ModItems.EASTER_COIN_2023.get().asItem().getDefaultInstance().getItem(),
+
             // SPRING COINS
             ModItems.COPPER_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_AXOLOTL_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -163,6 +166,8 @@ public class NumismatistTrades {
             ModItems.COPPER_SQUIRREL_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_PENGUIN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.COPPER_GUARD_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_RASCAL_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.COPPER_ARMADILLO_COIN.get().asItem().getDefaultInstance().getItem(),
 
             // SUMMER COINS
             ModItems.IRON_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -257,6 +262,8 @@ public class NumismatistTrades {
             ModItems.IRON_SQUIRREL_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_PENGUIN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.IRON_GUARD_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_RASCAL_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.IRON_ARMADILLO_COIN.get().asItem().getDefaultInstance().getItem(),
 
             // AUTUMN COINS
             ModItems.GOLD_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -351,6 +358,8 @@ public class NumismatistTrades {
             ModItems.GOLD_SQUIRREL_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_PENGUIN_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.GOLD_GUARD_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_RASCAL_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.GOLD_ARMADILLO_COIN.get().asItem().getDefaultInstance().getItem(),
 
             // WINTER COINS
             ModItems.NETHERITE_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -444,7 +453,9 @@ public class NumismatistTrades {
             ModItems.NETHERITE_CRAB_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_SQUIRREL_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.NETHERITE_PENGUIN_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.NETHERITE_GUARD_COIN.get().asItem().getDefaultInstance().getItem()
+            ModItems.NETHERITE_GUARD_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_RASCAL_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NETHERITE_ARMADILLO_COIN.get().asItem().getDefaultInstance().getItem()
     );
 
     private static Int2ObjectMap<VillagerTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ItemListing[]> pMap) {

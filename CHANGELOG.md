@@ -1,4 +1,11 @@
-### 2023-10-57 - 1.6.18.beta
+### 2023-10-29 - 1.7.0.beta
+
+- corrected the texture assigned to the collectible shulker netherite coin
+- mystery coin pack loot table rebalanced so it doesn't give just the holiday event coins during a holiday event
+- added custom subtitles for numismatist
+- added missing translations
+
+### 2023-10-27 - 1.6.18.beta
 
 - BREAKING CHANGE: re-organized how the coin effects are coded to (hopefully) ensure all intended effects are actually
   applied
@@ -6,9 +13,6 @@
 - added tooltips for the collectible coin and candy coin effects
 - added a server token coin for server admins to add and use however way they'd like
   - not otherwise available in gameplay
-  - my thought behind this was more along the lines of a simple universal reward coin that could be exchanged for other
-    currency or items
-    - quest rewards, login rewards, server prizes, etc
 
 ### 2023-10-20 - 1.6.17.beta
 

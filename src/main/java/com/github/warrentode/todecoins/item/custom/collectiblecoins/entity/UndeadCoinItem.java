@@ -134,19 +134,19 @@ public class UndeadCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.undead_damage").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.undead_damage").withStyle(ChatFormatting.BLUE));
 
                 if (stack.is(ModTags.Items.DROWNED_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.water_breathing").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.water_breathing").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.STRAY_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.slow_attack").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.slow_attack").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.WITHER_SKELETON_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.wither_attack").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.wither_attack").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.PHANTOM_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.slow_fall").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.slow_fall").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

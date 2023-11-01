@@ -60,7 +60,28 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "todecoins:spring_condition"
+              "condition": "todecoins:easter_condition"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_easter_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "todecoins:spring_condition"
+                },
+                {
+                  "condition": "todecoins:easter_condition"
+                }
+              ]
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/mystery_coin_pack_spring"

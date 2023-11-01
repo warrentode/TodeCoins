@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.datagen;
 
+import com.faboslav.friendsandfoes.FriendsAndFoes;
 import com.faboslav.friendsandfoes.init.FriendsAndFoesEntityTypes;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
@@ -192,6 +193,7 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.MAULER.get().getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.MOOBLOOM.get().getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.TUFF_GOLEM.get().getDefaultLootTable()))
+                                .or(LootTableIdCondition.builder(FriendsAndFoesEntityTypes.RASCAL.get().getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(ModEntityTypes.COCONUT_CRAB.get().getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(ModEntityTypes.CAMEL.get().getDefaultLootTable()))
                                 .or(LootTableIdCondition.builder(ModEntityTypes.SQUIRREL.get().getDefaultLootTable()))
@@ -221,6 +223,12 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
                                 .build()
                 },
                 ModBuiltInLootTables.TODECOINS_COIN_GIFT_LOOT
+        ));
+        add("add_rascal_coin_rewards", new AddLootTableModifier(
+                new LootItemCondition[]{
+                        LootTableIdCondition.builder(FriendsAndFoes.makeID("rewards/rascal_good_reward")).build()
+                },
+                ModBuiltInLootTables.RASCAL_COIN_REWARD
         ));
     }
 }

@@ -236,6 +236,8 @@ public class AdvancementsGen extends AdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HALLOWEEN_COIN_2023.get()))
                     .addCriterion("find_" + ModItems.CHRISTMAS_COIN_2023.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHRISTMAS_COIN_2023.get()))
+                    .addCriterion("find_" + ModItems.EASTER_COIN_2023.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EASTER_COIN_2023.get()))
 
                     .addCriterion("find_" + ModItems.MARSHALL_NASH_CARNATION_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.MARSHALL_NASH_CARNATION_COIN.get()))
@@ -1046,6 +1048,15 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.NETHERITE_WILDFIRE_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_WILDFIRE_COIN.get()))
 
+                    .addCriterion("find_" + ModItems.COPPER_RASCAL_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_RASCAL_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_RASCAL_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_RASCAL_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_RASCAL_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_RASCAL_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_RASCAL_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_RASCAL_COIN.get()))
+
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_friendsandfoes_coins"));
 
             // Guard Villagers Collectible Coins
@@ -1129,6 +1140,15 @@ public class AdvancementsGen extends AdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_SNIFFER_COIN.get()))
                     .addCriterion("find_" + ModItems.NETHERITE_SNIFFER_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_SNIFFER_COIN.get()))
+
+                    .addCriterion("find_" + ModItems.COPPER_ARMADILLO_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ARMADILLO_COIN.get()))
+                    .addCriterion("find_" + ModItems.IRON_ARMADILLO_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.IRON_ARMADILLO_COIN.get()))
+                    .addCriterion("find_" + ModItems.GOLD_ARMADILLO_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.GOLD_ARMADILLO_COIN.get()))
+                    .addCriterion("find_" + ModItems.NETHERITE_ARMADILLO_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ARMADILLO_COIN.get()))
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/collectible_unused_upcoming_coins"));
         }

@@ -1,6 +1,54 @@
 {
   "parent": "todecoins:main/collectible_coins",
   "criteria": {
+    "find_item.todecoins.collectible_coin_armadillo_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_armadillo_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_armadillo_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_armadillo_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_armadillo_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_armadillo_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_armadillo_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_armadillo_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "find_item.todecoins.collectible_coin_camel_copper": {
       "conditions": {
         "items": [
@@ -317,6 +365,18 @@
     ],
     [
       "find_item.todecoins.collectible_coin_sniffer_netherite"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_armadillo_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_armadillo_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_armadillo_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_armadillo_netherite"
     ]
   ]
 }

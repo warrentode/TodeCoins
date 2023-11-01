@@ -132,9 +132,12 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.GOLD_HERO_COIN.get())
                 .add(ModItems.NETHERITE_HERO_COIN.get());
         tag(ModTags.Items.HOLIDAY_COIN_SET)
+                .addTag(ModTags.Items.EASTER_COIN_SET)
                 .addTag(ModTags.Items.BIRTHDAY_COIN_SET)
                 .addTag(ModTags.Items.CHRISTMAS_COIN_SET)
                 .addTag(ModTags.Items.HALLOWEEN_COIN_SET);
+        tag(ModTags.Items.EASTER_COIN_SET)
+                .add(ModItems.EASTER_COIN_2023.get());
         tag(ModTags.Items.CHRISTMAS_COIN_SET)
                 .add(ModItems.CHRISTMAS_COIN_2023.get());
         tag(ModTags.Items.HALLOWEEN_COIN_SET)
@@ -156,6 +159,8 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
                 .add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
         tag(ModTags.Items.ENTITY_COIN_SET)
+                .addTag(ModTags.Items.ARMADILLO_COIN_SET)
+                .addTag(ModTags.Items.RASCAL_COIN_SET)
                 .addTag(ModTags.Items.ALLAY_COIN_SET)
                 .addTag(ModTags.Items.AXOLOTL_COIN_SET)
                 .addTag(ModTags.Items.BAT_COIN_SET)
@@ -249,6 +254,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.PENGUIN_COIN_SET)
                 .addTag(ModTags.Items.GUARD_COIN_SET)
                 .addTag(ModTags.Items.CRAB_COIN_SET);
+        tag(ModTags.Items.RASCAL_COIN_SET)
+                .add(ModItems.COPPER_RASCAL_COIN.get())
+                .add(ModItems.IRON_RASCAL_COIN.get())
+                .add(ModItems.GOLD_RASCAL_COIN.get())
+                .add(ModItems.NETHERITE_RASCAL_COIN.get());
         tag(ModTags.Items.PIGLIN_MERCHANT_COIN_SET)
                 .add(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get())
                 .add(ModItems.IRON_PIGLIN_MERCHANT_COIN.get())
@@ -544,6 +554,11 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.IRON_SNIFFER_COIN.get())
                 .add(ModItems.GOLD_SNIFFER_COIN.get())
                 .add(ModItems.NETHERITE_SNIFFER_COIN.get());
+        tag(ModTags.Items.ARMADILLO_COIN_SET)
+                .add(ModItems.COPPER_ARMADILLO_COIN.get())
+                .add(ModItems.IRON_ARMADILLO_COIN.get())
+                .add(ModItems.GOLD_ARMADILLO_COIN.get())
+                .add(ModItems.NETHERITE_ARMADILLO_COIN.get());
         tag(ModTags.Items.SHEEP_COIN_SET)
                 .add(ModItems.COPPER_SHEEP_COIN.get())
                 .add(ModItems.IRON_SHEEP_COIN.get())

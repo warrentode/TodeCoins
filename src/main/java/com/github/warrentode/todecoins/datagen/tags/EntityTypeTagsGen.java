@@ -111,6 +111,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.COD);
         tag(ForgeTags.EntityTypes.COPPER_GOLEM_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:copper_golem")));
+        tag(ForgeTags.EntityTypes.RASCAL_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:rascal")));
         tag(ForgeTags.EntityTypes.COW_TYPES)
                 .add(EntityType.COW);
         tag(ForgeTags.EntityTypes.CRAB_TYPES)
@@ -217,6 +219,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.SLIME);
         tag(ForgeTags.EntityTypes.SNIFFER_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:sniffer")));
+        tag(ForgeTags.EntityTypes.ARMADILLO_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:armadillo")));
         tag(ForgeTags.EntityTypes.SNOW_GOLEM_TYPES)
                 .add(EntityType.SNOW_GOLEM);
         tag(ForgeTags.EntityTypes.SPIDER_TYPES)

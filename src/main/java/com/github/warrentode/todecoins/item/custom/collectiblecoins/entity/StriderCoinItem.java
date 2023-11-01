@@ -88,7 +88,7 @@ public class StriderCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.fire_resist").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.fire_resist").withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });

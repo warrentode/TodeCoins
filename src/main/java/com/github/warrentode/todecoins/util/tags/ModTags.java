@@ -37,6 +37,7 @@ public class ModTags {
         public static final TagKey<Item> BIRTHDAY_COIN_SET = modItemTag("collectible_coins/holiday_coins/birthday_coin_set");
         public static final TagKey<Item> HALLOWEEN_COIN_SET = modItemTag("collectible_coins/holiday_coins/halloween_coin_set");
         public static final TagKey<Item> CHRISTMAS_COIN_SET = modItemTag("collectible_coins/holiday_coins/christmas_coin_set");
+        public static final TagKey<Item> EASTER_COIN_SET = modItemTag("collectible_coins/holiday_coins/easter_coin_set");
         // sponsor perk coins
         public static final TagKey<Item> PATRON_COIN_SET = modItemTag("collectible_coins/patron_coin_set");
         public static final TagKey<Item> LIFETIME_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/lifetime_patron_coin_set");
@@ -105,6 +106,7 @@ public class ModTags {
         public static final TagKey<Item> SKELETON_HORSE_COIN_SET = modItemTag("collectible_coins/entity_coins/skeleton_horse_coin_set");
         public static final TagKey<Item> SLIME_COIN_SET = modItemTag("collectible_coins/entity_coins/slime_coin_set");
         public static final TagKey<Item> SNIFFER_COIN_SET = modItemTag("collectible_coins/entity_coins/sniffer_coin_set");
+        public static final TagKey<Item> ARMADILLO_COIN_SET = modItemTag("collectible_coins/entity_coins/armadillo_coin_set");
         public static final TagKey<Item> SNOW_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/snow_golem_coin_set");
         public static final TagKey<Item> SPIDER_COIN_SET = modItemTag("collectible_coins/entity_coins/spider_coin_set");
         public static final TagKey<Item> STRAY_COIN_SET = modItemTag("collectible_coins/entity_coins/stray_coin_set");
@@ -143,6 +145,7 @@ public class ModTags {
         public static final TagKey<Item> MAULER_COIN_SET = modItemTag("collectible_coins/entity_coins/mauler_coin_set");
         public static final TagKey<Item> WILDFIRE_COIN_SET = modItemTag("collectible_coins/entity_coins/wildfire_coin_set");
         public static final TagKey<Item> TUFF_GOLEM_COIN_SET = modItemTag("collectible_coins/entity_coins/tuff_golem_coin_set");
+        public static final TagKey<Item> RASCAL_COIN_SET = modItemTag("collectible_coins/entity_coins/rascal_coin_set");
 
         public static final TagKey<Item> TEXTILES = modItemTag("textiles");
         public static final TagKey<Item> FIBRE = modItemTag("textiles/fibre");

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "todecoins:item/emerald_half_bank_note"
+  }
+}

@@ -118,7 +118,7 @@ public class CamelidCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.saturation").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.saturation").withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });

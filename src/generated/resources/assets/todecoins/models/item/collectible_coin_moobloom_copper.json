@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "todecoins:item/collectible_coin_moobloom_copper"
+  }
+}

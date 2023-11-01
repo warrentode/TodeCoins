@@ -51,39 +51,30 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
                 if (livingEntity != null) {
                     int armorBonus = 0;
                     int hpBonus = 0;
-                    int bossHPBonus = 0;
-                    int knockbackResistanceBonus = 3;
-                    int attackBonus = 3;
 
                     if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
                         if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
                             armorBonus = 1;
-                            hpBonus = 10;
+                            hpBonus = 20;
                         }
                         else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
                             armorBonus = 2;
-                            hpBonus = 15;
+                            hpBonus = 24;
                         }
                         else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
                             armorBonus = 3;
-                            hpBonus = 20;
+                            hpBonus = 30;
                         }
                         else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             armorBonus = 4;
-                            hpBonus = 25;
+                            hpBonus = 34;
                         }
 
                         attribute.put(Attributes.ARMOR,
                                 new AttributeModifier(uuid, "generic.armor", armorBonus,
                                         AttributeModifier.Operation.ADDITION));
                         attribute.put(Attributes.MAX_HEALTH,
-                                new AttributeModifier(uuid, "generic.max_health", (10 + hpBonus) + bossHPBonus,
-                                        AttributeModifier.Operation.ADDITION));
-                        attribute.put(Attributes.KNOCKBACK_RESISTANCE,
-                                new AttributeModifier(uuid, "generic.knockback_resistance", knockbackResistanceBonus,
-                                        AttributeModifier.Operation.ADDITION));
-                        attribute.put(Attributes.ATTACK_DAMAGE,
-                                new AttributeModifier(uuid, "generic.attack_damage", attackBonus,
+                                new AttributeModifier(uuid, "generic.max_health", hpBonus,
                                         AttributeModifier.Operation.ADDITION));
                     }
                 }
@@ -141,8 +132,8 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.fire_resist").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.burning_attack").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.fire_resist").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.burning_attack").withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });

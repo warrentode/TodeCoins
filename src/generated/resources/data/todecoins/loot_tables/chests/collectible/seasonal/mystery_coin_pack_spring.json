@@ -367,6 +367,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_piglin_merchant_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_rascal_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_armadillo_copper"
         }
       ],
       "rolls": 1.0

@@ -118,6 +118,7 @@ public class CageriumLootTablesGen implements Consumer<BiConsumer<ResourceLocati
         consumer.accept(CageriumLootTables.PENGUIN, LootTable.lootTable());
         consumer.accept(CageriumLootTables.SQUIRREL, LootTable.lootTable());
         consumer.accept(CageriumLootTables.GUARD, LootTable.lootTable());
+        consumer.accept(CageriumLootTables.RASCAL, LootTable.lootTable());
 
         consumer.accept(CageriumLootTables.CRAB, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))

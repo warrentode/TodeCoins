@@ -1,5 +1,7 @@
 {
   "values": [
+    "#todecoins:collectible_coins/entity_coins/armadillo_coin_set",
+    "#todecoins:collectible_coins/entity_coins/rascal_coin_set",
     "#todecoins:collectible_coins/entity_coins/allay_coin_set",
     "#todecoins:collectible_coins/entity_coins/axolotl_coin_set",
     "#todecoins:collectible_coins/entity_coins/bat_coin_set",

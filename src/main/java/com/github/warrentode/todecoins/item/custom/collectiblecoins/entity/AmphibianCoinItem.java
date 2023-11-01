@@ -67,6 +67,32 @@ public class AmphibianCoinItem extends CollectibleCoin implements ICurioItem {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, i,
                                 false, false, false));
                     }
+
+                    if (stack.is(ModTags.Items.TURTLE_COIN_SET)) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 0,
+                                false, false, false));
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 0,
+                                false, false, false));
+                    }
+
+                    if (stack.is(ModTags.Items.FROG_COIN_SET)) {
+                        int j = 0;
+                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
+                            j = 1;
+                        }
+                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
+                            j = 2;
+                        }
+                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
+                            j = 3;
+                        }
+                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
+                            j = 3;
+                        }
+
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, j,
+                                false, false, false));
+                    }
                 }
             }
 
@@ -80,8 +106,16 @@ public class AmphibianCoinItem extends CollectibleCoin implements ICurioItem {
                 if (stack.is(ModTags.Items.PENGUIN_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.REGENERATION);
                 }
-                if (stack.is(ModTags.Items.CRAB_COIN_SET) || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)) {
+                if (stack.is(ModTags.Items.CRAB_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.WATER_BREATHING);
+                }
+                if (stack.is(ModTags.Items.FROG_COIN_SET)) {
+                    livingEntity.removeEffect(MobEffects.JUMP);
+                }
+                if (stack.is(ModTags.Items.TURTLE_COIN_SET)) {
+                    livingEntity.removeEffect(MobEffects.WATER_BREATHING);
+                    livingEntity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+                    livingEntity.removeEffect(MobEffects.DAMAGE_RESISTANCE);
                 }
             }
 
@@ -111,16 +145,25 @@ public class AmphibianCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 if (stack.is(ModTags.Items.AXOLOTL_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.water_breathing").withStyle(ChatFormatting.BLUE));
-                    tooltips.add(Component.translatable("tooltips.regen").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.water_breathing").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.regen").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.PENGUIN_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.regen").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.regen").withStyle(ChatFormatting.BLUE));
                 }
-                if (stack.is(ModTags.Items.CRAB_COIN_SET) || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)) {
+                if (stack.is(ModTags.Items.CRAB_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.water_breathing").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.water_breathing").withStyle(ChatFormatting.BLUE));
+                }
+                if (stack.is(ModTags.Items.FROG_COIN_SET)) {
+                    tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.jump_boost").withStyle(ChatFormatting.BLUE));
+                }
+                if (stack.is(ModTags.Items.TURTLE_COIN_SET)) {
+                    tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.water_breathing").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.turtle_master").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

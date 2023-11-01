@@ -130,6 +130,7 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder BIRTHDAY_EVENT = BirthdayCondition.event();
     public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
     public static final LootItemCondition.Builder CHRISTMAS_EVENT = ChristmasCondition.event();
+    public static final LootItemCondition.Builder EASTER_EVENT = EasterCondition.event();
     public static final LootItemCondition.Builder ANNIVERSARY_EVENT = AnniversaryCondition.event();
     public static final LootItemCondition.Builder SPRING = SpringCondition.season();
     public static final LootItemCondition.Builder SUMMER = SummerCondition.season();
@@ -214,22 +215,29 @@ public class ModChestLootTablesGen extends ChestLoot {
                         .withPool(LootPool.lootPool()
                                 .setRolls(UniformGenerator.between(1.0F, 7.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
-                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_LOOT)
-                                        .when(BIRTHDAY_EVENT).setWeight(7).setQuality(0))
-                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT)
-                                        .when(ANNIVERSARY_EVENT).setWeight(7).setQuality(0))
-                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_LOOT)
-                                        .when(HALLOWEEN_EVENT).setWeight(7).setQuality(0))
-                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT)
-                                        .when(CHRISTMAS_EVENT).setWeight(7).setQuality(0))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_LOOT).when(BIRTHDAY_EVENT)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                        .setWeight(1).setQuality(6))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT).when(ANNIVERSARY_EVENT)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                        .setWeight(1).setQuality(6))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_LOOT).when(HALLOWEEN_EVENT)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                        .setWeight(1).setQuality(6))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT).when(CHRISTMAS_EVENT)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                        .setWeight(1).setQuality(6))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EASTER_COIN_LOOT).when(EASTER_EVENT)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                        .setWeight(1).setQuality(6))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SPRING_COIN_LOOT)
-                                        .when(SPRING).setWeight(1).setQuality(6))
+                                        .when(SPRING.or(EASTER_EVENT)).setWeight(1).setQuality(6))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT)
                                         .when(SUMMER).setWeight(1).setQuality(6))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT)
-                                        .when(AUTUMN).setWeight(1).setQuality(6))
+                                        .when(AUTUMN.or(HALLOWEEN_EVENT)).setQuality(6))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT)
-                                        .when(WINTER).setWeight(1).setQuality(6))
+                                        .when(WINTER.or(CHRISTMAS_EVENT).or(BIRTHDAY_EVENT).or(ANNIVERSARY_EVENT)).setWeight(1).setQuality(6))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_COPPER_COIN_LOOT,
                 LootTable.lootTable()
@@ -350,6 +358,14 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .setBonusRolls(ConstantValue.exactly(0F))
                                 .when(HALLOWEEN_EVENT)
                                 .add(LootItem.lootTableItem(ModItems.HALLOWEEN_COIN_2023.get()))
+                        ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_EASTER_COIN_LOOT,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setBonusRolls(ConstantValue.exactly(0F))
+                                .when(EASTER_EVENT)
+                                .add(LootItem.lootTableItem(ModItems.EASTER_COIN_2023.get()))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT,
                 LootTable.lootTable()
@@ -760,6 +776,15 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_RUINED_PORTAL_NETHER.or(IN_RUINED_PORTAL_DESERT).or(IN_RUINED_PORTAL_JUNGLE)
                                                 .or(IN_RUINED_PORTAL_MOUNTAIN).or(IN_RUINED_PORTAL_SWAMP).or(IN_RUINED_PORTAL_OCEAN)
                                                 .or(IN_RUINED_PORTAL_STANDARD)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_RASCAL_COIN.get()).when(SPRING)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_LUSH_CAVES).or(IN_DRIPSTONE_CAVES)
+                                                .or(IN_STRONGHOLD).or(IN_ANCIENT_CITY)))
+
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ARMADILLO_COIN.get()).when(SPRING)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_SAVANNA.or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT,
@@ -1149,6 +1174,15 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_RUINED_PORTAL_NETHER.or(IN_RUINED_PORTAL_DESERT).or(IN_RUINED_PORTAL_JUNGLE)
                                                 .or(IN_RUINED_PORTAL_MOUNTAIN).or(IN_RUINED_PORTAL_SWAMP).or(IN_RUINED_PORTAL_OCEAN)
                                                 .or(IN_RUINED_PORTAL_STANDARD)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_RASCAL_COIN.get()).when(SUMMER)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_LUSH_CAVES).or(IN_DRIPSTONE_CAVES)
+                                                .or(IN_STRONGHOLD).or(IN_ANCIENT_CITY)))
+
+                                .add(LootItem.lootTableItem(ModItems.IRON_ARMADILLO_COIN.get()).when(SUMMER)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_SAVANNA.or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT,
@@ -1536,6 +1570,15 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(IN_RUINED_PORTAL_NETHER.or(IN_RUINED_PORTAL_DESERT).or(IN_RUINED_PORTAL_JUNGLE)
                                                 .or(IN_RUINED_PORTAL_MOUNTAIN).or(IN_RUINED_PORTAL_SWAMP).or(IN_RUINED_PORTAL_OCEAN)
                                                 .or(IN_RUINED_PORTAL_STANDARD)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_RASCAL_COIN.get()).when(AUTUMN)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_LUSH_CAVES).or(IN_DRIPSTONE_CAVES)
+                                                .or(IN_STRONGHOLD).or(IN_ANCIENT_CITY)))
+
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ARMADILLO_COIN.get()).when(AUTUMN)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_SAVANNA.or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
                         ));
 
         consumer.accept(ModBuiltInLootTables.TODECOINS_WINTER_COIN_LOOT,
@@ -1924,6 +1967,15 @@ public class ModChestLootTablesGen extends ChestLoot {
                                                 .or(IN_RUINED_PORTAL_MOUNTAIN).or(IN_RUINED_PORTAL_SWAMP).or(IN_RUINED_PORTAL_OCEAN)
                                                 .or(IN_RUINED_PORTAL_STANDARD)))
 
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_RASCAL_COIN.get()).when(WINTER)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_MINESHAFT.or(IN_MINESHAFT_MESA).or(IN_LUSH_CAVES).or(IN_DRIPSTONE_CAVES)
+                                                .or(IN_STRONGHOLD).or(IN_ANCIENT_CITY)))
+
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ARMADILLO_COIN.get()).when(WINTER)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                        .when(IN_SAVANNA.or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
+
                         ));
 
         consumer.accept(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK,
@@ -2022,6 +2074,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PENGUIN_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_SQUIRREL_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_RASCAL_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_ARMADILLO_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK,
@@ -2120,6 +2174,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.IRON_PENGUIN_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_SQUIRREL_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_MERCHANT_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_RASCAL_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.IRON_ARMADILLO_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK,
@@ -2218,6 +2274,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.GOLD_PENGUIN_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_SQUIRREL_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_RASCAL_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_ARMADILLO_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK,
@@ -2316,6 +2374,8 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PENGUIN_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SQUIRREL_COIN.get()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_RASCAL_COIN.get()))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ARMADILLO_COIN.get()))
                         ));
 
         consumer.accept(ModBuiltInLootTables.MYSTERY_COIN_PACK,
@@ -2331,11 +2391,26 @@ public class ModChestLootTablesGen extends ChestLoot {
                                         .when(LootItemRandomChanceCondition.randomChance(0.25F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT).when(CHRISTMAS_EVENT)
                                         .when(LootItemRandomChanceCondition.randomChance(0.25F)))
-                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK).when(SPRING))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EASTER_COIN_LOOT).when(EASTER_EVENT)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.25F)))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.SPRING_MYSTERY_COIN_PACK)
+                                        .when(SPRING.or(EASTER_EVENT)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.SUMMER_MYSTERY_COIN_PACK).when(SUMMER))
-                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK).when(AUTUMN.or(HALLOWEEN_EVENT)))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.AUTUMN_MYSTERY_COIN_PACK)
+                                        .when(AUTUMN.or(HALLOWEEN_EVENT)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.WINTER_MYSTERY_COIN_PACK)
                                         .when(WINTER.or(CHRISTMAS_EVENT).or(BIRTHDAY_EVENT).or(ANNIVERSARY_EVENT)))
+                        ));
+
+        consumer.accept(ModBuiltInLootTables.RASCAL_COIN_REWARD,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .setBonusRolls(ConstantValue.exactly(0F))
+                                .add(LootItem.lootTableItem(ModItems.COPPER_RASCAL_COIN.get()).when(SPRING))
+                                .add(LootItem.lootTableItem(ModItems.IRON_RASCAL_COIN.get()).when(SUMMER))
+                                .add(LootItem.lootTableItem(ModItems.GOLD_RASCAL_COIN.get()).when(AUTUMN))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_RASCAL_COIN.get()).when(WINTER))
                         ));
     }
 }

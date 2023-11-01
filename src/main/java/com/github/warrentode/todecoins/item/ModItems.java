@@ -8,6 +8,7 @@ import com.github.warrentode.todecoins.item.custom.collectiblecoins.gameplay.Fis
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.gameplay.HeroCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.BirthdayCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.ChristmasCoinItem;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.EasterCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.HalloweenCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.CarnationPatronCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.CosmosPatronCoinItem;
@@ -141,9 +142,12 @@ public class ModItems {
     // halloween set
     public static final RegistryObject<Item> HALLOWEEN_COIN_2023 = ITEMS.register("collectible_coin_halloween_2023",
             () -> new HalloweenCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
-    // christmas coin
+    // christmas set
     public static final RegistryObject<Item> CHRISTMAS_COIN_2023 = ITEMS.register("collectible_coin_christmas_2023",
             () -> new ChristmasCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    // easter set
+    public static final RegistryObject<Item> EASTER_COIN_2023 = ITEMS.register("collectible_coin_easter_2023",
+            () -> new EasterCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     // patron collection
     // patron lifetime anniversary set
     public static final RegistryObject<Item> SCHOLAR_OWL_COIN = ITEMS.register("collectible_coin_scholar_owl",
@@ -704,6 +708,15 @@ public class ModItems {
             () -> new SnifferCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_SNIFFER_COIN = ITEMS.register("collectible_coin_sniffer_netherite",
             () -> new SnifferCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    // armadillo set
+    public static final RegistryObject<Item> COPPER_ARMADILLO_COIN = ITEMS.register("collectible_coin_armadillo_copper",
+            () -> new ArmadilloCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_ARMADILLO_COIN = ITEMS.register("collectible_coin_armadillo_iron",
+            () -> new ArmadilloCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_ARMADILLO_COIN = ITEMS.register("collectible_coin_armadillo_gold",
+            () -> new ArmadilloCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_ARMADILLO_COIN = ITEMS.register("collectible_coin_armadillo_netherite",
+            () -> new ArmadilloCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     // snow golem set
     public static final RegistryObject<Item> COPPER_SNOW_GOLEM_COIN = ITEMS.register("collectible_coin_snow_golem_copper",
             () -> new GolemCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
@@ -967,6 +980,17 @@ public class ModItems {
             () -> new BlazeCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_WILDFIRE_COIN = ITEMS.register("collectible_coin_wildfire_netherite",
             () -> new BlazeCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    // rascal set
+    public static final RegistryObject<Item> COPPER_RASCAL_COIN = ITEMS.register("collectible_coin_rascal_copper",
+            () -> new RascalCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> IRON_RASCAL_COIN = ITEMS.register("collectible_coin_rascal_iron",
+            () -> new RascalCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> GOLD_RASCAL_COIN = ITEMS.register("collectible_coin_rascal_gold",
+            () -> new RascalCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NETHERITE_RASCAL_COIN = ITEMS.register("collectible_coin_rascal_netherite",
+            () -> new RascalCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+
+    // ecologics
     // crab set
     public static final RegistryObject<Item> COPPER_CRAB_COIN = ITEMS.register("collectible_coin_crab_copper",
             () -> new AmphibianCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
@@ -994,6 +1018,8 @@ public class ModItems {
             () -> new AmphibianCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> NETHERITE_PENGUIN_COIN = ITEMS.register("collectible_coin_penguin_netherite",
             () -> new AmphibianCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+
+    // guard villagers
     // guard set
     public static final RegistryObject<Item> COPPER_GUARD_COIN = ITEMS.register("collectible_coin_guard_copper",
             () -> new VillagerCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));

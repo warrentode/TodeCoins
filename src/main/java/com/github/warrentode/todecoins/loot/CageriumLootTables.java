@@ -112,6 +112,7 @@ public class CageriumLootTables {
     public static final ResourceLocation ICEOLOGER = register("friendsandfoes", "iceologer");
     public static final ResourceLocation TUFF_GOLEM = register("friendsandfoes", "tuff_golem");
     public static final ResourceLocation WILDFIRE = register("friendsandfoes", "wildfire");
+    public static final ResourceLocation RASCAL = register("friendsandfoes", "rascal");
     // ecologics
     public static final ResourceLocation CAMEL = register("ecologics", "camel");
     public static final ResourceLocation CRAB = register("ecologics", "coconut_crab");

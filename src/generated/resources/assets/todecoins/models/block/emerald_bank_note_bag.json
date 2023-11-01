@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "todecoins:block/bag_bottom",
+    "side": "todecoins:block/bag_side",
+    "top": "todecoins:block/emerald_bank_note_bag_top"
+  }
+}

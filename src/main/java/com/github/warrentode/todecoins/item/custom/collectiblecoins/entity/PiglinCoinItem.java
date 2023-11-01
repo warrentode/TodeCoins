@@ -110,10 +110,10 @@ public class PiglinCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.piglin_neutral").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.piglin_neutral").withStyle(ChatFormatting.BLUE));
 
                 if (stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.undead_damage").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.undead_damage").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

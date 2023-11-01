@@ -342,6 +342,10 @@
         },
         {
           "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/rascal"
+        },
+        {
+          "condition": "forge:loot_table_id",
           "loot_table_id": "ecologics:entities/coconut_crab"
         },
         {

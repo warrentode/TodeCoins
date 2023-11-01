@@ -106,16 +106,16 @@ public class IllagerCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.illager_damage").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.illager_damage").withStyle(ChatFormatting.BLUE));
                 if (stack.is(ModTags.Items.ICEOLOGER_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.snow_walk").withStyle(ChatFormatting.BLUE));
-                    tooltips.add(Component.translatable("tooltips.slow_attack").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.snow_walk").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.slow_attack").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.PILLAGER_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.looting_1").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.looting_1").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.WITCH_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.poison_attack").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.poison_attack").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

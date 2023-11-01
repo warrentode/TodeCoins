@@ -367,6 +367,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_piglin_merchant_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_rascal_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_armadillo_netherite"
         }
       ],
       "rolls": 1.0

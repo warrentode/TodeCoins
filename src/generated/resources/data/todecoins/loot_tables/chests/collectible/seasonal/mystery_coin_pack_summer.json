@@ -367,6 +367,14 @@
         {
           "type": "minecraft:item",
           "name": "todecoins:collectible_coin_piglin_merchant_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_rascal_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:collectible_coin_armadillo_iron"
         }
       ],
       "rolls": 1.0

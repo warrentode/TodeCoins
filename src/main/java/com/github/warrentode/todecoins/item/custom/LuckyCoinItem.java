@@ -87,9 +87,9 @@ public class LuckyCoinItem extends CoinItem implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.fortune_1").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.looting_1").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.undying").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.fortune_1").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.looting_1").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.undying").withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });

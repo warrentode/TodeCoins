@@ -57,12 +57,15 @@ public class RabbitCoinItem extends CollectibleCoin implements ICurioItem {
                 }
                 livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, i,
                         false, false, false));
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, i,
+                        false, false, false));
             }
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 LivingEntity livingEntity = slotContext.entity();
                 livingEntity.removeEffect(MobEffects.JUMP);
+                livingEntity.removeEffect(MobEffects.MOVEMENT_SPEED);
             }
 
             @Nonnull
@@ -90,7 +93,8 @@ public class RabbitCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.jump_boost").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.jump_boost").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.movement_speed").withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });

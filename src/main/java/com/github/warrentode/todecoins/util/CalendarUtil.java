@@ -9,6 +9,7 @@ public class CalendarUtil {
         NONE,
         PATREON_ANNIVERSARY,
         BIRTHDAY,
+        EASTER,
         CHRISTMAS,
         HALLOWEEN,
         SPRING,
@@ -30,6 +31,10 @@ public class CalendarUtil {
 
         public static boolean isWinter() {
             return get() == AUTUMN;
+        }
+
+        public static boolean isEaster() {
+            return get() == EASTER;
         }
 
         public static boolean isChristmas() {
@@ -68,6 +73,9 @@ public class CalendarUtil {
             }
 
             // holidays
+            if ((month == Calendar.MARCH && date >= 19) && (month == Calendar.APRIL && date <= 30)) {
+                return EASTER;
+            }
             if ((month == Calendar.DECEMBER && date >= 1) && (month == Calendar.DECEMBER && date <= 31)) {
                 return CHRISTMAS;
             }

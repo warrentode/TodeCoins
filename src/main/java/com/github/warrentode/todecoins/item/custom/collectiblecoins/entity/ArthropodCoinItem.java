@@ -96,15 +96,15 @@ public class ArthropodCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.arthropod_damage").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.arthropod_damage").withStyle(ChatFormatting.BLUE));
                 if (stack.is(ModTags.Items.SILVERFISH_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.snow_walk").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.snow_walk").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.BEE_COIN_SET) || stack.is(ModTags.Items.CAVE_SPIDER_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.poison_attack").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.poison_attack").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.SPIDER_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.slow_attack").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.slow_attack").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

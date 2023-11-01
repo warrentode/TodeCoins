@@ -44,9 +44,11 @@ public class LanguageFileGen extends LanguageProvider {
 
     private void addItems() {
         // annual coins
-        addCollectibleCoins(ModItems.BIRTHDAY_COIN_2023.get().getDescriptionId(), "Birthday Coin 2023");
-        addCollectibleCoins(ModItems.HALLOWEEN_COIN_2023.get().getDescriptionId(), "Halloween Coin 2023");
-        addCollectibleCoins(ModItems.CHRISTMAS_COIN_2023.get().getDescriptionId(), "Christmas Coin 2023");
+        addCollectibleCoins(ModItems.BIRTHDAY_COIN_2023.get().getDescriptionId(), "Birthday Coin");
+        addCollectibleCoins(ModItems.HALLOWEEN_COIN_2023.get().getDescriptionId(), "Halloween Coin");
+        addCollectibleCoins(ModItems.CHRISTMAS_COIN_2023.get().getDescriptionId(), "Christmas Coin");
+        addCollectibleCoins(ModItems.EASTER_COIN_2023.get().getDescriptionId(), "Easter Coin");
+
         addCollectibleCoins(ModItems.SCHOLAR_OWL_COIN.get().getDescriptionId(), "Scholar Owl Lifetime Coin");
         addCollectibleCoins(ModItems.TUXEDO_CAT_COIN.get().getDescriptionId(), "Tuxedo Cat Lifetime Coin");
         addCollectibleCoins(ModItems.LITTLE_BEAR_COIN.get().getDescriptionId(), "Little Bear Lifetime Coin");
@@ -352,6 +354,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_SNIFFER_COIN.get().getDescriptionId(), "Gold Sniffer Coin");
         addCollectibleCoins(ModItems.NETHERITE_SNIFFER_COIN.get().getDescriptionId(), "Netherite Sniffer Coin");
 
+        addCollectibleCoins(ModItems.COPPER_ARMADILLO_COIN.get().getDescriptionId(), "Copper Armadillo Coin");
+        addCollectibleCoins(ModItems.IRON_ARMADILLO_COIN.get().getDescriptionId(), "Iron Armadillo Coin");
+        addCollectibleCoins(ModItems.GOLD_ARMADILLO_COIN.get().getDescriptionId(), "Gold Armadillo Coin");
+        addCollectibleCoins(ModItems.NETHERITE_ARMADILLO_COIN.get().getDescriptionId(), "Netherite Armadillo Coin");
+
         addCollectibleCoins(ModItems.COPPER_SNOW_GOLEM_COIN.get().getDescriptionId(), "Copper Snow Golem Coin");
         addCollectibleCoins(ModItems.IRON_SNOW_GOLEM_COIN.get().getDescriptionId(), "Iron Snow Golem Coin");
         addCollectibleCoins(ModItems.GOLD_SNOW_GOLEM_COIN.get().getDescriptionId(), "Gold Snow Golem Coin");
@@ -498,6 +505,11 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.GOLD_TUFF_GOLEM_COIN.get().getDescriptionId(), "Gold Tuff Golem Coin");
         addCollectibleCoins(ModItems.NETHERITE_TUFF_GOLEM_COIN.get().getDescriptionId(), "Netherite Tuff Golem Coin");
 
+        addCollectibleCoins(ModItems.COPPER_RASCAL_COIN.get().getDescriptionId(), "Copper Rascal Coin");
+        addCollectibleCoins(ModItems.IRON_RASCAL_COIN.get().getDescriptionId(), "Iron Rascal Coin");
+        addCollectibleCoins(ModItems.GOLD_RASCAL_COIN.get().getDescriptionId(), "Gold Rascal Coin");
+        addCollectibleCoins(ModItems.NETHERITE_RASCAL_COIN.get().getDescriptionId(), "Netherite Rascal Coin");
+
         // ecologics theme coins
         addCollectibleCoins(ModItems.COPPER_CRAB_COIN.get().getDescriptionId(), "Copper Crab Coin");
         addCollectibleCoins(ModItems.IRON_CRAB_COIN.get().getDescriptionId(), "Iron Crab Coin");
@@ -643,42 +655,49 @@ public class LanguageFileGen extends LanguageProvider {
         // coin effects
         add("tooltips.coin_effects", "Coin Effects:");
 
-        add("tooltips.fortune_1", "Fortune I");
-        add("tooltips.looting_1", "Looting I");
+        add("tooltips.coin_effects.fortune_1", "Fortune I");
+        add("tooltips.coin_effects.looting_1", "Looting I");
 
-        add("tooltips.night_vision", "Night Vision");
-        add("tooltips.water_breathing", "Water Breathing");
-        add("tooltips.saturation", "Increases Saturation");
-        add("tooltips.fire_resist", "Increases Fire Resistance");
-        add("tooltips.damage_resist", "Increases Damage Resistance");
-        add("tooltips.dig_speed", "Increases Dig Speed");
-        add("tooltips.levitation", "Levitation");
-        add("tooltips.jump_boost", "Jump Boost");
-        add("tooltips.slow_fall", "Slow Falling");
-        add("tooltips.health_boost", "Health Boost");
-        add("tooltips.dolphin_grace", "Dolphin's Grace");
-        add("tooltips.regen", "Regeneration");
+        add("tooltips.coin_effects.night_vision", "Night Vision");
+        add("tooltips.coin_effects.water_breathing", "Water Breathing");
+        add("tooltips.coin_effects.saturation", "Increases Saturation");
+        add("tooltips.coin_effects.fire_resist", "Increases Fire Resistance");
+        add("tooltips.coin_effects.damage_resist", "Increases Damage Resistance");
+        add("tooltips.coin_effects.dig_speed", "Increases Dig Speed");
+        add("tooltips.coin_effects.levitation", "Levitation");
+        add("tooltips.coin_effects.jump_boost", "Jump Boost");
+        add("tooltips.coin_effects.slow_fall", "Slow Falling");
+        add("tooltips.coin_effects.health_boost", "Health Boost");
+        add("tooltips.coin_effects.damage_boost", "Damage Boost");
+        add("tooltips.coin_effects.dolphin_grace", "Dolphin's Grace");
+        add("tooltips.coin_effects.regen", "Regeneration");
+        add("tooltips.coin_effects.invisibility", "Invisibility");
+        add("tooltips.coin_effects.movement_speed", "Speed");
+        add("tooltips.coin_effects.conduit", "Conduit Power");
+        add("tooltips.coin_effects.turtle_master", "Decreases Movement but Increases Resistance");
 
-        add("tooltips.snow_walk", "Can Walk on Powdered Snow");
-        add("tooltips.berry_walk", "Can Walk in Berry Bushes Unharmed");
-        add("tooltips.piglin_neutral", "Makes Piglins Neutral");
-        add("tooltips.enderman_neutral", "Makes Endermen Neutral");
+        add("tooltips.coin_effects.snow_walk", "Can Walk on Powdered Snow");
+        add("tooltips.coin_effects.berry_walk", "Can Walk in Berry Bushes Unharmed");
+        add("tooltips.coin_effects.piglin_neutral", "Makes Piglins Neutral");
+        add("tooltips.coin_effects.enderman_neutral", "Makes Endermen Neutral");
 
-        add("tooltips.undying", "Functions as a Totem of Undying while Equipped or in Inventory");
-        add("tooltips.halloween_hero", "Hero of the Village during Halloween Event");
-        add("tooltips.christmas_hero", "Hero of the Village during Christmas Event");
-        add("tooltips.birthday_hero", "Hero of the Village during Birthday Event");
-        add("tooltips.fishing_loot", "Unlocks Additional Sub Loot Tables for Fishing");
-        add("tooltips.night_invisibility", "Invisibility at Night");
-        add("tooltips.night_movement", "Increased Movement Speed at Night");
-        add("tooltips.cat_intimidation", "Intimidates Creepers and Phantoms");
-        add("tooltips.undead_damage", "Increased Damage vs. Undead");
-        add("tooltips.illager_damage", "Increased Damage vs. Illagers");
-        add("tooltips.arthropod_damage", "Increased Damage vs. Arthropods");
-        add("tooltips.slow_attack", "Attacks Inflict Slowness");
-        add("tooltips.poison_attack", "Attacks Inflict Poison");
-        add("tooltips.wither_attack", "Attacks Inflict Wither");
-        add("tooltips.burning_attack", "Attacks Inflict Burning");
+        add("tooltips.coin_effects.halloween_hero", "Hero of the Village during Halloween Event");
+        add("tooltips.coin_effects.christmas_hero", "Hero of the Village during Christmas Event");
+        add("tooltips.coin_effects.birthday_hero", "Hero of the Village during Birthday Event");
+        add("tooltips.coin_effects.easter_hero", "Hero of the Village during Easter Event");
+
+        add("tooltips.coin_effects.undying", "Functions as a Totem of Undying while Equipped or in Inventory");
+        add("tooltips.coin_effects.fishing_loot", "Unlocks Additional Sub Loot Tables for Fishing");
+        add("tooltips.coin_effects.night_invisibility", "Invisibility at Night");
+        add("tooltips.coin_effects.night_movement", "Increased Movement Speed at Night");
+        add("tooltips.coin_effects.cat_intimidation", "Intimidates Creepers and Phantoms");
+        add("tooltips.coin_effects.undead_damage", "Increased Damage vs. Undead");
+        add("tooltips.coin_effects.illager_damage", "Increased Damage vs. Illagers");
+        add("tooltips.coin_effects.arthropod_damage", "Increased Damage vs. Arthropods");
+        add("tooltips.coin_effects.slow_attack", "Attacks Inflict Slowness");
+        add("tooltips.coin_effects.poison_attack", "Attacks Inflict Poison");
+        add("tooltips.coin_effects.wither_attack", "Attacks Inflict Wither");
+        add("tooltips.coin_effects.burning_attack", "Attacks Inflict Burning");
 
         // food tooltips
         add("tooltips.crimson_spore_chocolate_effects", "90% Chance of Fire Resistance, 10% Chance of Hunger");
@@ -728,6 +747,7 @@ public class LanguageFileGen extends LanguageProvider {
         // friends and foes specific theme bases
         add("tooltips.collectible_glare_coin.hover", "One of Four Glare Seasonal Coins");
         add("tooltips.collectible_mauler_coin.hover", "One of Four Mauler Seasonal Coins");
+        add("tooltips.collectible_rascal_coin.hover", "One of Four Rascal Seasonal Coins");
 
         // gameplay collectible coin bases
         add("tooltips.collectible_hero_coin.hover", "One of Four Hero Seasonal Coins");
@@ -737,6 +757,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_birthday_coin.hover", "A Birthday Seasonal Coin");
         add("tooltips.collectible_christmas_coin.hover", "A Christmas Seasonal Coin");
         add("tooltips.collectible_halloween_coin.hover", "A Halloween Seasonal Coin");
+        add("tooltips.collectible_easter_coin.hover", "An Easter Seasonal Coin");
 
         // annual patron coin bases
         add("tooltips.collectible_patron_coin.hover", "A collectible coin to publicly honor, acknowledge, and appreciate those that support my work");

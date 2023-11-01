@@ -17,6 +17,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -50,9 +51,18 @@ public class VillagerCoinItem extends CollectibleCoin implements ICurioItem {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 LivingEntity livingEntity = slotContext.entity();
 
-                if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
+                if (livingEntity != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (livingEntity.level.getDayTime() >= 12000)) {
                     attribute.put(ModAttributes.CHARISMA.get(),
                             new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
+                if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
+                    attribute.put(Attributes.ATTACK_DAMAGE,
+                            new AttributeModifier(uuid, "generic.attack_damage", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.armor", 1,
                                     AttributeModifier.Operation.ADDITION));
                 }
                 return attribute;
@@ -102,7 +112,7 @@ public class VillagerCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public void onEquip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onEquip(slotContext, prevStack);
-                if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
+                if (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) {
                     PlayerCharisma.addCharisma(1);
                 }
             }
@@ -111,13 +121,9 @@ public class VillagerCoinItem extends CollectibleCoin implements ICurioItem {
             public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onUnequip(slotContext, prevStack);
                 LivingEntity livingEntity = slotContext.entity();
-                if (stack.is(ModTags.Items.GUARD_COIN_SET)) {
-                    PlayerCharisma.subtractCharisma(1);
-                    livingEntity.removeEffect(MobEffects.MOVEMENT_SPEED);
-                }
-
                 if (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.INVISIBILITY);
+                    PlayerCharisma.subtractCharisma(1);
                 }
 
                 if (stack.is(ModTags.Items.GUARD_COIN_SET) || stack.is(ModTags.Items.VILLAGER_COIN_SET)) {
@@ -145,11 +151,11 @@ public class VillagerCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 if (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.night_invisibility").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.night_invisibility").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.VILLAGER_COIN_SET) || stack.is(ModTags.Items.GUARD_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.night_movement").withStyle(ChatFormatting.BLUE));
+                    tooltips.add(Component.translatable("tooltips.coin_effects.night_movement").withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
