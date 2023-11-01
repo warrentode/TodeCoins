@@ -1,3 +1,14 @@
+### 2023-10-29 - 1.7.1.beta
+
+- completely overhauled the models and textures of the collectible coins
+  - this was to address the visibility issue of the coins in the GUI
+- added the Rascal, Armadillo and Easter coins
+- adjusted boss currency loot to drop a larger amount of coins
+  - loot tables are completely customizable via datapacks to fit the needs of modpacks and servers
+  - the adjustments being made here to all the default tables are strictly based on what has made sense to us during our
+    testing in our homeschool server so I encourage you to make any adjustments to these tables that make sense to your
+    uses and needs
+
 ### 2023-10-29 - 1.7.0.beta
 
 - corrected the texture assigned to the collectible shulker netherite coin
@@ -10,6 +21,7 @@
 - BREAKING CHANGE: re-organized how the coin effects are coded to (hopefully) ensure all intended effects are actually
   applied
   - please back up your worlds before updating
+  - this also means some coin effects were adjusted or rebalanced in the process
 - added tooltips for the collectible coin and candy coin effects
 - added a server token coin for server admins to add and use however way they'd like
   - not otherwise available in gameplay
