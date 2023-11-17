@@ -1,0 +1,82 @@
+{
+  "parent": "todecoins:collectible/all_coins",
+  "criteria": {
+    "find_item.todecoins.collectible_coin_cave_spider_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_cave_spider_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_cave_spider_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_cave_spider_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_cave_spider_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_cave_spider_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_cave_spider_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_cave_spider_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.caveSpiderCoinSet.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:collectible_coin_cave_spider_copper"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.caveSpiderCoinSet"
+    }
+  },
+  "requirements": [
+    [
+      "find_item.todecoins.collectible_coin_cave_spider_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_cave_spider_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_cave_spider_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_cave_spider_netherite"
+    ]
+  ]
+}

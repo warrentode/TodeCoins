@@ -1,0 +1,67 @@
+{
+  "parent": "todecoins:collectible/all_coins",
+  "criteria": {
+    "find_item.todecoins.collectible_coin_little_bear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_little_bear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_scholar_owl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_scholar_owl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_tuxedo_cat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_tuxedo_cat"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.lifetimePatronCoinSet.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:collectible_coin_scholar_owl"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.lifetimePatronCoinSet"
+    }
+  },
+  "requirements": [
+    [
+      "find_item.todecoins.collectible_coin_scholar_owl"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_tuxedo_cat"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_little_bear"
+    ]
+  ]
+}

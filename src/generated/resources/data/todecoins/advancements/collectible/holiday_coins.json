@@ -1,0 +1,82 @@
+{
+  "parent": "todecoins:collectible/all_coins",
+  "criteria": {
+    "find_item.todecoins.collectible_coin_birthday_2023": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_birthday_2023"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_christmas_2023": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_christmas_2023"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_easter_2023": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_easter_2023"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_halloween_2023": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_halloween_2023"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.holidayCoinSet.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:collectible_coin_christmas_2023"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.holidayCoinSet"
+    }
+  },
+  "requirements": [
+    [
+      "find_item.todecoins.collectible_coin_birthday_2023"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_halloween_2023"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_christmas_2023"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_easter_2023"
+    ]
+  ]
+}

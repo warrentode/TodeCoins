@@ -1,48 +1,48 @@
 {
-  "parent": "todecoins:main/collectible_coins",
+  "parent": "todecoins:collectible/all_coins",
   "criteria": {
-    "find_item.todecoins.collectible_coin_guard_copper": {
+    "find_item.todecoins.collectible_coin_sniffer_copper": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_guard_copper"
+              "todecoins:collectible_coin_sniffer_copper"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_guard_gold": {
+    "find_item.todecoins.collectible_coin_sniffer_gold": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_guard_gold"
+              "todecoins:collectible_coin_sniffer_gold"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_guard_iron": {
+    "find_item.todecoins.collectible_coin_sniffer_iron": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_guard_iron"
+              "todecoins:collectible_coin_sniffer_iron"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_guard_netherite": {
+    "find_item.todecoins.collectible_coin_sniffer_netherite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_guard_netherite"
+              "todecoins:collectible_coin_sniffer_netherite"
             ]
           }
         ]
@@ -53,30 +53,30 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.collectibleGuardVillagerCoins.desc"
+      "translate": "advancement.snifferCoinSet.desc"
     },
-    "frame": "challenge",
+    "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_guard_copper"
+      "item": "todecoins:collectible_coin_sniffer_copper"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.collectibleGuardVillagerCoins"
+      "translate": "advancement.snifferCoinSet"
     }
   },
   "requirements": [
     [
-      "find_item.todecoins.collectible_coin_guard_copper"
+      "find_item.todecoins.collectible_coin_sniffer_copper"
     ],
     [
-      "find_item.todecoins.collectible_coin_guard_iron"
+      "find_item.todecoins.collectible_coin_sniffer_iron"
     ],
     [
-      "find_item.todecoins.collectible_coin_guard_gold"
+      "find_item.todecoins.collectible_coin_sniffer_gold"
     ],
     [
-      "find_item.todecoins.collectible_coin_guard_netherite"
+      "find_item.todecoins.collectible_coin_sniffer_netherite"
     ]
   ]
 }

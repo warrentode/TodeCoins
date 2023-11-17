@@ -1,0 +1,82 @@
+{
+  "parent": "todecoins:collectible/all_coins",
+  "criteria": {
+    "find_item.todecoins.collectible_coin_rabbit_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_rabbit_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_rabbit_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_rabbit_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_rabbit_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_rabbit_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_rabbit_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_rabbit_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.rabbitCoinSet.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:collectible_coin_rabbit_copper"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.rabbitCoinSet"
+    }
+  },
+  "requirements": [
+    [
+      "find_item.todecoins.collectible_coin_rabbit_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_rabbit_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_rabbit_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_rabbit_netherite"
+    ]
+  ]
+}

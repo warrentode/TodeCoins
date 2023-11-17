@@ -590,8 +590,8 @@ public class LanguageFileGen extends LanguageProvider {
     }
 
     private void addAdvancements() {
-        add("advancement.root", "Tode Coins Advancements");
-        add("advancement.root.desc", "Tode Coins Advancement Description");
+        add("advancement.root", "TodeCoins Advancements");
+        add("advancement.root.desc", "Primary Advancements for TodeCoins");
         add("advancement.craftCoinPress", "Start Minting");
         add("advancement.craftCoinPress.desc", "Obtain a Coin Press");
         add("advancement.mintingCoins", "Minting Coins");
@@ -617,23 +617,299 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.luckyArmor", "Feeling Lucky?");
         add("advancement.luckyArmor.desc", "Obtain a full set of Lucky Armor");
 
-        add("advancement.collectibleCoins", "Collectible Vanilla Coins");
-        add("advancement.collectibleCoins.desc", "Find All the Vanilla Collectible Coins!");
+        add("advancement.all_coins", "Collectible Coins");
+        add("advancement.all_coins.desc", "Collectible Coin Advancements");
 
-        add("advancement.collectibleEcologicsCoins", "Collectible Ecologics Coins");
-        add("advancement.collectibleEcologicsCoins.desc", "Find All the Ecologics Collectible Coins!");
+        add("advancement.collectibleTodePiglinsCoins", "Piglin Merchant Coin Set");
+        add("advancement.collectibleTodePiglinsCoins.desc", "Find All the Piglin Merchant Coins!");
 
-        add("advancement.collectibleFriendsAndFoesCoins", "Collectible Friends and Foes Coins");
-        add("advancement.collectibleFriendsAndFoesCoins.desc", "Find All the Friends and Foes Collectible Coins!");
+        add("advancement.snifferCoinSet", "Sniffer Coin Set");
+        add("advancement.snifferCoinSet.desc", "Find All the Sniffer Coins!");
 
-        add("advancement.collectibleGuardVillagerCoins", "Collectible Guard Villager Coins");
-        add("advancement.collectibleGuardVillagerCoins.desc", "Find All the Guard Villager Collectible Coins!");
+        add("advancement.armadilloCoinSet", "Armadillo Coin Set");
+        add("advancement.armadilloCoinSet.desc", "Find All the Armadillo Coins!");
 
-        add("advancement.collectibleTodePiglinsCoins", "Collectible TodePiglins Coins");
-        add("advancement.collectibleTodePiglinsCoins.desc", "Find All the TodePiglins Collectible Coins!");
+        add("advancement.camelCoinSet", "Camel Coin Set");
+        add("advancement.camelCoinSet.desc", "Find All the Camel Coins!");
 
-        add("advancement.collectibleUnusedUpcomingCoins", "Collectible Unused or Upcoming Vanilla Mob Coins");
-        add("advancement.collectibleUnusedUpcomingCoins.desc", "Find All the Collectible Coins for the Unused or Upcoming Mobs!");
+        add("advancement.zombieHorseCoinSet", "Zombie Horse Coin Set");
+        add("advancement.zombieHorseCoinSet.desc", "Find All the Zombie Horse Coins!");
+
+        add("advancement.illusionerCoinSet", "Illusioner Coin Set");
+        add("advancement.illusionerCoinSet.desc", "Find All the Illusioner Coins!");
+
+        add("advancement.giantCoinSet", "Giant Coin Set");
+        add("advancement.giantCoinSet.desc", "Find All the Giant Coins!");
+
+        add("advancement.collectibleGuardVillagerCoins", "Guard Villager Coin Set");
+        add("advancement.collectibleGuardVillagerCoins.desc", "Find All the Guard Villager Coins!");
+
+        add("advancement.rascalCoinSet", "Rascal Coin Set");
+        add("advancement.rascalCoinSet.desc", "Find All the Rascal Coins!");
+
+        add("advancement.wildfireCoinSet", "Wildfire Coin Set");
+        add("advancement.wildfireCoinSet.desc", "Find All the Wildfire Coins!");
+
+        add("advancement.tuffGolemCoinSet", "Tuff Golem Coin Set");
+        add("advancement.tuffGolemCoinSet.desc", "Find All the Tuff Golem Coins!");
+
+        add("advancement.moobloomCoinSet", "Moobloom Coin Set");
+        add("advancement.moobloomCoinSet.desc", "Find All the Moobloom Coins!");
+
+        add("advancement.maulerCoinSet", "Mauler Coin Set");
+        add("advancement.maulerCoinSet.desc", "Find All the Mauler Coins!");
+
+        add("advancement.iceologerCoinSet", "Iceologer Coin Set");
+        add("advancement.iceologerCoinSet.desc", "Find All the Iceologer Coins!");
+
+        add("advancement.glareCoinSet", "Glare Coin Set");
+        add("advancement.glareCoinSet.desc", "Find All the Glare Coins!");
+
+        add("advancement.copperGolemCoinSet", "Copper Golem Coin Set");
+        add("advancement.copperGolemCoinSet.desc", "Find All the Copper Golem Coins!");
+
+        add("advancement.penguinCoinSet", "Penguin Coin Set");
+        add("advancement.penguinCoinSet.desc", "Find All the Penguin Coins!");
+
+        add("advancement.squirrelCoinSet", "Squirrel Coin Set");
+        add("advancement.squirrelCoinSet.desc", "Find All the Squirrel Coins!");
+
+        add("advancement.crabCoinSet", "Crab Coin Set");
+        add("advancement.crabCoinSet.desc", "Find All the Crab Coins!");
+
+        add("advancement.zombifiedPiglinCoinSet", "Zombified Piglin Coin Set");
+        add("advancement.zombifiedPiglinCoinSet.desc", "Find All the Zombified Piglin Coins!");
+
+        add("advancement.zombieVillagerCoinSet", "Zombie Villager Coin Set");
+        add("advancement.zombieVillagerCoinSet.desc", "Find All the Zombie Villager Coins!");
+
+        add("advancement.zombieCoinSet", "Zombie Coin Set");
+        add("advancement.zombieCoinSet.desc", "Find All the Zombie Coins!");
+
+        add("advancement.zoglinCoinSet", "Zoglin Coin Set");
+        add("advancement.zoglinCoinSet.desc", "Find All the Zoglin Coins!");
+
+        add("advancement.wolfCoinSet", "Wolf Coin Set");
+        add("advancement.wolfCoinSet.desc", "Find All the Wolf Coins!");
+
+        add("advancement.witherSkeletonCoinSet", "Wither Skeleton Coin Set");
+        add("advancement.witherSkeletonCoinSet.desc", "Find All the Wither Skeleton Coins!");
+
+        add("advancement.witherCoinSet", "Wither Coin Set");
+        add("advancement.witherCoinSet.desc", "Find All the Wither Coins!");
+
+        add("advancement.witchCoinSet", "Witch Coin Set");
+        add("advancement.witchCoinSet.desc", "Find All the Witch Coins!");
+
+        add("advancement.wardenCoinSet", "Warden Coin Set");
+        add("advancement.wardenCoinSet.desc", "Find All the Warden Coins!");
+
+        add("advancement.wanderingTraderCoinSet", "Wandering Trader Coin Set");
+        add("advancement.wanderingTraderCoinSet.desc", "Find All the Wandering Trader Coins!");
+
+        add("advancement.vindicatorCoinSet", "Vindicator Coin Set");
+        add("advancement.vindicatorCoinSet.desc", "Find All the Vindicator Coins!");
+
+        add("advancement.villagerCoinSet", "Villager Coin Set");
+        add("advancement.villagerCoinSet.desc", "Find All the Villager Coins!");
+
+        add("advancement.vexCoinSet", "Vex Coin Set");
+        add("advancement.vexCoinSet.desc", "Find All the Vex Coins!");
+
+        add("advancement.turtleCoinSet", "Turtle Coin Set");
+        add("advancement.turtleCoinSet.desc", "Find All the Turtle Coins!");
+
+        add("advancement.tropicalFishCoinSet", "Tropical Fish Coin Set");
+        add("advancement.tropicalFishCoinSet.desc", "Find All the Tropical Fish Coins!");
+
+        add("advancement.llamaCoinSet", "Llama Coin Set");
+        add("advancement.llamaCoinSet.desc", "Find All the Llama Coins!");
+
+        add("advancement.tadpoleCoinSet", "Tadpole Coin Set");
+        add("advancement.tadpoleCoinSet.desc", "Find All the Tadpole Coins!");
+
+        add("advancement.striderCoinSet", "Strider Coin Set");
+        add("advancement.striderCoinSet.desc", "Find All the Strider Coins!");
+
+        add("advancement.strayCoinSet", "Stray Coin Set");
+        add("advancement.strayCoinSet.desc", "Find All the Stray Coins!");
+
+        add("advancement.squidCoinSet", "Squid Coin Set");
+        add("advancement.squidCoinSet.desc", "Find All the Squid Coins!");
+
+        add("advancement.snowGolemCoinSet", "Snow Golem Coin Set");
+        add("advancement.snowGolemCoinSet.desc", "Find All the Snow Golem Coins!");
+
+        add("advancement.slimeCoinSet", "Slime Coin Set");
+        add("advancement.slimeCoinSet.desc", "Find All the Slime Coins!");
+
+        add("advancement.skeletonHorseCoinSet", "Skeleton Horse Coin Set");
+        add("advancement.skeletonHorseCoinSet.desc", "Find All the Skeleton Horse Coins!");
+
+        add("advancement.skeletonCoinSet", "Skeleton Coin Set");
+        add("advancement.skeletonCoinSet.desc", "Find All the Skeleton Coins!");
+
+        add("advancement.silverfishCoinSet", "Silverfish Coin Set");
+        add("advancement.silverfishCoinSet.desc", "Find All the Silverfish Coins!");
+
+        add("advancement.traderLlamaCoinSet", "Trader Llama Coin Set");
+        add("advancement.traderLlamaCoinSet.desc", "Find All the Trader Llama Coins!");
+
+        add("advancement.shulkerCoinSet", "Shulker Coin Set");
+        add("advancement.shulkerCoinSet.desc", "Find All the Shulker Coins!");
+
+        add("advancement.sheepCoinSet", "Sheep Coin Set");
+        add("advancement.sheepCoinSet.desc", "Find All the Sheep Coins!");
+
+        add("advancement.salmonCoinSet", "Salmon Coin Set");
+        add("advancement.salmonCoinSet.desc", "Find All the Salmon Coins!");
+
+        add("advancement.ravagerCoinSet", "Ravager Coin Set");
+        add("advancement.ravagerCoinSet.desc", "Find All the Ravager Coins!");
+
+        add("advancement.rabbitCoinSet", "Rabbit Coin Set");
+        add("advancement.rabbitCoinSet.desc", "Find All the Rabbit Coins!");
+
+        add("advancement.pillagerCoinSet", "Pillager Coin Set");
+        add("advancement.pillagerCoinSet.desc", "Find All the Pillager Coins!");
+
+        add("advancement.polarBearCoinSet", "Polar Bear Coin Set");
+        add("advancement.polarBearCoinSet.desc", "Find All the Polar Bear Coins!");
+
+        add("advancement.pufferfishCoinSet", "Pufferfish Coin Set");
+        add("advancement.pufferfishCoinSet.desc", "Find All the Pufferfish Coins!");
+
+        add("advancement.pandaCoinSet", "Panda Coin Set");
+        add("advancement.pandaCoinSet.desc", "Find All the Panda Coins!");
+
+        add("advancement.parrotCoinSet", "Parrot Coin Set");
+        add("advancement.parrotCoinSet.desc", "Find All the Parrot Coins!");
+
+        add("advancement.phantomCoinSet", "Phantom Coin Set");
+        add("advancement.phantomCoinSet.desc", "Find All the Phantom Coins!");
+
+        add("advancement.pigCoinSet", "Pig Coin Set");
+        add("advancement.pigCoinSet.desc", "Find All the Pig Coins!");
+
+        add("advancement.piglinCoinSet", "Piglin Coin Set");
+        add("advancement.piglinCoinSet.desc", "Find All the Piglin Coins!");
+
+        add("advancement.piglinBruteCoinSet", "Piglin Brute Coin Set");
+        add("advancement.piglinBruteCoinSet.desc", "Find All the Piglin Brute Coins!");
+
+        add("advancement.ocelotCoinSet", "Ocelot Coin Set");
+        add("advancement.ocelotCoinSet.desc", "Find All the Ocelot Coins!");
+
+        add("advancement.numismatistCoinSet", "Numismatist Coin Set");
+        add("advancement.numismatistCoinSet.desc", "Find All the Numismatist Coins!");
+
+        add("advancement.muleCoinSet", "Mule Coin Set");
+        add("advancement.muleCoinSet.desc", "Find All the Mule Coins!");
+
+        add("advancement.mooshroomCoinSet", "Mooshroom Coin Set");
+        add("advancement.mooshroomCoinSet.desc", "Find All the Mooshroom Coins!");
+
+        add("advancement.magmaCubeCoinSet", "Magma Cube Coin Set");
+        add("advancement.magmaCubeCoinSet.desc", "Find All the Magma Cube Coins!");
+
+        add("advancement.ironGolemCoinSet", "Iron Golem Coin Set");
+        add("advancement.ironGolemCoinSet.desc", "Find All the Iron Golem Coins!");
+
+        add("advancement.huskCoinSet", "Husk Coin Set");
+        add("advancement.huskCoinSet.desc", "Find All the Husk Coins!");
+
+        add("advancement.horseCoinSet", "Horse Coin Set");
+        add("advancement.horseCoinSet.desc", "Find All the Horse Coins!");
+
+        add("advancement.glowSquidCoinSet", "Glow Squid Coin Set");
+        add("advancement.glowSquidCoinSet.desc", "Find All the Glow Squid Coins!");
+
+        add("advancement.guardianCoinSet", "Guardian Coin Set");
+        add("advancement.guardianCoinSet.desc", "Find All the Guardian Coins!");
+
+        add("advancement.goatCoinSet", "Goat Coin Set");
+        add("advancement.goatCoinSet.desc", "Find All the Goat Coins!");
+
+        add("advancement.ghastCoinSet", "Ghast Coin Set");
+        add("advancement.ghastCoinSet.desc", "Find All the Ghast Coins!");
+
+        add("advancement.frogCoinSet", "Frog Coin Set");
+        add("advancement.frogCoinSet.desc", "Find All the Frog Coins!");
+
+        add("advancement.foxCoinSet", "Fox Coin Set");
+        add("advancement.foxCoinSet.desc", "Find All the Fox Coins!");
+
+        add("advancement.evokerCoinSet", "Evoker Coin Set");
+        add("advancement.evokerCoinSet.desc", "Find All the Evoker Coins!");
+
+        add("advancement.endermiteCoinSet", "Endermite Coin Set");
+        add("advancement.endermiteCoinSet.desc", "Find All the Endermite Coins!");
+
+        add("advancement.endermanCoinSet", "Enderman Coin Set");
+        add("advancement.endermanCoinSet.desc", "Find All the Enderman Coins!");
+
+        add("advancement.enderDragonCoinSet", "Ender Dragon Coin Set");
+        add("advancement.enderDragonCoinSet.desc", "Find All the Ender Dragon Coins!");
+
+        add("advancement.elderGuardianCoinSet", "Elder Guardian Coin Set");
+        add("advancement.elderGuardianCoinSet.desc", "Find All the Elder Guardian Coins!");
+
+        add("advancement.drownedCoinSet", "Drowned Coin Set");
+        add("advancement.drownedCoinSet.desc", "Find All the Drowned Coins!");
+
+        add("advancement.donkeyCoinSet", "Donkey Coin Set");
+        add("advancement.donkeyCoinSet.desc", "Find All the Donkey Coins!");
+
+        add("advancement.dolphinCoinSet", "Dolphin Coin Set");
+        add("advancement.dolphinCoinSet.desc", "Find All the Dolphin Coins!");
+
+        add("advancement.creeperCoinSet", "Creeper Coin Set");
+        add("advancement.creeperCoinSet.desc", "Find All the Creeper Coins!");
+
+        add("advancement.cowCoinSet", "Cow Coin Set");
+        add("advancement.cowCoinSet.desc", "Find All the Cow Coins!");
+
+        add("advancement.codCoinSet", "Cod Coin Set");
+        add("advancement.codCoinSet.desc", "Find All the Cod Coins!");
+
+        add("advancement.chickenCoinSet", "Chicken Coin Set");
+        add("advancement.chickenCoinSet.desc", "Find All the Chicken Coins!");
+
+        add("advancement.caveSpiderCoinSet", "Cave Spider Coin Set");
+        add("advancement.caveSpiderCoinSet.desc", "Find All the Cave Spider Coins!");
+
+        add("advancement.catCoinSet", "Cat Coin Set");
+        add("advancement.catCoinSet.desc", "Find All the Cat Coins!");
+
+        add("advancement.blazeCoinSet", "Blaze Coin Set");
+        add("advancement.blazeCoinSet.desc", "Find All the Blaze Coins!");
+
+        add("advancement.beeCoinSet", "Bee Coin Set");
+        add("advancement.beeCoinSet.desc", "Find All the Bee Coins!");
+
+        add("advancement.batCoinSet", "Bat Coin Set");
+        add("advancement.batCoinSet.desc", "Find All the Bat Coins!");
+
+        add("advancement.axolotlCoinSet", "Axolotl Coin Set");
+        add("advancement.axolotlCoinSet.desc", "Find All the Axolotl Coins!");
+
+        add("advancement.allayCoinSet", "Allay Coin Set");
+        add("advancement.allayCoinSet.desc", "Find All the Allay Coins!");
+
+        add("advancement.heroCoinSet", "Hero Coin Set");
+        add("advancement.heroCoinSet.desc", "Find All the Hero Coins!");
+
+        add("advancement.patronBranniganCoinSet", "Patron Brannigan Coin Set");
+        add("advancement.patronBranniganCoinSet.desc", "Find All the Patron Brannigan Coins!");
+
+        add("advancement.patronNashCoinSet", "Patron Nash Coin Set");
+        add("advancement.patronNashCoinSet.desc", "Find All the Patron Nash Coins!");
+
+        add("advancement.lifetimePatronCoinSet", "Lifetime Patron Coin Set");
+        add("advancement.lifetimePatronCoinSet.desc", "Find All the Lifetime Patron Coins!");
+
+        add("advancement.holidayCoinSet", "Holiday Coin Set");
+        add("advancement.holidayCoinSet.desc", "Find All the Holiday Coins!");
     }
 
     private void addTooltips() {

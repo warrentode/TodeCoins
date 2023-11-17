@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/collectible_coins",
+  "parent": "todecoins:collectible/all_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_piglin_merchant_copper": {
       "conditions": {
@@ -55,7 +55,7 @@
     "description": {
       "translate": "advancement.collectibleTodePiglinsCoins.desc"
     },
-    "frame": "challenge",
+    "frame": "task",
     "hidden": false,
     "icon": {
       "item": "todecoins:collectible_coin_piglin_merchant_copper"
