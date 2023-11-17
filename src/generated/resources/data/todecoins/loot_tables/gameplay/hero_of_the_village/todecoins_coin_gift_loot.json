@@ -6,7 +6,8 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:gameplay/hero_of_the_village/todecoins_hero_coin_loot"
+          "name": "todecoins:gameplay/hero_of_the_village/todecoins_hero_coin_loot",
+          "weight": 5
         },
         {
           "type": "minecraft:loot_table",
@@ -17,33 +18,33 @@
           ],
           "name": "todecoins:chests/collectible/seasonal/todecoins_birthday_coin_loot"
         },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:anniversary_condition"
-                  }
-              ],
-              "name": "todecoins:chests/collectible/seasonal/todecoins_anniversary_coin_loot"
-          },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:christmas_condition"
-                  }
-              ],
-              "name": "todecoins:chests/collectible/seasonal/todecoins_halloween_coin_loot"
-          },
-          {
-              "type": "minecraft:loot_table",
-              "conditions": [
-                  {
-                      "condition": "todecoins:christmas_condition"
-                  }
-              ],
-              "name": "todecoins:chests/collectible/seasonal/todecoins_christmas_coin_loot"
-          }
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_anniversary_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_halloween_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_christmas_coin_loot"
+        }
       ],
       "rolls": 1.0
     }

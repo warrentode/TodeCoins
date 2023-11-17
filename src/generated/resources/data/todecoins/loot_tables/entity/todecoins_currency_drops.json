@@ -199,7 +199,13 @@
             }
           ],
           "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
-        },
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 1.0,
+      "entries": [
         {
           "type": "minecraft:loot_table",
           "conditions": [
@@ -267,7 +273,11 @@
           "name": "todecoins:entity/collectible/seasonal/todecoins_winter_coin_drops"
         }
       ],
-      "rolls": 1.0
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 0.0
+      }
     }
   ]
 }

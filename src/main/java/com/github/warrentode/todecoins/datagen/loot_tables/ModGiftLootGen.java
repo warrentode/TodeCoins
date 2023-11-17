@@ -31,11 +31,11 @@ public class ModGiftLootGen extends GiftLoot {
         consumer.accept(ModBuiltInLootTables.TODECOINS_COIN_GIFT_LOOT,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HERO_COIN_LOOT))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_LOOT).when(BirthdayCondition.event()))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT).when(AnniversaryCondition.event()))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_LOOT).when(ChristmasCondition.event()))
-                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT).when(ChristmasCondition.event()))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HERO_COIN_LOOT).setWeight(5))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_LOOT).setWeight(1).when(BirthdayCondition.event()))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT).setWeight(1).when(AnniversaryCondition.event()))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_LOOT).setWeight(1).when(ChristmasCondition.event()))
+                                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT).setWeight(1).when(ChristmasCondition.event()))
                                  )
                        );
         // gift loot for mod villagers

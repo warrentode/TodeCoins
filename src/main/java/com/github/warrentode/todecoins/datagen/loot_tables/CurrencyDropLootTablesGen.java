@@ -78,6 +78,10 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                         .setWeight(1).when(LootItemRandomChanceCondition.randomChance(0.25F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_DROPS).when(ANNIVERSARY_EVENT)
                                         .setWeight(1).when(LootItemRandomChanceCondition.randomChance(0.25F)))
+                        )
+                        .withPool(LootPool.lootPool()
+                                .setRolls(UniformGenerator.between(0, 1))
+                                .setBonusRolls(ConstantValue.exactly(1))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SPRING_ENTITY_COIN_DROPS)
                                         .setWeight(1).when(SPRING.or(EASTER_EVENT)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SUMMER_ENTITY_COIN_DROPS)
@@ -86,7 +90,8 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                         .setWeight(1).when(AUTUMN.or(HALLOWEEN_EVENT)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_WINTER_ENTITY_COIN_DROPS)
                                         .setWeight(1).when(WINTER.or(CHRISTMAS_EVENT).or(BIRTHDAY_EVENT).or(ANNIVERSARY_EVENT)))
-                        ));
+                        )
+        );
         // injected entity loot table
         consumer.accept(ModBuiltInLootTables.TODECOINS_BOSS_CURRENCY_DROPS,
                 LootTable.lootTable()
@@ -126,6 +131,11 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                         .setWeight(1).when(LootItemRandomChanceCondition.randomChance(0.25F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_DROPS).when(ANNIVERSARY_EVENT)
                                         .setWeight(1).when(LootItemRandomChanceCondition.randomChance(0.25F)))
+                        )
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .setBonusRolls(ConstantValue.exactly(1))
+                                .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SPRING_ENTITY_COIN_DROPS)
                                         .setWeight(1).when(SPRING.or(EASTER_EVENT)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SUMMER_ENTITY_COIN_DROPS)
@@ -134,7 +144,8 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                         .setWeight(1).when(AUTUMN.or(HALLOWEEN_EVENT)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_WINTER_ENTITY_COIN_DROPS)
                                         .setWeight(1).when(WINTER.or(CHRISTMAS_EVENT).or(BIRTHDAY_EVENT).or(ANNIVERSARY_EVENT)))
-                        ));
+                        )
+        );
         consumer.accept(ModBuiltInLootTables.TODECOINS_COPPER_COIN_DROPS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
