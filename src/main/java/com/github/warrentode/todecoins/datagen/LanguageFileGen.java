@@ -53,7 +53,7 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.TUXEDO_CAT_COIN.get().getDescriptionId(), "Tuxedo Cat Lifetime Coin");
         addCollectibleCoins(ModItems.LITTLE_BEAR_COIN.get().getDescriptionId(), "Little Bear Lifetime Coin");
         addCollectibleCoins(ModItems.MARSHALL_NASH_CARNATION_COIN.get().getDescriptionId(), "Marshall Nash Carnation Coin");
-        addCollectibleCoins(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDescriptionId(), "Marshall Nash Carnation Coin");
+        addCollectibleCoins(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDescriptionId(), "Marshall Nash Cosmos Coin");
         addCollectibleCoins(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDescriptionId(), "Trevor Brannigan Carnation Coin");
         addCollectibleCoins(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().getDescriptionId(), "Trevor Brannigan Cosmos Coin");
 
@@ -804,7 +804,9 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("subtitles.todecoins.numismatist_drink_milk", "Numismatist Drinks Milk");
         add("subtitles.todecoins.numismatist_drink_potion", "Numismatist Drinks Potion");
-        add("subtitles.todecoins.numismatist_haggle", "Numismatist Haggles with You");
+        add("subtitles.todecoins.numismatist_appeared", "Numismatist Appears");
+        add("subtitles.todecoins.numismatist_disappeared", "Numismatist Disappears");
+        add("subtitles.todecoins.numismatist_haggle", "Numismatist Haggles");
         add("subtitles.todecoins.numismatist_no", "Numismatist Disagrees");
         add("subtitles.todecoins.numismatist_yes", "Numismatist Agrees");
         add("subtitles.todecoins.numismatist_idle", "Numismatist Mumbles");
