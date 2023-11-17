@@ -1,3 +1,9 @@
+### 2023-11-17 - 1.7.1.beta
+
+- completely revamped the advancements for the collectible coins
+- readjusted drop rates for the entity coins
+- added missing translations, fixed incorrect translations
+
 ### 2023-11-01 - 1.7.1.beta
 
 - completely overhauled the models and textures of the collectible coins
