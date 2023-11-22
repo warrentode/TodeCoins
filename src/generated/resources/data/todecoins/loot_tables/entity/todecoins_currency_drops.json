@@ -134,71 +134,6 @@
           "name": "todecoins:entity/notes/todecoins_emerald_bank_note_drops",
           "quality": 6,
           "weight": 2
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:birthday_condition"
-            },
-            {
-              "chance": 0.25,
-              "condition": "minecraft:random_chance"
-            }
-          ],
-          "name": "todecoins:entity/collectible/todecoins_birthday_coin_drops"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:halloween_condition"
-            },
-            {
-              "chance": 0.25,
-              "condition": "minecraft:random_chance"
-            }
-          ],
-          "name": "todecoins:entity/collectible/todecoins_halloween_coin_drops"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:christmas_condition"
-            },
-            {
-              "chance": 0.25,
-              "condition": "minecraft:random_chance"
-            }
-          ],
-          "name": "todecoins:entity/collectible/todecoins_christmas_coin_drops"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:easter_condition"
-            },
-            {
-              "chance": 0.25,
-              "condition": "minecraft:random_chance"
-            }
-          ],
-          "name": "todecoins:entity/collectible/todecoins_easter_coin_drops"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:anniversary_condition"
-            },
-            {
-              "chance": 0.25,
-              "condition": "minecraft:random_chance"
-            }
-          ],
-          "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
         }
       ],
       "rolls": 1.0
@@ -210,15 +145,62 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "todecoins:spring_condition"
-                },
-                {
-                  "condition": "todecoins:easter_condition"
-                }
-              ]
+              "condition": "todecoins:birthday_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_birthday_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:halloween_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_halloween_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_christmas_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:easter_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_easter_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1.0,
+        "min": 0.0
+      }
+    },
+    {
+      "bonus_rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
             }
           ],
           "name": "todecoins:entity/collectible/seasonal/todecoins_spring_coin_drops"
@@ -236,15 +218,7 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "todecoins:autumn_condition"
-                },
-                {
-                  "condition": "todecoins:halloween_condition"
-                }
-              ]
+              "condition": "todecoins:autumn_condition"
             }
           ],
           "name": "todecoins:entity/collectible/seasonal/todecoins_autumn_coin_drops"
@@ -253,21 +227,7 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "todecoins:winter_condition"
-                },
-                {
-                  "condition": "todecoins:christmas_condition"
-                },
-                {
-                  "condition": "todecoins:birthday_condition"
-                },
-                {
-                  "condition": "todecoins:anniversary_condition"
-                }
-              ]
+              "condition": "todecoins:winter_condition"
             }
           ],
           "name": "todecoins:entity/collectible/seasonal/todecoins_winter_coin_drops"

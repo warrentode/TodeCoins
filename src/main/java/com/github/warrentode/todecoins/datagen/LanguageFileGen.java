@@ -617,8 +617,8 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.luckyArmor", "Feeling Lucky?");
         add("advancement.luckyArmor.desc", "Obtain a full set of Lucky Armor");
 
-        add("advancement.all_coins", "Collectible Coins");
-        add("advancement.all_coins.desc", "Collectible Coin Advancements");
+        add("advancement.collectibleCoins", "Collectible Coins");
+        add("advancement.collectibleCoins.desc", "Collectible Coin Advancements");
 
         add("advancement.collectibleTodePiglinsCoins", "Piglin Merchant Coin Set");
         add("advancement.collectibleTodePiglinsCoins.desc", "Find All the Piglin Merchant Coins!");
@@ -641,8 +641,8 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.giantCoinSet", "Giant Coin Set");
         add("advancement.giantCoinSet.desc", "Find All the Giant Coins!");
 
-        add("advancement.collectibleGuardVillagerCoins", "Guard Villager Coin Set");
-        add("advancement.collectibleGuardVillagerCoins.desc", "Find All the Guard Villager Coins!");
+        add("advancement.guardVillagerCoinSet", "Guard Villager Coin Set");
+        add("advancement.guardVillagerCoinSet.desc", "Find All the Guard Villager Coins!");
 
         add("advancement.rascalCoinSet", "Rascal Coin Set");
         add("advancement.rascalCoinSet.desc", "Find All the Rascal Coins!");
@@ -910,6 +910,9 @@ public class LanguageFileGen extends LanguageProvider {
 
         add("advancement.holidayCoinSet", "Holiday Coin Set");
         add("advancement.holidayCoinSet.desc", "Find All the Holiday Coins!");
+
+        add("advancement.hoglinCoinSet", "Hoglin Coin Set");
+        add("advancement.hoglinCoinSet.desc", "Find All the Hoglin Coins!");
     }
 
     private void addTooltips() {

@@ -289,7 +289,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).setWeight(1)
                                         .when(IN_END_CITY)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
-                                .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).setWeight(1)
+                                .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).setWeight(1)
                                         .when(IN_END_CITY))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT,
