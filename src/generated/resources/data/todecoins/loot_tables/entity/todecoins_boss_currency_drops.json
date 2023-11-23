@@ -148,7 +148,28 @@
           ],
           "name": "todecoins:entity/coins/todecoins_lucky_coin_drops",
           "quality": 6
-        },
+        }
+      ],
+      "functions": [
+        {
+          "count": 1.0,
+          "function": "minecraft:looting_enchant"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 15.0,
+        "min": 10.0
+      }
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
+      "entries": [
         {
           "type": "minecraft:loot_table",
           "conditions": [
@@ -215,14 +236,16 @@
           "name": "todecoins:entity/collectible/todecoins_anniversary_coin_drops"
         }
       ],
-      "rolls": {
-        "type": "minecraft:uniform",
-        "max": 15.0,
-        "min": 10.0
-      }
+      "functions": [
+        {
+          "count": 1.0,
+          "function": "minecraft:looting_enchant"
+        }
+      ],
+      "rolls": 1.0
     },
     {
-      "bonus_rolls": 1.0,
+      "bonus_rolls": 0.0,
       "conditions": [
         {
           "condition": "minecraft:killed_by_player"
@@ -294,6 +317,12 @@
             }
           ],
           "name": "todecoins:entity/collectible/seasonal/todecoins_winter_coin_drops"
+        }
+      ],
+      "functions": [
+        {
+          "count": 1.0,
+          "function": "minecraft:looting_enchant"
         }
       ],
       "rolls": 1.0

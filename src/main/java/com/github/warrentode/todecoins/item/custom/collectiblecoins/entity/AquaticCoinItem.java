@@ -55,8 +55,11 @@ public class AquaticCoinItem extends CollectibleCoin implements ICurioItem {
                         else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                             i = 3;
                         }
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
-                                false, false, false));
+                        //noinspection deprecation
+                        if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                                    false, false, false));
+                        }
                     }
                     if (stack.is(ModTags.Items.DOLPHIN_COIN_SET)) {
                         //noinspection deprecation
@@ -71,8 +74,11 @@ public class AquaticCoinItem extends CollectibleCoin implements ICurioItem {
                             else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
                                 i = 3;
                             }
-                            livingEntity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 200, i,
-                                    false, false, true));
+                            //noinspection deprecation
+                            if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
+                                livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                                        false, false, false));
+                            }
                         }
                         else {
                             livingEntity.removeEffect(MobEffects.DOLPHINS_GRACE);

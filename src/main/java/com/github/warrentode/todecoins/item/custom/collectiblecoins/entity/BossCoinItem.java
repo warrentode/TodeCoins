@@ -8,6 +8,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -211,10 +212,13 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
                 }
 
                 if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
-                            false, false, false));
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 200, i,
-                            false, false, false));
+                    //noinspection deprecation
+                    if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                                false, false, false));
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 200, i,
+                                false, false, false));
+                    }
                 }
             }
 

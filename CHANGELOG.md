@@ -3,6 +3,7 @@
 - updated loot tables for collectible coin entity drops
 - fixed endonian coin chest loot
 - added missing translations
+- fixed underwater coin effects
 
 ### 2023-11-17 - 1.7.1.beta
 
