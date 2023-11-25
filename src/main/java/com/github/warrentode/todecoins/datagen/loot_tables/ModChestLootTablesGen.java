@@ -205,7 +205,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_LOOT)
                                         .setWeight(2).setQuality(5).when(LootItemRandomChanceCondition.randomChance(0.1F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_COLLECTIBLE_COIN_LOOT)
-                                        .setWeight(1).setQuality(0).when(LootItemRandomChanceCondition.randomChance(0.2F)))
+                                        .setWeight(1).setQuality(0).when(LootItemRandomChanceCondition.randomChance(0.5F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_LUCKY_COIN_LOOT)
                                         .setWeight(1).setQuality(6).when(LootItemRandomChanceCondition.randomChance(0.001F)))
                         ));
