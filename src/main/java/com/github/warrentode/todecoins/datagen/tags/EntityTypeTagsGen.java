@@ -128,8 +128,15 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
         tag(ForgeTags.EntityTypes.ENDER_DRAGON_TYPES)
                 .add(EntityType.ENDER_DRAGON);
         tag(ForgeTags.EntityTypes.ENDERMAN_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:undead_enderling")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:dragling")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:endstone_trapper")))
                 .add(EntityType.ENDERMAN);
         tag(ForgeTags.EntityTypes.ENDERMITES_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:ender_blob")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:ender_firefly")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:bolok")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("phantasm:crystie")))
                 .add(EntityType.ENDERMITE);
         tag(ForgeTags.EntityTypes.EVOKER_TYPES)
                 .add(EntityType.EVOKER);
@@ -160,6 +167,7 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
         tag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
                 .add(EntityType.ILLUSIONER);
         tag(ForgeTags.EntityTypes.IRON_GOLEM_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:endstone_golem")))
                 .add(EntityType.IRON_GOLEM);
         tag(ForgeTags.EntityTypes.LLAMA_TYPES)
                 .add(EntityType.LLAMA);

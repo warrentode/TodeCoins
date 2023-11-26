@@ -64,7 +64,7 @@ public class ArthropodCoinItem extends CollectibleCoin implements ICurioItem {
                         d = 0.03;
                     }
                     attribute.put(Attributes.MOVEMENT_SPEED,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.05 + d,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.01 + d,
                                     AttributeModifier.Operation.ADDITION));
                 }
 

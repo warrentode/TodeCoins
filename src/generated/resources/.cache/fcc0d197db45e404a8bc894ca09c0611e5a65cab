@@ -1,4 +1,4 @@
-// 1.19.2	2023-10-30T17:21:30.9706297	Tags for minecraft:entity_type
+// 1.19.2	2023-11-25T22:47:10.9307703	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
@@ -21,8 +21,8 @@ da9ec5f7ed64a0d225e00ee60b8e6d6408b431fb data/forge/tags/entity_types/creeper.js
 feb83e4135976325b1d958ce767ace41789192f1 data/forge/tags/entity_types/drops_currency.json
 a15d44b6e4cb2744c21fd173d65bb9858de283b1 data/forge/tags/entity_types/drowned.json
 10173428ff8a63550e9c0bbedd2ad68d7acf158b data/forge/tags/entity_types/elder_guardian.json
-6f8bc3eb93347d4d15c38a3b7cfbd2b796ac201c data/forge/tags/entity_types/enderman.json
-edf64deed56924f50118492f25104511eb052cab data/forge/tags/entity_types/endermites.json
+e2b0a6ca1c654ac3caca40c3b8d0c52cc129a628 data/forge/tags/entity_types/enderman.json
+913d47e8dd5403ffe9e2445c142c4cf0f8be9ee4 data/forge/tags/entity_types/endermites.json
 e00f2931577049b9a4400a87ed9c249373be376c data/forge/tags/entity_types/ender_dragon.json
 f60c3aa2adefe93f28eb08cff81788380b9f4c12 data/forge/tags/entity_types/evoker.json
 d6579e4bdc95064a373ff2e4145bbb7fd13131cf data/forge/tags/entity_types/fox.json
@@ -39,7 +39,7 @@ f7cc9e720867f2fea58d5b0840bdce7a253ca3fe data/forge/tags/entity_types/hoglin.jso
 e2e5633d9261e4ff3f7d07edc9901471b3586a5a data/forge/tags/entity_types/husk.json
 e16b49092952b777e252d70b0f18485facc9ce17 data/forge/tags/entity_types/illagers.json
 3f7f728e824b94d2b07880f63a920a98bc41e6f0 data/forge/tags/entity_types/illusioner.json
-29671cfa11d074462c259806e9d60468451e3cdb data/forge/tags/entity_types/iron_golem.json
+68d64aae1927c54d174ad38518b843bc2931fc75 data/forge/tags/entity_types/iron_golem.json
 5c5afd5d1064c82ba6697a1f869a9f972b777fe5 data/forge/tags/entity_types/llama.json
 699d8d2c92e77a66cc1875b9f29493cd201096d6 data/forge/tags/entity_types/magma_cube.json
 eaf3b9567732675bcd969f6751b68b015cd4d354 data/forge/tags/entity_types/mauler.json

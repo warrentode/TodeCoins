@@ -1,5 +1,17 @@
 {
-    "values": [
-        "minecraft:enderman"
-    ]
+  "values": [
+    {
+      "id": "unusualend:undead_enderling",
+      "required": false
+    },
+    {
+      "id": "unusualend:dragling",
+      "required": false
+    },
+    {
+      "id": "unusualend:endstone_trapper",
+      "required": false
+    },
+    "minecraft:enderman"
+  ]
 }
