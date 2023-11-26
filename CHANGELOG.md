@@ -1,3 +1,8 @@
+### 2023-11-25 - 1.7.4.beta
+
+- updated loot tables
+- removed a duplicate set of trades from the banker
+
 ### 2023-11-22 - 1.7.2.beta
 
 - updated loot tables for collectible coin entity drops

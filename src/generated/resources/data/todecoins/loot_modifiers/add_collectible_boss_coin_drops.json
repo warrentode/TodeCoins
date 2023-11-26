@@ -1,0 +1,31 @@
+{
+  "type": "todecoins:add_loot_table",
+  "conditions": [
+    {
+      "condition": "minecraft:alternative",
+      "terms": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/ender_dragon"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/elder_guardian"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/warden"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/wither"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "friendsandfoes:entities/wildfire"
+        }
+      ]
+    }
+  ],
+  "lootTable": "todecoins:entity/collectible/boss_collectible_coin_drops"
+}

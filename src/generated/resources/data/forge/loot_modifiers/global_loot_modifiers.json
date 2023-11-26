@@ -2,10 +2,13 @@
   "entries": [
     "todecoins:add_todecoins_chest",
     "todecoins:add_todecoins_fishing_coins",
+    "todecoins:add_collectible_holiday_coin_drops",
     "todecoins:add_loot_currency_drops",
+    "todecoins:add_collectible_entity_coin_drops",
     "todecoins:add_loot_chest_currency",
     "todecoins:add_todecoins_bonus_fishing_table",
     "todecoins:add_rascal_coin_rewards",
+    "todecoins:add_collectible_boss_coin_drops",
     "todecoins:add_loot_hero_gift_coins",
     "todecoins:add_loot_boss_currency_drops",
     "todecoins:add_four_leaf_clover_drops"

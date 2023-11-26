@@ -18,7 +18,7 @@
               "tag": "forge:drops_currency"
             },
             {
-              "chance": 0.5,
+              "chance": 0.1,
               "condition": "minecraft:random_chance"
             }
           ],

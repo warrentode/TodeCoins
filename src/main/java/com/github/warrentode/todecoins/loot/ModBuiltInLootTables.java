@@ -95,6 +95,9 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_BOSS_EMERALD_HALF_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_half_bank_note_drops");
     public static final ResourceLocation TODECOINS_BOSS_EMERALD_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_bank_note_drops");
     // seasonal collectible coin entity drop loot tables - added to the master tables
+    public static final ResourceLocation ENTITY_COLLECTIBLE_COIN_DROPS = register(MODID + ":" + "entity/collectible/entity_collectible_coin_drops");
+    public static final ResourceLocation BOSS_COLLECTIBLE_COIN_DROPS = register(MODID + ":" + "entity/collectible/boss_collectible_coin_drops");
+    public static final ResourceLocation HOLIDAY_COLLECTIBLE_COIN_DROPS = register(MODID + ":" + "entity/collectible/holiday_collectible_coin_drops");
     public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_halloween_coin_drops");
     public static final ResourceLocation TODECOINS_BIRTHDAY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_birthday_coin_drops");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_christmas_coin_drops");
