@@ -1,3 +1,7 @@
+### 2023-11-25 - 1.7.5.beta
+
+- collectible coin drops from entities work correctly again
+
 ### 2023-11-25 - 1.7.4.beta
 
 - updated loot tables
