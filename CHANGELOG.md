@@ -1,6 +1,17 @@
+### 2023-11-30 - 1.7.7.beta
+
+- corrected holiday checks with the Serene Seasons integration
+- fixed translation key for Zombified Piglin Coin Set advancement
+
+### 2023-11-25 - 1.7.6.beta
+
+- added optional compat for unusual end mod
+  - endermite coin set should remove ender infection
+
 ### 2023-11-25 - 1.7.5.beta
 
 - collectible coin drops from entities work correctly again
+- removed a duplicate set of trades from the banker
 
 ### 2023-11-25 - 1.7.4.beta
 
@@ -26,19 +37,3 @@
   - this was to address the visibility issue of the coins in the GUI
 - added the Rascal, Armadillo and Easter coins
 - adjusted boss currency loot to drop a larger amount of coins
-
-### 2023-10-29 - 1.7.0.beta
-
-- corrected the texture assigned to the collectible shulker netherite coin
-- mystery coin pack loot table rebalanced so it doesn't give just the holiday event coins during a holiday event
-- added custom subtitles for numismatist
-- added missing translations
-
-### 2023-10-27 - 1.6.18.beta
-
-- BREAKING CHANGE: re-organized how the coin effects are coded to ensure all intended effects are actually applied
-  - please back up your worlds before updating
-  - this also means some coin effects were adjusted or rebalanced in the process
-- added tooltips for the collectible coin and candy coin effects
-- added a server token coin for server admins to add and use however way they'd like
-  - not otherwise available in gameplay
