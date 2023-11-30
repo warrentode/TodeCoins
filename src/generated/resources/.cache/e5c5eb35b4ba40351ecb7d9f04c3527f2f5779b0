@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-17T11:54:24.1518862	Advancements
+// 1.19.2	2023-11-30T16:56:19.1692326	Advancements
 6722c16534a65be234d6107123bf3c427db38907 data/todecoins/advancements/collectible/allay_coins.json
 ce31e01a15812fad51fb9d0f6527587026f6d79b data/todecoins/advancements/collectible/all_coins.json
 8d3d32c43efd208f00a2302b8c550f5d54532d5f data/todecoins/advancements/collectible/armadillo_coins.json
@@ -97,7 +97,7 @@ c7320d544537c6b36663ab2868c21a5e2a738845 data/todecoins/advancements/collectible
 8af8a07fe61acede49b8b5f7270e5788382687ae data/todecoins/advancements/collectible/zombie_coins.json
 a7ced0b81dd4fe62833b3d2dd1b3691a3e379fa9 data/todecoins/advancements/collectible/zombie_horse_coins.json
 5de4242cf4982658fc3927f8de01020ad6864189 data/todecoins/advancements/collectible/zombie_villager_coins.json
-53ef4d3f4c081f4b19c54f5b2bf73f4ddc724bea data/todecoins/advancements/collectible/zombified_piglin_coins.json
+87a560918a787cdc2f98030166f5728408a25519 data/todecoins/advancements/collectible/zombified_piglin_coins.json
 19dfee6e968eb5937375eccad715a9a5789f2ec7 data/todecoins/advancements/main/bagging_dough.json
 91cffb0845472cec35e00626814d218780842008 data/todecoins/advancements/main/craft_coinpress.json
 56a1aa742c0b340076403fd29f2e32fec15d5376 data/todecoins/advancements/main/lucky_armor.json

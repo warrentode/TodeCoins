@@ -53,7 +53,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.zombified_piglinCoinSet.desc"
+      "translate": "advancement.zombifiedPiglinCoinSet.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -62,7 +62,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.zombified_piglinCoinSet"
+      "translate": "advancement.zombifiedPiglinCoinSet"
     }
   },
   "requirements": [

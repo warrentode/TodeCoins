@@ -2542,7 +2542,7 @@ public class AdvancementsGen extends AdvancementProvider {
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("collectible/zombie_villager_coins"));
 
             Advancement zombifiedPiglinCoinSet = getAdvancement(todeCoins, ModItems.COPPER_ZOMBIFIED_PIGLIN_COIN.get(),
-                    "zombified_piglinCoinSet", FrameType.TASK, true, true, false)
+                    "zombifiedPiglinCoinSet", FrameType.TASK, true, true, false)
                     .parent(collectibleCoins)
 
                     .addCriterion("find_" + ModItems.COPPER_ZOMBIFIED_PIGLIN_COIN.get().getDescriptionId(),

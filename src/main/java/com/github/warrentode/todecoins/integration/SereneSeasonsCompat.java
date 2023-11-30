@@ -79,18 +79,18 @@ public class SereneSeasonsCompat {
             }
 
             // holidays
-            if (subSeason == Season.SubSeason.MID_AUTUMN && tropicalSeason == Season.TropicalSeason.LATE_DRY) {
+            if (subSeason == Season.SubSeason.MID_AUTUMN || tropicalSeason == Season.TropicalSeason.LATE_DRY) {
                 return HALLOWEEN;
             }
-            if (subSeason == Season.SubSeason.EARLY_WINTER && tropicalSeason == Season.TropicalSeason.EARLY_WET) {
+            if (subSeason == Season.SubSeason.EARLY_WINTER || tropicalSeason == Season.TropicalSeason.EARLY_WET) {
                 return CHRISTMAS;
             }
 
             // yearly built-in events
-            if (subSeason == Season.SubSeason.MID_WINTER && tropicalSeason == Season.TropicalSeason.EARLY_WET) {
+            if (subSeason == Season.SubSeason.MID_WINTER || tropicalSeason == Season.TropicalSeason.MID_WET) {
                 return BIRTHDAY;
             }
-            if (subSeason == Season.SubSeason.LATE_WINTER && tropicalSeason == Season.TropicalSeason.MID_WET) {
+            if (subSeason == Season.SubSeason.LATE_WINTER || tropicalSeason == Season.TropicalSeason.LATE_WET) {
                 return PATREON_ANNIVERSARY;
             }
 
