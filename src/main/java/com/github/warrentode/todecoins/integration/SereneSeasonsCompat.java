@@ -60,38 +60,47 @@ public class SereneSeasonsCompat {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
             Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
 
+            // holidays
+            if ((subSeason == Season.SubSeason.EARLY_SPRING || tropicalSeason == Season.TropicalSeason.LATE_WET)
+                    && !(subSeason == Season.SubSeason.MID_SPRING || subSeason == Season.SubSeason.LATE_SPRING)) {
+                return EASTER;
+            }
+            if ((subSeason == Season.SubSeason.MID_AUTUMN || tropicalSeason == Season.TropicalSeason.LATE_DRY)
+                    && !(subSeason == Season.SubSeason.EARLY_AUTUMN || subSeason == Season.SubSeason.MID_AUTUMN)) {
+                return HALLOWEEN;
+            }
+            if ((subSeason == Season.SubSeason.EARLY_WINTER || tropicalSeason == Season.TropicalSeason.EARLY_WET)
+                    && !(subSeason == Season.SubSeason.MID_WINTER || subSeason == Season.SubSeason.LATE_WINTER
+                    || tropicalSeason == Season.TropicalSeason.MID_WET)) {
+                return CHRISTMAS;
+            }
+
+            // yearly built-in events
+            if ((subSeason == Season.SubSeason.MID_WINTER || tropicalSeason == Season.TropicalSeason.EARLY_WET)
+                    && !(subSeason == Season.SubSeason.EARLY_WINTER || subSeason == Season.SubSeason.LATE_WINTER)) {
+                return BIRTHDAY;
+            }
+            if ((subSeason == Season.SubSeason.LATE_WINTER || tropicalSeason == Season.TropicalSeason.MID_WET)
+                    && !(subSeason == Season.SubSeason.EARLY_WINTER || subSeason == Season.SubSeason.MID_WINTER)) {
+                return PATREON_ANNIVERSARY;
+            }
+
             // seasons
             if (subSeason == Season.SubSeason.EARLY_WINTER || subSeason == Season.SubSeason.MID_WINTER || subSeason == Season.SubSeason.LATE_WINTER
                     || tropicalSeason == Season.TropicalSeason.EARLY_WET || tropicalSeason == Season.TropicalSeason.MID_WET) {
                 return WINTER;
             }
-            else if (subSeason == Season.SubSeason.EARLY_SPRING || subSeason == Season.SubSeason.MID_SPRING || subSeason == Season.SubSeason.LATE_SPRING
+            if (subSeason == Season.SubSeason.EARLY_SPRING || subSeason == Season.SubSeason.MID_SPRING || subSeason == Season.SubSeason.LATE_SPRING
                     || tropicalSeason == Season.TropicalSeason.LATE_WET) {
                 return SPRING;
             }
-            else if (subSeason == Season.SubSeason.EARLY_SUMMER || subSeason == Season.SubSeason.MID_SUMMER || subSeason == Season.SubSeason.LATE_SUMMER
-                    || tropicalSeason == Season.TropicalSeason.MID_DRY) {
+            if (subSeason == Season.SubSeason.EARLY_SUMMER || subSeason == Season.SubSeason.MID_SUMMER || subSeason == Season.SubSeason.LATE_SUMMER
+                    || tropicalSeason == Season.TropicalSeason.EARLY_DRY || tropicalSeason == Season.TropicalSeason.MID_DRY) {
                 return SUMMER;
             }
-            else if (subSeason == Season.SubSeason.EARLY_AUTUMN || subSeason == Season.SubSeason.MID_AUTUMN || subSeason == Season.SubSeason.LATE_AUTUMN
-                    || tropicalSeason == Season.TropicalSeason.EARLY_DRY || tropicalSeason == Season.TropicalSeason.LATE_DRY) {
+            if (subSeason == Season.SubSeason.EARLY_AUTUMN || subSeason == Season.SubSeason.MID_AUTUMN || subSeason == Season.SubSeason.LATE_AUTUMN
+                    || tropicalSeason == Season.TropicalSeason.LATE_DRY) {
                 return AUTUMN;
-            }
-
-            // holidays
-            if (subSeason == Season.SubSeason.MID_AUTUMN || tropicalSeason == Season.TropicalSeason.LATE_DRY) {
-                return HALLOWEEN;
-            }
-            if (subSeason == Season.SubSeason.EARLY_WINTER || tropicalSeason == Season.TropicalSeason.EARLY_WET) {
-                return CHRISTMAS;
-            }
-
-            // yearly built-in events
-            if (subSeason == Season.SubSeason.MID_WINTER || tropicalSeason == Season.TropicalSeason.MID_WET) {
-                return BIRTHDAY;
-            }
-            if (subSeason == Season.SubSeason.LATE_WINTER || tropicalSeason == Season.TropicalSeason.LATE_WET) {
-                return PATREON_ANNIVERSARY;
             }
 
             return NONE;
