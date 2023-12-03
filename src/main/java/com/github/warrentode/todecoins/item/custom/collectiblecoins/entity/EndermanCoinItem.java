@@ -85,11 +85,7 @@ public class EndermanCoinItem extends CollectibleCoin implements ICurioItem {
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
                     if (stack.is(ModTags.Items.ENDERMITE_COIN_SET) && ModList.get().isLoaded("unusualend")) {
-                        boolean hasEnderInfection = livingEntity.getActiveEffects().equals(UnusualendModMobEffects.ENDER_INFECTION.get());
-
-                        if (hasEnderInfection) {
-                            livingEntity.removeEffect(UnusualendModMobEffects.ENDER_INFECTION.get());
-                        }
+                        livingEntity.removeEffect(UnusualendModMobEffects.ENDER_INFECTION.get());
                     }
                 }
             }
@@ -125,6 +121,9 @@ public class EndermanCoinItem extends CollectibleCoin implements ICurioItem {
                 if (stack.is(ModTags.Items.ENDERMITE_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                     tooltips.add(Component.translatable("tooltips.coin_effects.snow_walk").withStyle(ChatFormatting.BLUE));
+                    if (ModList.get().isLoaded("unusualend")) {
+                        tooltips.add(Component.translatable("tooltips.coin_effects.ender_infection_immune").withStyle(ChatFormatting.BLUE));
+                    }
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

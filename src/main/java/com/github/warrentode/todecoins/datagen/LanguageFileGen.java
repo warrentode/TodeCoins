@@ -978,6 +978,8 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.coin_effects.wither_attack", "Attacks Inflict Wither");
         add("tooltips.coin_effects.burning_attack", "Attacks Inflict Burning");
 
+        add("tooltips.coin_effects.ender_infection_immune", "Clears Ender Infection");
+
         // food tooltips
         add("tooltips.crimson_spore_chocolate_effects", "90% Chance of Fire Resistance, 10% Chance of Hunger");
         add("tooltips.warped_spice_chocolate_effects", "90% Chance of Increased Movement Speed, 10% Chance of Confusion");
