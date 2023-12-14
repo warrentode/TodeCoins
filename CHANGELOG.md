@@ -1,3 +1,7 @@
+### 2023-11-01 - 1.7.9.beta
+
+- added missing iceologer_types tag
+
 ### 2023-12-03 - 1.7.8.beta
 
 - fixed clearing ender infection with the endermite coin set
@@ -34,10 +38,3 @@
 - completely revamped the advancements for the collectible coins
 - readjusted drop rates for the entity coins
 - added missing translations, fixed incorrect translations
-
-### 2023-11-01 - 1.7.1.beta
-
-- completely overhauled the models and textures of the collectible coins
-  - this was to address the visibility issue of the coins in the GUI
-- added the Rascal, Armadillo and Easter coins
-- adjusted boss currency loot to drop a larger amount of coins
