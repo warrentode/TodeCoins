@@ -1,6 +1,8 @@
 ### 2023-11-01 - 1.7.9.beta
 
 - added missing iceologer_types tag
+- updated to Forge 43.3.5
+- updated dependencies
 
 ### 2023-12-03 - 1.7.8.beta
 

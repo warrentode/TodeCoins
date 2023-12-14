@@ -35,7 +35,6 @@ public class PotOfGoldBlock extends HorizontalDirectionalBlock {
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public @NotNull BlockState rotate(BlockState pState, Rotation pRotation) {
         return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));

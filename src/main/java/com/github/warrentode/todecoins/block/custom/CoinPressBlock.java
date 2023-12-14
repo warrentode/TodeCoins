@@ -60,7 +60,6 @@ public class CoinPressBlock extends BaseEntityBlock {
     }
 
     /* BLOCK ENTITY */
-    @SuppressWarnings("deprecation")
     @Override
     public @NotNull RenderShape getRenderShape(@NotNull BlockState pState) {
         return RenderShape.MODEL;
