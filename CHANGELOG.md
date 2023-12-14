@@ -1,3 +1,7 @@
+### 2023-12-03 - 1.7.8.beta
+
+- fixed clearing ender infection with the endermite coin set
+
 ### 2023-11-30 - 1.7.7.beta
 
 - corrected holiday checks with the Serene Seasons integration

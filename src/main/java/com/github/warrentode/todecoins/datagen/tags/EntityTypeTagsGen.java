@@ -42,7 +42,7 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .addTag(ForgeTags.EntityTypes.VEX_TYPES)
                 .addTag(ForgeTags.EntityTypes.RAVAGER_TYPES)
                 .addTag(ForgeTags.EntityTypes.EVOKER_TYPES)
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:iceologer")))
+                .addTag(ForgeTags.EntityTypes.ICEOLOGER_TYPES)
                 .addTag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
                 .addTag(ForgeTags.EntityTypes.PILLAGER_TYPES)
                 .addTag(ForgeTags.EntityTypes.RAVAGER_TYPES)
@@ -66,7 +66,7 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .addTag(ForgeTags.EntityTypes.GHAST_TYPES)
                 .addTag(ForgeTags.EntityTypes.GUARDIAN_TYPES)
                 .addTag(ForgeTags.EntityTypes.HUSK_TYPES)
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:iceologer")))
+                .addTag(ForgeTags.EntityTypes.ICEOLOGER_TYPES)
                 .addTag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
                 .addTag(ForgeTags.EntityTypes.MAGMA_CUBE_TYPES)
                 .addTag(ForgeTags.EntityTypes.PHANTOM_TYPES)
@@ -164,6 +164,8 @@ public class EntityTypeTagsGen extends EntityTypeTagsProvider {
                 .add(EntityType.HORSE);
         tag(ForgeTags.EntityTypes.HUSK_TYPES)
                 .add(EntityType.HUSK);
+        tag(ForgeTags.EntityTypes.ICEOLOGER_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:iceologer")));
         tag(ForgeTags.EntityTypes.ILLUSIONER_TYPES)
                 .add(EntityType.ILLUSIONER);
         tag(ForgeTags.EntityTypes.IRON_GOLEM_TYPES)
