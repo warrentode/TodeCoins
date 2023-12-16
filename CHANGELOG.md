@@ -1,3 +1,8 @@
+### 2023-11-01 - 1.7.10.beta
+
+- reduced entity coin drops from non-boss mobs to 10%
+- attempting to re-balance boss coin effects (mainly nerfing the Warden coins)
+
 ### 2023-11-01 - 1.7.9.beta
 
 - added missing iceologer_types tag
