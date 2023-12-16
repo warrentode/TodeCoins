@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-25T21:57:03.0553532	LootTables
+// 1.19.2	2023-12-16T02:33:30.0011411	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -162,8 +162,8 @@ e3510d7656f016d56151fa564f871d2608f8f764 data/todecoins/loot_tables/entity/coins
 26d211c12b3ef5a07790c1c55b09bb3691e7a834 data/todecoins/loot_tables/entity/coins/todecoins_netherite_coin_drops.json
 02ac3e6644fb435a8f46937e28a467b4df890242 data/todecoins/loot_tables/entity/coins/todecoins_nether_gold_coin_drops.json
 1e8124d3d22aa2638e13e96f47b8c35e67278b63 data/todecoins/loot_tables/entity/collectible/boss_collectible_coin_drops.json
-e7a32510949413d19d08fea2fd788ef13c1637d6 data/todecoins/loot_tables/entity/collectible/entity_collectible_coin_drops.json
-d2a4245ff2674e626b86727d106b4ed094219ba0 data/todecoins/loot_tables/entity/collectible/holiday_collectible_coin_drops.json
+10223ff9b6475abb9ea5448ab3127700bfa182ad data/todecoins/loot_tables/entity/collectible/entity_collectible_coin_drops.json
+7e1beabcfe492531597483cae8485d9a2457a746 data/todecoins/loot_tables/entity/collectible/holiday_collectible_coin_drops.json
 4a6aa7afc501f146c1149ae656f0788fa812d921 data/todecoins/loot_tables/entity/collectible/seasonal/todecoins_autumn_coin_drops.json
 be610d6eeb4c88c76e7bd71cc3302af52a7adce2 data/todecoins/loot_tables/entity/collectible/seasonal/todecoins_spring_coin_drops.json
 0918a81be7525c4af9a4f6351213c86630dcdb06 data/todecoins/loot_tables/entity/collectible/seasonal/todecoins_summer_coin_drops.json

@@ -90,19 +90,19 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
                             attackBonus = 3;
                         }
                         else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                            armorBonus = 4;
+                            armorBonus = 3;
                             hpBonus = 30;
                             knockbackResistanceBonus = 4;
                             attackBonus = 4;
                         }
                         else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                            armorBonus = 6;
+                            armorBonus = 4;
                             hpBonus = 34;
                             knockbackResistanceBonus = 4;
                             attackBonus = 5;
                         }
                         else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                            armorBonus = 8;
+                            armorBonus = 5;
                             hpBonus = 40;
                             knockbackResistanceBonus = 4;
                             attackBonus = 6;
@@ -111,7 +111,7 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
 
                     if (stack.is(ModTags.Items.WITHER_COIN_SET)) {
                         if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            armorBonus = 2;
+                            armorBonus = 3;
                             hpBonus = 30;
                             knockbackResistanceBonus = 2;
                             attackBonus = 3;
@@ -123,13 +123,13 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
                             attackBonus = 4;
                         }
                         else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                            armorBonus = 6;
+                            armorBonus = 5;
                             hpBonus = 40;
                             knockbackResistanceBonus = 2;
                             attackBonus = 5;
                         }
                         else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                            armorBonus = 8;
+                            armorBonus = 6;
                             hpBonus = 44;
                             knockbackResistanceBonus = 2;
                             attackBonus = 6;
@@ -198,16 +198,12 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
                 }
 
                 if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2000, i,
-                            false, false, true));
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, i,
                             false, false, true));
                 }
 
                 if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                     livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, i,
-                            false, false, false));
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, i,
                             false, false, false));
                 }
 
@@ -227,14 +223,12 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
                 if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.SLOW_FALLING);
-                    livingEntity.removeEffect(MobEffects.DAMAGE_RESISTANCE);
                 }
                 if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                     livingEntity.removeEffect(MobEffects.WATER_BREATHING);
-                    livingEntity.removeEffect(MobEffects.DOLPHINS_GRACE);
+                    livingEntity.removeEffect(MobEffects.CONDUIT_POWER);
                 }
                 if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
-                    livingEntity.removeEffect(MobEffects.DAMAGE_RESISTANCE);
                     livingEntity.removeEffect(MobEffects.DAMAGE_BOOST);
                 }
             }
@@ -266,7 +260,6 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
                 if (stack.is(ModTags.Items.ENDER_DRAGON_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                     tooltips.add(Component.translatable("tooltips.coin_effects.slow_fall").withStyle(ChatFormatting.BLUE));
-                    tooltips.add(Component.translatable("tooltips.coin_effects.damage_resist").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
@@ -275,7 +268,6 @@ public class BossCoinItem extends CollectibleCoin implements ICurioItem {
                 }
                 if (stack.is(ModTags.Items.WARDEN_COIN_SET)) {
                     tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                    tooltips.add(Component.translatable("tooltips.coin_effects.damage_resist").withStyle(ChatFormatting.BLUE));
                     tooltips.add(Component.translatable("tooltips.coin_effects.damage_boost").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.WITHER_COIN_SET)) {

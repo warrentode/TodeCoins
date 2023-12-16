@@ -16,7 +16,7 @@
               "condition": "todecoins:spring_condition"
             },
             {
-              "chance": 0.5,
+              "chance": 0.1,
               "condition": "minecraft:random_chance"
             }
           ],
@@ -29,7 +29,7 @@
               "condition": "todecoins:summer_condition"
             },
             {
-              "chance": 0.5,
+              "chance": 0.1,
               "condition": "minecraft:random_chance"
             }
           ],
@@ -42,7 +42,7 @@
               "condition": "todecoins:autumn_condition"
             },
             {
-              "chance": 0.5,
+              "chance": 0.1,
               "condition": "minecraft:random_chance"
             }
           ],
@@ -55,7 +55,7 @@
               "condition": "todecoins:winter_condition"
             },
             {
-              "chance": 0.5,
+              "chance": 0.1,
               "condition": "minecraft:random_chance"
             }
           ],

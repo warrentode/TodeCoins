@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-25T22:47:10.9307703	Tags for minecraft:entity_type
+// 1.19.2	2023-12-16T02:33:30.0051335	Tags for minecraft:entity_type
 a37c8a7cf9e25ba9178196b0552e6c5e79567ffa data/cagerium/tags/entity_types/bosses.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/cagerium/tags/entity_types/cagerium_blacklist.json
 3504f8fe078a27d80d7d356babb531ddcaab3dc5 data/forge/tags/entity_types/allay.json
@@ -18,7 +18,7 @@ dd79f519e750876b485633e3e26baefd29fa6ccf data/forge/tags/entity_types/cow.json
 d49647f002ef19b4681f9c4214422adbcf7c3d9e data/forge/tags/entity_types/crab.json
 da9ec5f7ed64a0d225e00ee60b8e6d6408b431fb data/forge/tags/entity_types/creeper.json
 2498290842377d8d9f3182ef2b7ecb2adb660cb0 data/forge/tags/entity_types/dolphin.json
-feb83e4135976325b1d958ce767ace41789192f1 data/forge/tags/entity_types/drops_currency.json
+004abf3b1c05b200a76a01f33be4bb27c0e5eff1 data/forge/tags/entity_types/drops_currency.json
 a15d44b6e4cb2744c21fd173d65bb9858de283b1 data/forge/tags/entity_types/drowned.json
 10173428ff8a63550e9c0bbedd2ad68d7acf158b data/forge/tags/entity_types/elder_guardian.json
 e2b0a6ca1c654ac3caca40c3b8d0c52cc129a628 data/forge/tags/entity_types/enderman.json
@@ -37,7 +37,8 @@ ec24edf6d1ea9189a4dc1a29a781bc696fb575d3 data/forge/tags/entity_types/guardian.j
 f7cc9e720867f2fea58d5b0840bdce7a253ca3fe data/forge/tags/entity_types/hoglin.json
 813a5e82a124f244206efa3c974874c17f57957d data/forge/tags/entity_types/horse.json
 e2e5633d9261e4ff3f7d07edc9901471b3586a5a data/forge/tags/entity_types/husk.json
-e16b49092952b777e252d70b0f18485facc9ce17 data/forge/tags/entity_types/illagers.json
+08d29f1617057dd8b8516b35f8e68248141375d2 data/forge/tags/entity_types/iceologer.json
+b19f24b3ac8a7e215d301746f3e0eee4ad7b9f59 data/forge/tags/entity_types/illagers.json
 3f7f728e824b94d2b07880f63a920a98bc41e6f0 data/forge/tags/entity_types/illusioner.json
 68d64aae1927c54d174ad38518b843bc2931fc75 data/forge/tags/entity_types/iron_golem.json
 5c5afd5d1064c82ba6697a1f869a9f972b777fe5 data/forge/tags/entity_types/llama.json
