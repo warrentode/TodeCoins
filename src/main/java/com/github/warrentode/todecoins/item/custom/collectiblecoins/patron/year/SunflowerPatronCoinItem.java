@@ -28,8 +28,8 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.UUID;
 
-public class LifetimePatronCoinItem extends PatronCommemorativeCoinItem implements ICurioItem {
-    public LifetimePatronCoinItem(Properties pProperties) {
+public class SunflowerPatronCoinItem extends PatronCommemorativeCoinItem implements ICurioItem {
+    public SunflowerPatronCoinItem(Properties pProperties) {
         super(pProperties);
     }
 
@@ -89,7 +89,7 @@ public class LifetimePatronCoinItem extends PatronCommemorativeCoinItem implemen
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
-            tooltips.add(Component.translatable("tooltips.collectible_coin_lifetime.hover").withStyle(ChatFormatting.GRAY));
+            tooltips.add(Component.translatable("tooltips.collectible_coin_sunflower.hover").withStyle(ChatFormatting.GRAY));
         }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }

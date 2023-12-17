@@ -67,8 +67,9 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.TUXEDO_CAT_COIN.get())
                 .add(ModItems.LITTLE_BEAR_COIN.get())
                 .add(ModItems.MARSHALL_NASH_CARNATION_COIN.get())
-                .add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get())
                 .add(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
+                .add(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get())
+                .add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get())
                 .add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
         tag(ModTags.Items.NETHERITE_COLLECTIBLE_COINS)
                 .add(ModItems.NETHERITE_COD_COIN.get())

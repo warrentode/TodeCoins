@@ -1,4 +1,4 @@
-// 1.19.2	2023-11-01T01:08:12.9096861	Item Models: todecoins
+// 1.19.2	2023-12-16T21:50:46.5730302	Item Models: todecoins
 f85c927404cf02d20be936048f03f94c210beca9 assets/todecoins/models/item/chocolate_coin_crimson_spore.json
 b6a86e52958d61e519951fc634386c8a8978aa51 assets/todecoins/models/item/chocolate_coin_milk_bone.json
 a663eae408eb92a03f4eb251be46db21e85cb976 assets/todecoins/models/item/chocolate_coin_ultimate_dark.json
@@ -313,6 +313,7 @@ f6c6581da7e3370d4e32b7b6b112872ea60ceda0 assets/todecoins/models/item/collectibl
 382c6bda554bf71e2a966cc43f983f2fa6d4bed2 assets/todecoins/models/item/collectible_coin_strider_gold.json
 21c9f33e4649df1f457d67d58ac6a4900d975ba4 assets/todecoins/models/item/collectible_coin_strider_iron.json
 c8a6b8a4f04c5dd5da8601befdfc924f9654581d assets/todecoins/models/item/collectible_coin_strider_netherite.json
+961ca80ad490f518e63e99085b4bf9b1339aa6f9 assets/todecoins/models/item/collectible_coin_sunflower_marshall_nash.json
 a1b129ed2cfe09e0d90c33c4f7a0094a1c340920 assets/todecoins/models/item/collectible_coin_tadpole_copper.json
 d2b7e79709822bcbde33aa7ecde0c5ee6f29e21c assets/todecoins/models/item/collectible_coin_tadpole_gold.json
 f17c0b3a58a697c93dad4e130dd6694265263e80 assets/todecoins/models/item/collectible_coin_tadpole_iron.json

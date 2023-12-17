@@ -10,9 +10,10 @@ import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.Birt
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.ChristmasCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.EasterCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.HalloweenCoinItem;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.LifetimePatronCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.CarnationPatronCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.CosmosPatronCoinItem;
-import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.LifetimePatronCoinItem;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.SunflowerPatronCoinItem;
 import com.github.warrentode.todecoins.util.customtabs.CollectibleCoinsTab;
 import com.github.warrentode.todecoins.util.customtabs.ModCreativeModeTab;
 import net.minecraft.world.entity.EntityType;
@@ -156,14 +157,16 @@ public class ModItems {
             () -> new LifetimePatronCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> LITTLE_BEAR_COIN = ITEMS.register("collectible_coin_little_bear",
             () -> new LifetimePatronCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
-    // patron carnation anniversary set
+    // patron marshall nash anniversary set
     public static final RegistryObject<Item> MARSHALL_NASH_CARNATION_COIN = ITEMS.register("collectible_coin_carnation_marshall_nash",
             () -> new CarnationPatronCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
-    public static final RegistryObject<Item> TREVOR_BRANNIGAN_CARNATION_COIN = ITEMS.register("collectible_coin_carnation_trevor_brannigan",
-            () -> new CarnationPatronCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
-    // patron cosmos anniversary set
     public static final RegistryObject<Item> MARSHALL_NASH_COSMOS_COIN = ITEMS.register("collectible_coin_cosmos_marshall_nash",
             () -> new CosmosPatronCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> MARSHALL_NASH_SUNFLOWER_COIN = ITEMS.register("collectible_coin_sunflower_marshall_nash",
+            () -> new SunflowerPatronCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    // patron trevor brannigan anniversary set
+    public static final RegistryObject<Item> TREVOR_BRANNIGAN_CARNATION_COIN = ITEMS.register("collectible_coin_carnation_trevor_brannigan",
+            () -> new CarnationPatronCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     public static final RegistryObject<Item> TREVOR_BRANNIGAN_COSMOS_COIN = ITEMS.register("collectible_coin_cosmos_trevor_brannigan",
             () -> new CosmosPatronCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     // gameplay collection

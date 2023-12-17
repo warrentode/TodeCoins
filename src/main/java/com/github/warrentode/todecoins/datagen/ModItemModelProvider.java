@@ -78,6 +78,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.MARSHALL_NASH_CARNATION_COIN.get());
         basicItem(ModItems.MARSHALL_NASH_COSMOS_COIN.get());
+        basicItem(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get());
         basicItem(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get());
         basicItem(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
 

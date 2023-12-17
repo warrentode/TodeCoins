@@ -54,6 +54,7 @@ public class LanguageFileGen extends LanguageProvider {
         addCollectibleCoins(ModItems.LITTLE_BEAR_COIN.get().getDescriptionId(), "Little Bear Lifetime Coin");
         addCollectibleCoins(ModItems.MARSHALL_NASH_CARNATION_COIN.get().getDescriptionId(), "Marshall Nash Carnation Coin");
         addCollectibleCoins(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDescriptionId(), "Marshall Nash Cosmos Coin");
+        addCollectibleCoins(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get().getDescriptionId(), "Marshall Nash Sunflower Coin");
         addCollectibleCoins(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDescriptionId(), "Trevor Brannigan Carnation Coin");
         addCollectibleCoins(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().getDescriptionId(), "Trevor Brannigan Cosmos Coin");
 
@@ -1045,6 +1046,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_coin_lifetime.hover", "This coin celebrates a special champion in my life");
         add("tooltips.collectible_coin_carnation.hover", "This coin celebrates the 1st year anniversary of this supporter");
         add("tooltips.collectible_coin_cosmos.hover", "This coin celebrates the 2nd year anniversary of this supporter");
+        add("tooltips.collectible_coin_sunflower.hover", "This coin celebrates the 3rd year anniversary of this supporter");
 
         // all collectible coin bases
         add("tooltips.collectible_coin.hover", "These types of coins aren't used as currency, but are instead collected and traded for their unique value");
