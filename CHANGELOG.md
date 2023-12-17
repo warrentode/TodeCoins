@@ -1,3 +1,9 @@
+### 2023-12-17 - 1.9.0.beta
+
+- [BREAKING] removed the enum classes from the seasonal loot checks
+  - this increases the variance of coins found, especially during holiday events
+  - this also brings the loot tables in line with what I had originally envisioned
+
 ### 2023-12-16 - 1.8.0.beta
 
 - this is a big change, but shouldn't break any internal code:
