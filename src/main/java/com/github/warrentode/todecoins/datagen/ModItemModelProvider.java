@@ -63,6 +63,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.MILK_BONE_CHOCOLATE_COIN.get());
         basicItem(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get());
         basicItem(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get());
+        basicItem(ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get());
+        basicItem(ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get());
+        basicItem(ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get());
+        basicItem(ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get());
+        basicItem(ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get());
 
         // spawn eggs
         withExistingParent(ModItems.GIANT_SPAWN_EGG.getId().toString(), "minecraft:item/template_spawn_egg");

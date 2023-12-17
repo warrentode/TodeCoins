@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-17T03:55:53.2015538	LootTables
+// 1.19.2	2023-12-17T10:31:42.1798079	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -188,7 +188,7 @@ f23e22fe7ea2116db3adbacc62a3512bc2de4fd4 data/todecoins/loot_tables/gameplay/bar
 2d5cb348c9aeb00b9a1212c3011c3dd3cccf1719 data/todecoins/loot_tables/gameplay/bartering/iron_piglin_coin_barter_loot.json
 acb80bd512e1fa418552b518a64502dcce192dd9 data/todecoins/loot_tables/gameplay/bartering/netherite_piglin_coin_barter_loot.json
 9ddc6753116f4a67b5b26dee1287b1ded43fc3ca data/todecoins/loot_tables/gameplay/bartering/nether_gold_coin_piglin_bartering.json
-b4eca1bed7df0ae7527b3b10fb79b53f9c8e7451 data/todecoins/loot_tables/gameplay/bartering/piglin_event_barter_loot.json
+6853d8f5e7fa84a4aca876dd41508196cc7f8aad data/todecoins/loot_tables/gameplay/bartering/piglin_event_barter_loot.json
 5dcdfab98ab6bbdc7afc069c733b9d42f4d88e43 data/todecoins/loot_tables/gameplay/bartering/zombie_piglin_barter_loot.json
 e13a622fe201104101596dc88d8c05b3794c06c3 data/todecoins/loot_tables/gameplay/fishing/bonus.json
 c101e087b548f82b2a42a38b677d17a445df28e6 data/todecoins/loot_tables/gameplay/fishing/cod_coin.json

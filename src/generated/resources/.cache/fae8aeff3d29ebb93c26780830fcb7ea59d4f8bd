@@ -1,7 +1,12 @@
-// 1.19.2	2023-12-17T03:55:53.2095323	Item Models: todecoins
+// 1.19.2	2023-12-17T10:31:42.1837958	Item Models: todecoins
+a1d9966577ff5acfb271b0f38ccda07f24a6499b assets/todecoins/models/item/chocolate_coin_bubbly_berry.json
+66cf68c934284a68a49999f6e904c7bd2b97b5c2 assets/todecoins/models/item/chocolate_coin_carmel_crisp.json
 f85c927404cf02d20be936048f03f94c210beca9 assets/todecoins/models/item/chocolate_coin_crimson_spore.json
+c1dcdab57f2a3fc7ec4b1c0df6e0e9c06a2e3687 assets/todecoins/models/item/chocolate_coin_festive_fudge.json
+c647dee8745412ed5138dc64f8f00cf12e3586d0 assets/todecoins/models/item/chocolate_coin_fuego_fudge.json
 b6a86e52958d61e519951fc634386c8a8978aa51 assets/todecoins/models/item/chocolate_coin_milk_bone.json
 a663eae408eb92a03f4eb251be46db21e85cb976 assets/todecoins/models/item/chocolate_coin_ultimate_dark.json
+b890789174a8e9064a9bb3b05483010658eb1b17 assets/todecoins/models/item/chocolate_coin_velvety_clover.json
 5ff80fc240140d70c11cf097c00a86801e6a668b assets/todecoins/models/item/chocolate_coin_warped_spice.json
 dba43134052ccb1fc28a4148ca51e708dafdf366 assets/todecoins/models/item/collectible_coin_allay_copper.json
 3b1695cd0c6615d1ccc4b51e1d440d062b621ded assets/todecoins/models/item/collectible_coin_allay_gold.json

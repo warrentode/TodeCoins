@@ -83,22 +83,39 @@ public class ModEvents {
             List<Component> tooltip = event.getToolTip();
 
             if (stack.is(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get())) {
-                tooltip.add(Component.translatable("tooltips.crimson_spore_chocolate_effects")
+                tooltip.add(Component.translatable("tooltips." + ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get() + "_effects")
                         .withStyle(ChatFormatting.DARK_BLUE));
             }
-
             if (stack.is(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get())) {
-                tooltip.add(Component.translatable("tooltips.warped_spice_chocolate_effects")
+                tooltip.add(Component.translatable("tooltips." + ModItems.WARPED_SPICE_CHOCOLATE_COIN.get() + "_effects")
                         .withStyle(ChatFormatting.DARK_BLUE));
             }
-
             if (stack.is(ModItems.MILK_BONE_CHOCOLATE_COIN.get())) {
-                tooltip.add(Component.translatable("tooltips.milk_bone_chocolate_effects")
+                tooltip.add(Component.translatable("tooltips." + ModItems.MILK_BONE_CHOCOLATE_COIN.get() + "_effects")
                         .withStyle(ChatFormatting.DARK_BLUE));
             }
-
             if (stack.is(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get())) {
-                tooltip.add(Component.translatable("tooltips.ultimate_dark_chocolate_effects")
+                tooltip.add(Component.translatable("tooltips." + ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get() + "_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+            if (stack.is(ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips." + ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get() + "_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+            if (stack.is(ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips." + ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get() + "_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+            if (stack.is(ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips." + ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get() + "_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+            if (stack.is(ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips." + ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get() + "_effects")
+                        .withStyle(ChatFormatting.DARK_BLUE));
+            }
+            if (stack.is(ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get())) {
+                tooltip.add(Component.translatable("tooltips." + ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get() + "_effects")
                         .withStyle(ChatFormatting.DARK_BLUE));
             }
 

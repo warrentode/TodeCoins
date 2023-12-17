@@ -1260,10 +1260,21 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(SupplementariesTags.Items.SWEETS)
                 .addTag(SupplementariesTags.Items.CANDY);
         tag(SupplementariesTags.Items.CHOCOLATE)
+                .add(ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get())
+                .add(ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get())
+                .add(ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get())
+                .add(ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get())
+                .add(ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get())
                 .add(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get())
                 .add(ModItems.MILK_BONE_CHOCOLATE_COIN.get())
                 .add(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get())
                 .add(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get());
+        tag(ForgeTags.Items.CLOVER)
+                .add(ModItems.FOUR_LEAF_CLOVER.get())
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("phantasm:ender_clover")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:clover")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:huge_clover_petal")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:chopped_clover")));
         tag(ForgeTags.Items.TOOLS_KNIVES);
         tag(ForgeTags.Items.TOOLS_CHISELS);
         tag(Tags.Items.EGGS)

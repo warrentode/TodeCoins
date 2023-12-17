@@ -123,7 +123,7 @@ dependencies {
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:ecologics-570463:4171285")
     implementation fg.deobf("curse.maven:serene-seasons-291874:4037228")
-    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4954013")
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4962644")
     implementation fg.deobf("curse.maven:guard-villagers-360203:4774930")
     implementation fg.deobf("curse.maven:unusual-end-617757:4549776")
 
@@ -133,12 +133,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"  : project.modid,
-                "Specification-Vendor" : project.mod_author,
-                "Specification-Version": "1",
-                "Implementation-Title" : project.modid,
+                "Specification-Title"     : project.modid,
+                "Specification-Vendor"    : project.mod_author,
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.modid,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor": project.mod_author,
+                "Implementation-Vendor"   : project.mod_author,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs"            : "mixins.todecoins.json"
         ])

@@ -136,11 +136,13 @@ public abstract class PiglinBarterMixin {
     @Unique
     private static boolean todeCoins$isGiftEvent(ServerLevel serverLevel) {
         if (ModList.get().isLoaded("sereneseasons")) {
-            return SereneSeasonsCompat.isChristmas(serverLevel) || SereneSeasonsCompat.isHalloween(serverLevel) ||
-                    SereneSeasonsCompat.isBirthday(serverLevel) || SereneSeasonsCompat.isAnniversary(serverLevel);
+            return SereneSeasonsCompat.isEaster(serverLevel) || SereneSeasonsCompat.isHalloween(serverLevel)
+                    || SereneSeasonsCompat.isChristmas(serverLevel) || SereneSeasonsCompat.isBirthday(serverLevel)
+                    || SereneSeasonsCompat.isAnniversary(serverLevel) || SereneSeasonsCompat.isNewYear(serverLevel);
         }
-        return CalendarUtil.isChristmas() || CalendarUtil.isHalloween()
-                || CalendarUtil.isBirthday() || CalendarUtil.isAnniversary();
+        return CalendarUtil.isEaster() || CalendarUtil.isHalloween()
+                || CalendarUtil.isChristmas() || CalendarUtil.isBirthday()
+                || CalendarUtil.isAnniversary() || CalendarUtil.isNewYear();
     }
 
     @Inject(at = @At("HEAD"), method = "stopHoldingOffHandItem", cancellable = true)

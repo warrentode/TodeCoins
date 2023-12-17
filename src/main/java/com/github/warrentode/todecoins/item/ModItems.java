@@ -131,6 +131,21 @@ public class ModItems {
     public static final RegistryObject<Item> ULTIMATE_DARK_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_ultimate_dark",
             () -> new Item(new Item.Properties().food(ModFoods.ULTIMATE_DARK_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
                     .tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> BUBBLY_BERRY_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_bubbly_berry",
+            () -> new Item(new Item.Properties().food(ModFoods.BUBBLY_BERRY_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> VELVETY_CLOVER_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_velvety_clover",
+            () -> new Item(new Item.Properties().food(ModFoods.VELVETY_CLOVER_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> FESTIVE_FUDGE_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_festive_fudge",
+            () -> new Item(new Item.Properties().food(ModFoods.FESTIVE_FUDGE_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> FUEGO_FUDGE_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_fuego_fudge",
+            () -> new Item(new Item.Properties().food(ModFoods.FUEGO_FUDGE_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> CARMEL_CRISP_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_carmel_crisp",
+            () -> new Item(new Item.Properties().food(ModFoods.CARMEL_CRISP_CHOCOLATE_COIN).tab(CreativeModeTab.TAB_FOOD)
+                    .tab(ModCreativeModeTab.TODECOINSTAB)));
 
     // COLLECTIBLE COIN SETS
     // holiday collection

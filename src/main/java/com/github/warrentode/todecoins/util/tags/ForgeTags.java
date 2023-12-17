@@ -131,6 +131,8 @@ public class ForgeTags {
         public static final TagKey<Item> COCOA = forgeItemTag("cocoa");
         public static final TagKey<Item> SUGAR = forgeItemTag("sugar");
         public static final TagKey<Item> FAT = forgeItemTag("fat");
+        public static final TagKey<Item> CLOVER = forgeItemTag("clover");
+        public static final TagKey<Item> BERRIES = forgeItemTag("crops/berries");
 
         public static final TagKey<Item> TOOLS_KNIVES = forgeItemTag("tools/knives");
         public static final TagKey<Item> TOOLS_CHISELS = forgeItemTag("tools/chisels");

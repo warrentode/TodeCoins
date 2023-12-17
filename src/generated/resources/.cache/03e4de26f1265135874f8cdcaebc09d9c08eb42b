@@ -1,7 +1,8 @@
-// 1.19.2	2023-12-17T06:49:52.557686	Tags for minecraft:item
+// 1.19.2	2023-12-17T10:31:42.1718283	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
+befe56c9f54e8784473a05fa5e800679b25ce60f data/forge/tags/items/clover.json
 b98916a5fe0160dc9d80a360961ec2ddbc784342 data/forge/tags/items/cocoa.json
 d5cf70c1c1570594208821e2af44e7225918bc4f data/forge/tags/items/coins.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
@@ -56,7 +57,7 @@ c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.j
 e199d3ab5411e637e6ee5c576a46d7f243cfeba4 data/hauntedharvest/tags/items/candy.json
 771a6a57c6423ef7bfde3dc7197a239176ecb4e8 data/hauntedharvest/tags/items/sweets.json
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
-57186dd80d3d435c2ad5ca0bb7a67b89a5f05663 data/supplementaries/tags/items/chocolate_bars.json
+85501e599f11da6fd937e4572943e5a17432e349 data/supplementaries/tags/items/chocolate_bars.json
 8831b7a7c1903bfd62992756333c08ecd55f796b data/supplementaries/tags/items/cookies.json
 1b64b170d75ce337e2786496d5c6024a2f8e6a28 data/todecoins/tags/items/bundles.json
 3fa68285540a9cacb458f465ee22db3e72f6c567 data/todecoins/tags/items/collectible_coins.json

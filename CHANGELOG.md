@@ -1,3 +1,9 @@
+### 2023-12-17 - 1.9.1.beta
+
+- added chocolate coins for each holiday coin introduced so far
+- added crafting table recipes for chocolate coins
+  - these recipes use mostly tagged ingredients along with just vanilla items to increase mod compatibility
+
 ### 2023-12-17 - 1.9.0.beta
 
 - [BREAKING] removed the enum classes from the seasonal loot checks

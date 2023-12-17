@@ -9,6 +9,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -40,9 +41,46 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
         chocolateCoinRecipeTemplate(consumer, ModItems.WARPED_SPICE_CHOCOLATE_COIN.get(), 4, Items.WARPED_FUNGUS, Items.PUFFERFISH);
         chocolateCoinRecipeTemplate(consumer, ModItems.MILK_BONE_CHOCOLATE_COIN.get(), 4, Items.BONE_MEAL, Items.COBWEB);
         chocolateCoinRecipeTemplate(consumer, ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get(), 4, Items.EMERALD, Items.INK_SAC);
+        chocolateCoinRecipeTemplate(consumer, ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get(), 4, Items.MAGMA_CREAM, Items.GLOWSTONE_DUST);
+        chocolateCoinRecipeTemplate(consumer, ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get(), 4, Items.HONEY_BLOCK, Items.COOKIE);
+
+        chocolateCoinRecipeTemplate2(consumer, ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get(), 4, ForgeTags.Items.BERRIES, Items.PHANTOM_MEMBRANE);
+        chocolateCoinRecipeTemplate2(consumer, ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get(), 4, ForgeTags.Items.COCOA, Items.GLOW_LICHEN);
+
+        chocolateCoinRecipeTemplate3(consumer, ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get(), 4, ForgeTags.Items.CLOVER, ForgeTags.Items.CLOVER);
     }
 
     private static void chocolateCoinRecipeTemplate(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, Item flavorA, Item flavorB) {
+        ShapelessRecipeBuilder.shapeless(result, resultAmount)
+                .group("chocolate_coins")
+                .requires(ForgeTags.Items.COCOA)
+                .requires(ForgeTags.Items.SUGAR)
+                .requires(ForgeTags.Items.MILK)
+                .requires(ForgeTags.Items.FAT)
+                // flavoring "extract" item 1
+                .requires(flavorA)
+                // flavoring "extract" item 2
+                .requires(flavorB)
+                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                .save(consumer, new ResourceLocation(MODID, "chocolate_coins/" + result));
+    }
+
+    private static void chocolateCoinRecipeTemplate2(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, TagKey<Item> flavorA, Item flavorB) {
+        ShapelessRecipeBuilder.shapeless(result, resultAmount)
+                .group("chocolate_coins")
+                .requires(ForgeTags.Items.COCOA)
+                .requires(ForgeTags.Items.SUGAR)
+                .requires(ForgeTags.Items.MILK)
+                .requires(ForgeTags.Items.FAT)
+                // flavoring "extract" item 1
+                .requires(flavorA)
+                // flavoring "extract" item 2
+                .requires(flavorB)
+                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                .save(consumer, new ResourceLocation(MODID, "chocolate_coins/" + result));
+    }
+
+    private static void chocolateCoinRecipeTemplate3(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, TagKey<Item> flavorA, TagKey<Item> flavorB) {
         ShapelessRecipeBuilder.shapeless(result, resultAmount)
                 .group("chocolate_coins")
                 .requires(ForgeTags.Items.COCOA)

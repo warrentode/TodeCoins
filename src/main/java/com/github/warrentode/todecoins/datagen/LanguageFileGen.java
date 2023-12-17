@@ -582,6 +582,11 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get(), "Crimson Spore Chocolate Coin");
         add(ModItems.MILK_BONE_CHOCOLATE_COIN.get(), "Milk Bone Chocolate Coin");
         add(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get(), "Ultimate Dark Chocolate Coin");
+        add(ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get(), "Bubbly Berry Chocolate Coin");
+        add(ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get(), "Velvety Clover Chocolate Coin");
+        add(ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get(), "Festive Fudge Chocolate Coin");
+        add(ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get(), "Fuego Fudge Chocolate Coin");
+        add(ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get(), "Fuego Fudge Chocolate Coin");
     }
 
     private void addCollectibleCoins(String id, String name) {
@@ -984,10 +989,15 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.coin_effects.ender_infection_immune", "Clears Ender Infection");
 
         // food tooltips
-        add("tooltips.crimson_spore_chocolate_effects", "90% Chance of Fire Resistance, 10% Chance of Hunger");
-        add("tooltips.warped_spice_chocolate_effects", "90% Chance of Increased Movement Speed, 10% Chance of Confusion");
-        add("tooltips.milk_bone_chocolate_effects", "90% Chance of Damage Resistance, 10% Chance of Slowness");
-        add("tooltips.ultimate_dark_chocolate_effects", "90% Chance of Hero of the Village, 10% Chance of Darkness");
+        add("tooltips." + ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get() + "_effects", "90% Chance of Fire Resistance, 10% Chance of Hunger");
+        add("tooltips." + ModItems.WARPED_SPICE_CHOCOLATE_COIN.get() + "_effects", "90% Chance of Increased Movement Speed, 10% Chance of Confusion");
+        add("tooltips." + ModItems.MILK_BONE_CHOCOLATE_COIN.get() + "_effects", "90% Chance of Damage Resistance, 10% Chance of Slowness");
+        add("tooltips." + ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get() + " _effects", "90% Chance of Hero of the Village, 10% Chance of Darkness");
+        add("tooltips." + ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get() + "_effects", "Puts a spring in your step and makes you light on your feet!");
+        add("tooltips." + ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get() + "_effects", "So smooth and fresh, it's your lucky day!");
+        add("tooltips." + ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get() + "_effects", "Sparkling, rich, and surprisingly rejuvenating too!");
+        add("tooltips." + ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get() + "_effects", "Feel the burn as you glow it up in style!");
+        add("tooltips." + ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get() + "_effects", "Crunchy and gooey, just the thing to keep you on task!");
 
         // entity collectible coin bases
         add("tooltips.collectible_aerial_coin.hover", "One of Twenty Aerial Seasonal Coins");
