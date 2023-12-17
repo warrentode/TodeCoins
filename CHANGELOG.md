@@ -1,9 +1,25 @@
-### 2023-11-01 - 1.7.10.beta
+### 2023-12-16 - 1.8.0.beta
+
+- this is a big change, but shouldn't break any internal code:
+- all attribute modifiers on collectible coins are now at fixed values
+- all effects on collectible coins have been set to a fixed amplifier of 0 - setting all effects to level 1
+  - none of the coins are dependent on difficulty level anymore
+  - yes, this means all the collectible coins have been nerfed to some extent, but especially the boss coins
+    - this is a result of our personal play testing while using an additional charm slot that isn't provided by default
+      but can be added in the curios config files
+      - the biggest and most notable issue was that wearing two Warden coins made a player invincible even in hard
+        mode,and even while fighting the Warden, so we're trying to fix that because we don't want something so insanely
+        overpowered in this mod - even just one Warden coin is overpowered
+        - so please bear with us as we use this coin as our means to measure our cap and scale everything back
+          accordingly and this might take us some time
+
+### 2023-12-16 - 1.7.10.beta
 
 - reduced entity coin drops from non-boss mobs to 10%
+  - boss coins remain set at 100% drop by default
 - attempting to re-balance boss coin effects (mainly nerfing the Warden coins)
 
-### 2023-11-01 - 1.7.9.beta
+### 2023-12-14 - 1.7.9.beta
 
 - added missing iceologer_types tag
 - updated to Forge 43.3.5
