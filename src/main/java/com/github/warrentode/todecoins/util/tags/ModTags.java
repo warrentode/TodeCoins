@@ -36,6 +36,7 @@ public class ModTags {
         public static final TagKey<Item> IRON_COLLECTIBLE_COINS = modItemTag("collectible_coins/iron");
         public static final TagKey<Item> GOLD_COLLECTIBLE_COINS = modItemTag("collectible_coins/gold");
         public static final TagKey<Item> NETHERITE_COLLECTIBLE_COINS = modItemTag("collectible_coins/netherite");
+        public static final TagKey<Item> ENDONIAN_COLLECTIBLE_COINS = modItemTag("collectible_coins/endonian");
 
         // holiday coins
         public static final TagKey<Item> HOLIDAY_COIN_SET = modItemTag("collectible_coins/holiday_coin_set");

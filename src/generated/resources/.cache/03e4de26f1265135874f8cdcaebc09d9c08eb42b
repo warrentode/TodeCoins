@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-16T20:47:02.3863587	Tags for minecraft:item
+// 1.19.2	2023-12-16T21:08:46.0758479	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -55,6 +55,7 @@ ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.
 1b64b170d75ce337e2786496d5c6024a2f8e6a28 data/todecoins/tags/items/bundles.json
 3fa68285540a9cacb458f465ee22db3e72f6c567 data/todecoins/tags/items/collectible_coins.json
 5c2d790af121edeadee589203f953e3d125d53e6 data/todecoins/tags/items/collectible_coins/copper.json
+503ac5baa02515f69481e1f45140ba78b19a6447 data/todecoins/tags/items/collectible_coins/endonian.json
 b74804da44b21600616a426b5c564679e59fa962 data/todecoins/tags/items/collectible_coins/entity_coins/allay_coin_set.json
 7dd943842542ca6c813a8afb892f7b002d29f9ee data/todecoins/tags/items/collectible_coins/entity_coins/armadillo_coin_set.json
 6d41bc32e07634fd0dab19d0cbdc1eff7d8c8d5c data/todecoins/tags/items/collectible_coins/entity_coins/axolotl_coin_set.json

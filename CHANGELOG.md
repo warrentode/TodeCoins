@@ -14,7 +14,8 @@
           accordingly and this might take us some time
 - it's now possible to salvage the copper, iron, gold, and netherite collectible coins by smelting or blasting them into
   nuggets
-  - undecided at the moment what the holiday and patron coins should be salvaged into
+  - holiday and patron coins can be salvaged into endonian nuggets via smelting or blasting
+  - the collectible coins continue to remain uncraftable
 
 ### 2023-12-16 - 1.7.10.beta
 

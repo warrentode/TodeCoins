@@ -58,6 +58,18 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.ENDONIAN_COLLECTIBLE_COINS)
+                .add(ModItems.BIRTHDAY_COIN_2023.get())
+                .add(ModItems.HALLOWEEN_COIN_2023.get())
+                .add(ModItems.CHRISTMAS_COIN_2023.get())
+                .add(ModItems.EASTER_COIN_2023.get())
+                .add(ModItems.SCHOLAR_OWL_COIN.get())
+                .add(ModItems.TUXEDO_CAT_COIN.get())
+                .add(ModItems.LITTLE_BEAR_COIN.get())
+                .add(ModItems.MARSHALL_NASH_CARNATION_COIN.get())
+                .add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get())
+                .add(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
+                .add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
         tag(ModTags.Items.NETHERITE_COLLECTIBLE_COINS)
                 .add(ModItems.NETHERITE_COD_COIN.get())
                 .add(ModItems.NETHERITE_HERO_COIN.get())

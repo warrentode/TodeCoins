@@ -37,6 +37,7 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
     static Ingredient ironCollectibleCoin = Ingredient.of(ModTags.Items.IRON_COLLECTIBLE_COINS);
     static Ingredient goldCollectibleCoin = Ingredient.of(ModTags.Items.GOLD_COLLECTIBLE_COINS);
     static Ingredient netheriteCollectibleCoin = Ingredient.of(ModTags.Items.NETHERITE_COLLECTIBLE_COINS);
+    static Ingredient endonianCollectibleCoin = Ingredient.of(ModTags.Items.ENDONIAN_COLLECTIBLE_COINS);
 
     private static void collectibleCoinSmeltingRecipes(Consumer<FinishedRecipe> consumer) {
         SimpleCookingRecipeBuilder.smelting(copperCollectibleCoin, ModItems.COPPER_NUGGET.get(), 0.1F, 100)
@@ -51,6 +52,9 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
         SimpleCookingRecipeBuilder.smelting(netheriteCollectibleCoin, ModItems.NETHERITE_NUGGET.get(), 0.1F, 100)
                 .unlockedBy("has_netherite_collectible_coin", has(ModTags.Items.NETHERITE_COLLECTIBLE_COINS))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/netherite_nugget"));
+        SimpleCookingRecipeBuilder.smelting(endonianCollectibleCoin, ModItems.ENDONIAN_NUGGET.get(), 0.1F, 100)
+                .unlockedBy("has_endonian_collectible_coin", has(ModTags.Items.ENDONIAN_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/endonian_nugget"));
     }
 
     private static void collectibleCoinBlastingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -66,6 +70,9 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
         SimpleCookingRecipeBuilder.blasting(netheriteCollectibleCoin, ModItems.NETHERITE_NUGGET.get(), 0.1F, 100)
                 .unlockedBy("has_netherite_collectible_coin", has(ModTags.Items.NETHERITE_COLLECTIBLE_COINS))
                 .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/netherite_nugget"));
+        SimpleCookingRecipeBuilder.blasting(endonianCollectibleCoin, ModItems.ENDONIAN_NUGGET.get(), 0.1F, 100)
+                .unlockedBy("has_endonian_collectible_coin", has(ModTags.Items.ENDONIAN_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/endonian_nugget"));
     }
 
     private static void armorRecipes(Consumer<FinishedRecipe> consumer) {
