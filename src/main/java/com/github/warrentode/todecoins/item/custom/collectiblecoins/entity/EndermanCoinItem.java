@@ -9,7 +9,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -61,18 +60,8 @@ public class EndermanCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
 
                 if (livingEntity != null) {
-                    double d = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        d = 0.01;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        d = 0.02;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        d = 0.03;
-                    }
                     attribute.put(Attributes.MOVEMENT_SPEED,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.01 + d,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.01,
                                     AttributeModifier.Operation.ADDITION));
                 }
 
@@ -114,12 +103,12 @@ public class EndermanCoinItem extends CollectibleCoin implements ICurioItem {
 
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
+                tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
+                tooltips.add(Component.translatable("tooltips.coin_effects.movement_speed").withStyle(ChatFormatting.BLUE));
                 if (stack.is(ModTags.Items.ENDERMAN_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                     tooltips.add(Component.translatable("tooltips.coin_effects.enderman_neutral").withStyle(ChatFormatting.BLUE));
                 }
                 if (stack.is(ModTags.Items.ENDERMITE_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                     tooltips.add(Component.translatable("tooltips.coin_effects.snow_walk").withStyle(ChatFormatting.BLUE));
                     if (ModList.get().isLoaded("unusualend")) {
                         tooltips.add(Component.translatable("tooltips.coin_effects.ender_infection_immune").withStyle(ChatFormatting.BLUE));

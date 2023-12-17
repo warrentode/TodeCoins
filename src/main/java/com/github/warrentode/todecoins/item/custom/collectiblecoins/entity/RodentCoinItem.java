@@ -7,7 +7,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -47,18 +46,8 @@ public class RodentCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
 
                 if (livingEntity != null) {
-                    int i = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 5;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 10;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 15;
-                    }
                     attribute.put(Attributes.MAX_HEALTH,
-                            new AttributeModifier(uuid, "generic.max_health", 10 + i,
+                            new AttributeModifier(uuid, "generic.max_health", 10,
                                     AttributeModifier.Operation.ADDITION));
                 }
 

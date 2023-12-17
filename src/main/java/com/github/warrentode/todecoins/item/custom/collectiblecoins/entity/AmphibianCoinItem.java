@@ -7,7 +7,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -43,28 +42,17 @@ public class AmphibianCoinItem extends CollectibleCoin implements ICurioItem {
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
                 if (livingEntity != null) {
-                    int i = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 1;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 2;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 3;
-                    }
-
                     if (stack.is(ModTags.Items.AXOLOTL_COIN_SET) || stack.is(ModTags.Items.CRAB_COIN_SET)
                             || stack.is(ModTags.Items.TURTLE_COIN_SET) || stack.is(ModTags.Items.TADPOLE_COIN_SET)) {
                         //noinspection deprecation
                         if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
-                            livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                            livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
                                     false, false, false));
                         }
                     }
 
                     if (stack.is(ModTags.Items.AXOLOTL_COIN_SET) || stack.is(ModTags.Items.PENGUIN_COIN_SET)) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0,
                                 false, false, false));
                     }
 
@@ -76,21 +64,7 @@ public class AmphibianCoinItem extends CollectibleCoin implements ICurioItem {
                     }
 
                     if (stack.is(ModTags.Items.FROG_COIN_SET)) {
-                        int j = 0;
-                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            j = 1;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                            j = 2;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                            j = 3;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                            j = 3;
-                        }
-
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, j,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 0,
                                 false, false, false));
                     }
                 }

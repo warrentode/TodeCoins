@@ -8,7 +8,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -50,36 +49,13 @@ public class BovineCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
 
                 if (livingEntity != null) {
-                    int i = 0;
-                    int k = 0;
-
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 5;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 10;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 15;
-                    }
-
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        k = 1;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        k = 2;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        k = 3;
-                    }
-
                     if (stack.is(ModTags.Items.RAVAGER_COIN_SET)) {
                         attribute.put(Attributes.ATTACK_KNOCKBACK,
-                                new AttributeModifier(uuid, "generic.attack_knockback", 1 + k,
+                                new AttributeModifier(uuid, "generic.attack_knockback", 1,
                                         AttributeModifier.Operation.ADDITION));
                     }
                     attribute.put(Attributes.MAX_HEALTH,
-                            new AttributeModifier(uuid, "generic.max_health", 10 + i,
+                            new AttributeModifier(uuid, "generic.max_health", 10,
                                     AttributeModifier.Operation.ADDITION));
                 }
 
@@ -90,17 +66,7 @@ public class BovineCoinItem extends CollectibleCoin implements ICurioItem {
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
                 if (stack.is(ModTags.Items.GOAT_COIN_SET)) {
-                    int i = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 1;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 2;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 3;
-                    }
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, i,
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 0,
                             false, false, false));
                 }
             }

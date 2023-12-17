@@ -7,7 +7,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -47,18 +46,8 @@ public class BearCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
 
                 if (livingEntity != null) {
-                    int i = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 1;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 2;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 3;
-                    }
                     attribute.put(Attributes.ATTACK_DAMAGE,
-                            new AttributeModifier(uuid, "generic.attack_damage", 1 + i,
+                            new AttributeModifier(uuid, "generic.attack_damage", 1,
                                     AttributeModifier.Operation.ADDITION));
                 }
 

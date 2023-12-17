@@ -11,7 +11,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -54,18 +53,8 @@ public class EasterCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
 
                 if (livingEntity != null) {
-                    double d = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        d = 0.01;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        d = 0.02;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        d = 0.03;
-                    }
                     attribute.put(Attributes.MOVEMENT_SPEED,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.05 + d,
+                            new AttributeModifier(uuid, "generic.movement_speed", 0.01,
                                     AttributeModifier.Operation.ADDITION));
                 }
 

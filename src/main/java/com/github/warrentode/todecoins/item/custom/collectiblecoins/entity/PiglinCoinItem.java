@@ -8,7 +8,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -53,32 +52,20 @@ public class PiglinCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
 
                 if (livingEntity != null) {
-                    int i = 0;
-
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 1;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 2;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 3;
-                    }
-
                     if (stack.is(ModTags.Items.PIGLIN_BRUTE_COIN_SET)) {
                         attribute.put(Attributes.ATTACK_KNOCKBACK,
-                                new AttributeModifier(uuid, "generic.attack_knockback", 1 + i,
+                                new AttributeModifier(uuid, "generic.attack_knockback", 1,
                                         AttributeModifier.Operation.ADDITION));
                     }
 
                     if (stack.is(ModTags.Items.PIGLIN_MERCHANT_COIN_SET)) {
                         attribute.put(Attributes.KNOCKBACK_RESISTANCE,
-                                new AttributeModifier(uuid, "generic.knockback_resistance", 1 + i,
+                                new AttributeModifier(uuid, "generic.knockback_resistance", 1,
                                         AttributeModifier.Operation.ADDITION));
                     }
 
                     attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.armor", 1 + i,
+                            new AttributeModifier(uuid, "generic.armor", 1,
                                     AttributeModifier.Operation.ADDITION));
                 }
 

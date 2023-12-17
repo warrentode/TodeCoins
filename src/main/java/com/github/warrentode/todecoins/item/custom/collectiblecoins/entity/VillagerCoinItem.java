@@ -10,7 +10,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -72,7 +71,8 @@ public class VillagerCoinItem extends CollectibleCoin implements ICurioItem {
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
                 if (livingEntity != null) {
-                    if (livingEntity != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET)) && (livingEntity.level.getDayTime() >= 12000)) {
+                    if (livingEntity != null && (stack.is(ModTags.Items.WANDERING_TRADER_COIN_SET) || stack.is(ModTags.Items.NUMISMATIST_COIN_SET))
+                            && (livingEntity.level.getDayTime() >= 12000)) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0,
                                 false, false, true));
                     }
@@ -82,19 +82,7 @@ public class VillagerCoinItem extends CollectibleCoin implements ICurioItem {
 
                     if (livingEntity != null && (stack.is(ModTags.Items.VILLAGER_COIN_SET) || stack.is(ModTags.Items.GUARD_COIN_SET))
                             && (livingEntity.level.getDayTime() >= 12000)) {
-
-                        int i = 0;
-                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                            i = 1;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                            i = 2;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                            i = 3;
-                        }
-
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1 + i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 0,
                                 false, false, false));
                     }
                     else {

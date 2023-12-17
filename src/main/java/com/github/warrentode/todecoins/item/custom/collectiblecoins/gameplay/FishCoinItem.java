@@ -10,7 +10,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -85,18 +84,7 @@ public class FishCoinItem extends CollectibleCoin implements ICurioItem {
                 if (livingEntity != null) {
                     //noinspection deprecation
                     if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
-
-                        int i = 0;
-                        if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                            i = 1;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                            i = 2;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                            i = 3;
-                        }
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, i,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
                                 false, false, false));
                     }
                 }

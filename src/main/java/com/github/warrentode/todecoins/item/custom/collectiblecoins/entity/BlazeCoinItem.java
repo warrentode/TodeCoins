@@ -8,7 +8,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -49,26 +48,10 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 LivingEntity livingEntity = slotContext.entity();
                 if (livingEntity != null) {
-                    int armorBonus = 0;
-                    int hpBonus = 0;
 
                     if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
-                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            armorBonus = 1;
-                            hpBonus = 20;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                            armorBonus = 2;
-                            hpBonus = 24;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                            armorBonus = 3;
-                            hpBonus = 30;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                            armorBonus = 4;
-                            hpBonus = 34;
-                        }
+                        int armorBonus = 1;
+                        int hpBonus = 10;
 
                         attribute.put(Attributes.ARMOR,
                                 new AttributeModifier(uuid, "generic.armor", armorBonus,
@@ -86,17 +69,7 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
 
                 if (livingEntity != null) {
-                    int i = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 1;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 2;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 3;
-                    }
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, i,
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0,
                             false, false, false));
                 }
             }
