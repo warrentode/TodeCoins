@@ -6,10 +6,7 @@ import com.github.warrentode.todecoins.item.custom.*;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.*;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.gameplay.FishCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.gameplay.HeroCoinItem;
-import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.BirthdayCoinItem;
-import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.ChristmasCoinItem;
-import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.EasterCoinItem;
-import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.HalloweenCoinItem;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday.*;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.LifetimePatronCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.CarnationPatronCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.patron.year.CosmosPatronCoinItem;
@@ -137,18 +134,16 @@ public class ModItems {
 
     // COLLECTIBLE COIN SETS
     // holiday collection
-    // birthday set
-    public static final RegistryObject<Item> BIRTHDAY_COIN_2023 = ITEMS.register("collectible_coin_birthday_2023",
+    public static final RegistryObject<Item> BIRTHDAY_COIN = ITEMS.register("collectible_coin_birthday",
             () -> new BirthdayCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
-    // halloween set
-    public static final RegistryObject<Item> HALLOWEEN_COIN_2023 = ITEMS.register("collectible_coin_halloween_2023",
+    public static final RegistryObject<Item> HALLOWEEN_COIN = ITEMS.register("collectible_coin_halloween",
             () -> new HalloweenCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
-    // christmas set
-    public static final RegistryObject<Item> CHRISTMAS_COIN_2023 = ITEMS.register("collectible_coin_christmas_2023",
+    public static final RegistryObject<Item> CHRISTMAS_COIN = ITEMS.register("collectible_coin_christmas",
             () -> new ChristmasCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
-    // easter set
-    public static final RegistryObject<Item> EASTER_COIN_2023 = ITEMS.register("collectible_coin_easter_2023",
+    public static final RegistryObject<Item> EASTER_COIN = ITEMS.register("collectible_coin_easter",
             () -> new EasterCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
+    public static final RegistryObject<Item> NEW_YEAR_COIN = ITEMS.register("collectible_coin_new_year",
+            () -> new NewYearCoinItem(new Item.Properties().stacksTo(1).tab(CollectibleCoinsTab.COLLECTORCOINSTAB)));
     // patron collection
     // patron lifetime anniversary set
     public static final RegistryObject<Item> SCHOLAR_OWL_COIN = ITEMS.register("collectible_coin_scholar_owl",

@@ -45,6 +45,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_halloween_coin_loot");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_christmas_coin_loot");
     public static final ResourceLocation TODECOINS_EASTER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_easter_coin_loot");
+    public static final ResourceLocation TODECOINS_NEW_YEAR_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_new_year_coin_loot");
     public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_anniversary_coin_loot");
     public static final ResourceLocation TODECOINS_SPRING_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_spring_coin_loot");
     public static final ResourceLocation TODECOINS_SUMMER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_summer_coin_loot");
@@ -102,6 +103,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_BIRTHDAY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_birthday_coin_drops");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_christmas_coin_drops");
     public static final ResourceLocation TODECOINS_EASTER_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_easter_coin_drops");
+    public static final ResourceLocation TODECOINS_NEW_YEAR_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_new_year_coin_drops");
     public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_anniversary_coin_drops");
     public static final ResourceLocation TODECOINS_SPRING_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_spring_coin_drops");
     public static final ResourceLocation TODECOINS_SUMMER_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_summer_coin_drops");

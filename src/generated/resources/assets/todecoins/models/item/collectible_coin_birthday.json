@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "todecoins:item/collectible_coin_christmas_2023"
+    "layer0": "todecoins:item/collectible_coin_birthday"
   }
 }

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "todecoins:collectible_coin_birthday_2023"
+          "name": "todecoins:collectible_coin_birthday"
         }
       ],
       "rolls": 1.0

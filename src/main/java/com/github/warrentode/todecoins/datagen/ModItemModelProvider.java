@@ -71,10 +71,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.SNOW_GOLEM_SPAWN_EGG.getId().toString(), "minecraft:item/template_spawn_egg");
 
         // collectible coins
-        basicItem(ModItems.EASTER_COIN_2023.get());
-        basicItem(ModItems.HALLOWEEN_COIN_2023.get());
-        basicItem(ModItems.CHRISTMAS_COIN_2023.get());
-        basicItem(ModItems.BIRTHDAY_COIN_2023.get());
+        basicItem(ModItems.EASTER_COIN.get());
+        basicItem(ModItems.HALLOWEEN_COIN.get());
+        basicItem(ModItems.CHRISTMAS_COIN.get());
+        basicItem(ModItems.BIRTHDAY_COIN.get());
+        basicItem(ModItems.NEW_YEAR_COIN.get());
 
         basicItem(ModItems.MARSHALL_NASH_CARNATION_COIN.get());
         basicItem(ModItems.MARSHALL_NASH_COSMOS_COIN.get());

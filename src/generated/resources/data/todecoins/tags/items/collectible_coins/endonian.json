@@ -1,16 +1,6 @@
 {
   "values": [
-    "todecoins:collectible_coin_birthday_2023",
-    "todecoins:collectible_coin_halloween_2023",
-    "todecoins:collectible_coin_christmas_2023",
-    "todecoins:collectible_coin_easter_2023",
-    "todecoins:collectible_coin_scholar_owl",
-    "todecoins:collectible_coin_tuxedo_cat",
-    "todecoins:collectible_coin_little_bear",
-    "todecoins:collectible_coin_carnation_marshall_nash",
-    "todecoins:collectible_coin_cosmos_marshall_nash",
-    "todecoins:collectible_coin_sunflower_marshall_nash",
-    "todecoins:collectible_coin_carnation_trevor_brannigan",
-    "todecoins:collectible_coin_cosmos_trevor_brannigan"
+    "#todecoins:collectible_coins/holiday_coin_set",
+    "#todecoins:collectible_coins/patron_coin_set"
   ]
 }

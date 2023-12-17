@@ -6,6 +6,7 @@ import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
@@ -127,7 +128,12 @@ public class EasterCoinItem extends CollectibleCoin implements ICurioItem {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_easter_coin.hover").withStyle(ChatFormatting.GRAY));
+        if (Screen.hasShiftDown()) {
+            tooltips.add(Component.translatable("tooltips.collectible_coin_easter.hover").withStyle(ChatFormatting.GRAY));
+        }
+        else {
+            tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

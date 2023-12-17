@@ -4,6 +4,7 @@ import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
@@ -107,7 +108,12 @@ public class ChristmasCoinItem extends CollectibleCoin implements ICurioItem {
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_christmas_coin.hover").withStyle(ChatFormatting.GRAY));
+        if (Screen.hasShiftDown()) {
+            tooltips.add(Component.translatable("tooltips.collectible_coin_christmas.hover").withStyle(ChatFormatting.GRAY));
+        }
+        else {
+            tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY));
+        }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

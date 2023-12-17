@@ -53,25 +53,21 @@ public class NumismatistTrades {
 
     private static ImmutableSet<ItemLike> CoinList = ImmutableSet.of(
             // ANNIVERSARY COINS
-            ModItems.LITTLE_BEAR_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.TUXEDO_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.SCHOLAR_OWL_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.MARSHALL_NASH_CARNATION_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.TUXEDO_CAT_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.LITTLE_BEAR_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.MARSHALL_NASH_COSMOS_COIN.get().asItem().getDefaultInstance().getItem(),
-            ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.MARSHALL_NASH_CARNATION_COIN.get().asItem().getDefaultInstance().getItem(),
             ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().asItem().getDefaultInstance().getItem(),
 
-            // BIRTHDAY COINS
-            ModItems.BIRTHDAY_COIN_2023.get().asItem().getDefaultInstance().getItem(),
-
-            // HALLOWEEN COINS
-            ModItems.HALLOWEEN_COIN_2023.get().asItem().getDefaultInstance().getItem(),
-
-            // CHRISTMAS COINS
-            ModItems.CHRISTMAS_COIN_2023.get().asItem().getDefaultInstance().getItem(),
-
-            // EASTER COINS
-            ModItems.EASTER_COIN_2023.get().asItem().getDefaultInstance().getItem(),
+            // HOLIDAY COINS
+            ModItems.EASTER_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.HALLOWEEN_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.CHRISTMAS_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.BIRTHDAY_COIN.get().asItem().getDefaultInstance().getItem(),
+            ModItems.NEW_YEAR_COIN.get().asItem().getDefaultInstance().getItem(),
 
             // SPRING COINS
             ModItems.COPPER_ALLAY_COIN.get().asItem().getDefaultInstance().getItem(),
@@ -475,7 +471,7 @@ public class NumismatistTrades {
                                         CoinList, 1,
                                         OneSetForOneSetTrade.UNCOMMON_ITEMS_SUPPLY,
                                         OneSetForOneSetTrade.XP_LEVEL_1_SELL, 0),
-                                // offer an off season coin for a current season coin
+                                // another coin for a coin trade
                                 new OneSetForOneSetTrade(
                                         CoinList, 1,
                                         CoinList, 1,
@@ -498,7 +494,7 @@ public class NumismatistTrades {
                                         CoinList, 1,
                                         OneSetForTwoSetsTrade.UNCOMMON_ITEMS_SUPPLY,
                                         OneSetForTwoSetsTrade.XP_LEVEL_1_SELL, 0),
-                                // offer a coin pack for 2 current season coins
+                                // offer a coin pack in a shulker box for 2 coins
                                 new LootBoxForTwoRequestSetsTrade(
                                         Items.SHULKER_BOX.getDefaultInstance(),
                                         "tooltips.collectible_coin_pack",
@@ -508,7 +504,7 @@ public class NumismatistTrades {
                                         LootBoxForTwoRequestSetsTrade.UNCOMMON_ITEMS_SUPPLY,
                                         LootBoxForTwoRequestSetsTrade.XP_LEVEL_1_SELL, 0)
                         },
-                        // 1 rare, season based trade
+                        // 1 rare offer for 2 coins
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // offer a Cagerium listing item for 2 current season coins
                                 new OneSetForTwoSetsTrade(

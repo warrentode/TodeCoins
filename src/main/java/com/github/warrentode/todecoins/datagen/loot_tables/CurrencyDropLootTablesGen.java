@@ -35,6 +35,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
     public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
     public static final LootItemCondition.Builder CHRISTMAS_EVENT = ChristmasCondition.event();
     public static final LootItemCondition.Builder EASTER_EVENT = EasterCondition.event();
+    public static final LootItemCondition.Builder NEW_YEAR_EVENT = NewYearCondition.event();
     public static final LootItemCondition.Builder ANNIVERSARY_EVENT = AnniversaryCondition.event();
     public static final LootItemCondition.Builder SPRING = SpringCondition.season();
     public static final LootItemCondition.Builder SUMMER = SummerCondition.season();
@@ -59,6 +60,8 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                         .when(CHRISTMAS_EVENT).when(LootItemRandomChanceCondition.randomChance(0.1F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EASTER_COIN_DROPS)
                                         .when(EASTER_EVENT).when(LootItemRandomChanceCondition.randomChance(0.1F)))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NEW_YEAR_COIN_DROPS)
+                                        .when(NEW_YEAR_EVENT).when(LootItemRandomChanceCondition.randomChance(0.1F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_DROPS)
                                         .when(ANNIVERSARY_EVENT).when(LootItemRandomChanceCondition.randomChance(0.1F)))
                         )
@@ -71,13 +74,15 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                                 .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                 .apply(LootingEnchantFunction.lootingMultiplier(ConstantValue.exactly(0)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SPRING_ENTITY_COIN_DROPS)
-                                        .when(SPRING).when(LootItemRandomChanceCondition.randomChance(0.1F)))
+                                        .when(SPRING.or(EASTER_EVENT).or(NEW_YEAR_EVENT))
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SUMMER_ENTITY_COIN_DROPS)
                                         .when(SUMMER).when(LootItemRandomChanceCondition.randomChance(0.1F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_AUTUMN_ENTITY_COIN_DROPS)
-                                        .when(AUTUMN).when(LootItemRandomChanceCondition.randomChance(0.1F)))
+                                        .when(AUTUMN.or(HALLOWEEN_EVENT)).when(LootItemRandomChanceCondition.randomChance(0.1F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_WINTER_ENTITY_COIN_DROPS)
-                                        .when(WINTER).when(LootItemRandomChanceCondition.randomChance(0.1F)))
+                                        .when(WINTER.or(CHRISTMAS_EVENT).or(BIRTHDAY_EVENT).or(ANNIVERSARY_EVENT))
+                                        .when(LootItemRandomChanceCondition.randomChance(0.1F)))
                         )
         );
         consumer.accept(ModBuiltInLootTables.BOSS_COLLECTIBLE_COIN_DROPS,
@@ -361,7 +366,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
-                                .add(LootItem.lootTableItem(ModItems.BIRTHDAY_COIN_2023.get()).when(BIRTHDAY_EVENT)
+                                .add(LootItem.lootTableItem(ModItems.BIRTHDAY_COIN.get()).when(BIRTHDAY_EVENT)
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
                         ));
@@ -370,7 +375,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
-                                .add(LootItem.lootTableItem(ModItems.HALLOWEEN_COIN_2023.get()).when(HALLOWEEN_EVENT)
+                                .add(LootItem.lootTableItem(ModItems.HALLOWEEN_COIN.get()).when(HALLOWEEN_EVENT)
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
                         ));
@@ -379,7 +384,7 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
-                                .add(LootItem.lootTableItem(ModItems.CHRISTMAS_COIN_2023.get()).when(CHRISTMAS_EVENT)
+                                .add(LootItem.lootTableItem(ModItems.CHRISTMAS_COIN.get()).when(CHRISTMAS_EVENT)
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
                         ));
@@ -388,7 +393,16 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
-                                .add(LootItem.lootTableItem(ModItems.EASTER_COIN_2023.get()).when(EASTER_EVENT)
+                                .add(LootItem.lootTableItem(ModItems.EASTER_COIN.get()).when(EASTER_EVENT)
+                                        .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                        ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_NEW_YEAR_COIN_DROPS,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setBonusRolls(ConstantValue.exactly(0F))
+                                .add(LootItem.lootTableItem(ModItems.NEW_YEAR_COIN.get()).when(NEW_YEAR_EVENT)
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
                         ));
@@ -397,17 +411,31 @@ public class CurrencyDropLootTablesGen implements Consumer<BiConsumer<ResourceLo
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
-                                // newest coins weight = total number of entries
+                                .add(LootItem.lootTableItem(ModItems.SCHOLAR_OWL_COIN.get()).when(ANNIVERSARY_EVENT)
+                                        .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                                        .setQuality(0).setWeight(1))
+                                .add(LootItem.lootTableItem(ModItems.TUXEDO_CAT_COIN.get()).when(ANNIVERSARY_EVENT)
+                                        .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                                        .setQuality(0).setWeight(1))
+                                .add(LootItem.lootTableItem(ModItems.LITTLE_BEAR_COIN.get()).when(ANNIVERSARY_EVENT)
+                                        .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                                        .setQuality(0).setWeight(1))
+                                .add(LootItem.lootTableItem(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get()).when(ANNIVERSARY_EVENT)
+                                        .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                                        .setQuality(0).setWeight(1))
                                 .add(LootItem.lootTableItem(ModItems.MARSHALL_NASH_COSMOS_COIN.get()).when(ANNIVERSARY_EVENT)
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        .setQuality(0).setWeight(4))
-                                .add(LootItem.lootTableItem(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get()).when(ANNIVERSARY_EVENT)
+                                        .setQuality(0).setWeight(1))
+                                .add(LootItem.lootTableItem(ModItems.MARSHALL_NASH_CARNATION_COIN.get()).when(ANNIVERSARY_EVENT)
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
-                                        .setQuality(0).setWeight(4))
-                                // old coins weight = 1
-                                .add(LootItem.lootTableItem(ModItems.MARSHALL_NASH_CARNATION_COIN.get()).when(ANNIVERSARY_EVENT)
+                                        .setQuality(0).setWeight(1))
+                                .add(LootItem.lootTableItem(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get()).when(ANNIVERSARY_EVENT)
                                         .when(LootItemKilledByPlayerCondition.killedByPlayer())
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
                                         .setQuality(0).setWeight(1))

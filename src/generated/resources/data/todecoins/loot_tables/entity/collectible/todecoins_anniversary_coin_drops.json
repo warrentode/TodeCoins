@@ -21,8 +21,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "todecoins:collectible_coin_cosmos_marshall_nash",
-          "weight": 4
+          "name": "todecoins:collectible_coin_scholar_owl"
         },
         {
           "type": "minecraft:item",
@@ -41,8 +40,64 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "todecoins:collectible_coin_cosmos_trevor_brannigan",
-          "weight": 4
+          "name": "todecoins:collectible_coin_tuxedo_cat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:collectible_coin_little_bear"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:collectible_coin_sunflower_marshall_nash"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:collectible_coin_cosmos_marshall_nash"
         },
         {
           "type": "minecraft:item",
@@ -62,6 +117,25 @@
             }
           ],
           "name": "todecoins:collectible_coin_carnation_marshall_nash"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            },
+            {
+              "condition": "minecraft:killed_by_player"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:collectible_coin_cosmos_trevor_brannigan"
         },
         {
           "type": "minecraft:item",

@@ -44,10 +44,11 @@ public class LanguageFileGen extends LanguageProvider {
 
     private void addItems() {
         // annual coins
-        addCollectibleCoins(ModItems.BIRTHDAY_COIN_2023.get().getDescriptionId(), "Birthday Coin");
-        addCollectibleCoins(ModItems.HALLOWEEN_COIN_2023.get().getDescriptionId(), "Halloween Coin");
-        addCollectibleCoins(ModItems.CHRISTMAS_COIN_2023.get().getDescriptionId(), "Christmas Coin");
-        addCollectibleCoins(ModItems.EASTER_COIN_2023.get().getDescriptionId(), "Easter Coin");
+        addCollectibleCoins(ModItems.BIRTHDAY_COIN.get().getDescriptionId(), "Birthday Coin");
+        addCollectibleCoins(ModItems.HALLOWEEN_COIN.get().getDescriptionId(), "Halloween Coin");
+        addCollectibleCoins(ModItems.CHRISTMAS_COIN.get().getDescriptionId(), "Christmas Coin");
+        addCollectibleCoins(ModItems.EASTER_COIN.get().getDescriptionId(), "Easter Coin");
+        addCollectibleCoins(ModItems.NEW_YEAR_COIN.get().getDescriptionId(), "New Year Coin");
 
         addCollectibleCoins(ModItems.SCHOLAR_OWL_COIN.get().getDescriptionId(), "Scholar Owl Lifetime Coin");
         addCollectibleCoins(ModItems.TUXEDO_CAT_COIN.get().getDescriptionId(), "Tuxedo Cat Lifetime Coin");
@@ -965,6 +966,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.coin_effects.christmas_hero", "Hero of the Village during Christmas Event");
         add("tooltips.coin_effects.birthday_hero", "Hero of the Village during Birthday Event");
         add("tooltips.coin_effects.easter_hero", "Hero of the Village during Easter Event");
+        add("tooltips.coin_effects.new_year_hero", "Hero of the Village during Easter Event");
 
         add("tooltips.coin_effects.undying", "Functions as a Totem of Undying while Equipped or in Inventory");
         add("tooltips.coin_effects.fishing_loot", "Unlocks Additional Sub Loot Tables for Fishing");
@@ -1036,10 +1038,11 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.collectible_fish_coin.hover", "One of Sixteen Fishing Seasonal Coins");
 
         // holiday collectible coin bases
-        add("tooltips.collectible_birthday_coin.hover", "A Birthday Seasonal Coin");
-        add("tooltips.collectible_christmas_coin.hover", "A Christmas Seasonal Coin");
-        add("tooltips.collectible_halloween_coin.hover", "A Halloween Seasonal Coin");
-        add("tooltips.collectible_easter_coin.hover", "An Easter Seasonal Coin");
+        add("tooltips.collectible_coin_birthday.hover", "A Coin to Celebrate Birthdays");
+        add("tooltips.collectible_coin_christmas.hover", "A Coin to Celebrate Many Holidays before and around the Hibernal Solstice, such as Christmas, Hanukkah, Kwanzaa, Yule, and many more!");
+        add("tooltips.collectible_coin_halloween.hover", "A Coin to Celebrate Many Holidays before and around the Autumnal Equinox, such as Harvest Festivals, All Hallows' Eve, Samhain, Halloween, Day of the Dead, and possibly more.");
+        add("tooltips.collectible_coin_easter.hover", "A Coin to Celebrate Many Holidays before and around the Vernal Equinox, such as the day itself in Japan, Passover, Easter, Ostara, and many more.");
+        add("tooltips.collectible_coin_new_year.hover", "A Coin to Celebrate the New Year");
 
         // annual patron coin bases
         add("tooltips.collectible_patron_coin.hover", "A collectible coin to publicly honor, acknowledge, and appreciate those that support my work");

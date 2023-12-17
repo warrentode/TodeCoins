@@ -248,14 +248,16 @@ public class AdvancementsGen extends AdvancementProvider {
                     .addCriterion("find_" + ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get()))
 
-                    .addCriterion("find_" + ModItems.BIRTHDAY_COIN_2023.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRTHDAY_COIN_2023.get()))
-                    .addCriterion("find_" + ModItems.HALLOWEEN_COIN_2023.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HALLOWEEN_COIN_2023.get()))
-                    .addCriterion("find_" + ModItems.CHRISTMAS_COIN_2023.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHRISTMAS_COIN_2023.get()))
-                    .addCriterion("find_" + ModItems.EASTER_COIN_2023.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EASTER_COIN_2023.get()))
+                    .addCriterion("find_" + ModItems.BIRTHDAY_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRTHDAY_COIN.get()))
+                    .addCriterion("find_" + ModItems.HALLOWEEN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HALLOWEEN_COIN.get()))
+                    .addCriterion("find_" + ModItems.CHRISTMAS_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHRISTMAS_COIN.get()))
+                    .addCriterion("find_" + ModItems.EASTER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EASTER_COIN.get()))
+                    .addCriterion("find_" + ModItems.NEW_YEAR_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NEW_YEAR_COIN.get()))
 
                     .addCriterion("find_" + ModItems.COPPER_ALLAY_COIN.get().getDescriptionId(),
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.COPPER_ALLAY_COIN.get()))
@@ -1131,18 +1133,18 @@ public class AdvancementsGen extends AdvancementProvider {
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("collectible/patron_brannigan_coins"));
 
-            Advancement holidayCoinSet = getAdvancement(todeCoins, ModItems.CHRISTMAS_COIN_2023.get(),
+            Advancement holidayCoinSet = getAdvancement(todeCoins, ModItems.CHRISTMAS_COIN.get(),
                     "holidayCoinSet", FrameType.TASK, true, true, false)
                     .parent(collectibleCoins)
 
-                    .addCriterion("find_" + ModItems.BIRTHDAY_COIN_2023.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRTHDAY_COIN_2023.get()))
-                    .addCriterion("find_" + ModItems.HALLOWEEN_COIN_2023.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HALLOWEEN_COIN_2023.get()))
-                    .addCriterion("find_" + ModItems.CHRISTMAS_COIN_2023.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHRISTMAS_COIN_2023.get()))
-                    .addCriterion("find_" + ModItems.EASTER_COIN_2023.get().getDescriptionId(),
-                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EASTER_COIN_2023.get()))
+                    .addCriterion("find_" + ModItems.BIRTHDAY_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.BIRTHDAY_COIN.get()))
+                    .addCriterion("find_" + ModItems.HALLOWEEN_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.HALLOWEEN_COIN.get()))
+                    .addCriterion("find_" + ModItems.CHRISTMAS_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CHRISTMAS_COIN.get()))
+                    .addCriterion("find_" + ModItems.EASTER_COIN.get().getDescriptionId(),
+                            InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.EASTER_COIN.get()))
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("collectible/holiday_coins"));
 

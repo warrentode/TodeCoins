@@ -78,6 +78,20 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "todecoins:new_year_condition"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_new_year_coin_loot",
+          "quality": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
               "condition": "minecraft:alternative",
               "terms": [
                 {
@@ -85,6 +99,9 @@
                 },
                 {
                   "condition": "todecoins:easter_condition"
+                },
+                {
+                  "condition": "todecoins:new_year_condition"
                 }
               ]
             }

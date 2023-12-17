@@ -65,6 +65,19 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "todecoins:new_year_condition"
+            },
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:entity/collectible/todecoins_new_year_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
               "condition": "todecoins:anniversary_condition"
             },
             {

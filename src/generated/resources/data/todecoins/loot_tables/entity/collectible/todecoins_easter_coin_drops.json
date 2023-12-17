@@ -21,7 +21,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "todecoins:collectible_coin_easter_2023"
+          "name": "todecoins:collectible_coin_easter"
         }
       ],
       "rolls": 1.0

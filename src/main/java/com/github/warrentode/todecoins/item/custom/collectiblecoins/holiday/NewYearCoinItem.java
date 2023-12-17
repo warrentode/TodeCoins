@@ -1,11 +1,8 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import com.github.warrentode.todecoins.util.CalendarUtil;
-import com.google.common.collect.LinkedHashMultimap;
-import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
@@ -17,12 +14,10 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
@@ -34,10 +29,9 @@ import top.theillusivec4.curios.common.capability.CurioItemCapability;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.UUID;
 
-public class BirthdayCoinItem extends CollectibleCoin implements ICurioItem {
-    public BirthdayCoinItem(Properties pProperties) {
+public class NewYearCoinItem extends CollectibleCoin implements ICurioItem {
+    public NewYearCoinItem(Properties pProperties) {
         super(pProperties);
     }
 
@@ -50,12 +44,8 @@ public class BirthdayCoinItem extends CollectibleCoin implements ICurioItem {
             }
 
             @Override
-            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
-                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.LUCK,
-                        new AttributeModifier(uuid, TodeCoins.MODID + ":luck_bonus", 1,
-                                AttributeModifier.Operation.ADDITION));
-                return attribute;
+            public int getFortuneLevel(SlotContext slotContext, @Nullable LootContext lootContext) {
+                return 1;
             }
 
             @Override
@@ -65,11 +55,11 @@ public class BirthdayCoinItem extends CollectibleCoin implements ICurioItem {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isBirthday(serverLevel)) {
+                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isNewYear(serverLevel)) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
-                    else if (CalendarUtil.Season.isBirthday() && !ModList.get().isLoaded("sereneseasons")) {
+                    else if (CalendarUtil.Season.isNewYear() && !ModList.get().isLoaded("sereneseasons")) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
@@ -110,7 +100,7 @@ public class BirthdayCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.coin_effects.birthday_hero").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.new_year_hero").withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });
@@ -119,7 +109,7 @@ public class BirthdayCoinItem extends CollectibleCoin implements ICurioItem {
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
-            tooltips.add(Component.translatable("tooltips.collectible_coin_birthday.hover").withStyle(ChatFormatting.GRAY));
+            tooltips.add(Component.translatable("tooltips.collectible_birthday_coin.hover").withStyle(ChatFormatting.GRAY));
         }
         else {
             tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY));

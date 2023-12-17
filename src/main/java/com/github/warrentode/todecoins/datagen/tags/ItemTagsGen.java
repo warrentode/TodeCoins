@@ -59,18 +59,8 @@ public class ItemTagsGen extends ItemTagsProvider {
 
     private void registerModTags() {
         tag(ModTags.Items.ENDONIAN_COLLECTIBLE_COINS)
-                .add(ModItems.BIRTHDAY_COIN_2023.get())
-                .add(ModItems.HALLOWEEN_COIN_2023.get())
-                .add(ModItems.CHRISTMAS_COIN_2023.get())
-                .add(ModItems.EASTER_COIN_2023.get())
-                .add(ModItems.SCHOLAR_OWL_COIN.get())
-                .add(ModItems.TUXEDO_CAT_COIN.get())
-                .add(ModItems.LITTLE_BEAR_COIN.get())
-                .add(ModItems.MARSHALL_NASH_CARNATION_COIN.get())
-                .add(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
-                .add(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get())
-                .add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get())
-                .add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
+                .addTag(ModTags.Items.HOLIDAY_COIN_SET)
+                .addTag(ModTags.Items.PATRON_COIN_SET);
         tag(ModTags.Items.NETHERITE_COLLECTIBLE_COINS)
                 .add(ModItems.NETHERITE_COD_COIN.get())
                 .add(ModItems.NETHERITE_HERO_COIN.get())
@@ -529,22 +519,16 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.GOLD_HERO_COIN.get())
                 .add(ModItems.NETHERITE_HERO_COIN.get());
         tag(ModTags.Items.HOLIDAY_COIN_SET)
-                .addTag(ModTags.Items.EASTER_COIN_SET)
-                .addTag(ModTags.Items.BIRTHDAY_COIN_SET)
-                .addTag(ModTags.Items.CHRISTMAS_COIN_SET)
-                .addTag(ModTags.Items.HALLOWEEN_COIN_SET);
-        tag(ModTags.Items.EASTER_COIN_SET)
-                .add(ModItems.EASTER_COIN_2023.get());
-        tag(ModTags.Items.CHRISTMAS_COIN_SET)
-                .add(ModItems.CHRISTMAS_COIN_2023.get());
-        tag(ModTags.Items.HALLOWEEN_COIN_SET)
-                .add(ModItems.HALLOWEEN_COIN_2023.get());
-        tag(ModTags.Items.BIRTHDAY_COIN_SET)
-                .add(ModItems.BIRTHDAY_COIN_2023.get());
+                .add(ModItems.EASTER_COIN.get())
+                .add(ModItems.HALLOWEEN_COIN.get())
+                .add(ModItems.CHRISTMAS_COIN.get())
+                .add(ModItems.BIRTHDAY_COIN.get())
+                .add(ModItems.NEW_YEAR_COIN.get());
         tag(ModTags.Items.PATRON_COIN_SET)
                 .addTag(ModTags.Items.LIFETIME_PATRON_COIN_SET)
                 .addTag(ModTags.Items.CARNATION_PATRON_COIN_SET)
-                .addTag(ModTags.Items.COSMOS_PATRON_COIN_SET);
+                .addTag(ModTags.Items.COSMOS_PATRON_COIN_SET)
+                .addTag(ModTags.Items.SUNFLOWER_PATRON_COIN_SET);
         tag(ModTags.Items.LIFETIME_PATRON_COIN_SET)
                 .add(ModItems.SCHOLAR_OWL_COIN.get())
                 .add(ModItems.TUXEDO_CAT_COIN.get())
@@ -555,6 +539,8 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ModTags.Items.COSMOS_PATRON_COIN_SET)
                 .add(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
                 .add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
+        tag(ModTags.Items.SUNFLOWER_PATRON_COIN_SET)
+                .add(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get());
         tag(ModTags.Items.ENTITY_COIN_SET)
                 .addTag(ModTags.Items.ARMADILLO_COIN_SET)
                 .addTag(ModTags.Items.RASCAL_COIN_SET)

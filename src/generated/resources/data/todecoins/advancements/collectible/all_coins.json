@@ -241,12 +241,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_birthday_2023": {
+    "find_item.todecoins.collectible_coin_birthday": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_birthday_2023"
+              "todecoins:collectible_coin_birthday"
             ]
           }
         ]
@@ -517,12 +517,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_christmas_2023": {
+    "find_item.todecoins.collectible_coin_christmas": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_christmas_2023"
+              "todecoins:collectible_coin_christmas"
             ]
           }
         ]
@@ -937,12 +937,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_easter_2023": {
+    "find_item.todecoins.collectible_coin_easter": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_easter_2023"
+              "todecoins:collectible_coin_easter"
             ]
           }
         ]
@@ -1573,12 +1573,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_halloween_2023": {
+    "find_item.todecoins.collectible_coin_halloween": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_halloween_2023"
+              "todecoins:collectible_coin_halloween"
             ]
           }
         ]
@@ -2215,6 +2215,18 @@
           {
             "items": [
               "todecoins:collectible_coin_mule_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_new_year": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_new_year"
             ]
           }
         ]
@@ -4636,16 +4648,19 @@
       "find_item.todecoins.collectible_coin_cosmos_trevor_brannigan"
     ],
     [
-      "find_item.todecoins.collectible_coin_birthday_2023"
+      "find_item.todecoins.collectible_coin_birthday"
     ],
     [
-      "find_item.todecoins.collectible_coin_halloween_2023"
+      "find_item.todecoins.collectible_coin_halloween"
     ],
     [
-      "find_item.todecoins.collectible_coin_christmas_2023"
+      "find_item.todecoins.collectible_coin_christmas"
     ],
     [
-      "find_item.todecoins.collectible_coin_easter_2023"
+      "find_item.todecoins.collectible_coin_easter"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_new_year"
     ],
     [
       "find_item.todecoins.collectible_coin_allay_copper"
