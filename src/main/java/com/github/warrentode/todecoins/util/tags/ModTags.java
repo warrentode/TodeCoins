@@ -32,6 +32,11 @@ public class ModTags {
         public static final TagKey<Item> CURRENCY_STAMPS = modItemTag("currency_stamps");
 
         public static final TagKey<Item> COLLECTIBLE_COINS = modItemTag("collectible_coins");
+        public static final TagKey<Item> COPPER_COLLECTIBLE_COINS = modItemTag("collectible_coins/copper");
+        public static final TagKey<Item> IRON_COLLECTIBLE_COINS = modItemTag("collectible_coins/iron");
+        public static final TagKey<Item> GOLD_COLLECTIBLE_COINS = modItemTag("collectible_coins/gold");
+        public static final TagKey<Item> NETHERITE_COLLECTIBLE_COINS = modItemTag("collectible_coins/netherite");
+
         // holiday coins
         public static final TagKey<Item> HOLIDAY_COIN_SET = modItemTag("collectible_coins/holiday_coin_set");
         public static final TagKey<Item> BIRTHDAY_COIN_SET = modItemTag("collectible_coins/holiday_coins/birthday_coin_set");

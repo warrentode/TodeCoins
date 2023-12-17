@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_netherite_collectible_coin": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "todecoins:collectible_coins/netherite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "todecoins:nuggets/blasting/netherite_nugget"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_netherite_collectible_coin",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "todecoins:nuggets/blasting/netherite_nugget"
+    ]
+  }
+}

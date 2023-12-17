@@ -3,15 +3,14 @@ package com.github.warrentode.todecoins.datagen.recipes.recipe;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
+import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.function.Consumer;
@@ -30,10 +29,46 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
         nuggetRecipes(consumer);
         storageBlockRecipes(consumer);
         textileRecipes(consumer);
+        collectibleCoinSmeltingRecipes(consumer);
+        collectibleCoinBlastingRecipes(consumer);
+    }
+
+    static Ingredient copperCollectibleCoin = Ingredient.of(ModTags.Items.COPPER_COLLECTIBLE_COINS);
+    static Ingredient ironCollectibleCoin = Ingredient.of(ModTags.Items.IRON_COLLECTIBLE_COINS);
+    static Ingredient goldCollectibleCoin = Ingredient.of(ModTags.Items.GOLD_COLLECTIBLE_COINS);
+    static Ingredient netheriteCollectibleCoin = Ingredient.of(ModTags.Items.NETHERITE_COLLECTIBLE_COINS);
+
+    private static void collectibleCoinSmeltingRecipes(Consumer<FinishedRecipe> consumer) {
+        SimpleCookingRecipeBuilder.smelting(copperCollectibleCoin, ModItems.COPPER_NUGGET.get(), 0.1F, 100)
+                .unlockedBy("has_copper_collectible_coin", has(ModTags.Items.COPPER_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/copper_nugget"));
+        SimpleCookingRecipeBuilder.smelting(ironCollectibleCoin, Items.IRON_NUGGET, 0.1F, 100)
+                .unlockedBy("has_iron_collectible_coin", has(ModTags.Items.IRON_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/iron_nugget"));
+        SimpleCookingRecipeBuilder.smelting(goldCollectibleCoin, Items.GOLD_NUGGET, 0.1F, 100)
+                .unlockedBy("has_gold_collectible_coin", has(ModTags.Items.GOLD_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/gold_nugget"));
+        SimpleCookingRecipeBuilder.smelting(netheriteCollectibleCoin, ModItems.NETHERITE_NUGGET.get(), 0.1F, 100)
+                .unlockedBy("has_netherite_collectible_coin", has(ModTags.Items.NETHERITE_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/netherite_nugget"));
+    }
+
+    private static void collectibleCoinBlastingRecipes(Consumer<FinishedRecipe> consumer) {
+        SimpleCookingRecipeBuilder.blasting(copperCollectibleCoin, ModItems.COPPER_NUGGET.get(), 0.1F, 100)
+                .unlockedBy("has_copper_collectible_coin", has(ModTags.Items.COPPER_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/copper_nugget"));
+        SimpleCookingRecipeBuilder.blasting(ironCollectibleCoin, Items.IRON_NUGGET, 0.1F, 100)
+                .unlockedBy("has_iron_collectible_coin", has(ModTags.Items.IRON_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/iron_nugget"));
+        SimpleCookingRecipeBuilder.blasting(goldCollectibleCoin, Items.GOLD_NUGGET, 0.1F, 100)
+                .unlockedBy("has_gold_collectible_coin", has(ModTags.Items.GOLD_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/gold_nugget"));
+        SimpleCookingRecipeBuilder.blasting(netheriteCollectibleCoin, ModItems.NETHERITE_NUGGET.get(), 0.1F, 100)
+                .unlockedBy("has_netherite_collectible_coin", has(ModTags.Items.NETHERITE_COLLECTIBLE_COINS))
+                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/netherite_nugget"));
     }
 
     private static void armorRecipes(Consumer<FinishedRecipe> consumer) {
-
         ShapedRecipeBuilder.shaped(ModItems.LUCKY_HAT.get(), 1)
                 .pattern("CCC")
                 .pattern("C C")
