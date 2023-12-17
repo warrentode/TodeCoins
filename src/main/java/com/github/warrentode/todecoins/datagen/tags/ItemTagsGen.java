@@ -1234,6 +1234,27 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(ForgeTags.Items.SUGAR)
+                .add(Items.SUGAR)
+                .add(Items.HONEY_BOTTLE);
+        tag(ForgeTags.Items.COCOA)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:dried_cocoa_beans")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:roasted_cocoa_beans")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:cocoa_powder")))
+                .add(Items.COCOA_BEANS);
+        tag(ForgeTags.Items.FAT)
+                .add(Items.HONEYCOMB)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:animal_oil_bottle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:animal_fat")));
+        tag(ForgeTags.Items.MILK_BOTTLES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:milk_bottle")));
+        tag(ForgeTags.Items.MILK)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:condensed_milk")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether:skyroot_milk_bucket")))
+                .add(Items.MILK_BUCKET);
+        tag(ForgeTags.Items.MILK_TYPES)
+                .addTag(ForgeTags.Items.MILK_BOTTLES)
+                .addTag(ForgeTags.Items.MILK);
         tag(SupplementariesTags.Items.CANDY)
                 .addTag(SupplementariesTags.Items.CHOCOLATE);
         tag(SupplementariesTags.Items.SWEETS)

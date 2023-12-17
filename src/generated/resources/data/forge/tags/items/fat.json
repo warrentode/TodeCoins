@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:honeycomb",
+    {
+      "id": "delightful:animal_oil_bottle",
+      "required": false
+    },
+    {
+      "id": "delightful:animal_fat",
+      "required": false
+    }
+  ]
+}

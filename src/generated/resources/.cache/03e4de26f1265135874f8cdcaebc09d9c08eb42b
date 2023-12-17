@@ -1,13 +1,15 @@
-// 1.19.2	2023-12-17T03:55:53.2145296	Tags for minecraft:item
+// 1.19.2	2023-12-17T06:49:52.557686	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
+b98916a5fe0160dc9d80a360961ec2ddbc784342 data/forge/tags/items/cocoa.json
 d5cf70c1c1570594208821e2af44e7225918bc4f data/forge/tags/items/coins.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
 49d871134517203e4311ad7c144a5a4f85ea511e data/forge/tags/items/currency_materials.json
 e696f402dd807aff108bcdbf82e9cfaf00b8dadc data/forge/tags/items/currency_stamps.json
 fe91d9df301382872a3e254eb22768784d8932b1 data/forge/tags/items/eggs.json
 056929b7ab3fd6b71312bcc7bae8661d4f4a5df0 data/forge/tags/items/enchanting_fuels.json
+b43f07fbac9cee58dfaac204b86a65a071d0a966 data/forge/tags/items/fat.json
 2e568aa5c18c99533dd4ae3a50f2d2a5636f5112 data/forge/tags/items/gems.json
 d8dc68294ba0bb69c51e2d77203706ddc8bd16ba data/forge/tags/items/gems/amethyst.json
 9299b02b724108ee9a7e847ff93cdbacab45fb76 data/forge/tags/items/gems/diamond.json
@@ -28,6 +30,9 @@ dd472552ed4619d6fb342240882d609489514b70 data/forge/tags/items/gems/redstone.jso
 f2aa87f54e7951ea0cf81ac252c2abe279b0c936 data/forge/tags/items/ingots/gold.json
 736f4ef35696340b932cdb679c5a32e7b28db783 data/forge/tags/items/ingots/iron.json
 f7a8c659163fbac23438e07049cc42e0aa39eb9a data/forge/tags/items/ingots/netherite.json
+45f23e2cea883d909d37fd7963ec91fe16442d60 data/forge/tags/items/milk.json
+542a505e51ccd0f137256e95bfb31d180e7488c3 data/forge/tags/items/milk/milk.json
+26dad9357e39e7ff790038f4a7e61dd5fb92c362 data/forge/tags/items/milk/milk_bottle.json
 f4a0b0c5aaced26af71ac410b796b06a90c5df73 data/forge/tags/items/nuggets.json
 8f8e1fd13824046404f22367dfb5b42f23421603 data/forge/tags/items/nuggets/copper.json
 9252b139bab820c2ab92e7c798f11d0bccd04238 data/forge/tags/items/nuggets/endonian_nugget.json
@@ -36,6 +41,7 @@ e6aa1463fc9f3d6a23a6fdb9c8ad3273bd5abf55 data/forge/tags/items/nuggets/iron.json
 32869cad7dc791d67f1b6ab0aa58945df28b6aae data/forge/tags/items/nuggets/lucky.json
 63a509a34d34dbba0491705310d0f3b73e029bad data/forge/tags/items/nuggets/netherite.json
 eceb115142137119185191b64ef142dbcb53a9dd data/forge/tags/items/piglin_barter_items.json
+ed10484707bf0ea9e3bb21e5439785b616cf2899 data/forge/tags/items/sugar.json
 d4a1d913e420ba2dce1249dbcc08b4625f482d75 data/forge/tags/items/textiles.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/bark.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/currency_fiber.json

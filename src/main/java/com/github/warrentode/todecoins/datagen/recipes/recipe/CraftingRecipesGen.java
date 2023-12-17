@@ -9,6 +9,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -31,6 +32,29 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
         textileRecipes(consumer);
         collectibleCoinSmeltingRecipes(consumer);
         collectibleCoinBlastingRecipes(consumer);
+        holidayChocolateCoinRecipes(consumer);
+    }
+
+    private static void holidayChocolateCoinRecipes(Consumer<FinishedRecipe> consumer) {
+        chocolateCoinRecipeTemplate(consumer, ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get(), 4, Items.CRIMSON_FUNGUS, Items.ROTTEN_FLESH);
+        chocolateCoinRecipeTemplate(consumer, ModItems.WARPED_SPICE_CHOCOLATE_COIN.get(), 4, Items.WARPED_FUNGUS, Items.PUFFERFISH);
+        chocolateCoinRecipeTemplate(consumer, ModItems.MILK_BONE_CHOCOLATE_COIN.get(), 4, Items.BONE_MEAL, Items.COBWEB);
+        chocolateCoinRecipeTemplate(consumer, ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get(), 4, Items.EMERALD, Items.INK_SAC);
+    }
+
+    private static void chocolateCoinRecipeTemplate(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, Item flavorA, Item flavorB) {
+        ShapelessRecipeBuilder.shapeless(result, resultAmount)
+                .group("chocolate_coins")
+                .requires(ForgeTags.Items.COCOA)
+                .requires(ForgeTags.Items.SUGAR)
+                .requires(ForgeTags.Items.MILK)
+                .requires(ForgeTags.Items.FAT)
+                // flavoring "extract" item 1
+                .requires(flavorA)
+                // flavoring "extract" item 2
+                .requires(flavorB)
+                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                .save(consumer, new ResourceLocation(MODID, "chocolate_coins/" + result));
     }
 
     static Ingredient copperCollectibleCoin = Ingredient.of(ModTags.Items.COPPER_COLLECTIBLE_COINS);
