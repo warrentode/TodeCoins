@@ -55,11 +55,11 @@ public class NewYearCoinItem extends CollectibleCoin implements ICurioItem {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isNewYear(serverLevel)) {
+                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.isNewYear(serverLevel)) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
-                    else if (CalendarUtil.Season.isNewYear() && !ModList.get().isLoaded("sereneseasons")) {
+                    else if (CalendarUtil.isNewYear() && !ModList.get().isLoaded("sereneseasons")) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
@@ -109,7 +109,7 @@ public class NewYearCoinItem extends CollectibleCoin implements ICurioItem {
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
-            tooltips.add(Component.translatable("tooltips.collectible_birthday_coin.hover").withStyle(ChatFormatting.GRAY));
+            tooltips.add(Component.translatable("tooltips.collectible_coin_new_year.hover").withStyle(ChatFormatting.GRAY));
         }
         else {
             tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY));

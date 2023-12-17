@@ -31,10 +31,10 @@ public class AutumnCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isAutumn = SereneSeasonsCompat.SeasonCompat.isAutumn(level);
+            return this.isAutumn = SereneSeasonsCompat.isAutumn(level);
         }
         else {
-            return this.isAutumn = CalendarUtil.Season.isAutumn();
+            return this.isAutumn = CalendarUtil.isAutumn();
         }
     }
 

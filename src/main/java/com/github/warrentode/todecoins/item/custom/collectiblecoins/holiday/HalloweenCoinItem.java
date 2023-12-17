@@ -49,11 +49,11 @@ public class HalloweenCoinItem extends CollectibleCoin implements ICurioItem {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isHalloween(serverLevel)) {
+                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.isHalloween(serverLevel)) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
-                    else if (CalendarUtil.Season.isHalloween() && !ModList.get().isLoaded("sereneseasons")) {
+                    else if (CalendarUtil.isHalloween() && !ModList.get().isLoaded("sereneseasons")) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }

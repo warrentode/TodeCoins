@@ -31,10 +31,10 @@ public class EasterCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isEaster = SereneSeasonsCompat.SeasonCompat.isEaster(level);
+            return this.isEaster = SereneSeasonsCompat.isEaster(level);
         }
         else {
-            return this.isEaster = CalendarUtil.Season.isEaster();
+            return this.isEaster = CalendarUtil.isEaster();
         }
     }
 

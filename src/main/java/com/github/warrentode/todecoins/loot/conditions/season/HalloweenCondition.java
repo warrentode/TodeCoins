@@ -31,10 +31,10 @@ public class HalloweenCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isHalloween = SereneSeasonsCompat.SeasonCompat.isHalloween(level);
+            return this.isHalloween = SereneSeasonsCompat.isHalloween(level);
         }
         else {
-            return this.isHalloween = CalendarUtil.Season.isHalloween();
+            return this.isHalloween = CalendarUtil.isHalloween();
         }
     }
 

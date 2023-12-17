@@ -31,10 +31,10 @@ public class AnniversaryCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isAnniversary = SereneSeasonsCompat.SeasonCompat.isAnniversary(level);
+            return this.isAnniversary = SereneSeasonsCompat.isAnniversary(level);
         }
         else {
-            return this.isAnniversary = CalendarUtil.Season.isAnniversary();
+            return this.isAnniversary = CalendarUtil.isAnniversary();
         }
     }
 

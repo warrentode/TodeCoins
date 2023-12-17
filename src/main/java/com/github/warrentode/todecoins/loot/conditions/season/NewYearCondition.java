@@ -31,10 +31,10 @@ public class NewYearCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isNewYear = SereneSeasonsCompat.SeasonCompat.isNewYear(level);
+            return this.isNewYear = SereneSeasonsCompat.isNewYear(level);
         }
         else {
-            return this.isNewYear = CalendarUtil.Season.isNewYear();
+            return this.isNewYear = CalendarUtil.isNewYear();
         }
     }
 

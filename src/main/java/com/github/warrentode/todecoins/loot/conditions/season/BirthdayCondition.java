@@ -31,10 +31,10 @@ public class BirthdayCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isBirthday = SereneSeasonsCompat.SeasonCompat.isBirthday(level);
+            return this.isBirthday = SereneSeasonsCompat.isBirthday(level);
         }
         else {
-            return this.isBirthday = CalendarUtil.Season.isBirthday();
+            return this.isBirthday = CalendarUtil.isBirthday();
         }
     }
 

@@ -31,10 +31,10 @@ public class SpringCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isSpring = SereneSeasonsCompat.SeasonCompat.isSpring(level);
+            return this.isSpring = SereneSeasonsCompat.isSpring(level);
         }
         else {
-            return this.isSpring = CalendarUtil.Season.isSpring();
+            return this.isSpring = CalendarUtil.isSpring();
         }
     }
 

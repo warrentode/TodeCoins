@@ -31,10 +31,10 @@ public class ChristmasCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isChristmas = SereneSeasonsCompat.SeasonCompat.isChristmas(level);
+            return this.isChristmas = SereneSeasonsCompat.isChristmas(level);
         }
         else {
-            return this.isChristmas = CalendarUtil.Season.isChristmas();
+            return this.isChristmas = CalendarUtil.isChristmas();
         }
     }
 

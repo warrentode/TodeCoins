@@ -31,10 +31,10 @@ public class WinterCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isWinter = SereneSeasonsCompat.SeasonCompat.isWinter(level);
+            return this.isWinter = SereneSeasonsCompat.isWinter(level);
         }
         else {
-            return this.isWinter = CalendarUtil.Season.isWinter();
+            return this.isWinter = CalendarUtil.isWinter();
         }
     }
 

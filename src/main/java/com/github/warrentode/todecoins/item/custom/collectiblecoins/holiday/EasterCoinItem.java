@@ -69,11 +69,11 @@ public class EasterCoinItem extends CollectibleCoin implements ICurioItem {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isEaster(serverLevel)) {
+                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.isEaster(serverLevel)) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }
-                    else if (CalendarUtil.Season.isEaster() && !ModList.get().isLoaded("sereneseasons")) {
+                    else if (CalendarUtil.isEaster() && !ModList.get().isLoaded("sereneseasons")) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
                     }

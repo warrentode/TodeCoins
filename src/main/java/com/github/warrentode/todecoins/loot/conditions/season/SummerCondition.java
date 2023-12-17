@@ -31,10 +31,10 @@ public class SummerCondition implements LootItemCondition {
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
         if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isSummer = SereneSeasonsCompat.SeasonCompat.isSummer(level);
+            return this.isSummer = SereneSeasonsCompat.isSummer(level);
         }
         else {
-            return this.isSummer = CalendarUtil.Season.isSummer();
+            return this.isSummer = CalendarUtil.isSummer();
         }
     }
 
