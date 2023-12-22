@@ -1,18 +1,23 @@
 package com.github.warrentode.todecoins.datagen;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.item.ModItems;
+import com.github.warrentode.todecoins.util.PlayerUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.data.LanguageProvider;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 import java.util.TreeMap;
+
+import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class LanguageFileGen extends LanguageProvider {
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().setLenient().create();
@@ -22,7 +27,7 @@ public class LanguageFileGen extends LanguageProvider {
     private final String locale;
 
     public LanguageFileGen(DataGenerator generator, String modid, String locale) {
-        super(generator, TodeCoins.MODID, locale);
+        super(generator, MODID, locale);
         this.generator = generator;
         this.modid = modid;
         this.locale = locale;
@@ -40,6 +45,33 @@ public class LanguageFileGen extends LanguageProvider {
         addItemGroups();
         addSubtitles();
         addTooltips();
+        addFriendshipBracelets();
+    }
+
+    private void addFriendshipBracelets() {
+        ItemStack stack = ItemStack.EMPTY;
+
+        add("tooltips.bracelet_not_linked", "This bracelet is not yet linked to anyone. First time use will link it to the user.");
+        add("tooltips.bracelet_linked_player", "This bracelet is linked to: ");
+        add("tooltips.bracelet_use_info", "If this bracelet is linked to you, use it to teleport to your spawn point. Otherwise, use it to teleport to the player it's linked to.");
+
+        add(ModItems.BRACELET_FRIENDSHIP_EMERALD.get(), "Emerald Friendship Bracelet");
+        fillInBraceletTranslations(ModItems.BRACELET_FRIENDSHIP_EMERALD.get().getDefaultInstance());
+
+        add(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get(), "Endonian Friendship Bracelet");
+        fillInBraceletTranslations(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get().getDefaultInstance());
+
+        add(ModItems.BRACELET_FRIENDSHIP_ECHO.get(), "Echo Friendship Bracelet");
+        fillInBraceletTranslations(ModItems.BRACELET_FRIENDSHIP_ECHO.get().getDefaultInstance());
+
+        add(ModItems.BRACELET_FRIENDSHIP_LUCKY.get(), "Lucky Friendship Bracelet");
+        fillInBraceletTranslations(ModItems.BRACELET_FRIENDSHIP_LUCKY.get().getDefaultInstance());
+    }
+
+    private void fillInBraceletTranslations(@NotNull ItemStack stack) {
+        add(stack + PlayerUtil.BRACELET_MAKER_TAG, String.valueOf(Component.literal(PlayerUtil.BRACELET_MAKER_TAG)));
+        add(stack + ".offline", "§cLinked player§r %s §cis offline. Teleport aborted.§r");
+        add(stack + ".linked", "This bracelet is now linked to you!");
     }
 
     private void addItems() {
@@ -567,7 +599,12 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModItems.EMERALD_BANK_NOTE.get(), "Emerald Bank Note");
         add(ModItems.EMERALD_FIBER.get(), "Emerald Fiber");
         add(ModItems.LUCKY_FIBER.get(), "Lucky Fiber");
+        add(ModItems.ENDONIAN_FIBER.get(), "Endonian Fiber");
+        add(ModItems.ECHO_FIBER.get(), "Echo Fiber");
+        add(ModItems.EMERALD_THREAD.get(), "Emerald Thread");
         add(ModItems.LUCKY_THREAD.get(), "Lucky Thread");
+        add(ModItems.ENDONIAN_THREAD.get(), "Endonian Thread");
+        add(ModItems.ECHO_THREAD.get(), "Echo Thread");
         add(ModItems.LUCKY_FABRIC.get(), "Lucky Fabric");
         add(ModItems.EMERALD_WOVE_PAPER.get(), "Emerald Wove Paper");
         add(ModItems.EMERALD_COARSE_WOVE_PAPER.get(), "Emerald Coarse Wove Paper");

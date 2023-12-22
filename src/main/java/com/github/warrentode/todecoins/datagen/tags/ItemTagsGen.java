@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.datagen.tags;
 
+
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.util.tags.CuriosTags;
@@ -15,8 +16,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import java.util.Objects;
 
 public class ItemTagsGen extends ItemTagsProvider {
@@ -1193,9 +1194,14 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.LUCKY_FABRIC.get());
         tag(ModTags.Items.FIBRE)
                 .add(ModItems.EMERALD_FIBER.get())
-                .add(ModItems.LUCKY_FIBER.get());
+                .add(ModItems.LUCKY_FIBER.get())
+                .add(ModItems.ENDONIAN_FIBER.get())
+                .add(ModItems.ECHO_FIBER.get());
         tag(ModTags.Items.THREAD)
-                .add(ModItems.LUCKY_THREAD.get());
+                .add(ModItems.EMERALD_THREAD.get())
+                .add(ModItems.LUCKY_THREAD.get())
+                .add(ModItems.ENDONIAN_THREAD.get())
+                .add(ModItems.ECHO_THREAD.get());
         tag(ModTags.Items.NUGGETS)
                 .addTag(ModTags.Items.COPPER_NUGGET)
                 .addTag(ModTags.Items.IRON_NUGGET)

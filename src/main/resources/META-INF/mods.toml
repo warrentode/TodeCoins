@@ -58,7 +58,7 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
 [[dependencies.todecoins]]
     modId = "friendsandfoes"
     mandatory = false
-    versionRange = "[1.8.6,)"
+    versionRange = "[2.0.6,)"
     ordering = "BEFORE"
     side = "BOTH"
 [[dependencies.todecoins]]

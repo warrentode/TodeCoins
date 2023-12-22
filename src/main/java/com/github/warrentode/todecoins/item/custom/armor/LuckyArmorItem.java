@@ -1,6 +1,5 @@
-package com.github.warrentode.todecoins.item.custom;
+package com.github.warrentode.todecoins.item.custom.armor;
 
-import com.github.warrentode.todecoins.item.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

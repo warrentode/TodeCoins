@@ -28,6 +28,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         // fiber
         basicItem(ModItems.EMERALD_FIBER.get());
         basicItem(ModItems.LUCKY_FIBER.get());
+        basicItem(ModItems.ENDONIAN_FIBER.get());
+        basicItem(ModItems.ECHO_FIBER.get());
 
         // paper
         basicItem(ModItems.EMERALD_COARSE_WOVE_PAPER.get());
@@ -57,6 +59,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.LUCKY_SHIRT.get());
         basicItem(ModItems.LUCKY_PANTS.get());
         basicItem(ModItems.LUCKY_BOOTS.get());
+
+        // friendship bracelets
+        basicItem(ModItems.BRACELET_FRIENDSHIP_EMERALD.get());
+        basicItem(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get());
+        basicItem(ModItems.BRACELET_FRIENDSHIP_ECHO.get());
+        basicItem(ModItems.BRACELET_FRIENDSHIP_LUCKY.get());
 
         // candy coins
         basicItem(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get());

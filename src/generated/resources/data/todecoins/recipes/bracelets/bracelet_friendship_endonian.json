@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "forge:textiles/currency_fiber"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "###",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "item": "todecoins:bracelet_friendship_endonian"
+  }
+}

@@ -54,8 +54,13 @@ public class ModCreativeModeTab extends CreativeModeTab {
 
         items.add(ModItems.EMERALD_FIBER.get().getDefaultInstance());
         items.add(ModItems.LUCKY_FIBER.get().getDefaultInstance());
+        items.add(ModItems.ENDONIAN_FIBER.get().getDefaultInstance());
+        items.add(ModItems.ECHO_FIBER.get().getDefaultInstance());
 
+        items.add(ModItems.EMERALD_THREAD.get().getDefaultInstance());
         items.add(ModItems.LUCKY_THREAD.get().getDefaultInstance());
+        items.add(ModItems.ENDONIAN_THREAD.get().getDefaultInstance());
+        items.add(ModItems.ECHO_THREAD.get().getDefaultInstance());
 
         items.add(ModItems.EMERALD_COARSE_WOVE_PAPER.get().getDefaultInstance());
         items.add(ModItems.EMERALD_WOVE_PAPER.get().getDefaultInstance());
@@ -67,6 +72,11 @@ public class ModCreativeModeTab extends CreativeModeTab {
         items.add(ModItems.LUCKY_SHIRT.get().getDefaultInstance());
         items.add(ModItems.LUCKY_PANTS.get().getDefaultInstance());
         items.add(ModItems.LUCKY_BOOTS.get().getDefaultInstance());
+
+        items.add(ModItems.BRACELET_FRIENDSHIP_EMERALD.get().getDefaultInstance());
+        items.add(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get().getDefaultInstance());
+        items.add(ModItems.BRACELET_FRIENDSHIP_ECHO.get().getDefaultInstance());
+        items.add(ModItems.BRACELET_FRIENDSHIP_LUCKY.get().getDefaultInstance());
 
         items.add(Items.BUNDLE.getDefaultInstance());
 

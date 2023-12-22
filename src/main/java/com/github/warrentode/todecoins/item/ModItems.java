@@ -3,6 +3,10 @@ package com.github.warrentode.todecoins.item;
 import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.item.custom.*;
+import com.github.warrentode.todecoins.item.custom.armor.LuckyArmorItem;
+import com.github.warrentode.todecoins.item.custom.armor.ModArmorMaterials;
+import com.github.warrentode.todecoins.item.custom.bracelet.BraceletProperties;
+import com.github.warrentode.todecoins.item.custom.bracelet.FriendshipBraceletItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.entity.*;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.gameplay.FishCoinItem;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.gameplay.HeroCoinItem;
@@ -26,7 +30,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     // TODO learn how to make Item Capabilities work - either with Curios or not - to make a functional wallet for these coins
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MODID);
-
     public static final RegistryObject<Item> FOUR_LEAF_CLOVER = ITEMS.register("four_leaf_clover",
             () -> new FourLeafCloverItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
 
@@ -78,7 +81,18 @@ public class ModItems {
             () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
     public static final RegistryObject<Item> LUCKY_FIBER = ITEMS.register("lucky_fiber",
             () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> ENDONIAN_FIBER = ITEMS.register("endonian_fiber",
+            () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> ECHO_FIBER = ITEMS.register("echo_fiber",
+            () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+
+    public static final RegistryObject<Item> EMERALD_THREAD = ITEMS.register("emerald_thread",
+            () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
     public static final RegistryObject<Item> LUCKY_THREAD = ITEMS.register("lucky_thread",
+            () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> ENDONIAN_THREAD = ITEMS.register("endonian_thread",
+            () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+    public static final RegistryObject<Item> ECHO_THREAD = ITEMS.register("echo_thread",
             () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
 
     public static final RegistryObject<Item> EMERALD_COARSE_WOVE_PAPER = ITEMS.register("emerald_coarse_wove_paper",
@@ -90,6 +104,23 @@ public class ModItems {
 
     public static final RegistryObject<Item> LUCKY_FABRIC = ITEMS.register("lucky_fabric",
             () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
+
+    public static final RegistryObject<Item> BRACELET_FRIENDSHIP_EMERALD = ITEMS.register("bracelet_friendship_emerald",
+            () -> new FriendshipBraceletItem(new Item.Properties()
+                    .durability(BraceletProperties.EMERALD.getMaxUses()),
+                    BraceletProperties.EMERALD));
+    public static final RegistryObject<Item> BRACELET_FRIENDSHIP_ENDONIAN = ITEMS.register("bracelet_friendship_endonian",
+            () -> new FriendshipBraceletItem(new Item.Properties()
+                    .durability(BraceletProperties.ENDONIAN.getMaxUses()),
+                    BraceletProperties.ENDONIAN));
+    public static final RegistryObject<Item> BRACELET_FRIENDSHIP_ECHO = ITEMS.register("bracelet_friendship_echo",
+            () -> new FriendshipBraceletItem(new Item.Properties()
+                    .durability(BraceletProperties.ECHO.getMaxUses()),
+                    BraceletProperties.ECHO));
+    public static final RegistryObject<Item> BRACELET_FRIENDSHIP_LUCKY = ITEMS.register("bracelet_friendship_lucky",
+            () -> new FriendshipBraceletItem(new Item.Properties()
+                    .durability(BraceletProperties.LUCKY.getMaxUses()),
+                    BraceletProperties.LUCKY));
 
     public static final RegistryObject<Item> LUCKY_BOOTS = ITEMS.register("lucky_boots",
             () -> new LuckyArmorItem(ModArmorMaterials.LUCKY, EquipmentSlot.FEET,

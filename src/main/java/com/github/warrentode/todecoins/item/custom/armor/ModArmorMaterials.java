@@ -1,6 +1,7 @@
-package com.github.warrentode.todecoins.item;
+package com.github.warrentode.todecoins.item.custom.armor;
 
 import com.github.warrentode.todecoins.TodeCoins;
+import com.github.warrentode.todecoins.item.ModItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.LazyLoadedValue;

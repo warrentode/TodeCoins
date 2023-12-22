@@ -1,4 +1,8 @@
-// 1.19.2	2023-12-17T10:31:42.1837958	Item Models: todecoins
+// 1.19.2	2023-12-22T00:52:59.2428157	Item Models: todecoins
+ecda3412c5e3b57cf74228f4a5da8e6350216ef0 assets/todecoins/models/item/bracelet_friendship_echo.json
+05759aa60208204f897d6a422840a8209aff5d2f assets/todecoins/models/item/bracelet_friendship_emerald.json
+61ab9a0ea117f87f5bda5abf3d26644a6ac3885f assets/todecoins/models/item/bracelet_friendship_endonian.json
+337e820742c93d4a6c45156b7737616f83e02599 assets/todecoins/models/item/bracelet_friendship_lucky.json
 a1d9966577ff5acfb271b0f38ccda07f24a6499b assets/todecoins/models/item/chocolate_coin_bubbly_berry.json
 66cf68c934284a68a49999f6e904c7bd2b97b5c2 assets/todecoins/models/item/chocolate_coin_carmel_crisp.json
 f85c927404cf02d20be936048f03f94c210beca9 assets/todecoins/models/item/chocolate_coin_crimson_spore.json
@@ -404,6 +408,7 @@ c05181e1463805ad464e5321aaf59ca6bf0ab146 assets/todecoins/models/item/collectibl
 a50d14f8e8dd2f1fc9c608296ceb2e9db2c6e03b assets/todecoins/models/item/copper_coin.json
 55bd197ef7adb843ac929b9d83983173623c91c9 assets/todecoins/models/item/copper_nugget.json
 0bed94a07d595b0ca87813ca53e4808d8fbd3efa assets/todecoins/models/item/currency_stamp.json
+fc97882e2dc7278b587e5845800c74164946885a assets/todecoins/models/item/echo_fiber.json
 20942420289f257587632695f496d1c33bfb48a1 assets/todecoins/models/item/emerald_bank_note.json
 e43bd4c7ebc7bdb4bd4da907760289c180620127 assets/todecoins/models/item/emerald_coarse_wove_paper.json
 2d75cc36d8719028fbcaa07d39903fb7cd437071 assets/todecoins/models/item/emerald_fiber.json
@@ -413,6 +418,7 @@ e782733e106054c34c3cf382a11310ebc583a7fe assets/todecoins/models/item/emerald_qu
 7e8cca6d41d9d840b953ae35a1feb0b90bef8e8f assets/todecoins/models/item/emerald_wove_paper.json
 611b70d3e0048f9989761826eed5429e36b70b64 assets/todecoins/models/item/endonian_coin.json
 bd5785ac59be664cbfcecd9b69f985ab6bf22c3a assets/todecoins/models/item/endonian_currency_stamp.json
+e8a820b86f67194024e94963f4fc9feee3f53d56 assets/todecoins/models/item/endonian_fiber.json
 2a88b4e7652b8191f971c6ec7487fb98571bfe5d assets/todecoins/models/item/endonian_ingot.json
 6f0feff26b78884ea35062cfe2a9516242aca342 assets/todecoins/models/item/endonian_nugget.json
 2df71840edec01fefb18684ad1f12e614c21ddb2 assets/todecoins/models/item/four_leaf_clover.json

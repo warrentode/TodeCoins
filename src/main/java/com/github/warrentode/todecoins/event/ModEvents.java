@@ -6,6 +6,8 @@ import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.ai.goal.AvoidPlayerCatCoinGoal;
 import com.github.warrentode.todecoins.entity.spawners.numismatist.NumismatistSpawner;
 import com.github.warrentode.todecoins.item.ModItems;
+import com.github.warrentode.todecoins.item.custom.bracelet.FriendshipBraceletItem;
+import com.github.warrentode.todecoins.util.PlayerUtil;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -55,7 +57,6 @@ import java.util.Optional;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModEvents {
-
     @Mod.EventBusSubscriber(modid = TodeCoins.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEventBusEvents {
         @SubscribeEvent
@@ -73,6 +74,10 @@ public class ModEvents {
             if (stack.is(ModTags.Items.NO_AI_EGGS)) {
                 final CompoundTag entityTag = stack.getOrCreateTagElement("EntityTag");
                 entityTag.putBoolean("NoAI", true);
+            }
+            if (stack.getItem() instanceof FriendshipBraceletItem) {
+                final CompoundTag itemTag = stack.getOrCreateTag();
+                itemTag.putString(PlayerUtil.BRACELET_MAKER_TAG, player.getGameProfile().getName());
             }
         }
 
