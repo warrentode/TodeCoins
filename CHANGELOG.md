@@ -7,6 +7,16 @@
     - when used by a player other than the linked player, the bracelet teleports the player to the linked player
       - teleports across dimensions, permits teleportation into private player areas (unless some other mod blocks this)
         - players should only give out their linked bracelets to those they trust
+        - restricting teleportation to one dimension isn't practical
+          - there's no way for me to know all present and future modded dimensions out there in the community
+          - there's no way for me to know which dimension modpack makers and server owners choose to have players start
+            in
+            - yes, usually this is the overworld, but there are mods that allow for a different option
+          - different bracelets for different dimensions would be a hassle for everyone
+            - who wants a different bracelet for each dimension just to teleport to their friend?
+              - start multiplying that by the number of friends you have and this becomes an inventory nightmare
+            - this also means the dimension would be hardcoded to the bracelet
+              - this means mod compatibility would be severely limited
     - these bracelets are not repairable and by default are only obtainable via crafting
 
 ### 2023-12-17 - 1.9.1.beta
