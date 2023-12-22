@@ -1,3 +1,14 @@
+### 2023-12-22 - 1.9.2.beta
+
+- updated build dependencies
+- added friendship bracelets
+  - these bracelets are linked to a single player
+    - when used by the linked player, the bracelet teleports the player to their spawn point
+    - when used by a player other than the linked player, the bracelet teleports the player to the linked player
+      - teleports across dimensions, permits teleportation into private player areas (unless some other mod blocks this)
+        - players should only give out their linked bracelets to those they trust
+    - these bracelets are not repairable and by default are only obtainable via crafting
+
 ### 2023-12-17 - 1.9.1.beta
 
 - added chocolate coins for each holiday coin introduced so far
