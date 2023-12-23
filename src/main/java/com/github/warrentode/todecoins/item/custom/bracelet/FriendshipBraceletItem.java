@@ -138,7 +138,7 @@ public class FriendshipBraceletItem extends Item {
                             }
                             // when braceletMaker is offline, notify playerUsing
                             else {
-                                playerUsing.sendSystemMessage(Component.translatable(stack + ".offline", ChatFormatting.RED + braceletMakerName));
+                                playerUsing.sendSystemMessage(Component.translatable(stack.getDescriptionId() + ".offline", ChatFormatting.RED + braceletMakerName));
                             }
                             return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
                         }
@@ -151,7 +151,7 @@ public class FriendshipBraceletItem extends Item {
             final CompoundTag itemTag = stack.getOrCreateTag();
             itemTag.putString(PlayerUtil.BRACELET_MAKER_TAG, playerUsing.getGameProfile().getName());
 
-            playerUsing.sendSystemMessage(Component.translatable(stack + ".linked").withStyle(ChatFormatting.GOLD));
+            playerUsing.sendSystemMessage(Component.translatable(stack.getDescriptionId() + ".linked").withStyle(ChatFormatting.GOLD));
 
             return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
         }

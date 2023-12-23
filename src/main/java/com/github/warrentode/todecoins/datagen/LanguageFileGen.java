@@ -8,7 +8,6 @@ import com.github.warrentode.todecoins.util.PlayerUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -69,9 +68,9 @@ public class LanguageFileGen extends LanguageProvider {
     }
 
     private void fillInBraceletTranslations(@NotNull ItemStack stack) {
-        add(stack + PlayerUtil.BRACELET_MAKER_TAG, String.valueOf(Component.literal(PlayerUtil.BRACELET_MAKER_TAG)));
-        add(stack + ".offline", "§cLinked player§r %s §cis offline. Teleport aborted.§r");
-        add(stack + ".linked", "This bracelet is now linked to you!");
+        add(stack.getDescriptionId() + "." + PlayerUtil.BRACELET_MAKER_TAG, "§cLinked player§r %s");
+        add(stack.getDescriptionId() + ".offline", "§cLinked player§r %s §cis offline. Teleport aborted.§r");
+        add(stack.getDescriptionId() + ".linked", "This bracelet is now linked to you!");
     }
 
     private void addItems() {
