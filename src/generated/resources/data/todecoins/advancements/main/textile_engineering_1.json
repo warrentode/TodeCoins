@@ -67,9 +67,15 @@
   },
   "requirements": [
     [
-      "craft_emerald_fiber",
-      "craft_coarse_wove_paper",
-      "craft_emerald_wove_paper",
+      "craft_emerald_fiber"
+    ],
+    [
+      "craft_coarse_wove_paper"
+    ],
+    [
+      "craft_emerald_wove_paper"
+    ],
+    [
       "craft_emerald_smooth_paper"
     ]
   ]

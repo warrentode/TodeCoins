@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/first_coin",
   "criteria": {
     "find_item.todecoins.collectible_coin_little_bear": {
       "conditions": {
@@ -46,7 +46,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_scholar_owl"
+      "item": "todecoins:collectible_coin_little_bear"
     },
     "show_toast": true,
     "title": {

@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/snow_golem_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_squid_copper": {
       "conditions": {

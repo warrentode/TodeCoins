@@ -1,24 +1,24 @@
 {
-  "parent": "todecoins:main/minting_coins",
+  "parent": "todecoins:main/textile_engineering_3",
   "criteria": {
-    "craft_nether_currency_stamp": {
+    "craft_echo_fiber": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:nether_currency_stamp"
+              "todecoins:echo_fiber"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "craft_nether_gold_coin": {
+    "craft_echo_thread": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:nether_gold_coin"
+              "todecoins:echo_thread"
             ]
           }
         ]
@@ -29,24 +29,24 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.netherDough.desc"
+      "translate": "advancement.textileEngineering4.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:nether_gold_coin"
+      "item": "todecoins:echo_thread"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.netherDough"
+      "translate": "advancement.textileEngineering4"
     }
   },
   "requirements": [
     [
-      "craft_nether_currency_stamp"
+      "craft_echo_fiber"
     ],
     [
-      "craft_nether_gold_coin"
+      "craft_echo_thread"
     ]
   ]
 }

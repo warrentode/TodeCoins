@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/penguin_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_phantom_copper": {
       "conditions": {

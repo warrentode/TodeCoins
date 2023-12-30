@@ -646,9 +646,9 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.rainbowEnd", "End of the Rainbow");
         add("advancement.rainbowEnd.desc", "Obtain a Pot of Gold");
         add("advancement.netherDough", "Nether Dough");
-        add("advancement.netherDough.desc", "Obtain a Nether Coin");
+        add("advancement.netherDough.desc", "Mint a Nether Coin");
         add("advancement.otherworldlyCoin", "Otherworldly Coin");
-        add("advancement.otherworldlyCoin.desc", "Obtain an Endonian Coin");
+        add("advancement.otherworldlyCoin.desc", "Mint an Endonian Coin");
         add("advancement.luckyClover", "Lucky Clover");
         add("advancement.luckyClover.desc", "Find a Four-Leaf Clover");
         add("advancement.luckyPenny", "Lucky Penny");
@@ -656,12 +656,24 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.textileEngineering1", "Emerald Textile Engineering");
         add("advancement.textileEngineering1.desc", "Craft all the Emerald Fibers and Papers");
         add("advancement.textileEngineering2", "Lucky Textile Engineering");
-        add("advancement.textileEngineering2.desc", "Craft the Lucky Fiber and Fabric");
+        add("advancement.textileEngineering2.desc", "Craft the Lucky Fiber, Thread, and Fabric");
         add("advancement.luckyArmor", "Feeling Lucky?");
         add("advancement.luckyArmor.desc", "Obtain a full set of Lucky Armor");
+        add("advancement.textileEngineering3", "Otherworldly Textile Engineering");
+        add("advancement.textileEngineering3.desc", "Craft the Endonian Fiber and Thread");
+        add("advancement.friendsForever", "BFF");
+        add("advancement.friendsForever.desc", "Craft a Friendship Bracelet");
+        add("advancement.textileEngineering4", "Ethereal Textile Engineering");
+        add("advancement.textileEngineering4.desc", "Craft the Echo Fiber and Thread");
 
         add("advancement.collectibleCoins", "Collectible Coins");
         add("advancement.collectibleCoins.desc", "Collectible Coin Advancements");
+
+        add("advancement.first_coin", "A Lucky Find");
+        add("advancement.first_coin.desc", "Obtain Your First Collectible Coin");
+
+        add("advancement.all_coins", "Be the Numismatist");
+        add("advancement.all_coins.desc", "Collect all the Collectible Coins");
 
         add("advancement.collectibleTodePiglinsCoins", "Piglin Merchant Coin Set");
         add("advancement.collectibleTodePiglinsCoins.desc", "Find All the Piglin Merchant Coins!");

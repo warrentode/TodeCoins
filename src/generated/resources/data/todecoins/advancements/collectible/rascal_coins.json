@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/rabbit_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_rascal_copper": {
       "conditions": {

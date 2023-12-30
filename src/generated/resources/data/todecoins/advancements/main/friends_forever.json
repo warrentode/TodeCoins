@@ -1,48 +1,48 @@
 {
-  "parent": "todecoins:collectible/phantom_coins",
+  "parent": "todecoins:main/textile_engineering_4",
   "criteria": {
-    "find_item.todecoins.collectible_coin_pig_copper": {
+    "craft_friendship_bracelet_echo": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_pig_copper"
+              "todecoins:bracelet_friendship_echo"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_pig_gold": {
+    "craft_friendship_bracelet_emerald": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_pig_gold"
+              "todecoins:bracelet_friendship_emerald"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_pig_iron": {
+    "craft_friendship_bracelet_endonian": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_pig_iron"
+              "todecoins:bracelet_friendship_endonian"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "find_item.todecoins.collectible_coin_pig_netherite": {
+    "craft_friendship_bracelet_lucky": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:collectible_coin_pig_netherite"
+              "todecoins:bracelet_friendship_lucky"
             ]
           }
         ]
@@ -53,30 +53,25 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.pigCoinSet.desc"
+      "translate": "advancement.friendsForever.desc"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_pig_copper"
+      "item": "todecoins:bracelet_friendship_endonian",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.pigCoinSet"
+      "translate": "advancement.friendsForever"
     }
   },
   "requirements": [
     [
-      "find_item.todecoins.collectible_coin_pig_copper"
-    ],
-    [
-      "find_item.todecoins.collectible_coin_pig_iron"
-    ],
-    [
-      "find_item.todecoins.collectible_coin_pig_gold"
-    ],
-    [
-      "find_item.todecoins.collectible_coin_pig_netherite"
+      "craft_friendship_bracelet_endonian",
+      "craft_friendship_bracelet_lucky",
+      "craft_friendship_bracelet_emerald",
+      "craft_friendship_bracelet_echo"
     ]
   ]
 }

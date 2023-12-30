@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/zombie_horse_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_zombie_villager_copper": {
       "conditions": {

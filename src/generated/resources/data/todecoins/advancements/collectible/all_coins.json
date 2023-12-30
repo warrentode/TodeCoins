@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/root",
+  "parent": "todecoins:collectible/zombified_piglin_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_allay_copper": {
       "conditions": {
@@ -4613,7 +4613,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.collectibleCoins.desc"
+      "translate": "advancement.all_coins.desc"
     },
     "frame": "challenge",
     "hidden": false,
@@ -4622,7 +4622,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.collectibleCoins"
+      "translate": "advancement.all_coins"
     }
   },
   "requirements": [

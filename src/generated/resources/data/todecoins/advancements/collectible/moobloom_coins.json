@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/mauler_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_moobloom_copper": {
       "conditions": {

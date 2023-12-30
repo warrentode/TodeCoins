@@ -127,14 +127,30 @@
   },
   "requirements": [
     [
-      "craft_copper_coin_bag",
-      "craft_iron_coin_bag",
-      "craft_gold_coin_bag",
-      "craft_netherite_coin_bag",
-      "craft_emerald_quarter_bank_note_bag",
-      "craft_emerald_half_bank_note_bag",
-      "craft_emerald_bank_note_bag",
-      "craft_nether_gold_coin_bag",
+      "craft_copper_coin_bag"
+    ],
+    [
+      "craft_iron_coin_bag"
+    ],
+    [
+      "craft_gold_coin_bag"
+    ],
+    [
+      "craft_netherite_coin_bag"
+    ],
+    [
+      "craft_emerald_quarter_bank_note_bag"
+    ],
+    [
+      "craft_emerald_half_bank_note_bag"
+    ],
+    [
+      "craft_emerald_bank_note_bag"
+    ],
+    [
+      "craft_nether_gold_coin_bag"
+    ],
+    [
       "craft_endonian_coin_bag"
     ]
   ]

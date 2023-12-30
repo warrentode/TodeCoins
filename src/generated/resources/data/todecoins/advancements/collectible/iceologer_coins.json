@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/husk_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_iceologer_copper": {
       "conditions": {

@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/armadillo_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_axolotl_copper": {
       "conditions": {

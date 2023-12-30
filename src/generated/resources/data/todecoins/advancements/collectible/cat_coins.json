@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/camel_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_cat_copper": {
       "conditions": {

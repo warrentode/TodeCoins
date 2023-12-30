@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/chicken_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_cod_copper": {
       "conditions": {

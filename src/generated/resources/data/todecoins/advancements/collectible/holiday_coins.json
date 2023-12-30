@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/patron_brannigan_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_birthday": {
       "conditions": {
@@ -48,6 +48,18 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_new_year": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_new_year"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -77,6 +89,9 @@
     ],
     [
       "find_item.todecoins.collectible_coin_easter"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_new_year"
     ]
   ]
 }

@@ -68,9 +68,15 @@
   },
   "requirements": [
     [
-      "craft_lucky_shirt",
-      "craft_lucky_pants",
-      "craft_lucky_hat",
+      "craft_lucky_shirt"
+    ],
+    [
+      "craft_lucky_pants"
+    ],
+    [
+      "craft_lucky_hat"
+    ],
+    [
       "craft_lucky_boots"
     ]
   ]

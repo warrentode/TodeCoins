@@ -1,24 +1,24 @@
 {
-  "parent": "todecoins:main/minting_coins",
+  "parent": "todecoins:main/otherworldly_coin",
   "criteria": {
-    "craft_nether_currency_stamp": {
+    "craft_endonian_fiber": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:nether_currency_stamp"
+              "todecoins:endonian_fiber"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "craft_nether_gold_coin": {
+    "craft_endonian_thread": {
       "conditions": {
         "items": [
           {
             "items": [
-              "todecoins:nether_gold_coin"
+              "todecoins:endonian_thread"
             ]
           }
         ]
@@ -29,24 +29,24 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.netherDough.desc"
+      "translate": "advancement.textileEngineering3.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:nether_gold_coin"
+      "item": "todecoins:endonian_thread"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.netherDough"
+      "translate": "advancement.textileEngineering3"
     }
   },
   "requirements": [
     [
-      "craft_nether_currency_stamp"
+      "craft_endonian_fiber"
     ],
     [
-      "craft_nether_gold_coin"
+      "craft_endonian_thread"
     ]
   ]
 }

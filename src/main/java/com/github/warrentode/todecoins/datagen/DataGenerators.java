@@ -1,5 +1,7 @@
 package com.github.warrentode.todecoins.datagen;
 
+import com.github.warrentode.todecoins.datagen.advancements.CollectibleCoinAdvancementsGen;
+import com.github.warrentode.todecoins.datagen.advancements.TodeCoinsAdvancementsGen;
 import com.github.warrentode.todecoins.datagen.recipes.RecipesGen;
 import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalCageriumRecipes;
 import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalSpawnEggRecipes;
@@ -40,7 +42,8 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new RecipesGen(generator));
         generator.addProvider(event.includeServer(), new ConditionalCageriumRecipes(generator));
         generator.addProvider(event.includeServer(), new ConditionalSpawnEggRecipes(generator));
-        generator.addProvider(event.includeServer(), new AdvancementsGen(generator, helper));
+        generator.addProvider(event.includeServer(), new TodeCoinsAdvancementsGen(generator, helper));
+        generator.addProvider(event.includeServer(), new CollectibleCoinAdvancementsGen(generator, helper));
         generator.addProvider(event.includeServer(), new ModLootTableGenProvider(generator));
         generator.addProvider(event.includeServer(), new ModItemModelProvider(generator, MODID, helper));
         generator.addProvider(event.includeServer(), new ModBlockStateProvider(generator, MODID, helper));

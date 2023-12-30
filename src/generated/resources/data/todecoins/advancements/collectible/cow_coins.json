@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/copper_golem_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_cow_copper": {
       "conditions": {

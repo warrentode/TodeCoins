@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/glow_squid_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_guard_copper": {
       "conditions": {

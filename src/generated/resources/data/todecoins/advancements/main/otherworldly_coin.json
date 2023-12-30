@@ -43,7 +43,9 @@
   },
   "requirements": [
     [
-      "craft_endonian_currency_stamp",
+      "craft_endonian_currency_stamp"
+    ],
+    [
       "craft_endonian_coin"
     ]
   ]

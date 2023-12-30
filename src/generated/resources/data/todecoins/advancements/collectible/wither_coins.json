@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/witch_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_wither_copper": {
       "conditions": {

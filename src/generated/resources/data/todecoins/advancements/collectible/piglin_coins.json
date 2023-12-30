@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/pig_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_piglin_copper": {
       "conditions": {

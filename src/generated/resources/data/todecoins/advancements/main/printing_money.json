@@ -55,8 +55,12 @@
   },
   "requirements": [
     [
-      "craft_emerald_quarter_bank_note",
-      "craft_emerald_half_bank_note",
+      "craft_emerald_quarter_bank_note"
+    ],
+    [
+      "craft_emerald_half_bank_note"
+    ],
+    [
       "craft_emerald_bank_note"
     ]
   ]

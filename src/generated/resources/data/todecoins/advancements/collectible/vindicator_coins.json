@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:collectible/all_coins",
+  "parent": "todecoins:collectible/villager_coins",
   "criteria": {
     "find_item.todecoins.collectible_coin_vindicator_copper": {
       "conditions": {
