@@ -1,7 +1,5 @@
 package com.github.warrentode.todecoins.loot.serializers;
 
-import com.github.warrentode.todecoins.loot.conditions.AdvancementCheckCondition;
-import com.github.warrentode.todecoins.loot.conditions.ModCheckCondition;
 import com.github.warrentode.todecoins.loot.conditions.curio.CodFishCharmCondition;
 import com.github.warrentode.todecoins.loot.conditions.curio.PufferfishCharmCondition;
 import com.github.warrentode.todecoins.loot.conditions.curio.SalmonFishCharmCondition;
@@ -29,11 +27,6 @@ public class ModLootItemConditions extends LootItemConditions {
             () -> new LootItemConditionType(new SalmonFishCharmCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> TROPICAL_FISH_CHARM_CONDITION = REGISTER.register("tropical_fish_charm_condition",
             () -> new LootItemConditionType(new TropicalFishCharmCondition.Serializer()));
-
-    public static final RegistryObject<LootItemConditionType> ADVANCEMENT_CONDITION = REGISTER.register("advancement_condition",
-            () -> new LootItemConditionType(new AdvancementCheckCondition.Serializer()));
-    public static final RegistryObject<LootItemConditionType> MODLOADED_CONDITION = REGISTER.register("modloaded_condition",
-            () -> new LootItemConditionType(new ModCheckCondition.Serializer()));
 
     public static final RegistryObject<LootItemConditionType> BLOCKTAG_CONDITION = REGISTER.register("blocktag_condition",
             () -> new LootItemConditionType(new BlockTagCondition.Serializer()));
