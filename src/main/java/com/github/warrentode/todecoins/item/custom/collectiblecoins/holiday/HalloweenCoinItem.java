@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday;
 
-import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import net.minecraft.ChatFormatting;
@@ -18,7 +17,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.SlotContext;
@@ -49,22 +47,19 @@ public class HalloweenCoinItem extends CollectibleCoin implements ICurioItem {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.isHalloween(serverLevel)) {
+                    if (CalendarUtil.check("HALLOWEEN")
+                            && (!livingEntity.hasEffect(MobEffects.HERO_OF_THE_VILLAGE) || !livingEntity.hasEffect(MobEffects.NIGHT_VISION))) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
-                    }
-                    else if (CalendarUtil.isHalloween() && !ModList.get().isLoaded("sereneseasons")) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2000, 0,
                                 false, false, true));
                     }
                     else {
                         livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2000, 0,
+                                false, false, true));
                     }
-
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2000, 0,
-                            false, false, true));
                 }
-
             }
 
             @Override

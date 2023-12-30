@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.mixin;
 
-import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.util.CalendarUtil;
@@ -135,14 +134,9 @@ public abstract class PiglinBarterMixin {
 
     @Unique
     private static boolean todeCoins$isGiftEvent(ServerLevel serverLevel) {
-        if (ModList.get().isLoaded("sereneseasons")) {
-            return SereneSeasonsCompat.isEaster(serverLevel) || SereneSeasonsCompat.isHalloween(serverLevel)
-                    || SereneSeasonsCompat.isChristmas(serverLevel) || SereneSeasonsCompat.isBirthday(serverLevel)
-                    || SereneSeasonsCompat.isAnniversary(serverLevel) || SereneSeasonsCompat.isNewYear(serverLevel);
-        }
-        return CalendarUtil.isEaster() || CalendarUtil.isHalloween()
-                || CalendarUtil.isChristmas() || CalendarUtil.isBirthday()
-                || CalendarUtil.isAnniversary() || CalendarUtil.isNewYear();
+        return CalendarUtil.check("EASTER") || CalendarUtil.check("HALLOWEEN")
+                || CalendarUtil.check("CHRISTMAS") || CalendarUtil.check("BIRTHDAY")
+                || CalendarUtil.check("ANNIVERSARY") || CalendarUtil.check("NEW_YEAR");
     }
 
     @Inject(at = @At("HEAD"), method = "stopHoldingOffHandItem", cancellable = true)

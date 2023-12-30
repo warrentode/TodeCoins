@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday;
 
-import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.google.common.collect.LinkedHashMultimap;
@@ -23,7 +22,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.SlotContext;
@@ -69,20 +67,18 @@ public class EasterCoinItem extends CollectibleCoin implements ICurioItem {
                 ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
                 if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.isEaster(serverLevel)) {
+                    if (CalendarUtil.check("EASTER")
+                            && (!livingEntity.hasEffect(MobEffects.HERO_OF_THE_VILLAGE) || !livingEntity.hasEffect(MobEffects.JUMP))) {
                         livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
                                 false, false, true));
-                    }
-                    else if (CalendarUtil.isEaster() && !ModList.get().isLoaded("sereneseasons")) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 2000, 0,
                                 false, false, true));
                     }
                     else {
                         livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 2000, 0,
+                                false, false, true));
                     }
-
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 2000, 0,
-                            false, false, true));
                 }
 
             }
