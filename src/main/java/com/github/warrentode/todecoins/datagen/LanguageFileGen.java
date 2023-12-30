@@ -979,7 +979,7 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.lucky_coin.hover", "Smells like fresh clover, what an unusual coin...");
         add("tooltips.four_leaf_clover.hover", "Many people believe this is a lucky charm...");
         add("tooltips.lucky_armor_item.hover", "Just wearing this garment makes you feel luckier...");
-        add("tooltips.barter_coin_item.hover", "Anthropological evidence suggests bartering actually occurs when currency isn't readily available.");
+        add("tooltips.barter_coin_item.hover", "Anthropological evidence suggests bartering occurs whenever currency isn't readily available.");
         add("tooltips.endonian_coin_item.hover", "An otherworldly coin for interdimensional trading.");
         add("tooltips.bank_note_item.hover", "The original bank notes were created by China and worked much like our debit cards today.");
         add("tooltips.coin_item.hover", "Since ancient times, coins were either stamped or forged into molds.");
