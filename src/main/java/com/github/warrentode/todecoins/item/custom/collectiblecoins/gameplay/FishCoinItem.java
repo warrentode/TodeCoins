@@ -2,6 +2,7 @@ package com.github.warrentode.todecoins.item.custom.collectiblecoins.gameplay;
 
 import com.github.warrentode.todecoins.attribute.*;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
@@ -9,16 +10,15 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,8 +32,27 @@ import java.util.List;
 import java.util.UUID;
 
 public class FishCoinItem extends CollectibleCoin implements ICurioItem {
-    public FishCoinItem(Properties pProperties) {
-        super(pProperties);
+    private CollectibleCoinProperties.Material material;
+    private int coinEffectDuration;
+    private int coinEffectAmplifier;
+
+    public FishCoinItem(Item.Properties properties, @NotNull CollectibleCoinProperties.Material material) {
+        super(properties);
+        this.material = material.getCoinMaterial();
+        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+    }
+
+    public CollectibleCoinProperties.Material getCoinMaterial() {
+        return this.material;
+    }
+
+    public int getCoinEffectDuration() {
+        return this.coinEffectDuration;
+    }
+
+    public int getCoinEffectAmplifier() {
+        return this.coinEffectAmplifier;
     }
 
     @Nullable
@@ -47,46 +66,75 @@ public class FishCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.COPPER) {
+                    attribute.put(Attributes.MAX_HEALTH,
+                            new AttributeModifier(uuid, "generic.max_health", 4,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                else {
+                    attribute.put(Attributes.MAX_HEALTH,
+                            new AttributeModifier(uuid, "generic.max_health", 2,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.IRON) {
+                    attribute.put(Attributes.ATTACK_DAMAGE,
+                            new AttributeModifier(uuid, "generic.attack_damage", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.GOLDEN) {
+                    attribute.put(Attributes.ATTACK_SPEED,
+                            new AttributeModifier(uuid, "generic.attack_speed", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.NETHERITE) {
+                    attribute.put(Attributes.KNOCKBACK_RESISTANCE,
+                            new AttributeModifier(uuid, "generic.knockback_resistance", 0.1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
                 if (stack.is(ModTags.Items.COD_COIN_SET)) {
                     attribute.put(ModAttributes.COD_BONUS.get(),
                             new AttributeModifier(ModAttributes.COD_BONUS_MODIFIER_UUID,
                                     ModAttributes.COD_BONUS_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
-                    return attribute;
                 }
                 else if (stack.is(ModTags.Items.PUFFERFISH_COIN_SET)) {
                     attribute.put(ModAttributes.PUFFERFISH_BONUS.get(),
                             new AttributeModifier(ModAttributes.PUFFERFISH_BONUS_MODIFIER_UUID,
                                     ModAttributes.PUFFERFISH_BONUS_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
-                    return attribute;
                 }
                 else if (stack.is(ModTags.Items.SALMON_COIN_SET)) {
                     attribute.put(ModAttributes.SALMON_BONUS.get(),
                             new AttributeModifier(ModAttributes.SALMON_BONUS_MODIFIER_UUID,
                                     ModAttributes.SALMON_BONUS_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
-                    return attribute;
                 }
                 else if (stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)) {
                     attribute.put(ModAttributes.TROPICAL_FISH_BONUS.get(),
                             new AttributeModifier(ModAttributes.TROPICAL_FISH_BONUS_MODIFIER_UUID,
                                     ModAttributes.TROPICAL_FISH_BONUS_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
-                    return attribute;
                 }
+
                 return attribute;
             }
 
             @Override
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
-                if (livingEntity != null) {
-                    //noinspection deprecation
-                    if (livingEntity.isEyeInFluid(FluidTags.WATER)) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0,
-                                false, false, false));
-                    }
+
+                if (livingEntity != null && !livingEntity.level.isClientSide()
+                        && (!livingEntity.hasEffect(MobEffects.MOVEMENT_SPEED) || !livingEntity.hasEffect(MobEffects.NIGHT_VISION))) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                            false, false, true));
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                            false, false, true));
+
+                    stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
                 }
             }
 
@@ -152,15 +200,10 @@ public class FishCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable("tooltips.coin_effects.fishing_loot").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.coin_effects.water_breathing").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.NIGHT_VISION.getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.MOVEMENT_SPEED.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });
-    }
-
-    @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_fish_coin.hover").withStyle(ChatFormatting.GRAY));
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

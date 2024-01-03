@@ -20,7 +20,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_tuxedo_cat"
+      "item": "todecoins:collectible_coin_tuxedo_cat",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

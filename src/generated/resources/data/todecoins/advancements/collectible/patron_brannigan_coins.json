@@ -34,7 +34,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_carnation_trevor_brannigan"
+      "item": "todecoins:collectible_coin_carnation_trevor_brannigan",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

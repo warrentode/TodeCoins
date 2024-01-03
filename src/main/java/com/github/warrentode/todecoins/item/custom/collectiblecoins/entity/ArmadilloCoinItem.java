@@ -1,6 +1,7 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.entity;
 
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
@@ -15,8 +16,6 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,8 +29,27 @@ import java.util.List;
 import java.util.UUID;
 
 public class ArmadilloCoinItem extends CollectibleCoin implements ICurioItem {
-    public ArmadilloCoinItem(Properties pProperties) {
-        super(pProperties);
+    private CollectibleCoinProperties.Material material;
+    private int coinEffectDuration;
+    private int coinEffectAmplifier;
+
+    public ArmadilloCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
+        super(properties);
+        this.material = material.getCoinMaterial();
+        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+    }
+
+    public CollectibleCoinProperties.Material getCoinMaterial() {
+        return this.material;
+    }
+
+    public int getCoinEffectDuration() {
+        return this.coinEffectDuration;
+    }
+
+    public int getCoinEffectAmplifier() {
+        return this.coinEffectAmplifier;
     }
 
     @Nullable
@@ -45,13 +63,36 @@ public class ArmadilloCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                LivingEntity livingEntity = slotContext.entity();
 
-                if (livingEntity != null) {
-                    attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.armor", 1,
+                // material based attributes
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.COPPER) {
+                    attribute.put(Attributes.MAX_HEALTH,
+                            new AttributeModifier(uuid, "generic.max_health", 2,
                                     AttributeModifier.Operation.ADDITION));
                 }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.IRON) {
+                    attribute.put(Attributes.ATTACK_DAMAGE,
+                            new AttributeModifier(uuid, "generic.attack_damage", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.GOLDEN) {
+                    attribute.put(Attributes.ATTACK_SPEED,
+                            new AttributeModifier(uuid, "generic.attack_speed", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.NETHERITE) {
+                    attribute.put(Attributes.KNOCKBACK_RESISTANCE,
+                            new AttributeModifier(uuid, "generic.knockback_resistance", 0.1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
+
+                attribute.put(Attributes.ARMOR,
+                        new AttributeModifier(uuid, "generic.armor", 1,
+                                AttributeModifier.Operation.ADDITION));
+                attribute.put(Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(uuid, "generic.armor_toughness", 1,
+                                AttributeModifier.Operation.ADDITION));
 
                 return attribute;
             }
@@ -60,22 +101,31 @@ public class ArmadilloCoinItem extends CollectibleCoin implements ICurioItem {
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
 
-                if (livingEntity != null) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 2000, 0,
+                if (livingEntity != null && !livingEntity.level.isClientSide()
+                        && (!livingEntity.hasEffect(MobEffects.SLOW_FALLING) || !livingEntity.hasEffect(MobEffects.NIGHT_VISION))) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, getCoinEffectDuration(), getCoinEffectAmplifier(),
                             false, false, true));
-                }
-            }
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                            false, false, true));
 
-            @Override
-            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                LivingEntity livingEntity = slotContext.entity();
-                livingEntity.removeEffect(MobEffects.NIGHT_VISION);
+                    stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
+                }
             }
 
             @Nonnull
             @Override
             public SoundInfo getEquipSound(SlotContext context) {
                 return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public void onEquip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onEquip(slotContext, prevStack);
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onUnequip(slotContext, prevStack);
             }
 
             @Override
@@ -97,15 +147,10 @@ public class ArmadilloCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.coin_effects.night_vision").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.SLOW_FALLING.getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.NIGHT_VISION.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });
-    }
-
-    @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_aerial_coin.hover").withStyle(ChatFormatting.GRAY));
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

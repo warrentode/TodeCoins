@@ -58,7 +58,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_magma_cube_copper"
+      "item": "todecoins:collectible_coin_magma_cube_copper",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

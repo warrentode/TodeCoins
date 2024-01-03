@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-30T12:12:38.2348515	Recipes
+// 1.19.2	2024-01-03T09:16:38.6334986	Recipes
 fbc47492ea1d4d9c2c608694dab197d2d41ac3f7 data/todecoins/advancements/recipes/misc/ingots/ingot_from_nuggets/copper_ingot.json
 867f5d2f3ddc963bc7e0aea390f58bc2066cf224 data/todecoins/advancements/recipes/misc/ingots/ingot_from_nuggets/netherite_ingot.json
 e7c868a096cc81894473265acfee2ec08c49c6af data/todecoins/advancements/recipes/misc/nuggets/blasting/gold_nugget.json
@@ -97,7 +97,7 @@ d9655f0f9ad7c72d7588f1682bb734e91b1594ce data/todecoins/advancements/recipes/tod
 a87168102c1178b54626be5d56c65a90663bf6d2 data/todecoins/recipes/blocks/blocks_from_other/endonian_block.json
 a6ba5a158c70d8cbd293cfe841678f721b774324 data/todecoins/recipes/bracelets/bracelet_friendship_echo.json
 844536ff876da008139a7237b3c2b7ba47ea1445 data/todecoins/recipes/bracelets/bracelet_friendship_emerald.json
-e840fb5e25f11c883191cb20a46272832960f17f data/todecoins/recipes/bracelets/bracelet_friendship_endonian.json
+325f7846290fe4d67e4f6180d0e08adc01b6a284 data/todecoins/recipes/bracelets/bracelet_friendship_endonian.json
 e053653853c8830e1dc3ac6978751fbc61b7376d data/todecoins/recipes/bracelets/bracelet_friendship_lucky.json
 09ad48a8e0761871f4cc85237b91810687582fe5 data/todecoins/recipes/chocolate_coins/chocolate_coin_bubbly_berry.json
 7c542a19a75b0c8c097b0e872b016a1c9bafcabd data/todecoins/recipes/chocolate_coins/chocolate_coin_carmel_crisp.json
@@ -168,7 +168,7 @@ e4b4cf56abf923f315527e77d8efac31abf769c8 data/todecoins/recipes/storage_blocks/c
 bbba0bb3f046c1d042fad6636fce9f2e71599e27 data/todecoins/recipes/storage_blocks/coins_to_bags/nether_gold_bag.json
 a918608ded94bdb938776c4ab270549e7e24c856 data/todecoins/recipes/storage_blocks/coin_to_bags/lucky_coin_bag.json
 c83cb8eb8819d14e64eacc9e7afd5c2f7c551b49 data/todecoins/recipes/textiles/fabric/lucky_fabric.json
-063e576aa12fc0cb94400e0a19fafa8e7f837a0d data/todecoins/recipes/textiles/fiber/echo_fiber.json
+05f98dceec83eeb94e5bacac395125f788d18946 data/todecoins/recipes/textiles/fiber/echo_fiber.json
 b6908e96434d5ffda920031b689d7103ad7dcf33 data/todecoins/recipes/textiles/fiber/emerald_fiber.json
 03ba67f388a32480404405246ad1f952f7efff2a data/todecoins/recipes/textiles/fiber/endonian_fiber.json
 b748479c72367ab6a01f7fa046b72af5158599a3 data/todecoins/recipes/textiles/fiber/lucky_fiber.json

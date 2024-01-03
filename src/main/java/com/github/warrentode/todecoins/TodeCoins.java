@@ -3,6 +3,7 @@ package com.github.warrentode.todecoins;
 import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.block.entity.ModBlockEntities;
+import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
 import com.github.warrentode.todecoins.entity.villager.renderer.NumismatistRenderer;
@@ -25,6 +26,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
@@ -72,6 +74,7 @@ public class TodeCoins {
 
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
@@ -110,6 +113,358 @@ public class TodeCoins {
             // Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
                     ModItems.LUCKY_COIN.get(), Potions.THICK));
+
+            // Holy Strike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.BONE, ModPotions.HOLY_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HOLY_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HOLY_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HOLY_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HOLY_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HOLY_STRIKE_POTION_6.get()));
+            // Long Holy Strike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_HOLY_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_HOLY_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_HOLY_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_HOLY_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_HOLY_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HOLY_STRIKE_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_HOLY_STRIKE_POTION_6.get()));
+
+            // Withering Strike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.WITHER_ROSE, ModPotions.WITHERING_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.WITHERING_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.WITHERING_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.WITHERING_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.WITHERING_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.WITHERING_STRIKE_POTION_6.get()));
+            // Long Withering Strike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_WITHERING_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_WITHERING_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_WITHERING_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_WITHERING_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_WITHERING_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.WITHERING_STRIKE_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_WITHERING_STRIKE_POTION_6.get()));
+
+            // Cloak of Silence Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.ECHO_SHARD, ModPotions.SILENCE_CLOAK_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.SILENCE_CLOAK_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.SILENCE_CLOAK_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.SILENCE_CLOAK_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.SILENCE_CLOAK_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.SILENCE_CLOAK_POTION_6.get()));
+            // Long Cloak of Silence Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_SILENCE_CLOAK_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_SILENCE_CLOAK_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_SILENCE_CLOAK_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_SILENCE_CLOAK_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_SILENCE_CLOAK_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.SILENCE_CLOAK_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_SILENCE_CLOAK_POTION_6.get()));
+
+            // Arthropod's Blight Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.FERMENTED_SPIDER_EYE, ModPotions.ARTHROPOD_BLIGHT_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ARTHROPOD_BLIGHT_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ARTHROPOD_BLIGHT_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ARTHROPOD_BLIGHT_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ARTHROPOD_BLIGHT_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ARTHROPOD_BLIGHT_POTION_6.get()));
+            // Long Arthropod's Blight Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_ARTHROPOD_BLIGHT_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_ARTHROPOD_BLIGHT_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_ARTHROPOD_BLIGHT_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_ARTHROPOD_BLIGHT_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_ARTHROPOD_BLIGHT_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ARTHROPOD_BLIGHT_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_ARTHROPOD_BLIGHT_POTION_6.get()));
+
+            // Healing Mist Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.GHAST_TEAR, ModPotions.HEALING_MIST_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HEALING_MIST_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HEALING_MIST_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HEALING_MIST_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HEALING_MIST_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.HEALING_MIST_POTION_6.get()));
+            // Long Healing Mist Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_HEALING_MIST_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_HEALING_MIST_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_HEALING_MIST_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_HEALING_MIST_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_HEALING_MIST_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.HEALING_MIST_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_HEALING_MIST_POTION_6.get()));
+
+            // Glowing Aura Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.GLOW_INK_SAC, ModPotions.GLOWING_AURA_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.GLOWING_AURA_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.GLOWING_AURA_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.GLOWING_AURA_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.GLOWING_AURA_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.GLOWING_AURA_POTION_6.get()));
+            // Long Glowing Aura Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_GLOWING_AURA_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_GLOWING_AURA_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_GLOWING_AURA_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_GLOWING_AURA_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_GLOWING_AURA_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.GLOWING_AURA_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_GLOWING_AURA_POTION_6.get()));
+
+            // Burning Strike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.FIRE_CHARGE, ModPotions.BURNING_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BURNING_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BURNING_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BURNING_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BURNING_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BURNING_STRIKE_POTION_6.get()));
+            // Long Burning Strike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_BURNING_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_BURNING_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_BURNING_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_BURNING_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_BURNING_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BURNING_STRIKE_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_BURNING_STRIKE_POTION_6.get()));
+
+            // Frost Strike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.SNOWBALL, ModPotions.FROST_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.FROST_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.FROST_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.FROST_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.FROST_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.FROST_STRIKE_POTION_6.get()));
+            // Long Frost Strike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_FROST_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_FROST_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_FROST_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_FROST_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_FROST_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.FROST_STRIKE_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_FROST_STRIKE_POTION_6.get()));
+
+            // Illager Bane Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.ARROW, ModPotions.ILLAGER_BANE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ILLAGER_BANE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ILLAGER_BANE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ILLAGER_BANE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ILLAGER_BANE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.ILLAGER_BANE_POTION_6.get()));
+            // Long Illager Bane Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_ILLAGER_BANE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_ILLAGER_BANE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_ILLAGER_BANE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_ILLAGER_BANE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_ILLAGER_BANE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.ILLAGER_BANE_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_ILLAGER_BANE_POTION_6.get()));
+
+            // Blind Shroud Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.GOLDEN_CARROT, ModPotions.BLIND_SHROUD_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_6.get()));
+            // Long Blind Shroud Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_6.get()));
+
+            // Thunderstrike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.LIGHTNING_ROD, ModPotions.THUNDERSTRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THUNDERSTRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THUNDERSTRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THUNDERSTRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THUNDERSTRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THUNDERSTRIKE_POTION_6.get()));
+            // Long Thunderstrike Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_THUNDERSTRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_THUNDERSTRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_THUNDERSTRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_THUNDERSTRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_THUNDERSTRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THUNDERSTRIKE_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_THUNDERSTRIKE_POTION_6.get()));
+
+            // Thorn Shield Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Blocks.SWEET_BERRY_BUSH.asItem(), ModPotions.THORN_SHIELD_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THORN_SHIELD_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THORN_SHIELD_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THORN_SHIELD_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THORN_SHIELD_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.THORN_SHIELD_POTION_6.get()));
+            // Long Thorn Shield Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_THORN_SHIELD_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_THORN_SHIELD_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_THORN_SHIELD_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_THORN_SHIELD_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_THORN_SHIELD_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.THORN_SHIELD_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_THORN_SHIELD_POTION_6.get()));
+
+            // Venom Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
+                    Items.SPIDER_EYE, ModPotions.VENOM_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.VENOM_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.VENOM_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.VENOM_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.VENOM_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.VENOM_STRIKE_POTION_6.get()));
+            // Long Venom Potions
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_VENOM_STRIKE_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_VENOM_STRIKE_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_VENOM_STRIKE_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_VENOM_STRIKE_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_VENOM_STRIKE_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.VENOM_STRIKE_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_VENOM_STRIKE_POTION_6.get()));
+
             // Luck Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
                     ModItems.LUCKY_COIN.get(), Potions.LUCK));
@@ -136,6 +491,7 @@ public class TodeCoins {
                     Items.REDSTONE, ModPotions.LONG_LUCK_POTION_5.get()));
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.LUCK_POTION_6.get(),
                     Items.REDSTONE, ModPotions.LONG_LUCK_POTION_6.get()));
+
             // Bad Luck Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.LUCK,
                     Items.FERMENTED_SPIDER_EYE, ModPotions.UNLUCK_POTION.get()));

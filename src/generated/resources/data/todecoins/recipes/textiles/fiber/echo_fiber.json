@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "todecoins:endonian_thread"
+      "item": "todecoins:endonian_fiber"
     },
     "C": {
       "item": "minecraft:echo_shard"

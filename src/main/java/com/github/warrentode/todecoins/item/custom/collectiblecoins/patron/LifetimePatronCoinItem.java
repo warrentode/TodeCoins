@@ -2,6 +2,8 @@ package com.github.warrentode.todecoins.item.custom.collectiblecoins.patron;
 
 import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.attribute.PlayerCharisma;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
+import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
@@ -10,8 +12,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -28,8 +34,23 @@ import java.util.List;
 import java.util.UUID;
 
 public class LifetimePatronCoinItem extends PatronCommemorativeCoinItem implements ICurioItem {
-    public LifetimePatronCoinItem(Properties pProperties) {
-        super(pProperties);
+    private CollectibleCoinProperties.Material material;
+    private int coinEffectDuration;
+    private int coinEffectAmplifier;
+
+    public LifetimePatronCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
+        super(properties);
+        this.material = material.getCoinMaterial();
+        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+    }
+
+    public int getCoinEffectDuration() {
+        return this.coinEffectDuration;
+    }
+
+    public int getCoinEffectAmplifier() {
+        return this.coinEffectAmplifier;
     }
 
     @Nullable
@@ -44,9 +65,29 @@ public class LifetimePatronCoinItem extends PatronCommemorativeCoinItem implemen
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 attribute.put(ModAttributes.CHARISMA.get(),
-                        new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 8,
+                        new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 2,
+                                AttributeModifier.Operation.ADDITION));
+                attribute.put(Attributes.LUCK,
+                        new AttributeModifier(uuid, "generic.luck", 1,
                                 AttributeModifier.Operation.ADDITION));
                 return attribute;
+            }
+
+            @Override
+            public void curioTick(SlotContext slotContext) {
+                LivingEntity livingEntity = slotContext.entity();
+
+                if (livingEntity != null && !livingEntity.level.isClientSide()
+                        && (!livingEntity.hasEffect(MobEffects.HERO_OF_THE_VILLAGE) || !livingEntity.hasEffect(MobEffects.LUCK))) {
+                    if (CalendarUtil.check("ANNIVERSARY")) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                                false, false, true));
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.LUCK, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                                false, false, true));
+
+                        stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
+                    }
+                }
             }
 
             @Nonnull
@@ -58,13 +99,13 @@ public class LifetimePatronCoinItem extends PatronCommemorativeCoinItem implemen
             @Override
             public void onEquip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onEquip(slotContext, prevStack);
-                PlayerCharisma.addCharisma(8);
+                PlayerCharisma.addCharisma(2);
             }
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onUnequip(slotContext, prevStack);
-                PlayerCharisma.subtractCharisma(8);
+                PlayerCharisma.subtractCharisma(2);
             }
 
             @Override
@@ -82,14 +123,22 @@ public class LifetimePatronCoinItem extends PatronCommemorativeCoinItem implemen
             public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
                 return DropRule.DEFAULT;
             }
+
+            @Override
+            public List<Component> getSlotsTooltip(List<Component> tooltips) {
+                tooltips.add(Component.translatable("tooltips.coin_effects_holiday").withStyle(ChatFormatting.GOLD));
+                tooltips.add(Component.translatable(MobEffects.HERO_OF_THE_VILLAGE.getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.LUCK.getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                return ICurio.super.getSlotsTooltip(tooltips);
+            }
         });
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltips, @NotNull TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
             tooltips.add(Component.translatable("tooltips.collectible_coin_lifetime.hover").withStyle(ChatFormatting.GRAY));
         }
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
+        super.appendHoverText(stack, level, tooltips, flag);
     }
 }

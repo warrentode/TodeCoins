@@ -1,12 +1,18 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.entity;
 
+
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -14,8 +20,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
@@ -30,8 +36,48 @@ import java.util.List;
 import java.util.UUID;
 
 public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
-    public ShulkerCoinItem(Properties pProperties) {
-        super(pProperties);
+    private CollectibleCoinProperties.Material material;
+    private int coinEffectDuration;
+    private int coinEffectAmplifier;
+
+    public ShulkerCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
+        super(properties);
+        this.material = material.getCoinMaterial();
+        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+    }
+
+    public CollectibleCoinProperties.Material getCoinMaterial() {
+        return this.material;
+    }
+
+    public int getCoinEffectDuration() {
+        return this.coinEffectDuration;
+    }
+
+    public int getCoinEffectAmplifier() {
+        return this.coinEffectAmplifier;
+    }
+
+
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player playerUsing, @NotNull InteractionHand useHand) {
+        ItemStack stack = playerUsing.getItemInHand(useHand);
+
+        if (!level.isClientSide && !playerUsing.hasEffect(MobEffects.LEVITATION)) {
+            level.playSound(null, playerUsing.getX(), playerUsing.getY(), playerUsing.getZ(), SoundEvents.SHULKER_BULLET_HIT, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
+
+            playerUsing.getCooldowns().addCooldown(this, getCoinEffectDuration() / 2);
+
+            playerUsing.addEffect(new MobEffectInstance(MobEffects.LEVITATION, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                    false, false, true));
+
+            stack.hurtAndBreak(1, playerUsing, (playerLambda) -> playerLambda.broadcastBreakEvent(useHand));
+
+            return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+        }
+
+        return new InteractionResultHolder<>(InteractionResult.FAIL, stack);
     }
 
     @Nullable
@@ -45,29 +91,51 @@ public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                LivingEntity livingEntity = slotContext.entity();
-                if (livingEntity != null) {
-                    attribute.put(Attributes.ARMOR,
-                            new AttributeModifier(uuid, "generic.armor", 1,
-                                    AttributeModifier.Operation.ADDITION));
-                    attribute.put(Attributes.KNOCKBACK_RESISTANCE,
-                            new AttributeModifier(uuid, "generic.knockback_resistance", 3,
+
+                // material based attributes
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.COPPER) {
+                    attribute.put(Attributes.MAX_HEALTH,
+                            new AttributeModifier(uuid, "generic.max_health", 2,
                                     AttributeModifier.Operation.ADDITION));
                 }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.IRON) {
+                    attribute.put(Attributes.ATTACK_DAMAGE,
+                            new AttributeModifier(uuid, "generic.attack_damage", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.GOLDEN) {
+                    attribute.put(Attributes.ATTACK_SPEED,
+                            new AttributeModifier(uuid, "generic.attack_speed", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.NETHERITE) {
+                    attribute.put(Attributes.KNOCKBACK_RESISTANCE,
+                            new AttributeModifier(uuid, "generic.knockback_resistance", 0.1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
+
+                attribute.put(Attributes.ARMOR,
+                        new AttributeModifier(uuid, "generic.armor", 1,
+                                AttributeModifier.Operation.ADDITION));
+                attribute.put(Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(uuid, "generic.armor_toughness", 1,
+                                AttributeModifier.Operation.ADDITION));
+
                 return attribute;
             }
 
             @Override
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 20, 0,
-                        false, false, true));
-            }
 
-            @Override
-            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                LivingEntity livingEntity = slotContext.entity();
-                livingEntity.removeEffect(MobEffects.LEVITATION);
+                if (livingEntity != null && !livingEntity.level.isClientSide()
+                        && (!livingEntity.hasEffect(MobEffects.DAMAGE_RESISTANCE))) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                            false, false, true));
+
+                    stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
+                }
             }
 
             @Nonnull
@@ -77,8 +145,18 @@ public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
             }
 
             @Override
+            public void onEquip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onEquip(slotContext, prevStack);
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onUnequip(slotContext, prevStack);
+            }
+
+            @Override
             public boolean canEquipFromUse(SlotContext context) {
-                return true;
+                return false;
             }
 
             @Override
@@ -95,15 +173,11 @@ public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.coin_effects.levitation").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.DAMAGE_RESISTANCE.getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects_on_use").withStyle(ChatFormatting.GOLD));
+                tooltips.add(Component.translatable(MobEffects.LEVITATION.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });
-    }
-
-    @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_shulker_coin.hover").withStyle(ChatFormatting.GRAY));
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

@@ -70,7 +70,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_christmas"
+      "item": "todecoins:collectible_coin_christmas",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

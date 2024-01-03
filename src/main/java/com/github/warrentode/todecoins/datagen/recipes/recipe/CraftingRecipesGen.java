@@ -514,7 +514,7 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .pattern("###")
                 .pattern("#P#")
                 .pattern("###")
-                .define('#', ForgeTags.Items.CURRENCY_FIBER)
+                .define('#', ModItems.ENDONIAN_THREAD.get())
                 .define('P', Items.ENDER_PEARL)
                 .unlockedBy("has_endonian_thread", has(ModItems.ENDONIAN_THREAD.get()))
                 .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_endonian"));
@@ -523,7 +523,7 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .pattern("###")
                 .pattern("#C#")
                 .pattern("###")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
+                .define('#', ModItems.ENDONIAN_FIBER.get())
                 .define('C', Items.ECHO_SHARD)
                 .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
                 .save(consumer, new ResourceLocation(MODID, "textiles/fiber/echo_fiber"));

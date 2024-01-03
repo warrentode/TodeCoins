@@ -1,3 +1,18 @@
+### 2024-01-03 - 2.0.0.beta
+
+- [BREAKING] completely overhauled collectible coin effects and attribute modifiers
+  - attempting to re-balance the coins so that none of them are overpowered and reduce redundancy
+- updated mixin class names to better reflect what they do
+- fox coins and arthropod coins properly allow players to walk through sweet berry bushes and cobwebs respectively
+  without getting stuck
+
+### 2023-12-30 - 1.9.5.beta
+
+- updated advancements
+- removed unused loot item conditions
+- updated season checks to be easier to access across the mod
+- added JEI support
+
 ### 2023-12-22 - 1.9.2.beta
 
 - updated build dependencies
@@ -61,40 +76,3 @@
 - added missing iceologer_types tag
 - updated to Forge 43.3.5
 - updated dependencies
-
-### 2023-12-03 - 1.7.8.beta
-
-- fixed clearing ender infection with the endermite coin set
-
-### 2023-11-30 - 1.7.7.beta
-
-- corrected holiday checks with the Serene Seasons integration
-- fixed translation key for Zombified Piglin Coin Set advancement
-
-### 2023-11-25 - 1.7.6.beta
-
-- added optional compat for unusual end mod
-  - endermite coin set should remove ender infection
-
-### 2023-11-25 - 1.7.5.beta
-
-- collectible coin drops from entities work correctly again
-- removed a duplicate set of trades from the banker
-
-### 2023-11-25 - 1.7.4.beta
-
-- updated loot tables
-- removed a duplicate set of trades from the banker
-
-### 2023-11-22 - 1.7.2.beta
-
-- updated loot tables for collectible coin entity drops
-- fixed endonian coin chest loot
-- added missing translations
-- fixed underwater coin effects
-
-### 2023-11-17 - 1.7.1.beta
-
-- completely revamped the advancements for the collectible coins
-- readjusted drop rates for the entity coins
-- added missing translations, fixed incorrect translations

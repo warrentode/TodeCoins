@@ -34,7 +34,8 @@
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "todecoins:collectible_coin_carnation_marshall_nash"
+      "item": "todecoins:collectible_coin_carnation_marshall_nash",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {

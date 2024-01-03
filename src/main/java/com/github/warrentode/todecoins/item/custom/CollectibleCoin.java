@@ -17,10 +17,11 @@ public class CollectibleCoin extends CoinItem {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltips, @NotNull TooltipFlag flag) {
+        tooltips.add(Component.translatable("tooltips." + stack.getDescriptionId() + ".set_count").withStyle(ChatFormatting.GRAY));
         if (Screen.hasShiftDown()) {
             tooltips.add(Component.translatable("tooltips.collectible_coin.hover").withStyle(ChatFormatting.DARK_GRAY).withStyle(ChatFormatting.ITALIC));
         }
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
+        super.appendHoverText(stack, level, tooltips, flag);
     }
 }
