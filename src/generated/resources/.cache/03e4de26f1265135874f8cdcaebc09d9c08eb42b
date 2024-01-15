@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-22T00:52:59.2318446	Tags for minecraft:item
+// 1.19.2	2024-01-15T17:18:11.67206	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -45,8 +45,8 @@ eceb115142137119185191b64ef142dbcb53a9dd data/forge/tags/items/piglin_barter_ite
 ed10484707bf0ea9e3bb21e5439785b616cf2899 data/forge/tags/items/sugar.json
 d4a1d913e420ba2dce1249dbcc08b4625f482d75 data/forge/tags/items/textiles.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/bark.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/currency_fiber.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/currency_paper.json
+5447e3da356135817e0c3d882ee4dbd4de7f6bae data/forge/tags/items/textiles/currency_fiber.json
+337b9c3a90e091b5ff29a2127a6613c571834b56 data/forge/tags/items/textiles/currency_paper.json
 c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/fibre.json
 886e5e1db1abef8583882d996f8600275f839c37 data/forge/tags/items/textiles/paper.json
