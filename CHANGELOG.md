@@ -1,3 +1,11 @@
+### 2024-01-15 - 2.0.0.2.beta
+
+- added missing translations for custom effects
+
+### 2024-01-04 - 2.0.0.1.beta
+
+- updated build gradle and forge version
+
 ### 2024-01-03 - 2.0.0.beta
 
 - [BREAKING] completely overhauled collectible coin effects and attribute modifiers
