@@ -1240,6 +1240,10 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(ForgeTags.Items.CURRENCY_PAPER)
+                .addTag(ModTags.Items.CURRENCY_PAPER);
+        tag(ForgeTags.Items.CURRENCY_FIBER)
+                .addTag(ModTags.Items.CURRENCY_FIBER);
         tag(ForgeTags.Items.SUGAR)
                 .add(Items.SUGAR)
                 .add(Items.HONEY_BOTTLE);
