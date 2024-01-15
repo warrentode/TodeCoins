@@ -2,6 +2,7 @@ package com.github.warrentode.todecoins.datagen;
 
 import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.block.ModBlocks;
+import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.util.PlayerUtil;
@@ -1496,10 +1497,49 @@ public class LanguageFileGen extends LanguageProvider {
 
     private void addEffect() {
         add(MobEffects.LUCK, "Luck");
-        add(MobEffects.UNLUCK, "Bad Luck");
-
         addPotionEffects("luck_potion", "Luck");
+
+        add(MobEffects.UNLUCK, "Bad Luck");
         addPotionEffects("unluck_potion", "Bad Luck");
+
+        add(ModEffects.VENOM_STRIKE.get(), "Venomous Strike");
+        addPotionEffects("venom_strike_potion", "Venomous Strike");
+
+        add(ModEffects.THORN_SHIELD.get(), "Shield of Thorns");
+        addPotionEffects("thorn_shield", "Shield of Thorns");
+
+        add(ModEffects.ILLAGER_BANE.get(), "Illager's Bane");
+        addPotionEffects("illager_bane", "Illager's Bane");
+
+        add(ModEffects.THUNDERSTRIKE.get(), "Thunder's Strike");
+        addPotionEffects("thunderstrike", "Thunder's Strike");
+
+        add(ModEffects.BLIND_SHROUD.get(), "Blinding Shroud");
+        addPotionEffects("blind_shroud", "Blinding Shroud");
+
+        add(ModEffects.FROST_STRIKE.get(), "Frost Strike");
+        addPotionEffects("frost_strike", "Frost Strike");
+
+        add(ModEffects.BURNING_STRIKE.get(), "Burning Strike");
+        addPotionEffects("burning_strike", "Burning Strike");
+
+        add(ModEffects.GLOWING_AURA.get(), "Glowing Aura");
+        addPotionEffects("glowing_aura", "Glowing Aura");
+
+        add(ModEffects.HEALING_MIST.get(), "Healing Mist");
+        addPotionEffects("healing_mist", "Healing Mist");
+
+        add(ModEffects.ARTHROPOD_BLIGHT.get(), "Blight of Arthropods");
+        addPotionEffects("arthropod_blight", "Blight of Arthropods");
+
+        add(ModEffects.SILENCE_CLOAK.get(), "Cloak of Silence");
+        addPotionEffects("silence_cloak", "Cloak of Silence");
+
+        add(ModEffects.WITHERING_STRIKE.get(), "Withering Strike");
+        addPotionEffects("withering_strike", "Withering Strike");
+
+        add(ModEffects.HOLY_STRIKE.get(), "Holy Strike");
+        addPotionEffects("holy_strike", "Holy Strike");
     }
 
     private void addPotionEffects(String id, String name) {
