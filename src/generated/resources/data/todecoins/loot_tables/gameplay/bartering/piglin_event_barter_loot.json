@@ -6,40 +6,93 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:cake"
+          "conditions": [
+            {
+              "condition": "todecoins:easter_condition"
+            }
+          ],
+          "name": "todecoins:chocolate_coin_bubbly_berry"
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:pumpkin_pie"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:cookie"
-        },
-        {
-          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:halloween_condition"
+            }
+          ],
           "name": "todecoins:chocolate_coin_ultimate_dark"
         },
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:halloween_condition"
+            }
+          ],
           "name": "todecoins:chocolate_coin_milk_bone"
         },
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:halloween_condition"
+            }
+          ],
           "name": "todecoins:chocolate_coin_warped_spice"
         },
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:halloween_condition"
+            }
+          ],
           "name": "todecoins:chocolate_coin_crimson_spore"
         },
         {
-          "type": "minecraft:loot_table",
+          "type": "minecraft:item",
           "conditions": [
             {
               "condition": "todecoins:birthday_condition"
             }
           ],
-          "name": "todecoins:chests/collectible/seasonal/todecoins_birthday_coin_loot"
+          "name": "todecoins:chocolate_coin_velvety_clover"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            }
+          ],
+          "name": "todecoins:chocolate_coin_festive_fudge"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:new_year_condition"
+            }
+          ],
+          "name": "todecoins:chocolate_coin_fuego_fudge"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:chocolate_coin_carmel_crisp"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:easter_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_easter_coin_loot"
         },
         {
           "type": "minecraft:loot_table",
@@ -63,10 +116,28 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "todecoins:birthday_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_birthday_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
               "condition": "todecoins:anniversary_condition"
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/todecoins_anniversary_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:new_year_condition"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_new_year_coin_loot"
         },
         {
           "type": "minecraft:item",
@@ -103,6 +174,14 @@
             }
           ],
           "name": "todecoins:collectible_coin_piglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cake"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cookie"
         }
       ],
       "rolls": 1.0

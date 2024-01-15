@@ -1,6 +1,8 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.entity;
 
+import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
@@ -8,7 +10,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -17,8 +19,6 @@ import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,8 +32,27 @@ import java.util.List;
 import java.util.UUID;
 
 public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
-    public BlazeCoinItem(Properties pProperties) {
-        super(pProperties);
+    private CollectibleCoinProperties.Material material;
+    private int coinEffectDuration;
+    private int coinEffectAmplifier;
+
+    public BlazeCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
+        super(properties);
+        this.material = material.getCoinMaterial();
+        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+    }
+
+    public CollectibleCoinProperties.Material getCoinMaterial() {
+        return this.material;
+    }
+
+    public int getCoinEffectDuration() {
+        return this.coinEffectDuration;
+    }
+
+    public int getCoinEffectAmplifier() {
+        return this.coinEffectAmplifier;
     }
 
     @Nullable
@@ -48,36 +67,74 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
                 LivingEntity livingEntity = slotContext.entity();
-                if (livingEntity != null) {
-                    int armorBonus = 0;
-                    int hpBonus = 0;
 
+                // material based attributes
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.COPPER) {
                     if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
-                        if (livingEntity.level.getDifficulty() == Difficulty.PEACEFUL) {
-                            armorBonus = 1;
-                            hpBonus = 20;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                            armorBonus = 2;
-                            hpBonus = 24;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                            armorBonus = 3;
-                            hpBonus = 30;
-                        }
-                        else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                            armorBonus = 4;
-                            hpBonus = 34;
-                        }
-
-                        attribute.put(Attributes.ARMOR,
-                                new AttributeModifier(uuid, "generic.armor", armorBonus,
-                                        AttributeModifier.Operation.ADDITION));
                         attribute.put(Attributes.MAX_HEALTH,
-                                new AttributeModifier(uuid, "generic.max_health", hpBonus,
+                                new AttributeModifier(uuid, "generic.max_health", 4,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                    else {
+                        attribute.put(Attributes.MAX_HEALTH,
+                                new AttributeModifier(uuid, "generic.max_health", 2,
                                         AttributeModifier.Operation.ADDITION));
                     }
                 }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.IRON) {
+                    if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
+                        attribute.put(Attributes.ATTACK_DAMAGE,
+                                new AttributeModifier(uuid, "generic.attack_damage", 2,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                    else {
+                        attribute.put(Attributes.ATTACK_DAMAGE,
+                                new AttributeModifier(uuid, "generic.attack_damage", 1,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.GOLDEN) {
+                    if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
+                        attribute.put(Attributes.ATTACK_SPEED,
+                                new AttributeModifier(uuid, "generic.attack_speed", 2,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                    else {
+                        attribute.put(Attributes.ATTACK_SPEED,
+                                new AttributeModifier(uuid, "generic.attack_speed", 1,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.NETHERITE) {
+                    if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
+                        attribute.put(Attributes.KNOCKBACK_RESISTANCE,
+                                new AttributeModifier(uuid, "generic.knockback_resistance", 0.2,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                    else {
+                        attribute.put(Attributes.KNOCKBACK_RESISTANCE,
+                                new AttributeModifier(uuid, "generic.knockback_resistance", 0.1,
+                                        AttributeModifier.Operation.ADDITION));
+                    }
+                }
+
+                if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
+                    attribute.put(Attributes.ATTACK_KNOCKBACK,
+                            new AttributeModifier(uuid, "generic.attack_knockback", 2,
+                                    AttributeModifier.Operation.ADDITION));
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.armor", 2,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                else {
+                    attribute.put(Attributes.ATTACK_KNOCKBACK,
+                            new AttributeModifier(uuid, "generic.attack_knockback", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                    attribute.put(Attributes.ARMOR,
+                            new AttributeModifier(uuid, "generic.armor", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
                 return attribute;
             }
 
@@ -85,26 +142,31 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
 
-                if (livingEntity != null) {
-                    int i = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        i = 1;
+                if (livingEntity != null && !livingEntity.level.isClientSide()
+                        && (!livingEntity.hasEffect(MobEffects.FIRE_RESISTANCE) || !livingEntity.hasEffect(ModEffects.BURNING_STRIKE.get())
+                        || !livingEntity.hasEffect(ModEffects.HEALING_MIST.get()))) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                            false, false, true));
+                    livingEntity.addEffect(new MobEffectInstance(ModEffects.BURNING_STRIKE.get(), getCoinEffectDuration(), getCoinEffectAmplifier(),
+                            false, false, true));
+
+                    if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
+                        livingEntity.addEffect(new MobEffectInstance(ModEffects.HEALING_MIST.get(), getCoinEffectDuration(), getCoinEffectAmplifier(),
+                                false, false, true));
                     }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        i = 2;
+
+                    if (stack.is(ModTags.Items.WILDFIRE_COIN_SET) && RandomSource.create().nextInt(100) > 50) {
+                        stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
                     }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        i = 3;
+                    else {
+                        stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
                     }
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, i,
-                            false, false, false));
                 }
             }
 
             @Override
             public void onUnequip(SlotContext slotContext, ItemStack newStack) {
                 LivingEntity livingEntity = slotContext.entity();
-                livingEntity.removeEffect(MobEffects.FIRE_RESISTANCE);
             }
 
             @Nonnull
@@ -132,16 +194,16 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.coin_effects.fire_resist").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.coin_effects.burning_attack").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.FIRE_RESISTANCE.getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(ModEffects.BURNING_STRIKE.get().getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
+                    tooltips.add(Component.translatable("tooltips.coin_effects_boss").withStyle(ChatFormatting.GOLD)
+                            .withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.ITALIC));
+                    tooltips.add(Component.translatable(ModEffects.HEALING_MIST.get().getDescriptionId())
+                            .withStyle(ChatFormatting.BLUE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.ITALIC));
+                }
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });
-    }
-
-    @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_blaze_coin.hover").withStyle(ChatFormatting.GRAY));
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

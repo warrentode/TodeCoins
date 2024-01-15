@@ -1,0 +1,52 @@
+{
+  "parent": "todecoins:main/textile_engineering_3",
+  "criteria": {
+    "craft_echo_fiber": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:echo_fiber"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_echo_thread": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:echo_thread"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.textileEngineering4.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:echo_thread"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.textileEngineering4"
+    }
+  },
+  "requirements": [
+    [
+      "craft_echo_fiber"
+    ],
+    [
+      "craft_echo_thread"
+    ]
+  ]
+}

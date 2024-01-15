@@ -1,17 +1,17 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.holiday;
 
-import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
+import com.github.warrentode.todecoins.attribute.ModAttributes;
+import com.github.warrentode.todecoins.attribute.PlayerCharisma;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -23,7 +23,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.SlotContext;
@@ -36,9 +35,25 @@ import java.util.List;
 import java.util.UUID;
 
 public class EasterCoinItem extends CollectibleCoin implements ICurioItem {
-    public EasterCoinItem(Properties pProperties) {
-        super(pProperties);
+    private CollectibleCoinProperties.Material material;
+    private int coinEffectDuration;
+    private int coinEffectAmplifier;
+
+    public EasterCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
+        super(properties);
+        this.material = material.getCoinMaterial();
+        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
     }
+
+    public int getCoinEffectDuration() {
+        return this.coinEffectDuration;
+    }
+
+    public int getCoinEffectAmplifier() {
+        return this.coinEffectAmplifier;
+    }
+
 
     @Nullable
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
@@ -51,57 +66,45 @@ public class EasterCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                LivingEntity livingEntity = slotContext.entity();
-
-                if (livingEntity != null) {
-                    double d = 0;
-                    if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                        d = 0.01;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                        d = 0.02;
-                    }
-                    else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                        d = 0.03;
-                    }
-                    attribute.put(Attributes.MOVEMENT_SPEED,
-                            new AttributeModifier(uuid, "generic.movement_speed", 0.05 + d,
-                                    AttributeModifier.Operation.ADDITION));
-                }
-
+                attribute.put(Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(uuid, "generic.movement_speed", 0.01,
+                                AttributeModifier.Operation.ADDITION));
+                attribute.put(Attributes.LUCK,
+                        new AttributeModifier(uuid, "generic.luck", 1,
+                                AttributeModifier.Operation.ADDITION));
+                attribute.put(ModAttributes.CHARISMA.get(),
+                        new AttributeModifier(ModAttributes.CHR_MODIFIER_UUID, ModAttributes.CHR_MODIFIER_NAME, 1,
+                                AttributeModifier.Operation.ADDITION));
                 return attribute;
             }
 
             @Override
             public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
-                MinecraftServer server = livingEntity != null ? livingEntity.getServer() : null;
-                ServerLevel serverLevel = server != null ? server.getLevel(livingEntity.level.dimension()) : null;
 
-                if (livingEntity != null && !livingEntity.level.isClientSide()) {
-                    if (ModList.get().isLoaded("sereneseasons") && SereneSeasonsCompat.SeasonCompat.isEaster(serverLevel)) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                if (livingEntity != null && !livingEntity.level.isClientSide()
+                        && (!livingEntity.hasEffect(MobEffects.HERO_OF_THE_VILLAGE) || !livingEntity.hasEffect(MobEffects.JUMP))) {
+                    if (CalendarUtil.check("EASTER")) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, getCoinEffectDuration(), getCoinEffectAmplifier(),
                                 false, false, true));
-                    }
-                    else if (CalendarUtil.Season.isEaster() && !ModList.get().isLoaded("sereneseasons")) {
-                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0,
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, getCoinEffectDuration(), getCoinEffectAmplifier(),
                                 false, false, true));
-                    }
-                    else {
-                        livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
-                    }
 
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 2000, 0,
-                            false, false, true));
+                        stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
+                    }
                 }
-
             }
 
             @Override
-            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                LivingEntity livingEntity = slotContext.entity();
-                livingEntity.removeEffect(MobEffects.HERO_OF_THE_VILLAGE);
-                livingEntity.removeEffect(MobEffects.JUMP);
+            public void onEquip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onEquip(slotContext, prevStack);
+                PlayerCharisma.addCharisma(1);
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onUnequip(slotContext, prevStack);
+                PlayerCharisma.subtractCharisma(1);
             }
 
             @Nonnull
@@ -128,17 +131,22 @@ public class EasterCoinItem extends CollectibleCoin implements ICurioItem {
 
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
-                tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.coin_effects.jump_boost").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.coin_effects.easter_hero").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects_holiday").withStyle(ChatFormatting.GOLD));
+                tooltips.add(Component.translatable(MobEffects.HERO_OF_THE_VILLAGE.getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.JUMP.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_easter_coin.hover").withStyle(ChatFormatting.GRAY));
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltips, @NotNull TooltipFlag flag) {
+        if (Screen.hasShiftDown()) {
+            tooltips.add(Component.translatable("tooltips.collectible_coin_easter.hover").withStyle(ChatFormatting.GRAY));
+        }
+        else {
+            tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY));
+        }
+        super.appendHoverText(stack, level, tooltips, flag);
     }
 }

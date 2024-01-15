@@ -54,8 +54,13 @@ public class ModCreativeModeTab extends CreativeModeTab {
 
         items.add(ModItems.EMERALD_FIBER.get().getDefaultInstance());
         items.add(ModItems.LUCKY_FIBER.get().getDefaultInstance());
+        items.add(ModItems.ENDONIAN_FIBER.get().getDefaultInstance());
+        items.add(ModItems.ECHO_FIBER.get().getDefaultInstance());
 
+        items.add(ModItems.EMERALD_THREAD.get().getDefaultInstance());
         items.add(ModItems.LUCKY_THREAD.get().getDefaultInstance());
+        items.add(ModItems.ENDONIAN_THREAD.get().getDefaultInstance());
+        items.add(ModItems.ECHO_THREAD.get().getDefaultInstance());
 
         items.add(ModItems.EMERALD_COARSE_WOVE_PAPER.get().getDefaultInstance());
         items.add(ModItems.EMERALD_WOVE_PAPER.get().getDefaultInstance());
@@ -67,6 +72,11 @@ public class ModCreativeModeTab extends CreativeModeTab {
         items.add(ModItems.LUCKY_SHIRT.get().getDefaultInstance());
         items.add(ModItems.LUCKY_PANTS.get().getDefaultInstance());
         items.add(ModItems.LUCKY_BOOTS.get().getDefaultInstance());
+
+        items.add(ModItems.BRACELET_FRIENDSHIP_EMERALD.get().getDefaultInstance());
+        items.add(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get().getDefaultInstance());
+        items.add(ModItems.BRACELET_FRIENDSHIP_ECHO.get().getDefaultInstance());
+        items.add(ModItems.BRACELET_FRIENDSHIP_LUCKY.get().getDefaultInstance());
 
         items.add(Items.BUNDLE.getDefaultInstance());
 
@@ -88,10 +98,15 @@ public class ModCreativeModeTab extends CreativeModeTab {
         items.add((ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance()));
         items.add((ModBlocks.COINPRESSBLOCK.get().asItem().getDefaultInstance()));
 
-        items.add((ModItems.WARPED_SPICE_CHOCOLATE_COIN.get().getDefaultInstance()));
+        items.add((ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get().getDefaultInstance()));
         items.add((ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get().getDefaultInstance()));
         items.add((ModItems.MILK_BONE_CHOCOLATE_COIN.get().getDefaultInstance()));
         items.add((ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get().getDefaultInstance()));
+        items.add((ModItems.WARPED_SPICE_CHOCOLATE_COIN.get().getDefaultInstance()));
+        items.add((ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get().getDefaultInstance()));
+        items.add((ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get().getDefaultInstance()));
+        items.add((ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get().getDefaultInstance()));
+        items.add((ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get().getDefaultInstance()));
 
         items.add(ModItems.NUMISMATIST_SPAWN_EGG.get().getDefaultInstance());
 

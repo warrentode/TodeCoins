@@ -5,7 +5,6 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.saveddata.SavedData;
 import org.jetbrains.annotations.NotNull;
 
@@ -63,7 +62,7 @@ public class NumismatistSavedData extends SavedData {
     }
 
     public static NumismatistSavedData get(@NotNull MinecraftServer server) {
-        ServerLevel serverLevel = server.getLevel(Level.OVERWORLD);
+        ServerLevel serverLevel = server.createCommandSourceStack().getLevel();
         assert serverLevel != null;
         return serverLevel.getDataStorage().computeIfAbsent(tag -> new NumismatistSavedData().read(tag), NumismatistSavedData::new, DATA_NAME);
     }

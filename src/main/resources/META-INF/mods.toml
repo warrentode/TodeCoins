@@ -44,30 +44,6 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
     ordering = "BEFORE"
     side = "BOTH"
 [[dependencies.todecoins]]
-    modId = "sophisticatedcore"
-    mandatory = false
-    versionRange = "[1.19.2-0.5.83.394,)"
-    ordering = "BEFORE"
-    side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "sophisticatedbackpacks"
-    mandatory = false
-    versionRange = "[1.19.2-3.18.55.889,)"
-    ordering = "BEFORE"
-    side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "puzzleslib"
-    mandatory = false
-    versionRange = "[1.19.2-4.4.3,)"
-    ordering = "BEFORE"
-    side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "bagofholding"
-    mandatory = false
-    versionRange = "[1.19.2-4.1.6,)"
-    ordering = "BEFORE"
-    side = "BOTH"
-[[dependencies.todecoins]]
     modId = "cagerium"
     mandatory = false
     versionRange = "[1.19.2-1.1.8,)"
@@ -82,7 +58,7 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
 [[dependencies.todecoins]]
     modId = "friendsandfoes"
     mandatory = false
-    versionRange = "[1.8.6,)"
+    versionRange = "[2.0.6,)"
     ordering = "BEFORE"
     side = "BOTH"
 [[dependencies.todecoins]]
@@ -90,4 +66,10 @@ description = '''Adds currency, collectible coins, a collectible coin trader, a 
     mandatory = false
     versionRange = "[1.19.2-1.5.7,)"
     ordering = "BEFORE"
+    side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "unusualend"
+    mandatory = false
+    versionRange = "[1.4.3,)"
+    ordering = "NONE"
     side = "BOTH"

@@ -18,10 +18,10 @@ public class PatronCommemorativeCoinItem extends CollectibleCoin {
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltips, @NotNull TooltipFlag flag) {
         if (Screen.hasShiftDown()) {
             tooltips.add(Component.translatable("tooltips.collectible_patron_coin.hover").withStyle(ChatFormatting.GRAY));
         }
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
+        super.appendHoverText(stack, level, tooltips, flag);
     }
 }

@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "trade": {
+      "conditions": {},
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "todecoins:textures/block/pot.png",
+    "description": {
+      "translate": "advancement.collectibleCoins.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:collectible_coin_scholar_owl",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.collectibleCoins"
+    }
+  },
+  "requirements": [
+    [
+      "trade"
+    ]
+  ]
+}

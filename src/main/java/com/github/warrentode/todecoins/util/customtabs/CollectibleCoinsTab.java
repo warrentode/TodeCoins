@@ -21,20 +21,18 @@ public class CollectibleCoinsTab extends CreativeModeTab {
     @Override
     public void fillItemList(final @NotNull NonNullList<ItemStack> items) {
         // holiday coins
-        // EASTER COIN SET
-        items.add(ModItems.EASTER_COIN_2023.get().getDefaultInstance());
-        // HALLOWEEN COIN SET
-        items.add(ModItems.HALLOWEEN_COIN_2023.get().getDefaultInstance());
-        // CHRISTMAS COIN SET
-        items.add(ModItems.CHRISTMAS_COIN_2023.get().getDefaultInstance());
-        // BIRTHDAY COIN SET
-        items.add(ModItems.BIRTHDAY_COIN_2023.get().getDefaultInstance());
+        items.add(ModItems.EASTER_COIN.get().getDefaultInstance());
+        items.add(ModItems.HALLOWEEN_COIN.get().getDefaultInstance());
+        items.add(ModItems.CHRISTMAS_COIN.get().getDefaultInstance());
+        items.add(ModItems.BIRTHDAY_COIN.get().getDefaultInstance());
+        items.add(ModItems.NEW_YEAR_COIN.get().getDefaultInstance());
         // PATRON COIN SET
         items.add(ModItems.SCHOLAR_OWL_COIN.get().getDefaultInstance());
         items.add(ModItems.TUXEDO_CAT_COIN.get().getDefaultInstance());
         items.add(ModItems.LITTLE_BEAR_COIN.get().getDefaultInstance());
         items.add(ModItems.MARSHALL_NASH_CARNATION_COIN.get().getDefaultInstance());
         items.add(ModItems.MARSHALL_NASH_COSMOS_COIN.get().getDefaultInstance());
+        items.add(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get().getDefaultInstance());
         items.add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get().getDefaultInstance());
         items.add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get().getDefaultInstance());
         // gameplay coins

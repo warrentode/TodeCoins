@@ -43,7 +43,9 @@
   },
   "requirements": [
     [
-      "craft_nether_currency_stamp",
+      "craft_nether_currency_stamp"
+    ],
+    [
       "craft_nether_gold_coin"
     ]
   ]

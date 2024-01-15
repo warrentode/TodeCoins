@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.mixin;
 
-import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.util.CalendarUtil;
@@ -135,16 +134,13 @@ public abstract class PiglinBarterMixin {
 
     @Unique
     private static boolean todeCoins$isGiftEvent(ServerLevel serverLevel) {
-        if (ModList.get().isLoaded("sereneseasons")) {
-            return SereneSeasonsCompat.SeasonCompat.isChristmas(serverLevel) || SereneSeasonsCompat.SeasonCompat.isHalloween(serverLevel) ||
-                    SereneSeasonsCompat.SeasonCompat.isBirthday(serverLevel) || SereneSeasonsCompat.SeasonCompat.isAnniversary(serverLevel);
-        }
-        return CalendarUtil.Season.isChristmas() || CalendarUtil.Season.isHalloween()
-                || CalendarUtil.Season.isBirthday() || CalendarUtil.Season.isAnniversary();
+        return CalendarUtil.check("EASTER") || CalendarUtil.check("HALLOWEEN")
+                || CalendarUtil.check("CHRISTMAS") || CalendarUtil.check("BIRTHDAY")
+                || CalendarUtil.check("ANNIVERSARY") || CalendarUtil.check("NEW_YEAR");
     }
 
     @Inject(at = @At("HEAD"), method = "stopHoldingOffHandItem", cancellable = true)
-    private static void todecoins_stopHoldingOffHandItem(@NotNull Piglin piglin, boolean shouldBarter, CallbackInfo ci) {
+    private static void todeCoins_stopHoldingOffHandItem(@NotNull Piglin piglin, boolean shouldBarter, CallbackInfo ci) {
         MinecraftServer server = piglin != null ? piglin.getServer() : null;
         ServerLevel serverLevel = server != null ? server.getLevel(piglin.level.dimension()) : null;
         ServerPlayer player = server != null ? server.createCommandSourceStack().getPlayer() : null;
@@ -155,25 +151,25 @@ public abstract class PiglinBarterMixin {
             if (shouldBarter && barterItem) {
                 piglin.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
                 if (shouldBarter && todeCoins$giftChance >= todeCoins$giftRate && todeCoins$isGiftEvent(serverLevel)) {
-                    throwItems(piglin, todecoins_getEventGiftLootResponseItems(piglin));
+                    throwItems(piglin, todeCoins_getEventGiftLootResponseItems(piglin));
                 }
                 if (netherGoldCoin) {
-                    throwItems(piglin, todecoins_getNetherGoldCoinBarterResponseItems(piglin));
+                    throwItems(piglin, todeCoins_getNetherGoldCoinBarterResponseItems(piglin));
                 }
                 else if (shouldBarter && todeCoins$isWearingNetheritePiglinCoin(player)) {
-                    throwItems(piglin, todecoins_getNetheritePiglinCoinBarterResponseItems(piglin));
+                    throwItems(piglin, todeCoins_getNetheritePiglinCoinBarterResponseItems(piglin));
                 }
                 else if (shouldBarter && todeCoins$isWearingGoldPiglinCoin(player)) {
-                    throwItems(piglin, todecoins_getGoldPiglinCoinBarterResponseItems(piglin));
+                    throwItems(piglin, todeCoins_getGoldPiglinCoinBarterResponseItems(piglin));
                 }
                 else if (shouldBarter && todeCoins$isWearingIronPiglinCoin(player)) {
-                    throwItems(piglin, todecoins_getIronPiglinCoinBarterResponseItems(piglin));
+                    throwItems(piglin, todeCoins_getIronPiglinCoinBarterResponseItems(piglin));
                 }
                 else if (shouldBarter && todeCoins$isWearingCopperPiglinCoin(player)) {
-                    throwItems(piglin, todecoins_getCopperPiglinCoinBarterResponseItems(piglin));
+                    throwItems(piglin, todeCoins_getCopperPiglinCoinBarterResponseItems(piglin));
                 }
                 else if (shouldBarter && todeCoins$isWearingZombiePiglinCoin(player)) {
-                    throwItems(piglin, todecoins_getZombiePiglinCoinBarterResponseItems(piglin));
+                    throwItems(piglin, todeCoins_getZombiePiglinCoinBarterResponseItems(piglin));
                 }
                 else {
                     throwItems(piglin, getBarterResponseItems(piglin));
@@ -184,61 +180,61 @@ public abstract class PiglinBarterMixin {
     }
 
     @Unique
-    private static List<ItemStack> todecoins_getEventGiftLootResponseItems(@NotNull Piglin piglin) {
+    private static List<ItemStack> todeCoins_getEventGiftLootResponseItems(@NotNull Piglin piglin) {
         LootTable lootTable = Objects.requireNonNull(piglin.level.getServer()).getLootTables().get(ModBuiltInLootTables.PIGLIN_EVENT_BARTER_LOOT);
         return lootTable.getRandomItems((new LootContext.Builder((ServerLevel) piglin.level)).withParameter(LootContextParams.THIS_ENTITY, piglin).withRandom(piglin.level.random).create(LootContextParamSets.PIGLIN_BARTER));
     }
 
     @Unique
-    private static List<ItemStack> todecoins_getZombiePiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
+    private static List<ItemStack> todeCoins_getZombiePiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
         LootTable lootTable = Objects.requireNonNull(piglin.level.getServer()).getLootTables().get(ModBuiltInLootTables.ZOMBIE_PIGLIN_COIN_BARTER_LOOT);
         return lootTable.getRandomItems((new LootContext.Builder((ServerLevel) piglin.level)).withParameter(LootContextParams.THIS_ENTITY, piglin).withRandom(piglin.level.random).create(LootContextParamSets.PIGLIN_BARTER));
     }
 
     @Unique
-    private static List<ItemStack> todecoins_getCopperPiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
+    private static List<ItemStack> todeCoins_getCopperPiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
         LootTable lootTable = Objects.requireNonNull(piglin.level.getServer()).getLootTables().get(ModBuiltInLootTables.COPPER_PIGLIN_COIN_BARTER_LOOT);
         return lootTable.getRandomItems((new LootContext.Builder((ServerLevel) piglin.level)).withParameter(LootContextParams.THIS_ENTITY, piglin).withRandom(piglin.level.random).create(LootContextParamSets.PIGLIN_BARTER));
     }
 
     @Unique
-    private static List<ItemStack> todecoins_getIronPiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
+    private static List<ItemStack> todeCoins_getIronPiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
         LootTable lootTable = Objects.requireNonNull(piglin.level.getServer()).getLootTables().get(ModBuiltInLootTables.IRON_PIGLIN_COIN_BARTER_LOOT);
         return lootTable.getRandomItems((new LootContext.Builder((ServerLevel) piglin.level)).withParameter(LootContextParams.THIS_ENTITY, piglin).withRandom(piglin.level.random).create(LootContextParamSets.PIGLIN_BARTER));
     }
     @Unique
-    private static List<ItemStack> todecoins_getGoldPiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
+    private static List<ItemStack> todeCoins_getGoldPiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
         LootTable lootTable = Objects.requireNonNull(piglin.level.getServer()).getLootTables().get(ModBuiltInLootTables.GOLD_PIGLIN_COIN_BARTER_LOOT);
         return lootTable.getRandomItems((new LootContext.Builder((ServerLevel) piglin.level)).withParameter(LootContextParams.THIS_ENTITY, piglin).withRandom(piglin.level.random).create(LootContextParamSets.PIGLIN_BARTER));
     }
     @Unique
-    private static List<ItemStack> todecoins_getNetheritePiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
+    private static List<ItemStack> todeCoins_getNetheritePiglinCoinBarterResponseItems(@NotNull Piglin piglin) {
         LootTable lootTable = Objects.requireNonNull(piglin.level.getServer()).getLootTables().get(ModBuiltInLootTables.NETHERITE_PIGLIN_COIN_BARTER_LOOT);
         return lootTable.getRandomItems((new LootContext.Builder((ServerLevel) piglin.level)).withParameter(LootContextParams.THIS_ENTITY, piglin).withRandom(piglin.level.random).create(LootContextParamSets.PIGLIN_BARTER));
     }
 
     @Unique
-    private static List<ItemStack> todecoins_getNetherGoldCoinBarterResponseItems(@NotNull Piglin piglin) {
+    private static List<ItemStack> todeCoins_getNetherGoldCoinBarterResponseItems(@NotNull Piglin piglin) {
         LootTable lootTable = Objects.requireNonNull(piglin.level.getServer()).getLootTables().get(ModBuiltInLootTables.NETHER_GOLD_COIN_PIGLIN_BARTERING);
         return lootTable.getRandomItems((new LootContext.Builder((ServerLevel) piglin.level)).withParameter(LootContextParams.THIS_ENTITY, piglin).withRandom(piglin.level.random).create(LootContextParamSets.PIGLIN_BARTER));
     }
 
     @Inject(at = @At("HEAD"), method = "wantsToPickup", cancellable = true)
-    private static void todecoins_wantsToPickup(Piglin piglin, @NotNull ItemStack pStack, CallbackInfoReturnable<Boolean> cir) {
+    private static void todeCoins_wantsToPickup(Piglin piglin, @NotNull ItemStack pStack, CallbackInfoReturnable<Boolean> cir) {
         if (pStack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS) && isNotHoldingLovedItemInOffHand(piglin)) {
             cir.setReturnValue(true);
             cir.cancel();
         }
     }
     @Inject(at = @At("HEAD"), method = "canAdmire", cancellable = true)
-    private static void todecoins_canAdmire(Piglin piglin, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+    private static void todeCoins_canAdmire(Piglin piglin, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (!isAdmiringDisabled(piglin) && !isAdmiringItem(piglin) && piglin.isAdult() && (stack.isPiglinCurrency() || stack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS))) {
             cir.setReturnValue(true);
             cir.cancel();
         }
     }
     @Inject(at = @At("HEAD"), method = "isBarterCurrency", cancellable = true)
-    private static void todecoins_isBarterCurrency(@NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+    private static void todeCoins_isBarterCurrency(@NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (stack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS)) {
             cir.setReturnValue(true);
             cir.cancel();

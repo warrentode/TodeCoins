@@ -12,10 +12,7 @@
     "#forge:ghast",
     "#forge:guardian",
     "#forge:husk",
-    {
-      "id": "friendsandfoes:iceologer",
-      "required": false
-    },
+    "#forge:iceologer",
     "#forge:illusioner",
     "#forge:magma_cube",
     "#forge:phantom",

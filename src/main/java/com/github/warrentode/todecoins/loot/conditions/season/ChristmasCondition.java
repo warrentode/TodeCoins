@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.loot.conditions.season;
 
-import com.github.warrentode.todecoins.integration.SereneSeasonsCompat;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.google.gson.JsonDeserializationContext;
@@ -11,7 +10,6 @@ import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
-import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -30,12 +28,7 @@ public class ChristmasCondition implements LootItemCondition {
 
     public boolean test(@NotNull LootContext context) {
         ServerLevel level = context.getLevel();
-        if (ModList.get().isLoaded("sereneseasons")) {
-            return this.isChristmas = SereneSeasonsCompat.SeasonCompat.isChristmas(level);
-        }
-        else {
-            return this.isChristmas = CalendarUtil.Season.isChristmas();
-        }
+        return this.isChristmas = CalendarUtil.check("CHRISTMAS");
     }
 
     public static ChristmasCondition.Builder event() {

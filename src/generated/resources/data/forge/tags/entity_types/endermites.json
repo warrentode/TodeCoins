@@ -1,5 +1,21 @@
 {
-    "values": [
-        "minecraft:endermite"
-    ]
+  "values": [
+    {
+      "id": "unusualend:ender_blob",
+      "required": false
+    },
+    {
+      "id": "unusualend:ender_firefly",
+      "required": false
+    },
+    {
+      "id": "unusualend:bolok",
+      "required": false
+    },
+    {
+      "id": "phantasm:crystie",
+      "required": false
+    },
+    "minecraft:endermite"
+  ]
 }

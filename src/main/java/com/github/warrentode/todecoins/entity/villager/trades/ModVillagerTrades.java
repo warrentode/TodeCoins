@@ -46,9 +46,6 @@ public class ModVillagerTrades {
                 trades.get(journeyman).add(new ItemForItemTrade(ModItems.GOLD_COIN.get().asItem().getDefaultInstance(), 1, ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 2, OneSetForItemTrade.COMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_3_SELL, ItemForItemTrade.LOW_TIER_PRICE_MULTIPLIER));
                 trades.get(journeyman).add(new ItemForItemTrade(ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 2, ModItems.GOLD_COIN.get().asItem().getDefaultInstance(), 1, OneSetForItemTrade.COMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_3_BUY, ItemForItemTrade.LOW_TIER_PRICE_MULTIPLIER));
 
-                trades.get(journeyman).add(new ItemForItemTrade(ModItems.GOLD_COIN.get().asItem().getDefaultInstance(), 1, ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 2, OneSetForItemTrade.COMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_3_SELL, ItemForItemTrade.LOW_TIER_PRICE_MULTIPLIER));
-                trades.get(journeyman).add(new ItemForItemTrade(ModItems.IRON_COIN.get().asItem().getDefaultInstance(), 2, ModItems.GOLD_COIN.get().asItem().getDefaultInstance(), 1, OneSetForItemTrade.COMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_3_BUY, ItemForItemTrade.LOW_TIER_PRICE_MULTIPLIER));
-
                 trades.get(expert).add(new ItemForItemTrade(ModItems.EMERALD_BANK_NOTE.get().asItem().getDefaultInstance(), 1, Items.EMERALD.asItem().getDefaultInstance(), 64, OneSetForItemTrade.COMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_4_SELL, ItemForItemTrade.LOW_TIER_PRICE_MULTIPLIER));
                 trades.get(expert).add(new ItemForItemTrade(Items.EMERALD.asItem().getDefaultInstance(), 64, ModItems.EMERALD_BANK_NOTE.get().asItem().getDefaultInstance(), 1, OneSetForItemTrade.COMMON_ITEMS_SUPPLY, ItemForItemTrade.XP_LEVEL_4_BUY, ItemForItemTrade.LOW_TIER_PRICE_MULTIPLIER));
 

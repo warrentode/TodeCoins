@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "chocolate_coins",
+  "ingredients": [
+    {
+      "tag": "forge:cocoa"
+    },
+    {
+      "tag": "forge:sugar"
+    },
+    {
+      "tag": "forge:milk/milk"
+    },
+    {
+      "tag": "forge:fat"
+    },
+    {
+      "tag": "forge:crops/berries"
+    },
+    {
+      "item": "minecraft:phantom_membrane"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "todecoins:chocolate_coin_bubbly_berry"
+  }
+}

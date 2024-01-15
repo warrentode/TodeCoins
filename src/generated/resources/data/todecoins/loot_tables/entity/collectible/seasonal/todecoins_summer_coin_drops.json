@@ -14,10 +14,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:allay"
             }
@@ -40,10 +36,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -70,10 +62,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:bat"
             }
@@ -96,10 +84,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -126,10 +110,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:bee"
             }
@@ -152,10 +132,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -182,10 +158,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:cat"
             }
@@ -208,10 +180,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -238,10 +206,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:chicken"
             }
@@ -264,10 +228,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -294,10 +254,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:cow"
             }
@@ -320,10 +276,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -350,10 +302,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:moobloom"
             }
@@ -376,10 +324,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -406,10 +350,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:ocelot"
             }
@@ -432,10 +372,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -462,10 +398,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:pufferfish"
             }
@@ -488,10 +420,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -518,10 +446,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:tropical_fish"
             }
@@ -544,10 +468,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -574,10 +494,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:donkey"
             }
@@ -600,10 +516,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -630,10 +542,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:skeleton_horse"
             }
@@ -656,10 +564,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -686,10 +590,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:fox"
             }
@@ -712,10 +612,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -742,10 +638,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:glow_squid"
             }
@@ -768,10 +660,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -798,10 +686,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:parrot"
             }
@@ -824,10 +708,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -854,10 +734,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:pig"
             }
@@ -880,10 +756,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -910,10 +782,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:sheep"
             }
@@ -936,10 +804,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -966,10 +830,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:sniffer"
             }
@@ -992,10 +852,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1022,10 +878,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:strider"
             }
@@ -1048,10 +900,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1078,10 +926,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:tadpole"
             }
@@ -1104,10 +948,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1134,10 +974,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:villager"
             }
@@ -1160,10 +996,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1190,10 +1022,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:dolphin"
             }
@@ -1216,10 +1044,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1246,10 +1070,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:iron_golem"
             }
@@ -1272,10 +1092,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1302,10 +1118,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:trader_llama"
             }
@@ -1328,10 +1140,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1358,10 +1166,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:polar_bear"
             }
@@ -1384,10 +1188,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1414,10 +1214,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:wolf"
             }
@@ -1440,10 +1236,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1470,10 +1262,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:creeper"
             }
@@ -1496,10 +1284,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1526,10 +1310,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:elder_guardian"
             }
@@ -1552,10 +1332,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1582,10 +1358,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:endermites"
             }
@@ -1608,10 +1380,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1638,10 +1406,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:ghast"
             }
@@ -1664,10 +1428,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1694,10 +1454,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:magma_cube"
             }
@@ -1720,10 +1476,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1750,10 +1502,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:phantom"
             }
@@ -1776,10 +1524,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1806,10 +1550,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:pillager"
             }
@@ -1832,10 +1572,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1862,10 +1598,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:shulker"
             }
@@ -1888,10 +1620,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1918,10 +1646,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:skeleton"
             }
@@ -1944,10 +1668,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -1974,10 +1694,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:vex"
             }
@@ -2000,10 +1716,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2030,10 +1742,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:warden"
             }
@@ -2056,10 +1764,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2086,10 +1790,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:wither_skeleton"
             }
@@ -2112,10 +1812,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2142,10 +1838,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:zoglin"
             }
@@ -2168,10 +1860,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2198,10 +1886,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:zombie_villager"
             }
@@ -2224,10 +1908,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2254,10 +1934,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:giant"
             }
@@ -2280,10 +1956,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2310,10 +1982,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:copper_golem"
             }
@@ -2336,10 +2004,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2366,10 +2030,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:iceologer"
             }
@@ -2392,10 +2052,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2422,10 +2078,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:wildfire"
             }
@@ -2448,10 +2100,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2478,10 +2126,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:crab"
             }
@@ -2504,10 +2148,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2534,10 +2174,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:penguin"
             }
@@ -2560,10 +2196,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",
@@ -2590,10 +2222,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:piglin_merchant"
             }
@@ -2618,10 +2246,6 @@
               "condition": "minecraft:killed_by_player"
             },
             {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:rascal"
             }
@@ -2644,10 +2268,6 @@
             },
             {
               "condition": "minecraft:killed_by_player"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
             },
             {
               "condition": "todecoins:entity_type_tag_condition",

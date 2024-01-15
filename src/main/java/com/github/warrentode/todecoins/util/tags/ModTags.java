@@ -32,17 +32,20 @@ public class ModTags {
         public static final TagKey<Item> CURRENCY_STAMPS = modItemTag("currency_stamps");
 
         public static final TagKey<Item> COLLECTIBLE_COINS = modItemTag("collectible_coins");
+        public static final TagKey<Item> COPPER_COLLECTIBLE_COINS = modItemTag("collectible_coins/copper");
+        public static final TagKey<Item> IRON_COLLECTIBLE_COINS = modItemTag("collectible_coins/iron");
+        public static final TagKey<Item> GOLD_COLLECTIBLE_COINS = modItemTag("collectible_coins/gold");
+        public static final TagKey<Item> NETHERITE_COLLECTIBLE_COINS = modItemTag("collectible_coins/netherite");
+        public static final TagKey<Item> ENDONIAN_COLLECTIBLE_COINS = modItemTag("collectible_coins/endonian");
+
         // holiday coins
         public static final TagKey<Item> HOLIDAY_COIN_SET = modItemTag("collectible_coins/holiday_coin_set");
-        public static final TagKey<Item> BIRTHDAY_COIN_SET = modItemTag("collectible_coins/holiday_coins/birthday_coin_set");
-        public static final TagKey<Item> HALLOWEEN_COIN_SET = modItemTag("collectible_coins/holiday_coins/halloween_coin_set");
-        public static final TagKey<Item> CHRISTMAS_COIN_SET = modItemTag("collectible_coins/holiday_coins/christmas_coin_set");
-        public static final TagKey<Item> EASTER_COIN_SET = modItemTag("collectible_coins/holiday_coins/easter_coin_set");
-        // sponsor perk coins
+        // patron coins
         public static final TagKey<Item> PATRON_COIN_SET = modItemTag("collectible_coins/patron_coin_set");
         public static final TagKey<Item> LIFETIME_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/lifetime_patron_coin_set");
         public static final TagKey<Item> CARNATION_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/carnation_patron_coin_set");
         public static final TagKey<Item> COSMOS_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/cosmos_patron_coin_set");
+        public static final TagKey<Item> SUNFLOWER_PATRON_COIN_SET = modItemTag("collectible_coins/patron_coins/sunflower_patron_coin_set");
         // gameplay coins
         public static final TagKey<Item> GAMEPLAY_COIN_SET = modItemTag("collectible_coins/gameplay_coin_set");
         public static final TagKey<Item> HERO_COIN_SET = modItemTag("collectible_coins/gameplay_coins/hero_coin_set");

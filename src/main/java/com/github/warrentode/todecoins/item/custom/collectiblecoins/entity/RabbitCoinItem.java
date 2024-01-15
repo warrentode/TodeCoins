@@ -1,18 +1,23 @@
 package com.github.warrentode.todecoins.item.custom.collectiblecoins.entity;
 
+
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
+import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -23,10 +28,30 @@ import top.theillusivec4.curios.common.capability.CurioItemCapability;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.UUID;
 
 public class RabbitCoinItem extends CollectibleCoin implements ICurioItem {
-    public RabbitCoinItem(Properties pProperties) {
-        super(pProperties);
+    private CollectibleCoinProperties.Material material;
+    private int coinEffectDuration;
+    private int coinEffectAmplifier;
+
+    public RabbitCoinItem(Item.Properties properties, @NotNull CollectibleCoinProperties.Material material) {
+        super(properties);
+        this.material = material.getCoinMaterial();
+        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+    }
+
+    public CollectibleCoinProperties.Material getCoinMaterial() {
+        return this.material;
+    }
+
+    public int getCoinEffectDuration() {
+        return this.coinEffectDuration;
+    }
+
+    public int getCoinEffectAmplifier() {
+        return this.coinEffectAmplifier;
     }
 
     @Nullable
@@ -43,35 +68,73 @@ public class RabbitCoinItem extends CollectibleCoin implements ICurioItem {
             }
 
             @Override
-            public void curioTick(SlotContext slotContext) {
-                LivingEntity livingEntity = slotContext.entity();
-                int i = 0;
-                if (livingEntity.level.getDifficulty() == Difficulty.EASY) {
-                    i = 1;
+            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
+                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
+
+                // material based attributes
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.COPPER) {
+                    attribute.put(Attributes.MAX_HEALTH,
+                            new AttributeModifier(uuid, "generic.max_health", 4,
+                                    AttributeModifier.Operation.ADDITION));
                 }
-                else if (livingEntity.level.getDifficulty() == Difficulty.NORMAL) {
-                    i = 2;
+                else {
+                    attribute.put(Attributes.MAX_HEALTH,
+                            new AttributeModifier(uuid, "generic.max_health", 2,
+                                    AttributeModifier.Operation.ADDITION));
                 }
-                else if (livingEntity.level.getDifficulty() == Difficulty.HARD) {
-                    i = 3;
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.IRON) {
+                    attribute.put(Attributes.ATTACK_DAMAGE,
+                            new AttributeModifier(uuid, "generic.attack_damage", 1,
+                                    AttributeModifier.Operation.ADDITION));
                 }
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, i,
-                        false, false, false));
-                livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, i,
-                        false, false, false));
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.GOLDEN) {
+                    attribute.put(Attributes.ATTACK_SPEED,
+                            new AttributeModifier(uuid, "generic.attack_speed", 1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+                if (getCoinMaterial() == CollectibleCoinProperties.Material.NETHERITE) {
+                    attribute.put(Attributes.KNOCKBACK_RESISTANCE,
+                            new AttributeModifier(uuid, "generic.knockback_resistance", 0.1,
+                                    AttributeModifier.Operation.ADDITION));
+                }
+
+
+                attribute.put(Attributes.ATTACK_KNOCKBACK,
+                        new AttributeModifier(uuid, "generic.attack_knockback", 1,
+                                AttributeModifier.Operation.ADDITION));
+
+                return attribute;
             }
 
             @Override
-            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
+            public void curioTick(SlotContext slotContext) {
                 LivingEntity livingEntity = slotContext.entity();
-                livingEntity.removeEffect(MobEffects.JUMP);
-                livingEntity.removeEffect(MobEffects.MOVEMENT_SPEED);
+
+                if (livingEntity != null && !livingEntity.level.isClientSide()
+                        && (!livingEntity.hasEffect(MobEffects.JUMP) || !livingEntity.hasEffect(MobEffects.MOVEMENT_SPEED))) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                            false, false, true));
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                            false, false, true));
+
+                    stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
+                }
             }
 
             @Nonnull
             @Override
             public SoundInfo getEquipSound(SlotContext context) {
                 return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 2.0F);
+            }
+
+            @Override
+            public void onEquip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onEquip(slotContext, prevStack);
+            }
+
+            @Override
+            public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onUnequip(slotContext, prevStack);
             }
 
             @Override
@@ -93,16 +156,11 @@ public class RabbitCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.coin_effects.jump_boost").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.coin_effects.movement_speed").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects.snow_walk").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.JUMP.getDescriptionId()).withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable(MobEffects.MOVEMENT_SPEED.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }
         });
-    }
-
-    @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.collectible_rabbit_coin.hover").withStyle(ChatFormatting.GRAY));
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 }

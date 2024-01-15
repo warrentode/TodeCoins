@@ -25,28 +25,32 @@ import java.util.function.BiConsumer;
 public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(ModBuiltInLootTables.PIGLIN_EVENT_BARTER_LOOT,
-                LootTable.lootTable().withPool(
-                        LootPool.lootPool()
+                LootTable.lootTable().withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
-                                .add(LootItem.lootTableItem(Items.CAKE))
-                                .add(LootItem.lootTableItem(Items.PUMPKIN_PIE))
-                                .add(LootItem.lootTableItem(Items.COOKIE))
-                                .add(LootItem.lootTableItem(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.MILK_BONE_CHOCOLATE_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get()))
-                                .add(LootItem.lootTableItem(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get()))
-                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_LOOT).when(BirthdayCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get()).when(EasterCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get()).when(HalloweenCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.MILK_BONE_CHOCOLATE_COIN.get()).when(HalloweenCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get()).when(HalloweenCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get()).when(HalloweenCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get()).when(BirthdayCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get()).when(ChristmasCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get()).when(NewYearCondition.event()))
+                        .add(LootItem.lootTableItem(ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get()).when(AnniversaryCondition.event()))
+                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EASTER_COIN_LOOT).when(EasterCondition.event()))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_LOOT).when(HalloweenCondition.event()))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT).when(ChristmasCondition.event()))
+                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_BIRTHDAY_COIN_LOOT).when(BirthdayCondition.event()))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT).when(AnniversaryCondition.event()))
+                        .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NEW_YEAR_COIN_LOOT).when(NewYearCondition.event()))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_COIN.get()).when(SpringCondition.season()))
                                 .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_COIN.get()).when(SummerCondition.season()))
                                 .add(LootItem.lootTableItem(ModItems.GOLD_PIGLIN_COIN.get()).when(AutumnCondition.season()))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_COIN.get()).when(WinterCondition.season()))
-                                              ));
+                        .add(LootItem.lootTableItem(Items.CAKE))
+                        .add(LootItem.lootTableItem(Items.COOKIE))
+                ));
         consumer.accept(ModBuiltInLootTables.ZOMBIE_PIGLIN_COIN_BARTER_LOOT,
-                LootTable.lootTable().withPool(
-                        LootPool.lootPool()
+                LootTable.lootTable().withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem.lootTableItem(ModItems.COPPER_PIGLIN_COIN.get()).when(SpringCondition.season()).setWeight(4))
                                 .add(LootItem.lootTableItem(ModItems.IRON_PIGLIN_COIN.get()).when(SummerCondition.season()).setWeight(4))
@@ -76,7 +80,7 @@ public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
                                         .apply((new EnchantRandomlyFunction.Builder()).withEnchantment(Enchantments.THORNS)))
                                 .add(LootItem.lootTableItem(Items.DIAMOND_BOOTS).setWeight(10)
                                         .apply((new EnchantRandomlyFunction.Builder()).withEnchantment(Enchantments.THORNS)))
-                                              ));
+                ));
         consumer.accept(ModBuiltInLootTables.COPPER_PIGLIN_COIN_BARTER_LOOT,
                 LootTable.lootTable().withPool(
                         LootPool.lootPool()

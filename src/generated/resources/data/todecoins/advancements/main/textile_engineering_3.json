@@ -1,0 +1,52 @@
+{
+  "parent": "todecoins:main/otherworldly_coin",
+  "criteria": {
+    "craft_endonian_fiber": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:endonian_fiber"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_endonian_thread": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:endonian_thread"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.textileEngineering3.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:endonian_thread"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.textileEngineering3"
+    }
+  },
+  "requirements": [
+    [
+      "craft_endonian_fiber"
+    ],
+    [
+      "craft_endonian_thread"
+    ]
+  ]
+}

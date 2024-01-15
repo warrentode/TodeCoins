@@ -5,7 +5,12 @@
   "refmap": "mixins.todecoins.refmap.json",
   "mixins": [
     "PiglinBarterMixin",
-    "VillagerMixin",
+    "SilenceEntityMixin",
+    "SilenceLivingEntityMixin",
+    "SilenceMobMixin",
+    "SilencePlayerMixin",
+    "StuckInBlockMixin",
+    "VillagerPricesMixin",
     "WalkThroughBerryBushMixin",
     "WitherLootMixin"
   ],

@@ -1,0 +1,83 @@
+{
+  "parent": "todecoins:collectible/skeleton_coins",
+  "criteria": {
+    "find_item.todecoins.collectible_coin_skeleton_horse_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_horse_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_skeleton_horse_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_horse_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_skeleton_horse_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_horse_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "find_item.todecoins.collectible_coin_skeleton_horse_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_skeleton_horse_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.skeletonHorseCoinSet.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:collectible_coin_skeleton_horse_copper",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.skeletonHorseCoinSet"
+    }
+  },
+  "requirements": [
+    [
+      "find_item.todecoins.collectible_coin_skeleton_horse_copper"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_horse_iron"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_horse_gold"
+    ],
+    [
+      "find_item.todecoins.collectible_coin_skeleton_horse_netherite"
+    ]
+  ]
+}

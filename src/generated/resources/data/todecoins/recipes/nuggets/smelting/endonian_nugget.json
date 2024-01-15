@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "tag": "todecoins:collectible_coins/endonian"
+  },
+  "result": "todecoins:endonian_nugget"
+}

@@ -4,10 +4,7 @@
     "#forge:vex",
     "#forge:ravager",
     "#forge:evoker",
-    {
-      "id": "friendsandfoes:iceologer",
-      "required": false
-    },
+    "#forge:iceologer",
     "#forge:illusioner",
     "#forge:pillager",
     "#forge:ravager",

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "todecoins:item/chocolate_coin_carmel_crisp"
+  }
+}

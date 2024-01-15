@@ -131,6 +131,7 @@ public class ModChestLootTablesGen extends ChestLoot {
     public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
     public static final LootItemCondition.Builder CHRISTMAS_EVENT = ChristmasCondition.event();
     public static final LootItemCondition.Builder EASTER_EVENT = EasterCondition.event();
+    public static final LootItemCondition.Builder NEW_YEAR_EVENT = NewYearCondition.event();
     public static final LootItemCondition.Builder ANNIVERSARY_EVENT = AnniversaryCondition.event();
     public static final LootItemCondition.Builder SPRING = SpringCondition.season();
     public static final LootItemCondition.Builder SUMMER = SummerCondition.season();
@@ -205,7 +206,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_BANK_NOTE_LOOT)
                                         .setWeight(2).setQuality(5).when(LootItemRandomChanceCondition.randomChance(0.1F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_COLLECTIBLE_COIN_LOOT)
-                                        .setWeight(1).setQuality(0).when(LootItemRandomChanceCondition.randomChance(0.2F)))
+                                        .setWeight(1).setQuality(0).when(LootItemRandomChanceCondition.randomChance(0.5F)))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_LUCKY_COIN_LOOT)
                                         .setWeight(1).setQuality(6).when(LootItemRandomChanceCondition.randomChance(0.001F)))
                         ));
@@ -230,8 +231,11 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_EASTER_COIN_LOOT).when(EASTER_EVENT)
                                         .when(LootItemRandomChanceCondition.randomChance(0.25F))
                                         .setWeight(1).setQuality(6))
+                                .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_NEW_YEAR_COIN_LOOT).when(NEW_YEAR_EVENT)
+                                        .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                        .setWeight(1).setQuality(6))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SPRING_COIN_LOOT)
-                                        .when(SPRING.or(EASTER_EVENT)).setWeight(1).setQuality(6))
+                                        .when(SPRING.or(EASTER_EVENT).or(NEW_YEAR_EVENT)).setWeight(1).setQuality(6))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_SUMMER_COIN_LOOT)
                                         .when(SUMMER).setWeight(1).setQuality(6))
                                 .add(LootTableReference.lootTableReference(ModBuiltInLootTables.TODECOINS_AUTUMN_COIN_LOOT)
@@ -289,7 +293,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).setWeight(1)
                                         .when(IN_END_CITY)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F))))
-                                .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).setWeight(1)
+                                .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).setWeight(1)
                                         .when(IN_END_CITY))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_LOOT,
@@ -341,7 +345,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
                                 .when(BIRTHDAY_EVENT)
-                                .add(LootItem.lootTableItem(ModItems.BIRTHDAY_COIN_2023.get()))
+                                .add(LootItem.lootTableItem(ModItems.BIRTHDAY_COIN.get()))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_CHRISTMAS_COIN_LOOT,
                 LootTable.lootTable()
@@ -349,7 +353,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
                                 .when(CHRISTMAS_EVENT)
-                                .add(LootItem.lootTableItem(ModItems.CHRISTMAS_COIN_2023.get()))
+                                .add(LootItem.lootTableItem(ModItems.CHRISTMAS_COIN.get()))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_HALLOWEEN_COIN_LOOT,
                 LootTable.lootTable()
@@ -357,7 +361,7 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
                                 .when(HALLOWEEN_EVENT)
-                                .add(LootItem.lootTableItem(ModItems.HALLOWEEN_COIN_2023.get()))
+                                .add(LootItem.lootTableItem(ModItems.HALLOWEEN_COIN.get()))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_EASTER_COIN_LOOT,
                 LootTable.lootTable()
@@ -365,7 +369,15 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .setRolls(ConstantValue.exactly(1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
                                 .when(EASTER_EVENT)
-                                .add(LootItem.lootTableItem(ModItems.EASTER_COIN_2023.get()))
+                                .add(LootItem.lootTableItem(ModItems.EASTER_COIN.get()))
+                        ));
+        consumer.accept(ModBuiltInLootTables.TODECOINS_NEW_YEAR_COIN_LOOT,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .setBonusRolls(ConstantValue.exactly(0F))
+                                .when(NEW_YEAR_EVENT)
+                                .add(LootItem.lootTableItem(ModItems.NEW_YEAR_COIN.get()))
                         ));
         consumer.accept(ModBuiltInLootTables.TODECOINS_ANNIVERSARY_COIN_LOOT,
                 LootTable.lootTable()
@@ -375,17 +387,18 @@ public class ModChestLootTablesGen extends ChestLoot {
                                 .when(ANNIVERSARY_EVENT)
                                 // newest coins weight = total number of entries
                                 .add(LootItem.lootTableItem(ModItems.LITTLE_BEAR_COIN.get())
-                                        .setQuality(0).setWeight(7))
+                                        .setQuality(0).setWeight(1))
                                 .add(LootItem.lootTableItem(ModItems.TUXEDO_CAT_COIN.get())
-                                        .setQuality(0).setWeight(7))
+                                        .setQuality(0).setWeight(1))
                                 .add(LootItem.lootTableItem(ModItems.SCHOLAR_OWL_COIN.get())
-                                        .setQuality(0).setWeight(7))
+                                        .setQuality(0).setWeight(1))
+                                .add(LootItem.lootTableItem(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get())
+                                        .setQuality(0).setWeight(1))
                                 .add(LootItem.lootTableItem(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
-                                        .setQuality(0).setWeight(7))
-                                .add(LootItem.lootTableItem(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get())
-                                        .setQuality(0).setWeight(7))
-                                // old coins weight = 1
+                                        .setQuality(0).setWeight(1))
                                 .add(LootItem.lootTableItem(ModItems.MARSHALL_NASH_CARNATION_COIN.get())
+                                        .setQuality(0).setWeight(1))
+                                .add(LootItem.lootTableItem(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get())
                                         .setQuality(0).setWeight(1))
                                 .add(LootItem.lootTableItem(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get())
                                         .setQuality(0).setWeight(1))

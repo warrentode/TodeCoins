@@ -26,16 +26,17 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "${project.minecraft_version}-${project.mod_version}"
+version = "${project.mc_version}-${project.mod_version}"
 group = "${project.mod_domain}"
-archivesBaseName = "todecoins"
+base {
+    archivesName = "${project.modid}"
+}
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '17'
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 
 minecraft {
-    mappings channel: 'parchment', version: '2022.11.27-1.19.2'
+    mappings channel: 'parchment', version: "${parchment_version}-${mc_version}"
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     // Currently, this location cannot be changed from the default.
 
@@ -111,22 +112,41 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven {
+        // location of the maven that hosts JEI files since January 2023
+        name = "Jared's maven"
+        url = "https://maven.blamejared.com/"
+    }
+    maven {
+        // location of a maven mirror for JEI files, as a fallback
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.19.2-43.3.0'
+    minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
-    implementation 'io.netty:netty-codec:4.1.86.Final'
+    // addresses vulnerabilities with imported external libraries
+    implementation 'io.netty:netty-codec:4.1.104.Final'
+    implementation 'io.netty:netty-handler:4.1.104.Final'
+    implementation 'com.google.guava:guava:33.0.0-jre'
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
 
-    implementation fg.deobf("curse.maven:curios-309927:4523009")
+    // project mod dependencies
+    implementation fg.deobf("curse.maven:curios-309927:4902099")
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:ecologics-570463:4171285")
     implementation fg.deobf("curse.maven:serene-seasons-291874:4037228")
-    implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:4637293")
-    implementation fg.deobf("curse.maven:sophisticated-core-618298:4668694")
-    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4809379")
-    implementation fg.deobf("curse.maven:guard-villagers-360203:4701400")
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4968849")
+    implementation fg.deobf("curse.maven:guard-villagers-360203:4774930")
+    implementation fg.deobf("curse.maven:unusual-end-617757:4549776")
+
+    // compile against the JEI API but do not include it at runtime
+    compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))
+    compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}"))
+    // at runtime, use the full JEI jar for Forge
+    runtimeOnly(fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}"))
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
@@ -134,12 +154,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"  : project.modid,
-                "Specification-Vendor" : project.mod_author,
-                "Specification-Version": "1",
-                "Implementation-Title" : project.modid,
+                "Specification-Title"     : project.modid,
+                "Specification-Vendor"    : project.mod_author,
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.modid,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor": project.mod_author,
+                "Implementation-Vendor"   : project.mod_author,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs"            : "mixins.todecoins.json"
         ])
@@ -158,7 +178,7 @@ tasks.register('updateJson') {
 tasks.register('updateChangeLog', Exec) {
     workingDir(project.projectDir)
     commandLine 'git', 'log', '--date=short', '--pretty=\\"%cd - %s\\"', '--since=1.month', '--no-merges'
-    standardOutput = new PrintStream("${buildDir}/CHANGELOG.txt")
+    standardOutput = new PrintStream("${rootDir}/CHANGELOG.txt")
 }
 
 tasks.register('deobfJar', Jar) { // Generate deobfuscated
@@ -184,7 +204,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = "${project.mod_domain}"
             artifactId = "${project.name}"
-            version = "${project.minecraft_version}-${project.mod_version}"
+            version = "${project.mc_version}-${project.mod_version}"
 
             from components.java
         }

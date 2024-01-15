@@ -45,6 +45,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_halloween_coin_loot");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_christmas_coin_loot");
     public static final ResourceLocation TODECOINS_EASTER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_easter_coin_loot");
+    public static final ResourceLocation TODECOINS_NEW_YEAR_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_new_year_coin_loot");
     public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_anniversary_coin_loot");
     public static final ResourceLocation TODECOINS_SPRING_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_spring_coin_loot");
     public static final ResourceLocation TODECOINS_SUMMER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_summer_coin_loot");
@@ -95,10 +96,14 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_BOSS_EMERALD_HALF_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_half_bank_note_drops");
     public static final ResourceLocation TODECOINS_BOSS_EMERALD_BANK_NOTE_DROPS = register(MODID + ":" + "entity/notes/todecoins_boss_emerald_bank_note_drops");
     // seasonal collectible coin entity drop loot tables - added to the master tables
+    public static final ResourceLocation ENTITY_COLLECTIBLE_COIN_DROPS = register(MODID + ":" + "entity/collectible/entity_collectible_coin_drops");
+    public static final ResourceLocation BOSS_COLLECTIBLE_COIN_DROPS = register(MODID + ":" + "entity/collectible/boss_collectible_coin_drops");
+    public static final ResourceLocation HOLIDAY_COLLECTIBLE_COIN_DROPS = register(MODID + ":" + "entity/collectible/holiday_collectible_coin_drops");
     public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_halloween_coin_drops");
     public static final ResourceLocation TODECOINS_BIRTHDAY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_birthday_coin_drops");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_christmas_coin_drops");
     public static final ResourceLocation TODECOINS_EASTER_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_easter_coin_drops");
+    public static final ResourceLocation TODECOINS_NEW_YEAR_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_new_year_coin_drops");
     public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_DROPS = register(MODID + ":" + "entity/collectible/todecoins_anniversary_coin_drops");
     public static final ResourceLocation TODECOINS_SPRING_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_spring_coin_drops");
     public static final ResourceLocation TODECOINS_SUMMER_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_summer_coin_drops");
