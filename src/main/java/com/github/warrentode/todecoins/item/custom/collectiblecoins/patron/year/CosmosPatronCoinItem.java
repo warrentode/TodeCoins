@@ -112,7 +112,7 @@ public class CosmosPatronCoinItem extends PatronCommemorativeCoinItem implements
 
             @Override
             public boolean canEquipFromUse(SlotContext context) {
-                return true;
+                return false;
             }
 
             @Override

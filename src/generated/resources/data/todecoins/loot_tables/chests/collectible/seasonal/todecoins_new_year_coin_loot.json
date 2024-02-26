@@ -3,11 +3,6 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "todecoins:new_year_condition"
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",

@@ -6,16 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:entity_type_tag_condition",
-              "tag": "forge:drops_currency"
-            },
-            {
-              "chance": 0.01,
-              "condition": "minecraft:random_chance"
-            }
-          ],
           "functions": [
             {
               "add": false,

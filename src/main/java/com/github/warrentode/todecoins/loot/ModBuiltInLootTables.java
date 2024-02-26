@@ -34,23 +34,30 @@ public class ModBuiltInLootTables {
     // rascal coin reward table
     public static final ResourceLocation RASCAL_COIN_REWARD = register(MODID + ":" + "chests/collectible/rascal_coin_reward");
 
+    // numismatist merchant offers loot tables
+    public static final ResourceLocation NUMISMATIST_RARE_OFFERS =
+            register(MODID + ":" + "chests/merchant/rare_offers");
+    public static final ResourceLocation NUMISMATIST_CONTAINER_OFFERS =
+            register(MODID + ":" + "chests/merchant/container_offers");
+
     // seasonal event collectible coin chest loot tables
+    public static final ResourceLocation MYSTERY_COIN_PACK_INVERTED = register(MODID + ":" + "chests/collectible/seasonal/numismatist_request_list");
     public static final ResourceLocation MYSTERY_COIN_PACK = register(MODID + ":" + "chests/collectible/seasonal/mystery_coin_pack");
     public static final ResourceLocation SPRING_MYSTERY_COIN_PACK = register(MODID + ":" + "chests/collectible/seasonal/mystery_coin_pack_spring");
     public static final ResourceLocation SUMMER_MYSTERY_COIN_PACK = register(MODID + ":" + "chests/collectible/seasonal/mystery_coin_pack_summer");
     public static final ResourceLocation AUTUMN_MYSTERY_COIN_PACK = register(MODID + ":" + "chests/collectible/seasonal/mystery_coin_pack_autumn");
     public static final ResourceLocation WINTER_MYSTERY_COIN_PACK = register(MODID + ":" + "chests/collectible/seasonal/mystery_coin_pack_winter");
-    public static final ResourceLocation TODECOINS_COLLECTIBLE_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_collectible_coin_loot");
+    public static final ResourceLocation COLLECTIBLE_COIN_CHEST_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_collectible_coin_loot");
     public static final ResourceLocation TODECOINS_BIRTHDAY_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_birthday_coin_loot");
     public static final ResourceLocation TODECOINS_HALLOWEEN_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_halloween_coin_loot");
     public static final ResourceLocation TODECOINS_CHRISTMAS_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_christmas_coin_loot");
     public static final ResourceLocation TODECOINS_EASTER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_easter_coin_loot");
     public static final ResourceLocation TODECOINS_NEW_YEAR_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_new_year_coin_loot");
     public static final ResourceLocation TODECOINS_ANNIVERSARY_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_anniversary_coin_loot");
-    public static final ResourceLocation TODECOINS_SPRING_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_spring_coin_loot");
-    public static final ResourceLocation TODECOINS_SUMMER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_summer_coin_loot");
-    public static final ResourceLocation TODECOINS_AUTUMN_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_autumn_coin_loot");
-    public static final ResourceLocation TODECOINS_WINTER_COIN_LOOT = register(MODID + ":" + "chests/collectible/seasonal/todecoins_winter_coin_loot");
+    public static final ResourceLocation SPRING_COINS_CHEST = register(MODID + ":" + "chests/collectible/seasonal/todecoins_spring_coin_loot");
+    public static final ResourceLocation SUMMER_COINS_CHEST = register(MODID + ":" + "chests/collectible/seasonal/todecoins_summer_coin_loot");
+    public static final ResourceLocation AUTUMN_COINS_CHEST = register(MODID + ":" + "chests/collectible/seasonal/todecoins_autumn_coin_loot");
+    public static final ResourceLocation WINTER_COINS_CHEST = register(MODID + ":" + "chests/collectible/seasonal/todecoins_winter_coin_loot");
     // injected chest loot table
     public static final ResourceLocation TODECOINS_CHEST_LOOT = register(MODID + ":" + "chests/todecoins_chest");
     public static final ResourceLocation ENDONIAN_MATERIALS_LOOT = register(MODID + ":" + "chests/endonian_materials_loot");

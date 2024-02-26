@@ -23,7 +23,10 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.monster.*;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.PatrollingMonster;
+import net.minecraft.world.entity.monster.Phantom;
+import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -259,24 +262,9 @@ public class ModEvents {
             float amount = event.getAmount();
             Level level = entity.getCommandSenderWorld();
 
-            int effectDuration = 0;
-
-            if (entity.level.getDifficulty() == Difficulty.EASY) {
-                effectDuration = 15;
-            }
-            else if (entity.level.getDifficulty() == Difficulty.NORMAL) {
-                effectDuration = 10;
-            }
-            else if (entity.level.getDifficulty() == Difficulty.HARD) {
-                effectDuration = 5;
-            }
-
             if (!level.isClientSide && (entity instanceof ServerPlayer player) && attacker != null && attacker.isAttackable()) {
                 if (player.hasEffect(ModEffects.THORN_SHIELD.get())) {
                     attacker.hurt(DamageSource.thorns(player), (float) getDamage(ThornShieldEffect.getAmplifier(), RandomSource.create()));
-                }
-                if (player.hasEffect(ModEffects.BLIND_SHROUD.get())) {
-                    ((LivingEntity) attacker).addEffect(new MobEffectInstance(MobEffects.BLINDNESS, (effectDuration * 20), BlindShroudEffect.getAmplifier()), attacker);
                 }
             }
             return false;

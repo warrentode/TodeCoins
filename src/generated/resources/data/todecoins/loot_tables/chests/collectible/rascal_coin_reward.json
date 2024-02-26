@@ -9,6 +9,27 @@
           "conditions": [
             {
               "condition": "todecoins:spring_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_rascal_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
             }
           ],
           "name": "todecoins:collectible_coin_rascal_copper"
@@ -18,6 +39,27 @@
           "conditions": [
             {
               "condition": "todecoins:summer_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_rascal_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
             }
           ],
           "name": "todecoins:collectible_coin_rascal_iron"
@@ -27,6 +69,27 @@
           "conditions": [
             {
               "condition": "todecoins:autumn_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_rascal_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
             }
           ],
           "name": "todecoins:collectible_coin_rascal_gold"
@@ -36,6 +99,27 @@
           "conditions": [
             {
               "condition": "todecoins:winter_condition"
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_rascal_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
             }
           ],
           "name": "todecoins:collectible_coin_rascal_netherite"

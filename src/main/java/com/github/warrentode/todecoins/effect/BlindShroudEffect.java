@@ -1,7 +1,9 @@
 package com.github.warrentode.todecoins.effect;
 
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,9 +16,11 @@ public class BlindShroudEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(@NotNull LivingEntity livingEntity, int amplifier) {
-        super.applyEffectTick(livingEntity, amplifier);
-
-        // blinds the attacker during the living hurt event in the ModEvents class
+        if (livingEntity instanceof ServerPlayer serverPlayer) {
+            if (serverPlayer.hasEffect(MobEffects.BLINDNESS)) {
+                serverPlayer.removeEffect(MobEffects.BLINDNESS);
+            }
+        }
     }
 
     public static int getAmplifier() {

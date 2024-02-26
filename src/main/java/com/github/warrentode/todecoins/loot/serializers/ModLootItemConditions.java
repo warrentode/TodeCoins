@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.loot.serializers;
 
+import com.github.warrentode.todecoins.loot.conditions.ModCheckCondition;
 import com.github.warrentode.todecoins.loot.conditions.curio.CodFishCharmCondition;
 import com.github.warrentode.todecoins.loot.conditions.curio.PufferfishCharmCondition;
 import com.github.warrentode.todecoins.loot.conditions.curio.SalmonFishCharmCondition;
@@ -18,6 +19,9 @@ import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModLootItemConditions extends LootItemConditions {
     private static final DeferredRegister<LootItemConditionType> REGISTER = DeferredRegister.create(Registry.LOOT_ITEM_REGISTRY, MODID);
+
+    public static final RegistryObject<LootItemConditionType> MODLOADED_CONDITION = REGISTER.register("modloaded_condition",
+            () -> new LootItemConditionType(new ModCheckCondition.Serializer()));
 
     public static final RegistryObject<LootItemConditionType> COD_FISH_CHARM_CONDITION = REGISTER.register("cod_fish_charm_condition",
             () -> new LootItemConditionType(new CodFishCharmCondition.Serializer()));

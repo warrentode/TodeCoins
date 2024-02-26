@@ -2,55 +2,20 @@
   "type": "minecraft:entity",
   "pools": [
     {
-        "bonus_rolls": 1.0,
-        "entries": [
+      "bonus_rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
             {
-                "type": "minecraft:item",
-                "conditions": [
-                    {
-                        "condition": "todecoins:entity_type_tag_condition",
-                        "tag": "forge:bosses"
-                    }
-                ],
-                "functions": [
-                    {
-                        "add": false,
-                        "count": {
-                            "type": "minecraft:uniform",
-                            "max": 1.0,
-                            "min": 0.0
-                        },
-                        "function": "minecraft:set_count"
-                    },
-            {
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
+                "max": 1.0,
+                "min": 0.0
               },
-              "function": "minecraft:looting_enchant"
-            }
-          ],
-          "name": "todecoins:copper_coin"
-        },
-            {
-                "type": "minecraft:item",
-                "conditions": [
-                    {
-                        "condition": "todecoins:entity_type_tag_condition",
-                        "tag": "forge:bosses"
-                    }
-                ],
-                "functions": [
-                    {
-                        "add": false,
-                        "count": {
-                            "type": "minecraft:uniform",
-                            "max": 1.0,
-                            "min": 0.0
-                        },
-                        "function": "minecraft:set_count"
-                    },
+              "function": "minecraft:set_count"
+            },
             {
               "count": {
                 "type": "minecraft:uniform",

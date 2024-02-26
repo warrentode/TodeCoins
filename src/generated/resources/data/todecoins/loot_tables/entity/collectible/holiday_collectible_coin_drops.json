@@ -16,7 +16,7 @@
               "condition": "todecoins:birthday_condition"
             },
             {
-              "chance": 0.1,
+              "chance": 0.01,
               "condition": "minecraft:random_chance"
             }
           ],
@@ -29,7 +29,7 @@
               "condition": "todecoins:halloween_condition"
             },
             {
-              "chance": 0.1,
+              "chance": 0.01,
               "condition": "minecraft:random_chance"
             }
           ],
@@ -42,7 +42,7 @@
               "condition": "todecoins:christmas_condition"
             },
             {
-              "chance": 0.1,
+              "chance": 0.01,
               "condition": "minecraft:random_chance"
             }
           ],
@@ -55,7 +55,7 @@
               "condition": "todecoins:easter_condition"
             },
             {
-              "chance": 0.1,
+              "chance": 0.01,
               "condition": "minecraft:random_chance"
             }
           ],
@@ -68,7 +68,7 @@
               "condition": "todecoins:new_year_condition"
             },
             {
-              "chance": 0.1,
+              "chance": 0.01,
               "condition": "minecraft:random_chance"
             }
           ],
@@ -81,7 +81,7 @@
               "condition": "todecoins:anniversary_condition"
             },
             {
-              "chance": 0.1,
+              "chance": 0.01,
               "condition": "minecraft:random_chance"
             }
           ],

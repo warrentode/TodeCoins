@@ -16,7 +16,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -64,12 +63,15 @@ public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player playerUsing, @NotNull InteractionHand useHand) {
         ItemStack stack = playerUsing.getItemInHand(useHand);
 
-        if (!level.isClientSide && !playerUsing.hasEffect(MobEffects.LEVITATION)) {
+        if (!level.isClientSide && !playerUsing.hasEffect(MobEffects.LEVITATION)
+                && !level.isClientSide && !playerUsing.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
             level.playSound(null, playerUsing.getX(), playerUsing.getY(), playerUsing.getZ(), SoundEvents.SHULKER_BULLET_HIT, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
 
             playerUsing.getCooldowns().addCooldown(this, getCoinEffectDuration() / 2);
 
             playerUsing.addEffect(new MobEffectInstance(MobEffects.LEVITATION, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                    false, false, true));
+            playerUsing.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, getCoinEffectDuration(), getCoinEffectAmplifier(),
                     false, false, true));
 
             stack.hurtAndBreak(1, playerUsing, (playerLambda) -> playerLambda.broadcastBreakEvent(useHand));
@@ -125,19 +127,6 @@ public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
                 return attribute;
             }
 
-            @Override
-            public void curioTick(SlotContext slotContext) {
-                LivingEntity livingEntity = slotContext.entity();
-
-                if (livingEntity != null && !livingEntity.level.isClientSide()
-                        && (!livingEntity.hasEffect(MobEffects.DAMAGE_RESISTANCE))) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-
-                    stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
-                }
-            }
-
             @Nonnull
             @Override
             public SoundInfo getEquipSound(SlotContext context) {
@@ -174,7 +163,6 @@ public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable(MobEffects.DAMAGE_RESISTANCE.getDescriptionId()).withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.coin_effects_on_use").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable(MobEffects.LEVITATION.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);
             }

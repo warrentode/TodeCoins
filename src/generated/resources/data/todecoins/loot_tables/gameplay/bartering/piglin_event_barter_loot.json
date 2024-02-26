@@ -86,6 +86,42 @@
           "name": "todecoins:chocolate_coin_carmel_crisp"
         },
         {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:spring_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_copper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:summer_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_iron"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:autumn_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_netherite"
+        },
+        {
           "type": "minecraft:loot_table",
           "conditions": [
             {
@@ -138,42 +174,6 @@
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/todecoins_new_year_coin_loot"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:spring_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_piglin_copper"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:summer_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_piglin_iron"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_piglin_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:winter_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_piglin_netherite"
         },
         {
           "type": "minecraft:item",

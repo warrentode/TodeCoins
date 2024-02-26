@@ -1387,13 +1387,8 @@ public class LanguageFileGen extends LanguageProvider {
         add("tooltips.server_token_coin.hover", "A special coin for server use.");
 
         // coin effects
-        add("tooltips.coin_effects", "Coin Effects:");
-        add("tooltips.coin_effects_boss", "Bonus Boss Coin Effect:");
-        add("tooltips.coin_effects_holiday", "Coin Effects during matching Holiday Season:");
-        add("tooltips.coin_effects_underwater", "Coin Effects while Underwater:");
-        add("tooltips.coin_effects_in_water", "Coin Effects while in Water:");
-        add("tooltips.coin_effects_at_night", "Coin Effects at Night:");
-        add("tooltips.coin_effects_on_use", "Coin Effects on Use:");
+        add("tooltips.coin_effects", "Coin Use Effects:");
+        add("tooltips.coin_effects_equip", "Coin Effects while Equipped:");
 
         add("tooltips.coin_effects.fortune_1", "Fortune I");
         add("tooltips.coin_effects.looting_1", "Looting I");
@@ -1514,8 +1509,8 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModEffects.THUNDERSTRIKE.get(), "Thunder's Strike");
         addPotionEffects("thunderstrike", "Thunder's Strike");
 
-        add(ModEffects.BLIND_SHROUD.get(), "Blinding Shroud");
-        addPotionEffects("blind_shroud", "Blinding Shroud");
+        add(ModEffects.BLIND_SHIELD.get(), "Blindness Shield");
+        addPotionEffects("blind_shield", "Blindness Shield");
 
         add(ModEffects.FROST_STRIKE.get(), "Frost Strike");
         addPotionEffects("frost_strike", "Frost Strike");

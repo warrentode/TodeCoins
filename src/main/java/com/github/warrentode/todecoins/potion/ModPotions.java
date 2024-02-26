@@ -249,30 +249,30 @@ public class ModPotions {
             () -> new Potion(new MobEffectInstance(ModEffects.ILLAGER_BANE.get(), 9600, 5)));
 
     public static final RegistryObject<Potion> BLIND_SHROUD_POTION = POTIONS.register("blind_shroud_potion",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 6000, 0)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 6000, 0)));
     public static final RegistryObject<Potion> BLIND_SHROUD_POTION_2 = POTIONS.register("blind_shroud_potion_2",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 6000, 1)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 6000, 1)));
     public static final RegistryObject<Potion> BLIND_SHROUD_POTION_3 = POTIONS.register("blind_shroud_potion_3",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 6000, 2)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 6000, 2)));
     public static final RegistryObject<Potion> BLIND_SHROUD_POTION_4 = POTIONS.register("blind_shroud_potion_4",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 6000, 3)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 6000, 3)));
     public static final RegistryObject<Potion> BLIND_SHROUD_POTION_5 = POTIONS.register("blind_shroud_potion_5",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 6000, 4)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 6000, 4)));
     public static final RegistryObject<Potion> BLIND_SHROUD_POTION_6 = POTIONS.register("blind_shroud_potion_6",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 6000, 5)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 6000, 5)));
 
     public static final RegistryObject<Potion> LONG_BLIND_SHROUD_POTION = POTIONS.register("long_blind_shroud_potion",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 9600, 0)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 9600, 0)));
     public static final RegistryObject<Potion> LONG_BLIND_SHROUD_POTION_2 = POTIONS.register("long_blind_shroud_potion_2",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 9600, 1)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 9600, 1)));
     public static final RegistryObject<Potion> LONG_BLIND_SHROUD_POTION_3 = POTIONS.register("long_blind_shroud_potion_3",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 9600, 2)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 9600, 2)));
     public static final RegistryObject<Potion> LONG_BLIND_SHROUD_POTION_4 = POTIONS.register("long_blind_shroud_potion_4",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 9600, 3)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 9600, 3)));
     public static final RegistryObject<Potion> LONG_BLIND_SHROUD_POTION_5 = POTIONS.register("long_blind_shroud_potion_5",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 9600, 4)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 9600, 4)));
     public static final RegistryObject<Potion> LONG_BLIND_SHROUD_POTION_6 = POTIONS.register("long_blind_shroud_potion_6",
-            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHROUD.get(), 9600, 5)));
+            () -> new Potion(new MobEffectInstance(ModEffects.BLIND_SHIELD.get(), 9600, 5)));
 
     public static final RegistryObject<Potion> THUNDERSTRIKE_POTION = POTIONS.register("thunderstrike_potion",
             () -> new Potion(new MobEffectInstance(ModEffects.THUNDERSTRIKE.get(), 6000, 0)));

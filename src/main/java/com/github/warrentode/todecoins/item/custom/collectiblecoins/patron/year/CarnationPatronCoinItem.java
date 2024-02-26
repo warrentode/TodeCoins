@@ -112,7 +112,7 @@ public class CarnationPatronCoinItem extends PatronCommemorativeCoinItem impleme
 
             @Override
             public boolean canEquipFromUse(SlotContext context) {
-                return true;
+                return false;
             }
 
             @Override

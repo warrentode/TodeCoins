@@ -8,2731 +8,10 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mansion"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:pillager_outpost"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_allay_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_axolotl_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:swamp_hut"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_bat_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:meadow"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sunflower_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:mangrove_swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:flower_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:birch_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_birch_forest"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_bee_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_blaze_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
               "condition": "minecraft:location_check",
               "predicate": {
-                "biome": "minecraft:desert"
+                "structure": "minecraft:monument"
               }
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_camel_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:swamp_hut"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_cat_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_cave_spider_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_chicken_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:beach"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:stony_shore"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_cod_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_cow_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warped_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "dimension": "minecraft:the_end"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_enderman_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:grove"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_pine_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_spruce_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:taiga"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_fox_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:mangrove_swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:swamp"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_frog_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:flower_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:meadow"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sunflower_plains"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_moobloom_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:mushroom_fields"
-              }
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_mooshroom_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sparse_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:bamboo_jungle"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_ocelot_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:bastion_remnant"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:nether_wastes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_piglin_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:beach"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:stony_shore"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_pufferfish_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:beach"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:stony_shore"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_beach"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_salmon_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:mangrove_swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:beach"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:stony_shore"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_tropical_fish_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sunflower_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_horse_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:meadow"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sunflower_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_donkey_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_mule_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:jungle_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:desert_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_skeleton_horse_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:jungle_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:desert_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_zombie_horse_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_river"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_squid_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_river"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_glow_squid_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:bamboo_jungle"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_parrot_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:bastion_remnant"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_hoglin_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sunflower_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:mangrove_swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:flower_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_spruce_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_pine_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_birch_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:birch_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:bamboo_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sparse_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_pig_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ice_spikes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_slopes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:grove"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_pine_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:meadow"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_spruce_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:flower_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:desert"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_rabbit_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sunflower_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:mangrove_swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:flower_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_spruce_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_pine_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_birch_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:birch_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:bamboo_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sparse_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_sheep_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ocean_ruin_cold"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ocean_ruin_warm"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_sniffer_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_numismatist_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_wandering_trader_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_villager_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ice_spikes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:grove"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_slopes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_peaks"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jagged_peaks"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_beach"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_snow_golem_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:mangrove_swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:swamp"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_tadpole_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:beach"
-              }
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_turtle_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warm_ocean"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_dolphin_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_peaks"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jagged_peaks"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_slopes"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_goat_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_iron_golem_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_hills"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_gravelly_hills"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_llama_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_hills"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_gravelly_hills"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_trader_llama_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:bamboo_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sparse_jungle"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_panda_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ice_spikes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_polar_bear_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_spider_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:grove"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_pine_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_spruce_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:forest"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_wolf_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:nether_wastes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                }
-              ]
-            },
-            {
-              "condition": "todecoins:autumn_condition"
-            }
-          ],
-          "name": "todecoins:collectible_coin_zombified_piglin_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:jungle_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:desert_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_creeper_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:warm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_drowned_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:monument"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ocean_ruin_warm"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ocean_ruin_cold"
-                  }
-                }
-              ]
             }
           ],
           "name": "todecoins:collectible_coin_elder_guardian_gold"
@@ -2740,814 +19,6 @@
         {
           "type": "minecraft:item",
           "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:monument"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_cold_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_lukewarm_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ocean_ruin_warm"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ocean_ruin_cold"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_guardian_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:end_city"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_endermite_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:mansion"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_evoker_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:mansion"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_vindicator_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:mansion"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_vex_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "dimension": "minecraft:the_nether"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_ghast_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:desert"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_husk_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:nether_wastes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:bastion_remnant"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_magma_cube_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:mangrove_swamp"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_slime_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:inverted",
-              "term": {
-                "condition": "minecraft:alternative",
-                "terms": [
-                  {
-                    "condition": "minecraft:time_check",
-                    "value": {
-                      "max": 23000.0,
-                      "min": 12000.0
-                    }
-                  },
-                  {
-                    "condition": "minecraft:weather_check",
-                    "thundering": true
-                  },
-                  {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "dimension": "minecraft:the_nether"
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_phantom_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:bastion_remnant"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:nether_wastes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_piglin_brute_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:pillager_outpost"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_pillager_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:pillager_outpost"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_ravager_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:end_city"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_shulker_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:igloo"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mansion"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:meadow"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:grove"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_slopes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jagged_peaks"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_peaks"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:stony_peaks"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_silverfish_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:jungle_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:desert_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_skeleton_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ice_spikes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_stray_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_dark"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_warden_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:swamp_hut"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:mangrove_swamp"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_witch_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:fortress"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_wither_skeleton_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "structure": "minecraft:fortress"
-              }
-            }
-          ],
-          "name": "todecoins:collectible_coin_wither_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:bastion_remnant"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:nether_wastes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_zoglin_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:jungle_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:desert_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_zombie_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:jungle_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:desert_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_zombie_villager_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
             {
               "condition": "minecraft:location_check",
               "predicate": {
@@ -3561,356 +32,22 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:jungle_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:desert_pyramid"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:fortress"
+              }
             }
           ],
-          "name": "todecoins:collectible_coin_giant_gold"
+          "name": "todecoins:collectible_coin_wither_gold"
         },
         {
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:mansion"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:pillager_outpost"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_illusioner_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_copper_golem_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_desert"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_tuff_golem_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_glare_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_river"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:ice_spikes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:frozen_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_iceologer_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:badlands"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:eroded_badlands"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:wooded_badlands"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                }
-              ]
-            }
-          ],
-          "name": "todecoins:collectible_coin_mauler_gold"
-        },
-        {
-          "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:bastion_remnant"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:soul_sand_valley"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:crimson_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:nether_wastes"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:basalt_deltas"
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structure": "minecraft:fortress"
+              }
             }
           ],
           "name": "todecoins:collectible_coin_wildfire_gold"
@@ -3919,159 +56,242 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
               "condition": "minecraft:location_check",
               "predicate": {
-                "biome": "minecraft:beach"
+                "structure": "minecraft:ancient_city"
               }
             }
           ],
-          "name": "todecoins:collectible_coin_crab_gold"
+          "name": "todecoins:collectible_coin_warden_gold"
         },
         {
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
               "condition": "minecraft:location_check",
               "predicate": {
-                "biome": "minecraft:plains"
+                "dimension": "minecraft:the_nether"
               }
             }
           ],
-          "name": "todecoins:collectible_coin_squirrel_gold"
+          "name": "todecoins:collectible_coin_blaze_gold"
         },
         {
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "todecoins:autumn_condition"
-            },
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_hoglin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombified_piglin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_ghast_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_magma_cube_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_brute_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_skeleton_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_endermite_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_shulker_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
             {
               "condition": "minecraft:alternative",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "biome": "minecraft:frozen_ocean"
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "biome": "minecraft:deep_frozen_ocean"
+                    "dimension": "minecraft:the_nether"
                   }
                 }
               ]
             }
           ],
-          "name": "todecoins:collectible_coin_penguin_gold"
+          "name": "todecoins:collectible_coin_skeleton_horse_gold"
         },
         {
           "type": "minecraft:item",
           "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
             {
               "condition": "minecraft:alternative",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "structure": "minecraft:village_desert"
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_snowy"
+                    "dimension": "minecraft:the_nether"
                   }
                 }
               ]
             }
           ],
-          "name": "todecoins:collectible_coin_guard_gold"
+          "name": "todecoins:collectible_coin_zombie_horse_gold"
         },
         {
           "type": "minecraft:item",
           "conditions": [
-            {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
             {
               "condition": "minecraft:alternative",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "structure": "minecraft:ruined_portal_desert"
+                    "dimension": "minecraft:the_nether"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_skeleton_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "structure": "minecraft:ruined_portal_jungle"
+                    "dimension": "minecraft:the_nether"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_zoglin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "structure": "minecraft:ruined_portal_mountain"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_swamp"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_ocean"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal"
+                    "dimension": "minecraft:the_nether"
                   }
                 }
               ]
@@ -4083,52 +303,879 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
               "condition": "minecraft:alternative",
               "terms": [
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "structure": "minecraft:mineshaft"
+                    "dimension": "minecraft:overworld"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "structure": "minecraft:mineshaft_mesa"
+                    "dimension": "minecraft:the_nether"
                   }
                 },
                 {
                   "condition": "minecraft:location_check",
                   "predicate": {
-                    "biome": "minecraft:lush_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dripstone_caves"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:stronghold"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ancient_city"
+                    "dimension": "minecraft:the_end"
                   }
                 }
               ]
+            }
+          ],
+          "name": "todecoins:collectible_coin_enderman_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_allay_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_axolotl_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_bat_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_bee_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_camel_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_cat_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_cave_spider_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_chicken_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_cod_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_cow_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_fox_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_frog_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_moobloom_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_mooshroom_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_ocelot_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_pufferfish_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_salmon_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_tropical_fish_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_horse_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_donkey_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_mule_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_squid_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_glow_squid_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_parrot_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_pig_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_rabbit_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_sheep_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_sniffer_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_numismatist_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_wandering_trader_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_villager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_snow_golem_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_tadpole_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_turtle_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_dolphin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_goat_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_iron_golem_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_llama_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_trader_llama_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_panda_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_polar_bear_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_spider_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_wolf_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_creeper_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_drowned_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_guardian_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_evoker_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_vindicator_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_vex_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_husk_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_slime_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_phantom_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_pillager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_ravager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_silverfish_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_stray_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_witch_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_villager_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_giant_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_illusioner_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_copper_golem_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_tuff_golem_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_glare_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_iceologer_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_mauler_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_crab_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_squirrel_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_penguin_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:collectible_coin_guard_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
             }
           ],
           "name": "todecoins:collectible_coin_rascal_gold"
@@ -4137,40 +1184,10 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "todecoins:autumn_condition"
-            },
-            {
-              "chance": 0.1,
-              "condition": "minecraft:random_chance"
-            },
-            {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                }
-              ]
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
             }
           ],
           "name": "todecoins:collectible_coin_armadillo_gold"

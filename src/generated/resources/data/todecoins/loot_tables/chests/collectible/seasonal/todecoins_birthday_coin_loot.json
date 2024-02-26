@@ -3,11 +3,6 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "todecoins:birthday_condition"
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",

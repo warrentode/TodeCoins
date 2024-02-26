@@ -10,14 +10,19 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -52,6 +57,29 @@ public class PiglinMerchantCoinItem extends CollectibleCoin implements ICurioIte
 
     public int getCoinEffectAmplifier() {
         return this.coinEffectAmplifier;
+    }
+
+
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player playerUsing, @NotNull InteractionHand useHand) {
+        ItemStack stack = playerUsing.getItemInHand(useHand);
+
+        if (!level.isClientSide && (!playerUsing.hasEffect(MobEffects.HEALTH_BOOST) || !playerUsing.hasEffect(MobEffects.DAMAGE_BOOST))) {
+            level.playSound(null, playerUsing.getX(), playerUsing.getY(), playerUsing.getZ(), SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
+
+            playerUsing.getCooldowns().addCooldown(this, getCoinEffectDuration() / 2);
+
+            playerUsing.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                    false, false, true));
+            playerUsing.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                    false, false, true));
+
+            stack.hurtAndBreak(1, playerUsing, (playerLambda) -> playerLambda.broadcastBreakEvent(useHand));
+
+            return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+        }
+
+        return new InteractionResultHolder<>(InteractionResult.FAIL, stack);
     }
 
     @Nullable
@@ -102,21 +130,6 @@ public class PiglinMerchantCoinItem extends CollectibleCoin implements ICurioIte
                 return attribute;
             }
 
-            @Override
-            public void curioTick(SlotContext slotContext) {
-                LivingEntity livingEntity = slotContext.entity();
-
-                if (livingEntity != null && !livingEntity.level.isClientSide()
-                        && (!livingEntity.hasEffect(MobEffects.HEALTH_BOOST) || !livingEntity.hasEffect(MobEffects.DAMAGE_BOOST))) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-
-                    stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
-                }
-            }
-
             @Nonnull
             @Override
             public SoundInfo getEquipSound(SlotContext context) {
@@ -137,7 +150,7 @@ public class PiglinMerchantCoinItem extends CollectibleCoin implements ICurioIte
 
             @Override
             public boolean canEquipFromUse(SlotContext context) {
-                return true;
+                return false;
             }
 
             @Override
@@ -153,8 +166,9 @@ public class PiglinMerchantCoinItem extends CollectibleCoin implements ICurioIte
 
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
-                tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
+                tooltips.add(Component.translatable("tooltips.coin_effects_equip").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable("tooltips.coin_effects.piglin_neutral").withStyle(ChatFormatting.BLUE));
+                tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable(MobEffects.HEALTH_BOOST.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 tooltips.add(Component.translatable(MobEffects.DAMAGE_BOOST.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);

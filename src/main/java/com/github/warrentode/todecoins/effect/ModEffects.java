@@ -24,7 +24,7 @@ public class ModEffects {
     public static final RegistryObject<MobEffect> THUNDERSTRIKE = MOB_EFFECTS.register("thunderstrike",
             () -> new ThunderstrikeEffect(MobEffectCategory.BENEFICIAL, 0xB0C4DE));
 
-    public static final RegistryObject<MobEffect> BLIND_SHROUD = MOB_EFFECTS.register("blind_shroud",
+    public static final RegistryObject<MobEffect> BLIND_SHIELD = MOB_EFFECTS.register("blind_shield",
             () -> new BlindShroudEffect(MobEffectCategory.BENEFICIAL, 0x708090));
 
     public static final RegistryObject<MobEffect> FROST_STRIKE = MOB_EFFECTS.register("frost_strike",

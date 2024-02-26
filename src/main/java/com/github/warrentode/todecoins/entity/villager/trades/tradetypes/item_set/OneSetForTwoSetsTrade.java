@@ -1,4 +1,4 @@
-package com.github.warrentode.todecoins.entity.villager.trades.tradetypes;
+package com.github.warrentode.todecoins.entity.villager.trades.tradetypes.item_set;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.util.RandomSource;

@@ -1,24 +1,30 @@
-package com.github.warrentode.todecoins.entity.villager.trades.tradetypes;
+package com.github.warrentode.todecoins.entity.villager.trades.tradetypes.loot_table;
 
 import com.github.warrentode.todecoins.util.tags.ModTags;
-import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.*;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraftforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class LootBoxForTwoRequestSetsTrade implements VillagerTrades.ItemListing {
+import java.util.List;
+
+public class LootBoxForTwoLootTableItemsTrade implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;
     public static final int UNCOMMON_ITEMS_SUPPLY = 3;
@@ -37,23 +43,21 @@ public class LootBoxForTwoRequestSetsTrade implements VillagerTrades.ItemListing
     private final ItemStack lootChest;
     private final int coinPackCount = 1;
     private final String displayName;
-    private final ImmutableSet<ItemLike> requestItemsA;
-    private final int requestItemsCountA;
-    private final ImmutableSet<ItemLike> requestItemsB;
-    private final int requestItemsCountB;
+    private final ResourceLocation currencyLootTable1;
+    private final ResourceLocation currencyLootTable2;
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
     private ResourceLocation lootTable;
 
-    public LootBoxForTwoRequestSetsTrade(ItemStack lootChest, String displayName, ResourceLocation lootTable, ImmutableSet<ItemLike> requestItemsA, int requestItemsCountA, ImmutableSet<ItemLike> requestItemsB, int requestItemsCountB, int maxUses, int xpValue, float priceMultiplier) {
+    public LootBoxForTwoLootTableItemsTrade(ItemStack lootChest, String displayName, ResourceLocation lootTable,
+                                            ResourceLocation currencyLootTable1, ResourceLocation currencyLootTable2,
+                                            int maxUses, int xpValue, float priceMultiplier) {
         this.lootChest = lootChest;
         this.displayName = displayName;
         this.lootTable = lootTable;
-        this.requestItemsA = requestItemsA;
-        this.requestItemsCountA = requestItemsCountA;
-        this.requestItemsB = requestItemsB;
-        this.requestItemsCountB = requestItemsCountB;
+        this.currencyLootTable1 = currencyLootTable1;
+        this.currencyLootTable2 = currencyLootTable2;
         this.maxUses = maxUses;
         this.xpValue = xpValue;
         this.priceMultiplier = priceMultiplier;
@@ -67,9 +71,21 @@ public class LootBoxForTwoRequestSetsTrade implements VillagerTrades.ItemListing
 
         sellStack.setHoverName(Component.translatable(this.displayName));
 
-        ItemStack requestSetA = new ItemStack(this.requestItemsA.asList().get(source.nextInt(requestItemsA.size() - 1)).asItem(), this.requestItemsCountA);
-        ItemStack requestSetB = new ItemStack(this.requestItemsB.asList().get(source.nextInt(requestItemsB.size() - 1)).asItem(), this.requestItemsCountB);
-        return new MerchantOffer(requestSetA, requestSetB, sellStack, this.maxUses, this.xpValue, this.priceMultiplier);
+        MinecraftServer minecraftServer = ServerLifecycleHooks.getCurrentServer().getPlayerList().getServer();
+        LootTable currencyTable1 = minecraftServer.getLootTables().get(currencyLootTable1);
+        LootTable currencyTable2 = minecraftServer.getLootTables().get(currencyLootTable2);
+
+        LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())
+                .withParameter(LootContextParams.ORIGIN, trader.position())
+                .withParameter(LootContextParams.THIS_ENTITY, trader)
+                .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
+        List<ItemStack> currency1 = currencyTable1.getRandomItems(lootContext);
+        List<ItemStack> currency2 = currencyTable2.getRandomItems(lootContext);
+
+        ItemStack requestStack1 = new ItemStack(currency1.get(source.nextInt(1)).getItem(), 1);
+        ItemStack requestStack2 = new ItemStack(currency2.get(source.nextInt(1)).getItem(), 1);
+
+        return new MerchantOffer(requestStack1, requestStack2, sellStack, this.maxUses, this.xpValue, this.priceMultiplier);
     }
 
     public BlockEntity getBlockEntity() {

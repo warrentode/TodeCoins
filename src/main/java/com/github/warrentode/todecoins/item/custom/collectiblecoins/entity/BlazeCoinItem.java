@@ -10,7 +10,11 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -18,7 +22,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -53,6 +59,41 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
 
     public int getCoinEffectAmplifier() {
         return this.coinEffectAmplifier;
+    }
+
+
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player playerUsing, @NotNull InteractionHand useHand) {
+        ItemStack stack = playerUsing.getItemInHand(useHand);
+
+        if (!level.isClientSide && (!playerUsing.hasEffect(MobEffects.FIRE_RESISTANCE)
+                || !playerUsing.hasEffect(ModEffects.BURNING_STRIKE.get())
+                || !playerUsing.hasEffect(ModEffects.HEALING_MIST.get()))) {
+            level.playSound(null, playerUsing.getX(), playerUsing.getY(), playerUsing.getZ(), SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
+
+            playerUsing.getCooldowns().addCooldown(this, getCoinEffectDuration() / 2);
+
+            playerUsing.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, getCoinEffectDuration(), getCoinEffectAmplifier(),
+                    false, false, true));
+            playerUsing.addEffect(new MobEffectInstance(ModEffects.BURNING_STRIKE.get(), getCoinEffectDuration(), getCoinEffectAmplifier(),
+                    false, false, true));
+
+            if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
+                playerUsing.addEffect(new MobEffectInstance(ModEffects.HEALING_MIST.get(), getCoinEffectDuration(), getCoinEffectAmplifier(),
+                        false, false, true));
+            }
+
+            if (stack.is(ModTags.Items.WILDFIRE_COIN_SET) && RandomSource.create().nextInt(100) > 50) {
+                stack.hurtAndBreak(1, playerUsing, (playerLambda) -> playerLambda.broadcastBreakEvent(useHand));
+            }
+            else {
+                stack.hurtAndBreak(1, playerUsing, (playerLambda) -> playerLambda.broadcastBreakEvent(useHand));
+            }
+
+            return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+        }
+
+        return new InteractionResultHolder<>(InteractionResult.FAIL, stack);
     }
 
     @Nullable
@@ -177,7 +218,7 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
 
             @Override
             public boolean canEquipFromUse(SlotContext context) {
-                return true;
+                return false;
             }
 
             @Override
@@ -197,8 +238,6 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
                 tooltips.add(Component.translatable(MobEffects.FIRE_RESISTANCE.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 tooltips.add(Component.translatable(ModEffects.BURNING_STRIKE.get().getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
-                    tooltips.add(Component.translatable("tooltips.coin_effects_boss").withStyle(ChatFormatting.GOLD)
-                            .withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.ITALIC));
                     tooltips.add(Component.translatable(ModEffects.HEALING_MIST.get().getDescriptionId())
                             .withStyle(ChatFormatting.BLUE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.ITALIC));
                 }

@@ -65,8 +65,8 @@ public class RascalCoinItem extends CollectibleCoin implements ICurioItem {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player playerUsing, @NotNull InteractionHand useHand) {
         ItemStack stack = playerUsing.getItemInHand(useHand);
 
-        if (!level.isClientSide && !playerUsing.hasEffect(MobEffects.INVISIBILITY)) {
-            level.playSound(null, playerUsing.getX(), playerUsing.getY(), playerUsing.getZ(), SoundEvents.SHULKER_BULLET_HIT, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
+        if (!level.isClientSide && (!playerUsing.hasEffect(MobEffects.INVISIBILITY) || !playerUsing.hasEffect(ModEffects.SILENCE_CLOAK.get()))) {
+            level.playSound(null, playerUsing.getX(), playerUsing.getY(), playerUsing.getZ(), SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
 
             playerUsing.getCooldowns().addCooldown(this, getCoinEffectDuration() / 2);
 
@@ -145,7 +145,7 @@ public class RascalCoinItem extends CollectibleCoin implements ICurioItem {
 
             @Override
             public boolean canEquipFromUse(SlotContext context) {
-                return true;
+                return false;
             }
 
             @Override
@@ -161,7 +161,7 @@ public class RascalCoinItem extends CollectibleCoin implements ICurioItem {
 
             @Override
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
-                tooltips.add(Component.translatable("tooltips.coin_effects_on_use").withStyle(ChatFormatting.GOLD));
+                tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable(ModEffects.SILENCE_CLOAK.get().getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 tooltips.add(Component.translatable(MobEffects.INVISIBILITY.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 return ICurio.super.getSlotsTooltip(tooltips);

@@ -8,6 +8,12 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
               "condition": "todecoins:birthday_condition"
             },
             {
@@ -20,6 +26,31 @@
         {
           "type": "minecraft:loot_table",
           "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_birthday_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
             {
               "condition": "todecoins:anniversary_condition"
             },
@@ -34,6 +65,31 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_anniversary_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
               "condition": "todecoins:halloween_condition"
             },
             {
@@ -46,6 +102,31 @@
         {
           "type": "minecraft:loot_table",
           "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_halloween_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
             {
               "condition": "todecoins:christmas_condition"
             },
@@ -60,6 +141,69 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_christmas_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
+              "condition": "todecoins:new_year_condition"
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_new_year_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_new_year_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
               "condition": "todecoins:easter_condition"
             },
             {
@@ -73,6 +217,31 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "chance": 0.25,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/todecoins_easter_coin_loot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
               "condition": "minecraft:alternative",
               "terms": [
                 {
@@ -80,6 +249,9 @@
                 },
                 {
                   "condition": "todecoins:easter_condition"
+                },
+                {
+                  "condition": "todecoins:new_year_condition"
                 }
               ]
             }
@@ -90,6 +262,27 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/mystery_coin_pack_spring"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
               "condition": "todecoins:summer_condition"
             }
           ],
@@ -98,6 +291,27 @@
         {
           "type": "minecraft:loot_table",
           "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/mystery_coin_pack_summer"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
             {
               "condition": "minecraft:alternative",
               "terms": [
@@ -116,6 +330,27 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/mystery_coin_pack_autumn"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
               "condition": "minecraft:alternative",
               "terms": [
                 {
@@ -131,6 +366,21 @@
                   "condition": "todecoins:anniversary_condition"
                 }
               ]
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/mystery_coin_pack_winter"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
             }
           ],
           "name": "todecoins:chests/collectible/seasonal/mystery_coin_pack_winter"

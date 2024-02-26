@@ -13,6 +13,10 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "chance": 0.8,
+              "condition": "minecraft:random_chance"
+            },
+            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
             }
@@ -24,6 +28,10 @@
         {
           "type": "minecraft:loot_table",
           "conditions": [
+            {
+              "chance": 0.7,
+              "condition": "minecraft:random_chance"
+            },
             {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
@@ -37,6 +45,10 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "chance": 0.6,
+              "condition": "minecraft:random_chance"
+            },
+            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
             }
@@ -48,6 +60,10 @@
         {
           "type": "minecraft:loot_table",
           "conditions": [
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            },
             {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
@@ -67,6 +83,10 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "chance": 0.4,
+              "condition": "minecraft:random_chance"
+            },
+            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
             },
@@ -85,6 +105,10 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "chance": 0.3,
+              "condition": "minecraft:random_chance"
+            },
+            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
             }
@@ -96,6 +120,10 @@
         {
           "type": "minecraft:loot_table",
           "conditions": [
+            {
+              "chance": 0.5,
+              "condition": "minecraft:random_chance"
+            },
             {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
@@ -115,6 +143,10 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            },
+            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
             }
@@ -127,6 +159,10 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "chance": 0.01,
+              "condition": "minecraft:random_chance"
+            },
+            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:drops_currency"
             }
@@ -134,6 +170,9 @@
           "name": "todecoins:entity/notes/todecoins_emerald_bank_note_drops",
           "quality": 6,
           "weight": 2
+        },
+        {
+          "type": "minecraft:empty"
         }
       ],
       "functions": [

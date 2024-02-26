@@ -13,6 +13,21 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
+              "chance": 0.001,
+              "condition": "minecraft:random_chance"
+            },
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bosses"
+            }
+          ],
+          "name": "todecoins:entity/coins/todecoins_lucky_coin_drops",
+          "quality": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
               "condition": "todecoins:entity_type_tag_condition",
               "tag": "forge:bosses"
             }
@@ -139,15 +154,7 @@
           "weight": 10
         },
         {
-          "type": "minecraft:loot_table",
-          "conditions": [
-            {
-              "condition": "todecoins:entity_type_tag_condition",
-              "tag": "forge:bosses"
-            }
-          ],
-          "name": "todecoins:entity/coins/todecoins_lucky_coin_drops",
-          "quality": 6
+          "type": "minecraft:empty"
         }
       ],
       "functions": [
