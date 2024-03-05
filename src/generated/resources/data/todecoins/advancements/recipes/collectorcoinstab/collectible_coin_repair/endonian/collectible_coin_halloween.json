@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_endonian_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "todecoins:nuggets/endonian_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "todecoins:collectible_coin_repair/endonian/collectible_coin_halloween"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_endonian_nugget",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "todecoins:collectible_coin_repair/endonian/collectible_coin_halloween"
+    ]
+  }
+}

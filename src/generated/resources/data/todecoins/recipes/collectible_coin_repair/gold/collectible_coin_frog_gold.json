@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "collectible_coins_gold",
+  "ingredients": [
+    {
+      "tag": "todecoins:nuggets/gold"
+    },
+    {
+      "item": "todecoins:collectible_coin_frog_gold"
+    }
+  ],
+  "result": {
+    "item": "todecoins:collectible_coin_frog_gold"
+  }
+}

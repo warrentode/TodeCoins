@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "collectible_coins_iron",
+  "ingredients": [
+    {
+      "tag": "todecoins:nuggets/iron"
+    },
+    {
+      "item": "todecoins:collectible_coin_creeper_iron"
+    }
+  ],
+  "result": {
+    "item": "todecoins:collectible_coin_creeper_iron"
+  }
+}

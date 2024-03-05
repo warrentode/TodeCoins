@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "todecoins:nuggets/copper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "todecoins:collectible_coin_repair/copper/collectible_coin_endermite_copper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_copper_nugget",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "todecoins:collectible_coin_repair/copper/collectible_coin_endermite_copper"
+    ]
+  }
+}
