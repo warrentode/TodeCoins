@@ -1240,6 +1240,10 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(Tags.Items.LEATHER)
+                .add(Items.LEATHER)
+                .add(Items.RABBIT_HIDE)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:hoglin_hide")));
         tag(ForgeTags.Items.CURRENCY_PAPER)
                 .addTag(ModTags.Items.CURRENCY_PAPER);
         tag(ForgeTags.Items.CURRENCY_FIBER)
