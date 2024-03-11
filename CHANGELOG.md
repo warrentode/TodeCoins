@@ -1,3 +1,21 @@
+### 2024-03-10 - 2.1.0.2.beta
+
+- fixed crash on server when generating new Numismatist trades
+
+### 2024-03-05 - 2.1.0.1.beta
+
+- added crafting table recipes to repair collectible coins with nuggets
+
+### 2024-02-26 - 2.1.0.0.beta
+
+- split loot table gen files into smaller files to make future edits easier
+- converted numismatist trades to use loot tables
+  - this brings back seasonal coin offers and requests
+- added additional loot condition in collectible coin loot tables to check dimension
+- collectible coin chest loot tables now fully randomized instead of based on biome or structure
+- collectible coin mob/potion effects applied on item use only
+- collectible coins no longer equip on item use
+
 ### 2024-01-15 - 2.0.0.2.beta
 
 - added missing translations for custom effects
