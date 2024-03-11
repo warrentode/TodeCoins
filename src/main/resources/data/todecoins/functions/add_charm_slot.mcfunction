@@ -1,0 +1,1 @@
+execute as @s at @s run curios add charm @s 1

@@ -1,0 +1,44 @@
+{
+  "parent": "todecoins:collectible/root",
+  "criteria": {
+    "equip_lucky_coin": {
+      "conditions": {
+        "curios:slot": {
+          "slots": [
+            "charm"
+          ]
+        },
+        "item": {
+          "items": [
+            "todecoins:lucky_coin"
+          ]
+        },
+        "location": {}
+      },
+      "trigger": "curios:equip_curio"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.equip_lucky_coin.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:lucky_coin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.equip_lucky_coin"
+    }
+  },
+  "requirements": [
+    [
+      "equip_lucky_coin"
+    ]
+  ],
+  "rewards": {
+    "function": "todecoins:add_charm_slot"
+  }
+}

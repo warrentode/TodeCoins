@@ -1072,6 +1072,12 @@ public class LanguageFileGen extends LanguageProvider {
         add("advancement.first_coin", "A Lucky Find");
         add("advancement.first_coin.desc", "Obtain Your First Collectible Coin");
 
+        add("advancement.equip_lucky_coin", "And All Day You'll Have Good Luck!");
+        add("advancement.equip_lucky_coin.desc", "Equip a Lucky Coin");
+
+        add("advancement.equip_wallet", "Cash on Hand");
+        add("advancement.equip_wallet.desc", "Equip a Wallet Item");
+
         add("advancement.all_coins", "Be the Numismatist");
         add("advancement.all_coins.desc", "Collect all the Collectible Coins");
 

@@ -6,22 +6,29 @@ import com.github.warrentode.todecoins.util.tags.ModTags;
 import com.google.common.collect.Sets;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import top.theillusivec4.curios.api.CuriosTriggers;
+import top.theillusivec4.curios.api.SlotPredicate;
+import top.theillusivec4.curios.api.SlotTypePreset;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Objects;
 import java.util.Set;
 import java.util.function.Consumer;
 
@@ -85,6 +92,28 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance
                                     .hasItems(ItemPredicate.Builder.item().of(ModTags.Items.COLLECTIBLE_COINS).build()))
                     .requirements(RequirementsStrategy.OR).save(consumer, getPath("collectible/first_coin"));
+
+            Advancement equipLuckyCoin = getAdvancement(collectibleCoins, ModItems.LUCKY_COIN.get(),
+                    "equip_lucky_coin", FrameType.TASK, true, true, false)
+                    .addCriterion("equip_lucky_coin",
+                            CuriosTriggers.equip()
+                                    .withItem(ItemPredicate.Builder.item().of(ModItems.LUCKY_COIN.get()))
+                                    .withSlot(SlotPredicate.Builder.slot().of(SlotTypePreset.CHARM.getIdentifier()))
+                                    .withLocation(LocationPredicate.Builder.location())
+                                    .build())
+                    .rewards(AdvancementRewards.Builder.function(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:add_charm_slot"))))
+                    .requirements(RequirementsStrategy.OR).save(consumer, getCuriosPath("advancements/equip_lucky_coin"));
+
+            Advancement equipWallet = getAdvancement(collectibleCoins, Items.BUNDLE,
+                    "equip_wallet", FrameType.TASK, true, true, false)
+                    .addCriterion("equip_wallet",
+                            CuriosTriggers.equip()
+                                    .withItem(ItemPredicate.Builder.item().of(ModTags.Items.WALLETS))
+                                    .withSlot(SlotPredicate.Builder.slot().of(SlotTypePreset.BELT.getIdentifier()))
+                                    .withLocation(LocationPredicate.Builder.location())
+                                    .build())
+                    .rewards(AdvancementRewards.Builder.function(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:add_belt_slot"))))
+                    .requirements(RequirementsStrategy.OR).save(consumer, getCuriosPath("advancements/equip_wallet"));
 
             Advancement lifetimePatronCoinSet = getAdvancement(first_coin, ModItems.LITTLE_BEAR_COIN.get(),
                     "lifetimePatronCoinSet", FrameType.TASK, true, true, false)
@@ -2410,6 +2439,10 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
                             InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHERITE_ZOMBIFIED_PIGLIN_COIN.get()))
 
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("collectible/all_coins"));
+        }
+
+        private String getCuriosPath(String id) {
+            return "curios" + ":" + id;
         }
 
         private String getPath(String id) {
