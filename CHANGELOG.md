@@ -1,3 +1,11 @@
+### 2024-03-11 - 2.1.1.0.beta
+
+- updated build dependencies and fixed missing texture
+- added advancements for equipping a lucky coin and equipping a wallet
+  - both reward the player with an additional respective curios slot
+- added leather item tag to the textiles tags
+- added a bundle recipe using leather tag and string tag
+
 ### 2024-03-10 - 2.1.0.2.beta
 
 - fixed crash on server when generating new Numismatist trades
