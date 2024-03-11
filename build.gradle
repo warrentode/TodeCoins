@@ -134,12 +134,12 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
 
     // project mod dependencies
-    implementation fg.deobf("curse.maven:curios-309927:4902099")
+    implementation fg.deobf("curse.maven:curios-309927:5066842")
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:ecologics-570463:4171285")
     implementation fg.deobf("curse.maven:serene-seasons-291874:4037228")
-    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:4968849")
-    implementation fg.deobf("curse.maven:guard-villagers-360203:4774930")
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:5073566")
+    implementation fg.deobf("curse.maven:guard-villagers-360203:5116175")
     implementation fg.deobf("curse.maven:unusual-end-617757:4549776")
 
     // compile against the JEI API but do not include it at runtime
