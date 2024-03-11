@@ -20,9 +20,6 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class CuriosBeltSlot {
     // yes, I'm leaving this to-do list here for now
-    // TODO learn how custom enchantments work and how enchantments apply to Curio items in order to expand the variety
-    // of equipped effects of these coins since it feels very repetitive to me right now
-    // TODO since the coins do not stack in inventory, I may need to make them breakable and repairable in some fashion to reduce clutter
     // [LittleBear suggestions:]
     // TODO look into how bone meal works and how that can be altered for the bee coin
     // TODO look into adding Loyalty effect for the Drowned coin
@@ -32,7 +29,6 @@ public class CuriosBeltSlot {
     // [ScholarOwl suggestions:]
     // TODO look into giving Elder Guardian coin Depth Strider and Thorns
     // TODO look into increase buff duration for Witch coin
-    // TODO look into giving immunity to poison for Cave Spider
     // (or at least maybe look into how to remove debuffs with a coin - like the cow coin)
 
     public static ItemStack getBeltSlot(Player player) {

@@ -19,7 +19,6 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraftforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -72,9 +71,9 @@ public class MapForOneLootTableItemTrade implements VillagerTrades.ItemListing {
             return null;
         }
         else {
+            MinecraftServer minecraftServer = trader.level.getServer();
             BlockPos blockpos = serverlevel.findNearestMapStructure(this.mapStructure, trader.blockPosition(), 100, true);
             if (blockpos != null) {
-                MinecraftServer minecraftServer = ServerLifecycleHooks.getCurrentServer().getPlayerList().getServer();
                 LootTable currencyTable = minecraftServer.getLootTables().get(currencyLootTable);
 
                 LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())

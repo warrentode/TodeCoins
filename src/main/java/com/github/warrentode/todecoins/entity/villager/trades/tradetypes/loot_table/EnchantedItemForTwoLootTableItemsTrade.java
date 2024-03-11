@@ -2,6 +2,7 @@ package com.github.warrentode.todecoins.entity.villager.trades.tradetypes.loot_t
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -12,7 +13,6 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraftforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,23 +56,32 @@ public class EnchantedItemForTwoLootTableItemsTrade implements VillagerTrades.It
 
     @Nullable
     public MerchantOffer getOffer(@NotNull Entity trader, @NotNull RandomSource source) {
-        int i = 5 + source.nextInt(15);
-        ItemStack enchantedItem = EnchantmentHelper.enchantItem(source, new ItemStack(this.sellItem.getItem()), i, false);
+        if (!(trader.level instanceof ServerLevel)) {
+            return null;
+        }
+        else {
+            MinecraftServer minecraftServer = trader.level.getServer();
+            LootTable currencyTable1 = minecraftServer.getLootTables().get(currencyLootTable1);
+            LootTable currencyTable2 = minecraftServer.getLootTables().get(currencyLootTable2);
 
-        MinecraftServer minecraftServer = ServerLifecycleHooks.getCurrentServer().getPlayerList().getServer();
-        LootTable currencyTable1 = minecraftServer.getLootTables().get(currencyLootTable1);
-        LootTable currencyTable2 = minecraftServer.getLootTables().get(currencyLootTable2);
+            LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())
+                    .withParameter(LootContextParams.ORIGIN, trader.position())
+                    .withParameter(LootContextParams.THIS_ENTITY, trader)
+                    .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
+            List<ItemStack> currency1 = currencyTable1.getRandomItems(lootContext);
+            List<ItemStack> currency2 = currencyTable1.getRandomItems(lootContext);
 
-        LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())
-                .withParameter(LootContextParams.ORIGIN, trader.position())
-                .withParameter(LootContextParams.THIS_ENTITY, trader)
-                .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
-        List<ItemStack> currency1 = currencyTable1.getRandomItems(lootContext);
-        List<ItemStack> currency2 = currencyTable1.getRandomItems(lootContext);
+            ItemStack requestStack1 = new ItemStack(currency1.get(source.nextInt(currency1.size())).getItem(), 1);
+            ItemStack requestStack2 = new ItemStack(currency2.get(source.nextInt(currency1.size())).getItem(), 1);
 
-        ItemStack requestStack1 = new ItemStack(currency1.get(source.nextInt(currency1.size())).getItem(), 1);
-        ItemStack requestStack2 = new ItemStack(currency2.get(source.nextInt(currency1.size())).getItem(), 1);
+            int i = 5 + source.nextInt(15);
+            ItemStack enchantedItem = EnchantmentHelper.enchantItem(source, new ItemStack(this.sellItem.getItem()), i, false);
 
-        return new MerchantOffer(requestStack1, requestStack2, enchantedItem, this.maxUses, this.xpValue, this.priceMultiplier);
+            return new MerchantOffer(requestStack1, requestStack2, enchantedItem, this.maxUses, this.xpValue, this.priceMultiplier);
+        }
+    }
+
+    private void getLootTableCurrency(ResourceLocation lootTable) {
+
     }
 }
