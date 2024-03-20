@@ -1,3 +1,9 @@
+### 2024-03-20 - 2.1.1.1.beta
+
+- fixed patron coin item use on right click function
+- cleaned up code
+- minor fixes to mod trade types
+
 ### 2024-03-11 - 2.1.1.0.beta
 
 - updated build dependencies and fixed missing texture
