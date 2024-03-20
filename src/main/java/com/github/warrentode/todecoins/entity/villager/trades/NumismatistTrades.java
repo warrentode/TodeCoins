@@ -81,7 +81,7 @@ public class NumismatistTrades {
                                 ),
                                 // enchanted book for 2 coins
                                 new EnchantedItemForTwoLootTableItemsTrade(
-                                        Items.BOOK.getDefaultInstance(), 1,
+                                        Items.BOOK.getDefaultInstance(),
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
                                         OneSetForTwoSetsTrade.UNCOMMON_ITEMS_SUPPLY,

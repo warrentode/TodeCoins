@@ -15,7 +15,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -42,8 +41,8 @@ public class FoxCoinItem extends CollectibleCoin implements ICurioItem {
     public FoxCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);
         this.material = material.getCoinMaterial();
-        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
-        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+        this.coinEffectDuration = this.material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = this.material.getCoinMaterialEffectAmplifier();
     }
 
     public CollectibleCoinProperties.Material getCoinMaterial() {
@@ -129,18 +128,6 @@ public class FoxCoinItem extends CollectibleCoin implements ICurioItem {
                                 AttributeModifier.Operation.ADDITION));
 
                 return attribute;
-            }
-
-            @Override
-            public void curioTick(SlotContext slotContext) {
-                LivingEntity livingEntity = slotContext.entity();
-
-                if (livingEntity != null && !livingEntity.level.isClientSide()
-                        && (!livingEntity.hasEffect(ModEffects.BLIND_SHIELD.get()) || !livingEntity.hasEffect(ModEffects.FROST_STRIKE.get()))) {
-
-
-                    stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
-                }
             }
 
             @Nonnull

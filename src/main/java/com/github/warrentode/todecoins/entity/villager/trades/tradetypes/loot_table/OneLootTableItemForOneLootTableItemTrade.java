@@ -49,7 +49,7 @@ public class OneLootTableItemForOneLootTableItemTrade implements VillagerTrades.
 
     @Nullable
     public MerchantOffer getOffer(@NotNull Entity trader, @NotNull RandomSource source) {
-        if (!(trader.level instanceof ServerLevel serverlevel)) {
+        if (!(trader.level instanceof ServerLevel)) {
             return null;
         }
         else {

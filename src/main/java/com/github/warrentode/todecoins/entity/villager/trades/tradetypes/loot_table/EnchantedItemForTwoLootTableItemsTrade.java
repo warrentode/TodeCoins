@@ -35,18 +35,16 @@ public class EnchantedItemForTwoLootTableItemsTrade implements VillagerTrades.It
     public static final float HIGH_TIER_PRICE_MULTIPLIER = 0.2F;
 
     private final ItemStack sellItem;
-    private final int sellItemCount;
     private final ResourceLocation currencyLootTable1;
     private final ResourceLocation currencyLootTable2;
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
 
-    public EnchantedItemForTwoLootTableItemsTrade(ItemStack sellItem, int sellItemCount,
-                                                  ResourceLocation currencyLootTable1, ResourceLocation currencyLootTable2,
+    public EnchantedItemForTwoLootTableItemsTrade(ItemStack sellItem, ResourceLocation currencyLootTable1,
+                                                  ResourceLocation currencyLootTable2,
                                                   int maxUses, int xpValue, float priceMultiplier) {
         this.sellItem = sellItem;
-        this.sellItemCount = sellItemCount;
         this.currencyLootTable1 = currencyLootTable1;
         this.currencyLootTable2 = currencyLootTable2;
         this.maxUses = maxUses;
@@ -69,7 +67,7 @@ public class EnchantedItemForTwoLootTableItemsTrade implements VillagerTrades.It
                     .withParameter(LootContextParams.THIS_ENTITY, trader)
                     .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
             List<ItemStack> currency1 = currencyTable1.getRandomItems(lootContext);
-            List<ItemStack> currency2 = currencyTable1.getRandomItems(lootContext);
+            List<ItemStack> currency2 = currencyTable2.getRandomItems(lootContext);
 
             ItemStack requestStack1 = new ItemStack(currency1.get(source.nextInt(currency1.size())).getItem(), 1);
             ItemStack requestStack2 = new ItemStack(currency2.get(source.nextInt(currency1.size())).getItem(), 1);
@@ -79,9 +77,5 @@ public class EnchantedItemForTwoLootTableItemsTrade implements VillagerTrades.It
 
             return new MerchantOffer(requestStack1, requestStack2, enchantedItem, this.maxUses, this.xpValue, this.priceMultiplier);
         }
-    }
-
-    private void getLootTableCurrency(ResourceLocation lootTable) {
-
     }
 }

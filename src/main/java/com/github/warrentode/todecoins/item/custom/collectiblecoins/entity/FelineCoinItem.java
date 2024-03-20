@@ -17,7 +17,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -44,8 +43,8 @@ public class FelineCoinItem extends CollectibleCoin implements ICurioItem {
     public FelineCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);
         this.material = material.getCoinMaterial();
-        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
-        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+        this.coinEffectDuration = this.material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = this.material.getCoinMaterialEffectAmplifier();
     }
 
     public CollectibleCoinProperties.Material getCoinMaterial() {
@@ -140,8 +139,8 @@ public class FelineCoinItem extends CollectibleCoin implements ICurioItem {
             }
 
             @Override
-            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                LivingEntity livingEntity = slotContext.entity();
+            public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onUnequip(slotContext, prevStack);
             }
 
             @Nonnull

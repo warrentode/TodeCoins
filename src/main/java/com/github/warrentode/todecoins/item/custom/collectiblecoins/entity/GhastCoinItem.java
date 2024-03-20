@@ -16,7 +16,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -43,8 +42,8 @@ public class GhastCoinItem extends CollectibleCoin implements ICurioItem {
     public GhastCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);
         this.material = material.getCoinMaterial();
-        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
-        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+        this.coinEffectDuration = this.material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = this.material.getCoinMaterialEffectAmplifier();
     }
 
     public CollectibleCoinProperties.Material getCoinMaterial() {
@@ -125,21 +124,6 @@ public class GhastCoinItem extends CollectibleCoin implements ICurioItem {
                                 AttributeModifier.Operation.ADDITION));
 
                 return attribute;
-            }
-
-            @Override
-            public void curioTick(SlotContext slotContext) {
-                LivingEntity livingEntity = slotContext.entity();
-
-                if (livingEntity != null && !livingEntity.level.isClientSide()
-                        && (!livingEntity.hasEffect(MobEffects.SLOW_FALLING) || !livingEntity.hasEffect(MobEffects.FIRE_RESISTANCE))) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-
-                    stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
-                }
             }
 
             @Nonnull

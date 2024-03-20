@@ -53,7 +53,7 @@ public class OneLootTableItemForTwoLootTableItemsTrade implements VillagerTrades
 
     @Nullable
     public MerchantOffer getOffer(@NotNull Entity trader, @NotNull RandomSource source) {
-        if (!(trader.level instanceof ServerLevel serverlevel)) {
+        if (!(trader.level instanceof ServerLevel)) {
             return null;
         }
         else {
@@ -69,7 +69,7 @@ public class OneLootTableItemForTwoLootTableItemsTrade implements VillagerTrades
 
             List<ItemStack> sellGoods = sellingTable.getRandomItems(lootContext);
             List<ItemStack> currency1 = currencyTable1.getRandomItems(lootContext);
-            List<ItemStack> currency2 = currencyTable1.getRandomItems(lootContext);
+            List<ItemStack> currency2 = currencyTable2.getRandomItems(lootContext);
 
             ItemStack sellStack = new ItemStack(sellGoods.get(source.nextInt(sellGoods.size())).getItem(), 1);
             ItemStack requestStack1 = new ItemStack(currency1.get(source.nextInt(currency1.size())).getItem(), 1);

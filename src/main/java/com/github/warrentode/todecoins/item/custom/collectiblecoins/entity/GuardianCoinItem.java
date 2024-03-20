@@ -18,7 +18,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -45,8 +44,8 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
     public GuardianCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);
         this.material = material.getCoinMaterial();
-        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
-        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+        this.coinEffectDuration = this.material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = this.material.getCoinMaterialEffectAmplifier();
     }
 
     public CollectibleCoinProperties.Material getCoinMaterial() {
@@ -181,33 +180,6 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
                 }
 
                 return attribute;
-            }
-
-            @Override
-            public void curioTick(SlotContext slotContext) {
-                LivingEntity livingEntity = slotContext.entity();
-
-                if (livingEntity != null && !livingEntity.level.isClientSide() && livingEntity.isUnderWater()
-                        && (!livingEntity.hasEffect(MobEffects.DOLPHINS_GRACE) || !livingEntity.hasEffect(MobEffects.CONDUIT_POWER)
-                        || !livingEntity.hasEffect(ModEffects.HEALING_MIST.get()))) {
-
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
-                        livingEntity.addEffect(new MobEffectInstance(ModEffects.HEALING_MIST.get(), getCoinEffectDuration(), getCoinEffectAmplifier(),
-                                false, false, true));
-                    }
-
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) && RandomSource.create().nextInt(100) > 50) {
-                        stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
-                    }
-                    else {
-                        stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
-                    }
-                }
             }
 
             @Nonnull

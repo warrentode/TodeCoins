@@ -43,8 +43,8 @@ public class VindicatorCoinItem extends CollectibleCoin implements ICurioItem {
     public VindicatorCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);
         this.material = material.getCoinMaterial();
-        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
-        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+        this.coinEffectDuration = this.material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = this.material.getCoinMaterialEffectAmplifier();
     }
 
     public CollectibleCoinProperties.Material getCoinMaterial() {

@@ -42,8 +42,8 @@ public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
     public ShulkerCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);
         this.material = material.getCoinMaterial();
-        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
-        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+        this.coinEffectDuration = this.material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = this.material.getCoinMaterialEffectAmplifier();
     }
 
     public CollectibleCoinProperties.Material getCoinMaterial() {
@@ -63,8 +63,7 @@ public class ShulkerCoinItem extends CollectibleCoin implements ICurioItem {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player playerUsing, @NotNull InteractionHand useHand) {
         ItemStack stack = playerUsing.getItemInHand(useHand);
 
-        if (!level.isClientSide && !playerUsing.hasEffect(MobEffects.LEVITATION)
-                && !level.isClientSide && !playerUsing.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
+        if (!level.isClientSide && !playerUsing.hasEffect(MobEffects.LEVITATION) && !playerUsing.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
             level.playSound(null, playerUsing.getX(), playerUsing.getY(), playerUsing.getZ(), SoundEvents.SHULKER_BULLET_HIT, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
 
             playerUsing.getCooldowns().addCooldown(this, getCoinEffectDuration() / 2);

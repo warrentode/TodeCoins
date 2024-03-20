@@ -18,7 +18,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -45,8 +44,8 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
     public BlazeCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);
         this.material = material.getCoinMaterial();
-        this.coinEffectDuration = material.getCoinMaterialEffectDuration();
-        this.coinEffectAmplifier = material.getCoinMaterialEffectAmplifier();
+        this.coinEffectDuration = this.material.getCoinMaterialEffectDuration();
+        this.coinEffectAmplifier = this.material.getCoinMaterialEffectAmplifier();
     }
 
     public CollectibleCoinProperties.Material getCoinMaterial() {
@@ -107,7 +106,6 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
                 Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                LivingEntity livingEntity = slotContext.entity();
 
                 // material based attributes
                 if (getCoinMaterial() == CollectibleCoinProperties.Material.COPPER) {
@@ -180,34 +178,8 @@ public class BlazeCoinItem extends CollectibleCoin implements ICurioItem {
             }
 
             @Override
-            public void curioTick(SlotContext slotContext) {
-                LivingEntity livingEntity = slotContext.entity();
-
-                if (livingEntity != null && !livingEntity.level.isClientSide()
-                        && (!livingEntity.hasEffect(MobEffects.FIRE_RESISTANCE) || !livingEntity.hasEffect(ModEffects.BURNING_STRIKE.get())
-                        || !livingEntity.hasEffect(ModEffects.HEALING_MIST.get()))) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-                    livingEntity.addEffect(new MobEffectInstance(ModEffects.BURNING_STRIKE.get(), getCoinEffectDuration(), getCoinEffectAmplifier(),
-                            false, false, true));
-
-                    if (stack.is(ModTags.Items.WILDFIRE_COIN_SET)) {
-                        livingEntity.addEffect(new MobEffectInstance(ModEffects.HEALING_MIST.get(), getCoinEffectDuration(), getCoinEffectAmplifier(),
-                                false, false, true));
-                    }
-
-                    if (stack.is(ModTags.Items.WILDFIRE_COIN_SET) && RandomSource.create().nextInt(100) > 50) {
-                        stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
-                    }
-                    else {
-                        stack.hurtAndBreak(1, livingEntity, (livingEntity1) -> curioBreak(slotContext));
-                    }
-                }
-            }
-
-            @Override
-            public void onUnequip(SlotContext slotContext, ItemStack newStack) {
-                LivingEntity livingEntity = slotContext.entity();
+            public void onUnequip(SlotContext slotContext, ItemStack prevStack) {
+                ICurio.super.onUnequip(slotContext, prevStack);
             }
 
             @Nonnull
