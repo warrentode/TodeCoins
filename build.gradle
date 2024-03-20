@@ -132,6 +132,7 @@ dependencies {
     implementation 'io.netty:netty-handler:4.1.104.Final'
     implementation 'com.google.guava:guava:33.0.0-jre'
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
+    implementation 'org.apache.commons:commons-compress:1.26.1'
 
     // project mod dependencies
     implementation fg.deobf("curse.maven:curios-309927:5066842")
