@@ -2,6 +2,7 @@ package com.github.warrentode.todecoins.util;
 
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.server.ServerLifecycleHooks;
 import sereneseasons.api.season.Season;
@@ -56,13 +57,11 @@ public class CalendarUtil {
     }
 
     public static boolean isAnniversary(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.EARLY_SPRING || tropicalSeason == Season.TropicalSeason.MID_WET;
+            return subSeason == Season.SubSeason.EARLY_SPRING;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
@@ -70,62 +69,66 @@ public class CalendarUtil {
             // week of the blog's first post on Patreon anniversary
             return month == Calendar.JANUARY && (date >= 21 && date <= 27);
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isEaster(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.MID_SPRING || tropicalSeason == Season.TropicalSeason.LATE_WET;
+            return subSeason == Season.SubSeason.MID_SPRING;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
             return (month == Calendar.MARCH && date >= 19) || month == Calendar.APRIL;
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isHalloween(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.MID_AUTUMN || tropicalSeason == Season.TropicalSeason.LATE_DRY;
+            return subSeason == Season.SubSeason.MID_AUTUMN;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
 
             return month == Calendar.OCTOBER;
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isChristmas(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.EARLY_WINTER || tropicalSeason == Season.TropicalSeason.EARLY_WET;
+            return subSeason == Season.SubSeason.EARLY_WINTER;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
 
             return month == Calendar.DECEMBER;
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isBirthday(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.MID_WINTER || tropicalSeason == Season.TropicalSeason.EARLY_WET;
+            return subSeason == Season.SubSeason.MID_WINTER;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
@@ -133,16 +136,17 @@ public class CalendarUtil {
             // week of this mod's birthday
             return month == Calendar.DECEMBER && (date >= 19 && date <= 21);
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isNewYear(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.LATE_WINTER || tropicalSeason == Season.TropicalSeason.MID_WET;
+            return subSeason == Season.SubSeason.LATE_WINTER;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
@@ -151,73 +155,84 @@ public class CalendarUtil {
             return (month == Calendar.DECEMBER && date == 31) || (month == Calendar.JANUARY && date == 1)
                     || ((month == Calendar.FEBRUARY && date <= 20) || (month == Calendar.JANUARY && date >= 21));
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isSpring(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.EARLY_SPRING || subSeason == Season.SubSeason.MID_SPRING || subSeason == Season.SubSeason.LATE_SPRING
-                    || tropicalSeason == Season.TropicalSeason.MID_WET || tropicalSeason == Season.TropicalSeason.LATE_WET;
+            return subSeason == Season.SubSeason.EARLY_SPRING
+                    || subSeason == Season.SubSeason.MID_SPRING
+                    || subSeason == Season.SubSeason.LATE_SPRING;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
             return (month == Calendar.MARCH && date >= 20) || (month == Calendar.JUNE && date <= 20);
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isSummer(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.EARLY_SUMMER || subSeason == Season.SubSeason.MID_SUMMER || subSeason == Season.SubSeason.LATE_SUMMER
-                    || tropicalSeason == Season.TropicalSeason.EARLY_DRY || tropicalSeason == Season.TropicalSeason.MID_DRY;
+            return subSeason == Season.SubSeason.EARLY_SUMMER
+                    || subSeason == Season.SubSeason.MID_SUMMER
+                    || subSeason == Season.SubSeason.LATE_SUMMER;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
             return (month == Calendar.JUNE && date >= 20) || (month == Calendar.SEPTEMBER && date <= 20);
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isAutumn(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.EARLY_AUTUMN || subSeason == Season.SubSeason.MID_AUTUMN || subSeason == Season.SubSeason.LATE_AUTUMN
-                    || tropicalSeason == Season.TropicalSeason.MID_DRY || tropicalSeason == Season.TropicalSeason.LATE_DRY;
+            return subSeason == Season.SubSeason.EARLY_AUTUMN
+                    || subSeason == Season.SubSeason.MID_AUTUMN
+                    || subSeason == Season.SubSeason.LATE_AUTUMN;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
             return (month == Calendar.SEPTEMBER && date >= 20) || (month == Calendar.DECEMBER && date <= 20);
         }
+        else {
+            return false;
+        }
     }
 
     public static boolean isWinter(ServerLevel level) {
-        if (ModList.get().isLoaded("sereneseasons")) {
+        if (ModList.get().isLoaded("sereneseasons") && level.dimension() == Level.OVERWORLD) {
             Season.SubSeason subSeason = SeasonHelper.getSeasonState(level).getSubSeason();
-            Season.TropicalSeason tropicalSeason = SeasonHelper.getSeasonState(level).getTropicalSeason();
-
-            return subSeason == Season.SubSeason.EARLY_WINTER || subSeason == Season.SubSeason.MID_WINTER || subSeason == Season.SubSeason.LATE_WINTER
-                    || tropicalSeason == Season.TropicalSeason.EARLY_WET || tropicalSeason == Season.TropicalSeason.MID_WET;
+            return subSeason == Season.SubSeason.EARLY_WINTER
+                    || subSeason == Season.SubSeason.MID_WINTER
+                    || subSeason == Season.SubSeason.LATE_WINTER;
         }
-        else {
+        else if (!ModList.get().isLoaded("sereneseasons") || level.dimension() != Level.OVERWORLD) {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
             return (month == Calendar.DECEMBER && date >= 20) || (month == Calendar.MARCH && date <= 20);
+        }
+        else {
+            return false;
         }
     }
 }
