@@ -17,6 +17,7 @@ public class CalendarUtil {
     public static boolean check(String season) {
         if (ModList.get().isLoaded("sereneseasons")) {
             MinecraftServer minecraftServer = ServerLifecycleHooks.getCurrentServer().getPlayerList().getServer();
+            //noinspection ConstantValue
             if (minecraftServer != null) {
                 ServerLevel serverLevel = minecraftServer.createCommandSourceStack().getLevel();
                 if (Objects.equals(season, "ANNIVERSARY")) {
@@ -83,7 +84,7 @@ public class CalendarUtil {
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
-            return (month == Calendar.MARCH && date >= 19) && (month == Calendar.APRIL && date <= 30);
+            return (month == Calendar.MARCH && date >= 19) || month == Calendar.APRIL;
         }
     }
 
@@ -97,9 +98,8 @@ public class CalendarUtil {
         else {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
-            int date = calendar.get(Calendar.DATE);
 
-            return month == Calendar.OCTOBER && (date >= 1 && date <= 31);
+            return month == Calendar.OCTOBER;
         }
     }
 
@@ -113,9 +113,8 @@ public class CalendarUtil {
         else {
             Calendar calendar = Calendar.getInstance();
             int month = calendar.get(Calendar.MONTH);
-            int date = calendar.get(Calendar.DATE);
 
-            return month == Calendar.DECEMBER && (date >= 1 && date <= 31);
+            return month == Calendar.DECEMBER;
         }
     }
 
@@ -150,7 +149,7 @@ public class CalendarUtil {
 
             // Georgian and lunisolar calendar time frames
             return (month == Calendar.DECEMBER && date == 31) || (month == Calendar.JANUARY && date == 1)
-                    || ((month == Calendar.FEBRUARY && date <= 20) && (month == Calendar.JANUARY && date >= 21));
+                    || ((month == Calendar.FEBRUARY && date <= 20) || (month == Calendar.JANUARY && date >= 21));
         }
     }
 
@@ -167,7 +166,7 @@ public class CalendarUtil {
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
-            return (month == Calendar.MARCH && date >= 20) && (month == Calendar.JUNE && date <= 20);
+            return (month == Calendar.MARCH && date >= 20) || (month == Calendar.JUNE && date <= 20);
         }
     }
 
@@ -184,7 +183,7 @@ public class CalendarUtil {
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
-            return (month == Calendar.JUNE && date >= 20) && (month == Calendar.SEPTEMBER && date <= 20);
+            return (month == Calendar.JUNE && date >= 20) || (month == Calendar.SEPTEMBER && date <= 20);
         }
     }
 
@@ -201,7 +200,7 @@ public class CalendarUtil {
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
-            return (month == Calendar.SEPTEMBER && date >= 20) && (month == Calendar.DECEMBER && date <= 20);
+            return (month == Calendar.SEPTEMBER && date >= 20) || (month == Calendar.DECEMBER && date <= 20);
         }
     }
 
@@ -218,7 +217,7 @@ public class CalendarUtil {
             int month = calendar.get(Calendar.MONTH);
             int date = calendar.get(Calendar.DATE);
 
-            return (month == Calendar.DECEMBER && date >= 20) && (month == Calendar.MARCH && date <= 20);
+            return (month == Calendar.DECEMBER && date >= 20) || (month == Calendar.MARCH && date <= 20);
         }
     }
 }

@@ -81,7 +81,8 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0, 1 -> true;
+                case 0 -> stack.is(ModTags.Items.CURRENCY_STAMPS);
+                case 1 -> stack.is(ModTags.Items.CURRENCY_MATERIALS);
                 case 2 -> false;
                 default -> super.isItemValid(slot, stack);
             };
@@ -90,11 +91,14 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
 
     private final Map<Direction, LazyOptional<CoinPressItemHandler>> directionWrappedHandlerMap =
             Map.of(Direction.DOWN, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
-                    Direction.NORTH, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (i) -> i == 2, (i, s) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (index) -> index == 0,
-                            (index, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (i) -> i == 1,
-                            (index, stack) -> itemHandler.isItemValid(1, stack))),
+                    Direction.UP, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (index) -> index == 0 || index == 1,
+                            (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(1, stack))),
+                    Direction.NORTH, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (index) -> index == 0 || index == 1,
+                            (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(1, stack))),
+                    Direction.WEST, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (index) -> index == 0 || index == 1,
+                            (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(1, stack))),
+                    Direction.EAST, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (index) -> index == 0 || index == 1,
+                            (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(1, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new CoinPressItemHandler(itemHandler, (index) -> index == 0 || index == 1,
                             (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(1, stack))));
 
