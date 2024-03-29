@@ -4,6 +4,8 @@
 - fixed netherite ingot and endonian ingot tags
 - fixed translation error for nether gold coin bag
 - edited currency materials tag
+- fixed incorrect system message on bracelet use
+- cleaned up some code
 
 ### 2024-03-20 - 2.1.1.1.beta
 

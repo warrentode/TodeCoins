@@ -43,6 +43,7 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
     public final ItemStackHandler inventory;
     private final Level level;
     private final ContainerData coinpressData;
+    @SuppressWarnings("unused")
     private final ContainerLevelAccess canInteractWithCallable;
     public CoinPressMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf extraData) {
         this(windowId, playerInventory, getBlockEntity(playerInventory, extraData), new SimpleContainerData(2));
@@ -94,6 +95,7 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
+    @SuppressWarnings("ConstantValue")
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);

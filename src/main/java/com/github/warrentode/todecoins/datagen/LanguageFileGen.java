@@ -20,10 +20,15 @@ import java.util.TreeMap;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class LanguageFileGen extends LanguageProvider {
+    @SuppressWarnings("unused")
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().setLenient().create();
+    @SuppressWarnings("unused")
     private final Map<String, String> data = new TreeMap<>();
+    @SuppressWarnings("unused")
     private final DataGenerator generator;
+    @SuppressWarnings("unused")
     private final String modid;
+    @SuppressWarnings("unused")
     private final String locale;
 
     public LanguageFileGen(DataGenerator generator, String modid, String locale) {
@@ -49,8 +54,6 @@ public class LanguageFileGen extends LanguageProvider {
     }
 
     private void addFriendshipBracelets() {
-        ItemStack stack = ItemStack.EMPTY;
-
         add("tooltips.bracelet_not_linked", "This bracelet is not yet linked to anyone. First time use will link it to the user.");
         add("tooltips.bracelet_linked_player", "This bracelet is linked to: ");
         add("tooltips.bracelet_use_info", "If this bracelet is linked to you, use it to teleport to your spawn point. Otherwise, use it to teleport to the player it's linked to.");
@@ -71,7 +74,7 @@ public class LanguageFileGen extends LanguageProvider {
     private void fillInBraceletTranslations(@NotNull ItemStack stack) {
         add(stack.getDescriptionId() + "." + PlayerUtil.BRACELET_MAKER_TAG, "§cLinked player§r %s");
         add(stack.getDescriptionId() + ".offline", "§cLinked player§r %s §cis offline. Teleport aborted.§r");
-        add(stack.getDescriptionId() + ".linked", "This bracelet is now linked to you!");
+        add(stack.getDescriptionId() + ".linked", "This bracelet is linked to you!");
     }
 
     private void addItems() {
