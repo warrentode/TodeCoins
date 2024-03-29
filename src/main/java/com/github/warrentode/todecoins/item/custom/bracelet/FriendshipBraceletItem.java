@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+@SuppressWarnings("AccessStaticViaInstance")
 public class FriendshipBraceletItem extends Item {
     public static int braceletDurability;
     private final BraceletProperties braceletMaterials;
@@ -60,7 +61,7 @@ public class FriendshipBraceletItem extends Item {
         return serverPlayer.getRespawnPosition();
     }
 
-    public static ResourceKey<Level> getRespawnDimension(@NotNull ServerPlayer serverPlayer) {
+    public static @NotNull ResourceKey<Level> getRespawnDimension(@NotNull ServerPlayer serverPlayer) {
         return serverPlayer.getRespawnDimension();
     }
 
@@ -68,7 +69,7 @@ public class FriendshipBraceletItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player playerUsing, @NotNull InteractionHand useHand) {
         ItemStack stack = playerUsing.getItemInHand(useHand);
 
-        if (!level.isClientSide && stack.getTag() != null) {
+        if (!level.isClientSide && stack.getTag() != null && !stack.getTag().getString(PlayerUtil.BRACELET_MAKER_TAG).isEmpty()) {
             // checks if the braceletMakerName tag contains a player name
             if (stack.getTag().contains(PlayerUtil.BRACELET_MAKER_TAG)) {
                 String braceletMakerName = stack.getTag().getString(PlayerUtil.BRACELET_MAKER_TAG);
@@ -140,14 +141,14 @@ public class FriendshipBraceletItem extends Item {
                             else {
                                 playerUsing.sendSystemMessage(Component.translatable(stack.getDescriptionId() + ".offline", ChatFormatting.RED + braceletMakerName));
                             }
-                            return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
                         }
                     }
                 }
+                return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
             }
         }
         // if braceletMakerTag is not present or empty, create one with name of playerUsing
-        else {
+        else if (!level.isClientSide && (stack.getTag() == null || stack.getTag().getString(PlayerUtil.BRACELET_MAKER_TAG).isEmpty())) {
             final CompoundTag itemTag = stack.getOrCreateTag();
             itemTag.putString(PlayerUtil.BRACELET_MAKER_TAG, playerUsing.getGameProfile().getName());
 
