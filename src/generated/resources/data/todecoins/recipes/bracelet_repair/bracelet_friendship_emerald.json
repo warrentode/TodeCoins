@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "bracelets",
+  "ingredients": [
+    {
+      "item": "todecoins:endonian_thread"
+    },
+    {
+      "item": "todecoins:emerald_thread"
+    },
+    {
+      "item": "todecoins:bracelet_friendship_emerald"
+    }
+  ],
+  "result": {
+    "item": "todecoins:bracelet_friendship_emerald"
+  }
+}

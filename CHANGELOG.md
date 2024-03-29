@@ -5,6 +5,7 @@
 - fixed translation error for nether gold coin bag
 - edited currency materials tag
 - fixed incorrect system message on bracelet use
+- added repair recipes for friendship bracelets in crafting table
 - cleaned up some code
 
 ### 2024-03-20 - 2.1.1.1.beta

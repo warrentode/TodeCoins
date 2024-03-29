@@ -34,6 +34,48 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
         collectibleCoinSmeltingRecipes(consumer);
         collectibleCoinBlastingRecipes(consumer);
         holidayChocolateCoinRecipes(consumer);
+        braceletRecipes(consumer);
+    }
+
+    private static void braceletRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_EMERALD.get(), 1)
+                .pattern("#A#")
+                .pattern("APA")
+                .pattern("#A#")
+                .define('#', ModItems.ENDONIAN_THREAD.get())
+                .define('A', ModItems.EMERALD_THREAD.get())
+                .define('P', Items.ENDER_PEARL)
+                .unlockedBy("has_emerald_thread", has(ModItems.EMERALD_THREAD.get()))
+                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_emerald"));
+
+        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_ECHO.get(), 1)
+                .pattern("#A#")
+                .pattern("APA")
+                .pattern("#A#")
+                .define('#', ModItems.ENDONIAN_THREAD.get())
+                .define('A', ModItems.ECHO_THREAD.get())
+                .define('P', Items.ENDER_PEARL)
+                .unlockedBy("has_echo_thread", has(ModItems.ECHO_THREAD.get()))
+                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_echo"));
+
+        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get(), 1)
+                .pattern("###")
+                .pattern("#P#")
+                .pattern("###")
+                .define('#', ModItems.ENDONIAN_THREAD.get())
+                .define('P', Items.ENDER_PEARL)
+                .unlockedBy("has_endonian_thread", has(ModItems.ENDONIAN_THREAD.get()))
+                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_endonian"));
+
+        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_LUCKY.get(), 1)
+                .pattern("#A#")
+                .pattern("APA")
+                .pattern("#A#")
+                .define('#', ModItems.ENDONIAN_THREAD.get())
+                .define('A', ModItems.LUCKY_THREAD.get())
+                .define('P', Items.ENDER_PEARL)
+                .unlockedBy("has_lucky_thread", has(ModItems.LUCKY_THREAD.get()))
+                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_lucky"));
     }
 
     private static void holidayChocolateCoinRecipes(Consumer<FinishedRecipe> consumer) {
@@ -50,6 +92,7 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
         chocolateCoinRecipeTemplate3(consumer, ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get(), 4, ForgeTags.Items.CLOVER, ForgeTags.Items.CLOVER);
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static void chocolateCoinRecipeTemplate(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, Item flavorA, Item flavorB) {
         ShapelessRecipeBuilder.shapeless(result, resultAmount)
                 .group("chocolate_coins")
@@ -65,6 +108,7 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .save(consumer, new ResourceLocation(MODID, "chocolate_coins/" + result));
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static void chocolateCoinRecipeTemplate2(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, TagKey<Item> flavorA, Item flavorB) {
         ShapelessRecipeBuilder.shapeless(result, resultAmount)
                 .group("chocolate_coins")
@@ -80,6 +124,7 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .save(consumer, new ResourceLocation(MODID, "chocolate_coins/" + result));
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static void chocolateCoinRecipeTemplate3(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, TagKey<Item> flavorA, TagKey<Item> flavorB) {
         ShapelessRecipeBuilder.shapeless(result, resultAmount)
                 .group("chocolate_coins")
@@ -431,16 +476,6 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .unlockedBy("has_emerald_fiber", has(ModItems.EMERALD_FIBER.get()))
                 .save(consumer, new ResourceLocation(MODID, "textiles/thread/emerald_thread"));
 
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_EMERALD.get(), 1)
-                .pattern("#A#")
-                .pattern("APA")
-                .pattern("#A#")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
-                .define('A', ModItems.EMERALD_THREAD.get())
-                .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_emerald_thread", has(ModItems.EMERALD_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_emerald"));
-
         ShapedRecipeBuilder.shaped(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get(), 1)
                 .pattern("##")
                 .pattern("##")
@@ -484,16 +519,6 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .unlockedBy("has_lucky_thread", has(ModItems.LUCKY_THREAD.get()))
                 .save(consumer, new ResourceLocation(MODID, "textiles/fabric/lucky_fabric"));
 
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_LUCKY.get(), 1)
-                .pattern("#A#")
-                .pattern("APA")
-                .pattern("#A#")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
-                .define('A', ModItems.LUCKY_THREAD.get())
-                .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_lucky_thread", has(ModItems.LUCKY_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_lucky"));
-
         ShapedRecipeBuilder.shaped(ModItems.ENDONIAN_FIBER.get(), 1)
                 .pattern("###")
                 .pattern("#C#")
@@ -510,15 +535,6 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .unlockedBy("has_endonian_fiber", has(ModItems.ENDONIAN_FIBER.get()))
                 .save(consumer, new ResourceLocation(MODID, "textiles/thread/endonian_thread"));
 
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get(), 1)
-                .pattern("###")
-                .pattern("#P#")
-                .pattern("###")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
-                .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_endonian_thread", has(ModItems.ENDONIAN_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_endonian"));
-
         ShapedRecipeBuilder.shaped(ModItems.ECHO_FIBER.get(), 1)
                 .pattern("###")
                 .pattern("#C#")
@@ -534,15 +550,5 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .define('#', ModItems.ECHO_FIBER.get())
                 .unlockedBy("has_echo_fiber", has(ModItems.ECHO_FIBER.get()))
                 .save(consumer, new ResourceLocation(MODID, "textiles/thread/echo_thread"));
-
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_ECHO.get(), 1)
-                .pattern("#A#")
-                .pattern("APA")
-                .pattern("#A#")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
-                .define('A', ModItems.ECHO_THREAD.get())
-                .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_echo_thread", has(ModItems.ECHO_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_echo"));
     }
 }

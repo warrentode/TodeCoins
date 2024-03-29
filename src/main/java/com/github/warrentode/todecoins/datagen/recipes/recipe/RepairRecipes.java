@@ -14,8 +14,8 @@ import java.util.function.Consumer;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
-public class CoinRepairRecipes extends RecipeProvider implements IConditionBuilder {
-    public CoinRepairRecipes(DataGenerator pGenerator) {
+public class RepairRecipes extends RecipeProvider implements IConditionBuilder {
+    public RepairRecipes(DataGenerator pGenerator) {
         super(pGenerator);
     }
 
@@ -25,6 +25,49 @@ public class CoinRepairRecipes extends RecipeProvider implements IConditionBuild
         goldCoins(consumer);
         netheriteCoins(consumer);
         endonianCoins(consumer);
+        bracelets(consumer);
+    }
+
+    private static void bracelets(Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(ModItems.BRACELET_FRIENDSHIP_EMERALD.get(), 1)
+                .group("bracelets")
+                .requires(ModItems.ENDONIAN_THREAD.get())
+                .requires(ModItems.EMERALD_THREAD.get())
+                .requires(ModItems.BRACELET_FRIENDSHIP_EMERALD.get())
+                .unlockedBy("has_emerald_friendship_bracelet",
+                        has(ModItems.BRACELET_FRIENDSHIP_EMERALD.get()))
+                .save(consumer, new ResourceLocation(MODID, "bracelet_repair/" +
+                        ModItems.BRACELET_FRIENDSHIP_EMERALD.get()));
+
+        ShapelessRecipeBuilder.shapeless(ModItems.BRACELET_FRIENDSHIP_ECHO.get(), 1)
+                .group("bracelets")
+                .requires(ModItems.ENDONIAN_THREAD.get())
+                .requires(ModItems.ECHO_THREAD.get())
+                .requires(ModItems.BRACELET_FRIENDSHIP_ECHO.get())
+                .unlockedBy("has_echo_friendship_bracelet",
+                        has(ModItems.BRACELET_FRIENDSHIP_ECHO.get()))
+                .save(consumer, new ResourceLocation(MODID, "bracelet_repair/" +
+                        ModItems.BRACELET_FRIENDSHIP_ECHO.get()));
+
+        ShapelessRecipeBuilder.shapeless(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get(), 1)
+                .group("bracelets")
+                .requires(ModItems.ENDONIAN_THREAD.get())
+                .requires(ModItems.ENDONIAN_THREAD.get())
+                .requires(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get())
+                .unlockedBy("has_endonian_friendship_bracelet",
+                        has(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get()))
+                .save(consumer, new ResourceLocation(MODID, "bracelet_repair/" +
+                        ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get()));
+
+        ShapelessRecipeBuilder.shapeless(ModItems.BRACELET_FRIENDSHIP_LUCKY.get(), 1)
+                .group("bracelets")
+                .requires(ModItems.ENDONIAN_THREAD.get())
+                .requires(ModItems.LUCKY_THREAD.get())
+                .requires(ModItems.BRACELET_FRIENDSHIP_LUCKY.get())
+                .unlockedBy("has_lucky_friendship_bracelet",
+                        has(ModItems.BRACELET_FRIENDSHIP_LUCKY.get()))
+                .save(consumer, new ResourceLocation(MODID, "bracelet_repair/" +
+                        ModItems.BRACELET_FRIENDSHIP_LUCKY.get()));
     }
 
     private static void copperCoins(Consumer<FinishedRecipe> consumer) {

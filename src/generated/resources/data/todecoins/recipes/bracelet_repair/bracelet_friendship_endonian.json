@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "bracelets",
+  "ingredients": [
+    {
+      "item": "todecoins:endonian_thread"
+    },
+    {
+      "item": "todecoins:endonian_thread"
+    },
+    {
+      "item": "todecoins:bracelet_friendship_endonian"
+    }
+  ],
+  "result": {
+    "item": "todecoins:bracelet_friendship_endonian"
+  }
+}

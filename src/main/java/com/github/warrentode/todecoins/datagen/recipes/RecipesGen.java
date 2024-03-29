@@ -1,8 +1,8 @@
 package com.github.warrentode.todecoins.datagen.recipes;
 
 import com.github.warrentode.todecoins.datagen.recipes.recipe.CoinPressRecipesGen;
-import com.github.warrentode.todecoins.datagen.recipes.recipe.CoinRepairRecipes;
 import com.github.warrentode.todecoins.datagen.recipes.recipe.CraftingRecipesGen;
+import com.github.warrentode.todecoins.datagen.recipes.recipe.RepairRecipes;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -22,6 +22,6 @@ public class RecipesGen extends RecipeProvider {
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         CraftingRecipesGen.register(consumer);
         CoinPressRecipesGen.register(consumer);
-        CoinRepairRecipes.register(consumer);
+        RepairRecipes.register(consumer);
     }
 }
