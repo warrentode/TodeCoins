@@ -33,8 +33,6 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeManager;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -68,8 +66,6 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
     private ItemStack lastItemCrafted;
     private boolean checkNewRecipe;
     public LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-    public RecipeType<CoinPressRecipe> recipeType = CoinPressRecipe.Type.INSTANCE;
-    private RecipeManager.CachedCheck<RecipeWrapper, CoinPressRecipe> quickCheck;
     private final ItemStackHandler itemHandler = new ItemStackHandler(INVENTORY_SIZE) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -108,7 +104,6 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         this.lastItemCrafted = ItemStack.EMPTY;
         this.usedRecipes = new Object2IntOpenHashMap<>();
         this.checkNewRecipe = true;
-        this.quickCheck = RecipeManager.createCheck(recipeType);
         this.coinpressData = new ContainerData() {
             @Override
             public int get(int pIndex) {

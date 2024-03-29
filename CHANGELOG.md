@@ -1,3 +1,10 @@
+### 2024-03-29 - 2.1.1.2.beta
+
+- fixed item handler for coin press
+- fixed netherite ingot and endonian ingot tags
+- fixed translation error for nether gold coin bag
+- edited currency materials tag
+
 ### 2024-03-20 - 2.1.1.1.beta
 
 - fixed patron coin item use on right click function

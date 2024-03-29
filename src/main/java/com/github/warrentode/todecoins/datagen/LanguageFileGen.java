@@ -1443,7 +1443,7 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModBlocks.IRON_COIN_BAG.get(), "Iron Coin Bag");
         add(ModBlocks.GOLD_COIN_BAG.get(), "Gold Coin Bag");
         add(ModBlocks.NETHERITE_COIN_BAG.get(), "Netherite Coin Bag");
-        add(ModBlocks.NETHER_GOLD_COIN_BAG.get(), "Netherite Gold Coin Bag");
+        add(ModBlocks.NETHER_GOLD_COIN_BAG.get(), "Nether Gold Coin Bag");
         add(ModBlocks.ENDONIAN_COIN_BAG.get(), "Endonian Coin Bag");
         add(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(), "Emerald Quarter Bank Note Bag");
         add(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get(), "Emerald Half Bank Note Bag");

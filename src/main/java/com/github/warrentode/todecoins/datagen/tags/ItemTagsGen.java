@@ -1167,7 +1167,6 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.GOLD_NUGGET)
                 .addTag(ModTags.Items.NETHERITE_NUGGET)
                 .addTag(ModTags.Items.ENDONIAN_NUGGET)
-                .addTag(ModTags.Items.CURRENCY_FIBER)
                 .addTag(ModTags.Items.CURRENCY_PAPER);
         tag(ModTags.Items.CURRENCY_STAMPS)
                 .add(ModItems.CURRENCY_STAMP.get())
@@ -1235,7 +1234,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.GOLD_INGOT);
         tag(ModTags.Items.NETHERITE_INGOT)
                 .add(Items.NETHERITE_INGOT);
-        tag(ModTags.Items.NETHERITE_INGOT)
+        tag(ModTags.Items.ENDONIAN_INGOT)
                 .add(ModItems.ENDONIAN_INGOT.get());
     }
 

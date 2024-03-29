@@ -1,26 +1,30 @@
 package com.github.warrentode.todecoins.block.entity.container.inventory;
 
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
 import javax.annotation.Nonnull;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
-public class CoinPressItemHandler implements IItemHandler {
-    private static final int SLOTS_INPUT = 1;
-    private static final int SLOT_OUTPUT = 2;
+/*
+ * WrappedHandler by noeppi_noeppi
+ * under https://github.com/ModdingX/LibX/blob/1.19/LICENSE
+ *
+ */
+public class CoinPressItemHandler implements IItemHandlerModifiable {
     private final IItemHandlerModifiable handler;
     private final Predicate<Integer> extract;
     private final BiPredicate<Integer, ItemStack> insert;
 
-    public CoinPressItemHandler(IItemHandlerModifiable handler, Predicate<Integer> extract, BiPredicate<Integer, ItemStack> insert) {
+    public CoinPressItemHandler(IItemHandlerModifiable handler, Predicate<Integer> extract,
+                                BiPredicate<Integer, ItemStack> insert) {
         this.handler = handler;
         this.extract = extract;
         this.insert = insert;
     }
 
+    @Override
     public void setStackInSlot(int slot, @Nonnull ItemStack stack) {
         this.handler.setStackInSlot(slot, stack);
     }

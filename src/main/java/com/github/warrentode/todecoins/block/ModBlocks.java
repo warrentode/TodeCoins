@@ -27,7 +27,6 @@ public class ModBlocks {
     // probably means I need to redesign the textures and models of these coins so they look nice on a block
     // as it is, I feel they are hard to see in the gui right now
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TodeCoins.MODID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TodeCoins.MODID);
 
     public static final RegistryObject<Block> COPPER_COIN_BAG = registerBlock("copper_coin_bag",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.CHAIN).strength(2f)),

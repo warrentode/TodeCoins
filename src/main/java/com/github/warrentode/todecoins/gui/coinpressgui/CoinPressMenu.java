@@ -68,7 +68,7 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
         this.addDataSlots(coinpressData);
     }
 
-    private static CoinPressBlockEntity getBlockEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
+    private static @NotNull CoinPressBlockEntity getBlockEntity(final Inventory playerInventory, final FriendlyByteBuf data) {
         Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
         Objects.requireNonNull(data, "data cannot be null");
         final BlockEntity tileAtPos = playerInventory.player.level.getBlockEntity(data.readBlockPos());
