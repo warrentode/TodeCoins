@@ -1,3 +1,16 @@
+### 2024-03-29 - 2.1.2.0.beta
+
+- edited the calendar check to include checking for the overworld dimension to apply the serene seasons compat events
+- all other dimensions now use the system calendar to apply seasonal events
+  - the reason for this change is simply due to the fact that by default, time doesn't change in the Nether and the End
+    - this means that when using the serene seasons mod, those dimensions were stuck in whatever seasonal event the
+      world was created in
+    - other modded dimensions also have this same issue
+  - a secondary reason for this change was to address some leaking in of the system calendar events while the serene
+    seasons mod is loaded
+    - ie: winter event checking as true due to system clock while in some other seasonal event is in effect for serene
+      seasons mod
+
 ### 2024-03-29 - 2.1.1.2.beta
 
 - fixed item handler for coin press
