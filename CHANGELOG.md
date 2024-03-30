@@ -1,5 +1,6 @@
 ### 2024-03-29 - 2.1.2.0.beta
 
+- fixed currency materials tags
 - edited the calendar check to include checking for the overworld dimension to apply the serene seasons compat events
 - all other dimensions now use the system calendar to apply seasonal events
     - the reason for this change is simply due to the fact that by default, time doesn't change in the Nether and the
@@ -21,6 +22,8 @@
 ### 2024-03-29 - 2.1.1.2.beta
 
 - fixed item handler for coin press
+    - first slot now only accepts items tagged as currency stamps
+    - second slot now only accepts items tagged as currency materials
 - fixed netherite ingot and endonian ingot tags
 - fixed translation error for nether gold coin bag
 - edited currency materials tag
