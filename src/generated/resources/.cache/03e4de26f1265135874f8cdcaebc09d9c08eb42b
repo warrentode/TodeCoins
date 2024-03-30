@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-28T23:46:20.7471439	Tags for minecraft:item
+// 1.19.2	2024-03-30T06:07:54.1308567	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -6,7 +6,7 @@ befe56c9f54e8784473a05fa5e800679b25ce60f data/forge/tags/items/clover.json
 b98916a5fe0160dc9d80a360961ec2ddbc784342 data/forge/tags/items/cocoa.json
 d5cf70c1c1570594208821e2af44e7225918bc4f data/forge/tags/items/coins.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
-49d871134517203e4311ad7c144a5a4f85ea511e data/forge/tags/items/currency_materials.json
+5f68ab5892f7d0337e7a331a1244af90f29c5b36 data/forge/tags/items/currency_materials.json
 e696f402dd807aff108bcdbf82e9cfaf00b8dadc data/forge/tags/items/currency_stamps.json
 fe91d9df301382872a3e254eb22768784d8932b1 data/forge/tags/items/eggs.json
 056929b7ab3fd6b71312bcc7bae8661d4f4a5df0 data/forge/tags/items/enchanting_fuels.json
@@ -174,7 +174,7 @@ e52b2fa951e26756b57d45d0f1d3419bd63cc979 data/todecoins/tags/items/collectible_c
 be62e171e8f5010cfe7db3e2a1fe33d7e96d6d34 data/todecoins/tags/items/currency.json
 6e1bba552c6a9722a324eafa93960525ca7e9e94 data/todecoins/tags/items/currency/banknotes.json
 f04960c86353f26abb0c4a476a4d3f3e838ec5f8 data/todecoins/tags/items/currency/coins.json
-d6299e939f5b07ccd67f466ed7a68e33b84c2cac data/todecoins/tags/items/currency_materials.json
+3879c99c8234b0e5270ea976e3cbc9287d943dd2 data/todecoins/tags/items/currency_materials.json
 75d20f717c80c13d15170f5d225e1a93a8dc9967 data/todecoins/tags/items/currency_stamps.json
 790a0e710eba0bb16c6e3bc1bdd3724093227240 data/todecoins/tags/items/gems.json
 6bbf2021a2f6b6a21fc45c80637b7cfb6dbd79f5 data/todecoins/tags/items/ingots.json

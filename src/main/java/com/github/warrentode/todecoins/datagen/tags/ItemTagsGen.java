@@ -1162,11 +1162,8 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.COINS)
                 .addTag(ForgeTags.Items.PIGLIN_BARTER_ITEMS);
         tag(ModTags.Items.CURRENCY_MATERIALS)
-                .addTag(ModTags.Items.COPPER_NUGGET)
-                .addTag(ModTags.Items.IRON_NUGGET)
-                .addTag(ModTags.Items.GOLD_NUGGET)
-                .addTag(ModTags.Items.NETHERITE_NUGGET)
-                .addTag(ModTags.Items.ENDONIAN_NUGGET)
+                .addTag(ModTags.Items.NUGGETS)
+                .addTag(ModTags.Items.INGOTS)
                 .addTag(ModTags.Items.CURRENCY_PAPER);
         tag(ModTags.Items.CURRENCY_STAMPS)
                 .add(ModItems.CURRENCY_STAMP.get())
@@ -1407,12 +1404,8 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ForgeTags.Items.ENDONIAN_INGOT).add(
                 ModItems.ENDONIAN_INGOT.get());
         tag(ForgeTags.Items.CURRENCY_MATERIALS)
-                .addTag(ForgeTags.Items.COPPER_NUGGET)
-                .addTag(ForgeTags.Items.IRON_NUGGET)
-                .addTag(ForgeTags.Items.GOLD_NUGGET)
-                .addTag(ModTags.Items.NETHERITE_NUGGET)
-                .addTag(ModTags.Items.ENDONIAN_NUGGET)
-                .addTag(ModTags.Items.CURRENCY_FIBER)
+                .addTag(Tags.Items.NUGGETS)
+                .addTag(Tags.Items.INGOTS)
                 .addTag(ModTags.Items.CURRENCY_PAPER);
         tag(ForgeTags.Items.TEXTILES)
                 .addTag(ForgeTags.Items.BARK)
