@@ -1022,7 +1022,7 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get(), "Velvety Clover Chocolate Coin");
         add(ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get(), "Festive Fudge Chocolate Coin");
         add(ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get(), "Fuego Fudge Chocolate Coin");
-        add(ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get(), "Fuego Fudge Chocolate Coin");
+        add(ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get(), "Carmel Crisp Chocolate Coin");
     }
 
     private void addCollectibleCoins(String id, String name, String setName, int coinSetCount, int coinSetTotal) {

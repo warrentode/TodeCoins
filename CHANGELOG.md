@@ -2,6 +2,7 @@
 
 - fixed mistake in damage targeting of coin effects like Holy Strike and Arthropod's Blight
     - the damage is now correctly applied to the target and not the player under the effect
+- fixed incorrect translation for carmel crisp chocolate coin
 
 ### 2024-03-29 - 2.1.2.0.beta
 
