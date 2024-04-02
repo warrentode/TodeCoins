@@ -52,6 +52,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotResult;
@@ -88,8 +89,9 @@ public class ModEvents {
             }
         }
 
+        @Contract("_ -> param1")
         @SubscribeEvent
-        public static ItemTooltipEvent onItemTooltip(@NotNull ItemTooltipEvent event) {
+        public static @NotNull ItemTooltipEvent onItemTooltip(@NotNull ItemTooltipEvent event) {
             ItemStack stack = event.getItemStack();
             Player player = event.getEntity();
             List<Component> tooltip = event.getToolTip();
@@ -203,8 +205,6 @@ public class ModEvents {
         public static boolean onLivingDeath(@NotNull LivingDeathEvent event) {
             LivingEntity dyingEntity = event.getEntity();
             Level level = dyingEntity.getCommandSenderWorld();
-            DamageSource source = event.getSource();
-            LivingEntity target = event.getEntity();
             if (!level.isClientSide) {
                 if (dyingEntity instanceof ServerPlayer player) {
                     Inventory playerInventory = player.getInventory();
@@ -259,7 +259,6 @@ public class ModEvents {
         public static boolean onHurtEntity(@NotNull LivingHurtEvent event) {
             LivingEntity entity = event.getEntity();
             Entity attacker = event.getSource().getEntity();
-            float amount = event.getAmount();
             Level level = entity.getCommandSenderWorld();
 
             if (!level.isClientSide && (entity instanceof ServerPlayer player) && attacker != null && attacker.isAttackable()) {
@@ -300,7 +299,7 @@ public class ModEvents {
                 }
                 if (player.hasEffect(ModEffects.ILLAGER_BANE.get()) && ((target instanceof Vex || target instanceof PatrollingMonster))) {
                     ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (effectDuration * 20), IllagerBaneEffect.getAmplifier()), target);
-                    player.hurt(DamageSource.playerAttack(player), 2.5F * getDamage(IllagerBaneEffect.getAmplifier(), RandomSource.create()));
+                    target.hurt(DamageSource.playerAttack(player), 2.5F * getDamage(IllagerBaneEffect.getAmplifier(), RandomSource.create()));
                 }
                 if (player.hasEffect(ModEffects.THUNDERSTRIKE.get())) {
                     LightningBolt lightningBolt = EntityType.LIGHTNING_BOLT.create(player.level);
@@ -318,14 +317,14 @@ public class ModEvents {
                 }
                 if (player.hasEffect(ModEffects.ARTHROPOD_BLIGHT.get()) && ((LivingEntity) target).getMobType() == MobType.ARTHROPOD) {
                     ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (effectDuration * 20), ArthropodBlightEffect.getAmplifier()), target);
-                    player.hurt(DamageSource.playerAttack(player), 2.5F * getDamage(ArthropodBlightEffect.getAmplifier(), RandomSource.create()));
+                    target.hurt(DamageSource.playerAttack(player), 2.5F * getDamage(ArthropodBlightEffect.getAmplifier(), RandomSource.create()));
                 }
                 if (player.hasEffect(ModEffects.WITHERING_STRIKE.get())) {
                     ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.WITHER, (effectDuration * 20), WitheringStrikeEffect.getAmplifier()), target);
                 }
                 if (player.hasEffect(ModEffects.HOLY_STRIKE.get()) && ((LivingEntity) target).getMobType() == MobType.UNDEAD) {
-                    ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (effectDuration * 20), ArthropodBlightEffect.getAmplifier()), target);
-                    player.hurt(DamageSource.playerAttack(player), 2.5F * getDamage(ArthropodBlightEffect.getAmplifier(), RandomSource.create()));
+                    ((LivingEntity) target).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, (effectDuration * 20), HolyStrikeEffect.getAmplifier()), target);
+                    target.hurt(DamageSource.playerAttack(player), 2.5F * getDamage(HolyStrikeEffect.getAmplifier(), RandomSource.create()));
                 }
             }
 
@@ -340,7 +339,7 @@ public class ModEvents {
             Level level = entity.getCommandSenderWorld();
 
             if (!level.isClientSide) {
-                if (entity instanceof Phantom phantom && target instanceof ServerPlayer player) {
+                if (entity instanceof Phantom && target instanceof ServerPlayer player) {
                     ItemStack catCharm = null;
 
                     Optional<SlotResult> catCoin1 = CuriosApi.getCuriosHelper().findFirstCurio(player, ModItems.COPPER_CAT_COIN.get());
