@@ -68,6 +68,7 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
     }
 
     public static class CollectibleCoinAdvancements implements Consumer<Consumer<Advancement>> {
+        @SuppressWarnings("SameParameterValue")
         protected static Advancement.Builder getAdvancement(Advancement parent, ItemLike display, String name,
                                                             FrameType frame, boolean showToast,
                                                             boolean announceToChat, boolean hidden) {
@@ -93,6 +94,7 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
                                     .hasItems(ItemPredicate.Builder.item().of(ModTags.Items.COLLECTIBLE_COINS).build()))
                     .requirements(RequirementsStrategy.OR).save(consumer, getPath("collectible/first_coin"));
 
+            //noinspection unused
             Advancement equipLuckyCoin = getAdvancement(collectibleCoins, ModItems.LUCKY_COIN.get(),
                     "equip_lucky_coin", FrameType.TASK, true, true, false)
                     .addCriterion("equip_lucky_coin",
@@ -104,6 +106,7 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
                     .rewards(AdvancementRewards.Builder.function(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:add_charm_slot"))))
                     .requirements(RequirementsStrategy.OR).save(consumer, getCuriosPath("advancements/equip_lucky_coin"));
 
+            //noinspection unused
             Advancement equipWallet = getAdvancement(collectibleCoins, Items.BUNDLE,
                     "equip_wallet", FrameType.TASK, true, true, false)
                     .addCriterion("equip_wallet",
@@ -1570,6 +1573,7 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("collectible/zombified_piglin_coins"));
 
             // Obtain all Collectible Coins
+            //noinspection unused
             Advancement all_coins = getAdvancement(zombifiedPiglinCoinSet, ModItems.COPPER_HERO_COIN.get(),
                     "all_coins", FrameType.CHALLENGE, true, true, false)
 

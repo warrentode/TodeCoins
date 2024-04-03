@@ -60,6 +60,7 @@ public class TodeCoinsAdvancementsGen extends AdvancementProvider {
     }
 
     public static class TodeCoinsAdvancements implements Consumer<Consumer<Advancement>> {
+        @SuppressWarnings("SameParameterValue")
         protected static Advancement.Builder getAdvancement(Advancement parent, ItemLike display, String name,
                                                             FrameType frame, boolean showToast,
                                                             boolean announceToChat, boolean hidden) {
