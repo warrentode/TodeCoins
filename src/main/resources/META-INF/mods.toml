@@ -2,7 +2,7 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
 license = "GNU_GPL.3"
-issueTrackerURL = "https://github.com/warrentode/TodeCoins/issues"
+issueTrackerURL="https://discord.gg/gB8PjQgZ4Q"
 
 [[mods]]
 modId = "todecoins"

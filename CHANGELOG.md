@@ -1,3 +1,8 @@
+### 2024-04-03 - 2.1.2.2.beta
+
+- changed issue tracker url to my chaos crew discord channel
+- minor code touch ups
+
 ### 2024-04-02 - 2.1.2.1.beta
 
 - fixed mistake in damage targeting of coin effects like Holy Strike and Arthropod's Blight

@@ -511,7 +511,7 @@ public class TodeCoins {
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
+        public static void onClientSetup(@NotNull FMLClientSetupEvent event) {
             event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new));
             EntityRenderers.register(ModEntityTypes.NUMISMATIST.get(), NumismatistRenderer::new);
         }
