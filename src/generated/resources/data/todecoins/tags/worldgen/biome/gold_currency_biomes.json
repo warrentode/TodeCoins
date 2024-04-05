@@ -1,0 +1,22 @@
+{
+  "values": [
+    "minecraft:deep_frozen_ocean",
+    "minecraft:frozen_ocean",
+    "minecraft:snowy_beach",
+    "minecraft:frozen_river",
+    "minecraft:jagged_peaks",
+    "minecraft:frozen_peaks",
+    "minecraft:snowy_slopes",
+    "minecraft:grove",
+    "minecraft:snowy_taiga",
+    "minecraft:snowy_plains",
+    "minecraft:ice_spikes",
+    "minecraft:wooded_badlands",
+    "minecraft:eroded_badlands",
+    "minecraft:badlands",
+    "minecraft:desert",
+    "minecraft:bamboo_jungle",
+    "minecraft:sparse_jungle",
+    "minecraft:jungle"
+  ]
+}

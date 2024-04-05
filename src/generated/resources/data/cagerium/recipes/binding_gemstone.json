@@ -29,10 +29,10 @@
             "item": "minecraft:dragon_breath"
           },
           {
-            "tag": "forge:gems"
+            "tag": "forge:gem_currency"
           },
           {
-            "tag": "forge:gems"
+            "tag": "forge:gem_currency"
           },
           {
             "tag": "forge:nuggets/netherite"

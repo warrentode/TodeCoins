@@ -39,6 +39,7 @@ public class DataGenerators {
 
         generator.addProvider(event.includeClient(), new LanguageFileGen(generator, MODID, "en_us"));
 
+        generator.addProvider(event.includeServer(), new BiomeTagsGen(generator, helper));
         generator.addProvider(event.includeServer(), new RecipesGen(generator));
         generator.addProvider(event.includeServer(), new ConditionalCageriumRecipes(generator));
         generator.addProvider(event.includeServer(), new ConditionalSpawnEggRecipes(generator));

@@ -24,11 +24,11 @@ import java.util.Optional;
 @Mixin(Entity.class)
 public class StuckInBlockMixin {
     @Unique
-    Entity todeCoins_$entity = (Entity) (Object) this;
+    Entity todeCoins$entity = (Entity) (Object) this;
 
     @Inject(at = @At("HEAD"), method = "makeStuckInBlock", cancellable = true)
     public void todeCoins_makeStuckInBlock(@NotNull BlockState state, Vec3 vec3, CallbackInfo ci) {
-        if (todeCoins_$entity instanceof LivingEntity livingEntity) {
+        if (todeCoins$entity instanceof LivingEntity livingEntity) {
             ItemStack stack = null;
             if (ModList.get().isLoaded("curios")) {
                 Optional<SlotResult> foxCoin1 = CuriosApi.getCuriosHelper().findFirstCurio(livingEntity, ModItems.COPPER_FOX_COIN.get());

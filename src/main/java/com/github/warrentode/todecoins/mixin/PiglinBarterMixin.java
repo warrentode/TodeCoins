@@ -44,7 +44,7 @@ public abstract class PiglinBarterMixin {
     private static final int todeCoins$giftRate = 50;
 
     @Unique
-    private static boolean todeCoins$isWearingZombiePiglinCoin(ServerPlayer player) {
+    private static boolean todeCoins_isWearingZombiePiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
             ItemStack stack = null;
 
@@ -72,7 +72,7 @@ public abstract class PiglinBarterMixin {
     }
 
     @Unique
-    private static boolean todeCoins$isWearingNetheritePiglinCoin(ServerPlayer player) {
+    private static boolean todeCoins_isWearingNetheritePiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
             ItemStack stack = null;
 
@@ -87,7 +87,7 @@ public abstract class PiglinBarterMixin {
         return false;
     }
     @Unique
-    private static boolean todeCoins$isWearingGoldPiglinCoin(ServerPlayer player) {
+    private static boolean todeCoins_isWearingGoldPiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
             ItemStack stack = null;
 
@@ -102,7 +102,7 @@ public abstract class PiglinBarterMixin {
         return false;
     }
     @Unique
-    private static boolean todeCoins$isWearingIronPiglinCoin(ServerPlayer player) {
+    private static boolean todeCoins_isWearingIronPiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
             ItemStack stack = null;
 
@@ -117,7 +117,7 @@ public abstract class PiglinBarterMixin {
         return false;
     }
     @Unique
-    private static boolean todeCoins$isWearingCopperPiglinCoin(ServerPlayer player) {
+    private static boolean todeCoins_isWearingCopperPiglinCoin(ServerPlayer player) {
         if (player != null && ModList.get().isLoaded("curios")) {
             ItemStack stack = null;
 
@@ -133,7 +133,7 @@ public abstract class PiglinBarterMixin {
     }
 
     @Unique
-    private static boolean todeCoins$isGiftEvent(ServerLevel serverLevel) {
+    private static boolean todeCoins_isGiftEvent() {
         return CalendarUtil.check("EASTER") || CalendarUtil.check("HALLOWEEN")
                 || CalendarUtil.check("CHRISTMAS") || CalendarUtil.check("BIRTHDAY")
                 || CalendarUtil.check("ANNIVERSARY") || CalendarUtil.check("NEW_YEAR");
@@ -141,8 +141,7 @@ public abstract class PiglinBarterMixin {
 
     @Inject(at = @At("HEAD"), method = "stopHoldingOffHandItem", cancellable = true)
     private static void todeCoins_stopHoldingOffHandItem(@NotNull Piglin piglin, boolean shouldBarter, CallbackInfo ci) {
-        MinecraftServer server = piglin != null ? piglin.getServer() : null;
-        ServerLevel serverLevel = server != null ? server.getLevel(piglin.level.dimension()) : null;
+        MinecraftServer server = piglin.getServer();
         ServerPlayer player = server != null ? server.createCommandSourceStack().getPlayer() : null;
         if (piglin.isAdult()) {
             ItemStack offHandItem = piglin.getItemInHand(InteractionHand.OFF_HAND);
@@ -150,25 +149,25 @@ public abstract class PiglinBarterMixin {
             boolean netherGoldCoin = piglin.getItemInHand(InteractionHand.OFF_HAND).is(ModItems.NETHER_GOLD_COIN.get());
             if (shouldBarter && barterItem) {
                 piglin.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
-                if (shouldBarter && todeCoins$giftChance >= todeCoins$giftRate && todeCoins$isGiftEvent(serverLevel)) {
+                if (todeCoins$giftChance >= todeCoins$giftRate && todeCoins_isGiftEvent()) {
                     throwItems(piglin, todeCoins_getEventGiftLootResponseItems(piglin));
                 }
                 if (netherGoldCoin) {
                     throwItems(piglin, todeCoins_getNetherGoldCoinBarterResponseItems(piglin));
                 }
-                else if (shouldBarter && todeCoins$isWearingNetheritePiglinCoin(player)) {
+                else if (todeCoins_isWearingNetheritePiglinCoin(player)) {
                     throwItems(piglin, todeCoins_getNetheritePiglinCoinBarterResponseItems(piglin));
                 }
-                else if (shouldBarter && todeCoins$isWearingGoldPiglinCoin(player)) {
+                else if (todeCoins_isWearingGoldPiglinCoin(player)) {
                     throwItems(piglin, todeCoins_getGoldPiglinCoinBarterResponseItems(piglin));
                 }
-                else if (shouldBarter && todeCoins$isWearingIronPiglinCoin(player)) {
+                else if (todeCoins_isWearingIronPiglinCoin(player)) {
                     throwItems(piglin, todeCoins_getIronPiglinCoinBarterResponseItems(piglin));
                 }
-                else if (shouldBarter && todeCoins$isWearingCopperPiglinCoin(player)) {
+                else if (todeCoins_isWearingCopperPiglinCoin(player)) {
                     throwItems(piglin, todeCoins_getCopperPiglinCoinBarterResponseItems(piglin));
                 }
-                else if (shouldBarter && todeCoins$isWearingZombiePiglinCoin(player)) {
+                else if (todeCoins_isWearingZombiePiglinCoin(player)) {
                     throwItems(piglin, todeCoins_getZombiePiglinCoinBarterResponseItems(piglin));
                 }
                 else {

@@ -1,0 +1,136 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "todecoins"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 3.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:emerald_bank_note"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "todecoins"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 6.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:emerald_half_bank_note"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "todecoins:nether_currency_biomes"
+            },
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "todecoins"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 6.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:netherite_coin"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "todecoins"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 12.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:emerald_quarter_bank_note"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "todecoins:endonian_currency_biomes"
+            },
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "todecoins"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 22.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:endonian_coin_bag"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "todecoins:nether_currency_biomes"
+            },
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "todecoins"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 64.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:nether_gold_coin_bag"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 22.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:emerald_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

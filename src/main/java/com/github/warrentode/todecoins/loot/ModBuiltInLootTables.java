@@ -11,6 +11,26 @@ import static com.github.warrentode.todecoins.TodeCoins.MODID;
 public class ModBuiltInLootTables {
     private static final Set<ResourceLocation> LOCATIONS = Sets.newHashSet();
 
+    // villager currency trade tables
+    public static final ResourceLocation THREE_LUCKY_COIN_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/single_lucky_coin_value_items");
+    public static final ResourceLocation SINGLE_LUCKY_COIN_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/single_lucky_coin_value_currency");
+    public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/thirty_pot_of_gold_value_items");
+    public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/thirty_pot_of_gold_value_gem_currency");
+    public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/thirty_pot_of_gold_value_currency");
+    public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/sixty_pot_of_gold_value_items");
+    public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/sixty_pot_of_gold_value_gem_currency");
+    public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/sixty_pot_of_gold_value_currency");
+    public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/four_pot_of_gold_value_items");
+    public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/four_pot_of_gold_value_gem_currency");
+    public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/four_pot_of_gold_value_currency");
+    public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/two_pot_of_gold_value_items");
+    public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/two_pot_of_gold_value_gem_currency");
+    public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/two_pot_of_gold_value_currency");
+    public static final ResourceLocation SIXYFOUR_EMERALD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/sixyfour_emerald_value_gem_currency");
+    public static final ResourceLocation SIXYFOUR_EMERALD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/sixyfour_emerald_value_currency");
+    public static final ResourceLocation SINGLE_EMERALD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/single_emerald_value_gem_currency");
+    public static final ResourceLocation SINGLE_EMERALD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/single_emerald_value_currency");
+
     // bonus fishing loot tables
     public static final ResourceLocation TODECOINS_BONUS_FISHING = register(MODID + ":" + "gameplay/fishing/bonus");
     public static final ResourceLocation TODECOINS_FISHING_EXTRA_JUNK = register(MODID + ":" + "gameplay/fishing/extra_junk");

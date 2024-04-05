@@ -154,20 +154,20 @@ public class ForgeTags {
         public static final TagKey<Item> CURRENCY_FIBER = forgeItemTag("textiles/currency_fiber");
         public static final TagKey<Item> CURRENCY_PAPER = forgeItemTag("textiles/currency_paper");
 
-        public static final TagKey<Item> GEMS = forgeItemTag("gems");
-        public static final TagKey<Item> AMETHYST = forgeItemTag("gems/amethyst");
-        public static final TagKey<Item> DIAMOND = forgeItemTag("gems/diamond");
-        public static final TagKey<Item> ECHO_SHARD = forgeItemTag("gems/echo_shard");
-        public static final TagKey<Item> EMERALD = forgeItemTag("gems/emerald");
-        public static final TagKey<Item> END_CRYSTAL = forgeItemTag("gems/end_crystal");
-        public static final TagKey<Item> ENDER_EYE = forgeItemTag("gems/ender_eye");
-        public static final TagKey<Item> ENDER_PEARL = forgeItemTag("gems/ender_pearl");
-        public static final TagKey<Item> GLOWSTONE = forgeItemTag("gems/glowstone");
-        public static final TagKey<Item> LAPIS_LAZULI = forgeItemTag("gems/lapis_lazuli");
-        public static final TagKey<Item> NETHER_STAR = forgeItemTag("gems/nether_star");
-        public static final TagKey<Item> PRISMARINE = forgeItemTag("gems/prismarine");
-        public static final TagKey<Item> QUARTZ = forgeItemTag("gems/quartz");
-        public static final TagKey<Item> REDSTONE = forgeItemTag("gems/redstone");
+        public static final TagKey<Item> GEM_CURRENCY = forgeItemTag("gem_currency");
+        public static final TagKey<Item> AMETHYST = forgeItemTag("gem_currency/amethyst");
+        public static final TagKey<Item> DIAMOND = forgeItemTag("gem_currency/diamond");
+        public static final TagKey<Item> ECHO_SHARD = forgeItemTag("gem_currency/echo_shard");
+        public static final TagKey<Item> EMERALD = forgeItemTag("gem_currency/emerald");
+        public static final TagKey<Item> END_CRYSTAL = forgeItemTag("gem_currency/end_crystal");
+        public static final TagKey<Item> ENDER_EYE = forgeItemTag("gem_currency/ender_eye");
+        public static final TagKey<Item> ENDER_PEARL = forgeItemTag("gem_currency/ender_pearl");
+        public static final TagKey<Item> GLOWSTONE = forgeItemTag("gem_currency/glowstone");
+        public static final TagKey<Item> LAPIS_LAZULI = forgeItemTag("gem_currency/lapis_lazuli");
+        public static final TagKey<Item> NETHER_STAR = forgeItemTag("gem_currency/nether_star");
+        public static final TagKey<Item> PRISMARINE = forgeItemTag("gem_currency/prismarine");
+        public static final TagKey<Item> QUARTZ = forgeItemTag("gem_currency/quartz");
+        public static final TagKey<Item> REDSTONE = forgeItemTag("gem_currency/redstone");
 
         public static final TagKey<Item> NUGGETS = forgeItemTag("nuggets");
         public static final TagKey<Item> COPPER_NUGGET = forgeItemTag("nuggets/copper");

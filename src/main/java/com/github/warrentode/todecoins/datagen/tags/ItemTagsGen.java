@@ -1133,8 +1133,8 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("bagofholding:golden_bag_of_holding")));
         tag(ModTags.Items.WALLETS)
                 .addTag(ModTags.Items.BUNDLES);
-        tag(ModTags.Items.GEMS)
-                .addTag(ForgeTags.Items.GEMS);
+        tag(ModTags.Items.GEM_CURRENCY)
+                .addTag(ForgeTags.Items.GEM_CURRENCY);
         tag(ModTags.Items.BANKNOTES)
                 .add(ModItems.EMERALD_BANK_NOTE.get())
                 .add(ModItems.EMERALD_HALF_BANK_NOTE.get())
@@ -1292,7 +1292,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.EGG);
         tag(Tags.Items.ENCHANTING_FUELS)
                 .add(Items.LAPIS_LAZULI);
-        tag(ForgeTags.Items.GEMS)
+        tag(ForgeTags.Items.GEM_CURRENCY)
                 .addTag(ForgeTags.Items.AMETHYST)
                 .addTag(ForgeTags.Items.DIAMOND)
                 .addTag(ForgeTags.Items.ECHO_SHARD)

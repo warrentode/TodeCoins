@@ -1,4 +1,4 @@
-// 1.19.2	2024-03-30T06:07:54.1308567	Tags for minecraft:item
+// 1.19.2	2024-04-04T07:15:59.8162483	Tags for minecraft:item
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 4fcfed0068c13d43a8d04faea1ee3740550953a8 data/forge/tags/items/banknotes.json
@@ -11,20 +11,20 @@ e696f402dd807aff108bcdbf82e9cfaf00b8dadc data/forge/tags/items/currency_stamps.j
 fe91d9df301382872a3e254eb22768784d8932b1 data/forge/tags/items/eggs.json
 056929b7ab3fd6b71312bcc7bae8661d4f4a5df0 data/forge/tags/items/enchanting_fuels.json
 b43f07fbac9cee58dfaac204b86a65a071d0a966 data/forge/tags/items/fat.json
-2e568aa5c18c99533dd4ae3a50f2d2a5636f5112 data/forge/tags/items/gems.json
-d8dc68294ba0bb69c51e2d77203706ddc8bd16ba data/forge/tags/items/gems/amethyst.json
-9299b02b724108ee9a7e847ff93cdbacab45fb76 data/forge/tags/items/gems/diamond.json
-3c136ad71b9cc1a962b06ab779e09369ea8e25a9 data/forge/tags/items/gems/echo_shard.json
-c64e59ade97ecccccb7b769c8e3856338623649e data/forge/tags/items/gems/emerald.json
-74eefeb986d633d26ad42202c4a6b5e71463c425 data/forge/tags/items/gems/ender_eye.json
-8c4603792263de771b44aee19f8f9239b6210fdb data/forge/tags/items/gems/ender_pearl.json
-41dc040cee1faae1195c90d68185bd4fa781179c data/forge/tags/items/gems/end_crystal.json
-5a7bf7736c7f6f3ecd89de5532afca0e507fb8f7 data/forge/tags/items/gems/glowstone.json
-c6e07cf2d0b21d2499979229f18ee790cec07a05 data/forge/tags/items/gems/lapis_lazuli.json
-d9fa8492b3cf95f697b9823051abd6f56771b81b data/forge/tags/items/gems/nether_star.json
-6803ae6ef49e9bcc2a6143b51148c5b5e5c538d9 data/forge/tags/items/gems/prismarine.json
-d85fd810d52948017ca841f5fd1c863fa3a37d51 data/forge/tags/items/gems/quartz.json
-dd472552ed4619d6fb342240882d609489514b70 data/forge/tags/items/gems/redstone.json
+ced9b853d8bf80127dc88e1746eaa66fe48ba35f data/forge/tags/items/gem_currency.json
+d8dc68294ba0bb69c51e2d77203706ddc8bd16ba data/forge/tags/items/gem_currency/amethyst.json
+9299b02b724108ee9a7e847ff93cdbacab45fb76 data/forge/tags/items/gem_currency/diamond.json
+3c136ad71b9cc1a962b06ab779e09369ea8e25a9 data/forge/tags/items/gem_currency/echo_shard.json
+c64e59ade97ecccccb7b769c8e3856338623649e data/forge/tags/items/gem_currency/emerald.json
+74eefeb986d633d26ad42202c4a6b5e71463c425 data/forge/tags/items/gem_currency/ender_eye.json
+8c4603792263de771b44aee19f8f9239b6210fdb data/forge/tags/items/gem_currency/ender_pearl.json
+41dc040cee1faae1195c90d68185bd4fa781179c data/forge/tags/items/gem_currency/end_crystal.json
+5a7bf7736c7f6f3ecd89de5532afca0e507fb8f7 data/forge/tags/items/gem_currency/glowstone.json
+c6e07cf2d0b21d2499979229f18ee790cec07a05 data/forge/tags/items/gem_currency/lapis_lazuli.json
+d9fa8492b3cf95f697b9823051abd6f56771b81b data/forge/tags/items/gem_currency/nether_star.json
+6803ae6ef49e9bcc2a6143b51148c5b5e5c538d9 data/forge/tags/items/gem_currency/prismarine.json
+d85fd810d52948017ca841f5fd1c863fa3a37d51 data/forge/tags/items/gem_currency/quartz.json
+dd472552ed4619d6fb342240882d609489514b70 data/forge/tags/items/gem_currency/redstone.json
 6bbf2021a2f6b6a21fc45c80637b7cfb6dbd79f5 data/forge/tags/items/ingots.json
 6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/forge/tags/items/ingots/copper.json
 666c1ccba339cca0c11121d875e645753a838d48 data/forge/tags/items/ingots/endonian_ingot.json
@@ -176,7 +176,7 @@ be62e171e8f5010cfe7db3e2a1fe33d7e96d6d34 data/todecoins/tags/items/currency.json
 f04960c86353f26abb0c4a476a4d3f3e838ec5f8 data/todecoins/tags/items/currency/coins.json
 3879c99c8234b0e5270ea976e3cbc9287d943dd2 data/todecoins/tags/items/currency_materials.json
 75d20f717c80c13d15170f5d225e1a93a8dc9967 data/todecoins/tags/items/currency_stamps.json
-790a0e710eba0bb16c6e3bc1bdd3724093227240 data/todecoins/tags/items/gems.json
+4c217aa3d30c983d9b2a86b702a05e1cab7eebf2 data/todecoins/tags/items/gem_currency.json
 6bbf2021a2f6b6a21fc45c80637b7cfb6dbd79f5 data/todecoins/tags/items/ingots.json
 6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/todecoins/tags/items/ingots/copper.json
 666c1ccba339cca0c11121d875e645753a838d48 data/todecoins/tags/items/ingots/endonian_ingot.json

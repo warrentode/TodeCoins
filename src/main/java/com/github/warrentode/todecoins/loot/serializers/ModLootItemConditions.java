@@ -6,6 +6,7 @@ import com.github.warrentode.todecoins.loot.conditions.curio.PufferfishCharmCond
 import com.github.warrentode.todecoins.loot.conditions.curio.SalmonFishCharmCondition;
 import com.github.warrentode.todecoins.loot.conditions.curio.TropicalFishCharmCondition;
 import com.github.warrentode.todecoins.loot.conditions.season.*;
+import com.github.warrentode.todecoins.loot.conditions.tag.BiomeTagCondition;
 import com.github.warrentode.todecoins.loot.conditions.tag.BlockTagCondition;
 import com.github.warrentode.todecoins.loot.conditions.tag.EntityTypeTagCondition;
 import net.minecraft.core.Registry;
@@ -32,6 +33,8 @@ public class ModLootItemConditions extends LootItemConditions {
     public static final RegistryObject<LootItemConditionType> TROPICAL_FISH_CHARM_CONDITION = REGISTER.register("tropical_fish_charm_condition",
             () -> new LootItemConditionType(new TropicalFishCharmCondition.Serializer()));
 
+    public static final RegistryObject<LootItemConditionType> BIOMETAG_CONDITION = REGISTER.register("biometag_condition",
+            () -> new LootItemConditionType(new BiomeTagCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> BLOCKTAG_CONDITION = REGISTER.register("blocktag_condition",
             () -> new LootItemConditionType(new BlockTagCondition.Serializer()));
     public static final RegistryObject<LootItemConditionType> ENTITY_TYPE_TAG_CONDITION = REGISTER.register("entity_type_tag_condition",

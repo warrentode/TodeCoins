@@ -1,8 +1,8 @@
 package com.github.warrentode.todecoins.entity.villager.trades;
 
-import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.item_set.MapForItemSetTrade;
-import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.item_set.OneSetForTwoSetsTrade;
-import com.github.warrentode.todecoins.entity.villager.trades.tradetypes.loot_table.*;
+import com.github.warrentode.todecoins.entity.villager.tradetypes.item_set.MapForItemSetTrade;
+import com.github.warrentode.todecoins.entity.villager.tradetypes.item_set.OneSetForTwoSetsTrade;
+import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.*;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.google.common.collect.ImmutableMap;

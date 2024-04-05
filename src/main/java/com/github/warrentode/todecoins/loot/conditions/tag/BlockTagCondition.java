@@ -44,15 +44,16 @@ public class BlockTagCondition implements LootItemCondition {
         return blockstate != null && blockstate.is(this.blockTag);
     }
 
-    public BlockTagCondition.Builder build() {
-        return new BlockTagCondition.Builder(this.blockTag);
+    public static BlockTagCondition.Builder tag() {
+        return new BlockTagCondition.Builder();
     }
 
     public static class Builder implements LootItemCondition.Builder {
-        final TagKey<Block> blockTag;
+        TagKey<Block> blockTag;
 
-        public Builder(TagKey<Block> blockTag) {
+        public BlockTagCondition.Builder setTag(TagKey<Block> blockTag) {
             this.blockTag = blockTag;
+            return this;
         }
 
         public @NotNull BlockTagCondition build() {

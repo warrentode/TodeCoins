@@ -41,6 +41,7 @@ public class EntityTypeTagCondition implements LootItemCondition {
 
     public boolean test(@NotNull LootContext context) {
         EntityType<?> entityType = Objects.requireNonNull(context.getParamOrNull(LootContextParams.THIS_ENTITY)).getType();
+        //noinspection ConstantValue
         return entityType != null && entityType.is(this.entityTypeTag);
     }
 
