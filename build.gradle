@@ -166,27 +166,20 @@ jar {
     }
 }
 
-tasks.register('updateJson') {
-    file('update.json').withWriter { w ->
-        file('update_template.json').eachLine { line ->
-            w << line.replaceAll("version", project.version) + System.getProperty("line.separator")
-        }
-        w.close()
-    }
-}
-
 tasks.register('updateChangeLog', Exec) {
     workingDir(project.projectDir)
     commandLine 'git', 'log', '--date=short', '--pretty=\\"%cd - %s\\"', '--since=1.month', '--no-merges'
     standardOutput = new PrintStream("${rootDir}/CHANGELOG.txt")
 }
 
-tasks.register('deobfJar', Jar) { // Generate deobfuscated
+tasks.register('deobfJar', Jar) {
+    // Generate deobfuscated jar
     from sourceSets.main.output
     archiveClassifier = 'deobf'
 }
 
-tasks.register('sourceJar', Jar) { // Generate sources
+tasks.register('sourceJar', Jar) {
+    // Generate sources jar
     from sourceSets.main.allSource
     archiveClassifier = 'sources'
 }
@@ -217,6 +210,5 @@ publishing {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
-    options.release = 17
+    options.encoding = 'UTF-8'
 }
