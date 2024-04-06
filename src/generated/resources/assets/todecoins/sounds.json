@@ -1,0 +1,174 @@
+{
+  "coin_press_take": {
+    "sounds": [
+      {
+        "name": "block/chain/break1",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break2",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break3",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break4",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "note/icechime",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.coin_press_take"
+  },
+  "coin_press_use": {
+    "sounds": [
+      {
+        "name": "random/anvil_use",
+        "pitch": 2.0
+      }
+    ],
+    "subtitle": "subtitles.todecoins.coin_press_use"
+  },
+  "numismatist_appeared": {
+    "sounds": [
+      "mob/wandering_trader/appeared1",
+      "mob/wandering_trader/appeared2",
+      "mob/wandering_trader/reappeared1",
+      "mob/wandering_trader/reappeared2"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_appeared"
+  },
+  "numismatist_death": {
+    "sounds": [
+      "mob/wandering_trader/death"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_death"
+  },
+  "numismatist_disappeared": {
+    "sounds": [
+      "mob/wandering_trader/disappeared1",
+      "mob/wandering_trader/disappeared2"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_disappeared"
+  },
+  "numismatist_drink_milk": {
+    "sounds": [
+      "mob/wandering_trader/drink_milk1",
+      "mob/wandering_trader/drink_milk2",
+      "mob/wandering_trader/drink_milk3",
+      "mob/wandering_trader/drink_milk4",
+      "mob/wandering_trader/drink_milk5"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_drink_milk"
+  },
+  "numismatist_drink_potion": {
+    "sounds": [
+      "mob/wandering_trader/drink_potion"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_drink_potion"
+  },
+  "numismatist_haggle": {
+    "sounds": [
+      "mob/wandering_trader/haggle1",
+      "mob/wandering_trader/haggle2",
+      "mob/wandering_trader/haggle3"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_haggle"
+  },
+  "numismatist_hurt": {
+    "sounds": [
+      "mob/wandering_trader/hurt1",
+      "mob/wandering_trader/hurt2",
+      "mob/wandering_trader/hurt3",
+      "mob/wandering_trader/hurt4"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_hurt"
+  },
+  "numismatist_idle": {
+    "sounds": [
+      "mob/wandering_trader/idle1",
+      "mob/wandering_trader/idle2",
+      "mob/wandering_trader/idle3",
+      "mob/wandering_trader/idle4",
+      "mob/wandering_trader/idle5"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_haggle"
+  },
+  "numismatist_no": {
+    "sounds": [
+      "mob/wandering_trader/no1",
+      "mob/wandering_trader/no2",
+      "mob/wandering_trader/no3",
+      "mob/wandering_trader/no4",
+      "mob/wandering_trader/no5"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_no"
+  },
+  "numismatist_yes": {
+    "sounds": [
+      "mob/wandering_trader/yes1",
+      "mob/wandering_trader/yes2",
+      "mob/wandering_trader/yes3",
+      "mob/wandering_trader/yes4"
+    ],
+    "subtitle": "subtitles.todecoins.numismatist_yes"
+  },
+  "work_banker": {
+    "sounds": [
+      {
+        "name": "block/chain/break1",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break2",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break3",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break4",
+        "pitch": 1.5,
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.work_banker"
+  },
+  "work_leprechaun": {
+    "sounds": [
+      {
+        "name": "block/chain/break1",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break2",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break3",
+        "pitch": 1.5,
+        "weight": 3
+      },
+      {
+        "name": "block/chain/break4",
+        "pitch": 1.5,
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.work_leprechaun"
+  }
+}
