@@ -9,6 +9,7 @@ import com.github.warrentode.todecoins.entity.villager.ModVillagers;
 import com.github.warrentode.todecoins.entity.villager.renderer.NumismatistRenderer;
 import com.github.warrentode.todecoins.gui.ModMenuTypes;
 import com.github.warrentode.todecoins.gui.coinpressgui.CoinPressScreen;
+import com.github.warrentode.todecoins.integration.CurioBeltSlot;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.serializers.ModLootItemConditions;
 import com.github.warrentode.todecoins.loot.serializers.ModLootModifiers;
@@ -17,10 +18,14 @@ import com.github.warrentode.todecoins.potion.ModPotions;
 import com.github.warrentode.todecoins.recipe.ModRecipes;
 import com.github.warrentode.todecoins.recipe.recipebook.CoinPressRecipeCategories;
 import com.github.warrentode.todecoins.sounds.ModSounds;
+import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
@@ -29,6 +34,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterRecipeBookCategoriesEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -41,9 +50,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
+import top.theillusivec4.curios.api.type.capability.ICurio;
 
 @Mod(TodeCoins.MODID)
 public class TodeCoins {
@@ -92,6 +104,22 @@ public class TodeCoins {
                     () -> SlotTypePreset.CHARM.getMessageBuilder().build());
             InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE,
                     () -> SlotTypePreset.BELT.getMessageBuilder().build());
+        }
+    }
+
+    @SubscribeEvent
+    public void attachCapabilities(AttachCapabilitiesEvent<ItemStack> event) {
+        ItemStack stack = event.getObject();
+        //noinspection unused
+        Item item = stack.getItem();
+        if (stack.is(ModTags.Items.WALLETS)) {
+            final LazyOptional<ICurio> curioLazyOptional = LazyOptional.of(() -> new CurioBeltSlot(stack));
+            event.addCapability(CuriosCapability.ID_ITEM, new ICapabilityProvider() {
+                @Override
+                public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
+                    return CuriosCapability.ITEM.orEmpty(cap, curioLazyOptional);
+                }
+            });
         }
     }
 
