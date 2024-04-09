@@ -158,7 +158,7 @@ public class CoinPressRecipe implements Recipe<RecipeWrapper> {
                 final String tabKey = GsonHelper.getAsString(json, "recipe_book_tab", null);
                 final CoinPressRecipeBookTab tab = CoinPressRecipeBookTab.findByName(tabKey);
                 if (tabKey != null && tab == null) {
-                    TodeCoins.LOGGER.warn("Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: " + EnumSet.allOf(CoinPressRecipeBookTab.class));
+                    TodeCoins.LOGGER.warn("Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: {}", EnumSet.allOf(CoinPressRecipeBookTab.class));
                 }
                 ItemStack result = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
                 final float experience = GsonHelper.getAsFloat(json, "experience", 0.0F);

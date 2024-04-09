@@ -112,7 +112,8 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
                 return ItemStack.EMPTY;  // EMPTY_ITEM
             }
         }
-        else if (index < VANILLA_FIRST_SLOT_INDEX) {
+        else //noinspection UnreachableCode
+            if (index < VANILLA_FIRST_SLOT_INDEX) {
             // This is a TE slot so merge the stack into the players inventory
             if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_LAST_SLOT_INDEX, false)) {
                 return ItemStack.EMPTY;

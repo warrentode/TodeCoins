@@ -1,3 +1,7 @@
+### 2024-04-09 - 2.1.2.3.beta
+
+- updated build gradle and bumped version
+
 ### 2024-04-03 - 2.1.2.2.beta
 
 - changed issue tracker url to my chaos crew discord channel

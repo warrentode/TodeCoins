@@ -138,7 +138,7 @@ dependencies {
     implementation fg.deobf("curse.maven:cagerium-709608:4517775")
     implementation fg.deobf("curse.maven:ecologics-570463:4171285")
     implementation fg.deobf("curse.maven:serene-seasons-291874:4037228")
-    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:5073566")
+    implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:5184433")
     implementation fg.deobf("curse.maven:guard-villagers-360203:5116175")
     implementation fg.deobf("curse.maven:unusual-end-617757:4549776")
 
@@ -210,5 +210,6 @@ publishing {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+    options.release = 17
 }

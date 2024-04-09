@@ -8,6 +8,7 @@ import top.theillusivec4.curios.api.type.capability.ICurio;
 
 import javax.annotation.Nonnull;
 
+@SuppressWarnings("ClassCanBeRecord")
 public class CurioBeltSlot implements ICurio {
 
     private final ItemStack stack;

@@ -98,7 +98,7 @@ public class LuckyCoinItem extends CoinItem implements ICurioItem {
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
-            tooltips.add(Component.translatable("tooltips.lucky_coin.hover").withStyle(ChatFormatting.GOLD));
+            tooltips.add(Component.translatable("curios.modifiers.charm").withStyle(ChatFormatting.GOLD));
         }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
