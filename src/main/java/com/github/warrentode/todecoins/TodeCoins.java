@@ -108,18 +108,19 @@ public class TodeCoins {
     }
 
     @SubscribeEvent
-    public void attachCapabilities(AttachCapabilitiesEvent<ItemStack> event) {
+    public void attachCapabilities(@NotNull AttachCapabilitiesEvent<ItemStack> event) {
         ItemStack stack = event.getObject();
         //noinspection unused
         Item item = stack.getItem();
         if (stack.is(ModTags.Items.WALLETS)) {
-            final LazyOptional<ICurio> curioLazyOptional = LazyOptional.of(() -> new CurioBeltSlot(stack));
+            final LazyOptional<ICurio> curioBeltSlot = LazyOptional.of(() -> new CurioBeltSlot(stack));
             event.addCapability(CuriosCapability.ID_ITEM, new ICapabilityProvider() {
                 @Override
                 public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-                    return CuriosCapability.ITEM.orEmpty(cap, curioLazyOptional);
+                    return CuriosCapability.ITEM.orEmpty(cap, curioBeltSlot);
                 }
             });
+            event.addListener(curioBeltSlot::invalidate);
         }
     }
 

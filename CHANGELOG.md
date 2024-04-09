@@ -2,6 +2,17 @@
 
 - changed issue tracker url to my chaos crew discord channel
 - minor code touch ups
+- added biome tag loot condition
+- edited block tag loot condition
+- created villager loot table based currency trade types, not yet implemented
+- changed the gems tags to gem_currency tags to not mess up other mod recipes
+- cleaned up the piglin barter mixin
+- removed the automated update file since I've decided that I prefer to handle it manually
+    - too often my updates don't turn out as intended at this stage so I'd like to test them more personally before
+      releasing them in an official way
+- finally figured out how to set up a datagen for the sounds.json
+- brought back the curios belt slot in the registry
+    - finally got the equip sound to work on the belt slot
 
 ### 2024-04-02 - 2.1.2.1.beta
 
