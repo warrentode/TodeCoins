@@ -39,6 +39,7 @@ public class CageriumLootTablesGen implements Consumer<BiConsumer<ResourceLocati
             .flags(EntityFlagsPredicate.Builder.flags().setOnFire(true).build());
     private static final ResourceLocation FISHING_FISH = path("minecraft", "cagerium/gameplay/fishing/fish");
 
+    @SuppressWarnings("SameParameterValue")
     static ResourceLocation path(String modid, String path) {
         return new ResourceLocation(modid, path);
     }
@@ -119,6 +120,13 @@ public class CageriumLootTablesGen implements Consumer<BiConsumer<ResourceLocati
         consumer.accept(CageriumLootTables.SQUIRREL, LootTable.lootTable());
         consumer.accept(CageriumLootTables.GUARD, LootTable.lootTable());
         consumer.accept(CageriumLootTables.RASCAL, LootTable.lootTable());
+
+        consumer.accept(CageriumLootTables.BLAZE, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
+                                .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F))))
+                        .when(LootItemKilledByPlayerCondition.killedByPlayer())));
 
         consumer.accept(CageriumLootTables.CRAB, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))

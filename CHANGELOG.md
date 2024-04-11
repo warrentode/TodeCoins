@@ -1,3 +1,7 @@
+### 2024-04-09 - 2.1.2.4.beta
+
+- added the missing cagerium blaze loot table
+
 ### 2024-04-09 - 2.1.2.3.beta
 
 - updated build gradle and bumped version

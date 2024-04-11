@@ -2,7 +2,7 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
 license = "GNU_GPL.3"
-issueTrackerURL="https://discord.gg/gB8PjQgZ4Q"
+issueTrackerURL="https://github.com/warrentode/TodeCoins/issues"
 
 [[mods]]
 modId = "todecoins"
@@ -13,7 +13,9 @@ displayURL = "https://github.com/warrentode/TodeCoins"
 logoFile = "logo.png"
 credits = '''Special thanks to my sons, and my supporters: Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!'''
 authors = "Warren Tode (ToadieOdie)"
-description = '''Adds currency, collectible coins, a collectible coin trader, a banker and leprechaun villager with trades, an armor set with set effects, and luck potions to the game.'''
+description = '''Adds currency, collectible coins, a collectible coin trader, a banker and leprechaun villager with trades, an armor set with set effects, and luck potions to the game.
+An additional location to report issues or ask questions is on my discord at: https://discord.gg/gB8PjQgZ4Q
+'''
 
 [modproperties.todecoins]
     catalogueItemIcon = "todecoins:currency_stamp" #Support for Catalogue mod

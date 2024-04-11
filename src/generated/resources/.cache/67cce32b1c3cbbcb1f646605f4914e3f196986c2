@@ -1,4 +1,4 @@
-// 1.19.2	2024-04-04T07:15:59.8132491	LootTables
+// 1.19.2	2024-04-11T13:25:47.4634153	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -15,6 +15,7 @@ ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/all
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/axolotl.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/bat.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/minecraft/loot_tables/cagerium/bee.json
+1f613c7f33b11dfeeed5466aa0fcf9f4ccb3b485 data/minecraft/loot_tables/cagerium/blaze.json
 d33a67a6ec0575d163783651ebef33375cb58ed2 data/minecraft/loot_tables/cagerium/cat.json
 d73181116c831e209c5d290ff926fd3be34f00a0 data/minecraft/loot_tables/cagerium/cave_spider.json
 9ee9468af5df32d7b774aa950a0bf50864157376 data/minecraft/loot_tables/cagerium/chicken.json
