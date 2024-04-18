@@ -13,7 +13,6 @@ import java.util.Objects;
 
 public class CalendarUtil {
     public static Boolean isSeason;
-    public String season;
 
     public static boolean check(String season) {
         if (ModList.get().isLoaded("sereneseasons")) {

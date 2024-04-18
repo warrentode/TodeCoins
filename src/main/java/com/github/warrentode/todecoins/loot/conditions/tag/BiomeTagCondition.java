@@ -70,16 +70,12 @@ public class BiomeTagCondition implements LootItemCondition {
     }
 
     public static class Serializer implements net.minecraft.world.level.storage.loot.Serializer<BiomeTagCondition> {
-        /**
-         * Serialize the value by putting its data into the JsonObject.
-         */
+        /** Serialize the value by putting its data into the JsonObject. */
         public void serialize(@NotNull JsonObject jsonObject, @NotNull BiomeTagCondition condition, @NotNull JsonSerializationContext context) {
             jsonObject.addProperty("tag", condition.biomeTag.location().toString());
         }
 
-        /**
-         * Deserialize a value by reading it from the JsonObject.
-         */
+        /** Deserialize a value by reading it from the JsonObject. */
         public @NotNull BiomeTagCondition deserialize(@NotNull JsonObject jsonObject, @NotNull JsonDeserializationContext context) {
             ResourceLocation resourcelocation = new ResourceLocation(GsonHelper.getAsString(jsonObject, "tag"));
             TagKey<Biome> biomeTag = TagKey.create(Registry.BIOME_REGISTRY, resourcelocation);

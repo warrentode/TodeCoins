@@ -5,7 +5,6 @@ import com.github.warrentode.todecoins.util.CalendarUtil;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -27,7 +26,6 @@ public class AnniversaryCondition implements LootItemCondition {
     }
 
     public boolean test(@NotNull LootContext context) {
-        ServerLevel level = context.getLevel();
         return this.isAnniversary = CalendarUtil.check("ANNIVERSARY");
     }
 
@@ -50,16 +48,12 @@ public class AnniversaryCondition implements LootItemCondition {
     }
 
     public static class Serializer implements net.minecraft.world.level.storage.loot.Serializer<AnniversaryCondition> {
-        /**
-         * Serialize the value by putting its data into the JsonObject.
-         */
+        /** Serialize the value by putting its data into the JsonObject. */
         public void serialize(@NotNull JsonObject jsonObject, @NotNull AnniversaryCondition check, @NotNull JsonSerializationContext context) {
             jsonObject.addProperty("anniversary", check.isAnniversary);
         }
 
-        /**
-         * Deserialize a value by reading it from the JsonObject.
-         */
+        /** Deserialize a value by reading it from the JsonObject. */
         public @NotNull AnniversaryCondition deserialize(@NotNull JsonObject jsonObject, @NotNull JsonDeserializationContext context) {
             Boolean booleanValue = jsonObject.has("anniversary") ? GsonHelper.getAsBoolean(jsonObject, "anniversary") : null;
             return new AnniversaryCondition(booleanValue);

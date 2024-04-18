@@ -6,8 +6,8 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModBlockStateProvider extends BlockStateProvider {
-    public ModBlockStateProvider(DataGenerator gen, String modid, ExistingFileHelper exFileHelper) {
-        super(gen, modid, exFileHelper);
+    public ModBlockStateProvider(DataGenerator gen, String modid, ExistingFileHelper helper) {
+        super(gen, modid, helper);
     }
 
     @Override

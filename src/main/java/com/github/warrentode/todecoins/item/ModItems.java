@@ -106,21 +106,13 @@ public class ModItems {
             () -> new TextileItem(new Item.Properties().stacksTo(64).tab(ModCreativeModeTab.TODECOINSTAB)));
 
     public static final RegistryObject<Item> BRACELET_FRIENDSHIP_EMERALD = ITEMS.register("bracelet_friendship_emerald",
-            () -> new FriendshipBraceletItem(new Item.Properties()
-                    .durability(BraceletProperties.EMERALD.getMaxUses()),
-                    BraceletProperties.EMERALD));
+            () -> new FriendshipBraceletItem(new Item.Properties().durability(BraceletProperties.EMERALD.getMaxUses()), BraceletProperties.EMERALD));
     public static final RegistryObject<Item> BRACELET_FRIENDSHIP_ENDONIAN = ITEMS.register("bracelet_friendship_endonian",
-            () -> new FriendshipBraceletItem(new Item.Properties()
-                    .durability(BraceletProperties.ENDONIAN.getMaxUses()),
-                    BraceletProperties.ENDONIAN));
+            () -> new FriendshipBraceletItem(new Item.Properties().durability(BraceletProperties.ENDONIAN.getMaxUses()), BraceletProperties.ENDONIAN));
     public static final RegistryObject<Item> BRACELET_FRIENDSHIP_ECHO = ITEMS.register("bracelet_friendship_echo",
-            () -> new FriendshipBraceletItem(new Item.Properties()
-                    .durability(BraceletProperties.ECHO.getMaxUses()),
-                    BraceletProperties.ECHO));
+            () -> new FriendshipBraceletItem(new Item.Properties().durability(BraceletProperties.ECHO.getMaxUses()), BraceletProperties.ECHO));
     public static final RegistryObject<Item> BRACELET_FRIENDSHIP_LUCKY = ITEMS.register("bracelet_friendship_lucky",
-            () -> new FriendshipBraceletItem(new Item.Properties()
-                    .durability(BraceletProperties.LUCKY.getMaxUses()),
-                    BraceletProperties.LUCKY));
+            () -> new FriendshipBraceletItem(new Item.Properties().durability(BraceletProperties.LUCKY.getMaxUses()), BraceletProperties.LUCKY));
 
     public static final RegistryObject<Item> LUCKY_BOOTS = ITEMS.register("lucky_boots",
             () -> new LuckyArmorItem(ModArmorMaterials.LUCKY, EquipmentSlot.FEET,

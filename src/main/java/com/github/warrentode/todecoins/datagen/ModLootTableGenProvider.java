@@ -25,8 +25,7 @@ import java.util.function.Supplier;
 
 public class ModLootTableGenProvider extends LootTableProvider {
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>>
-            loot_tables = ImmutableList
-            .of(
+            loot_tables = ImmutableList.of(
                     Pair.of(ModGiftLootGen::new, LootContextParamSets.GIFT),
                     Pair.of(ModBlockLootTablesGen::new, LootContextParamSets.BLOCK),
                     Pair.of(CustomPiglinBarterLootGen::new, LootContextParamSets.PIGLIN_BARTER),

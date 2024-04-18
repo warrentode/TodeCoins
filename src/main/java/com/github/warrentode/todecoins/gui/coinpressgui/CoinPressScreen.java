@@ -92,7 +92,7 @@ public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> impl
         renderProgressArrow(poseStack, x, y);
     }
 
-    private void renderProgressArrow(PoseStack poseStack, int x, int y) {
+    private void renderProgressArrow(PoseStack poseStack, int ignoredX, int ignoredY) {
         if (menu.isCrafting()) {
             int l = menu.getScaledProgress();
             blit(poseStack, this.leftPos + PROGRESS_ARROW.x, this.topPos + PROGRESS_ARROW.y, 179, 3, l + 1, PROGRESS_ARROW.height);
