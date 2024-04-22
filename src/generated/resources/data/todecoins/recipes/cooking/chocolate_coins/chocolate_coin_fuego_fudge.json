@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:ingredients/cocoa"
+    },
+    {
+      "tag": "forge:sugar"
+    },
+    {
+      "tag": "forge:milk/milk"
+    },
+    {
+      "tag": "forge:fat"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 4,
+    "item": "todecoins:chocolate_coin_fuego_fudge"
+  }
+}

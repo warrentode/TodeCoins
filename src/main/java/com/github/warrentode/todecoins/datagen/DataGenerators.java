@@ -4,6 +4,7 @@ import com.github.warrentode.todecoins.datagen.advancements.CollectibleCoinAdvan
 import com.github.warrentode.todecoins.datagen.advancements.TodeCoinsAdvancementsGen;
 import com.github.warrentode.todecoins.datagen.recipes.RecipesGen;
 import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalCageriumRecipes;
+import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalCookingPotRecipesGen;
 import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalSpawnEggRecipes;
 import com.github.warrentode.todecoins.datagen.tags.*;
 import net.minecraft.data.DataGenerator;
@@ -42,6 +43,7 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new SoundsFileGen(generator, MODID, helper));
         generator.addProvider(event.includeServer(), new BiomeTagsGen(generator, helper));
         generator.addProvider(event.includeServer(), new RecipesGen(generator));
+        generator.addProvider(event.includeServer(), new ConditionalCookingPotRecipesGen(generator));
         generator.addProvider(event.includeServer(), new ConditionalCageriumRecipes(generator));
         generator.addProvider(event.includeServer(), new ConditionalSpawnEggRecipes(generator));
         generator.addProvider(event.includeServer(), new TodeCoinsAdvancementsGen(generator, helper));

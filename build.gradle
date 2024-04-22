@@ -141,6 +141,7 @@ dependencies {
     implementation fg.deobf("curse.maven:friends-and-foes-forge-602059:5184433")
     implementation fg.deobf("curse.maven:guard-villagers-360203:5116175")
     implementation fg.deobf("curse.maven:unusual-end-617757:4549776")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:4679318")
 
     // compile against the JEI API but do not include it at runtime
     compileOnly(fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}"))

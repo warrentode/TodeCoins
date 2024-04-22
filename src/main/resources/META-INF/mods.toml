@@ -75,3 +75,9 @@ An additional location to report issues or ask questions is on my discord at: ht
     versionRange = "[1.4.3,)"
     ordering = "NONE"
     side = "BOTH"
+[[dependencies.todecoins]]
+modId = "farmersdelight"
+mandatory = false
+versionRange = "[1.19.2-1.2.3,)"
+ordering = "NONE"
+side = "BOTH"

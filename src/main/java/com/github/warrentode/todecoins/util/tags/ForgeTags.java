@@ -129,6 +129,7 @@ public class ForgeTags {
         public static final TagKey<Item> MILK = forgeItemTag("milk/milk");
         public static final TagKey<Item> MILK_BOTTLES = forgeItemTag("milk/milk_bottle");
         public static final TagKey<Item> COCOA = forgeItemTag("cocoa");
+        public static final TagKey<Item> COCOA_INGREDIENTS = forgeItemTag("ingredients/cocoa");
         public static final TagKey<Item> SUGAR = forgeItemTag("sugar");
         public static final TagKey<Item> FAT = forgeItemTag("fat");
         public static final TagKey<Item> CLOVER = forgeItemTag("clover");

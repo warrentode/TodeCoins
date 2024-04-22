@@ -1,17 +1,5 @@
 {
   "values": [
-    {
-      "id": "kawaiidishes:dried_cocoa_beans",
-      "required": false
-    },
-    {
-      "id": "kawaiidishes:roasted_cocoa_beans",
-      "required": false
-    },
-    {
-      "id": "kawaiidishes:cocoa_powder",
-      "required": false
-    },
     "minecraft:cocoa_beans"
   ]
 }

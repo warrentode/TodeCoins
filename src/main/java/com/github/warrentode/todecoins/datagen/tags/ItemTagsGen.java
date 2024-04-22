@@ -1248,6 +1248,8 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.SUGAR)
                 .add(Items.HONEY_BOTTLE);
         tag(ForgeTags.Items.COCOA)
+                .add(Items.COCOA_BEANS);
+        tag(ForgeTags.Items.COCOA_INGREDIENTS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:dried_cocoa_beans")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:roasted_cocoa_beans")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:cocoa_powder")))
