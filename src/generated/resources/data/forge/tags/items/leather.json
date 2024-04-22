@@ -5,6 +5,12 @@
     {
       "id": "nethersdelight:hoglin_hide",
       "required": false
+    },
+    "minecraft:rabbit_hide",
+    "minecraft:leather",
+    {
+      "id": "nethersdelight:hoglin_hide",
+      "required": false
     }
   ]
 }

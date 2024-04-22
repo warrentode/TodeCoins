@@ -154,6 +154,7 @@ public class ForgeTags {
         public static final TagKey<Item> THREAD = forgeItemTag("textiles/thread");
         public static final TagKey<Item> CURRENCY_FIBER = forgeItemTag("textiles/currency_fiber");
         public static final TagKey<Item> CURRENCY_PAPER = forgeItemTag("textiles/currency_paper");
+        public static final TagKey<Item> LEATHER = forgeItemTag("leather");
 
         public static final TagKey<Item> GEM_CURRENCY = forgeItemTag("gem_currency");
         public static final TagKey<Item> AMETHYST = forgeItemTag("gem_currency/amethyst");

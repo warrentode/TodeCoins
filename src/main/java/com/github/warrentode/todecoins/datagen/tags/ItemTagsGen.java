@@ -1411,6 +1411,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.CURRENCY_PAPER);
         tag(ForgeTags.Items.TEXTILES)
                 .addTag(ForgeTags.Items.BARK)
+                .addTag(ForgeTags.Items.LEATHER)
                 .addTag(ForgeTags.Items.FIBRE)
                 .addTag(ForgeTags.Items.STRING)
                 .addTag(ForgeTags.Items.PAPER)
@@ -1418,6 +1419,10 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ForgeTags.Items.THREAD)
                 .addTag(ForgeTags.Items.CURRENCY_PAPER)
                 .addTag(ForgeTags.Items.CURRENCY_FIBER);
+        tag(ForgeTags.Items.LEATHER)
+                .add(Items.RABBIT_HIDE)
+                .add(Items.LEATHER)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:hoglin_hide")));
         tag(ForgeTags.Items.BARK);
         tag(ForgeTags.Items.THREAD);
         tag(ForgeTags.Items.CURRENCY_PAPER);
