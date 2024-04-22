@@ -146,6 +146,7 @@ public class ForgeTags {
         public static final TagKey<Item> PIGLIN_BARTER_ITEMS = forgeItemTag("piglin_barter_items");
 
         public static final TagKey<Item> TEXTILES = forgeItemTag("textiles");
+        public static final TagKey<Item> LEATHER = forgeItemTag("textiles/leather");
         public static final TagKey<Item> BARK = forgeItemTag("textiles/bark");
         public static final TagKey<Item> FIBRE = forgeItemTag("textiles/fibre");
         public static final TagKey<Item> STRING = forgeItemTag("textiles/string");

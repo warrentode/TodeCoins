@@ -1,6 +1,7 @@
 ### 2024-04-22 - 2.1.2.6.beta
 
 - added optional farmers delight cooking pot recipes for chocolate coins
+- added missing bundle recipe (thought I added it already)
 
 ### 2024-04-09 - 2.1.2.4.beta
 

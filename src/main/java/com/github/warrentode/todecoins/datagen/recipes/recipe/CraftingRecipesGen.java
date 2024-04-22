@@ -460,6 +460,14 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_blocks/endonian_ingot"));
     }
     private static void textileRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(Items.BUNDLE, 1)
+                .pattern("SHS")
+                .pattern("H H")
+                .pattern("HHH")
+                .define('S', ForgeTags.Items.STRING)
+                .define('H', ForgeTags.Items.LEATHER)
+                .unlockedBy("has_leather", has(ForgeTags.Items.LEATHER))
+                .save(consumer, new ResourceLocation("minecraft", "bundle"));
         ShapedRecipeBuilder.shaped(ModItems.EMERALD_FIBER.get(), 1)
                 .pattern("###")
                 .pattern("#E#")
