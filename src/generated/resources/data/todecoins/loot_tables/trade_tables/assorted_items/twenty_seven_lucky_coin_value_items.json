@@ -1,0 +1,154 @@
+{
+    "type": "minecraft:chest",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 32.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "todecoins:endonian_block"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 36.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "todecoins:emerald_quarter_bank_note_bag"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 18.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "todecoins:netherite_coin_bag"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 18.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "todecoins:emerald_quarter_bank_note_bag"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 9.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:netherite_ingot"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 9.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "todecoins:emerald_bank_note_bag"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 1.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:netherite_block"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 9.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:budding_amethyst"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 9.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:nether_star"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 23.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "minecraft:sea_lantern"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 26.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "todecoins:lucky_fiber"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 4.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "todecoins:lucky_thread"
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "add": false,
+                            "count": 2.0,
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "todecoins:lucky_fabric"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

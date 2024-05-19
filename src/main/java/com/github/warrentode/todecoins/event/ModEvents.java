@@ -399,7 +399,7 @@ public class ModEvents {
 
     @Mod.EventBusSubscriber(modid = MODID)
     public static class CustomSpawnerHandler {
-        private static Map<ResourceLocation, NumismatistSpawner> numismatistSpawner = new HashMap<>();
+        private static final Map<ResourceLocation, NumismatistSpawner> numismatistSpawner = new HashMap<>();
 
         @SubscribeEvent
         public static void onWorldLoad(@NotNull ServerStartingEvent event) {

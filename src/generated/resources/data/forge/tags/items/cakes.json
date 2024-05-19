@@ -1,0 +1,25 @@
+{
+    "values": [
+        "minecraft:cake",
+        {
+            "id": "farmersdelight:sweet_berry_cheesecake",
+            "required": false
+        },
+        {
+            "id": "farmersrespite:coffee_cake",
+            "required": false
+        },
+        {
+            "id": "kawaiidishes:honey_cheesecake",
+            "required": false
+        },
+        {
+            "id": "kawaiidishes:chocolate_cheesecake",
+            "required": false
+        },
+        {
+            "id": "kawaiidishes:cheesecake",
+            "required": false
+        }
+    ]
+}

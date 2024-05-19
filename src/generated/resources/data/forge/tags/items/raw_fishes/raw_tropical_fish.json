@@ -1,0 +1,9 @@
+{
+    "values": [
+        "minecraft:tropical_fish",
+        {
+            "id": "crabbersdelight:tropical_fish_slice",
+            "required": false
+        }
+    ]
+}

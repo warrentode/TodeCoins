@@ -1,0 +1,75 @@
+{
+    "values": [
+        "#forge:worldgen/structure/monument",
+        "#forge:worldgen/structure/ocean_ruin",
+        "#forge:worldgen/structure/shipwreck",
+        {
+            "id": "repurposed_structures:temple_ocean",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:pyramid_ocean",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:ancient_city_ocean",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:wreckage_ocean",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:boat_1",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:boat_2",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:flotsam_1",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:flotsam_2",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:flotsam_3",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:flotsam_4",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:flotsam_5",
+            "required": false
+        },
+        {
+            "id": "dungeons_arise:illager_corsair",
+            "required": false
+        },
+        {
+            "id": "dungeons_arise:illager_galley",
+            "required": false
+        },
+        {
+            "id": "dungeons_arise:typhon",
+            "required": false
+        },
+        {
+            "id": "dungeons_arise:undead_pirate_ship",
+            "required": false
+        },
+        {
+            "id": "towns_and_towers:wreckage_ocean",
+            "required": false
+        },
+        {
+            "id": "#betteroceanmonuments:better_ocean_monuments",
+            "required": false
+        }
+    ]
+}

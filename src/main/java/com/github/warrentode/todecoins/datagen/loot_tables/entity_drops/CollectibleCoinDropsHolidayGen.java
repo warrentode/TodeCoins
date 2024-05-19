@@ -2,7 +2,6 @@ package com.github.warrentode.todecoins.datagen.loot_tables.entity_drops;
 
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
-import com.github.warrentode.todecoins.loot.conditions.season.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -10,7 +9,6 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -19,14 +17,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class CollectibleCoinDropsHolidayGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
-    public static final LootItemCondition.Builder BIRTHDAY_EVENT = BirthdayCondition.event();
-    public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
-    public static final LootItemCondition.Builder CHRISTMAS_EVENT = ChristmasCondition.event();
-    public static final LootItemCondition.Builder EASTER_EVENT = EasterCondition.event();
-    public static final LootItemCondition.Builder NEW_YEAR_EVENT = NewYearCondition.event();
-    public static final LootItemCondition.Builder ANNIVERSARY_EVENT = AnniversaryCondition.event();
+import static com.github.warrentode.todecoins.datagen.ModLootTableGenProvider.*;
 
+public class CollectibleCoinDropsHolidayGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
     @Override
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(ModBuiltInLootTables.HOLIDAY_COLLECTIBLE_COIN_DROPS,

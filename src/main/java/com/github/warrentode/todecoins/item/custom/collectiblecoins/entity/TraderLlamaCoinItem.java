@@ -36,9 +36,9 @@ import java.util.List;
 import java.util.UUID;
 
 public class TraderLlamaCoinItem extends CollectibleCoin implements ICurioItem {
-    private CollectibleCoinProperties.Material material;
-    private int coinEffectDuration;
-    private int coinEffectAmplifier;
+    private final CollectibleCoinProperties.Material material;
+    private final int coinEffectDuration;
+    private final int coinEffectAmplifier;
 
     public TraderLlamaCoinItem(Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);

@@ -2,11 +2,7 @@ package com.github.warrentode.todecoins.datagen.loot_tables.entity_drops;
 
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
-import com.github.warrentode.todecoins.loot.conditions.tag.EntityTypeTagCondition;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
-import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.EmptyLootItem;
@@ -14,8 +10,6 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -25,14 +19,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class CoinDropsEntityGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
-    public static final LootItemCondition.Builder IN_NETHER =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.NETHER));
-    public static final LootItemCondition.Builder IN_THE_END =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.END));
-    public static final LootItemCondition.Builder DROPS_CURRENCY =
-            EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.DROPS_CURRENCY).build();
+import static com.github.warrentode.todecoins.datagen.ModLootTableGenProvider.*;
 
+public class CoinDropsEntityGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
     @Override
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(ModBuiltInLootTables.TODECOINS_CURRENCY_DROPS,

@@ -11,26 +11,6 @@ import static com.github.warrentode.todecoins.TodeCoins.MODID;
 public class ModBuiltInLootTables {
     private static final Set<ResourceLocation> LOCATIONS = Sets.newHashSet();
 
-    // villager currency trade tables
-    public static final ResourceLocation THREE_LUCKY_COIN_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/single_lucky_coin_value_items");
-    public static final ResourceLocation SINGLE_LUCKY_COIN_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/single_lucky_coin_value_currency");
-    public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/thirty_pot_of_gold_value_items");
-    public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/thirty_pot_of_gold_value_gem_currency");
-    public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/thirty_pot_of_gold_value_currency");
-    public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/sixty_pot_of_gold_value_items");
-    public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/sixty_pot_of_gold_value_gem_currency");
-    public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/sixty_pot_of_gold_value_currency");
-    public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/four_pot_of_gold_value_items");
-    public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/four_pot_of_gold_value_gem_currency");
-    public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/four_pot_of_gold_value_currency");
-    public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_ITEMS = register("todecoins" + ":" + "village/trades/two_pot_of_gold_value_items");
-    public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/two_pot_of_gold_value_gem_currency");
-    public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/two_pot_of_gold_value_currency");
-    public static final ResourceLocation SIXYFOUR_EMERALD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/sixyfour_emerald_value_gem_currency");
-    public static final ResourceLocation SIXYFOUR_EMERALD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/sixyfour_emerald_value_currency");
-    public static final ResourceLocation SINGLE_EMERALD_VALUE_GEM_CURRENCY = register("todecoins" + ":" + "village/trades/single_emerald_value_gem_currency");
-    public static final ResourceLocation SINGLE_EMERALD_VALUE_CURRENCY = register("todecoins" + ":" + "village/trades/single_emerald_value_currency");
-
     // bonus fishing loot tables
     public static final ResourceLocation TODECOINS_BONUS_FISHING = register(MODID + ":" + "gameplay/fishing/bonus");
     public static final ResourceLocation TODECOINS_FISHING_EXTRA_JUNK = register(MODID + ":" + "gameplay/fishing/extra_junk");
@@ -53,12 +33,6 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_EMERALD_BANK_NOTE_LOOT = register(MODID + ":" + "chests/currency/todecoins_emerald_bank_note_loot");
     // rascal coin reward table
     public static final ResourceLocation RASCAL_COIN_REWARD = register(MODID + ":" + "chests/collectible/rascal_coin_reward");
-
-    // numismatist merchant offers loot tables
-    public static final ResourceLocation NUMISMATIST_RARE_OFFERS =
-            register(MODID + ":" + "chests/merchant/rare_offers");
-    public static final ResourceLocation NUMISMATIST_CONTAINER_OFFERS =
-            register(MODID + ":" + "chests/merchant/container_offers");
 
     // seasonal event collectible coin chest loot tables
     public static final ResourceLocation MYSTERY_COIN_PACK_INVERTED = register(MODID + ":" + "chests/collectible/seasonal/numismatist_request_list");
@@ -136,6 +110,7 @@ public class ModBuiltInLootTables {
     public static final ResourceLocation TODECOINS_SUMMER_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_summer_coin_drops");
     public static final ResourceLocation TODECOINS_AUTUMN_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_autumn_coin_drops");
     public static final ResourceLocation TODECOINS_WINTER_ENTITY_COIN_DROPS = register(MODID + ":" + "entity/collectible/seasonal/todecoins_winter_coin_drops");
+
     private static final Set<ResourceLocation> IMMUTABLE_LOCATIONS = Collections.unmodifiableSet(LOCATIONS);
 
     private static ResourceLocation register(String path) {

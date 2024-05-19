@@ -1,0 +1,125 @@
+{
+    "values": [
+        "#tconstruct:worldgen/structure/nether_slime_islands",
+        {
+            "id": "repurposed_structures:village_warped",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:village_crimson",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:temple_nether_wasteland",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:temple_nether_warped",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:temple_nether_soul",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:temple_nether_crimson",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:temple_nether_basalt",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:stronghold_nether",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:shipwreck_crimson",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:shipwreck_warped",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:shipwreck_nether_bricks",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:pyramid_nether",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:outpost_warped",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:outpost_nether_brick",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:outpost_crimson",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:monument_nether",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:mineshaft_nether",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:mineshaft_crimson",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:mineshaft_warped",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:city_nether",
+            "required": false
+        },
+        {
+            "id": "repurposed_structures:ancient_city_nether",
+            "required": false
+        },
+        {
+            "id": "betterdungeons:small_nether_dungeon",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:nether_building_1",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:nether_building_2",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:nether_building_3",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:nether_dungeon_1",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:nether_dungeon_2",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:nether_dungeon_3",
+            "required": false
+        },
+        {
+            "id": "additionalstructures:nether_villager_house_1",
+            "required": false
+        },
+        "#forge:worldgen/structure/bastion_remnant",
+        "#forge:worldgen/structure/nether_fortress",
+        "#forge:worldgen/structure/nether_fossil",
+        "#forge:worldgen/structure/nether_ruined_portal"
+    ]
+}

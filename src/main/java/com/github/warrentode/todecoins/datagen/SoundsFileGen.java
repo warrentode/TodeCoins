@@ -11,7 +11,7 @@ public class SoundsFileGen extends SoundDefinitionsProvider {
         super(generator, modid, helper);
     }
 
-    private static String modid = "minecraft";
+    private static final String modid = "minecraft";
 
     @Override
     public void registerSounds() {

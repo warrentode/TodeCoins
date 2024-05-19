@@ -1,0 +1,8 @@
+{
+    "values": [
+        {
+            "id": "salt:salt",
+            "required": false
+        }
+    ]
+}

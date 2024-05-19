@@ -16,8 +16,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public class AddItemLootModifier extends LootModifier {
-    public static final Supplier<Codec<AddItemLootModifier>> CODEC = Suppliers.memoize(()
-            -> RecordCodecBuilder.create(inst -> codecStart(inst).and(ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(m -> m.item))
+    public static final Supplier<Codec<AddItemLootModifier>> CODEC = Suppliers.memoize(() ->
+            RecordCodecBuilder.create(inst -> codecStart(inst).and(ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(m -> m.item))
             .and(Codec.FLOAT.fieldOf("dropChance").forGetter(g -> g.dropChance)).apply(inst, AddItemLootModifier::new)));
     private final Item item;
     protected final float dropChance;

@@ -44,7 +44,7 @@ public class LootBoxForTwoRequestSetsTrade implements VillagerTrades.ItemListing
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
-    private ResourceLocation lootTable;
+    private final ResourceLocation lootTable;
 
     public LootBoxForTwoRequestSetsTrade(ItemStack lootChest, String displayName, ResourceLocation lootTable,
                                          ImmutableSet<ItemLike> requestItemsA, int requestItemsCountA,

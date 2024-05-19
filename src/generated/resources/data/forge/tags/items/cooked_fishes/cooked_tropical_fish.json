@@ -1,0 +1,13 @@
+{
+    "values": [
+        "minecraft:tropical_fish",
+        {
+            "id": "crabbersdelight:cooked_tropical_fish",
+            "required": false
+        },
+        {
+            "id": "crabbersdelight:cooked_tropical_fish_slice",
+            "required": false
+        }
+    ]
+}

@@ -1,0 +1,166 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 45.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:emerald_fiber"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 22.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:emerald_coarse_wove_paper"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 11.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:emerald_wove_paper"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 5.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:emerald_smooth_wove_paper"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 22.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:slime_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 36.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:blaze_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 18.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:blaze_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 9.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:phantom_membrane"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 2.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:shulker_shell"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.001,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:dragon_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.001,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 22.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:elytra"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 2.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:chorus_flower"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 5.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:chorus_fruit"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

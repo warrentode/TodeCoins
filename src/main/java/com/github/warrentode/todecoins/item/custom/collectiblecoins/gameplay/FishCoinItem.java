@@ -38,9 +38,9 @@ import java.util.List;
 import java.util.UUID;
 
 public class FishCoinItem extends CollectibleCoin implements ICurioItem {
-    private CollectibleCoinProperties.Material material;
-    private int coinEffectDuration;
-    private int coinEffectAmplifier;
+    private final CollectibleCoinProperties.Material material;
+    private final int coinEffectDuration;
+    private final int coinEffectAmplifier;
 
     public FishCoinItem(Item.Properties properties, @NotNull CollectibleCoinProperties.Material material) {
         super(properties);

@@ -4,7 +4,6 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
@@ -176,19 +175,6 @@ public class ModTags {
         public static final TagKey<Item> GOLD_INGOT = modItemTag("ingots/gold");
         public static final TagKey<Item> NETHERITE_INGOT = modItemTag("ingots/netherite");
         public static final TagKey<Item> ENDONIAN_INGOT = modItemTag("ingots/endonian_ingot");
-    }
-
-    public static class BiomesTags {
-        public static final TagKey<Biome> COPPER_CURRENCY_BIOMES = modBiomeTag("copper_currency_biomes");
-        public static final TagKey<Biome> IRON_CURRENCY_BIOMES = modBiomeTag("iron_currency_biomes");
-        public static final TagKey<Biome> GOLD_CURRENCY_BIOMES = modBiomeTag("gold_currency_biomes");
-        public static final TagKey<Biome> NETHER_CURRENCY_BIOMES = modBiomeTag("nether_currency_biomes");
-        public static final TagKey<Biome> ENDONIAN_CURRENCY_BIOMES = modBiomeTag("endonian_currency_biomes");
-        public static final TagKey<Biome> GEM_CURRENCY_BIOMES = modBiomeTag("gem_currency_biomes");
-    }
-
-    private static @NotNull TagKey<Biome> modBiomeTag(String path) {
-        return TagKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(MODID, path));
     }
 
     private static @NotNull TagKey<Block> modBlockTag(String path) {

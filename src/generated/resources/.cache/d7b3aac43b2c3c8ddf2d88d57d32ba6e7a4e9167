@@ -1,4 +1,4 @@
-// 1.19.2	2023-07-20T22:44:11.8423616	Tags for minecraft:worldgen/structure
+// 1.19.2	2024-05-03T01:06:30.9716686	Tags for minecraft:worldgen/structure
 9255f5bb041a060c7b38b753dda0b0b77bfdf7b0 data/forge/tags/worldgen/structure/worldgen/structure/ancient_city.json
 67de4047e1e3aab40c5318c5cb39d89e58e90fce data/forge/tags/worldgen/structure/worldgen/structure/bastion_remnant.json
 7d144e52b87edf090c249af45d654d5019ff4f50 data/forge/tags/worldgen/structure/worldgen/structure/desert_pyramid.json
@@ -19,3 +19,21 @@ bdbef1e5398bebdc50384225edce07692966829c data/forge/tags/worldgen/structure/worl
 4d92943fafdfded03126ec0627466acbb025902d data/forge/tags/worldgen/structure/worldgen/structure/swamp_hut.json
 db7acc9f9e931ed7a41f2b2c96466edd7e528acc data/forge/tags/worldgen/structure/worldgen/structure/treasure.json
 ae4c1144459e8f9b4d657cbb09cb1c757d09cb63 data/forge/tags/worldgen/structure/worldgen/structure/village.json
+da29105bf7d66185e72fb8c0707df8165d04e274 data/supplementaries/tags/worldgen/structure/worldgen/structure/way_sign_destinations.json
+2cd356e30d40fbcef0305f1efcd0e9df5933b4ac data/tconstruct/tags/worldgen/structure/worldgen/structure/end_slime_islands.json
+686bc6f2235596440bab0f913441384ffbbd2cf0 data/tconstruct/tags/worldgen/structure/worldgen/structure/nether_slime_islands.json
+6ea71193806c3ae137d56762c8ce1923d89c0f91 data/tconstruct/tags/worldgen/structure/worldgen/structure/overworld_slime_islands.json
+13ad18b5b801809f6d1b49a6751c4154834cb063 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/desert_poi.json
+c836e7a62bfe257b8bef18bee31361582344d224 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/end_poi.json
+7400faa7a6a9cc7e293b210c369ffd83445bb638 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/jungle_poi.json
+9d1b8ed49bdc512957bd0cc192aa645c53196565 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/misc_poi.json
+b5b806fdd3b6758f211df91b808fd46aedc5d43b data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/nether_poi.json
+b8cdde582b508be87909e8596ccc7dfdbb76bde3 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/ocean_poi.json
+282ebaae2a9bcaf3e1be5732efbb41f356df8c85 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/overworld_end_poi.json
+82079dc0ab00ce60dd31ba02ca565cd3835cfab2 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/overworld_nether_poi.json
+94e5863bdf05400c8ece44cbbc840a825adb1bc2 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/overworld_poi.json
+e3c61dd5d5459f71edfb06d4400d6428dd5f30ac data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/pillager_poi.json
+ab26fcf77eee3887707c4d5926067db0c2b78a6f data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/settlement.json
+2a4283ce53977c841c50a02e1f1bccf3e31c762c data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/treasure_poi.json
+efdf24d3b3f8cc1329ce61107ca12b28414e483a data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/underground_poi.json
+2ff4af4356902058173411876422c7ec547037f1 data/turtleblockacademy/tags/worldgen/structure/worldgen/structure/witch_sighting.json

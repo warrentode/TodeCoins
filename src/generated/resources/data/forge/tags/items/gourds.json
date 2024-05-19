@@ -1,0 +1,10 @@
+{
+    "values": [
+        {
+            "id": "delightful:cantaloupe",
+            "required": false
+        },
+        "minecraft:pumpkin",
+        "minecraft:melon"
+    ]
+}

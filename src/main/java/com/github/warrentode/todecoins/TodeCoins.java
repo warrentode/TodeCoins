@@ -3,6 +3,7 @@ package com.github.warrentode.todecoins;
 import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.block.entity.ModBlockEntities;
+import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
@@ -42,7 +43,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -63,6 +66,8 @@ public class TodeCoins {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public TodeCoins() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC,
+                MODID + "-common.toml");
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::onIMEnqueueEvent);

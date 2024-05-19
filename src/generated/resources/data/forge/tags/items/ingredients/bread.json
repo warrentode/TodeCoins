@@ -1,0 +1,29 @@
+{
+    "values": [
+        "minecraft:bread",
+        {
+            "id": "tofucraft:steamed_bread",
+            "required": false
+        },
+        {
+            "id": "tofucraft:steamed_bread",
+            "required": false
+        },
+        {
+            "id": "tofucraft:steamed_bread_cocoa",
+            "required": false
+        },
+        {
+            "id": "tofucraft:apricotjerry_bread",
+            "required": false
+        },
+        {
+            "id": "hauntedharvest:cornbread",
+            "required": false
+        },
+        {
+            "id": "farmersrespite:nether_wart_sourdough",
+            "required": false
+        }
+    ]
+}

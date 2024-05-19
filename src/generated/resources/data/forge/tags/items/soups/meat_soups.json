@@ -1,0 +1,49 @@
+{
+    "values": [
+        {
+            "id": "miners_delight:noodle_soup_cup",
+            "required": false
+        },
+        {
+            "id": "miners_delight:chicken_soup_cup",
+            "required": false
+        },
+        {
+            "id": "miners_delight:rabbit_stew_cup",
+            "required": false
+        },
+        {
+            "id": "miners_delight:beef_stew_cup",
+            "required": false
+        },
+        {
+            "id": "miners_delight:noodle_soup_cup",
+            "required": false
+        },
+        {
+            "id": "miners_delight:pumpkin_soup_cup",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:pumpkin_soup",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:bone_broth",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:noodle_soup",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:beef_stew",
+            "required": false
+        },
+        {
+            "id": "farmersdelight:chicken_soup",
+            "required": false
+        },
+        "minecraft:rabbit_stew"
+    ]
+}

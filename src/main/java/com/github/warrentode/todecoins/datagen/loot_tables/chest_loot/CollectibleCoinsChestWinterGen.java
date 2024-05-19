@@ -2,41 +2,19 @@ package com.github.warrentode.todecoins.datagen.loot_tables.chest_loot;
 
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
-import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.data.loot.ChestLoot;
-import net.minecraft.data.worldgen.Structures;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-public class CollectibleCoinsChestWinterGen extends ChestLoot {
-    public static final LootItemCondition.Builder IN_OCEAN_MONUMENT =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location()
-                    .setStructure(Structures.OCEAN_MONUMENT.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_ANCIENT_CITY =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location()
-                    .setStructure(Structures.ANCIENT_CITY.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_NETHER_FORTRESS =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location()
-                    .setStructure(Structures.FORTRESS.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_END_CITY =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location()
-                    .setStructure(Structures.END_CITY.unwrapKey().orElseThrow()));
-    public static final LootItemCondition.Builder IN_THE_END =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.END));
-    public static final LootItemCondition.Builder IN_OVERWORLD =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.OVERWORLD));
-    public static final LootItemCondition.Builder IN_NETHER =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.NETHER));
+import static com.github.warrentode.todecoins.datagen.ModLootTableGenProvider.*;
 
+public class CollectibleCoinsChestWinterGen extends ChestLoot {
     @Override
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(ModBuiltInLootTables.WINTER_COINS_CHEST,

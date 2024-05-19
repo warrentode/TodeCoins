@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 // AUTHOR: MrCrayfish https://github.com/MrCrayfish/GoblinTraders - modified for my mod,
 // not sure how else to set the data up for this so it doesn't bug out
 public class NumismatistData {
-    private NumismatistSavedData numismatistSavedData;
+    private final NumismatistSavedData numismatistSavedData;
     private int numismatistSpawnDelay;
     private int numismatistSpawnChance;
 

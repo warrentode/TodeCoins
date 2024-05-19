@@ -1,36 +1,20 @@
 package com.github.warrentode.todecoins.datagen.loot_tables.chest_loot;
 
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
-import com.github.warrentode.todecoins.loot.conditions.season.*;
-import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.data.loot.ChestLoot;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
-import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
 
-public class CollectibleCoinChestGen extends ChestLoot {
-    public static final LootItemCondition.Builder IN_OVERWORLD =
-            LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.OVERWORLD));
-    public static final LootItemCondition.Builder BIRTHDAY_EVENT = BirthdayCondition.event();
-    public static final LootItemCondition.Builder HALLOWEEN_EVENT = HalloweenCondition.event();
-    public static final LootItemCondition.Builder CHRISTMAS_EVENT = ChristmasCondition.event();
-    public static final LootItemCondition.Builder EASTER_EVENT = EasterCondition.event();
-    public static final LootItemCondition.Builder NEW_YEAR_EVENT = NewYearCondition.event();
-    public static final LootItemCondition.Builder ANNIVERSARY_EVENT = AnniversaryCondition.event();
-    public static final LootItemCondition.Builder SPRING = SpringCondition.season();
-    public static final LootItemCondition.Builder SUMMER = SummerCondition.season();
-    public static final LootItemCondition.Builder AUTUMN = AutumnCondition.season();
-    public static final LootItemCondition.Builder WINTER = WinterCondition.season();
+import static com.github.warrentode.todecoins.datagen.ModLootTableGenProvider.*;
 
+public class CollectibleCoinChestGen extends ChestLoot {
     @Override
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(ModBuiltInLootTables.COLLECTIBLE_COIN_CHEST_LOOT,

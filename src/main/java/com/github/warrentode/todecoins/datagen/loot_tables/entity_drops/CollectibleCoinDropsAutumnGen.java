@@ -2,7 +2,6 @@ package com.github.warrentode.todecoins.datagen.loot_tables.entity_drops;
 
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
-import com.github.warrentode.todecoins.loot.conditions.season.AutumnCondition;
 import com.github.warrentode.todecoins.loot.conditions.tag.EntityTypeTagCondition;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import net.minecraft.resources.ResourceLocation;
@@ -10,7 +9,6 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import org.jetbrains.annotations.NotNull;
@@ -18,9 +16,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public class CollectibleCoinDropsAutumnGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
-    public static final LootItemCondition.Builder AUTUMN = AutumnCondition.season();
+import static com.github.warrentode.todecoins.datagen.ModLootTableGenProvider.AUTUMN;
 
+public class CollectibleCoinDropsAutumnGen implements Consumer<BiConsumer<ResourceLocation, LootTable.Builder>> {
     @Override
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(ModBuiltInLootTables.TODECOINS_AUTUMN_ENTITY_COIN_DROPS,
