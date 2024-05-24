@@ -25,7 +25,7 @@ public class CoinPressRecipeCategory implements IRecipeCategory<CoinPressRecipe>
     private final IDrawable icon;
 
     public CoinPressRecipeCategory(@NotNull IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 0, 0, 175, 168);
+        this.background = helper.createDrawable(TEXTURE, 29, 4, 137, 68);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.COINPRESSBLOCK.get()));
     }
 
@@ -51,9 +51,9 @@ public class CoinPressRecipeCategory implements IRecipeCategory<CoinPressRecipe>
 
     @Override
     public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull CoinPressRecipe recipe, @NotNull IFocusGroup group) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 34, 47).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 70, 47).addIngredients(recipe.getIngredients().get(1));
+        builder.addSlot(RecipeIngredientRole.INPUT, 5, 43).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 41, 43).addIngredients(recipe.getIngredients().get(1));
 
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 142, 47).addItemStack(recipe.getResultItem());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 113, 43).addItemStack(recipe.getResultItem());
     }
 }

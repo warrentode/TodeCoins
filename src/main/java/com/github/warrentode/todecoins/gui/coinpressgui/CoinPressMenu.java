@@ -43,7 +43,6 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
     public final ItemStackHandler inventory;
     private final Level level;
     private final ContainerData coinpressData;
-    @SuppressWarnings({"unused", "FieldCanBeLocal"})
     private final ContainerLevelAccess canInteractWithCallable;
     public CoinPressMenu(final int windowId, final Inventory playerInventory, final FriendlyByteBuf extraData) {
         this(windowId, playerInventory, getBlockEntity(playerInventory, extraData), new SimpleContainerData(2));
@@ -136,8 +135,7 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
 
     @Override
     public boolean stillValid(@NotNull Player player) {
-        return stillValid(ContainerLevelAccess.create(level, coinPress.getBlockPos()),
-                player, ModBlocks.COINPRESSBLOCK.get());
+        return stillValid(this.canInteractWithCallable, player, ModBlocks.COINPRESSBLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
