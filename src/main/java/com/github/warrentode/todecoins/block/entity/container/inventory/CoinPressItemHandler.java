@@ -10,7 +10,6 @@ import java.util.function.Predicate;
 /*
  * WrappedHandler by noeppi_noeppi
  * under https://github.com/ModdingX/LibX/blob/1.19/LICENSE
- *
  */
 public class CoinPressItemHandler implements IItemHandlerModifiable {
     private final IItemHandlerModifiable handler;

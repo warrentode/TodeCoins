@@ -128,7 +128,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.LUCKY_FIBER.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FOUR_POT_OF_GOLD_VALUE_CURRENCY,
+        consumer.accept(VillagerTradeLootTables.FOUR_POTS_OF_GOLD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -504,7 +504,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TWO_POT_OF_GOLD_VALUE_CURRENCY,
+        consumer.accept(VillagerTradeLootTables.TWO_POTS_OF_GOLD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))

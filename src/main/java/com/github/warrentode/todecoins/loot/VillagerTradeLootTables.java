@@ -17,8 +17,8 @@ public class VillagerTradeLootTables {
 
     public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/sixty_pot_of_gold_value_currency");
     public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/thirty_pot_of_gold_value_currency");
-    public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/four_pot_of_gold_value_currency");
-    public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/two_pot_of_gold_value_currency");
+    public static final ResourceLocation FOUR_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/four_pot_of_gold_value_currency");
+    public static final ResourceLocation TWO_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/two_pot_of_gold_value_currency");
 
     public static final ResourceLocation EMERALD_BANK_NOTE_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/emerald_bank_note_value_currency");
     public static final ResourceLocation EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/emerald_quarter_half_note_value_currency");
