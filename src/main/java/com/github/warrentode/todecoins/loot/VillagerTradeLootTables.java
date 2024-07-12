@@ -14,6 +14,7 @@ public class VillagerTradeLootTables {
 
     // currency exchange tables
     public static final ResourceLocation SINGLE_LUCKY_COIN_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/single_lucky_coin_value_currency");
+    public static final ResourceLocation SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/single_lucky_coin_bag_value_currency");
 
     public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/sixty_pot_of_gold_value_currency");
     public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/thirty_pot_of_gold_value_currency");
@@ -53,8 +54,8 @@ public class VillagerTradeLootTables {
     // gems
     public static final ResourceLocation SINGLE_LUCKY_COIN_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/single_lucky_coin_value_gems");
     public static final ResourceLocation EMERALD_BANK_NOTE_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/emerald_bank_note_value_gems");
-    public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/sixty_pot_of_gold_value_gems");
-    public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/thirty_pot_of_gold_value_gems");
+    public static final ResourceLocation SIXTY_POT_OF_GOLD_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/sixty_pot_of_gold_value_gems");
+    public static final ResourceLocation THIRTY_POT_OF_GOLD_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/thirty_pot_of_gold_value_gems");
     public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/four_pot_of_gold_value_gems");
     public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/two_pot_of_gold_value_gems");
     public static final ResourceLocation FIVE_EMERALD_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/five_emerald_value_gems");
@@ -100,10 +101,10 @@ public class VillagerTradeLootTables {
     public static final ResourceLocation GUIDE_BOOKS_TABLE = register(MODID + ":" + "trade_tables/library/guide_books");
 
     // stone block trade tables
-    public static final ResourceLocation SINGLE_BRICK_TABLE = register(MODID + ":" + "trade_tables/stone/single_brick");
+    public static final ResourceLocation OVERWORLD_BRICK_TABLE = register(MODID + ":" + "trade_tables/stone/overworld_brick");
     public static final ResourceLocation OVERWORLD_STONE_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/stone/overworld_stone_blocks");
     public static final ResourceLocation OVERWORLD_BRICK_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/stone/overworld_brick_blocks");
-    public static final ResourceLocation OVERWORLD_POLISHED_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/stone/overworld_polished_stone_blocks");
+    public static final ResourceLocation OVERWORLD_POLISHED_STONE_TABLE = register(MODID + ":" + "trade_tables/stone/overworld_polished_stone_blocks");
     public static final ResourceLocation OTHER_STONE_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/stone/other_stone_blocks");
 
     public static final ResourceLocation TERRACOTTA_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/terracotta/terracotta_blocks");
@@ -116,6 +117,11 @@ public class VillagerTradeLootTables {
     public static final ResourceLocation GOLD_TIER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/gold_tier_tools");
     public static final ResourceLocation DIAMOND_TIER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/diamond_tier_tools");
     public static final ResourceLocation NETHERITE_TIER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/netherite_tier_tools");
+
+    public static final ResourceLocation IRON_TIER_WEAPONS_TABLE = register(MODID + ":" + "trade_tables/weapons/iron_tier_weapons");
+    public static final ResourceLocation GOLD_TIER_WEAPONS_TABLE = register(MODID + ":" + "trade_tables/weapons/gold_tier_weapons");
+    public static final ResourceLocation DIAMOND_TIER_WEAPONS_TABLE = register(MODID + ":" + "trade_tables/weapons/diamond_tier_weapons");
+    public static final ResourceLocation NETHERITE_TIER_WEAPONS_TABLE = register(MODID + ":" + "trade_tables/weapons/netherite_tier_weapons");
 
     public static final ResourceLocation LEATHER_TIER_HORSE_ARMOR_TABLE = register(MODID + ":" + "trade_tables/armor/horse/leather_tier_horse_armor");
     public static final ResourceLocation GOLD_TIER_HORSE_ARMOR_TABLE = register(MODID + ":" + "trade_tables/armor/horse/gold_tier_horse_armor");

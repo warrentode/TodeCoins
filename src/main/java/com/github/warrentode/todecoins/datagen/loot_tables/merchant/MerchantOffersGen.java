@@ -191,6 +191,27 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
                 ));
+        consumer.accept(VillagerTradeLootTables.SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                ));
         consumer.accept(VillagerTradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -223,7 +244,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.CHORUS_FRUIT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_GEMS,
+        consumer.accept(VillagerTradeLootTables.THIRTY_POT_OF_GOLD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -321,7 +342,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.CHORUS_FRUIT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SIXTY_POTS_OF_GOLD_VALUE_GEMS,
+        consumer.accept(VillagerTradeLootTables.SIXTY_POT_OF_GOLD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1335,6 +1356,42 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.IRON_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
+        consumer.accept(VillagerTradeLootTables.IRON_TIER_WEAPONS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.IRON_SWORD))
+                        .add(LootItem.lootTableItem(Items.IRON_AXE))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.IRON_KNIFE.get())
+                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
+                ));
+        consumer.accept(VillagerTradeLootTables.GOLD_TIER_WEAPONS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_SWORD))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_AXE))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.GOLDEN_KNIFE.get())
+                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
+                ));
+        consumer.accept(VillagerTradeLootTables.DIAMOND_TIER_WEAPONS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_SWORD))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_AXE))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get())
+                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
+                ));
+        consumer.accept(VillagerTradeLootTables.NETHERITE_TIER_WEAPONS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_SWORD))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_AXE))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.NETHERITE_KNIFE.get())
+                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
+                ));
         consumer.accept(VillagerTradeLootTables.GOLD_TIER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1368,7 +1425,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.NETHERITE_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.SINGLE_BRICK_TABLE,
+        consumer.accept(VillagerTradeLootTables.OVERWORLD_BRICK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1442,7 +1499,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(16))))
                 ));
-        consumer.accept(VillagerTradeLootTables.OVERWORLD_POLISHED_BLOCKS_TABLE,
+        consumer.accept(VillagerTradeLootTables.OVERWORLD_POLISHED_STONE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))

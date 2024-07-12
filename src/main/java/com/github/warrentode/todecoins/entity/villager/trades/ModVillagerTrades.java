@@ -18,6 +18,7 @@ import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -30,8 +31,11 @@ public class ModVillagerTrades {
     static int journeyman = 3;
     static int expert = 4;
     static int master = 5;
+    static int BASE_XP = CommonConfig.getBaseXP();
     static int MAX_USES = 16;
     static float PRICE_MULTIPLIER = 0.05F;
+
+    // TODO: add weaponsmith trades
 
     @Mod.EventBusSubscriber(modid = MODID)
     public static class ForgeEvents {
@@ -41,6 +45,68 @@ public class ModVillagerTrades {
 
             // vanilla trades
             if (CommonConfig.getCustomTrades()) {
+                // WEAPONSMITH
+                if (event.getType() == VillagerProfession.WEAPONSMITH) {
+                    trades.get(novice).clear();
+                    trades.get(apprentice).clear();
+                    trades.get(journeyman).clear();
+                    trades.get(expert).clear();
+                    trades.get(master).clear();
+
+                    trades.get(novice).add(new ItemForLootTable(
+                            Items.COAL.getDefaultInstance(), 16,
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
+                    ));
+                    trades.get(novice).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getIronWeaponTable()),
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
+                    ));
+                    trades.get(novice).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(CommonConfig.getIronTierToolTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
+                    ));
+
+                    trades.get(apprentice).add(new ItemForLootTable(
+                            Items.IRON_INGOT.getDefaultInstance(), 4,
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
+                    ));
+                    trades.get(apprentice).add(new LootTableForItem(
+                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldCurrencyTable()),
+                            Items.BELL.getDefaultInstance(), 1,
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
+                    ));
+
+                    trades.get(journeyman).add(new ItemForLootTable(
+                            Items.FLINT.getDefaultInstance(), 26,
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
+                    ));
+                    trades.get(journeyman).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
+                    ));
+
+                    trades.get(master).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(CommonConfig.getDiamondTierWeaponTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
+                    ));
+                    trades.get(master).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(CommonConfig.getGoldTierWeaponTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
+                    ));
+                    trades.get(master).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(CommonConfig.getNetheriteTierWeaponTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLuckyCoinBagValueCurrency()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
+                    ));
+                }
                 // TOOLSMITH
                 if (event.getType() == VillagerProfession.TOOLSMITH) {
                     trades.get(novice).clear();
@@ -51,61 +117,66 @@ public class ModVillagerTrades {
 
                     trades.get(novice).add(new ItemForLootTable(
                             Items.COAL.getDefaultInstance(), 16,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.STONE_TIER_TOOLS_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getStoneTierToolTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new ItemForLootTable(
                             Items.IRON_INGOT.getDefaultInstance(), 4,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldCurrencyTable()),
                             Items.BELL.getDefaultInstance(), 1,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new ItemForLootTable(
                             Items.FLINT.getDefaultInstance(), 26,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            VillagerTradeLootTables.THREE_EMERALD_VALUE_CURRENCY,
-                            VillagerTradeLootTables.IRON_TIER_TOOLS_TABLE,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getIronTierToolTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            VillagerTradeLootTables.IRON_TIER_TOOLS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getIronTierToolTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldValueTable()),
-                            VillagerTradeLootTables.DIAMOND_TIER_TOOLS_TABLE,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getDiamondTierToolTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            VillagerTradeLootTables.DIAMOND_TIER_TOOLS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDiamondTierToolTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            VillagerTradeLootTables.GOLD_TIER_TOOLS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getGoldTierToolTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
+                    ));
+                    trades.get(master).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(CommonConfig.getNetheriteTierToolTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLuckyCoinBagValueCurrency()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // SHEPHERD
-                if (event.getType() == VillagerProfession.SHEPHERD) {
+                if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("minecraft:shepherd"))) {
                     trades.get(novice).clear();
                     trades.get(apprentice).clear();
                     trades.get(journeyman).clear();
@@ -114,62 +185,70 @@ public class ModVillagerTrades {
 
                     trades.get(novice).add(new ItemForLootTable(
                             Items.WHITE_WOOL.getDefaultInstance(), 18,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                             Items.SHEARS.getDefaultInstance(), 1,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_DYES_TABLE, 12,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
+                            CommonConfig.getDyeCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_WOOL_TABLE, 1,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getWoolTagTable()),
+                            CommonConfig.getWoolCount(),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_WOOL_CARPETS_TABLE, 4,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getWoolCarpetTagTable()),
+                            CommonConfig.getWoolCarpetCount(),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_DYES_TABLE, 12,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
+                            CommonConfig.getDyeCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_BEDS_TABLE, 1,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getBedTagTable()),
+                            CommonConfig.getBedCount(),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_DYES_TABLE, 12,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
+                            CommonConfig.getDyeCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_BANNER_TABLE, 1,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getBannerTagTable()),
+                            CommonConfig.getBannerCount(),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_DYES_TABLE, 12,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
+                            CommonConfig.getDyeCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getTwoEmeraldValueTable()),
-                            VillagerTradeLootTables.PAINTINGS_TABLE,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getTwoEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getPaintingsTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // MASON
@@ -182,57 +261,57 @@ public class ModVillagerTrades {
 
                     trades.get(novice).add(new ItemForLootTable(
                             Items.CLAY_BALL.getDefaultInstance(), 4,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.SINGLE_BRICK_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOverworldBrickTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            VillagerTradeLootTables.OVERWORLD_STONE_BLOCKS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOverworldStoneTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.OVERWORLD_BRICK_BLOCKS_TABLE,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOverworldBrickBlockTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.OVERWORLD_POLISHED_BLOCKS_TABLE,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOverworldPolishedStoneTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TERRACOTTA_BLOCKS_TABLE,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTerracottaTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOtherStoneTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.OTHER_STONE_BLOCKS_TABLE,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getGlazedTerracottaTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            VillagerTradeLootTables.OTHER_STONE_BLOCKS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOtherStoneTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // LIBRARIAN
@@ -245,96 +324,98 @@ public class ModVillagerTrades {
 
                     if (ModList.get().isLoaded("patchouli")) {
                         trades.get(novice).add(new LootTableForItem(
-                                VillagerTradeLootTables.GUIDE_BOOKS_TABLE,
+                                ResourceLocation.tryParse(CommonConfig.getGuideBookTable()),
                                 ModItems.COPPER_COIN.get().getDefaultInstance(), 1,
-                                MAX_USES, novice, PRICE_MULTIPLIER
+                                MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                         ));
                     }
                     trades.get(novice).add(new ItemForLootTable(
                             Items.PAPER.getDefaultInstance(), 24,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForEnchanted(
                             Items.BOOK.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getNineEmeraldValueTable()),
-                            VillagerTradeLootTables.BOOKSHELF_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getNineEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getBookshelfTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new ItemForLootTable(
                             Items.BOOK.getDefaultInstance(), 4,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForEnchanted(
                             Items.BOOK.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.LANTERN_TABLE,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLanternTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new ItemForLootTable(
                             Items.INK_SAC.getDefaultInstance(), 5,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForEnchanted(
                             Items.BOOK.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_GLASS_TABLE, 4,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getGlassTagTable()),
+                            CommonConfig.getGlassCount(),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new ItemForLootTable(
                             Items.WRITABLE_BOOK.getDefaultInstance(), 2,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForEnchanted(
                             Items.BOOK.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getSixEmeraldValueTable()),
-                            VillagerTradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getSixEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTierHorseArmorTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldCurrencyTable()),
                             Items.CLOCK.getDefaultInstance(), 1,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     if (ModList.get().isLoaded("supplementaries")) {
                         trades.get(master).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getFourEmeraldValueTable()),
-                                VillagerTradeLootTables.TAGGED_INK_TABLE, 5,
-                                MAX_USES, 5 * master, PRICE_MULTIPLIER
+                                ResourceLocation.tryParse(CommonConfig.getFourEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getInkTagTable()),
+                                CommonConfig.getInkCount(),
+                                MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                         ));
                     }
                     trades.get(master).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldCurrencyTable()),
                             Items.COMPASS.getDefaultInstance(), 1,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldCurrencyTable()),
                             Items.NAME_TAG.getDefaultInstance(), 1,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // LEATHERWORKER
@@ -346,68 +427,70 @@ public class ModVillagerTrades {
                     trades.get(master).clear();
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_LEATHER_TABLE, 6,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTagTable()),
+                            CommonConfig.getLeatherCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new DyedArmorForLootTable(
-                            VillagerTradeLootTables.THREE_EMERALD_VALUE_CURRENCY,
-                            VillagerTradeLootTables.LEATHER_TIER_LEGGINGS_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTierLeggingsTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldValueTable()),
-                            VillagerTradeLootTables.LEATHER_TIER_CHESTPLATES_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTierChestplateTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new ItemForLootTable(
                             Items.FLINT.getDefaultInstance(), 26,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldValueTable()),
-                            VillagerTradeLootTables.LEATHER_TIER_HELMETS_TABLE,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTierHelmetTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldValueTable()),
-                            VillagerTradeLootTables.LEATHER_TIER_BOOTS_TABLE,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTierBootsTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_LEATHER_TABLE, 6,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTagTable()),
+                            CommonConfig.getLeatherCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldValueTable()),
-                            VillagerTradeLootTables.LEATHER_TIER_CHESTPLATES_TABLE,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTierChestplateTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new ItemForLootTable(
                             Items.SCUTE.getDefaultInstance(), 4,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getSixEmeraldValueTable()),
-                            VillagerTradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getSixEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTierHorseArmorTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getSixEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getSixEmeraldCurrencyTable()),
                             Items.SADDLE.getDefaultInstance(), 1,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldValueTable()),
-                            VillagerTradeLootTables.LEATHER_TIER_HELMETS_TABLE,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getLeatherTierHelmetTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // FLETCHER
@@ -420,63 +503,64 @@ public class ModVillagerTrades {
 
                     trades.get(novice).add(new ItemForLootTable(
                             Items.STICK.getDefaultInstance(), 32,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableAndItemForItem(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                             Items.GRAVEL.getDefaultInstance(), 10,
                             Items.FLINT.getDefaultInstance(), 10,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new ItemForLootTable(
                             Items.FLINT.getDefaultInstance(), 26,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            VillagerTradeLootTables.THREE_EMERALD_VALUE_CURRENCY,
-                            VillagerTradeLootTables.BOWS_TABLE,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getBowsTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new ItemForLootTable(
                             Items.STRING.getDefaultInstance(), 14,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new ItemForLootTable(
                             Items.FEATHER.getDefaultInstance(), 24,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            VillagerTradeLootTables.BOWS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getBowsTable()),
+                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     if (ModList.get().isLoaded("supplementaries")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getTwoEmeraldValueTable()),
-                                VillagerTradeLootTables.TAGGED_QUIVERS_TABLE, 1,
-                                MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                                ResourceLocation.tryParse(CommonConfig.getTwoEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getQuiversTagTable()),
+                                CommonConfig.getQuiverCount(),
+                                MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                         ));
                     }
                     trades.get(expert).add(new ItemForLootTable(
                             Items.TRIPWIRE_HOOK.getDefaultInstance(), 8,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new TippedArrowForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getTwoEmeraldValueTable()), 5,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getTwoEmeraldCurrencyTable()), 5,
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new TippedArrowForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getTwoEmeraldValueTable()), 5,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getTwoEmeraldCurrencyTable()), 5,
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // FISHERMAN
@@ -489,72 +573,78 @@ public class ModVillagerTrades {
 
                     trades.get(novice).add(new ItemForLootTable(
                             Items.STRING.getDefaultInstance(), 20,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new ItemForLootTable(
                             Items.COAL.getDefaultInstance(), 16,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE, 6,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getPreppedSeafoodTagTable()),
+                            CommonConfig.getPreppedSeafoodCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
                             Items.COD_BUCKET.getDefaultInstance(), 1,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_RAW_SEAFOOD_TABLE, 8,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getRawSeafoodTagTable()),
+                            CommonConfig.getRawSeafoodCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE, 6,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getPreppedSeafoodTagTable()),
+                            CommonConfig.getPreppedSeafoodCount(),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getTwoEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwoEmeraldCurrencyTable()),
                             Items.CAMPFIRE.getDefaultInstance(), 1,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_RAW_SEAFOOD_TABLE, 8,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getRawSeafoodTagTable()),
+                            CommonConfig.getRawSeafoodCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.FISHING_GEAR_TABLE,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFishingGearTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForEnchanted(
                             Items.FISHING_ROD.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_RAW_SEAFOOD_TABLE, 8,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getRawSeafoodTagTable()),
+                            CommonConfig.getRawSeafoodCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_RAW_SEAFOOD_TABLE, 8,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getRawSeafoodTagTable()),
+                            CommonConfig.getRawSeafoodCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            VillagerTradeLootTables.FISHING_GEAR_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getFishingGearTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // FARMER
@@ -566,83 +656,90 @@ public class ModVillagerTrades {
                     trades.get(master).clear();
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_VEGGIES_AND_GRAINS_TABLE, 16,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getVegGrainTagTable()),
+                            CommonConfig.getVegGrainCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_BREADS_TABLE, 6,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getBreadTagTable()),
+                            CommonConfig.getBreadCount(),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_GOURDS_TABLE, 6,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getGourdTagTable()),
+                            CommonConfig.getGourdCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_PIES_TABLE, 4,
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getPieTagTable()),
+                            CommonConfig.getPieCount(),
                             MAX_USES, 5 + apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_FRUITS_TABLE, 4,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFruitTagTable()),
+                            CommonConfig.getFruitCount(),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_COOKIES_TABLE, 18,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getCookieTagTable()),
+                            CommonConfig.getCookieCount(),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_CAKES_TABLE, 1,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getCakeTagTable()),
+                            CommonConfig.getCakeCount(),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new SUSStewForLootTable(
                             MobEffects.NIGHT_VISION, 300,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new SUSStewForLootTable(
                             MobEffects.JUMP, 300,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new SUSStewForLootTable(
                             MobEffects.WEAKNESS, 300,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new SUSStewForLootTable(
                             MobEffects.BLINDNESS, 300,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new SUSStewForLootTable(
                             MobEffects.POISON, 300,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new SUSStewForLootTable(
                             MobEffects.SATURATION, 300,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
                             Items.GOLDEN_CARROT.getDefaultInstance(), 3,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldCurrencyTable()),
                             Items.GLISTERING_MELON_SLICE.getDefaultInstance(), 3,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // CLERIC
@@ -655,62 +752,62 @@ public class ModVillagerTrades {
 
                     trades.get(novice).add(new ItemForLootTable(
                             Items.ROTTEN_FLESH.getDefaultInstance(), 32,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new ItemForLootTable(
                             Items.GOLD_INGOT.getDefaultInstance(), 3,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
                             MAX_USES, 5 + apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new ItemForLootTable(
                             Items.RABBIT_FOOT.getDefaultInstance(), 2,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
                             MAX_USES, 5 + journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new ItemForLootTable(
                             Items.SCUTE.getDefaultInstance(), 4,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new ItemForLootTable(
                             Items.GLASS_BOTTLE.getDefaultInstance(), 9,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldValueTable()),
-                            VillagerTradeLootTables.FIVE_EMERALD_VALUE_GEMS,
+                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldGemsTable()),
                             MAX_USES, 5 + expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new ItemForLootTable(
                             Items.NETHER_WART.getDefaultInstance(), 22,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
                             Items.EXPERIENCE_BOTTLE.getDefaultInstance(), 1,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // CARTOGRAPHER
@@ -723,63 +820,65 @@ public class ModVillagerTrades {
 
                     trades.get(novice).add(new ItemForLootTable(
                             Items.PAPER.getDefaultInstance(), 24,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldCurrencyTable()),
                             Items.MAP.getDefaultInstance(), 1,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_GLASS_PANES_TABLE, 11,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getGlassPaneTagTable()),
+                            CommonConfig.getGlassPaneCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new MapForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFourteenEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFourteenEmeraldCurrencyTable()),
                             Items.COMPASS.getDefaultInstance(), 1,
                             ForgeTags.StructureTags.OVERWORLD_POI,
                             "Overworld Exploration Map", MapDecoration.Type.TARGET_POINT,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new ItemForLootTable(
                             Items.COMPASS.getDefaultInstance(), 1,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new MapForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFourteenEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFourteenEmeraldCurrencyTable()),
                             Items.COMPASS.getDefaultInstance(), 1,
                             ForgeTags.StructureTags.OVERWORLD_POI,
                             "Overworld Exploration Map", MapDecoration.Type.TARGET_POINT,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldCurrencyTable()),
                             Items.ITEM_FRAME.getDefaultInstance(), 1,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_BANNER_TABLE, 1,
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getBannerTagTable()),
+                            CommonConfig.getBannerCount(),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getEightEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getEightEmeraldCurrencyTable()),
                             Items.GLOBE_BANNER_PATTERN.getDefaultInstance(), 1,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new MapForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFourteenEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFourteenEmeraldCurrencyTable()),
                             Items.COMPASS.getDefaultInstance(), 1,
                             ForgeTags.StructureTags.OVERWORLD_POI,
                             "Overworld Exploration Map", MapDecoration.Type.TARGET_POINT,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // BUTCHER
@@ -791,83 +890,92 @@ public class ModVillagerTrades {
                     trades.get(master).clear();
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_RAW_MEATS_TABLE, 8,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getRawMeatTagTable()),
+                            CommonConfig.getRawMeatCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_MEAT_SOUPS_TABLE, 1,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getMeatSoupTagTable()),
+                            CommonConfig.getMeatSoupCount(),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new ItemForLootTable(
                             Items.COAL.getDefaultInstance(), 16,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_COOKED_MEATS_TABLE, 8,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getCookedMeatTagTable()),
+                            CommonConfig.getCookedMeatCount(),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            VillagerTradeLootTables.TAGGED_RAW_MEATS_TABLE, 8,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getRawMeatTagTable()),
+                            CommonConfig.getRawMeatCount(),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     if (ModList.get().isLoaded("farmersdelight")) {
-                        trades.get(journeyman).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                                VillagerTradeLootTables.STONE_TIER_KNIVES, 1,
-                                MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getStoneTierKnifeTable()),
+                                MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                         ));
                     }
                     else {
                         trades.get(journeyman).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                                VillagerTradeLootTables.TAGGED_COOKED_MEATS_TABLE, 8,
-                                MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getCookedMeatTagTable()),
+                                CommonConfig.getCookedMeatCount(),
+                                MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                         ));
                     }
 
                     trades.get(expert).add(new ItemForLootTable(
                             Items.DRIED_KELP_BLOCK.getDefaultInstance(), 10,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
-                    if (ModList.get().isLoaded("salt")) {
+                    if (ModList.get().isLoaded("salt") || ModList.get().isLoaded("turtleblockacademy")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                                VillagerTradeLootTables.TAGGED_SALTS_TABLE, 8,
-                                MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getSaltTagTable()),
+                                CommonConfig.getSaltCount(),
+                                MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                         ));
                     }
-                    if (ModList.get().isLoaded("supplementaries")) {
+                    if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                                VillagerTradeLootTables.TAGGED_ASH_TABLE, 8,
-                                MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getAshTagTable()),
+                                CommonConfig.getAshCount(),
+                                MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                         ));
                     }
                     else {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                                VillagerTradeLootTables.TAGGED_COOKED_MEATS_TABLE, 8,
-                                MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getCookedMeatTagTable()),
+                                CommonConfig.getCookedMeatCount(),
+                                MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                         ));
                     }
 
                     trades.get(master).add(new TagTableForLootTable(
                             VillagerTradeLootTables.TAGGED_FOX_FOOD_TABLE, 8,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.TAGGED_COOKED_MEATS_TABLE, 8,
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getCookedMeatTagTable()),
+                            CommonConfig.getCookedMeatCount(),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                 }
                 // ARMORER
@@ -880,97 +988,102 @@ public class ModVillagerTrades {
 
                     trades.get(novice).add(new ItemForLootTable(
                             Items.COAL.getDefaultInstance(), 15,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.CHAINMAIL_TIER_HELMETS_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getChainmailTierHelmetTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldValueTable()),
-                            VillagerTradeLootTables.CHAINMAIL_TIER_CHESTPLATES_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getChainmailTierChestplateTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldValueTable()),
-                            VillagerTradeLootTables.CHAINMAIL_TIER_LEGGINGS_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getChainmailTierLeggingsTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            VillagerTradeLootTables.CHAINMAIL_TIER_BOOTS_TABLE,
-                            MAX_USES, novice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getChainmailTierBootsTable()),
+                            MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new ItemForLootTable(
                             Items.IRON_INGOT.getDefaultInstance(), 4,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getThirtySixEmeraldCurrencyTable()),
                             Items.BELL.getDefaultInstance(), 1,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldValueTable()),
-                            VillagerTradeLootTables.IRON_TIER_LEGGINGS_TABLE,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getSevenEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getIronTierLeggingsTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldValueTable()),
-                            VillagerTradeLootTables.IRON_TIER_BOOTS_TABLE,
-                            MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getFourEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getIronTierBootsTable()),
+                            MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new ItemForLootTable(
                             Items.LAVA_BUCKET.getDefaultInstance(), 1,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
-                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                            ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldValueTable()),
-                            VillagerTradeLootTables.IRON_TIER_HELMETS_TABLE,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getIronTierHelmetTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getNineEmeraldValueTable()),
-                            VillagerTradeLootTables.IRON_TIER_CHESTPLATES_TABLE,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getNineEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getIronTierChestplateTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldValueTable()),
+                            ResourceLocation.tryParse(CommonConfig.getFiveEmeraldCurrencyTable()),
                             Items.SHIELD.getDefaultInstance(), 1,
-                            MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
+                    ));
+                    trades.get(journeyman).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getNineEmeraldCurrencyTable()),
+                            ResourceLocation.tryParse(CommonConfig.getIronTierHorseArmorTable()),
+                            MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            VillagerTradeLootTables.DIAMOND_TIER_LEGGINGS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDiamondTierLeggingsTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            VillagerTradeLootTables.DIAMOND_TIER_BOOTS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDiamondTierBootsTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            VillagerTradeLootTables.DIAMOND_TIER_HELMETS_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldValueTable()),
-                            MAX_USES, 5 * master, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDiamondTierHelmetTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentyEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            VillagerTradeLootTables.DIAMOND_TIER_CHESTPLATES_TABLE,
-                            ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldValueTable()),
-                            MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                            ResourceLocation.tryParse(CommonConfig.getDiamondTierChestplateTable()),
+                            ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldCurrencyTable()),
+                            MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                     ));
                 }
             }
@@ -979,167 +1092,172 @@ public class ModVillagerTrades {
             if (event.getType() == ModVillagers.BANKER.get()) {
                 trades.get(novice).add(new ItemForLootTable(
                         Items.EMERALD.getDefaultInstance(), 1,
-                        ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
-                        MAX_USES, novice, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                        MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                 ));
                 trades.get(novice).add(new LootTableForItem(
-                        ResourceLocation.tryParse(CommonConfig.getOneEmeraldValueTable()),
+                        ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                         Items.EMERALD.getDefaultInstance(), 1,
-                        MAX_USES, novice, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                 ));
 
                 trades.get(apprentice).add(new ItemForLootTable(
                         Items.EMERALD.getDefaultInstance(), 16,
-                        ResourceLocation.tryParse(CommonConfig.getEmeraldQuarterNoteValueTable()),
-                        MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getEmeraldQuarterNoteCurrencyTable()),
+                        MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                 ));
                 trades.get(apprentice).add(new LootTableForItem(
-                        ResourceLocation.tryParse(CommonConfig.getEmeraldQuarterNoteValueTable()),
+                        ResourceLocation.tryParse(CommonConfig.getEmeraldQuarterNoteCurrencyTable()),
                         Items.EMERALD.getDefaultInstance(), 16,
-                        MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                 ));
 
                 trades.get(journeyman).add(new ItemForLootTable(
                         Items.EMERALD.getDefaultInstance(), 32,
-                        ResourceLocation.tryParse(CommonConfig.getEmeraldHalfNoteValueTable()),
-                        MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getEmeraldHalfNoteCurrencyTable()),
+                        MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                 ));
                 trades.get(journeyman).add(new LootTableForItem(
-                        ResourceLocation.tryParse(CommonConfig.getEmeraldHalfNoteValueTable()),
+                        ResourceLocation.tryParse(CommonConfig.getEmeraldHalfNoteCurrencyTable()),
                         Items.EMERALD.getDefaultInstance(), 32,
-                        MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                 ));
 
                 trades.get(expert).add(new LootTableForItem(
-                        ResourceLocation.tryParse(CommonConfig.getEmeraldNoteValueTable()),
+                        ResourceLocation.tryParse(CommonConfig.getEmeraldNoteCurrencyTable()),
                         Items.EMERALD.getDefaultInstance(), 64,
-                        MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                 ));
                 trades.get(expert).add(new ItemForLootTable(
                         Items.EMERALD.getDefaultInstance(), 64,
-                        ResourceLocation.tryParse(CommonConfig.getEmeraldNoteValueTable()),
-                        MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getEmeraldNoteCurrencyTable()),
+                        MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                 ));
 
                 trades.get(master).add(new LootTableForItem(
-                        VillagerTradeLootTables.SINGLE_EMERALD_VALUE_METALS,
+                        ResourceLocation.tryParse(CommonConfig.getOneEmeraldMetalsTable()),
                         Items.EMERALD.getDefaultInstance(), 1,
-                        MAX_USES, 5 * master, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                 ));
                 trades.get(master).add(new LootTableForItem(
-                        VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
+                        ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
                         Items.EMERALD.getDefaultInstance(), 1,
-                        MAX_USES, 5 * master, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                 ));
                 trades.get(master).add(new LootTableForItem(
-                        VillagerTradeLootTables.EMERALD_BANK_NOTE_VALUE_METALS,
+                        ResourceLocation.tryParse(CommonConfig.getEmeraldNoteMetalsTable()),
                         ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 1,
-                        MAX_USES, 5 * master, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                 ));
                 trades.get(master).add(new LootTableForItem(
-                        VillagerTradeLootTables.EMERALD_BANK_NOTE_VALUE_GEMS,
+                        ResourceLocation.tryParse(CommonConfig.getEmeraldNoteGemsTable()),
                         ModItems.EMERALD_BANK_NOTE.get().getDefaultInstance(), 1,
-                        MAX_USES, 5 * master, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                 ));
             }
 
             // LEPRECHAUN TRADES SET
             if (event.getType() == ModVillagers.LEPRECHAUN.get()) {
                 trades.get(novice).add(new LootTableForItem(
-                        ResourceLocation.tryParse(CommonConfig.getTwoPotGoldValueTable()),
+                        ResourceLocation.tryParse(CommonConfig.getTwoPotGoldCurrencyTable()),
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 2,
-                        MAX_USES, novice, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                 ));
                 trades.get(novice).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 2,
-                        ResourceLocation.tryParse(CommonConfig.getTwoPotGoldValueTable()),
-                        MAX_USES, novice, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getTwoPotGoldCurrencyTable()),
+                        MAX_USES, BASE_XP * novice, PRICE_MULTIPLIER
                 ));
 
                 trades.get(apprentice).add(new LootTableForItem(
-                        VillagerTradeLootTables.TWO_POT_OF_GOLD_VALUE_GEMS,
+                        ResourceLocation.tryParse(CommonConfig.getTwoGoldPotGemsTable()),
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 2,
-                        MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                 ));
                 trades.get(apprentice).add(new LootTableForItem(
                         VillagerTradeLootTables.TWO_POT_OF_GOLD_VALUE_ITEMS,
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 2,
-                        MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                 ));
 
                 trades.get(apprentice).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 4,
-                        ResourceLocation.tryParse(CommonConfig.getFourPotGoldValueTable()),
-                        MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getFourPotGoldCurrencyTable()),
+                        MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                 ));
                 trades.get(apprentice).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 4,
                         VillagerTradeLootTables.FOUR_POT_OF_GOLD_VALUE_ITEMS,
-                        MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                 ));
                 trades.get(apprentice).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 4,
-                        ResourceLocation.tryParse(CommonConfig.getFourPotGoldValueTable()),
-                        MAX_USES, 5 * apprentice, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getFourGoldPotGemsTable()),
+                        MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
+                ));
+                trades.get(apprentice).add(new ItemForLootTable(
+                        ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 4,
+                        ResourceLocation.tryParse(CommonConfig.getFourPotGoldCurrencyTable()),
+                        MAX_USES, BASE_XP * apprentice, PRICE_MULTIPLIER
                 ));
 
                 trades.get(journeyman).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 30,
                         VillagerTradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_ITEMS,
-                        MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                 ));
                 trades.get(journeyman).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 30,
-                        ResourceLocation.tryParse(CommonConfig.getThirtyPotGoldValueTable()),
-                        MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getThirtyPotGoldCurrencyTable()),
+                        MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                 ));
                 trades.get(journeyman).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 30,
-                        VillagerTradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_GEMS,
-                        MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getThirtyGoldPotGemsTable()),
+                        MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                 ));
 
                 trades.get(journeyman).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 60,
-                        ResourceLocation.tryParse(CommonConfig.getSixtyPotGoldValueTable()),
-                        MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getSixtyPotGoldCurrencyTable()),
+                        MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                 ));
                 trades.get(journeyman).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 60,
                         VillagerTradeLootTables.SIXTY_POTS_OF_GOLD_VALUE_ITEMS,
-                        MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                 ));
                 trades.get(journeyman).add(new ItemForLootTable(
                         ModBlocks.POT_OF_GOLD.get().asItem().getDefaultInstance(), 60,
-                        VillagerTradeLootTables.SIXTY_POTS_OF_GOLD_VALUE_GEMS,
-                        MAX_USES, 5 * journeyman, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getSixtyGoldPotGemsTable()),
+                        MAX_USES, BASE_XP * journeyman, PRICE_MULTIPLIER
                 ));
 
                 trades.get(expert).add(new LootTableForItem(
-                        ResourceLocation.tryParse(CommonConfig.getOneLuckyCoinValueTable()),
+                        ResourceLocation.tryParse(CommonConfig.getOneLuckyCoinCurrencyTable()),
                         ModItems.LUCKY_COIN.get().getDefaultInstance(), 1,
-                        MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                 ));
                 trades.get(expert).add(new ItemForLootTable(
                         ModItems.LUCKY_COIN.get().getDefaultInstance(), 1,
-                        ResourceLocation.tryParse(CommonConfig.getOneLuckyCoinValueTable()),
-                        MAX_USES, 5 * expert, PRICE_MULTIPLIER
+                        ResourceLocation.tryParse(CommonConfig.getOneLuckyCoinCurrencyTable()),
+                        MAX_USES, BASE_XP * expert, PRICE_MULTIPLIER
                 ));
 
                 trades.get(master).add(new LootTableForItem(
-                        VillagerTradeLootTables.SINGLE_LUCKY_COIN_VALUE_GEMS,
+                        ResourceLocation.tryParse(CommonConfig.getLuckyCoinGemsTable()),
                         ModItems.LUCKY_COIN.get().getDefaultInstance(), 1,
-                        MAX_USES, 5 * master, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                 ));
                 trades.get(master).add(new LootTableForItem(
                         VillagerTradeLootTables.THREE_LUCKY_COIN_VALUE_ITEMS,
                         ModItems.LUCKY_COIN.get().getDefaultInstance(), 3,
-                        MAX_USES, 5 * master, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                 ));
                 trades.get(master).add(new LootTableForItem(
                         VillagerTradeLootTables.TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS,
                         ModItems.LUCKY_COIN.get().getDefaultInstance(), 27,
-                        MAX_USES, 5 * master, PRICE_MULTIPLIER
+                        MAX_USES, BASE_XP * master, PRICE_MULTIPLIER
                 ));
             }
         }
