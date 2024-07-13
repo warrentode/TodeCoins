@@ -38,12 +38,13 @@ public class VillagerTradeLootTables {
     public static final ResourceLocation THREE_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/three_emerald_value_currency");
     public static final ResourceLocation TWO_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/two_emerald_value_currency");
     public static final ResourceLocation SINGLE_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/single_emerald_value_currency");
+    public static final ResourceLocation SMALLEST_COIN = register(MODID + ":" + "trade_tables/currency/smallest_coin");
 
     // set value item tables
     public static final ResourceLocation TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS = register(MODID + ":" + "trade_tables/assorted_items/twenty_seven_lucky_coin_value_items");
     public static final ResourceLocation THREE_LUCKY_COIN_VALUE_ITEMS = register(MODID + ":" + "trade_tables/assorted_items/single_lucky_coin_value_items");
-    public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_ITEMS = register(MODID + ":" + "trade_tables/assorted_items/sixty_pot_of_gold_value_items");
-    public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_ITEMS = register(MODID + ":" + "trade_tables/assorted_items/thirty_pot_of_gold_value_items");
+    public static final ResourceLocation SIXTY_POT_OF_GOLD_VALUE_ITEMS = register(MODID + ":" + "trade_tables/assorted_items/sixty_pot_of_gold_value_items");
+    public static final ResourceLocation THIRTY_POT_OF_GOLD_VALUE_ITEMS = register(MODID + ":" + "trade_tables/assorted_items/thirty_pot_of_gold_value_items");
     public static final ResourceLocation FOUR_POT_OF_GOLD_VALUE_ITEMS = register(MODID + ":" + "trade_tables/assorted_items/four_pot_of_gold_value_items");
     public static final ResourceLocation TWO_POT_OF_GOLD_VALUE_ITEMS = register(MODID + ":" + "trade_tables/assorted_items/two_pot_of_gold_value_items");
 
@@ -88,13 +89,52 @@ public class VillagerTradeLootTables {
     public static final ResourceLocation TAGGED_BEDS_TABLE = register(MODID + ":" + "trade_tables/wool/tagged_beds_table");
 
     // assorted items
+    public static final ResourceLocation TAGGED_CANDLE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/tagged_candle_table");
+    public static final ResourceLocation BEEHIVE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/beehive_table");
+    public static final ResourceLocation BEE_EGG_TABLE = register(MODID + ":" + "trade_tables/assorted_items/bee_egg_table");
+    public static final ResourceLocation ENCHANTING_GEMS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/enchanting_gems_table");
+    public static final ResourceLocation EQUIPMENT_GEMS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/equipment_gems_table");
+    public static final ResourceLocation ONE_EMERALD_VALUE_FUEL = register(MODID + ":" + "trade_tables/assorted_items/one_emerald_value_fuel_table");
     public static final ResourceLocation FISHING_GEAR_TABLE = register(MODID + ":" + "trade_tables/assorted_items/fishing_gear_table");
+    public static final ResourceLocation FISHING_ROD_TABLE = register(MODID + ":" + "trade_tables/assorted_items/fishing_rod_table");
     public static final ResourceLocation LANTERN_TABLE = register(MODID + ":" + "trade_tables/assorted_items/lantern_table");
     public static final ResourceLocation PAINTINGS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/paintings_table");
     public static final ResourceLocation TAGGED_ASH_TABLE = register(MODID + ":" + "trade_tables/assorted_items/tagged_ash_table");
     public static final ResourceLocation TAGGED_LEATHER_TABLE = register(MODID + ":" + "trade_tables/assorted_items/tagged_leather_table");
     public static final ResourceLocation TAGGED_INK_TABLE = register(MODID + ":" + "trade_tables/assorted_items/tagged_ink_table");
     public static final ResourceLocation TAGGED_DYES_TABLE = register(MODID + ":" + "trade_tables/assorted_items/tagged_dyes_table");
+    public static final ResourceLocation TAGGED_STICK_TABLE = register(MODID + ":" + "trade_tables/assorted_items/tagged_stick_table");
+    public static final ResourceLocation TAGGED_STRING_TABLE = register(MODID + ":" + "trade_tables/assorted_items/tagged_string_table");
+    public static final ResourceLocation BELL_TABLE = register(MODID + ":" + "trade_tables/assorted_items/bell_table");
+    public static final ResourceLocation FLINT_BUY_TABLE = register(MODID + ":" + "trade_tables/assorted_items/flint_buy_table");
+    public static final ResourceLocation FLINT_SELL_TABLE = register(MODID + ":" + "trade_tables/assorted_items/flint_sell_table");
+    public static final ResourceLocation ANVIL_TABLE = register(MODID + ":" + "trade_tables/assorted_items/anvil_table");
+    public static final ResourceLocation SHEARS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/shears_table");
+    public static final ResourceLocation CLAY_TABLE = register(MODID + ":" + "trade_tables/assorted_items/clay_table");
+    public static final ResourceLocation PAPER_TABLE = register(MODID + ":" + "trade_tables/assorted_items/paper_table");
+    public static final ResourceLocation BOOK_TABLE = register(MODID + ":" + "trade_tables/assorted_items/book_table");
+    public static final ResourceLocation CLOCK_TABLE = register(MODID + ":" + "trade_tables/assorted_items/clock_table");
+    public static final ResourceLocation COMPASS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/compass_table");
+    public static final ResourceLocation SCUTE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/scute_table");
+    public static final ResourceLocation SADDLE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/saddle_table");
+    public static final ResourceLocation GRAVEL_TABLE = register(MODID + ":" + "trade_tables/assorted_items/gravel_table");
+    public static final ResourceLocation FEATHER_TABLE = register(MODID + ":" + "trade_tables/assorted_items/feather_table");
+    public static final ResourceLocation TRIPWIRE_HOOK_TABLE = register(MODID + ":" + "trade_tables/assorted_items/tripwire_hook_table");
+    public static final ResourceLocation FISH_BUCKET_TABLE = register(MODID + ":" + "trade_tables/assorted_items/fish_bucket_table");
+    public static final ResourceLocation CAMPFIRE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/campfire_table");
+    public static final ResourceLocation GOLDEN_FOOD_TABLE = register(MODID + ":" + "trade_tables/assorted_items/golden_food_table");
+    public static final ResourceLocation MOB_PARTS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/mob_parts_table");
+    public static final ResourceLocation GLASS_BOTTLE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/glass_bottle_table");
+    public static final ResourceLocation POTION_INGREDIENTS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/potion_ingredients_table");
+    public static final ResourceLocation EXPERIENCE_BOTTLE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/experience_bottle_table");
+    public static final ResourceLocation BLANK_MAP_TABLE = register(MODID + ":" + "trade_tables/assorted_items/blank_map_table");
+    public static final ResourceLocation BANNER_PATTERN_TABLE = register(MODID + ":" + "trade_tables/assorted_items/banner_pattern_table");
+    public static final ResourceLocation ITEM_FRAME_TABLE = register(MODID + ":" + "trade_tables/assorted_items/item_frame_table");
+    public static final ResourceLocation SHIELD_TABLE = register(MODID + ":" + "trade_tables/assorted_items/shield_table");
+    public static final ResourceLocation FLOWER_BUY_TABLE = register(MODID + ":" + "trade_tables/assorted_items/flower_buy_table");
+    public static final ResourceLocation BOTTLED_HONEY_TABLE = register(MODID + ":" + "trade_tables/assorted_items/bottled_honey_table");
+    public static final ResourceLocation HONEY_BLOCK_TABLE = register(MODID + ":" + "trade_tables/assorted_items/honey_block_table");
+    public static final ResourceLocation HONEY_COMB_TABLE = register(MODID + ":" + "trade_tables/assorted_items/honey_comb_table");
 
     // books and bookshelves
     public static final ResourceLocation BOOKSHELF_TABLE = register(MODID + ":" + "trade_tables/library/bookshelf_table");

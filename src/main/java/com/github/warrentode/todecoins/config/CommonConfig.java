@@ -1,8 +1,15 @@
 package com.github.warrentode.todecoins.config;
 
 import com.github.warrentode.todecoins.loot.VillagerTradeLootTables;
+import com.github.warrentode.todecoins.util.tags.ForgeTags;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.saveddata.maps.MapDecoration;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -15,6 +22,10 @@ public class CommonConfig {
 
     public static final ForgeConfigSpec.ConfigValue<Boolean> USE_MOD_TRADES;
     public static final ForgeConfigSpec.ConfigValue<Integer> BASE_TRADE_XP;
+    public static final ForgeConfigSpec.ConfigValue<Integer> COMMON_MAX_TRADES;
+    public static final ForgeConfigSpec.ConfigValue<Integer> RARE_MAX_TRADES;
+    public static final ForgeConfigSpec.ConfigValue<Float> COMMON_TRADE_MULTIPLIER;
+    public static final ForgeConfigSpec.ConfigValue<Float> RARE_TRADE_MULTIPLIER;
     // currency value tables
     public static final ForgeConfigSpec.ConfigValue<String> ONE_EMERALD_VALUE;
     public static final ForgeConfigSpec.ConfigValue<String> TWO_EMERALD_VALUE;
@@ -42,13 +53,21 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> ONE_EMERALD_METALS;
     public static final ForgeConfigSpec.ConfigValue<String> EMERALD_NOTE_METALS;
     public static final ForgeConfigSpec.ConfigValue<String> ONE_EMERALD_GEMS;
+    public static final ForgeConfigSpec.ConfigValue<String> EQUIPMENT_GEMS;
+    public static final ForgeConfigSpec.ConfigValue<String> ENCHANTING_GEMS;
     public static final ForgeConfigSpec.ConfigValue<String> FIVE_EMERALD_GEMS;
     public static final ForgeConfigSpec.ConfigValue<String> TWO_GOLD_POT_GEMS;
+    public static final ForgeConfigSpec.ConfigValue<String> TWO_GOLD_POT_ITEMS;
     public static final ForgeConfigSpec.ConfigValue<String> FOUR_GOLD_POT_GEMS;
+    public static final ForgeConfigSpec.ConfigValue<String> FOUR_GOLD_POT_ITEMS;
     public static final ForgeConfigSpec.ConfigValue<String> THIRTY_GOLD_POT_GEMS;
+    public static final ForgeConfigSpec.ConfigValue<String> THIRTY_GOLD_POT_ITEMS;
     public static final ForgeConfigSpec.ConfigValue<String> SIXTY_GOLD_POT_GEMS;
+    public static final ForgeConfigSpec.ConfigValue<String> SIXTY_GOLD_POT_ITEMS;
     public static final ForgeConfigSpec.ConfigValue<String> EMERALD_NOTE_GEMS;
     public static final ForgeConfigSpec.ConfigValue<String> LUCKY_COIN_GEMS;
+    public static final ForgeConfigSpec.ConfigValue<String> THREE_LUCKY_COIN_ITEMS;
+    public static final ForgeConfigSpec.ConfigValue<String> TWENTY_SEVEN_LUCKY_COIN_ITEMS;
     public static final ForgeConfigSpec.ConfigValue<String> RAW_MEAT_TAG_TABLE;
     public static final ForgeConfigSpec.ConfigValue<Integer> RAW_MEAT_TAG_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> MEAT_SOUP_TAG_TABLE;
@@ -82,7 +101,8 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> BANNER_TAG_TABLE;
     public static final ForgeConfigSpec.ConfigValue<Integer> BANNER_TAG_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> WOOL_TAG_TABLE;
-    public static final ForgeConfigSpec.ConfigValue<Integer> WOOL_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> WOOL_TAG_BUY_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> WOOL_TAG_SELL_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> WOOL_CARPET_TAG_TABLE;
     public static final ForgeConfigSpec.ConfigValue<Integer> WOOL_CARPET_TAG_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> BED_TAG_TABLE;
@@ -90,16 +110,19 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> ASH_TAG_TABLE;
     public static final ForgeConfigSpec.ConfigValue<Integer> ASH_TAG_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> FISHING_GEAR_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> FISHING_ROD_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> LANTERN_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> PAINTINGS_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> LEATHER_TAG_TABLE;
     public static final ForgeConfigSpec.ConfigValue<Integer> LEATHER_TAG_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> INK_TAG_TABLE;
-    public static final ForgeConfigSpec.ConfigValue<Integer> INK_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> INK_TAG_BUY_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> INK_TAG_SELL_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> DYE_TAG_TABLE;
     public static final ForgeConfigSpec.ConfigValue<Integer> DYE_TAG_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> BOOKSHELF_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> GUIDE_BOOK_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> SMALLEST_COIN;
     public static final ForgeConfigSpec.ConfigValue<String> OVERWORLD_BRICK_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> OVERWORLD_STONE_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> OVERWORLD_BRICK_BLOCK_TABLE;
@@ -138,6 +161,59 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> DIAMOND_WEAPON_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> GOLD_WEAPON_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> NETHERITE_WEAPON_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> ONE_EMERALD_FUEL;
+    public static final ForgeConfigSpec.ConfigValue<String> BELL_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> FLINT_BUY_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> FLINT_SELL_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> ANVIL_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> SHEARS_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> CLAY_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> PAPER_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> BOOK_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> CLOCK_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> COMPASS_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> SCUTE_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> SADDLE_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> STICK_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> STICK_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GRAVEL_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> STRING_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> STRING_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> FEATHER_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> TRIPWIRE_HOOK_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> FISH_BUCKET_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> CAMPFIRE_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> GOLDEN_FOOD_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> MONSTER_PARTS_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASS_BOTTLE_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> POTION_INGREDIENTS_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> EXPERIENCE_BOTTLE_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> BLANK_MAP_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> MERCHANT_MAP_STRUCTURE_TAG;
+    public static final ForgeConfigSpec.ConfigValue<String> MERCHANT_MAP_NAME;
+    public static final ForgeConfigSpec.ConfigValue<String> MERCHANT_MAP_MARKER;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_1_STRUCTURE_TAG;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_1_NAME;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_1_MARKER;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_2_STRUCTURE_TAG;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_2_NAME;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_2_MARKER;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_3_STRUCTURE_TAG;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_3_NAME;
+    public static final ForgeConfigSpec.ConfigValue<String> CARTOGRAPHER_MAP_3_MARKER;
+    public static final ForgeConfigSpec.ConfigValue<String> BANNER_PATTERN_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> ITEM_FRAME_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> SHIELD_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> FLOWER_BUY_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> BOTTLED_HONEY_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> HONEY_BLOCK_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> HONEY_COMB_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> CANDLE_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> CANDLE_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> BEEHIVE_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> BEE_EGG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> NUMISMATIST_CONTAINER_OFFERS;
+    public static final ForgeConfigSpec.ConfigValue<String> NUMISMATIST_RARE_OFFERS;
 
     static {
         BUILDER.push("Config Settings for TodeCoins");
@@ -145,8 +221,23 @@ public class CommonConfig {
                 .comment(" Use Trade Tables? Default: false")
                 .define("use_trade_tables", false);
         BASE_TRADE_XP = BUILDER
-                .comment(" Experience per Trade Level Default: 5")
-                .define("xp_per_level", 5);
+                .comment(" Experience per Trade Level")
+                .define("xp_per_level_multiplier", 5);
+        COMMON_MAX_TRADES = BUILDER
+                .comment(" Max Trades for Common Items")
+                .define("common_max_trades", 16);
+        COMMON_TRADE_MULTIPLIER = BUILDER
+                .comment(" Price Multiplier for Common Items")
+                .define("common_trade_multiplier", 0.05F);
+        RARE_MAX_TRADES = BUILDER
+                .comment(" Max Trades for Rare Items")
+                .comment(" Applied to All Rare Trades, Enchanted Items, Enchanted Books, NUMISMATIST trades, and LEPRECHAUN Trades")
+                .define("rare_max_trades", 3);
+        RARE_TRADE_MULTIPLIER = BUILDER
+                .comment(" Price Multiplier for Rare Items")
+                .comment(" Applied to All Rare Trades, Enchanted Items, Enchanted Books, and LEPRECHAUN Trades")
+                .comment("NUMISMATIST Trades have an unchangeable multiplier of 0")
+                .define("rare_trade_multiplier", 0.2F);
 
         BUILDER.push("Lucky Coin Value Loot Tables");
         ONE_LUCKY_COIN_VALUE = BUILDER
@@ -250,360 +341,1111 @@ public class CommonConfig {
 
         BUILDER.push("Item Tag Loot Tables for Trades");
         RAW_MEAT_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" BUTCHER")
                 .define("raw_meat_tag_table",
                         VillagerTradeLootTables.TAGGED_RAW_MEATS_TABLE.toString());
         RAW_MEAT_TAG_COUNT = BUILDER.define("raw_meat_tag_amount", 8);
         COOKED_MEAT_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" BUTCHER")
                 .define("cooked_meat_tag_table",
                         VillagerTradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         COOKED_MEAT_TAG_COUNT = BUILDER.define("cooked_meat_tag_amount", 8);
         MEAT_SOUP_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" BUTCHER")
                 .define("meat_soup_tag_table",
                         VillagerTradeLootTables.TAGGED_MEAT_SOUPS_TABLE.toString());
         MEAT_SOUP_TAG_COUNT = BUILDER.define("meat_soup_tag_amount", 1);
         VEG_GRAIN_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" FARMER")
                 .define("vegetable_and_grain_tags_table",
                         VillagerTradeLootTables.TAGGED_VEGGIES_AND_GRAINS_TABLE.toString());
         VEG_GRAIN_TAG_COUNT = BUILDER.define("vegetables_and_grain_tag_amount", 16);
         BREAD_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" FARMER")
                 .define("bread_tag_table",
                         VillagerTradeLootTables.TAGGED_BREADS_TABLE.toString());
         BREAD_TAG_COUNT = BUILDER.define("bread_tag_amount", 6);
         GOURD_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
                 .comment(" 1 Emerald Value")
+                .comment(" FARMER")
                 .define("gourd_tag_table",
                         VillagerTradeLootTables.TAGGED_GOURDS_TABLE.toString());
         GOURD_TAG_COUNT = BUILDER.define("gourd_tag_amount", 6);
         PIE_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" FARMER")
                 .define("pie_tag_table",
                         VillagerTradeLootTables.TAGGED_PIES_TABLE.toString());
         PIE_TAG_COUNT = BUILDER.define("pie_tag_amount", 4);
         FRUIT_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" FARMER")
                 .define("fruit_tag_table",
                         VillagerTradeLootTables.TAGGED_FRUITS_TABLE.toString());
         FRUIT_TAG_COUNT = BUILDER.define("fruit_tag_amount", 4);
         COOKIE_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" FARMER")
                 .define("cookie_tag_table",
                         VillagerTradeLootTables.TAGGED_COOKIES_TABLE.toString());
         COOKIE_TAG_COUNT = BUILDER.define("cookie_tag_amount", 18);
         CAKE_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" FARMER")
                 .define("cake_tag_table",
                         VillagerTradeLootTables.TAGGED_CAKES_TABLE.toString());
         CAKE_TAG_COUNT = BUILDER.define("cake_tag_amount", 1);
         PREPPED_SEAFOOD_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" FISHERMAN")
                 .define("prepared_seafood_tag_table",
                         VillagerTradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE.toString());
         PREPPED_SEAFOOD_TAG_COUNT = BUILDER.define("prepared_seafood_tag_amount", 6);
         RAW_SEAFOOD_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" FISHERMAN")
                 .define("raw_seafood_tag_table",
                         VillagerTradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         RAW_SEAFOOD_TAG_COUNT = BUILDER.define("raw_seafood_tag_amount", 8);
         GLASS_PANE_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" CARTOGRAPHER")
                 .define("glass_pane_tag_table",
                         VillagerTradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
         GLASS_PANE_TAG_COUNT = BUILDER.define("glass_pane_tag_amount", 11);
         GLASS_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" LIBRARIAN")
+                .comment(" Available on LIBRARIAN if TodeVillagers mod is not loaded")
                 .define("glass_tag_table",
                         VillagerTradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
         GLASS_TAG_COUNT = BUILDER.define("glass_tag_amount", 4);
         BANNER_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" SHEPHERD, CARTOGRAPHER")
                 .define("banner_tag_table",
                         VillagerTradeLootTables.TAGGED_BANNER_TABLE.toString());
         BANNER_TAG_COUNT = BUILDER.define("banner_tag_amount", 1);
         WOOL_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" SHEPHERD")
                 .define("wool_tag_table",
                         VillagerTradeLootTables.TAGGED_WOOL_TABLE.toString());
-        WOOL_TAG_COUNT = BUILDER.define("wool_tag_amount", 1);
+        WOOL_TAG_BUY_COUNT = BUILDER.define("wool_tag_buy_amount", 18);
+        WOOL_TAG_SELL_COUNT = BUILDER.define("wool_tag_sell_amount", 1);
         WOOL_CARPET_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" SHEPHERD")
                 .define("wool_carpet_tag_table",
                         VillagerTradeLootTables.TAGGED_WOOL_CARPETS_TABLE.toString());
         WOOL_CARPET_TAG_COUNT = BUILDER.define("wool_carpet_tag_amount", 4);
+        SHEARS_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" SHEPHERD, friendsandfoes:beekeeper")
+                .define("shears_table",
+                        VillagerTradeLootTables.SHEARS_TABLE.toString());
         BED_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" SHEPHERD")
                 .define("bed_tag_table",
                         VillagerTradeLootTables.TAGGED_BEDS_TABLE.toString());
         BED_TAG_COUNT = BUILDER.define("bed_tag_amount", 1);
         LEATHER_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" LEATHERWORKER")
                 .define("leather_tag_table",
                         VillagerTradeLootTables.TAGGED_LEATHER_TABLE.toString());
         LEATHER_TAG_COUNT = BUILDER.define("leather_tag_amount", 6);
         INK_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" LIBRARIAN")
                 .define("ink_tag_table",
                         VillagerTradeLootTables.TAGGED_INK_TABLE.toString());
-        INK_TAG_COUNT = BUILDER.define("ink_tag_amount", 5);
+        INK_TAG_BUY_COUNT = BUILDER.define("ink_tag_buy_amount", 5);
+        INK_TAG_SELL_COUNT = BUILDER.define("ink_tag_sell_amount", 2);
         DYE_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" SHEPHERD")
                 .define("dye_tag_table",
                         VillagerTradeLootTables.TAGGED_DYES_TABLE.toString());
         DYE_TAG_COUNT = BUILDER.define("dye_tag_amount", 12);
         SALT_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" BUTCHER")
                 .comment(" Trade Unlocked with either Salt mod or Turtle Block Academy mod Loaded")
                 .define("salt_tag_table",
                         VillagerTradeLootTables.TAGGED_SALTS_TABLE.toString());
         SALT_TAG_COUNT = BUILDER.define("salt_tag_amount", 8);
         ASH_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
+                .comment(" ARMORER, BUTCHER, WEAPONSMITH, TOOLSMITH, FISHERMAN")
                 .comment(" Trade Unlocked with either Supplementaries mod or Turtle Block Academy mod Loaded")
                 .define("ash_tag_table",
                         VillagerTradeLootTables.TAGGED_ASH_TABLE.toString());
         ASH_TAG_COUNT = BUILDER.define("ash_tag_amount", 8);
         QUIVER_TAG_TABLE = BUILDER
-                .comment(" 1 Emerald Value Item Tag Loot Table")
+                .comment(" 1 Emerald Value")
                 .comment(" Trade Unlocked with Supplementaries mod Loaded")
+                .comment(" FLETCHER")
                 .define("quiver_tag_table",
                         VillagerTradeLootTables.TAGGED_QUIVERS_TABLE.toString());
         QUIVER_TAG_COUNT = BUILDER.define("quiver_tag_amount", 1);
+        STICK_TAG_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" FLETCHER")
+                .define("stick_tag_table",
+                        VillagerTradeLootTables.TAGGED_STICK_TABLE.toString());
+        STICK_TAG_COUNT = BUILDER.define("stick_tag_amount", 32);
+        STRING_TAG_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" FLETCHER, FISHERMAN, friendsandfoes:beekeeper")
+                .define("string_tag_table",
+                        VillagerTradeLootTables.TAGGED_STRING_TABLE.toString());
+        STRING_TAG_COUNT = BUILDER.define("string_tag_amount", 14);
+        CANDLE_TAG_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("candle_tag_table",
+                        VillagerTradeLootTables.TAGGED_CANDLE_TABLE.toString());
+        CANDLE_TAG_COUNT = BUILDER.define("candle_tag_amount", 4);
+
+        BEEHIVE_TABLE = BUILDER
+                .comment(" 5 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("beehive_table",
+                        VillagerTradeLootTables.BEEHIVE_TABLE.toString());
+        BEE_EGG_TABLE = BUILDER
+                .comment(" 5 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("bee_egg_table",
+                        VillagerTradeLootTables.BEE_EGG_TABLE.toString());
         BUILDER.pop();
 
         BUILDER.push("Item Loot Tables for Trades");
         GUIDE_BOOK_TABLE = BUILDER
                 .comment(" 1 Copper Coin Value")
+                .comment(" LIBRARIAN")
+                .comment(" Unlocked with Patchouli mod Loaded")
                 .define("guide_book_table",
                         VillagerTradeLootTables.GUIDE_BOOKS_TABLE.toString());
+        SMALLEST_COIN = BUILDER
+                .comment(" 1 Copper Coin Value")
+                .comment(" LIBRARIAN")
+                .comment(" Guide Book Price")
+                .define("smallest_coin",
+                        VillagerTradeLootTables.SMALLEST_COIN.toString());
+        PAPER_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" LIBRARIAN, CARTOGRAPHER")
+                .define("paper_table",
+                        VillagerTradeLootTables.PAPER_TABLE.toString());
+        BOOK_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" LIBRARIAN")
+                .define("book_table",
+                        VillagerTradeLootTables.BOOK_TABLE.toString());
         ONE_EMERALD_METALS = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" WEAPONSMITH, TOOLSMITH, ARMORER, CLERIC")
                 .define("one_emerald_metals",
                         VillagerTradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
+        EQUIPMENT_GEMS = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WEAPONSMITH, ARMORER")
+                .define("equipment_gems",
+                        VillagerTradeLootTables.EQUIPMENT_GEMS_TABLE.toString());
+        ENCHANTING_GEMS = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" CLERIC")
+                .define("enchanting_gems",
+                        VillagerTradeLootTables.ENCHANTING_GEMS_TABLE.toString());
         ONE_EMERALD_GEMS = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" MASON, BANKER")
                 .define("one_emerald_gems",
                         VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        ONE_EMERALD_FUEL = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" ARMORER, FISHERMAN, BUTCHER, TOOLSMITH, WEAPONSMITH")
+                .define("one_emerald_fuel",
+                        VillagerTradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         FISHING_GEAR_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" FISHERMAN")
                 .define("fishing_gear_table",
                         VillagerTradeLootTables.FISHING_GEAR_TABLE.toString());
+        FISHING_ROD_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" FISHERMAN")
+                .define("fishing_rod_table",
+                        VillagerTradeLootTables.FISHING_ROD_TABLE.toString());
         LANTERN_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" LIBRARIAN")
                 .define("lantern_table",
                         VillagerTradeLootTables.LANTERN_TABLE.toString());
         OVERWORLD_BRICK_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" MASON")
                 .define("overworld_brick_table",
                         VillagerTradeLootTables.OVERWORLD_BRICK_TABLE.toString());
         OVERWORLD_BRICK_BLOCK_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" MASON")
                 .define("overworld_brick_block_table",
                         VillagerTradeLootTables.OVERWORLD_BRICK_BLOCKS_TABLE.toString());
         OVERWORLD_STONE_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" MASON")
                 .define("overworld_stone_table",
                         VillagerTradeLootTables.OVERWORLD_STONE_BLOCKS_TABLE.toString());
         OVERWORLD_POLISHED_STONE_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" MASON")
                 .define("overworld_polished_stone_table",
                         VillagerTradeLootTables.OVERWORLD_POLISHED_STONE_TABLE.toString());
         OTHER_STONE_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" MASON")
                 .define("overworld_polished_stone_table",
                         VillagerTradeLootTables.OVERWORLD_POLISHED_STONE_TABLE.toString());
         TERRACOTTA_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" MASON")
                 .define("terracotta_table",
                         VillagerTradeLootTables.TERRACOTTA_BLOCKS_TABLE.toString());
         GLAZED_TERRACOTTA_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" MASON")
                 .define("glazed_terracotta_table",
                         VillagerTradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE.toString());
+        CLAY_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" MASON")
+                .define("clay_table",
+                        VillagerTradeLootTables.CLAY_TABLE.toString());
         STONE_KNIFE_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" TOOLSMITH")
                 .comment(" Trade Unlocked with Farmers Delight mod Loaded")
                 .define("stone_tier_knife_table",
                         VillagerTradeLootTables.STONE_TIER_KNIVES.toString());
         STONE_TOOL_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" TOOLSMITH")
                 .define("stone_tier_tools_table",
                         VillagerTradeLootTables.STONE_TIER_TOOLS_TABLE.toString());
         CHAINMAIL_HELMET_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" ARMORER")
                 .define("chainmail_tier_helmets_table",
                         VillagerTradeLootTables.CHAINMAIL_TIER_HELMETS_TABLE.toString());
         CHAINMAIL_BOOTS_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
+                .comment(" ARMORER")
                 .define("chainmail_tier_boots_table",
                         VillagerTradeLootTables.CHAINMAIL_TIER_BOOTS_TABLE.toString());
+        FLINT_BUY_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WEAPONSMITH, TOOLSMITH, LEATHERWORKER, FLETCHER")
+                .define("flint_buy_table",
+                        VillagerTradeLootTables.FLINT_BUY_TABLE.toString());
+        FLINT_SELL_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" FLETCHER")
+                .define("flint_sell_table",
+                        VillagerTradeLootTables.FLINT_SELL_TABLE.toString());
+        SCUTE_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" CLERIC, LEATHERWORKER")
+                .define("scute_table",
+                        VillagerTradeLootTables.SCUTE_TABLE.toString());
+        GRAVEL_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" FLETCHER")
+                .define("gravel_table",
+                        VillagerTradeLootTables.GRAVEL_TABLE.toString());
+        FEATHER_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" FLETCHER")
+                .define("feather_table",
+                        VillagerTradeLootTables.FEATHER_TABLE.toString());
+        TRIPWIRE_HOOK_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" FLETCHER")
+                .define("tripwire_hook_table",
+                        VillagerTradeLootTables.TRIPWIRE_HOOK_TABLE.toString());
+        MONSTER_PARTS_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" CLERIC")
+                .define("mob_parts_table",
+                        VillagerTradeLootTables.MOB_PARTS_TABLE.toString());
+        GLASS_BOTTLE_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" CLERIC, friendsandfoes:beekeeper")
+                .define("glass_bottle_table",
+                        VillagerTradeLootTables.GLASS_BOTTLE_TABLE.toString());
+        POTION_INGREDIENTS_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" CLERIC")
+                .define("potion_ingredients_table",
+                        VillagerTradeLootTables.POTION_INGREDIENTS_TABLE.toString());
+        FLOWER_BUY_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("flower_buy_table",
+                        VillagerTradeLootTables.FLOWER_BUY_TABLE.toString());
+        BOTTLED_HONEY_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("bottled_honey_table",
+                        VillagerTradeLootTables.BOTTLED_HONEY_TABLE.toString());
+        HONEY_BLOCK_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("honey_block_table",
+                        VillagerTradeLootTables.HONEY_BLOCK_TABLE.toString());
+        HONEY_COMB_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("honey_comb_table",
+                        VillagerTradeLootTables.HONEY_COMB_TABLE.toString());
 
         PAINTINGS_TABLE = BUILDER
                 .comment(" 2 Emerald Value")
+                .comment(" SHEPHERD")
                 .define("paintings_table",
                         VillagerTradeLootTables.PAINTINGS_TABLE.toString());
+        CAMPFIRE_TABLE = BUILDER
+                .comment(" 2 Emerald Value")
+                .comment(" FISHERMAN")
+                .define("campfire_table",
+                        VillagerTradeLootTables.CAMPFIRE_TABLE.toString());
 
         IRON_TOOL_TABLE = BUILDER
                 .comment(" 3 Emerald Value")
                 .comment(" Enchanted: 20 Emerald Value")
+                .comment(" TOOLSMITH")
                 .define("iron_tier_tools_table",
                         VillagerTradeLootTables.IRON_TIER_TOOLS_TABLE.toString());
         IRON_WEAPON_TABLE = BUILDER
                 .comment(" 3 Emerald Value")
                 .comment(" Enchanted: 20 Emerald Value")
+                .comment(" WEAPONSMITH")
                 .define("iron_tier_weapons_table",
                         VillagerTradeLootTables.IRON_TIER_WEAPONS_TABLE.toString());
         LEATHER_HELMET_TABLE = BUILDER
                 .comment(" 3 Emerald Value")
+                .comment(" LEATHERWORKER")
                 .define("leather_tier_helmets_table",
                         VillagerTradeLootTables.LEATHER_TIER_HELMETS_TABLE.toString());
         CHAINMAIL_LEGGINGS_TABLE = BUILDER
                 .comment(" 3 Emerald Value")
+                .comment(" ARMORER")
                 .define("chainmail_tier_leggings_table",
                         VillagerTradeLootTables.CHAINMAIL_TIER_LEGGINGS_TABLE.toString());
         TWO_GOLD_POT_GEMS = BUILDER
                 .comment(" 3 Emerald Value")
+                .comment(" LEPRECHAUN")
                 .define("two_gold_pot_gems",
                         VillagerTradeLootTables.TWO_POT_OF_GOLD_VALUE_GEMS.toString());
+        TWO_GOLD_POT_ITEMS = BUILDER
+                .comment(" 3 Emerald Value")
+                .comment(" LEPRECHAUN")
+                .define("two_gold_pot_items",
+                        VillagerTradeLootTables.TWO_POT_OF_GOLD_VALUE_ITEMS.toString());
         BOWS_TABLE = BUILDER
                 .comment(" 3 Emerald Value")
                 .comment(" Enchanted: 7 Emerald Value")
-                .define("bows_table",
+                .comment(" FLETCHER")
+                .define("bows_and_crossbows_table",
                         VillagerTradeLootTables.BOWS_TABLE.toString());
+        FISH_BUCKET_TABLE = BUILDER
+                .comment(" 3 Emerald Value")
+                .comment(" FISHERMAN")
+                .define("fish_bucket_table",
+                        VillagerTradeLootTables.FISH_BUCKET_TABLE.toString());
+        EXPERIENCE_BOTTLE_TABLE = BUILDER
+                .comment(" 3 Emerald Value")
+                .comment(" CLERIC")
+                .define("experience_bottle_table",
+                        VillagerTradeLootTables.EXPERIENCE_BOTTLE_TABLE.toString());
 
         DIAMOND_TOOL_TABLE = BUILDER
                 .comment(" 4 Emerald Value")
                 .comment(" Enchanted: 26 Emerald Value")
+                .comment(" TOOLSMITH")
                 .define("diamond_tier_tools_table",
                         VillagerTradeLootTables.DIAMOND_TIER_TOOLS_TABLE.toString());
         CHAINMAIL_CHESTPLATE_TABLE = BUILDER
                 .comment(" 4 Emerald Value")
+                .comment(" ARMORER")
                 .define("chainmail_tier_chestplate_table",
                         VillagerTradeLootTables.CHAINMAIL_TIER_CHESTPLATES_TABLE.toString());
         LEATHER_BOOTS_TABLE = BUILDER
                 .comment(" 4 Emerald Value")
+                .comment(" LEATHERWORKER")
                 .define("leather_tier_boots_table",
                         VillagerTradeLootTables.LEATHER_TIER_BOOTS_TABLE.toString());
         IRON_BOOTS_TABLE = BUILDER
                 .comment(" 4 Emerald Value")
+                .comment(" ARMORER")
                 .define("iron_tier_boots_table",
                         VillagerTradeLootTables.IRON_TIER_BOOTS_TABLE.toString());
+        COMPASS_TABLE = BUILDER
+                .comment(" 4 Emerald Value")
+                .comment(" LIBRARIAN, CARTOGRAPHER, NUMISMATIST")
+                .define("compass_table",
+                        VillagerTradeLootTables.COMPASS_TABLE.toString());
 
         FIVE_EMERALD_GEMS = BUILDER
                 .comment(" 5 Emerald Value")
+                .comment(" CLERIC")
                 .define("five_emerald_gems",
                         VillagerTradeLootTables.FIVE_EMERALD_VALUE_GEMS.toString());
         LEATHER_LEGGINGS_TABLE = BUILDER
                 .comment(" 5 Emerald Value")
+                .comment(" LEATHERWORKER")
                 .define("leather_tier_leggings_table",
                         VillagerTradeLootTables.LEATHER_TIER_LEGGINGS_TABLE.toString());
         IRON_HELMET_TABLE = BUILDER
                 .comment(" 5 Emerald Value")
+                .comment(" ARMORER")
                 .define("iron_tier_helmets_table",
                         VillagerTradeLootTables.IRON_TIER_HELMETS_TABLE.toString());
+        CLOCK_TABLE = BUILDER
+                .comment(" 5 Emerald Value")
+                .comment(" LIBRARIAN")
+                .define("clock_table",
+                        VillagerTradeLootTables.CLOCK_TABLE.toString());
+        GOLDEN_FOOD_TABLE = BUILDER
+                .comment(" 5 Emerald Value")
+                .comment(" FARMER")
+                .define("golden_food_table",
+                        VillagerTradeLootTables.GOLDEN_FOOD_TABLE.toString());
+        SHIELD_TABLE = BUILDER
+                .comment(" 5 Emerald Value")
+                .comment(" ARMORER")
+                .define("shield_table",
+                        VillagerTradeLootTables.SHIELD_TABLE.toString());
 
         FOUR_GOLD_POT_GEMS = BUILDER
                 .comment(" 6 Emerald Value")
+                .comment(" LEPRECHAUN")
                 .define("four_gold_pot_gems",
                         VillagerTradeLootTables.FOUR_POT_OF_GOLD_VALUE_GEMS.toString());
+        FOUR_GOLD_POT_ITEMS = BUILDER
+                .comment(" 6 Emerald Value")
+                .comment(" LEPRECHAUN")
+                .define("four_gold_pot_items",
+                        VillagerTradeLootTables.FOUR_POT_OF_GOLD_VALUE_ITEMS.toString());
         LEATHER_HORSE_ARMOR_TABLE = BUILDER
                 .comment(" 6 Emerald Value")
+                .comment(" LEATHERWORKER")
                 .define("leather_tier_horse_armor",
                         VillagerTradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE.toString());
+        SADDLE_TABLE = BUILDER
+                .comment(" 6 Emerald Value")
+                .comment(" LEATHERWORKER")
+                .define("saddle_table",
+                        VillagerTradeLootTables.SADDLE_TABLE.toString());
 
         LEATHER_CHESTPLATE_TABLE = BUILDER
                 .comment(" 7 Emerald Value")
+                .comment(" LEATHERWORKER")
                 .define("leather_tier_chestplates_table",
                         VillagerTradeLootTables.LEATHER_TIER_CHESTPLATES_TABLE.toString());
         IRON_LEGGINGS_TABLE = BUILDER
                 .comment(" 7 Emerald Value")
+                .comment(" ARMORER")
                 .define("iron_tier_leggings_table",
                         VillagerTradeLootTables.IRON_TIER_LEGGINGS_TABLE.toString());
+        BLANK_MAP_TABLE = BUILDER
+                .comment(" 7 Emerald Value")
+                .comment(" CARTOGRAPHER")
+                .define("blank_map_table",
+                        VillagerTradeLootTables.BLANK_MAP_TABLE.toString());
+        ITEM_FRAME_TABLE = BUILDER
+                .comment(" 7 Emerald Value")
+                .comment(" CARTOGRAPHER")
+                .define("item_frame_table",
+                        VillagerTradeLootTables.ITEM_FRAME_TABLE.toString());
+
+        ANVIL_TABLE = BUILDER
+                .comment(" 8 Emerald Value")
+                .comment(" WEAPONSMITH")
+                .define("anvil_table",
+                        VillagerTradeLootTables.ANVIL_TABLE.toString());
+        BANNER_PATTERN_TABLE = BUILDER
+                .comment(" 8 Emerald Value")
+                .comment(" CARTOGRAPHER")
+                .define("banner_pattern_table",
+                        VillagerTradeLootTables.BANNER_PATTERN_TABLE.toString());
 
         BOOKSHELF_TABLE = BUILDER
                 .comment(" 9 Emerald Value")
+                .comment(" LIBRARIAN")
                 .define("bookshelf_table",
                         VillagerTradeLootTables.BOOKSHELF_TABLE.toString());
         IRON_HORSE_ARMOR_TABLE = BUILDER
                 .comment(" 9 Emerald Value")
+                .comment(" ARMORER")
                 .define("iron_tier_horse_armor",
                         VillagerTradeLootTables.IRON_TIER_HORSE_ARMOR_TABLE.toString());
         IRON_CHESTPLATE_TABLE = BUILDER
                 .comment(" 9 Emerald Value")
+                .comment(" ARMORER")
                 .define("iron_tier_chestplates_table",
                         VillagerTradeLootTables.IRON_TIER_CHESTPLATES_TABLE.toString());
 
         GOLD_TOOL_TABLE = BUILDER
                 .comment(" 20 Emerald Value")
+                .comment(" TOOLSMITH")
                 .define("gold_tier_tools_table",
                         VillagerTradeLootTables.GOLD_TIER_TOOLS_TABLE.toString());
         GOLD_WEAPON_TABLE = BUILDER
                 .comment(" 20 Emerald Value")
+                .comment(" WEAPONSMITH")
                 .define("gold_tier_weapons_table",
                         VillagerTradeLootTables.GOLD_TIER_WEAPONS_TABLE.toString());
         DIAMOND_HELMET_TABLE = BUILDER
                 .comment(" 20 Emerald Value")
+                .comment(" ARMORER")
                 .define("diamond_tier_helmets_table",
                         VillagerTradeLootTables.DIAMOND_TIER_HELMETS_TABLE.toString());
         DIAMOND_BOOTS_TABLE = BUILDER
                 .comment(" 20 Emerald Value")
+                .comment(" ARMORER")
                 .define("diamond_tier_boots_table",
                         VillagerTradeLootTables.DIAMOND_TIER_BOOTS_TABLE.toString());
 
         DIAMOND_CHESTPLATE_TABLE = BUILDER
                 .comment(" 26 Emerald Value")
+                .comment(" ARMORER")
                 .define("diamond_tier_chestplates_table",
                         VillagerTradeLootTables.DIAMOND_TIER_CHESTPLATES_TABLE.toString());
         DIAMOND_LEGGINGS_TABLE = BUILDER
                 .comment(" 26 Emerald Value")
+                .comment(" ARMORER")
                 .define("diamond_tier_leggings_table",
                         VillagerTradeLootTables.DIAMOND_TIER_LEGGINGS_TABLE.toString());
         DIAMOND_WEAPON_TABLE = BUILDER
                 .comment(" 26 Emerald Value")
+                .comment(" WEAPONSMITH")
                 .define("diamond_tier_weapons_table",
                         VillagerTradeLootTables.DIAMOND_TIER_WEAPONS_TABLE.toString());
 
+        BELL_TABLE = BUILDER
+                .comment(" 36 Emerald Value")
+                .comment(" ARMORER, WEAPONSMITH, TOOLSMITH")
+                .define("bell_table",
+                        VillagerTradeLootTables.BELL_TABLE.toString());
+
         THIRTY_GOLD_POT_GEMS = BUILDER
                 .comment(" 45 Emerald Value")
+                .comment(" LEPRECHAUN")
                 .define("thirty_gold_pot_gems",
                         VillagerTradeLootTables.THIRTY_POT_OF_GOLD_VALUE_GEMS.toString());
+        THIRTY_GOLD_POT_ITEMS = BUILDER
+                .comment(" 45 Emerald Value")
+                .comment(" LEPRECHAUN")
+                .define("thirty_gold_pot_items",
+                        VillagerTradeLootTables.THIRTY_POT_OF_GOLD_VALUE_ITEMS.toString());
 
         EMERALD_NOTE_METALS = BUILDER
                 .comment(" 64 Emerald Value")
+                .comment(" BANKER")
                 .define("emerald_bank_note_metals",
                         VillagerTradeLootTables.EMERALD_BANK_NOTE_VALUE_METALS.toString());
         EMERALD_NOTE_GEMS = BUILDER
                 .comment(" 64 Emerald Value")
+                .comment(" BANKER")
                 .define("emerald_bank_note_gems",
                         VillagerTradeLootTables.EMERALD_BANK_NOTE_VALUE_GEMS.toString());
 
         SIXTY_GOLD_POT_GEMS = BUILDER
                 .comment(" 90 Emerald Value")
+                .comment(" LEPRECHAUN")
                 .define("sixty_gold_pot_gems",
+                        VillagerTradeLootTables.SIXTY_POT_OF_GOLD_VALUE_GEMS.toString());
+        SIXTY_GOLD_POT_ITEMS = BUILDER
+                .comment(" 90 Emerald Value")
+                .comment(" LEPRECHAUN")
+                .define("sixty_gold_pot_items",
                         VillagerTradeLootTables.SIXTY_POT_OF_GOLD_VALUE_GEMS.toString());
 
         LUCKY_COIN_GEMS = BUILDER
                 .comment(" 192 Emerald Value")
+                .comment(" LEPRECHAUN")
                 .define("lucky_coin_gems",
                         VillagerTradeLootTables.SINGLE_LUCKY_COIN_VALUE_GEMS.toString());
+        THREE_LUCKY_COIN_ITEMS = BUILDER
+                .comment(" 576 Emerald Value")
+                .comment(" LEPRECHAUN")
+                .define("three_lucky_coin_items",
+                        VillagerTradeLootTables.THREE_LUCKY_COIN_VALUE_ITEMS.toString());
         NETHERITE_TOOL_TABLE = BUILDER
                 .comment(" 9 Lucky Coin Value")
+                .comment(" TOOLSMITH")
                 .define("netherite_tier_tools_table",
                         VillagerTradeLootTables.NETHERITE_TIER_TOOLS_TABLE.toString());
         NETHERITE_WEAPON_TABLE = BUILDER
+                .comment(" WEAPONSMITH")
                 .comment(" 9 Lucky Coin Value")
                 .define("netherite_tier_weapons_table",
                         VillagerTradeLootTables.NETHERITE_TIER_WEAPONS_TABLE.toString());
+        TWENTY_SEVEN_LUCKY_COIN_ITEMS = BUILDER
+                .comment(" 576 Emerald Value")
+                .comment(" LEPRECHAUN")
+                .define("twenty_seven_lucky_coin_items",
+                        VillagerTradeLootTables.TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS.toString());
+
+        NUMISMATIST_CONTAINER_OFFERS = BUILDER
+                .comment(" 2 Collectible Coin Value")
+                .comment(" NUMISMATIST")
+                .define("numismatist_container_table",
+                        VillagerTradeLootTables.NUMISMATIST_CONTAINER_OFFERS.toString());
+        NUMISMATIST_RARE_OFFERS = BUILDER
+                .comment(" 2 Collectible Coin Value")
+                .comment(" NUMISMATIST")
+                .define("numismatist_rare_offer_table",
+                        VillagerTradeLootTables.NUMISMATIST_RARE_OFFERS.toString());
+        BUILDER.pop();
+
+        BUILDER.push("Structure Map Configs");
+        MERCHANT_MAP_STRUCTURE_TAG = BUILDER
+                .comment(" NUMISMATIST")
+                .define("merchant_map_structure_tag",
+                        ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS.toString());
+        MERCHANT_MAP_NAME = BUILDER
+                .comment(" NUMISMATIST")
+                .define("merchant_map_name",
+                        "Merchant Map");
+        MERCHANT_MAP_MARKER = BUILDER
+                .comment(" NUMISMATIST")
+                .define("merchant_map_marker",
+                        MapDecoration.Type.MANSION.toString());
+        CARTOGRAPHER_MAP_1_STRUCTURE_TAG = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_1_structure_tag",
+                        ForgeTags.StructureTags.OVERWORLD_POI.toString());
+        CARTOGRAPHER_MAP_1_NAME = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_1_name",
+                        "Overworld Exploration Map");
+        CARTOGRAPHER_MAP_1_MARKER = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_1_marker",
+                        MapDecoration.Type.TARGET_POINT.toString());
+        CARTOGRAPHER_MAP_2_STRUCTURE_TAG = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_2_structure_tag",
+                        ForgeTags.StructureTags.OVERWORLD_POI.toString());
+        CARTOGRAPHER_MAP_2_NAME = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_2_name",
+                        "Overworld Exploration Map");
+        CARTOGRAPHER_MAP_2_MARKER = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_2_marker",
+                        MapDecoration.Type.TARGET_POINT.toString());
+        CARTOGRAPHER_MAP_3_STRUCTURE_TAG = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_2_structure_tag",
+                        ForgeTags.StructureTags.OVERWORLD_POI.toString());
+        CARTOGRAPHER_MAP_3_NAME = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_2_name",
+                        "Overworld Exploration Map");
+        CARTOGRAPHER_MAP_3_MARKER = BUILDER
+                .comment(" CARTOGRAPHER")
+                .define("cartographer_map_2_marker",
+                        MapDecoration.Type.TARGET_POINT.toString());
         BUILDER.pop();
 
         BUILDER.pop();
         SPEC = BUILDER.build();
     }
+
+    public static @NotNull TagKey<Structure> getStructureTag(String structureTag) {
+        return TagKey.create(Registry.STRUCTURE_REGISTRY, new ResourceLocation(structureTag));
+    }
+
+    // map configs
+    public static String getMerchantMapStructureTag() {
+        if (Objects.equals(MERCHANT_MAP_STRUCTURE_TAG.get(), MERCHANT_MAP_STRUCTURE_TAG.getDefault())) {
+            return MERCHANT_MAP_STRUCTURE_TAG.getDefault();
+        }
+        else {
+            return MERCHANT_MAP_STRUCTURE_TAG.get();
+        }
+    }
+    public static String getMerchantMapName() {
+        if (Objects.equals(MERCHANT_MAP_NAME.get(), MERCHANT_MAP_NAME.getDefault())) {
+            return MERCHANT_MAP_NAME.getDefault();
+        }
+        else {
+            return MERCHANT_MAP_NAME.get();
+        }
+    }
+    public static String getMerchantMapMarker() {
+        if (Objects.equals(MERCHANT_MAP_MARKER.get(), MERCHANT_MAP_MARKER.getDefault())) {
+            return MERCHANT_MAP_MARKER.getDefault();
+        }
+        else {
+            return MERCHANT_MAP_MARKER.get();
+        }
+    }
+    public static String getCartographerMap1StructureTag() {
+        if (Objects.equals(CARTOGRAPHER_MAP_1_STRUCTURE_TAG.get(), CARTOGRAPHER_MAP_1_STRUCTURE_TAG.getDefault())) {
+            return CARTOGRAPHER_MAP_1_STRUCTURE_TAG.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_1_STRUCTURE_TAG.get();
+        }
+    }
+    public static String getCartographerMap1Name() {
+        if (Objects.equals(CARTOGRAPHER_MAP_1_NAME.get(), CARTOGRAPHER_MAP_1_NAME.getDefault())) {
+            return CARTOGRAPHER_MAP_1_NAME.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_1_NAME.get();
+        }
+    }
+    public static String getCartographerMap1Marker() {
+        if (Objects.equals(CARTOGRAPHER_MAP_1_MARKER.get(), CARTOGRAPHER_MAP_1_MARKER.getDefault())) {
+            return CARTOGRAPHER_MAP_1_MARKER.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_1_MARKER.get();
+        }
+    }
+    public static String getCartographerMap2StructureTag() {
+        if (Objects.equals(CARTOGRAPHER_MAP_2_STRUCTURE_TAG.get(), CARTOGRAPHER_MAP_2_STRUCTURE_TAG.getDefault())) {
+            return CARTOGRAPHER_MAP_2_STRUCTURE_TAG.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_2_STRUCTURE_TAG.get();
+        }
+    }
+    public static String getCartographerMap2Name() {
+        if (Objects.equals(CARTOGRAPHER_MAP_2_NAME.get(), CARTOGRAPHER_MAP_2_NAME.getDefault())) {
+            return CARTOGRAPHER_MAP_2_NAME.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_2_NAME.get();
+        }
+    }
+    public static String getCartographerMap2Marker() {
+        if (Objects.equals(CARTOGRAPHER_MAP_2_MARKER.get(), CARTOGRAPHER_MAP_2_MARKER.getDefault())) {
+            return CARTOGRAPHER_MAP_2_MARKER.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_2_MARKER.get();
+        }
+    }
+    public static String getCartographerMap3StructureTag() {
+        if (Objects.equals(CARTOGRAPHER_MAP_3_STRUCTURE_TAG.get(), CARTOGRAPHER_MAP_3_STRUCTURE_TAG.getDefault())) {
+            return CARTOGRAPHER_MAP_3_STRUCTURE_TAG.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_3_STRUCTURE_TAG.get();
+        }
+    }
+    public static String getCartographerMap3Name() {
+        if (Objects.equals(CARTOGRAPHER_MAP_3_NAME.get(), CARTOGRAPHER_MAP_3_NAME.getDefault())) {
+            return CARTOGRAPHER_MAP_3_NAME.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_3_NAME.get();
+        }
+    }
+    public static String getCartographerMap3Marker() {
+        if (Objects.equals(CARTOGRAPHER_MAP_3_MARKER.get(), CARTOGRAPHER_MAP_3_MARKER.getDefault())) {
+            return CARTOGRAPHER_MAP_3_MARKER.getDefault();
+        }
+        else {
+            return CARTOGRAPHER_MAP_3_MARKER.get();
+        }
+    }
     // item loot tables
+    public static String getNumismatistRareOfferTable() {
+        if (Objects.equals(NUMISMATIST_RARE_OFFERS.get(), NUMISMATIST_RARE_OFFERS.getDefault())) {
+            return NUMISMATIST_RARE_OFFERS.getDefault();
+        }
+        else {
+            return NUMISMATIST_RARE_OFFERS.get();
+        }
+    }
+    public static String getNumismatistContainerTable() {
+        if (Objects.equals(NUMISMATIST_CONTAINER_OFFERS.get(), NUMISMATIST_CONTAINER_OFFERS.getDefault())) {
+            return NUMISMATIST_CONTAINER_OFFERS.getDefault();
+        }
+        else {
+            return NUMISMATIST_CONTAINER_OFFERS.get();
+        }
+    }
+    public static String getBeeEggTable() {
+        if (Objects.equals(BEE_EGG_TABLE.get(), BEE_EGG_TABLE.getDefault())) {
+            return BEE_EGG_TABLE.getDefault();
+        }
+        else {
+            return BEE_EGG_TABLE.get();
+        }
+    }
+    public static String getBeehiveTable() {
+        if (Objects.equals(BEEHIVE_TABLE.get(), BEEHIVE_TABLE.getDefault())) {
+            return BEEHIVE_TABLE.getDefault();
+        }
+        else {
+            return BEEHIVE_TABLE.get();
+        }
+    }
+    public static String getHoneyCombTable() {
+        if (Objects.equals(HONEY_COMB_TABLE.get(), HONEY_COMB_TABLE.getDefault())) {
+            return HONEY_COMB_TABLE.getDefault();
+        }
+        else {
+            return HONEY_COMB_TABLE.get();
+        }
+    }
+    public static String getHoneyBlockTable() {
+        if (Objects.equals(HONEY_BLOCK_TABLE.get(), HONEY_BLOCK_TABLE.getDefault())) {
+            return HONEY_BLOCK_TABLE.getDefault();
+        }
+        else {
+            return HONEY_BLOCK_TABLE.get();
+        }
+    }
+    public static String getBottledHoneyTable() {
+        if (Objects.equals(BOTTLED_HONEY_TABLE.get(), BOTTLED_HONEY_TABLE.getDefault())) {
+            return BOTTLED_HONEY_TABLE.getDefault();
+        }
+        else {
+            return BOTTLED_HONEY_TABLE.get();
+        }
+    }
+    public static String getFlowerBuyTable() {
+        if (Objects.equals(FLOWER_BUY_TABLE.get(), FLOWER_BUY_TABLE.getDefault())) {
+            return FLOWER_BUY_TABLE.getDefault();
+        }
+        else {
+            return FLOWER_BUY_TABLE.get();
+        }
+    }
+    public static String getShieldTable() {
+        if (Objects.equals(SHIELD_TABLE.get(), SHIELD_TABLE.getDefault())) {
+            return SHIELD_TABLE.getDefault();
+        }
+        else {
+            return SHIELD_TABLE.get();
+        }
+    }
+    public static String getItemFrameTable() {
+        if (Objects.equals(ITEM_FRAME_TABLE.get(), ITEM_FRAME_TABLE.getDefault())) {
+            return ITEM_FRAME_TABLE.getDefault();
+        }
+        else {
+            return ITEM_FRAME_TABLE.get();
+        }
+    }
+    public static String getBannerPatternTable() {
+        if (Objects.equals(BANNER_PATTERN_TABLE.get(), BANNER_PATTERN_TABLE.getDefault())) {
+            return BANNER_PATTERN_TABLE.getDefault();
+        }
+        else {
+            return BANNER_PATTERN_TABLE.get();
+        }
+    }
+    public static String getExperienceBottleTable() {
+        if (Objects.equals(EXPERIENCE_BOTTLE_TABLE.get(), EXPERIENCE_BOTTLE_TABLE.getDefault())) {
+            return EXPERIENCE_BOTTLE_TABLE.getDefault();
+        }
+        else {
+            return EXPERIENCE_BOTTLE_TABLE.get();
+        }
+    }
+    public static String getBlankMapTable() {
+        if (Objects.equals(BLANK_MAP_TABLE.get(), BLANK_MAP_TABLE.getDefault())) {
+            return BLANK_MAP_TABLE.getDefault();
+        }
+        else {
+            return BLANK_MAP_TABLE.get();
+        }
+    }
+    public static String getGlassBottleTable() {
+        if (Objects.equals(GLASS_BOTTLE_TABLE.get(), GLASS_BOTTLE_TABLE.getDefault())) {
+            return GLASS_BOTTLE_TABLE.getDefault();
+        }
+        else {
+            return GLASS_BOTTLE_TABLE.get();
+        }
+    }
+    public static String getPotionIngredientTable() {
+        if (Objects.equals(POTION_INGREDIENTS_TABLE.get(), POTION_INGREDIENTS_TABLE.getDefault())) {
+            return POTION_INGREDIENTS_TABLE.getDefault();
+        }
+        else {
+            return POTION_INGREDIENTS_TABLE.get();
+        }
+    }
+    public static String getMobPartsTable() {
+        if (Objects.equals(MONSTER_PARTS_TABLE.get(), MONSTER_PARTS_TABLE.getDefault())) {
+            return MONSTER_PARTS_TABLE.getDefault();
+        }
+        else {
+            return MONSTER_PARTS_TABLE.get();
+        }
+    }
+    public static String getGoldenFoodTable() {
+        if (Objects.equals(GOLDEN_FOOD_TABLE.get(), GOLDEN_FOOD_TABLE.getDefault())) {
+            return GOLDEN_FOOD_TABLE.getDefault();
+        }
+        else {
+            return GOLDEN_FOOD_TABLE.get();
+        }
+    }
+    public static String getCampfireTable() {
+        if (Objects.equals(CAMPFIRE_TABLE.get(), CAMPFIRE_TABLE.getDefault())) {
+            return CAMPFIRE_TABLE.getDefault();
+        }
+        else {
+            return CAMPFIRE_TABLE.get();
+        }
+    }
+    public static String getFishBucketTable() {
+        if (Objects.equals(FISH_BUCKET_TABLE.get(), FISH_BUCKET_TABLE.getDefault())) {
+            return FISH_BUCKET_TABLE.getDefault();
+        }
+        else {
+            return FISH_BUCKET_TABLE.get();
+        }
+    }
+    public static String getFlintSellTable() {
+        if (Objects.equals(FLINT_SELL_TABLE.get(), FLINT_SELL_TABLE.getDefault())) {
+            return FLINT_SELL_TABLE.getDefault();
+        }
+        else {
+            return FLINT_SELL_TABLE.get();
+        }
+    }
+    public static String getTripwireHookTable() {
+        if (Objects.equals(TRIPWIRE_HOOK_TABLE.get(), TRIPWIRE_HOOK_TABLE.getDefault())) {
+            return TRIPWIRE_HOOK_TABLE.getDefault();
+        }
+        else {
+            return TRIPWIRE_HOOK_TABLE.get();
+        }
+    }
+    public static String getFeatherTable() {
+        if (Objects.equals(FEATHER_TABLE.get(), FEATHER_TABLE.getDefault())) {
+            return FEATHER_TABLE.getDefault();
+        }
+        else {
+            return FEATHER_TABLE.get();
+        }
+    }
+    public static String getGravelTable() {
+        if (Objects.equals(GRAVEL_TABLE.get(), GRAVEL_TABLE.getDefault())) {
+            return GRAVEL_TABLE.getDefault();
+        }
+        else {
+            return GRAVEL_TABLE.get();
+        }
+    }
+    public static String getSaddleTable() {
+        if (Objects.equals(SADDLE_TABLE.get(), SADDLE_TABLE.getDefault())) {
+            return SADDLE_TABLE.getDefault();
+        }
+        else {
+            return SADDLE_TABLE.get();
+        }
+    }
+    public static String getScuteTable() {
+        if (Objects.equals(SCUTE_TABLE.get(), SCUTE_TABLE.getDefault())) {
+            return SCUTE_TABLE.getDefault();
+        }
+        else {
+            return SCUTE_TABLE.get();
+        }
+    }
+    public static String getCompassTable() {
+        if (Objects.equals(COMPASS_TABLE.get(), COMPASS_TABLE.getDefault())) {
+            return COMPASS_TABLE.getDefault();
+        }
+        else {
+            return COMPASS_TABLE.get();
+        }
+    }
+    public static String getClockTable() {
+        if (Objects.equals(CLOCK_TABLE.get(), CLOCK_TABLE.getDefault())) {
+            return CLOCK_TABLE.getDefault();
+        }
+        else {
+            return CLOCK_TABLE.get();
+        }
+    }
+    public static String getBookTable() {
+        if (Objects.equals(BOOK_TABLE.get(), BOOK_TABLE.getDefault())) {
+            return BOOK_TABLE.getDefault();
+        }
+        else {
+            return BOOK_TABLE.get();
+        }
+    }
+    public static String getPaperTable() {
+        if (Objects.equals(PAPER_TABLE.get(), PAPER_TABLE.getDefault())) {
+            return PAPER_TABLE.getDefault();
+        }
+        else {
+            return PAPER_TABLE.get();
+        }
+    }
+    public static String getClayTable() {
+        if (Objects.equals(CLAY_TABLE.get(), CLAY_TABLE.getDefault())) {
+            return CLAY_TABLE.getDefault();
+        }
+        else {
+            return CLAY_TABLE.get();
+        }
+    }
+    public static String getShearsTable() {
+        if (Objects.equals(SHEARS_TABLE.get(), SHEARS_TABLE.getDefault())) {
+            return SHEARS_TABLE.getDefault();
+        }
+        else {
+            return SHEARS_TABLE.get();
+        }
+    }
+    public static String getAnvilTable() {
+        if (Objects.equals(ANVIL_TABLE.get(), ANVIL_TABLE.getDefault())) {
+            return ANVIL_TABLE.getDefault();
+        }
+        else {
+            return ANVIL_TABLE.get();
+        }
+    }
+    public static String getFlintBuyTable() {
+        if (Objects.equals(FLINT_BUY_TABLE.get(), FLINT_BUY_TABLE.getDefault())) {
+            return FLINT_BUY_TABLE.getDefault();
+        }
+        else {
+            return FLINT_BUY_TABLE.get();
+        }
+    }
+    public static String getBellTable() {
+        if (Objects.equals(BELL_TABLE.get(), BELL_TABLE.getDefault())) {
+            return BELL_TABLE.getDefault();
+        }
+        else {
+            return BELL_TABLE.get();
+        }
+    }
     public static String getNetheriteTierWeaponTable() {
         if (Objects.equals(NETHERITE_WEAPON_TABLE.get(), NETHERITE_WEAPON_TABLE.getDefault())) {
             return NETHERITE_WEAPON_TABLE.getDefault();
@@ -650,6 +1492,54 @@ public class CommonConfig {
         }
         else {
             return QUIVER_TAG_COUNT.get();
+        }
+    }
+    public static String getCandleTagTable() {
+        if (Objects.equals(CANDLE_TAG_TABLE.get(), CANDLE_TAG_TABLE.getDefault())) {
+            return CANDLE_TAG_TABLE.getDefault();
+        }
+        else {
+            return CANDLE_TAG_TABLE.get();
+        }
+    }
+    public static int getCandleCount() {
+        if (Objects.equals(CANDLE_TAG_COUNT.get(), CANDLE_TAG_COUNT.getDefault())) {
+            return CANDLE_TAG_COUNT.getDefault();
+        }
+        else {
+            return CANDLE_TAG_COUNT.get();
+        }
+    }
+    public static String getStringTagTable() {
+        if (Objects.equals(STRING_TAG_TABLE.get(), STRING_TAG_TABLE.getDefault())) {
+            return STRING_TAG_TABLE.getDefault();
+        }
+        else {
+            return STRING_TAG_TABLE.get();
+        }
+    }
+    public static int getStringCount() {
+        if (Objects.equals(STRING_TAG_COUNT.get(), STRING_TAG_COUNT.getDefault())) {
+            return STRING_TAG_COUNT.getDefault();
+        }
+        else {
+            return STRING_TAG_COUNT.get();
+        }
+    }
+    public static String getStickTagTable() {
+        if (Objects.equals(STICK_TAG_TABLE.get(), STICK_TAG_TABLE.getDefault())) {
+            return STICK_TAG_TABLE.getDefault();
+        }
+        else {
+            return STICK_TAG_TABLE.get();
+        }
+    }
+    public static int getStickCount() {
+        if (Objects.equals(STICK_TAG_COUNT.get(), STICK_TAG_COUNT.getDefault())) {
+            return STICK_TAG_COUNT.getDefault();
+        }
+        else {
+            return STICK_TAG_COUNT.get();
         }
     }
     public static String getBowsTable() {
@@ -916,6 +1806,14 @@ public class CommonConfig {
             return GUIDE_BOOK_TABLE.get();
         }
     }
+    public static String getSmallestCoin() {
+        if (Objects.equals(SMALLEST_COIN.get(), SMALLEST_COIN.getDefault())) {
+            return SMALLEST_COIN.getDefault();
+        }
+        else {
+            return SMALLEST_COIN.get();
+        }
+    }
     public static String getBookshelfTable() {
         if (Objects.equals(BOOKSHELF_TABLE.get(), BOOKSHELF_TABLE.getDefault())) {
             return BOOKSHELF_TABLE.getDefault();
@@ -948,12 +1846,20 @@ public class CommonConfig {
             return INK_TAG_TABLE.get();
         }
     }
-    public static int getInkCount() {
-        if (Objects.equals(INK_TAG_COUNT.get(), INK_TAG_COUNT.getDefault())) {
-            return INK_TAG_COUNT.getDefault();
+    public static int getInkSellCount() {
+        if (Objects.equals(INK_TAG_SELL_COUNT.get(), INK_TAG_SELL_COUNT.getDefault())) {
+            return INK_TAG_SELL_COUNT.getDefault();
         }
         else {
-            return INK_TAG_COUNT.get();
+            return INK_TAG_SELL_COUNT.get();
+        }
+    }
+    public static int getInkBuyCount() {
+        if (Objects.equals(INK_TAG_BUY_COUNT.get(), INK_TAG_BUY_COUNT.getDefault())) {
+            return INK_TAG_BUY_COUNT.getDefault();
+        }
+        else {
+            return INK_TAG_BUY_COUNT.get();
         }
     }
     public static String getLeatherTagTable() {
@@ -1004,6 +1910,14 @@ public class CommonConfig {
             return LANTERN_TABLE.get();
         }
     }
+    public static String getFishingRodTable() {
+        if (Objects.equals(FISHING_ROD_TABLE.get(), FISHING_ROD_TABLE.getDefault())) {
+            return FISHING_ROD_TABLE.getDefault();
+        }
+        else {
+            return FISHING_ROD_TABLE.get();
+        }
+    }
     public static String getFishingGearTable() {
         if (Objects.equals(FISHING_GEAR_TABLE.get(), FISHING_GEAR_TABLE.getDefault())) {
             return FISHING_GEAR_TABLE.getDefault();
@@ -1052,12 +1966,20 @@ public class CommonConfig {
             return WOOL_TAG_TABLE.get();
         }
     }
-    public static int getWoolCount() {
-        if (Objects.equals(WOOL_TAG_COUNT.get(), WOOL_TAG_COUNT.getDefault())) {
-            return WOOL_TAG_COUNT.getDefault();
+    public static int getWoolSellCount() {
+        if (Objects.equals(WOOL_TAG_SELL_COUNT.get(), WOOL_TAG_SELL_COUNT.getDefault())) {
+            return WOOL_TAG_SELL_COUNT.getDefault();
         }
         else {
-            return WOOL_TAG_COUNT.get();
+            return WOOL_TAG_SELL_COUNT.get();
+        }
+    }
+    public static int getWoolBuyCount() {
+        if (Objects.equals(WOOL_TAG_BUY_COUNT.get(), WOOL_TAG_BUY_COUNT.getDefault())) {
+            return WOOL_TAG_BUY_COUNT.getDefault();
+        }
+        else {
+            return WOOL_TAG_BUY_COUNT.get();
         }
     }
     public static String getBannerTagTable() {
@@ -1324,6 +2246,22 @@ public class CommonConfig {
             return LUCKY_COIN_GEMS.get();
         }
     }
+    public static String getTwentySevenLuckyCoinItemsTable() {
+        if (Objects.equals(TWENTY_SEVEN_LUCKY_COIN_ITEMS.get(), TWENTY_SEVEN_LUCKY_COIN_ITEMS.getDefault())) {
+            return TWENTY_SEVEN_LUCKY_COIN_ITEMS.getDefault();
+        }
+        else {
+            return TWENTY_SEVEN_LUCKY_COIN_ITEMS.get();
+        }
+    }
+    public static String getThreeLuckyCoinItemsTable() {
+        if (Objects.equals(THREE_LUCKY_COIN_ITEMS.get(), THREE_LUCKY_COIN_ITEMS.getDefault())) {
+            return THREE_LUCKY_COIN_ITEMS.getDefault();
+        }
+        else {
+            return THREE_LUCKY_COIN_ITEMS.get();
+        }
+    }
     public static String getEmeraldNoteGemsTable() {
         if (Objects.equals(EMERALD_NOTE_GEMS.get(), EMERALD_NOTE_GEMS.getDefault())) {
             return EMERALD_NOTE_GEMS.getDefault();
@@ -1340,6 +2278,22 @@ public class CommonConfig {
             return SIXTY_GOLD_POT_GEMS.get();
         }
     }
+    public static String getSixtyGoldPotItemsTable() {
+        if (Objects.equals(SIXTY_GOLD_POT_ITEMS.get(), SIXTY_GOLD_POT_ITEMS.getDefault())) {
+            return SIXTY_GOLD_POT_ITEMS.getDefault();
+        }
+        else {
+            return SIXTY_GOLD_POT_ITEMS.get();
+        }
+    }
+    public static String getThirtyGoldPotItemsTable() {
+        if (Objects.equals(THIRTY_GOLD_POT_ITEMS.get(), THIRTY_GOLD_POT_ITEMS.getDefault())) {
+            return THIRTY_GOLD_POT_ITEMS.getDefault();
+        }
+        else {
+            return THIRTY_GOLD_POT_ITEMS.get();
+        }
+    }
     public static String getThirtyGoldPotGemsTable() {
         if (Objects.equals(THIRTY_GOLD_POT_GEMS.get(), THIRTY_GOLD_POT_GEMS.getDefault())) {
             return THIRTY_GOLD_POT_GEMS.getDefault();
@@ -1348,12 +2302,28 @@ public class CommonConfig {
             return THIRTY_GOLD_POT_GEMS.get();
         }
     }
+    public static String getFourGoldPotItemsTable() {
+        if (Objects.equals(FOUR_GOLD_POT_ITEMS.get(), FOUR_GOLD_POT_ITEMS.getDefault())) {
+            return FOUR_GOLD_POT_ITEMS.getDefault();
+        }
+        else {
+            return FOUR_GOLD_POT_ITEMS.get();
+        }
+    }
     public static String getFourGoldPotGemsTable() {
         if (Objects.equals(FOUR_GOLD_POT_GEMS.get(), FOUR_GOLD_POT_GEMS.getDefault())) {
             return FOUR_GOLD_POT_GEMS.getDefault();
         }
         else {
             return FOUR_GOLD_POT_GEMS.get();
+        }
+    }
+    public static String getTwoGoldPotItemsTable() {
+        if (Objects.equals(TWO_GOLD_POT_ITEMS.get(), TWO_GOLD_POT_ITEMS.getDefault())) {
+            return TWO_GOLD_POT_ITEMS.getDefault();
+        }
+        else {
+            return TWO_GOLD_POT_ITEMS.get();
         }
     }
     public static String getTwoGoldPotGemsTable() {
@@ -1372,12 +2342,36 @@ public class CommonConfig {
             return FIVE_EMERALD_GEMS.get();
         }
     }
+    public static String getOneEmeraldFuelTable() {
+        if (Objects.equals(ONE_EMERALD_FUEL.get(), ONE_EMERALD_FUEL.getDefault())) {
+            return ONE_EMERALD_FUEL.getDefault();
+        }
+        else {
+            return ONE_EMERALD_FUEL.get();
+        }
+    }
     public static String getOneEmeraldGemsTable() {
         if (Objects.equals(ONE_EMERALD_GEMS.get(), ONE_EMERALD_GEMS.getDefault())) {
             return ONE_EMERALD_GEMS.getDefault();
         }
         else {
             return ONE_EMERALD_GEMS.get();
+        }
+    }
+    public static String getEquipmentGemsTable() {
+        if (Objects.equals(EQUIPMENT_GEMS.get(), EQUIPMENT_GEMS.getDefault())) {
+            return EQUIPMENT_GEMS.getDefault();
+        }
+        else {
+            return EQUIPMENT_GEMS.get();
+        }
+    }
+    public static String getEnchantingGemsTable() {
+        if (Objects.equals(ENCHANTING_GEMS.get(), ENCHANTING_GEMS.getDefault())) {
+            return ENCHANTING_GEMS.getDefault();
+        }
+        else {
+            return ENCHANTING_GEMS.get();
         }
     }
     public static String getOneEmeraldMetalsTable() {
@@ -1588,6 +2582,38 @@ public class CommonConfig {
         }
         else {
             return BASE_TRADE_XP.get();
+        }
+    }
+    public static int getCommonMaxTrades() {
+        if (Objects.equals(COMMON_MAX_TRADES.get(), COMMON_MAX_TRADES.getDefault())) {
+            return COMMON_MAX_TRADES.getDefault();
+        }
+        else {
+            return COMMON_MAX_TRADES.get();
+        }
+    }
+    public static float getCommonTradeMultiplier() {
+        if (Objects.equals(COMMON_TRADE_MULTIPLIER.get(), COMMON_TRADE_MULTIPLIER.getDefault())) {
+            return COMMON_TRADE_MULTIPLIER.getDefault();
+        }
+        else {
+            return COMMON_TRADE_MULTIPLIER.get();
+        }
+    }
+    public static int getRareMaxTrades() {
+        if (Objects.equals(RARE_MAX_TRADES.get(), RARE_MAX_TRADES.getDefault())) {
+            return RARE_MAX_TRADES.getDefault();
+        }
+        else {
+            return RARE_MAX_TRADES.get();
+        }
+    }
+    public static float getRareTradeMultiplier() {
+        if (Objects.equals(RARE_TRADE_MULTIPLIER.get(), RARE_TRADE_MULTIPLIER.getDefault())) {
+            return RARE_TRADE_MULTIPLIER.getDefault();
+        }
+        else {
+            return RARE_TRADE_MULTIPLIER.get();
         }
     }
 }

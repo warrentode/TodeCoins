@@ -1236,6 +1236,23 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(ForgeTags.Items.DYES)
+                .add(Items.GRAY_DYE)
+                .add(Items.GREEN_DYE)
+                .add(Items.BLACK_DYE)
+                .add(Items.BLUE_DYE)
+                .add(Items.BROWN_DYE)
+                .add(Items.CYAN_DYE)
+                .add(Items.LIGHT_BLUE_DYE)
+                .add(Items.LIGHT_GRAY_DYE)
+                .add(Items.LIME_DYE)
+                .add(Items.MAGENTA_DYE)
+                .add(Items.ORANGE_DYE)
+                .add(Items.PINK_DYE)
+                .add(Items.PURPLE_DYE)
+                .add(Items.RED_DYE)
+                .add(Items.WHITE_DYE)
+                .add(Items.YELLOW_DYE);
         tag(ForgeTags.Items.GLAZED_TERRACOTTA)
                 .add(Items.GRAY_GLAZED_TERRACOTTA)
                 .add(Items.GREEN_GLAZED_TERRACOTTA)
@@ -1257,8 +1274,12 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("patchouli:guide_book")));
         tag(ForgeTags.Items.INK)
+                .add(Items.INK_SAC)
+                .add(Items.GLOW_INK_SAC)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("supplementaries:antique_ink")));
+        tag(ForgeTags.Items.STICKS)
+                .add(Items.STICK);
         tag(ForgeTags.Items.QUIVERS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("supplementaries:quivers")));

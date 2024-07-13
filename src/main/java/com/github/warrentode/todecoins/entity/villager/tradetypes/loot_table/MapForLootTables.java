@@ -24,10 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class MapForLootTable implements VillagerTrades.ItemListing {
+public class MapForLootTables implements VillagerTrades.ItemListing {
     private final ResourceLocation currencyLootTable;
-    private final ItemStack requestedItemB;
-    private final int requestedItemCountB;
+    private final ResourceLocation requestedItemB;
     private final TagKey<Structure> mapStructure;
     private final String mapName;
     private final MapDecoration.Type mapMarker;
@@ -35,12 +34,11 @@ public class MapForLootTable implements VillagerTrades.ItemListing {
     private final int xpValue;
     private final float priceMultiplier;
 
-    public MapForLootTable(ResourceLocation currencyLootTable, ItemStack requestedItemB, int requestedItemCountB,
-                           TagKey<Structure> mapStructure, String mapName, MapDecoration.Type mapMarker,
-                           int maxUses, int xpValue, float priceMultiplier) {
+    public MapForLootTables(ResourceLocation currencyLootTable, ResourceLocation requestedItemB,
+                            TagKey<Structure> mapStructure, String mapName, MapDecoration.Type mapMarker,
+                            int maxUses, int xpValue, float priceMultiplier) {
         this.currencyLootTable = currencyLootTable;
         this.requestedItemB = requestedItemB;
-        this.requestedItemCountB = requestedItemCountB;
         this.mapStructure = mapStructure;
         this.mapName = mapName;
         this.mapMarker = mapMarker;
@@ -60,24 +58,27 @@ public class MapForLootTable implements VillagerTrades.ItemListing {
             BlockPos blockpos = serverlevel.findNearestMapStructure(this.mapStructure, trader.blockPosition(), 100, true);
             if (blockpos != null) {
                 LootTable currencyTable = minecraftServer.getLootTables().get(currencyLootTable);
+                LootTable requestedTable = minecraftServer.getLootTables().get(requestedItemB);
 
                 LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())
                         .withParameter(LootContextParams.ORIGIN, trader.position())
                         .withParameter(LootContextParams.THIS_ENTITY, trader)
                         .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
                 List<ItemStack> currency = currencyTable.getRandomItems(lootContext);
+                List<ItemStack> requested = requestedTable.getRandomItems(lootContext);
 
                 ItemStack offeredMap = MapItem.create(serverlevel, blockpos.getX(), blockpos.getZ(), (byte) 2, true, true);
                 MapItem.renderBiomePreviewMap(serverlevel, offeredMap);
                 MapItemSavedData.addTargetDecoration(offeredMap, blockpos, "+", this.mapMarker);
                 offeredMap.setHoverName(Component.translatable(this.mapName));
 
-                ItemStack requestStack = new ItemStack(
+                ItemStack currencyStack = new ItemStack(
                         currency.get(source.nextInt(currency.size())).getItem(),
                         currency.get(source.nextInt(currency.size())).getCount());
+                ItemStack requestStack = new ItemStack(
+                        requested.get(source.nextInt(requested.size())).getItem());
 
-                ItemStack requestStackB = new ItemStack(this.requestedItemB.getItem(), this.requestedItemCountB);
-                return new MerchantOffer(requestStack, requestStackB, offeredMap, this.maxUses, this.xpValue, this.priceMultiplier);
+                return new MerchantOffer(currencyStack, requestStack, offeredMap, this.maxUses, this.xpValue, this.priceMultiplier);
             }
             else {
                 return null;

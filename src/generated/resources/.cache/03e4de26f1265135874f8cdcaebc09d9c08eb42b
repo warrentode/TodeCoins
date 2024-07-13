@@ -1,4 +1,4 @@
-// 1.19.2	2024-05-03T07:21:19.1910635	Tags for minecraft:item
+// 1.19.2	2024-07-13T14:52:35.7884297	Tags for minecraft:item
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
@@ -48,6 +48,7 @@ de3994930962786796a826cd9676cb67b67e7bc2 data/forge/tags/items/crops/tomato.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
 5f68ab5892f7d0337e7a331a1244af90f29c5b36 data/forge/tags/items/currency_materials.json
 e696f402dd807aff108bcdbf82e9cfaf00b8dadc data/forge/tags/items/currency_stamps.json
+6b9ee5087cd4160d845085ac6bb64c86e1aedba3 data/forge/tags/items/dyes.json
 fe91d9df301382872a3e254eb22768784d8932b1 data/forge/tags/items/eggs.json
 056929b7ab3fd6b71312bcc7bae8661d4f4a5df0 data/forge/tags/items/enchanting_fuels.json
 b43f07fbac9cee58dfaac204b86a65a071d0a966 data/forge/tags/items/fat.json
@@ -79,7 +80,7 @@ b98916a5fe0160dc9d80a360961ec2ddbc784342 data/forge/tags/items/ingredients/cocoa
 401ebc22e5250fa26fa406e7e8a118b9b38d2cba data/forge/tags/items/ingredients/cooked_meats.json
 c5c28dd67a9e3f6d37ebb3afacea1d9224f1f571 data/forge/tags/items/ingredients/raw_fishes.json
 69f49db92b07feecdb0bf9e3288b52adf02b18e0 data/forge/tags/items/ingredients/raw_meats.json
-49686acec04812394b5b82ddb461effc6507537e data/forge/tags/items/ink.json
+40902f3a3ed285a1de20b7ec5d9aa526fa78751a data/forge/tags/items/ink.json
 584497302bb063bf5aaf97a21f3bf0885301dec4 data/forge/tags/items/leather.json
 45f23e2cea883d909d37fd7963ec91fe16442d60 data/forge/tags/items/milk.json
 542a505e51ccd0f137256e95bfb31d180e7488c3 data/forge/tags/items/milk/milk.json
@@ -114,6 +115,7 @@ ec0a7309322ef8719a8dd108a2ba8da89b556822 data/forge/tags/items/raw_meats/raw_goa
 676cee16d107d62d62093f32df13eb8e934c7db9 data/forge/tags/items/raw_meats/raw_rabbit.json
 d446ee2af1c0373c5465ef905fa918af501f2a00 data/forge/tags/items/raw_meats/raw_venison.json
 df0e0579de3880831933b87f169620da0965c720 data/forge/tags/items/raw_pork/raw_bacon.json
+1ad920aa65e2706dabb6265f3b12546ab33e8936 data/forge/tags/items/rods.json
 8db012e41865fd3ca9adf0c262c99ea1c41f6e7f data/forge/tags/items/salts.json
 f1047b1e10df992f5e5fa86ee60a76a401d37294 data/forge/tags/items/soups.json
 401a873cb1ac25b5e1d1cc901d232312ffe77026 data/forge/tags/items/soups/fish_soups.json

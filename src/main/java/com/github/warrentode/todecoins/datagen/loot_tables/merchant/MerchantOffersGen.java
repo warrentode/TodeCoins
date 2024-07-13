@@ -212,7 +212,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                 ));
-        consumer.accept(VillagerTradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_ITEMS,
+        consumer.accept(VillagerTradeLootTables.THIRTY_POT_OF_GOLD_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -309,7 +309,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SIXTY_POTS_OF_GOLD_VALUE_ITEMS,
+        consumer.accept(VillagerTradeLootTables.SIXTY_POT_OF_GOLD_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -650,6 +650,20 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
+        consumer.accept(VillagerTradeLootTables.ENCHANTING_GEMS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.EQUIPMENT_GEMS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DIAMOND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
         consumer.accept(VillagerTradeLootTables.FIVE_EMERALD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -702,6 +716,13 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.SMALLEST_COIN,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.COPPER_COIN.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
         consumer.accept(VillagerTradeLootTables.TWO_EMERALD_VALUE_CURRENCY,
@@ -999,6 +1020,53 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.BANNERS))
                 ));
+        consumer.accept(VillagerTradeLootTables.TAGGED_CANDLE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.CANDLES))
+                ));
+        consumer.accept(VillagerTradeLootTables.BEE_EGG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BEE_SPAWN_EGG)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(VillagerTradeLootTables.BEEHIVE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BEE_NEST))
+                        .add(LootItem.lootTableItem(Items.BEEHIVE))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.ACACIA_BEEHIVE.get())
+                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
+                                .when(IN_SAVANNA.or(IN_SAVANNA_PLATEAU)
+                                        .or(IN_WINDSWEPT_SAVANNA).or(IN_VILLAGE_SAVANNA)))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.BIRCH_BEEHIVE.get())
+                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
+                                .when(IN_BIRCH_FOREST.or(IN_OLD_GROWTH_BIRCH_FOREST)))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.CRIMSON_BEEHIVE.get())
+                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
+                                .when(IN_CRIMSON_FOREST))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.WARPED_BEEHIVE.get())
+                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
+                                .when(IN_WARPED_FOREST))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.DARK_OAK_BEEHIVE.get())
+                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
+                                .when(IN_DARK_FOREST))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.JUNGLE_BEEHIVE.get())
+                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
+                                .when(IN_JUNGLE.or(IN_BAMBOO_JUNGLE).or(IN_SPARSE_JUNGLE)))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.MANGROVE_BEEHIVE.get())
+                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
+                                .when(IN_MANGROVE_SWAMP))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.SPRUCE_BEEHIVE.get())
+                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
+                                .when(IN_TAIGA.or(IN_SNOWY_TAIGA).or(IN_GROVE)
+                                        .or(IN_OLD_GROWTH_PINE_TAIGA).or(IN_OLD_GROWTH_SPRUCE_TAIGA)
+                                        .or(IN_VILLAGE_TAIGA)))
+                ));
         consumer.accept(VillagerTradeLootTables.TAGGED_VEGGIES_AND_GRAINS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1056,6 +1124,329 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.RAW_FISHES))
                 ));
+        consumer.accept(VillagerTradeLootTables.BELL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BELL))
+                ));
+        consumer.accept(VillagerTradeLootTables.FLINT_BUY_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.FLINT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
+                ));
+        consumer.accept(VillagerTradeLootTables.FLINT_SELL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.FLINT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                ));
+        consumer.accept(VillagerTradeLootTables.ANVIL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.ANVIL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.SHEARS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SHEARS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.PAPER_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.PAPER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                ));
+        consumer.accept(VillagerTradeLootTables.BOOK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BOOK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.WRITABLE_BOOK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(VillagerTradeLootTables.CLOCK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.CLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.COMPASS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.COMPASS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.SCUTE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SCUTE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(VillagerTradeLootTables.SADDLE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SADDLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.GRAVEL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GRAVEL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                ));
+        consumer.accept(VillagerTradeLootTables.FEATHER_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.FEATHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                ));
+        consumer.accept(VillagerTradeLootTables.TRIPWIRE_HOOK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.TRIPWIRE_HOOK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                ));
+        consumer.accept(VillagerTradeLootTables.BLANK_MAP_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.MAP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.BANNER_PATTERN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GLOBE_BANNER_PATTERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.FLOWER_BUY_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SUNFLOWER)
+                                .when(IN_SUNFLOWER_PLAINS.or(IN_ICE_SPIKES))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.PEONY)
+                                .when(IN_FLOWER_FOREST.or(IN_BIRCH_FOREST).or(IN_DARK_FOREST)
+                                        .or(IN_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.ROSE_BUSH)
+                                .when(IN_FLOWER_FOREST.or(IN_BIRCH_FOREST).or(IN_DARK_FOREST)
+                                        .or(IN_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.LILAC)
+                                .when(IN_FLOWER_FOREST.or(IN_BIRCH_FOREST).or(IN_DARK_FOREST)
+                                        .or(IN_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.BUTTERCUP.get())
+                                .when(IN_FLOWER_FOREST.or(IN_MEADOW).or(IN_SUNFLOWER_PLAINS))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.LILY_OF_THE_VALLEY)
+                                .when(IN_FLOWER_FOREST.or(IN_BIRCH_FOREST).or(IN_DARK_FOREST)
+                                        .or(IN_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.CORNFLOWER)
+                                .when(IN_FLOWER_FOREST.or(IN_DRIPSTONE_CAVES).or(IN_DEEP_DARK)
+                                        .or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS).or(IN_MEADOW))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.OXEYE_DAISY)
+                                .when(IN_FLOWER_FOREST.or(IN_DRIPSTONE_CAVES).or(IN_DEEP_DARK)
+                                        .or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS).or(IN_MEADOW))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.PINK_TULIP)
+                                .when(IN_FLOWER_FOREST.or(IN_DRIPSTONE_CAVES).or(IN_DEEP_DARK)
+                                        .or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.WHITE_TULIP)
+                                .when(IN_FLOWER_FOREST.or(IN_DRIPSTONE_CAVES).or(IN_DEEP_DARK)
+                                        .or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.ORANGE_TULIP)
+                                .when(IN_FLOWER_FOREST.or(IN_DRIPSTONE_CAVES).or(IN_DEEP_DARK)
+                                        .or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.RED_TULIP)
+                                .when(IN_FLOWER_FOREST.or(IN_DRIPSTONE_CAVES).or(IN_DEEP_DARK)
+                                        .or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.AZURE_BLUET)
+                                .when(IN_FLOWER_FOREST.or(IN_DRIPSTONE_CAVES).or(IN_DEEP_DARK)
+                                        .or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS).or(IN_MEADOW))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.ALLIUM).when(IN_FLOWER_FOREST.or(IN_MEADOW))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.BLUE_ORCHID).when(IN_SWAMP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.POPPY)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.DANDELION)
+                                .when(IN_FLOWER_FOREST.or(IN_BEACH).or(IN_BIRCH_FOREST)
+                                        .or(IN_DARK_FOREST).or(IN_DEEP_COLD_OCEAN).or(IN_COLD_OCEAN)
+                                        .or(IN_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST).or(IN_FROZEN_RIVER)
+                                        .or(IN_DEEP_FROZEN_OCEAN).or(IN_DEEP_OCEAN).or(IN_DESERT)
+                                        .or(IN_DEEP_LUKEWARM_OCEAN).or(IN_LUKEWARM_OCEAN).or(IN_RIVER)
+                                        .or(IN_FROZEN_OCEAN).or(IN_OCEAN).or(IN_OLD_GROWTH_SPRUCE_TAIGA)
+                                        .or(IN_ICE_SPIKES).or(IN_SNOWY_PLAINS).or(IN_SNOWY_TAIGA)
+                                        .or(IN_OLD_GROWTH_PINE_TAIGA).or(IN_SNOWY_BEACH).or(IN_STONY_SHORE)
+                                        .or(IN_TAIGA).or(IN_WARM_OCEAN).or(IN_WINDSWEPT_FOREST)
+                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_WINDSWEPT_HILLS)
+                                        .or(IN_WINDSWEPT_SAVANNA).or(IN_DRIPSTONE_CAVES).or(IN_DEEP_DARK)
+                                        .or(IN_PLAINS).or(IN_SUNFLOWER_PLAINS).or(IN_MEADOW)
+                                )
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                ));
+        consumer.accept(VillagerTradeLootTables.BOTTLED_HONEY_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.HONEY_BOTTLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(VillagerTradeLootTables.HONEY_BLOCK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.HONEY_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                ));
+        consumer.accept(VillagerTradeLootTables.HONEY_COMB_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.HONEYCOMB)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.HONEYCOMB)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.SHIELD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SHIELD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.ITEM_FRAME_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.ITEM_FRAME)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.GLOW_ITEM_FRAME)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.EXPERIENCE_BOTTLE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.POTION_INGREDIENTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NETHER_WART)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
+                ));
+        consumer.accept(VillagerTradeLootTables.GLASS_BOTTLE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GLASS_BOTTLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                ));
+        consumer.accept(VillagerTradeLootTables.MOB_PARTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(VillagerTradeLootTables.GOLDEN_FOOD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_CARROT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.GLISTERING_MELON_SLICE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).when(BIRTHDAY_EVENT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.CAMPFIRE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.CAMPFIRE).when(IN_OVERWORLD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SOUL_CAMPFIRE).when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.FISH_BUCKET_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.COD_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SALMON_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PUFFERFISH_BUCKET)
+                                .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.TROPICAL_FISH_BUCKET)
+                                .when(LootItemRandomChanceCondition.randomChance(0.25F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.TADPOLE_BUCKET)
+                                .when(IN_MANGROVE_SWAMP.or(IN_SWAMP))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.AXOLOTL_BUCKET)
+                                .when(IN_LUSH_CAVES)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(VillagerTradeLootTables.CLAY_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.CLAY)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.CLAY_BALL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(VillagerTradeLootTables.ONE_EMERALD_VALUE_FUEL,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.COAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.COAL_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.CHARCOAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(Items.LAVA_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                ));
         consumer.accept(VillagerTradeLootTables.FISHING_GEAR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1081,6 +1472,12 @@ public class MerchantOffersGen extends ChestLoot {
                                         .or(IN_WINDSWEPT_FOREST).or(IN_GROVE)))
                         .add(LootItem.lootTableItem(Items.OAK_BOAT))
                         .add(TagEntry.expandTag(ForgeTags.Items.CRAB_TRAP))
+                ));
+        consumer.accept(VillagerTradeLootTables.FISHING_ROD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.FISHING_ROD))
                 ));
 
         consumer.accept(VillagerTradeLootTables.LEATHER_TIER_HELMETS_TABLE,
@@ -1302,7 +1699,19 @@ public class MerchantOffersGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(Tags.Items.DYES))
+                        .add(TagEntry.expandTag(ForgeTags.Items.DYES))
+                ));
+        consumer.accept(VillagerTradeLootTables.TAGGED_STICK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.STICKS))
+                ));
+        consumer.accept(VillagerTradeLootTables.TAGGED_STRING_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.STRING))
                 ));
         consumer.accept(VillagerTradeLootTables.TAGGED_WOOL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()

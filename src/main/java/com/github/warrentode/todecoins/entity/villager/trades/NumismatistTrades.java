@@ -1,12 +1,12 @@
 package com.github.warrentode.todecoins.entity.villager.trades;
 
+import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.*;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
-import com.github.warrentode.todecoins.loot.VillagerTradeLootTables;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.saveddata.maps.MapDecoration;
@@ -14,8 +14,8 @@ import net.minecraft.world.level.saveddata.maps.MapDecoration;
 public class NumismatistTrades {
     static int rarityLevel1 = 1;
     static int rarityLevel2 = 2;
-    static int MAX_USES = 16;
-    static float PRICE_MULTIPLIER = 0.05F;
+    static int MAX_USES = CommonConfig.getRareMaxTrades();
+    static float PRICE_MULTIPLIER = 0F;
 
     private static Int2ObjectMap<VillagerTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ItemListing[]> pMap) {
         return new Int2ObjectOpenHashMap<>(pMap);
@@ -41,16 +41,17 @@ public class NumismatistTrades {
                                         MAX_USES, 5 * rarityLevel1, PRICE_MULTIPLIER
                                 ),
                                 // offer a map for a season coin
-                                new MapForLootTable(
+                                new MapForLootTables(
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
-                                        Items.COMPASS.getDefaultInstance(), 1,
-                                        ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS,
-                                        "Merchant Map", MapDecoration.Type.MANSION,
+                                        ResourceLocation.tryParse(CommonConfig.getCompassTable()),
+                                        CommonConfig.getStructureTag(CommonConfig.getMerchantMapStructureTag()),
+                                        CommonConfig.getMerchantMapName(),
+                                        MapDecoration.Type.valueOf(CommonConfig.getMerchantMapMarker()),
                                         MAX_USES, 5 * rarityLevel1, PRICE_MULTIPLIER
                                 ),
                                 // offer a container for 2 coins
                                 new LootTableForTwoLootTable(
-                                        VillagerTradeLootTables.NUMISMATIST_CONTAINER_OFFERS,
+                                        ResourceLocation.tryParse(CommonConfig.getNumismatistContainerTable()),
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
                                         MAX_USES, 5 * rarityLevel1, PRICE_MULTIPLIER
@@ -69,7 +70,7 @@ public class NumismatistTrades {
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // offer a rare item for 2 coins
                                 new LootTableForTwoLootTable(
-                                        VillagerTradeLootTables.NUMISMATIST_RARE_OFFERS,
+                                        ResourceLocation.tryParse(CommonConfig.getNumismatistRareOfferTable()),
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
                                         MAX_USES, 5 * rarityLevel2, PRICE_MULTIPLIER
