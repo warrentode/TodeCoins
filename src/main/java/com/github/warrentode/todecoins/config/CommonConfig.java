@@ -25,6 +25,7 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> RARE_MAX_TRADES;
     public static final ForgeConfigSpec.ConfigValue<Float> COMMON_TRADE_MULTIPLIER;
     public static final ForgeConfigSpec.ConfigValue<Float> RARE_TRADE_MULTIPLIER;
+    public static final ForgeConfigSpec.ConfigValue<Boolean> RESET_TRADES_ON_RESTOCK;
     // currency value tables
     public static final ForgeConfigSpec.ConfigValue<String> ONE_EMERALD_VALUE;
     public static final ForgeConfigSpec.ConfigValue<String> TWO_EMERALD_VALUE;
@@ -237,6 +238,9 @@ public class CommonConfig {
                 .comment(" Applied to All Rare Trades, Enchanted Items, Enchanted Books, and LEPRECHAUN Trades")
                 .comment("NUMISMATIST Trades have an unchangeable multiplier of 0")
                 .define("rare_trade_multiplier", 0.2F);
+        RESET_TRADES_ON_RESTOCK = BUILDER
+                .comment(" Reset Trades on Restock?")
+                .define("reset_trades_on_restock", false);
 
         BUILDER.push("Lucky Coin Value Loot Tables");
         ONE_LUCKY_COIN_VALUE = BUILDER
@@ -2615,6 +2619,14 @@ public class CommonConfig {
         }
         else {
             return RARE_TRADE_MULTIPLIER.get();
+        }
+    }
+    public static Boolean getResetTrades() {
+        if (Objects.equals(RESET_TRADES_ON_RESTOCK.get(), RESET_TRADES_ON_RESTOCK.getDefault())) {
+            return RESET_TRADES_ON_RESTOCK.getDefault();
+        }
+        else {
+            return RESET_TRADES_ON_RESTOCK.get();
         }
     }
 }
