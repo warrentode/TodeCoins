@@ -1078,7 +1078,10 @@ public class CommonConfig {
 
     public static @NotNull TagKey<Structure> getStructureTag(String structureTag) {
         ResourceLocation structureTagLocation = ResourceLocation.tryParse(structureTag);
-        return ForgeTags.forgeStructureTag(structureTagLocation.getNamespace(), structureTagLocation.getPath());
+        if (structureTagLocation != null) {
+            return ForgeTags.forgeStructureTag(structureTagLocation.getNamespace(), structureTagLocation.getPath());
+        }
+        else return ForgeTags.StructureTags.OVERWORLD_POI;
     }
 
     // map configs
