@@ -1,58 +1,58 @@
 {
-    "values": [
-        "#tconstruct:worldgen/structure/end_slime_islands",
-        "#forge:worldgen/structure/end_city",
-        {
-            "id": "repurposed_structures:stronghold_end",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:shipwreck_end",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:ruined_portal_end",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:pyramid_end",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:outpost_end",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_end",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:ancient_city_end",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:dragon_fossil_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:dragon_fossil_2",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:end_building_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:end_crystal",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:end_dungeon_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:end_ruin_1",
-            "required": false
-        }
-    ]
+  "values": [
+    "#tconstruct:worldgen/structure/end_slime_islands",
+    "#forge:worldgen/structure/end_city",
+    {
+      "id": "repurposed_structures:stronghold_end",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:shipwreck_end",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:ruined_portal_end",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:pyramid_end",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:outpost_end",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_end",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:ancient_city_end",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:dragon_fossil_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:dragon_fossil_2",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:end_building_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:end_crystal",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:end_dungeon_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:end_ruin_1",
+      "required": false
+    }
+  ]
 }

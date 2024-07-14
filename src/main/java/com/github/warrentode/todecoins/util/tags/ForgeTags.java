@@ -333,7 +333,7 @@ public class ForgeTags {
         return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(modid, path));
     }
 
-    private static TagKey<Structure> forgeStructureTag(String modid, String path) {
+    public static TagKey<Structure> forgeStructureTag(String modid, String path) {
         return TagKey.create(Registry.STRUCTURE_REGISTRY, new ResourceLocation(modid, path));
     }
 }

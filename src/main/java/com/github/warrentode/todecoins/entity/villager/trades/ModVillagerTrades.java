@@ -903,8 +903,7 @@ public class ModVillagerTrades {
                             ResourceLocation.tryParse(CommonConfig.getFourteenEmeraldCurrencyTable()),
                             ResourceLocation.tryParse(CommonConfig.getCompassTable()),
                             CommonConfig.getStructureTag(CommonConfig.getCartographerMap1StructureTag()),
-                            CommonConfig.getCartographerMap1Name(),
-                            MapDecoration.Type.valueOf(CommonConfig.getCartographerMap1Marker()),
+                            "Overworld Exploration Map", MapDecoration.Type.TARGET_POINT,
                             COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
                     ));
 

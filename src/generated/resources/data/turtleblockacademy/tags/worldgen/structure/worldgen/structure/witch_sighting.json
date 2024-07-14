@@ -1,37 +1,37 @@
 {
-    "values": [
-        "#forge:worldgen/structure/swamp_hut",
-        {
-            "id": "repurposed_structures:witch_hut_birch",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:witch_hut_dark_forest",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:witch_hut_giant_tree_taiga",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:witch_hut_mangrove",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:witch_hut_taiga",
-            "required": false
-        },
-        {
-            "id": "betterwitchhuts:witch_hut",
-            "required": false
-        },
-        {
-            "id": "betterwitchhuts:witch_circle",
-            "required": false
-        },
-        {
-            "id": "#morevillagers:on_swamp_hut_explorer_maps",
-            "required": false
-        }
-    ]
+  "values": [
+    "#forge:worldgen/structure/swamp_hut",
+    {
+      "id": "repurposed_structures:witch_hut_birch",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:witch_hut_dark_forest",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:witch_hut_giant_tree_taiga",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:witch_hut_mangrove",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:witch_hut_taiga",
+      "required": false
+    },
+    {
+      "id": "betterwitchhuts:witch_hut",
+      "required": false
+    },
+    {
+      "id": "betterwitchhuts:witch_circle",
+      "required": false
+    },
+    {
+      "id": "#morevillagers:on_swamp_hut_explorer_maps",
+      "required": false
+    }
+  ]
 }

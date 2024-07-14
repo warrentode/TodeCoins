@@ -1,15 +1,15 @@
 {
-    "values": [
-        "#supplementaries:worldgen/structure/way_sign_destinations",
-        "#turtleblockacademy:worldgen/structure/pillager_poi",
-        "#turtleblockacademy:worldgen/structure/desert_poi",
-        "#turtleblockacademy:worldgen/structure/jungle_poi",
-        "#turtleblockacademy:worldgen/structure/misc_poi",
-        "#turtleblockacademy:worldgen/structure/witch_sighting",
-        "#turtleblockacademy:worldgen/structure/treasure_poi",
-        "#turtleblockacademy:worldgen/structure/underground_poi",
-        "#turtleblockacademy:worldgen/structure/overworld_nether_poi",
-        "#turtleblockacademy:worldgen/structure/overworld_end_poi",
-        "#tconstruct:worldgen/structure/overworld_slime_islands"
-    ]
+  "values": [
+    "#supplementaries:worldgen/structure/way_sign_destinations",
+    "#turtleblockacademy:worldgen/structure/pillager_poi",
+    "#turtleblockacademy:worldgen/structure/desert_poi",
+    "#turtleblockacademy:worldgen/structure/jungle_poi",
+    "#turtleblockacademy:worldgen/structure/misc_poi",
+    "#turtleblockacademy:worldgen/structure/witch_sighting",
+    "#turtleblockacademy:worldgen/structure/treasure_poi",
+    "#turtleblockacademy:worldgen/structure/underground_poi",
+    "#turtleblockacademy:worldgen/structure/overworld_nether_poi",
+    "#turtleblockacademy:worldgen/structure/overworld_end_poi",
+    "#tconstruct:worldgen/structure/overworld_slime_islands"
+  ]
 }

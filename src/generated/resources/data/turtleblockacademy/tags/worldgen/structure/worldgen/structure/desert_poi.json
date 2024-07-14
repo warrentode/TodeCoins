@@ -1,65 +1,65 @@
 {
-    "values": [
-        "#forge:worldgen/structure/desert_pyramid",
-        {
-            "id": "repurposed_structures:pyramid_badlands",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:monument_desert",
-            "required": false
-        },
-        {
-            "id": "imst:pyramid",
-            "required": false
-        },
-        {
-            "id": "imst:el_dorado",
-            "required": false
-        },
-        {
-            "id": "towns_and_towers:mimic_desert",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:desert_tomb_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:desert_tomb_2",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:pyramid_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:pyramid_2",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:pyramid_dungeon",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:badlands_pyramid",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:desert_shrine",
-            "required": false
-        },
-        {
-            "id": "imst:desertwell",
-            "required": false
-        },
-        {
-            "id": "imst:pyramid",
-            "required": false
-        },
-        {
-            "id": "#betterdeserttemples:better_desert_temples",
-            "required": false
-        }
-    ]
+  "values": [
+    "#forge:worldgen/structure/desert_pyramid",
+    {
+      "id": "repurposed_structures:pyramid_badlands",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:monument_desert",
+      "required": false
+    },
+    {
+      "id": "imst:pyramid",
+      "required": false
+    },
+    {
+      "id": "imst:el_dorado",
+      "required": false
+    },
+    {
+      "id": "towns_and_towers:mimic_desert",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:desert_tomb_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:desert_tomb_2",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:pyramid_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:pyramid_2",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:pyramid_dungeon",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:badlands_pyramid",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:desert_shrine",
+      "required": false
+    },
+    {
+      "id": "imst:desertwell",
+      "required": false
+    },
+    {
+      "id": "imst:pyramid",
+      "required": false
+    },
+    {
+      "id": "#betterdeserttemples:better_desert_temples",
+      "required": false
+    }
+  ]
 }

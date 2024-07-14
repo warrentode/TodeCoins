@@ -1,155 +1,155 @@
 {
-    "values": [
-        "#forge:worldgen/structure/ancient_city",
-        "#forge:worldgen/structure/mineshaft",
-        "#forge:worldgen/structure/stronghold",
-        {
-            "id": "repurposed_structures:mineshaft_birch",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_dark_forest",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_desert",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_icy",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_jungle",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_ocean",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_savanna",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_stone",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_swamp",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_taiga",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:mineshaft_crimson",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:sewage_system_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:tomb_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:tomb_2",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:tomb_3",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:tomb_4",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:underground_base_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:underground_base_2",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:underground_dungeon_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:underground_dungeon_2",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:underground_stollen_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:spider_nest_1",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:spider_nest_2",
-            "required": false
-        },
-        {
-            "id": "additionalstructures:spider_nest_3",
-            "required": false
-        },
-        {
-            "id": "dungeoncrawl:dungeon",
-            "required": false
-        },
-        {
-            "id": "dungeons_arise:scorched_mines",
-            "required": false
-        },
-        {
-            "id": "repurposed_structures:bastion_underground",
-            "required": false
-        },
-        {
-            "id": "#betterstrongholds:better_strongholds",
-            "required": false
-        },
-        {
-            "id": "#betterdungeons:better_dungeons",
-            "required": false
-        },
-        {
-            "id": "#bettermineshafts:better_mineshafts",
-            "required": false
-        },
-        {
-            "id": "#dungeons_arise:explorer_maps/mining_system",
-            "required": false
-        },
-        {
-            "id": "#dungeons_arise:explorer_maps/mushroom_mines",
-            "required": false
-        },
-        {
-            "id": "#dungeons_arise:explorer_maps/plague_asylum",
-            "required": false
-        },
-        {
-            "id": "#dungeons_arise:explorer_maps/foundry",
-            "required": false
-        },
-        {
-            "id": "#ctov:village_underground",
-            "required": false
-        },
-        {
-            "id": "#morevillagers:on_ancient_city_explorer_maps",
-            "required": false
-        },
-        {
-            "id": "#morevillagers:on_mineshaft_explorer_maps",
-            "required": false
-        }
-    ]
+  "values": [
+    "#forge:worldgen/structure/ancient_city",
+    "#forge:worldgen/structure/mineshaft",
+    "#forge:worldgen/structure/stronghold",
+    {
+      "id": "repurposed_structures:mineshaft_birch",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_dark_forest",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_desert",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_icy",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_jungle",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_ocean",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_savanna",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_stone",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_swamp",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_taiga",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:mineshaft_crimson",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:sewage_system_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:tomb_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:tomb_2",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:tomb_3",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:tomb_4",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:underground_base_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:underground_base_2",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:underground_dungeon_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:underground_dungeon_2",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:underground_stollen_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:spider_nest_1",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:spider_nest_2",
+      "required": false
+    },
+    {
+      "id": "additionalstructures:spider_nest_3",
+      "required": false
+    },
+    {
+      "id": "dungeoncrawl:dungeon",
+      "required": false
+    },
+    {
+      "id": "dungeons_arise:scorched_mines",
+      "required": false
+    },
+    {
+      "id": "repurposed_structures:bastion_underground",
+      "required": false
+    },
+    {
+      "id": "#betterstrongholds:better_strongholds",
+      "required": false
+    },
+    {
+      "id": "#betterdungeons:better_dungeons",
+      "required": false
+    },
+    {
+      "id": "#bettermineshafts:better_mineshafts",
+      "required": false
+    },
+    {
+      "id": "#dungeons_arise:explorer_maps/mining_system",
+      "required": false
+    },
+    {
+      "id": "#dungeons_arise:explorer_maps/mushroom_mines",
+      "required": false
+    },
+    {
+      "id": "#dungeons_arise:explorer_maps/plague_asylum",
+      "required": false
+    },
+    {
+      "id": "#dungeons_arise:explorer_maps/foundry",
+      "required": false
+    },
+    {
+      "id": "#ctov:village_underground",
+      "required": false
+    },
+    {
+      "id": "#morevillagers:on_ancient_city_explorer_maps",
+      "required": false
+    },
+    {
+      "id": "#morevillagers:on_mineshaft_explorer_maps",
+      "required": false
+    }
+  ]
 }

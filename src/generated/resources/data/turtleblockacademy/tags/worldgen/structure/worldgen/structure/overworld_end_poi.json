@@ -1,10 +1,10 @@
 {
-    "values": [
-        "#forge:worldgen/structure/stronghold",
-        {
-            "id": "#betterstrongholds:better_strongholds",
-            "required": false
-        },
-        "#forge:worldgen/structure/stronghold"
-    ]
+  "values": [
+    "#forge:worldgen/structure/stronghold",
+    {
+      "id": "#betterstrongholds:better_strongholds",
+      "required": false
+    },
+    "#forge:worldgen/structure/stronghold"
+  ]
 }

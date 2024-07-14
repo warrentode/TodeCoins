@@ -2,7 +2,6 @@ package com.github.warrentode.todecoins.config;
 
 import com.github.warrentode.todecoins.loot.VillagerTradeLootTables;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
-import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.levelgen.structure.Structure;
@@ -1021,7 +1020,7 @@ public class CommonConfig {
         MERCHANT_MAP_STRUCTURE_TAG = BUILDER
                 .comment(" NUMISMATIST")
                 .define("merchant_map_structure_tag",
-                        ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS.toString());
+                        ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS.location().toString());
         MERCHANT_MAP_NAME = BUILDER
                 .comment(" NUMISMATIST")
                 .define("merchant_map_name",
@@ -1033,7 +1032,8 @@ public class CommonConfig {
         CARTOGRAPHER_MAP_1_STRUCTURE_TAG = BUILDER
                 .comment(" CARTOGRAPHER")
                 .define("cartographer_map_1_structure_tag",
-                        ForgeTags.StructureTags.OVERWORLD_POI.toString());
+                        ForgeTags.StructureTags.OVERWORLD_POI.location().toString()
+                        );
         CARTOGRAPHER_MAP_1_NAME = BUILDER
                 .comment(" CARTOGRAPHER")
                 .define("cartographer_map_1_name",
@@ -1045,7 +1045,7 @@ public class CommonConfig {
         CARTOGRAPHER_MAP_2_STRUCTURE_TAG = BUILDER
                 .comment(" CARTOGRAPHER")
                 .define("cartographer_map_2_structure_tag",
-                        ForgeTags.StructureTags.OVERWORLD_POI.toString());
+                        ForgeTags.StructureTags.OVERWORLD_POI.location().toString());
         CARTOGRAPHER_MAP_2_NAME = BUILDER
                 .comment(" CARTOGRAPHER")
                 .define("cartographer_map_2_name",
@@ -1057,7 +1057,7 @@ public class CommonConfig {
         CARTOGRAPHER_MAP_3_STRUCTURE_TAG = BUILDER
                 .comment(" CARTOGRAPHER")
                 .define("cartographer_map_2_structure_tag",
-                        ForgeTags.StructureTags.OVERWORLD_POI.toString());
+                        ForgeTags.StructureTags.OVERWORLD_POI.location().toString());
         CARTOGRAPHER_MAP_3_NAME = BUILDER
                 .comment(" CARTOGRAPHER")
                 .define("cartographer_map_2_name",
@@ -1073,7 +1073,8 @@ public class CommonConfig {
     }
 
     public static @NotNull TagKey<Structure> getStructureTag(String structureTag) {
-        return TagKey.create(Registry.STRUCTURE_REGISTRY, new ResourceLocation(structureTag));
+        ResourceLocation structureTagLocation = ResourceLocation.tryParse(structureTag);
+        return ForgeTags.forgeStructureTag(structureTagLocation.getNamespace(), structureTagLocation.getPath());
     }
 
     // map configs
