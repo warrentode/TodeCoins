@@ -2,6 +2,7 @@ package com.github.warrentode.todecoins.event;
 
 import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.attribute.*;
+import com.github.warrentode.todecoins.commands.VillagerTradeCommands;
 import com.github.warrentode.todecoins.effect.*;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.ai.goal.AvoidPlayerCatCoinGoal;
@@ -36,6 +37,7 @@ import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
@@ -75,6 +77,10 @@ public class ModEvents {
 
     @Mod.EventBusSubscriber(modid = TodeCoins.MODID)
     public static class ForgeEvents {
+        @SubscribeEvent
+        public static void registerCommands(@NotNull RegisterCommandsEvent event) {
+            VillagerTradeCommands.register(event.getDispatcher());
+        }
         @SubscribeEvent
         public static void onItemCrafted(@NotNull PlayerEvent.ItemCraftedEvent event) {
             ItemStack stack = event.getCrafting();

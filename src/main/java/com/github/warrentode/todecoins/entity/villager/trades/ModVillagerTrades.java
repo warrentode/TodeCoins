@@ -47,7 +47,6 @@ public class ModVillagerTrades {
     //TODO: add sawmill trades
     //TODO: add todepiglin trades
     //TODO: merge todepiglin with todecoins
-    //TODO: add unusualend wandering trader trades?
     //TODO: add villagerenchanter trades
     //TODO: add villagersplus trades
     //TODO: add wares trades?
