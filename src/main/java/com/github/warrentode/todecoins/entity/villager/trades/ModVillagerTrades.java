@@ -296,7 +296,7 @@ public class ModVillagerTrades {
 
                     trades.get(apprentice).add(new TagTableForLootTable(
                             ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
-                            CommonConfig.getDyeCount(),
+                            CommonConfig.getDyeBuyCount(),
                             ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                             COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
                     ));
@@ -315,7 +315,7 @@ public class ModVillagerTrades {
 
                     trades.get(journeyman).add(new TagTableForLootTable(
                             ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
-                            CommonConfig.getDyeCount(),
+                            CommonConfig.getDyeBuyCount(),
                             ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                             COMMON_MAX_TRADES, BASE_XP * journeyman, COMMON_TRADE_MULTIPLIER
                     ));
@@ -328,7 +328,7 @@ public class ModVillagerTrades {
 
                     trades.get(expert).add(new TagTableForLootTable(
                             ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
-                            CommonConfig.getDyeCount(),
+                            CommonConfig.getDyeBuyCount(),
                             ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                             COMMON_MAX_TRADES, BASE_XP * expert, COMMON_TRADE_MULTIPLIER
                     ));
@@ -341,7 +341,7 @@ public class ModVillagerTrades {
 
                     trades.get(master).add(new TagTableForLootTable(
                             ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
-                            CommonConfig.getDyeCount(),
+                            CommonConfig.getDyeBuyCount(),
                             ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                             COMMON_MAX_TRADES, BASE_XP * master, COMMON_TRADE_MULTIPLIER
                     ));
@@ -689,7 +689,7 @@ public class ModVillagerTrades {
                     trades.get(novice).add(new LootTableForLootTable(
                             ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
                             ResourceLocation.tryParse(CommonConfig.getFishBucketTable()),
-                            COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                            RARE_MAX_TRADES, BASE_XP * novice, RARE_MAX_TRADES
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(

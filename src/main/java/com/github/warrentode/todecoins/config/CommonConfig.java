@@ -119,7 +119,8 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> INK_TAG_BUY_COUNT;
     public static final ForgeConfigSpec.ConfigValue<Integer> INK_TAG_SELL_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> DYE_TAG_TABLE;
-    public static final ForgeConfigSpec.ConfigValue<Integer> DYE_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> DYE_TAG_BUY_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> DYE_TAG_SELL_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> BOOKSHELF_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> GUIDE_BOOK_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> SMALLEST_COIN;
@@ -205,6 +206,7 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> ITEM_FRAME_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> SHIELD_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> FLOWER_BUY_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> FLOWER_SELL_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> BOTTLED_HONEY_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> HONEY_BLOCK_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> HONEY_COMB_TABLE;
@@ -214,6 +216,20 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> BEE_EGG_TABLE;
     public static final ForgeConfigSpec.ConfigValue<String> NUMISMATIST_CONTAINER_OFFERS;
     public static final ForgeConfigSpec.ConfigValue<String> NUMISMATIST_RARE_OFFERS;
+    public static final ForgeConfigSpec.ConfigValue<String> SEED_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> SEED_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> SAPLING_SELL_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> SLIMEBALL_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> SLIMEBALL_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> SAND_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> SAND_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> SEASHELL_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> ICE_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> SPECIAL_DIRT_BLOCKS_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> WANDERING_TRADER_RARE_OFFERS;
+    public static final ForgeConfigSpec.ConfigValue<String> WANDERING_TRADER_COMMON_OFFERS;
+    public static final ForgeConfigSpec.ConfigValue<String> CORAL_BLOCK_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> CORAL_BLOCK_TAG_COUNT;
 
     static {
         BUILDER.push("Config Settings for TodeCoins");
@@ -231,7 +247,7 @@ public class CommonConfig {
                 .define("common_trade_multiplier", 0.05F);
         RARE_MAX_TRADES = BUILDER
                 .comment(" Max Trades for Rare Items")
-                .comment(" Applied to All Rare Trades, Enchanted Items, Enchanted Books, NUMISMATIST trades, and LEPRECHAUN Trades")
+                .comment(" Applied to All WANDERING TRADER Rare Trades, Entity Buckets, Enchanted Items, Enchanted Books, NUMISMATIST trades, and LEPRECHAUN Trades")
                 .define("rare_max_trades", 3);
         RARE_TRADE_MULTIPLIER = BUILDER
                 .comment(" Price Multiplier for Rare Items")
@@ -343,6 +359,18 @@ public class CommonConfig {
         BUILDER.pop();
 
         BUILDER.push("Item Tag Loot Tables for Trades");
+        SEED_TAG_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("seed_tag_table",
+                        VillagerTradeLootTables.SEED_TAG_TABLE.toString());
+        SEED_TAG_COUNT = BUILDER.define("seed_tag_amount", 1);
+        SAND_TAG_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("sand_tag_table",
+                        VillagerTradeLootTables.SAND_TAG_TABLE.toString());
+        SAND_TAG_COUNT = BUILDER.define("sand_tag_amount", 6);
         RAW_MEAT_TAG_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
                 .comment(" BUTCHER")
@@ -473,10 +501,11 @@ public class CommonConfig {
         INK_TAG_SELL_COUNT = BUILDER.define("ink_tag_sell_amount", 2);
         DYE_TAG_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" SHEPHERD")
+                .comment(" SHEPHERD, WANDERING TRADER")
                 .define("dye_tag_table",
                         VillagerTradeLootTables.TAGGED_DYES_TABLE.toString());
-        DYE_TAG_COUNT = BUILDER.define("dye_tag_amount", 12);
+        DYE_TAG_BUY_COUNT = BUILDER.define("dye_tag_buy_amount", 12);
+        DYE_TAG_SELL_COUNT = BUILDER.define("dye_tag_sell_amount", 3);
         SALT_TAG_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
                 .comment(" BUTCHER")
@@ -517,16 +546,20 @@ public class CommonConfig {
                         VillagerTradeLootTables.TAGGED_CANDLE_TABLE.toString());
         CANDLE_TAG_COUNT = BUILDER.define("candle_tag_amount", 4);
 
-        BEEHIVE_TABLE = BUILDER
+        CORAL_BLOCK_TAG_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("coral_block_tag_table",
+                        VillagerTradeLootTables.CORAL_BLOCK_TAG_TABLE.toString());
+        CORAL_BLOCK_TAG_COUNT = BUILDER.define("coral_block_tag_amount", 1);
+
+        SLIMEBALL_TAG_TABLE = BUILDER
                 .comment(" 5 Emerald Value")
-                .comment(" friendsandfoes:beekeeper")
-                .define("beehive_table",
-                        VillagerTradeLootTables.BEEHIVE_TABLE.toString());
-        BEE_EGG_TABLE = BUILDER
-                .comment(" 5 Emerald Value")
-                .comment(" friendsandfoes:beekeeper")
-                .define("bee_egg_table",
-                        VillagerTradeLootTables.BEE_EGG_TABLE.toString());
+                .comment(" WANDERING TRADER")
+                .define("slimeball_tag_table",
+                        VillagerTradeLootTables.SLIMEBALL_TAG_TABLE.toString());
+        SLIMEBALL_TAG_COUNT = BUILDER
+                .define("slimeball_tag_count", 1);
         BUILDER.pop();
 
         BUILDER.push("Item Loot Tables for Trades");
@@ -703,6 +736,11 @@ public class CommonConfig {
                 .comment(" friendsandfoes:beekeeper")
                 .define("flower_buy_table",
                         VillagerTradeLootTables.FLOWER_BUY_TABLE.toString());
+        FLOWER_SELL_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("flower_sell_table",
+                        VillagerTradeLootTables.FLOWER_SELL_TABLE.toString());
         BOTTLED_HONEY_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
                 .comment(" friendsandfoes:beekeeper")
@@ -718,6 +756,21 @@ public class CommonConfig {
                 .comment(" friendsandfoes:beekeeper")
                 .define("honey_comb_table",
                         VillagerTradeLootTables.HONEY_COMB_TABLE.toString());
+        SPECIAL_DIRT_BLOCKS_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("special_dirt_blocks_table",
+                        VillagerTradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE.toString());
+        WANDERING_TRADER_COMMON_OFFERS = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("wandering_trader_common_offers",
+                        VillagerTradeLootTables.WANDERING_TRADER_COMMON_OFFERS.toString());
+        WANDERING_TRADER_RARE_OFFERS = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("wandering_trader_rare_offers",
+                        VillagerTradeLootTables.WANDERING_TRADER_RARE_OFFERS.toString());
 
         PAINTINGS_TABLE = BUILDER
                 .comment(" 2 Emerald Value")
@@ -836,6 +889,21 @@ public class CommonConfig {
                 .comment(" ARMORER")
                 .define("shield_table",
                         VillagerTradeLootTables.SHIELD_TABLE.toString());
+        BEEHIVE_TABLE = BUILDER
+                .comment(" 5 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("beehive_table",
+                        VillagerTradeLootTables.BEEHIVE_TABLE.toString());
+        BEE_EGG_TABLE = BUILDER
+                .comment(" 5 Emerald Value")
+                .comment(" friendsandfoes:beekeeper")
+                .define("bee_egg_table",
+                        VillagerTradeLootTables.BEE_EGG_TABLE.toString());
+        SEASHELL_TABLE = BUILDER
+                .comment(" 5 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("seashell_table",
+                        VillagerTradeLootTables.SEASHELL_TABLE.toString());
 
         FOUR_GOLD_POT_GEMS = BUILDER
                 .comment(" 6 Emerald Value")
@@ -857,6 +925,16 @@ public class CommonConfig {
                 .comment(" LEATHERWORKER")
                 .define("saddle_table",
                         VillagerTradeLootTables.SADDLE_TABLE.toString());
+        SAPLING_SELL_TABLE = BUILDER
+                .comment(" 6 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("sapling_sell_table",
+                        VillagerTradeLootTables.SAPLING_SELL_TABLE.toString());
+        ICE_TABLE = BUILDER
+                .comment(" 6 Emerald Value")
+                .comment(" WANDERING TRADER")
+                .define("ice_table",
+                        VillagerTradeLootTables.ICE_TABLE.toString());
 
         LEATHER_CHESTPLATE_TABLE = BUILDER
                 .comment(" 7 Emerald Value")
@@ -1182,6 +1260,23 @@ public class CommonConfig {
         }
     }
     // item loot tables
+    public static String getWanderingTraderCommonOffersTable() {
+        if (Objects.equals(WANDERING_TRADER_COMMON_OFFERS.get(),
+                WANDERING_TRADER_COMMON_OFFERS.getDefault())) {
+            return WANDERING_TRADER_COMMON_OFFERS.getDefault();
+        }
+        else {
+            return WANDERING_TRADER_COMMON_OFFERS.get();
+        }
+    }
+    public static String getWanderingTraderRareOffersTable() {
+        if (Objects.equals(WANDERING_TRADER_RARE_OFFERS.get(), WANDERING_TRADER_RARE_OFFERS.getDefault())) {
+            return WANDERING_TRADER_RARE_OFFERS.getDefault();
+        }
+        else {
+            return WANDERING_TRADER_RARE_OFFERS.get();
+        }
+    }
     public static String getNumismatistRareOfferTable() {
         if (Objects.equals(NUMISMATIST_RARE_OFFERS.get(), NUMISMATIST_RARE_OFFERS.getDefault())) {
             return NUMISMATIST_RARE_OFFERS.getDefault();
@@ -1198,12 +1293,44 @@ public class CommonConfig {
             return NUMISMATIST_CONTAINER_OFFERS.get();
         }
     }
+    public static String getSpecialDirtTable() {
+        if (Objects.equals(SPECIAL_DIRT_BLOCKS_TABLE.get(), SPECIAL_DIRT_BLOCKS_TABLE.getDefault())) {
+            return SPECIAL_DIRT_BLOCKS_TABLE.getDefault();
+        }
+        else {
+            return SPECIAL_DIRT_BLOCKS_TABLE.get();
+        }
+    }
+    public static String getIceTable() {
+        if (Objects.equals(ICE_TABLE.get(), ICE_TABLE.getDefault())) {
+            return ICE_TABLE.getDefault();
+        }
+        else {
+            return ICE_TABLE.get();
+        }
+    }
+    public static String getSaplingSellTable() {
+        if (Objects.equals(SAPLING_SELL_TABLE.get(), SAPLING_SELL_TABLE.getDefault())) {
+            return SAPLING_SELL_TABLE.getDefault();
+        }
+        else {
+            return SAPLING_SELL_TABLE.get();
+        }
+    }
     public static String getBeeEggTable() {
         if (Objects.equals(BEE_EGG_TABLE.get(), BEE_EGG_TABLE.getDefault())) {
             return BEE_EGG_TABLE.getDefault();
         }
         else {
             return BEE_EGG_TABLE.get();
+        }
+    }
+    public static String getSeaShellTable() {
+        if (Objects.equals(SEASHELL_TABLE.get(), SEASHELL_TABLE.getDefault())) {
+            return SEASHELL_TABLE.getDefault();
+        }
+        else {
+            return SEASHELL_TABLE.get();
         }
     }
     public static String getBeehiveTable() {
@@ -1236,6 +1363,14 @@ public class CommonConfig {
         }
         else {
             return BOTTLED_HONEY_TABLE.get();
+        }
+    }
+    public static String getFlowerSellTable() {
+        if (Objects.equals(FLOWER_SELL_TABLE.get(), FLOWER_SELL_TABLE.getDefault())) {
+            return FLOWER_SELL_TABLE.getDefault();
+        }
+        else {
+            return FLOWER_SELL_TABLE.get();
         }
     }
     public static String getFlowerBuyTable() {
@@ -1500,6 +1635,22 @@ public class CommonConfig {
         }
         else {
             return QUIVER_TAG_COUNT.get();
+        }
+    }
+    public static String getCoralBlockTagTable() {
+        if (Objects.equals(CORAL_BLOCK_TAG_TABLE.get(), CORAL_BLOCK_TAG_TABLE.getDefault())) {
+            return CORAL_BLOCK_TAG_TABLE.getDefault();
+        }
+        else {
+            return CORAL_BLOCK_TAG_TABLE.get();
+        }
+    }
+    public static int getCoralBlockCount() {
+        if (Objects.equals(CORAL_BLOCK_TAG_COUNT.get(), CORAL_BLOCK_TAG_COUNT.getDefault())) {
+            return CORAL_BLOCK_TAG_COUNT.getDefault();
+        }
+        else {
+            return CORAL_BLOCK_TAG_COUNT.get();
         }
     }
     public static String getCandleTagTable() {
@@ -1838,12 +1989,20 @@ public class CommonConfig {
             return DYE_TAG_TABLE.get();
         }
     }
-    public static int getDyeCount() {
-        if (Objects.equals(DYE_TAG_COUNT.get(), DYE_TAG_COUNT.getDefault())) {
-            return DYE_TAG_COUNT.getDefault();
+    public static int getDyeBuyCount() {
+        if (Objects.equals(DYE_TAG_BUY_COUNT.get(), DYE_TAG_BUY_COUNT.getDefault())) {
+            return DYE_TAG_BUY_COUNT.getDefault();
         }
         else {
-            return DYE_TAG_COUNT.get();
+            return DYE_TAG_BUY_COUNT.get();
+        }
+    }
+    public static int getDyeSellCount() {
+        if (Objects.equals(DYE_TAG_SELL_COUNT.get(), DYE_TAG_SELL_COUNT.getDefault())) {
+            return DYE_TAG_SELL_COUNT.getDefault();
+        }
+        else {
+            return DYE_TAG_SELL_COUNT.get();
         }
     }
     public static String getInkTagTable() {
@@ -2228,6 +2387,54 @@ public class CommonConfig {
         }
         else {
             return RAW_MEAT_TAG_COUNT.get();
+        }
+    }
+    public static String getSandTagTable() {
+        if (Objects.equals(SAND_TAG_TABLE.get(), SAND_TAG_TABLE.getDefault())) {
+            return SAND_TAG_TABLE.getDefault();
+        }
+        else {
+            return SAND_TAG_TABLE.get();
+        }
+    }
+    public static int getSandCount() {
+        if (Objects.equals(SAND_TAG_COUNT.get(), SAND_TAG_COUNT.getDefault())) {
+            return SAND_TAG_COUNT.getDefault();
+        }
+        else {
+            return SAND_TAG_COUNT.get();
+        }
+    }
+    public static String getSeedTagTable() {
+        if (Objects.equals(SEED_TAG_TABLE.get(), SEED_TAG_TABLE.getDefault())) {
+            return SEED_TAG_TABLE.getDefault();
+        }
+        else {
+            return SEED_TAG_TABLE.get();
+        }
+    }
+    public static int getSeedCount() {
+        if (Objects.equals(SEED_TAG_COUNT.get(), SEED_TAG_COUNT.getDefault())) {
+            return SEED_TAG_COUNT.getDefault();
+        }
+        else {
+            return SEED_TAG_COUNT.get();
+        }
+    }
+    public static String getSlimeballTagTable() {
+        if (Objects.equals(SLIMEBALL_TAG_TABLE.get(), SLIMEBALL_TAG_TABLE.getDefault())) {
+            return SLIMEBALL_TAG_TABLE.getDefault();
+        }
+        else {
+            return SLIMEBALL_TAG_TABLE.get();
+        }
+    }
+    public static int getSlimeballCount() {
+        if (Objects.equals(SLIMEBALL_TAG_COUNT.get(), SLIMEBALL_TAG_COUNT.getDefault())) {
+            return SLIMEBALL_TAG_COUNT.getDefault();
+        }
+        else {
+            return SLIMEBALL_TAG_COUNT.get();
         }
     }
     public static String getRawMeatTagTable() {

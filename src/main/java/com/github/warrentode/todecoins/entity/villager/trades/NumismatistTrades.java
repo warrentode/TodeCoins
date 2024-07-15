@@ -1,4 +1,4 @@
-package com.github.warrentode.todecoins.event.trades;
+package com.github.warrentode.todecoins.entity.villager.trades;
 
 import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.*;

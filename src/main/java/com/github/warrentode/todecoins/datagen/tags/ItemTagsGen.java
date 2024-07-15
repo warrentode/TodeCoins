@@ -1236,6 +1236,17 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(ForgeTags.Items.CORAL_BLOCKS)
+                .add(Items.TUBE_CORAL_BLOCK)
+                .add(Items.HORN_CORAL_BLOCK)
+                .add(Items.FIRE_CORAL_BLOCK)
+                .add(Items.BUBBLE_CORAL_BLOCK)
+                .add(Items.BRAIN_CORAL_BLOCK);
+        tag(ForgeTags.Items.SAND)
+                .add(Items.SAND)
+                .add(Items.RED_SAND);
+        tag(ForgeTags.Items.SLIMEBALLS)
+                .add(Items.SLIME_BALL);
         tag(ForgeTags.Items.DYES)
                 .add(Items.GRAY_DYE)
                 .add(Items.GREEN_DYE)
@@ -1495,6 +1506,27 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ForgeTags.Items.CROPS_TOMATO)
                 .addTag(ForgeTags.Items.CROPS_FLAX)
                 .addTag(ForgeTags.Items.CROPS_CORN);
+        tag(ForgeTags.Items.SEEDS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("snowyspirit:ginger")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("hauntedharvest:kernels")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("supplementaries:flax_seed")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("farmersdelight:onion")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("farmersdelight:rice")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("farmersdelight:tomato_seeds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("farmersdelight:cabbage_seeds")))
+                .add(Items.MELON_SEEDS)
+                .add(Items.PUMPKIN_SEEDS)
+                .add(Items.CARROT)
+                .add(Items.POTATO)
+                .add(Items.BEETROOT_SEEDS)
+                .add(Items.WHEAT_SEEDS);
         tag(ForgeTags.Items.CROPS_FRUIT)
                 .addTag(ForgeTags.Items.BERRIES)
                 .addTag(ForgeTags.Items.CROPS_APPLES);

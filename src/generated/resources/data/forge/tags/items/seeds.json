@@ -1,0 +1,38 @@
+{
+  "values": [
+    {
+      "id": "snowyspirit:ginger",
+      "required": false
+    },
+    {
+      "id": "hauntedharvest:kernels",
+      "required": false
+    },
+    {
+      "id": "supplementaries:flax_seed",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:onion",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato_seeds",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_seeds",
+      "required": false
+    },
+    "minecraft:melon_seeds",
+    "minecraft:pumpkin_seeds",
+    "minecraft:carrot",
+    "minecraft:potato",
+    "minecraft:beetroot_seeds",
+    "minecraft:wheat_seeds"
+  ]
+}

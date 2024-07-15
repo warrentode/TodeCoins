@@ -141,6 +141,11 @@ public class ForgeTags {
         public static final TagKey<Item> CROPS_FRUIT = forgeItemTag("forge", "crops/fruits");
         public static final TagKey<Item> CROPS_APPLES = forgeItemTag("forge", "crops/apples");
 
+        public static final TagKey<Item> SEEDS = forgeItemTag("forge", "seeds");
+        public static final TagKey<Item> SLIMEBALLS = forgeItemTag("forge", "slimeballs");
+        public static final TagKey<Item> SAND = forgeItemTag("forge", "sand");
+        public static final TagKey<Item> CORAL_BLOCKS = forgeItemTag("forge", "coral_blocks");
+
         public static final TagKey<Item> GOURDS = forgeItemTag("forge", "gourds");
         public static final TagKey<Item> PIES = forgeItemTag("forge", "pies");
         public static final TagKey<Item> COOKIES = forgeItemTag("forge", "cookies");

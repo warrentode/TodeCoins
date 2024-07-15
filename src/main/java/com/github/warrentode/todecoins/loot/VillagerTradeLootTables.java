@@ -132,9 +132,18 @@ public class VillagerTradeLootTables {
     public static final ResourceLocation ITEM_FRAME_TABLE = register(MODID + ":" + "trade_tables/assorted_items/item_frame_table");
     public static final ResourceLocation SHIELD_TABLE = register(MODID + ":" + "trade_tables/assorted_items/shield_table");
     public static final ResourceLocation FLOWER_BUY_TABLE = register(MODID + ":" + "trade_tables/assorted_items/flower_buy_table");
+    public static final ResourceLocation FLOWER_SELL_TABLE = register(MODID + ":" + "trade_tables/assorted_items/flower_sell_table");
     public static final ResourceLocation BOTTLED_HONEY_TABLE = register(MODID + ":" + "trade_tables/assorted_items/bottled_honey_table");
     public static final ResourceLocation HONEY_BLOCK_TABLE = register(MODID + ":" + "trade_tables/assorted_items/honey_block_table");
     public static final ResourceLocation HONEY_COMB_TABLE = register(MODID + ":" + "trade_tables/assorted_items/honey_comb_table");
+    public static final ResourceLocation SAPLING_SELL_TABLE = register(MODID + ":" + "trade_tables/assorted_items/sapling_sell_table");
+    public static final ResourceLocation SEED_TAG_TABLE = register(MODID + ":" + "trade_tables/assorted_items/seed_tag_table");
+    public static final ResourceLocation SLIMEBALL_TAG_TABLE = register(MODID + ":" + "trade_tables/assorted_items/slimeball_tag_table");
+    public static final ResourceLocation SAND_TAG_TABLE = register(MODID + ":" + "trade_tables/assorted_items/sand_tag_table");
+    public static final ResourceLocation SEASHELL_TABLE = register(MODID + ":" + "trade_tables/assorted_items/seashell_table");
+    public static final ResourceLocation ICE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/ice_table");
+    public static final ResourceLocation SPECIAL_DIRT_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/special_dirt_blocks_table");
+    public static final ResourceLocation CORAL_BLOCK_TAG_TABLE = register(MODID + ":" + "trade_tables/assorted_items/coral_block_tag_table");
 
     // books and bookshelves
     public static final ResourceLocation BOOKSHELF_TABLE = register(MODID + ":" + "trade_tables/library/bookshelf_table");
@@ -204,6 +213,12 @@ public class VillagerTradeLootTables {
             register(MODID + ":" + "trade_tables/numismatist/rare_offers");
     public static final ResourceLocation NUMISMATIST_CONTAINER_OFFERS =
             register(MODID + ":" + "trade_tables/numismatist/container_offers");
+
+    // wandering trader specific offers loot tables
+    public static final ResourceLocation WANDERING_TRADER_COMMON_OFFERS =
+            register(MODID + ":" + "trade_tables/wandering_trader/common_offers");
+    public static final ResourceLocation WANDERING_TRADER_RARE_OFFERS =
+            register(MODID + ":" + "trade_tables/wandering_trader/rare_offers");
 
     private static ResourceLocation register(String path) {
         return register(new ResourceLocation(path));
