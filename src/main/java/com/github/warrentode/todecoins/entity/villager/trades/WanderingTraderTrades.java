@@ -15,8 +15,6 @@ import java.util.List;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class WanderingTraderTrades {
-    static int common = 1;
-    static int rare = 2;
     static int BASE_XP = CommonConfig.getBaseXP();
     static int COMMON_MAX_TRADES = CommonConfig.getCommonMaxTrades();
     static int RARE_MAX_TRADES = CommonConfig.getRareMaxTrades();
@@ -95,22 +93,22 @@ public class WanderingTraderTrades {
                 rareTrades.add(new LootTableForLootTable(
                         ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
                         ResourceLocation.tryParse(CommonConfig.getFishBucketTable()),
-                        RARE_MAX_TRADES, BASE_XP, RARE_MAX_TRADES
+                        RARE_MAX_TRADES, BASE_XP, RARE_TRADE_MULTIPLIER
                 ));
                 rareTrades.add(new LootTableForLootTable(
                         ResourceLocation.tryParse(CommonConfig.getSixEmeraldCurrencyTable()),
                         ResourceLocation.tryParse(CommonConfig.getIceTable()),
-                        RARE_MAX_TRADES, BASE_XP, RARE_MAX_TRADES
+                        RARE_MAX_TRADES, BASE_XP, RARE_TRADE_MULTIPLIER
                 ));
                 rareTrades.add(new LootTableForLootTable(
                         ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                         ResourceLocation.tryParse(CommonConfig.getSpecialDirtTable()),
-                        RARE_MAX_TRADES, BASE_XP, RARE_MAX_TRADES
+                        RARE_MAX_TRADES, BASE_XP, RARE_TRADE_MULTIPLIER
                 ));
                 rareTrades.add(new LootTableForLootTable(
                         ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
                         ResourceLocation.tryParse(CommonConfig.getWanderingTraderRareOffersTable()),
-                        RARE_MAX_TRADES, BASE_XP, RARE_MAX_TRADES
+                        RARE_MAX_TRADES, BASE_XP, RARE_TRADE_MULTIPLIER
                 ));
             }
         }

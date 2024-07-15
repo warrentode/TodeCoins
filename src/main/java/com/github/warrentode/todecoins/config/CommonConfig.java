@@ -230,6 +230,13 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> WANDERING_TRADER_COMMON_OFFERS;
     public static final ForgeConfigSpec.ConfigValue<String> CORAL_BLOCK_TAG_TABLE;
     public static final ForgeConfigSpec.ConfigValue<Integer> CORAL_BLOCK_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_FRAGMENTS_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<String> MUSIC_DISC_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> MUSIC_DISC_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> RECYCLABLE_GLASS_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> RECYCLABLE_GLASS_TAG_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWING_TOOLS_TAG_TABLE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWING_TOOLS_TAG_COUNT;
 
     static {
         BUILDER.push("Config Settings for TodeCoins");
@@ -247,7 +254,7 @@ public class CommonConfig {
                 .define("common_trade_multiplier", 0.05F);
         RARE_MAX_TRADES = BUILDER
                 .comment(" Max Trades for Rare Items")
-                .comment(" Applied to All WANDERING TRADER Rare Trades, Entity Buckets, Enchanted Items, Enchanted Books, NUMISMATIST trades, and LEPRECHAUN Trades")
+                .comment(" Applied to All WANDERING TRADER and todevillagers:retired_trader Rare Trades, Entity Bucket Tag, Enchanted Items, Enchanted Books, NUMISMATIST trades, and LEPRECHAUN Trades")
                 .define("rare_max_trades", 3);
         RARE_TRADE_MULTIPLIER = BUILDER
                 .comment(" Price Multiplier for Rare Items")
@@ -361,13 +368,13 @@ public class CommonConfig {
         BUILDER.push("Item Tag Loot Tables for Trades");
         SEED_TAG_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("seed_tag_table",
                         VillagerTradeLootTables.SEED_TAG_TABLE.toString());
         SEED_TAG_COUNT = BUILDER.define("seed_tag_amount", 1);
         SAND_TAG_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader, todevillagers:glassblower")
                 .define("sand_tag_table",
                         VillagerTradeLootTables.SAND_TAG_TABLE.toString());
         SAND_TAG_COUNT = BUILDER.define("sand_tag_amount", 6);
@@ -445,14 +452,14 @@ public class CommonConfig {
         RAW_SEAFOOD_TAG_COUNT = BUILDER.define("raw_seafood_tag_amount", 8);
         GLASS_PANE_TAG_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" CARTOGRAPHER")
+                .comment(" CARTOGRAPHER, todevillagers:glassblower")
                 .define("glass_pane_tag_table",
                         VillagerTradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
         GLASS_PANE_TAG_COUNT = BUILDER.define("glass_pane_tag_amount", 11);
         GLASS_TAG_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
                 .comment(" LIBRARIAN")
-                .comment(" Available on LIBRARIAN if TodeVillagers mod is not loaded")
+                .comment(" Available on LIBRARIAN if TodeVillagers mod is not loaded, todevillagers:glass")
                 .define("glass_tag_table",
                         VillagerTradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
         GLASS_TAG_COUNT = BUILDER.define("glass_tag_amount", 4);
@@ -545,21 +552,42 @@ public class CommonConfig {
                 .define("candle_tag_table",
                         VillagerTradeLootTables.TAGGED_CANDLE_TABLE.toString());
         CANDLE_TAG_COUNT = BUILDER.define("candle_tag_amount", 4);
-
+        RECYCLABLE_GLASS_TAG_TABLE = BUILDER
+                .comment(" 1 Emerald Value")
+                .comment(" todevillagers:glassblower")
+                .define("recyclable_glass_tag_table",
+                        VillagerTradeLootTables.RECYCLABLE_GLASS_TAG_TABLE.toString());
+        RECYCLABLE_GLASS_TAG_COUNT = BUILDER.define("recyclable_glass_tag_amount", 4);
         CORAL_BLOCK_TAG_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("coral_block_tag_table",
                         VillagerTradeLootTables.CORAL_BLOCK_TAG_TABLE.toString());
         CORAL_BLOCK_TAG_COUNT = BUILDER.define("coral_block_tag_amount", 1);
 
         SLIMEBALL_TAG_TABLE = BUILDER
                 .comment(" 5 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("slimeball_tag_table",
                         VillagerTradeLootTables.SLIMEBALL_TAG_TABLE.toString());
         SLIMEBALL_TAG_COUNT = BUILDER
                 .define("slimeball_tag_count", 1);
+
+        GLASSBLOWING_TOOLS_TAG_TABLE = BUILDER
+                .comment(" 6 Emerald Value")
+                .comment(" todevillagers:glassblower")
+                .define("glassblowing_tools_tag_table",
+                        VillagerTradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE.toString());
+        GLASSBLOWING_TOOLS_TAG_COUNT = BUILDER.define("glassblowing_tools_tag_amount", 1);
+
+        MUSIC_DISC_TAG_TABLE = BUILDER
+                .comment(" 26 Emerald Value")
+                .comment(" todevillagers:disc_jockey")
+                .define("music_disc_tag_table",
+                        VillagerTradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
+        MUSIC_DISC_TAG_COUNT = BUILDER
+                .define("music_disc_tag_count", 1);
+
         BUILDER.pop();
 
         BUILDER.push("Item Loot Tables for Trades");
@@ -602,12 +630,12 @@ public class CommonConfig {
                         VillagerTradeLootTables.ENCHANTING_GEMS_TABLE.toString());
         ONE_EMERALD_GEMS = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" MASON, BANKER")
+                .comment(" MASON, BANKER, todevillagers:disc_jockey")
                 .define("one_emerald_gems",
                         VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         ONE_EMERALD_FUEL = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" ARMORER, FISHERMAN, BUTCHER, TOOLSMITH, WEAPONSMITH")
+                .comment(" ARMORER, FISHERMAN, BUTCHER, TOOLSMITH, WEAPONSMITH, todevillagers:glassblower")
                 .define("one_emerald_fuel",
                         VillagerTradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         FISHING_GEAR_TABLE = BUILDER
@@ -723,7 +751,7 @@ public class CommonConfig {
                         VillagerTradeLootTables.MOB_PARTS_TABLE.toString());
         GLASS_BOTTLE_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" CLERIC, friendsandfoes:beekeeper")
+                .comment(" CLERIC, friendsandfoes:beekeeper, todevillagers:glassblower")
                 .define("glass_bottle_table",
                         VillagerTradeLootTables.GLASS_BOTTLE_TABLE.toString());
         POTION_INGREDIENTS_TABLE = BUILDER
@@ -738,7 +766,7 @@ public class CommonConfig {
                         VillagerTradeLootTables.FLOWER_BUY_TABLE.toString());
         FLOWER_SELL_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("flower_sell_table",
                         VillagerTradeLootTables.FLOWER_SELL_TABLE.toString());
         BOTTLED_HONEY_TABLE = BUILDER
@@ -758,17 +786,17 @@ public class CommonConfig {
                         VillagerTradeLootTables.HONEY_COMB_TABLE.toString());
         SPECIAL_DIRT_BLOCKS_TABLE = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("special_dirt_blocks_table",
                         VillagerTradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE.toString());
         WANDERING_TRADER_COMMON_OFFERS = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("wandering_trader_common_offers",
                         VillagerTradeLootTables.WANDERING_TRADER_COMMON_OFFERS.toString());
         WANDERING_TRADER_RARE_OFFERS = BUILDER
                 .comment(" 1 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("wandering_trader_rare_offers",
                         VillagerTradeLootTables.WANDERING_TRADER_RARE_OFFERS.toString());
 
@@ -831,6 +859,11 @@ public class CommonConfig {
                 .comment(" CLERIC")
                 .define("experience_bottle_table",
                         VillagerTradeLootTables.EXPERIENCE_BOTTLE_TABLE.toString());
+        DISC_FRAGMENTS_TABLE = BUILDER
+                .comment(" 3 Emerald Value")
+                .comment(" todevillagers:disc_jockey")
+                .define("disc_fragments_table",
+                        VillagerTradeLootTables.DISC_FRAGMENTS_TABLE.toString());
 
         DIAMOND_TOOL_TABLE = BUILDER
                 .comment(" 4 Emerald Value")
@@ -901,7 +934,7 @@ public class CommonConfig {
                         VillagerTradeLootTables.BEE_EGG_TABLE.toString());
         SEASHELL_TABLE = BUILDER
                 .comment(" 5 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("seashell_table",
                         VillagerTradeLootTables.SEASHELL_TABLE.toString());
 
@@ -927,12 +960,12 @@ public class CommonConfig {
                         VillagerTradeLootTables.SADDLE_TABLE.toString());
         SAPLING_SELL_TABLE = BUILDER
                 .comment(" 6 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("sapling_sell_table",
                         VillagerTradeLootTables.SAPLING_SELL_TABLE.toString());
         ICE_TABLE = BUILDER
                 .comment(" 6 Emerald Value")
-                .comment(" WANDERING TRADER")
+                .comment(" WANDERING TRADER, todevillagers:retired_trader")
                 .define("ice_table",
                         VillagerTradeLootTables.ICE_TABLE.toString());
 
@@ -1301,6 +1334,54 @@ public class CommonConfig {
             return SPECIAL_DIRT_BLOCKS_TABLE.get();
         }
     }
+    public static String getGlassblowingToolsTagTable() {
+        if (Objects.equals(GLASSBLOWING_TOOLS_TAG_TABLE.get(), GLASSBLOWING_TOOLS_TAG_TABLE.getDefault())) {
+            return GLASSBLOWING_TOOLS_TAG_TABLE.getDefault();
+        }
+        else {
+            return GLASSBLOWING_TOOLS_TAG_TABLE.get();
+        }
+    }
+    public static int getGlassblowingToolsCount() {
+        if (Objects.equals(GLASSBLOWING_TOOLS_TAG_COUNT.get(), GLASSBLOWING_TOOLS_TAG_COUNT.getDefault())) {
+            return GLASSBLOWING_TOOLS_TAG_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWING_TOOLS_TAG_COUNT.get();
+        }
+    }
+    public static String getRecyclableGlassTagTable() {
+        if (Objects.equals(RECYCLABLE_GLASS_TAG_TABLE.get(), RECYCLABLE_GLASS_TAG_TABLE.getDefault())) {
+            return RECYCLABLE_GLASS_TAG_TABLE.getDefault();
+        }
+        else {
+            return RECYCLABLE_GLASS_TAG_TABLE.get();
+        }
+    }
+    public static int getRecyclableGlassTagCount() {
+        if (Objects.equals(RECYCLABLE_GLASS_TAG_COUNT.get(), RECYCLABLE_GLASS_TAG_COUNT.getDefault())) {
+            return RECYCLABLE_GLASS_TAG_COUNT.getDefault();
+        }
+        else {
+            return RECYCLABLE_GLASS_TAG_COUNT.get();
+        }
+    }
+    public static String getMusicDiscTagTable() {
+        if (Objects.equals(MUSIC_DISC_TAG_TABLE.get(), MUSIC_DISC_TAG_TABLE.getDefault())) {
+            return MUSIC_DISC_TAG_TABLE.getDefault();
+        }
+        else {
+            return MUSIC_DISC_TAG_TABLE.get();
+        }
+    }
+    public static int getMusicDiscTagCount() {
+        if (Objects.equals(MUSIC_DISC_TAG_COUNT.get(), MUSIC_DISC_TAG_COUNT.getDefault())) {
+            return MUSIC_DISC_TAG_COUNT.getDefault();
+        }
+        else {
+            return MUSIC_DISC_TAG_COUNT.get();
+        }
+    }
     public static String getIceTable() {
         if (Objects.equals(ICE_TABLE.get(), ICE_TABLE.getDefault())) {
             return ICE_TABLE.getDefault();
@@ -1403,6 +1484,14 @@ public class CommonConfig {
         }
         else {
             return BANNER_PATTERN_TABLE.get();
+        }
+    }
+    public static String getDiscFragmentsTable() {
+        if (Objects.equals(DISC_FRAGMENTS_TABLE.get(), DISC_FRAGMENTS_TABLE.getDefault())) {
+            return DISC_FRAGMENTS_TABLE.getDefault();
+        }
+        else {
+            return DISC_FRAGMENTS_TABLE.get();
         }
     }
     public static String getExperienceBottleTable() {

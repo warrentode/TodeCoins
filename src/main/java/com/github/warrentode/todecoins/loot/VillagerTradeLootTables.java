@@ -144,6 +144,9 @@ public class VillagerTradeLootTables {
     public static final ResourceLocation ICE_TABLE = register(MODID + ":" + "trade_tables/assorted_items/ice_table");
     public static final ResourceLocation SPECIAL_DIRT_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/special_dirt_blocks_table");
     public static final ResourceLocation CORAL_BLOCK_TAG_TABLE = register(MODID + ":" + "trade_tables/assorted_items/coral_block_tag_table");
+    public static final ResourceLocation DISC_FRAGMENTS_TABLE = register(MODID + ":" + "trade_tables/assorted_items/disc_fragments_table");
+    public static final ResourceLocation MUSIC_DISC_TAG_TABLE = register(MODID + ":" + "trade_tables/assorted_items/music_disc_tag_table");
+    public static final ResourceLocation RECYCLABLE_GLASS_TAG_TABLE = register(MODID + ":" + "trade_tables/assorted_items/recyclable_glass_tag_table");
 
     // books and bookshelves
     public static final ResourceLocation BOOKSHELF_TABLE = register(MODID + ":" + "trade_tables/library/bookshelf_table");
@@ -160,6 +163,7 @@ public class VillagerTradeLootTables {
     public static final ResourceLocation GLAZED_TERRACOTTA_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/terracotta/glazed_terracotta_blocks");
 
     // equipment trade tables
+    public static final ResourceLocation GLASSBLOWING_TOOLS_TAG_TABLE = register(MODID + ":" + "trade_tables/tools/glassblowing_tools_tag_table");
     public static final ResourceLocation STONE_TIER_KNIVES = register(MODID + ":" + "trade_tables/tools/stone_tier_knives_table");
     public static final ResourceLocation STONE_TIER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/stone_tier_tools");
     public static final ResourceLocation IRON_TIER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/iron_tier_tools");

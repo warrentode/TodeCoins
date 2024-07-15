@@ -35,8 +35,6 @@ public class ModVillagerTrades {
     static float COMMON_TRADE_MULTIPLIER = CommonConfig.getCommonTradeMultiplier();
     static float RARE_TRADE_MULTIPLIER = CommonConfig.getRareTradeMultiplier();
 
-    //TODO: add wandering trader trades
-    //TODO: add todevillagers trades
     //TODO: add morevillagers trades
     //TODO: add annabethsextravillagers trades
     //TODO: add sewingkit trades
@@ -60,8 +58,253 @@ public class ModVillagerTrades {
         public static void addCustomTrades(@NotNull VillagerTradesEvent event) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
-            // vanilla trades
             if (CommonConfig.getCustomTrades()) {
+                if (ModList.get().isLoaded("todevillagers")) {
+                    // RETIRED TRADER
+                    if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("todevillagers:retired_trader"))) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getFlowerSellTable()),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getFiveEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getSaplingSellTable()),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getWanderingTraderCommonOffersTable()),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+
+
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getSeedTagTable()),
+                                CommonConfig.getSeedCount(),
+                                COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getFourEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getSlimeballTagTable()),
+                                CommonConfig.getSlimeballCount(),
+                                COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getCoralBlockTagTable()),
+                                CommonConfig.getCoralBlockCount(),
+                                COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                                COMMON_MAX_TRADES, BASE_XP * journeyman, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(journeyman).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getSandTagTable()),
+                                CommonConfig.getSandCount(),
+                                COMMON_MAX_TRADES, BASE_XP * journeyman, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getThreeEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getFishBucketTable()),
+                                RARE_MAX_TRADES, BASE_XP * journeyman, RARE_MAX_TRADES
+                        ));
+
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getDyeTagTable()),
+                                CommonConfig.getDyeSellCount(),
+                                COMMON_MAX_TRADES, BASE_XP * expert, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getFiveEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getSeaShellTable()),
+                                COMMON_MAX_TRADES, BASE_XP * expert, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getSpecialDirtTable()),
+                                RARE_MAX_TRADES, BASE_XP * expert, RARE_MAX_TRADES
+                        ));
+
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getSixEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getIceTable()),
+                                RARE_MAX_TRADES, BASE_XP * master, RARE_MAX_TRADES
+                        ));
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getWanderingTraderRareOffersTable()),
+                                RARE_MAX_TRADES, BASE_XP * master, RARE_MAX_TRADES
+                        ));
+                    }
+                    // DISC JOCKEY
+                    if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("todevillagers:disc_jockey"))) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscFragmentsTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getMusicDiscTagTable()),
+                                CommonConfig.getMusicDiscTagCount(),
+                                COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getMusicDiscTagTable()),
+                                CommonConfig.getMusicDiscTagCount(),
+                                COMMON_MAX_TRADES, BASE_XP * journeyman, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                COMMON_MAX_TRADES, BASE_XP * journeyman, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getMusicDiscTagTable()),
+                                CommonConfig.getMusicDiscTagCount(),
+                                COMMON_MAX_TRADES, BASE_XP * expert, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                COMMON_MAX_TRADES, BASE_XP * expert, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(master).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getTwentySixEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getMusicDiscTagTable()),
+                                CommonConfig.getMusicDiscTagCount(),
+                                COMMON_MAX_TRADES, BASE_XP * master, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldGemsTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                COMMON_MAX_TRADES, BASE_XP * master, COMMON_TRADE_MULTIPLIER
+                        ));
+                    }
+                    // GLASSBLOWER
+                    if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("todevillagers:glassblower"))) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+
+                        trades.get(novice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getRecyclableGlassTagTable()),
+                                CommonConfig.getRecyclableGlassTagCount(),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new TagTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getSandTagTable()),
+                                CommonConfig.getSandCount(),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldFuelTable()),
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                COMMON_MAX_TRADES, BASE_XP * novice, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassTagTable()),
+                                CommonConfig.getGlassCount(),
+                                COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassPaneTagTable()),
+                                CommonConfig.getGlassPaneCount(),
+                                COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassBottleTable()),
+                                COMMON_MAX_TRADES, BASE_XP * apprentice, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getSixEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblowingToolsTagTable()),
+                                CommonConfig.getGlassblowingToolsCount(),
+                                COMMON_MAX_TRADES, BASE_XP * journeyman, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(journeyman).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getSixEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblowingToolsTagTable()),
+                                CommonConfig.getGlassblowingToolsCount(),
+                                COMMON_MAX_TRADES, BASE_XP * journeyman, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassTagTable()),
+                                CommonConfig.getGlassCount(),
+                                COMMON_MAX_TRADES, BASE_XP * expert, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassTagTable()),
+                                CommonConfig.getGlassCount(),
+                                COMMON_MAX_TRADES, BASE_XP * expert, COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(master).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassTagTable()),
+                                CommonConfig.getGlassCount(),
+                                COMMON_MAX_TRADES, BASE_XP * master, COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(master).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getOneEmeraldCurrencyTable()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassTagTable()),
+                                CommonConfig.getGlassCount(),
+                                COMMON_MAX_TRADES, BASE_XP * master, COMMON_TRADE_MULTIPLIER
+                        ));
+                    }
+                }
                 // BEEKEEPER
                 if (ModList.get().isLoaded("friendsandfoes") && event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("friendsandfoes:beekeeper"))) {
                     trades.get(novice).clear();

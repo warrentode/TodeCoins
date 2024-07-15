@@ -1445,11 +1445,35 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.BLUE_ICE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
+        consumer.accept(VillagerTradeLootTables.DISC_FRAGMENTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DISC_FRAGMENT_5))
+                ));
         consumer.accept(VillagerTradeLootTables.CORAL_BLOCK_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.CORAL_BLOCKS))
+                ));
+        consumer.accept(VillagerTradeLootTables.MUSIC_DISC_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.MUSIC_DISCS))
+                ));
+        consumer.accept(VillagerTradeLootTables.RECYCLABLE_GLASS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.RECYCLABLE_GLASS))
+                ));
+        consumer.accept(VillagerTradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.GLASSBLOWER_TOOLS))
                 ));
         consumer.accept(VillagerTradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()

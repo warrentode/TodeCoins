@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "todevillagers:marver",
+      "required": false
+    },
+    {
+      "id": "todevillagers:glassblowing_pipe",
+      "required": false
+    },
+    {
+      "id": "todevillagers:glassblower_shears",
+      "required": false
+    }
+  ]
+}

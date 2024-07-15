@@ -1236,6 +1236,16 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(ForgeTags.Items.GLASSBLOWER_TOOLS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("todevillagers:marver")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("todevillagers:glassblowing_pipe")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("todevillagers:glassblower_shears")));
+        tag(ForgeTags.Items.RECYCLABLE_GLASS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("todevillagers:crushed_glass")));
         tag(ForgeTags.Items.CORAL_BLOCKS)
                 .add(Items.TUBE_CORAL_BLOCK)
                 .add(Items.HORN_CORAL_BLOCK)
