@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.commands;
 
 import com.github.warrentode.todecoins.entity.villager.Numismatist;
-import com.github.warrentode.todecoins.entity.villager.trades.NumismatistTrades;
+import com.github.warrentode.todecoins.entity.villager.trades.AddNumismatistTrades;
 import com.github.warrentode.todecoins.mixin.AbstractVillagerAccessor;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
@@ -71,7 +71,7 @@ public class VillagerTradeCommands {
 
         if (trader instanceof Numismatist) {
             {
-                var trades = NumismatistTrades.NUMISMATIST_TRADES.get(1);
+                var trades = AddNumismatistTrades.NUMISMATIST_TRADES.get(1);
                 var tradeCount = 5;
 
                 var shuffled = Arrays.asList(trades);
@@ -83,7 +83,7 @@ public class VillagerTradeCommands {
             }
 
             {
-                var trades = NumismatistTrades.NUMISMATIST_TRADES.get(2);
+                var trades = AddNumismatistTrades.NUMISMATIST_TRADES.get(2);
                 var tradeCount = 1;
 
                 var shuffled = Arrays.asList(trades);

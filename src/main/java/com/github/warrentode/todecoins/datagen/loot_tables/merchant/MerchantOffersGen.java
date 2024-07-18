@@ -3,7 +3,7 @@ package com.github.warrentode.todecoins.datagen.loot_tables.merchant;
 import com.faboslav.friendsandfoes.init.FriendsAndFoesItems;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.loot.VillagerTradeLootTables;
+import com.github.warrentode.todecoins.loot.TradeLootTables;
 import com.github.warrentode.todecoins.loot.conditions.ModCheckCondition;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.github.warrentode.todecoins.util.tags.ModTags;
@@ -30,7 +30,7 @@ import static com.github.warrentode.todecoins.datagen.ModLootTableGenProvider.*;
 public class MerchantOffersGen extends ChestLoot {
     @Override
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
-        consumer.accept(VillagerTradeLootTables.TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS,
+        consumer.accept(TradeLootTables.TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -61,7 +61,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.LUCKY_FABRIC.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -79,7 +79,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.EMERALD_QUARTER_BANK_NOTE_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.EMERALD_QUARTER_BANK_NOTE_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -93,7 +93,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
                 ));
-        consumer.accept(VillagerTradeLootTables.THREE_LUCKY_COIN_VALUE_ITEMS,
+        consumer.accept(TradeLootTables.THREE_LUCKY_COIN_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -128,7 +128,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.LUCKY_FIBER.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FOUR_POTS_OF_GOLD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.FOUR_POTS_OF_GOLD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -148,7 +148,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SINGLE_LUCKY_COIN_VALUE_GEMS,
+        consumer.accept(TradeLootTables.SINGLE_LUCKY_COIN_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -176,7 +176,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SINGLE_LUCKY_COIN_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.SINGLE_LUCKY_COIN_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -191,7 +191,19 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.SEVEN_NETHERITE_COIN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get())
+                                .when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                ));
+        consumer.accept(TradeLootTables.SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -212,7 +224,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                 ));
-        consumer.accept(VillagerTradeLootTables.THIRTY_POT_OF_GOLD_VALUE_ITEMS,
+        consumer.accept(TradeLootTables.THIRTY_POT_OF_GOLD_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -244,7 +256,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.CHORUS_FRUIT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.THIRTY_POT_OF_GOLD_VALUE_GEMS,
+        consumer.accept(TradeLootTables.THIRTY_POT_OF_GOLD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -291,7 +303,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
-        consumer.accept(VillagerTradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -309,7 +321,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SIXTY_POT_OF_GOLD_VALUE_ITEMS,
+        consumer.accept(TradeLootTables.SIXTY_POT_OF_GOLD_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -342,7 +354,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.CHORUS_FRUIT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SIXTY_POT_OF_GOLD_VALUE_GEMS,
+        consumer.accept(TradeLootTables.SIXTY_POT_OF_GOLD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -373,7 +385,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SIXTY_POTS_OF_GOLD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.SIXTY_POTS_OF_GOLD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -393,7 +405,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FOUR_POT_OF_GOLD_VALUE_GEMS,
+        consumer.accept(TradeLootTables.FOUR_POT_OF_GOLD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -428,7 +440,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.DIAMOND)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FOUR_POT_OF_GOLD_VALUE_ITEMS,
+        consumer.accept(TradeLootTables.FOUR_POT_OF_GOLD_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -465,7 +477,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(LootItemRandomChanceCondition.randomChance(0.01F))
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TWO_POT_OF_GOLD_VALUE_ITEMS,
+        consumer.accept(TradeLootTables.TWO_POT_OF_GOLD_VALUE_ITEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -492,7 +504,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(LootItemRandomChanceCondition.randomChance(0.01F))
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TWO_POT_OF_GOLD_VALUE_GEMS,
+        consumer.accept(TradeLootTables.TWO_POT_OF_GOLD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -525,7 +537,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TWO_POTS_OF_GOLD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.TWO_POTS_OF_GOLD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -543,7 +555,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(VillagerTradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -563,7 +575,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
-        consumer.accept(VillagerTradeLootTables.EMERALD_BANK_NOTE_VALUE_GEMS,
+        consumer.accept(TradeLootTables.EMERALD_BANK_NOTE_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -600,7 +612,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
                 ));
-        consumer.accept(VillagerTradeLootTables.EMERALD_BANK_NOTE_VALUE_METALS,
+        consumer.accept(TradeLootTables.EMERALD_BANK_NOTE_VALUE_METALS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -618,7 +630,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
 
-        consumer.accept(VillagerTradeLootTables.SINGLE_EMERALD_VALUE_METALS,
+        consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_METALS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -633,7 +645,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.GOLD_INGOT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
+        consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -650,21 +662,21 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.ENCHANTING_GEMS_TABLE,
+        consumer.accept(TradeLootTables.ENCHANTING_GEMS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.EQUIPMENT_GEMS_TABLE,
+        consumer.accept(TradeLootTables.EQUIPMENT_GEMS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.DIAMOND)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FIVE_EMERALD_VALUE_GEMS,
+        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -699,7 +711,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5)))
                 ));
-        consumer.accept(VillagerTradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -718,14 +730,14 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SMALLEST_COIN,
+        consumer.accept(TradeLootTables.SMALLEST_COIN,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(ModItems.COPPER_COIN.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TWO_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.TWO_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -744,7 +756,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FIVE_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -761,7 +773,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SIX_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.SIX_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -780,7 +792,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
-        consumer.accept(VillagerTradeLootTables.NINE_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.NINE_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -800,7 +812,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
                 ));
-        consumer.accept(VillagerTradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -824,7 +836,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -846,7 +858,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FOUR_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -868,7 +880,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
-        consumer.accept(VillagerTradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -894,7 +906,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
-        consumer.accept(VillagerTradeLootTables.THREE_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.THREE_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -918,7 +930,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -933,7 +945,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -948,7 +960,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -965,75 +977,75 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_RAW_MEATS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_RAW_MEATS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.RAW_MEATS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_MEAT_SOUPS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_MEAT_SOUPS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.MEAT_SOUPS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_COOKED_MEATS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_COOKED_MEATS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.COOKED_MEATS))
                 ));
-        consumer.accept(VillagerTradeLootTables.STONE_TIER_KNIVES,
+        consumer.accept(TradeLootTables.STONE_TIER_KNIVES,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.FLINT_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmers_delight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_SALTS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_SALTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.SALTS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_ASH_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_ASH_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.ASH))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_FOX_FOOD_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_FOX_FOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.FOX_FOOD))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_GLASS_PANES_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_GLASS_PANES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(Tags.Items.GLASS_PANES))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_BANNER_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_BANNER_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.BANNERS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_CANDLE_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_CANDLE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.CANDLES))
                 ));
-        consumer.accept(VillagerTradeLootTables.BEE_EGG_TABLE,
+        consumer.accept(TradeLootTables.BEE_EGG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.BEE_SPAWN_EGG)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(VillagerTradeLootTables.BEEHIVE_TABLE,
+        consumer.accept(TradeLootTables.BEEHIVE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1067,50 +1079,50 @@ public class MerchantOffersGen extends ChestLoot {
                                         .or(IN_OLD_GROWTH_PINE_TAIGA).or(IN_OLD_GROWTH_SPRUCE_TAIGA)
                                         .or(IN_VILLAGE_TAIGA)))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_VEGGIES_AND_GRAINS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_VEGGIES_AND_GRAINS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.CROPS_VEGETABLES))
                         .add(TagEntry.expandTag(ForgeTags.Items.CROPS_GRAINS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_BREADS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_BREADS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.BREAD))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_GOURDS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_GOURDS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.GOURDS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_PIES_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_PIES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.PIES))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_FRUITS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_FRUITS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.CROPS_FRUIT))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_COOKIES_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_COOKIES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.COOKIES))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_CAKES_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_CAKES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.CAKES))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1118,54 +1130,54 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(TagEntry.expandTag(ForgeTags.Items.FISH_SOUPS))
                         .add(TagEntry.expandTag(ForgeTags.Items.SUSHI))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_RAW_SEAFOOD_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.RAW_FISHES))
                 ));
-        consumer.accept(VillagerTradeLootTables.BELL_TABLE,
+        consumer.accept(TradeLootTables.BELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.BELL))
                 ));
-        consumer.accept(VillagerTradeLootTables.FLINT_BUY_TABLE,
+        consumer.accept(TradeLootTables.FLINT_BUY_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.FLINT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FLINT_SELL_TABLE,
+        consumer.accept(TradeLootTables.FLINT_SELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.FLINT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(VillagerTradeLootTables.ANVIL_TABLE,
+        consumer.accept(TradeLootTables.ANVIL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.ANVIL)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SHEARS_TABLE,
+        consumer.accept(TradeLootTables.SHEARS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.SHEARS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.PAPER_TABLE,
+        consumer.accept(TradeLootTables.PAPER_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.PAPER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
                 ));
-        consumer.accept(VillagerTradeLootTables.BOOK_TABLE,
+        consumer.accept(TradeLootTables.BOOK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1174,70 +1186,77 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.WRITABLE_BOOK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.CLOCK_TABLE,
+        consumer.accept(TradeLootTables.CLOCK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.CLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.COMPASS_TABLE,
+        consumer.accept(TradeLootTables.COMPASS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.COMPASS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SCUTE_TABLE,
+        consumer.accept(TradeLootTables.SCUTE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.SCUTE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SADDLE_TABLE,
+        consumer.accept(TradeLootTables.SADDLE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.SADDLE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.GRAVEL_TABLE,
+        consumer.accept(TradeLootTables.SEA_LANTERN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SEA_LANTERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.GRAVEL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GRAVEL)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FEATHER_TABLE,
+        consumer.accept(TradeLootTables.FEATHER_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.FEATHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TRIPWIRE_HOOK_TABLE,
+        consumer.accept(TradeLootTables.TRIPWIRE_HOOK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.TRIPWIRE_HOOK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
                 ));
-        consumer.accept(VillagerTradeLootTables.BLANK_MAP_TABLE,
+        consumer.accept(TradeLootTables.BLANK_MAP_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.MAP)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.BANNER_PATTERN_TABLE,
+        consumer.accept(TradeLootTables.BANNER_PATTERN_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GLOBE_BANNER_PATTERN)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FLOWER_BUY_TABLE,
+        consumer.accept(TradeLootTables.FLOWER_BUY_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1300,7 +1319,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.DANDELION)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FLOWER_SELL_TABLE,
+        consumer.accept(TradeLootTables.FLOWER_SELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1376,7 +1395,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.DANDELION)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SAPLING_SELL_TABLE,
+        consumer.accept(TradeLootTables.SAPLING_SELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1410,31 +1429,31 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.OAK_SAPLING)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SEED_TAG_TABLE,
+        consumer.accept(TradeLootTables.SEED_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.SEEDS))
                 ));
-        consumer.accept(VillagerTradeLootTables.SLIMEBALL_TAG_TABLE,
+        consumer.accept(TradeLootTables.SLIMEBALL_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.SLIMEBALLS))
                 ));
-        consumer.accept(VillagerTradeLootTables.SAND_TAG_TABLE,
+        consumer.accept(TradeLootTables.SAND_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.SAND))
                 ));
-        consumer.accept(VillagerTradeLootTables.SEASHELL_TABLE,
+        consumer.accept(TradeLootTables.SEASHELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NAUTILUS_SHELL))
                 ));
-        consumer.accept(VillagerTradeLootTables.ICE_TABLE,
+        consumer.accept(TradeLootTables.ICE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1445,37 +1464,37 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.BLUE_ICE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.DISC_FRAGMENTS_TABLE,
+        consumer.accept(TradeLootTables.DISC_FRAGMENTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.DISC_FRAGMENT_5))
                 ));
-        consumer.accept(VillagerTradeLootTables.CORAL_BLOCK_TAG_TABLE,
+        consumer.accept(TradeLootTables.CORAL_BLOCK_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.CORAL_BLOCKS))
                 ));
-        consumer.accept(VillagerTradeLootTables.MUSIC_DISC_TAG_TABLE,
+        consumer.accept(TradeLootTables.MUSIC_DISC_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.MUSIC_DISCS))
                 ));
-        consumer.accept(VillagerTradeLootTables.RECYCLABLE_GLASS_TAG_TABLE,
+        consumer.accept(TradeLootTables.RECYCLABLE_GLASS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.RECYCLABLE_GLASS))
                 ));
-        consumer.accept(VillagerTradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE,
+        consumer.accept(TradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.GLASSBLOWER_TOOLS))
                 ));
-        consumer.accept(VillagerTradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.DIRT_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1487,21 +1506,21 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(LootItemRandomChanceCondition.randomChance(0.1F))
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.BOTTLED_HONEY_TABLE,
+        consumer.accept(TradeLootTables.BOTTLED_HONEY_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.HONEY_BOTTLE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
-        consumer.accept(VillagerTradeLootTables.HONEY_BLOCK_TABLE,
+        consumer.accept(TradeLootTables.HONEY_BLOCK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.HONEY_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(VillagerTradeLootTables.HONEY_COMB_TABLE,
+        consumer.accept(TradeLootTables.HONEY_COMB_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1510,14 +1529,14 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.HONEYCOMB)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.SHIELD_TABLE,
+        consumer.accept(TradeLootTables.SHIELD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.SHIELD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.ITEM_FRAME_TABLE,
+        consumer.accept(TradeLootTables.ITEM_FRAME_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1526,28 +1545,28 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.GLOW_ITEM_FRAME)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.EXPERIENCE_BOTTLE_TABLE,
+        consumer.accept(TradeLootTables.EXPERIENCE_BOTTLE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.POTION_INGREDIENTS_TABLE,
+        consumer.accept(TradeLootTables.POTION_INGREDIENTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHER_WART)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
                 ));
-        consumer.accept(VillagerTradeLootTables.GLASS_BOTTLE_TABLE,
+        consumer.accept(TradeLootTables.GLASS_BOTTLE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GLASS_BOTTLE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
                 ));
-        consumer.accept(VillagerTradeLootTables.MOB_PARTS_TABLE,
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1556,7 +1575,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(VillagerTradeLootTables.GOLDEN_FOOD_TABLE,
+        consumer.accept(TradeLootTables.GOLDEN_FOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1567,7 +1586,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).when(BIRTHDAY_EVENT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.CAMPFIRE_TABLE,
+        consumer.accept(TradeLootTables.CAMPFIRE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1576,7 +1595,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.SOUL_CAMPFIRE).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FISH_BUCKET_TABLE,
+        consumer.accept(TradeLootTables.FISH_BUCKET_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1597,7 +1616,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_LUSH_CAVES)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(VillagerTradeLootTables.CLAY_TABLE,
+        consumer.accept(TradeLootTables.CLAY_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1606,7 +1625,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.CLAY_BALL)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
-        consumer.accept(VillagerTradeLootTables.ONE_EMERALD_VALUE_FUEL,
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_FUEL,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1621,7 +1640,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(VillagerTradeLootTables.FISHING_GEAR_TABLE,
+        consumer.accept(TradeLootTables.FISHING_GEAR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1647,277 +1666,277 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.OAK_BOAT))
                         .add(TagEntry.expandTag(ForgeTags.Items.CRAB_TRAP))
                 ));
-        consumer.accept(VillagerTradeLootTables.FISHING_ROD_TABLE,
+        consumer.accept(TradeLootTables.FISHING_ROD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.FISHING_ROD))
                 ));
 
-        consumer.accept(VillagerTradeLootTables.LEATHER_TIER_HELMETS_TABLE,
+        consumer.accept(TradeLootTables.LEATHER_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.LEATHER_HELMET))
                 ));
-        consumer.accept(VillagerTradeLootTables.CHAINMAIL_TIER_HELMETS_TABLE,
+        consumer.accept(TradeLootTables.CHAINMAIL_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.CHAINMAIL_HELMET))
                 ));
-        consumer.accept(VillagerTradeLootTables.IRON_TIER_HELMETS_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.IRON_HELMET))
                 ));
-        consumer.accept(VillagerTradeLootTables.GOLD_TIER_HELMETS_TABLE,
+        consumer.accept(TradeLootTables.GOLD_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GOLDEN_HELMET))
                 ));
-        consumer.accept(VillagerTradeLootTables.DIAMOND_TIER_HELMETS_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.DIAMOND_HELMET))
                 ));
-        consumer.accept(VillagerTradeLootTables.NETHERITE_TIER_HELMETS_TABLE,
+        consumer.accept(TradeLootTables.NETHERITE_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHERITE_HELMET))
                 ));
 
-        consumer.accept(VillagerTradeLootTables.LEATHER_TIER_CHESTPLATES_TABLE,
+        consumer.accept(TradeLootTables.LEATHER_TIER_CHESTPLATES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.LEATHER_CHESTPLATE))
                 ));
-        consumer.accept(VillagerTradeLootTables.CHAINMAIL_TIER_CHESTPLATES_TABLE,
+        consumer.accept(TradeLootTables.CHAINMAIL_TIER_CHESTPLATES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.CHAINMAIL_CHESTPLATE))
                 ));
-        consumer.accept(VillagerTradeLootTables.IRON_TIER_CHESTPLATES_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_CHESTPLATES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.IRON_CHESTPLATE))
                 ));
-        consumer.accept(VillagerTradeLootTables.GOLD_TIER_CHESTPLATES_TABLE,
+        consumer.accept(TradeLootTables.GOLD_TIER_CHESTPLATES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GOLDEN_CHESTPLATE))
                 ));
-        consumer.accept(VillagerTradeLootTables.DIAMOND_TIER_CHESTPLATES_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_CHESTPLATES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.DIAMOND_CHESTPLATE))
                 ));
-        consumer.accept(VillagerTradeLootTables.NETHERITE_TIER_CHESTPLATES_TABLE,
+        consumer.accept(TradeLootTables.NETHERITE_TIER_CHESTPLATES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHERITE_CHESTPLATE))
                 ));
 
-        consumer.accept(VillagerTradeLootTables.LEATHER_TIER_LEGGINGS_TABLE,
+        consumer.accept(TradeLootTables.LEATHER_TIER_LEGGINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.LEATHER_LEGGINGS))
                 ));
-        consumer.accept(VillagerTradeLootTables.CHAINMAIL_TIER_LEGGINGS_TABLE,
+        consumer.accept(TradeLootTables.CHAINMAIL_TIER_LEGGINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.CHAINMAIL_LEGGINGS))
                 ));
-        consumer.accept(VillagerTradeLootTables.IRON_TIER_LEGGINGS_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_LEGGINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.IRON_LEGGINGS))
                 ));
-        consumer.accept(VillagerTradeLootTables.GOLD_TIER_LEGGINGS_TABLE,
+        consumer.accept(TradeLootTables.GOLD_TIER_LEGGINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GOLDEN_LEGGINGS))
                 ));
-        consumer.accept(VillagerTradeLootTables.DIAMOND_TIER_LEGGINGS_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_LEGGINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.DIAMOND_LEGGINGS))
                 ));
-        consumer.accept(VillagerTradeLootTables.NETHERITE_TIER_LEGGINGS_TABLE,
+        consumer.accept(TradeLootTables.NETHERITE_TIER_LEGGINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHERITE_LEGGINGS))
                 ));
 
-        consumer.accept(VillagerTradeLootTables.LEATHER_TIER_BOOTS_TABLE,
+        consumer.accept(TradeLootTables.LEATHER_TIER_BOOTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.LEATHER_BOOTS))
                 ));
-        consumer.accept(VillagerTradeLootTables.CHAINMAIL_TIER_BOOTS_TABLE,
+        consumer.accept(TradeLootTables.CHAINMAIL_TIER_BOOTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.CHAINMAIL_BOOTS))
                 ));
-        consumer.accept(VillagerTradeLootTables.IRON_TIER_BOOTS_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_BOOTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.IRON_BOOTS))
                 ));
-        consumer.accept(VillagerTradeLootTables.GOLD_TIER_BOOTS_TABLE,
+        consumer.accept(TradeLootTables.GOLD_TIER_BOOTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GOLDEN_BOOTS))
                 ));
-        consumer.accept(VillagerTradeLootTables.DIAMOND_TIER_BOOTS_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_BOOTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.DIAMOND_BOOTS))
                 ));
-        consumer.accept(VillagerTradeLootTables.NETHERITE_TIER_BOOTS_TABLE,
+        consumer.accept(TradeLootTables.NETHERITE_TIER_BOOTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHERITE_BOOTS))
                 ));
 
-        consumer.accept(VillagerTradeLootTables.BOWS_TABLE,
+        consumer.accept(TradeLootTables.BOWS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.BOW))
                         .add(LootItem.lootTableItem(Items.CROSSBOW))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_QUIVERS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_QUIVERS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.QUIVERS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_LEATHER_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_LEATHER_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.LEATHER))
                 ));
-        consumer.accept(VillagerTradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE,
+        consumer.accept(TradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.LEATHER_HORSE_ARMOR))
                 ));
-        consumer.accept(VillagerTradeLootTables.IRON_TIER_HORSE_ARMOR_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.IRON_HORSE_ARMOR))
                 ));
-        consumer.accept(VillagerTradeLootTables.GOLD_TIER_HORSE_ARMOR_TABLE,
+        consumer.accept(TradeLootTables.GOLD_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GOLDEN_HORSE_ARMOR))
                 ));
-        consumer.accept(VillagerTradeLootTables.DIAMOND_TIER_HORSE_ARMOR_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR))
                 ));
-        consumer.accept(VillagerTradeLootTables.BOOKSHELF_TABLE,
+        consumer.accept(TradeLootTables.BOOKSHELF_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.BOOKSHELF))
                 ));
-        consumer.accept(VillagerTradeLootTables.LANTERN_TABLE,
+        consumer.accept(TradeLootTables.LANTERN_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.LANTERN))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_GLASS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_GLASS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(Tags.Items.GLASS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_INK_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_INK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.INK))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_DYES_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_DYES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.DYES))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_STICK_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_STICK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.STICKS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_STRING_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_STRING_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.STRING))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_WOOL_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_WOOL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.WOOL))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_WOOL_CARPETS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_WOOL_CARPETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.WOOL_CARPETS))
                 ));
-        consumer.accept(VillagerTradeLootTables.TAGGED_BEDS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_BEDS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.BEDS))
                 ));
-        consumer.accept(VillagerTradeLootTables.GUIDE_BOOKS_TABLE,
+        consumer.accept(TradeLootTables.GUIDE_BOOKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.INK))
                 ));
-        consumer.accept(VillagerTradeLootTables.PAINTINGS_TABLE,
+        consumer.accept(TradeLootTables.PAINTINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.PAINTING))
                 ));
-        consumer.accept(VillagerTradeLootTables.STONE_TIER_TOOLS_TABLE,
+        consumer.accept(TradeLootTables.STONE_TIER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1928,7 +1947,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.FLINT_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.IRON_TIER_TOOLS_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1939,7 +1958,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.IRON_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.IRON_TIER_WEAPONS_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_WEAPONS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1948,7 +1967,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.IRON_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.GOLD_TIER_WEAPONS_TABLE,
+        consumer.accept(TradeLootTables.GOLD_TIER_WEAPONS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1957,7 +1976,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.GOLDEN_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.DIAMOND_TIER_WEAPONS_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_WEAPONS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1966,7 +1985,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.NETHERITE_TIER_WEAPONS_TABLE,
+        consumer.accept(TradeLootTables.NETHERITE_TIER_WEAPONS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1975,7 +1994,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.NETHERITE_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.GOLD_TIER_TOOLS_TABLE,
+        consumer.accept(TradeLootTables.GOLD_TIER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1986,7 +2005,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.GOLDEN_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.DIAMOND_TIER_TOOLS_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1997,7 +2016,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.NETHERITE_TIER_TOOLS_TABLE,
+        consumer.accept(TradeLootTables.NETHERITE_TIER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -2008,14 +2027,14 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.NETHERITE_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(VillagerTradeLootTables.OVERWORLD_BRICK_TABLE,
+        consumer.accept(TradeLootTables.OVERWORLD_BRICK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.BRICK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
-        consumer.accept(VillagerTradeLootTables.OVERWORLD_STONE_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.OVERWORLD_STONE_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -2044,7 +2063,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(16))))
                 ));
-        consumer.accept(VillagerTradeLootTables.OVERWORLD_BRICK_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.OVERWORLD_BRICK_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -2082,7 +2101,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(16))))
                 ));
-        consumer.accept(VillagerTradeLootTables.OVERWORLD_POLISHED_STONE_TABLE,
+        consumer.accept(TradeLootTables.OVERWORLD_POLISHED_STONE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -2114,19 +2133,19 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(4))))
                 ));
-        consumer.accept(VillagerTradeLootTables.TERRACOTTA_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.TERRACOTTA_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.TERRACOTTA))
                 ));
-        consumer.accept(VillagerTradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.GLAZED_TERRACOTTA))
                 ));
-        consumer.accept(VillagerTradeLootTables.OTHER_STONE_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.OTHER_STONE_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -2186,14 +2205,14 @@ public class MerchantOffersGen extends ChestLoot {
                                         ConstantValue.exactly(4))))
                 ));
 
-        consumer.accept(VillagerTradeLootTables.WANDERING_TRADER_RARE_OFFERS,
+        consumer.accept(TradeLootTables.WANDERING_TRADER_RARE_OFFERS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
                                 .add(LootItem.lootTableItem(Items.GUNPOWDER))
                         ));
-        consumer.accept(VillagerTradeLootTables.WANDERING_TRADER_COMMON_OFFERS,
+        consumer.accept(TradeLootTables.WANDERING_TRADER_COMMON_OFFERS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
@@ -2215,7 +2234,7 @@ public class MerchantOffersGen extends ChestLoot {
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         ));
 
-        consumer.accept(VillagerTradeLootTables.NUMISMATIST_RARE_OFFERS,
+        consumer.accept(TradeLootTables.NUMISMATIST_RARE_OFFERS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
@@ -2244,7 +2263,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(FriendsAndFoesItems.WILDFIRE_CROWN_FRAGMENT.get())
                                         .when(ModCheckCondition.mod().isLoaded("friendsandfoes")))
                         ));
-        consumer.accept(VillagerTradeLootTables.NUMISMATIST_CONTAINER_OFFERS,
+        consumer.accept(TradeLootTables.NUMISMATIST_CONTAINER_OFFERS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))

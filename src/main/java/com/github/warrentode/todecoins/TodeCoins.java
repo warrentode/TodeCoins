@@ -66,13 +66,12 @@ public class TodeCoins {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public TodeCoins() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC,
-                MODID + "-common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MODID + "/common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MODID + "/currency.toml");
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::onIMEnqueueEvent);
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::setup);
 
         ModSounds.SOUNDS.register(modEventBus);
         ModAttributes.ATTRIBUTES.register(modEventBus);
@@ -91,16 +90,6 @@ public class TodeCoins {
 
         ModLootModifiers.register(modEventBus);
         ModLootItemConditions.register(modEventBus);
-    }
-
-    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
-        event.enqueueWork(ModVillagers::registerPOIs);
-        event.enqueueWork(ModVillagers::init);
-        event.enqueueWork(() -> {
-            //noinspection deprecation
-            SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(), SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
-        });
     }
 
     private void onIMEnqueueEvent(InterModEnqueueEvent event) {
@@ -129,7 +118,14 @@ public class TodeCoins {
         }
     }
 
-    private void setup(final @NotNull FMLCommonSetupEvent event) {
+    private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
+        event.enqueueWork(ModVillagers::registerPOIs);
+        event.enqueueWork(ModVillagers::init);
+        event.enqueueWork(() -> {
+            //noinspection deprecation
+            SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(), SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+        });
         event.enqueueWork(() -> {
             // Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,

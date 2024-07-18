@@ -1,23 +1,28 @@
 package com.github.warrentode.todecoins.entity.villager.trades;
 
-import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.*;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
+import com.github.warrentode.todecoins.loot.TradeLootTables;
+import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.saveddata.maps.MapDecoration;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
-public class NumismatistTrades {
+
+public class AddNumismatistTrades {
     static int rarityLevel1 = 1;
     static int rarityLevel2 = 2;
-    static int MAX_USES = CommonConfig.getRareMaxTrades();
-    static float PRICE_MULTIPLIER = 0F;
+    static int maxUses = 3;
+    static int baseXP = 5;
+    static int priceMultiplier = 0;
 
-    private static Int2ObjectMap<VillagerTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ItemListing[]> pMap) {
+    @Contract("_ -> new")
+    private static @NotNull Int2ObjectMap<VillagerTrades.ItemListing[]> toIntMap(ImmutableMap<Integer, VillagerTrades.ItemListing[]> pMap) {
         return new Int2ObjectOpenHashMap<>(pMap);
     }
 
@@ -32,29 +37,28 @@ public class NumismatistTrades {
                                 new LootTableForLootTable(
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
-                                        MAX_USES, 5 * rarityLevel1, PRICE_MULTIPLIER
+                                        maxUses, baseXP, priceMultiplier
                                 ),
                                 // an off season coin for a season coin trade
                                 new LootTableForLootTable(
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
-                                        MAX_USES, 5 * rarityLevel1, PRICE_MULTIPLIER
+                                        maxUses, baseXP, priceMultiplier
                                 ),
                                 // offer a map for a season coin
                                 new MapForLootTables(
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
-                                        ResourceLocation.tryParse(CommonConfig.getCompassTable()),
-                                        CommonConfig.getStructureTag(CommonConfig.getMerchantMapStructureTag()),
-                                        CommonConfig.getMerchantMapName(),
-                                        MapDecoration.Type.valueOf(CommonConfig.getMerchantMapMarker()),
-                                        MAX_USES, 5 * rarityLevel1, PRICE_MULTIPLIER
+                                        TradeLootTables.COMPASS_TABLE,
+                                        ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS,
+                                        "Merchant Map", MapDecoration.Type.MANSION,
+                                        maxUses, baseXP, priceMultiplier
                                 ),
                                 // offer a container for 2 coins
                                 new LootTableForTwoLootTable(
-                                        ResourceLocation.tryParse(CommonConfig.getNumismatistContainerTable()),
+                                        TradeLootTables.NUMISMATIST_CONTAINER_OFFERS,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
-                                        MAX_USES, 5 * rarityLevel1, PRICE_MULTIPLIER
+                                        maxUses, baseXP, priceMultiplier
                                 ),
                                 // offer a coin pack in a shulker box for 2 coins
                                 new LootBoxForTwoLootTable(
@@ -63,24 +67,24 @@ public class NumismatistTrades {
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
-                                        MAX_USES, 5 * rarityLevel1, PRICE_MULTIPLIER
+                                        maxUses, baseXP, priceMultiplier
                                 )
                         },
                         // 1 rare offer for 2 coins
                         rarityLevel2, new VillagerTrades.ItemListing[]{
                                 // offer a rare item for 2 coins
                                 new LootTableForTwoLootTable(
-                                        ResourceLocation.tryParse(CommonConfig.getNumismatistRareOfferTable()),
+                                        TradeLootTables.NUMISMATIST_RARE_OFFERS,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
-                                        MAX_USES, 5 * rarityLevel2, PRICE_MULTIPLIER
+                                        maxUses, baseXP, priceMultiplier
                                 ),
                                 // enchanted book for 2 coins
                                 new TwoLootTableForEnchanted(
                                         Items.BOOK.getDefaultInstance(),
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
-                                        MAX_USES, 5 * rarityLevel2, PRICE_MULTIPLIER
+                                        maxUses, baseXP, priceMultiplier
                                 )
                         }));
     }
