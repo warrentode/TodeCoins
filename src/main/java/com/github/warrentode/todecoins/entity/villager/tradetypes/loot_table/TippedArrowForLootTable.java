@@ -25,7 +25,6 @@ public class TippedArrowForLootTable implements VillagerTrades.ItemListing {
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
-
     private final ItemStack tippedArrow;
     private final int tippedArrowCount;
     private final ResourceLocation requestTable;

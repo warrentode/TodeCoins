@@ -3,7 +3,7 @@
     "package": "com.github.warrentode.todecoins.mixin",
     "compatibilityLevel": "JAVA_17",
     "refmap": "mixins.todecoins.refmap.json",
-    "mixins": ["AbstractVillagerAccessor", "PiglinBarterMixin", "SilenceEntityMixin", "SilenceLivingEntityMixin", "SilenceMobMixin", "SilencePlayerMixin", "StuckInBlockMixin", "VillagerMixin", "WalkThroughBerryBushMixin", "WanderingTraderMixin", "WitherLootMixin"],
+    "mixins": ["AbstractVillagerAccessor", "PiglinBarterMixin", "SilenceEntityMixin", "SilenceLivingEntityMixin", "SilenceMobMixin", "SilencePlayerMixin", "StuckInBlockMixin", "VillagerMixin", "WalkThroughBerryBushMixin", "WitherLootMixin"],
     "client": [
     ],
     "minVersion": "0.8"

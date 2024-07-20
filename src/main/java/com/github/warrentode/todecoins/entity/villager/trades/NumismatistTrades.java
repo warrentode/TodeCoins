@@ -19,8 +19,8 @@ public class NumismatistTrades {
     // for default trades
     static int rarityLevel1 = 1;
     static int rarityLevel2 = 2;
-    static int maxUses = CommonConfig.getRareMaxUses();
-    static int baseXP = CommonConfig.getBaseXp();
+    static int maxUses = 3;
+    static int baseXP = 5;
     static int priceMultiplier = 0;
 
     @Contract("_ -> new")
@@ -38,32 +38,32 @@ public class NumismatistTrades {
                             // 5 normal, season based trades
                             rarityLevel1, new VillagerTrades.ItemListing[]{
                                     // a season coin for an off season coin trade
-                                    new LootTableForLootTableTrade(
+                                    new LootTableForLootTable(
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistTradeRequest1()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistTradeOffer1()),
-                                            maxUses, baseXP, priceMultiplier
+                                            CommonConfig.getRareMaxUses(), CommonConfig.getBaseXp(), (float) CommonConfig.getRarePriceMultiplier()
                                     ),
                                     // an off season coin for a season coin trade
-                                    new LootTableForLootTableTrade(
+                                    new LootTableForLootTable(
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistTradeRequest2()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistTradeOffer2()),
-                                            maxUses, baseXP, priceMultiplier
+                                            CommonConfig.getRareMaxUses(), CommonConfig.getBaseXp(), (float) CommonConfig.getRarePriceMultiplier()
                                     ),
                                     // offer a map for a season coin
-                                    new MapForLootTablesTradeType(
+                                    new MapForLootTablesTrade(
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistTradeRequest3A()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistTradeRequest3B()),
                                             CommonConfig.getStructureTag(CommonConfig.getNumismatistTrade3StructureTag()),
                                             CommonConfig.getNumismatistTrade3MapName(),
                                             MapDecoration.Type.valueOf(CommonConfig.getNumismatistTrade3MapMarker()),
-                                            maxUses, baseXP, priceMultiplier
+                                            CommonConfig.getRareMaxUses(), CommonConfig.getBaseXp(), (float) CommonConfig.getRarePriceMultiplier()
                                     ),
                                     // offer a container for 2 coins
                                     new LootTableForTwoLootTable(
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistOffer4()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRequest4A()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRequest4B()),
-                                            maxUses, baseXP, priceMultiplier
+                                            CommonConfig.getRareMaxUses(), CommonConfig.getBaseXp(), (float) CommonConfig.getRarePriceMultiplier()
                                     ),
                                     // offer a coin pack in a shulker box for 2 coins
                                     new LootBoxForTwoLootTable(
@@ -72,7 +72,7 @@ public class NumismatistTrades {
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistLootBoxLootTable()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRequest5A()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRequest5B()),
-                                            maxUses, baseXP, priceMultiplier
+                                            CommonConfig.getRareMaxUses(), CommonConfig.getBaseXp(), (float) CommonConfig.getRarePriceMultiplier()
                                     )
                             },
                             // 1 rare offer for 2 coins
@@ -82,14 +82,14 @@ public class NumismatistTrades {
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRareOffer()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRareRequest1A()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRareRequest1B()),
-                                            maxUses, baseXP, priceMultiplier
+                                            CommonConfig.getRareMaxUses(), CommonConfig.getBaseXp(), (float) CommonConfig.getRarePriceMultiplier()
                                     ),
                                     // enchanted book for 2 coins
                                     new TwoLootTableForEnchanted(
                                             Items.BOOK.getDefaultInstance(),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRareRequest2A()),
                                             ResourceLocation.tryParse(CommonConfig.getNumismatistRareRequest2B()),
-                                            maxUses, baseXP, priceMultiplier
+                                            CommonConfig.getRareMaxUses(), CommonConfig.getBaseXp(), (float) CommonConfig.getRarePriceMultiplier()
                                     )
                             }));
         }
@@ -100,19 +100,19 @@ public class NumismatistTrades {
                             // 5 normal, season based trades
                             rarityLevel1, new VillagerTrades.ItemListing[]{
                                     // a season coin for an off season coin trade
-                                    new LootTableForLootTableTrade(
+                                    new LootTableForLootTable(
                                             ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
                                             ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                             maxUses, baseXP, priceMultiplier
                                     ),
                                     // an off season coin for a season coin trade
-                                    new LootTableForLootTableTrade(
+                                    new LootTableForLootTable(
                                             ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                             ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED,
                                             maxUses, baseXP, priceMultiplier
                                     ),
                                     // offer a map for a season coin
-                                    new MapForLootTablesTradeType(
+                                    new MapForLootTablesTrade(
                                             ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                             TradeLootTables.COMPASS_TABLE,
                                             ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS,

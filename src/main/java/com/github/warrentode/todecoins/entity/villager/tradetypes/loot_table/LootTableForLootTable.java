@@ -17,14 +17,14 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LootTableForLootTableTrade implements VillagerTrades.ItemListing {
-    public ResourceLocation requestTable;
-    public ResourceLocation offerTable;
-    public int maxUses;
-    public int tradeXP;
-    public float priceMultiplier;
+public class LootTableForLootTable implements VillagerTrades.ItemListing {
+    private final ResourceLocation requestTable;
+    private final ResourceLocation offerTable;
+    private final int maxUses;
+    private final int tradeXP;
+    private final float priceMultiplier;
 
-    public LootTableForLootTableTrade(ResourceLocation requestTable, ResourceLocation offerTable, int maxUses, int tradeXP, float priceMultiplier) {
+    public LootTableForLootTable(ResourceLocation requestTable, ResourceLocation offerTable, int maxUses, int tradeXP, float priceMultiplier) {
         this.requestTable = requestTable;
         this.offerTable = offerTable;
         this.maxUses = maxUses;

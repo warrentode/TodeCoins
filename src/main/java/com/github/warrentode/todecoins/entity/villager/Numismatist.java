@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.entity.villager;
 
-import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.entity.villager.trades.NumismatistTrades;
 import com.github.warrentode.todecoins.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
@@ -35,7 +34,7 @@ public class Numismatist extends WanderingTrader {
     /**
      * the number of total trades this merchant has to offer can be altered here - default is 5 for Wandering Trader
      **/
-    private static final int maxOFFERS = CommonConfig.getMaxWandererCommonTradesPerLevel();
+    private static final int maxOFFERS = 5;
     @Nullable
     private BlockPos wanderTarget;
     private int despawnDelay;

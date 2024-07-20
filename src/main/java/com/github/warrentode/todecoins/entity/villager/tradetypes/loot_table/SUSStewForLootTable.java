@@ -25,8 +25,8 @@ public class SUSStewForLootTable implements VillagerTrades.ItemListing {
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
-    final MobEffect effect;
-    final int duration;
+    private final MobEffect effect;
+    private final int duration;
     private final ResourceLocation requestTable;
 
     public SUSStewForLootTable(MobEffect effect, int duration, ResourceLocation requestTable, int maxUses, int xpValue, float priceMultiplier) {
