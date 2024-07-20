@@ -1,6 +1,7 @@
 package com.github.warrentode.todecoins.entity.villager;
 
-import com.github.warrentode.todecoins.entity.villager.trades.AddNumismatistTrades;
+import com.github.warrentode.todecoins.config.CommonConfig;
+import com.github.warrentode.todecoins.entity.villager.trades.NumismatistTrades;
 import com.github.warrentode.todecoins.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -34,7 +35,7 @@ public class Numismatist extends WanderingTrader {
     /**
      * the number of total trades this merchant has to offer can be altered here - default is 5 for Wandering Trader
      **/
-    private static final int maxOFFERS = 5;
+    private static final int maxOFFERS = CommonConfig.getMaxWandererCommonTradesPerLevel();
     @Nullable
     private BlockPos wanderTarget;
     private int despawnDelay;
@@ -88,8 +89,8 @@ public class Numismatist extends WanderingTrader {
 
     @Override
     public void updateTrades() {
-        VillagerTrades.ItemListing[] avillagertrades$itemlisting = AddNumismatistTrades.NUMISMATIST_TRADES.get(1);
-        VillagerTrades.ItemListing[] avillagertrades$itemlisting1 = AddNumismatistTrades.NUMISMATIST_TRADES.get(2);
+        VillagerTrades.ItemListing[] avillagertrades$itemlisting = NumismatistTrades.NUMISMATIST_TRADES.get(1);
+        VillagerTrades.ItemListing[] avillagertrades$itemlisting1 = NumismatistTrades.NUMISMATIST_TRADES.get(2);
         if (avillagertrades$itemlisting != null && avillagertrades$itemlisting1 != null) {
             MerchantOffers merchantoffers = this.getOffers();
             this.addOffersFromItemListings(merchantoffers, avillagertrades$itemlisting, maxOFFERS);

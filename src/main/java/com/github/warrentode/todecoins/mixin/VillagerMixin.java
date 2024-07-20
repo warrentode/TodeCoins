@@ -13,7 +13,9 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -33,6 +35,11 @@ public abstract class VillagerMixin {
     private long lastRestockGameTime;
     @Shadow
     private int numberOfRestocksToday;
+
+    @ModifyConstant(method = "updateTrades", constant = @Constant(intValue = 2))
+    private int changeTradeOfferPerLevelCount(int value) {
+        return CommonConfig.MAX_VILLAGER_TRADES_PER_LEVEL.get();
+    }
 
     @Inject(at = {@At("TAIL")}, method = {"getPlayerReputation(Lnet/minecraft/world/entity/player/Player;)I"}, cancellable = true)
     private void todeCoins_updateSpecialPrices(Player player, @NotNull CallbackInfoReturnable<Integer> cir) {

@@ -24,7 +24,7 @@ public class MapForItemSetTrade implements VillagerTrades.ItemListing {
     private final int requestedItemSetCount;
     private final ItemStack requestedItemB;
     private final int requestedItemCountB;
-    private final TagKey<Structure> mapStructure;
+    private final TagKey<Structure> structureTag;
     private final String mapName;
     private final MapDecoration.Type mapMarker;
     private final int maxUses;
@@ -32,13 +32,13 @@ public class MapForItemSetTrade implements VillagerTrades.ItemListing {
     private final float priceMultiplier;
 
     public MapForItemSetTrade(ImmutableSet<ItemLike> requestedItemSet, int requestedItemSetCount, ItemStack requestedItemB, int requestedItemCountB,
-                              TagKey<Structure> mapStructure, String mapName, MapDecoration.Type mapMarker,
+                              TagKey<Structure> structureTag, String mapName, MapDecoration.Type mapMarker,
                               int maxUses, int xpValue, float priceMultiplier) {
         this.requestedItemSet = requestedItemSet;
         this.requestedItemSetCount = requestedItemSetCount;
         this.requestedItemB = requestedItemB;
         this.requestedItemCountB = requestedItemCountB;
-        this.mapStructure = mapStructure;
+        this.structureTag = structureTag;
         this.mapName = mapName;
         this.mapMarker = mapMarker;
         this.maxUses = maxUses;
@@ -53,7 +53,7 @@ public class MapForItemSetTrade implements VillagerTrades.ItemListing {
             return null;
         }
         else {
-            BlockPos blockpos = serverlevel.findNearestMapStructure(this.mapStructure, trader.blockPosition(), 100, true);
+            BlockPos blockpos = serverlevel.findNearestMapStructure(this.structureTag, trader.blockPosition(), 100, true);
             if (blockpos != null) {
                 ItemStack offeredMap = MapItem.create(serverlevel, blockpos.getX(), blockpos.getZ(), (byte) 2, true, true);
                 MapItem.renderBiomePreviewMap(serverlevel, offeredMap);

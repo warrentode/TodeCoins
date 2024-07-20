@@ -1,7 +1,8 @@
 package com.github.warrentode.todecoins.commands;
 
+import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.entity.villager.Numismatist;
-import com.github.warrentode.todecoins.entity.villager.trades.AddNumismatistTrades;
+import com.github.warrentode.todecoins.entity.villager.trades.NumismatistTrades;
 import com.github.warrentode.todecoins.mixin.AbstractVillagerAccessor;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
@@ -66,13 +67,14 @@ public class VillagerTradeCommands {
         return false;
     }
 
+    @SuppressWarnings("SameReturnValue")
     private static boolean resetTrader(WanderingTrader trader) {
         var offers = new MerchantOffers();
 
         if (trader instanceof Numismatist) {
             {
-                var trades = AddNumismatistTrades.NUMISMATIST_TRADES.get(1);
-                var tradeCount = 5;
+                var trades = NumismatistTrades.NUMISMATIST_TRADES.get(1);
+                var tradeCount = CommonConfig.getMaxWandererCommonTradesPerLevel();
 
                 var shuffled = Arrays.asList(trades);
                 Collections.shuffle(shuffled, new Random(trader.getRandom().nextLong()));
@@ -83,7 +85,7 @@ public class VillagerTradeCommands {
             }
 
             {
-                var trades = AddNumismatistTrades.NUMISMATIST_TRADES.get(2);
+                var trades = NumismatistTrades.NUMISMATIST_TRADES.get(2);
                 var tradeCount = 1;
 
                 var shuffled = Arrays.asList(trades);
@@ -101,7 +103,7 @@ public class VillagerTradeCommands {
         else if (trader instanceof WanderingTrader) {
             {
                 var trades = VillagerTrades.WANDERING_TRADER_TRADES.get(1);
-                var tradeCount = 5;
+                var tradeCount = CommonConfig.getMaxWandererCommonTradesPerLevel();
 
                 var shuffled = Arrays.asList(trades);
                 Collections.shuffle(shuffled, new Random(trader.getRandom().nextLong()));
@@ -141,7 +143,7 @@ public class VillagerTradeCommands {
 
         for (int level = 1; level <= data.getLevel(); level++) {
             var listings = trades.get(level);
-            var tradeCount = 2;
+            var tradeCount = CommonConfig.getMaxVillagerTradesPerLevel();
             if (listings == null) {
                 continue;
             }

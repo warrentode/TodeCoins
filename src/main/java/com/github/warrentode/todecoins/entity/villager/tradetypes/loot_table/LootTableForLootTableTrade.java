@@ -17,18 +17,18 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LootTableForLootTable implements VillagerTrades.ItemListing {
-    private final int maxUses;
-    private final int xpValue;
-    private final float priceMultiplier;
-    private final ResourceLocation requestTable;
-    private final ResourceLocation offerTable;
+public class LootTableForLootTableTrade implements VillagerTrades.ItemListing {
+    public ResourceLocation requestTable;
+    public ResourceLocation offerTable;
+    public int maxUses;
+    public int tradeXP;
+    public float priceMultiplier;
 
-    public LootTableForLootTable(ResourceLocation requestTable, ResourceLocation offerTable, int maxUses, int xpValue, float priceMultiplier) {
+    public LootTableForLootTableTrade(ResourceLocation requestTable, ResourceLocation offerTable, int maxUses, int tradeXP, float priceMultiplier) {
         this.requestTable = requestTable;
         this.offerTable = offerTable;
         this.maxUses = maxUses;
-        this.xpValue = xpValue;
+        this.tradeXP = tradeXP;
         this.priceMultiplier = priceMultiplier;
     }
 
@@ -58,7 +58,7 @@ public class LootTableForLootTable implements VillagerTrades.ItemListing {
                     offered.get(source.nextInt(offered.size())).getItem(),
                     offered.get(source.nextInt(offered.size())).getCount());
 
-            return new MerchantOffer(requestStack, offerStack, this.maxUses, this.xpValue, this.priceMultiplier);
+            return new MerchantOffer(requestStack, offerStack, this.maxUses, this.tradeXP, this.priceMultiplier);
         }
     }
 }

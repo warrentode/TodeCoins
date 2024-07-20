@@ -24,26 +24,26 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class MapForLootTables implements VillagerTrades.ItemListing {
-    private final ResourceLocation currencyLootTable;
-    private final ResourceLocation requestedItemB;
-    private final TagKey<Structure> mapStructure;
-    private final String mapName;
-    private final MapDecoration.Type mapMarker;
-    private final int maxUses;
-    private final int xpValue;
-    private final float priceMultiplier;
+public class MapForLootTablesTradeType implements VillagerTrades.ItemListing {
+    public final ResourceLocation currencyLootTable;
+    public final ResourceLocation secondaryRequestLootTable;
+    public final TagKey<Structure> structureTag;
+    public final String mapName;
+    public final MapDecoration.Type mapMarker;
+    public final int maxUses;
+    public final int tradeXP;
+    public final float priceMultiplier;
 
-    public MapForLootTables(ResourceLocation currencyLootTable, ResourceLocation requestedItemB,
-                            TagKey<Structure> mapStructure, String mapName, MapDecoration.Type mapMarker,
-                            int maxUses, int xpValue, float priceMultiplier) {
+    public MapForLootTablesTradeType(ResourceLocation currencyLootTable, ResourceLocation secondaryRequestLootTable,
+                                     TagKey<Structure> structureTag, String mapName, MapDecoration.Type mapMarker,
+                                     int maxUses, int tradeXP, float priceMultiplier) {
         this.currencyLootTable = currencyLootTable;
-        this.requestedItemB = requestedItemB;
-        this.mapStructure = mapStructure;
+        this.secondaryRequestLootTable = secondaryRequestLootTable;
+        this.structureTag = structureTag;
         this.mapName = mapName;
         this.mapMarker = mapMarker;
         this.maxUses = maxUses;
-        this.xpValue = xpValue;
+        this.tradeXP = tradeXP;
         this.priceMultiplier = priceMultiplier;
     }
 
@@ -55,10 +55,10 @@ public class MapForLootTables implements VillagerTrades.ItemListing {
         }
         else {
             MinecraftServer minecraftServer = trader.level.getServer();
-            BlockPos blockpos = serverlevel.findNearestMapStructure(this.mapStructure, trader.blockPosition(), 100, true);
+            BlockPos blockpos = serverlevel.findNearestMapStructure(this.structureTag, trader.blockPosition(), 100, true);
             if (blockpos != null) {
                 LootTable currencyTable = minecraftServer.getLootTables().get(currencyLootTable);
-                LootTable requestedTable = minecraftServer.getLootTables().get(requestedItemB);
+                LootTable requestedTable = minecraftServer.getLootTables().get(secondaryRequestLootTable);
 
                 LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())
                         .withParameter(LootContextParams.ORIGIN, trader.position())
@@ -78,7 +78,7 @@ public class MapForLootTables implements VillagerTrades.ItemListing {
                 ItemStack requestStack = new ItemStack(
                         requested.get(source.nextInt(requested.size())).getItem());
 
-                return new MerchantOffer(currencyStack, requestStack, offeredMap, this.maxUses, this.xpValue, this.priceMultiplier);
+                return new MerchantOffer(currencyStack, requestStack, offeredMap, this.maxUses, this.tradeXP, this.priceMultiplier);
             }
             else {
                 return null;
