@@ -59,6 +59,284 @@ public class ModVillagerTrades {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             if (CommonConfig.getCustomTrades()) {
+                // TodeVillagers mod trades
+                if (ModList.get().isLoaded("todevillagers")) {
+                    // RETIRED TRADER
+                    if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("todevillagers:retired_trader"))) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Offer1()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Request3()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Offer3()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Offer1()),
+                                CommonConfig.getRetiredTrader2Offer1Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Offer2()),
+                                CommonConfig.getRetiredTrader2Offer2Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Request3()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Offer3()),
+                                CommonConfig.getRetiredTrader2Offer3Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(journeyman).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Offer1()),
+                                CommonConfig.getRetiredTrader3Offer1Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Request3()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Offer3()),
+                                CommonConfig.getRareMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                            (float) CommonConfig.getRareTradeMultiplier()
+                        ));
+
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Offer1()),
+                                CommonConfig.getRetiredTrader4Offer1Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Request3()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Offer3()),
+                                CommonConfig.getRareMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getRareTradeMultiplier()
+                        ));
+
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader5Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader5Offer1()),
+                                CommonConfig.getRareMaxUses(), CommonConfig.getBaseXP() * master,
+                            (float) CommonConfig.getRareTradeMultiplier()
+                        ));
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader5Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader5Offer2()),
+                                CommonConfig.getRareMaxUses(), CommonConfig.getBaseXP() * master,
+                            (float) CommonConfig.getRareTradeMultiplier()
+                        ));
+                    }
+                    // DISC JOCKEY
+                    if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("todevillagers:disc_jockey"))) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Offer1()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Request3()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Offer3()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey2Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey2Offer1()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey2Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey2Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey3Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey3Offer1()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey3Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey3Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey4Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey4Offer1()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey4Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey4Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey5Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey5Offer1()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * master,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey5Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getDiscJockey5Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * master,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                    }
+                    // GLASSBLOWER
+                    if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("todevillagers:glassblower"))) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+
+                        trades.get(novice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Offer1()),
+                                CommonConfig.getGlassblower1Offer1Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(novice).add(new TagTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Request2()),
+                                CommonConfig.getGlassblower1Request2Count(),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Request3()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Offer3()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Offer1()),
+                                CommonConfig.getGlassblower2Offer1Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Offer2()),
+                                CommonConfig.getGlassblower2Offer2Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Request3()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Offer3()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower3Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower3Offer1()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower3Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower3Offer2()),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                                (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower4Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower4Offer1()),
+                                CommonConfig.getGlassblower4Offer1Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower4Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower4Offer2()),
+                                CommonConfig.getGlassblower4Offer2Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+
+                        trades.get(master).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower5Request1()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower5Offer1()),
+                                CommonConfig.getGlassblower5Offer1Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * master,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                        trades.get(master).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower5Request2()),
+                                ResourceLocation.tryParse(CommonConfig.getGlassblower5Offer2()),
+                                CommonConfig.getGlassblower5Offer2Count(),
+                                CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * master,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                        ));
+                    }
+                }
                 // FriendsAndFoes mod trades
                 if (ModList.get().isLoaded("friendsandfoes") && event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("friendsandfoes:beekeeper"))) {
                     trades.get(novice).clear();

@@ -557,6 +557,97 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> BEEKEEPER_5_OFFER_1;
     public static final ForgeConfigSpec.ConfigValue<String> BEEKEEPER_5_REQUEST_2;
     public static final ForgeConfigSpec.ConfigValue<String> BEEKEEPER_5_OFFER_2;
+    // TodeVillagers mod trades
+    // Retired Trader Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_1_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_1_OFFER_3;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<Integer> RETIRED_TRADER_2_OFFER_1_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<Integer> RETIRED_TRADER_2_OFFER_2_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_2_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_2_OFFER_3;
+    public static final ForgeConfigSpec.ConfigValue<Integer> RETIRED_TRADER_2_OFFER_3_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<Integer> RETIRED_TRADER_3_OFFER_1_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_3_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_3_OFFER_3;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<Integer> RETIRED_TRADER_4_OFFER_1_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_4_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_4_OFFER_3;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> RETIRED_TRADER_5_OFFER_2;
+    // Disc Jockey Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_1_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_1_OFFER_3;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> DISC_JOCKEY_5_OFFER_2;
+    // Glassblower Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_1_OFFER_1_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_1_REQUEST_2_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_1_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_1_OFFER_3;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_2_OFFER_1_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_2_OFFER_2_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_2_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_2_OFFER_3;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_4_OFFER_1_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_4_OFFER_2_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_5_OFFER_1_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_5_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_5_OFFER_2_COUNT;
 
     // general trade variable setters
     static {
@@ -584,7 +675,432 @@ public class CommonConfig {
                 .define("reset_trades_on_restock", false);
         BUILDER.pop();
 
+        // TodeVillagers mod trades
+        BUILDER.push("TodeVillagers Trades");
+        // GLASSBLOWER TRADES
+        BUILDER.push("Glassblower Trade Settings");
+        // level 1
+        BUILDER.push("Glassblower Level One Trade One");
+        GLASSBLOWER_1_REQUEST_1 = BUILDER
+                .comment("Glassblower 1 Trade Request 1 Table")
+                .define("glassblower_1_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_1_OFFER_1 = BUILDER
+                .comment("Glassblower 1 Trade Offer 1 Table")
+                .define("glassblower_1_trade_offer_1_table",
+                        TradeLootTables.RECYCLABLE_GLASS_TAG_TABLE.toString());
+        GLASSBLOWER_1_OFFER_1_COUNT = BUILDER
+                .define("glassblower_1_trade_offer_1_count", 4);
+        BUILDER.pop();
+        BUILDER.push("Glassblower Level One Trade Two");
+        GLASSBLOWER_1_REQUEST_2 = BUILDER
+                .comment("Glassblower 1 Trade Request 2 Table")
+                .define("glassblower_1_trade_request_2_table",
+                        TradeLootTables.SAND_TAG_TABLE.toString());
+        GLASSBLOWER_1_REQUEST_2_COUNT = BUILDER
+                .define("glassblower_1_trade_request_2_count", 6);
+        GLASSBLOWER_1_OFFER_2 = BUILDER
+                .comment("Glassblower 1 Trade Offer 2 Table")
+                .define("glassblower_1_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push("Glassblower Level One Trade Three");
+        GLASSBLOWER_1_REQUEST_3 = BUILDER
+                .comment("Glassblower 1 Trade Request 3 Table")
+                .define("glassblower_1_trade_request_3_table",
+                        TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
+        GLASSBLOWER_1_OFFER_3 = BUILDER
+                .comment("Glassblower 1 Trade Offer 3 Table")
+                .define("glassblower_1_trade_offer_3_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push("Glassblower Level Two Trade One");
+        GLASSBLOWER_2_REQUEST_1 = BUILDER
+                .comment("Glassblower 2 Trade Request 1 Table")
+                .define("glassblower_2_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_2_OFFER_1 = BUILDER
+                .comment("Glassblower 2 Trade Offer 1 Table")
+                .define("glassblower_2_trade_offer_1_table",
+                        TradeLootTables.TAGGED_GLASS_TABLE.toString());
+        GLASSBLOWER_2_OFFER_1_COUNT = BUILDER
+                .define("glassblower_2_trade_offer_1_count", 4);
+        BUILDER.pop();
+        BUILDER.push("Glassblower Level Two Trade Two");
+        GLASSBLOWER_2_REQUEST_2 = BUILDER
+                .comment("Glassblower 2 Trade Request 2 Table")
+                .define("glassblower_2_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_2_OFFER_2 = BUILDER
+                .comment("Glassblower 2 Trade Offer 2 Table")
+                .define("glassblower_2_trade_offer_2_table",
+                        TradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
+        GLASSBLOWER_2_OFFER_2_COUNT = BUILDER
+                .define("glassblower_2_trade_offer_2_count", 16);
+        BUILDER.pop();
+        BUILDER.push("Glassblower Level Two Trade Three");
+        GLASSBLOWER_2_REQUEST_3 = BUILDER
+                .comment("Glassblower 2 Trade Request 3 Table")
+                .define("glassblower_2_trade_request_3_table",
+                        TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_2_OFFER_3 = BUILDER
+                .comment("Glassblower 2 Trade Offer 3 Table")
+                .define("glassblower_2_trade_offer_3_table",
+                        TradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push("Glassblower Level Three Trade One");
+        GLASSBLOWER_3_REQUEST_1 = BUILDER
+                .comment("Glassblower 3 Trade Request 1 Table")
+                .define("glassblower_3_trade_request_1_table",
+                        TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_3_OFFER_1 = BUILDER
+                .comment("Glassblower 3 Trade Offer 1 Table")
+                .define("glassblower_3_trade_offer_1_table",
+                        TradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Glassblower Level Three Trade Two");
+        GLASSBLOWER_3_REQUEST_2 = BUILDER
+                .comment("Glassblower 3 Trade Request 2 Table")
+                .define("glassblower_3_trade_request_2_table",
+                        TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY.toString());
+        GLASSBLOWER_3_OFFER_2 = BUILDER
+                .comment("Glassblower 3 Trade Offer 2 Table")
+                .define("glassblower_3_trade_offer_2_table",
+                        TradeLootTables.THIRTY_TWO_EMERALD_TABLE.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push("Glassblower Level Four Trade One");
+        GLASSBLOWER_4_REQUEST_1 = BUILDER
+                .comment("Glassblower 4 Trade Request 1 Table")
+                .define("glassblower_4_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_4_OFFER_1 = BUILDER
+                .comment("Glassblower 4 Trade Offer 1 Table")
+                .define("glassblower_4_trade_offer_1_table",
+                        TradeLootTables.TAGGED_GLASS_TABLE.toString());
+        GLASSBLOWER_4_OFFER_1_COUNT = BUILDER
+                .define("glassblower_4_trade_offer_1_count", 4);
+        BUILDER.pop();
+        BUILDER.push("Glassblower Level Four Trade Two");
+        GLASSBLOWER_4_REQUEST_2 = BUILDER
+                .comment("Glassblower 4 Trade Request 2 Table")
+                .define("glassblower_4_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_4_OFFER_2 = BUILDER
+                .comment("Glassblower 4 Trade Offer 2 Table")
+                .define("glassblower_4_trade_offer_2_table",
+                        TradeLootTables.TAGGED_GLASS_TABLE.toString());
+        GLASSBLOWER_4_OFFER_2_COUNT = BUILDER
+                .define("glassblower_4_trade_offer_2_count", 4);
+        BUILDER.pop();
+        // level 5
+        BUILDER.push("Glassblower Level Five Trade One");
+        GLASSBLOWER_5_REQUEST_1 = BUILDER
+                .comment("Glassblower 5 Trade Request 1 Table")
+                .define("glassblower_5_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_5_OFFER_1 = BUILDER
+                .comment("Glassblower 5 Trade Offer 1 Table")
+                .define("glassblower_5_trade_offer_1_table",
+                        TradeLootTables.TAGGED_GLASS_TABLE.toString());
+        GLASSBLOWER_5_OFFER_1_COUNT = BUILDER
+                .define("glassblower_5_trade_offer_1_count", 4);
+        BUILDER.pop();
+        BUILDER.push("Glassblower Level Five Trade Two");
+        GLASSBLOWER_5_REQUEST_2 = BUILDER
+                .comment("Glassblower 5 Trade Request 2 Table")
+                .define("glassblower_5_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        GLASSBLOWER_5_OFFER_2 = BUILDER
+                .comment("Glassblower 5 Trade Offer 2 Table")
+                .define("glassblower_5_trade_offer_2_table",
+                        TradeLootTables.TAGGED_GLASS_TABLE.toString());
+        GLASSBLOWER_5_OFFER_2_COUNT = BUILDER
+                .define("glassblower_5_trade_offer_2_count", 4);
+        BUILDER.pop();
+        BUILDER.pop();
+        // DISC_JOCKEY TRADES
+        BUILDER.push("DiscJockey Trade Settings");
+        // level 1
+        BUILDER.push("DiscJockey Level One Trade One");
+        DISC_JOCKEY_1_REQUEST_1 = BUILDER
+                .comment("DiscJockey 1 Trade Request 1 Table")
+                .define("disc_jockey_1_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        DISC_JOCKEY_1_OFFER_1 = BUILDER
+                .comment("DiscJockey 1 Trade Offer 1 Table")
+                .define("disc_jockey_1_trade_offer_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push("DiscJockey Level One Trade Two");
+        DISC_JOCKEY_1_REQUEST_2 = BUILDER
+                .comment("DiscJockey 1 Trade Request 2 Table")
+                .define("disc_jockey_1_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        DISC_JOCKEY_1_OFFER_2 = BUILDER
+                .comment("DiscJockey 1 Trade Offer 2 Table")
+                .define("disc_jockey_1_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        BUILDER.pop();
+        BUILDER.push("DiscJockey Level One Trade Three");
+        DISC_JOCKEY_1_REQUEST_3 = BUILDER
+                .comment("DiscJockey 1 Trade Request 3 Table")
+                .define("disc_jockey_1_trade_request_3_table",
+                        TradeLootTables.DISC_FRAGMENTS_TABLE.toString());
+        DISC_JOCKEY_1_OFFER_3 = BUILDER
+                .comment("DiscJockey 1 Trade Offer 3 Table")
+                .define("disc_jockey_1_trade_offer_3_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push("DiscJockey Level Two Trade One");
+        DISC_JOCKEY_2_REQUEST_1 = BUILDER
+                .comment("DiscJockey 2 Trade Request 1 Table")
+                .define("disc_jockey_2_trade_request_1_table",
+                        TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
+        DISC_JOCKEY_2_OFFER_1 = BUILDER
+                .comment("DiscJockey 2 Trade Offer 1 Table")
+                .define("disc_jockey_2_trade_offer_1_table",
+                        TradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("DiscJockey Level Two Trade Two");
+        DISC_JOCKEY_2_REQUEST_2 = BUILDER
+                .comment("DiscJockey 2 Trade Request 2 Table")
+                .define("disc_jockey_2_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        DISC_JOCKEY_2_OFFER_2 = BUILDER
+                .comment("DiscJockey 2 Trade Offer 2 Table")
+                .define("disc_jockey_2_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push("DiscJockey Level Three Trade One");
+        DISC_JOCKEY_3_REQUEST_1 = BUILDER
+                .comment("DiscJockey 3 Trade Request 1 Table")
+                .define("disc_jockey_3_trade_request_1_table",
+                        TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
+        DISC_JOCKEY_3_OFFER_1 = BUILDER
+                .comment("DiscJockey 3 Trade Offer 1 Table")
+                .define("disc_jockey_3_trade_offer_1_table",
+                        TradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("DiscJockey Level Three Trade Two");
+        DISC_JOCKEY_3_REQUEST_2 = BUILDER
+                .comment("DiscJockey 3 Trade Request 2 Table")
+                .define("disc_jockey_3_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        DISC_JOCKEY_3_OFFER_2 = BUILDER
+                .comment("DiscJockey 3 Trade Offer 2 Table")
+                .define("disc_jockey_3_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push("DiscJockey Level Four Trade One");
+        DISC_JOCKEY_4_REQUEST_1 = BUILDER
+                .comment("DiscJockey 4 Trade Request 1 Table")
+                .define("disc_jockey_4_trade_request_1_table",
+                        TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
+        DISC_JOCKEY_4_OFFER_1 = BUILDER
+                .comment("DiscJockey 4 Trade Offer 1 Table")
+                .define("disc_jockey_4_trade_offer_1_table",
+                        TradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("DiscJockey Level Four Trade Two");
+        DISC_JOCKEY_4_REQUEST_2 = BUILDER
+                .comment("DiscJockey 4 Trade Request 2 Table")
+                .define("disc_jockey_4_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        DISC_JOCKEY_4_OFFER_2 = BUILDER
+                .comment("DiscJockey 4 Trade Offer 2 Table")
+                .define("disc_jockey_4_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push("DiscJockey Level Five Trade One");
+        DISC_JOCKEY_5_REQUEST_1 = BUILDER
+                .comment("DiscJockey 5 Trade Request 1 Table")
+                .define("disc_jockey_5_trade_request_1_table",
+                        TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY.toString());
+        DISC_JOCKEY_5_OFFER_1 = BUILDER
+                .comment("DiscJockey 5 Trade Offer 1 Table")
+                .define("disc_jockey_5_trade_offer_1_table",
+                        TradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("DiscJockey Level Five Trade Two");
+        DISC_JOCKEY_5_REQUEST_2 = BUILDER
+                .comment("DiscJockey 5 Trade Request 2 Table")
+                .define("disc_jockey_5_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        DISC_JOCKEY_5_OFFER_2 = BUILDER
+                .comment("DiscJockey 5 Trade Offer 2 Table")
+                .define("disc_jockey_5_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        // RETIRED_TRADER TRADES
+        BUILDER.push("Retired Trader Trade Settings");
+        // level 1
+        BUILDER.push("Retired Trader Level One Trade One");
+        RETIRED_TRADER_1_REQUEST_1 = BUILDER
+                .comment("Retired Trader 1 Trade Request 1 Table")
+                .define("retired_trader_1_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_1_OFFER_1 = BUILDER
+                .comment("Retired Trader 1 Trade Offer 1 Table")
+                .define("retired_trader_1_trade_offer_1_table",
+                        TradeLootTables.FLOWER_SELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level One Trade Two");
+        RETIRED_TRADER_1_REQUEST_2 = BUILDER
+                .comment("Retired Trader 1 Trade Request 2 Table")
+                .define("retired_trader_1_trade_request_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_1_OFFER_2 = BUILDER
+                .comment("Retired Trader 1 Trade Offer 2 Table")
+                .define("retired_trader_1_trade_offer_2_table",
+                        TradeLootTables.SAPLING_SELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level One Trade Three");
+        RETIRED_TRADER_1_REQUEST_3 = BUILDER
+                .comment("Retired Trader 1 Trade Request 3 Table")
+                .define("retired_trader_1_trade_request_3_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_1_OFFER_3 = BUILDER
+                .comment("Retired Trader 1 Trade Offer 3 Table")
+                .define("retired_trader_1_trade_offer_3_table",
+                        TradeLootTables.WANDERING_TRADER_COMMON_OFFERS.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push("Retired Trader Level Two Trade One");
+        RETIRED_TRADER_2_REQUEST_1 = BUILDER
+                .comment("Retired Trader 2 Trade Request 1 Table")
+                .define("retired_trader_2_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_2_OFFER_1 = BUILDER
+                .comment("Retired Trader 2 Trade Offer 1 Table")
+                .define("retired_trader_2_trade_offer_1_table",
+                        TradeLootTables.SEED_TAG_TABLE.toString());
+        RETIRED_TRADER_2_OFFER_1_COUNT = BUILDER
+                .define("retired_trader_2_trade_offer_1_count", 1);
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level Two Trade Two");
+        RETIRED_TRADER_2_REQUEST_2 = BUILDER
+                .comment("Retired Trader 2 Trade Request 2 Table")
+                .define("retired_trader_2_trade_request_2_table",
+                        TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_2_OFFER_2 = BUILDER
+                .comment("Retired Trader 2 Trade Offer 2 Table")
+                .define("retired_trader_2_trade_offer_2_table",
+                        TradeLootTables.SLIMEBALL_TAG_TABLE.toString());
+        RETIRED_TRADER_2_OFFER_2_COUNT = BUILDER
+                .define("retired_trader_2_trade_offer_2_count", 1);
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level Two Trade Three");
+        RETIRED_TRADER_2_REQUEST_3 = BUILDER
+                .comment("Retired Trader 2 Trade Request 3 Table")
+                .define("retired_trader_2_trade_request_3_table",
+                        TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_2_OFFER_3 = BUILDER
+                .comment("Retired Trader 2 Trade Offer 3 Table")
+                .define("retired_trader_2_trade_offer_3_table",
+                        TradeLootTables.CORAL_BLOCK_TAG_TABLE.toString());
+        RETIRED_TRADER_2_OFFER_3_COUNT = BUILDER
+                .define("retired_trader_2_trade_offer_3_count", 1);
+        BUILDER.pop();
+        // level 3
+        BUILDER.push("Retired Trader Level Three Trade One");
+        RETIRED_TRADER_3_REQUEST_1 = BUILDER
+                .comment("Retired Trader 3 Trade Request 1 Table")
+                .define("retired_trader_3_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_3_OFFER_1 = BUILDER
+                .comment("Retired Trader 3 Trade Offer 1 Table")
+                .define("retired_trader_3_trade_offer_1_table",
+                        TradeLootTables.SAND_TAG_TABLE.toString());
+        RETIRED_TRADER_3_OFFER_1_COUNT = BUILDER
+                .define("retired_trader_3_trade_offer_1_count", 6);
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level Three Trade Two");
+        RETIRED_TRADER_3_REQUEST_2 = BUILDER
+                .comment("Retired Trader 3 Trade Request 2 Table")
+                .define("retired_trader_3_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_3_OFFER_2 = BUILDER
+                .comment("Retired Trader 3 Trade Offer 2 Table")
+                .define("retired_trader_3_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level Three Trade Three");
+        RETIRED_TRADER_3_REQUEST_3 = BUILDER
+                .comment("Retired Trader 3 Trade Request 3 Table")
+                .define("retired_trader_3_trade_request_3_table",
+                        TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_3_OFFER_3 = BUILDER
+                .comment("Retired Trader 3 Trade Offer 3 Table")
+                .define("retired_trader_3_trade_offer_3_table",
+                        TradeLootTables.FISH_BUCKET_TABLE.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push("Retired Trader Level Four Trade One");
+        RETIRED_TRADER_4_REQUEST_1 = BUILDER
+                .comment("Retired Trader 4 Trade Request 1 Table")
+                .define("retired_trader_4_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_4_OFFER_1 = BUILDER
+                .comment("Retired Trader 4 Trade Offer 1 Table")
+                .define("retired_trader_4_trade_offer_1_table",
+                        TradeLootTables.TAGGED_DYES_TABLE.toString());
+        RETIRED_TRADER_4_OFFER_1_COUNT = BUILDER
+                .define("retired_trader_4_trade_offer_1_count", 3);
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level Four Trade Two");
+        RETIRED_TRADER_4_REQUEST_2 = BUILDER
+                .comment("Retired Trader 4 Trade Request 2 Table")
+                .define("retired_trader_4_trade_request_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_4_OFFER_2 = BUILDER
+                .comment("Retired Trader 4 Trade Offer 2 Table")
+                .define("retired_trader_4_trade_offer_2_table",
+                        TradeLootTables.SEASHELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level Four Trade Three");
+        RETIRED_TRADER_4_REQUEST_3 = BUILDER
+                .comment("Retired Trader 4 Trade Request 3 Table")
+                .define("retired_trader_4_trade_request_3_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_4_OFFER_3 = BUILDER
+                .comment("Retired Trader 4 Trade Offer 3 Table")
+                .define("retired_trader_4_trade_offer_3_table",
+                        TradeLootTables.DIRT_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push("Retired Trader Level Five Trade One");
+        RETIRED_TRADER_5_REQUEST_1 = BUILDER
+                .comment("Retired Trader 5 Trade Request 1 Table")
+                .define("retired_trader_5_trade_request_1_table",
+                        TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_5_OFFER_1 = BUILDER
+                .comment("Retired Trader 5 Trade Offer 1 Table")
+                .define("retired_trader_5_trade_offer_1_table",
+                        TradeLootTables.ICE_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Retired Trader Level Five Trade Two");
+        RETIRED_TRADER_5_REQUEST_2 = BUILDER
+                .comment("Retired Trader 5 Trade Request 2 Table")
+                .define("retired_trader_5_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        RETIRED_TRADER_5_OFFER_2 = BUILDER
+                .comment("Retired Trader 5 Trade Offer 2 Table")
+                .define("retired_trader_5_trade_offer_2_table",
+                        TradeLootTables.WANDERING_TRADER_RARE_OFFERS.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        BUILDER.pop();
+
         // FriendsAndFoes Trades
+        BUILDER.push("FriendsAndFoes Trades");
         // BEEKEEPER TRADES
         BUILDER.push("Beekeeper Trade Settings");
         // level 1
@@ -697,8 +1213,10 @@ public class CommonConfig {
                         TradeLootTables.BEE_EGG_TABLE.toString());
         BUILDER.pop();
         BUILDER.pop();
+        BUILDER.pop();
 
         // Vanilla Trades
+        BUILDER.push("Vanilla Trades");
         // ARMORER TRADES
         BUILDER.push("Armorer Trade Settings");
         // level 1
@@ -2692,9 +3210,10 @@ public class CommonConfig {
                         TradeLootTables.WANDERING_TRADER_RARE_OFFERS.toString());
         BUILDER.pop();
         BUILDER.pop();
+        BUILDER.pop();
 
         // todecoins trades
-        BUILDER.push("TodeCoins");
+        BUILDER.push("TodeCoins Trades");
         // BANKER TRADES
         BUILDER.push("Banker Trade Settings");
         // level 1
@@ -3132,6 +3651,706 @@ public class CommonConfig {
         SPEC = BUILDER.build();
     }
 
+    // TodeVillagers mod trades
+    // GLASSBLOWER TRADE GETTERS
+    public static int getGlassblower5Offer2Count() {
+        if (Objects.equals(GLASSBLOWER_5_OFFER_2_COUNT.get(), GLASSBLOWER_5_OFFER_2_COUNT.getDefault())) {
+            return GLASSBLOWER_5_OFFER_2_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWER_5_OFFER_2_COUNT.get();
+        }
+    }
+    public static String getGlassblower5Offer2() {
+        if (Objects.equals(GLASSBLOWER_5_OFFER_2.get(), GLASSBLOWER_5_OFFER_2.getDefault())) {
+            return GLASSBLOWER_5_OFFER_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_5_OFFER_2.get();
+        }
+    }
+    public static String getGlassblower5Request2() {
+        if (Objects.equals(GLASSBLOWER_5_REQUEST_2.get(), GLASSBLOWER_5_REQUEST_2.getDefault())) {
+            return GLASSBLOWER_5_REQUEST_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_5_REQUEST_2.get();
+        }
+    }
+    public static int getGlassblower5Offer1Count() {
+        if (Objects.equals(GLASSBLOWER_5_OFFER_1_COUNT.get(), GLASSBLOWER_5_OFFER_1_COUNT.getDefault())) {
+            return GLASSBLOWER_5_OFFER_1_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWER_5_OFFER_1_COUNT.get();
+        }
+    }
+    public static String getGlassblower5Offer1() {
+        if (Objects.equals(GLASSBLOWER_5_OFFER_1.get(), GLASSBLOWER_5_OFFER_1.getDefault())) {
+            return GLASSBLOWER_5_OFFER_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_5_OFFER_1.get();
+        }
+    }
+    public static String getGlassblower5Request1() {
+        if (Objects.equals(GLASSBLOWER_5_REQUEST_1.get(), GLASSBLOWER_5_REQUEST_1.getDefault())) {
+            return GLASSBLOWER_5_REQUEST_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_5_REQUEST_1.get();
+        }
+    }
+    public static int getGlassblower4Offer2Count() {
+        if (Objects.equals(GLASSBLOWER_4_OFFER_2_COUNT.get(), GLASSBLOWER_4_OFFER_2_COUNT.getDefault())) {
+            return GLASSBLOWER_4_OFFER_2_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWER_4_OFFER_2_COUNT.get();
+        }
+    }
+    public static String getGlassblower4Offer2() {
+        if (Objects.equals(GLASSBLOWER_4_OFFER_2.get(), GLASSBLOWER_4_OFFER_2.getDefault())) {
+            return GLASSBLOWER_4_OFFER_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_4_OFFER_2.get();
+        }
+    }
+    public static String getGlassblower4Request2() {
+        if (Objects.equals(GLASSBLOWER_4_REQUEST_2.get(), GLASSBLOWER_4_REQUEST_2.getDefault())) {
+            return GLASSBLOWER_4_REQUEST_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_4_REQUEST_2.get();
+        }
+    }
+    public static int getGlassblower4Offer1Count() {
+        if (Objects.equals(GLASSBLOWER_4_OFFER_1_COUNT.get(), GLASSBLOWER_4_OFFER_1_COUNT.getDefault())) {
+            return GLASSBLOWER_4_OFFER_1_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWER_4_OFFER_1_COUNT.get();
+        }
+    }
+    public static String getGlassblower4Offer1() {
+        if (Objects.equals(GLASSBLOWER_4_OFFER_1.get(), GLASSBLOWER_4_OFFER_1.getDefault())) {
+            return GLASSBLOWER_4_OFFER_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_4_OFFER_1.get();
+        }
+    }
+    public static String getGlassblower4Request1() {
+        if (Objects.equals(GLASSBLOWER_4_REQUEST_1.get(), GLASSBLOWER_4_REQUEST_1.getDefault())) {
+            return GLASSBLOWER_4_REQUEST_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_4_REQUEST_1.get();
+        }
+    }
+    public static String getGlassblower3Offer2() {
+        if (Objects.equals(GLASSBLOWER_3_OFFER_2.get(), GLASSBLOWER_3_OFFER_2.getDefault())) {
+            return GLASSBLOWER_3_OFFER_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_3_OFFER_2.get();
+        }
+    }
+    public static String getGlassblower3Request2() {
+        if (Objects.equals(GLASSBLOWER_3_REQUEST_2.get(), GLASSBLOWER_3_REQUEST_2.getDefault())) {
+            return GLASSBLOWER_3_REQUEST_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_3_REQUEST_2.get();
+        }
+    }
+    public static String getGlassblower3Offer1() {
+        if (Objects.equals(GLASSBLOWER_3_OFFER_1.get(), GLASSBLOWER_3_OFFER_1.getDefault())) {
+            return GLASSBLOWER_3_OFFER_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_3_OFFER_1.get();
+        }
+    }
+    public static String getGlassblower3Request1() {
+        if (Objects.equals(GLASSBLOWER_3_REQUEST_1.get(), GLASSBLOWER_3_REQUEST_1.getDefault())) {
+            return GLASSBLOWER_3_REQUEST_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_3_REQUEST_1.get();
+        }
+    }
+    public static String getGlassblower2Offer3() {
+        if (Objects.equals(GLASSBLOWER_2_OFFER_3.get(), GLASSBLOWER_2_OFFER_3.getDefault())) {
+            return GLASSBLOWER_2_OFFER_3.getDefault();
+        }
+        else {
+            return GLASSBLOWER_2_OFFER_3.get();
+        }
+    }
+    public static String getGlassblower2Request3() {
+        if (Objects.equals(GLASSBLOWER_2_REQUEST_3.get(), GLASSBLOWER_2_REQUEST_3.getDefault())) {
+            return GLASSBLOWER_2_REQUEST_3.getDefault();
+        }
+        else {
+            return GLASSBLOWER_2_REQUEST_3.get();
+        }
+    }
+    public static int getGlassblower2Offer2Count() {
+        if (Objects.equals(GLASSBLOWER_2_OFFER_2_COUNT.get(), GLASSBLOWER_2_OFFER_2_COUNT.getDefault())) {
+            return GLASSBLOWER_2_OFFER_2_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWER_2_OFFER_2_COUNT.get();
+        }
+    }
+    public static String getGlassblower2Offer2() {
+        if (Objects.equals(GLASSBLOWER_2_OFFER_2.get(), GLASSBLOWER_2_OFFER_2.getDefault())) {
+            return GLASSBLOWER_2_OFFER_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_2_OFFER_2.get();
+        }
+    }
+    public static String getGlassblower2Request2() {
+        if (Objects.equals(GLASSBLOWER_2_REQUEST_2.get(), GLASSBLOWER_2_REQUEST_2.getDefault())) {
+            return GLASSBLOWER_2_REQUEST_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_2_REQUEST_2.get();
+        }
+    }
+    public static int getGlassblower2Offer1Count() {
+        if (Objects.equals(GLASSBLOWER_2_OFFER_1_COUNT.get(), GLASSBLOWER_2_OFFER_1_COUNT.getDefault())) {
+            return GLASSBLOWER_2_OFFER_1_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWER_2_OFFER_1_COUNT.get();
+        }
+    }
+    public static String getGlassblower2Offer1() {
+        if (Objects.equals(GLASSBLOWER_2_OFFER_1.get(), GLASSBLOWER_2_OFFER_1.getDefault())) {
+            return GLASSBLOWER_2_OFFER_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_2_OFFER_1.get();
+        }
+    }
+    public static String getGlassblower2Request1() {
+        if (Objects.equals(GLASSBLOWER_2_REQUEST_1.get(), GLASSBLOWER_2_REQUEST_1.getDefault())) {
+            return GLASSBLOWER_2_REQUEST_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_2_REQUEST_1.get();
+        }
+    }
+    public static String getGlassblower1Offer3() {
+        if (Objects.equals(GLASSBLOWER_1_OFFER_3.get(), GLASSBLOWER_1_OFFER_3.getDefault())) {
+            return GLASSBLOWER_1_OFFER_3.getDefault();
+        }
+        else {
+            return GLASSBLOWER_1_OFFER_3.get();
+        }
+    }
+    public static String getGlassblower1Request3() {
+        if (Objects.equals(GLASSBLOWER_1_REQUEST_3.get(), GLASSBLOWER_1_REQUEST_3.getDefault())) {
+            return GLASSBLOWER_1_REQUEST_3.getDefault();
+        }
+        else {
+            return GLASSBLOWER_1_REQUEST_3.get();
+        }
+    }
+    public static String getGlassblower1Offer2() {
+        if (Objects.equals(GLASSBLOWER_1_OFFER_2.get(), GLASSBLOWER_1_OFFER_2.getDefault())) {
+            return GLASSBLOWER_1_OFFER_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_1_OFFER_2.get();
+        }
+    }
+    public static int getGlassblower1Request2Count() {
+        if (Objects.equals(GLASSBLOWER_1_REQUEST_2_COUNT.get(), GLASSBLOWER_1_REQUEST_2_COUNT.getDefault())) {
+            return GLASSBLOWER_1_REQUEST_2_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWER_1_REQUEST_2_COUNT.get();
+        }
+    }
+    public static String getGlassblower1Request2() {
+        if (Objects.equals(GLASSBLOWER_1_REQUEST_2.get(), GLASSBLOWER_1_REQUEST_2.getDefault())) {
+            return GLASSBLOWER_1_REQUEST_2.getDefault();
+        }
+        else {
+            return GLASSBLOWER_1_REQUEST_2.get();
+        }
+    }
+    public static int getGlassblower1Offer1Count() {
+        if (Objects.equals(GLASSBLOWER_1_OFFER_1_COUNT.get(), GLASSBLOWER_1_OFFER_1_COUNT.getDefault())) {
+            return GLASSBLOWER_1_OFFER_1_COUNT.getDefault();
+        }
+        else {
+            return GLASSBLOWER_1_OFFER_1_COUNT.get();
+        }
+    }
+    public static String getGlassblower1Offer1() {
+        if (Objects.equals(GLASSBLOWER_1_OFFER_1.get(), GLASSBLOWER_1_OFFER_1.getDefault())) {
+            return GLASSBLOWER_1_OFFER_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_1_OFFER_1.get();
+        }
+    }
+    public static String getGlassblower1Request1() {
+        if (Objects.equals(GLASSBLOWER_1_REQUEST_1.get(), GLASSBLOWER_1_REQUEST_1.getDefault())) {
+            return GLASSBLOWER_1_REQUEST_1.getDefault();
+        }
+        else {
+            return GLASSBLOWER_1_REQUEST_1.get();
+        }
+    }
+    // DISC_JOCKEY TRADE GETTERS
+    public static String getDiscJockey5Offer2() {
+        if (Objects.equals(DISC_JOCKEY_5_OFFER_2.get(), DISC_JOCKEY_5_OFFER_2.getDefault())) {
+            return DISC_JOCKEY_5_OFFER_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_5_OFFER_2.get();
+        }
+    }
+    public static String getDiscJockey5Request2() {
+        if (Objects.equals(DISC_JOCKEY_5_REQUEST_2.get(), DISC_JOCKEY_5_REQUEST_2.getDefault())) {
+            return DISC_JOCKEY_5_REQUEST_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_5_REQUEST_2.get();
+        }
+    }
+    public static String getDiscJockey5Offer1() {
+        if (Objects.equals(DISC_JOCKEY_5_OFFER_1.get(), DISC_JOCKEY_5_OFFER_1.getDefault())) {
+            return DISC_JOCKEY_5_OFFER_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_5_OFFER_1.get();
+        }
+    }
+    public static String getDiscJockey5Request1() {
+        if (Objects.equals(DISC_JOCKEY_5_REQUEST_1.get(), DISC_JOCKEY_5_REQUEST_1.getDefault())) {
+            return DISC_JOCKEY_5_REQUEST_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_5_REQUEST_1.get();
+        }
+    }
+    public static String getDiscJockey4Offer2() {
+        if (Objects.equals(DISC_JOCKEY_4_OFFER_2.get(), DISC_JOCKEY_4_OFFER_2.getDefault())) {
+            return DISC_JOCKEY_4_OFFER_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_4_OFFER_2.get();
+        }
+    }
+    public static String getDiscJockey4Request2() {
+        if (Objects.equals(DISC_JOCKEY_4_REQUEST_2.get(), DISC_JOCKEY_4_REQUEST_2.getDefault())) {
+            return DISC_JOCKEY_4_REQUEST_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_4_REQUEST_2.get();
+        }
+    }
+    public static String getDiscJockey4Offer1() {
+        if (Objects.equals(DISC_JOCKEY_4_OFFER_1.get(), DISC_JOCKEY_4_OFFER_1.getDefault())) {
+            return DISC_JOCKEY_4_OFFER_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_4_OFFER_1.get();
+        }
+    }
+    public static String getDiscJockey4Request1() {
+        if (Objects.equals(DISC_JOCKEY_4_REQUEST_1.get(), DISC_JOCKEY_4_REQUEST_1.getDefault())) {
+            return DISC_JOCKEY_4_REQUEST_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_4_REQUEST_1.get();
+        }
+    }
+    public static String getDiscJockey3Offer2() {
+        if (Objects.equals(DISC_JOCKEY_3_OFFER_2.get(), DISC_JOCKEY_3_OFFER_2.getDefault())) {
+            return DISC_JOCKEY_3_OFFER_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_3_OFFER_2.get();
+        }
+    }
+    public static String getDiscJockey3Request2() {
+        if (Objects.equals(DISC_JOCKEY_3_REQUEST_2.get(), DISC_JOCKEY_3_REQUEST_2.getDefault())) {
+            return DISC_JOCKEY_3_REQUEST_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_3_REQUEST_2.get();
+        }
+    }
+    public static String getDiscJockey3Offer1() {
+        if (Objects.equals(DISC_JOCKEY_3_OFFER_1.get(), DISC_JOCKEY_3_OFFER_1.getDefault())) {
+            return DISC_JOCKEY_3_OFFER_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_3_OFFER_1.get();
+        }
+    }
+    public static String getDiscJockey3Request1() {
+        if (Objects.equals(DISC_JOCKEY_3_REQUEST_1.get(), DISC_JOCKEY_3_REQUEST_1.getDefault())) {
+            return DISC_JOCKEY_3_REQUEST_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_3_REQUEST_1.get();
+        }
+    }
+    public static String getDiscJockey2Offer2() {
+        if (Objects.equals(DISC_JOCKEY_2_OFFER_2.get(), DISC_JOCKEY_2_OFFER_2.getDefault())) {
+            return DISC_JOCKEY_2_OFFER_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_2_OFFER_2.get();
+        }
+    }
+    public static String getDiscJockey2Request2() {
+        if (Objects.equals(DISC_JOCKEY_2_REQUEST_2.get(), DISC_JOCKEY_2_REQUEST_2.getDefault())) {
+            return DISC_JOCKEY_2_REQUEST_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_2_REQUEST_2.get();
+        }
+    }
+    public static String getDiscJockey2Offer1() {
+        if (Objects.equals(DISC_JOCKEY_2_OFFER_1.get(), DISC_JOCKEY_2_OFFER_1.getDefault())) {
+            return DISC_JOCKEY_2_OFFER_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_2_OFFER_1.get();
+        }
+    }
+    public static String getDiscJockey2Request1() {
+        if (Objects.equals(DISC_JOCKEY_2_REQUEST_1.get(), DISC_JOCKEY_2_REQUEST_1.getDefault())) {
+            return DISC_JOCKEY_2_REQUEST_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_2_REQUEST_1.get();
+        }
+    }
+    public static String getDiscJockey1Offer3() {
+        if (Objects.equals(DISC_JOCKEY_1_OFFER_3.get(), DISC_JOCKEY_1_OFFER_3.getDefault())) {
+            return DISC_JOCKEY_1_OFFER_3.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_1_OFFER_3.get();
+        }
+    }
+    public static String getDiscJockey1Request3() {
+        if (Objects.equals(DISC_JOCKEY_1_REQUEST_3.get(), DISC_JOCKEY_1_REQUEST_3.getDefault())) {
+            return DISC_JOCKEY_1_REQUEST_3.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_1_REQUEST_3.get();
+        }
+    }
+    public static String getDiscJockey1Offer2() {
+        if (Objects.equals(DISC_JOCKEY_1_OFFER_2.get(), DISC_JOCKEY_1_OFFER_2.getDefault())) {
+            return DISC_JOCKEY_1_OFFER_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_1_OFFER_2.get();
+        }
+    }
+    public static String getDiscJockey1Request2() {
+        if (Objects.equals(DISC_JOCKEY_1_REQUEST_2.get(), DISC_JOCKEY_1_REQUEST_2.getDefault())) {
+            return DISC_JOCKEY_1_REQUEST_2.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_1_REQUEST_2.get();
+        }
+    }
+    public static String getDiscJockey1Offer1() {
+        if (Objects.equals(DISC_JOCKEY_1_OFFER_1.get(), DISC_JOCKEY_1_OFFER_1.getDefault())) {
+            return DISC_JOCKEY_1_OFFER_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_1_OFFER_1.get();
+        }
+    }
+    public static String getDiscJockey1Request1() {
+        if (Objects.equals(DISC_JOCKEY_1_REQUEST_1.get(), DISC_JOCKEY_1_REQUEST_1.getDefault())) {
+            return DISC_JOCKEY_1_REQUEST_1.getDefault();
+        }
+        else {
+            return DISC_JOCKEY_1_REQUEST_1.get();
+        }
+    }
+    // RETIRED_TRADER TRADE GETTERS
+    public static String getRetiredTrader5Offer2() {
+        if (Objects.equals(RETIRED_TRADER_5_OFFER_2.get(), RETIRED_TRADER_5_OFFER_2.getDefault())) {
+            return RETIRED_TRADER_5_OFFER_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_5_OFFER_2.get();
+        }
+    }
+    public static String getRetiredTrader5Request2() {
+        if (Objects.equals(RETIRED_TRADER_5_REQUEST_2.get(), RETIRED_TRADER_5_REQUEST_2.getDefault())) {
+            return RETIRED_TRADER_5_REQUEST_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_5_REQUEST_2.get();
+        }
+    }
+    public static String getRetiredTrader5Offer1() {
+        if (Objects.equals(RETIRED_TRADER_5_OFFER_1.get(), RETIRED_TRADER_5_OFFER_1.getDefault())) {
+            return RETIRED_TRADER_5_OFFER_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_5_OFFER_1.get();
+        }
+    }
+    public static String getRetiredTrader5Request1() {
+        if (Objects.equals(RETIRED_TRADER_5_REQUEST_1.get(), RETIRED_TRADER_5_REQUEST_1.getDefault())) {
+            return RETIRED_TRADER_5_REQUEST_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_5_REQUEST_1.get();
+        }
+    }
+    public static String getRetiredTrader4Offer3() {
+        if (Objects.equals(RETIRED_TRADER_4_OFFER_3.get(), RETIRED_TRADER_4_OFFER_3.getDefault())) {
+            return RETIRED_TRADER_4_OFFER_3.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_4_OFFER_3.get();
+        }
+    }
+    public static String getRetiredTrader4Request3() {
+        if (Objects.equals(RETIRED_TRADER_4_REQUEST_3.get(), RETIRED_TRADER_4_REQUEST_3.getDefault())) {
+            return RETIRED_TRADER_4_REQUEST_3.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_4_REQUEST_3.get();
+        }
+    }
+    public static String getRetiredTrader4Offer2() {
+        if (Objects.equals(RETIRED_TRADER_4_OFFER_2.get(), RETIRED_TRADER_4_OFFER_2.getDefault())) {
+            return RETIRED_TRADER_4_OFFER_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_4_OFFER_2.get();
+        }
+    }
+    public static String getRetiredTrader4Request2() {
+        if (Objects.equals(RETIRED_TRADER_4_REQUEST_2.get(), RETIRED_TRADER_4_REQUEST_2.getDefault())) {
+            return RETIRED_TRADER_4_REQUEST_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_4_REQUEST_2.get();
+        }
+    }
+    public static int getRetiredTrader4Offer1Count() {
+        if (Objects.equals(RETIRED_TRADER_4_OFFER_1_COUNT.get(), RETIRED_TRADER_4_OFFER_1_COUNT.getDefault())) {
+            return RETIRED_TRADER_4_OFFER_1_COUNT.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_4_OFFER_1_COUNT.get();
+        }
+    }
+    public static String getRetiredTrader4Offer1() {
+        if (Objects.equals(RETIRED_TRADER_4_OFFER_1.get(), RETIRED_TRADER_4_OFFER_1.getDefault())) {
+            return RETIRED_TRADER_4_OFFER_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_4_OFFER_1.get();
+        }
+    }
+    public static String getRetiredTrader4Request1() {
+        if (Objects.equals(RETIRED_TRADER_4_REQUEST_1.get(), RETIRED_TRADER_4_REQUEST_1.getDefault())) {
+            return RETIRED_TRADER_4_REQUEST_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_4_REQUEST_1.get();
+        }
+    }
+    public static String getRetiredTrader3Offer3() {
+        if (Objects.equals(RETIRED_TRADER_3_OFFER_3.get(), RETIRED_TRADER_3_OFFER_3.getDefault())) {
+            return RETIRED_TRADER_3_OFFER_3.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_3_OFFER_3.get();
+        }
+    }
+    public static String getRetiredTrader3Request3() {
+        if (Objects.equals(RETIRED_TRADER_3_REQUEST_3.get(), RETIRED_TRADER_3_REQUEST_3.getDefault())) {
+            return RETIRED_TRADER_3_REQUEST_3.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_3_REQUEST_3.get();
+        }
+    }
+    public static String getRetiredTrader3Offer2() {
+        if (Objects.equals(RETIRED_TRADER_3_OFFER_2.get(), RETIRED_TRADER_3_OFFER_2.getDefault())) {
+            return RETIRED_TRADER_3_OFFER_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_3_OFFER_2.get();
+        }
+    }
+    public static String getRetiredTrader3Request2() {
+        if (Objects.equals(RETIRED_TRADER_3_REQUEST_2.get(), RETIRED_TRADER_3_REQUEST_2.getDefault())) {
+            return RETIRED_TRADER_3_REQUEST_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_3_REQUEST_2.get();
+        }
+    }
+    public static int getRetiredTrader3Offer1Count() {
+        if (Objects.equals(RETIRED_TRADER_3_OFFER_1_COUNT.get(), RETIRED_TRADER_3_OFFER_1_COUNT.getDefault())) {
+            return RETIRED_TRADER_3_OFFER_1_COUNT.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_3_OFFER_1_COUNT.get();
+        }
+    }
+    public static String getRetiredTrader3Offer1() {
+        if (Objects.equals(RETIRED_TRADER_3_OFFER_1.get(), RETIRED_TRADER_3_OFFER_1.getDefault())) {
+            return RETIRED_TRADER_3_OFFER_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_3_OFFER_1.get();
+        }
+    }
+    public static String getRetiredTrader3Request1() {
+        if (Objects.equals(RETIRED_TRADER_3_REQUEST_1.get(), RETIRED_TRADER_3_REQUEST_1.getDefault())) {
+            return RETIRED_TRADER_3_REQUEST_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_3_REQUEST_1.get();
+        }
+    }
+    public static int getRetiredTrader2Offer3Count() {
+        if (Objects.equals(RETIRED_TRADER_2_OFFER_3_COUNT.get(), RETIRED_TRADER_2_OFFER_3_COUNT.getDefault())) {
+            return RETIRED_TRADER_2_OFFER_3_COUNT.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_OFFER_3_COUNT.get();
+        }
+    }
+    public static String getRetiredTrader2Offer3() {
+        if (Objects.equals(RETIRED_TRADER_2_OFFER_3.get(), RETIRED_TRADER_2_OFFER_3.getDefault())) {
+            return RETIRED_TRADER_2_OFFER_3.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_OFFER_3.get();
+        }
+    }
+    public static String getRetiredTrader2Request3() {
+        if (Objects.equals(RETIRED_TRADER_2_REQUEST_3.get(), RETIRED_TRADER_2_REQUEST_3.getDefault())) {
+            return RETIRED_TRADER_2_REQUEST_3.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_REQUEST_3.get();
+        }
+    }
+    public static int getRetiredTrader2Offer2Count() {
+        if (Objects.equals(RETIRED_TRADER_2_OFFER_2_COUNT.get(), RETIRED_TRADER_2_OFFER_2_COUNT.getDefault())) {
+            return RETIRED_TRADER_2_OFFER_2_COUNT.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_OFFER_2_COUNT.get();
+        }
+    }
+    public static String getRetiredTrader2Offer2() {
+        if (Objects.equals(RETIRED_TRADER_2_OFFER_2.get(), RETIRED_TRADER_2_OFFER_2.getDefault())) {
+            return RETIRED_TRADER_2_OFFER_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_OFFER_2.get();
+        }
+    }
+    public static String getRetiredTrader2Request2() {
+        if (Objects.equals(RETIRED_TRADER_2_REQUEST_2.get(), RETIRED_TRADER_2_REQUEST_2.getDefault())) {
+            return RETIRED_TRADER_2_REQUEST_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_REQUEST_2.get();
+        }
+    }
+    public static int getRetiredTrader2Offer1Count() {
+        if (Objects.equals(RETIRED_TRADER_2_OFFER_1_COUNT.get(), RETIRED_TRADER_2_OFFER_1_COUNT.getDefault())) {
+            return RETIRED_TRADER_2_OFFER_1_COUNT.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_OFFER_1_COUNT.get();
+        }
+    }
+    public static String getRetiredTrader2Offer1() {
+        if (Objects.equals(RETIRED_TRADER_2_OFFER_1.get(), RETIRED_TRADER_2_OFFER_1.getDefault())) {
+            return RETIRED_TRADER_2_OFFER_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_OFFER_1.get();
+        }
+    }
+    public static String getRetiredTrader2Request1() {
+        if (Objects.equals(RETIRED_TRADER_2_REQUEST_1.get(), RETIRED_TRADER_2_REQUEST_1.getDefault())) {
+            return RETIRED_TRADER_2_REQUEST_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_2_REQUEST_1.get();
+        }
+    }
+    public static String getRetiredTrader1Offer3() {
+        if (Objects.equals(RETIRED_TRADER_1_OFFER_3.get(), RETIRED_TRADER_1_OFFER_3.getDefault())) {
+            return RETIRED_TRADER_1_OFFER_3.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_1_OFFER_3.get();
+        }
+    }
+    public static String getRetiredTrader1Request3() {
+        if (Objects.equals(RETIRED_TRADER_1_REQUEST_3.get(), RETIRED_TRADER_1_REQUEST_3.getDefault())) {
+            return RETIRED_TRADER_1_REQUEST_3.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_1_REQUEST_3.get();
+        }
+    }
+    public static String getRetiredTrader1Offer2() {
+        if (Objects.equals(RETIRED_TRADER_1_OFFER_2.get(), RETIRED_TRADER_1_OFFER_2.getDefault())) {
+            return RETIRED_TRADER_1_OFFER_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_1_OFFER_2.get();
+        }
+    }
+    public static String getRetiredTrader1Request2() {
+        if (Objects.equals(RETIRED_TRADER_1_REQUEST_2.get(), RETIRED_TRADER_1_REQUEST_2.getDefault())) {
+            return RETIRED_TRADER_1_REQUEST_2.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_1_REQUEST_2.get();
+        }
+    }
+    public static String getRetiredTrader1Offer1() {
+        if (Objects.equals(RETIRED_TRADER_1_OFFER_1.get(), RETIRED_TRADER_1_OFFER_1.getDefault())) {
+            return RETIRED_TRADER_1_OFFER_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_1_OFFER_1.get();
+        }
+    }
+    public static String getRetiredTrader1Request1() {
+        if (Objects.equals(RETIRED_TRADER_1_REQUEST_1.get(), RETIRED_TRADER_1_REQUEST_1.getDefault())) {
+            return RETIRED_TRADER_1_REQUEST_1.getDefault();
+        }
+        else {
+            return RETIRED_TRADER_1_REQUEST_1.get();
+        }
+    }
     // FriendsAndFoes Trades
     // BEEKEEPER TRADE GETTERS
     public static String getBeekeeper5Offer2() {
