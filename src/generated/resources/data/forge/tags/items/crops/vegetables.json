@@ -1,9 +1,10 @@
 {
-    "values": [
-        "#forge:crops/tomato",
-        "#forge:crops/carrots",
-        "#forge:crops/beetroot",
-        "#forge:crops/cabbage",
-        "#forge:crops/onion"
-    ]
+  "values": [
+    "#forge:crops/tomato",
+    "#forge:crops/tomato",
+    "#forge:crops/carrots",
+    "#forge:crops/beetroot",
+    "#forge:crops/cabbage",
+    "#forge:crops/onion"
+  ]
 }

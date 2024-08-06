@@ -16,12 +16,21 @@ public class TradeLootTables {
     public static final ResourceLocation SINGLE_LUCKY_COIN_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/single_lucky_coin_value_currency");
     public static final ResourceLocation SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/single_lucky_coin_bag_value_currency");
 
+    public static final ResourceLocation TWENTY_SEVEN_LUCKY_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/twenty_seven_lucky_coin_table");
+    public static final ResourceLocation THREE_LUCKY_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/three_lucky_coin_table");
+    public static final ResourceLocation ONE_LUCKY_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/one_lucky_coin_table");
+
     public static final ResourceLocation SEVEN_NETHERITE_COIN_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/seven_netherite_coin_value_currency");
 
     public static final ResourceLocation SIXTY_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/sixty_pot_of_gold_value_currency");
     public static final ResourceLocation THIRTY_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/thirty_pot_of_gold_value_currency");
     public static final ResourceLocation FOUR_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/four_pot_of_gold_value_currency");
     public static final ResourceLocation TWO_POTS_OF_GOLD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/two_pot_of_gold_value_currency");
+
+    public static final ResourceLocation SIXTY_POTS_OF_GOLD_TABLE = register(MODID + ":" + "trade_tables/currency/sixty_pot_of_gold_table");
+    public static final ResourceLocation THIRTY_POTS_OF_GOLD_TABLE = register(MODID + ":" + "trade_tables/currency/thirty_pot_of_gold_table");
+    public static final ResourceLocation FOUR_POTS_OF_GOLD_TABLE = register(MODID + ":" + "trade_tables/currency/four_pot_of_gold_table");
+    public static final ResourceLocation TWO_POTS_OF_GOLD_TABLE = register(MODID + ":" + "trade_tables/currency/two_pot_of_gold_table");
 
     public static final ResourceLocation EMERALD_BANK_NOTE_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/emerald_bank_note_value_currency");
     public static final ResourceLocation EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/emerald_quarter_half_note_value_currency");
@@ -41,6 +50,11 @@ public class TradeLootTables {
     public static final ResourceLocation TWO_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/two_emerald_value_currency");
     public static final ResourceLocation SINGLE_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/single_emerald_value_currency");
     public static final ResourceLocation SMALLEST_COIN = register(MODID + ":" + "trade_tables/currency/smallest_coin");
+
+    public static final ResourceLocation SIXTY_FOUR_EMERALD_TABLE = register(MODID + ":" + "trade_tables/currency/sixty_four_emerald_table");
+    public static final ResourceLocation THIRTY_TWO_EMERALD_TABLE = register(MODID + ":" + "trade_tables/currency/thirty_two_emerald_table");
+    public static final ResourceLocation SIXTEEN_EMERALD_TABLE = register(MODID + ":" + "trade_tables/currency/sixteen_emerald_table");
+    public static final ResourceLocation ONE_EMERALD_TABLE = register(MODID + ":" + "trade_tables/currency/one_emerald_table");
 
     // gems
     public static final ResourceLocation SINGLE_LUCKY_COIN_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/single_lucky_coin_value_gems");

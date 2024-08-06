@@ -203,6 +203,13 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
                 ));
+        consumer.accept(TradeLootTables.ONE_LUCKY_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
         consumer.accept(TradeLootTables.SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -537,6 +544,27 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
+        consumer.accept(TradeLootTables.THIRTY_POTS_OF_GOLD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                ));
+        consumer.accept(TradeLootTables.FOUR_POTS_OF_GOLD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.TWO_POTS_OF_GOLD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
         consumer.accept(TradeLootTables.TWO_POTS_OF_GOLD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -728,6 +756,34 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
                                 .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                ));
+        consumer.accept(TradeLootTables.ONE_EMERALD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
         consumer.accept(TradeLootTables.SMALLEST_COIN,

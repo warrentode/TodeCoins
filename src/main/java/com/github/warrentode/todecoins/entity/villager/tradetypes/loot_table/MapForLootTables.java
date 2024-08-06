@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class MapForLootTablesTrade implements VillagerTrades.ItemListing {
+public class MapForLootTables implements VillagerTrades.ItemListing {
     private final ResourceLocation currencyLootTable;
     private final ResourceLocation secondaryRequestLootTable;
     private final TagKey<Structure> structureTag;
@@ -34,9 +34,9 @@ public class MapForLootTablesTrade implements VillagerTrades.ItemListing {
     private final int tradeXP;
     private final float priceMultiplier;
 
-    public MapForLootTablesTrade(ResourceLocation currencyLootTable, ResourceLocation secondaryRequestLootTable,
-                                 TagKey<Structure> structureTag, String mapName, MapDecoration.Type mapMarker,
-                                 int maxUses, int tradeXP, float priceMultiplier) {
+    public MapForLootTables(ResourceLocation currencyLootTable, ResourceLocation secondaryRequestLootTable,
+                            TagKey<Structure> structureTag, String mapName, MapDecoration.Type mapMarker,
+                            int maxUses, int tradeXP, float priceMultiplier) {
         this.currencyLootTable = currencyLootTable;
         this.secondaryRequestLootTable = secondaryRequestLootTable;
         this.structureTag = structureTag;

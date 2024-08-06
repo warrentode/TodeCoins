@@ -1,4 +1,4 @@
-// 1.19.2	2024-07-15T15:47:46.0848411	Tags for minecraft:item
+// 1.19.2	2024-08-06T17:12:45.467802	Tags for minecraft:item
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
@@ -44,7 +44,7 @@ f7e03cca33f392271927084edb8df31d3c37f1c7 data/forge/tags/items/crops/fruits.json
 849f851b30eb74acf2ca9316cd9708544427ecbc data/forge/tags/items/crops/potato.json
 ffc02a5218ff321b19d07b2e482739c4863a84bf data/forge/tags/items/crops/rice.json
 de3994930962786796a826cd9676cb67b67e7bc2 data/forge/tags/items/crops/tomato.json
-222b772892b83241aaab8c32874aeb0ad953b842 data/forge/tags/items/crops/vegetables.json
+709ec43757dc33a2b3ba30266d347d24eb45a53b data/forge/tags/items/crops/vegetables.json
 9c99444249ea9362072a08ee44c2d01c8ab03176 data/forge/tags/items/crops/wheat.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
 5f68ab5892f7d0337e7a331a1244af90f29c5b36 data/forge/tags/items/currency_materials.json

@@ -15,11 +15,11 @@ import java.util.List;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class WanderingTraderTrades {
-    static int BASE_XP = CommonConfig.getBaseXp();
-    static int COMMON_MAX_TRADES = CommonConfig.getMaxUses();
+    static int BASE_XP = CommonConfig.getBaseXP();
+    static int COMMON_MAX_TRADES = CommonConfig.getCommonMaxUses();
     static int RARE_MAX_TRADES = CommonConfig.getRareMaxUses();
-    static float COMMON_TRADE_MULTIPLIER = (float) CommonConfig.getPriceMultiplier();
-    static float RARE_TRADE_MULTIPLIER = (float) CommonConfig.getRarePriceMultiplier();
+    static float COMMON_TRADE_MULTIPLIER = (float) CommonConfig.getCommonTradeMultiplier();
+    static float RARE_TRADE_MULTIPLIER = (float) CommonConfig.getRareTradeMultiplier();
 
     @Mod.EventBusSubscriber(modid = MODID)
     public static class ForgeEvents {

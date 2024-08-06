@@ -1554,6 +1554,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ForgeTags.Items.CROPS_CORN);
         tag(ForgeTags.Items.CROPS_VEGETABLES)
                 .addTag(ForgeTags.Items.CROPS_TOMATO)
+                .addTag(ForgeTags.Items.CROPS_TOMATO)
                 .addTag(ForgeTags.Items.CROPS_CARROTS)
                 .addTag(ForgeTags.Items.CROPS_BEETROOT)
                 .addTag(ForgeTags.Items.CROPS_CABBAGE)
