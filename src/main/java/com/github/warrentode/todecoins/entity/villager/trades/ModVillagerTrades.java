@@ -59,6 +59,81 @@ public class ModVillagerTrades {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             if (CommonConfig.getCustomTrades()) {
+                // FriendsAndFoes mod trades
+                if (ModList.get().isLoaded("friendsandfoes") && event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("friendsandfoes:beekeeper"))) {
+                    trades.get(novice).clear();
+                    trades.get(apprentice).clear();
+                    trades.get(journeyman).clear();
+                    trades.get(expert).clear();
+                    trades.get(master).clear();
+
+                    trades.get(novice).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper1Request1()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper1Offer1()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+                    trades.get(novice).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper1Request2()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper1Offer2()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * novice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+
+                    trades.get(apprentice).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper2Request1()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper2Offer1()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+                    trades.get(apprentice).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper2Request2()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper2Offer2()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * apprentice,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+
+                    trades.get(journeyman).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper3Request1()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper3Offer1()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+                    trades.get(journeyman).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper3Request2()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper3Offer2()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * journeyman,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+
+                    trades.get(expert).add(new TagTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper4Request1()),
+                            CommonConfig.getBeekeeper4Request1Count(),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper4Offer1()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+                    trades.get(expert).add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper4Request2()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper4Offer2()),
+                            CommonConfig.getBeekeeper4Offer2Count(),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * expert,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+
+                    trades.get(master).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper5Request1()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper5Offer1()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * master,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+                    trades.get(master).add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper5Request2()),
+                            ResourceLocation.tryParse(CommonConfig.getBeekeeper5Offer2()),
+                            CommonConfig.getCommonMaxUses(), CommonConfig.getBaseXP() * master,
+                            (float) CommonConfig.getCommonTradeMultiplier()
+                    ));
+                }
                 // vanilla trades
                 // WEAPONSMITH
                 if (event.getType() == VillagerProfession.WEAPONSMITH) {
