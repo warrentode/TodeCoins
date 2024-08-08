@@ -9,6 +9,39 @@
           "functions": [
             {
               "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:basalt"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:smooth_basalt"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:polished_basalt"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
               "count": 1.0,
               "function": "minecraft:set_count"
             }
@@ -64,72 +97,6 @@
           "functions": [
             {
               "add": false,
-              "count": 4.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:dripstone_block"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 4.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:calcite"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 4.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:tuff"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 4.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:basalt"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 4.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:smooth_basalt"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 4.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:polished_basalt"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
               "count": 16.0,
               "function": "minecraft:set_count"
             }
@@ -174,22 +141,88 @@
           "functions": [
             {
               "add": false,
-              "count": 4.0,
+              "count": 1.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:deepslate_tiles"
+          "name": "minecraft:warped_wart_block"
         },
         {
           "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "count": 16.0,
+              "count": 1.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:end_stone"
+          "name": "minecraft:nether_wart_block"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:warped_nylium"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:crimson_nylium"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:glowstone"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:obsidian"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:crying_obsidian"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 32.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:netherrack"
         },
         {
           "type": "minecraft:item",
@@ -200,7 +233,62 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:end_stone_bricks"
+          "name": "minecraft:chiseled_nether_bricks"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:nether_bricks"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:cracked_nether_bricks"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:red_nether_bricks"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 6.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:crimson_stem"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 6.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:warped_stem"
         }
       ],
       "rolls": 1.0

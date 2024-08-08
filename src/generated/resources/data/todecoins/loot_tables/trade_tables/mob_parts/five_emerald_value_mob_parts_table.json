@@ -6,43 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:gunpowder"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 32.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:spider_eye"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 32.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bone"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 32.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:rotten_flesh"
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -50,7 +13,29 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:rabbit_foot"
+          "name": "minecraft:blaze_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:blaze_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:blaze_rod"
         }
       ],
       "rolls": 1.0

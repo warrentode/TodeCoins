@@ -20,6 +20,7 @@ public class WanderingTraderTrades {
     static int RARE_MAX_TRADES = CommonConfig.getRareMaxUses();
     static float COMMON_TRADE_MULTIPLIER = (float) CommonConfig.getCommonTradeMultiplier();
     static float RARE_TRADE_MULTIPLIER = (float) CommonConfig.getRareTradeMultiplier();
+    static boolean REPLACE_TRADES = CommonConfig.getReplaceTrades();
 
     @Mod.EventBusSubscriber(modid = MODID)
     public static class ForgeEvents {
@@ -29,8 +30,10 @@ public class WanderingTraderTrades {
             List<VillagerTrades.ItemListing> rareWandererTrades = event.getRareTrades();
 
             if (CommonConfig.getCustomTrades()) {
-                commonWandererTrades.clear();
-                rareWandererTrades.clear();
+                if (REPLACE_TRADES) {
+                    commonWandererTrades.clear();
+                    rareWandererTrades.clear();
+                }
 
                 // COMMON TRADES
                 commonWandererTrades.add(new LootTableForLootTable(

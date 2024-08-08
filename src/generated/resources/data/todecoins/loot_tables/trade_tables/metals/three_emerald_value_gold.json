@@ -6,40 +6,14 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:gunpowder"
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "count": 32.0,
+              "count": 18.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:spider_eye"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 32.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bone"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 32.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:rotten_flesh"
+          "name": "todecoins:gold_coin_bag"
         },
         {
           "type": "minecraft:item",
@@ -50,7 +24,29 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:rabbit_foot"
+          "name": "todecoins:pot_of_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 9.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:gold_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:gold_block"
         }
       ],
       "rolls": 1.0

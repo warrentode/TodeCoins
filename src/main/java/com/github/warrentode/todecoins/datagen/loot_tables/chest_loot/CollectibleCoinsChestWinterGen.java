@@ -37,8 +37,8 @@ public class CollectibleCoinsChestWinterGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_BRUTE_COIN.get()).when(IN_NETHER))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_WITHER_SKELETON_COIN.get()).when(IN_NETHER))
 
-                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMITE_COIN.get()).when(IN_THE_END))
-                                .add(LootItem.lootTableItem(ModItems.NETHERITE_SHULKER_COIN.get()).when(IN_THE_END))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMITE_COIN.get()).when(IN_END))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_SHULKER_COIN.get()).when(IN_END))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_SKELETON_HORSE_COIN.get()).when(IN_OVERWORLD.or(IN_NETHER)))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get()).when(IN_OVERWORLD.or(IN_NETHER)))
@@ -46,7 +46,7 @@ public class CollectibleCoinsChestWinterGen extends ChestLoot {
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ZOGLIN_COIN.get()).when(IN_OVERWORLD.or(IN_NETHER)))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get()).when(IN_OVERWORLD.or(IN_NETHER)))
 
-                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMAN_COIN.get()).when(IN_OVERWORLD.or(IN_NETHER).or(IN_THE_END)))
+                                .add(LootItem.lootTableItem(ModItems.NETHERITE_ENDERMAN_COIN.get()).when(IN_OVERWORLD.or(IN_NETHER).or(IN_END)))
 
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_ALLAY_COIN.get()).when(IN_OVERWORLD))
                                 .add(LootItem.lootTableItem(ModItems.NETHERITE_AXOLOTL_COIN.get()).when(IN_OVERWORLD))

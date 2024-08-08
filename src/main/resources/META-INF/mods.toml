@@ -8,8 +8,8 @@ issueTrackerURL="https://github.com/warrentode/TodeCoins/issues"
 modId = "todecoins"
 version = "${file.jarVersion}"
 displayName = "TodeCoins"
-updateJSONURL = "https://www.planetminecraft.com/mod/tode-coins/"
-displayURL = "https://www.planetminecraft.com/mod/tode-coins/"
+updateJSONURL = "https://raw.githubusercontent.com/warrentode/TodeCoins/master/update.json"
+displayURL = "https://github.com/warrentode/TodeCoins"
 logoFile = "logo.png"
 credits = '''Special thanks to my sons, and my supporters: Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!'''
 authors = "Warren Tode (ToadieOdie)"
@@ -76,8 +76,8 @@ An additional location to report issues or ask questions is on my discord at: ht
     ordering = "NONE"
     side = "BOTH"
 [[dependencies.todecoins]]
-modId = "farmersdelight"
-mandatory = false
-versionRange = "[1.19.2-1.2.3,)"
-ordering = "NONE"
-side = "BOTH"
+    modId = "farmersdelight"
+    mandatory = false
+    versionRange = "[1.19.2-1.2.3,)"
+    ordering = "NONE"
+    side = "BOTH"

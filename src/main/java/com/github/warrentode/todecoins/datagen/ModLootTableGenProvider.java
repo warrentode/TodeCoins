@@ -92,7 +92,7 @@ public class ModLootTableGenProvider extends LootTableProvider {
             LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.OVERWORLD));
     public static final LootItemCondition.Builder IN_NETHER =
             LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.NETHER));
-    public static final LootItemCondition.Builder IN_THE_END =
+    public static final LootItemCondition.Builder IN_END =
             LocationCheck.checkLocation(LocationPredicate.Builder.location().setDimension(Level.END));
 
     // seasonal checks
@@ -197,5 +197,4 @@ public class ModLootTableGenProvider extends LootTableProvider {
     public static final LootItemCondition.Builder IN_FROZEN_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.FROZEN_OCEAN));
     public static final LootItemCondition.Builder IN_DEEP_FROZEN_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.DEEP_FROZEN_OCEAN));
     public static final LootItemCondition.Builder IN_WARM_OCEAN = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARM_OCEAN));
-
 }

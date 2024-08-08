@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_axe"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:shears"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_hoe"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

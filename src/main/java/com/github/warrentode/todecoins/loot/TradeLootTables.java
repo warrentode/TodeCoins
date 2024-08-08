@@ -40,6 +40,7 @@ public class TradeLootTables {
     public static final ResourceLocation TWENTY_SIX_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/twenty_six_emerald_value_currency");
     public static final ResourceLocation TWENTY_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/twenty_emerald_value_currency");
     public static final ResourceLocation FOURTEEN_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/fourteen_emerald_value_currency");
+    public static final ResourceLocation TEN_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/ten_emerald_value_currency");
     public static final ResourceLocation NINE_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/nine_emerald_value_currency");
     public static final ResourceLocation EIGHT_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/eight_emerald_value_currency");
     public static final ResourceLocation SEVEN_EMERALD_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/seven_emerald_value_currency");
@@ -55,6 +56,20 @@ public class TradeLootTables {
     public static final ResourceLocation THIRTY_TWO_EMERALD_TABLE = register(MODID + ":" + "trade_tables/currency/thirty_two_emerald_table");
     public static final ResourceLocation SIXTEEN_EMERALD_TABLE = register(MODID + ":" + "trade_tables/currency/sixteen_emerald_table");
     public static final ResourceLocation ONE_EMERALD_TABLE = register(MODID + ":" + "trade_tables/currency/one_emerald_table");
+
+    // nether dimension currency
+    public static final ResourceLocation THREE_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/three_nether_gold_coin_table");
+    public static final ResourceLocation NINE_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/nine_nether_gold_coin_table");
+    public static final ResourceLocation EIGHTEEN_NETHERITE_COIN_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/eighteen_netherite_coin_value_currency");
+    public static final ResourceLocation THIRTY_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/thirty_nether_gold_coin_table");
+    public static final ResourceLocation FORTY_TWO_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/forty_two_nether_gold_coin_table");
+
+    // end dimension currency
+    public static final ResourceLocation ENDONIAN_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/endonian_coin_table");
+    public static final ResourceLocation FIVE_ENDONIAN_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/five_endonian_coin_table");
+    public static final ResourceLocation FOURTEEN_ENDONIAN_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/fourteen_endonian_coin_table");
+    public static final ResourceLocation THIRTY_TWO_ENDONIAN_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/thirty_two_endonian_coin_table");
+    public static final ResourceLocation FIFTY_ENDONIAN_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/fifty_endonian_coin_table");
 
     // gems
     public static final ResourceLocation SINGLE_LUCKY_COIN_VALUE_GEMS = register(MODID + ":" + "trade_tables/gems/single_lucky_coin_value_gems");
@@ -72,6 +87,8 @@ public class TradeLootTables {
     // metals
     public static final ResourceLocation EMERALD_BANK_NOTE_VALUE_METALS = register(MODID + ":" + "trade_tables/metals/emerald_bank_note_value_metals");
     public static final ResourceLocation SINGLE_EMERALD_VALUE_METALS = register(MODID + ":" + "trade_tables/metals/single_emerald_value_metals");
+    public static final ResourceLocation SINGLE_EMERALD_VALUE_GOLD = register(MODID + ":" + "trade_tables/metals/single_emerald_value_gold");
+    public static final ResourceLocation THREE_EMERALD_VALUE_GOLD = register(MODID + ":" + "trade_tables/metals/three_emerald_value_gold");
 
     // food
     public static final ResourceLocation TAGGED_RAW_MEATS_TABLE = register(MODID + ":" + "trade_tables/food/tagged_raw_meats_table");
@@ -112,11 +129,15 @@ public class TradeLootTables {
     public static final ResourceLocation PAINTINGS_TABLE = register(MODID + ":" + "trade_tables/decor/paintings_table");
     public static final ResourceLocation TAGGED_CANDLE_TABLE = register(MODID + ":" + "trade_tables/decor/tagged_candle_table");
     public static final ResourceLocation LANTERN_TABLE = register(MODID + ":" + "trade_tables/decor/lantern_table");
+    public static final ResourceLocation TORCH_TABLE = register(MODID + ":" + "trade_tables/decor/torch_table");
     public static final ResourceLocation CAMPFIRE_TABLE = register(MODID + ":" + "trade_tables/decor/campfire_table");
+    public static final ResourceLocation SOUL_LIGHTS_TABLE = register(MODID + ":" + "trade_tables/decor/soul_lights_table");
     public static final ResourceLocation ITEM_FRAME_TABLE = register(MODID + ":" + "trade_tables/decor/item_frame_table");
     public static final ResourceLocation FLOWER_BUY_TABLE = register(MODID + ":" + "trade_tables/decor/flower_buy_table");
     public static final ResourceLocation FLOWER_SELL_TABLE = register(MODID + ":" + "trade_tables/decor/flower_sell_table");
     public static final ResourceLocation SAPLING_SELL_TABLE = register(MODID + ":" + "trade_tables/decor/sapling_sell_table");
+    public static final ResourceLocation SAPLING_BUY_TABLE = register(MODID + ":" + "trade_tables/decor/sapling_buy_table");
+    public static final ResourceLocation FLOWER_POT_TABLE = register(MODID + ":" + "trade_tables/decor/flower_pot_table");
 
     // beekeeping
     public static final ResourceLocation BEEHIVE_TABLE = register(MODID + ":" + "trade_tables/beekeeping/beehive_table");
@@ -126,12 +147,16 @@ public class TradeLootTables {
 
     // mob parts
     public static final ResourceLocation ONE_EMERALD_VALUE_MOB_PARTS_TABLE = register(MODID + ":" + "trade_tables/mob_parts/one_emerald_value_mob_parts_table");
+    public static final ResourceLocation FIVE_EMERALD_VALUE_MOB_PARTS_TABLE = register(MODID + ":" + "trade_tables/mob_parts/five_emerald_value_mob_parts_table");
+    public static final ResourceLocation TEN_EMERALD_VALUE_MOB_PARTS_TABLE = register(MODID + ":" + "trade_tables/mob_parts/ten_emerald_value_mob_parts_table");
     public static final ResourceLocation SCUTE_TABLE = register(MODID + ":" + "trade_tables/mob_parts/scute_table");
     public static final ResourceLocation SLIMEBALL_TAG_TABLE = register(MODID + ":" + "trade_tables/mob_parts/slimeball_tag_table");
 
     // brewing
     public static final ResourceLocation POTION_INGREDIENTS_TABLE = register(MODID + ":" + "trade_tables/brewing/potion_ingredients_table");
     public static final ResourceLocation EXPERIENCE_BOTTLE_TABLE = register(MODID + ":" + "trade_tables/brewing/experience_bottle_table");
+    public static final ResourceLocation GHAST_TEAR_TABLE = register(MODID + ":" + "trade_tables/brewing/ghast_tear_table");
+    public static final ResourceLocation NETHER_WART_TABLE = register(MODID + ":" + "trade_tables/brewing/nether_wart_table");
 
     // music
     public static final ResourceLocation DISC_FRAGMENTS_TABLE = register(MODID + ":" + "trade_tables/music/disc_fragments_table");
@@ -142,22 +167,27 @@ public class TradeLootTables {
     public static final ResourceLocation GUIDE_BOOKS_TABLE = register(MODID + ":" + "trade_tables/library/guide_books");
     public static final ResourceLocation PAPER_TABLE = register(MODID + ":" + "trade_tables/library/paper_table");
     public static final ResourceLocation BOOK_TABLE = register(MODID + ":" + "trade_tables/library/book_table");
-    public static final ResourceLocation TAGGED_INK_TABLE = register(MODID + ":" + "trade_tables/misc/tagged_ink_table");
+    public static final ResourceLocation TAGGED_INK_TABLE = register(MODID + ":" + "trade_tables/library/tagged_ink_table");
 
     // blocks
+    public static final ResourceLocation OCEAN_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/ocean_blocks_table");
     public static final ResourceLocation SEA_LANTERN_TABLE = register(MODID + ":" + "trade_tables/blocks/sea_lantern_table");
     public static final ResourceLocation GRAVEL_TABLE = register(MODID + ":" + "trade_tables/blocks/gravel_table");
     public static final ResourceLocation SAND_TAG_TABLE = register(MODID + ":" + "trade_tables/blocks/sand_tag_table");
     public static final ResourceLocation CORAL_BLOCK_TAG_TABLE = register(MODID + ":" + "trade_tables/blocks/coral_block_tag_table");
-    public static final ResourceLocation DIRT_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/dirt_blocks_table");
+    public static final ResourceLocation SPECIAL_DIRT_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/special_dirt_blocks_table");
     public static final ResourceLocation ICE_TABLE = register(MODID + ":" + "trade_tables/blocks/ice_table");
     public static final ResourceLocation OVERWORLD_BRICK_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_brick");
     public static final ResourceLocation OVERWORLD_STONE_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_stone_blocks");
     public static final ResourceLocation OVERWORLD_BRICK_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_brick_blocks");
     public static final ResourceLocation OVERWORLD_POLISHED_STONE_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_polished_stone_blocks");
-    public static final ResourceLocation OTHER_STONE_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/other_stone_blocks");
+    public static final ResourceLocation OVERWORLD_OTHER_STONE_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_other_stone_blocks");
     public static final ResourceLocation TERRACOTTA_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/terracotta/terracotta_blocks");
     public static final ResourceLocation GLAZED_TERRACOTTA_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/terracotta/glazed_terracotta_blocks");
+    public static final ResourceLocation NETHER_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/nether_blocks_table");
+    public static final ResourceLocation LOGS_BUY_TABLE = register(MODID + ":" + "trade_tables/blocks/logs_buy_table");
+    public static final ResourceLocation LOGS_SELL_TABLE = register(MODID + ":" + "trade_tables/blocks/logs_sell_table");
+    public static final ResourceLocation END_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/end_blocks_table");
 
     // tools
     public static final ResourceLocation TRIPWIRE_HOOK_TABLE = register(MODID + ":" + "trade_tables/tools/tripwire_hook_table");
@@ -173,6 +203,8 @@ public class TradeLootTables {
     public static final ResourceLocation NETHERITE_TIER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/netherite_tier_tools");
     public static final ResourceLocation CLOCK_TABLE = register(MODID + ":" + "trade_tables/tools/clock_table");
     public static final ResourceLocation COMPASS_TABLE = register(MODID + ":" + "trade_tables/tools/compass_table");
+    public static final ResourceLocation IRON_TIER_LUMBER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/iron_tier_lumber_tools_table");
+    public static final ResourceLocation DIAMOND_TIER_LUMBER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/diamond_tier_lumber_tools_table");
 
     // weapons
     public static final ResourceLocation IRON_TIER_WEAPONS_TABLE = register(MODID + ":" + "trade_tables/weapons/iron_tier_weapons");
@@ -181,6 +213,7 @@ public class TradeLootTables {
     public static final ResourceLocation NETHERITE_TIER_WEAPONS_TABLE = register(MODID + ":" + "trade_tables/weapons/netherite_tier_weapons");
     public static final ResourceLocation BOWS_TABLE = register(MODID + ":" + "trade_tables/weapons/bows");
     public static final ResourceLocation TAGGED_QUIVERS_TABLE = register(MODID + ":" + "trade_tables/weapons/quivers");
+    public static final ResourceLocation TRIDENT_TABLE = register(MODID + ":" + "trade_tables/weapons/trident");
 
     // horse gear
     public static final ResourceLocation SADDLE_TABLE = register(MODID + ":" + "trade_tables/horse_gear/saddle_table");
@@ -239,6 +272,18 @@ public class TradeLootTables {
     public static final ResourceLocation ANVIL_TABLE = register(MODID + ":" + "trade_tables/misc/anvil_table");
     public static final ResourceLocation CLAY_TABLE = register(MODID + ":" + "trade_tables/misc/clay_table");
     public static final ResourceLocation BANNER_PATTERN_TABLE = register(MODID + ":" + "trade_tables/misc/banner_pattern_table");
+    public static final ResourceLocation HEART_OF_THE_SEA_TABLE = register(MODID + ":" + "trade_tables/misc/heart_of_the_sea_table");
+    public static final ResourceLocation NETHER_STAR_TABLE = register(MODID + ":" + "trade_tables/misc/nether_star_table");
+    public static final ResourceLocation END_ROD_TABLE = register(MODID + ":" + "trade_tables/misc/end_rod_table");
+    public static final ResourceLocation ENDER_PEARL_TABLE = register(MODID + ":" + "trade_tables/misc/ender_pearl_table");
+    public static final ResourceLocation FIREWORK_ROCKET_TABLE = register(MODID + ":" + "trade_tables/misc/firework_rocket_table");
+    public static final ResourceLocation DRAGON_BREATH_TABLE = register(MODID + ":" + "trade_tables/misc/dragon_breath_table");
+    public static final ResourceLocation SHULKER_SHELL_TABLE = register(MODID + ":" + "trade_tables/misc/shulker_shell_table");
+    public static final ResourceLocation DRAGON_HEAD_TABLE = register(MODID + ":" + "trade_tables/misc/dragon_head_table");
+    public static final ResourceLocation NINE_EMERALD_VALUE_REDSTONE = register(MODID + ":" + "trade_tables/misc/nine_emerald_value_redstone");
+    public static final ResourceLocation REDSTONE_TORCH_TABLE = register(MODID + ":" + "trade_tables/misc/redstone_torch_table");
+    public static final ResourceLocation REDSTONE_COMPONENTS_TABLE = register(MODID + ":" + "trade_tables/misc/redstone_components_table");
+    public static final ResourceLocation BONE_MEAL_TABLE = register(MODID + ":" + "trade_tables/misc/bone_meal_table");
 
     // numismatist merchant specific offers loot tables
     public static final ResourceLocation NUMISMATIST_RARE_OFFERS =

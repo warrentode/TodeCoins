@@ -50,7 +50,7 @@ public class CoinDropsBossGen implements Consumer<BiConsumer<ResourceLocation, L
                                         .when(DROPS_BOSS_CURRENCY).when(IN_NETHER).setWeight(4).setQuality(1))
                                 .add(LootTableReference
                                         .lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_ENDONIAN_COIN_DROPS)
-                                        .setWeight(5).setQuality(3).when(DROPS_BOSS_CURRENCY).when(IN_THE_END))
+                                        .setWeight(5).setQuality(3).when(DROPS_BOSS_CURRENCY).when(IN_END))
                                 .add(LootTableReference
                                         .lootTableReference(ModBuiltInLootTables.TODECOINS_BOSS_EMERALD_QUARTER_BANK_NOTE_DROPS)
                                         .when(DROPS_BOSS_CURRENCY).setWeight(6).setQuality(2))
@@ -114,7 +114,7 @@ public class CoinDropsBossGen implements Consumer<BiConsumer<ResourceLocation, L
                                 .setRolls(UniformGenerator.between(1.0F, 5.0F))
                                 .setBonusRolls(ConstantValue.exactly(1.0F))
                                 .add(LootItem
-                                        .lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END)
+                                        .lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
                                         .apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(1.0F, 2.0F))))
                         ));

@@ -22,6 +22,7 @@ public class CommonConfig {
 
     // general trade setting variables
     public static final ForgeConfigSpec.BooleanValue USE_MOD_TRADES;
+    public static final ForgeConfigSpec.BooleanValue REPLACE_TRADES;
     public static final ForgeConfigSpec.IntValue BASE_XP;
     public static final ForgeConfigSpec.IntValue MAX_USES;
     public static final ForgeConfigSpec.IntValue RARE_MAX_USES;
@@ -648,6 +649,185 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_5_REQUEST_2;
     public static final ForgeConfigSpec.ConfigValue<String> GLASSBLOWER_5_OFFER_2;
     public static final ForgeConfigSpec.ConfigValue<Integer> GLASSBLOWER_5_OFFER_2_COUNT;
+    // MoreVillagers mod trades
+    // Oceanographer Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<Integer> OCEANOGRAPHER_2_OFFER_2_COUNT;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_3_REQUEST_1_SECONDARY;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_3_REQUEST_1_STRUCTURE_TAG;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_3_REQUEST_1_MAP_NAME;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_3_REQUEST_1_MAP_MARKER;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> OCEANOGRAPHER_5_OFFER_2;
+    // Netherian Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_3_REQUEST_2_SECONDARY;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_3_REQUEST_2_STRUCTURE_TAG;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_3_REQUEST_2_MAP_NAME;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_3_REQUEST_2_MAP_MARKER;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> NETHERIAN_5_OFFER_2;
+    // Woodworker Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> WOODWORKER_5_OFFER_2;
+    // Enderian Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_4_REQUEST_2_SECONDARY;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_4_REQUEST_2_STRUCTURE_TAG;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_4_REQUEST_2_MAP_NAME;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_4_REQUEST_2_MAP_MARKER;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENDERIAN_5_OFFER_2;
+    // Engineer Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> ENGINEER_5_OFFER_2;
+    // Florist Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> FLORIST_5_OFFER_2;
+    // Hunter Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> HUNTER_5_OFFER_2;
+    // Miner Trade Variables
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_1_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_1_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_1_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_1_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_2_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_2_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_2_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_3_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_3_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_3_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_3_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_4_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_4_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_4_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_4_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_5_REQUEST_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_5_OFFER_1;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_5_REQUEST_2;
+    public static final ForgeConfigSpec.ConfigValue<String> MINER_5_OFFER_2;
 
     // general trade variable setters
     static {
@@ -655,26 +835,940 @@ public class CommonConfig {
         USE_MOD_TRADES = BUILDER
                 .comment(" Use Loot Table Trades?")
                 .define("use_loot_table_trades", false);
+        REPLACE_TRADES = BUILDER
+                .comment(" Replace Trade with Configured Loot Table Trades?")
+                .define("replace_trades", true);
         BASE_XP = BUILDER
-                .comment("Default Base XP per Level")
+                .comment(" Default Base XP per Level")
                 .defineInRange("default_base_xp_per_level", 5, 0, Integer.MAX_VALUE);
         MAX_USES = BUILDER
-                .comment("Default Max Uses per Trade")
+                .comment(" Default Max Uses per Trade")
                 .defineInRange("default_max_uses_per_trade", 12, 1, Integer.MAX_VALUE);
         RARE_MAX_USES = BUILDER
-                .comment("Default Max Uses per Rare Trade")
+                .comment(" Default Max Uses per Rare Trade")
                 .defineInRange("default_max_uses_per_rare_trade", 3, 1, Integer.MAX_VALUE);
         PRICE_MULTIPLIER = BUILDER
-                .comment("Default Price Multiplier")
+                .comment(" Default Price Multiplier")
                 .defineInRange("default_common_price_multiplier", 0.05, 0, Double.MAX_VALUE);
         RARE_PRICE_MULTIPLIER = BUILDER
-                .comment("Default Price Multiplier")
+                .comment(" Default Price Multiplier")
                 .defineInRange("default_rare_price_multiplier", 0.2, 0, Double.MAX_VALUE);
         RESET_TRADES_ON_RESTOCK = BUILDER
                 .comment(" Reset Villager Trades on Restock?")
                 .define("reset_trades_on_restock", false);
         BUILDER.pop();
 
+        // MoreVillagers mod trades
+        BUILDER.push("MoreVillagers Trades");
+        // MINER TRADES
+        BUILDER.push(" Miner Trade Settings");
+        // level 1
+        BUILDER.push(" Miner Level One Trade One");
+        MINER_1_REQUEST_1 = BUILDER
+                .comment(" Miner 1 Trade Request 1 Table")
+                .define("miner_1_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_1_OFFER_1 = BUILDER
+                .comment(" Miner 1 Trade Offer 1 Table")
+                .define("miner_1_trade_offer_1_table",
+                        TradeLootTables.TORCH_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Miner Level One Trade Two");
+        MINER_1_REQUEST_2 = BUILDER
+                .comment(" Miner 1 Trade Request 2 Table")
+                .define("miner_1_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_1_OFFER_2 = BUILDER
+                .comment(" Miner 1 Trade Offer 2 Table")
+                .define("miner_1_trade_offer_2_table",
+                        TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push(" Miner Level Two Trade One");
+        MINER_2_REQUEST_1 = BUILDER
+                .comment(" Miner 2 Trade Request 1 Table")
+                .define("miner_2_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_2_OFFER_1 = BUILDER
+                .comment(" Miner 2 Trade Offer 1 Table")
+                .define("miner_2_trade_offer_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
+        BUILDER.pop();
+        BUILDER.push(" Miner Level Two Trade Two");
+        MINER_2_REQUEST_2 = BUILDER
+                .comment(" Miner 2 Trade Request 2 Table")
+                .define("miner_2_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_2_OFFER_2 = BUILDER
+                .comment(" Miner 2 Trade Offer 2 Table")
+                .define("miner_2_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push(" Miner Level Three Trade One");
+        MINER_3_REQUEST_1 = BUILDER
+                .comment(" Miner 3 Trade Request 1 Table")
+                .define("miner_3_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_3_OFFER_1 = BUILDER
+                .comment(" Miner 3 Trade Offer 1 Table")
+                .define("miner_3_trade_offer_1_table",
+                        TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Miner Level Three Trade Two");
+        MINER_3_REQUEST_2 = BUILDER
+                .comment(" Miner 3 Trade Request 2 Table")
+                .define("miner_3_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_3_OFFER_2 = BUILDER
+                .comment(" Miner 3 Trade Offer 2 Table")
+                .define("miner_3_trade_offer_2_table",
+                        TradeLootTables.LANTERN_TABLE.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push(" Miner Level Four Trade One");
+        MINER_4_REQUEST_1 = BUILDER
+                .comment(" Miner 4 Trade Request 1 Table")
+                .define("miner_4_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_4_OFFER_1 = BUILDER
+                .comment(" Miner 4 Trade Offer 1 Table")
+                .define("miner_4_trade_offer_1_table",
+                        TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Miner Level Four Trade Two");
+        MINER_4_REQUEST_2 = BUILDER
+                .comment(" Miner 4 Trade Request 2 Table")
+                .define("miner_4_trade_request_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_4_OFFER_2 = BUILDER
+                .comment(" Miner 4 Trade Offer 2 Table")
+                .define("miner_4_trade_offer_2_table",
+                        TradeLootTables.DIAMOND_TIER_TOOLS_TABLE.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push(" Miner Level Five Trade One")
+                .comment(" Rare Trade");
+        MINER_5_REQUEST_1 = BUILDER
+                .comment(" Miner 5 Trade Request 1 Table")
+                .define("miner_5_trade_request_1_table",
+                        TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
+        MINER_5_OFFER_1 = BUILDER
+                .comment(" Miner 5 Trade Offer 1 Table")
+                .define("miner_5_trade_offer_1_table",
+                        TradeLootTables.DIAMOND_TIER_TOOLS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Miner Level Five Trade Two");
+        MINER_5_REQUEST_2 = BUILDER
+                .comment(" Miner 5 Trade Request 2 Table")
+                .define("miner_5_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        MINER_5_OFFER_2 = BUILDER
+                .comment(" Miner 5 Trade Offer 2 Table")
+                .define("miner_5_trade_offer_2_table",
+                        TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        // HUNTER TRADES
+        BUILDER.push(" Hunter Trade Settings");
+        // level 1
+        BUILDER.push(" Hunter Level One Trade One");
+        HUNTER_1_REQUEST_1 = BUILDER
+                .comment(" Hunter 1 Trade Request 1 Table")
+                .define("hunter_1_trade_request_1_table",
+                        TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        HUNTER_1_OFFER_1 = BUILDER
+                .comment(" Hunter 1 Trade Offer 1 Table")
+                .define("hunter_1_trade_offer_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push(" Hunter Level One Trade Two");
+        HUNTER_1_REQUEST_2 = BUILDER
+                .comment(" Hunter 1 Trade Request 2 Table")
+                .define("hunter_1_trade_request_2_table",
+                        TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
+        HUNTER_1_OFFER_2 = BUILDER
+                .comment(" Hunter 1 Trade Offer 2 Table")
+                .define("hunter_1_trade_offer_2_table",
+                        TradeLootTables.SLIMEBALL_TAG_TABLE.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push(" Hunter Level Two Trade One");
+        HUNTER_2_REQUEST_1 = BUILDER
+                .comment(" Hunter 2 Trade Request 1 Table")
+                .define("hunter_2_trade_request_1_table",
+                        TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        HUNTER_2_OFFER_1 = BUILDER
+                .comment(" Hunter 2 Trade Offer 1 Table")
+                .define("hunter_2_trade_offer_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push(" Hunter Level Two Trade Two");
+        HUNTER_2_REQUEST_2 = BUILDER
+                .comment(" Hunter 2 Trade Request 2 Table")
+                .define("hunter_2_trade_request_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        HUNTER_2_OFFER_2 = BUILDER
+                .comment(" Hunter 2 Trade Offer 2 Table")
+                .define("hunter_2_trade_offer_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push(" Hunter Level Three Trade One");
+        HUNTER_3_REQUEST_1 = BUILDER
+                .comment(" Hunter 3 Trade Request 1 Table")
+                .define("hunter_3_trade_request_1_table",
+                        TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        HUNTER_3_OFFER_1 = BUILDER
+                .comment(" Hunter 3 Trade Offer 1 Table")
+                .define("hunter_3_trade_offer_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push(" Hunter Level Three Trade Two");
+        HUNTER_3_REQUEST_2 = BUILDER
+                .comment(" Hunter 3 Trade Request 2 Table")
+                .define("hunter_3_trade_request_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
+        HUNTER_3_OFFER_2 = BUILDER
+                .comment(" Hunter 3 Trade Offer 2 Table")
+                .define("hunter_3_trade_offer_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push(" Hunter Level Four Trade One");
+        HUNTER_4_REQUEST_1 = BUILDER
+                .comment(" Hunter 4 Trade Request 1 Table")
+                .define("hunter_4_trade_request_1_table",
+                        TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        HUNTER_4_OFFER_1 = BUILDER
+                .comment(" Hunter 4 Trade Offer 1 Table")
+                .define("hunter_4_trade_offer_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push(" Hunter Level Four Trade Two");
+        HUNTER_4_REQUEST_2 = BUILDER
+                .comment(" Hunter 4 Trade Request 2 Table")
+                .define("hunter_4_trade_request_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
+        HUNTER_4_OFFER_2 = BUILDER
+                .comment(" Hunter 4 Trade Offer 2 Table")
+                .define("hunter_4_trade_offer_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push(" Hunter Level Five Trade One");
+        HUNTER_5_REQUEST_1 = BUILDER
+                .comment(" Hunter 5 Trade Request 1 Table")
+                .define("hunter_5_trade_request_1_table",
+                        TradeLootTables.TEN_EMERALD_VALUE_CURRENCY.toString());
+        HUNTER_5_OFFER_1 = BUILDER
+                .comment(" Hunter 5 Trade Offer 1 Table")
+                .define("hunter_5_trade_offer_1_table",
+                        TradeLootTables.TEN_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Hunter Level Five Trade Two");
+        HUNTER_5_REQUEST_2 = BUILDER
+                .comment(" Hunter 5 Trade Request 2 Table")
+                .define("hunter_5_trade_request_2_table",
+                        TradeLootTables.TEN_EMERALD_VALUE_CURRENCY.toString());
+        HUNTER_5_OFFER_2 = BUILDER
+                .comment(" Hunter 5 Trade Offer 2 Table")
+                .define("hunter_5_trade_offer_2_table",
+                        TradeLootTables.TEN_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        // FLORIST TRADES
+        BUILDER.push(" Florist Trade Settings");
+        // level 1
+        BUILDER.push(" Florist Level One Trade One");
+        FLORIST_1_REQUEST_1 = BUILDER
+                .comment(" Florist 1 Trade Request 1 Table")
+                .define("florist_1_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        FLORIST_1_OFFER_1 = BUILDER
+                .comment(" Florist 1 Trade Offer 1 Table")
+                .define("florist_1_trade_offer_1_table",
+                        TradeLootTables.FLOWER_POT_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Florist Level One Trade Two");
+        FLORIST_1_REQUEST_2 = BUILDER
+                .comment(" Florist 1 Trade Request 2 Table")
+                .define("florist_1_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        FLORIST_1_OFFER_2 = BUILDER
+                .comment(" Florist 1 Trade Offer 2 Table")
+                .define("florist_1_trade_offer_2_table",
+                        TradeLootTables.BONE_MEAL_TABLE.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push(" Florist Level Two Trade One");
+        FLORIST_2_REQUEST_1 = BUILDER
+                .comment(" Florist 2 Trade Request 1 Table")
+                .define("florist_2_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        FLORIST_2_OFFER_1 = BUILDER
+                .comment(" Florist 2 Trade Offer 1 Table")
+                .define("florist_2_trade_offer_1_table",
+                        TradeLootTables.FLOWER_SELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Florist Level Two Trade Two");
+        FLORIST_2_REQUEST_2 = BUILDER
+                .comment(" Florist 2 Trade Request 2 Table")
+                .define("florist_2_trade_request_2_table",
+                        TradeLootTables.FLOWER_BUY_TABLE.toString());
+        FLORIST_2_OFFER_2 = BUILDER
+                .comment(" Florist 2 Trade Offer 2 Table")
+                .define("florist_2_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push(" Florist Level Three Trade One");
+        FLORIST_3_REQUEST_1 = BUILDER
+                .comment(" Florist 3 Trade Request 1 Table")
+                .define("florist_3_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        FLORIST_3_OFFER_1 = BUILDER
+                .comment(" Florist 3 Trade Offer 1 Table")
+                .define("florist_3_trade_offer_1_table",
+                        TradeLootTables.FLOWER_SELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Florist Level Three Trade Two");
+        FLORIST_3_REQUEST_2 = BUILDER
+                .comment(" Florist 3 Trade Request 2 Table")
+                .define("florist_3_trade_request_2_table",
+                        TradeLootTables.FLOWER_BUY_TABLE.toString());
+        FLORIST_3_OFFER_2 = BUILDER
+                .comment(" Florist 3 Trade Offer 2 Table")
+                .define("florist_3_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push(" Florist Level Four Trade One");
+        FLORIST_4_REQUEST_1 = BUILDER
+                .comment(" Florist 4 Trade Request 1 Table")
+                .define("florist_4_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        FLORIST_4_OFFER_1 = BUILDER
+                .comment(" Florist 4 Trade Offer 1 Table")
+                .define("florist_4_trade_offer_1_table",
+                        TradeLootTables.FLOWER_SELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Florist Level Four Trade Two");
+        FLORIST_4_REQUEST_2 = BUILDER
+                .comment(" Florist 4 Trade Request 2 Table")
+                .define("florist_4_trade_request_2_table",
+                        TradeLootTables.FLOWER_BUY_TABLE.toString());
+        FLORIST_4_OFFER_2 = BUILDER
+                .comment(" Florist 4 Trade Offer 2 Table")
+                .define("florist_4_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push(" Florist Level Five Trade One");
+        FLORIST_5_REQUEST_1 = BUILDER
+                .comment(" Florist 5 Trade Request 1 Table")
+                .define("florist_5_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        FLORIST_5_OFFER_1 = BUILDER
+                .comment(" Florist 5 Trade Offer 1 Table")
+                .define("florist_5_trade_offer_1_table",
+                        TradeLootTables.FLOWER_SELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Florist Level Five Trade Two");
+        FLORIST_5_REQUEST_2 = BUILDER
+                .comment(" Florist 5 Trade Request 2 Table")
+                .define("florist_5_trade_request_2_table",
+                        TradeLootTables.FLINT_BUY_TABLE.toString());
+        FLORIST_5_OFFER_2 = BUILDER
+                .comment(" Florist 5 Trade Offer 2 Table")
+                .define("florist_5_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        // ENGINEER TRADES
+        BUILDER.push(" Engineer Trade Settings");
+        // level 1
+        BUILDER.push(" Engineer Level One Trade One");
+        ENGINEER_1_REQUEST_1 = BUILDER
+                .comment(" Engineer 1 Trade Request 1 Table")
+                .define("engineer_1_trade_request_1_table",
+                        TradeLootTables.NINE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_1_OFFER_1 = BUILDER
+                .comment(" Engineer 1 Trade Offer 1 Table")
+                .define("engineer_1_trade_offer_1_table",
+                        TradeLootTables.NINE_EMERALD_VALUE_REDSTONE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Engineer Level One Trade Two");
+        ENGINEER_1_REQUEST_2 = BUILDER
+                .comment(" Engineer 1 Trade Request 2 Table")
+                .define("engineer_1_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_1_OFFER_2 = BUILDER
+                .comment(" Engineer 1 Trade Offer 2 Table")
+                .define("engineer_1_trade_offer_2_table",
+                        TradeLootTables.REDSTONE_TORCH_TABLE.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push(" Engineer Level Two Trade One");
+        ENGINEER_2_REQUEST_1 = BUILDER
+                .comment(" Engineer 2 Trade Request 1 Table")
+                .define("engineer_2_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_2_OFFER_1 = BUILDER
+                .comment(" Engineer 2 Trade Offer 1 Table")
+                .define("engineer_2_trade_offer_1_table",
+                        TradeLootTables.REDSTONE_COMPONENTS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Engineer Level Two Trade Two");
+        ENGINEER_2_REQUEST_2 = BUILDER
+                .comment(" Engineer 2 Trade Request 2 Table")
+                .define("engineer_2_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_2_OFFER_2 = BUILDER
+                .comment(" Engineer 2 Trade Offer 2 Table")
+                .define("engineer_2_trade_offer_2_table",
+                        TradeLootTables.REDSTONE_COMPONENTS_TABLE.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push(" Engineer Level Three Trade One");
+        ENGINEER_3_REQUEST_1 = BUILDER
+                .comment(" Engineer 3 Trade Request 1 Table")
+                .define("engineer_3_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_3_OFFER_1 = BUILDER
+                .comment(" Engineer 3 Trade Offer 1 Table")
+                .define("engineer_3_trade_offer_1_table",
+                        TradeLootTables.REDSTONE_COMPONENTS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Engineer Level Three Trade Two");
+        ENGINEER_3_REQUEST_2 = BUILDER
+                .comment(" Engineer 3 Trade Request 2 Table")
+                .define("engineer_3_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_3_OFFER_2 = BUILDER
+                .comment(" Engineer 3 Trade Offer 2 Table")
+                .define("engineer_3_trade_offer_2_table",
+                        TradeLootTables.REDSTONE_COMPONENTS_TABLE.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push(" Engineer Level Four Trade One");
+        ENGINEER_4_REQUEST_1 = BUILDER
+                .comment(" Engineer 4 Trade Request 1 Table")
+                .define("engineer_4_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_4_OFFER_1 = BUILDER
+                .comment(" Engineer 4 Trade Offer 1 Table")
+                .define("engineer_4_trade_offer_1_table",
+                        TradeLootTables.REDSTONE_COMPONENTS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Engineer Level Four Trade Two");
+        ENGINEER_4_REQUEST_2 = BUILDER
+                .comment(" Engineer 4 Trade Request 2 Table")
+                .define("engineer_4_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_4_OFFER_2 = BUILDER
+                .comment(" Engineer 4 Trade Offer 2 Table")
+                .define("engineer_4_trade_offer_2_table",
+                        TradeLootTables.REDSTONE_COMPONENTS_TABLE.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push(" Engineer Level Five Trade One");
+        ENGINEER_5_REQUEST_1 = BUILDER
+                .comment(" Engineer 5 Trade Request 1 Table")
+                .define("engineer_5_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
+        ENGINEER_5_OFFER_1 = BUILDER
+                .comment(" Engineer 5 Trade Offer 1 Table")
+                .define("engineer_5_trade_offer_1_table",
+                        TradeLootTables.REDSTONE_COMPONENTS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Engineer Level Five Trade Two");
+        ENGINEER_5_REQUEST_2 = BUILDER
+                .comment(" Engineer 5 Trade Request 2 Table")
+                .define("engineer_5_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        ENGINEER_5_OFFER_2 = BUILDER
+                .comment(" Engineer 5 Trade Offer 2 Table")
+                .define("engineer_5_trade_offer_2_table",
+                        TradeLootTables.REDSTONE_COMPONENTS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        // ENDERIAN TRADES
+        BUILDER.push(" Enderian Trade Settings");
+        // level 1
+        BUILDER.push(" Enderian Level One Trade One");
+        ENDERIAN_1_REQUEST_1 = BUILDER
+                .comment(" Enderian 1 Trade Request 1 Table")
+                .define("enderian_1_trade_request_1_table",
+                        TradeLootTables.ENDONIAN_COIN_TABLE.toString());
+        ENDERIAN_1_OFFER_1 = BUILDER
+                .comment(" Enderian 1 Trade Offer 1 Table")
+                .define("enderian_1_trade_offer_1_table",
+                        TradeLootTables.END_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Enderian Level One Trade Two");
+        ENDERIAN_1_REQUEST_2 = BUILDER
+                .comment(" Enderian 1 Trade Request 2 Table")
+                .define("enderian_1_trade_request_2_table",
+                        TradeLootTables.ENDONIAN_COIN_TABLE.toString());
+        ENDERIAN_1_OFFER_2 = BUILDER
+                .comment(" Enderian 1 Trade Offer 2 Table")
+                .define("enderian_1_trade_offer_2_table",
+                        TradeLootTables.END_ROD_TABLE.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push(" Enderian Level Two Trade One");
+        ENDERIAN_2_REQUEST_1 = BUILDER
+                .comment(" Enderian 2 Trade Request 1 Table")
+                .define("enderian_2_trade_request_1_table",
+                        TradeLootTables.FIVE_ENDONIAN_COIN_TABLE.toString());
+        ENDERIAN_2_OFFER_1 = BUILDER
+                .comment(" Enderian 2 Trade Offer 1 Table")
+                .define("enderian_2_trade_offer_1_table",
+                        TradeLootTables.ENDER_PEARL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Enderian Level Two Trade Two");
+        ENDERIAN_2_REQUEST_2 = BUILDER
+                .comment(" Enderian 2 Trade Request 2 Table")
+                .define("enderian_2_trade_request_2_table",
+                        TradeLootTables.ENDONIAN_COIN_TABLE.toString());
+        ENDERIAN_2_OFFER_2 = BUILDER
+                .comment(" Enderian 2 Trade Offer 2 Table")
+                .define("enderian_2_trade_offer_2_table",
+                        TradeLootTables.FIREWORK_ROCKET_TABLE.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push(" Enderian Level Three Trade One");
+        ENDERIAN_3_REQUEST_1 = BUILDER
+                .comment(" Enderian 3 Trade Request 1 Table")
+                .define("enderian_3_trade_request_1_table",
+                        TradeLootTables.ENDONIAN_COIN_TABLE.toString());
+        ENDERIAN_3_OFFER_1 = BUILDER
+                .comment(" Enderian 3 Trade Offer 1 Table")
+                .define("enderian_3_trade_offer_1_table",
+                        TradeLootTables.DRAGON_BREATH_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Enderian Level Three Trade Two");
+        ENDERIAN_3_REQUEST_2 = BUILDER
+                .comment(" Enderian 3 Trade Request 2 Table")
+                .define("enderian_3_trade_request_2_table",
+                        TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY.toString());
+        ENDERIAN_3_OFFER_2 = BUILDER
+                .comment(" Enderian 3 Trade Offer 2 Table")
+                .define("enderian_3_trade_offer_2_table",
+                        TradeLootTables.THIRTY_TWO_EMERALD_TABLE.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push(" Enderian Level Four Trade One");
+        ENDERIAN_4_REQUEST_1 = BUILDER
+                .comment(" Enderian 4 Trade Request 1 Table")
+                .define("enderian_4_trade_request_1_table",
+                        TradeLootTables.SIXTY_FOUR_EMERALD_TABLE.toString());
+        ENDERIAN_4_OFFER_1 = BUILDER
+                .comment(" Enderian 4 Trade Offer 1 Table")
+                .define("enderian_4_trade_offer_1_table",
+                        TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push(" Enderian Level Four Trade Two")
+                .comment(" Rare Trade");
+        ENDERIAN_4_REQUEST_2 = BUILDER
+                .comment(" Enderian 4 Trade Request 2 Table")
+                .define("enderian_4_trade_request_2_table",
+                        TradeLootTables.FOURTEEN_ENDONIAN_COIN_TABLE.toString());
+        ENDERIAN_4_REQUEST_2_SECONDARY = BUILDER
+                .comment(" Enderian 4 Trade Secondary Request 2 Table")
+                .define("enderian_4_trade_secondary_request_2_table",
+                        TradeLootTables.COMPASS_TABLE.toString());
+        ENDERIAN_4_REQUEST_2_STRUCTURE_TAG = BUILDER
+                .comment(" Enderian 4 Trade Request 2 Structure Tag")
+                .define("enderian_4_trade_secondary_request_2_structure_tag",
+                        "turtleblockacademy:worldgen/structure/end_poi");
+        ENDERIAN_4_REQUEST_2_MAP_NAME = BUILDER
+                .comment(" Enderian 4 Trade Request 2 Map Name")
+                .define("enderian_4_trade_secondary_request_2_map_name",
+                        "End Explorer Map");
+        ENDERIAN_4_REQUEST_2_MAP_MARKER = BUILDER
+                .comment(" Enderian 4 Trade Request 2 Map Marker")
+                .define("enderian_4_trade_secondary_request_2_map_marker",
+                        String.valueOf(MapDecoration.Type.BLUE_MARKER));
+        BUILDER.pop();
+        // level 5
+        BUILDER.push(" Enderian Level Five Trade One");
+        ENDERIAN_5_REQUEST_1 = BUILDER
+                .comment(" Enderian 5 Trade Request 1 Table")
+                .define("enderian_5_trade_request_1_table",
+                        TradeLootTables.THIRTY_TWO_ENDONIAN_COIN_TABLE.toString());
+        ENDERIAN_5_OFFER_1 = BUILDER
+                .comment(" Enderian 5 Trade Offer 1 Table")
+                .define("enderian_5_trade_offer_1_table",
+                        TradeLootTables.SHULKER_SHELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Enderian Level Five Trade Two");
+        ENDERIAN_5_REQUEST_2 = BUILDER
+                .comment(" Enderian 5 Trade Request 2 Table")
+                .define("enderian_5_trade_request_2_table",
+                        TradeLootTables.FIFTY_ENDONIAN_COIN_TABLE.toString());
+        ENDERIAN_5_OFFER_2 = BUILDER
+                .comment(" Enderian 5 Trade Offer 2 Table")
+                .define("enderian_5_trade_offer_2_table",
+                        TradeLootTables.DRAGON_HEAD_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        // WOODWORKER TRADES
+        BUILDER.push(" Woodworker Trade Settings");
+        // level 1
+        BUILDER.push(" Woodworker Level One Trade One");
+        WOODWORKER_1_REQUEST_1 = BUILDER
+                .comment(" Woodworker 1 Trade Request 1 Table")
+                .define("woodworker_1_trade_request_1_table",
+                        TradeLootTables.SAPLING_BUY_TABLE.toString());
+        WOODWORKER_1_OFFER_1 = BUILDER
+                .comment(" Woodworker 1 Trade Offer 1 Table")
+                .define("woodworker_1_trade_offer_1_table",
+                        TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push(" Woodworker Level One Trade Two");
+        WOODWORKER_1_REQUEST_2 = BUILDER
+                .comment(" Woodworker 1 Trade Request 2 Table")
+                .define("woodworker_1_trade_request_2_table",
+                        TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
+        WOODWORKER_1_OFFER_2 = BUILDER
+                .comment(" Woodworker 1 Trade Offer 2 Table")
+                .define("woodworker_1_trade_offer_2_table",
+                        TradeLootTables.SAPLING_SELL_TABLE.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push(" Woodworker Level Two Trade One");
+        WOODWORKER_2_REQUEST_1 = BUILDER
+                .comment(" Woodworker 2 Trade Request 1 Table")
+                .define("woodworker_2_trade_request_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        WOODWORKER_2_OFFER_1 = BUILDER
+                .comment(" Woodworker 2 Trade Offer 1 Table")
+                .define("woodworker_2_trade_offer_1_table",
+                        TradeLootTables.LOGS_SELL_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Woodworker Level Two Trade Two");
+        WOODWORKER_2_REQUEST_2 = BUILDER
+                .comment(" Woodworker 2 Trade Request 2 Table")
+                .define("woodworker_2_trade_request_2_table",
+                        TradeLootTables.LOGS_BUY_TABLE.toString());
+        WOODWORKER_2_OFFER_2 = BUILDER
+                .comment(" Woodworker 2 Trade Offer 2 Table")
+                .define("woodworker_2_trade_offer_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push(" Woodworker Level Three Trade One");
+        WOODWORKER_3_REQUEST_1 = BUILDER
+                .comment(" Woodworker 3 Trade Request 1 Table")
+                .define("woodworker_3_trade_request_1_table",
+                        TradeLootTables.SAPLING_BUY_TABLE.toString());
+        WOODWORKER_3_OFFER_1 = BUILDER
+                .comment(" Woodworker 3 Trade Offer 1 Table")
+                .define("woodworker_3_trade_offer_1_table",
+                        TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push(" Woodworker Level Three Trade Two");
+        WOODWORKER_3_REQUEST_2 = BUILDER
+                .comment(" Woodworker 3 Trade Request 2 Table")
+                .define("woodworker_3_trade_request_2_table",
+                        TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
+        WOODWORKER_3_OFFER_2 = BUILDER
+                .comment(" Woodworker 3 Trade Offer 2 Table")
+                .define("woodworker_3_trade_offer_2_table",
+                        TradeLootTables.SAPLING_SELL_TABLE.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push(" Woodworker Level Four Trade One");
+        WOODWORKER_4_REQUEST_1 = BUILDER
+                .comment(" Woodworker 4 Trade Request 1 Table")
+                .define("woodworker_4_trade_request_1_table",
+                        TradeLootTables.LOGS_BUY_TABLE.toString());
+        WOODWORKER_4_OFFER_1 = BUILDER
+                .comment(" Woodworker 4 Trade Offer 1 Table")
+                .define("woodworker_4_trade_offer_1_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        BUILDER.pop();
+        BUILDER.push(" Woodworker Level Four Trade Two");
+        WOODWORKER_4_REQUEST_2 = BUILDER
+                .comment(" Woodworker 4 Trade Request 2 Table")
+                .define("woodworker_4_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+        WOODWORKER_4_OFFER_2 = BUILDER
+                .comment(" Woodworker 4 Trade Offer 2 Table")
+                .define("woodworker_4_trade_offer_2_table",
+                        TradeLootTables.LOGS_SELL_TABLE.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push(" Woodworker Level Five Trade One")
+                .comment(" Rare Trade");
+        WOODWORKER_5_REQUEST_1 = BUILDER
+                .comment(" Woodworker 5 Trade Request 1 Table")
+                .define("woodworker_5_trade_request_1_table",
+                        TradeLootTables.SIXTEEN_EMERALD_TABLE.toString());
+        WOODWORKER_5_OFFER_1 = BUILDER
+                .comment(" Woodworker 5 Trade Offer 1 Table")
+                .define("woodworker_5_trade_offer_1_table",
+                        TradeLootTables.IRON_TIER_LUMBER_TOOLS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push(" Woodworker Level Five Trade Two");
+        WOODWORKER_5_REQUEST_2 = BUILDER
+                .comment(" Woodworker 5 Trade Request 2 Table")
+                .define("woodworker_5_trade_request_2_table",
+                        TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
+        WOODWORKER_5_OFFER_2 = BUILDER
+                .comment(" Woodworker 5 Trade Offer 2 Table")
+                .define("woodworker_5_trade_offer_2_table",
+                        TradeLootTables.DIAMOND_TIER_LUMBER_TOOLS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        // NETHERIAN TRADES
+        BUILDER.push("Netherian Trade Settings");
+        // level 1
+        BUILDER.push("Netherian Level One Trade One");
+        NETHERIAN_1_REQUEST_1 = BUILDER
+                .comment(" Netherian 1 Trade Request 1 Table")
+                .define("netherian_1_trade_request_1_table",
+                        TradeLootTables.THREE_NETHER_GOLD_COIN_TABLE.toString());
+        NETHERIAN_1_OFFER_1 = BUILDER
+                .comment(" Netherian 1 Trade Offer 1 Table")
+                .define("netherian_1_trade_offer_1_table",
+                        TradeLootTables.SOUL_LIGHTS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Netherian Level One Trade Two");
+        NETHERIAN_1_REQUEST_2 = BUILDER
+                .comment(" Netherian 1 Trade Request 2 Table")
+                .define("netherian_1_trade_request_2_table",
+                        TradeLootTables.SINGLE_EMERALD_VALUE_GOLD.toString());
+        NETHERIAN_1_OFFER_2 = BUILDER
+                .comment(" Netherian 1 Trade Offer 2 Table")
+                .define("netherian_1_trade_offer_2_table",
+                        TradeLootTables.THREE_NETHER_GOLD_COIN_TABLE.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push("Netherian Level Two Trade One");
+        NETHERIAN_2_REQUEST_1 = BUILDER
+                .comment(" Netherian 2 Trade Request 1 Table")
+                .define("netherian_2_trade_request_1_table",
+                        TradeLootTables.THREE_NETHER_GOLD_COIN_TABLE.toString());
+        NETHERIAN_2_OFFER_1 = BUILDER
+                .comment(" Netherian 2 Trade Offer 1 Table")
+                .define("netherian_2_trade_offer_1_table",
+                        TradeLootTables.NETHER_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Netherian Level Two Trade Two");
+        NETHERIAN_2_REQUEST_2 = BUILDER
+                .comment(" Netherian 2 Trade Request 2 Table")
+                .define("netherian_2_trade_request_2_table",
+                        TradeLootTables.THREE_NETHER_GOLD_COIN_TABLE.toString());
+        NETHERIAN_2_OFFER_2 = BUILDER
+                .comment(" Netherian 2 Trade Offer 2 Table")
+                .define("netherian_2_trade_offer_2_table",
+                        TradeLootTables.NETHER_WART_TABLE.toString());
+        BUILDER.pop();
+        // level 3
+        BUILDER.push("Netherian Level Three Trade One");
+        NETHERIAN_3_REQUEST_1 = BUILDER
+                .comment(" Netherian 3 Trade Request 1 Table")
+                .define("netherian_3_trade_request_1_table",
+                        TradeLootTables.THIRTY_NETHER_GOLD_COIN_TABLE.toString());
+        NETHERIAN_3_OFFER_1 = BUILDER
+                .comment(" Netherian 3 Trade Offer 1 Table")
+                .define("netherian_3_trade_offer_1_table",
+                        TradeLootTables.GHAST_TEAR_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Netherian Level Three Trade Two")
+                .comment(" Rare Trade");
+        NETHERIAN_3_REQUEST_2 = BUILDER
+                .comment(" Netherian 3 Trade Request 2 Table")
+                .define("netherian_3_trade_request_2_table",
+                        TradeLootTables.FORTY_TWO_NETHER_GOLD_COIN_TABLE.toString());
+        NETHERIAN_3_REQUEST_2_SECONDARY = BUILDER
+                .comment(" Netherian 3 Trade Secondary Request 2 Table")
+                .define("netherian_3_trade_secondary_request_2_table",
+                        TradeLootTables.COMPASS_TABLE.toString());
+        NETHERIAN_3_REQUEST_2_STRUCTURE_TAG = BUILDER
+                .comment(" Netherian 3 Trade Request 2 Structure Tag")
+                .define("netherian_3_trade_secondary_request_2_structure_tag",
+                        "turtleblockacademy:worldgen/structure/nether_poi");
+        NETHERIAN_3_REQUEST_2_MAP_NAME = BUILDER
+                .comment(" Netherian 3 Trade Request 2 Map Name")
+                .define("netherian_3_trade_secondary_request_2_map_name",
+                        "Nether Explorer Map");
+        NETHERIAN_3_REQUEST_2_MAP_MARKER = BUILDER
+                .comment(" Netherian 3 Trade Request 2 Map Marker")
+                .define("netherian_5_trade_secondary_request_2_map_marker",
+                        String.valueOf(MapDecoration.Type.RED_MARKER));
+        BUILDER.pop();
+        // level 4
+        BUILDER.push("Netherian Level Four Trade One");
+        NETHERIAN_4_REQUEST_1 = BUILDER
+                .comment(" Netherian 4 Trade Request 1 Table")
+                .define("netherian_4_trade_request_1_table",
+                        TradeLootTables.NINE_NETHER_GOLD_COIN_TABLE.toString());
+        NETHERIAN_4_OFFER_1 = BUILDER
+                .comment(" Netherian 4 Trade Offer 1 Table")
+                .define("netherian_4_trade_offer_1_table",
+                        TradeLootTables.THREE_EMERALD_VALUE_GOLD.toString());
+        BUILDER.pop();
+        BUILDER.push("Netherian Level Four Trade Two");
+        NETHERIAN_4_REQUEST_2 = BUILDER
+                .comment(" Netherian 4 Trade Request 2 Table")
+                .define("netherian_4_trade_request_2_table",
+                        TradeLootTables.THREE_NETHER_GOLD_COIN_TABLE.toString());
+        NETHERIAN_4_OFFER_2 = BUILDER
+                .comment(" Netherian 4 Trade Offer 2 Table")
+                .define("netherian_4_trade_offer_2_table",
+                        TradeLootTables.NETHER_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push("Netherian Level Five Trade One");
+        NETHERIAN_5_REQUEST_1 = BUILDER
+                .comment(" Netherian 5 Trade Request 1 Table")
+                .define("netherian_5_trade_request_1_table",
+                        TradeLootTables.THREE_NETHER_GOLD_COIN_TABLE.toString());
+        NETHERIAN_5_OFFER_1 = BUILDER
+                .comment(" Netherian 5 Trade Offer 1 Table")
+                .define("netherian_5_trade_offer_1_table",
+                        TradeLootTables.NETHER_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Netherian Level Five Trade Two");
+        NETHERIAN_5_REQUEST_2 = BUILDER
+                .comment(" Netherian 5 Trade Request 2 Table")
+                .define("netherian_5_trade_request_2_table",
+                        TradeLootTables.EIGHTEEN_NETHERITE_COIN_VALUE_CURRENCY.toString());
+        NETHERIAN_5_OFFER_2 = BUILDER
+                .comment(" Netherian 5 Trade Offer 2 Table")
+                .define("netherian_5_trade_offer_2_table",
+                        TradeLootTables.NETHER_STAR_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        // OCEANOGRAPHER TRADES
+        BUILDER.push("Oceanographer Trade Settings");
+        // level 1
+        BUILDER.push("Oceanographer Level One Trade One");
+        OCEANOGRAPHER_1_REQUEST_1 = BUILDER
+                .comment(" Oceanographer 1 Trade Request 1 Table")
+                .define("oceanographer_1_trade_request_1_table",
+                        TradeLootTables.EMERALD_QUARTER_BANK_NOTE_VALUE_CURRENCY.toString());
+        OCEANOGRAPHER_1_OFFER_1 = BUILDER
+                .comment(" Oceanographer 1 Trade Offer 1 Table")
+                .define("oceanographer_1_trade_offer_1_table",
+                        TradeLootTables.PRISMARINE_SHARD_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Oceanographer Level One Trade Two");
+        OCEANOGRAPHER_1_REQUEST_2 = BUILDER
+                .comment(" Oceanographer 1 Trade Request 2 Table")
+                .define("oceanographer_1_trade_request_2_table",
+                        TradeLootTables.ONE_LUCKY_COIN_TABLE.toString());
+        OCEANOGRAPHER_1_OFFER_2 = BUILDER
+                .comment(" Oceanographer 1 Trade Offer 2 Table")
+                .define("oceanographer_1_trade_offer_2_table",
+                        TradeLootTables.SEA_LANTERN_TABLE.toString());
+        BUILDER.pop();
+        // level 2
+        BUILDER.push("Oceanographer Level Two Trade One");
+        OCEANOGRAPHER_2_REQUEST_1 = BUILDER
+                .comment(" Oceanographer 2 Trade Request 1 Table")
+                .define("oceanographer_2_trade_request_1_table",
+                        TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY.toString());
+        OCEANOGRAPHER_2_OFFER_1 = BUILDER
+                .comment(" Oceanographer 2 Trade Offer 1 Table")
+                .define("oceanographer_2_trade_offer_1_table",
+                        TradeLootTables.OCEAN_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Oceanographer Level Two Trade Two");
+        OCEANOGRAPHER_2_REQUEST_2 = BUILDER
+                .comment(" Oceanographer 2 Trade Request 2 Table")
+                .define("oceanographer_2_trade_request_2_table",
+                        TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
+        OCEANOGRAPHER_2_OFFER_2 = BUILDER
+                .comment(" Oceanographer 2 Trade Offer 2 Table")
+                .define("oceanographer_2_trade_offer_2_table",
+                        TradeLootTables.CORAL_BLOCK_TAG_TABLE.toString());
+        OCEANOGRAPHER_2_OFFER_2_COUNT = BUILDER
+                .define("oceanographer_2_trade_offer_2_count", 1);
+        BUILDER.pop();
+        // level 3
+        BUILDER.push("Oceanographer Level Three Trade One")
+                .comment(" Rare Trade");
+        OCEANOGRAPHER_3_REQUEST_1 = BUILDER
+                .comment(" Oceanographer 3 Trade Request 1 Table")
+                .define("oceanographer_3_trade_request_1_table",
+                        TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY.toString());
+        OCEANOGRAPHER_3_REQUEST_1_SECONDARY = BUILDER
+                .comment(" Oceanographer 3 Trade Secondary Request 1 Table")
+                .define("oceanographer_3_trade_secondary_request_1_table",
+                        TradeLootTables.COMPASS_TABLE.toString());
+        OCEANOGRAPHER_3_REQUEST_1_STRUCTURE_TAG = BUILDER
+                .comment(" Oceanographer 3 Trade Request 1 Structure Tag")
+                .define("oceanographer_3_trade_secondary_request_1_structure_tag",
+                        "turtleblockacademy:worldgen/structure/ocean_poi");
+        OCEANOGRAPHER_3_REQUEST_1_MAP_NAME = BUILDER
+                .comment(" Oceanographer 3 Trade Request 1 Map Name")
+                .define("oceanographer_3_trade_secondary_request_1_map_name",
+                        "Ocean Explorer Map");
+        OCEANOGRAPHER_3_REQUEST_1_MAP_MARKER = BUILDER
+                .comment(" Oceanographer 3 Trade Request 1 Map Marker")
+                .define("oceanographer_3_trade_secondary_request_1_map_marker",
+                        String.valueOf(MapDecoration.Type.MONUMENT));
+        BUILDER.pop();
+        BUILDER.push("Oceanographer Level Three Trade Two");
+        OCEANOGRAPHER_3_REQUEST_2 = BUILDER
+                .comment(" Oceanographer 3 Trade Request 2 Table")
+                .define("oceanographer_3_trade_request_2_table",
+                        TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
+        OCEANOGRAPHER_3_OFFER_2 = BUILDER
+                .comment(" Oceanographer 3 Trade Offer 2 Table")
+                .define("oceanographer_3_trade_offer_2_table",
+                        TradeLootTables.SEASHELL_TABLE.toString());
+        BUILDER.pop();
+        // level 4
+        BUILDER.push("Oceanographer Level Four Trade One");
+        OCEANOGRAPHER_4_REQUEST_1 = BUILDER
+                .comment(" Oceanographer 4 Trade Request 1 Table")
+                .define("oceanographer_4_trade_request_1_table",
+                        TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY.toString());
+        OCEANOGRAPHER_4_OFFER_1 = BUILDER
+                .comment(" Oceanographer 4 Trade Offer 1 Table")
+                .define("oceanographer_4_trade_offer_1_table",
+                        TradeLootTables.HEART_OF_THE_SEA_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Oceanographer Level Four Trade Two");
+        OCEANOGRAPHER_4_REQUEST_2 = BUILDER
+                .comment(" Oceanographer 4 Trade Request 2 Table")
+                .define("oceanographer_4_trade_request_2_table",
+                        TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY.toString());
+        OCEANOGRAPHER_4_OFFER_2 = BUILDER
+                .comment(" Oceanographer 4 Trade Offer 2 Table")
+                .define("oceanographer_4_trade_offer_2_table",
+                        TradeLootTables.TRIDENT_TABLE.toString());
+        BUILDER.pop();
+        // level 5
+        BUILDER.push("Oceanographer Level Five Trade One")
+                .comment(" Rare Trade");
+        OCEANOGRAPHER_5_REQUEST_1 = BUILDER
+                .comment(" Oceanographer 5 Trade Request 1 Table")
+                .define("oceanographer_5_trade_request_1_table",
+                        TradeLootTables.ONE_LUCKY_COIN_TABLE.toString());
+        OCEANOGRAPHER_5_OFFER_1 = BUILDER
+                .comment(" Oceanographer 5 Trade Offer 1 Table")
+                .define("oceanographer_5_trade_offer_1_table",
+                        TradeLootTables.TRIDENT_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.push("Oceanographer Level Five Trade Two");
+        OCEANOGRAPHER_5_REQUEST_2 = BUILDER
+                .comment(" Oceanographer 5 Trade Request 2 Table")
+                .define("oceanographer_5_trade_request_2_table",
+                        TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY.toString());
+        OCEANOGRAPHER_5_OFFER_2 = BUILDER
+                .comment(" Oceanographer 5 Trade Offer 2 Table")
+                .define("oceanographer_5_trade_offer_2_table",
+                        TradeLootTables.OCEAN_BLOCKS_TABLE.toString());
+        BUILDER.pop();
+        BUILDER.pop();
+        BUILDER.pop();
         // TodeVillagers mod trades
         BUILDER.push("TodeVillagers Trades");
         // GLASSBLOWER TRADES
@@ -682,11 +1776,11 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Glassblower Level One Trade One");
         GLASSBLOWER_1_REQUEST_1 = BUILDER
-                .comment("Glassblower 1 Trade Request 1 Table")
+                .comment(" Glassblower 1 Trade Request 1 Table")
                 .define("glassblower_1_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_1_OFFER_1 = BUILDER
-                .comment("Glassblower 1 Trade Offer 1 Table")
+                .comment(" Glassblower 1 Trade Offer 1 Table")
                 .define("glassblower_1_trade_offer_1_table",
                         TradeLootTables.RECYCLABLE_GLASS_TAG_TABLE.toString());
         GLASSBLOWER_1_OFFER_1_COUNT = BUILDER
@@ -694,34 +1788,34 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Glassblower Level One Trade Two");
         GLASSBLOWER_1_REQUEST_2 = BUILDER
-                .comment("Glassblower 1 Trade Request 2 Table")
+                .comment(" Glassblower 1 Trade Request 2 Table")
                 .define("glassblower_1_trade_request_2_table",
                         TradeLootTables.SAND_TAG_TABLE.toString());
         GLASSBLOWER_1_REQUEST_2_COUNT = BUILDER
                 .define("glassblower_1_trade_request_2_count", 6);
         GLASSBLOWER_1_OFFER_2 = BUILDER
-                .comment("Glassblower 1 Trade Offer 2 Table")
+                .comment(" Glassblower 1 Trade Offer 2 Table")
                 .define("glassblower_1_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Glassblower Level One Trade Three");
         GLASSBLOWER_1_REQUEST_3 = BUILDER
-                .comment("Glassblower 1 Trade Request 3 Table")
+                .comment(" Glassblower 1 Trade Request 3 Table")
                 .define("glassblower_1_trade_request_3_table",
                         TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         GLASSBLOWER_1_OFFER_3 = BUILDER
-                .comment("Glassblower 1 Trade Offer 3 Table")
+                .comment(" Glassblower 1 Trade Offer 3 Table")
                 .define("glassblower_1_trade_offer_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Glassblower Level Two Trade One");
         GLASSBLOWER_2_REQUEST_1 = BUILDER
-                .comment("Glassblower 2 Trade Request 1 Table")
+                .comment(" Glassblower 2 Trade Request 1 Table")
                 .define("glassblower_2_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_2_OFFER_1 = BUILDER
-                .comment("Glassblower 2 Trade Offer 1 Table")
+                .comment(" Glassblower 2 Trade Offer 1 Table")
                 .define("glassblower_2_trade_offer_1_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_2_OFFER_1_COUNT = BUILDER
@@ -729,11 +1823,11 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Glassblower Level Two Trade Two");
         GLASSBLOWER_2_REQUEST_2 = BUILDER
-                .comment("Glassblower 2 Trade Request 2 Table")
+                .comment(" Glassblower 2 Trade Request 2 Table")
                 .define("glassblower_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_2_OFFER_2 = BUILDER
-                .comment("Glassblower 2 Trade Offer 2 Table")
+                .comment(" Glassblower 2 Trade Offer 2 Table")
                 .define("glassblower_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
         GLASSBLOWER_2_OFFER_2_COUNT = BUILDER
@@ -741,43 +1835,43 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Glassblower Level Two Trade Three");
         GLASSBLOWER_2_REQUEST_3 = BUILDER
-                .comment("Glassblower 2 Trade Request 3 Table")
+                .comment(" Glassblower 2 Trade Request 3 Table")
                 .define("glassblower_2_trade_request_3_table",
                         TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_2_OFFER_3 = BUILDER
-                .comment("Glassblower 2 Trade Offer 3 Table")
+                .comment(" Glassblower 2 Trade Offer 3 Table")
                 .define("glassblower_2_trade_offer_3_table",
                         TradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Glassblower Level Three Trade One");
         GLASSBLOWER_3_REQUEST_1 = BUILDER
-                .comment("Glassblower 3 Trade Request 1 Table")
+                .comment(" Glassblower 3 Trade Request 1 Table")
                 .define("glassblower_3_trade_request_1_table",
                         TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_3_OFFER_1 = BUILDER
-                .comment("Glassblower 3 Trade Offer 1 Table")
+                .comment(" Glassblower 3 Trade Offer 1 Table")
                 .define("glassblower_3_trade_offer_1_table",
                         TradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Glassblower Level Three Trade Two");
         GLASSBLOWER_3_REQUEST_2 = BUILDER
-                .comment("Glassblower 3 Trade Request 2 Table")
+                .comment(" Glassblower 3 Trade Request 2 Table")
                 .define("glassblower_3_trade_request_2_table",
                         TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY.toString());
         GLASSBLOWER_3_OFFER_2 = BUILDER
-                .comment("Glassblower 3 Trade Offer 2 Table")
+                .comment(" Glassblower 3 Trade Offer 2 Table")
                 .define("glassblower_3_trade_offer_2_table",
                         TradeLootTables.THIRTY_TWO_EMERALD_TABLE.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Glassblower Level Four Trade One");
         GLASSBLOWER_4_REQUEST_1 = BUILDER
-                .comment("Glassblower 4 Trade Request 1 Table")
+                .comment(" Glassblower 4 Trade Request 1 Table")
                 .define("glassblower_4_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_4_OFFER_1 = BUILDER
-                .comment("Glassblower 4 Trade Offer 1 Table")
+                .comment(" Glassblower 4 Trade Offer 1 Table")
                 .define("glassblower_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_4_OFFER_1_COUNT = BUILDER
@@ -785,11 +1879,11 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Glassblower Level Four Trade Two");
         GLASSBLOWER_4_REQUEST_2 = BUILDER
-                .comment("Glassblower 4 Trade Request 2 Table")
+                .comment(" Glassblower 4 Trade Request 2 Table")
                 .define("glassblower_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_4_OFFER_2 = BUILDER
-                .comment("Glassblower 4 Trade Offer 2 Table")
+                .comment(" Glassblower 4 Trade Offer 2 Table")
                 .define("glassblower_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_4_OFFER_2_COUNT = BUILDER
@@ -798,11 +1892,11 @@ public class CommonConfig {
         // level 5
         BUILDER.push("Glassblower Level Five Trade One");
         GLASSBLOWER_5_REQUEST_1 = BUILDER
-                .comment("Glassblower 5 Trade Request 1 Table")
+                .comment(" Glassblower 5 Trade Request 1 Table")
                 .define("glassblower_5_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_5_OFFER_1 = BUILDER
-                .comment("Glassblower 5 Trade Offer 1 Table")
+                .comment(" Glassblower 5 Trade Offer 1 Table")
                 .define("glassblower_5_trade_offer_1_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_5_OFFER_1_COUNT = BUILDER
@@ -810,11 +1904,11 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Glassblower Level Five Trade Two");
         GLASSBLOWER_5_REQUEST_2 = BUILDER
-                .comment("Glassblower 5 Trade Request 2 Table")
+                .comment(" Glassblower 5 Trade Request 2 Table")
                 .define("glassblower_5_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         GLASSBLOWER_5_OFFER_2 = BUILDER
-                .comment("Glassblower 5 Trade Offer 2 Table")
+                .comment(" Glassblower 5 Trade Offer 2 Table")
                 .define("glassblower_5_trade_offer_2_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_5_OFFER_2_COUNT = BUILDER
@@ -826,115 +1920,119 @@ public class CommonConfig {
         // level 1
         BUILDER.push("DiscJockey Level One Trade One");
         DISC_JOCKEY_1_REQUEST_1 = BUILDER
-                .comment("DiscJockey 1 Trade Request 1 Table")
+                .comment(" DiscJockey 1 Trade Request 1 Table")
                 .define("disc_jockey_1_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         DISC_JOCKEY_1_OFFER_1 = BUILDER
-                .comment("DiscJockey 1 Trade Offer 1 Table")
+                .comment(" DiscJockey 1 Trade Offer 1 Table")
                 .define("disc_jockey_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("DiscJockey Level One Trade Two");
         DISC_JOCKEY_1_REQUEST_2 = BUILDER
-                .comment("DiscJockey 1 Trade Request 2 Table")
+                .comment(" DiscJockey 1 Trade Request 2 Table")
                 .define("disc_jockey_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         DISC_JOCKEY_1_OFFER_2 = BUILDER
-                .comment("DiscJockey 1 Trade Offer 2 Table")
+                .comment(" DiscJockey 1 Trade Offer 2 Table")
                 .define("disc_jockey_1_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         BUILDER.pop();
         BUILDER.push("DiscJockey Level One Trade Three");
         DISC_JOCKEY_1_REQUEST_3 = BUILDER
-                .comment("DiscJockey 1 Trade Request 3 Table")
+                .comment(" DiscJockey 1 Trade Request 3 Table")
                 .define("disc_jockey_1_trade_request_3_table",
                         TradeLootTables.DISC_FRAGMENTS_TABLE.toString());
         DISC_JOCKEY_1_OFFER_3 = BUILDER
-                .comment("DiscJockey 1 Trade Offer 3 Table")
+                .comment(" DiscJockey 1 Trade Offer 3 Table")
                 .define("disc_jockey_1_trade_offer_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 2
-        BUILDER.push("DiscJockey Level Two Trade One");
+        BUILDER.push("DiscJockey Level Two Trade One")
+                .comment(" Rare Trade");
         DISC_JOCKEY_2_REQUEST_1 = BUILDER
-                .comment("DiscJockey 2 Trade Request 1 Table")
+                .comment(" DiscJockey 2 Trade Request 1 Table")
                 .define("disc_jockey_2_trade_request_1_table",
                         TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         DISC_JOCKEY_2_OFFER_1 = BUILDER
-                .comment("DiscJockey 2 Trade Offer 1 Table")
+                .comment(" DiscJockey 2 Trade Offer 1 Table")
                 .define("disc_jockey_2_trade_offer_1_table",
                         TradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("DiscJockey Level Two Trade Two");
         DISC_JOCKEY_2_REQUEST_2 = BUILDER
-                .comment("DiscJockey 2 Trade Request 2 Table")
+                .comment(" DiscJockey 2 Trade Request 2 Table")
                 .define("disc_jockey_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         DISC_JOCKEY_2_OFFER_2 = BUILDER
-                .comment("DiscJockey 2 Trade Offer 2 Table")
+                .comment(" DiscJockey 2 Trade Offer 2 Table")
                 .define("disc_jockey_2_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 3
-        BUILDER.push("DiscJockey Level Three Trade One");
+        BUILDER.push("DiscJockey Level Three Trade One")
+                .comment(" Rare Trade");
         DISC_JOCKEY_3_REQUEST_1 = BUILDER
-                .comment("DiscJockey 3 Trade Request 1 Table")
+                .comment(" DiscJockey 3 Trade Request 1 Table")
                 .define("disc_jockey_3_trade_request_1_table",
                         TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         DISC_JOCKEY_3_OFFER_1 = BUILDER
-                .comment("DiscJockey 3 Trade Offer 1 Table")
+                .comment(" DiscJockey 3 Trade Offer 1 Table")
                 .define("disc_jockey_3_trade_offer_1_table",
                         TradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("DiscJockey Level Three Trade Two");
         DISC_JOCKEY_3_REQUEST_2 = BUILDER
-                .comment("DiscJockey 3 Trade Request 2 Table")
+                .comment(" DiscJockey 3 Trade Request 2 Table")
                 .define("disc_jockey_3_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         DISC_JOCKEY_3_OFFER_2 = BUILDER
-                .comment("DiscJockey 3 Trade Offer 2 Table")
+                .comment(" DiscJockey 3 Trade Offer 2 Table")
                 .define("disc_jockey_3_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 4
-        BUILDER.push("DiscJockey Level Four Trade One");
+        BUILDER.push("DiscJockey Level Four Trade One")
+                .comment(" Rare Trade");
         DISC_JOCKEY_4_REQUEST_1 = BUILDER
-                .comment("DiscJockey 4 Trade Request 1 Table")
+                .comment(" DiscJockey 4 Trade Request 1 Table")
                 .define("disc_jockey_4_trade_request_1_table",
                         TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         DISC_JOCKEY_4_OFFER_1 = BUILDER
-                .comment("DiscJockey 4 Trade Offer 1 Table")
+                .comment(" DiscJockey 4 Trade Offer 1 Table")
                 .define("disc_jockey_4_trade_offer_1_table",
                         TradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("DiscJockey Level Four Trade Two");
         DISC_JOCKEY_4_REQUEST_2 = BUILDER
-                .comment("DiscJockey 4 Trade Request 2 Table")
+                .comment(" DiscJockey 4 Trade Request 2 Table")
                 .define("disc_jockey_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         DISC_JOCKEY_4_OFFER_2 = BUILDER
-                .comment("DiscJockey 4 Trade Offer 2 Table")
+                .comment(" DiscJockey 4 Trade Offer 2 Table")
                 .define("disc_jockey_4_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 5
-        BUILDER.push("DiscJockey Level Five Trade One");
+        BUILDER.push("DiscJockey Level Five Trade One")
+                .comment(" Rare Trade");
         DISC_JOCKEY_5_REQUEST_1 = BUILDER
-                .comment("DiscJockey 5 Trade Request 1 Table")
+                .comment(" DiscJockey 5 Trade Request 1 Table")
                 .define("disc_jockey_5_trade_request_1_table",
                         TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY.toString());
         DISC_JOCKEY_5_OFFER_1 = BUILDER
-                .comment("DiscJockey 5 Trade Offer 1 Table")
+                .comment(" DiscJockey 5 Trade Offer 1 Table")
                 .define("disc_jockey_5_trade_offer_1_table",
                         TradeLootTables.MUSIC_DISC_TAG_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("DiscJockey Level Five Trade Two");
         DISC_JOCKEY_5_REQUEST_2 = BUILDER
-                .comment("DiscJockey 5 Trade Request 2 Table")
+                .comment(" DiscJockey 5 Trade Request 2 Table")
                 .define("disc_jockey_5_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         DISC_JOCKEY_5_OFFER_2 = BUILDER
-                .comment("DiscJockey 5 Trade Offer 2 Table")
+                .comment(" DiscJockey 5 Trade Offer 2 Table")
                 .define("disc_jockey_5_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
@@ -944,42 +2042,42 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Retired Trader Level One Trade One");
         RETIRED_TRADER_1_REQUEST_1 = BUILDER
-                .comment("Retired Trader 1 Trade Request 1 Table")
+                .comment(" Retired Trader 1 Trade Request 1 Table")
                 .define("retired_trader_1_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_1_OFFER_1 = BUILDER
-                .comment("Retired Trader 1 Trade Offer 1 Table")
+                .comment(" Retired Trader 1 Trade Offer 1 Table")
                 .define("retired_trader_1_trade_offer_1_table",
                         TradeLootTables.FLOWER_SELL_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Retired Trader Level One Trade Two");
         RETIRED_TRADER_1_REQUEST_2 = BUILDER
-                .comment("Retired Trader 1 Trade Request 2 Table")
+                .comment(" Retired Trader 1 Trade Request 2 Table")
                 .define("retired_trader_1_trade_request_2_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_1_OFFER_2 = BUILDER
-                .comment("Retired Trader 1 Trade Offer 2 Table")
+                .comment(" Retired Trader 1 Trade Offer 2 Table")
                 .define("retired_trader_1_trade_offer_2_table",
                         TradeLootTables.SAPLING_SELL_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Retired Trader Level One Trade Three");
         RETIRED_TRADER_1_REQUEST_3 = BUILDER
-                .comment("Retired Trader 1 Trade Request 3 Table")
+                .comment(" Retired Trader 1 Trade Request 3 Table")
                 .define("retired_trader_1_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_1_OFFER_3 = BUILDER
-                .comment("Retired Trader 1 Trade Offer 3 Table")
+                .comment(" Retired Trader 1 Trade Offer 3 Table")
                 .define("retired_trader_1_trade_offer_3_table",
                         TradeLootTables.WANDERING_TRADER_COMMON_OFFERS.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Retired Trader Level Two Trade One");
         RETIRED_TRADER_2_REQUEST_1 = BUILDER
-                .comment("Retired Trader 2 Trade Request 1 Table")
+                .comment(" Retired Trader 2 Trade Request 1 Table")
                 .define("retired_trader_2_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_2_OFFER_1 = BUILDER
-                .comment("Retired Trader 2 Trade Offer 1 Table")
+                .comment(" Retired Trader 2 Trade Offer 1 Table")
                 .define("retired_trader_2_trade_offer_1_table",
                         TradeLootTables.SEED_TAG_TABLE.toString());
         RETIRED_TRADER_2_OFFER_1_COUNT = BUILDER
@@ -987,11 +2085,11 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Retired Trader Level Two Trade Two");
         RETIRED_TRADER_2_REQUEST_2 = BUILDER
-                .comment("Retired Trader 2 Trade Request 2 Table")
+                .comment(" Retired Trader 2 Trade Request 2 Table")
                 .define("retired_trader_2_trade_request_2_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_2_OFFER_2 = BUILDER
-                .comment("Retired Trader 2 Trade Offer 2 Table")
+                .comment(" Retired Trader 2 Trade Offer 2 Table")
                 .define("retired_trader_2_trade_offer_2_table",
                         TradeLootTables.SLIMEBALL_TAG_TABLE.toString());
         RETIRED_TRADER_2_OFFER_2_COUNT = BUILDER
@@ -999,11 +2097,11 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Retired Trader Level Two Trade Three");
         RETIRED_TRADER_2_REQUEST_3 = BUILDER
-                .comment("Retired Trader 2 Trade Request 3 Table")
+                .comment(" Retired Trader 2 Trade Request 3 Table")
                 .define("retired_trader_2_trade_request_3_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_2_OFFER_3 = BUILDER
-                .comment("Retired Trader 2 Trade Offer 3 Table")
+                .comment(" Retired Trader 2 Trade Offer 3 Table")
                 .define("retired_trader_2_trade_offer_3_table",
                         TradeLootTables.CORAL_BLOCK_TAG_TABLE.toString());
         RETIRED_TRADER_2_OFFER_3_COUNT = BUILDER
@@ -1012,11 +2110,11 @@ public class CommonConfig {
         // level 3
         BUILDER.push("Retired Trader Level Three Trade One");
         RETIRED_TRADER_3_REQUEST_1 = BUILDER
-                .comment("Retired Trader 3 Trade Request 1 Table")
+                .comment(" Retired Trader 3 Trade Request 1 Table")
                 .define("retired_trader_3_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_3_OFFER_1 = BUILDER
-                .comment("Retired Trader 3 Trade Offer 1 Table")
+                .comment(" Retired Trader 3 Trade Offer 1 Table")
                 .define("retired_trader_3_trade_offer_1_table",
                         TradeLootTables.SAND_TAG_TABLE.toString());
         RETIRED_TRADER_3_OFFER_1_COUNT = BUILDER
@@ -1024,32 +2122,33 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Retired Trader Level Three Trade Two");
         RETIRED_TRADER_3_REQUEST_2 = BUILDER
-                .comment("Retired Trader 3 Trade Request 2 Table")
+                .comment(" Retired Trader 3 Trade Request 2 Table")
                 .define("retired_trader_3_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_3_OFFER_2 = BUILDER
-                .comment("Retired Trader 3 Trade Offer 2 Table")
+                .comment(" Retired Trader 3 Trade Offer 2 Table")
                 .define("retired_trader_3_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         BUILDER.pop();
-        BUILDER.push("Retired Trader Level Three Trade Three");
+        BUILDER.push("Retired Trader Level Three Trade Three")
+                .comment(" Rare Trade");
         RETIRED_TRADER_3_REQUEST_3 = BUILDER
-                .comment("Retired Trader 3 Trade Request 3 Table")
+                .comment(" Retired Trader 3 Trade Request 3 Table")
                 .define("retired_trader_3_trade_request_3_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_3_OFFER_3 = BUILDER
-                .comment("Retired Trader 3 Trade Offer 3 Table")
+                .comment(" Retired Trader 3 Trade Offer 3 Table")
                 .define("retired_trader_3_trade_offer_3_table",
                         TradeLootTables.FISH_BUCKET_TABLE.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Retired Trader Level Four Trade One");
         RETIRED_TRADER_4_REQUEST_1 = BUILDER
-                .comment("Retired Trader 4 Trade Request 1 Table")
+                .comment(" Retired Trader 4 Trade Request 1 Table")
                 .define("retired_trader_4_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_4_OFFER_1 = BUILDER
-                .comment("Retired Trader 4 Trade Offer 1 Table")
+                .comment(" Retired Trader 4 Trade Offer 1 Table")
                 .define("retired_trader_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         RETIRED_TRADER_4_OFFER_1_COUNT = BUILDER
@@ -1057,42 +2156,45 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Retired Trader Level Four Trade Two");
         RETIRED_TRADER_4_REQUEST_2 = BUILDER
-                .comment("Retired Trader 4 Trade Request 2 Table")
+                .comment(" Retired Trader 4 Trade Request 2 Table")
                 .define("retired_trader_4_trade_request_2_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_4_OFFER_2 = BUILDER
-                .comment("Retired Trader 4 Trade Offer 2 Table")
+                .comment(" Retired Trader 4 Trade Offer 2 Table")
                 .define("retired_trader_4_trade_offer_2_table",
                         TradeLootTables.SEASHELL_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Retired Trader Level Four Trade Three");
+        BUILDER.push("Retired Trader Level Four Trade Three")
+                .comment(" Rare Trade");
         RETIRED_TRADER_4_REQUEST_3 = BUILDER
-                .comment("Retired Trader 4 Trade Request 3 Table")
+                .comment(" Retired Trader 4 Trade Request 3 Table")
                 .define("retired_trader_4_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_4_OFFER_3 = BUILDER
-                .comment("Retired Trader 4 Trade Offer 3 Table")
+                .comment(" Retired Trader 4 Trade Offer 3 Table")
                 .define("retired_trader_4_trade_offer_3_table",
-                        TradeLootTables.DIRT_BLOCKS_TABLE.toString());
+                        TradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE.toString());
         BUILDER.pop();
         // level 5
-        BUILDER.push("Retired Trader Level Five Trade One");
+        BUILDER.push("Retired Trader Level Five Trade One")
+                .comment(" Rare Trade");
         RETIRED_TRADER_5_REQUEST_1 = BUILDER
-                .comment("Retired Trader 5 Trade Request 1 Table")
+                .comment(" Retired Trader 5 Trade Request 1 Table")
                 .define("retired_trader_5_trade_request_1_table",
                         TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_5_OFFER_1 = BUILDER
-                .comment("Retired Trader 5 Trade Offer 1 Table")
+                .comment(" Retired Trader 5 Trade Offer 1 Table")
                 .define("retired_trader_5_trade_offer_1_table",
                         TradeLootTables.ICE_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Retired Trader Level Five Trade Two");
+        BUILDER.push("Retired Trader Level Five Trade Two")
+                .comment(" Rare Trade");
         RETIRED_TRADER_5_REQUEST_2 = BUILDER
-                .comment("Retired Trader 5 Trade Request 2 Table")
+                .comment(" Retired Trader 5 Trade Request 2 Table")
                 .define("retired_trader_5_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         RETIRED_TRADER_5_OFFER_2 = BUILDER
-                .comment("Retired Trader 5 Trade Offer 2 Table")
+                .comment(" Retired Trader 5 Trade Offer 2 Table")
                 .define("retired_trader_5_trade_offer_2_table",
                         TradeLootTables.WANDERING_TRADER_RARE_OFFERS.toString());
         BUILDER.pop();
@@ -1106,86 +2208,86 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Beekeeper Level One Trade One");
         BEEKEEPER_1_REQUEST_1 = BUILDER
-                .comment("Beekeeper 1 Trade Request 1 Table")
+                .comment(" Beekeeper 1 Trade Request 1 Table")
                 .define("beekeeper_1_trade_request_1_table",
                         TradeLootTables.FLOWER_BUY_TABLE.toString());
         BEEKEEPER_1_OFFER_1 = BUILDER
-                .comment("Beekeeper 1 Trade Offer 1 Table")
+                .comment(" Beekeeper 1 Trade Offer 1 Table")
                 .define("beekeeper_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Beekeeper Level One Trade Two");
         BEEKEEPER_1_REQUEST_2 = BUILDER
-                .comment("Beekeeper 1 Trade Request 2 Table")
+                .comment(" Beekeeper 1 Trade Request 2 Table")
                 .define("beekeeper_1_trade_request_2_table",
                         TradeLootTables.GLASS_BOTTLE_TABLE.toString());
         BEEKEEPER_1_OFFER_2 = BUILDER
-                .comment("Beekeeper 1 Trade Offer 2 Table")
+                .comment(" Beekeeper 1 Trade Offer 2 Table")
                 .define("beekeeper_1_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Beekeeper Level Two Trade One");
         BEEKEEPER_2_REQUEST_1 = BUILDER
-                .comment("Beekeeper 2 Trade Request 1 Table")
+                .comment(" Beekeeper 2 Trade Request 1 Table")
                 .define("beekeeper_2_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BEEKEEPER_2_OFFER_1 = BUILDER
-                .comment("Beekeeper 2 Trade Offer 1 Table")
+                .comment(" Beekeeper 2 Trade Offer 1 Table")
                 .define("beekeeper_2_trade_offer_1_table",
                         TradeLootTables.BOTTLED_HONEY_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Beekeeper Level Two Trade Two");
         BEEKEEPER_2_REQUEST_2 = BUILDER
-                .comment("Beekeeper 2 Trade Request 2 Table")
+                .comment(" Beekeeper 2 Trade Request 2 Table")
                 .define("beekeeper_2_trade_request_2_table",
                         TradeLootTables.SHEARS_TABLE.toString());
         BEEKEEPER_2_OFFER_2 = BUILDER
-                .comment("Beekeeper 2 Trade Offer 2 Table")
+                .comment(" Beekeeper 2 Trade Offer 2 Table")
                 .define("beekeeper_2_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Beekeeper Level Three Trade One");
         BEEKEEPER_3_REQUEST_1 = BUILDER
-                .comment("Beekeeper 3 Trade Request 1 Table")
+                .comment(" Beekeeper 3 Trade Request 1 Table")
                 .define("beekeeper_3_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BEEKEEPER_3_OFFER_1 = BUILDER
-                .comment("Beekeeper 3 Trade Offer 1 Table")
+                .comment(" Beekeeper 3 Trade Offer 1 Table")
                 .define("beekeeper_3_trade_offer_1_table",
                         TradeLootTables.HONEY_BLOCK_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Beekeeper Level Three Trade Two");
         BEEKEEPER_3_REQUEST_2 = BUILDER
-                .comment("Beekeeper 3 Trade Request 2 Table")
+                .comment(" Beekeeper 3 Trade Request 2 Table")
                 .define("beekeeper_3_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BEEKEEPER_3_OFFER_2 = BUILDER
-                .comment("Beekeeper 3 Trade Offer 2 Table")
+                .comment(" Beekeeper 3 Trade Offer 2 Table")
                 .define("beekeeper_3_trade_offer_2_table",
                         TradeLootTables.HONEY_COMB_TABLE.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Beekeeper Level Four Trade One");
         BEEKEEPER_4_REQUEST_1 = BUILDER
-                .comment("Beekeeper 4 Trade Request 1 Table")
+                .comment(" Beekeeper 4 Trade Request 1 Table")
                 .define("beekeeper_4_trade_request_1_table",
                         TradeLootTables.TAGGED_STRING_TABLE.toString());
         BEEKEEPER_4_REQUEST_1_COUNT = BUILDER
                 .define("beekeeper_4_trade_request_1_count", 16);
         BEEKEEPER_4_OFFER_1 = BUILDER
-                .comment("Beekeeper 4 Trade Offer 1 Table")
+                .comment(" Beekeeper 4 Trade Offer 1 Table")
                 .define("beekeeper_4_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Beekeeper Level Four Trade Two");
         BEEKEEPER_4_REQUEST_2 = BUILDER
-                .comment("Beekeeper 4 Trade Request 2 Table")
+                .comment(" Beekeeper 4 Trade Request 2 Table")
                 .define("beekeeper_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BEEKEEPER_4_OFFER_2 = BUILDER
-                .comment("Beekeeper 4 Trade Offer 2 Table")
+                .comment(" Beekeeper 4 Trade Offer 2 Table")
                 .define("beekeeper_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_CANDLE_TABLE.toString());
         BEEKEEPER_4_OFFER_2_COUNT = BUILDER
@@ -1194,21 +2296,21 @@ public class CommonConfig {
         // level 5
         BUILDER.push("Beekeeper Level Five Trade One");
         BEEKEEPER_5_REQUEST_1 = BUILDER
-                .comment("Beekeeper 5 Trade Request 1 Table")
+                .comment(" Beekeeper 5 Trade Request 1 Table")
                 .define("beekeeper_5_trade_request_1_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         BEEKEEPER_5_OFFER_1 = BUILDER
-                .comment("Beekeeper 5 Trade Offer 1 Table")
+                .comment(" Beekeeper 5 Trade Offer 1 Table")
                 .define("beekeeper_5_trade_offer_1_table",
                         TradeLootTables.BEEHIVE_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Beekeeper Level Five Trade Two");
         BEEKEEPER_5_REQUEST_2 = BUILDER
-                .comment("Beekeeper 5 Trade Request 2 Table")
+                .comment(" Beekeeper 5 Trade Request 2 Table")
                 .define("beekeeper_5_trade_request_2_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         BEEKEEPER_5_OFFER_2 = BUILDER
-                .comment("Beekeeper 5 Trade Offer 2 Table")
+                .comment(" Beekeeper 5 Trade Offer 2 Table")
                 .define("beekeeper_5_trade_offer_2_table",
                         TradeLootTables.BEE_EGG_TABLE.toString());
         BUILDER.pop();
@@ -1222,208 +2324,212 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Armorer Level One Trade One");
         ARMORER_1_REQUEST_1 = BUILDER
-                .comment("Armorer 1 Trade Request 1 Table")
+                .comment(" Armorer 1 Trade Request 1 Table")
                 .define("armorer_1_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         ARMORER_1_OFFER_1 = BUILDER
-                .comment("Armorer 1 Trade Offer 1 Table")
+                .comment(" Armorer 1 Trade Offer 1 Table")
                 .define("armorer_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level One Trade Two");
         ARMORER_1_REQUEST_2 = BUILDER
-                .comment("Armorer 1 Trade Request 2 Table")
+                .comment(" Armorer 1 Trade Request 2 Table")
                 .define("armorer_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_1_OFFER_2 = BUILDER
-                .comment("Armorer 1 Trade Offer 2 Table")
+                .comment(" Armorer 1 Trade Offer 2 Table")
                 .define("armorer_1_trade_offer_2_table",
                         TradeLootTables.CHAINMAIL_TIER_HELMETS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level One Trade Three");
         ARMORER_1_REQUEST_3 = BUILDER
-                .comment("Armorer 1 Trade Request 3 Table")
+                .comment(" Armorer 1 Trade Request 3 Table")
                 .define("armorer_1_trade_request_3_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_1_OFFER_3 = BUILDER
-                .comment("Armorer 1 Trade Offer 3 Table")
+                .comment(" Armorer 1 Trade Offer 3 Table")
                 .define("armorer_1_trade_offer_3_table",
                         TradeLootTables.CHAINMAIL_TIER_CHESTPLATES_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level One Trade Four");
         ARMORER_1_REQUEST_4 = BUILDER
-                .comment("Armorer 1 Trade Request 4 Table")
+                .comment(" Armorer 1 Trade Request 4 Table")
                 .define("armorer_1_trade_request_4_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_1_OFFER_4 = BUILDER
-                .comment("Armorer 1 Trade Offer 4 Table")
+                .comment(" Armorer 1 Trade Offer 4 Table")
                 .define("armorer_1_trade_offer_4_table",
                         TradeLootTables.CHAINMAIL_TIER_LEGGINGS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level One Trade Five");
         ARMORER_1_REQUEST_5 = BUILDER
-                .comment("Armorer 1 Trade Request 5 Table")
+                .comment(" Armorer 1 Trade Request 5 Table")
                 .define("armorer_1_trade_request_5_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_1_OFFER_5 = BUILDER
-                .comment("Armorer 1 Trade Offer 4 Table")
+                .comment(" Armorer 1 Trade Offer 4 Table")
                 .define("armorer_1_trade_offer_4_table",
                         TradeLootTables.CHAINMAIL_TIER_BOOTS_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Armorer Level Two Trade One");
         ARMORER_2_REQUEST_1 = BUILDER
-                .comment("Armorer 2 Trade Request 1 Table")
+                .comment(" Armorer 2 Trade Request 1 Table")
                 .define("armorer_2_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
         ARMORER_2_OFFER_1 = BUILDER
-                .comment("Armorer 2 Trade Offer 1 Table")
+                .comment(" Armorer 2 Trade Offer 1 Table")
                 .define("armorer_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Two Trade Two");
         ARMORER_2_REQUEST_2 = BUILDER
-                .comment("Armorer 2 Trade Request 2 Table")
+                .comment(" Armorer 2 Trade Request 2 Table")
                 .define("armorer_2_trade_request_2_table",
                         TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_2_OFFER_2 = BUILDER
-                .comment("Armorer 2 Trade Offer 2 Table")
+                .comment(" Armorer 2 Trade Offer 2 Table")
                 .define("armorer_2_trade_offer_2_table",
                         TradeLootTables.BELL_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Two Trade Three");
         ARMORER_2_REQUEST_3 = BUILDER
-                .comment("Armorer 2 Trade Request 3 Table")
+                .comment(" Armorer 2 Trade Request 3 Table")
                 .define("armorer_2_trade_request_3_table",
                         TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_2_OFFER_3 = BUILDER
-                .comment("Armorer 2 Trade Offer 3 Table")
+                .comment(" Armorer 2 Trade Offer 3 Table")
                 .define("armorer_2_trade_offer_3_table",
                         TradeLootTables.IRON_TIER_LEGGINGS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Two Trade Four");
         ARMORER_2_REQUEST_4 = BUILDER
-                .comment("Armorer 2 Trade Request 4 Table")
+                .comment(" Armorer 2 Trade Request 4 Table")
                 .define("armorer_2_trade_request_4_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_2_OFFER_4 = BUILDER
-                .comment("Armorer 2 Trade Offer 4 Table")
+                .comment(" Armorer 2 Trade Offer 4 Table")
                 .define("armorer_2_trade_offer_4_table",
                         TradeLootTables.IRON_TIER_BOOTS_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Armorer Level Three Trade One");
         ARMORER_3_REQUEST_1 = BUILDER
-                .comment("Armorer 3 Trade Request 1 Table")
+                .comment(" Armorer 3 Trade Request 1 Table")
                 .define("armorer_3_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         ARMORER_3_OFFER_1 = BUILDER
-                .comment("Armorer 3 Trade Offer 1 Table")
+                .comment(" Armorer 3 Trade Offer 1 Table")
                 .define("armorer_3_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Three Trade Two");
         ARMORER_3_REQUEST_2 = BUILDER
-                .comment("Armorer 3 Trade Request 2 Table")
+                .comment(" Armorer 3 Trade Request 2 Table")
                 .define("armorer_3_trade_request_2_table",
                         TradeLootTables.EQUIPMENT_GEMS_TABLE.toString());
         ARMORER_3_OFFER_2 = BUILDER
-                .comment("Armorer 3 Trade Offer 2 Table")
+                .comment(" Armorer 3 Trade Offer 2 Table")
                 .define("armorer_3_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Three Trade Three");
         ARMORER_3_REQUEST_3 = BUILDER
-                .comment("Armorer 3 Trade Request 3 Table")
+                .comment(" Armorer 3 Trade Request 3 Table")
                 .define("armorer_3_trade_request_3_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_3_OFFER_3 = BUILDER
-                .comment("Armorer 3 Trade Offer 3 Table")
+                .comment(" Armorer 3 Trade Offer 3 Table")
                 .define("armorer_3_trade_offer_3_table",
                         TradeLootTables.IRON_TIER_HELMETS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Three Trade Four");
         ARMORER_3_REQUEST_4 = BUILDER
-                .comment("Armorer 3 Trade Request 4 Table")
+                .comment(" Armorer 3 Trade Request 4 Table")
                 .define("armorer_3_trade_request_4_table",
                         TradeLootTables.NINE_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_3_OFFER_4 = BUILDER
-                .comment("Armorer 3 Trade Offer 4 Table")
+                .comment(" Armorer 3 Trade Offer 4 Table")
                 .define("armorer_3_trade_offer_4_table",
                         TradeLootTables.IRON_TIER_CHESTPLATES_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Three Trade Five");
         ARMORER_3_REQUEST_5 = BUILDER
-                .comment("Armorer 3 Trade Request 5 Table")
+                .comment(" Armorer 3 Trade Request 5 Table")
                 .define("armorer_3_trade_request_5_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_3_OFFER_5 = BUILDER
-                .comment("Armorer 3 Trade Offer 5 Table")
+                .comment(" Armorer 3 Trade Offer 5 Table")
                 .define("armorer_3_trade_offer_5_table",
                         TradeLootTables.SHIELD_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Three Trade Six");
         ARMORER_3_REQUEST_6 = BUILDER
-                .comment("Armorer 3 Trade Request 6 Table")
+                .comment(" Armorer 3 Trade Request 6 Table")
                 .define("armorer_3_trade_request_6_table",
                         TradeLootTables.NINE_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_3_OFFER_6 = BUILDER
-                .comment("Armorer 3 Trade Offer 6 Table")
+                .comment(" Armorer 3 Trade Offer 6 Table")
                 .define("armorer_3_trade_offer_6_table",
                         TradeLootTables.IRON_TIER_HORSE_ARMOR_TABLE.toString());
         BUILDER.pop();
         // level 4
-        BUILDER.push("Armorer Level Four Trade One");
+        BUILDER.push("Armorer Level Four Trade One")
+                .comment(" Rare Trade");
         ARMORER_4_REQUEST_1 = BUILDER
-                .comment("Armorer 4 Trade Request 1 Table")
+                .comment(" Armorer 4 Trade Request 1 Table")
                 .define("armorer_4_trade_request_1_table",
                         TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_4_OFFER_1 = BUILDER
-                .comment("Armorer 4 Trade Offer 1 Table")
+                .comment(" Armorer 4 Trade Offer 1 Table")
                 .define("armorer_4_trade_offer_1_table",
                         TradeLootTables.DIAMOND_TIER_LEGGINGS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Armorer Level Four Trade Two");
+        BUILDER.push("Armorer Level Four Trade Two")
+                .comment(" Rare Trade");
         ARMORER_4_REQUEST_2 = BUILDER
-                .comment("Armorer 4 Trade Request 2 Table")
+                .comment(" Armorer 4 Trade Request 2 Table")
                 .define("armorer_4_trade_request_2_table",
                         TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_4_OFFER_2 = BUILDER
-                .comment("Armorer 4 Trade Offer 2 Table")
+                .comment(" Armorer 4 Trade Offer 2 Table")
                 .define("armorer_4_trade_offer_2_table",
                         TradeLootTables.DIAMOND_TIER_BOOTS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Four Trade Three")
-                .comment("Available if Supplementaries mod or Turtle Block Academy mod is Loaded");
+                .comment(" Available if Supplementaries mod or Turtle Block Academy mod is Loaded");
         ARMORER_4_REQUEST_3 = BUILDER
-                .comment("Armorer 4 Trade Request 3 Table")
+                .comment(" Armorer 4 Trade Request 3 Table")
                 .define("armorer_4_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_4_OFFER_3 = BUILDER
-                .comment("Armorer 4 Trade Offer 3 Table")
+                .comment(" Armorer 4 Trade Offer 3 Table")
                 .define("armorer_4_trade_offer_3_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         ARMORER_4_OFFER_3_COUNT = BUILDER
                 .define("armorer_4_trade_offer_3_count", 18);
         BUILDER.pop();
         // level 5
-        BUILDER.push("Armorer Level Five Trade One");
+        BUILDER.push("Armorer Level Five Trade One")
+                .comment(" Rare Trade");
         ARMORER_5_REQUEST_1 = BUILDER
-                .comment("Armorer 5 Trade Request 1 Table")
+                .comment(" Armorer 5 Trade Request 1 Table")
                 .define("armorer_5_trade_request_1_table",
                         TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_5_OFFER_1 = BUILDER
-                .comment("Armorer 5 Trade Offer 1 Table")
+                .comment(" Armorer 5 Trade Offer 1 Table")
                 .define("armorer_5_trade_offer_1_table",
                         TradeLootTables.DIAMOND_TIER_HELMETS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Armorer Level Five Trade Two");
+        BUILDER.push("Armorer Level Five Trade Two")
+                .comment(" Rare Trade");
         ARMORER_5_REQUEST_2 = BUILDER
-                .comment("Armorer 5 Trade Request 2 Table")
+                .comment(" Armorer 5 Trade Request 2 Table")
                 .define("armorer_5_trade_request_2_table",
                         TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         ARMORER_5_OFFER_2 = BUILDER
-                .comment("Armorer 5 Trade Offer 2 Table")
+                .comment(" Armorer 5 Trade Offer 2 Table")
                 .define("armorer_5_trade_offer_2_table",
                         TradeLootTables.DIAMOND_TIER_CHESTPLATES_TABLE.toString());
         BUILDER.pop();
@@ -1433,23 +2539,23 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Butcher Level One Trade One");
         BUTCHER_1_REQUEST_1 = BUILDER
-                .comment("Butcher 1 Trade Request 1 Table")
+                .comment(" Butcher 1 Trade Request 1 Table")
                 .define("butcher_1_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_MEATS_TABLE.toString());
         BUTCHER_1_REQUEST_1_COUNT = BUILDER
                 .define("butcher_1_trade_request_1_count", 12);
         BUTCHER_1_OFFER_1 = BUILDER
-                .comment("Butcher 1 Trade Offer 1 Table")
+                .comment(" Butcher 1 Trade Offer 1 Table")
                 .define("butcher_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Butcher Level One Trade Two");
         BUTCHER_1_REQUEST_2 = BUILDER
-                .comment("Butcher 1 Trade Request 2 Table")
+                .comment(" Butcher 1 Trade Request 2 Table")
                 .define("butcher_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUTCHER_1_OFFER_2 = BUILDER
-                .comment("Butcher 1 Trade Offer 2 Table")
+                .comment(" Butcher 1 Trade Offer 2 Table")
                 .define("butcher_1_trade_offer_2_table",
                         TradeLootTables.TAGGED_MEAT_SOUPS_TABLE.toString());
         BUTCHER_1_OFFER_2_COUNT = BUILDER
@@ -1458,21 +2564,21 @@ public class CommonConfig {
         // level 2
         BUILDER.push("Butcher Level Two Trade One");
         BUTCHER_2_REQUEST_1 = BUILDER
-                .comment("Butcher 2 Trade Request 1 Table")
+                .comment(" Butcher 2 Trade Request 1 Table")
                 .define("butcher_2_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         BUTCHER_2_OFFER_1 = BUILDER
-                .comment("Butcher 2 Trade Offer 1 Table")
+                .comment(" Butcher 2 Trade Offer 1 Table")
                 .define("butcher_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Butcher Level Two Trade Two");
         BUTCHER_2_REQUEST_2 = BUILDER
-                .comment("Butcher 2 Trade Request 2 Table")
+                .comment(" Butcher 2 Trade Request 2 Table")
                 .define("butcher_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUTCHER_2_OFFER_2 = BUILDER
-                .comment("Butcher 2 Trade Offer 2 Table")
+                .comment(" Butcher 2 Trade Offer 2 Table")
                 .define("butcher_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         BUTCHER_2_OFFER_2_COUNT = BUILDER
@@ -1481,34 +2587,34 @@ public class CommonConfig {
         // level 3
         BUILDER.push("Butcher Level Three Trade One");
         BUTCHER_3_REQUEST_1 = BUILDER
-                .comment("Butcher 3 Trade Request 1 Table")
+                .comment(" Butcher 3 Trade Request 1 Table")
                 .define("butcher_3_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_MEATS_TABLE.toString());
         BUTCHER_3_REQUEST_1_COUNT = BUILDER
                 .define("butcher_3_trade_request_1_count", 12);
         BUTCHER_3_OFFER_1 = BUILDER
-                .comment("Butcher 3 Trade Offer 1 Table")
+                .comment(" Butcher 3 Trade Offer 1 Table")
                 .define("butcher_3_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Butcher Level Three Trade Two")
-                .comment("Available if Farmers Delight mod is Loaded");
+                .comment(" Available if Farmers Delight mod is Loaded");
         BUTCHER_3_REQUEST_2 = BUILDER
-                .comment("Butcher 3 Trade Request 2 Table")
+                .comment(" Butcher 3 Trade Request 2 Table")
                 .define("butcher_3_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUTCHER_3_OFFER_2 = BUILDER
-                .comment("Butcher 3 Trade Offer 2 Table")
+                .comment(" Butcher 3 Trade Offer 2 Table")
                 .define("butcher_3_trade_offer_2_table",
                         TradeLootTables.STONE_TIER_KNIVES.toString());
         BUILDER.pop();
         BUILDER.push("Butcher Level Three Trade Three");
         BUTCHER_3_REQUEST_3 = BUILDER
-                .comment("Butcher 3 Trade Request 3 Table")
+                .comment(" Butcher 3 Trade Request 3 Table")
                 .define("butcher_3_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUTCHER_3_OFFER_3 = BUILDER
-                .comment("Butcher 2 Trade Offer 2 Table")
+                .comment(" Butcher 2 Trade Offer 2 Table")
                 .define("butcher_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         BUTCHER_3_OFFER_3_COUNT = BUILDER
@@ -1517,35 +2623,35 @@ public class CommonConfig {
         // level 4
         BUILDER.push("Butcher Level Four Trade One");
         BUTCHER_4_REQUEST_1 = BUILDER
-                .comment("Butcher 4 Trade Request 1 Table")
+                .comment(" Butcher 4 Trade Request 1 Table")
                 .define("butcher_4_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         BUTCHER_4_OFFER_1 = BUILDER
-                .comment("Butcher 4 Trade Offer 1 Table")
+                .comment(" Butcher 4 Trade Offer 1 Table")
                 .define("butcher_4_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Butcher Level Four Trade Two")
-                .comment("Available if Salt mod or Turtle Block Academy mod is Loaded");
+                .comment(" Available if Salt mod or Turtle Block Academy mod is Loaded");
         BUTCHER_4_REQUEST_2 = BUILDER
-                .comment("Butcher 4 Trade Request 2 Table")
+                .comment(" Butcher 4 Trade Request 2 Table")
                 .define("butcher_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUTCHER_4_OFFER_2 = BUILDER
-                .comment("Butcher 4 Trade Offer 2 Table")
+                .comment(" Butcher 4 Trade Offer 2 Table")
                 .define("butcher_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_SALTS_TABLE.toString());
         BUTCHER_4_OFFER_2_COUNT = BUILDER
                 .define("butcher_4_trade_offer_2_count", 18);
         BUILDER.pop();
         BUILDER.push("Butcher Level Four Trade Three")
-                .comment("Available if Supplementaries mod or Turtle Block Academy mod is Loaded");
+                .comment(" Available if Supplementaries mod or Turtle Block Academy mod is Loaded");
         BUTCHER_4_REQUEST_3 = BUILDER
-                .comment("Butcher 4 Trade Request 3 Table")
+                .comment(" Butcher 4 Trade Request 3 Table")
                 .define("butcher_4_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUTCHER_4_OFFER_3 = BUILDER
-                .comment("Butcher 4 Trade Offer 3 Table")
+                .comment(" Butcher 4 Trade Offer 3 Table")
                 .define("butcher_4_trade_offer_3_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         BUTCHER_4_OFFER_3_COUNT = BUILDER
@@ -1553,11 +2659,11 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Butcher Level Four Trade Four");
         BUTCHER_4_REQUEST_4 = BUILDER
-                .comment("Butcher 4 Trade Request 4 Table")
+                .comment(" Butcher 4 Trade Request 4 Table")
                 .define("butcher_4_trade_request_4_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUTCHER_4_OFFER_4 = BUILDER
-                .comment("Butcher 4 Trade Offer 4 Table")
+                .comment(" Butcher 4 Trade Offer 4 Table")
                 .define("butcher_4_trade_offer_4_table",
                         TradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         BUTCHER_4_OFFER_4_COUNT = BUILDER
@@ -1566,23 +2672,23 @@ public class CommonConfig {
         // level 5
         BUILDER.push("Butcher Level Five Trade One");
         BUTCHER_5_REQUEST_1 = BUILDER
-                .comment("Butcher 5 Trade Request 1 Table")
+                .comment(" Butcher 5 Trade Request 1 Table")
                 .define("butcher_5_trade_request_1_table",
                         TradeLootTables.TAGGED_FOX_FOOD_TABLE.toString());
         BUTCHER_5_REQUEST_1_COUNT = BUILDER
                 .define("butcher_5_trade_request_1_count", 8);
         BUTCHER_5_OFFER_1 = BUILDER
-                .comment("Butcher 5 Trade Offer 1 Table")
+                .comment(" Butcher 5 Trade Offer 1 Table")
                 .define("butcher_5_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Butcher Level Five Trade Two");
         BUTCHER_5_REQUEST_2 = BUILDER
-                .comment("Butcher 5 Trade Request 2 Table")
+                .comment(" Butcher 5 Trade Request 2 Table")
                 .define("butcher_5_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUTCHER_5_OFFER_2 = BUILDER
-                .comment("Butcher 5 Trade Offer 2 Table")
+                .comment(" Butcher 5 Trade Offer 2 Table")
                 .define("butcher_5_trade_offer_2_table",
                         TradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         BUTCHER_5_OFFER_2_COUNT = BUILDER
@@ -1594,118 +2700,120 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Cartographer Level One Trade One");
         CARTOGRAPHER_1_REQUEST_1 = BUILDER
-                .comment("Cartographer 1 Trade Request 1 Table")
+                .comment(" Cartographer 1 Trade Request 1 Table")
                 .define("cartographer_1_trade_request_1_table",
                         TradeLootTables.PAPER_TABLE.toString());
         CARTOGRAPHER_1_OFFER_1 = BUILDER
-                .comment("Cartographer 1 Trade Offer 1 Table")
+                .comment(" Cartographer 1 Trade Offer 1 Table")
                 .define("cartographer_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Cartographer Level One Trade Two");
         CARTOGRAPHER_1_REQUEST_2 = BUILDER
-                .comment("Cartographer 1 Trade Request 2 Table")
+                .comment(" Cartographer 1 Trade Request 2 Table")
                 .define("cartographer_1_trade_request_2_table",
                         TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY.toString());
         CARTOGRAPHER_1_OFFER_2 = BUILDER
-                .comment("Cartographer 1 Trade Offer 2 Table")
+                .comment(" Cartographer 1 Trade Offer 2 Table")
                 .define("cartographer_1_trade_offer_2_table",
                         TradeLootTables.BLANK_MAP_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Cartographer Level Two Trade One");
         CARTOGRAPHER_2_REQUEST_1 = BUILDER
-                .comment("Cartographer 2 Trade Request 1 Table")
+                .comment(" Cartographer 2 Trade Request 1 Table")
                 .define("cartographer_2_trade_request_1_table",
                         TradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
         CARTOGRAPHER_2_REQUEST_1_COUNT = BUILDER
                 .define("cartographer_2_trade_request_1_count", 16);
         CARTOGRAPHER_2_OFFER_1 = BUILDER
-                .comment("Cartographer 2 Trade Offer 1 Table")
+                .comment(" Cartographer 2 Trade Offer 1 Table")
                 .define("cartographer_2_trade_offer_1_table",
                         TradeLootTables.EMERALD_QUARTER_BANK_NOTE_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Cartographer Level Two Trade Two");
+        BUILDER.push("Cartographer Level Two Trade Two")
+                .comment(" Rare Trade");
         CARTOGRAPHER_2_REQUEST_2 = BUILDER
-                .comment("Cartographer 2 Trade Request 2 Table")
+                .comment(" Cartographer 2 Trade Request 2 Table")
                 .define("cartographer_2_trade_request_2_table",
                         TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY.toString());
         CARTOGRAPHER_2_REQUEST_2_SECONDARY = BUILDER
-                .comment("Cartographer 2 Trade Secondary Request 2 Table")
+                .comment(" Cartographer 2 Trade Secondary Request 2 Table")
                 .define("cartographer_2_trade_secondary_request_2_table",
                         TradeLootTables.COMPASS_TABLE.toString());
         CARTOGRAPHER_2_REQUEST_2_STRUCTURE_TAG = BUILDER
-                .comment("Cartographer 2 Trade Request 2 Structure Tag")
+                .comment(" Cartographer 2 Trade Request 2 Structure Tag")
                 .define("cartographer_2_trade_secondary_request_2_structure_tag",
-                        String.valueOf(ForgeTags.StructureTags.OVERWORLD_POI));
+                        "turtleblockacademy:worldgen/structure/overworld_poi");
         CARTOGRAPHER_2_REQUEST_2_MAP_NAME = BUILDER
-                .comment("Cartographer 2 Trade Request 2 Map Name")
+                .comment(" Cartographer 2 Trade Request 2 Map Name")
                 .define("cartographer_2_trade_secondary_request_2_map_name",
                         "Overworld Explorer Map");
         CARTOGRAPHER_2_REQUEST_2_MAP_MARKER = BUILDER
-                .comment("Cartographer 2 Trade Request 2 Map Name")
-                .define("cartographer_2_trade_secondary_request_2_map_name",
+                .comment(" Cartographer 2 Trade Request 2 Map Marker")
+                .define("cartographer_2_trade_secondary_request_2_map_marker",
                         String.valueOf(MapDecoration.Type.TARGET_X));
         CARTOGRAPHER_2_OFFER_2 = BUILDER
-                .comment("Cartographer 2 Trade Offer 2 Table")
+                .comment(" Cartographer 2 Trade Offer 2 Table")
                 .define("cartographer_2_trade_offer_2_table",
                         TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Cartographer Level Three Trade One");
         CARTOGRAPHER_3_REQUEST_1 = BUILDER
-                .comment("Cartographer 3 Trade Request 1 Table")
+                .comment(" Cartographer 3 Trade Request 1 Table")
                 .define("cartographer_3_trade_request_1_table",
                         TradeLootTables.COMPASS_TABLE.toString());
         CARTOGRAPHER_3_OFFER_1 = BUILDER
-                .comment("Cartographer 3 Trade Offer 1 Table")
+                .comment(" Cartographer 3 Trade Offer 1 Table")
                 .define("cartographer_3_trade_offer_1_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Cartographer Level Three Trade Two");
+        BUILDER.push("Cartographer Level Three Trade Two")
+                .comment(" Rare Trade");
         CARTOGRAPHER_3_REQUEST_2 = BUILDER
-                .comment("Cartographer 3 Trade Request 2 Table")
+                .comment(" Cartographer 3 Trade Request 2 Table")
                 .define("cartographer_3_trade_request_2_table",
                         TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY.toString());
         CARTOGRAPHER_3_REQUEST_2_SECONDARY = BUILDER
-                .comment("Cartographer 3 Trade Secondary Request 2 Table")
+                .comment(" Cartographer 3 Trade Secondary Request 2 Table")
                 .define("cartographer_3_trade_secondary_request_2_table",
                         TradeLootTables.COMPASS_TABLE.toString());
         CARTOGRAPHER_3_REQUEST_2_STRUCTURE_TAG = BUILDER
-                .comment("Cartographer 3 Trade Request 2 Structure Tag")
+                .comment(" Cartographer 3 Trade Request 2 Structure Tag")
                 .define("cartographer_3_trade_secondary_request_2_structure_tag",
-                        String.valueOf(ForgeTags.StructureTags.OVERWORLD_POI));
+                        "turtleblockacademy:worldgen/structure/overworld_poi");
         CARTOGRAPHER_3_REQUEST_2_MAP_NAME = BUILDER
-                .comment("Cartographer 3 Trade Request 2 Map Name")
+                .comment(" Cartographer 3 Trade Request 2 Map Name")
                 .define("cartographer_3_trade_secondary_request_2_map_name",
                         "Overworld Explorer Map");
         CARTOGRAPHER_3_REQUEST_2_MAP_MARKER = BUILDER
-                .comment("Cartographer 3 Trade Request 2 Map Name")
-                .define("cartographer_3_trade_secondary_request_2_map_name",
+                .comment(" Cartographer 3 Trade Request 2 Map Marker")
+                .define("cartographer_3_trade_secondary_request_2_map_marker",
                         String.valueOf(MapDecoration.Type.TARGET_X));
         CARTOGRAPHER_3_OFFER_2 = BUILDER
-                .comment("Cartographer 3 Trade Offer 2 Table")
+                .comment(" Cartographer 3 Trade Offer 2 Table")
                 .define("cartographer_3_trade_offer_2_table",
                         TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Cartographer Level Four Trade One");
         CARTOGRAPHER_4_REQUEST_1 = BUILDER
-                .comment("Cartographer 4 Trade Request 1 Table")
+                .comment(" Cartographer 4 Trade Request 1 Table")
                 .define("cartographer_4_trade_request_1_table",
                         TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY.toString());
         CARTOGRAPHER_4_OFFER_1 = BUILDER
-                .comment("Cartographer 4 Trade Offer 1 Table")
+                .comment(" Cartographer 4 Trade Offer 1 Table")
                 .define("cartographer_4_trade_offer_1_table",
                         TradeLootTables.ITEM_FRAME_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Cartographer Level Four Trade Two");
         CARTOGRAPHER_4_REQUEST_2 = BUILDER
-                .comment("Cartographer 4 Trade Request 2 Table")
+                .comment(" Cartographer 4 Trade Request 2 Table")
                 .define("cartographer_4_trade_request_2_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         CARTOGRAPHER_4_OFFER_2 = BUILDER
-                .comment("Cartographer 4 Trade Offer 2 Table")
+                .comment(" Cartographer 4 Trade Offer 2 Table")
                 .define("cartographer_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_BANNER_TABLE.toString());
         CARTOGRAPHER_4_OFFER_2_COUNT = BUILDER
@@ -1714,34 +2822,35 @@ public class CommonConfig {
         // level 5
         BUILDER.push("Cartographer Level Five Trade One");
         CARTOGRAPHER_5_REQUEST_1 = BUILDER
-                .comment("Cartographer 5 Trade Request 1 Table")
+                .comment(" Cartographer 5 Trade Request 1 Table")
                 .define("cartographer_5_trade_request_1_table",
                         TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY.toString());
         CARTOGRAPHER_5_OFFER_1 = BUILDER
-                .comment("Cartographer 5 Trade Offer 1 Table")
+                .comment(" Cartographer 5 Trade Offer 1 Table")
                 .define("cartographer_5_trade_offer_1_table",
                         TradeLootTables.BANNER_PATTERN_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Cartographer Level Five Trade Two");
+        BUILDER.push("Cartographer Level Five Trade Two")
+                .comment(" Rare Trade");
         CARTOGRAPHER_5_REQUEST_2 = BUILDER
-                .comment("Cartographer 5 Trade Request 2 Table")
+                .comment(" Cartographer 5 Trade Request 2 Table")
                 .define("cartographer_5_trade_request_2_table",
                         TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY.toString());
         CARTOGRAPHER_5_REQUEST_2_SECONDARY = BUILDER
-                .comment("Cartographer 5 Trade Secondary Request 2 Table")
+                .comment(" Cartographer 5 Trade Secondary Request 2 Table")
                 .define("cartographer_5_trade_secondary_request_2_table",
                         TradeLootTables.COMPASS_TABLE.toString());
         CARTOGRAPHER_5_REQUEST_2_STRUCTURE_TAG = BUILDER
-                .comment("Cartographer 5 Trade Request 2 Structure Tag")
+                .comment(" Cartographer 5 Trade Request 2 Structure Tag")
                 .define("cartographer_5_trade_secondary_request_2_structure_tag",
-                        String.valueOf(ForgeTags.StructureTags.OVERWORLD_POI));
+                        "turtleblockacademy:worldgen/structure/overworld_poi");
         CARTOGRAPHER_5_REQUEST_2_MAP_NAME = BUILDER
-                .comment("Cartographer 5 Trade Request 2 Map Name")
+                .comment(" Cartographer 5 Trade Request 2 Map Name")
                 .define("cartographer_5_trade_secondary_request_2_map_name",
                         "Overworld Explorer Map");
         CARTOGRAPHER_5_REQUEST_2_MAP_MARKER = BUILDER
-                .comment("Cartographer 5 Trade Request 2 Map Name")
-                .define("cartographer_5_trade_secondary_request_2_map_name",
+                .comment(" Cartographer 5 Trade Request 2 Map Marker")
+                .define("cartographer_5_trade_secondary_request_2_map_marker",
                         String.valueOf(MapDecoration.Type.TARGET_X));
         BUILDER.pop();
         BUILDER.pop();
@@ -1750,115 +2859,115 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Cleric Level One Trade One");
         CLERIC_1_REQUEST_1 = BUILDER
-                .comment("Cleric 1 Trade Request 1 Table")
+                .comment(" Cleric 1 Trade Request 1 Table")
                 .define("cleric_1_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
         CLERIC_1_OFFER_1 = BUILDER
-                .comment("Cleric 1 Trade Offer 1 Table")
+                .comment(" Cleric 1 Trade Offer 1 Table")
                 .define("cleric_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Cleric Level One Trade Two");
         CLERIC_1_REQUEST_2 = BUILDER
-                .comment("Cleric 1 Trade Request 2 Table")
+                .comment(" Cleric 1 Trade Request 2 Table")
                 .define("cleric_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         CLERIC_1_OFFER_2 = BUILDER
-                .comment("Cleric 1 Trade Offer 2 Table")
+                .comment(" Cleric 1 Trade Offer 2 Table")
                 .define("cleric_1_trade_offer_2_table",
                         TradeLootTables.ENCHANTING_GEMS_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Cleric Level Two Trade One");
         CLERIC_2_REQUEST_1 = BUILDER
-                .comment("Cleric 2 Trade Request 1 Table")
+                .comment(" Cleric 2 Trade Request 1 Table")
                 .define("cleric_2_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
         CLERIC_2_OFFER_1 = BUILDER
-                .comment("Cleric 2 Trade Offer 1 Table")
+                .comment(" Cleric 2 Trade Offer 1 Table")
                 .define("cleric_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Cleric Level Two Trade Two");
         CLERIC_2_REQUEST_2 = BUILDER
-                .comment("Cleric 2 Trade Request 2 Table")
+                .comment(" Cleric 2 Trade Request 2 Table")
                 .define("cleric_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         CLERIC_2_OFFER_2 = BUILDER
-                .comment("Cleric 2 Trade Offer 2 Table")
+                .comment(" Cleric 2 Trade Offer 2 Table")
                 .define("cleric_2_trade_offer_2_table",
                         TradeLootTables.ENCHANTING_GEMS_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Cleric Level Three Trade One");
         CLERIC_3_REQUEST_1 = BUILDER
-                .comment("Cleric 3 Trade Request 1 Table")
+                .comment(" Cleric 3 Trade Request 1 Table")
                 .define("cleric_3_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE.toString());
         CLERIC_3_OFFER_1 = BUILDER
-                .comment("Cleric 3 Trade Offer 1 Table")
+                .comment(" Cleric 3 Trade Offer 1 Table")
                 .define("cleric_3_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Cleric Level Three Trade Two");
         CLERIC_3_REQUEST_2 = BUILDER
-                .comment("Cleric 3 Trade Request 2 Table")
+                .comment(" Cleric 3 Trade Request 2 Table")
                 .define("cleric_3_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         CLERIC_3_OFFER_2 = BUILDER
-                .comment("Cleric 3 Trade Offer 2 Table")
+                .comment(" Cleric 3 Trade Offer 2 Table")
                 .define("cleric_3_trade_offer_2_table",
                         TradeLootTables.ENCHANTING_GEMS_TABLE.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Cleric Level Four Trade One");
         CLERIC_4_REQUEST_1 = BUILDER
-                .comment("Cleric 4 Trade Request 1 Table")
+                .comment(" Cleric 4 Trade Request 1 Table")
                 .define("cleric_4_trade_request_1_table",
                         TradeLootTables.SCUTE_TABLE.toString());
         CLERIC_4_OFFER_1 = BUILDER
-                .comment("Cleric 4 Trade Offer 1 Table")
+                .comment(" Cleric 4 Trade Offer 1 Table")
                 .define("cleric_4_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Cleric Level Four Trade Two");
         CLERIC_4_REQUEST_2 = BUILDER
-                .comment("Cleric 4 Trade Request 2 Table")
+                .comment(" Cleric 4 Trade Request 2 Table")
                 .define("cleric_4_trade_request_2_table",
                         TradeLootTables.GLASS_BOTTLE_TABLE.toString());
         CLERIC_4_OFFER_2 = BUILDER
-                .comment("Cleric 4 Trade Offer 2 Table")
+                .comment(" Cleric 4 Trade Offer 2 Table")
                 .define("cleric_4_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Cleric Level Four Trade Three");
         CLERIC_4_REQUEST_3 = BUILDER
-                .comment("Cleric 4 Trade Request 3 Table")
+                .comment(" Cleric 4 Trade Request 3 Table")
                 .define("cleric_4_trade_request_3_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         CLERIC_4_OFFER_3 = BUILDER
-                .comment("Cleric 4 Trade Offer 3 Table")
+                .comment(" Cleric 4 Trade Offer 3 Table")
                 .define("cleric_4_trade_offer_3_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_GEMS.toString());
         BUILDER.pop();
         // level 5
         BUILDER.push("Cleric Level Five Trade One");
         CLERIC_5_REQUEST_1 = BUILDER
-                .comment("Cleric 5 Trade Request 1 Table")
+                .comment(" Cleric 5 Trade Request 1 Table")
                 .define("cleric_5_trade_request_1_table",
                         TradeLootTables.POTION_INGREDIENTS_TABLE.toString());
         CLERIC_5_OFFER_1 = BUILDER
-                .comment("Cleric 5 Trade Offer 1 Table")
+                .comment(" Cleric 5 Trade Offer 1 Table")
                 .define("cleric_5_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Cleric Level Five Trade Two");
         CLERIC_5_REQUEST_2 = BUILDER
-                .comment("Cleric 5 Trade Request 2 Table")
+                .comment(" Cleric 5 Trade Request 2 Table")
                 .define("cleric_5_trade_request_2_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         CLERIC_5_OFFER_2 = BUILDER
-                .comment("Cleric 5 Trade Offer 2 Table")
+                .comment(" Cleric 5 Trade Offer 2 Table")
                 .define("cleric_5_trade_offer_2_table",
                         TradeLootTables.EXPERIENCE_BOTTLE_TABLE.toString());
         BUILDER.pop();
@@ -1868,23 +2977,23 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Farmer Level One Trade One");
         FARMER_1_REQUEST_1 = BUILDER
-                .comment("Farmer 1 Trade Request 1 Table")
+                .comment(" Farmer 1 Trade Request 1 Table")
                 .define("farmer_1_trade_request_1_table",
                         TradeLootTables.TAGGED_VEGGIES_AND_GRAINS_TABLE.toString());
         FARMER_1_REQUEST_1_COUNT = BUILDER
                 .define("farmer_1_trade_request_1_count", 24);
         FARMER_1_OFFER_1 = BUILDER
-                .comment("Farmer 1 Trade Offer 1 Table")
+                .comment(" Farmer 1 Trade Offer 1 Table")
                 .define("farmer_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Farmer Level One Trade Two");
         FARMER_1_REQUEST_2 = BUILDER
-                .comment("Farmer 1 Trade Request 2 Table")
+                .comment(" Farmer 1 Trade Request 2 Table")
                 .define("farmer_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FARMER_1_OFFER_2 = BUILDER
-                .comment("Farmer 1 Trade Offer 2 Table")
+                .comment(" Farmer 1 Trade Offer 2 Table")
                 .define("farmer_1_trade_offer_2_table",
                         TradeLootTables.TAGGED_BREADS_TABLE.toString());
         FARMER_1_OFFER_2_COUNT = BUILDER
@@ -1893,23 +3002,23 @@ public class CommonConfig {
         // level 2
         BUILDER.push("Farmer Level Two Trade One");
         FARMER_2_REQUEST_1 = BUILDER
-                .comment("Farmer 2 Trade Request 1 Table")
+                .comment(" Farmer 2 Trade Request 1 Table")
                 .define("farmer_2_trade_request_1_table",
                         TradeLootTables.TAGGED_GOURDS_TABLE.toString());
         FARMER_2_REQUEST_1_COUNT = BUILDER
                 .define("farmer_2_trade_request_1_count", 6);
         FARMER_2_OFFER_1 = BUILDER
-                .comment("Farmer 2 Trade Offer 1 Table")
+                .comment(" Farmer 2 Trade Offer 1 Table")
                 .define("farmer_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Farmer Level Two Trade Two");
         FARMER_2_REQUEST_2 = BUILDER
-                .comment("Farmer 2 Trade Request 2 Table")
+                .comment(" Farmer 2 Trade Request 2 Table")
                 .define("farmer_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FARMER_2_OFFER_2 = BUILDER
-                .comment("Farmer 2 Trade Offer 2 Table")
+                .comment(" Farmer 2 Trade Offer 2 Table")
                 .define("farmer_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_PIES_TABLE.toString());
         FARMER_2_OFFER_2_COUNT = BUILDER
@@ -1918,11 +3027,11 @@ public class CommonConfig {
         // level 3
         BUILDER.push("Farmer Level Three Trade One");
         FARMER_3_REQUEST_1 = BUILDER
-                .comment("Farmer 3 Trade Request 1 Table")
+                .comment(" Farmer 3 Trade Request 1 Table")
                 .define("farmer_3_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FARMER_3_OFFER_1 = BUILDER
-                .comment("Farmer 3 Trade Offer 1 Table")
+                .comment(" Farmer 3 Trade Offer 1 Table")
                 .define("farmer_3_trade_offer_1_table",
                         TradeLootTables.TAGGED_FRUITS_TABLE.toString());
         FARMER_3_OFFER_1_COUNT = BUILDER
@@ -1930,11 +3039,11 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Farmer Level Three Trade Two");
         FARMER_3_REQUEST_2 = BUILDER
-                .comment("Farmer 3 Trade Request 2 Table")
+                .comment(" Farmer 3 Trade Request 2 Table")
                 .define("farmer_3_trade_request_2_count",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FARMER_3_OFFER_2 = BUILDER
-                .comment("Farmer 3 Trade Offer 2 Table")
+                .comment(" Farmer 3 Trade Offer 2 Table")
                 .define("farmer_3_trade_offer_2_table",
                         TradeLootTables.TAGGED_COOKIES_TABLE.toString());
         FARMER_3_OFFER_2_COUNT = BUILDER
@@ -1943,11 +3052,11 @@ public class CommonConfig {
         // level 4
         BUILDER.push("Farmer Level Four Trade One");
         FARMER_4_REQUEST_1 = BUILDER
-                .comment("Farmer 4 Trade Request 1 Table")
+                .comment(" Farmer 4 Trade Request 1 Table")
                 .define("farmer_4_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FARMER_4_OFFER_1 = BUILDER
-                .comment("Farmer 4 Trade Offer 1 Table")
+                .comment(" Farmer 4 Trade Offer 1 Table")
                 .define("farmer_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_CAKES_TABLE.toString());
         FARMER_4_OFFER_1_COUNT = BUILDER
@@ -1955,29 +3064,31 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Farmer Level Four Trade Two");
         FARMER_4_REQUEST_2 = BUILDER
-                .comment("Farmer 4 Trade Request 2 Table")
-                .comment("Suspicious Stew Trade - adds all registered mob effects")
+                .comment(" Farmer 4 Trade Request 2 Table")
+                .comment(" Suspicious Stew Trade - adds all registered mob effects")
                 .define("farmer_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 5
-        BUILDER.push("Farmer Level Five Trade One");
+        BUILDER.push("Farmer Level Five Trade One")
+                .comment(" Rare Trade");
         FARMER_5_REQUEST_1 = BUILDER
-                .comment("Farmer 5 Trade Request 1 Table")
+                .comment(" Farmer 5 Trade Request 1 Table")
                 .define("farmer_5_trade_request_1_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         FARMER_5_OFFER_1 = BUILDER
-                .comment("Farmer 5 Trade Offer 1 Table")
+                .comment(" Farmer 5 Trade Offer 1 Table")
                 .define("farmer_5_trade_offer_1_table",
                         TradeLootTables.GOLDEN_FOOD_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Farmer Level Five Trade Two");
+        BUILDER.push("Farmer Level Five Trade Two")
+                .comment(" Rare Trade");
         FARMER_5_REQUEST_2 = BUILDER
-                .comment("Farmer 5 Trade Request 2 Table")
+                .comment(" Farmer 5 Trade Request 2 Table")
                 .define("farmer_5_trade_request_2_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         FARMER_5_OFFER_2 = BUILDER
-                .comment("Farmer 5 Trade Offer 2 Table")
+                .comment(" Farmer 5 Trade Offer 2 Table")
                 .define("farmer_5_trade_offer_2_table",
                         TradeLootTables.GOLDEN_FOOD_TABLE.toString());
         BUILDER.pop();
@@ -1987,68 +3098,69 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Fisherman Level One Trade One");
         FISHERMAN_1_REQUEST_1 = BUILDER
-                .comment("Fisherman 1 Trade Request 1 Table")
+                .comment(" Fisherman 1 Trade Request 1 Table")
                 .define("fisherman_1_trade_request_1_table",
                         TradeLootTables.TAGGED_STRING_TABLE.toString());
         FISHERMAN_1_REQUEST_1_COUNT = BUILDER
                 .define("fisherman_1_trade_request_1_count", 16);
         FISHERMAN_1_OFFER_1 = BUILDER
-                .comment("Fisherman 1 Trade Offer 1 Table")
+                .comment(" Fisherman 1 Trade Offer 1 Table")
                 .define("fisherman_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fisherman Level One Trade Two");
         FISHERMAN_1_REQUEST_2 = BUILDER
-                .comment("Fisherman 1 Trade Request 2 Table")
+                .comment(" Fisherman 1 Trade Request 2 Table")
                 .define("fisherman_1_trade_request_2_table",
                         TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         FISHERMAN_1_OFFER_2 = BUILDER
-                .comment("Fisherman 1 Trade Offer 2 Table")
+                .comment(" Fisherman 1 Trade Offer 2 Table")
                 .define("fisherman_1_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fisherman Level One Trade Three");
         FISHERMAN_1_REQUEST_3 = BUILDER
-                .comment("Fisherman 1 Trade Request 3 Table")
+                .comment(" Fisherman 1 Trade Request 3 Table")
                 .define("fisherman_1_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_1_OFFER_3 = BUILDER
-                .comment("Fisherman 1 Trade Offer 3 Table")
+                .comment(" Fisherman 1 Trade Offer 3 Table")
                 .define("fisherman_1_trade_offer_3_table",
                         TradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE.toString());
         FISHERMAN_1_OFFER_3_COUNT = BUILDER
                 .define("fisherman_1_trade_offer_3_count", 6);
         BUILDER.pop();
-        BUILDER.push("Fisherman Level One Trade Four");
+        BUILDER.push("Fisherman Level One Trade Four")
+                .comment(" Rare Trade");
         FISHERMAN_1_REQUEST_4 = BUILDER
-                .comment("Fisherman 1 Trade Request 4 Table")
+                .comment(" Fisherman 1 Trade Request 4 Table")
                 .define("fisherman_1_trade_request_4_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_1_OFFER_4 = BUILDER
-                .comment("Fisherman 1 Trade Offer 4 Table")
+                .comment(" Fisherman 1 Trade Offer 4 Table")
                 .define("fisherman_1_trade_offer_4_table",
                         TradeLootTables.FISH_BUCKET_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Fisherman Level Two Trade One");
         FISHERMAN_2_REQUEST_1 = BUILDER
-                .comment("Fisherman 2 Trade Request 1 Table")
+                .comment(" Fisherman 2 Trade Request 1 Table")
                 .define("fisherman_2_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         FISHERMAN_2_REQUEST_1_COUNT = BUILDER
                 .define("fisherman_2_trade_request_1_count", 6);
         FISHERMAN_2_OFFER_1 = BUILDER
-                .comment("Fisherman 2 Trade Offer 1 Table")
+                .comment(" Fisherman 2 Trade Offer 1 Table")
                 .define("fisherman_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fisherman Level Two Trade Three");
         FISHERMAN_2_REQUEST_2 = BUILDER
-                .comment("Fisherman 2 Trade Request 2 Table")
+                .comment(" Fisherman 2 Trade Request 2 Table")
                 .define("fisherman_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_2_OFFER_2 = BUILDER
-                .comment("Fisherman 2 Trade Offer 2 Table")
+                .comment(" Fisherman 2 Trade Offer 2 Table")
                 .define("fisherman_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE.toString());
         FISHERMAN_2_OFFER_2_COUNT = BUILDER
@@ -2056,93 +3168,94 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Fisherman Level Two Trade Three");
         FISHERMAN_2_REQUEST_3 = BUILDER
-                .comment("Fisherman 2 Trade Request 3 Table")
+                .comment(" Fisherman 2 Trade Request 3 Table")
                 .define("fisherman_2_trade_request_3_table",
                         TradeLootTables.TWO_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_2_OFFER_3 = BUILDER
-                .comment("Fisherman 2 Trade Offer 3 Table")
+                .comment(" Fisherman 2 Trade Offer 3 Table")
                 .define("fisherman_2_trade_offer_3_table",
                         TradeLootTables.CAMPFIRE_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Fisherman Level Three Trade One");
         FISHERMAN_3_REQUEST_1 = BUILDER
-                .comment("Fisherman 3 Trade Request 1 Table")
+                .comment(" Fisherman 3 Trade Request 1 Table")
                 .define("fisherman_3_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         FISHERMAN_3_REQUEST_1_COUNT = BUILDER
                 .define("fisherman_3_trade_request_1_count", 6);
         FISHERMAN_3_OFFER_1 = BUILDER
-                .comment("Fisherman 3 Trade Offer 1 Table")
+                .comment(" Fisherman 3 Trade Offer 1 Table")
                 .define("fisherman_3_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fisherman Level Three Trade Two");
         FISHERMAN_3_REQUEST_2 = BUILDER
-                .comment("Fisherman 3 Trade Request 2 Table")
+                .comment(" Fisherman 3 Trade Request 2 Table")
                 .define("fisherman_3_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_3_OFFER_2 = BUILDER
-                .comment("Fisherman 3 Trade Offer 2 Table")
+                .comment(" Fisherman 3 Trade Offer 2 Table")
                 .define("fisherman_3_trade_offer_2_table",
                         TradeLootTables.FISHING_GEAR_TABLE.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Fisherman Level Four Trade One");
         FISHERMAN_4_REQUEST_1 = BUILDER
-                .comment("Fisherman 4 Trade Request 1 Table")
+                .comment(" Fisherman 4 Trade Request 1 Table")
                 .define("fisherman_4_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_4_OFFER_1 = BUILDER
-                .comment("Fisherman 4 Trade Offer 1 Table")
-                .comment("Available if Supplementaries or Turtle Block Academy mod is Loaded")
+                .comment(" Fisherman 4 Trade Offer 1 Table")
+                .comment(" Available if Supplementaries or Turtle Block Academy mod is Loaded")
                 .define("fisherman_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         FISHERMAN_4_OFFER_1_COUNT = BUILDER
                 .define("fisherman_4_trade_offer_1_count", 18);
         BUILDER.pop();
-        BUILDER.push("Fisherman Level Four Trade Two");
+        BUILDER.push("Fisherman Level Four Trade Two")
+                .comment(" Rare Trade");
         FISHERMAN_4_REQUEST_2 = BUILDER
-                .comment("Fisherman 4 Trade Request 2 Table")
+                .comment(" Fisherman 4 Trade Request 2 Table")
                 .define("fisherman_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_4_OFFER_2 = BUILDER
-                .comment("Fisherman 4 Trade Offer 2 Table")
+                .comment(" Fisherman 4 Trade Offer 2 Table")
                 .define("fisherman_4_trade_offer_2_table",
                         TradeLootTables.FISHING_ROD_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Fisherman Level Four Trade Three");
         FISHERMAN_4_REQUEST_3 = BUILDER
-                .comment("Fisherman 4 Trade Request 3 Table")
+                .comment(" Fisherman 4 Trade Request 3 Table")
                 .define("fisherman_4_trade_request_3_table",
                         TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         FISHERMAN_4_REQUEST_3_COUNT = BUILDER
                 .define("fisherman_4_trade_request_3_count", 6);
         FISHERMAN_4_OFFER_3 = BUILDER
-                .comment("Fisherman 4 Trade Offer 3 Table")
+                .comment(" Fisherman 4 Trade Offer 3 Table")
                 .define("fisherman_4_trade_offer_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 5
         BUILDER.push("Fisherman Level Five Trade One");
         FISHERMAN_5_REQUEST_1 = BUILDER
-                .comment("Fisherman 5 Trade Request 1 Table")
+                .comment(" Fisherman 5 Trade Request 1 Table")
                 .define("fisherman_5_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         FISHERMAN_5_REQUEST_1_COUNT = BUILDER
                 .define("fisherman_5_trade_request_1_count", 6);
         FISHERMAN_5_OFFER_1 = BUILDER
-                .comment("Fisherman 5 Trade Offer 1 Table")
+                .comment(" Fisherman 5 Trade Offer 1 Table")
                 .define("fisherman_5_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fisherman Level Five Trade Two");
         FISHERMAN_5_REQUEST_2 = BUILDER
-                .comment("Fisherman 5 Trade Request 2 Table")
+                .comment(" Fisherman 5 Trade Request 2 Table")
                 .define("fisherman_5_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_5_OFFER_2 = BUILDER
-                .comment("Fisherman 5 Trade Offer 2 Table")
+                .comment(" Fisherman 5 Trade Offer 2 Table")
                 .define("fisherman_5_trade_offer_2_table",
                         TradeLootTables.FISHING_GEAR_TABLE.toString());
         BUILDER.pop();
@@ -2152,94 +3265,95 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Fletcher Level One Trade One");
         FLETCHER_1_REQUEST_1 = BUILDER
-                .comment("Fletcher 1 Trade Request 1 Table")
+                .comment(" Fletcher 1 Trade Request 1 Table")
                 .define("fletcher_1_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_TABLE.toString());
         FLETCHER_1_REQUEST_1_COUNT = BUILDER
                 .define("fletcher_1_trade_request_1_count", 16);
         FLETCHER_1_OFFER_1 = BUILDER
-                .comment("Fletcher 1 Trade Offer 1 Table")
+                .comment(" Fletcher 1 Trade Offer 1 Table")
                 .define("fletcher_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fletcher Level One Trade Two");
         FLETCHER_1_REQUEST_2 = BUILDER
-                .comment("Fletcher 1 Trade Request 2 Table")
+                .comment(" Fletcher 1 Trade Request 2 Table")
                 .define("fletcher_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FLETCHER_1_REQUEST_2_SECONDARY = BUILDER
-                .comment("Fletcher 1 Trade Secondary Request 2 Table")
+                .comment(" Fletcher 1 Trade Secondary Request 2 Table")
                 .define("fletcher_1_trade_secondary_request_2_table",
                         TradeLootTables.GRAVEL_TABLE.toString());
         FLETCHER_1_OFFER_2 = BUILDER
-                .comment("Fletcher 1 Trade Offer 2 Table")
+                .comment(" Fletcher 1 Trade Offer 2 Table")
                 .define("fletcher_1_trade_offer_2_table",
                         TradeLootTables.FLINT_SELL_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Fletcher Level Two Trade One");
         FLETCHER_2_REQUEST_1 = BUILDER
-                .comment("Fletcher 2 Trade Request 1 Table")
+                .comment(" Fletcher 2 Trade Request 1 Table")
                 .define("fletcher_2_trade_request_1_table",
                         TradeLootTables.FLINT_BUY_TABLE.toString());
         FLETCHER_2_OFFER_1 = BUILDER
-                .comment("Fletcher 2 Trade Offer 1 Table")
+                .comment(" Fletcher 2 Trade Offer 1 Table")
                 .define("fletcher_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fletcher Level Two Trade Two");
         FLETCHER_2_REQUEST_2 = BUILDER
-                .comment("Fletcher 2 Trade Request 2 Table")
+                .comment(" Fletcher 2 Trade Request 2 Table")
                 .define("fletcher_2_trade_request_2_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         FLETCHER_2_OFFER_2 = BUILDER
-                .comment("Fletcher 2 Trade Offer 2 Table")
+                .comment(" Fletcher 2 Trade Offer 2 Table")
                 .define("fletcher_2_trade_offer_2_table",
                         TradeLootTables.BOWS_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Fletcher Level Three Trade One");
         FLETCHER_3_REQUEST_1 = BUILDER
-                .comment("Fletcher 3 Trade Request 1 Table")
+                .comment(" Fletcher 3 Trade Request 1 Table")
                 .define("fletcher_3_trade_request_1_table",
                         TradeLootTables.TAGGED_STRING_TABLE.toString());
         FLETCHER_3_REQUEST_1_COUNT = BUILDER
                 .define("fletcher_3_trade_request_1_count", 16);
         FLETCHER_3_OFFER_1 = BUILDER
-                .comment("Fletcher 3 Trade Offer 1 Table")
+                .comment(" Fletcher 3 Trade Offer 1 Table")
                 .define("fletcher_3_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fletcher Level Three Trade Two");
         FLETCHER_3_REQUEST_2 = BUILDER
-                .comment("Fletcher 3 Trade Request 2 Table")
+                .comment(" Fletcher 3 Trade Request 2 Table")
                 .define("fletcher_3_trade_request_2_table",
                         TradeLootTables.FEATHER_TABLE.toString());
         FLETCHER_3_OFFER_2 = BUILDER
-                .comment("Fletcher 3 Trade Offer 2 Table")
+                .comment(" Fletcher 3 Trade Offer 2 Table")
                 .define("fletcher_3_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 4
-        BUILDER.push("Fletcher Level Four Trade One");
+        BUILDER.push("Fletcher Level Four Trade One")
+                .comment(" Rare Trade");
         FLETCHER_4_REQUEST_1 = BUILDER
-                .comment("Fletcher 4 Trade Request 1 Table")
+                .comment(" Fletcher 4 Trade Request 1 Table")
                 .define("fletcher_4_trade_request_1_table",
                         TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY.toString());
         FLETCHER_4_OFFER_1 = BUILDER
-                .comment("Fletcher 4 Trade Offer 1 Table")
+                .comment(" Fletcher 4 Trade Offer 1 Table")
                 .define("fletcher_4_trade_offer_1_table",
                         TradeLootTables.BOWS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Fletcher Level Four Trade Two");
         FLETCHER_4_REQUEST_2 = BUILDER
-                .comment("Fletcher 4 Trade Request 2 Table")
-                .comment("Available if Supplementaries mod is Loaded")
+                .comment(" Fletcher 4 Trade Request 2 Table")
+                .comment(" Available if Supplementaries mod is Loaded")
                 .define("fletcher_4_trade_request_2_table",
                         TradeLootTables.TWO_EMERALD_VALUE_CURRENCY.toString());
         FLETCHER_4_OFFER_2 = BUILDER
-                .comment("Fletcher 4 Trade Offer 2 Table")
-                .comment("Available if Supplementaries mod is Loaded")
+                .comment(" Fletcher 4 Trade Offer 2 Table")
+                .comment(" Available if Supplementaries mod is Loaded")
                 .define("fletcher_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_QUIVERS_TABLE.toString());
         FLETCHER_4_OFFER_2_COUNT = BUILDER
@@ -2247,26 +3361,26 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Fletcher Level Four Trade Two");
         FLETCHER_4_REQUEST_3 = BUILDER
-                .comment("Fletcher 4 Trade Request 3 Table")
+                .comment(" Fletcher 4 Trade Request 3 Table")
                 .define("fletcher_4_trade_request_3_table",
                         TradeLootTables.TRIPWIRE_HOOK_TABLE.toString());
         FLETCHER_4_OFFER_3 = BUILDER
-                .comment("Fletcher 4 Trade Offer 3 Table")
+                .comment(" Fletcher 4 Trade Offer 3 Table")
                 .define("fletcher_4_trade_offer_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 5
         BUILDER.push("Fletcher Level Five Trade One");
         FLETCHER_5_REQUEST_1 = BUILDER
-                .comment("Fletcher 5 Trade Request 1 Table")
-                .comment("Tipped Arrow Trade")
+                .comment(" Fletcher 5 Trade Request 1 Table")
+                .comment(" Tipped Arrow Trade")
                 .define("fletcher_5_trade_request_1_table",
                         TradeLootTables.TWO_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Fletcher Level Five Trade Two");
         FLETCHER_5_REQUEST_2 = BUILDER
-                .comment("Fletcher 5 Trade Request 2 Table")
-                .comment("Tipped Arrow Trade")
+                .comment(" Fletcher 5 Trade Request 2 Table")
+                .comment(" Tipped Arrow Trade")
                 .define("fletcher_5_trade_request_2_table",
                         TradeLootTables.TWO_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
@@ -2276,129 +3390,129 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Leatherworker Level One Trade One");
         LEATHERWORKER_1_REQUEST_1 = BUILDER
-                .comment("Leatherworker 1 Trade Request 1 Table")
+                .comment(" Leatherworker 1 Trade Request 1 Table")
                 .define("leatherworker_1_trade_request_1_table",
                         TradeLootTables.TAGGED_LEATHER_TABLE.toString());
         LEATHERWORKER_1_REQUEST_1_COUNT = BUILDER
                 .define("leatherworker_1_trade_request_1_count", 6);
         LEATHERWORKER_1_OFFER_1 = BUILDER
-                .comment("Leatherworker 1 Trade Offer 1 Table")
+                .comment(" Leatherworker 1 Trade Offer 1 Table")
                 .define("leatherworker_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Leatherworker Level One Trade Two");
         LEATHERWORKER_1_REQUEST_2 = BUILDER
-                .comment("Leatherworker 1 Trade Request 2 Table")
+                .comment(" Leatherworker 1 Trade Request 2 Table")
                 .define("leatherworker_1_trade_request_2_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         LEATHERWORKER_1_OFFER_2 = BUILDER
-                .comment("Leatherworker 1 Trade Offer 2 Table")
+                .comment(" Leatherworker 1 Trade Offer 2 Table")
                 .define("leatherworker_1_trade_offer_2_table",
                         TradeLootTables.LEATHER_TIER_LEGGINGS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Leatherworker Level One Trade Three");
         LEATHERWORKER_1_REQUEST_3 = BUILDER
-                .comment("Leatherworker 1 Trade Request 3 Table")
+                .comment(" Leatherworker 1 Trade Request 3 Table")
                 .define("leatherworker_1_trade_request_3_table",
                         TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY.toString());
         LEATHERWORKER_1_OFFER_3 = BUILDER
-                .comment("Leatherworker 1 Trade Offer 3 Table")
+                .comment(" Leatherworker 1 Trade Offer 3 Table")
                 .define("leatherworker_1_trade_offer_3_table",
                         TradeLootTables.LEATHER_TIER_CHESTPLATES_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Leatherworker Level Two Trade One");
         LEATHERWORKER_2_REQUEST_1 = BUILDER
-                .comment("Leatherworker 2 Trade Request 1 Table")
+                .comment(" Leatherworker 2 Trade Request 1 Table")
                 .define("leatherworker_2_trade_request_1_table",
                         TradeLootTables.FLINT_BUY_TABLE.toString());
         LEATHERWORKER_2_OFFER_1 = BUILDER
-                .comment("Leatherworker 2 Trade Offer 1 Table")
+                .comment(" Leatherworker 2 Trade Offer 1 Table")
                 .define("leatherworker_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Leatherworker Level Two Trade Two");
         LEATHERWORKER_2_REQUEST_2 = BUILDER
-                .comment("Leatherworker 2 Trade Request 2 Table")
+                .comment(" Leatherworker 2 Trade Request 2 Table")
                 .define("leatherworker_2_trade_request_2_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         LEATHERWORKER_2_OFFER_2 = BUILDER
-                .comment("Leatherworker 2 Trade Offer 2 Table")
+                .comment(" Leatherworker 2 Trade Offer 2 Table")
                 .define("leatherworker_2_trade_offer_2_table",
                         TradeLootTables.LEATHER_TIER_HELMETS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Leatherworker Level Two Trade Three");
         LEATHERWORKER_2_REQUEST_3 = BUILDER
-                .comment("Leatherworker 2 Trade Request 3 Table")
+                .comment(" Leatherworker 2 Trade Request 3 Table")
                 .define("leatherworker_2_trade_request_3_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         LEATHERWORKER_2_OFFER_3 = BUILDER
-                .comment("Leatherworker 2 Trade Offer 3 Table")
+                .comment(" Leatherworker 2 Trade Offer 3 Table")
                 .define("leatherworker_2_trade_offer_3_table",
                         TradeLootTables.LEATHER_TIER_BOOTS_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Leatherworker Level Three Trade One");
         LEATHERWORKER_3_REQUEST_1 = BUILDER
-                .comment("Leatherworker 3 Trade Request 1 Table")
+                .comment(" Leatherworker 3 Trade Request 1 Table")
                 .define("leatherworker_3_trade_request_1_table",
                         TradeLootTables.TAGGED_LEATHER_TABLE.toString());
         LEATHERWORKER_3_REQUEST_1_COUNT = BUILDER
                 .define("leatherworker_3_trade_request_1_count", 6);
         LEATHERWORKER_3_OFFER_1 = BUILDER
-                .comment("Leatherworker 3 Trade Offer 1 Table")
+                .comment(" Leatherworker 3 Trade Offer 1 Table")
                 .define("leatherworker_3_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Leatherworker Level Three Trade Two");
         LEATHERWORKER_3_REQUEST_2 = BUILDER
-                .comment("Leatherworker 3 Trade Request 2 Table")
+                .comment(" Leatherworker 3 Trade Request 2 Table")
                 .define("leatherworker_3_trade_request_2_table",
                         TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY.toString());
         LEATHERWORKER_3_OFFER_2 = BUILDER
-                .comment("Leatherworker 3 Trade Offer 2 Table")
+                .comment(" Leatherworker 3 Trade Offer 2 Table")
                 .define("leatherworker_3_trade_offer_2_table",
                         TradeLootTables.LEATHER_TIER_CHESTPLATES_TABLE.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Leatherworker Level Four Trade One");
         LEATHERWORKER_4_REQUEST_1 = BUILDER
-                .comment("Leatherworker 4 Trade Request 1 Table")
+                .comment(" Leatherworker 4 Trade Request 1 Table")
                 .define("leatherworker_4_trade_request_1_table",
                         TradeLootTables.SCUTE_TABLE.toString());
         LEATHERWORKER_4_OFFER_1 = BUILDER
-                .comment("Leatherworker 4 Trade Offer 1 Table")
+                .comment(" Leatherworker 4 Trade Offer 1 Table")
                 .define("leatherworker_4_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Leatherworker Level Four Trade Two");
         LEATHERWORKER_4_REQUEST_2 = BUILDER
-                .comment("Leatherworker 4 Trade Request 2 Table")
+                .comment(" Leatherworker 4 Trade Request 2 Table")
                 .define("leatherworker_4_trade_request_2_table",
                         TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
         LEATHERWORKER_4_OFFER_2 = BUILDER
-                .comment("Leatherworker 4 Trade Offer 2 Table")
+                .comment(" Leatherworker 4 Trade Offer 2 Table")
                 .define("leatherworker_4_trade_offer_2_table",
                         TradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE.toString());
         BUILDER.pop();
         // level 5
         BUILDER.push("Leatherworker Level Five Trade One");
         LEATHERWORKER_5_REQUEST_1 = BUILDER
-                .comment("Leatherworker 5 Trade Request 1 Table")
+                .comment(" Leatherworker 5 Trade Request 1 Table")
                 .define("leatherworker_5_trade_request_1_table",
                         TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
         LEATHERWORKER_5_OFFER_1 = BUILDER
-                .comment("Leatherworker 5 Trade Offer 1 Table")
+                .comment(" Leatherworker 5 Trade Offer 1 Table")
                 .define("leatherworker_5_trade_offer_1_table",
                         TradeLootTables.SADDLE_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Leatherworker Level Five Trade Two");
         LEATHERWORKER_5_REQUEST_2 = BUILDER
-                .comment("Leatherworker 5 Trade Request 2 Table")
+                .comment(" Leatherworker 5 Trade Request 2 Table")
                 .define("leatherworker_5_trade_request_2_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         LEATHERWORKER_5_OFFER_2 = BUILDER
-                .comment("Leatherworker 5 Trade Offer 2 Table")
+                .comment(" Leatherworker 5 Trade Offer 2 Table")
                 .define("leatherworker_5_trade_offer_2_table",
                         TradeLootTables.LEATHER_TIER_HELMETS_TABLE.toString());
         BUILDER.pop();
@@ -2408,93 +3522,96 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Librarian Level One Trade One");
         LIBRARIAN_1_REQUEST_1 = BUILDER
-                .comment("Librarian 1 Trade Request 1 Table")
+                .comment(" Librarian 1 Trade Request 1 Table")
                 .define("librarian_1_trade_request_1_table",
                         TradeLootTables.SMALLEST_COIN.toString());
         LIBRARIAN_1_OFFER_1 = BUILDER
-                .comment("Librarian 1 Trade Offer 1 Table")
+                .comment(" Librarian 1 Trade Offer 1 Table")
                 .define("librarian_1_trade_offer_1_table",
                         TradeLootTables.GUIDE_BOOKS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level One Trade Two");
         LIBRARIAN_1_REQUEST_2 = BUILDER
-                .comment("Librarian 1 Trade Request 2 Table")
+                .comment(" Librarian 1 Trade Request 2 Table")
                 .define("librarian_1_trade_request_2_table",
                         TradeLootTables.PAPER_TABLE.toString());
         LIBRARIAN_1_OFFER_2 = BUILDER
-                .comment("Librarian 1 Trade Offer 2 Table")
+                .comment(" Librarian 1 Trade Offer 2 Table")
                 .define("librarian_1_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Librarian Level One Trade Three");
+        BUILDER.push("Librarian Level One Trade Three")
+                .comment(" Rare Trade");
         LIBRARIAN_1_REQUEST_3 = BUILDER
-                .comment("Librarian 1 Trade Request 2 Table")
+                .comment(" Librarian 1 Trade Request 2 Table")
                 .define("librarian_1_trade_request_3_table",
                         TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level One Trade Four");
         LIBRARIAN_1_REQUEST_4 = BUILDER
-                .comment("Librarian 1 Trade Request 4 Table")
+                .comment(" Librarian 1 Trade Request 4 Table")
                 .define("librarian_1_trade_request_4_table",
                         TradeLootTables.NINE_EMERALD_VALUE_CURRENCY.toString());
         LIBRARIAN_1_OFFER_4 = BUILDER
-                .comment("Librarian 1 Trade Offer 4 Table")
+                .comment(" Librarian 1 Trade Offer 4 Table")
                 .define("librarian_1_trade_offer_4_table",
                         TradeLootTables.BOOKSHELF_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Librarian Level Two Trade One");
         LIBRARIAN_2_REQUEST_1 = BUILDER
-                .comment("Librarian 2 Trade Request 1 Table")
+                .comment(" Librarian 2 Trade Request 1 Table")
                 .define("librarian_2_trade_request_1_table",
                         TradeLootTables.BOOK_TABLE.toString());
         LIBRARIAN_2_OFFER_1 = BUILDER
-                .comment("Librarian 2 Trade Offer 1 Table")
+                .comment(" Librarian 2 Trade Offer 1 Table")
                 .define("librarian_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Librarian Level Two Trade Two");
+        BUILDER.push("Librarian Level Two Trade Two")
+                .comment(" Rare Trade");
         LIBRARIAN_2_REQUEST_2 = BUILDER
-                .comment("Librarian 2 Trade Request 2 Table")
+                .comment(" Librarian 2 Trade Request 2 Table")
                 .define("librarian_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level Two Trade Three");
         LIBRARIAN_2_REQUEST_3 = BUILDER
-                .comment("Librarian 2 Trade Request 3 Table")
+                .comment(" Librarian 2 Trade Request 3 Table")
                 .define("librarian_2_trade_request_3_table",
                         TradeLootTables.BOOK_TABLE.toString());
         LIBRARIAN_2_OFFER_3 = BUILDER
-                .comment("Librarian 2 Trade Offer 3 Table")
+                .comment(" Librarian 2 Trade Offer 3 Table")
                 .define("librarian_2_trade_offer_3_table",
                         TradeLootTables.LANTERN_TABLE.toString());
         BUILDER.pop();
         // level 3
-        BUILDER.push("Librarian Level Three Trade One");
+        BUILDER.push("Librarian Level Three Trade One")
+                .comment(" Rare Trade");
         LIBRARIAN_3_REQUEST_1 = BUILDER
-                .comment("Librarian 3 Trade Request 1 Table")
+                .comment(" Librarian 3 Trade Request 1 Table")
                 .define("librarian_3_trade_request_1_table",
                         TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level Three Trade Two");
         LIBRARIAN_3_REQUEST_2 = BUILDER
-                .comment("Librarian 3 Trade Request 2 Table")
+                .comment(" Librarian 3 Trade Request 2 Table")
                 .define("librarian_3_trade_request_2_table",
                         TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY.toString());
         LIBRARIAN_3_REQUEST_2_COUNT = BUILDER
                 .define("librarian_3_trade_request_2_count", 1);
         LIBRARIAN_3_OFFER_2 = BUILDER
-                .comment("Librarian 3 Trade Offer 2 Table")
+                .comment(" Librarian 3 Trade Offer 2 Table")
                 .define("librarian_3_trade_offer_2_table",
                         TradeLootTables.THIRTY_TWO_EMERALD_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level Three Trade Three");
         LIBRARIAN_3_REQUEST_3 = BUILDER
-                .comment("Librarian 3 Trade Request 3 Table")
+                .comment(" Librarian 3 Trade Request 3 Table")
                 .define("librarian_3_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         LIBRARIAN_3_OFFER_3 = BUILDER
-                .comment("Librarian 3 Trade Offer 3 Table")
+                .comment(" Librarian 3 Trade Offer 3 Table")
                 .define("librarian_3_trade_offer_3_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         LIBRARIAN_3_OFFER_3_COUNT = BUILDER
@@ -2503,38 +3620,39 @@ public class CommonConfig {
         // level 4
         BUILDER.push("Librarian Level Four Trade One");
         LIBRARIAN_4_REQUEST_1 = BUILDER
-                .comment("Librarian 4 Trade Request 1 Table")
+                .comment(" Librarian 4 Trade Request 1 Table")
                 .define("librarian_4_trade_request_1_table",
                         TradeLootTables.BOOK_TABLE.toString());
         LIBRARIAN_4_OFFER_1 = BUILDER
-                .comment("Librarian 4 Trade Offer 1 Table")
+                .comment(" Librarian 4 Trade Offer 1 Table")
                 .define("librarian_4_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Librarian Level Four Trade Two");
+        BUILDER.push("Librarian Level Four Trade Two")
+                .comment(" Rare Trade");
         LIBRARIAN_4_REQUEST_2 = BUILDER
-                .comment("Librarian 4 Trade Request 2 Table")
+                .comment(" Librarian 4 Trade Request 2 Table")
                 .define("librarian_4_trade_request_2_table",
                         TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level Four Trade Three");
         LIBRARIAN_4_REQUEST_3 = BUILDER
-                .comment("Librarian 4 Trade Request 3 Table")
+                .comment(" Librarian 4 Trade Request 3 Table")
                 .define("librarian_4_trade_request_3_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         LIBRARIAN_4_OFFER_3 = BUILDER
-                .comment("Librarian 4 Trade Offer 3 Table")
+                .comment(" Librarian 4 Trade Offer 3 Table")
                 .define("librarian_4_trade_offer_3_table",
                         TradeLootTables.CLOCK_TABLE.toString());
         BUILDER.pop();
         // level 5
         BUILDER.push("Librarian Level Five Trade One");
         LIBRARIAN_5_REQUEST_1 = BUILDER
-                .comment("Librarian 5 Trade Request 1 Table")
+                .comment(" Librarian 5 Trade Request 1 Table")
                 .define("librarian_5_trade_request_1_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         LIBRARIAN_5_OFFER_1 = BUILDER
-                .comment("Librarian 5 Trade Offer 1 Table")
+                .comment(" Librarian 5 Trade Offer 1 Table")
                 .define("librarian_5_trade_offer_1_table",
                         TradeLootTables.TAGGED_INK_TABLE.toString());
         LIBRARIAN_5_OFFER_1_COUNT = BUILDER
@@ -2542,17 +3660,17 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Librarian Level Five Trade Two");
         LIBRARIAN_5_REQUEST_2 = BUILDER
-                .comment("Librarian 5 Trade Request 2 Table")
+                .comment(" Librarian 5 Trade Request 2 Table")
                 .define("librarian_5_trade_request_2_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         LIBRARIAN_5_OFFER_2 = BUILDER
-                .comment("Librarian 5 Trade Offer 2 Table")
+                .comment(" Librarian 5 Trade Offer 2 Table")
                 .define("librarian_5_trade_offer_2_table",
                         TradeLootTables.COMPASS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level Five Trade Three");
         LIBRARIAN_5_REQUEST_3 = BUILDER
-                .comment("Librarian 5 Trade Request 3 Table")
+                .comment(" Librarian 5 Trade Request 3 Table")
                 .define("librarian_5_trade_request_3_table",
                         TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
@@ -2562,107 +3680,107 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Mason Level One Trade One");
         MASON_1_REQUEST_1 = BUILDER
-                .comment("Mason 1 Trade Request 1 Table")
+                .comment(" Mason 1 Trade Request 1 Table")
                 .define("mason_1_trade_request_1_table",
                         TradeLootTables.CLAY_TABLE.toString());
         MASON_1_OFFER_1 = BUILDER
-                .comment("Mason 1 Trade Offer 1 Table")
+                .comment(" Mason 1 Trade Offer 1 Table")
                 .define("mason_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Mason Level One Trade Two");
         MASON_1_REQUEST_2 = BUILDER
-                .comment("Mason 1 Trade Request 2 Table")
+                .comment(" Mason 1 Trade Request 2 Table")
                 .define("mason_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         MASON_1_OFFER_2 = BUILDER
-                .comment("Mason 1 Trade Offer 2 Table")
+                .comment(" Mason 1 Trade Offer 2 Table")
                 .define("mason_1_trade_offer_2_table",
                         TradeLootTables.OVERWORLD_BRICK_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Mason Level Two Trade One");
         MASON_2_REQUEST_1 = BUILDER
-                .comment("Mason 2 Trade Request 1 Table")
+                .comment(" Mason 2 Trade Request 1 Table")
                 .define("mason_2_trade_request_1_table",
                         TradeLootTables.OVERWORLD_STONE_BLOCKS_TABLE.toString());
         MASON_2_OFFER_1 = BUILDER
-                .comment("Mason 2 Trade Offer 1 Table")
+                .comment(" Mason 2 Trade Offer 1 Table")
                 .define("mason_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Mason Level Two Trade Two");
         MASON_2_REQUEST_2 = BUILDER
-                .comment("Mason 2 Trade Request 2 Table")
+                .comment(" Mason 2 Trade Request 2 Table")
                 .define("mason_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         MASON_2_OFFER_2 = BUILDER
-                .comment("Mason 2 Trade Offer 2 Table")
+                .comment(" Mason 2 Trade Offer 2 Table")
                 .define("mason_2_trade_offer_2_table",
                         TradeLootTables.OVERWORLD_BRICK_BLOCKS_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Mason Level Three Trade One");
         MASON_3_REQUEST_1 = BUILDER
-                .comment("Mason 3 Trade Request 1 Table")
+                .comment(" Mason 3 Trade Request 1 Table")
                 .define("mason_3_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         MASON_3_OFFER_1 = BUILDER
-                .comment("Mason 3 Trade Offer 1 Table")
+                .comment(" Mason 3 Trade Offer 1 Table")
                 .define("mason_3_trade_offer_1_table",
                         TradeLootTables.OVERWORLD_POLISHED_STONE_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Mason Level Three Trade Two");
         MASON_3_REQUEST_2 = BUILDER
-                .comment("Mason 3 Trade Request 2 Table")
+                .comment(" Mason 3 Trade Request 2 Table")
                 .define("mason_3_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         MASON_3_OFFER_2 = BUILDER
-                .comment("Mason 3 Trade Offer 2 Table")
+                .comment(" Mason 3 Trade Offer 2 Table")
                 .define("mason_3_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Mason Level Four Trade One");
         MASON_4_REQUEST_1 = BUILDER
-                .comment("Mason 4 Trade Request 1 Table")
+                .comment(" Mason 4 Trade Request 1 Table")
                 .define("mason_4_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         MASON_4_OFFER_1 = BUILDER
-                .comment("Mason 4 Trade Offer 1 Table")
+                .comment(" Mason 4 Trade Offer 1 Table")
                 .define("mason_4_trade_offer_1_table",
                         TradeLootTables.TERRACOTTA_BLOCKS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Mason Level Four Trade Two");
         MASON_4_REQUEST_2 = BUILDER
-                .comment("Mason 4 Trade Request 2 Table")
+                .comment(" Mason 4 Trade Request 2 Table")
                 .define("mason_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         MASON_4_OFFER_2 = BUILDER
-                .comment("Mason 4 Trade Offer 2 Table")
+                .comment(" Mason 4 Trade Offer 2 Table")
                 .define("mason_4_trade_offer_2_table",
-                        TradeLootTables.OTHER_STONE_BLOCKS_TABLE.toString());
+                        TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE.toString());
         BUILDER.pop();
         // level 5
         BUILDER.push("Mason Level Five Trade One");
         MASON_5_REQUEST_1 = BUILDER
-                .comment("Mason 5 Trade Request 1 Table")
+                .comment(" Mason 5 Trade Request 1 Table")
                 .define("mason_5_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
         MASON_5_OFFER_1 = BUILDER
-                .comment("Mason 5 Trade Offer 1 Table")
+                .comment(" Mason 5 Trade Offer 1 Table")
                 .define("mason_5_trade_offer_1_table",
                         TradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Mason Level Five Trade Two");
         MASON_5_REQUEST_2 = BUILDER
-                .comment("Mason 5 Trade Request 2 Table")
+                .comment(" Mason 5 Trade Request 2 Table")
                 .define("mason_5_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         MASON_5_OFFER_2 = BUILDER
-                .comment("Mason 5 Trade Offer 2 Table")
+                .comment(" Mason 5 Trade Offer 2 Table")
                 .define("mason_5_trade_offer_2_table",
-                        TradeLootTables.OTHER_STONE_BLOCKS_TABLE.toString());
+                        TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE.toString());
         BUILDER.pop();
         BUILDER.pop();
 
@@ -2671,46 +3789,46 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Shepherd Level One Trade One");
         SHEPHERD_1_REQUEST_1 = BUILDER
-                .comment("Shepherd 1 Trade Request 1 Table")
+                .comment(" Shepherd 1 Trade Request 1 Table")
                 .define("shepherd_1_trade_request_1_table",
                         TradeLootTables.TAGGED_WOOL_TABLE.toString());
         SHEPHERD_1_REQUEST_1_COUNT = BUILDER
                 .define("shepherd_1_trade_offer_1_count", 18);
         SHEPHERD_1_OFFER_1 = BUILDER
-                .comment("Shepherd 1 Trade Offer 1 Table")
+                .comment(" Shepherd 1 Trade Offer 1 Table")
                 .define("shepherd_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Shepherd Level One Trade Two");
         SHEPHERD_1_REQUEST_2 = BUILDER
-                .comment("Shepherd 1 Trade Request 2 Table")
+                .comment(" Shepherd 1 Trade Request 2 Table")
                 .define("shepherd_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         SHEPHERD_1_OFFER_2 = BUILDER
-                .comment("Shepherd 1 Trade Offer 2 Table")
+                .comment(" Shepherd 1 Trade Offer 2 Table")
                 .define("shepherd_1_trade_offer_2_table",
                         TradeLootTables.SHEARS_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Shepherd Level Two Trade One");
         SHEPHERD_2_REQUEST_1 = BUILDER
-                .comment("Shepherd 2 Trade Request 1 Table")
+                .comment(" Shepherd 2 Trade Request 1 Table")
                 .define("shepherd_2_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         SHEPHERD_2_REQUEST_1_COUNT = BUILDER
                 .define("shepherd_2_trade_offer_1_count", 6);
         SHEPHERD_2_OFFER_1 = BUILDER
-                .comment("Shepherd 2 Trade Offer 1 Table")
+                .comment(" Shepherd 2 Trade Offer 1 Table")
                 .define("shepherd_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Shepherd Level Two Trade Two");
         SHEPHERD_2_REQUEST_2 = BUILDER
-                .comment("Shepherd 2 Trade Request 2 Table")
+                .comment(" Shepherd 2 Trade Request 2 Table")
                 .define("shepherd_2_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         SHEPHERD_2_OFFER_2 = BUILDER
-                .comment("Shepherd 2 Trade Offer 2 Table")
+                .comment(" Shepherd 2 Trade Offer 2 Table")
                 .define("shepherd_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_WOOL_TABLE.toString());
         SHEPHERD_2_OFFER_2_COUNT = BUILDER
@@ -2718,11 +3836,11 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Shepherd Level Two Trade Three");
         SHEPHERD_2_REQUEST_3 = BUILDER
-                .comment("Shepherd 2 Trade Request 3 Table")
+                .comment(" Shepherd 2 Trade Request 3 Table")
                 .define("shepherd_2_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         SHEPHERD_2_OFFER_3 = BUILDER
-                .comment("Shepherd 2 Trade Offer 3 Table")
+                .comment(" Shepherd 2 Trade Offer 3 Table")
                 .define("shepherd_2_trade_offer_3_table",
                         TradeLootTables.TAGGED_WOOL_CARPETS_TABLE.toString());
         SHEPHERD_2_OFFER_3_COUNT = BUILDER
@@ -2731,46 +3849,46 @@ public class CommonConfig {
         // level 3
         BUILDER.push("Shepherd Level Three Trade One");
         SHEPHERD_3_REQUEST_1 = BUILDER
-                .comment("Shepherd 3 Trade Request 1 Table")
+                .comment(" Shepherd 3 Trade Request 1 Table")
                 .define("shepherd_3_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         SHEPHERD_3_REQUEST_1_COUNT = BUILDER
                 .define("shepherd_3_trade_offer_1_count", 6);
         SHEPHERD_3_OFFER_1 = BUILDER
-                .comment("Shepherd 2 Trade Offer 1 Table")
+                .comment(" Shepherd 2 Trade Offer 1 Table")
                 .define("shepherd_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Shepherd Level Three Trade Two");
         SHEPHERD_3_REQUEST_2 = BUILDER
-                .comment("Shepherd 3 Trade Request 2 Table")
+                .comment(" Shepherd 3 Trade Request 2 Table")
                 .define("shepherd_3_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         SHEPHERD_3_OFFER_2 = BUILDER
-                .comment("Shepherd 3 Trade Offer 2 Table")
+                .comment(" Shepherd 3 Trade Offer 2 Table")
                 .define("shepherd_3_trade_offer_2_table",
                         TradeLootTables.TAGGED_BEDS_TABLE.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Shepherd Level Four Trade One");
         SHEPHERD_4_REQUEST_1 = BUILDER
-                .comment("Shepherd 4 Trade Request 1 Table")
+                .comment(" Shepherd 4 Trade Request 1 Table")
                 .define("shepherd_4_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         SHEPHERD_4_REQUEST_1_COUNT = BUILDER
                 .define("shepherd_4_trade_offer_1_count", 6);
         SHEPHERD_4_OFFER_1 = BUILDER
-                .comment("Shepherd 4 Trade Offer 1 Table")
+                .comment(" Shepherd 4 Trade Offer 1 Table")
                 .define("shepherd_4_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Shepherd Level Four Trade Two");
         SHEPHERD_4_REQUEST_2 = BUILDER
-                .comment("Shepherd 4 Trade Request 2 Table")
+                .comment(" Shepherd 4 Trade Request 2 Table")
                 .define("shepherd_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         SHEPHERD_4_OFFER_2 = BUILDER
-                .comment("Shepherd 4 Trade Offer 2 Table")
+                .comment(" Shepherd 4 Trade Offer 2 Table")
                 .define("shepherd_4_trade_offer_2_table",
                         TradeLootTables.BANNER_PATTERN_TABLE.toString());
         SHEPHERD_4_OFFER_2_COUNT = BUILDER
@@ -2779,23 +3897,23 @@ public class CommonConfig {
         // level 5
         BUILDER.push("Shepherd Level Five Trade One");
         SHEPHERD_5_REQUEST_1 = BUILDER
-                .comment("Shepherd 5 Trade Request 1 Table")
+                .comment(" Shepherd 5 Trade Request 1 Table")
                 .define("shepherd_5_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         SHEPHERD_5_REQUEST_1_COUNT = BUILDER
                 .define("shepherd_5_trade_offer_1_count", 6);
         SHEPHERD_5_OFFER_1 = BUILDER
-                .comment("Shepherd 5 Trade Offer 1 Table")
+                .comment(" Shepherd 5 Trade Offer 1 Table")
                 .define("shepherd_5_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Shepherd Level Five Trade Two");
         SHEPHERD_5_REQUEST_2 = BUILDER
-                .comment("Shepherd 5 Trade Request 2 Table")
+                .comment(" Shepherd 5 Trade Request 2 Table")
                 .define("shepherd_5_trade_request_2_table",
                         TradeLootTables.TWO_EMERALD_VALUE_CURRENCY.toString());
         SHEPHERD_5_OFFER_2 = BUILDER
-                .comment("Shepherd 5 Trade Offer 2 Table")
+                .comment(" Shepherd 5 Trade Offer 2 Table")
                 .define("shepherd_5_trade_offer_2_table",
                         TradeLootTables.PAINTINGS_TABLE.toString());
         BUILDER.pop();
@@ -2805,128 +3923,133 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Toolsmith Level One Trade One");
         TOOLSMITH_1_REQUEST_1 = BUILDER
-                .comment("Toolsmith 1 Trade Request 1 Table")
+                .comment(" Toolsmith 1 Trade Request 1 Table")
                 .define("toolsmith_1_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         TOOLSMITH_1_OFFER_1 = BUILDER
-                .comment("Toolsmith 1 Trade Offer 1 Table")
+                .comment(" Toolsmith 1 Trade Offer 1 Table")
                 .define("toolsmith_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Toolsmith Level One Trade Two");
         TOOLSMITH_1_REQUEST_2 = BUILDER
-                .comment("Toolsmith 1 Trade Request 2 Table")
+                .comment(" Toolsmith 1 Trade Request 2 Table")
                 .define("toolsmith_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         TOOLSMITH_1_OFFER_2 = BUILDER
-                .comment("Toolsmith 1 Trade Offer 2 Table")
+                .comment(" Toolsmith 1 Trade Offer 2 Table")
                 .define("toolsmith_1_trade_offer_2_table",
                         TradeLootTables.STONE_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Toolsmith Level Two Trade One");
         TOOLSMITH_2_REQUEST_1 = BUILDER
-                .comment("Toolsmith 2 Trade Request 1 Table")
+                .comment(" Toolsmith 2 Trade Request 1 Table")
                 .define("toolsmith_2_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
         TOOLSMITH_2_OFFER_1 = BUILDER
-                .comment("Toolsmith 2 Trade Offer 1 Table")
+                .comment(" Toolsmith 2 Trade Offer 1 Table")
                 .define("toolsmith_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Toolsmith Level Two Trade Two");
+        BUILDER.push("Toolsmith Level Two Trade Two")
+                .comment(" Rare Trade");
         TOOLSMITH_2_REQUEST_2 = BUILDER
-                .comment("Toolsmith 2 Trade Request 2 Table")
+                .comment(" Toolsmith 2 Trade Request 2 Table")
                 .define("toolsmith_2_trade_request_2_table",
                         TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         TOOLSMITH_2_OFFER_2 = BUILDER
-                .comment("Toolsmith 2 Trade Offer 2 Table")
+                .comment(" Toolsmith 2 Trade Offer 2 Table")
                 .define("toolsmith_2_trade_offer_2_table",
                         TradeLootTables.BELL_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Toolsmith Level Three Trade One");
         TOOLSMITH_3_REQUEST_1 = BUILDER
-                .comment("Toolsmith 3 Trade Request 1 Table")
+                .comment(" Toolsmith 3 Trade Request 1 Table")
                 .define("toolsmith_3_trade_request_1_table",
                         TradeLootTables.IRON_TIER_TOOLS_TABLE.toString());
         TOOLSMITH_3_OFFER_1 = BUILDER
-                .comment("Toolsmith 3 Trade Offer 1 Table")
+                .comment(" Toolsmith 3 Trade Offer 1 Table")
                 .define("toolsmith_3_trade_offer_1_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Toolsmith Level Three Trade Two");
         TOOLSMITH_3_REQUEST_2 = BUILDER
-                .comment("Toolsmith 3 Trade Request 2 Table")
+                .comment(" Toolsmith 3 Trade Request 2 Table")
                 .define("toolsmith_3_trade_request_2_table",
                         TradeLootTables.FLINT_BUY_TABLE.toString());
         TOOLSMITH_3_OFFER_2 = BUILDER
-                .comment("Toolsmith 3 Trade Offer 2 Table")
+                .comment(" Toolsmith 3 Trade Offer 2 Table")
                 .define("toolsmith_3_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 4
-        BUILDER.push("Toolsmith Level Four Trade One");
+        BUILDER.push("Toolsmith Level Four Trade One")
+                .comment(" Rare Trade");
         TOOLSMITH_4_REQUEST_1 = BUILDER
-                .comment("Toolsmith 4 Trade Request 1 Table")
+                .comment(" Toolsmith 4 Trade Request 1 Table")
                 .define("toolsmith_4_trade_request_1_table",
-                        TradeLootTables.SIXTY_FOUR_EMERALD_TABLE.toString());
+                        TradeLootTables.SIXTEEN_EMERALD_TABLE.toString());
         TOOLSMITH_4_OFFER_1 = BUILDER
-                .comment("Toolsmith 4 Trade Offer 1 Table")
+                .comment(" Toolsmith 4 Trade Offer 1 Table")
                 .define("toolsmith_4_trade_offer_1_table",
-                        TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY.toString());
+                        TradeLootTables.IRON_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Toolsmith Level Four Trade Two");
         TOOLSMITH_4_REQUEST_2 = BUILDER
-                .comment("Toolsmith 4 Trade Request 2 Table")
+                .comment(" Toolsmith 4 Trade Request 2 Table")
                 .define("toolsmith_4_trade_request_2_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         TOOLSMITH_4_OFFER_2 = BUILDER
-                .comment("Toolsmith 4 Trade Offer 2 Table")
+                .comment(" Toolsmith 4 Trade Offer 2 Table")
                 .define("toolsmith_4_trade_offer_2_table",
                         TradeLootTables.DIAMOND_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Toolsmith Level Four Trade Three");
         TOOLSMITH_4_REQUEST_3 = BUILDER
-                .comment("Toolsmith 4 Trade Request 3 Table")
-                .comment("for either supplementaries mod or turtleblockacademy mod")
+                .comment(" Toolsmith 4 Trade Request 3 Table")
+                .comment(" for either supplementaries mod or turtleblockacademy mod")
                 .define("toolsmith_4_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         TOOLSMITH_4_OFFER_3 = BUILDER
-                .comment("Toolsmith 4 Trade Offer 3 Table")
+                .comment(" Toolsmith 4 Trade Offer 3 Table")
                 .define("toolsmith_4_trade_offer_3_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         TOOLSMITH_4_OFFER_3_COUNT = BUILDER
                 .define("toolsmith_4_trade_offer_2_count", 18);
         BUILDER.pop();
         // level 5
-        BUILDER.push("Toolsmith Level Five Trade One");
+        BUILDER.push("Toolsmith Level Five Trade One")
+                .comment(" Rare Trade");
         TOOLSMITH_5_REQUEST_1 = BUILDER
-                .comment("Toolsmith 5 Trade Request 1 Table")
+                .comment(" Toolsmith 5 Trade Request 1 Table")
                 .define("toolsmith_5_trade_request_1_table",
                         TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY.toString());
         TOOLSMITH_5_OFFER_1 = BUILDER
-                .comment("Toolsmith 5 Trade Offer 1 Table")
+                .comment(" Toolsmith 5 Trade Offer 1 Table")
                 .define("toolsmith_5_trade_offer_1_table",
                         TradeLootTables.GOLD_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Toolsmith Level Five Trade Two");
+        BUILDER.push("Toolsmith Level Five Trade Two")
+                .comment(" Rare Trade");
         TOOLSMITH_5_REQUEST_2 = BUILDER
-                .comment("Toolsmith 5 Trade Request 2 Table")
+                .comment(" Toolsmith 5 Trade Request 2 Table")
                 .define("toolsmith_5_trade_request_2_table",
                         TradeLootTables.SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY.toString());
         TOOLSMITH_5_OFFER_2 = BUILDER
-                .comment("Toolsmith 5 Trade Offer 2 Table")
+                .comment(" Toolsmith 5 Trade Offer 2 Table")
                 .define("toolsmith_5_trade_offer_2_table",
                         TradeLootTables.NETHERITE_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Toolsmith Level Five Trade Three");
+        BUILDER.push("Toolsmith Level Five Trade Three")
+                .comment(" Rare Trade");
         TOOLSMITH_5_REQUEST_3 = BUILDER
-                .comment("Toolsmith 5 Trade Request 3 Table")
+                .comment(" Toolsmith 5 Trade Request 3 Table")
                 .define("toolsmith_5_trade_request_3_table",
                         TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         TOOLSMITH_5_OFFER_3 = BUILDER
-                .comment("Toolsmith 5 Trade Offer 3 Table")
+                .comment(" Toolsmith 5 Trade Offer 3 Table")
                 .define("toolsmith_5_trade_offer_3_table",
                         TradeLootTables.DIAMOND_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
@@ -2936,85 +4059,87 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Weaponsmith Level One Trade One");
         WEAPONSMITH_1_REQUEST_1 = BUILDER
-                .comment("Weaponsmith 1 Trade Request 1 Table")
+                .comment(" Weaponsmith 1 Trade Request 1 Table")
                 .define("weaponsmith_1_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_VALUE_FUEL.toString());
         WEAPONSMITH_1_OFFER_1 = BUILDER
-                .comment("Weaponsmith 1 Trade Offer 1 Table")
+                .comment(" Weaponsmith 1 Trade Offer 1 Table")
                 .define("weaponsmith_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Weaponsmith Level One Trade Two");
         WEAPONSMITH_1_REQUEST_2 = BUILDER
-                .comment("Weaponsmith 1 Trade Request 2 Table")
+                .comment(" Weaponsmith 1 Trade Request 2 Table")
                 .define("weaponsmith_1_trade_request_2_table",
                         TradeLootTables.IRON_TIER_WEAPONS_TABLE.toString());
         WEAPONSMITH_1_OFFER_2 = BUILDER
-                .comment("Weaponsmith 1 Trade Offer 2 Table")
+                .comment(" Weaponsmith 1 Trade Offer 2 Table")
                 .define("weaponsmith_1_trade_offer_2_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Weaponsmith Level Two Trade One");
         WEAPONSMITH_2_REQUEST_1 = BUILDER
-                .comment("Weaponsmith 2 Trade Request 1 Table")
+                .comment(" Weaponsmith 2 Trade Request 1 Table")
                 .define("weaponsmith_2_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
         WEAPONSMITH_2_OFFER_1 = BUILDER
-                .comment("Weaponsmith 2 Trade Offer 1 Table")
+                .comment(" Weaponsmith 2 Trade Offer 1 Table")
                 .define("weaponsmith_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Weaponsmith Level Two Trade Two");
+        BUILDER.push("Weaponsmith Level Two Trade Two")
+                .comment(" Rare Trade");
         WEAPONSMITH_2_REQUEST_2 = BUILDER
-                .comment("Weaponsmith 2 Trade Request 2 Table")
+                .comment(" Weaponsmith 2 Trade Request 2 Table")
                 .define("weaponsmith_2_trade_request_2_table",
                         TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         WEAPONSMITH_2_OFFER_2 = BUILDER
-                .comment("Weaponsmith 2 Trade Offer 2 Table")
+                .comment(" Weaponsmith 2 Trade Offer 2 Table")
                 .define("weaponsmith_2_trade_offer_2_table",
                         TradeLootTables.BELL_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Weaponsmith Level Three Trade One");
         WEAPONSMITH_3_REQUEST_1 = BUILDER
-                .comment("Weaponsmith 3 Trade Request 1 Table")
+                .comment(" Weaponsmith 3 Trade Request 1 Table")
                 .define("weaponsmith_3_trade_request_1_table",
                         TradeLootTables.FLINT_BUY_TABLE.toString());
         WEAPONSMITH_3_OFFER_1 = BUILDER
-                .comment("Weaponsmith 3 Trade Offer 1 Table")
+                .comment(" Weaponsmith 3 Trade Offer 1 Table")
                 .define("weaponsmith_3_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Weaponsmith Level Three Trade Two");
         WEAPONSMITH_3_REQUEST_2 = BUILDER
-                .comment("Weaponsmith 3 Trade Request 2 Table")
+                .comment(" Weaponsmith 3 Trade Request 2 Table")
                 .define("weaponsmith_3_trade_request_2_table",
                         TradeLootTables.EQUIPMENT_GEMS_TABLE.toString());
         WEAPONSMITH_3_OFFER_2 = BUILDER
-                .comment("Weaponsmith 3 Trade Offer 2 Table")
+                .comment(" Weaponsmith 3 Trade Offer 2 Table")
                 .define("weaponsmith_3_trade_offer_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 4
-        BUILDER.push("Weaponsmith Level Four Trade One");
+        BUILDER.push("Weaponsmith Level Four Trade One")
+                .comment(" Rare Trade");
         WEAPONSMITH_4_REQUEST_1 = BUILDER
-                .comment("Weaponsmith 4 Trade Request 1 Table")
+                .comment(" Weaponsmith 4 Trade Request 1 Table")
                 .define("weaponsmith_4_trade_request_1_table",
                         TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY.toString());
         WEAPONSMITH_4_OFFER_1 = BUILDER
-                .comment("Weaponsmith 4 Trade Offer 1 Table")
+                .comment(" Weaponsmith 4 Trade Offer 1 Table")
                 .define("weaponsmith_4_trade_offer_1_table",
                         TradeLootTables.GOLD_TIER_WEAPONS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Weaponsmith Level Four Trade Two");
         WEAPONSMITH_4_REQUEST_2 = BUILDER
-                .comment("Weaponsmith 4 Trade Request 2 Table")
-                .comment("for either supplementaries mod or turtleblockacademy mod")
+                .comment(" Weaponsmith 4 Trade Request 2 Table")
+                .comment(" for either supplementaries mod or turtleblockacademy mod")
                 .define("weaponsmith_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WEAPONSMITH_4_OFFER_2 = BUILDER
-                .comment("Weaponsmith 4 Trade Offer 2 Table")
+                .comment(" Weaponsmith 4 Trade Offer 2 Table")
                 .define("weaponsmith_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         WEAPONSMITH_4_OFFER_2_COUNT = BUILDER
@@ -3022,32 +4147,34 @@ public class CommonConfig {
         BUILDER.pop();
         BUILDER.push("Weaponsmith Level Four Trade Three");
         WEAPONSMITH_4_REQUEST_3 = BUILDER
-                .comment("Weaponsmith 4 Trade Request 3 Table")
+                .comment(" Weaponsmith 4 Trade Request 3 Table")
                 .define("weaponsmith_4_trade_request_3_table",
                         TradeLootTables.ANVIL_TABLE.toString());
         WEAPONSMITH_4_OFFER_3 = BUILDER
-                .comment("Weaponsmith 4 Trade Offer 3 Table")
+                .comment(" Weaponsmith 4 Trade Offer 3 Table")
                 .define("weaponsmith_4_trade_offer_3_table",
                         TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 5
-        BUILDER.push("Weaponsmith Level Five Trade One");
+        BUILDER.push("Weaponsmith Level Five Trade One")
+                .comment(" Rare Trade");
         WEAPONSMITH_5_REQUEST_1 = BUILDER
-                .comment("Weaponsmith 5 Trade Request 1 Table")
+                .comment(" Weaponsmith 5 Trade Request 1 Table")
                 .define("weaponsmith_5_trade_request_1_table",
                         TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         WEAPONSMITH_5_OFFER_1 = BUILDER
-                .comment("Weaponsmith 5 Trade Offer 1 Table")
+                .comment(" Weaponsmith 5 Trade Offer 1 Table")
                 .define("weaponsmith_5_trade_offer_1_table",
                         TradeLootTables.DIAMOND_TIER_WEAPONS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Weaponsmith Level Five Trade Two");
+        BUILDER.push("Weaponsmith Level Five Trade Two")
+                .comment(" Rare Trade");
         WEAPONSMITH_5_REQUEST_2 = BUILDER
-                .comment("Weaponsmith 5 Trade Request 2 Table")
+                .comment(" Weaponsmith 5 Trade Request 2 Table")
                 .define("weaponsmith_5_trade_request_2_table",
                         TradeLootTables.SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY.toString());
         WEAPONSMITH_5_OFFER_2 = BUILDER
-                .comment("Weaponsmith 5 Trade Offer 2 Table")
+                .comment(" Weaponsmith 5 Trade Offer 2 Table")
                 .define("weaponsmith_5_trade_offer_2_table",
                         TradeLootTables.NETHERITE_TIER_WEAPONS_TABLE.toString());
         BUILDER.pop();
@@ -3056,156 +4183,156 @@ public class CommonConfig {
         BUILDER.push("Wandering Trader Trade Settings");
         BUILDER.push("Wandering Trader Common Trade One");
         WANDERING_REQUEST_1 = BUILDER
-                .comment("Wandering Trader Request 1 Table")
+                .comment(" Wandering Trader Request 1 Table")
                 .define("wandering_trader_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_1 = BUILDER
-                .comment("Wandering Trader Offer 1 Table")
+                .comment(" Wandering Trader Offer 1 Table")
                 .define("wandering_trader_offer_1_table",
                         TradeLootTables.FLOWER_SELL_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Two");
         WANDERING_REQUEST_2 = BUILDER
-                .comment("Wandering Trader Request 2 Table")
+                .comment(" Wandering Trader Request 2 Table")
                 .define("wandering_trader_request_2_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_2 = BUILDER
-                .comment("Wandering Trader Offer 2 Table")
+                .comment(" Wandering Trader Offer 2 Table")
                 .define("wandering_trader_offer_2_table",
                         TradeLootTables.SAPLING_SELL_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Three");
         WANDERING_REQUEST_3 = BUILDER
-                .comment("Wandering Trader Request 3 Table")
+                .comment(" Wandering Trader Request 3 Table")
                 .define("wandering_trader_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_3 = BUILDER
-                .comment("Wandering Trader Offer 3 Tag Table")
+                .comment(" Wandering Trader Offer 3 Tag Table")
                 .define("wandering_trader_offer_3_tag_table",
                         TradeLootTables.SEED_TAG_TABLE.toString());
         WANDERING_OFFER_3_COUNT = BUILDER
-                .comment("Wandering Trader Offer 3 Count Override")
+                .comment(" Wandering Trader Offer 3 Count Override")
                 .defineInRange("wandering_trader_offer_3_table_override", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Four");
         WANDERING_REQUEST_4 = BUILDER
-                .comment("Wandering Trader Request 4 Table")
+                .comment(" Wandering Trader Request 4 Table")
                 .define("wandering_trader_request_4_table",
                         TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_4 = BUILDER
-                .comment("Wandering Trader Offer 4 Tag Table")
+                .comment(" Wandering Trader Offer 4 Tag Table")
                 .define("wandering_trader_offer_4_tag_table",
                         TradeLootTables.SLIMEBALL_TAG_TABLE.toString());
         WANDERING_OFFER_4_COUNT = BUILDER
-                .comment("Wandering Trader Offer 4 Count Override")
+                .comment(" Wandering Trader Offer 4 Count Override")
                 .defineInRange("wandering_trader_offer_4_table_override", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Five");
         WANDERING_REQUEST_5 = BUILDER
-                .comment("Wandering Trader Request 5 Table")
+                .comment(" Wandering Trader Request 5 Table")
                 .define("wandering_trader_request_5_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_5 = BUILDER
-                .comment("Wandering Trader Offer 5 Tag Table")
+                .comment(" Wandering Trader Offer 5 Tag Table")
                 .define("wandering_trader_offer_5_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Six");
         WANDERING_REQUEST_6 = BUILDER
-                .comment("Wandering Trader Request 6 Table")
+                .comment(" Wandering Trader Request 6 Table")
                 .define("wandering_trader_request_6_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_6 = BUILDER
-                .comment("Wandering Trader Offer 6 Tag Table")
+                .comment(" Wandering Trader Offer 6 Tag Table")
                 .define("wandering_trader_offer_6_tag_table",
                         TradeLootTables.SAND_TAG_TABLE.toString());
         WANDERING_OFFER_6_COUNT = BUILDER
-                .comment("Wandering Trader Offer 6 Count Override")
+                .comment(" Wandering Trader Offer 6 Count Override")
                 .defineInRange("wandering_trader_offer_6_table_override", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Seven");
         WANDERING_REQUEST_7 = BUILDER
-                .comment("Wandering Trader Offer 7 Table")
+                .comment(" Wandering Trader Offer 7 Table")
                 .define("wandering_trader_request_7_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_7 = BUILDER
-                .comment("Wandering Trader Request 7 Tag Table")
+                .comment(" Wandering Trader Request 7 Tag Table")
                 .define("wandering_trader_offer_7_tag_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         WANDERING_OFFER_7_COUNT = BUILDER
-                .comment("Wandering Trader Offer 7 Count Override")
+                .comment(" Wandering Trader Offer 7 Count Override")
                 .defineInRange("wandering_trader_offer_7_table_override", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Eight");
         WANDERING_REQUEST_8 = BUILDER
-                .comment("Wandering Trader Request 8 Table")
+                .comment(" Wandering Trader Request 8 Table")
                 .define("wandering_trader_request_8_table",
                         TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_8 = BUILDER
-                .comment("Wandering Trader Offer 8 Table")
+                .comment(" Wandering Trader Offer 8 Table")
                 .define("wandering_trader_offer_8_table",
                         TradeLootTables.SEASHELL_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Nine");
         WANDERING_REQUEST_9 = BUILDER
-                .comment("Wandering Trader Request 9 Table")
+                .comment(" Wandering Trader Request 9 Table")
                 .define("wandering_trader_request_9_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_9 = BUILDER
-                .comment("Wandering Trader Offer 9 Table")
+                .comment(" Wandering Trader Offer 9 Table")
                 .define("wandering_trader_offer_9_table",
                         TradeLootTables.WANDERING_TRADER_COMMON_OFFERS.toString());
         BUILDER.pop();
         BUILDER.push("Wandering Trader Common Trade Ten");
         WANDERING_REQUEST_10 = BUILDER
-                .comment("Wandering Trader Request 10 Table")
+                .comment(" Wandering Trader Request 10 Table")
                 .define("wandering_trader_request_10_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_OFFER_10 = BUILDER
-                .comment("Wandering Trader Offer 10 Tag Table")
+                .comment(" Wandering Trader Offer 10 Tag Table")
                 .define("wandering_trader_offer_10_tag_table",
                         TradeLootTables.CORAL_BLOCK_TAG_TABLE.toString());
         WANDERING_OFFER_10_COUNT = BUILDER
-                .comment("Wandering Trader Offer 10 Count Override")
+                .comment(" Wandering Trader Offer 10 Count Override")
                 .defineInRange("wandering_trader_offer_10_table_override", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Wandering Trader Rare Trade One");
         WANDERING_RARE_REQUEST_1 = BUILDER
-                .comment("Wandering Trader Rare Request 1 Table")
+                .comment(" Wandering Trader Rare Request 1 Table")
                 .define("wandering_trader_rare_request_1_table",
                         TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_RARE_OFFER_1 = BUILDER
-                .comment("Wandering Trader Rare Offer 1 Table")
+                .comment(" Wandering Trader Rare Offer 1 Table")
                 .define("wandering_trader_rare_offer_1_table",
                         TradeLootTables.FISH_BUCKET_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Wandering Trader Rare Trade Two");
         WANDERING_RARE_REQUEST_2 = BUILDER
-                .comment("Wandering Trader Rare Request 2 Table")
+                .comment(" Wandering Trader Rare Request 2 Table")
                 .define("wandering_trader_rare_request_2_table",
                         TradeLootTables.SIX_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_RARE_OFFER_2 = BUILDER
-                .comment("Wandering Trader Rare Offer 2 Table")
+                .comment(" Wandering Trader Rare Offer 2 Table")
                 .define("wandering_trader_rare_offer_2_table",
                         TradeLootTables.ICE_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Wandering Trader Rare Trade Three");
         WANDERING_RARE_REQUEST_3 = BUILDER
-                .comment("Wandering Trader Rare Request 3 Table")
+                .comment(" Wandering Trader Rare Request 3 Table")
                 .define("wandering_trader_rare_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_RARE_OFFER_3 = BUILDER
-                .comment("Wandering Trader Rare Offer 3 Table")
+                .comment(" Wandering Trader Rare Offer 3 Table")
                 .define("wandering_trader_rare_offer_3_table",
-                        TradeLootTables.DIRT_BLOCKS_TABLE.toString());
+                        TradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Wandering Trader Rare Trade Four");
         WANDERING_RARE_REQUEST_4 = BUILDER
-                .comment("Wandering Trader Rare Request 4 Table")
+                .comment(" Wandering Trader Rare Request 4 Table")
                 .define("wandering_trader_rare_request_4_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WANDERING_RARE_OFFER_4 = BUILDER
-                .comment("Wandering Trader Rare Offer 4 Table")
+                .comment(" Wandering Trader Rare Offer 4 Table")
                 .define("wandering_trader_rare_offer_4_table",
                         TradeLootTables.WANDERING_TRADER_RARE_OFFERS.toString());
         BUILDER.pop();
@@ -3219,125 +4346,125 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Banker Level One Trade One");
         BANKER_1_REQUEST_1 = BUILDER
-                .comment("Banker 1 Trade Request 1 Table")
+                .comment(" Banker 1 Trade Request 1 Table")
                 .define("banker_1_trade_request_1_table",
                         TradeLootTables.ONE_EMERALD_TABLE.toString());
         BANKER_1_OFFER_1 = BUILDER
-                .comment("Banker 1 Trade Offer 1 Table")
+                .comment(" Banker 1 Trade Offer 1 Table")
                 .define("banker_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Banker Level One Trade Two");
         BANKER_1_REQUEST_2 = BUILDER
-                .comment("Banker 1 Trade Request 2 Table")
+                .comment(" Banker 1 Trade Request 2 Table")
                 .define("banker_1_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BANKER_1_OFFER_2 = BUILDER
-                .comment("Banker 1 Trade Offer 2 Table")
+                .comment(" Banker 1 Trade Offer 2 Table")
                 .define("banker_1_trade_offer_2_table",
                         TradeLootTables.ONE_EMERALD_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Banker Level Two Trade One");
         BANKER_2_REQUEST_1 = BUILDER
-                .comment("Banker 2 Trade Request 1 Table")
+                .comment(" Banker 2 Trade Request 1 Table")
                 .define("banker_2_trade_request_1_table",
                         TradeLootTables.SIXTEEN_EMERALD_TABLE.toString());
         BANKER_2_OFFER_1 = BUILDER
-                .comment("Banker 2 Trade Offer 1 Table")
+                .comment(" Banker 2 Trade Offer 1 Table")
                 .define("banker_2_trade_offer_1_table",
                         TradeLootTables.EMERALD_QUARTER_BANK_NOTE_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Banker Level Two Trade Two");
         BANKER_2_REQUEST_2 = BUILDER
-                .comment("Banker 2 Trade Request 2 Table")
+                .comment(" Banker 2 Trade Request 2 Table")
                 .define("banker_2_trade_request_2_table",
                         TradeLootTables.EMERALD_QUARTER_BANK_NOTE_VALUE_CURRENCY.toString());
         BANKER_2_OFFER_2 = BUILDER
-                .comment("Banker 2 Trade Offer 2 Table")
+                .comment(" Banker 2 Trade Offer 2 Table")
                 .define("banker_2_trade_offer_2_table",
                         TradeLootTables.SIXTEEN_EMERALD_TABLE.toString());
         BUILDER.pop();
         // level 3
         BUILDER.push("Banker Level Three Trade One");
         BANKER_3_REQUEST_1 = BUILDER
-                .comment("Banker 3 Trade Request 1 Table")
+                .comment(" Banker 3 Trade Request 1 Table")
                 .define("banker_3_trade_request_1_table",
                         TradeLootTables.THIRTY_TWO_EMERALD_TABLE.toString());
         BANKER_3_OFFER_1 = BUILDER
-                .comment("Banker 3 Trade Offer 1 Table")
+                .comment(" Banker 3 Trade Offer 1 Table")
                 .define("banker_3_trade_offer_1_table",
                         TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Banker Level Three Trade Two");
         BANKER_3_REQUEST_2 = BUILDER
-                .comment("Banker 3 Trade Request 2 Table")
+                .comment(" Banker 3 Trade Request 2 Table")
                 .define("banker_3_trade_request_2_table",
                         TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY.toString());
         BANKER_3_OFFER_2 = BUILDER
-                .comment("Banker 3 Trade Offer 2 Table")
+                .comment(" Banker 3 Trade Offer 2 Table")
                 .define("banker_3_trade_offer_2_table",
                         TradeLootTables.THIRTY_TWO_EMERALD_TABLE.toString());
         BUILDER.pop();
         // level 4
         BUILDER.push("Banker Level Four Trade One");
         BANKER_4_REQUEST_1 = BUILDER
-                .comment("Banker 4 Trade Request 1 Table")
+                .comment(" Banker 4 Trade Request 1 Table")
                 .define("banker_4_trade_request_1_table",
                         TradeLootTables.SIXTY_FOUR_EMERALD_TABLE.toString());
         BANKER_4_OFFER_1 = BUILDER
-                .comment("Banker 4 Trade Offer 1 Table")
+                .comment(" Banker 4 Trade Offer 1 Table")
                 .define("banker_4_trade_offer_1_table",
                         TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Banker Level Four Trade Two");
         BANKER_4_REQUEST_2 = BUILDER
-                .comment("Banker 4 Trade Request 2 Table")
+                .comment(" Banker 4 Trade Request 2 Table")
                 .define("banker_4_trade_request_2_table",
                         TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY.toString());
         BANKER_4_OFFER_2 = BUILDER
-                .comment("Banker 4 Trade Offer 2 Table")
+                .comment(" Banker 4 Trade Offer 2 Table")
                 .define("banker_4_trade_offer_2_table",
                         TradeLootTables.SIXTY_FOUR_EMERALD_TABLE.toString());
         BUILDER.pop();
         // level 5
         BUILDER.push("Banker Level Five Trade One");
         BANKER_5_REQUEST_1 = BUILDER
-                .comment("Banker 5 Trade Request 1 Table")
+                .comment(" Banker 5 Trade Request 1 Table")
                 .define("banker_5_trade_request_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
         BANKER_5_OFFER_1 = BUILDER
-                .comment("Banker 5 Trade Offer 1 Table")
+                .comment(" Banker 5 Trade Offer 1 Table")
                 .define("banker_5_trade_offer_1_table",
                         TradeLootTables.ONE_EMERALD_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Banker Level Five Trade Two");
         BANKER_5_REQUEST_2 = BUILDER
-                .comment("Banker 5 Trade Request 2 Table")
+                .comment(" Banker 5 Trade Request 2 Table")
                 .define("banker_5_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_GEMS.toString());
         BANKER_5_OFFER_2 = BUILDER
-                .comment("Banker 5 Trade Offer 2 Table")
+                .comment(" Banker 5 Trade Offer 2 Table")
                 .define("banker_5_trade_offer_2_table",
                         TradeLootTables.ONE_EMERALD_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Banker Level Five Trade Three");
         BANKER_5_REQUEST_3 = BUILDER
-                .comment("Banker 5 Trade Request 3 Table")
+                .comment(" Banker 5 Trade Request 3 Table")
                 .define("banker_5_trade_request_3_table",
                         TradeLootTables.EMERALD_BANK_NOTE_VALUE_METALS.toString());
         BANKER_5_OFFER_3 = BUILDER
-                .comment("Banker 5 Trade Offer 3 Table")
+                .comment(" Banker 5 Trade Offer 3 Table")
                 .define("banker_5_trade_offer_3_table",
                         TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Banker Level Five Trade Four");
         BANKER_5_REQUEST_4 = BUILDER
-                .comment("Banker 5 Trade Request 4 Table")
+                .comment(" Banker 5 Trade Request 4 Table")
                 .define("banker_5_trade_request_4_table",
                         TradeLootTables.EMERALD_BANK_NOTE_VALUE_GEMS.toString());
         BANKER_5_OFFER_4 = BUILDER
-                .comment("Banker 5 Trade Offer 4 Table")
+                .comment(" Banker 5 Trade Offer 4 Table")
                 .define("banker_5_trade_offer_4_table",
                         TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY.toString());
         BUILDER.pop();
@@ -3347,301 +4474,319 @@ public class CommonConfig {
         // level 1
         BUILDER.push("Leprechaun Level One Trade One");
         LEPRECHAUN_1_REQUEST_1 = BUILDER
-                .comment("Leprechaun 1 Trade Request 1 Table")
+                .comment(" Leprechaun 1 Trade Request 1 Table")
                 .define("leprechaun_1_trade_request_1_table",
                         TradeLootTables.TWO_POTS_OF_GOLD_VALUE_CURRENCY.toString());
         LEPRECHAUN_1_OFFER_1 = BUILDER
-                .comment("Leprechaun 1 Trade Offer 1 Table")
+                .comment(" Leprechaun 1 Trade Offer 1 Table")
                 .define("leprechaun_1_trade_offer_1_table",
                         TradeLootTables.TWO_POTS_OF_GOLD_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Leprechaun Level One Trade Two");
         LEPRECHAUN_1_REQUEST_2 = BUILDER
-                .comment("Leprechaun 1 Trade Request 2 Table")
+                .comment(" Leprechaun 1 Trade Request 2 Table")
                 .define("leprechaun_1_trade_request_2_table",
                         TradeLootTables.TWO_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_1_OFFER_2 = BUILDER
-                .comment("Leprechaun 1 Trade Offer 2 Table")
+                .comment(" Leprechaun 1 Trade Offer 2 Table")
                 .define("leprechaun_1_trade_offer_2_table",
                         TradeLootTables.TWO_POTS_OF_GOLD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 2
-        BUILDER.push("Leprechaun Level Two Trade One");
+        BUILDER.push("Leprechaun Level Two Trade One")
+                .comment(" Rare Trade");
         LEPRECHAUN_2_REQUEST_1 = BUILDER
-                .comment("Leprechaun 2 Trade Request 1 Table")
+                .comment(" Leprechaun 2 Trade Request 1 Table")
                 .define("leprechaun_2_trade_request_1_table",
                         TradeLootTables.TWO_POT_OF_GOLD_VALUE_GEMS.toString());
         LEPRECHAUN_2_OFFER_1 = BUILDER
-                .comment("Leprechaun 2 Trade Offer 1 Table")
+                .comment(" Leprechaun 2 Trade Offer 1 Table")
                 .define("leprechaun_2_trade_offer_1_table",
                         TradeLootTables.TWO_POTS_OF_GOLD_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Two Trade Two");
+        BUILDER.push("Leprechaun Level Two Trade Two")
+                .comment(" Rare Trade");
         LEPRECHAUN_2_REQUEST_2 = BUILDER
-                .comment("Leprechaun 2 Trade Request 2 Table")
+                .comment(" Leprechaun 2 Trade Request 2 Table")
                 .define("leprechaun_2_trade_request_2_table",
                         TradeLootTables.TWO_POT_OF_GOLD_VALUE_ITEMS.toString());
         LEPRECHAUN_2_OFFER_2 = BUILDER
-                .comment("Leprechaun 2 Trade Offer 2 Table")
+                .comment(" Leprechaun 2 Trade Offer 2 Table")
                 .define("leprechaun_2_trade_offer_2_table",
                         TradeLootTables.TWO_POTS_OF_GOLD_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Two Trade Three");
+        BUILDER.push("Leprechaun Level Two Trade Three")
+                .comment(" Rare Trade");
         LEPRECHAUN_2_REQUEST_3 = BUILDER
-                .comment("Leprechaun 2 Trade Request 3 Table")
+                .comment(" Leprechaun 2 Trade Request 3 Table")
                 .define("leprechaun_2_trade_request_3_table",
                         TradeLootTables.FOUR_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_2_OFFER_3 = BUILDER
-                .comment("Leprechaun 2 Trade Offer 3 Table")
+                .comment(" Leprechaun 2 Trade Offer 3 Table")
                 .define("leprechaun_2_trade_offer_3_table",
                         TradeLootTables.FOUR_POTS_OF_GOLD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Two Trade Four");
+        BUILDER.push("Leprechaun Level Two Trade Four")
+                .comment(" Rare Trade");
         LEPRECHAUN_2_REQUEST_4 = BUILDER
-                .comment("Leprechaun 2 Trade Request 4 Table")
+                .comment(" Leprechaun 2 Trade Request 4 Table")
                 .define("leprechaun_2_trade_request_4_table",
                         TradeLootTables.FOUR_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_2_OFFER_4 = BUILDER
-                .comment("Leprechaun 2 Trade Offer 4 Table")
+                .comment(" Leprechaun 2 Trade Offer 4 Table")
                 .define("leprechaun_2_trade_offer_4_table",
                         TradeLootTables.FOUR_POT_OF_GOLD_VALUE_GEMS.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Two Trade Five");
+        BUILDER.push("Leprechaun Level Two Trade Five")
+                .comment(" Rare Trade");
         LEPRECHAUN_2_REQUEST_5 = BUILDER
-                .comment("Leprechaun 2 Trade Request 5 Table")
+                .comment(" Leprechaun 2 Trade Request 5 Table")
                 .define("leprechaun_2_trade_request_5_table",
                         TradeLootTables.FOUR_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_2_OFFER_5 = BUILDER
-                .comment("Leprechaun 2 Trade Offer 5 Table")
+                .comment(" Leprechaun 2 Trade Offer 5 Table")
                 .define("leprechaun_2_trade_offer_5_table",
                         TradeLootTables.FOUR_POT_OF_GOLD_VALUE_ITEMS.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Two Trade Six");
+        BUILDER.push("Leprechaun Level Two Trade Six")
+                .comment(" Rare Trade");
         LEPRECHAUN_2_REQUEST_6 = BUILDER
-                .comment("Leprechaun 2 Trade Request 6 Table")
+                .comment(" Leprechaun 2 Trade Request 6 Table")
                 .define("leprechaun_2_trade_request_6_table",
                         TradeLootTables.FOUR_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_2_OFFER_6 = BUILDER
-                .comment("Leprechaun 2 Trade Offer 6 Table")
+                .comment(" Leprechaun 2 Trade Offer 6 Table")
                 .define("leprechaun_2_trade_offer_6_table",
                         TradeLootTables.FOUR_POTS_OF_GOLD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 3
-        BUILDER.push("Leprechaun Level Three Trade One");
+        BUILDER.push("Leprechaun Level Three Trade One")
+                .comment(" Rare Trade");
         LEPRECHAUN_3_REQUEST_1 = BUILDER
-                .comment("Leprechaun 3 Trade Request 1 Table")
+                .comment(" Leprechaun 3 Trade Request 1 Table")
                 .define("leprechaun_3_trade_request_1_table",
                         TradeLootTables.THIRTY_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_3_OFFER_1 = BUILDER
-                .comment("Leprechaun 3 Trade Offer 1 Table")
+                .comment(" Leprechaun 3 Trade Offer 1 Table")
                 .define("leprechaun_3_trade_offer_1_table",
                         TradeLootTables.THIRTY_POT_OF_GOLD_VALUE_ITEMS.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Three Trade One");
+        BUILDER.push("Leprechaun Level Three Trade Two")
+                .comment(" Rare Trade");
         LEPRECHAUN_3_REQUEST_2 = BUILDER
-                .comment("Leprechaun 3 Trade Request 2 Table")
+                .comment(" Leprechaun 3 Trade Request 2 Table")
                 .define("leprechaun_3_trade_request_2_table",
                         TradeLootTables.THIRTY_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_3_OFFER_2 = BUILDER
-                .comment("Leprechaun 3 Trade Offer 2 Table")
+                .comment(" Leprechaun 3 Trade Offer 2 Table")
                 .define("leprechaun_3_trade_offer_2_table",
                         TradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Three Trade Three");
+        BUILDER.push("Leprechaun Level Three Trade Three")
+                .comment(" Rare Trade");
         LEPRECHAUN_3_REQUEST_3 = BUILDER
-                .comment("Leprechaun 3 Trade Request 3 Table")
+                .comment(" Leprechaun 3 Trade Request 3 Table")
                 .define("leprechaun_3_trade_request_3_table",
                         TradeLootTables.THIRTY_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_3_OFFER_3 = BUILDER
-                .comment("Leprechaun 3 Trade Offer 3 Table")
+                .comment(" Leprechaun 3 Trade Offer 3 Table")
                 .define("leprechaun_3_trade_offer_3_table",
                         TradeLootTables.THIRTY_POT_OF_GOLD_VALUE_GEMS.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Three Trade Four");
+        BUILDER.push("Leprechaun Level Three Trade Four")
+                .comment(" Rare Trade");
         LEPRECHAUN_3_REQUEST_4 = BUILDER
-                .comment("Leprechaun 3 Trade Request 4 Table")
+                .comment(" Leprechaun 3 Trade Request 4 Table")
                 .define("leprechaun_3_trade_request_4_table",
                         TradeLootTables.SIXTY_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_3_OFFER_4 = BUILDER
-                .comment("Leprechaun 3 Trade Offer 4 Table")
+                .comment(" Leprechaun 3 Trade Offer 4 Table")
                 .define("leprechaun_3_trade_offer_4_table",
                         TradeLootTables.SIXTY_POTS_OF_GOLD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Three Trade Five");
+        BUILDER.push("Leprechaun Level Three Trade Five")
+                .comment(" Rare Trade");
         LEPRECHAUN_3_REQUEST_5 = BUILDER
-                .comment("Leprechaun 3 Trade Request 5 Table")
+                .comment(" Leprechaun 3 Trade Request 5 Table")
                 .define("leprechaun_3_trade_request_5_table",
                         TradeLootTables.SIXTY_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_3_OFFER_5 = BUILDER
-                .comment("Leprechaun 3 Trade Offer 5 Table")
+                .comment(" Leprechaun 3 Trade Offer 5 Table")
                 .define("leprechaun_3_trade_offer_5_table",
                         TradeLootTables.SIXTY_POT_OF_GOLD_VALUE_ITEMS.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Three Trade Six");
+        BUILDER.push("Leprechaun Level Three Trade Six")
+                .comment(" Rare Trade");
         LEPRECHAUN_3_REQUEST_6 = BUILDER
-                .comment("Leprechaun 3 Trade Request 6 Table")
+                .comment(" Leprechaun 3 Trade Request 6 Table")
                 .define("leprechaun_3_trade_request_6_table",
                         TradeLootTables.SIXTY_POTS_OF_GOLD_TABLE.toString());
         LEPRECHAUN_3_OFFER_6 = BUILDER
-                .comment("Leprechaun 3 Trade Offer 6 Table")
+                .comment(" Leprechaun 3 Trade Offer 6 Table")
                 .define("leprechaun_3_trade_offer_6_table",
                         TradeLootTables.SIXTY_POT_OF_GOLD_VALUE_GEMS.toString());
         BUILDER.pop();
         // level 4
-        BUILDER.push("Leprechaun Level Four Trade One");
+        BUILDER.push("Leprechaun Level Four Trade One")
+                .comment(" Rare Trade");
         LEPRECHAUN_4_REQUEST_1 = BUILDER
-                .comment("Leprechaun 4 Trade Request 1 Table")
+                .comment(" Leprechaun 4 Trade Request 1 Table")
                 .define("leprechaun_4_trade_request_1_table",
                         TradeLootTables.SINGLE_LUCKY_COIN_VALUE_CURRENCY.toString());
         LEPRECHAUN_4_OFFER_1 = BUILDER
-                .comment("Leprechaun 4 Trade Offer 1 Table")
+                .comment(" Leprechaun 4 Trade Offer 1 Table")
                 .define("leprechaun_4_trade_offer_1_table",
                         TradeLootTables.ONE_LUCKY_COIN_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Four Trade Two");
+        BUILDER.push("Leprechaun Level Four Trade Two")
+                .comment(" Rare Trade");
         LEPRECHAUN_4_REQUEST_2 = BUILDER
-                .comment("Leprechaun 4 Trade Request 2 Table")
+                .comment(" Leprechaun 4 Trade Request 2 Table")
                 .define("leprechaun_4_trade_request_2_table",
                         TradeLootTables.ONE_LUCKY_COIN_TABLE.toString());
         LEPRECHAUN_4_OFFER_2 = BUILDER
-                .comment("Leprechaun 4 Trade Offer 2 Table")
+                .comment(" Leprechaun 4 Trade Offer 2 Table")
                 .define("leprechaun_4_trade_offer_2_table",
                         TradeLootTables.SINGLE_LUCKY_COIN_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 5
-        BUILDER.push("Leprechaun Level Five Trade One");
+        BUILDER.push("Leprechaun Level Five Trade One")
+                .comment(" Rare Trade");
         LEPRECHAUN_5_REQUEST_1 = BUILDER
-                .comment("Leprechaun 5 Trade Request 1 Table")
+                .comment(" Leprechaun 5 Trade Request 1 Table")
                 .define("leprechaun_5_trade_request_1_table",
                         TradeLootTables.SINGLE_LUCKY_COIN_VALUE_GEMS.toString());
         LEPRECHAUN_5_OFFER_1 = BUILDER
-                .comment("Leprechaun 5 Trade Offer 1 Table")
+                .comment(" Leprechaun 5 Trade Offer 1 Table")
                 .define("leprechaun_5_trade_offer_1_table",
                         TradeLootTables.ONE_LUCKY_COIN_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Five Trade Two");
+        BUILDER.push("Leprechaun Level Five Trade Two")
+                .comment(" Rare Trade");
         LEPRECHAUN_5_REQUEST_2 = BUILDER
-                .comment("Leprechaun 5 Trade Request 2 Table")
+                .comment(" Leprechaun 5 Trade Request 2 Table")
                 .define("leprechaun_5_trade_request_2_table",
                         TradeLootTables.THREE_LUCKY_COIN_VALUE_ITEMS.toString());
         LEPRECHAUN_5_OFFER_2 = BUILDER
-                .comment("Leprechaun 5 Trade Offer 2 Table")
+                .comment(" Leprechaun 5 Trade Offer 2 Table")
                 .define("leprechaun_5_trade_offer_2_table",
                         TradeLootTables.THREE_LUCKY_COIN_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Leprechaun Level Five Trade Three");
+        BUILDER.push("Leprechaun Level Five Trade Three")
+                .comment(" Rare Trade");
         LEPRECHAUN_5_REQUEST_3 = BUILDER
-                .comment("Leprechaun 5 Trade Request 3 Table")
+                .comment(" Leprechaun 5 Trade Request 3 Table")
                 .define("leprechaun_5_trade_request_3_table",
                         TradeLootTables.TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS.toString());
         LEPRECHAUN_5_OFFER_3 = BUILDER
-                .comment("Leprechaun 5 Trade Offer 3 Table")
+                .comment(" Leprechaun 5 Trade Offer 3 Table")
                 .define("leprechaun_5_trade_offer_3_table",
                         TradeLootTables.TWENTY_SEVEN_LUCKY_COIN_TABLE.toString());
         BUILDER.pop();
         BUILDER.pop();
 
         // NUMISMATIST TRADES
-        BUILDER.push("Numismatist Trade Settings");
+        BUILDER.push("Numismatist Trade Settings")
+                .comment(" All these Trades use the Rare Max Trades Setting");
         BUILDER.push("Numismatist Common Trade One");
         NUMISMATIST_REQUEST_1 = BUILDER
-                .comment("Numismatist Trade Request 1 Table")
+                .comment(" Numismatist Trade Request 1 Table")
                 .define("numismatist_trade_request_1_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED.toString());
         NUMISMATIST_OFFER_1 = BUILDER
-                .comment("Numismatist Trade Offer 1 Table")
+                .comment(" Numismatist Trade Offer 1 Table")
                 .define("numismatist_trade_offer_1_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK.toString());
         BUILDER.pop();
         BUILDER.push("Numismatist Common Trade Two");
         NUMISMATIST_REQUEST_2 = BUILDER
-                .comment("Numismatist Trade Request 2 Table")
+                .comment(" Numismatist Trade Request 2 Table")
                 .define("numismatist_trade_request_2_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK.toString());
         NUMISMATIST_OFFER_2 = BUILDER
-                .comment("Numismatist Trade Offer 2 Table")
+                .comment(" Numismatist Trade Offer 2 Table")
                 .define("numismatist_trade_offer_2_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED.toString());
         BUILDER.pop();
         BUILDER.push("Numismatist Common Trade Three");
         NUMISMATIST_REQUEST_3A = BUILDER
-                .comment("Numismatist Trade Request 3A Table")
+                .comment(" Numismatist Trade Request 3A Table")
                 .define("numismatist_trade_request_3a_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK.toString());
         NUMISMATIST_REQUEST_3B = BUILDER
-                .comment("Numismatist Trade Request 3B Table")
+                .comment(" Numismatist Trade Request 3B Table")
                 .define("numismatist_trade_request_3b_table",
                         TradeLootTables.COMPASS_TABLE.toString());
         NUMISMATIST_TRADE_3_STRUCTURE_TAG = BUILDER
-                .comment("Numismatist Trade 2 Structure Tag")
+                .comment(" Numismatist Trade 2 Structure Tag")
                 .define("numismatist_trade_3_structure_tag",
-                        ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS.toString());
+                        "forge:worldgen/structure/village");
         NUMISMATIST_TRADE_3_MAP_NAME = BUILDER
-                .comment("Numismatist Trade 3 Map Name")
+                .comment(" Numismatist Trade 3 Map Name")
                 .define("numismatist_trade_3_map_name",
                         "Merchant Map");
         NUMISMATIST_TRADE_3_MAP_MARKER = BUILDER
-                .comment("Numismatist Trade 3 Map Marker")
+                .comment(" Numismatist Trade 3 Map Marker")
                 .define("numismatist_trade_3_map_marker",
                         MapDecoration.Type.MANSION.toString());
         BUILDER.pop();
         BUILDER.push("Numismatist Common Trade Four");
         NUMISMATIST_REQUEST_4A = BUILDER
-                .comment("Numismatist Trade Request 4A Table")
+                .comment(" Numismatist Trade Request 4A Table")
                 .define("numismatist_trade_request_4a_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK.toString());
         NUMISMATIST_REQUEST_4B = BUILDER
-                .comment("Numismatist Trade Request 4B Table")
+                .comment(" Numismatist Trade Request 4B Table")
                 .define("numismatist_trade_request_4b_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED.toString());
         NUMISMATIST_OFFER_4 = BUILDER
-                .comment("Numismatist Trade Offer 4 Table")
+                .comment(" Numismatist Trade Offer 4 Table")
                 .define("numismatist_trade_offer_4_table",
                         TradeLootTables.NUMISMATIST_CONTAINER_OFFERS.toString());
         BUILDER.pop();
         BUILDER.push("Numismatist Common Trade Five");
         NUMISMATIST_LOOT_BOX_DISPLAY_NAME = BUILDER
-                .comment("Numismatist Loot Box Display Name")
-                .comment("sorry, I don't know how to make a single item/block customizable in a config file")
+                .comment(" Numismatist Loot Box Display Name")
+                .comment(" sorry, I don't know how to make a single item/block customizable in a config file")
                 .define("numismatist_trade_loot_box_display_name",
                         "tooltips.collectible_coin_pack");
         NUMISMATIST_LOOT_BOX_LOOT_TABLE = BUILDER
-                .comment("Numismatist Trade Loot Box Loot Table")
-                .comment("recommend blacklisting this loot table in lootr")
+                .comment(" Numismatist Trade Loot Box Loot Table")
+                .comment(" recommend blacklisting this loot table in lootr")
                 .define("numismatist_trade_loot_box_loot_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK.toString());
         NUMISMATIST_REQUEST_5A = BUILDER
-                .comment("Numismatist Trade Request 5A Table")
+                .comment(" Numismatist Trade Request 5A Table")
                 .define("numismatist_trade_request_5a_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK.toString());
         NUMISMATIST_REQUEST_5B = BUILDER
-                .comment("Numismatist Trade Request 5B Table")
+                .comment(" Numismatist Trade Request 5B Table")
                 .define("numismatist_trade_request_5b_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED.toString());
         BUILDER.pop();
         BUILDER.push("Numismatist Rare Trade One");
         NUMISMATIST_RARE_OFFER = BUILDER
-                .comment("Numismatist Trade Rare Offers Table")
+                .comment(" Numismatist Trade Rare Offers Table")
                 .define("numismatist_trade_offers_table",
                         TradeLootTables.NUMISMATIST_RARE_OFFERS.toString());
         NUMISMATIST_RARE_REQUEST_1A = BUILDER
-                .comment("Numismatist Trade Rare Request 1A Table")
+                .comment(" Numismatist Trade Rare Request 1A Table")
                 .define("numismatist_trade_rare_request_1a_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK.toString());
         NUMISMATIST_RARE_REQUEST_1B = BUILDER
-                .comment("Numismatist Trade Rare Request 1B Table")
+                .comment(" Numismatist Trade Rare Request 1B Table")
                 .define("numismatist_trade_rare_request_1b_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED.toString());
         BUILDER.pop();
         BUILDER.push("Numismatist Rare Trade Two");
         NUMISMATIST_RARE_REQUEST_2A = BUILDER
-                .comment("Numismatist Trade Rare Request 2A Table")
-                .comment("for enchanted book offer")
+                .comment(" Numismatist Trade Rare Request 2A Table")
+                .comment(" for enchanted book offer")
                 .define("numismatist_trade_rare_request_2a_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK.toString());
         NUMISMATIST_RARE_REQUEST_2B = BUILDER
-                .comment("Numismatist Trade Rare Request 2B Table")
-                .comment("for enchanted book offer")
+                .comment(" Numismatist Trade Rare Request 2B Table")
+                .comment(" for enchanted book offer")
                 .define("numismatist_trade_rare_request_2b_table",
                         ModBuiltInLootTables.MYSTERY_COIN_PACK_INVERTED.toString());
         BUILDER.pop();
@@ -3651,6 +4796,1376 @@ public class CommonConfig {
         SPEC = BUILDER.build();
     }
 
+    // MoreVillagers mod trades
+    // MINER TRADE GETTERS
+    public static String getMiner5Offer2() {
+        if (Objects.equals(MINER_5_OFFER_2.get(), MINER_5_OFFER_2.getDefault())) {
+            return MINER_5_OFFER_2.getDefault();
+        }
+        else {
+            return MINER_5_OFFER_2.get();
+        }
+    }
+    public static String getMiner5Request2() {
+        if (Objects.equals(MINER_5_REQUEST_2.get(), MINER_5_REQUEST_2.getDefault())) {
+            return MINER_5_REQUEST_2.getDefault();
+        }
+        else {
+            return MINER_5_REQUEST_2.get();
+        }
+    }
+    public static String getMiner5Offer1() {
+        if (Objects.equals(MINER_5_OFFER_1.get(), MINER_5_OFFER_1.getDefault())) {
+            return MINER_5_OFFER_1.getDefault();
+        }
+        else {
+            return MINER_5_OFFER_1.get();
+        }
+    }
+    public static String getMiner5Request1() {
+        if (Objects.equals(MINER_5_REQUEST_1.get(), MINER_5_REQUEST_1.getDefault())) {
+            return MINER_5_REQUEST_1.getDefault();
+        }
+        else {
+            return MINER_5_REQUEST_1.get();
+        }
+    }
+    public static String getMiner4Offer2() {
+        if (Objects.equals(MINER_4_OFFER_2.get(), MINER_4_OFFER_2.getDefault())) {
+            return MINER_4_OFFER_2.getDefault();
+        }
+        else {
+            return MINER_4_OFFER_2.get();
+        }
+    }
+    public static String getMiner4Request2() {
+        if (Objects.equals(MINER_4_REQUEST_2.get(), MINER_4_REQUEST_2.getDefault())) {
+            return MINER_4_REQUEST_2.getDefault();
+        }
+        else {
+            return MINER_4_REQUEST_2.get();
+        }
+    }
+    public static String getMiner4Offer1() {
+        if (Objects.equals(MINER_4_OFFER_1.get(), MINER_4_OFFER_1.getDefault())) {
+            return MINER_4_OFFER_1.getDefault();
+        }
+        else {
+            return MINER_4_OFFER_1.get();
+        }
+    }
+    public static String getMiner4Request1() {
+        if (Objects.equals(MINER_4_REQUEST_1.get(), MINER_4_REQUEST_1.getDefault())) {
+            return MINER_4_REQUEST_1.getDefault();
+        }
+        else {
+            return MINER_4_REQUEST_1.get();
+        }
+    }
+    public static String getMiner3Offer2() {
+        if (Objects.equals(MINER_3_OFFER_2.get(), MINER_3_OFFER_2.getDefault())) {
+            return MINER_3_OFFER_2.getDefault();
+        }
+        else {
+            return MINER_3_OFFER_2.get();
+        }
+    }
+    public static String getMiner3Request2() {
+        if (Objects.equals(MINER_3_REQUEST_2.get(), MINER_3_REQUEST_2.getDefault())) {
+            return MINER_3_REQUEST_2.getDefault();
+        }
+        else {
+            return MINER_3_REQUEST_2.get();
+        }
+    }
+    public static String getMiner3Offer1() {
+        if (Objects.equals(MINER_3_OFFER_1.get(), MINER_3_OFFER_1.getDefault())) {
+            return MINER_3_OFFER_1.getDefault();
+        }
+        else {
+            return MINER_3_OFFER_1.get();
+        }
+    }
+    public static String getMiner3Request1() {
+        if (Objects.equals(MINER_3_REQUEST_1.get(), MINER_3_REQUEST_1.getDefault())) {
+            return MINER_3_REQUEST_1.getDefault();
+        }
+        else {
+            return MINER_3_REQUEST_1.get();
+        }
+    }
+    public static String getMiner2Offer2() {
+        if (Objects.equals(MINER_2_OFFER_2.get(), MINER_2_OFFER_2.getDefault())) {
+            return MINER_2_OFFER_2.getDefault();
+        }
+        else {
+            return MINER_2_OFFER_2.get();
+        }
+    }
+    public static String getMiner2Request2() {
+        if (Objects.equals(MINER_2_REQUEST_2.get(), MINER_2_REQUEST_2.getDefault())) {
+            return MINER_2_REQUEST_2.getDefault();
+        }
+        else {
+            return MINER_2_REQUEST_2.get();
+        }
+    }
+    public static String getMiner2Offer1() {
+        if (Objects.equals(MINER_2_OFFER_1.get(), MINER_2_OFFER_1.getDefault())) {
+            return MINER_2_OFFER_1.getDefault();
+        }
+        else {
+            return MINER_2_OFFER_1.get();
+        }
+    }
+    public static String getMiner2Request1() {
+        if (Objects.equals(MINER_2_REQUEST_1.get(), MINER_2_REQUEST_1.getDefault())) {
+            return MINER_2_REQUEST_1.getDefault();
+        }
+        else {
+            return MINER_2_REQUEST_1.get();
+        }
+    }
+    public static String getMiner1Offer2() {
+        if (Objects.equals(MINER_1_OFFER_2.get(), MINER_1_OFFER_2.getDefault())) {
+            return MINER_1_OFFER_2.getDefault();
+        }
+        else {
+            return MINER_1_OFFER_2.get();
+        }
+    }
+    public static String getMiner1Request2() {
+        if (Objects.equals(MINER_1_REQUEST_2.get(), MINER_1_REQUEST_2.getDefault())) {
+            return MINER_1_REQUEST_2.getDefault();
+        }
+        else {
+            return MINER_1_REQUEST_2.get();
+        }
+    }
+    public static String getMiner1Offer1() {
+        if (Objects.equals(MINER_1_OFFER_1.get(), MINER_1_OFFER_1.getDefault())) {
+            return MINER_1_OFFER_1.getDefault();
+        }
+        else {
+            return MINER_1_OFFER_1.get();
+        }
+    }
+    public static String getMiner1Request1() {
+        if (Objects.equals(MINER_1_REQUEST_1.get(), MINER_1_REQUEST_1.getDefault())) {
+            return MINER_1_REQUEST_1.getDefault();
+        }
+        else {
+            return MINER_1_REQUEST_1.get();
+        }
+    }
+    // HUNTER TRADE GETTERS
+    public static String getHunter5Offer2() {
+        if (Objects.equals(HUNTER_5_OFFER_2.get(), HUNTER_5_OFFER_2.getDefault())) {
+            return HUNTER_5_OFFER_2.getDefault();
+        }
+        else {
+            return HUNTER_5_OFFER_2.get();
+        }
+    }
+    public static String getHunter5Request2() {
+        if (Objects.equals(HUNTER_5_REQUEST_2.get(), HUNTER_5_REQUEST_2.getDefault())) {
+            return HUNTER_5_REQUEST_2.getDefault();
+        }
+        else {
+            return HUNTER_5_REQUEST_2.get();
+        }
+    }
+    public static String getHunter5Offer1() {
+        if (Objects.equals(HUNTER_5_OFFER_1.get(), HUNTER_5_OFFER_1.getDefault())) {
+            return HUNTER_5_OFFER_1.getDefault();
+        }
+        else {
+            return HUNTER_5_OFFER_1.get();
+        }
+    }
+    public static String getHunter5Request1() {
+        if (Objects.equals(HUNTER_5_REQUEST_1.get(), HUNTER_5_REQUEST_1.getDefault())) {
+            return HUNTER_5_REQUEST_1.getDefault();
+        }
+        else {
+            return HUNTER_5_REQUEST_1.get();
+        }
+    }
+    public static String getHunter4Offer2() {
+        if (Objects.equals(HUNTER_4_OFFER_2.get(), HUNTER_4_OFFER_2.getDefault())) {
+            return HUNTER_4_OFFER_2.getDefault();
+        }
+        else {
+            return HUNTER_4_OFFER_2.get();
+        }
+    }
+    public static String getHunter4Request2() {
+        if (Objects.equals(HUNTER_4_REQUEST_2.get(), HUNTER_4_REQUEST_2.getDefault())) {
+            return HUNTER_4_REQUEST_2.getDefault();
+        }
+        else {
+            return HUNTER_4_REQUEST_2.get();
+        }
+    }
+    public static String getHunter4Offer1() {
+        if (Objects.equals(HUNTER_4_OFFER_1.get(), HUNTER_4_OFFER_1.getDefault())) {
+            return HUNTER_4_OFFER_1.getDefault();
+        }
+        else {
+            return HUNTER_4_OFFER_1.get();
+        }
+    }
+    public static String getHunter4Request1() {
+        if (Objects.equals(HUNTER_4_REQUEST_1.get(), HUNTER_4_REQUEST_1.getDefault())) {
+            return HUNTER_4_REQUEST_1.getDefault();
+        }
+        else {
+            return HUNTER_4_REQUEST_1.get();
+        }
+    }
+    public static String getHunter3Offer2() {
+        if (Objects.equals(HUNTER_3_OFFER_2.get(), HUNTER_3_OFFER_2.getDefault())) {
+            return HUNTER_3_OFFER_2.getDefault();
+        }
+        else {
+            return HUNTER_3_OFFER_2.get();
+        }
+    }
+    public static String getHunter3Request2() {
+        if (Objects.equals(HUNTER_3_REQUEST_2.get(), HUNTER_3_REQUEST_2.getDefault())) {
+            return HUNTER_3_REQUEST_2.getDefault();
+        }
+        else {
+            return HUNTER_3_REQUEST_2.get();
+        }
+    }
+    public static String getHunter3Offer1() {
+        if (Objects.equals(HUNTER_3_OFFER_1.get(), HUNTER_3_OFFER_1.getDefault())) {
+            return HUNTER_3_OFFER_1.getDefault();
+        }
+        else {
+            return HUNTER_3_OFFER_1.get();
+        }
+    }
+    public static String getHunter3Request1() {
+        if (Objects.equals(HUNTER_3_REQUEST_1.get(), HUNTER_3_REQUEST_1.getDefault())) {
+            return HUNTER_3_REQUEST_1.getDefault();
+        }
+        else {
+            return HUNTER_3_REQUEST_1.get();
+        }
+    }
+    public static String getHunter2Offer2() {
+        if (Objects.equals(HUNTER_2_OFFER_2.get(), HUNTER_2_OFFER_2.getDefault())) {
+            return HUNTER_2_OFFER_2.getDefault();
+        }
+        else {
+            return HUNTER_2_OFFER_2.get();
+        }
+    }
+    public static String getHunter2Request2() {
+        if (Objects.equals(HUNTER_2_REQUEST_2.get(), HUNTER_2_REQUEST_2.getDefault())) {
+            return HUNTER_2_REQUEST_2.getDefault();
+        }
+        else {
+            return HUNTER_2_REQUEST_2.get();
+        }
+    }
+    public static String getHunter2Offer1() {
+        if (Objects.equals(HUNTER_2_OFFER_1.get(), HUNTER_2_OFFER_1.getDefault())) {
+            return HUNTER_2_OFFER_1.getDefault();
+        }
+        else {
+            return HUNTER_2_OFFER_1.get();
+        }
+    }
+    public static String getHunter2Request1() {
+        if (Objects.equals(HUNTER_2_REQUEST_1.get(), HUNTER_2_REQUEST_1.getDefault())) {
+            return HUNTER_2_REQUEST_1.getDefault();
+        }
+        else {
+            return HUNTER_2_REQUEST_1.get();
+        }
+    }
+    public static String getHunter1Offer2() {
+        if (Objects.equals(HUNTER_1_OFFER_2.get(), HUNTER_1_OFFER_2.getDefault())) {
+            return HUNTER_1_OFFER_2.getDefault();
+        }
+        else {
+            return HUNTER_1_OFFER_2.get();
+        }
+    }
+    public static String getHunter1Request2() {
+        if (Objects.equals(HUNTER_1_REQUEST_2.get(), HUNTER_1_REQUEST_2.getDefault())) {
+            return HUNTER_1_REQUEST_2.getDefault();
+        }
+        else {
+            return HUNTER_1_REQUEST_2.get();
+        }
+    }
+    public static String getHunter1Offer1() {
+        if (Objects.equals(HUNTER_1_OFFER_1.get(), HUNTER_1_OFFER_1.getDefault())) {
+            return HUNTER_1_OFFER_1.getDefault();
+        }
+        else {
+            return HUNTER_1_OFFER_1.get();
+        }
+    }
+    public static String getHunter1Request1() {
+        if (Objects.equals(HUNTER_1_REQUEST_1.get(), HUNTER_1_REQUEST_1.getDefault())) {
+            return HUNTER_1_REQUEST_1.getDefault();
+        }
+        else {
+            return HUNTER_1_REQUEST_1.get();
+        }
+    }
+    // FLORIST TRADE GETTERS
+    public static String getFlorist5Offer2() {
+        if (Objects.equals(FLORIST_5_OFFER_2.get(), FLORIST_5_OFFER_2.getDefault())) {
+            return FLORIST_5_OFFER_2.getDefault();
+        }
+        else {
+            return FLORIST_5_OFFER_2.get();
+        }
+    }
+    public static String getFlorist5Request2() {
+        if (Objects.equals(FLORIST_5_REQUEST_2.get(), FLORIST_5_REQUEST_2.getDefault())) {
+            return FLORIST_5_REQUEST_2.getDefault();
+        }
+        else {
+            return FLORIST_5_REQUEST_2.get();
+        }
+    }
+    public static String getFlorist5Offer1() {
+        if (Objects.equals(FLORIST_5_OFFER_1.get(), FLORIST_5_OFFER_1.getDefault())) {
+            return FLORIST_5_OFFER_1.getDefault();
+        }
+        else {
+            return FLORIST_5_OFFER_1.get();
+        }
+    }
+    public static String getFlorist5Request1() {
+        if (Objects.equals(FLORIST_5_REQUEST_1.get(), FLORIST_5_REQUEST_1.getDefault())) {
+            return FLORIST_5_REQUEST_1.getDefault();
+        }
+        else {
+            return FLORIST_5_REQUEST_1.get();
+        }
+    }
+    public static String getFlorist4Offer2() {
+        if (Objects.equals(FLORIST_4_OFFER_2.get(), FLORIST_4_OFFER_2.getDefault())) {
+            return FLORIST_4_OFFER_2.getDefault();
+        }
+        else {
+            return FLORIST_4_OFFER_2.get();
+        }
+    }
+    public static String getFlorist4Request2() {
+        if (Objects.equals(FLORIST_4_REQUEST_2.get(), FLORIST_4_REQUEST_2.getDefault())) {
+            return FLORIST_4_REQUEST_2.getDefault();
+        }
+        else {
+            return FLORIST_4_REQUEST_2.get();
+        }
+    }
+    public static String getFlorist4Offer1() {
+        if (Objects.equals(FLORIST_4_OFFER_1.get(), FLORIST_4_OFFER_1.getDefault())) {
+            return FLORIST_4_OFFER_1.getDefault();
+        }
+        else {
+            return FLORIST_4_OFFER_1.get();
+        }
+    }
+    public static String getFlorist4Request1() {
+        if (Objects.equals(FLORIST_4_REQUEST_1.get(), FLORIST_4_REQUEST_1.getDefault())) {
+            return FLORIST_4_REQUEST_1.getDefault();
+        }
+        else {
+            return FLORIST_4_REQUEST_1.get();
+        }
+    }
+    public static String getFlorist3Offer2() {
+        if (Objects.equals(FLORIST_3_OFFER_2.get(), FLORIST_3_OFFER_2.getDefault())) {
+            return FLORIST_3_OFFER_2.getDefault();
+        }
+        else {
+            return FLORIST_3_OFFER_2.get();
+        }
+    }
+    public static String getFlorist3Request2() {
+        if (Objects.equals(FLORIST_3_REQUEST_2.get(), FLORIST_3_REQUEST_2.getDefault())) {
+            return FLORIST_3_REQUEST_2.getDefault();
+        }
+        else {
+            return FLORIST_3_REQUEST_2.get();
+        }
+    }
+    public static String getFlorist3Offer1() {
+        if (Objects.equals(FLORIST_3_OFFER_1.get(), FLORIST_3_OFFER_1.getDefault())) {
+            return FLORIST_3_OFFER_1.getDefault();
+        }
+        else {
+            return FLORIST_3_OFFER_1.get();
+        }
+    }
+    public static String getFlorist3Request1() {
+        if (Objects.equals(FLORIST_3_REQUEST_1.get(), FLORIST_3_REQUEST_1.getDefault())) {
+            return FLORIST_3_REQUEST_1.getDefault();
+        }
+        else {
+            return FLORIST_3_REQUEST_1.get();
+        }
+    }
+    public static String getFlorist2Offer2() {
+        if (Objects.equals(FLORIST_2_OFFER_2.get(), FLORIST_2_OFFER_2.getDefault())) {
+            return FLORIST_2_OFFER_2.getDefault();
+        }
+        else {
+            return FLORIST_2_OFFER_2.get();
+        }
+    }
+    public static String getFlorist2Request2() {
+        if (Objects.equals(FLORIST_2_REQUEST_2.get(), FLORIST_2_REQUEST_2.getDefault())) {
+            return FLORIST_2_REQUEST_2.getDefault();
+        }
+        else {
+            return FLORIST_2_REQUEST_2.get();
+        }
+    }
+    public static String getFlorist2Offer1() {
+        if (Objects.equals(FLORIST_2_OFFER_1.get(), FLORIST_2_OFFER_1.getDefault())) {
+            return FLORIST_2_OFFER_1.getDefault();
+        }
+        else {
+            return FLORIST_2_OFFER_1.get();
+        }
+    }
+    public static String getFlorist2Request1() {
+        if (Objects.equals(FLORIST_2_REQUEST_1.get(), FLORIST_2_REQUEST_1.getDefault())) {
+            return FLORIST_2_REQUEST_1.getDefault();
+        }
+        else {
+            return FLORIST_2_REQUEST_1.get();
+        }
+    }
+    public static String getFlorist1Offer2() {
+        if (Objects.equals(FLORIST_1_OFFER_2.get(), FLORIST_1_OFFER_2.getDefault())) {
+            return FLORIST_1_OFFER_2.getDefault();
+        }
+        else {
+            return FLORIST_1_OFFER_2.get();
+        }
+    }
+    public static String getFlorist1Request2() {
+        if (Objects.equals(FLORIST_1_REQUEST_2.get(), FLORIST_1_REQUEST_2.getDefault())) {
+            return FLORIST_1_REQUEST_2.getDefault();
+        }
+        else {
+            return FLORIST_1_REQUEST_2.get();
+        }
+    }
+    public static String getFlorist1Offer1() {
+        if (Objects.equals(FLORIST_1_OFFER_1.get(), FLORIST_1_OFFER_1.getDefault())) {
+            return FLORIST_1_OFFER_1.getDefault();
+        }
+        else {
+            return FLORIST_1_OFFER_1.get();
+        }
+    }
+    public static String getFlorist1Request1() {
+        if (Objects.equals(FLORIST_1_REQUEST_1.get(), FLORIST_1_REQUEST_1.getDefault())) {
+            return FLORIST_1_REQUEST_1.getDefault();
+        }
+        else {
+            return FLORIST_1_REQUEST_1.get();
+        }
+    }
+    // ENGINEER TRADE GETTERS
+    public static String getEngineer5Offer2() {
+        if (Objects.equals(ENGINEER_5_OFFER_2.get(), ENGINEER_5_OFFER_2.getDefault())) {
+            return ENGINEER_5_OFFER_2.getDefault();
+        }
+        else {
+            return ENGINEER_5_OFFER_2.get();
+        }
+    }
+    public static String getEngineer5Request2() {
+        if (Objects.equals(ENGINEER_5_REQUEST_2.get(), ENGINEER_5_REQUEST_2.getDefault())) {
+            return ENGINEER_5_REQUEST_2.getDefault();
+        }
+        else {
+            return ENGINEER_5_REQUEST_2.get();
+        }
+    }
+    public static String getEngineer5Offer1() {
+        if (Objects.equals(ENGINEER_5_OFFER_1.get(), ENGINEER_5_OFFER_1.getDefault())) {
+            return ENGINEER_5_OFFER_1.getDefault();
+        }
+        else {
+            return ENGINEER_5_OFFER_1.get();
+        }
+    }
+    public static String getEngineer5Request1() {
+        if (Objects.equals(ENGINEER_5_REQUEST_1.get(), ENGINEER_5_REQUEST_1.getDefault())) {
+            return ENGINEER_5_REQUEST_1.getDefault();
+        }
+        else {
+            return ENGINEER_5_REQUEST_1.get();
+        }
+    }
+    public static String getEngineer4Offer2() {
+        if (Objects.equals(ENGINEER_4_OFFER_2.get(), ENGINEER_4_OFFER_2.getDefault())) {
+            return ENGINEER_4_OFFER_2.getDefault();
+        }
+        else {
+            return ENGINEER_4_OFFER_2.get();
+        }
+    }
+    public static String getEngineer4Request2() {
+        if (Objects.equals(ENGINEER_4_REQUEST_2.get(), ENGINEER_4_REQUEST_2.getDefault())) {
+            return ENGINEER_4_REQUEST_2.getDefault();
+        }
+        else {
+            return ENGINEER_4_REQUEST_2.get();
+        }
+    }
+    public static String getEngineer4Offer1() {
+        if (Objects.equals(ENGINEER_4_OFFER_1.get(), ENGINEER_4_OFFER_1.getDefault())) {
+            return ENGINEER_4_OFFER_1.getDefault();
+        }
+        else {
+            return ENGINEER_4_OFFER_1.get();
+        }
+    }
+    public static String getEngineer4Request1() {
+        if (Objects.equals(ENGINEER_4_REQUEST_1.get(), ENGINEER_4_REQUEST_1.getDefault())) {
+            return ENGINEER_4_REQUEST_1.getDefault();
+        }
+        else {
+            return ENGINEER_4_REQUEST_1.get();
+        }
+    }
+    public static String getEngineer3Offer2() {
+        if (Objects.equals(ENGINEER_3_OFFER_2.get(), ENGINEER_3_OFFER_2.getDefault())) {
+            return ENGINEER_3_OFFER_2.getDefault();
+        }
+        else {
+            return ENGINEER_3_OFFER_2.get();
+        }
+    }
+    public static String getEngineer3Request2() {
+        if (Objects.equals(ENGINEER_3_REQUEST_2.get(), ENGINEER_3_REQUEST_2.getDefault())) {
+            return ENGINEER_3_REQUEST_2.getDefault();
+        }
+        else {
+            return ENGINEER_3_REQUEST_2.get();
+        }
+    }
+    public static String getEngineer3Offer1() {
+        if (Objects.equals(ENGINEER_3_OFFER_1.get(), ENGINEER_3_OFFER_1.getDefault())) {
+            return ENGINEER_3_OFFER_1.getDefault();
+        }
+        else {
+            return ENGINEER_3_OFFER_1.get();
+        }
+    }
+    public static String getEngineer3Request1() {
+        if (Objects.equals(ENGINEER_3_REQUEST_1.get(), ENGINEER_3_REQUEST_1.getDefault())) {
+            return ENGINEER_3_REQUEST_1.getDefault();
+        }
+        else {
+            return ENGINEER_3_REQUEST_1.get();
+        }
+    }
+    public static String getEngineer2Offer2() {
+        if (Objects.equals(ENGINEER_2_OFFER_2.get(), ENGINEER_2_OFFER_2.getDefault())) {
+            return ENGINEER_2_OFFER_2.getDefault();
+        }
+        else {
+            return ENGINEER_2_OFFER_2.get();
+        }
+    }
+    public static String getEngineer2Request2() {
+        if (Objects.equals(ENGINEER_2_REQUEST_2.get(), ENGINEER_2_REQUEST_2.getDefault())) {
+            return ENGINEER_2_REQUEST_2.getDefault();
+        }
+        else {
+            return ENGINEER_2_REQUEST_2.get();
+        }
+    }
+    public static String getEngineer2Offer1() {
+        if (Objects.equals(ENGINEER_2_OFFER_1.get(), ENGINEER_2_OFFER_1.getDefault())) {
+            return ENGINEER_2_OFFER_1.getDefault();
+        }
+        else {
+            return ENGINEER_2_OFFER_1.get();
+        }
+    }
+    public static String getEngineer2Request1() {
+        if (Objects.equals(ENGINEER_2_REQUEST_1.get(), ENGINEER_2_REQUEST_1.getDefault())) {
+            return ENGINEER_2_REQUEST_1.getDefault();
+        }
+        else {
+            return ENGINEER_2_REQUEST_1.get();
+        }
+    }
+    public static String getEngineer1Offer2() {
+        if (Objects.equals(ENGINEER_1_OFFER_2.get(), ENGINEER_1_OFFER_2.getDefault())) {
+            return ENGINEER_1_OFFER_2.getDefault();
+        }
+        else {
+            return ENGINEER_1_OFFER_2.get();
+        }
+    }
+    public static String getEngineer1Request2() {
+        if (Objects.equals(ENGINEER_1_REQUEST_2.get(), ENGINEER_1_REQUEST_2.getDefault())) {
+            return ENGINEER_1_REQUEST_2.getDefault();
+        }
+        else {
+            return ENGINEER_1_REQUEST_2.get();
+        }
+    }
+    public static String getEngineer1Offer1() {
+        if (Objects.equals(ENGINEER_1_OFFER_1.get(), ENGINEER_1_OFFER_1.getDefault())) {
+            return ENGINEER_1_OFFER_1.getDefault();
+        }
+        else {
+            return ENGINEER_1_OFFER_1.get();
+        }
+    }
+    public static String getEngineer1Request1() {
+        if (Objects.equals(ENGINEER_1_REQUEST_1.get(), ENGINEER_1_REQUEST_1.getDefault())) {
+            return ENGINEER_1_REQUEST_1.getDefault();
+        }
+        else {
+            return ENGINEER_1_REQUEST_1.get();
+        }
+    }
+    // ENDERIAN TRADE GETTERS
+    public static String getEnderian5Offer2() {
+        if (Objects.equals(ENDERIAN_5_OFFER_2.get(), ENDERIAN_5_OFFER_2.getDefault())) {
+            return ENDERIAN_5_OFFER_2.getDefault();
+        }
+        else {
+            return ENDERIAN_5_OFFER_2.get();
+        }
+    }
+    public static String getEnderian5Request2() {
+        if (Objects.equals(ENDERIAN_5_REQUEST_2.get(), ENDERIAN_5_REQUEST_2.getDefault())) {
+            return ENDERIAN_5_REQUEST_2.getDefault();
+        }
+        else {
+            return ENDERIAN_5_REQUEST_2.get();
+        }
+    }
+    public static String getEnderian5Offer1() {
+        if (Objects.equals(ENDERIAN_5_OFFER_1.get(), ENDERIAN_5_OFFER_1.getDefault())) {
+            return ENDERIAN_5_OFFER_1.getDefault();
+        }
+        else {
+            return ENDERIAN_5_OFFER_1.get();
+        }
+    }
+    public static String getEnderian5Request1() {
+        if (Objects.equals(ENDERIAN_5_REQUEST_1.get(), ENDERIAN_5_REQUEST_1.getDefault())) {
+            return ENDERIAN_5_REQUEST_1.getDefault();
+        }
+        else {
+            return ENDERIAN_5_REQUEST_1.get();
+        }
+    }
+    public static String getEnderian4Request2MapMarker() {
+        if (Objects.equals(ENDERIAN_4_REQUEST_2_MAP_MARKER.get(), ENDERIAN_4_REQUEST_2_MAP_MARKER.getDefault())) {
+            return ENDERIAN_4_REQUEST_2_MAP_MARKER.getDefault();
+        }
+        else {
+            return ENDERIAN_4_REQUEST_2_MAP_MARKER.get();
+        }
+    }
+    public static String getEnderian4Request2MapName() {
+        if (Objects.equals(ENDERIAN_4_REQUEST_2_MAP_NAME.get(), ENDERIAN_4_REQUEST_2_MAP_NAME.getDefault())) {
+            return ENDERIAN_4_REQUEST_2_MAP_NAME.getDefault();
+        }
+        else {
+            return ENDERIAN_4_REQUEST_2_MAP_NAME.get();
+        }
+    }
+    public static String getEnderian4Request2StructureTag() {
+        if (Objects.equals(ENDERIAN_4_REQUEST_2_STRUCTURE_TAG.get(), ENDERIAN_4_REQUEST_2_STRUCTURE_TAG.getDefault())) {
+            return ENDERIAN_4_REQUEST_2_STRUCTURE_TAG.getDefault();
+        }
+        else {
+            return ENDERIAN_4_REQUEST_2_STRUCTURE_TAG.get();
+        }
+    }
+    public static String getEnderian4Request2Secondary() {
+        if (Objects.equals(ENDERIAN_4_REQUEST_2_SECONDARY.get(), ENDERIAN_4_REQUEST_2_SECONDARY.getDefault())) {
+            return ENDERIAN_4_REQUEST_2_SECONDARY.getDefault();
+        }
+        else {
+            return ENDERIAN_4_REQUEST_2_SECONDARY.get();
+        }
+    }
+    public static String getEnderian4Request2() {
+        if (Objects.equals(ENDERIAN_4_REQUEST_2.get(), ENDERIAN_4_REQUEST_2.getDefault())) {
+            return ENDERIAN_4_REQUEST_2.getDefault();
+        }
+        else {
+            return ENDERIAN_4_REQUEST_2.get();
+        }
+    }
+    public static String getEnderian4Offer1() {
+        if (Objects.equals(ENDERIAN_4_OFFER_1.get(), ENDERIAN_4_OFFER_1.getDefault())) {
+            return ENDERIAN_4_OFFER_1.getDefault();
+        }
+        else {
+            return ENDERIAN_4_OFFER_1.get();
+        }
+    }
+    public static String getEnderian4Request1() {
+        if (Objects.equals(ENDERIAN_4_REQUEST_1.get(), ENDERIAN_4_REQUEST_1.getDefault())) {
+            return ENDERIAN_4_REQUEST_1.getDefault();
+        }
+        else {
+            return ENDERIAN_4_REQUEST_1.get();
+        }
+    }
+    public static String getEnderian3Offer2() {
+        if (Objects.equals(ENDERIAN_3_OFFER_2.get(), ENDERIAN_3_OFFER_2.getDefault())) {
+            return ENDERIAN_3_OFFER_2.getDefault();
+        }
+        else {
+            return ENDERIAN_3_OFFER_2.get();
+        }
+    }
+    public static String getEnderian3Request2() {
+        if (Objects.equals(ENDERIAN_3_REQUEST_2.get(), ENDERIAN_3_REQUEST_2.getDefault())) {
+            return ENDERIAN_3_REQUEST_2.getDefault();
+        }
+        else {
+            return ENDERIAN_3_REQUEST_2.get();
+        }
+    }
+    public static String getEnderian3Offer1() {
+        if (Objects.equals(ENDERIAN_3_OFFER_1.get(), ENDERIAN_3_OFFER_1.getDefault())) {
+            return ENDERIAN_3_OFFER_1.getDefault();
+        }
+        else {
+            return ENDERIAN_3_OFFER_1.get();
+        }
+    }
+    public static String getEnderian3Request1() {
+        if (Objects.equals(ENDERIAN_3_REQUEST_1.get(), ENDERIAN_3_REQUEST_1.getDefault())) {
+            return ENDERIAN_3_REQUEST_1.getDefault();
+        }
+        else {
+            return ENDERIAN_3_REQUEST_1.get();
+        }
+    }
+    public static String getEnderian2Offer2() {
+        if (Objects.equals(ENDERIAN_2_OFFER_2.get(), ENDERIAN_2_OFFER_2.getDefault())) {
+            return ENDERIAN_2_OFFER_2.getDefault();
+        }
+        else {
+            return ENDERIAN_2_OFFER_2.get();
+        }
+    }
+    public static String getEnderian2Request2() {
+        if (Objects.equals(ENDERIAN_2_REQUEST_2.get(), ENDERIAN_2_REQUEST_2.getDefault())) {
+            return ENDERIAN_2_REQUEST_2.getDefault();
+        }
+        else {
+            return ENDERIAN_2_REQUEST_2.get();
+        }
+    }
+    public static String getEnderian2Offer1() {
+        if (Objects.equals(ENDERIAN_2_OFFER_1.get(), ENDERIAN_2_OFFER_1.getDefault())) {
+            return ENDERIAN_2_OFFER_1.getDefault();
+        }
+        else {
+            return ENDERIAN_2_OFFER_1.get();
+        }
+    }
+    public static String getEnderian2Request1() {
+        if (Objects.equals(ENDERIAN_2_REQUEST_1.get(), ENDERIAN_2_REQUEST_1.getDefault())) {
+            return ENDERIAN_2_REQUEST_1.getDefault();
+        }
+        else {
+            return ENDERIAN_2_REQUEST_1.get();
+        }
+    }
+    public static String getEnderian1Offer2() {
+        if (Objects.equals(ENDERIAN_1_OFFER_2.get(), ENDERIAN_1_OFFER_2.getDefault())) {
+            return ENDERIAN_1_OFFER_2.getDefault();
+        }
+        else {
+            return ENDERIAN_1_OFFER_2.get();
+        }
+    }
+    public static String getEnderian1Request2() {
+        if (Objects.equals(ENDERIAN_1_REQUEST_2.get(), ENDERIAN_1_REQUEST_2.getDefault())) {
+            return ENDERIAN_1_REQUEST_2.getDefault();
+        }
+        else {
+            return ENDERIAN_1_REQUEST_2.get();
+        }
+    }
+    public static String getEnderian1Offer1() {
+        if (Objects.equals(ENDERIAN_1_OFFER_1.get(), ENDERIAN_1_OFFER_1.getDefault())) {
+            return ENDERIAN_1_OFFER_1.getDefault();
+        }
+        else {
+            return ENDERIAN_1_OFFER_1.get();
+        }
+    }
+    public static String getEnderian1Request1() {
+        if (Objects.equals(ENDERIAN_1_REQUEST_1.get(), ENDERIAN_1_REQUEST_1.getDefault())) {
+            return ENDERIAN_1_REQUEST_1.getDefault();
+        }
+        else {
+            return ENDERIAN_1_REQUEST_1.get();
+        }
+    }
+    // WOODWORKER TRADE GETTERS
+    public static String getWoodworker5Offer2() {
+        if (Objects.equals(WOODWORKER_5_OFFER_2.get(), WOODWORKER_5_OFFER_2.getDefault())) {
+            return WOODWORKER_5_OFFER_2.getDefault();
+        }
+        else {
+            return WOODWORKER_5_OFFER_2.get();
+        }
+    }
+    public static String getWoodworker5Request2() {
+        if (Objects.equals(WOODWORKER_5_REQUEST_2.get(), WOODWORKER_5_REQUEST_2.getDefault())) {
+            return WOODWORKER_5_REQUEST_2.getDefault();
+        }
+        else {
+            return WOODWORKER_5_REQUEST_2.get();
+        }
+    }
+    public static String getWoodworker5Offer1() {
+        if (Objects.equals(WOODWORKER_5_OFFER_1.get(), WOODWORKER_5_OFFER_1.getDefault())) {
+            return WOODWORKER_5_OFFER_1.getDefault();
+        }
+        else {
+            return WOODWORKER_5_OFFER_1.get();
+        }
+    }
+    public static String getWoodworker5Request1() {
+        if (Objects.equals(WOODWORKER_5_REQUEST_1.get(), WOODWORKER_5_REQUEST_1.getDefault())) {
+            return WOODWORKER_5_REQUEST_1.getDefault();
+        }
+        else {
+            return WOODWORKER_5_REQUEST_1.get();
+        }
+    }
+    public static String getWoodworker4Offer2() {
+        if (Objects.equals(WOODWORKER_4_OFFER_2.get(), WOODWORKER_4_OFFER_2.getDefault())) {
+            return WOODWORKER_4_OFFER_2.getDefault();
+        }
+        else {
+            return WOODWORKER_4_OFFER_2.get();
+        }
+    }
+    public static String getWoodworker4Request2() {
+        if (Objects.equals(WOODWORKER_4_REQUEST_2.get(), WOODWORKER_4_REQUEST_2.getDefault())) {
+            return WOODWORKER_4_REQUEST_2.getDefault();
+        }
+        else {
+            return WOODWORKER_4_REQUEST_2.get();
+        }
+    }
+    public static String getWoodworker4Offer1() {
+        if (Objects.equals(WOODWORKER_4_OFFER_1.get(), WOODWORKER_4_OFFER_1.getDefault())) {
+            return WOODWORKER_4_OFFER_1.getDefault();
+        }
+        else {
+            return WOODWORKER_4_OFFER_1.get();
+        }
+    }
+    public static String getWoodworker4Request1() {
+        if (Objects.equals(WOODWORKER_4_REQUEST_1.get(), WOODWORKER_4_REQUEST_1.getDefault())) {
+            return WOODWORKER_4_REQUEST_1.getDefault();
+        }
+        else {
+            return WOODWORKER_4_REQUEST_1.get();
+        }
+    }
+    public static String getWoodworker3Offer2() {
+        if (Objects.equals(WOODWORKER_3_OFFER_2.get(), WOODWORKER_3_OFFER_2.getDefault())) {
+            return WOODWORKER_3_OFFER_2.getDefault();
+        }
+        else {
+            return WOODWORKER_3_OFFER_2.get();
+        }
+    }
+    public static String getWoodworker3Request2() {
+        if (Objects.equals(WOODWORKER_3_REQUEST_2.get(), WOODWORKER_3_REQUEST_2.getDefault())) {
+            return WOODWORKER_3_REQUEST_2.getDefault();
+        }
+        else {
+            return WOODWORKER_3_REQUEST_2.get();
+        }
+    }
+    public static String getWoodworker3Offer1() {
+        if (Objects.equals(WOODWORKER_3_OFFER_1.get(), WOODWORKER_3_OFFER_1.getDefault())) {
+            return WOODWORKER_3_OFFER_1.getDefault();
+        }
+        else {
+            return WOODWORKER_3_OFFER_1.get();
+        }
+    }
+    public static String getWoodworker3Request1() {
+        if (Objects.equals(WOODWORKER_3_REQUEST_1.get(), WOODWORKER_3_REQUEST_1.getDefault())) {
+            return WOODWORKER_3_REQUEST_1.getDefault();
+        }
+        else {
+            return WOODWORKER_3_REQUEST_1.get();
+        }
+    }
+    public static String getWoodworker2Offer2() {
+        if (Objects.equals(WOODWORKER_2_OFFER_2.get(), WOODWORKER_2_OFFER_2.getDefault())) {
+            return WOODWORKER_2_OFFER_2.getDefault();
+        }
+        else {
+            return WOODWORKER_2_OFFER_2.get();
+        }
+    }
+    public static String getWoodworker2Request2() {
+        if (Objects.equals(WOODWORKER_2_REQUEST_2.get(), WOODWORKER_2_REQUEST_2.getDefault())) {
+            return WOODWORKER_2_REQUEST_2.getDefault();
+        }
+        else {
+            return WOODWORKER_2_REQUEST_2.get();
+        }
+    }
+    public static String getWoodworker2Offer1() {
+        if (Objects.equals(WOODWORKER_2_OFFER_1.get(), WOODWORKER_2_OFFER_1.getDefault())) {
+            return WOODWORKER_2_OFFER_1.getDefault();
+        }
+        else {
+            return WOODWORKER_2_OFFER_1.get();
+        }
+    }
+    public static String getWoodworker2Request1() {
+        if (Objects.equals(WOODWORKER_2_REQUEST_1.get(), WOODWORKER_2_REQUEST_1.getDefault())) {
+            return WOODWORKER_2_REQUEST_1.getDefault();
+        }
+        else {
+            return WOODWORKER_2_REQUEST_1.get();
+        }
+    }
+    public static String getWoodworker1Offer2() {
+        if (Objects.equals(WOODWORKER_1_OFFER_2.get(), WOODWORKER_1_OFFER_2.getDefault())) {
+            return WOODWORKER_1_OFFER_2.getDefault();
+        }
+        else {
+            return WOODWORKER_1_OFFER_2.get();
+        }
+    }
+    public static String getWoodworker1Request2() {
+        if (Objects.equals(WOODWORKER_1_REQUEST_2.get(), WOODWORKER_1_REQUEST_2.getDefault())) {
+            return WOODWORKER_1_REQUEST_2.getDefault();
+        }
+        else {
+            return WOODWORKER_1_REQUEST_2.get();
+        }
+    }
+    public static String getWoodworker1Offer1() {
+        if (Objects.equals(WOODWORKER_1_OFFER_1.get(), WOODWORKER_1_OFFER_1.getDefault())) {
+            return WOODWORKER_1_OFFER_1.getDefault();
+        }
+        else {
+            return WOODWORKER_1_OFFER_1.get();
+        }
+    }
+    public static String getWoodworker1Request1() {
+        if (Objects.equals(WOODWORKER_1_REQUEST_1.get(), WOODWORKER_1_REQUEST_1.getDefault())) {
+            return WOODWORKER_1_REQUEST_1.getDefault();
+        }
+        else {
+            return WOODWORKER_1_REQUEST_1.get();
+        }
+    }
+    // NETHERIAN TRADE GETTERS
+    public static String getNetherian5Offer2() {
+        if (Objects.equals(NETHERIAN_5_OFFER_2.get(), NETHERIAN_5_OFFER_2.getDefault())) {
+            return NETHERIAN_5_OFFER_2.getDefault();
+        }
+        else {
+            return NETHERIAN_5_OFFER_2.get();
+        }
+    }
+    public static String getNetherian5Request2() {
+        if (Objects.equals(NETHERIAN_5_REQUEST_2.get(), NETHERIAN_5_REQUEST_2.getDefault())) {
+            return NETHERIAN_5_REQUEST_2.getDefault();
+        }
+        else {
+            return NETHERIAN_5_REQUEST_2.get();
+        }
+    }
+    public static String getNetherian5Offer1() {
+        if (Objects.equals(NETHERIAN_5_OFFER_1.get(), NETHERIAN_5_OFFER_1.getDefault())) {
+            return NETHERIAN_5_OFFER_1.getDefault();
+        }
+        else {
+            return NETHERIAN_5_OFFER_1.get();
+        }
+    }
+    public static String getNetherian5Request1() {
+        if (Objects.equals(NETHERIAN_5_REQUEST_1.get(), NETHERIAN_5_REQUEST_1.getDefault())) {
+            return NETHERIAN_5_REQUEST_1.getDefault();
+        }
+        else {
+            return NETHERIAN_5_REQUEST_1.get();
+        }
+    }
+    public static String getNetherian4Offer2() {
+        if (Objects.equals(NETHERIAN_4_OFFER_2.get(), NETHERIAN_4_OFFER_2.getDefault())) {
+            return NETHERIAN_4_OFFER_2.getDefault();
+        }
+        else {
+            return NETHERIAN_4_OFFER_2.get();
+        }
+    }
+    public static String getNetherian4Request2() {
+        if (Objects.equals(NETHERIAN_4_REQUEST_2.get(), NETHERIAN_4_REQUEST_2.getDefault())) {
+            return NETHERIAN_4_REQUEST_2.getDefault();
+        }
+        else {
+            return NETHERIAN_4_REQUEST_2.get();
+        }
+    }
+    public static String getNetherian4Offer1() {
+        if (Objects.equals(NETHERIAN_4_OFFER_1.get(), NETHERIAN_4_OFFER_1.getDefault())) {
+            return NETHERIAN_4_OFFER_1.getDefault();
+        }
+        else {
+            return NETHERIAN_4_OFFER_1.get();
+        }
+    }
+    public static String getNetherian4Request1() {
+        if (Objects.equals(NETHERIAN_4_REQUEST_1.get(), NETHERIAN_4_REQUEST_1.getDefault())) {
+            return NETHERIAN_4_REQUEST_1.getDefault();
+        }
+        else {
+            return NETHERIAN_4_REQUEST_1.get();
+        }
+    }
+    public static String getNetherian3Request2MapMarker() {
+        if (Objects.equals(NETHERIAN_3_REQUEST_2_MAP_MARKER.get(), NETHERIAN_3_REQUEST_2_MAP_MARKER.getDefault())) {
+            return NETHERIAN_3_REQUEST_2_MAP_MARKER.getDefault();
+        }
+        else {
+            return NETHERIAN_3_REQUEST_2_MAP_MARKER.get();
+        }
+    }
+    public static String getNetherian3Request2MapName() {
+        if (Objects.equals(NETHERIAN_3_REQUEST_2_MAP_NAME.get(), NETHERIAN_3_REQUEST_2_MAP_NAME.getDefault())) {
+            return NETHERIAN_3_REQUEST_2_MAP_NAME.getDefault();
+        }
+        else {
+            return NETHERIAN_3_REQUEST_2_MAP_NAME.get();
+        }
+    }
+    public static String getNetherian3Request2StructureTag() {
+        if (Objects.equals(NETHERIAN_3_REQUEST_2_STRUCTURE_TAG.get(), NETHERIAN_3_REQUEST_2_STRUCTURE_TAG.getDefault())) {
+            return NETHERIAN_3_REQUEST_2_STRUCTURE_TAG.getDefault();
+        }
+        else {
+            return NETHERIAN_3_REQUEST_2_STRUCTURE_TAG.get();
+        }
+    }
+    public static String getNetherian3Request2Secondary() {
+        if (Objects.equals(NETHERIAN_3_REQUEST_2_SECONDARY.get(), NETHERIAN_3_REQUEST_2_SECONDARY.getDefault())) {
+            return NETHERIAN_3_REQUEST_2_SECONDARY.getDefault();
+        }
+        else {
+            return NETHERIAN_3_REQUEST_2_SECONDARY.get();
+        }
+    }
+    public static String getNetherian3Request2() {
+        if (Objects.equals(NETHERIAN_3_REQUEST_2.get(), NETHERIAN_3_REQUEST_2.getDefault())) {
+            return NETHERIAN_3_REQUEST_2.getDefault();
+        }
+        else {
+            return NETHERIAN_3_REQUEST_2.get();
+        }
+    }
+    public static String getNetherian3Offer1() {
+        if (Objects.equals(NETHERIAN_3_OFFER_1.get(), NETHERIAN_3_OFFER_1.getDefault())) {
+            return NETHERIAN_3_OFFER_1.getDefault();
+        }
+        else {
+            return NETHERIAN_3_OFFER_1.get();
+        }
+    }
+    public static String getNetherian3Request1() {
+        if (Objects.equals(NETHERIAN_3_REQUEST_1.get(), NETHERIAN_3_REQUEST_1.getDefault())) {
+            return NETHERIAN_3_REQUEST_1.getDefault();
+        }
+        else {
+            return NETHERIAN_3_REQUEST_1.get();
+        }
+    }
+    public static String getNetherian2Offer2() {
+        if (Objects.equals(NETHERIAN_2_OFFER_2.get(), NETHERIAN_2_OFFER_2.getDefault())) {
+            return NETHERIAN_2_OFFER_2.getDefault();
+        }
+        else {
+            return NETHERIAN_2_OFFER_2.get();
+        }
+    }
+    public static String getNetherian2Request2() {
+        if (Objects.equals(NETHERIAN_2_REQUEST_2.get(), NETHERIAN_2_REQUEST_2.getDefault())) {
+            return NETHERIAN_2_REQUEST_2.getDefault();
+        }
+        else {
+            return NETHERIAN_2_REQUEST_2.get();
+        }
+    }
+    public static String getNetherian2Offer1() {
+        if (Objects.equals(NETHERIAN_2_OFFER_1.get(), NETHERIAN_2_OFFER_1.getDefault())) {
+            return NETHERIAN_2_OFFER_1.getDefault();
+        }
+        else {
+            return NETHERIAN_2_OFFER_1.get();
+        }
+    }
+    public static String getNetherian2Request1() {
+        if (Objects.equals(NETHERIAN_2_REQUEST_1.get(), NETHERIAN_2_REQUEST_1.getDefault())) {
+            return NETHERIAN_2_REQUEST_1.getDefault();
+        }
+        else {
+            return NETHERIAN_2_REQUEST_1.get();
+        }
+    }
+    public static String getNetherian1Offer2() {
+        if (Objects.equals(NETHERIAN_1_OFFER_2.get(), NETHERIAN_1_OFFER_2.getDefault())) {
+            return NETHERIAN_1_OFFER_2.getDefault();
+        }
+        else {
+            return NETHERIAN_1_OFFER_2.get();
+        }
+    }
+    public static String getNetherian1Request2() {
+        if (Objects.equals(NETHERIAN_1_REQUEST_2.get(), NETHERIAN_1_REQUEST_2.getDefault())) {
+            return NETHERIAN_1_REQUEST_2.getDefault();
+        }
+        else {
+            return NETHERIAN_1_REQUEST_2.get();
+        }
+    }
+    public static String getNetherian1Offer1() {
+        if (Objects.equals(NETHERIAN_1_OFFER_1.get(), NETHERIAN_1_OFFER_1.getDefault())) {
+            return NETHERIAN_1_OFFER_1.getDefault();
+        }
+        else {
+            return NETHERIAN_1_OFFER_1.get();
+        }
+    }
+    public static String getNetherian1Request1() {
+        if (Objects.equals(NETHERIAN_1_REQUEST_1.get(), NETHERIAN_1_REQUEST_1.getDefault())) {
+            return NETHERIAN_1_REQUEST_1.getDefault();
+        }
+        else {
+            return NETHERIAN_1_REQUEST_1.get();
+        }
+    }
+    // OCEANOGRAPHER TRADE GETTERS
+    public static String getOceanographer5Offer2() {
+        if (Objects.equals(OCEANOGRAPHER_5_OFFER_2.get(), OCEANOGRAPHER_5_OFFER_2.getDefault())) {
+            return OCEANOGRAPHER_5_OFFER_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_5_OFFER_2.get();
+        }
+    }
+    public static String getOceanographer5Request2() {
+        if (Objects.equals(OCEANOGRAPHER_5_REQUEST_2.get(), OCEANOGRAPHER_5_REQUEST_2.getDefault())) {
+            return OCEANOGRAPHER_5_REQUEST_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_5_REQUEST_2.get();
+        }
+    }
+    public static String getOceanographer5Offer1() {
+        if (Objects.equals(OCEANOGRAPHER_5_OFFER_1.get(), OCEANOGRAPHER_5_OFFER_1.getDefault())) {
+            return OCEANOGRAPHER_5_OFFER_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_5_OFFER_1.get();
+        }
+    }
+    public static String getOceanographer5Request1() {
+        if (Objects.equals(OCEANOGRAPHER_5_REQUEST_1.get(), OCEANOGRAPHER_5_REQUEST_1.getDefault())) {
+            return OCEANOGRAPHER_5_REQUEST_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_5_REQUEST_1.get();
+        }
+    }
+    public static String getOceanographer4Offer2() {
+        if (Objects.equals(OCEANOGRAPHER_4_OFFER_2.get(), OCEANOGRAPHER_4_OFFER_2.getDefault())) {
+            return OCEANOGRAPHER_4_OFFER_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_4_OFFER_2.get();
+        }
+    }
+    public static String getOceanographer4Request2() {
+        if (Objects.equals(OCEANOGRAPHER_4_REQUEST_2.get(), OCEANOGRAPHER_4_REQUEST_2.getDefault())) {
+            return OCEANOGRAPHER_4_REQUEST_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_4_REQUEST_2.get();
+        }
+    }
+    public static String getOceanographer4Offer1() {
+        if (Objects.equals(OCEANOGRAPHER_4_OFFER_1.get(), OCEANOGRAPHER_4_OFFER_1.getDefault())) {
+            return OCEANOGRAPHER_4_OFFER_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_4_OFFER_1.get();
+        }
+    }
+    public static String getOceanographer4Request1() {
+        if (Objects.equals(OCEANOGRAPHER_4_REQUEST_1.get(), OCEANOGRAPHER_4_REQUEST_1.getDefault())) {
+            return OCEANOGRAPHER_4_REQUEST_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_4_REQUEST_1.get();
+        }
+    }
+    public static String getOceanographer3Offer2() {
+        if (Objects.equals(OCEANOGRAPHER_3_OFFER_2.get(), OCEANOGRAPHER_3_OFFER_2.getDefault())) {
+            return OCEANOGRAPHER_3_OFFER_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_3_OFFER_2.get();
+        }
+    }
+    public static String getOceanographer3Request2() {
+        if (Objects.equals(OCEANOGRAPHER_3_REQUEST_2.get(), OCEANOGRAPHER_3_REQUEST_2.getDefault())) {
+            return OCEANOGRAPHER_3_REQUEST_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_3_REQUEST_2.get();
+        }
+    }
+
+    public static String getOceanographer3Request1MapMarker() {
+        if (Objects.equals(OCEANOGRAPHER_3_REQUEST_1_MAP_MARKER.get(), OCEANOGRAPHER_3_REQUEST_1_MAP_MARKER.getDefault())) {
+            return OCEANOGRAPHER_3_REQUEST_1_MAP_MARKER.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_3_REQUEST_1_MAP_MARKER.get();
+        }
+    }
+    public static String getOceanographer3Request1MapName() {
+        if (Objects.equals(OCEANOGRAPHER_3_REQUEST_1_MAP_NAME.get(), OCEANOGRAPHER_3_REQUEST_1_MAP_NAME.getDefault())) {
+            return OCEANOGRAPHER_3_REQUEST_1_MAP_NAME.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_3_REQUEST_1_MAP_NAME.get();
+        }
+    }
+    public static String getOceanographer3Request1StructureTag() {
+        if (Objects.equals(OCEANOGRAPHER_3_REQUEST_1_STRUCTURE_TAG.get(), OCEANOGRAPHER_3_REQUEST_1_STRUCTURE_TAG.getDefault())) {
+            return OCEANOGRAPHER_3_REQUEST_1_STRUCTURE_TAG.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_3_REQUEST_1_STRUCTURE_TAG.get();
+        }
+    }
+    public static String getOceanographer3Request1Secondary() {
+        if (Objects.equals(OCEANOGRAPHER_3_REQUEST_1_SECONDARY.get(), OCEANOGRAPHER_3_REQUEST_1_SECONDARY.getDefault())) {
+            return OCEANOGRAPHER_3_REQUEST_1_SECONDARY.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_3_REQUEST_1_SECONDARY.get();
+        }
+    }
+    public static String getOceanographer3Request1() {
+        if (Objects.equals(OCEANOGRAPHER_3_REQUEST_1.get(), OCEANOGRAPHER_3_REQUEST_1.getDefault())) {
+            return OCEANOGRAPHER_3_REQUEST_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_3_REQUEST_1.get();
+        }
+    }
+    public static int getOceanographer2Offer2Count() {
+        if (Objects.equals(OCEANOGRAPHER_2_OFFER_2_COUNT.get(), OCEANOGRAPHER_2_OFFER_2_COUNT.getDefault())) {
+            return OCEANOGRAPHER_2_OFFER_2_COUNT.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_2_OFFER_2_COUNT.get();
+        }
+    }
+    public static String getOceanographer2Offer2() {
+        if (Objects.equals(OCEANOGRAPHER_2_OFFER_2.get(), OCEANOGRAPHER_2_OFFER_2.getDefault())) {
+            return OCEANOGRAPHER_2_OFFER_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_2_OFFER_2.get();
+        }
+    }
+    public static String getOceanographer2Request2() {
+        if (Objects.equals(OCEANOGRAPHER_2_REQUEST_2.get(), OCEANOGRAPHER_2_REQUEST_2.getDefault())) {
+            return OCEANOGRAPHER_2_REQUEST_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_2_REQUEST_2.get();
+        }
+    }
+    public static String getOceanographer2Offer1() {
+        if (Objects.equals(OCEANOGRAPHER_2_OFFER_1.get(), OCEANOGRAPHER_2_OFFER_1.getDefault())) {
+            return OCEANOGRAPHER_2_OFFER_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_2_OFFER_1.get();
+        }
+    }
+    public static String getOceanographer2Request1() {
+        if (Objects.equals(OCEANOGRAPHER_2_REQUEST_1.get(), OCEANOGRAPHER_2_REQUEST_1.getDefault())) {
+            return OCEANOGRAPHER_2_REQUEST_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_2_REQUEST_1.get();
+        }
+    }
+    public static String getOceanographer1Offer2() {
+        if (Objects.equals(OCEANOGRAPHER_1_OFFER_2.get(), OCEANOGRAPHER_1_OFFER_2.getDefault())) {
+            return OCEANOGRAPHER_1_OFFER_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_1_OFFER_2.get();
+        }
+    }
+    public static String getOceanographer1Request2() {
+        if (Objects.equals(OCEANOGRAPHER_1_REQUEST_2.get(), OCEANOGRAPHER_1_REQUEST_2.getDefault())) {
+            return OCEANOGRAPHER_1_REQUEST_2.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_1_REQUEST_2.get();
+        }
+    }
+    public static String getOceanographer1Offer1() {
+        if (Objects.equals(OCEANOGRAPHER_1_OFFER_1.get(), OCEANOGRAPHER_1_OFFER_1.getDefault())) {
+            return OCEANOGRAPHER_1_OFFER_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_1_OFFER_1.get();
+        }
+    }
+    public static String getOceanographer1Request1() {
+        if (Objects.equals(OCEANOGRAPHER_1_REQUEST_1.get(), OCEANOGRAPHER_1_REQUEST_1.getDefault())) {
+            return OCEANOGRAPHER_1_REQUEST_1.getDefault();
+        }
+        else {
+            return OCEANOGRAPHER_1_REQUEST_1.get();
+        }
+    }
     // TodeVillagers mod trades
     // GLASSBLOWER TRADE GETTERS
     public static int getGlassblower5Offer2Count() {
@@ -8444,6 +10959,14 @@ public class CommonConfig {
         }
         else {
             return USE_MOD_TRADES.get();
+        }
+    }
+    public static Boolean getReplaceTrades() {
+        if (Objects.equals(REPLACE_TRADES.get(), REPLACE_TRADES.getDefault())) {
+            return REPLACE_TRADES.getDefault();
+        }
+        else {
+            return REPLACE_TRADES.get();
         }
     }
     public static Boolean getResetTrades() {

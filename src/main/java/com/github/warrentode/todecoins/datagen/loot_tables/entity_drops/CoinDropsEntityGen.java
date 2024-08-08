@@ -50,7 +50,7 @@ public class CoinDropsEntityGen implements Consumer<BiConsumer<ResourceLocation,
                                 .add(LootTableReference
                                         .lootTableReference(ModBuiltInLootTables.TODECOINS_ENDONIAN_COIN_DROPS)
                                         .when(LootItemRandomChanceCondition.randomChance(0.4F))
-                                        .setWeight(6).setQuality(3).when(DROPS_CURRENCY).when(IN_THE_END))
+                                        .setWeight(6).setQuality(3).when(DROPS_CURRENCY).when(IN_END))
                                 .add(LootTableReference
                                         .lootTableReference(ModBuiltInLootTables.TODECOINS_EMERALD_QUARTER_BANK_NOTE_DROPS)
                                         .when(LootItemRandomChanceCondition.randomChance(0.3F))
@@ -107,7 +107,7 @@ public class CoinDropsEntityGen implements Consumer<BiConsumer<ResourceLocation,
                         .withPool(LootPool.lootPool()
                                 .setRolls(UniformGenerator.between(0F, 1.0F))
                                 .setBonusRolls(ConstantValue.exactly(0F))
-                                .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                                .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
 
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))))
                         ));

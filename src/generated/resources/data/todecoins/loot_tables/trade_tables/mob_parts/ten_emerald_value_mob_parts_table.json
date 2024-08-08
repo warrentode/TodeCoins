@@ -6,43 +6,6 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:gunpowder"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 32.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:spider_eye"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 32.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:bone"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 32.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:rotten_flesh"
-        },
-        {
-          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -50,7 +13,40 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:rabbit_foot"
+          "name": "minecraft:ender_pearl"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:ghast_tear"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:magma_cream"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:phantom_membrane"
         }
       ],
       "rolls": 1.0

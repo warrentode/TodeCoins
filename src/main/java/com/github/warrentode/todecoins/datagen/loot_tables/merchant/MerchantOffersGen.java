@@ -69,12 +69,12 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
                         .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
@@ -87,10 +87,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                         .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
                 ));
         consumer.accept(TradeLootTables.THREE_LUCKY_COIN_VALUE_ITEMS,
@@ -142,10 +142,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHERITE_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
         consumer.accept(TradeLootTables.SINGLE_LUCKY_COIN_VALUE_GEMS,
@@ -188,7 +188,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
                 ));
         consumer.accept(TradeLootTables.SEVEN_NETHERITE_COIN_VALUE_CURRENCY,
@@ -316,7 +316,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
@@ -325,7 +325,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootItem.lootTableItem(Items.EMERALD_BLOCK).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
         consumer.accept(TradeLootTables.SIXTY_POT_OF_GOLD_VALUE_ITEMS,
@@ -398,7 +398,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
@@ -409,7 +409,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.EMERALD_BLOCK).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
         consumer.accept(TradeLootTables.FOUR_POT_OF_GOLD_VALUE_GEMS,
@@ -569,7 +569,7 @@ public class MerchantOffersGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get().asItem()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get().asItem()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
@@ -580,7 +580,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModBlocks.COPPER_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
         consumer.accept(TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY,
@@ -593,10 +593,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
                         .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
                         .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
@@ -657,7 +657,32 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.NETHERITE_NUGGET.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-
+        consumer.accept(TradeLootTables.THREE_EMERALD_VALUE_GOLD,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.GOLD_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_GOLD,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(ModItems.GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
         consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_METALS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -695,6 +720,13 @@ public class MerchantOffersGen extends ChestLoot {
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.PRISMARINE_SHARD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
         consumer.accept(TradeLootTables.EQUIPMENT_GEMS_TABLE,
@@ -739,13 +771,99 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EMERALD))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5)))
                 ));
+        consumer.accept(TradeLootTables.FIFTY_ENDONIAN_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(50))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_ENDONIAN_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_ENDONIAN_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_ENDONIAN_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                ));
+        consumer.accept(TradeLootTables.ENDONIAN_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.THREE_NETHER_GOLD_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.NINE_NETHER_GOLD_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                ));
+        consumer.accept(TradeLootTables.EIGHTEEN_NETHERITE_COIN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(ModBlocks.NETHERITE_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.FORTY_TWO_NETHER_GOLD_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_NETHER_GOLD_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                ));
         consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(ModBlocks.COPPER_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
@@ -755,7 +873,7 @@ public class MerchantOffersGen extends ChestLoot {
                                 .when(IN_OVERWORLD.or(IN_NETHER))
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
         consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_TABLE,
@@ -806,10 +924,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                         .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
         consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY,
@@ -823,10 +941,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
                         .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
         consumer.accept(TradeLootTables.SIX_EMERALD_VALUE_CURRENCY,
@@ -842,10 +960,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
         consumer.accept(TradeLootTables.NINE_EMERALD_VALUE_CURRENCY,
@@ -854,19 +972,19 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
                                 .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
                         .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
                                 .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
                         .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
         consumer.accept(TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -884,12 +1002,12 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
                 ));
         consumer.accept(TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY,
@@ -908,10 +1026,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
                 ));
         consumer.accept(TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY,
@@ -930,10 +1048,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
         consumer.accept(TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY,
@@ -945,9 +1063,9 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                         .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
@@ -956,10 +1074,10 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
                         .add(LootItem.lootTableItem(Items.EMERALD_BLOCK).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
         consumer.accept(TradeLootTables.THREE_EMERALD_VALUE_CURRENCY,
@@ -980,10 +1098,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
         consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY,
@@ -995,10 +1113,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(17))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
                 ));
         consumer.accept(TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY,
@@ -1010,10 +1128,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
                 ));
         consumer.accept(TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY,
@@ -1027,10 +1145,10 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
                         .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_THE_END)
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
                         .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_THE_END.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
                 ));
         consumer.accept(TradeLootTables.TAGGED_RAW_MEATS_TABLE,
@@ -1277,6 +1395,17 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.SEA_LANTERN)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
+        consumer.accept(TradeLootTables.OCEAN_BLOCKS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SPONGE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DARK_PRISMARINE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_BRICKS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
         consumer.accept(TradeLootTables.GRAVEL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1311,6 +1440,13 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GLOBE_BANNER_PATTERN)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FLOWER_POT_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.FLOWER_POT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
         consumer.accept(TradeLootTables.FLOWER_BUY_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1451,6 +1587,40 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.DANDELION)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                 ));
+        consumer.accept(TradeLootTables.SAPLING_BUY_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SPRUCE_SAPLING)
+                                .when(IN_VILLAGE_TAIGA.or(IN_TAIGA)
+                                        .or(IN_OLD_GROWTH_PINE_TAIGA).or(IN_OLD_GROWTH_SPRUCE_TAIGA)
+                                        .or(IN_WINDSWEPT_FOREST).or(IN_WINDSWEPT_HILLS)
+                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_VILLAGE_SNOWY)
+                                        .or(IN_SNOWY_TAIGA).or(IN_SNOWY_SLOPES)
+                                        .or(IN_JAGGED_PEAKS).or(IN_ICE_SPIKES)
+                                        .or(IN_SNOWY_PLAINS).or(IN_GROVE).or(IN_FROZEN_PEAKS)
+                                        .or(IN_SNOWY_BEACH).or(IN_FROZEN_RIVER))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.MANGROVE_PROPAGULE)
+                                .when(IN_MANGROVE_SWAMP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.ACACIA_SAPLING)
+                                .when(IN_VILLAGE_SAVANNA.or(IN_SAVANNA)
+                                        .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.JUNGLE_SAPLING)
+                                .when(IN_JUNGLE.or(IN_BAMBOO_JUNGLE).or(IN_SPARSE_JUNGLE))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BIRCH_SAPLING)
+                                .when(IN_FOREST.or(IN_FLOWER_FOREST)
+                                        .or(IN_BIRCH_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DARK_OAK_SAPLING)
+                                .when(IN_DARK_FOREST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.OAK_SAPLING)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
         consumer.accept(TradeLootTables.SAPLING_SELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1490,6 +1660,30 @@ public class MerchantOffersGen extends ChestLoot {
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.SEEDS))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_MOB_PARTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_MOB_PARTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
         consumer.accept(TradeLootTables.SLIMEBALL_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1550,7 +1744,7 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ForgeTags.Items.GLASSBLOWER_TOOLS))
                 ));
-        consumer.accept(TradeLootTables.DIRT_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1608,6 +1802,20 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
+        consumer.accept(TradeLootTables.GHAST_TEAR_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.NETHER_WART_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NETHER_WART)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
+                ));
         consumer.accept(TradeLootTables.POTION_INGREDIENTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1626,6 +1834,11 @@ public class MerchantOffersGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GUNPOWDER))
+                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.BONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
                         .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
                         .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
@@ -1651,6 +1864,17 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.SOUL_CAMPFIRE).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
+        consumer.accept(TradeLootTables.SOUL_LIGHTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SOUL_TORCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(Items.SOUL_LANTERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SOUL_CAMPFIRE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
         consumer.accept(TradeLootTables.FISH_BUCKET_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1670,6 +1894,110 @@ public class MerchantOffersGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.AXOLOTL_BUCKET)
                                 .when(IN_LUSH_CAVES)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.DRAGON_BREATH_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_VALUE_REDSTONE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                ));
+        consumer.accept(TradeLootTables.REDSTONE_COMPONENTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.REPEATER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.DROPPER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.DISPENSER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE_LAMP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.OBSERVER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.COMPARATOR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.PISTON)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.STICKY_PISTON)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.DAYLIGHT_DETECTOR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.HOPPER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.REDSTONE_TORCH_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.REDSTONE_TORCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.BONE_MEAL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BONE_MEAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.DRAGON_HEAD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DRAGON_HEAD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SHULKER_SHELL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SHULKER_SHELL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FIREWORK_ROCKET_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.FIREWORK_ROCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.ENDER_PEARL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.END_ROD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.END_ROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.NETHER_STAR_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NETHER_STAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.HEART_OF_THE_SEA_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.HEART_OF_THE_SEA)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
         consumer.accept(TradeLootTables.CLAY_TABLE,
@@ -1876,7 +2204,12 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHERITE_BOOTS))
                 ));
-
+        consumer.accept(TradeLootTables.TRIDENT_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.TRIDENT))
+                ));
         consumer.accept(TradeLootTables.BOWS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1925,6 +2258,13 @@ public class MerchantOffersGen extends ChestLoot {
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.BOOKSHELF))
+                ));
+        consumer.accept(TradeLootTables.TORCH_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.TORCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
                 ));
         consumer.accept(TradeLootTables.LANTERN_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2002,6 +2342,21 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.STONE_HOE))
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.FLINT_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
+                ));
+        consumer.accept(TradeLootTables.IRON_TIER_LUMBER_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.IRON_AXE))
+                        .add(LootItem.lootTableItem(Items.SHEARS))
+                        .add(LootItem.lootTableItem(Items.IRON_HOE))
+                ));
+        consumer.accept(TradeLootTables.DIAMOND_TIER_LUMBER_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_AXE))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_HOE))
                 ));
         consumer.accept(TradeLootTables.IRON_TIER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2195,16 +2550,117 @@ public class MerchantOffersGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.TERRACOTTA))
                 ));
-        consumer.accept(TradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.LOGS_SELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.GLAZED_TERRACOTTA))
+                        .add(LootItem.lootTableItem(Items.SPRUCE_LOG)
+                                .when(IN_VILLAGE_TAIGA.invert().or(IN_TAIGA.invert())
+                                        .or(IN_OLD_GROWTH_PINE_TAIGA.invert()).or(IN_OLD_GROWTH_SPRUCE_TAIGA.invert())
+                                        .or(IN_WINDSWEPT_FOREST.invert()).or(IN_WINDSWEPT_HILLS.invert())
+                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS.invert()).or(IN_VILLAGE_SNOWY.invert())
+                                        .or(IN_SNOWY_TAIGA.invert()).or(IN_SNOWY_SLOPES.invert())
+                                        .or(IN_JAGGED_PEAKS.invert()).or(IN_ICE_SPIKES.invert())
+                                        .or(IN_SNOWY_PLAINS.invert()).or(IN_GROVE.invert()).or(IN_FROZEN_PEAKS.invert())
+                                        .or(IN_SNOWY_BEACH.invert()).or(IN_FROZEN_RIVER.invert()))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.MANGROVE_LOG)
+                                .when(IN_MANGROVE_SWAMP.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.ACACIA_LOG)
+                                .when(IN_VILLAGE_SAVANNA.invert().or(IN_SAVANNA.invert())
+                                        .or(IN_SAVANNA_PLATEAU.invert()).or(IN_WINDSWEPT_SAVANNA.invert()))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.JUNGLE_LOG)
+                                .when(IN_JUNGLE.invert().or(IN_BAMBOO_JUNGLE.invert()).or(IN_SPARSE_JUNGLE.invert()))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.BIRCH_LOG)
+                                .when(IN_FOREST.invert().or(IN_FLOWER_FOREST.invert())
+                                        .or(IN_BIRCH_FOREST.invert()).or(IN_OLD_GROWTH_BIRCH_FOREST.invert()))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.DARK_OAK_LOG)
+                                .when(IN_DARK_FOREST.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.CRIMSON_STEM)
+                                .when(IN_NETHER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.WARPED_STEM)
+                                .when(IN_NETHER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.OAK_LOG)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
-        consumer.accept(TradeLootTables.OTHER_STONE_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.LOGS_BUY_TABLE, LootTable.lootTable()
+                .withPool(LootPool.lootPool().
+                        setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SPRUCE_LOG)
+                                .when(IN_VILLAGE_TAIGA.or(IN_TAIGA)
+                                        .or(IN_OLD_GROWTH_PINE_TAIGA).or(IN_OLD_GROWTH_SPRUCE_TAIGA)
+                                        .or(IN_WINDSWEPT_FOREST).or(IN_WINDSWEPT_HILLS)
+                                        .or(IN_WINDSWEPT_GRAVELLY_HILLS).or(IN_VILLAGE_SNOWY)
+                                        .or(IN_SNOWY_TAIGA).or(IN_SNOWY_SLOPES)
+                                        .or(IN_JAGGED_PEAKS).or(IN_ICE_SPIKES)
+                                        .or(IN_SNOWY_PLAINS).or(IN_GROVE).or(IN_FROZEN_PEAKS)
+                                        .or(IN_SNOWY_BEACH).or(IN_FROZEN_RIVER))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.MANGROVE_LOG)
+                                .when(IN_MANGROVE_SWAMP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.ACACIA_LOG)
+                                .when(IN_VILLAGE_SAVANNA.or(IN_SAVANNA)
+                                        .or(IN_SAVANNA_PLATEAU).or(IN_WINDSWEPT_SAVANNA))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.JUNGLE_LOG)
+                                .when(IN_JUNGLE.or(IN_BAMBOO_JUNGLE).or(IN_SPARSE_JUNGLE))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.BIRCH_LOG)
+                                .when(IN_FOREST.or(IN_FLOWER_FOREST)
+                                        .or(IN_BIRCH_FOREST).or(IN_OLD_GROWTH_BIRCH_FOREST))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.DARK_OAK_LOG)
+                                .when(IN_DARK_FOREST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.CRIMSON_STEM)
+                                .when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.WARPED_STEM)
+                                .when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.OAK_LOG)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                )
+        );
+        consumer.accept(TradeLootTables.END_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.END_STONE)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.END_STONE_BRICKS)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.PURPUR_BLOCK)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.PURPUR_PILLAR)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.NETHER_BLOCKS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BASALT)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.SMOOTH_BASALT)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.POLISHED_BASALT)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
                         .add(LootItem.lootTableItem(Items.QUARTZ_BLOCK)
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(1))))
@@ -2220,24 +2676,6 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.SMOOTH_QUARTZ)
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.DRIPSTONE_BLOCK)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.CALCITE)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.TUFF)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.BASALT)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.SMOOTH_BASALT)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.POLISHED_BASALT)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
                         .add(LootItem.lootTableItem(Items.BLACKSTONE)
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(16))))
@@ -2250,13 +2688,58 @@ public class MerchantOffersGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.POLISHED_BLACKSTONE_BRICKS)
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.DEEPSLATE_TILES)
+                        .add(LootItem.lootTableItem(Blocks.WARPED_WART_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.NETHER_WART_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.WARPED_NYLIUM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.CRIMSON_NYLIUM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.GLOWSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.OBSIDIAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.CRYING_OBSIDIAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.NETHERRACK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Blocks.CHISELED_NETHER_BRICKS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Blocks.NETHER_BRICKS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Blocks.CRACKED_NETHER_BRICKS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Blocks.RED_NETHER_BRICKS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Blocks.CRIMSON_STEM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.WARPED_STEM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.GLAZED_TERRACOTTA))
+                ));
+        consumer.accept(TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DRIPSTONE_BLOCK)
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.END_STONE)
+                        .add(LootItem.lootTableItem(Items.CALCITE)
                                 .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(16))))
-                        .add(LootItem.lootTableItem(Items.END_STONE_BRICKS)
+                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.TUFF)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.SMOOTH_BASALT)
+                                .apply(SetItemCountFunction.setCount(
+                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.DEEPSLATE_TILES)
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(4))))
                 ));

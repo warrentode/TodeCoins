@@ -29,8 +29,8 @@ import java.util.stream.StreamSupport;
  href="https://github.com/PssbleTrngle/DataTrades/blob/1.19/common/src/main/java/com/possible_triangle/data_trades/command/VillagersCommand.java#L95">DataTrades</a> */
 public class VillagerTradeCommands {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
-        dispatcher.register(Commands.literal("villagers").requires(it -> it.hasPermission(3))
-                .then(Commands.literal("refresh").executes(VillagerTradeCommands::resetAllVillagers)
+        dispatcher.register(Commands.literal("trades").requires(it -> it.hasPermission(3))
+                .then(Commands.literal("reset").executes(VillagerTradeCommands::resetAllVillagers)
                         .then(Commands.argument("target", EntityArgument.entities())
                                 .executes(VillagerTradeCommands::resetTargetedVillagers)
                         )

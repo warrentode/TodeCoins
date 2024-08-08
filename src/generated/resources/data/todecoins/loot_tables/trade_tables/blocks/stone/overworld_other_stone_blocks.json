@@ -6,51 +6,58 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:gunpowder"
+          "functions": [
+            {
+              "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:dripstone_block"
         },
         {
           "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "count": 32.0,
+              "count": 4.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:spider_eye"
+          "name": "minecraft:calcite"
         },
         {
           "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "count": 32.0,
+              "count": 4.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:bone"
+          "name": "minecraft:tuff"
         },
         {
           "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "count": 32.0,
+              "count": 4.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:rotten_flesh"
+          "name": "minecraft:smooth_basalt"
         },
         {
           "type": "minecraft:item",
           "functions": [
             {
               "add": false,
-              "count": 2.0,
+              "count": 4.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:rabbit_foot"
+          "name": "minecraft:deepslate_tiles"
         }
       ],
       "rolls": 1.0
