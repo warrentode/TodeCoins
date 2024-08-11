@@ -4,6 +4,15 @@ import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.block.entity.ModBlockEntities;
 import com.github.warrentode.todecoins.config.CommonConfig;
+import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
+import com.github.warrentode.todecoins.config.trades.minecraft.*;
+import com.github.warrentode.todecoins.config.trades.morevillagers.*;
+import com.github.warrentode.todecoins.config.trades.todecoins.BankerTradesConfig;
+import com.github.warrentode.todecoins.config.trades.todecoins.LeprechaunTradesConfig;
+import com.github.warrentode.todecoins.config.trades.todecoins.NumismatistTradesConfig;
+import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTrades;
+import com.github.warrentode.todecoins.config.trades.todevillagers.GlassblowerTradesConfig;
+import com.github.warrentode.todecoins.config.trades.todevillagers.RetiredTraderTradesConfig;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
@@ -66,7 +75,40 @@ public class TodeCoins {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public TodeCoins() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MODID + "-common.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MODID + "/common.toml");
+        // friendsandfoes trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BeekeeperTradesConfig.SPEC, MODID + "/trades/friendsandfoes/beekeeper.toml");
+        // minecraft trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ArmorerTradesConfig.SPEC, MODID + "/trades/minecraft/armorer.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ButcherTradesConfig.SPEC, MODID + "/trades/minecraft/butcher.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CartographerTradesConfig.SPEC, MODID + "/trades/minecraft/cartographer.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ClericTradesConfig.SPEC, MODID + "/trades/minecraft/cleric.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FarmerTradesConfig.SPEC, MODID + "/trades/minecraft/farmer.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FishermanTradesConfig.SPEC, MODID + "/trades/minecraft/fisherman.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FletcherTradesConfig.SPEC, MODID + "/trades/minecraft/fletcher.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LeatherworkerTradesConfig.SPEC, MODID + "/trades/minecraft/leatherworker.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LibrarianTradesConfig.SPEC, MODID + "/trades/minecraft/librarian.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MasonTradesConfig.SPEC, MODID + "/trades/minecraft/mason.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ShepherdTradesConfig.SPEC, MODID + "/trades/minecraft/shepherd.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ToolsmithTradesConfig.SPEC, MODID + "/trades/minecraft/toolsmith.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WanderingTraderTradesConfig.SPEC, MODID + "/trades/minecraft/wandering_trader.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WeaponsmithTradesConfig.SPEC, MODID + "/trades/minecraft/weaponsmith.toml");
+        // morevillagers trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EnderianTradesConfig.SPEC, MODID + "/trades/morevillagers/enderian.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EngineerTradesConfig.SPEC, MODID + "/trades/morevillagers/engineer.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FloristTradesConfig.SPEC, MODID + "/trades/morevillagers/florist.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, HunterTradesConfig.SPEC, MODID + "/trades/morevillagers/hunter.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NetherianTradesConfig.SPEC, MODID + "/trades/morevillagers/netherian.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, OceanographerTradesConfig.SPEC, MODID + "/trades/morevillagers/oceanographer.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WoodworkerTradesConfig.SPEC, MODID + "/trades/morevillagers/woodworker.toml");
+        // todecoins trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BankerTradesConfig.SPEC, MODID + "/trades/todecoins/banker.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LeprechaunTradesConfig.SPEC, MODID + "/trades/todecoins/leprechaun.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NumismatistTradesConfig.SPEC, MODID + "/trades/todecoins/numismatist.toml");
+        // todevillagers trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, RetiredTraderTradesConfig.SPEC, MODID + "/trades/todevillagers/retired_trader.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, GlassblowerTradesConfig.SPEC, MODID + "/trades/todevillagers/glassblower.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DiscJockeyTrades.SPEC, MODID + "/trades/todevillagers/disc_jockey.toml");
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);

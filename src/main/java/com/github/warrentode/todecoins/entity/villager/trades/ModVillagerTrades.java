@@ -2,6 +2,14 @@ package com.github.warrentode.todecoins.entity.villager.trades;
 
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.config.CommonConfig;
+import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
+import com.github.warrentode.todecoins.config.trades.minecraft.*;
+import com.github.warrentode.todecoins.config.trades.morevillagers.*;
+import com.github.warrentode.todecoins.config.trades.todecoins.BankerTradesConfig;
+import com.github.warrentode.todecoins.config.trades.todecoins.LeprechaunTradesConfig;
+import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTrades;
+import com.github.warrentode.todecoins.config.trades.todevillagers.GlassblowerTradesConfig;
+import com.github.warrentode.todecoins.config.trades.todevillagers.RetiredTraderTradesConfig;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
 import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.*;
 import com.github.warrentode.todecoins.item.ModItems;
@@ -75,66 +83,66 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner1Offer1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner1Request1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner1Offer2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner1Request2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner2Offer1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner2Request1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner2Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner2Offer2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner2Request2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner2Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner3Offer1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner3Request1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner3Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner3Offer2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner3Request2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner4Offer1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner4Request1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner4Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner4Offer2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner4Request2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForEnchantedTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner5Offer1()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner5Request1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner5Offer1()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner5Request1()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getMiner5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getMiner5Offer2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner5Request2()),
+                                ResourceLocation.tryParse(MinerTradesConfig.getMiner5Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -150,66 +158,66 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter1Offer1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter1Request1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter1Offer2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter1Request2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter2Offer1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter2Request1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter2Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter2Offer2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter2Request2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter2Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter3Offer1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter3Request1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter3Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter3Offer2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter3Request2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter4Offer1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter4Request1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter4Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter4Offer2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter4Request2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter5Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter5Offer1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter5Request1()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter5Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getHunter5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getHunter5Offer2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter5Request2()),
+                                ResourceLocation.tryParse(HunterTradesConfig.getHunter5Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -225,66 +233,66 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist1Offer1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist1Request1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist1Offer2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist1Request2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist2Offer1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist2Request1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist2Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist2Offer2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist2Request2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist2Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist3Offer1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist3Request1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist3Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist3Offer2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist3Request2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist4Offer1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist4Request1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist4Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist4Offer2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist4Request2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist5Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist5Offer1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist5Request1()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist5Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getFlorist5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getFlorist5Offer2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist5Request2()),
+                                ResourceLocation.tryParse(FloristTradesConfig.getFlorist5Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -300,66 +308,66 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer1Offer1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer1Request1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer1Offer2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer1Request2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer2Offer1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer2Request1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer2Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer2Offer2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer2Request2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer2Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer3Offer1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer3Request1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer3Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer3Offer2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer3Request2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer4Offer1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer4Request1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer4Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer4Offer2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer4Request2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer5Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer5Offer1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer5Request1()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer5Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEngineer5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEngineer5Offer2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer5Request2()),
+                                ResourceLocation.tryParse(EngineerTradesConfig.getEngineer5Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -375,69 +383,69 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian1Offer1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian1Request1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian1Offer2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian1Request2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian2Offer1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian2Request1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian2Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian2Offer2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian2Request2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian2Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian3Offer1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian3Request1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian3Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian3Offer2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian3Request2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian4Offer1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian4Request1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian4Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new MapForLootTables(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian4Request2Secondary()),
-                                CommonConfig.getStructureTag(CommonConfig.getEnderian4Request2StructureTag()),
-                                CommonConfig.getEnderian4Request2MapName(),
-                                MapDecoration.Type.valueOf(CommonConfig.getEnderian4Request2MapMarker()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian4Request2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian4Request2Secondary()),
+                                CommonConfig.getStructureTag(EnderianTradesConfig.getEnderian4Request2StructureTag()),
+                                EnderianTradesConfig.getEnderian4Request2MapName(),
+                                MapDecoration.Type.valueOf(EnderianTradesConfig.getEnderian4Request2MapMarker()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_RARE_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian5Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian5Offer1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian5Request1()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian5Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getEnderian5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getEnderian5Offer2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian5Request2()),
+                                ResourceLocation.tryParse(EnderianTradesConfig.getEnderian5Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -453,66 +461,66 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker1Offer1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker1Request1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker1Offer2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker1Request2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker2Offer1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker2Request1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker2Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker2Offer2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker2Request2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker2Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker3Offer1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker3Request1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker3Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker3Offer2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker3Request2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker4Offer1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker4Request1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker4Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker4Offer2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker4Request2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForEnchantedTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker5Offer1()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker5Request1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker5Offer1()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker5Request1()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getWoodworker5Offer2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker5Request2()),
+                                ResourceLocation.tryParse(WoodworkerTradesConfig.getWoodworker5Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -528,69 +536,69 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian1Offer1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian1Request1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian1Offer2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian1Request2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian2Offer1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian2Request1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian2Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian2Offer2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian2Request2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian2Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian3Offer1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian3Request1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian3Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new MapForLootTables(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian3Request2Secondary()),
-                                CommonConfig.getStructureTag(CommonConfig.getNetherian3Request2StructureTag()),
-                                CommonConfig.getNetherian3Request2MapName(),
-                                MapDecoration.Type.valueOf(CommonConfig.getNetherian3Request2MapMarker()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian3Request2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian3Request2Secondary()),
+                                CommonConfig.getStructureTag(NetherianTradesConfig.getNetherian3Request2StructureTag()),
+                                NetherianTradesConfig.getNetherian3Request2MapName(),
+                                MapDecoration.Type.valueOf(NetherianTradesConfig.getNetherian3Request2MapMarker()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_RARE_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian4Offer1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian4Request1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian4Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian4Offer2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian4Request2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian5Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian5Offer1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian5Request1()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian5Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getNetherian5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getNetherian5Offer2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian5Request2()),
+                                ResourceLocation.tryParse(NetherianTradesConfig.getNetherian5Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -606,70 +614,70 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer1Offer1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer1Request1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer1Offer2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer1Request2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer2Offer1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer2Request1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer2Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer2Offer2()),
-                                CommonConfig.getOceanographer2Offer2Count(),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer2Request2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer2Offer2()),
+                                OceanographerTradesConfig.getOceanographer2Offer2Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new MapForLootTables(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer3Request1Secondary()),
-                                CommonConfig.getStructureTag(CommonConfig.getOceanographer3Request1StructureTag()),
-                                CommonConfig.getOceanographer3Request1MapName(),
-                                MapDecoration.Type.valueOf(CommonConfig.getOceanographer3Request1MapMarker()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer3Request1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer3Request1Secondary()),
+                                CommonConfig.getStructureTag(OceanographerTradesConfig.getOceanographer3Request1StructureTag()),
+                                OceanographerTradesConfig.getOceanographer3Request1MapName(),
+                                MapDecoration.Type.valueOf(OceanographerTradesConfig.getOceanographer3Request1MapMarker()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer3Offer2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer3Request2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer4Offer1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer4Request1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer4Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer4Offer2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer4Request2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForEnchantedTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer5Offer1()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer5Request1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer5Offer1()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer5Request1()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForEnchantedTable(
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer5Offer2()),
-                                ResourceLocation.tryParse(CommonConfig.getOceanographer5Request2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer5Offer2()),
+                                ResourceLocation.tryParse(OceanographerTradesConfig.getOceanographer5Request2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -688,96 +696,96 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Offer1()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader1Request1()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Offer2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader1Request2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader1Offer3()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader1Request3()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader1Offer3()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
 
                         trades.get(apprentice).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Offer1()),
-                                CommonConfig.getRetiredTrader2Offer1Count(),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader2Request1()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader2Offer1()),
+                                RetiredTraderTradesConfig.getRetiredTrader2Offer1Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Offer2()),
-                                CommonConfig.getRetiredTrader2Offer2Count(),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader2Request2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader2Offer2()),
+                                RetiredTraderTradesConfig.getRetiredTrader2Offer2Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader2Offer3()),
-                                CommonConfig.getRetiredTrader2Offer3Count(),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader2Request3()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader2Offer3()),
+                                RetiredTraderTradesConfig.getRetiredTrader2Offer3Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Offer2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader3Request2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Offer1()),
-                                CommonConfig.getRetiredTrader3Offer1Count(),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader3Request1()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader3Offer1()),
+                                RetiredTraderTradesConfig.getRetiredTrader3Offer1Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader3Offer3()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader3Request3()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader3Offer3()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Offer1()),
-                                CommonConfig.getRetiredTrader4Offer1Count(),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader4Request1()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader4Offer1()),
+                                RetiredTraderTradesConfig.getRetiredTrader4Offer1Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Offer2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader4Request2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader4Offer3()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader4Request3()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader4Offer3()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader5Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader5Offer1()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader5Request1()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader5Offer1()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getRetiredTrader5Offer2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader5Request2()),
+                                ResourceLocation.tryParse(RetiredTraderTradesConfig.getRetiredTrader5Offer2()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                         ));
@@ -793,72 +801,72 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Offer1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey1Request1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Offer2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey1Request2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey1Offer3()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey1Request3()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey1Offer3()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey2Offer1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey2Request1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey2Offer1()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey2Offer2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey2Request2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey2Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey3Offer1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey3Request1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey3Offer1()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey3Offer2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey3Request2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey4Offer1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey4Request1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey4Offer1()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey4Offer2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey4Request2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey4Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey5Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey5Offer1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey5Request1()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey5Offer1()),
                                 CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getDiscJockey5Offer2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey5Request2()),
+                                ResourceLocation.tryParse(DiscJockeyTrades.getDiscJockey5Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -874,86 +882,86 @@ public class ModVillagerTrades {
                         }
 
                         trades.get(novice).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Offer1()),
-                                CommonConfig.getGlassblower1Offer1Count(),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower1Request1()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower1Offer1()),
+                                GlassblowerTradesConfig.getGlassblower1Offer1Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new TagTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Request2()),
-                                CommonConfig.getGlassblower1Request2Count(),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Offer2()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower1Request2()),
+                                GlassblowerTradesConfig.getGlassblower1Request2Count(),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower1Offer3()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower1Request3()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower1Offer3()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(apprentice).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Offer1()),
-                                CommonConfig.getGlassblower2Offer1Count(),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower2Request1()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower2Offer1()),
+                                GlassblowerTradesConfig.getGlassblower2Offer1Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Offer2()),
-                                CommonConfig.getGlassblower2Offer2Count(),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower2Request2()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower2Offer2()),
+                                GlassblowerTradesConfig.getGlassblower2Offer2Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(apprentice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower2Offer3()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower2Request3()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower2Offer3()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower3Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower3Offer1()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower3Request1()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower3Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower3Offer2()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower3Request2()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower4Offer1()),
-                                CommonConfig.getGlassblower4Offer1Count(),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower4Request1()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower4Offer1()),
+                                GlassblowerTradesConfig.getGlassblower4Offer1Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower4Offer2()),
-                                CommonConfig.getGlassblower4Offer2Count(),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower4Request2()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower4Offer2()),
+                                GlassblowerTradesConfig.getGlassblower4Offer2Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
 
                         trades.get(master).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower5Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower5Offer1()),
-                                CommonConfig.getGlassblower5Offer1Count(),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower5Request1()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower5Offer1()),
+                                GlassblowerTradesConfig.getGlassblower5Offer1Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                         trades.get(master).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower5Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getGlassblower5Offer2()),
-                                CommonConfig.getGlassblower5Offer2Count(),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower5Request2()),
+                                ResourceLocation.tryParse(GlassblowerTradesConfig.getGlassblower5Offer2()),
+                                GlassblowerTradesConfig.getGlassblower5Offer2Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
@@ -970,68 +978,68 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper1Offer1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper1Request1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper1Offer2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper1Request2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper2Offer1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper2Request1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper2Offer2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper2Request2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper2Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper3Offer1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper3Request1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper3Offer2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper3Request2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper4Request1()),
-                            CommonConfig.getBeekeeper4Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper4Offer1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper4Request1()),
+                            BeekeeperTradesConfig.getBeekeeper4Request1Count(),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper4Offer2()),
-                            CommonConfig.getBeekeeper4Offer2Count(),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper4Request2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper4Offer2()),
+                            BeekeeperTradesConfig.getBeekeeper4Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper5Offer1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper5Request1()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBeekeeper5Offer2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper5Request2()),
+                            ResourceLocation.tryParse(BeekeeperTradesConfig.getBeekeeper5Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -1048,75 +1056,75 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith1Offer1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith1Request1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith1Offer2()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith1Request2()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith2Offer1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith2Request1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith2Offer2()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith2Request2()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith2Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith3Offer1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith3Request1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith3Offer2()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith3Request2()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getWeaponsmith4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getWeaponsmith4Offer2()),
-                                CommonConfig.getWeaponsmith4Offer2Count(),
+                                ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith4Request2()),
+                                ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith4Offer2()),
+                                WeaponsmithTradesConfig.getWeaponsmith4Offer2Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith4Offer1()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith4Request1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith4Offer1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith4Request1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith4Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith4Offer3()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith4Request3()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith4Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith5Offer1()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith5Request1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith5Offer1()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith5Request1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith5Offer2()),
-                            ResourceLocation.tryParse(CommonConfig.getWeaponsmith5Request2()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith5Offer2()),
+                            ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith5Request2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
@@ -1132,81 +1140,81 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith1Offer1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith1Request1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith1Offer2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith1Request2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith2Offer1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith2Request1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith2Offer2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith2Request2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith2Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith3Offer2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith3Request2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith3Offer1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith3Request1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getToolsmith4Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getToolsmith4Offer3()),
-                                CommonConfig.getToolsmith4Offer3Count(),
+                                ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith4Request3()),
+                                ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith4Offer3()),
+                                ToolsmithTradesConfig.getToolsmith4Offer3Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith4Offer1()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith4Request1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith4Offer1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith4Request1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith4Offer2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith4Request2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith4Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith5Offer3()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith5Request3()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith5Offer3()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith5Request3()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith5Offer1()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith5Request1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith5Offer1()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith5Request1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith5Offer2()),
-                            ResourceLocation.tryParse(CommonConfig.getToolsmith5Request2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith5Offer2()),
+                            ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith5Request2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
@@ -1222,80 +1230,80 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd1Request1()),
-                            CommonConfig.getShepherd1Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd1Offer1()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd1Request1()),
+                            ShepherdTradesConfig.getShepherd1Request1Count(),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd1Offer2()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd1Request2()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd2Request1()),
-                            CommonConfig.getShepherd2Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd2Offer1()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd2Request1()),
+                            ShepherdTradesConfig.getShepherd2Request1Count(),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd2Offer2()),
-                            CommonConfig.getShepherd2Offer2Count(),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd2Request2()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd2Offer2()),
+                            ShepherdTradesConfig.getShepherd2Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd2Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd2Offer3()),
-                            CommonConfig.getShepherd2Offer3Count(),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd2Request3()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd2Offer3()),
+                            ShepherdTradesConfig.getShepherd2Offer3Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd3Request1()),
-                            CommonConfig.getShepherd3Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd3Offer1()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd3Request1()),
+                            ShepherdTradesConfig.getShepherd3Request1Count(),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd3Offer2()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd3Request2()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd4Request1()),
-                            CommonConfig.getShepherd4Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd4Offer1()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd4Request1()),
+                            ShepherdTradesConfig.getShepherd4Request1Count(),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd4Offer2()),
-                            CommonConfig.getShepherd4Offer2Count(),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd4Request2()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd4Offer2()),
+                            ShepherdTradesConfig.getShepherd4Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd5Request1()),
-                            CommonConfig.getShepherd5Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd5Offer1()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd5Request1()),
+                            ShepherdTradesConfig.getShepherd5Request1Count(),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getShepherd5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getShepherd5Offer2()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd5Request2()),
+                            ResourceLocation.tryParse(ShepherdTradesConfig.getShepherd5Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -1311,66 +1319,66 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getMason1Offer1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason1Request1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getMason1Offer2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason1Request2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getMason2Offer1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason2Request1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getMason2Offer2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason2Request2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason2Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getMason3Offer1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason3Request1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getMason3Offer2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason3Request2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getMason4Offer1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason4Request1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getMason4Offer2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason4Request2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason4Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getMason5Offer1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason5Request1()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getMason5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getMason5Offer2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason5Request2()),
+                            ResourceLocation.tryParse(MasonTradesConfig.getMason5Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -1387,107 +1395,107 @@ public class ModVillagerTrades {
 
                     if (ModList.get().isLoaded("patchouli")) {
                         trades.get(novice).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getLibrarian1Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getLibrarian1Offer1()),
+                                ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian1Request1()),
+                                ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian1Offer1()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian1Offer2()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian1Request2()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForEnchanted(
                             Items.BOOK.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian1Request3()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian1Request3()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian1Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian1Offer4()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian1Request4()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian1Offer4()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian2Offer1()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian2Request1()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForEnchanted(
                             Items.BOOK.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian2Request2()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian2Request2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian2Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian2Offer3()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian2Request3()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian2Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForEnchanted(
                             Items.BOOK.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian3Request1()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian3Request1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian3Request2()),
-                            CommonConfig.getLibrarian3Request2Count(),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian3Offer2()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian3Request2()),
+                            LibrarianTradesConfig.getLibrarian3Request2Count(),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     if (!ModList.get().isLoaded("todevillagers")) {
                         trades.get(journeyman).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getLibrarian3Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getLibrarian3Offer3()),
-                                CommonConfig.getLibrarian3Offer3Count(),
+                                ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian3Request3()),
+                                ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian3Offer3()),
+                                LibrarianTradesConfig.getLibrarian3Offer3Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian4Offer1()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian4Request1()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForEnchanted(
                             Items.BOOK.getDefaultInstance(),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian4Request2()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian4Request2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian4Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian4Offer3()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian4Request3()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian4Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian5Offer1()),
-                            CommonConfig.getLibrarian5Offer1Count(),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian5Request1()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian5Offer1()),
+                            LibrarianTradesConfig.getLibrarian5Offer1Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian5Offer2()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian5Request2()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian5Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForItem(
-                            ResourceLocation.tryParse(CommonConfig.getLibrarian5Request3()),
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian5Request3()),
                             Items.NAME_TAG.getDefaultInstance(), 1,
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
@@ -1504,80 +1512,80 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker1Request1()),
-                            CommonConfig.getLeatherworker1Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker1Offer1()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker1Request1()),
+                            LeatherworkerTradesConfig.getLeatherworker1Request1Count(),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker1Offer2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker1Request2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker1Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker1Offer3()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker1Request3()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker1Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker2Offer1()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker2Request1()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker2Offer2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker2Request2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker2Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker2Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker2Offer3()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker2Request3()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker2Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker3Request1()),
-                            CommonConfig.getLeatherworker3Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker3Offer1()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker3Request1()),
+                            LeatherworkerTradesConfig.getLeatherworker3Request1Count(),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker3Offer2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker3Request2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker4Offer1()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker4Request1()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker4Offer2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker4Request2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker4Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker5Offer1()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker5Request1()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new DyedArmorForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeatherworker5Offer2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker5Request2()),
+                            ResourceLocation.tryParse(LeatherworkerTradesConfig.getLeatherworker5Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -1593,76 +1601,76 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher1Request1()),
-                            CommonConfig.getFletcher1Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher1Offer1()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Request1()),
+                            FletcherTradesConfig.getFletcher1Request1Count(),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new TwoLootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher1Request2Secondary()),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher1Offer2()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Request2()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Request2Secondary()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher2Offer1()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher2Request1()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher2Offer2()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher2Request2()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher2Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher3Request1()),
-                            CommonConfig.getFletcher3Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher3Offer1()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher3Request1()),
+                            FletcherTradesConfig.getFletcher3Request1Count(),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher3Offer2()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher3Request2()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher4Offer1()),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher4Request1()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher4Offer1()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher4Request1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     if (ModList.get().isLoaded("supplementaries")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getFletcher4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getFletcher4Offer2()),
-                                CommonConfig.getFletcher4Offer2Count(),
+                                ResourceLocation.tryParse(FletcherTradesConfig.getFletcher4Request2()),
+                                ResourceLocation.tryParse(FletcherTradesConfig.getFletcher4Offer2()),
+                                FletcherTradesConfig.getFletcher4Offer2Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher4Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getFletcher4Offer3()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher4Request3()),
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher4Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new TippedArrowForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher5Request1()), 5,
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher5Request1()), 5,
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new TippedArrowForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFletcher5Request2()), 5,
+                            ResourceLocation.tryParse(FletcherTradesConfig.getFletcher5Request2()), 5,
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -1678,100 +1686,100 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman1Request1()),
-                            CommonConfig.getFisherman1Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman1Offer1()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman1Request1()),
+                            FishermanTradesConfig.getFisherman1Request1Count(),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman1Offer2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman1Request2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman1Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman1Offer3()),
-                            CommonConfig.getFisherman1Offer3Count(),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman1Request3()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman1Offer3()),
+                            FishermanTradesConfig.getFisherman1Offer3Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman1Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman1Offer4()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman1Request4()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman1Offer4()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman2Request1()),
-                            CommonConfig.getFisherman2Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman2Offer1()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman2Request1()),
+                            FishermanTradesConfig.getFisherman2Request1Count(),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman2Offer2()),
-                            CommonConfig.getFisherman2Offer2Count(),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman2Request2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman2Offer2()),
+                            FishermanTradesConfig.getFisherman2Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman2Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman2Offer3()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman2Request3()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman2Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman3Request1()),
-                            CommonConfig.getFisherman3Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman3Offer1()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman3Request1()),
+                            FishermanTradesConfig.getFisherman3Request1Count(),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman3Offer2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman3Request2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getFisherman4Request1()),
-                                ResourceLocation.tryParse(CommonConfig.getFisherman4Offer1()),
-                                CommonConfig.getFisherman4Offer1Count(),
+                                ResourceLocation.tryParse(FishermanTradesConfig.getFisherman4Request1()),
+                                ResourceLocation.tryParse(FishermanTradesConfig.getFisherman4Offer1()),
+                                FishermanTradesConfig.getFisherman4Offer1Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman4Offer2()),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman4Request2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman4Offer2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman4Request2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman4Request3()),
-                            CommonConfig.getFisherman4Request3Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman4Offer3()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman4Request3()),
+                            FishermanTradesConfig.getFisherman4Request3Count(),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman4Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman5Request1()),
-                            CommonConfig.getFisherman5Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman5Offer1()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman5Request1()),
+                            FishermanTradesConfig.getFisherman5Request1Count(),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFisherman5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFisherman5Offer2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman5Request2()),
+                            ResourceLocation.tryParse(FishermanTradesConfig.getFisherman5Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -1787,75 +1795,75 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer1Request1()),
-                            CommonConfig.getFarmer1Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer1Offer1()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer1Request1()),
+                            FarmerTradesConfig.getFarmer1Request1Count(),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer1Offer2()),
-                            CommonConfig.getFarmer1Offer2Count(),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer1Request2()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer1Offer2()),
+                            FarmerTradesConfig.getFarmer1Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer2Request1()),
-                            CommonConfig.getFarmer2Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer2Offer1()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer2Request1()),
+                            FarmerTradesConfig.getFarmer2Request1Count(),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer2Offer2()),
-                            CommonConfig.getFarmer2Offer2Count(),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer2Request2()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer2Offer2()),
+                            FarmerTradesConfig.getFarmer2Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, 5 + apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer3Offer1()),
-                            CommonConfig.getFarmer3Offer1Count(),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer3Request1()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer3Offer1()),
+                            FarmerTradesConfig.getFarmer3Offer1Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer3Offer2()),
-                            CommonConfig.getFarmer3Offer2Count(),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer3Request2()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer3Offer2()),
+                            FarmerTradesConfig.getFarmer3Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer4Offer1()),
-                            CommonConfig.getFarmer4Offer1Count(),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer4Request1()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer4Offer1()),
+                            FarmerTradesConfig.getFarmer4Offer1Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     ForgeRegistries.MOB_EFFECTS.forEach( mobEffect ->
                             trades.get(expert).add(new SUSStewForLootTable(
                                     mobEffect, 300,
-                                    ResourceLocation.tryParse(CommonConfig.getFarmer4Request2()),
+                                    ResourceLocation.tryParse(FarmerTradesConfig.getFarmer4Request2()),
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                             ))
                     );
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer5Offer1()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer5Request1()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer5Offer1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getFarmer5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getFarmer5Offer2()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer5Request2()),
+                            ResourceLocation.tryParse(FarmerTradesConfig.getFarmer5Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
@@ -1871,72 +1879,72 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric1Offer1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric1Request1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric1Offer2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric1Request2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric2Offer1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric2Request1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric2Offer2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric2Request2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric2Offer2()),
                             CONFIG_COMMON_MAX_TRADES, 5 + apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric3Offer1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric3Request1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric3Offer2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric3Request2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, 5 + journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric4Offer1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric4Request1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric4Offer2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric4Request2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric4Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric4Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric4Offer3()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric4Request3()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric4Offer3()),
                             CONFIG_COMMON_MAX_TRADES, 5 + expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric5Offer1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric5Request1()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCleric5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCleric5Offer2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric5Request2()),
+                            ResourceLocation.tryParse(ClericTradesConfig.getCleric5Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -1952,77 +1960,77 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer1Offer1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer1Request1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer1Offer2()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer1Request2()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer2Request1()),
-                            CommonConfig.getCartographer2Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer2Offer1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer2Request1()),
+                            CartographerTradesConfig.getCartographer2Request1Count(),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new MapForLootTables(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer2Request2Secondary()),
-                            CommonConfig.getStructureTag(CommonConfig.getCartographer2Request2StructureTag()),
-                            CommonConfig.getCartographer2Request2MapName(),
-                            MapDecoration.Type.valueOf(CommonConfig.getCartographer2Request2MapMarker()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer2Request2()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer2Request2Secondary()),
+                            CommonConfig.getStructureTag(CartographerTradesConfig.getCartographer2Request2StructureTag()),
+                            CartographerTradesConfig.getCartographer2Request2MapName(),
+                            MapDecoration.Type.valueOf(CartographerTradesConfig.getCartographer2Request2MapMarker()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer3Offer1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer3Request1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new MapForLootTables(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer3Request2Secondary()),
-                            CommonConfig.getStructureTag(CommonConfig.getCartographer3Request2StructureTag()),
-                            CommonConfig.getCartographer3Request2MapName(),
-                            MapDecoration.Type.valueOf(CommonConfig.getCartographer3Request2MapMarker()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer3Request2()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer3Request2Secondary()),
+                            CommonConfig.getStructureTag(CartographerTradesConfig.getCartographer3Request2StructureTag()),
+                            CartographerTradesConfig.getCartographer3Request2MapName(),
+                            MapDecoration.Type.valueOf(CartographerTradesConfig.getCartographer3Request2MapMarker()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer4Offer1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer4Request1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer4Offer2()),
-                            CommonConfig.getCartographer4Offer2Count(),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer4Request2()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer4Offer2()),
+                            CartographerTradesConfig.getCartographer4Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer5Offer1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer5Request1()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new MapForLootTables(
-                            ResourceLocation.tryParse(CommonConfig.getCartographer5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getCartographer5Request2Secondary()),
-                            CommonConfig.getStructureTag(CommonConfig.getCartographer5Request2StructureTag()),
-                            CommonConfig.getCartographer5Request2MapName(),
-                            MapDecoration.Type.valueOf(CommonConfig.getCartographer5Request2MapMarker()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer5Request2()),
+                            ResourceLocation.tryParse(CartographerTradesConfig.getCartographer5Request2Secondary()),
+                            CommonConfig.getStructureTag(CartographerTradesConfig.getCartographer5Request2StructureTag()),
+                            CartographerTradesConfig.getCartographer5Request2MapName(),
+                            MapDecoration.Type.valueOf(CartographerTradesConfig.getCartographer5Request2MapMarker()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
@@ -2038,100 +2046,100 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher1Request1()),
-                            CommonConfig.getButcher1Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getButcher1Offer1()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher1Request1()),
+                            ButcherTradesConfig.getButcher1Request1Count(),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getButcher1Offer2()),
-                            CommonConfig.getButcher1Offer2Count(),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher1Request2()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher1Offer2()),
+                            ButcherTradesConfig.getButcher1Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getButcher2Offer1()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher2Request1()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getButcher2Offer2()),
-                            CommonConfig.getButcher2Offer2Count(),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher2Request2()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher2Offer2()),
+                            ButcherTradesConfig.getButcher2Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher3Request1()),
-                            CommonConfig.getButcher3Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getButcher3Offer1()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher3Request1()),
+                            ButcherTradesConfig.getButcher3Request1Count(),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     if (ModList.get().isLoaded("farmersdelight")) {
                         trades.get(journeyman).add(new LootTableForLootTable(
-                                ResourceLocation.tryParse(CommonConfig.getButcher3Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getButcher3Offer2()),
+                                ResourceLocation.tryParse(ButcherTradesConfig.getButcher3Request2()),
+                                ResourceLocation.tryParse(ButcherTradesConfig.getButcher3Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
                     trades.get(journeyman).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher3Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getButcher3Offer3()),
-                            CommonConfig.getButcher3Offer3Count(),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher3Request3()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher3Offer3()),
+                            ButcherTradesConfig.getButcher3Offer3Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getButcher4Offer1()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Request1()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     if (ModList.get().isLoaded("salt") || ModList.get().isLoaded("turtleblockacademy")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getButcher4Request2()),
-                                ResourceLocation.tryParse(CommonConfig.getButcher4Offer2()),
-                                CommonConfig.getButcher4Offer2Count(),
+                                ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Request2()),
+                                ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Offer2()),
+                                ButcherTradesConfig.getButcher4Offer2Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
                     if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getButcher4Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getButcher4Offer3()),
-                                CommonConfig.getButcher4Offer3Count(),
+                                ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Request3()),
+                                ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Offer3()),
+                                ButcherTradesConfig.getButcher4Offer3Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
                     trades.get(expert).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher4Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getButcher4Offer4()),
-                            CommonConfig.getButcher4Offer4Count(),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Request4()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Offer4()),
+                            ButcherTradesConfig.getButcher4Offer4Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new TagTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher5Request1()),
-                            CommonConfig.getButcher5Request1Count(),
-                            ResourceLocation.tryParse(CommonConfig.getButcher5Offer1()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher5Request1()),
+                            ButcherTradesConfig.getButcher5Request1Count(),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForTagTable(
-                            ResourceLocation.tryParse(CommonConfig.getButcher5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getButcher5Offer2()),
-                            CommonConfig.getButcher5Offer2Count(),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher5Request2()),
+                            ResourceLocation.tryParse(ButcherTradesConfig.getButcher5Offer2()),
+                            ButcherTradesConfig.getButcher5Offer2Count(),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -2147,129 +2155,129 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Offer1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Request1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Offer2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Request2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Offer3()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Request3()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Offer4()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Request4()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Offer4()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Request5()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer1Offer5()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Request5()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer1Offer5()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer2Offer1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer2Request1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer2Offer2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer2Request2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer2Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer2Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer2Offer3()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer2Request3()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer2Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer2Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer2Offer4()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer2Request4()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer2Offer4()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Offer1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Request1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Offer2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Request2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Offer3()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Request3()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Offer4()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Request4()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Offer4()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Request5()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Offer5()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Request5()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Offer5()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Request6()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer3Offer6()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Request6()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer3Offer6()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer4Offer1()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer4Request1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer4Offer1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer4Request1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer4Offer2()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer4Request2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer4Offer2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer4Request2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
                         trades.get(expert).add(new LootTableForTagTable(
-                                ResourceLocation.tryParse(CommonConfig.getArmorer4Request3()),
-                                ResourceLocation.tryParse(CommonConfig.getArmorer4Offer3()),
-                                CommonConfig.getArmorer4Offer3Count(),
+                                ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer4Request3()),
+                                ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer4Offer3()),
+                                ArmorerTradesConfig.getArmorer4Offer3Count(),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
 
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer5Offer1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Request1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Offer1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(CommonConfig.getArmorer5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getArmorer5Offer2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Request2()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
@@ -2278,78 +2286,78 @@ public class ModVillagerTrades {
                 // BANKER TRADES SET
                 if (event.getType() == ModVillagers.BANKER.get()) {
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker1Offer1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker1Request1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker1Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker1Offer2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker1Request2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker1Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker2Offer1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker2Request1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker2Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker2Offer2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker2Request2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker2Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker3Offer1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker3Request1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker3Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker3Offer2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker3Request2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker3Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker4Offer1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker4Request1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker4Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker4Offer2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker4Request2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker4Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker5Offer1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker5Request1()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker5Offer1()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker5Offer2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker5Request2()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker5Offer2()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker5Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker5Offer3()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker5Request3()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker5Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getBanker5Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getBanker5Offer4()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker5Request4()),
+                            ResourceLocation.tryParse(BankerTradesConfig.getBanker5Offer4()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -2358,120 +2366,120 @@ public class ModVillagerTrades {
                 // LEPRECHAUN TRADES SET
                 if (event.getType() == ModVillagers.LEPRECHAUN.get()) {
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun1Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun1Offer1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun1Request1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun1Offer1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(novice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun1Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun1Offer2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun1Request2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun1Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * novice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Offer1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Request1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Offer1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Offer2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Request2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Offer3()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Request3()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Offer3()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Offer4()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Request4()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Offer4()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Request5()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Offer5()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Request5()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Offer5()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(apprentice).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Request6()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun2Offer6()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Request6()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun2Offer6()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Offer1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Request1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Offer1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Offer2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Request2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Offer3()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Request3()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Offer3()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Request4()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Offer4()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Request4()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Offer4()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Request5()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Offer5()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Request5()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Offer5()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(journeyman).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Request6()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun3Offer6()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Request6()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun3Offer6()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun4Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun4Offer1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun4Request1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun4Offer1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(expert).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun4Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun4Offer2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun4Request2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun4Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
 
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun5Request1()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun5Offer1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun5Request1()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun5Offer1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun5Request2()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun5Offer2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun5Request2()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun5Offer2()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                     trades.get(master).add(new LootTableForLootTable(
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun5Request3()),
-                            ResourceLocation.tryParse(CommonConfig.getLeprechaun5Offer3()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun5Request3()),
+                            ResourceLocation.tryParse(LeprechaunTradesConfig.getLeprechaun5Offer3()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));

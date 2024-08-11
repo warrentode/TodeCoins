@@ -1,6 +1,7 @@
 package com.github.warrentode.todecoins.entity.villager.trades;
 
 import com.github.warrentode.todecoins.config.CommonConfig;
+import com.github.warrentode.todecoins.config.trades.todecoins.NumismatistTradesConfig;
 import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.*;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.loot.TradeLootTables;
@@ -41,39 +42,39 @@ public class NumismatistTrades {
                             rarityLevel1, new VillagerTrades.ItemListing[]{
                                     // a season coin for an off season coin trade
                                     new LootTableForLootTable(
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistTradeRequest1()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistTradeOffer1()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistTradeRequest1()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistTradeOffer1()),
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     ),
                                     // an off season coin for a season coin trade
                                     new LootTableForLootTable(
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistTradeRequest2()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistTradeOffer2()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistTradeRequest2()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistTradeOffer2()),
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     ),
                                     // offer a map for a season coin
                                     new MapForLootTables(
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistTradeRequest3A()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistTradeRequest3B()),
-                                            CommonConfig.getStructureTag(CommonConfig.getNumismatistTrade3StructureTag()),
-                                            CommonConfig.getNumismatistTrade3MapName(),
-                                            MapDecoration.Type.valueOf(CommonConfig.getNumismatistTrade3MapMarker()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistTradeRequest3A()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistTradeRequest3B()),
+                                            CommonConfig.getStructureTag(NumismatistTradesConfig.getNumismatistTrade3StructureTag()),
+                                            NumismatistTradesConfig.getNumismatistTrade3MapName(),
+                                            MapDecoration.Type.valueOf(NumismatistTradesConfig.getNumismatistTrade3MapMarker()),
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     ),
                                     // offer a container for 2 coins
                                     new LootTableForTwoLootTable(
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistOffer4()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRequest4A()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRequest4B()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistOffer4()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRequest4A()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRequest4B()),
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     ),
                                     // offer a coin pack in a shulker box for 2 coins
                                     new LootBoxForTwoLootTable(
                                             Items.SHULKER_BOX.getDefaultInstance(),
-                                            CommonConfig.getNumismatistLootBoxDisplayName(),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistLootBoxLootTable()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRequest5A()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRequest5B()),
+                                            NumismatistTradesConfig.getNumismatistLootBoxDisplayName(),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistLootBoxLootTable()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRequest5A()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRequest5B()),
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     )
                             },
@@ -81,16 +82,16 @@ public class NumismatistTrades {
                             rarityLevel2, new VillagerTrades.ItemListing[]{
                                     // offer a rare item for 2 coins
                                     new LootTableForTwoLootTable(
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRareOffer()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRareRequest1A()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRareRequest1B()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRareOffer()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRareRequest1A()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRareRequest1B()),
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     ),
                                     // enchanted book for 2 coins
                                     new TwoLootTableForEnchanted(
                                             Items.BOOK.getDefaultInstance(),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRareRequest2A()),
-                                            ResourceLocation.tryParse(CommonConfig.getNumismatistRareRequest2B()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRareRequest2A()),
+                                            ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistRareRequest2B()),
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     )
                             }));
