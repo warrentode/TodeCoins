@@ -21,13 +21,13 @@ public class CommonConfig {
     public static final ForgeConfigSpec.BooleanValue USE_MOD_TRADES;
     public static final ForgeConfigSpec.BooleanValue REPLACE_TRADES;
     public static final ForgeConfigSpec.BooleanValue RESET_TRADES_ON_RESTOCK;
+    public static final ForgeConfigSpec.IntValue MAX_VILLAGER_TRADES_PER_LEVEL;
+    public static final ForgeConfigSpec.IntValue MAX_WANDERER_COMMON_TRADES;
     public static final ForgeConfigSpec.IntValue BASE_XP;
     public static final ForgeConfigSpec.IntValue MAX_USES;
     public static final ForgeConfigSpec.IntValue RARE_MAX_USES;
     public static final ForgeConfigSpec.DoubleValue PRICE_MULTIPLIER;
     public static final ForgeConfigSpec.DoubleValue RARE_PRICE_MULTIPLIER;
-    public static final ForgeConfigSpec.IntValue MAX_VILLAGER_TRADES_PER_LEVEL;
-    public static final ForgeConfigSpec.IntValue MAX_WANDERER_COMMON_TRADES;
 
     // general trade variable setters
     static {

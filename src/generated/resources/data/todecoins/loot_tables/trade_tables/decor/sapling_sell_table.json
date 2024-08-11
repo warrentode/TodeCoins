@@ -8,162 +8,8 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "structure": "minecraft:village_taiga"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:taiga"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:old_growth_pine_taiga"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:old_growth_spruce_taiga"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:windswept_forest"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:windswept_hills"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:windswept_gravelly_hills"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "structure": "minecraft:village_snowy"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:snowy_taiga"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:snowy_slopes"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:jagged_peaks"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:ice_spikes"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:snowy_plains"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:grove"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:frozen_peaks"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:snowy_beach"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:frozen_river"
-                    }
-                  }
-                }
-              ]
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_spruce"
             }
           ],
           "functions": [
@@ -181,10 +27,8 @@
             {
               "condition": "minecraft:inverted",
               "term": {
-                "condition": "minecraft:location_check",
-                "predicate": {
-                  "biome": "minecraft:mangrove_swamp"
-                }
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:has_mangrove"
               }
             }
           ],
@@ -201,45 +45,11 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "structure": "minecraft:village_savanna"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:savanna"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:savanna_plateau"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:windswept_savanna"
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:has_acacia"
+              }
             }
           ],
           "functions": [
@@ -255,36 +65,11 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:jungle"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:bamboo_jungle"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:sparse_jungle"
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:has_jungle"
+              }
             }
           ],
           "functions": [
@@ -300,45 +85,11 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:forest"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:flower_forest"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:birch_forest"
-                    }
-                  }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:location_check",
-                    "predicate": {
-                      "biome": "minecraft:old_growth_birch_forest"
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:has_birch"
+              }
             }
           ],
           "functions": [
@@ -356,10 +107,8 @@
             {
               "condition": "minecraft:inverted",
               "term": {
-                "condition": "minecraft:location_check",
-                "predicate": {
-                  "biome": "minecraft:dark_forest"
-                }
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:has_dark_oak"
               }
             }
           ],

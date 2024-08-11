@@ -1296,9 +1296,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("patchouli:guide_book")));
         tag(ForgeTags.Items.INK)
                 .add(Items.INK_SAC)
-                .add(Items.GLOW_INK_SAC)
-                .addOptional(Objects.requireNonNull(
-                        ResourceLocation.tryParse("supplementaries:antique_ink")));
+                .add(Items.GLOW_INK_SAC);
         tag(ForgeTags.Items.STICKS)
                 .add(Items.STICK);
         tag(ForgeTags.Items.QUIVERS)
@@ -1581,6 +1579,8 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ForgeTags.Items.CROPS_WHEAT)
                 .add(Items.WHEAT);
         tag(ForgeTags.Items.SALTS)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
+                        "turtleblockacademy:pickling_salt")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "salt:salt")));
         tag(ForgeTags.Items.ASH)

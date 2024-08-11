@@ -12,33 +12,8 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:village_savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:savanna_plateau"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_savanna"
-                  }
-                }
-              ]
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_acacia"
             }
           ],
           "name": "minecraft:acacia_boat"
@@ -47,39 +22,8 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:birch_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:dark_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_birch_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:meadow"
-                  }
-                }
-              ]
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_birch"
             }
           ],
           "name": "minecraft:birch_boat"
@@ -88,10 +32,8 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:dark_forest"
-              }
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_dark_oak"
             }
           ],
           "name": "minecraft:dark_oak_boat"
@@ -100,27 +42,8 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:bamboo_jungle"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:sparse_jungle"
-                  }
-                }
-              ]
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_jungle"
             }
           ],
           "name": "minecraft:jungle_boat"
@@ -129,10 +52,8 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biome": "minecraft:mangrove_swamp"
-              }
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_mangrove"
             }
           ],
           "name": "minecraft:mangrove_boat"
@@ -141,51 +62,8 @@
           "type": "minecraft:item",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_pine_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:old_growth_spruce_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:snowy_plains"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:taiga"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:windswept_forest"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "biome": "minecraft:grove"
-                  }
-                }
-              ]
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_spruce"
             }
           ],
           "name": "minecraft:spruce_boat"

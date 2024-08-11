@@ -127,7 +127,7 @@ public class MasonTradesConfig {
         MASON_5_REQUEST_1 = BUILDER
                 .comment(" Mason 5 Trade Request 1 Table")
                 .define("mason_5_trade_request_1_table",
-                        TradeLootTables.SINGLE_EMERALD_VALUE_METALS.toString());
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         MASON_5_OFFER_1 = BUILDER
                 .comment(" Mason 5 Trade Offer 1 Table")
                 .define("mason_5_trade_offer_1_table",

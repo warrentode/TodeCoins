@@ -47,7 +47,7 @@ public class FletcherTradesConfig {
         FLETCHER_1_REQUEST_1 = BUILDER
                 .comment(" Fletcher 1 Trade Request 1 Table")
                 .define("fletcher_1_trade_request_1_table",
-                        TradeLootTables.ONE_EMERALD_TABLE.toString());
+                        TradeLootTables.TAGGED_STICK_TABLE.toString());
         FLETCHER_1_REQUEST_1_COUNT = BUILDER
                 .define("fletcher_1_trade_request_1_count", 16);
         FLETCHER_1_OFFER_1 = BUILDER

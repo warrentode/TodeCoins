@@ -113,7 +113,7 @@ public class ToolsmithTradesConfig {
         TOOLSMITH_4_REQUEST_1 = BUILDER
                 .comment(" Toolsmith 4 Trade Request 1 Table")
                 .define("toolsmith_4_trade_request_1_table",
-                        TradeLootTables.SIXTEEN_EMERALD_TABLE.toString());
+                        TradeLootTables.EMERALD_QUARTER_BANK_NOTE_VALUE_CURRENCY.toString());
         TOOLSMITH_4_OFFER_1 = BUILDER
                 .comment(" Toolsmith 4 Trade Offer 1 Table")
                 .define("toolsmith_4_trade_offer_1_table",
@@ -129,10 +129,10 @@ public class ToolsmithTradesConfig {
                 .define("toolsmith_4_trade_offer_2_table",
                         TradeLootTables.DIAMOND_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Toolsmith Level Four Trade Three");
+        BUILDER.push("Toolsmith Level Four Trade Three")
+                .comment(" Available if Supplementaries is Loaded");
         TOOLSMITH_4_REQUEST_3 = BUILDER
                 .comment(" Toolsmith 4 Trade Request 3 Table")
-                .comment(" for either supplementaries mod or turtleblockacademy mod")
                 .define("toolsmith_4_trade_request_3_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         TOOLSMITH_4_OFFER_3 = BUILDER

@@ -163,7 +163,7 @@ public class ButcherTradesConfig {
                 .define("butcher_4_trade_offer_2_count", 18);
         BUILDER.pop();
         BUILDER.push("Butcher Level Four Trade Three")
-                .comment(" Available if Supplementaries mod or Turtle Block Academy mod is Loaded");
+                .comment(" Available if Supplementaries mod is Loaded");
         BUTCHER_4_REQUEST_3 = BUILDER
                 .comment(" Butcher 4 Trade Request 3 Table")
                 .define("butcher_4_trade_request_3_table",

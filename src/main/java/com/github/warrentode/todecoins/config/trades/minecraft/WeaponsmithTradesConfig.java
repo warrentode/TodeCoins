@@ -56,11 +56,11 @@ public class WeaponsmithTradesConfig {
         WEAPONSMITH_1_REQUEST_2 = BUILDER
                 .comment(" Weaponsmith 1 Trade Request 2 Table")
                 .define("weaponsmith_1_trade_request_2_table",
-                        TradeLootTables.IRON_TIER_WEAPONS_TABLE.toString());
+                        TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
         WEAPONSMITH_1_OFFER_2 = BUILDER
                 .comment(" Weaponsmith 1 Trade Offer 2 Table")
                 .define("weaponsmith_1_trade_offer_2_table",
-                        TradeLootTables.THREE_EMERALD_VALUE_CURRENCY.toString());
+                        TradeLootTables.IRON_TIER_WEAPONS_TABLE.toString());
         BUILDER.pop();
         // level 2
         BUILDER.push("Weaponsmith Level Two Trade One");
@@ -117,10 +117,10 @@ public class WeaponsmithTradesConfig {
                 .define("weaponsmith_4_trade_offer_1_table",
                         TradeLootTables.GOLD_TIER_WEAPONS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Weaponsmith Level Four Trade Two");
+        BUILDER.push("Weaponsmith Level Four Trade Two")
+                .comment(" Available if Supplementaries is Loaded");
         WEAPONSMITH_4_REQUEST_2 = BUILDER
                 .comment(" Weaponsmith 4 Trade Request 2 Table")
-                .comment(" for either supplementaries mod or turtleblockacademy mod")
                 .define("weaponsmith_4_trade_request_2_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         WEAPONSMITH_4_OFFER_2 = BUILDER
@@ -134,11 +134,11 @@ public class WeaponsmithTradesConfig {
         WEAPONSMITH_4_REQUEST_3 = BUILDER
                 .comment(" Weaponsmith 4 Trade Request 3 Table")
                 .define("weaponsmith_4_trade_request_3_table",
-                        TradeLootTables.ANVIL_TABLE.toString());
+                        TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY.toString());
         WEAPONSMITH_4_OFFER_3 = BUILDER
                 .comment(" Weaponsmith 4 Trade Offer 3 Table")
                 .define("weaponsmith_4_trade_offer_3_table",
-                        TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY.toString());
+                        TradeLootTables.ANVIL_TABLE.toString());
         BUILDER.pop();
         // level 5
         BUILDER.push("Weaponsmith Level Five Trade One")

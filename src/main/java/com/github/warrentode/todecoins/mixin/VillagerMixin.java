@@ -53,7 +53,7 @@ public abstract class VillagerMixin {
             if (trades != null) {
                 for (int level = 1; level <= data.getLevel(); level++) {
                     var listings = trades.get(level);
-                    var tradeCount = 2;
+                    var tradeCount = CommonConfig.getMaxVillagerTrades();
 
                     if (listings == null) {
                         continue;

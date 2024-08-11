@@ -44,6 +44,7 @@ public class LibrarianTradesConfig {
     public static final ForgeConfigSpec.ConfigValue<String> LIBRARIAN_5_REQUEST_2;
     public static final ForgeConfigSpec.ConfigValue<String> LIBRARIAN_5_OFFER_2;
     public static final ForgeConfigSpec.ConfigValue<String> LIBRARIAN_5_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> LIBRARIAN_5_OFFER_3;
 
     static {
         // LIBRARIAN TRADES
@@ -102,13 +103,13 @@ public class LibrarianTradesConfig {
         LIBRARIAN_2_REQUEST_2 = BUILDER
                 .comment(" Librarian 2 Trade Request 2 Table")
                 .define("librarian_2_trade_request_2_table",
-                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
+                        TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level Two Trade Three");
         LIBRARIAN_2_REQUEST_3 = BUILDER
                 .comment(" Librarian 2 Trade Request 3 Table")
                 .define("librarian_2_trade_request_3_table",
-                        TradeLootTables.BOOK_TABLE.toString());
+                        TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         LIBRARIAN_2_OFFER_3 = BUILDER
                 .comment(" Librarian 2 Trade Offer 3 Table")
                 .define("librarian_2_trade_offer_3_table",
@@ -126,13 +127,13 @@ public class LibrarianTradesConfig {
         LIBRARIAN_3_REQUEST_2 = BUILDER
                 .comment(" Librarian 3 Trade Request 2 Table")
                 .define("librarian_3_trade_request_2_table",
-                        TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY.toString());
+                        TradeLootTables.TAGGED_INK_TABLE.toString());
         LIBRARIAN_3_REQUEST_2_COUNT = BUILDER
-                .define("librarian_3_trade_request_2_count", 1);
+                .define("librarian_3_trade_request_2_count", 3);
         LIBRARIAN_3_OFFER_2 = BUILDER
                 .comment(" Librarian 3 Trade Offer 2 Table")
                 .define("librarian_3_trade_offer_2_table",
-                        TradeLootTables.THIRTY_TWO_EMERALD_TABLE.toString());
+                        TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         BUILDER.push("Librarian Level Three Trade Three");
         LIBRARIAN_3_REQUEST_3 = BUILDER
@@ -185,7 +186,7 @@ public class LibrarianTradesConfig {
                 .define("librarian_5_trade_offer_1_table",
                         TradeLootTables.TAGGED_INK_TABLE.toString());
         LIBRARIAN_5_OFFER_1_COUNT = BUILDER
-                .define("librarian_5_trade_offer_1_count", 3);
+                .define("librarian_5_trade_offer_1_count", 1);
         BUILDER.pop();
         BUILDER.push("Librarian Level Five Trade Two");
         LIBRARIAN_5_REQUEST_2 = BUILDER
@@ -202,6 +203,10 @@ public class LibrarianTradesConfig {
                 .comment(" Librarian 5 Trade Request 3 Table")
                 .define("librarian_5_trade_request_3_table",
                         TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY.toString());
+        LIBRARIAN_5_OFFER_3 = BUILDER
+                .comment(" Librarian 5 Trade Offer 2 Table")
+                .define("librarian_5_trade_offer_2_table",
+                        TradeLootTables.NAME_TAG_TABLE.toString());
         BUILDER.pop();
         BUILDER.pop();
 
@@ -209,6 +214,14 @@ public class LibrarianTradesConfig {
     }
 
     // LIBRARIAN TRADE GETTERS
+    public static String getLibrarian5Offer3() {
+        if (Objects.equals(LIBRARIAN_5_OFFER_3.get(), LIBRARIAN_5_OFFER_3.getDefault())) {
+            return LIBRARIAN_5_OFFER_3.getDefault();
+        }
+        else {
+            return LIBRARIAN_5_OFFER_3.get();
+        }
+    }
     public static String getLibrarian5Request3() {
         if (Objects.equals(LIBRARIAN_5_REQUEST_3.get(), LIBRARIAN_5_REQUEST_3.getDefault())) {
             return LIBRARIAN_5_REQUEST_3.getDefault();

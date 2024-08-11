@@ -5,8 +5,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import org.jetbrains.annotations.NotNull;
 
 public class ForgeTags {
     public static class EntityTypes {
@@ -323,6 +325,46 @@ public class ForgeTags {
         TagKey<Structure> OVERWORLD_SLIME_ISLANDS = forgeStructureTag("tconstruct", "worldgen/structure/overworld_slime_islands");
         TagKey<Structure> NETHER_SLIME_ISLANDS = forgeStructureTag("tconstruct", "worldgen/structure/nether_slime_islands");
         TagKey<Structure> END_SLIME_ISLANDS = forgeStructureTag("tconstruct", "worldgen/structure/end_slime_islands");
+    }
+
+    public interface Biomes {
+        TagKey<Biome> HAS_SUNFLOWER = forgeBiomeTag("has_sunflower");
+        TagKey<Biome> HAS_PEONY = forgeBiomeTag("has_peony");
+        TagKey<Biome> HAS_ROSE_BUSH = forgeBiomeTag("has_rose_bush");
+        TagKey<Biome> HAS_LILAC = forgeBiomeTag("has_lilac");
+        TagKey<Biome> HAS_BUTTERCUP = forgeBiomeTag("has_buttercup");
+        TagKey<Biome> HAS_LILY_OF_THE_VALLEY = forgeBiomeTag("has_lily_of_the_valley");
+        TagKey<Biome> HAS_CORNFLOWER = forgeBiomeTag("has_cornflower");
+        TagKey<Biome> HAS_OXEYE_DAISY = forgeBiomeTag("has_oxeye_daisy");
+        TagKey<Biome> HAS_PINK_TULIP = forgeBiomeTag("has_pink_tulip");
+        TagKey<Biome> HAS_WHITE_TULIP = forgeBiomeTag("has_white_tulip");
+        TagKey<Biome> HAS_ORANGE_TULIP = forgeBiomeTag("has_orange_tulip");
+        TagKey<Biome> HAS_RED_TULIP = forgeBiomeTag("has_red_tulip");
+        TagKey<Biome> HAS_AZURE_BLUET = forgeBiomeTag("has_azure_bluet");
+        TagKey<Biome> HAS_ALLIUM = forgeBiomeTag("has_allium");
+        TagKey<Biome> HAS_BLUE_ORCHID = forgeBiomeTag("has_blue_orchid");
+        TagKey<Biome> HAS_SPRUCE = forgeBiomeTag("has_spruce");
+        TagKey<Biome> HAS_MANGROVE = forgeBiomeTag("has_mangrove");
+        TagKey<Biome> HAS_ACACIA = forgeBiomeTag("has_acacia");
+        TagKey<Biome> HAS_JUNGLE = forgeBiomeTag("has_jungle");
+        TagKey<Biome> HAS_BIRCH = forgeBiomeTag("has_birch");
+        TagKey<Biome> HAS_DARK_OAK = forgeBiomeTag("has_dark_oak");
+        TagKey<Biome> NETHER_BIOMES = forgeBiomeTag("nether_biomes");
+        TagKey<Biome> HAS_WARPED_FUNGUS = forgeBiomeTag("has_warped_fungus");
+        TagKey<Biome> HAS_CRIMSON_FUNGUS = forgeBiomeTag("has_crimson_fungus");
+        TagKey<Biome> HAS_SANDSTONE = forgeBiomeTag("has_sandstone");
+        TagKey<Biome> HAS_RED_SANDSTONE = forgeBiomeTag("has_red_sandstone");
+        TagKey<Biome> HAS_MOSSY_STONE = forgeBiomeTag("has_mossy_stone");
+        TagKey<Biome> HAS_PUFFERFISH = forgeBiomeTag("has_pufferfish");
+        TagKey<Biome> HAS_TROPICAL_FISH = forgeBiomeTag("has_tropical_fish");
+        TagKey<Biome> HAS_SALMON = forgeBiomeTag("has_salmon");
+        TagKey<Biome> HAS_FROGS = forgeBiomeTag("has_frogs");
+        TagKey<Biome> HAS_AXOLOTL = forgeBiomeTag("has_axolotl");
+        TagKey<Biome> HAS_MUD = forgeBiomeTag("has_mud");
+    }
+
+    private static @NotNull TagKey<Biome> forgeBiomeTag(String name) {
+        return TagKey.create(Registry.BIOME_REGISTRY, new ResourceLocation("forge", name));
     }
 
     @SuppressWarnings({"unused", "SameParameterValue"})

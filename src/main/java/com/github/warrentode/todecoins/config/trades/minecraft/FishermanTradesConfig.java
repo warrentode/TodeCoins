@@ -166,7 +166,7 @@ public class FishermanTradesConfig {
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         FISHERMAN_4_OFFER_1 = BUILDER
                 .comment(" Fisherman 4 Trade Offer 1 Table")
-                .comment(" Available if Supplementaries or Turtle Block Academy mod is Loaded")
+                .comment(" Available if Supplementaries is Loaded")
                 .define("fisherman_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         FISHERMAN_4_OFFER_1_COUNT = BUILDER

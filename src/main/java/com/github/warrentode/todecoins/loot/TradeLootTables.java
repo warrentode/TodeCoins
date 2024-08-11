@@ -284,6 +284,7 @@ public class TradeLootTables {
     public static final ResourceLocation REDSTONE_TORCH_TABLE = register(MODID + ":" + "trade_tables/misc/redstone_torch_table");
     public static final ResourceLocation REDSTONE_COMPONENTS_TABLE = register(MODID + ":" + "trade_tables/misc/redstone_components_table");
     public static final ResourceLocation BONE_MEAL_TABLE = register(MODID + ":" + "trade_tables/misc/bone_meal_table");
+    public static final ResourceLocation NAME_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/name_tag_table");
 
     // numismatist merchant specific offers loot tables
     public static final ResourceLocation NUMISMATIST_RARE_OFFERS =

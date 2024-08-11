@@ -40,6 +40,7 @@ public class DataGenerators {
 
         generator.addProvider(event.includeClient(), new LanguageFileGen(generator, MODID, "en_us"));
 
+        generator.addProvider(event.includeServer(), new BiomeTagsGen(generator, MODID, helper));
         generator.addProvider(event.includeClient(), new SoundsFileGen(generator, MODID, helper));
         generator.addProvider(event.includeServer(), new RecipesGen(generator));
         generator.addProvider(event.includeServer(), new ConditionalCookingPotRecipesGen(generator));

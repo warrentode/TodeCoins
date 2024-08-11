@@ -1,10 +1,6 @@
 {
   "values": [
     "minecraft:ink_sac",
-    "minecraft:glow_ink_sac",
-    {
-      "id": "supplementaries:antique_ink",
-      "required": false
-    }
+    "minecraft:glow_ink_sac"
   ]
 }

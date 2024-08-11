@@ -236,7 +236,7 @@ public class ArmorerTradesConfig {
                         TradeLootTables.DIAMOND_TIER_BOOTS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Four Trade Three")
-                .comment(" Available if Supplementaries mod or Turtle Block Academy mod is Loaded");
+                .comment(" Available if Supplementaries mod is Loaded");
         ARMORER_4_REQUEST_3 = BUILDER
                 .comment(" Armorer 4 Trade Request 3 Table")
                 .define("armorer_4_trade_request_3_table",

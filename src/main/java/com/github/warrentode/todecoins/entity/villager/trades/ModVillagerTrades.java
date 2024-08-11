@@ -1094,7 +1094,7 @@ public class ModVillagerTrades {
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
-                    if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
+                    if (ModList.get().isLoaded("supplementaries")) {
                         trades.get(expert).add(new LootTableForTagTable(
                                 ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith4Request2()),
                                 ResourceLocation.tryParse(WeaponsmithTradesConfig.getWeaponsmith4Offer2()),
@@ -1178,7 +1178,7 @@ public class ModVillagerTrades {
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
-                    if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
+                    if (ModList.get().isLoaded("supplementaries")) {
                         trades.get(expert).add(new LootTableForTagTable(
                                 ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith4Request3()),
                                 ResourceLocation.tryParse(ToolsmithTradesConfig.getToolsmith4Offer3()),
@@ -1494,9 +1494,9 @@ public class ModVillagerTrades {
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
-                    trades.get(master).add(new LootTableForItem(
+                    trades.get(master).add(new LootTableForLootTable(
                             ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian5Request3()),
-                            Items.NAME_TAG.getDefaultInstance(), 1,
+                            ResourceLocation.tryParse(LibrarianTradesConfig.getLibrarian5Offer3()),
                             CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
@@ -1747,7 +1747,7 @@ public class ModVillagerTrades {
                             CONFIG_COMMON_TRADE_MULTIPLIER
                     ));
 
-                    if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
+                    if (ModList.get().isLoaded("supplementaries")) {
                         trades.get(expert).add(new LootTableForTagTable(
                                 ResourceLocation.tryParse(FishermanTradesConfig.getFisherman4Request1()),
                                 ResourceLocation.tryParse(FishermanTradesConfig.getFisherman4Offer1()),
@@ -2112,7 +2112,7 @@ public class ModVillagerTrades {
                             CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
                     }
-                    if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
+                    if (ModList.get().isLoaded("supplementaries")) {
                         trades.get(expert).add(new LootTableForTagTable(
                                 ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Request3()),
                                 ResourceLocation.tryParse(ButcherTradesConfig.getButcher4Offer3()),
@@ -2259,7 +2259,7 @@ public class ModVillagerTrades {
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
-                    if (ModList.get().isLoaded("supplementaries") || ModList.get().isLoaded("turtleblockacademy")) {
+                    if (ModList.get().isLoaded("supplementaries")) {
                         trades.get(expert).add(new LootTableForTagTable(
                                 ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer4Request3()),
                                 ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer4Offer3()),
@@ -2270,15 +2270,15 @@ public class ModVillagerTrades {
                     }
 
                     trades.get(master).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Request1()),
                             ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Offer1()),
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Request1()),
                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
-                    trades.get(expert).add(new LootTableForEnchantedTable(
-                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Request2()),
+                    trades.get(master).add(new LootTableForEnchantedTable(
                             ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Offer2()),
-                            CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
+                            ResourceLocation.tryParse(ArmorerTradesConfig.getArmorer5Request2()),
+                            CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
                             CONFIG_RARE_TRADE_MULTIPLIER
                     ));
                 }

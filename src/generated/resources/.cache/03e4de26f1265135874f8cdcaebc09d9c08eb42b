@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-06T17:12:45.467802	Tags for minecraft:item
+// 1.19.2	2024-08-11T18:02:52.6365773	Tags for minecraft:item
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
@@ -81,7 +81,7 @@ b98916a5fe0160dc9d80a360961ec2ddbc784342 data/forge/tags/items/ingredients/cocoa
 401ebc22e5250fa26fa406e7e8a118b9b38d2cba data/forge/tags/items/ingredients/cooked_meats.json
 c5c28dd67a9e3f6d37ebb3afacea1d9224f1f571 data/forge/tags/items/ingredients/raw_fishes.json
 69f49db92b07feecdb0bf9e3288b52adf02b18e0 data/forge/tags/items/ingredients/raw_meats.json
-40902f3a3ed285a1de20b7ec5d9aa526fa78751a data/forge/tags/items/ink.json
+a80223091f20c8bf855cff6a66b21f7d0aee345e data/forge/tags/items/ink.json
 584497302bb063bf5aaf97a21f3bf0885301dec4 data/forge/tags/items/leather.json
 45f23e2cea883d909d37fd7963ec91fe16442d60 data/forge/tags/items/milk.json
 542a505e51ccd0f137256e95bfb31d180e7488c3 data/forge/tags/items/milk/milk.json
@@ -118,7 +118,7 @@ d446ee2af1c0373c5465ef905fa918af501f2a00 data/forge/tags/items/raw_meats/raw_ven
 df0e0579de3880831933b87f169620da0965c720 data/forge/tags/items/raw_pork/raw_bacon.json
 3d7a237252555308b9bc778b50b9162d45c1fe8f data/forge/tags/items/recyclable_glass.json
 1ad920aa65e2706dabb6265f3b12546ab33e8936 data/forge/tags/items/rods.json
-8db012e41865fd3ca9adf0c262c99ea1c41f6e7f data/forge/tags/items/salts.json
+d65ee2a4f97bbb1ba46b10f8a796eeef013f4297 data/forge/tags/items/salts.json
 e85d473045cf55c6f706798af73a74b69875c186 data/forge/tags/items/sand.json
 4a68490900323e69d45af480b6d572c30c961829 data/forge/tags/items/seeds.json
 105727dc444ddc319293c250e6c64f197b4ba151 data/forge/tags/items/slimeballs.json
