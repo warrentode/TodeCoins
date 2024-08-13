@@ -1,0 +1,40 @@
+{
+  "values": [
+    {
+      "id": "turtleblockacademy:copper_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:wood_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:stone_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:bone_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:gold_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:iron_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:iron_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:diamond_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:netherite_sewing_needle",
+      "required": false
+    }
+  ]
+}

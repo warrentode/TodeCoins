@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:leather_helmet",
+    {
+      "id": "sewingkit:wool_hat",
+      "required": false
+    }
+  ]
+}

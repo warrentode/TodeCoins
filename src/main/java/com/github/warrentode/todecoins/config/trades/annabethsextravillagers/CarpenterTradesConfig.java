@@ -124,6 +124,7 @@ public class CarpenterTradesConfig {
         BUILDER.pop();
         // level 5
         BUILDER.push(" Carpenter Level Five Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         CARPENTER_5_REQUEST_1 = BUILDER
                 .comment(" Carpenter 5 Trade Request 1 Table")

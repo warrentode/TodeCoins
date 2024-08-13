@@ -107,6 +107,7 @@ public class WeaponsmithTradesConfig {
         BUILDER.pop();
         // level 4
         BUILDER.push("Weaponsmith Level Four Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         WEAPONSMITH_4_REQUEST_1 = BUILDER
                 .comment(" Weaponsmith 4 Trade Request 1 Table")
@@ -142,6 +143,7 @@ public class WeaponsmithTradesConfig {
         BUILDER.pop();
         // level 5
         BUILDER.push("Weaponsmith Level Five Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         WEAPONSMITH_5_REQUEST_1 = BUILDER
                 .comment(" Weaponsmith 5 Trade Request 1 Table")
@@ -153,6 +155,7 @@ public class WeaponsmithTradesConfig {
                         TradeLootTables.DIAMOND_TIER_WEAPONS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Weaponsmith Level Five Trade Two")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         WEAPONSMITH_5_REQUEST_2 = BUILDER
                 .comment(" Weaponsmith 5 Trade Request 2 Table")

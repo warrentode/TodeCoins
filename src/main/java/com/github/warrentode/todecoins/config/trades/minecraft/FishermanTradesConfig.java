@@ -173,6 +173,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_4_trade_offer_1_count", 18);
         BUILDER.pop();
         BUILDER.push("Fisherman Level Four Trade Two")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         FISHERMAN_4_REQUEST_2 = BUILDER
                 .comment(" Fisherman 4 Trade Request 2 Table")

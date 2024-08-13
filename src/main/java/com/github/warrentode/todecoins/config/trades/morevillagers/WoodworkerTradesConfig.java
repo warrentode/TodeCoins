@@ -124,6 +124,7 @@ public class WoodworkerTradesConfig {
         BUILDER.pop();
         // level 5
         BUILDER.push(" Woodworker Level Five Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         WOODWORKER_5_REQUEST_1 = BUILDER
                 .comment(" Woodworker 5 Trade Request 1 Table")

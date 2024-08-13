@@ -57,7 +57,8 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_1_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Leatherworker Level One Trade Two");
+        BUILDER.push("Leatherworker Level One Trade Two")
+                .comment(" Dyed Armor Trade");
         LEATHERWORKER_1_REQUEST_2 = BUILDER
                 .comment(" Leatherworker 1 Trade Request 2 Table")
                 .define("leatherworker_1_trade_request_2_table",
@@ -67,7 +68,8 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_1_trade_offer_2_table",
                         TradeLootTables.LEATHER_TIER_LEGGINGS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Leatherworker Level One Trade Three");
+        BUILDER.push("Leatherworker Level One Trade Three")
+                .comment(" Dyed Armor Trade");
         LEATHERWORKER_1_REQUEST_3 = BUILDER
                 .comment(" Leatherworker 1 Trade Request 3 Table")
                 .define("leatherworker_1_trade_request_3_table",
@@ -88,7 +90,8 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_2_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Leatherworker Level Two Trade Two");
+        BUILDER.push("Leatherworker Level Two Trade Two")
+                .comment(" Dyed Armor Trade");
         LEATHERWORKER_2_REQUEST_2 = BUILDER
                 .comment(" Leatherworker 2 Trade Request 2 Table")
                 .define("leatherworker_2_trade_request_2_table",
@@ -98,7 +101,8 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_2_trade_offer_2_table",
                         TradeLootTables.LEATHER_TIER_HELMETS_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Leatherworker Level Two Trade Three");
+        BUILDER.push("Leatherworker Level Two Trade Three")
+                .comment(" Dyed Armor Trade");
         LEATHERWORKER_2_REQUEST_3 = BUILDER
                 .comment(" Leatherworker 2 Trade Request 3 Table")
                 .define("leatherworker_2_trade_request_3_table",
@@ -121,7 +125,8 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_3_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Leatherworker Level Three Trade Two");
+        BUILDER.push("Leatherworker Level Three Trade Two")
+                .comment(" Dyed Armor Trade");
         LEATHERWORKER_3_REQUEST_2 = BUILDER
                 .comment(" Leatherworker 3 Trade Request 2 Table")
                 .define("leatherworker_3_trade_request_2_table",
@@ -142,7 +147,8 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_4_trade_offer_1_table",
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Leatherworker Level Four Trade Two");
+        BUILDER.push("Leatherworker Level Four Trade Two")
+                .comment(" Dyed Armor Trade");
         LEATHERWORKER_4_REQUEST_2 = BUILDER
                 .comment(" Leatherworker 4 Trade Request 2 Table")
                 .define("leatherworker_4_trade_request_2_table",
@@ -163,7 +169,8 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_5_trade_offer_1_table",
                         TradeLootTables.SADDLE_TABLE.toString());
         BUILDER.pop();
-        BUILDER.push("Leatherworker Level Five Trade Two");
+        BUILDER.push("Leatherworker Level Five Trade Two")
+                .comment(" Dyed Armor Trade");
         LEATHERWORKER_5_REQUEST_2 = BUILDER
                 .comment(" Leatherworker 5 Trade Request 2 Table")
                 .define("leatherworker_5_trade_request_2_table",

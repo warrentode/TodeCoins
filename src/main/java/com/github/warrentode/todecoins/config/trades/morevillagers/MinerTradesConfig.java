@@ -124,6 +124,7 @@ public class MinerTradesConfig {
         BUILDER.pop();
         // level 5
         BUILDER.push(" Miner Level Five Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         MINER_5_REQUEST_1 = BUILDER
                 .comment(" Miner 5 Trade Request 1 Table")

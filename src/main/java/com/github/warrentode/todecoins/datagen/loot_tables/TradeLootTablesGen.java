@@ -1846,6 +1846,29 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.REDSTONE_TORCH)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
+        consumer.accept(TradeLootTables.TEXTILES_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.LEATHER_TEXTILES))
+                        .add(TagEntry.expandTag(ForgeTags.Items.FIBRE))
+                        .add(TagEntry.expandTag(ForgeTags.Items.STRING))
+                        .add(TagEntry.expandTag(ForgeTags.Items.FABRIC))
+                        .add(TagEntry.expandTag(ForgeTags.Items.THREAD))
+                ));
+        consumer.accept(TradeLootTables.PATTERNS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.PATTERNS))
+                ));
+        consumer.accept(TradeLootTables.TAILOR_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.NEEDLES))
+                        .add(TagEntry.expandTag(ModTags.Items.FILE))
+                ));
         consumer.accept(TradeLootTables.NAME_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -2106,6 +2129,30 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHERITE_BOOTS))
+                ));
+        consumer.accept(TradeLootTables.DYEABLE_HELMETS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.DYEABLE_HELMETS))
+                ));
+        consumer.accept(TradeLootTables.DYEABLE_CHESTPLATES_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.DYEABLE_CHESTPLATES))
+                ));
+        consumer.accept(TradeLootTables.DYEABLE_LEGGINGS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.DYEABLE_LEGGINGS))
+                ));
+        consumer.accept(TradeLootTables.DYEABLE_BOOTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.DYEABLE_BOOTS))
                 ));
         consumer.accept(TradeLootTables.TRIDENT_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()

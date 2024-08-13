@@ -59,6 +59,23 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.FILE)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:file")));
+        tag(ModTags.Items.PATTERNS)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:common_pattern")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:uncommon_pattern")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:rare_pattern")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:legendary_pattern")));
+        tag(ModTags.Items.NEEDLES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("turtleblockacademy:copper_sewing_needle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:wood_sewing_needle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:stone_sewing_needle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:bone_sewing_needle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:gold_sewing_needle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:iron_sewing_needle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:iron_sewing_needle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:diamond_sewing_needle")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:netherite_sewing_needle")));
         tag(ModTags.Items.ENDONIAN_COLLECTIBLE_COINS)
                 .addTag(ModTags.Items.HOLIDAY_COIN_SET)
                 .addTag(ModTags.Items.PATRON_COIN_SET);
@@ -1236,6 +1253,22 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(ForgeTags.Items.DYEABLE_BOOTS)
+                .add(Items.LEATHER_BOOTS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("sewingkit:wool_shoes")));
+        tag(ForgeTags.Items.DYEABLE_LEGGINGS)
+                .add(Items.LEATHER_LEGGINGS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("sewingkit:wool_pants")));
+        tag(ForgeTags.Items.DYEABLE_CHESTPLATES)
+                .add(Items.LEATHER_CHESTPLATE)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("sewingkit:wool_shirt")));
+        tag(ForgeTags.Items.DYEABLE_HELMETS)
+                .add(Items.LEATHER_HELMET)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("sewingkit:wool_hat")));
         tag(ForgeTags.Items.GLASSBLOWER_TOOLS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("todevillagers:marver")))
@@ -1873,6 +1906,19 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(Tags.Items.NUGGETS)
                 .addTag(Tags.Items.INGOTS)
                 .addTag(ModTags.Items.CURRENCY_PAPER);
+        tag(ForgeTags.Items.LEATHER_TEXTILES)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("sewingkit:leather_strip")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("sewingkit:leather_sheet")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("sewingkit:wool_roll")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("sewingkit:wool_trim")))
+                .add(Items.RABBIT_HIDE)
+                .add(Items.LEATHER)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("nethersdelight:hoglin_hide")));
         tag(ForgeTags.Items.LEATHER)
                 .add(Items.RABBIT_HIDE)
                 .add(Items.LEATHER)

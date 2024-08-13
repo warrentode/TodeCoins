@@ -115,6 +115,7 @@ public class FletcherTradesConfig {
         BUILDER.pop();
         // level 4
         BUILDER.push("Fletcher Level Four Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         FLETCHER_4_REQUEST_1 = BUILDER
                 .comment(" Fletcher 4 Trade Request 1 Table")

@@ -244,6 +244,7 @@ public class ForgeTags {
 
         public static final TagKey<Item> LEATHER = forgeItemTag("forge", "leather");
         public static final TagKey<Item> TEXTILES = forgeItemTag("forge", "textiles");
+        public static final TagKey<Item> LEATHER_TEXTILES = forgeItemTag("forge", "textiles/leather");
         public static final TagKey<Item> BARK = forgeItemTag("forge", "textiles/bark");
         public static final TagKey<Item> FIBRE = forgeItemTag("forge", "textiles/fibre");
         public static final TagKey<Item> STRING = forgeItemTag("forge", "textiles/string");
@@ -252,6 +253,11 @@ public class ForgeTags {
         public static final TagKey<Item> THREAD = forgeItemTag("forge", "textiles/thread");
         public static final TagKey<Item> CURRENCY_FIBER = forgeItemTag("forge", "textiles/currency_fiber");
         public static final TagKey<Item> CURRENCY_PAPER = forgeItemTag("forge", "textiles/currency_paper");
+
+        public static final TagKey<Item> DYEABLE_HELMETS = forgeItemTag("forge", "dyeable_helmets");
+        public static final TagKey<Item> DYEABLE_CHESTPLATES = forgeItemTag("forge", "dyeable_chestplates");
+        public static final TagKey<Item> DYEABLE_LEGGINGS = forgeItemTag("forge", "dyeable_leggings");
+        public static final TagKey<Item> DYEABLE_BOOTS = forgeItemTag("forge", "dyeable_boots");
 
         public static final TagKey<Item> GEM_CURRENCY = forgeItemTag("forge", "gem_currency");
         public static final TagKey<Item> AMETHYST = forgeItemTag("forge", "gem_currency/amethyst");

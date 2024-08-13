@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "sewingkit:common_pattern",
+      "required": false
+    },
+    {
+      "id": "sewingkit:uncommon_pattern",
+      "required": false
+    },
+    {
+      "id": "sewingkit:rare_pattern",
+      "required": false
+    },
+    {
+      "id": "sewingkit:legendary_pattern",
+      "required": false
+    }
+  ]
+}

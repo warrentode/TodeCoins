@@ -109,6 +109,7 @@ public class ToolsmithTradesConfig {
         BUILDER.pop();
         // level 4
         BUILDER.push("Toolsmith Level Four Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         TOOLSMITH_4_REQUEST_1 = BUILDER
                 .comment(" Toolsmith 4 Trade Request 1 Table")
@@ -144,6 +145,7 @@ public class ToolsmithTradesConfig {
         BUILDER.pop();
         // level 5
         BUILDER.push("Toolsmith Level Five Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         TOOLSMITH_5_REQUEST_1 = BUILDER
                 .comment(" Toolsmith 5 Trade Request 1 Table")
@@ -155,6 +157,7 @@ public class ToolsmithTradesConfig {
                         TradeLootTables.GOLD_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Toolsmith Level Five Trade Two")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         TOOLSMITH_5_REQUEST_2 = BUILDER
                 .comment(" Toolsmith 5 Trade Request 2 Table")
@@ -166,6 +169,7 @@ public class ToolsmithTradesConfig {
                         TradeLootTables.NETHERITE_TIER_TOOLS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Toolsmith Level Five Trade Three")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         TOOLSMITH_5_REQUEST_3 = BUILDER
                 .comment(" Toolsmith 5 Trade Request 3 Table")

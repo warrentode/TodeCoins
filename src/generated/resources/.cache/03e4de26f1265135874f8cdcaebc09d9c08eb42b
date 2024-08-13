@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-11T18:02:52.6365773	Tags for minecraft:item
+// 1.19.2	2024-08-13T10:25:29.4347034	Tags for minecraft:item
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
@@ -49,6 +49,10 @@ de3994930962786796a826cd9676cb67b67e7bc2 data/forge/tags/items/crops/tomato.json
 52834661883f7bc664f50721822e1b6b6459d1a8 data/forge/tags/items/currency.json
 5f68ab5892f7d0337e7a331a1244af90f29c5b36 data/forge/tags/items/currency_materials.json
 e696f402dd807aff108bcdbf82e9cfaf00b8dadc data/forge/tags/items/currency_stamps.json
+aebe50ca7f6d0c03d5534daf26afd8d003be5f76 data/forge/tags/items/dyeable_boots.json
+e922533bc371202caa0291653c1ebd240231e2a2 data/forge/tags/items/dyeable_chestplates.json
+b5361c2fb05557316d959891c3e1c7213a7c61bf data/forge/tags/items/dyeable_helmets.json
+b7a175ec097ce9e68f6d2caf8d74e06d98dc9534 data/forge/tags/items/dyeable_leggings.json
 6b9ee5087cd4160d845085ac6bb64c86e1aedba3 data/forge/tags/items/dyes.json
 fe91d9df301382872a3e254eb22768784d8932b1 data/forge/tags/items/eggs.json
 056929b7ab3fd6b71312bcc7bae8661d4f4a5df0 data/forge/tags/items/enchanting_fuels.json
@@ -134,6 +138,7 @@ ed10484707bf0ea9e3bb21e5439785b616cf2899 data/forge/tags/items/sugar.json
 337b9c3a90e091b5ff29a2127a6613c571834b56 data/forge/tags/items/textiles/currency_paper.json
 c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/fibre.json
+494597564bd28f2a0a7d763d69cbba222a0556b7 data/forge/tags/items/textiles/leather.json
 886e5e1db1abef8583882d996f8600275f839c37 data/forge/tags/items/textiles/paper.json
 6bb01ece43dc060b7f6e508c68ea0179c30e853f data/forge/tags/items/textiles/string.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/thread.json
@@ -142,6 +147,8 @@ dfae1adbe3cdcfe71de34baac625074a69bfd8f7 data/forge/tags/items/tools/knives.json
 e199d3ab5411e637e6ee5c576a46d7f243cfeba4 data/hauntedharvest/tags/items/candy.json
 771a6a57c6423ef7bfde3dc7197a239176ecb4e8 data/hauntedharvest/tags/items/sweets.json
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
+7b975ada88349f8e6d8ec35475e6f20a36405eaa data/sewingkit/tags/items/file.json
+dc43988c84642e2f6d88f3b37d9c03c17f1fc66a data/sewingkit/tags/items/patterns.json
 85501e599f11da6fd937e4572943e5a17432e349 data/supplementaries/tags/items/chocolate_bars.json
 f07a1823df44a420c33f3a820db6bbd5cb60b804 data/supplementaries/tags/items/cookies.json
 1b64b170d75ce337e2786496d5c6024a2f8e6a28 data/todecoins/tags/items/bundles.json
@@ -287,3 +294,4 @@ d7cfa7074795abb34667bf7605e6d6a4787ea5a4 data/todecoins/tags/items/textiles/thre
 248d2cc48006d5fc334bc67bbe237e12527a7920 data/todecoins/tags/items/tools/carving.json
 07afe5b82d4526b131b02c23b0f2d53d4fbac6ef data/todecoins/tags/items/wallets.json
 44e0ac6a9542c62b81f9e46666792ddb52f84fd2 data/todevillagers/tags/items/glassblower_tools.json
+d981dca9a04141e8b661ac119d9be5551667623b data/turtleblockacademy/tags/items/needles.json

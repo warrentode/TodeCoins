@@ -1,7 +1,8 @@
-// 1.19.2	2024-08-11T12:10:35.5730163	Tags for minecraft:worldgen/biome
+// 1.19.2	2024-08-13T10:25:29.4347034	Tags for minecraft:worldgen/biome
 04d75d1148ebf1488557b3bb6d36cd926f672708 data/forge/tags/worldgen/biome/has_acacia.json
 f6cf4c5ba152cdc8af26ef165bebaccb56a0055b data/forge/tags/worldgen/biome/has_allium.json
 0f241c94b10e4b16b4304f66ad949bb089955b1e data/forge/tags/worldgen/biome/has_axolotl.json
+c1ae958b4a41c09d417efab480ee83e9ac0b0d25 data/forge/tags/worldgen/biome/has_azure_bluet.json
 a173769a640784f2d0ce09c7e36de98e6f24fe19 data/forge/tags/worldgen/biome/has_birch.json
 a2c17e9189d16e11b26ac0a0c170a0bc41bf1093 data/forge/tags/worldgen/biome/has_blue_orchid.json
 880192323d2b94560cbc9403259a2e5f917a3684 data/forge/tags/worldgen/biome/has_buttercup.json

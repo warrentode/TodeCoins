@@ -214,6 +214,7 @@ public class ArmorerTradesConfig {
         BUILDER.pop();
         // level 4
         BUILDER.push("Armorer Level Four Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         ARMORER_4_REQUEST_1 = BUILDER
                 .comment(" Armorer 4 Trade Request 1 Table")
@@ -225,6 +226,7 @@ public class ArmorerTradesConfig {
                         TradeLootTables.DIAMOND_TIER_LEGGINGS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Four Trade Two")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         ARMORER_4_REQUEST_2 = BUILDER
                 .comment(" Armorer 4 Trade Request 2 Table")
@@ -250,6 +252,7 @@ public class ArmorerTradesConfig {
         BUILDER.pop();
         // level 5
         BUILDER.push("Armorer Level Five Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         ARMORER_5_REQUEST_1 = BUILDER
                 .comment(" Armorer 5 Trade Request 1 Table")
@@ -261,6 +264,7 @@ public class ArmorerTradesConfig {
                         TradeLootTables.DIAMOND_TIER_HELMETS_TABLE.toString());
         BUILDER.pop();
         BUILDER.push("Armorer Level Five Trade Two")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         ARMORER_5_REQUEST_2 = BUILDER
                 .comment(" Armorer 5 Trade Request 2 Table")

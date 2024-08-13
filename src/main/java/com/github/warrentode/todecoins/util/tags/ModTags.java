@@ -20,6 +20,9 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> NO_AI_EGGS = modItemTag("no_ai_spawn_eggs");
         public static final TagKey<Item> TOOLS_CARVING = modItemTag("tools/carving");
+        public static final TagKey<Item> NEEDLES = modItemTag("turtleblockacademy", "needles");
+        public static final TagKey<Item> PATTERNS = modItemTag("sewingkit", "patterns");
+        public static final TagKey<Item> FILE = modItemTag("sewingkit", "file");
         public static final TagKey<Item> WALLETS = modItemTag("wallets");
         public static final TagKey<Item> BUNDLES = modItemTag("bundles");
         public static final TagKey<Item> SHULKER_BOXES = modItemTag("shulker_boxes");
@@ -183,5 +186,9 @@ public class ModTags {
 
     private static @NotNull TagKey<Item> modItemTag(String path) {
         return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MODID, path));
+    }
+
+    private static @NotNull TagKey<Item> modItemTag(String modid, String path) {
+        return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(modid, path));
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "turtleblockacademy:needles"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "sewingkit:file"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

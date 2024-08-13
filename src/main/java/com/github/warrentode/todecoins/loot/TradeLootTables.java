@@ -253,6 +253,11 @@ public class TradeLootTables {
     public static final ResourceLocation DIAMOND_TIER_BOOTS_TABLE = register(MODID + ":" + "trade_tables/armor/boots/diamond_tier_boots");
     public static final ResourceLocation NETHERITE_TIER_BOOTS_TABLE = register(MODID + ":" + "trade_tables/armor/boots/netherite_tier_boots");
 
+    public static final ResourceLocation DYEABLE_BOOTS_TABLE = register(MODID + ":" + "trade_tables/armor/boots/dyeable");
+    public static final ResourceLocation DYEABLE_LEGGINGS_TABLE = register(MODID + ":" + "trade_tables/armor/leggings/dyeable");
+    public static final ResourceLocation DYEABLE_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/dyeable");
+    public static final ResourceLocation DYEABLE_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/dyeable");
+
     // misc item tables
     public static final ResourceLocation TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS = register(MODID + ":" + "trade_tables/misc/twenty_seven_lucky_coin_value_items");
     public static final ResourceLocation THREE_LUCKY_COIN_VALUE_ITEMS = register(MODID + ":" + "trade_tables/misc/single_lucky_coin_value_items");
@@ -285,6 +290,9 @@ public class TradeLootTables {
     public static final ResourceLocation REDSTONE_COMPONENTS_TABLE = register(MODID + ":" + "trade_tables/misc/redstone_components_table");
     public static final ResourceLocation BONE_MEAL_TABLE = register(MODID + ":" + "trade_tables/misc/bone_meal_table");
     public static final ResourceLocation NAME_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/name_tag_table");
+    public static final ResourceLocation TAILOR_TOOLS_TABLE = register(MODID + ":" + "trade_tables/misc/tailor_tools_table");
+    public static final ResourceLocation PATTERNS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/patterns_tag_table");
+    public static final ResourceLocation TEXTILES_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/textiles_tag_table");
 
     // numismatist merchant specific offers loot tables
     public static final ResourceLocation NUMISMATIST_RARE_OFFERS =

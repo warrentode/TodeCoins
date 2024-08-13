@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:leather_boots",
+    {
+      "id": "sewingkit:wool_shoes",
+      "required": false
+    }
+  ]
+}

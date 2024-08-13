@@ -144,6 +144,7 @@ public class OceanographerTradesConfig {
         BUILDER.pop();
         // level 5
         BUILDER.push("Oceanographer Level Five Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         OCEANOGRAPHER_5_REQUEST_1 = BUILDER
                 .comment(" Oceanographer 5 Trade Request 1 Table")

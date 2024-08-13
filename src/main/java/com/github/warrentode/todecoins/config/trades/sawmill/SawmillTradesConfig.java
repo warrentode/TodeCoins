@@ -124,6 +124,7 @@ public class SawmillTradesConfig {
         BUILDER.pop();
         // level 5
         BUILDER.push(" Sawmill Level Five Trade One")
+                .comment(" Enchanted Item Trade")
                 .comment(" Rare Trade");
         SAWMILL_5_REQUEST_1 = BUILDER
                 .comment(" Sawmill 5 Trade Request 1 Table")

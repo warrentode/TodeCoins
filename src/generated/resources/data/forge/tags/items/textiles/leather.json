@@ -1,0 +1,26 @@
+{
+  "values": [
+    {
+      "id": "sewingkit:leather_strip",
+      "required": false
+    },
+    {
+      "id": "sewingkit:leather_sheet",
+      "required": false
+    },
+    {
+      "id": "sewingkit:wool_roll",
+      "required": false
+    },
+    {
+      "id": "sewingkit:wool_trim",
+      "required": false
+    },
+    "minecraft:rabbit_hide",
+    "minecraft:leather",
+    {
+      "id": "nethersdelight:hoglin_hide",
+      "required": false
+    }
+  ]
+}

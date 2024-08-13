@@ -11,6 +11,7 @@ import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTra
 import com.github.warrentode.todecoins.config.trades.minecraft.*;
 import com.github.warrentode.todecoins.config.trades.morevillagers.*;
 import com.github.warrentode.todecoins.config.trades.sawmill.SawmillTradesConfig;
+import com.github.warrentode.todecoins.config.trades.sewingkit.TailorTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todecoins.BankerTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todecoins.LeprechaunTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todecoins.NumismatistTradesConfig;
@@ -111,6 +112,8 @@ public class TodeCoins {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WoodworkerTradesConfig.SPEC, MODID + "/trades/morevillagers/woodworker.toml");
         // sawmill trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SawmillTradesConfig.SPEC, MODID + "/trades/sawmill/carpenter.toml");
+        // sewingkit trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TailorTradesConfig.SPEC, MODID + "/trades/sewingkit/tailor.toml");
         // todecoins trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BankerTradesConfig.SPEC, MODID + "/trades/todecoins/banker.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LeprechaunTradesConfig.SPEC, MODID + "/trades/todecoins/leprechaun.toml");
