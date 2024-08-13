@@ -1,0 +1,40 @@
+{
+  "values": [
+    {
+      "id": "beautify:oak_trellis",
+      "required": false
+    },
+    {
+      "id": "beautify:spruce_trellis",
+      "required": false
+    },
+    {
+      "id": "beautify:birch_trellis",
+      "required": false
+    },
+    {
+      "id": "beautify:jungle_trellis",
+      "required": false
+    },
+    {
+      "id": "beautify:acacia_trellis",
+      "required": false
+    },
+    {
+      "id": "beautify:dark_oak_trellis",
+      "required": false
+    },
+    {
+      "id": "beautify:crimson_trellis",
+      "required": false
+    },
+    {
+      "id": "beautify:warped_trellis",
+      "required": false
+    },
+    {
+      "id": "beautify:mangrove_trellis",
+      "required": false
+    }
+  ]
+}

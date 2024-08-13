@@ -7,6 +7,9 @@ import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.CarpenterTradesConfig;
 import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.MusicianTradesConfig;
 import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.PotterTradesConfig;
+import com.github.warrentode.todecoins.config.trades.beautify.BotanistTradesConfig;
+import com.github.warrentode.todecoins.config.trades.chefsdelight.ChefTradesConfig;
+import com.github.warrentode.todecoins.config.trades.chefsdelight.CookTradesConfig;
 import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
 import com.github.warrentode.todecoins.config.trades.minecraft.*;
 import com.github.warrentode.todecoins.config.trades.morevillagers.*;
@@ -85,6 +88,11 @@ public class TodeCoins {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CarpenterTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/carpenter.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MusicianTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/musician.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PotterTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/potter.toml");
+        // beautify trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BotanistTradesConfig.SPEC, MODID + "/trades/beautify/botanist.toml");
+        // chefsdelight trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ChefTradesConfig.SPEC, MODID + "/trades/chefsdelight/delightchef.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CookTradesConfig.SPEC, MODID + "/trades/chefsdelight/delightcook.toml");
         // friendsandfoes trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BeekeeperTradesConfig.SPEC, MODID + "/trades/friendsandfoes/beekeeper.toml");
         // minecraft trade config files

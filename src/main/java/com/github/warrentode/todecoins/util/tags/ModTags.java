@@ -26,6 +26,11 @@ public class ModTags {
         public static final TagKey<Item> WALLETS = modItemTag("wallets");
         public static final TagKey<Item> BUNDLES = modItemTag("bundles");
         public static final TagKey<Item> SHULKER_BOXES = modItemTag("shulker_boxes");
+        public static final TagKey<Item> BLINDS = modItemTag("turtleblockacademy", "blinds");
+        public static final TagKey<Item> PICTURE_FRAMES = modItemTag("turtleblockacademy", "picture_frames");
+        public static final TagKey<Item> TRELLIS = modItemTag("turtleblockacademy", "trellis");
+        public static final TagKey<Item> HANGING_POT = modItemTag("beautify","hanging_pot");
+        public static final TagKey<Item> FLOWER_BOX = modItemTag("supplementaries","flower_box");
 
         public static final TagKey<Item> CURRENCY = modItemTag("currency");
         public static final TagKey<Item> BANKNOTES = modItemTag("currency/banknotes");

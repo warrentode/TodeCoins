@@ -108,6 +108,13 @@ public class TradeLootTables {
     public static final ResourceLocation GOLDEN_FOOD_TABLE = register(MODID + ":" + "trade_tables/food/golden_food_table");
     public static final ResourceLocation BOTTLED_HONEY_TABLE = register(MODID + ":" + "trade_tables/food/bottled_honey_table");
     public static final ResourceLocation SEED_TAG_TABLE = register(MODID + ":" + "trade_tables/food/seed_tag_table");
+    public static final ResourceLocation INGREDIENTS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/ingredients_tag_table");
+    public static final ResourceLocation FEAST_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/food/feast_blocks_table");
+    public static final ResourceLocation SANDWICH_TAG_TABLE = register(MODID + ":" + "trade_tables/food/sandwich_tag_table");
+    public static final ResourceLocation SIDE_DISH_TAG_TABLE = register(MODID + ":" + "trade_tables/food/side_dish_tag_table");
+    public static final ResourceLocation SOUP_TAG_TABLE = register(MODID + ":" + "trade_tables/food/soup_tag_table");
+    public static final ResourceLocation PLATED_FOODS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/plated_foods_tag_table");
+    public static final ResourceLocation DESSERT_TAG_TABLE = register(MODID + ":" + "trade_tables/food/dessert_tag_table");
 
     // textiles
     public static final ResourceLocation TAGGED_WOOL_TABLE = register(MODID + ":" + "trade_tables/textiles/tagged_wool_table");
@@ -138,6 +145,9 @@ public class TradeLootTables {
     public static final ResourceLocation SAPLING_SELL_TABLE = register(MODID + ":" + "trade_tables/decor/sapling_sell_table");
     public static final ResourceLocation SAPLING_BUY_TABLE = register(MODID + ":" + "trade_tables/decor/sapling_buy_table");
     public static final ResourceLocation FLOWER_POT_TABLE = register(MODID + ":" + "trade_tables/decor/flower_pot_table");
+    public static final ResourceLocation DECOR_PLANTS_TABLE = register(MODID + ":" + "trade_tables/decor/decor_plants_table");
+    public static final ResourceLocation TRELLIS_TAG_TABLE = register(MODID + ":" + "trade_tables/decor/trellis_tag_table");
+    public static final ResourceLocation FRAMES_TABLE = register(MODID + ":" + "trade_tables/decor/frames_table");
 
     // beekeeping
     public static final ResourceLocation BEEHIVE_TABLE = register(MODID + ":" + "trade_tables/beekeeping/beehive_table");
@@ -293,6 +303,7 @@ public class TradeLootTables {
     public static final ResourceLocation TAILOR_TOOLS_TABLE = register(MODID + ":" + "trade_tables/misc/tailor_tools_table");
     public static final ResourceLocation PATTERNS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/patterns_tag_table");
     public static final ResourceLocation TEXTILES_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/textiles_tag_table");
+    public static final ResourceLocation COOKING_TOOLS_TABLE = register(MODID + ":" + "trade_tables/misc/cooking_tools_table");
 
     // numismatist merchant specific offers loot tables
     public static final ResourceLocation NUMISMATIST_RARE_OFFERS =

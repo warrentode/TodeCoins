@@ -1,5 +1,6 @@
 {
   "values": [
+    "#forge:milk/milk_bottle",
     {
       "id": "kawaiidishes:condensed_milk",
       "required": false

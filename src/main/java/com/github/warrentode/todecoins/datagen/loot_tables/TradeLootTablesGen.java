@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.entries.TagEntry;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
@@ -1438,12 +1439,67 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.GLOBE_BANNER_PATTERN)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
+        consumer.accept(TradeLootTables.DECOR_PLANTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.VINE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.BIG_DRIPLEAF)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.SMALL_DRIPLEAF)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.LILY_PAD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.FERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.LARGE_FERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.CACTUS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GLOW_LICHEN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SPORE_BLOSSOM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SUGAR_CANE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GRASS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.TALL_GRASS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TAGGED_FOX_FOOD_TABLE))
+                        .add(LootItem.lootTableItem(Items.AZALEA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.FLOWERING_AZALEA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.HANGING_ROOTS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.FRAMES_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ITEM_FRAME_TABLE))
+                        .add(TagEntry.expandTag(ModTags.Items.PICTURE_FRAMES)
+                                .when(ModCheckCondition.mod().isLoaded("beautify")))
+                ));
+        consumer.accept(TradeLootTables.TRELLIS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.TRELLIS)
+                                .when(ModCheckCondition.mod().isLoaded("beautify")))
+                ));
         consumer.accept(TradeLootTables.FLOWER_POT_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.FLOWER_POT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(TagEntry.expandTag(ModTags.Items.FLOWER_BOX)
+                                .when(ModCheckCondition.mod().isLoaded("supplementaries")))
+                        .add(TagEntry.expandTag(ModTags.Items.HANGING_POT)
+                                .when(ModCheckCondition.mod().isLoaded("beautify")))
                 ));
         consumer.accept(TradeLootTables.FLOWER_BUY_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1561,6 +1617,52 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.OAK_SAPLING)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
+        consumer.accept(TradeLootTables.FEAST_BLOCKS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.HONEY_GLAZED_HAM_BLOCK.get()))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.RICE_ROLL_MEDLEY_BLOCK.get()))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.ROAST_CHICKEN_BLOCK.get()))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.SHEPHERDS_PIE_BLOCK.get()))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.STUFFED_PUMPKIN_BLOCK.get()))
+                ));
+        consumer.accept(TradeLootTables.DESSERT_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.DESSERTS))
+                ));
+        consumer.accept(TradeLootTables.PLATED_FOODS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.PLATED_FOODS))
+                ));
+        consumer.accept(TradeLootTables.SOUP_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.SOUPS))
+                ));
+        consumer.accept(TradeLootTables.SIDE_DISH_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.SIDE_DISHES))
+                ));
+        consumer.accept(TradeLootTables.SANDWICH_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.SANDWICHES))
+                ));
+        consumer.accept(TradeLootTables.INGREDIENTS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.INGREDIENTS))
+                ));
         consumer.accept(TradeLootTables.SEED_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1654,13 +1756,20 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.MUD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.COARSE_DIRT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootItem.lootTableItem(Items.PODZOL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootItem.lootTableItem(Items.ROOTED_DIRT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.MOSS_BLOCK)
+                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootItem.lootTableItem(Items.MYCELIUM)
                                 .when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
         consumer.accept(TradeLootTables.BOTTLED_HONEY_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1699,7 +1808,7 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.ITEM_FRAME)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootItem.lootTableItem(Items.GLOW_ITEM_FRAME)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
         consumer.accept(TradeLootTables.EXPERIENCE_BOTTLE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1845,6 +1954,14 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.REDSTONE_TORCH)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.COOKING_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.TOOLS_KNIVES))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.CUTTING_BOARD.get()))
+                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.COOKING_POT.get()))
                 ));
         consumer.accept(TradeLootTables.TEXTILES_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2668,16 +2785,10 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
                                 .add(LootItem.lootTableItem(Items.KELP))
-                                .add(LootItem.lootTableItem(Items.CACTUS))
                                 .add(LootItem.lootTableItem(Items.SEA_PICKLE))
-                                .add(LootItem.lootTableItem(Items.FERN))
-                                .add(LootItem.lootTableItem(Items.VINE))
                                 .add(LootItem.lootTableItem(Items.RED_MUSHROOM))
                                 .add(LootItem.lootTableItem(Items.BROWN_MUSHROOM))
-                                .add(LootItem.lootTableItem(Items.SUGAR_CANE))
-                                .add(LootItem.lootTableItem(Items.LILY_PAD)
-                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                                .add(LootItem.lootTableItem(Items.SMALL_DRIPLEAF))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.DECOR_PLANTS_TABLE))
                                 .add(LootItem.lootTableItem(Items.POINTED_DRIPSTONE)
                                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                                 .add(LootItem.lootTableItem(Items.MOSS_BLOCK)

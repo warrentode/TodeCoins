@@ -59,6 +59,73 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.HANGING_POT)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:hanging_pot")));
+        tag(ModTags.Items.FLOWER_BOX)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("supplementaries:flower_box")));
+        tag(ModTags.Items.TRELLIS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:oak_trellis")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:spruce_trellis")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:birch_trellis")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:jungle_trellis")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:acacia_trellis")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:dark_oak_trellis")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:crimson_trellis")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:warped_trellis")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:mangrove_trellis")));
+        tag(ModTags.Items.PICTURE_FRAMES)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:oak_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:spruce_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:birch_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:jungle_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:acacia_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:dark_oak_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:crimson_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:warped_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:mangrove_picture_frame")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:quartz_picture_frame")));
+        tag(ModTags.Items.BLINDS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:oak_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:spruce_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:birch_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:jungle_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:acacia_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:dark_oak_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:crimson_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:warped_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:mangrove_blinds")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:iron_blinds")));
         tag(ModTags.Items.FILE)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:file")));
         tag(ModTags.Items.PATTERNS)
@@ -1253,6 +1320,21 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(ForgeTags.Items.INGREDIENTS)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.TOMATO_SAUCE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.WHEAT_DOUGH.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.RAW_PASTA.get())
+                .addTag(Tags.Items.EGGS)
+                .addTag(ForgeTags.Items.CROPS)
+                .addTag(ForgeTags.Items.COCOA_INGREDIENTS)
+                .addTag(ForgeTags.Items.MILK_BOTTLES)
+                .addTag(ForgeTags.Items.MILK)
+                .addTag(ForgeTags.Items.COOKED_FISHES)
+                .addTag(ForgeTags.Items.RAW_FISHES)
+                .addTag(ForgeTags.Items.COOKED_MEATS)
+                .addTag(ForgeTags.Items.RAW_MEATS)
+                .addTag(ForgeTags.Items.BREAD);
         tag(ForgeTags.Items.DYEABLE_BOOTS)
                 .add(Items.LEATHER_BOOTS)
                 .addOptional(Objects.requireNonNull(
@@ -1492,6 +1574,49 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("miners_delight:tentacles")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("miners_delight:glow_squid")));
+        tag(ForgeTags.Items.DESSERTS)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.CAKE_SLICE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.APPLE_PIE_SLICE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.SWEET_BERRY_CHEESECAKE_SLICE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.CHOCOLATE_PIE_SLICE.get())
+                .addTag(ForgeTags.Items.COOKIES)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.MELON_POPSICLE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.GLOW_BERRY_CUSTARD.get());
+        tag(ForgeTags.Items.PLATED_FOODS)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.SHEPHERDS_PIE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.HONEY_GLAZED_HAM.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.STUFFED_PUMPKIN.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.ROAST_CHICKEN.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.GRILLED_SALMON.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.SQUID_INK_PASTA.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.RATATOUILLE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.STEAK_AND_POTATOES.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.VEGETABLE_NOODLES.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.MUSHROOM_RICE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.PASTA_WITH_MUTTON_CHOP.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.DUMPLINGS.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.CABBAGE_ROLLS.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.COOKED_RICE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.FRIED_RICE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.BACON_AND_EGGS.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.PASTA_WITH_MEATBALLS.get());
+        tag(ForgeTags.Items.SIDE_DISHES)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.SALMON_ROLL.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.COD_ROLL.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.STUFFED_POTATO.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.COOKED_BACON.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.FRIED_EGG.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.FRUIT_SALAD.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.MIXED_SALAD.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.NETHER_SALAD.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.BARBECUE_STICK.get());
+        tag(ForgeTags.Items.SANDWICHES)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.MUTTON_WRAP.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.HAMBURGER.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.EGG_SANDWICH.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.CHICKEN_SANDWICH.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.BACON_SANDWICH.get());
         tag(ForgeTags.Items.CAKES)
                 .add(Items.CAKE)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.SWEET_BERRY_CHEESECAKE.getId())
@@ -1757,6 +1882,7 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ForgeTags.Items.MILK_BOTTLES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:milk_bottle")));
         tag(ForgeTags.Items.MILK)
+                .addTag(ForgeTags.Items.MILK_BOTTLES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:condensed_milk")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether:skyroot_milk_bucket")))
                 .add(Items.MILK_BUCKET);

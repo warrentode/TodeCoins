@@ -10,19 +10,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:cactus"
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:sea_pickle"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:fern"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:vine"
         },
         {
           "type": "minecraft:item",
@@ -33,23 +21,8 @@
           "name": "minecraft:brown_mushroom"
         },
         {
-          "type": "minecraft:item",
-          "name": "minecraft:sugar_cane"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 2.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "minecraft:lily_pad"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:small_dripleaf"
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/decor/decor_plants_table"
         },
         {
           "type": "minecraft:item",

@@ -1,0 +1,44 @@
+{
+  "values": [
+    {
+      "id": "beautify:oak_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:spruce_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:birch_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:jungle_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:acacia_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:dark_oak_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:crimson_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:warped_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:mangrove_blinds",
+      "required": false
+    },
+    {
+      "id": "beautify:iron_blinds",
+      "required": false
+    }
+  ]
+}

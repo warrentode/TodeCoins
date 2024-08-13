@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/decor/item_frame_table"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "beautify"
+            }
+          ],
+          "expand": true,
+          "name": "turtleblockacademy:picture_frames"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

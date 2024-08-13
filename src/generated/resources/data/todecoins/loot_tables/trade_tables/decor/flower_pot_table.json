@@ -14,6 +14,28 @@
             }
           ],
           "name": "minecraft:flower_pot"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "expand": true,
+          "name": "supplementaries:flower_box"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "beautify"
+            }
+          ],
+          "expand": true,
+          "name": "beautify:hanging_pot"
         }
       ],
       "rolls": 1.0
