@@ -1,4 +1,4 @@
-package com.github.warrentode.todecoins.datagen.loot_tables.merchant;
+package com.github.warrentode.todecoins.datagen.loot_tables;
 
 import com.faboslav.friendsandfoes.init.FriendsAndFoesItems;
 import com.github.warrentode.todecoins.block.ModBlocks;
@@ -27,7 +27,7 @@ import java.util.function.BiConsumer;
 
 import static com.github.warrentode.todecoins.datagen.ModLootTableGenProvider.*;
 
-public class MerchantOffersGen extends ChestLoot {
+public class TradeLootTablesGen extends ChestLoot {
     @Override
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(TradeLootTables.TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS,

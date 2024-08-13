@@ -3,7 +3,6 @@ package com.github.warrentode.todecoins.datagen;
 import com.github.warrentode.todecoins.datagen.loot_tables.*;
 import com.github.warrentode.todecoins.datagen.loot_tables.chest_loot.*;
 import com.github.warrentode.todecoins.datagen.loot_tables.entity_drops.*;
-import com.github.warrentode.todecoins.datagen.loot_tables.merchant.MerchantOffersGen;
 import com.github.warrentode.todecoins.datagen.loot_tables.mystery_coin_packs.*;
 import com.github.warrentode.todecoins.loot.conditions.season.*;
 import com.github.warrentode.todecoins.loot.conditions.tag.BiomeTagCondition;
@@ -40,7 +39,7 @@ public class ModLootTableGenProvider extends LootTableProvider {
             Pair.of(CustomPiglinBarterLootGen::new, LootContextParamSets.PIGLIN_BARTER),
             Pair.of(ModFishingLootGen::new, LootContextParamSets.FISHING),
             Pair.of(CageriumLootTablesGen::new, LootContextParamSets.ENTITY),
-            Pair.of(MerchantOffersGen::new, LootContextParamSets.CHEST),
+            Pair.of(TradeLootTablesGen::new, LootContextParamSets.CHEST),
 
             Pair.of(CoinDropsEntityGen::new, LootContextParamSets.ENTITY),
             Pair.of(CoinDropsBossGen::new, LootContextParamSets.ENTITY),

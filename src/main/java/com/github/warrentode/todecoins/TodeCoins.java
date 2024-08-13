@@ -4,13 +4,16 @@ import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.block.entity.ModBlockEntities;
 import com.github.warrentode.todecoins.config.CommonConfig;
+import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.CarpenterTradesConfig;
+import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.MusicianTradesConfig;
+import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.PotterTradesConfig;
 import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
 import com.github.warrentode.todecoins.config.trades.minecraft.*;
 import com.github.warrentode.todecoins.config.trades.morevillagers.*;
 import com.github.warrentode.todecoins.config.trades.todecoins.BankerTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todecoins.LeprechaunTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todecoins.NumismatistTradesConfig;
-import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTrades;
+import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todevillagers.GlassblowerTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todevillagers.RetiredTraderTradesConfig;
 import com.github.warrentode.todecoins.effect.ModEffects;
@@ -76,6 +79,10 @@ public class TodeCoins {
 
     public TodeCoins() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MODID + "/common.toml");
+        // annabethsextravillagers trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CarpenterTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/carpenter.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MusicianTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/musician.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PotterTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/potter.toml");
         // friendsandfoes trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BeekeeperTradesConfig.SPEC, MODID + "/trades/friendsandfoes/beekeeper.toml");
         // minecraft trade config files
@@ -108,7 +115,7 @@ public class TodeCoins {
         // todevillagers trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, RetiredTraderTradesConfig.SPEC, MODID + "/trades/todevillagers/retired_trader.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, GlassblowerTradesConfig.SPEC, MODID + "/trades/todevillagers/glassblower.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DiscJockeyTrades.SPEC, MODID + "/trades/todevillagers/disc_jockey.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DiscJockeyTradesConfig.SPEC, MODID + "/trades/todevillagers/disc_jockey.toml");
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);

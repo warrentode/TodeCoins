@@ -18,6 +18,10 @@ public class BiomeTagsGen extends BiomeTagsProvider {
     }
 
     private void registerTags() {
+        tag(ForgeTags.Biomes.HAS_AZURE_BLUET)
+                .add(Biomes.SUNFLOWER_PLAINS)
+                .add(Biomes.PLAINS)
+                .add(Biomes.MEADOW);
         tag(ForgeTags.Biomes.HAS_SUNFLOWER)
                 .add(Biomes.SUNFLOWER_PLAINS)
                 .add(Biomes.ICE_SPIKES);
