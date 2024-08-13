@@ -1600,6 +1600,61 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(vectorwing.farmersdelight.common.registry.ModItems.FRIED_RICE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.BACON_AND_EGGS.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.PASTA_WITH_MEATBALLS.get());
+        tag(ForgeTags.Items.DRINKS)
+                .add(vectorwing.farmersdelight.common.registry.ModItems.MELON_JUICE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.APPLE_CIDER.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get())
+                .add(vectorwing.farmersdelight.common.registry.ModItems.HOT_COCOA.get());
+        tag(ForgeTags.Items.FAST_FOOD_DESSERTS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:fruit_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:sweet_berry_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:chocolate_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:ice_cream")));
+        tag(ForgeTags.Items.FAST_FOOD_DRINKS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:iced_tea")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:creaming_soda")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:lemon_soda")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:orange_soda")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:cola_soda")));
+        tag(ForgeTags.Items.FAST_FOOD_SANDWICHES)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:chicken_wrap")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:cheese_wrap")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:rabbit_sandwich")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:croque_monsieur")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:chicken_cheese_sandwich")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:cheeseburger")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:cod_sandwich")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:salmon_sandwich")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:pork_sandwich")));
+        tag(ForgeTags.Items.FAST_FOOD_SIDE_DISHES)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:apple_sauce")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:chicken_nuggets")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:fried_onions")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:carrot_fries")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("fastfooddelight:french_fries")));
         tag(ForgeTags.Items.SIDE_DISHES)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.SALMON_ROLL.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.COD_ROLL.get())

@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-13T13:08:33.9719184	Tags for minecraft:item
+// 1.19.2	2024-08-13T17:53:24.2368208	Tags for minecraft:item
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
@@ -51,6 +51,7 @@ de3994930962786796a826cd9676cb67b67e7bc2 data/forge/tags/items/crops/tomato.json
 5f68ab5892f7d0337e7a331a1244af90f29c5b36 data/forge/tags/items/currency_materials.json
 e696f402dd807aff108bcdbf82e9cfaf00b8dadc data/forge/tags/items/currency_stamps.json
 6056e8419b2a574dd388adda0c64181c0d794f27 data/forge/tags/items/desserts.json
+bab7c16bb378e5550d969f38057e5c1346afb79e data/forge/tags/items/drinks.json
 aebe50ca7f6d0c03d5534daf26afd8d003be5f76 data/forge/tags/items/dyeable_boots.json
 e922533bc371202caa0291653c1ebd240231e2a2 data/forge/tags/items/dyeable_chestplates.json
 b5361c2fb05557316d959891c3e1c7213a7c61bf data/forge/tags/items/dyeable_helmets.json
@@ -58,6 +59,10 @@ b7a175ec097ce9e68f6d2caf8d74e06d98dc9534 data/forge/tags/items/dyeable_leggings.
 6b9ee5087cd4160d845085ac6bb64c86e1aedba3 data/forge/tags/items/dyes.json
 fe91d9df301382872a3e254eb22768784d8932b1 data/forge/tags/items/eggs.json
 056929b7ab3fd6b71312bcc7bae8661d4f4a5df0 data/forge/tags/items/enchanting_fuels.json
+c27647d2a6a061c47468ac1aa6d10dd13990fd3b data/forge/tags/items/fast_food_desserts.json
+1464a36df3a64ee3cc3a6be591eec5c4c3c279f0 data/forge/tags/items/fast_food_drinks.json
+033dcc620ded5a0a494866a2101f958049894b65 data/forge/tags/items/fast_food_sandwiches.json
+6f1b45b20d556a3206afdec3ad3af9855cf72cf8 data/forge/tags/items/fast_food_side_dishes.json
 b43f07fbac9cee58dfaac204b86a65a071d0a966 data/forge/tags/items/fat.json
 ced9b853d8bf80127dc88e1746eaa66fe48ba35f data/forge/tags/items/gem_currency.json
 d8dc68294ba0bb69c51e2d77203706ddc8bd16ba data/forge/tags/items/gem_currency/amethyst.json

@@ -115,6 +115,7 @@ public class TradeLootTables {
     public static final ResourceLocation SOUP_TAG_TABLE = register(MODID + ":" + "trade_tables/food/soup_tag_table");
     public static final ResourceLocation PLATED_FOODS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/plated_foods_tag_table");
     public static final ResourceLocation DESSERT_TAG_TABLE = register(MODID + ":" + "trade_tables/food/dessert_tag_table");
+    public static final ResourceLocation DRINKS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/drinks_tag_table");
 
     // textiles
     public static final ResourceLocation TAGGED_WOOL_TABLE = register(MODID + ":" + "trade_tables/textiles/tagged_wool_table");

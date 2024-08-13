@@ -93,6 +93,8 @@ public class TodeCoins {
         // chefsdelight trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ChefTradesConfig.SPEC, MODID + "/trades/chefsdelight/delightchef.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CookTradesConfig.SPEC, MODID + "/trades/chefsdelight/delightcook.toml");
+        // fastfooddelight trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ChefTradesConfig.SPEC, MODID + "/trades/fastfooddelight/waiter.toml");
         // friendsandfoes trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BeekeeperTradesConfig.SPEC, MODID + "/trades/friendsandfoes/beekeeper.toml");
         // minecraft trade config files

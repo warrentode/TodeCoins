@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "fastfooddelight:iced_tea",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:creaming_soda",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:lemon_soda",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:orange_soda",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:cola_soda",
+      "required": false
+    }
+  ]
+}

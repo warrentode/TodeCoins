@@ -1627,10 +1627,20 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.SHEPHERDS_PIE_BLOCK.get()))
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.STUFFED_PUMPKIN_BLOCK.get()))
                 ));
+        consumer.accept(TradeLootTables.DRINKS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_DRINKS)
+                                .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
+                        .add(TagEntry.expandTag(ForgeTags.Items.DRINKS))
+                ));
         consumer.accept(TradeLootTables.DESSERT_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_DESSERTS)
+                                .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
                         .add(TagEntry.expandTag(ForgeTags.Items.DESSERTS))
                 ));
         consumer.accept(TradeLootTables.PLATED_FOODS_TAG_TABLE,
@@ -1649,12 +1659,16 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_SIDE_DISHES)
+                                .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
                         .add(TagEntry.expandTag(ForgeTags.Items.SIDE_DISHES))
                 ));
         consumer.accept(TradeLootTables.SANDWICH_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_SANDWICHES)
+                                .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
                         .add(TagEntry.expandTag(ForgeTags.Items.SANDWICHES))
                 ));
         consumer.accept(TradeLootTables.INGREDIENTS_TAG_TABLE,

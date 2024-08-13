@@ -154,10 +154,16 @@ public class ForgeTags {
         public static final TagKey<Item> PIES = forgeItemTag("forge", "pies");
         public static final TagKey<Item> COOKIES = forgeItemTag("forge", "cookies");
         public static final TagKey<Item> CAKES = forgeItemTag("forge", "cakes");
+
         public static final TagKey<Item> SANDWICHES = forgeItemTag("forge", "sandwiches");
         public static final TagKey<Item> SIDE_DISHES = forgeItemTag("forge", "side_dishes");
         public static final TagKey<Item> PLATED_FOODS = forgeItemTag("forge", "plated_foods");
         public static final TagKey<Item> DESSERTS = forgeItemTag("forge", "desserts");
+        public static final TagKey<Item> DRINKS = forgeItemTag("forge", "drinks");
+        public static final TagKey<Item> FAST_FOOD_SIDE_DISHES = forgeItemTag("forge", "fast_food_side_dishes");
+        public static final TagKey<Item> FAST_FOOD_SANDWICHES = forgeItemTag("forge", "fast_food_sandwiches");
+        public static final TagKey<Item> FAST_FOOD_DRINKS = forgeItemTag("forge", "fast_food_drinks");
+        public static final TagKey<Item> FAST_FOOD_DESSERTS = forgeItemTag("forge", "fast_food_desserts");
 
         public static final TagKey<Item> INGREDIENTS = forgeItemTag("forge", "ingredients");
 

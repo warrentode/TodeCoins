@@ -8,6 +8,7 @@ import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.Pot
 import com.github.warrentode.todecoins.config.trades.beautify.BotanistTradesConfig;
 import com.github.warrentode.todecoins.config.trades.chefsdelight.ChefTradesConfig;
 import com.github.warrentode.todecoins.config.trades.chefsdelight.CookTradesConfig;
+import com.github.warrentode.todecoins.config.trades.fastfooddelight.WaiterTradesConfig;
 import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
 import com.github.warrentode.todecoins.config.trades.minecraft.*;
 import com.github.warrentode.todecoins.config.trades.morevillagers.*;
@@ -61,10 +62,9 @@ public class ModVillagerTrades {
     //TODO: add todepiglin trades
 
     //TODO: add domesticationinnovation trades
-    //TODO: add dynamicvillage (create) trades
-    //TODO: add fastfooddelight trades
     //TODO: add villagerenchanter trades
     //TODO: add villagersplus trades
+    //TODO: add dynamicvillage (create) trades
 
     @Mod.EventBusSubscriber(modid = MODID)
     public static class ForgeEvents {
@@ -73,6 +73,93 @@ public class ModVillagerTrades {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             if (CommonConfig.getCustomTrades()) {
+                // FastFoodDelight mod trades
+                if (ModList.get().isLoaded("fastfooddelight")) {
+                    if (REPLACE_TRADES) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+                    }
+
+                    for (int i = 0; i < CommonConfig.getMaxVillagerTrades(); ++i) {
+                        trades.get(novice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter1Request1()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter1Offer1()),
+                                WaiterTradesConfig.getWaiter1Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter1Request2()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter1Offer2()),
+                                WaiterTradesConfig.getWaiter1Offer2Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter2Request1()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter2Offer1()),
+                                WaiterTradesConfig.getWaiter2Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(apprentice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter2Request2()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter2Offer2()),
+                                WaiterTradesConfig.getWaiter2Offer2Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter3Request1()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter3Offer1()),
+                                WaiterTradesConfig.getWaiter3Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(journeyman).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter3Request2()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter3Offer2()),
+                                WaiterTradesConfig.getWaiter3Offer2Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter4Request1()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter4Offer1()),
+                                WaiterTradesConfig.getWaiter4Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter4Request2()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter4Offer2()),
+                                WaiterTradesConfig.getWaiter4Offer2Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(master).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter5Request1()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter5Offer1()),
+                                WaiterTradesConfig.getWaiter5Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(master).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter5Request2()),
+                                ResourceLocation.tryParse(WaiterTradesConfig.getWaiter5Offer2()),
+                                WaiterTradesConfig.getWaiter5Offer2Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                    }
+                }
                 // ChefsDelight mod trades
                 if (ModList.get().isLoaded("chefsdelight")) {
                     // CHEF
