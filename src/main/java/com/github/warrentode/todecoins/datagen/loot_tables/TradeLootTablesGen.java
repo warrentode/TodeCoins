@@ -1349,6 +1349,13 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.PAPER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
                 ));
+        consumer.accept(TradeLootTables.REFRESH_BOOK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.REFRESH_BOOK)
+                                .when(ModCheckCondition.mod().isLoaded("villager_enchanter")))
+                ));
         consumer.accept(TradeLootTables.BOOK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1357,6 +1364,8 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                         .add(LootItem.lootTableItem(Items.WRITABLE_BOOK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(TagEntry.expandTag(ModTags.Items.BOOKSTACK)
+                                .when(ModCheckCondition.mod().isLoaded("beautify")))
                 ));
         consumer.accept(TradeLootTables.CLOCK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()

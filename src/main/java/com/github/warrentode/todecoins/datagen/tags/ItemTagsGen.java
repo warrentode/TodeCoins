@@ -1253,6 +1253,12 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.CURRENCY_STAMP.get())
                 .add(ModItems.NETHER_CURRENCY_STAMP.get())
                 .add(ModItems.ENDONIAN_CURRENCY_STAMP.get());
+        tag(ModTags.Items.REFRESH_BOOK)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("villager_enchanter:enchant_refresh_book")));
+        tag(ModTags.Items.BOOKSTACK)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("beautify:bookstack")));
         tag(ModTags.Items.TEXTILES)
                 .addTag(ModTags.Items.CURRENCY_FIBER)
                 .addTag(ModTags.Items.CURRENCY_PAPER)

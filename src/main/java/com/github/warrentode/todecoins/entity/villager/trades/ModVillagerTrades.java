@@ -19,6 +19,7 @@ import com.github.warrentode.todecoins.config.trades.todecoins.LeprechaunTradesC
 import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todevillagers.GlassblowerTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todevillagers.RetiredTraderTradesConfig;
+import com.github.warrentode.todecoins.config.trades.villager_enchanter.EnchanterTradesConfig;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
 import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.*;
 import com.github.warrentode.todecoins.item.ModItems;
@@ -62,7 +63,6 @@ public class ModVillagerTrades {
     //TODO: add todepiglin trades
 
     //TODO: add domesticationinnovation trades
-    //TODO: add villagerenchanter trades
     //TODO: add villagersplus trades
     //TODO: add dynamicvillage (create) trades
 
@@ -73,6 +73,120 @@ public class ModVillagerTrades {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             if (CommonConfig.getCustomTrades()) {
+                // VillagerEnchanter mod trades
+                if (ModList.get().isLoaded("villager_enchanter")) {
+                    if (REPLACE_TRADES) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+                    }
+
+                    for (int i = 0; i < CommonConfig.getMaxVillagerTrades(); ++i) {
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter1Request2()),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter1Offer2()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+                        trades.get(novice).add(new LootTableForEnchanted(
+                                Items.BOOK.getDefaultInstance(),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter1Request3()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter2Request1()),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter2Offer1()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+                        trades.get(apprentice).add(new LootTableForEnchanted(
+                                Items.BOOK.getDefaultInstance(),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter2Request2()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForEnchanted(
+                                Items.BOOK.getDefaultInstance(),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter3Request1()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter3Request3()),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter3Offer3()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter4Request1()),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter4Offer1()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+                        trades.get(expert).add(new LootTableForEnchanted(
+                                Items.BOOK.getDefaultInstance(),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter4Request2()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+
+
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter5Request1()),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter5Offer1()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+                        trades.get(master).add(new LootTableForEnchanted(
+                                Items.BOOK.getDefaultInstance(),
+                                ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter5Request3()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
+                                CONFIG_RARE_MAX_TRADES
+                        ));
+                    }
+                    // refresh book trades
+                    trades.get(novice).add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter1Request1()),
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter1Offer1()),
+                            EnchanterTradesConfig.getEnchanter1Offer1Count(),
+                            CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                            CONFIG_COMMON_TRADE_MULTIPLIER
+                    ));
+                    trades.get(apprentice).add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter2Request3()),
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter2Offer3()),
+                            EnchanterTradesConfig.getEnchanter2Offer3Count(),
+                            CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                            CONFIG_COMMON_TRADE_MULTIPLIER
+                    ));
+                    trades.get(journeyman).add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter3Request2()),
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter3Offer2()),
+                            EnchanterTradesConfig.getEnchanter3Offer2Count(),
+                            CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                            CONFIG_COMMON_TRADE_MULTIPLIER
+                    ));
+                    trades.get(expert).add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter4Request3()),
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter4Offer3()),
+                            EnchanterTradesConfig.getEnchanter4Offer3Count(),
+                            CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                            CONFIG_COMMON_TRADE_MULTIPLIER
+                    ));
+                    trades.get(master).add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter5Request2()),
+                            ResourceLocation.tryParse(EnchanterTradesConfig.getEnchanter5Offer2()),
+                            EnchanterTradesConfig.getEnchanter5Offer2Count(),
+                            CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
+                            CONFIG_COMMON_TRADE_MULTIPLIER
+                    ));
+                }
                 // FastFoodDelight mod trades
                 if (ModList.get().isLoaded("fastfooddelight")) {
                     if (REPLACE_TRADES) {

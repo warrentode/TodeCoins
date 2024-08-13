@@ -21,6 +21,7 @@ import com.github.warrentode.todecoins.config.trades.todecoins.NumismatistTrades
 import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todevillagers.GlassblowerTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todevillagers.RetiredTraderTradesConfig;
+import com.github.warrentode.todecoins.config.trades.villager_enchanter.EnchanterTradesConfig;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
@@ -132,6 +133,8 @@ public class TodeCoins {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, RetiredTraderTradesConfig.SPEC, MODID + "/trades/todevillagers/retired_trader.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, GlassblowerTradesConfig.SPEC, MODID + "/trades/todevillagers/glassblower.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DiscJockeyTradesConfig.SPEC, MODID + "/trades/todevillagers/disc_jockey.toml");
+        // villager_enchanter trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EnchanterTradesConfig.SPEC, MODID + "/trades/villager_enchanter/enchanter.toml");
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);

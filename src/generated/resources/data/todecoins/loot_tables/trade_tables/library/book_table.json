@@ -25,6 +25,17 @@
             }
           ],
           "name": "minecraft:writable_book"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "beautify"
+            }
+          ],
+          "expand": true,
+          "name": "beautify:bookstack"
         }
       ],
       "rolls": 1.0

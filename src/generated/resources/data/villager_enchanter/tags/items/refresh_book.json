@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "villager_enchanter:enchant_refresh_book",
+      "required": false
+    }
+  ]
+}

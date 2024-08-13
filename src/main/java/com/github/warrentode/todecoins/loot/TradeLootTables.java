@@ -179,6 +179,7 @@ public class TradeLootTables {
     public static final ResourceLocation PAPER_TABLE = register(MODID + ":" + "trade_tables/library/paper_table");
     public static final ResourceLocation BOOK_TABLE = register(MODID + ":" + "trade_tables/library/book_table");
     public static final ResourceLocation TAGGED_INK_TABLE = register(MODID + ":" + "trade_tables/library/tagged_ink_table");
+    public static final ResourceLocation REFRESH_BOOK_TABLE = register(MODID + ":" + "trade_tables/library/refresh_book_table");
 
     // blocks
     public static final ResourceLocation OCEAN_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/ocean_blocks_table");

@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-13T17:53:24.2298207	LootTables
+// 1.19.2	2024-08-13T18:47:59.5130034	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -365,9 +365,10 @@ c021334960ec733f42b869d44417a6a827ea9207 data/todecoins/loot_tables/trade_tables
 3016b82db7af7a37c09c62e2d50df44f247d1f30 data/todecoins/loot_tables/trade_tables/horse_gear/leather_tier_horse_armor.json
 50b21c5bb71cb768c2f80bdd51301165dd764ba9 data/todecoins/loot_tables/trade_tables/horse_gear/saddle_table.json
 2cd9379b25492b147ad86203c63f3976948827b4 data/todecoins/loot_tables/trade_tables/library/bookshelf_table.json
-c6f9462c39f92aa0cbbf8d3f07ee03f82e71343f data/todecoins/loot_tables/trade_tables/library/book_table.json
+0bf5c461cbadb19a1212b5824486f8b2c91ada94 data/todecoins/loot_tables/trade_tables/library/book_table.json
 e074cfee901bd1d5f7d1bd5232bb15fe607d8c03 data/todecoins/loot_tables/trade_tables/library/guide_books.json
 67e00a0ad1aec64c221c1510902077eedcb80327 data/todecoins/loot_tables/trade_tables/library/paper_table.json
+8153b6f423c0969d17df38be75b71c679f7ae86f data/todecoins/loot_tables/trade_tables/library/refresh_book_table.json
 e074cfee901bd1d5f7d1bd5232bb15fe607d8c03 data/todecoins/loot_tables/trade_tables/library/tagged_ink_table.json
 a5ea2b43baaee7497f19edeed2d27b31a64ab395 data/todecoins/loot_tables/trade_tables/metals/emerald_bank_note_value_metals.json
 65afea771954d2ae09e00e93330a2b0996c6c2c8 data/todecoins/loot_tables/trade_tables/metals/single_emerald_value_gold.json
