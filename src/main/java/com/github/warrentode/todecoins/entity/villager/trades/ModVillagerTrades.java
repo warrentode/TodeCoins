@@ -8,6 +8,7 @@ import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.Pot
 import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
 import com.github.warrentode.todecoins.config.trades.minecraft.*;
 import com.github.warrentode.todecoins.config.trades.morevillagers.*;
+import com.github.warrentode.todecoins.config.trades.sawmill.SawmillTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todecoins.BankerTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todecoins.LeprechaunTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTradesConfig;
@@ -55,7 +56,6 @@ public class ModVillagerTrades {
     //TODO: merge todepiglin with todecoins
     //TODO: add todepiglin trades
 
-    //TODO: add annabethsextravillagers trades
     //TODO: add sewingkit trades
     //TODO: add beautify trades
     //TODO: add chefsdelight trades
@@ -73,6 +73,84 @@ public class ModVillagerTrades {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             if (CommonConfig.getCustomTrades()) {
+                // Sawmill mod trades
+                if (ModList.get().isLoaded("sawmill")) {
+                    // CARPENTER
+                    if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("sawmill:carpenter"))) {
+                        if (REPLACE_TRADES) {
+                            trades.get(novice).clear();
+                            trades.get(apprentice).clear();
+                            trades.get(journeyman).clear();
+                            trades.get(expert).clear();
+                            trades.get(master).clear();
+                        }
+
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill1Request1()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill1Offer1()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill1Request2()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill1Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill2Request1()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill2Offer1()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill2Request2()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill2Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill3Request1()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill3Offer1()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill3Request2()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill3Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill4Request1()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill4Offer1()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill4Request2()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill4Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(master).add(new LootTableForEnchantedTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill5Offer1()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill5Request1()),
+                                CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
+                                CONFIG_RARE_TRADE_MULTIPLIER
+                        ));
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill5Request2()),
+                                ResourceLocation.tryParse(SawmillTradesConfig.getSawmill5Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                    }
+                }
                 // AnnaBethsExtraVillager mod trades
                 if (ModList.get().isLoaded("annabethsextravillagers")) {
                     // CARPENTER
