@@ -36,62 +36,64 @@ public class WanderingTraderTrades {
                     rareWandererTrades.clear();
                 }
 
-                // COMMON TRADES
-                commonWandererTrades.add(new LootTableForLootTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest1()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer1()),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForLootTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest2()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer2()),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForTagTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest3()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer3()),
-                        WanderingTraderTradesConfig.getWanderingOffer3Count(),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForTagTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest4()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer4()),
-                        WanderingTraderTradesConfig.getWanderingOffer4Count(),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForLootTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest5()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer5()),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForTagTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest6()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer6()),
-                        WanderingTraderTradesConfig.getWanderingOffer6Count(),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForTagTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest7()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer7()),
-                        WanderingTraderTradesConfig.getWanderingOffer7Count(),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForLootTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest8()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer8()),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForLootTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest9()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer9()),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
-                commonWandererTrades.add(new LootTableForTagTable(
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest10()),
-                        ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer10()),
-                        WanderingTraderTradesConfig.getWanderingOffer10Count(),
-                        COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
-                ));
+                for (int i = 0; i < CommonConfig.getMaxWandererTrades(); ++i) {
+                    // COMMON TRADES
+                    commonWandererTrades.add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest1()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer1()),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest2()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer2()),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest3()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer3()),
+                            WanderingTraderTradesConfig.getWanderingOffer3Count(),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest4()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer4()),
+                            WanderingTraderTradesConfig.getWanderingOffer4Count(),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest5()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer5()),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest6()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer6()),
+                            WanderingTraderTradesConfig.getWanderingOffer6Count(),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest7()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer7()),
+                            WanderingTraderTradesConfig.getWanderingOffer7Count(),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest8()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer8()),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForLootTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest9()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer9()),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                    commonWandererTrades.add(new LootTableForTagTable(
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingRequest10()),
+                            ResourceLocation.tryParse(WanderingTraderTradesConfig.getWanderingOffer10()),
+                            WanderingTraderTradesConfig.getWanderingOffer10Count(),
+                            COMMON_MAX_TRADES, BASE_XP, COMMON_TRADE_MULTIPLIER
+                    ));
+                }
 
                 // RARE TRADES
                 rareWandererTrades.add(new LootTableForLootTable(

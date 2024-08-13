@@ -150,17 +150,17 @@ public class FletcherTradesConfig {
                         TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
         // level 5
-        BUILDER.push("Fletcher Level Five Trade One");
+        BUILDER.push("Fletcher Level Five Trade One")
+                .comment(" Tipped Arrow Trade");
         FLETCHER_5_REQUEST_1 = BUILDER
                 .comment(" Fletcher 5 Trade Request 1 Table")
-                .comment(" Tipped Arrow Trade")
                 .define("fletcher_5_trade_request_1_table",
                         TradeLootTables.TWO_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
-        BUILDER.push("Fletcher Level Five Trade Two");
+        BUILDER.push("Fletcher Level Five Trade Two")
+                .comment(" Tipped Arrow Trade");
         FLETCHER_5_REQUEST_2 = BUILDER
                 .comment(" Fletcher 5 Trade Request 2 Table")
-                .comment(" Tipped Arrow Trade")
                 .define("fletcher_5_trade_request_2_table",
                         TradeLootTables.TWO_EMERALD_VALUE_CURRENCY.toString());
         BUILDER.pop();
