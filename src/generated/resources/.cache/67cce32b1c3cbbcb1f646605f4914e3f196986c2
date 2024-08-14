@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-13T18:47:59.5130034	LootTables
+// 1.19.2	2024-08-14T00:53:24.0477667	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -320,8 +320,9 @@ cfe7121103eb3511d32837971a0eb060d38a233c data/todecoins/loot_tables/trade_tables
 9b370c3254a6d4157763dd9ebf14c3670bdefdef data/todecoins/loot_tables/trade_tables/decor/torch_table.json
 30cd48c05f1bb1a4fd6cb9ccf1231f1530f20e6a data/todecoins/loot_tables/trade_tables/decor/trellis_tag_table.json
 194b96f3a7d98484a311bed920253ee60d8e28fc data/todecoins/loot_tables/trade_tables/food/bottled_honey_table.json
-6bd80d36887fa5241fd874dbf9c6113ace3e45c7 data/todecoins/loot_tables/trade_tables/food/dessert_tag_table.json
-7fbc94b1c2d55d0b1ab98e35826aba0d3548c389 data/todecoins/loot_tables/trade_tables/food/drinks_tag_table.json
+5f02b88f0399207b389803138a66840a2f6da737 data/todecoins/loot_tables/trade_tables/food/coffee_ingredients_tag_table.json
+3726e867cfd6e65cce7f3e91c9c301cd207a6fd9 data/todecoins/loot_tables/trade_tables/food/dessert_tag_table.json
+33bfcb706776ee9b6dce0f609480f71ae8e18b88 data/todecoins/loot_tables/trade_tables/food/drinks_tag_table.json
 90df883ee834ec80d38eef057171fd7bda1a4f87 data/todecoins/loot_tables/trade_tables/food/feast_blocks_table.json
 8842bfc2d9756b2e9b57e07fad25a474f072ec15 data/todecoins/loot_tables/trade_tables/food/golden_food_table.json
 ebd90ea2debb8e7b9bd99cd9c7b13aa016e71727 data/todecoins/loot_tables/trade_tables/food/ingredients_tag_table.json
@@ -381,6 +382,7 @@ efaf215db8c87c26b8ced536be441374481e93b3 data/todecoins/loot_tables/trade_tables
 c66748aa8111e32a4894f302d940201e646148bc data/todecoins/loot_tables/trade_tables/misc/bone_meal_table.json
 c80c5c91e37c49d0cb777f77d17f45483cea8187 data/todecoins/loot_tables/trade_tables/misc/clay_table.json
 b925becaf5e96383b5b6d5bdb753fa6cfc059080 data/todecoins/loot_tables/trade_tables/misc/cooking_tools_table.json
+0e840cbd7cae3e81efacd2f7a2d7e4f08a3b3037 data/todecoins/loot_tables/trade_tables/misc/cups_tag_table.json
 4cb19070b49dcc96e58086a4182a3b8c33b421c3 data/todecoins/loot_tables/trade_tables/misc/dragon_breath_table.json
 d1ace1bbb0c5bd20d77a068c8b74612f17bea0dc data/todecoins/loot_tables/trade_tables/misc/dragon_head_table.json
 c2f5a615242ca0a9632d6a1b928615c91f18758a data/todecoins/loot_tables/trade_tables/misc/ender_pearl_table.json

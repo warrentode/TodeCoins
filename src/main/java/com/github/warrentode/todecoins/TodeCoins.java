@@ -11,6 +11,7 @@ import com.github.warrentode.todecoins.config.trades.beautify.BotanistTradesConf
 import com.github.warrentode.todecoins.config.trades.chefsdelight.ChefTradesConfig;
 import com.github.warrentode.todecoins.config.trades.chefsdelight.CookTradesConfig;
 import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
+import com.github.warrentode.todecoins.config.trades.kawaiidishes.BaristaTradesConfig;
 import com.github.warrentode.todecoins.config.trades.minecraft.*;
 import com.github.warrentode.todecoins.config.trades.morevillagers.*;
 import com.github.warrentode.todecoins.config.trades.sawmill.SawmillTradesConfig;
@@ -98,6 +99,8 @@ public class TodeCoins {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ChefTradesConfig.SPEC, MODID + "/trades/fastfooddelight/waiter.toml");
         // friendsandfoes trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BeekeeperTradesConfig.SPEC, MODID + "/trades/friendsandfoes/beekeeper.toml");
+        // kawaiidishes trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BaristaTradesConfig.SPEC, MODID + "/trades/kawaiidishes/barista.toml");
         // minecraft trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ArmorerTradesConfig.SPEC, MODID + "/trades/minecraft/armorer.toml");
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ButcherTradesConfig.SPEC, MODID + "/trades/minecraft/butcher.toml");

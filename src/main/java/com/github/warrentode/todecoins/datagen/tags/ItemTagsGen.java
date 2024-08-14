@@ -1620,6 +1620,61 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("fastfooddelight:chocolate_ice_cream")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:ice_cream")));
+        tag(ForgeTags.Items.KAWAII_DESSERTS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:milk_chocolate_bar")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:dark_chocolate_bar")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:white_chocolate_bar")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:glow_berry_milkshake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:mocha_milkshake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:coffee_milkshake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:napolitano_milkshake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:cream_milkshake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:chocolate_milkshake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:sweet_berry_milkshake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:glow_berry_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:mocha_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:coffee_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:chocolate_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:cream_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:napolitano_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:sweet_berry_ice_cream")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:piece_of_honey_cheesecake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:piece_of_chocolate_cheesecake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:piece_of_cheesecake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:piece_of_cake")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:brigadeiro")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:beijinho")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:chocolate_cookie")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:sweet_berry_cookie")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:honey_cookie")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:golden_cookie")));
         tag(ForgeTags.Items.FAST_FOOD_DRINKS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:iced_tea")))
@@ -1631,6 +1686,28 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("fastfooddelight:orange_soda")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:cola_soda")));
+        tag(ForgeTags.Items.KAWAII_DRINKS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:expresso_coffee")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:american_coffee")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:latte_coffee")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:mocha_coffee")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:macchiato_coffee")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:doppio_coffee")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:cappuccino_coffee")));
+        tag(ForgeTags.Items.KAWAII_CUPS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:mug")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:glass_cup")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("kawaiidishes:milkshake_cup")));
         tag(ForgeTags.Items.FAST_FOOD_SANDWICHES)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:chicken_wrap")))
@@ -1711,6 +1788,20 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:cantaloupe")))
                 .add(Items.PUMPKIN)
                 .add(Items.MELON);
+        tag(ForgeTags.Items.KAWAII_COFFEE_INGREDIENTS)
+                .add(Items.SUGAR)
+                .add(Items.COCOA_BEANS)
+                .add(Items.HONEY_BOTTLE)
+                .addTag(ForgeTags.Items.MILK)
+                .addTag(ForgeTags.Items.BERRIES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:cream_cheese")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:roasted_coffee_beans")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:roasted_cocoa_beans")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:dried_coffee_beans")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:dried_cocoa_beans")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:coffee_fruit")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:coffee_powder")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:cocoa_powder")));
         tag(ForgeTags.Items.BREAD)
                 .add(Items.BREAD)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tofucraft:steamed_bread")))

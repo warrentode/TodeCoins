@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-13T18:47:59.5160034	Tags for minecraft:item
+// 1.19.2	2024-08-14T00:53:24.0597658	Tags for minecraft:item
 8e2bc408dad83ed16a56b702b891e65363fab23b data/beautify/tags/items/bookstack.json
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
@@ -92,9 +92,13 @@ f7a8c659163fbac23438e07049cc42e0aa39eb9a data/forge/tags/items/ingots/netherite.
 2600368b9f58bb8fbfa496de5325d17c2a6025ed data/forge/tags/items/ingredients/bread.json
 b98916a5fe0160dc9d80a360961ec2ddbc784342 data/forge/tags/items/ingredients/cocoa.json
 401ebc22e5250fa26fa406e7e8a118b9b38d2cba data/forge/tags/items/ingredients/cooked_meats.json
+c3a09d6566fd7398cf52542b5dbef8af1cb738dd data/forge/tags/items/ingredients/kawaii_coffee.json
 c5c28dd67a9e3f6d37ebb3afacea1d9224f1f571 data/forge/tags/items/ingredients/raw_fishes.json
 69f49db92b07feecdb0bf9e3288b52adf02b18e0 data/forge/tags/items/ingredients/raw_meats.json
 a80223091f20c8bf855cff6a66b21f7d0aee345e data/forge/tags/items/ink.json
+d36271c0bd7e8f407654d6eac55a153e6dcab96f data/forge/tags/items/kawaii_cups.json
+631e5fc17cdce0e4fad9d0b49d8fbd9c324edf7a data/forge/tags/items/kawaii_desserts.json
+ce56ba13f0f3a6860ef629cd53f3f6b7426fded9 data/forge/tags/items/kawaii_drinks.json
 584497302bb063bf5aaf97a21f3bf0885301dec4 data/forge/tags/items/leather.json
 45f23e2cea883d909d37fd7963ec91fe16442d60 data/forge/tags/items/milk.json
 04a09640f8fa23ea3685312184077bd43766511f data/forge/tags/items/milk/milk.json

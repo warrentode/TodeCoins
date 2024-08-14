@@ -9,6 +9,17 @@
           "conditions": [
             {
               "condition": "todecoins:modloaded_condition",
+              "modid": "kawaiidishes"
+            }
+          ],
+          "expand": true,
+          "name": "forge:kawaii_drinks"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
               "modid": "fastfooddelight"
             }
           ],

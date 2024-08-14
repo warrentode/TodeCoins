@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": "kawaiidishes:expresso_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:american_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:latte_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:mocha_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:macchiato_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:doppio_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:cappuccino_coffee",
+      "required": false
+    }
+  ]
+}

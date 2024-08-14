@@ -1636,10 +1636,19 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.SHEPHERDS_PIE_BLOCK.get()))
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.STUFFED_PUMPKIN_BLOCK.get()))
                 ));
+        consumer.accept(TradeLootTables.COFFEE_INGREDIENTS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_COFFEE_INGREDIENTS)
+                                .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
+                ));
         consumer.accept(TradeLootTables.DRINKS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_DRINKS)
+                                .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
                         .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_DRINKS)
                                 .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
                         .add(TagEntry.expandTag(ForgeTags.Items.DRINKS))
@@ -1648,6 +1657,8 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_DESSERTS)
+                                .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
                         .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_DESSERTS)
                                 .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
                         .add(TagEntry.expandTag(ForgeTags.Items.DESSERTS))
@@ -1977,6 +1988,13 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.REDSTONE_TORCH)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.CUPS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GLASS_BOTTLE))
+                        .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_CUPS))
                 ));
         consumer.accept(TradeLootTables.COOKING_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()

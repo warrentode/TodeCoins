@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "kawaiidishes:mug",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:glass_cup",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:milkshake_cup",
+      "required": false
+    }
+  ]
+}

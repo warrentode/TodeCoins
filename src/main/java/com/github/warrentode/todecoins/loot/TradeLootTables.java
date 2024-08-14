@@ -116,6 +116,7 @@ public class TradeLootTables {
     public static final ResourceLocation PLATED_FOODS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/plated_foods_tag_table");
     public static final ResourceLocation DESSERT_TAG_TABLE = register(MODID + ":" + "trade_tables/food/dessert_tag_table");
     public static final ResourceLocation DRINKS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/drinks_tag_table");
+    public static final ResourceLocation COFFEE_INGREDIENTS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/coffee_ingredients_tag_table");
 
     // textiles
     public static final ResourceLocation TAGGED_WOOL_TABLE = register(MODID + ":" + "trade_tables/textiles/tagged_wool_table");
@@ -306,6 +307,7 @@ public class TradeLootTables {
     public static final ResourceLocation PATTERNS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/patterns_tag_table");
     public static final ResourceLocation TEXTILES_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/textiles_tag_table");
     public static final ResourceLocation COOKING_TOOLS_TABLE = register(MODID + ":" + "trade_tables/misc/cooking_tools_table");
+    public static final ResourceLocation CUPS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/cups_tag_table");
 
     // numismatist merchant specific offers loot tables
     public static final ResourceLocation NUMISMATIST_RARE_OFFERS =
