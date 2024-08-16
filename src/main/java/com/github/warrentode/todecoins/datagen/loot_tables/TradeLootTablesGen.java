@@ -1865,10 +1865,49 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.NETHER_WART)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
                 ));
-        consumer.accept(TradeLootTables.POTION_INGREDIENTS_TABLE,
+        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.SLIMEBALLS))
+                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SUGAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.FERMENTED_SPIDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.PUFFERFISH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SCUTE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT).when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH).when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.NETHER_WART)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
                 ));
@@ -1982,12 +2021,31 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.HOPPER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
+        consumer.accept(TradeLootTables.POISONOUS_POTATO_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.POISONOUS_POTATO)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
         consumer.accept(TradeLootTables.REDSTONE_TORCH_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.REDSTONE_TORCH)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.LEAVES_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.LEAVES))
+                ));
+        consumer.accept(TradeLootTables.ENCHANTABLE_PET_GEAR_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.ENCHANTABLE_PET_GEAR))
                 ));
         consumer.accept(TradeLootTables.PET_SUPPLIES_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()

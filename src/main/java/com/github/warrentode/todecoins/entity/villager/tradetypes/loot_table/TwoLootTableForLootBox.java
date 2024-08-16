@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LootBoxForTwoLootTable implements VillagerTrades.ItemListing {
+public class TwoLootTableForLootBox implements VillagerTrades.ItemListing {
     private final ItemStack lootChest;
     private final String displayName;
     private final ResourceLocation currencyLootTable1;
@@ -34,7 +34,7 @@ public class LootBoxForTwoLootTable implements VillagerTrades.ItemListing {
     private final float priceMultiplier;
     private final ResourceLocation lootTable;
 
-    public LootBoxForTwoLootTable(ItemStack lootChest, String displayName, ResourceLocation lootTable,
+    public TwoLootTableForLootBox(ItemStack lootChest, String displayName, ResourceLocation lootTable,
                                   ResourceLocation currencyLootTable1, ResourceLocation currencyLootTable2,
                                   int maxUses, int xpValue, float priceMultiplier) {
         this.lootChest = lootChest;

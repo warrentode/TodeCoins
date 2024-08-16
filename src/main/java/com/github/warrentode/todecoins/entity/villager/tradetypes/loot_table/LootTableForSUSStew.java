@@ -1,33 +1,39 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table;
 
-import com.google.common.collect.Lists;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
-public class DyedArmorForLootTable implements VillagerTrades.ItemListing {
+public class LootTableForSUSStew implements VillagerTrades.ItemListing {
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
+    private final MobEffect effect;
+    private final int duration;
     private final ResourceLocation requestTable;
-    private final ResourceLocation offerTable;
 
-    public DyedArmorForLootTable(ResourceLocation requestTable, ResourceLocation offerTable, int maxUses, int xpValue, float priceMultiplier) {
+    public LootTableForSUSStew(MobEffect effect, int duration, ResourceLocation requestTable, int maxUses, int xpValue, float priceMultiplier) {
+        this.effect = effect;
+        this.duration = duration;
         this.requestTable = requestTable;
-        this.offerTable = offerTable;
         this.maxUses = maxUses;
         this.xpValue = xpValue;
         this.priceMultiplier = priceMultiplier;
@@ -42,7 +48,6 @@ public class DyedArmorForLootTable implements VillagerTrades.ItemListing {
         else {
             MinecraftServer minecraftServer = trader.level.getServer();
             LootTable requestedTable = minecraftServer.getLootTables().get(requestTable);
-            LootTable offeredTable = minecraftServer.getLootTables().get(offerTable);
 
             LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())
                     .withParameter(LootContextParams.ORIGIN, trader.position())
@@ -50,35 +55,26 @@ public class DyedArmorForLootTable implements VillagerTrades.ItemListing {
                     .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
 
             List<ItemStack> requested = requestedTable.getRandomItems(lootContext);
-            List<ItemStack> offered = offeredTable.getRandomItems(lootContext);
 
             ItemStack requestStack = new ItemStack(
                     requested.get(source.nextInt(requested.size())).getItem(),
                     requested.get(source.nextInt(requested.size())).getCount());
 
-            ItemStack offerStack = new ItemStack(
-                    offered.get(source.nextInt(offered.size())).getItem(),
-                    offered.get(source.nextInt(offered.size())).getCount());
+            ItemStack offeredBowl = new ItemStack(Items.SUSPICIOUS_STEW, 1);
+            saveMobEffect(offeredBowl, this.effect, this.duration);
 
-            if (offerStack.getItem() instanceof DyeableArmorItem) {
-                List<DyeItem> list = Lists.newArrayList();
-                list.add(getRandomDye(source));
-                if (source.nextFloat() > 0.7F) {
-                    list.add(getRandomDye(source));
-                }
-
-                if (source.nextFloat() > 0.8F) {
-                    list.add(getRandomDye(source));
-                }
-
-                offerStack = DyeableLeatherItem.dyeArmor(offerStack, list);
-            }
-
-            return new MerchantOffer(requestStack, offerStack, this.maxUses, this.xpValue, this.priceMultiplier);
+            return new MerchantOffer(requestStack, offeredBowl, this.maxUses, this.xpValue, this.priceMultiplier);
         }
     }
 
-    private static DyeItem getRandomDye(RandomSource pRandom) {
-        return DyeItem.byColor(DyeColor.byId(pRandom.nextInt(16)));
+    public void saveMobEffect(ItemStack bowlStack, MobEffect mobEffect, int effectDuration) {
+        CompoundTag compoundTag = bowlStack.getOrCreateTag();
+        ListTag listTag = compoundTag.getList("Effects", 9);
+        CompoundTag compoundTag1 = new CompoundTag();
+        compoundTag1.putInt("EffectId", MobEffect.getId(mobEffect));
+        ForgeHooks.saveMobEffect(compoundTag1, "forge:effect_id", mobEffect);
+        compoundTag1.putInt("EffectDuration", effectDuration);
+        listTag.add(compoundTag1);
+        compoundTag.put("Effects", listTag);
     }
 }

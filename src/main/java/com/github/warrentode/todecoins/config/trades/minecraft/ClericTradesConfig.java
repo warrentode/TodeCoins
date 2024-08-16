@@ -139,7 +139,7 @@ public class ClericTradesConfig {
         CLERIC_5_REQUEST_1 = BUILDER
                 .comment(" Cleric 5 Trade Request 1 Table")
                 .define("cleric_5_trade_request_1_table",
-                        TradeLootTables.POTION_INGREDIENTS_TABLE.toString());
+                        TradeLootTables.ONE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE.toString());
         CLERIC_5_OFFER_1 = BUILDER
                 .comment(" Cleric 5 Trade Offer 1 Table")
                 .define("cleric_5_trade_offer_1_table",

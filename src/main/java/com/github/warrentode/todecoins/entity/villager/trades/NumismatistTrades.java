@@ -53,7 +53,7 @@ public class NumismatistTrades {
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     ),
                                     // offer a map for a season coin
-                                    new MapForLootTables(
+                                    new TwoLootTableForMap(
                                             ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistTradeRequest3A()),
                                             ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistTradeRequest3B()),
                                             CommonConfig.getStructureTag(NumismatistTradesConfig.getNumismatistTrade3StructureTag()),
@@ -69,7 +69,7 @@ public class NumismatistTrades {
                                             CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP, priceMultiplier
                                     ),
                                     // offer a coin pack in a shulker box for 2 coins
-                                    new LootBoxForTwoLootTable(
+                                    new TwoLootTableForLootBox(
                                             Items.SHULKER_BOX.getDefaultInstance(),
                                             NumismatistTradesConfig.getNumismatistLootBoxDisplayName(),
                                             ResourceLocation.tryParse(NumismatistTradesConfig.getNumismatistLootBoxLootTable()),
@@ -115,7 +115,7 @@ public class NumismatistTrades {
                                             maxUses, baseXP, priceMultiplier
                                     ),
                                     // offer a map for a season coin
-                                    new MapForLootTables(
+                                    new TwoLootTableForMap(
                                             ModBuiltInLootTables.MYSTERY_COIN_PACK,
                                             TradeLootTables.COMPASS_TABLE,
                                             ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS,
@@ -130,7 +130,7 @@ public class NumismatistTrades {
                                             maxUses, baseXP, priceMultiplier
                                     ),
                                     // offer a coin pack in a shulker box for 2 coins
-                                    new LootBoxForTwoLootTable(
+                                    new TwoLootTableForLootBox(
                                             Items.SHULKER_BOX.getDefaultInstance(),
                                             "tooltips.collectible_coin_pack",
                                             ModBuiltInLootTables.MYSTERY_COIN_PACK,

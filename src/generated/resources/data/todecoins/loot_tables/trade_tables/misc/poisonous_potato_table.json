@@ -9,11 +9,11 @@
           "functions": [
             {
               "add": false,
-              "count": 22.0,
+              "count": 6.0,
               "function": "minecraft:set_count"
             }
           ],
-          "name": "minecraft:nether_wart"
+          "name": "minecraft:poisonous_potato"
         }
       ],
       "rolls": 1.0

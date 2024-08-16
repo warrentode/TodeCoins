@@ -166,7 +166,9 @@ public class TradeLootTables {
     public static final ResourceLocation SLIMEBALL_TAG_TABLE = register(MODID + ":" + "trade_tables/mob_parts/slimeball_tag_table");
 
     // brewing
-    public static final ResourceLocation POTION_INGREDIENTS_TABLE = register(MODID + ":" + "trade_tables/brewing/potion_ingredients_table");
+    public static final ResourceLocation ONE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE = register(MODID + ":" + "trade_tables/brewing/one_emerald_value_potion_ingredients_table");
+    public static final ResourceLocation FIVE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE = register(MODID + ":" + "trade_tables/brewing/five_emerald_value_potion_ingredients_table");
+    public static final ResourceLocation TEN_EMERALD_VALUE_POTION_INGREDIENTS_TABLE = register(MODID + ":" + "trade_tables/brewing/ten_emerald_value_potion_ingredients_table");
     public static final ResourceLocation EXPERIENCE_BOTTLE_TABLE = register(MODID + ":" + "trade_tables/brewing/experience_bottle_table");
     public static final ResourceLocation GHAST_TEAR_TABLE = register(MODID + ":" + "trade_tables/brewing/ghast_tear_table");
     public static final ResourceLocation NETHER_WART_TABLE = register(MODID + ":" + "trade_tables/brewing/nether_wart_table");
@@ -311,6 +313,8 @@ public class TradeLootTables {
     public static final ResourceLocation CUPS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/cups_tag_table");
     public static final ResourceLocation PET_SUPPLIES_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/pet_supplies_tag_table");
     public static final ResourceLocation ENCHANTABLE_PET_GEAR_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/enchantable_pet_gear_tag_table");
+    public static final ResourceLocation LEAVES_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/leaves_tag_table");
+    public static final ResourceLocation POISONOUS_POTATO_TABLE = register(MODID + ":" + "trade_tables/misc/poisonous_potato_table");
 
     // numismatist merchant specific offers loot tables
     public static final ResourceLocation NUMISMATIST_RARE_OFFERS =

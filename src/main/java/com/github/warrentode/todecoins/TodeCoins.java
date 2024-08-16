@@ -25,6 +25,8 @@ import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTra
 import com.github.warrentode.todecoins.config.trades.todevillagers.GlassblowerTradesConfig;
 import com.github.warrentode.todecoins.config.trades.todevillagers.RetiredTraderTradesConfig;
 import com.github.warrentode.todecoins.config.trades.villager_enchanter.EnchanterTradesConfig;
+import com.github.warrentode.todecoins.config.trades.villagersplus.AlchemistTradesConfig;
+import com.github.warrentode.todecoins.config.trades.villagersplus.HorticulturistTradesConfig;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
@@ -142,6 +144,10 @@ public class TodeCoins {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DiscJockeyTradesConfig.SPEC, MODID + "/trades/todevillagers/disc_jockey.toml");
         // villager_enchanter trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EnchanterTradesConfig.SPEC, MODID + "/trades/villager_enchanter/enchanter.toml");
+        // villagersplus trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AlchemistTradesConfig.SPEC, MODID + "/trades/villagersplus/alchemist.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, HorticulturistTradesConfig.SPEC, MODID + "/trades/villagersplus/horticulturist.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, com.github.warrentode.todecoins.config.trades.villagersplus.OceanographerTradesConfig.SPEC, MODID + "/trades/villagersplus/oceanographer.toml");
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
