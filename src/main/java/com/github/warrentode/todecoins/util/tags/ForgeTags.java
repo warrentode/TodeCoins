@@ -168,6 +168,10 @@ public class ForgeTags {
         public static final TagKey<Item> KAWAII_DRINKS = forgeItemTag("forge", "kawaii_drinks");
         public static final TagKey<Item> KAWAII_CUPS = forgeItemTag("forge", "kawaii_cups");
 
+        public static final TagKey<Item> PET_FOOD = forgeItemTag("forge", "pet_food");
+        public static final TagKey<Item> PET_SUPPLIES = forgeItemTag("forge", "pet_supplies");
+        public static final TagKey<Item> ENCHANTABLE_PET_GEAR = forgeItemTag("forge", "enchantable_pet_gear");
+
         public static final TagKey<Item> INGREDIENTS = forgeItemTag("forge", "ingredients");
 
         public static final TagKey<Item> BREAD = forgeItemTag("forge", "ingredients/bread");

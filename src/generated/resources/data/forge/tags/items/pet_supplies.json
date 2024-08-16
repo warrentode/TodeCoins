@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "domesticationinnovation:feather_on_a_stick",
+      "required": false
+    },
+    {
+      "id": "domesticationinnovation:collar_tag",
+      "required": false
+    },
+    {
+      "id": "domesticationinnovation:deed_of_ownership",
+      "required": false
+    },
+    {
+      "id": "domesticationinnovation:wayward_lantern",
+      "required": false
+    },
+    {
+      "id": "domesticationinnovation:drum",
+      "required": false
+    },
+    {
+      "id": "supplementaries:flute",
+      "required": false
+    },
+    {
+      "id": "leashed:diamond_lead",
+      "required": false
+    },
+    "minecraft:lead",
+    "minecraft:warped_fungus_on_a_stick",
+    "minecraft:carrot_on_a_stick",
+    "minecraft:saddle"
+  ]
+}

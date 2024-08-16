@@ -28,6 +28,7 @@ public class CommonConfig {
     public static final ForgeConfigSpec.IntValue RARE_MAX_USES;
     public static final ForgeConfigSpec.DoubleValue PRICE_MULTIPLIER;
     public static final ForgeConfigSpec.DoubleValue RARE_PRICE_MULTIPLIER;
+    public static final ForgeConfigSpec.BooleanValue ALLOW_TREASURE_ENCHANTMENTS;
 
     // general trade variable setters
     static {
@@ -62,6 +63,9 @@ public class CommonConfig {
         MAX_WANDERER_COMMON_TRADES = BUILDER
                 .comment(" Max Wandering Trader Common Trades per Level")
                 .defineInRange("max_wanderer_common_trades", 5, 0, Integer.MAX_VALUE);
+        ALLOW_TREASURE_ENCHANTMENTS = BUILDER
+                .comment(" Allow Treasure Enchantments in Trades")
+                .define("allow_treasure_enchantments", false);
         BUILDER.pop();
 
         SPEC = BUILDER.build();
@@ -146,6 +150,14 @@ public class CommonConfig {
         }
         else {
             return MAX_WANDERER_COMMON_TRADES.get();
+        }
+    }
+    public static Boolean getAllowTreasureEnchantments() {
+        if (Objects.equals(ALLOW_TREASURE_ENCHANTMENTS.get(), ALLOW_TREASURE_ENCHANTMENTS.getDefault())) {
+            return USE_MOD_TRADES.getDefault();
+        }
+        else {
+            return ALLOW_TREASURE_ENCHANTMENTS.get();
         }
     }
 

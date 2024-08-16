@@ -1,0 +1,28 @@
+{
+  "values": [
+    "minecraft:tropical_fish",
+    "minecraft:bone",
+    "minecraft:carrot",
+    "minecraft:golden_carrot",
+    "minecraft:hay_block",
+    "minecraft:spider_eye",
+    "#minecraft:fox_food",
+    "#forge:ingredients/raw_meats",
+    {
+      "id": "domesticationinnovation:rotten_apple",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:dog_food",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:horse_feed",
+      "required": false
+    },
+    {
+      "id": "supplementaries:sugar_cube",
+      "required": false
+    }
+  ]
+}

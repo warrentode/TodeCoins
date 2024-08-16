@@ -1989,6 +1989,13 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.REDSTONE_TORCH)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
+        consumer.accept(TradeLootTables.PET_SUPPLIES_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.PET_BEDS))
+                        .add(TagEntry.expandTag(ForgeTags.Items.PET_SUPPLIES))
+                ));
         consumer.accept(TradeLootTables.CUPS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))

@@ -8,6 +8,7 @@ import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.Pot
 import com.github.warrentode.todecoins.config.trades.beautify.BotanistTradesConfig;
 import com.github.warrentode.todecoins.config.trades.chefsdelight.ChefTradesConfig;
 import com.github.warrentode.todecoins.config.trades.chefsdelight.CookTradesConfig;
+import com.github.warrentode.todecoins.config.trades.domesticationinnovation.AnimalTamerTradesConfig;
 import com.github.warrentode.todecoins.config.trades.fastfooddelight.WaiterTradesConfig;
 import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
 import com.github.warrentode.todecoins.config.trades.kawaiidishes.BaristaTradesConfig;
@@ -63,7 +64,6 @@ public class ModVillagerTrades {
     //TODO: merge todepiglin with todecoins
     //TODO: add todepiglin trades
 
-    //TODO: add domesticationinnovation trades
     //TODO: add villagersplus trades
     //TODO: add dynamicvillage (create) trades
 
@@ -74,6 +74,133 @@ public class ModVillagerTrades {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             if (CommonConfig.getCustomTrades()) {
+                // DomesticationInnovation mod trades
+                if (ModList.get().isLoaded("animal_tamer")) {
+                    if (REPLACE_TRADES) {
+                        trades.get(novice).clear();
+                        trades.get(apprentice).clear();
+                        trades.get(journeyman).clear();
+                        trades.get(expert).clear();
+                        trades.get(master).clear();
+                    }
+
+                    for (int i = 0; i < CommonConfig.getMaxVillagerTrades(); ++i) {
+                        trades.get(novice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer1Request1()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer1Offer1()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(novice).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer1Request2()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer1Offer2()),
+                                AnimalTamerTradesConfig.getAnimalTamer1Offer2Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(apprentice).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer2Request1()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer2Offer1()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(apprentice).add(new TagTableForLootTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer2Request2()),
+                                AnimalTamerTradesConfig.getAnimalTamer2Request2Count(),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer2Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(journeyman).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Request1()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Offer1()),
+                                AnimalTamerTradesConfig.getAnimalTamer3Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(journeyman).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Request2()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Request1()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Offer1()),
+                                AnimalTamerTradesConfig.getAnimalTamer3Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Request2()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(expert).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Request1()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Offer1()),
+                                AnimalTamerTradesConfig.getAnimalTamer3Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(expert).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Request2()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+
+                        trades.get(master).add(new LootTableForTagTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer4Request1()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer4Offer1()),
+                                AnimalTamerTradesConfig.getAnimalTamer3Offer1Count(),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                        trades.get(master).add(new LootTableForLootTable(
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer5Request2()),
+                                ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer5Offer2()),
+                                CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
+                                CONFIG_COMMON_TRADE_MULTIPLIER
+                        ));
+                    }
+                    // enchanted pet gear trades
+                    trades.get(novice).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer1Offer3()),
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer1Request3()),
+                            CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * novice,
+                            CONFIG_RARE_MAX_TRADES
+                    ));
+                    trades.get(apprentice).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer2Offer3()),
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer2Request3()),
+                            CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                            CONFIG_RARE_MAX_TRADES
+                    ));
+                    trades.get(journeyman).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Offer3()),
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer3Request3()),
+                            CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                            CONFIG_RARE_MAX_TRADES
+                    ));
+                    trades.get(expert).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer4Offer3()),
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer4Request3()),
+                            CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * expert,
+                            CONFIG_RARE_MAX_TRADES
+                    ));
+                    trades.get(master).add(new LootTableForEnchantedTable(
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer5Offer3()),
+                            ResourceLocation.tryParse(AnimalTamerTradesConfig.getAnimalTamer5Request3()),
+                            CONFIG_RARE_MAX_TRADES, CONFIG_BASE_XP * master,
+                            CONFIG_RARE_MAX_TRADES
+                    ));
+                }
                 // KawaiiDishes mod trades
                 if (ModList.get().isLoaded("barista")) {
                     if (REPLACE_TRADES) {

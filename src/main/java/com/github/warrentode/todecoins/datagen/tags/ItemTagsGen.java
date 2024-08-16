@@ -59,6 +59,39 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.PET_BEDS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_yellow")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_white")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_red")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_purple")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_pink")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_orange")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_magenta")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_lime")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_light_gray")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_light_blue")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_green")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_gray")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_cyan")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_brown")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_blue")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:pet_bed_black")));
         tag(ModTags.Items.HANGING_POT)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:hanging_pot")));
@@ -1326,6 +1359,49 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerForgeTags() {
+        tag(ForgeTags.Items.ENCHANTABLE_PET_GEAR)
+                .add(Items.DIAMOND_HORSE_ARMOR)
+                .add(Items.GOLDEN_HORSE_ARMOR)
+                .add(Items.IRON_HORSE_ARMOR)
+                .add(Items.LEATHER_HORSE_ARMOR)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:collar_tag")));
+        tag(ForgeTags.Items.PET_SUPPLIES)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:feather_on_a_stick")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:collar_tag")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:deed_of_ownership")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:wayward_lantern")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:drum")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("supplementaries:flute")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("leashed:diamond_lead")))
+                .add(Items.LEAD)
+                .add(Items.WARPED_FUNGUS_ON_A_STICK)
+                .add(Items.CARROT_ON_A_STICK)
+                .add(Items.SADDLE);
+        tag(ForgeTags.Items.PET_FOOD)
+                .add(Items.TROPICAL_FISH)
+                .add(Items.BONE)
+                .add(Items.CARROT)
+                .add(Items.GOLDEN_CARROT)
+                .add(Items.HAY_BLOCK)
+                .add(Items.SPIDER_EYE)
+                .addTag(ItemTags.FOX_FOOD)
+                .addTag(ForgeTags.Items.RAW_MEATS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("domesticationinnovation:rotten_apple")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("farmersdelight:dog_food")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("farmersdelight:horse_feed")))
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("supplementaries:sugar_cube")));
         tag(ForgeTags.Items.INGREDIENTS)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.TOMATO_SAUCE.get())

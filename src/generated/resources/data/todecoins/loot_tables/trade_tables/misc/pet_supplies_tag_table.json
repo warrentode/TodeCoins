@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "domesticationinnovation:pet_beds"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:pet_supplies"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

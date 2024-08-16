@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table;
 
+import com.github.warrentode.todecoins.config.CommonConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -58,7 +59,8 @@ public class LootTableForEnchantedTable implements VillagerTrades.ItemListing {
 
             int i = 5 + source.nextInt(15);
             ItemStack offerStack = EnchantmentHelper.enchantItem(source,
-                    new ItemStack(enchantStack.get(source.nextInt(enchantStack.size())).getItem()), i, false);
+                    new ItemStack(enchantStack.get(source.nextInt(enchantStack.size())).getItem()), i,
+                    CommonConfig.getAllowTreasureEnchantments());
 
             return new MerchantOffer(requestStack, offerStack, this.maxUses, this.xpValue, this.priceMultiplier);
         }
