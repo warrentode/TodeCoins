@@ -64,8 +64,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_1_trade_offer_1_table",
                         TradeLootTables.COPPER_MATERIALS_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_1_OFFER_1_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_1_trade_offer_1_count",
-                        9, 1, 64);
+                .defineInRange("hydraulic_engineer_1_trade_offer_1_count", 9, 1, 64);
         BUILDER.pop();
         BUILDER.push("Hydraulic Engineer Level One Trade TWo");
         HYDRAULIC_ENGINEER_1_REQUEST_2 = BUILDER
@@ -87,7 +86,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_1_trade_offer_2_table",
                         TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_1_OFFER_3_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_1_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("hydraulic_engineer_1_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Hydraulic Engineer Level One Trade Four");
         HYDRAULIC_ENGINEER_1_REQUEST_4 = BUILDER
@@ -120,8 +119,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_2_trade_offer_1_table",
                         TradeLootTables.COPPER_MATERIALS_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_2_OFFER_1_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_2_trade_offer_1_count",
-                        9, 1, 64);
+                .defineInRange("hydraulic_engineer_2_trade_offer_1_count", 9, 1, 64);
         BUILDER.pop();
         BUILDER.push("Hydraulic Engineer Level Two Trade TWo");
         HYDRAULIC_ENGINEER_2_REQUEST_2 = BUILDER
@@ -133,7 +131,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_2_trade_offer_2_table",
                         TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_2_OFFER_2_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_2_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("hydraulic_engineer_2_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Hydraulic Engineer Level Three Trade One");
@@ -146,8 +144,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_3_trade_offer_1_table",
                         TradeLootTables.COPPER_MATERIALS_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_3_OFFER_1_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_3_trade_offer_1_count",
-                        9, 1, 64);
+                .defineInRange("hydraulic_engineer_3_trade_offer_1_count", 9, 1, 64);
         BUILDER.pop();
         BUILDER.push("Hydraulic Engineer Level Three Trade TWo");
         HYDRAULIC_ENGINEER_3_REQUEST_2 = BUILDER
@@ -159,7 +156,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_3_trade_offer_2_table",
                         TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_3_OFFER_2_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_3_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("hydraulic_engineer_3_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Hydraulic Engineer Level Four Trade One");
@@ -172,7 +169,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_4_trade_offer_1_table",
                         TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_4_OFFER_1_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_4_trade_offer_1_table", 1, 1, 64);
+                .defineInRange("hydraulic_engineer_4_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Hydraulic Engineer Level Four Trade TWo");
         HYDRAULIC_ENGINEER_4_REQUEST_2 = BUILDER
@@ -184,7 +181,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_4_trade_offer_2_table",
                         TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_4_OFFER_2_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_4_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("hydraulic_engineer_4_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Hydraulic Engineer Level Five Trade One");
@@ -197,7 +194,7 @@ public class HydraulicEngineerTradesConfig {
                 .define("hydraulic_engineer_5_trade_offer_1_table",
                         TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE.toString());
         HYDRAULIC_ENGINEER_5_OFFER_1_COUNT = BUILDER
-                .defineInRange("hydraulic_engineer_5_trade_offer_1_table", 1, 1, 64);
+                .defineInRange("hydraulic_engineer_5_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Hydraulic Engineer Level Five Trade TWo");
         HYDRAULIC_ENGINEER_5_REQUEST_2 = BUILDER

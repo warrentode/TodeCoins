@@ -129,7 +129,7 @@ public class HorticulturistTradesConfig {
                 .define("horticulturist_1_trade_offer_2_table",
                         TradeLootTables.SEED_TAG_TABLE.toString());
         HORTICULTURIST_1_OFFER_2_COUNT = BUILDER
-                .defineInRange("horticulturist_1_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("horticulturist_1_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Horticulturist Level One Trade Three");
         HORTICULTURIST_1_REQUEST_3 = BUILDER
@@ -214,7 +214,7 @@ public class HorticulturistTradesConfig {
                 .define("horticulturist_2_trade_offer_2_table",
                         TradeLootTables.SEED_TAG_TABLE.toString());
         HORTICULTURIST_2_OFFER_2_COUNT = BUILDER
-                .defineInRange("horticulturist_2_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("horticulturist_2_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Horticulturist Level Two Trade Three");
         HORTICULTURIST_2_REQUEST_3 = BUILDER
@@ -299,7 +299,7 @@ public class HorticulturistTradesConfig {
                 .define("horticulturist_3_trade_offer_2_table",
                         TradeLootTables.SEED_TAG_TABLE.toString());
         HORTICULTURIST_3_OFFER_2_COUNT = BUILDER
-                .defineInRange("horticulturist_3_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("horticulturist_3_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Horticulturist Level Three Trade Three");
         HORTICULTURIST_3_REQUEST_3 = BUILDER
@@ -384,7 +384,7 @@ public class HorticulturistTradesConfig {
                 .define("horticulturist_4_trade_offer_2_table",
                         TradeLootTables.SEED_TAG_TABLE.toString());
         HORTICULTURIST_4_OFFER_2_COUNT = BUILDER
-                .defineInRange("horticulturist_4_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("horticulturist_4_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Horticulturist Level Four Trade Three");
         HORTICULTURIST_4_REQUEST_3 = BUILDER
@@ -469,7 +469,7 @@ public class HorticulturistTradesConfig {
                 .define("horticulturist_5_trade_offer_2_table",
                         TradeLootTables.SEED_TAG_TABLE.toString());
         HORTICULTURIST_5_OFFER_2_COUNT = BUILDER
-                .defineInRange("horticulturist_5_trade_offer_2_table", 1, 1, 64);
+                .defineInRange("horticulturist_5_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Horticulturist Level Five Trade Three");
         HORTICULTURIST_5_REQUEST_3 = BUILDER
