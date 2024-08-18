@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glass_bottle"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:kawaii_cups"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

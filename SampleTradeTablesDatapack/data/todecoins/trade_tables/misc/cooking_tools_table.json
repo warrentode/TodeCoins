@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:tools/knives"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:cutting_board"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "farmersdelight:cooking_pot"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

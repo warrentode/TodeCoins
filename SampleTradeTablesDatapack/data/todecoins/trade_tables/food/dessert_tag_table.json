@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "kawaiidishes"
+            }
+          ],
+          "expand": true,
+          "name": "forge:kawaii_desserts"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "fastfooddelight"
+            }
+          ],
+          "expand": true,
+          "name": "forge:fast_food_desserts"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:desserts"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

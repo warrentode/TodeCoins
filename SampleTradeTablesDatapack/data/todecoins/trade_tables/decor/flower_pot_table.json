@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 3.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:flower_pot"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "expand": true,
+          "name": "supplementaries:flower_box"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "beautify"
+            }
+          ],
+          "expand": true,
+          "name": "beautify:hanging_pot"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

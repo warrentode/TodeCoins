@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_axe"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "farmersdelight"
+            }
+          ],
+          "name": "farmersdelight:diamond_knife"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

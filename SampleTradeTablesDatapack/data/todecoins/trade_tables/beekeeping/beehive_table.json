@@ -1,0 +1,131 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bee_nest"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:beehive"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "friendsandfoes"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_acacia"
+            }
+          ],
+          "name": "friendsandfoes:acacia_beehive"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "friendsandfoes"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_birch"
+            }
+          ],
+          "name": "friendsandfoes:birch_beehive"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "friendsandfoes"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_crimson_fungus"
+            }
+          ],
+          "name": "friendsandfoes:crimson_beehive"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "friendsandfoes"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_warped_fungus"
+            }
+          ],
+          "name": "friendsandfoes:warped_beehive"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "friendsandfoes"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_dark_oak"
+            }
+          ],
+          "name": "friendsandfoes:dark_oak_beehive"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "friendsandfoes"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_jungle"
+            }
+          ],
+          "name": "friendsandfoes:jungle_beehive"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "friendsandfoes"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_mangrove"
+            }
+          ],
+          "name": "friendsandfoes:mangrove_beehive"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "friendsandfoes"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_spruce"
+            }
+          ],
+          "name": "friendsandfoes:spruce_beehive"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

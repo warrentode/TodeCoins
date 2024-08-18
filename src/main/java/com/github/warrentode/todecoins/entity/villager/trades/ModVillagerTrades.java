@@ -67,11 +67,6 @@ public class ModVillagerTrades {
     static float CONFIG_RARE_TRADE_MULTIPLIER = (float) CommonConfig.getRareTradeMultiplier();
     static boolean REPLACE_TRADES = CommonConfig.getReplaceTrades();
 
-    //TODO: merge todepiglin with todecoins
-    //TODO: add todepiglin trades
-
-    //TODO: add dynamicvillage (create) trades
-
     @Mod.EventBusSubscriber(modid = MODID)
     public static class ForgeEvents {
         @SubscribeEvent

@@ -83,7 +83,6 @@ public class TwoLootTableForLootBox implements VillagerTrades.ItemListing {
     }
 
     public BlockEntity getBlockEntity() {
-        //TODO: add loot table block tag and revise this to use that instead
         ItemStack stack = this.lootChest.getItem().getDefaultInstance();
         if (stack == Items.TRAPPED_CHEST.getDefaultInstance()) {
             return new TrappedChestBlockEntity(BlockPos.ZERO, Blocks.TRAPPED_CHEST.defaultBlockState());
