@@ -1,7 +1,16 @@
-// 1.19.2	2024-08-15T21:56:27.6825768	Tags for minecraft:item
+// 1.19.2	2024-08-18T04:06:49.862037	Tags for minecraft:item
 8e2bc408dad83ed16a56b702b891e65363fab23b data/beautify/tags/items/bookstack.json
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
+6aa57f8b28d61afb5955ec71b1940f7a50f80d9e data/create/tags/items/copper_diving_gear.json
+48a0b84c1938c7aa4c6e68661190ce5f186a2d4c data/create/tags/items/equipment/hydraulic.json
+ffb9de977b064eba657b87e38eabbbf60f1b9f84 data/create/tags/items/equipment/mechanical.json
+d87994869677900ead4d020a084c54bd2fbc0e4d data/create/tags/items/equipment/mining.json
+706e1a828816a7f4ec609081f03bcdb7902b9a1b data/create/tags/items/equipment/train.json
+36a42907f322b175934b1e539b45657f653e75ab data/create/tags/items/goggle.json
+85cfc7478b28c66b06dddad346d33aa63b003889 data/create/tags/items/materials/copper.json
+5f4e31d2fa982c1c94164518bd76d944544d366e data/create/tags/items/materials/iron.json
+ff9a4d4805a838a0470450eaf4e42d61599caf26 data/create/tags/items/materials/zinc.json
 2fd0dffcf31024f4fae16517342db1059a00d07e data/curios/tags/items/belt.json
 81f6cb213680b16953c427121c7b66c203384f53 data/curios/tags/items/charm.json
 1780c2a85ccab18a9cc7c6723ebb5a6c4fb2122c data/domesticationinnovation/tags/items/pet_beds.json
@@ -86,6 +95,7 @@ b525f19b281ccbd139bd1563299c6e2a2aebf4ec data/forge/tags/items/gourds.json
 2a4fe874325f4d4cfa1cf87c7271932d363fcd72 data/forge/tags/items/guide_books.json
 6bbf2021a2f6b6a21fc45c80637b7cfb6dbd79f5 data/forge/tags/items/ingots.json
 6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/forge/tags/items/ingots/copper.json
+040f418d31bfdf28c28d8fc566495ecee4e3ae5a data/forge/tags/items/ingots/create_ingots.json
 666c1ccba339cca0c11121d875e645753a838d48 data/forge/tags/items/ingots/endonian_ingot.json
 f2aa87f54e7951ea0cf81ac252c2abe279b0c936 data/forge/tags/items/ingots/gold.json
 736f4ef35696340b932cdb679c5a32e7b28db783 data/forge/tags/items/ingots/iron.json
@@ -163,7 +173,9 @@ c95c455fe4e6a7c8c1a280e27f6957acdeb9e2f3 data/forge/tags/items/textiles/fabric.j
 6bb01ece43dc060b7f6e508c68ea0179c30e853f data/forge/tags/items/textiles/string.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/textiles/thread.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/tools/chisels.json
+22f531fe2b52e09b02b75df2a309a99842126810 data/forge/tags/items/tools/engineer_tools.json
 dfae1adbe3cdcfe71de34baac625074a69bfd8f7 data/forge/tags/items/tools/knives.json
+abc74db62e55f86d4fc853a8ec90cda2d5055647 data/forge/tags/items/tools/wrench.json
 e199d3ab5411e637e6ee5c576a46d7f243cfeba4 data/hauntedharvest/tags/items/candy.json
 771a6a57c6423ef7bfde3dc7197a239176ecb4e8 data/hauntedharvest/tags/items/sweets.json
 ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json

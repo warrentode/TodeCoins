@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "create:crushed_raw_iron",
+      "required": false
+    },
+    {
+      "id": "create:iron_sheet",
+      "required": false
+    }
+  ]
+}

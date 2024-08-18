@@ -85,7 +85,7 @@ public class OceanographerTradesConfig {
                 .define("oceanographer_2_trade_offer_2_table",
                         TradeLootTables.CORAL_BLOCK_TAG_TABLE.toString());
         OCEANOGRAPHER_2_OFFER_2_COUNT = BUILDER
-                .define("oceanographer_2_trade_offer_2_count", 1);
+                .defineInRange("oceanographer_2_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Oceanographer Level Three Trade One")

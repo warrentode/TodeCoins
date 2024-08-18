@@ -80,7 +80,7 @@ public class CartographerTradesConfig {
                 .define("cartographer_2_trade_request_1_table",
                         TradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
         CARTOGRAPHER_2_REQUEST_1_COUNT = BUILDER
-                .define("cartographer_2_trade_request_1_count", 16);
+                .defineInRange("cartographer_2_trade_request_1_count", 16, 1, 64);
         CARTOGRAPHER_2_OFFER_1 = BUILDER
                 .comment(" Cartographer 2 Trade Offer 1 Table")
                 .define("cartographer_2_trade_offer_1_table",
@@ -172,7 +172,7 @@ public class CartographerTradesConfig {
                 .define("cartographer_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_BANNER_TABLE.toString());
         CARTOGRAPHER_4_OFFER_2_COUNT = BUILDER
-                .define("cartographer_4_trade_offer_2_count", 3);
+                .defineInRange("cartographer_4_trade_offer_2_count", 3, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Cartographer Level Five Trade One");

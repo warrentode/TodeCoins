@@ -55,7 +55,7 @@ public class CookTradesConfig {
                 .define("cook_1_trade_offer_1_table",
                         TradeLootTables.INGREDIENTS_TAG_TABLE.toString());
         COOK_1_REQUEST_1_COUNT = BUILDER
-                .define("cook_1_trade_request_1_count", 16);
+                .defineInRange("cook_1_trade_request_1_count", 16, 1, 64);
         COOK_1_OFFER_1 = BUILDER
                 .comment(" Cook 1 Trade Request 1 Table")
                 .define("cook_1_trade_request_1_table",
@@ -67,7 +67,7 @@ public class CookTradesConfig {
                 .define("cook_1_trade_request_2_table",
                         TradeLootTables.INGREDIENTS_TAG_TABLE.toString());
         COOK_1_REQUEST_2_COUNT = BUILDER
-                .define("cook_1_trade_request_2_count", 16);
+                .defineInRange("cook_1_trade_request_2_count", 16, 1, 64);
         COOK_1_OFFER_2 = BUILDER
                 .comment(" Cook 1 Trade Offer 2 Table")
                 .define("cook_1_trade_offer_2_table",
@@ -84,7 +84,7 @@ public class CookTradesConfig {
                 .define("cook_2_trade_offer_1_table",
                         TradeLootTables.SANDWICH_TAG_TABLE.toString());
         COOK_2_OFFER_1_COUNT = BUILDER
-                .define("cook_2_trade_offer_1_count", 6);
+                .defineInRange("cook_2_trade_offer_1_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Cook Level Two Trade Two");
         COOK_2_REQUEST_2 = BUILDER
@@ -96,7 +96,7 @@ public class CookTradesConfig {
                 .define("cook_2_trade_offer_2_table",
                         TradeLootTables.SIDE_DISH_TAG_TABLE.toString());
         COOK_2_OFFER_2_COUNT = BUILDER
-                .define("cook_2_trade_offer_2_count", 6);
+                .defineInRange("cook_2_trade_offer_2_count", 6, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Cook Level Three Trade One");
@@ -109,7 +109,7 @@ public class CookTradesConfig {
                 .define("cook_3_trade_offer_1_table",
                         TradeLootTables.SOUP_TAG_TABLE.toString());
         COOK_3_OFFER_1_COUNT = BUILDER
-                .define("cook_3_trade_offer_1_count", 1);
+                .defineInRange("cook_3_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Cook Level Three Trade Two");
         COOK_3_REQUEST_2 = BUILDER
@@ -121,7 +121,7 @@ public class CookTradesConfig {
                 .define("cook_3_trade_offer_2_table",
                         TradeLootTables.PLATED_FOODS_TAG_TABLE.toString());
         COOK_3_OFFER_2_COUNT = BUILDER
-                .define("cook_3_trade_offer_2_count", 6);
+                .defineInRange("cook_3_trade_offer_2_count", 6, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Cook Level Four Trade One");
@@ -134,7 +134,7 @@ public class CookTradesConfig {
                 .define("cook_4_trade_offer_1_table",
                         TradeLootTables.DESSERT_TAG_TABLE.toString());
         COOK_4_OFFER_1_COUNT = BUILDER
-                .define("cook_4_trade_offer_1_count", 4);
+                .defineInRange("cook_4_trade_offer_1_count", 4, 1, 64);
         BUILDER.pop();
         BUILDER.push("Cook Level Four Trade Two");
         COOK_4_REQUEST_2 = BUILDER
@@ -146,7 +146,7 @@ public class CookTradesConfig {
                 .define("cook_4_trade_offer_2_table",
                         TradeLootTables.DESSERT_TAG_TABLE.toString());
         COOK_4_OFFER_2_COUNT = BUILDER
-                .define("cook_3_trade_offer_2_count", 4);
+                .defineInRange("cook_3_trade_offer_2_count", 4, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Cook Level Five Trade One")
@@ -160,7 +160,7 @@ public class CookTradesConfig {
                 .define("cook_5_trade_offer_1_table",
                         TradeLootTables.INGREDIENTS_TAG_TABLE.toString());
         COOK_5_OFFER_1_COUNT = BUILDER
-                .define("cook_5_trade_offer_1_count", 9);
+                .defineInRange("cook_5_trade_offer_1_count", 9, 1, 64);
         BUILDER.pop();
         BUILDER.push("Cook Level Five Trade Two")
                 .comment(" Rare Trade");
@@ -173,7 +173,7 @@ public class CookTradesConfig {
                 .define("cook_5_trade_offer_2_table",
                         TradeLootTables.INGREDIENTS_TAG_TABLE.toString());
         COOK_5_OFFER_2_COUNT = BUILDER
-                .define("cook_5_trade_offer_2_count", 9);
+                .defineInRange("cook_5_trade_offer_2_count", 9, 1, 64);
         BUILDER.pop();
         BUILDER.pop();
 

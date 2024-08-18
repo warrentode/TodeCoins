@@ -129,7 +129,7 @@ public class WeaponsmithTradesConfig {
                 .define("weaponsmith_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         WEAPONSMITH_4_OFFER_2_COUNT = BUILDER
-                .define("weaponsmith_4_trade_offer_2_count", 18);
+                .defineInRange("weaponsmith_4_trade_offer_2_count", 18, 1, 64);
         BUILDER.pop();
         BUILDER.push("Weaponsmith Level Four Trade Three");
         WEAPONSMITH_4_REQUEST_3 = BUILDER

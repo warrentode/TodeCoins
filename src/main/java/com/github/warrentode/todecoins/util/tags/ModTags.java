@@ -186,6 +186,19 @@ public class ModTags {
         public static final TagKey<Item> GOLD_INGOT = modItemTag("ingots/gold");
         public static final TagKey<Item> NETHERITE_INGOT = modItemTag("ingots/netherite");
         public static final TagKey<Item> ENDONIAN_INGOT = modItemTag("ingots/endonian_ingot");
+
+        public static final TagKey<Item> GOGGLES = modItemTag("create", "goggle");
+        public static final TagKey<Item> COPPER_MATERIALS = modItemTag("create", "materials/copper");
+        public static final TagKey<Item> IRON_MATERIALS = modItemTag("create", "materials/iron");
+        public static final TagKey<Item> ZINC_MATERIALS = modItemTag("create", "materials/zinc");
+        public static final TagKey<Item> HYDRAULIC_EQUIPMENT = modItemTag("create", "equipment/hydraulic");
+        public static final TagKey<Item> MECHANICAL_EQUIPMENT = modItemTag("create", "equipment/mechanical");
+        public static final TagKey<Item> MINING_EQUIPMENT = modItemTag("create", "equipment/mining");
+        public static final TagKey<Item> TRAIN_EQUIPMENT = modItemTag("create", "equipment/train");
+        public static final TagKey<Item> COPPER_DIVING_GEAR = modItemTag("create", "copper_diving_gear");
+        public static final TagKey<Item> CREATE_INGOTS = modItemTag("forge", "ingots/create_ingots");
+        public static final TagKey<Item> TOOLS_WRENCH = modItemTag("forge", "tools/wrench");
+        public static final TagKey<Item> ENGINEER_TOOLS = modItemTag("forge", "tools/engineer_tools");
     }
 
     private static @NotNull TagKey<Block> modBlockTag(String path) {

@@ -74,7 +74,7 @@ public class AnimalTamerTradesConfig {
                 .define("animal_tamer_1_trade_offer_2_table",
                         TradeLootTables.PET_FOOD_TAG_TABLE.toString());
         ANIMAL_TAMER_1_OFFER_2_COUNT = BUILDER
-                .define("animal_tamer_1_trade_offer_2_count", 3);
+                .defineInRange("animal_tamer_1_trade_offer_2_count", 3, 1, 64);
         BUILDER.pop();
         BUILDER.push("Animal Tamer Level One Trade Three")
                 .comment(" Rare Trade");
@@ -104,7 +104,7 @@ public class AnimalTamerTradesConfig {
                 .define("animal_tamer_2_trade_request_2_table",
                         TradeLootTables.PET_FOOD_TAG_TABLE.toString());
         ANIMAL_TAMER_2_REQUEST_2_COUNT = BUILDER
-                .define("animal_tamer_2_trade_request_2_count", 3);
+                .defineInRange("animal_tamer_2_trade_request_2_count", 3, 1, 64);
         ANIMAL_TAMER_2_OFFER_2 = BUILDER
                 .comment(" Animal Tamer 2 Trade Request 2 Table")
                 .define("animal_tamer_2_trade_request_2_table",
@@ -132,7 +132,7 @@ public class AnimalTamerTradesConfig {
                 .define("animal_tamer_3_trade_offer_1_table",
                         TradeLootTables.PET_FOOD_TAG_TABLE.toString());
         ANIMAL_TAMER_3_OFFER_1_COUNT = BUILDER
-                .define("animal_tamer_3_trade_offer_1_count", 3);
+                .defineInRange("animal_tamer_3_trade_offer_1_count", 3, 1, 64);
         BUILDER.pop();
         BUILDER.push("Animal Tamer Level Three Trade Two");
         ANIMAL_TAMER_3_REQUEST_2 = BUILDER
@@ -166,7 +166,7 @@ public class AnimalTamerTradesConfig {
                 .define("animal_tamer_4_trade_offer_1_table",
                         TradeLootTables.PET_FOOD_TAG_TABLE.toString());
         ANIMAL_TAMER_4_OFFER_1_COUNT = BUILDER
-                .define("animal_tamer_4_trade_offer_1_count", 1);
+                .defineInRange("animal_tamer_4_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Animal Tamer Level Four Trade Two");
         ANIMAL_TAMER_4_REQUEST_2 = BUILDER
@@ -211,7 +211,7 @@ public class AnimalTamerTradesConfig {
                 .define("animal_tamer_5_trade_offer_2_table",
                         TradeLootTables.PET_FOOD_TAG_TABLE.toString());
         ANIMAL_TAMER_5_OFFER_2_COUNT = BUILDER
-                .define("animal_tamer_5_trade_offer_2_count", 3);
+                .defineInRange("animal_tamer_5_trade_offer_2_count", 3, 1, 64);
         BUILDER.pop();
         BUILDER.push("Animal Tamer Level Five Trade Three")
                 .comment(" Rare Trade");

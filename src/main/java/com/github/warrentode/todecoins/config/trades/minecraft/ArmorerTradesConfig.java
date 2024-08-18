@@ -248,7 +248,7 @@ public class ArmorerTradesConfig {
                 .define("armorer_4_trade_offer_3_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         ARMORER_4_OFFER_3_COUNT = BUILDER
-                .define("armorer_4_trade_offer_3_count", 18);
+                .defineInRange("armorer_4_trade_offer_3_count", 18, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Armorer Level Five Trade One")

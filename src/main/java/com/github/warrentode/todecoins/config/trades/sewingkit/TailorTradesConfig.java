@@ -66,7 +66,7 @@ public class TailorTradesConfig {
                 .define("tailor_1_trade_request_1_table",
                         TradeLootTables.TAGGED_LEATHER_TABLE.toString());
         TAILOR_1_REQUEST_1_COUNT = BUILDER
-                .define("tailor_1_trade_request_1_count", 6);
+                .defineInRange("tailor_1_trade_request_1_count", 6, 1, 64);
         TAILOR_1_OFFER_1 = BUILDER
                 .comment(" Tailor 1 Trade Offer 1 Table")
                 .define("tailor_1_trade_offer_1_table",
@@ -78,7 +78,7 @@ public class TailorTradesConfig {
                 .define("tailor_1_trade_request_2_table",
                         TradeLootTables.TAGGED_WOOL_TABLE.toString());
         TAILOR_1_REQUEST_2_COUNT = BUILDER
-                .define("tailor_1_trade_offer_1_count", 18);
+                .defineInRange("tailor_1_trade_offer_1_count", 18, 1, 64);
         TAILOR_1_OFFER_2 = BUILDER
                 .comment(" Tailor 1 Trade Offer 2 Table")
                 .define("tailor_1_trade_offer_2_table",
@@ -90,7 +90,7 @@ public class TailorTradesConfig {
                 .define("tailor_1_trade_request_3_table",
                         TradeLootTables.TAGGED_STRING_TABLE.toString());
         TAILOR_1_REQUEST_3_COUNT = BUILDER
-                .define("tailor_1_trade_request_3_count", 16);
+                .defineInRange("tailor_1_trade_request_3_count", 16, 1, 64);
         TAILOR_1_OFFER_3 = BUILDER
                 .comment(" Tailor 1 Trade Offer 3 Table")
                 .define("tailor_1_trade_offer_3_table",
@@ -102,7 +102,7 @@ public class TailorTradesConfig {
                 .define("tailor_1_trade_request_4_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         TAILOR_1_REQUEST_4_COUNT = BUILDER
-                .define("tailor_1_trade_offer_4_count", 6);
+                .defineInRange("tailor_1_trade_offer_4_count", 6, 1, 64);
         TAILOR_1_OFFER_4 = BUILDER
                 .comment(" Tailor 1 Trade Offer 4 Table")
                 .define("tailor_1_trade_offer_4_table",
@@ -160,7 +160,7 @@ public class TailorTradesConfig {
                 .define("tailor_3_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         TAILOR_3_REQUEST_1_COUNT = BUILDER
-                .define("tailor_3_trade_request_1_count", 3);
+                .defineInRange("tailor_3_trade_request_1_count", 3, 1, 64);
         TAILOR_3_OFFER_1 = BUILDER
                 .comment(" Tailor 3 Trade Offer 1 Table")
                 .define("tailor_3_trade_offer_1_table",
@@ -176,7 +176,7 @@ public class TailorTradesConfig {
                 .define("tailor_3_trade_offer_2_table",
                         TradeLootTables.PATTERNS_TAG_TABLE.toString());
         TAILOR_3_OFFER_2_COUNT = BUILDER
-                .define("tailor_3_trade_offer_2_count", 1);
+                .defineInRange("tailor_3_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Tailor Level Four Trade One");
@@ -189,7 +189,7 @@ public class TailorTradesConfig {
                 .define("tailor_4_trade_offer_1_table",
                         TradeLootTables.TEXTILES_TAG_TABLE.toString());
         TAILOR_4_OFFER_1_COUNT = BUILDER
-                .define("tailor_4_trade_offer_1_count", 6);
+                .defineInRange("tailor_4_trade_offer_1_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Tailor Level Four Trade Two");
         TAILOR_4_REQUEST_2 = BUILDER
@@ -201,7 +201,7 @@ public class TailorTradesConfig {
                 .define("tailor_4_trade_offer_2_table",
                         TradeLootTables.TAILOR_TOOLS_TABLE.toString());
         TAILOR_4_OFFER_2_COUNT = BUILDER
-                .define("tailor_4_trade_offer_2_count", 1);
+                .defineInRange("tailor_4_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Tailor Level Five Trade One");
@@ -214,7 +214,7 @@ public class TailorTradesConfig {
                 .define("tailor_5_trade_offer_1_table",
                         TradeLootTables.TEXTILES_TAG_TABLE.toString());
         TAILOR_5_OFFER_1_COUNT = BUILDER
-                .define("tailor_5_trade_offer_1_count", 6);
+                .defineInRange("tailor_5_trade_offer_1_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Tailor Level Five Trade Two");
         TAILOR_5_REQUEST_2 = BUILDER
@@ -226,7 +226,7 @@ public class TailorTradesConfig {
                 .define("tailor_5_trade_offer_2_table",
                         TradeLootTables.TAILOR_TOOLS_TABLE.toString());
         TAILOR_5_OFFER_2_COUNT = BUILDER
-                .define("tailor_5_trade_offer_2_count", 1);
+                .defineInRange("tailor_5_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Tailor Level Five Trade Three");
         TAILOR_5_REQUEST_3= BUILDER
@@ -238,7 +238,7 @@ public class TailorTradesConfig {
                 .define("tailor_5_trade_offer_3_table",
                         TradeLootTables.PATTERNS_TAG_TABLE.toString());
         TAILOR_5_OFFER_3_COUNT = BUILDER
-                .define("tailor_5_trade_offer_3_count", 1);
+                .defineInRange("tailor_5_trade_offer_3_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.pop();
 

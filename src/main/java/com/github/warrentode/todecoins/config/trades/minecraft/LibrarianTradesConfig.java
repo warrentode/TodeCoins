@@ -129,7 +129,7 @@ public class LibrarianTradesConfig {
                 .define("librarian_3_trade_request_2_table",
                         TradeLootTables.TAGGED_INK_TABLE.toString());
         LIBRARIAN_3_REQUEST_2_COUNT = BUILDER
-                .define("librarian_3_trade_request_2_count", 3);
+                .defineInRange("librarian_3_trade_request_2_count", 3, 1, 64);
         LIBRARIAN_3_OFFER_2 = BUILDER
                 .comment(" Librarian 3 Trade Offer 2 Table")
                 .define("librarian_3_trade_offer_2_table",
@@ -145,7 +145,7 @@ public class LibrarianTradesConfig {
                 .define("librarian_3_trade_offer_3_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         LIBRARIAN_3_OFFER_3_COUNT = BUILDER
-                .define("librarian_3_trade_request_3_count", 1);
+                .defineInRange("librarian_3_trade_request_3_count", 1, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Librarian Level Four Trade One");
@@ -186,7 +186,7 @@ public class LibrarianTradesConfig {
                 .define("librarian_5_trade_offer_1_table",
                         TradeLootTables.TAGGED_INK_TABLE.toString());
         LIBRARIAN_5_OFFER_1_COUNT = BUILDER
-                .define("librarian_5_trade_offer_1_count", 1);
+                .defineInRange("librarian_5_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Librarian Level Five Trade Two");
         LIBRARIAN_5_REQUEST_2 = BUILDER

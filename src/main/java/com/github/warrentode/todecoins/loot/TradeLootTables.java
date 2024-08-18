@@ -118,6 +118,7 @@ public class TradeLootTables {
     public static final ResourceLocation DRINKS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/drinks_tag_table");
     public static final ResourceLocation COFFEE_INGREDIENTS_TAG_TABLE = register(MODID + ":" + "trade_tables/food/coffee_ingredients_tag_table");
     public static final ResourceLocation PET_FOOD_TAG_TABLE = register(MODID + ":" + "trade_tables/food/pet_food_tag_table");
+    public static final ResourceLocation DRIED_KELP_TABLE = register(MODID + ":" + "trade_tables/food/dried_kelp_table");
 
     // textiles
     public static final ResourceLocation TAGGED_WOOL_TABLE = register(MODID + ":" + "trade_tables/textiles/tagged_wool_table");
@@ -221,6 +222,8 @@ public class TradeLootTables {
     public static final ResourceLocation COMPASS_TABLE = register(MODID + ":" + "trade_tables/tools/compass_table");
     public static final ResourceLocation IRON_TIER_LUMBER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/iron_tier_lumber_tools_table");
     public static final ResourceLocation DIAMOND_TIER_LUMBER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/diamond_tier_lumber_tools_table");
+    public static final ResourceLocation WRENCH_TAG_TABLE = register(MODID + ":" + "trade_tables/tools/wrench");
+    public static final ResourceLocation ENGINEER_TOOLS_TABLE = register(MODID + ":" + "trade_tables/tools/engineer_tools");
 
     // weapons
     public static final ResourceLocation IRON_TIER_WEAPONS_TABLE = register(MODID + ":" + "trade_tables/weapons/iron_tier_weapons");
@@ -242,6 +245,7 @@ public class TradeLootTables {
     public static final ResourceLocation SHIELD_TABLE = register(MODID + ":" + "trade_tables/armor/shield_table");
 
     public static final ResourceLocation LEATHER_TIER_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/leather_tier_helmets");
+    public static final ResourceLocation GOGGLES_TAG_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/goggles_tag");
     public static final ResourceLocation CHAINMAIL_TIER_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/chainmail_tier_helmets");
     public static final ResourceLocation IRON_TIER_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/iron_tier_helmets");
     public static final ResourceLocation GOLD_TIER_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/gold_tier_helmets");
@@ -316,17 +320,24 @@ public class TradeLootTables {
     public static final ResourceLocation LEAVES_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/leaves_tag_table");
     public static final ResourceLocation POISONOUS_POTATO_TABLE = register(MODID + ":" + "trade_tables/misc/poisonous_potato_table");
 
+    // create related tags
+    public static final ResourceLocation COPPER_MATERIALS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/copper_materials_tag_table");
+    public static final ResourceLocation IRON_MATERIALS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/iron_materials_tag_table");
+    public static final ResourceLocation ZINC_MATERIALS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/zinc_materials_tag_table");
+    public static final ResourceLocation HYDRAULIC_EQUIPMENT_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/hydraulic_equipment_tag_table");
+    public static final ResourceLocation MECHANICAL_EQUIPMENT_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/mechanical_equipment_tag_table");
+    public static final ResourceLocation TRAIN_EQUIPMENT_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/train_equipment_tag_table");
+    public static final ResourceLocation MINING_EQUIPMENT_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/mining_equipment_tag_table");
+    public static final ResourceLocation COPPER_DIVING_GEAR_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/copper_diving_gear_tag_table");
+    public static final ResourceLocation CREATE_INGOTS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/create_ingots_tag_table");
+
     // numismatist merchant specific offers loot tables
-    public static final ResourceLocation NUMISMATIST_RARE_OFFERS =
-            register(MODID + ":" + "trade_tables/numismatist/rare_offers");
-    public static final ResourceLocation NUMISMATIST_CONTAINER_OFFERS =
-            register(MODID + ":" + "trade_tables/numismatist/container_offers");
+    public static final ResourceLocation NUMISMATIST_RARE_OFFERS = register(MODID + ":" + "trade_tables/numismatist/rare_offers");
+    public static final ResourceLocation NUMISMATIST_CONTAINER_OFFERS = register(MODID + ":" + "trade_tables/numismatist/container_offers");
 
     // wandering trader specific offers loot tables
-    public static final ResourceLocation WANDERING_TRADER_COMMON_OFFERS =
-            register(MODID + ":" + "trade_tables/wandering_trader/common_offers");
-    public static final ResourceLocation WANDERING_TRADER_RARE_OFFERS =
-            register(MODID + ":" + "trade_tables/wandering_trader/rare_offers");
+    public static final ResourceLocation WANDERING_TRADER_COMMON_OFFERS = register(MODID + ":" + "trade_tables/wandering_trader/common_offers");
+    public static final ResourceLocation WANDERING_TRADER_RARE_OFFERS = register(MODID + ":" + "trade_tables/wandering_trader/rare_offers");
 
     private static ResourceLocation register(String path) {
         return register(new ResourceLocation(path));

@@ -11,6 +11,10 @@ import com.github.warrentode.todecoins.config.trades.beautify.BotanistTradesConf
 import com.github.warrentode.todecoins.config.trades.chefsdelight.ChefTradesConfig;
 import com.github.warrentode.todecoins.config.trades.chefsdelight.CookTradesConfig;
 import com.github.warrentode.todecoins.config.trades.domesticationinnovation.AnimalTamerTradesConfig;
+import com.github.warrentode.todecoins.config.trades.dynamicvillage.HydraulicEngineerTradesConfig;
+import com.github.warrentode.todecoins.config.trades.dynamicvillage.MechanicalEngineerTradesConfig;
+import com.github.warrentode.todecoins.config.trades.dynamicvillage.MinerTradesConfig;
+import com.github.warrentode.todecoins.config.trades.dynamicvillage.TrainMechanicTradesConfig;
 import com.github.warrentode.todecoins.config.trades.fastfooddelight.WaiterTradesConfig;
 import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
 import com.github.warrentode.todecoins.config.trades.kawaiidishes.BaristaTradesConfig;
@@ -101,6 +105,11 @@ public class TodeCoins {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CookTradesConfig.SPEC, MODID + "/trades/chefsdelight/delightcook.toml");
         // domesticationinnovation trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AnimalTamerTradesConfig.SPEC, MODID + "/trades/domesticationinnovation/animal_tamer.toml");
+        // dynamicvillage trade config files
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, HydraulicEngineerTradesConfig.SPEC, MODID + "/trades/dynamicvillage/hydraulic_engineer.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MechanicalEngineerTradesConfig.SPEC, MODID + "/trades/dynamicvillage/mechanical_engineer.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MinerTradesConfig.SPEC, MODID + "/trades/dynamicvillage/miner.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TrainMechanicTradesConfig.SPEC, MODID + "/trades/dynamicvillage/train_mechanic.toml");
         // fastfooddelight trade config files
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WaiterTradesConfig.SPEC, MODID + "/trades/fastfooddelight/waiter.toml");
         // friendsandfoes trade config files

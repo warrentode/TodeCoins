@@ -51,7 +51,7 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_1_trade_request_1_table",
                         TradeLootTables.TAGGED_LEATHER_TABLE.toString());
         LEATHERWORKER_1_REQUEST_1_COUNT = BUILDER
-                .define("leatherworker_1_trade_request_1_count", 6);
+                .defineInRange("leatherworker_1_trade_request_1_count", 6, 1, 64);
         LEATHERWORKER_1_OFFER_1 = BUILDER
                 .comment(" Leatherworker 1 Trade Offer 1 Table")
                 .define("leatherworker_1_trade_offer_1_table",
@@ -119,7 +119,7 @@ public class LeatherworkerTradesConfig {
                 .define("leatherworker_3_trade_request_1_table",
                         TradeLootTables.TAGGED_LEATHER_TABLE.toString());
         LEATHERWORKER_3_REQUEST_1_COUNT = BUILDER
-                .define("leatherworker_3_trade_request_1_count", 6);
+                .defineInRange("leatherworker_3_trade_request_1_count", 6, 1, 64);
         LEATHERWORKER_3_OFFER_1 = BUILDER
                 .comment(" Leatherworker 3 Trade Offer 1 Table")
                 .define("leatherworker_3_trade_offer_1_table",

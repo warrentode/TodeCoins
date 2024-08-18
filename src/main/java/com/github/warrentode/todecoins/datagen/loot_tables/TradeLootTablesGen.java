@@ -1643,6 +1643,19 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_COFFEE_INGREDIENTS)
                                 .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
                 ));
+        consumer.accept(TradeLootTables.DRIED_KELP_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                ));
+        consumer.accept(TradeLootTables.PET_FOOD_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ForgeTags.Items.PET_FOOD))
+                ));
         consumer.accept(TradeLootTables.DRINKS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -2021,6 +2034,60 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.HOPPER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
+        consumer.accept(TradeLootTables.CREATE_INGOTS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.CREATE_INGOTS))
+                ));
+        consumer.accept(TradeLootTables.COPPER_DIVING_GEAR_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.COPPER_DIVING_GEAR))
+                ));
+        consumer.accept(TradeLootTables.MINING_EQUIPMENT_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.MINING_EQUIPMENT))
+                ));
+        consumer.accept(TradeLootTables.TRAIN_EQUIPMENT_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.TRAIN_EQUIPMENT))
+                ));
+        consumer.accept(TradeLootTables.MECHANICAL_EQUIPMENT_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.MECHANICAL_EQUIPMENT))
+                ));
+        consumer.accept(TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.HYDRAULIC_EQUIPMENT))
+                ));
+        consumer.accept(TradeLootTables.ZINC_MATERIALS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.ZINC_MATERIALS))
+                ));
+        consumer.accept(TradeLootTables.IRON_MATERIALS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.IRON_MATERIALS))
+                ));
+        consumer.accept(TradeLootTables.COPPER_MATERIALS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.COPPER_MATERIALS))
+                ));
         consumer.accept(TradeLootTables.POISONOUS_POTATO_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -2206,6 +2273,12 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.FISHING_ROD))
                 ));
 
+        consumer.accept(TradeLootTables.GOGGLES_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.GOGGLES))
+                ));
         consumer.accept(TradeLootTables.LEATHER_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -2523,6 +2596,18 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.IRON_AXE))
                         .add(LootItem.lootTableItem(Items.SHEARS))
                         .add(LootItem.lootTableItem(Items.IRON_HOE))
+                ));
+        consumer.accept(TradeLootTables.ENGINEER_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.ENGINEER_TOOLS))
+                ));
+        consumer.accept(TradeLootTables.WRENCH_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.TOOLS_WRENCH))
                 ));
         consumer.accept(TradeLootTables.DIAMOND_TIER_LUMBER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()

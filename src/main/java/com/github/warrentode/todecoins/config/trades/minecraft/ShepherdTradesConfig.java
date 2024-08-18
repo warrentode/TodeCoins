@@ -55,7 +55,7 @@ public class ShepherdTradesConfig {
                 .define("shepherd_1_trade_request_1_table",
                         TradeLootTables.TAGGED_WOOL_TABLE.toString());
         SHEPHERD_1_REQUEST_1_COUNT = BUILDER
-                .define("shepherd_1_trade_offer_1_count", 18);
+                .defineInRange("shepherd_1_trade_offer_1_count", 18, 1, 64);
         SHEPHERD_1_OFFER_1 = BUILDER
                 .comment(" Shepherd 1 Trade Offer 1 Table")
                 .define("shepherd_1_trade_offer_1_table",
@@ -78,7 +78,7 @@ public class ShepherdTradesConfig {
                 .define("shepherd_2_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         SHEPHERD_2_REQUEST_1_COUNT = BUILDER
-                .define("shepherd_2_trade_offer_1_count", 6);
+                .defineInRange("shepherd_2_trade_offer_1_count", 6, 1, 64);
         SHEPHERD_2_OFFER_1 = BUILDER
                 .comment(" Shepherd 2 Trade Offer 1 Table")
                 .define("shepherd_2_trade_offer_1_table",
@@ -94,7 +94,7 @@ public class ShepherdTradesConfig {
                 .define("shepherd_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_WOOL_TABLE.toString());
         SHEPHERD_2_OFFER_2_COUNT = BUILDER
-                .define("shepherd_2_trade_offer_2_count", 1);
+                .defineInRange("shepherd_2_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Shepherd Level Two Trade Three");
         SHEPHERD_2_REQUEST_3 = BUILDER
@@ -106,7 +106,7 @@ public class ShepherdTradesConfig {
                 .define("shepherd_2_trade_offer_3_table",
                         TradeLootTables.TAGGED_WOOL_CARPETS_TABLE.toString());
         SHEPHERD_2_OFFER_3_COUNT = BUILDER
-                .define("shepherd_2_trade_offer_3_count", 3);
+                .defineInRange("shepherd_2_trade_offer_3_count", 3, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Shepherd Level Three Trade One");
@@ -115,7 +115,7 @@ public class ShepherdTradesConfig {
                 .define("shepherd_3_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         SHEPHERD_3_REQUEST_1_COUNT = BUILDER
-                .define("shepherd_3_trade_offer_1_count", 6);
+                .defineInRange("shepherd_3_trade_offer_1_count", 6, 1, 64);
         SHEPHERD_3_OFFER_1 = BUILDER
                 .comment(" Shepherd 2 Trade Offer 1 Table")
                 .define("shepherd_2_trade_offer_1_table",
@@ -138,7 +138,7 @@ public class ShepherdTradesConfig {
                 .define("shepherd_4_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         SHEPHERD_4_REQUEST_1_COUNT = BUILDER
-                .define("shepherd_4_trade_offer_1_count", 6);
+                .defineInRange("shepherd_4_trade_offer_1_count", 6, 1, 64);
         SHEPHERD_4_OFFER_1 = BUILDER
                 .comment(" Shepherd 4 Trade Offer 1 Table")
                 .define("shepherd_4_trade_offer_1_table",
@@ -154,7 +154,7 @@ public class ShepherdTradesConfig {
                 .define("shepherd_4_trade_offer_2_table",
                         TradeLootTables.BANNER_PATTERN_TABLE.toString());
         SHEPHERD_4_OFFER_2_COUNT = BUILDER
-                .define("shepherd_4_trade_offer_2_count", 3);
+                .defineInRange("shepherd_4_trade_offer_2_count", 3, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Shepherd Level Five Trade One");
@@ -163,7 +163,7 @@ public class ShepherdTradesConfig {
                 .define("shepherd_5_trade_request_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         SHEPHERD_5_REQUEST_1_COUNT = BUILDER
-                .define("shepherd_5_trade_offer_1_count", 6);
+                .defineInRange("shepherd_5_trade_offer_1_count", 6, 1, 64);
         SHEPHERD_5_OFFER_1 = BUILDER
                 .comment(" Shepherd 5 Trade Offer 1 Table")
                 .define("shepherd_5_trade_offer_1_table",

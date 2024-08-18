@@ -61,7 +61,7 @@ public class ButcherTradesConfig {
                 .define("butcher_1_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_MEATS_TABLE.toString());
         BUTCHER_1_REQUEST_1_COUNT = BUILDER
-                .define("butcher_1_trade_request_1_count", 12);
+                .defineInRange("butcher_1_trade_request_1_count", 12, 1, 64);
         BUTCHER_1_OFFER_1 = BUILDER
                 .comment(" Butcher 1 Trade Offer 1 Table")
                 .define("butcher_1_trade_offer_1_table",
@@ -77,7 +77,7 @@ public class ButcherTradesConfig {
                 .define("butcher_1_trade_offer_2_table",
                         TradeLootTables.TAGGED_MEAT_SOUPS_TABLE.toString());
         BUTCHER_1_OFFER_2_COUNT = BUILDER
-                .define("butcher_1_trade_offer_2_count", 1);
+                .defineInRange("butcher_1_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         // level 2
         BUILDER.push("Butcher Level Two Trade One");
@@ -100,7 +100,7 @@ public class ButcherTradesConfig {
                 .define("butcher_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         BUTCHER_2_OFFER_2_COUNT = BUILDER
-                .define("butcher_2_trade_offer_2_count", 6);
+                .defineInRange("butcher_2_trade_offer_2_count", 6, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Butcher Level Three Trade One");
@@ -109,7 +109,7 @@ public class ButcherTradesConfig {
                 .define("butcher_3_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_MEATS_TABLE.toString());
         BUTCHER_3_REQUEST_1_COUNT = BUILDER
-                .define("butcher_3_trade_request_1_count", 12);
+                .defineInRange("butcher_3_trade_request_1_count", 12, 1, 64);
         BUTCHER_3_OFFER_1 = BUILDER
                 .comment(" Butcher 3 Trade Offer 1 Table")
                 .define("butcher_3_trade_offer_1_table",
@@ -136,7 +136,7 @@ public class ButcherTradesConfig {
                 .define("butcher_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         BUTCHER_3_OFFER_3_COUNT = BUILDER
-                .define("butcher_2_trade_offer_2_count", 6);
+                .defineInRange("butcher_2_trade_offer_2_count", 6, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Butcher Level Four Trade One");
@@ -160,7 +160,7 @@ public class ButcherTradesConfig {
                 .define("butcher_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_SALTS_TABLE.toString());
         BUTCHER_4_OFFER_2_COUNT = BUILDER
-                .define("butcher_4_trade_offer_2_count", 18);
+                .defineInRange("butcher_4_trade_offer_2_count", 18, 1, 64);
         BUILDER.pop();
         BUILDER.push("Butcher Level Four Trade Three")
                 .comment(" Available if Supplementaries mod is Loaded");
@@ -173,7 +173,7 @@ public class ButcherTradesConfig {
                 .define("butcher_4_trade_offer_3_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         BUTCHER_4_OFFER_3_COUNT = BUILDER
-                .define("butcher_4_trade_offer_3_count", 18);
+                .defineInRange("butcher_4_trade_offer_3_count", 18, 1, 64);
         BUILDER.pop();
         BUILDER.push("Butcher Level Four Trade Four");
         BUTCHER_4_REQUEST_4 = BUILDER
@@ -185,7 +185,7 @@ public class ButcherTradesConfig {
                 .define("butcher_4_trade_offer_4_table",
                         TradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         BUTCHER_4_OFFER_4_COUNT = BUILDER
-                .define("butcher_4_trade_offer_4_count", 6);
+                .defineInRange("butcher_4_trade_offer_4_count", 6, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Butcher Level Five Trade One");
@@ -194,7 +194,7 @@ public class ButcherTradesConfig {
                 .define("butcher_5_trade_request_1_table",
                         TradeLootTables.TAGGED_FOX_FOOD_TABLE.toString());
         BUTCHER_5_REQUEST_1_COUNT = BUILDER
-                .define("butcher_5_trade_request_1_count", 8);
+                .defineInRange("butcher_5_trade_request_1_count", 8, 1, 64);
         BUTCHER_5_OFFER_1 = BUILDER
                 .comment(" Butcher 5 Trade Offer 1 Table")
                 .define("butcher_5_trade_offer_1_table",
@@ -210,7 +210,7 @@ public class ButcherTradesConfig {
                 .define("butcher_5_trade_offer_2_table",
                         TradeLootTables.TAGGED_COOKED_MEATS_TABLE.toString());
         BUTCHER_5_OFFER_2_COUNT = BUILDER
-                .define("butcher_5_trade_offer_23_count", 6);
+                .defineInRange("butcher_5_trade_offer_23_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.pop();
 

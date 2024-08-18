@@ -86,7 +86,7 @@ public class BotanistTradesConfig {
                 .define("botanist_2_trade_offer_1_table",
                         TradeLootTables.TRELLIS_TAG_TABLE.toString());
         BOTANIST_2_OFFER_1_COUNT = BUILDER
-                .define("botanist_2_trade_offer_1_count", 2);
+                .defineInRange("botanist_2_trade_offer_1_count", 2, 1, 64);
         BUILDER.pop();
         BUILDER.push("Botanist Level Two Trade Two");
         BOTANIST_2_REQUEST_2 = BUILDER
@@ -109,7 +109,7 @@ public class BotanistTradesConfig {
                 .define("botanist_3_trade_offer_1_table",
                         TradeLootTables.FRAMES_TABLE.toString());
         BOTANIST_3_OFFER_1_COUNT = BUILDER
-                .define("botanist_3_trade_offer_1_count", 2);
+                .defineInRange("botanist_3_trade_offer_1_count", 2, 1, 64);
         BUILDER.pop();
         BUILDER.push("Botanist Level Three Trade Two");
         BOTANIST_3_REQUEST_2 = BUILDER
@@ -121,7 +121,7 @@ public class BotanistTradesConfig {
                 .define("botanist_3_trade_offer_2_table",
                         TradeLootTables.TAGGED_CANDLE_TABLE.toString());
         BOTANIST_3_OFFER_2_COUNT = BUILDER
-                .define("botanist_3_trade_offer_2_count", 4);
+                .defineInRange("botanist_3_trade_offer_2_count", 4, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Botanist Level Four Trade One");
@@ -144,7 +144,7 @@ public class BotanistTradesConfig {
                 .define("botanist_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_CANDLE_TABLE.toString());
         BOTANIST_4_OFFER_2_COUNT = BUILDER
-                .define("botanist_3_trade_offer_2_count", 4);
+                .defineInRange("botanist_3_trade_offer_2_count", 4, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Botanist Level Five Trade One")

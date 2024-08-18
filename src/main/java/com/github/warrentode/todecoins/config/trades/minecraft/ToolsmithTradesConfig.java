@@ -141,7 +141,7 @@ public class ToolsmithTradesConfig {
                 .define("toolsmith_4_trade_offer_3_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         TOOLSMITH_4_OFFER_3_COUNT = BUILDER
-                .define("toolsmith_4_trade_offer_2_count", 18);
+                .defineInRange("toolsmith_4_trade_offer_2_count", 18, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Toolsmith Level Five Trade One")

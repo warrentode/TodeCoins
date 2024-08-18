@@ -59,7 +59,7 @@ public class WaiterTradesConfig {
                 .define("waiter_1_trade_offer_1_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         WAITER_1_OFFER_1_COUNT = BUILDER
-                .define("waiter_1_trade_offer_1_count", 1);
+                .defineInRange("waiter_1_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Waiter Level One Trade Two");
         WAITER_1_REQUEST_2 = BUILDER
@@ -71,7 +71,7 @@ public class WaiterTradesConfig {
                 .define("waiter_1_trade_offer_2_table",
                         TradeLootTables.SIDE_DISH_TAG_TABLE.toString());
         WAITER_1_OFFER_2_COUNT = BUILDER
-                .define("waiter_1_trade_offer_2_count", 6);
+                .defineInRange("waiter_1_trade_offer_2_count", 6, 1, 64);
         BUILDER.pop();
         // level 2
         BUILDER.push("Waiter Level Two Trade One");
@@ -84,7 +84,7 @@ public class WaiterTradesConfig {
                 .define("waiter_2_trade_offer_1_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         WAITER_2_OFFER_1_COUNT = BUILDER
-                .define("waiter_2_trade_offer_1_count", 1);
+                .defineInRange("waiter_2_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Waiter Level Two Trade Two");
         WAITER_2_REQUEST_2 = BUILDER
@@ -96,7 +96,7 @@ public class WaiterTradesConfig {
                 .define("waiter_2_trade_offer_2_table",
                         TradeLootTables.SANDWICH_TAG_TABLE.toString());
         WAITER_2_OFFER_2_COUNT = BUILDER
-                .define("waiter_2_trade_offer_2_count", 6);
+                .defineInRange("waiter_2_trade_offer_2_count", 6, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Waiter Level Three Trade One");
@@ -109,7 +109,7 @@ public class WaiterTradesConfig {
                 .define("waiter_3_trade_offer_1_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         WAITER_3_OFFER_1_COUNT = BUILDER
-                .define("waiter_3_trade_offer_1_count", 1);
+                .defineInRange("waiter_3_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Waiter Level Three Trade Two");
         WAITER_3_REQUEST_2 = BUILDER
@@ -121,7 +121,7 @@ public class WaiterTradesConfig {
                 .define("waiter_3_trade_offer_2_table",
                         TradeLootTables.SOUP_TAG_TABLE.toString());
         WAITER_3_OFFER_2_COUNT = BUILDER
-                .define("waiter_3_trade_offer_2_count", 1);
+                .defineInRange("waiter_3_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Waiter Level Four Trade One");
@@ -134,7 +134,7 @@ public class WaiterTradesConfig {
                 .define("waiter_4_trade_offer_1_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         WAITER_4_OFFER_1_COUNT = BUILDER
-                .define("waiter_4_trade_offer_1_count", 1);
+                .defineInRange("waiter_4_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Waiter Level Four Trade Two");
         WAITER_4_REQUEST_2 = BUILDER
@@ -146,7 +146,7 @@ public class WaiterTradesConfig {
                 .define("waiter_4_trade_offer_2_table",
                         TradeLootTables.PLATED_FOODS_TAG_TABLE.toString());
         WAITER_4_OFFER_2_COUNT = BUILDER
-                .define("waiter_3_trade_offer_2_count", 4);
+                .defineInRange("waiter_3_trade_offer_2_count", 4, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Waiter Level Five Trade One")
@@ -160,7 +160,7 @@ public class WaiterTradesConfig {
                 .define("waiter_5_trade_offer_1_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         WAITER_5_OFFER_1_COUNT = BUILDER
-                .define("waiter_5_trade_offer_1_count", 1);
+                .defineInRange("waiter_5_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Waiter Level Five Trade Two")
                 .comment(" Rare Trade");
@@ -173,7 +173,7 @@ public class WaiterTradesConfig {
                 .define("waiter_5_trade_offer_2_table",
                         TradeLootTables.DESSERT_TAG_TABLE.toString());
         WAITER_5_OFFER_2_COUNT = BUILDER
-                .define("waiter_5_trade_offer_2_count", 1);
+                .defineInRange("waiter_5_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.pop();
 

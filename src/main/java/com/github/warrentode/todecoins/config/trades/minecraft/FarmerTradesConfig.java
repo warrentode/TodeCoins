@@ -51,7 +51,7 @@ public class FarmerTradesConfig {
                 .define("farmer_1_trade_request_1_table",
                         TradeLootTables.TAGGED_VEGGIES_AND_GRAINS_TABLE.toString());
         FARMER_1_REQUEST_1_COUNT = BUILDER
-                .define("farmer_1_trade_request_1_count", 24);
+                .defineInRange("farmer_1_trade_request_1_count", 24, 1, 64);
         FARMER_1_OFFER_1 = BUILDER
                 .comment(" Farmer 1 Trade Offer 1 Table")
                 .define("farmer_1_trade_offer_1_table",
@@ -67,7 +67,7 @@ public class FarmerTradesConfig {
                 .define("farmer_1_trade_offer_2_table",
                         TradeLootTables.TAGGED_BREADS_TABLE.toString());
         FARMER_1_OFFER_2_COUNT = BUILDER
-                .define("farmer_1_trade_offer_2_count", 6);
+                .defineInRange("farmer_1_trade_offer_2_count", 6, 1, 64);
         BUILDER.pop();
         // level 2
         BUILDER.push("Farmer Level Two Trade One");
@@ -76,7 +76,7 @@ public class FarmerTradesConfig {
                 .define("farmer_2_trade_request_1_table",
                         TradeLootTables.TAGGED_GOURDS_TABLE.toString());
         FARMER_2_REQUEST_1_COUNT = BUILDER
-                .define("farmer_2_trade_request_1_count", 6);
+                .defineInRange("farmer_2_trade_request_1_count", 6, 1, 64);
         FARMER_2_OFFER_1 = BUILDER
                 .comment(" Farmer 2 Trade Offer 1 Table")
                 .define("farmer_2_trade_offer_1_table",
@@ -92,7 +92,7 @@ public class FarmerTradesConfig {
                 .define("farmer_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_PIES_TABLE.toString());
         FARMER_2_OFFER_2_COUNT = BUILDER
-                .define("farmer_2_trade_offer_2_count", 4);
+                .defineInRange("farmer_2_trade_offer_2_count", 4, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Farmer Level Three Trade One");
@@ -105,7 +105,7 @@ public class FarmerTradesConfig {
                 .define("farmer_3_trade_offer_1_table",
                         TradeLootTables.TAGGED_FRUITS_TABLE.toString());
         FARMER_3_OFFER_1_COUNT = BUILDER
-                .define("farmer_3_trade_offer_1_count", 6);
+                .defineInRange("farmer_3_trade_offer_1_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Farmer Level Three Trade Two");
         FARMER_3_REQUEST_2 = BUILDER
@@ -117,7 +117,7 @@ public class FarmerTradesConfig {
                 .define("farmer_3_trade_offer_2_table",
                         TradeLootTables.TAGGED_COOKIES_TABLE.toString());
         FARMER_3_OFFER_2_COUNT = BUILDER
-                .define("farmer_3_trade_offer_2_count", 8);
+                .defineInRange("farmer_3_trade_offer_2_count", 8, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Farmer Level Four Trade One");
@@ -130,7 +130,7 @@ public class FarmerTradesConfig {
                 .define("farmer_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_CAKES_TABLE.toString());
         FARMER_4_OFFER_1_COUNT = BUILDER
-                .define("farmer_4_trade_offer_1_count", 1);
+                .defineInRange("farmer_4_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Farmer Level Four Trade Two");
         FARMER_4_REQUEST_2 = BUILDER

@@ -60,7 +60,7 @@ public class EnchanterTradesConfig {
                 .define("enchanter_1_trade_offer_1_table",
                         TradeLootTables.REFRESH_BOOK_TABLE.toString());
         ENCHANTER_1_OFFER_1_COUNT = BUILDER
-                .define("enchanter_1_trade_offer_1_count", 1);
+                .defineInRange("enchanter_1_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Enchanter Level One Trade Two")
                 .comment(" Rare Trade");
@@ -109,7 +109,7 @@ public class EnchanterTradesConfig {
                 .define("enchanter_2_trade_offer_3_table",
                         TradeLootTables.REFRESH_BOOK_TABLE.toString());
         ENCHANTER_2_OFFER_3_COUNT = BUILDER
-                .define("enchanter_1_trade_offer_1_count", 1);
+                .defineInRange("enchanter_1_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Enchanter Level Three Trade One")
@@ -130,7 +130,7 @@ public class EnchanterTradesConfig {
                 .define("enchanter_3_trade_offer_2_table",
                         TradeLootTables.REFRESH_BOOK_TABLE.toString());
         ENCHANTER_3_OFFER_2_COUNT = BUILDER
-                .define("enchanter_3_trade_offer_2_count", 1);
+                .defineInRange("enchanter_3_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Enchanter Level Three Trade Three");
         ENCHANTER_3_REQUEST_3 = BUILDER
@@ -171,7 +171,7 @@ public class EnchanterTradesConfig {
                 .define("enchanter_4_trade_offer_3_table",
                         TradeLootTables.REFRESH_BOOK_TABLE.toString());
         ENCHANTER_4_OFFER_3_COUNT = BUILDER
-                .define("enchanter_4_trade_offer_3_count", 1);
+                .defineInRange("enchanter_4_trade_offer_3_count", 1, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Enchanter Level Five Trade One");
@@ -195,7 +195,7 @@ public class EnchanterTradesConfig {
                 .define("enchanter_5_trade_offer_2_table",
                         TradeLootTables.REFRESH_BOOK_TABLE.toString());
         ENCHANTER_5_OFFER_2_COUNT = BUILDER
-                .define("enchanter_5_trade_offer_2_count", 1);
+                .defineInRange("enchanter_5_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Enchanter Level Five Trade Three");
         ENCHANTER_5_REQUEST_3 = BUILDER

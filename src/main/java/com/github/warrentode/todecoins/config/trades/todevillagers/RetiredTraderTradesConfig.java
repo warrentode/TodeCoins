@@ -93,7 +93,7 @@ public class RetiredTraderTradesConfig {
                 .define("retired_trader_2_trade_offer_1_table",
                         TradeLootTables.SEED_TAG_TABLE.toString());
         RETIRED_TRADER_2_OFFER_1_COUNT = BUILDER
-                .define("retired_trader_2_trade_offer_1_count", 1);
+                .defineInRange("retired_trader_2_trade_offer_1_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Retired Trader Level Two Trade Two");
         RETIRED_TRADER_2_REQUEST_2 = BUILDER
@@ -105,7 +105,7 @@ public class RetiredTraderTradesConfig {
                 .define("retired_trader_2_trade_offer_2_table",
                         TradeLootTables.SLIMEBALL_TAG_TABLE.toString());
         RETIRED_TRADER_2_OFFER_2_COUNT = BUILDER
-                .define("retired_trader_2_trade_offer_2_count", 1);
+                .defineInRange("retired_trader_2_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Retired Trader Level Two Trade Three");
         RETIRED_TRADER_2_REQUEST_3 = BUILDER
@@ -117,7 +117,7 @@ public class RetiredTraderTradesConfig {
                 .define("retired_trader_2_trade_offer_3_table",
                         TradeLootTables.CORAL_BLOCK_TAG_TABLE.toString());
         RETIRED_TRADER_2_OFFER_3_COUNT = BUILDER
-                .define("retired_trader_2_trade_offer_3_count", 1);
+                .defineInRange("retired_trader_2_trade_offer_3_count", 1, 1, 64);
         BUILDER.pop();
         // level 3
         BUILDER.push("Retired Trader Level Three Trade One");
@@ -130,7 +130,7 @@ public class RetiredTraderTradesConfig {
                 .define("retired_trader_3_trade_offer_1_table",
                         TradeLootTables.SAND_TAG_TABLE.toString());
         RETIRED_TRADER_3_OFFER_1_COUNT = BUILDER
-                .define("retired_trader_3_trade_offer_1_count", 6);
+                .defineInRange("retired_trader_3_trade_offer_1_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Retired Trader Level Three Trade Two");
         RETIRED_TRADER_3_REQUEST_2 = BUILDER
@@ -164,7 +164,7 @@ public class RetiredTraderTradesConfig {
                 .define("retired_trader_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_DYES_TABLE.toString());
         RETIRED_TRADER_4_OFFER_1_COUNT = BUILDER
-                .define("retired_trader_4_trade_offer_1_count", 3);
+                .defineInRange("retired_trader_4_trade_offer_1_count", 3, 1, 64);
         BUILDER.pop();
         BUILDER.push("Retired Trader Level Four Trade Two");
         RETIRED_TRADER_4_REQUEST_2 = BUILDER

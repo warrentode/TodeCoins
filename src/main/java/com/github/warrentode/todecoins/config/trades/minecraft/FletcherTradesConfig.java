@@ -49,7 +49,7 @@ public class FletcherTradesConfig {
                 .define("fletcher_1_trade_request_1_table",
                         TradeLootTables.TAGGED_STICK_TABLE.toString());
         FLETCHER_1_REQUEST_1_COUNT = BUILDER
-                .define("fletcher_1_trade_request_1_count", 16);
+                .defineInRange("fletcher_1_trade_request_1_count", 16, 1, 64);
         FLETCHER_1_OFFER_1 = BUILDER
                 .comment(" Fletcher 1 Trade Offer 1 Table")
                 .define("fletcher_1_trade_offer_1_table",
@@ -97,7 +97,7 @@ public class FletcherTradesConfig {
                 .define("fletcher_3_trade_request_1_table",
                         TradeLootTables.TAGGED_STRING_TABLE.toString());
         FLETCHER_3_REQUEST_1_COUNT = BUILDER
-                .define("fletcher_3_trade_request_1_count", 16);
+                .defineInRange("fletcher_3_trade_request_1_count", 16, 1, 64);
         FLETCHER_3_OFFER_1 = BUILDER
                 .comment(" Fletcher 3 Trade Offer 1 Table")
                 .define("fletcher_3_trade_offer_1_table",
@@ -138,7 +138,7 @@ public class FletcherTradesConfig {
                 .define("fletcher_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_QUIVERS_TABLE.toString());
         FLETCHER_4_OFFER_2_COUNT = BUILDER
-                .define("fletcher_4_trade_offer_2_count", 1);
+                .defineInRange("fletcher_4_trade_offer_2_count", 1, 1, 64);
         BUILDER.pop();
         BUILDER.push("Fletcher Level Four Trade Two");
         FLETCHER_4_REQUEST_3 = BUILDER

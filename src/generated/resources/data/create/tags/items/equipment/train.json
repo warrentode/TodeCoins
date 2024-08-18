@@ -1,0 +1,56 @@
+{
+  "values": [
+    {
+      "id": "create:sturdy_sheet",
+      "required": false
+    },
+    {
+      "id": "create:portable_storage_interface",
+      "required": false
+    },
+    {
+      "id": "create:railway_casing",
+      "required": false
+    },
+    {
+      "id": "create:placard",
+      "required": false
+    },
+    {
+      "id": "create:controls",
+      "required": false
+    },
+    {
+      "id": "create:placard",
+      "required": false
+    },
+    {
+      "id": "create:schedule",
+      "required": false
+    },
+    {
+      "id": "create:display_link",
+      "required": false
+    },
+    {
+      "id": "create:display_board",
+      "required": false
+    },
+    {
+      "id": "create:track_station",
+      "required": false
+    },
+    {
+      "id": "create:track",
+      "required": false
+    },
+    {
+      "id": "create:steam_whistle",
+      "required": false
+    },
+    {
+      "id": "create:train_door",
+      "required": false
+    }
+  ]
+}

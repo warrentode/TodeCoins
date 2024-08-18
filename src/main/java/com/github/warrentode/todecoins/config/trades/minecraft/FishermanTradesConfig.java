@@ -61,7 +61,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_1_trade_request_1_table",
                         TradeLootTables.TAGGED_STRING_TABLE.toString());
         FISHERMAN_1_REQUEST_1_COUNT = BUILDER
-                .define("fisherman_1_trade_request_1_count", 16);
+                .defineInRange("fisherman_1_trade_request_1_count", 16, 1, 64);
         FISHERMAN_1_OFFER_1 = BUILDER
                 .comment(" Fisherman 1 Trade Offer 1 Table")
                 .define("fisherman_1_trade_offer_1_table",
@@ -87,7 +87,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_1_trade_offer_3_table",
                         TradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE.toString());
         FISHERMAN_1_OFFER_3_COUNT = BUILDER
-                .define("fisherman_1_trade_offer_3_count", 6);
+                .defineInRange("fisherman_1_trade_offer_3_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Fisherman Level One Trade Four")
                 .comment(" Rare Trade");
@@ -107,7 +107,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_2_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         FISHERMAN_2_REQUEST_1_COUNT = BUILDER
-                .define("fisherman_2_trade_request_1_count", 6);
+                .defineInRange("fisherman_2_trade_request_1_count", 6, 1, 64);
         FISHERMAN_2_OFFER_1 = BUILDER
                 .comment(" Fisherman 2 Trade Offer 1 Table")
                 .define("fisherman_2_trade_offer_1_table",
@@ -123,7 +123,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE.toString());
         FISHERMAN_2_OFFER_2_COUNT = BUILDER
-                .define("fisherman_2_trade_offer_2_count", 6);
+                .defineInRange("fisherman_2_trade_offer_2_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Fisherman Level Two Trade Three");
         FISHERMAN_2_REQUEST_3 = BUILDER
@@ -142,7 +142,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_3_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         FISHERMAN_3_REQUEST_1_COUNT = BUILDER
-                .define("fisherman_3_trade_request_1_count", 6);
+                .defineInRange("fisherman_3_trade_request_1_count", 6, 1, 64);
         FISHERMAN_3_OFFER_1 = BUILDER
                 .comment(" Fisherman 3 Trade Offer 1 Table")
                 .define("fisherman_3_trade_offer_1_table",
@@ -170,7 +170,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_ASH_TABLE.toString());
         FISHERMAN_4_OFFER_1_COUNT = BUILDER
-                .define("fisherman_4_trade_offer_1_count", 18);
+                .defineInRange("fisherman_4_trade_offer_1_count", 18, 1, 64);
         BUILDER.pop();
         BUILDER.push("Fisherman Level Four Trade Two")
                 .comment(" Enchanted Item Trade")
@@ -190,7 +190,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_4_trade_request_3_table",
                         TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         FISHERMAN_4_REQUEST_3_COUNT = BUILDER
-                .define("fisherman_4_trade_request_3_count", 6);
+                .defineInRange("fisherman_4_trade_request_3_count", 6, 1, 64);
         FISHERMAN_4_OFFER_3 = BUILDER
                 .comment(" Fisherman 4 Trade Offer 3 Table")
                 .define("fisherman_4_trade_offer_3_table",
@@ -203,7 +203,7 @@ public class FishermanTradesConfig {
                 .define("fisherman_5_trade_request_1_table",
                         TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE.toString());
         FISHERMAN_5_REQUEST_1_COUNT = BUILDER
-                .define("fisherman_5_trade_request_1_count", 6);
+                .defineInRange("fisherman_5_trade_request_1_count", 6, 1, 64);
         FISHERMAN_5_OFFER_1 = BUILDER
                 .comment(" Fisherman 5 Trade Offer 1 Table")
                 .define("fisherman_5_trade_offer_1_table",

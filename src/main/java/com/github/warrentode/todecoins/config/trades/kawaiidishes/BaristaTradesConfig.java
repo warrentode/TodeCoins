@@ -85,7 +85,7 @@ public class BaristaTradesConfig {
                 .define("barista_1_trade_request_1_table",
                         TradeLootTables.COFFEE_INGREDIENTS_TAG_TABLE.toString());
         BARISTA_1_REQUEST_1_COUNT = BUILDER
-                .define("barista_1_trade_request_1_count", 12);
+                .defineInRange("barista_1_trade_request_1_count", 12, 1, 64);
         BARISTA_1_OFFER_1 = BUILDER
                 .comment(" Barista 1 Trade Offer 1 Table")
                 .define("barista_1_trade_offer_1_table",
@@ -101,7 +101,7 @@ public class BaristaTradesConfig {
                 .define("barista_1_trade_offer_2_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         BARISTA_1_OFFER_2_COUNT = BUILDER
-                .define("barista_1_trade_offer_2_count", 12);
+                .defineInRange("barista_1_trade_offer_2_count", 12, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level One Trade Three");
         BARISTA_1_REQUEST_3 = BUILDER
@@ -113,7 +113,7 @@ public class BaristaTradesConfig {
                 .define("barista_1_trade_offer_3_table",
                         TradeLootTables.DESSERT_TAG_TABLE.toString());
         BARISTA_1_OFFER_3_COUNT = BUILDER
-                .define("barista_1_trade_offer_3_count", 6);
+                .defineInRange("barista_1_trade_offer_3_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level One Trade Four");
         BARISTA_1_REQUEST_4 = BUILDER
@@ -121,7 +121,7 @@ public class BaristaTradesConfig {
                 .define("barista_1_trade_offer_4_table",
                         TradeLootTables.CUPS_TAG_TABLE.toString());
         BARISTA_1_REQUEST_4_COUNT = BUILDER
-                .define("barista_1_trade_offer_4_count", 9);
+                .defineInRange("barista_1_trade_offer_4_count", 9, 1, 64);
         BARISTA_1_OFFER_4 = BUILDER
                 .comment(" Barista 1 Trade Request 4 Table")
                 .define("barista_1_trade_request_4_table",
@@ -134,7 +134,7 @@ public class BaristaTradesConfig {
                 .define("barista_2_trade_request_1_table",
                         TradeLootTables.COFFEE_INGREDIENTS_TAG_TABLE.toString());
         BARISTA_2_REQUEST_1_COUNT = BUILDER
-                .define("barista_2_trade_request_1_count", 12);
+                .defineInRange("barista_2_trade_request_1_count", 12, 1, 64);
         BARISTA_2_OFFER_1 = BUILDER
                 .comment(" Barista 2 Trade Offer 1 Table")
                 .define("barista_2_trade_offer_1_table",
@@ -150,7 +150,7 @@ public class BaristaTradesConfig {
                 .define("barista_2_trade_offer_2_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         BARISTA_2_OFFER_2_COUNT = BUILDER
-                .define("barista_2_trade_offer_2_count", 12);
+                .defineInRange("barista_2_trade_offer_2_count", 12, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level Two Trade Three");
         BARISTA_2_REQUEST_3 = BUILDER
@@ -162,7 +162,7 @@ public class BaristaTradesConfig {
                 .define("barista_2_trade_offer_3_table",
                         TradeLootTables.DESSERT_TAG_TABLE.toString());
         BARISTA_2_OFFER_3_COUNT = BUILDER
-                .define("barista_2_trade_offer_3_count", 6);
+                .defineInRange("barista_2_trade_offer_3_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level Two Trade Four");
         BARISTA_2_REQUEST_4 = BUILDER
@@ -170,7 +170,7 @@ public class BaristaTradesConfig {
                 .define("barista_2_trade_offer_4_table",
                         TradeLootTables.CUPS_TAG_TABLE.toString());
         BARISTA_2_REQUEST_4_COUNT = BUILDER
-                .define("barista_2_trade_offer_4_count", 9);
+                .defineInRange("barista_2_trade_offer_4_count", 9, 1, 64);
         BARISTA_2_OFFER_4 = BUILDER
                 .comment(" Barista 2 Trade Request 4 Table")
                 .define("barista_2_trade_request_4_table",
@@ -183,7 +183,7 @@ public class BaristaTradesConfig {
                 .define("barista_3_trade_request_1_table",
                         TradeLootTables.COFFEE_INGREDIENTS_TAG_TABLE.toString());
         BARISTA_3_REQUEST_1_COUNT = BUILDER
-                .define("barista_3_trade_request_1_count", 12);
+                .defineInRange("barista_3_trade_request_1_count", 12, 1, 64);
         BARISTA_3_OFFER_1 = BUILDER
                 .comment(" Barista 3 Trade Offer 1 Table")
                 .define("barista_3_trade_offer_1_table",
@@ -199,7 +199,7 @@ public class BaristaTradesConfig {
                 .define("barista_3_trade_offer_2_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         BARISTA_3_OFFER_2_COUNT = BUILDER
-                .define("barista_3_trade_offer_2_count", 12);
+                .defineInRange("barista_3_trade_offer_2_count", 12, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level Two Trade Three");
         BARISTA_3_REQUEST_3 = BUILDER
@@ -211,7 +211,7 @@ public class BaristaTradesConfig {
                 .define("barista_3_trade_offer_3_table",
                         TradeLootTables.DESSERT_TAG_TABLE.toString());
         BARISTA_3_OFFER_3_COUNT = BUILDER
-                .define("barista_3_trade_offer_3_count", 6);
+                .defineInRange("barista_3_trade_offer_3_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level Two Trade Four");
         BARISTA_3_REQUEST_4 = BUILDER
@@ -223,7 +223,7 @@ public class BaristaTradesConfig {
                 .define("barista_3_trade_offer_4_table",
                         TradeLootTables.CUPS_TAG_TABLE.toString());
         BARISTA_3_REQUEST_4_COUNT = BUILDER
-                .define("barista_3_trade_offer_4_count", 9);
+                .defineInRange("barista_3_trade_offer_4_count", 9, 1, 64);
         BUILDER.pop();
         // level 4
         BUILDER.push("Barista Level Four Trade One");
@@ -232,7 +232,7 @@ public class BaristaTradesConfig {
                 .define("barista_4_trade_request_1_table",
                         TradeLootTables.COFFEE_INGREDIENTS_TAG_TABLE.toString());
         BARISTA_4_REQUEST_1_COUNT = BUILDER
-                .define("barista_4_trade_request_1_count", 12);
+                .defineInRange("barista_4_trade_request_1_count", 12, 1, 64);
         BARISTA_4_OFFER_1 = BUILDER
                 .comment(" Barista 4 Trade Offer 1 Table")
                 .define("barista_4_trade_offer_1_table",
@@ -248,7 +248,7 @@ public class BaristaTradesConfig {
                 .define("barista_4_trade_offer_2_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         BARISTA_4_OFFER_2_COUNT = BUILDER
-                .define("barista_4_trade_offer_2_count", 12);
+                .defineInRange("barista_4_trade_offer_2_count", 12, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level Two Trade Three");
         BARISTA_4_REQUEST_3 = BUILDER
@@ -260,7 +260,7 @@ public class BaristaTradesConfig {
                 .define("barista_4_trade_offer_3_table",
                         TradeLootTables.DESSERT_TAG_TABLE.toString());
         BARISTA_4_OFFER_3_COUNT = BUILDER
-                .define("barista_4_trade_offer_3_count", 6);
+                .defineInRange("barista_4_trade_offer_3_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level Two Trade Four");
         BARISTA_4_REQUEST_4 = BUILDER
@@ -268,7 +268,7 @@ public class BaristaTradesConfig {
                 .define("barista_4_trade_offer_4_table",
                         TradeLootTables.CUPS_TAG_TABLE.toString());
         BARISTA_4_REQUEST_4_COUNT = BUILDER
-                .define("barista_4_trade_offer_4_count", 9);
+                .defineInRange("barista_4_trade_offer_4_count", 9, 1, 64);
         BARISTA_4_OFFER_4 = BUILDER
                 .comment(" Barista 4 Trade Request 4 Table")
                 .define("barista_4_trade_request_4_table",
@@ -281,7 +281,7 @@ public class BaristaTradesConfig {
                 .define("barista_5_trade_request_1_table",
                         TradeLootTables.COFFEE_INGREDIENTS_TAG_TABLE.toString());
         BARISTA_5_REQUEST_1_COUNT = BUILDER
-                .define("barista_5_trade_request_1_count", 12);
+                .defineInRange("barista_5_trade_request_1_count", 12, 1, 64);
         BARISTA_5_OFFER_1 = BUILDER
                 .comment(" Barista 5 Trade Offer 1 Table")
                 .define("barista_5_trade_offer_1_table",
@@ -297,7 +297,7 @@ public class BaristaTradesConfig {
                 .define("barista_5_trade_offer_2_table",
                         TradeLootTables.DRINKS_TAG_TABLE.toString());
         BARISTA_5_OFFER_2_COUNT = BUILDER
-                .define("barista_5_trade_offer_2_count", 12);
+                .defineInRange("barista_5_trade_offer_2_count", 12, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level Two Trade Three");
         BARISTA_5_REQUEST_3 = BUILDER
@@ -309,7 +309,7 @@ public class BaristaTradesConfig {
                 .define("barista_5_trade_offer_3_table",
                         TradeLootTables.DESSERT_TAG_TABLE.toString());
         BARISTA_5_OFFER_3_COUNT = BUILDER
-                .define("barista_5_trade_offer_3_count", 6);
+                .defineInRange("barista_5_trade_offer_3_count", 6, 1, 64);
         BUILDER.pop();
         BUILDER.push("Barista Level Two Trade Four");
         BARISTA_5_REQUEST_4 = BUILDER
@@ -317,7 +317,7 @@ public class BaristaTradesConfig {
                 .define("barista_5_trade_offer_4_table",
                         TradeLootTables.CUPS_TAG_TABLE.toString());
         BARISTA_5_REQUEST_4_COUNT = BUILDER
-                .define("barista_5_trade_offer_4_count", 9);
+                .defineInRange("barista_5_trade_offer_4_count", 9, 1, 64);
         BARISTA_5_OFFER_4 = BUILDER
                 .comment(" Barista 5 Trade Request 4 Table")
                 .define("barista_5_trade_request_4_table",

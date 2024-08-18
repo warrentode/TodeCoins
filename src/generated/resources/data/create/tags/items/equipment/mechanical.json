@@ -1,0 +1,68 @@
+{
+  "values": [
+    {
+      "id": "create:mechanical_crafter",
+      "required": false
+    },
+    {
+      "id": "create:mechanical_arm",
+      "required": false
+    },
+    {
+      "id": "create:mechanical_roller",
+      "required": false
+    },
+    {
+      "id": "create:crushing_wheel",
+      "required": false
+    },
+    {
+      "id": "create:chute",
+      "required": false
+    },
+    {
+      "id": "create:belt",
+      "required": false
+    },
+    {
+      "id": "create:depot",
+      "required": false
+    },
+    {
+      "id": "create:basin",
+      "required": false
+    },
+    {
+      "id": "create:brass_encased_large_cogwheel",
+      "required": false
+    },
+    {
+      "id": "create:andesite_encased_large_cogwheel",
+      "required": false
+    },
+    {
+      "id": "create:brass_encased_cogwheel",
+      "required": false
+    },
+    {
+      "id": "create:andesite_encased_cogwheel",
+      "required": false
+    },
+    {
+      "id": "create:large_cogwheel",
+      "required": false
+    },
+    {
+      "id": "create:cogwheel",
+      "required": false
+    },
+    {
+      "id": "create:windmill_bearing",
+      "required": false
+    },
+    {
+      "id": "create:mechanical_bearing",
+      "required": false
+    }
+  ]
+}

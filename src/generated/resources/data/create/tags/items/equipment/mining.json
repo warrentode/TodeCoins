@@ -1,0 +1,32 @@
+{
+  "values": [
+    {
+      "id": "create:rope_pulley",
+      "required": false
+    },
+    {
+      "id": "create:elevator_pulley",
+      "required": false
+    },
+    {
+      "id": "create:mechanical_roller",
+      "required": false
+    },
+    {
+      "id": "create:crushing_wheel",
+      "required": false
+    },
+    {
+      "id": "create:blaze_burner",
+      "required": false
+    },
+    {
+      "id": "create:encased_fan",
+      "required": false
+    },
+    {
+      "id": "create:mechanical_drill",
+      "required": false
+    }
+  ]
+}

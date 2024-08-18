@@ -110,7 +110,7 @@ public class BeekeeperTradesConfig {
                 .define("beekeeper_4_trade_request_1_table",
                         TradeLootTables.TAGGED_STRING_TABLE.toString());
         BEEKEEPER_4_REQUEST_1_COUNT = BUILDER
-                .define("beekeeper_4_trade_request_1_count", 16);
+                .defineInRange("beekeeper_4_trade_request_1_count", 16, 1, 64);
         BEEKEEPER_4_OFFER_1 = BUILDER
                 .comment(" Beekeeper 4 Trade Offer 1 Table")
                 .define("beekeeper_4_trade_offer_1_table",
@@ -126,7 +126,7 @@ public class BeekeeperTradesConfig {
                 .define("beekeeper_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_CANDLE_TABLE.toString());
         BEEKEEPER_4_OFFER_2_COUNT = BUILDER
-                .define("beekeeper_4_trade_offer_2_count", 4);
+                .defineInRange("beekeeper_4_trade_offer_2_count", 4, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Beekeeper Level Five Trade One");

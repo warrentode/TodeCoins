@@ -61,7 +61,7 @@ public class GlassblowerTradesConfig {
                 .define("glassblower_1_trade_offer_1_table",
                         TradeLootTables.RECYCLABLE_GLASS_TAG_TABLE.toString());
         GLASSBLOWER_1_OFFER_1_COUNT = BUILDER
-                .define("glassblower_1_trade_offer_1_count", 4);
+                .defineInRange("glassblower_1_trade_offer_1_count", 4, 1, 64);
         BUILDER.pop();
         BUILDER.push("Glassblower Level One Trade Two");
         GLASSBLOWER_1_REQUEST_2 = BUILDER
@@ -69,7 +69,7 @@ public class GlassblowerTradesConfig {
                 .define("glassblower_1_trade_request_2_table",
                         TradeLootTables.SAND_TAG_TABLE.toString());
         GLASSBLOWER_1_REQUEST_2_COUNT = BUILDER
-                .define("glassblower_1_trade_request_2_count", 6);
+                .defineInRange("glassblower_1_trade_request_2_count", 6, 1, 64);
         GLASSBLOWER_1_OFFER_2 = BUILDER
                 .comment(" Glassblower 1 Trade Offer 2 Table")
                 .define("glassblower_1_trade_offer_2_table",
@@ -96,7 +96,7 @@ public class GlassblowerTradesConfig {
                 .define("glassblower_2_trade_offer_1_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_2_OFFER_1_COUNT = BUILDER
-                .define("glassblower_2_trade_offer_1_count", 4);
+                .defineInRange("glassblower_2_trade_offer_1_count", 4, 1, 64);
         BUILDER.pop();
         BUILDER.push("Glassblower Level Two Trade Two");
         GLASSBLOWER_2_REQUEST_2 = BUILDER
@@ -108,7 +108,7 @@ public class GlassblowerTradesConfig {
                 .define("glassblower_2_trade_offer_2_table",
                         TradeLootTables.TAGGED_GLASS_PANES_TABLE.toString());
         GLASSBLOWER_2_OFFER_2_COUNT = BUILDER
-                .define("glassblower_2_trade_offer_2_count", 16);
+                .defineInRange("glassblower_2_trade_offer_2_count", 16, 1, 64);
         BUILDER.pop();
         BUILDER.push("Glassblower Level Two Trade Three");
         GLASSBLOWER_2_REQUEST_3 = BUILDER
@@ -152,7 +152,7 @@ public class GlassblowerTradesConfig {
                 .define("glassblower_4_trade_offer_1_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_4_OFFER_1_COUNT = BUILDER
-                .define("glassblower_4_trade_offer_1_count", 4);
+                .defineInRange("glassblower_4_trade_offer_1_count", 4, 1, 64);
         BUILDER.pop();
         BUILDER.push("Glassblower Level Four Trade Two");
         GLASSBLOWER_4_REQUEST_2 = BUILDER
@@ -164,7 +164,7 @@ public class GlassblowerTradesConfig {
                 .define("glassblower_4_trade_offer_2_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_4_OFFER_2_COUNT = BUILDER
-                .define("glassblower_4_trade_offer_2_count", 4);
+                .defineInRange("glassblower_4_trade_offer_2_count", 4, 1, 64);
         BUILDER.pop();
         // level 5
         BUILDER.push("Glassblower Level Five Trade One");
@@ -177,7 +177,7 @@ public class GlassblowerTradesConfig {
                 .define("glassblower_5_trade_offer_1_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_5_OFFER_1_COUNT = BUILDER
-                .define("glassblower_5_trade_offer_1_count", 4);
+                .defineInRange("glassblower_5_trade_offer_1_count", 4, 1, 64);
         BUILDER.pop();
         BUILDER.push("Glassblower Level Five Trade Two");
         GLASSBLOWER_5_REQUEST_2 = BUILDER
@@ -189,7 +189,7 @@ public class GlassblowerTradesConfig {
                 .define("glassblower_5_trade_offer_2_table",
                         TradeLootTables.TAGGED_GLASS_TABLE.toString());
         GLASSBLOWER_5_OFFER_2_COUNT = BUILDER
-                .define("glassblower_5_trade_offer_2_count", 4);
+                .defineInRange("glassblower_5_trade_offer_2_count", 4, 1, 64);
         BUILDER.pop();
         BUILDER.pop();
 
