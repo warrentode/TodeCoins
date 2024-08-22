@@ -1,5 +1,6 @@
-package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table;
+package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
+import com.github.warrentode.todecoins.config.CommonConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -7,6 +8,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -17,18 +19,17 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LootTableForTagTable implements VillagerTrades.ItemListing {
+public class LootTableForEnchanted implements VillagerTrades.ItemListing {
+    private final ItemStack sellItem;
+    private final ResourceLocation currencyLootTable;
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
-    private final ResourceLocation offeredTagTable;
-    private final int offeredTagCount;
-    private final ResourceLocation requestedTable;
 
-    public LootTableForTagTable(ResourceLocation requestedTable, ResourceLocation offeredTagTable, int offeredTagCount, int maxUses, int xpValue, float priceMultiplier) {
-        this.offeredTagTable = offeredTagTable;
-        this.offeredTagCount = offeredTagCount;
-        this.requestedTable = requestedTable;
+    public LootTableForEnchanted(ItemStack sellItem, ResourceLocation currencyLootTable,
+                                 int maxUses, int xpValue, float priceMultiplier) {
+        this.sellItem = sellItem;
+        this.currencyLootTable = currencyLootTable;
         this.maxUses = maxUses;
         this.xpValue = xpValue;
         this.priceMultiplier = priceMultiplier;
@@ -41,24 +42,24 @@ public class LootTableForTagTable implements VillagerTrades.ItemListing {
         }
         else {
             MinecraftServer minecraftServer = trader.level.getServer();
-            LootTable offeredTable = minecraftServer.getLootTables().get(this.offeredTagTable);
-            LootTable requestedTable = minecraftServer.getLootTables().get(this.requestedTable);
+            LootTable currencyTable1 = minecraftServer.getLootTables().get(currencyLootTable);
 
             LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())
                     .withParameter(LootContextParams.ORIGIN, trader.position())
                     .withParameter(LootContextParams.THIS_ENTITY, trader)
                     .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
+            List<ItemStack> currency1 = currencyTable1.getRandomItems(lootContext);
 
-            List<ItemStack> offered = offeredTable.getRandomItems(lootContext);
-            List<ItemStack> requested = requestedTable.getRandomItems(lootContext);
+            ItemStack requestStack1 = new ItemStack(
+                    currency1.get(source.nextInt(currency1.size())).getItem(),
+                    currency1.get(source.nextInt(currency1.size())).getCount());
 
-            ItemStack offerStack = new ItemStack(
-                    offered.get(source.nextInt(requested.size())).getItem(), this.offeredTagCount);
-            ItemStack requestStack = new ItemStack(
-                    requested.get(source.nextInt(requested.size())).getItem(),
-                    requested.get(source.nextInt(requested.size())).getCount());
+            int i = 5 + source.nextInt(15);
+            ItemStack enchantedItem = EnchantmentHelper.enchantItem(source,
+                    new ItemStack(this.sellItem.getItem()), i,
+                    CommonConfig.getAllowTreasureEnchantments());
 
-            return new MerchantOffer(requestStack, offerStack, this.maxUses, this.xpValue, this.priceMultiplier);
+            return new MerchantOffer(requestStack1, enchantedItem, this.maxUses, this.xpValue, this.priceMultiplier);
         }
     }
 }

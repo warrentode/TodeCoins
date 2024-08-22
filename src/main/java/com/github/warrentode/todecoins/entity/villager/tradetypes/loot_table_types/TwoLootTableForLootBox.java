@@ -1,4 +1,4 @@
-package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table;
+package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import net.minecraft.core.BlockPos;

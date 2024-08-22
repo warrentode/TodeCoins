@@ -81,3 +81,9 @@ An additional location to report issues or ask questions is on my discord at: ht
     versionRange = "[1.19.2-1.2.3,)"
     ordering = "NONE"
     side = "BOTH"
+[[dependencies.todecoins]]
+    modId = "wares"
+    mandatory = false
+    versionRange = "[1.2.8,)"
+    ordering = "NONE"
+    side = "BOTH"

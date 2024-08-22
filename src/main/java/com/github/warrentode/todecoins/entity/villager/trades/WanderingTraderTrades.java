@@ -2,8 +2,8 @@ package com.github.warrentode.todecoins.entity.villager.trades;
 
 import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.config.trades.minecraft.WanderingTraderTradesConfig;
-import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.LootTableForLootTable;
-import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.LootTableForTagTable;
+import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types.LootTableForLootTable;
+import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types.LootTableForTagTable;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraftforge.event.village.WandererTradesEvent;

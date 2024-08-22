@@ -28,11 +28,14 @@ import com.github.warrentode.todecoins.config.trades.villager_enchanter.Enchante
 import com.github.warrentode.todecoins.config.trades.villagersplus.AlchemistTradesConfig;
 import com.github.warrentode.todecoins.config.trades.villagersplus.HorticulturistTradesConfig;
 import com.github.warrentode.todecoins.config.trades.villagersplus.OccultistTradesConfig;
+import com.github.warrentode.todecoins.config.trades.wares.PackagerTradesConfig;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
-import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table.*;
+import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types.*;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.TradeLootTables;
+import io.github.mortuusars.wares.data.agreement.component.TextProvider;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -74,6 +77,148 @@ public class ModVillagerTrades {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             if (CommonConfig.getCustomTrades()) {
+                // Wares mod trades
+                if (ModList.get().isLoaded("wares")) {
+                    // PACKAGER
+                    if (event.getType() == ForgeRegistries.VILLAGER_PROFESSIONS.getValue(ResourceLocation.tryParse("wares:packager"))) {
+                        if (REPLACE_TRADES) {
+                            trades.get(novice).clear();
+                            trades.get(apprentice).clear();
+                            trades.get(journeyman).clear();
+                            trades.get(expert).clear();
+                            trades.get(master).clear();
+                        }
+
+                        for (int i = 0; i < CommonConfig.getMaxVillagerTrades(); ++i) {
+                            trades.get(novice).add(new LootTableForTagTable(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager1Request1()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager1Offer1()),
+                                    PackagerTradesConfig.getPackager1Offer1Count(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+                            trades.get(novice).add(new LootTableForSealedAgreement(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager1Request2()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager1Offer2AgreementPriceTable()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager1Offer2AgreementOfferTable()),
+                                    PackagerTradesConfig.getPackager1Offer2AgreementID(),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager1Offer2AgreementTitle())),
+                                    Component.literal(PackagerTradesConfig.getPackager1Offer2AgreementBacksideMessage()),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager1Offer2AgreementBuyerName())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager1Offer2AgreementBuyerAddress())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager1Offer2AgreementBuyerMessage())),
+                                    PackagerTradesConfig.getPackager1Offer2AgreementSeal(),
+                                    Component.literal(PackagerTradesConfig.getPackager1Offer2AgreementSealTooltip()),
+                                    PackagerTradesConfig.getPackager1Offer2AgreementOrderCount(),
+                                    PackagerTradesConfig.getPackager1Offer2AgreementOrderXP(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+
+                            trades.get(apprentice).add(new LootTableForTagTable(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager2Request1()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager2Offer1()),
+                                    PackagerTradesConfig.getPackager2Offer1Count(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+                            trades.get(apprentice).add(new LootTableForSealedAgreement(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager2Request2()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager2Offer2AgreementPriceTable()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager2Offer2AgreementOfferTable()),
+                                    PackagerTradesConfig.getPackager2Offer2AgreementID(),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager2Offer2AgreementTitle())),
+                                    Component.literal(PackagerTradesConfig.getPackager2Offer2AgreementBacksideMessage()),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager2Offer2AgreementBuyerName())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager2Offer2AgreementBuyerAddress())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager2Offer2AgreementBuyerMessage())),
+                                    PackagerTradesConfig.getPackager2Offer2AgreementSeal(),
+                                    Component.literal(PackagerTradesConfig.getPackager2Offer2AgreementSealTooltip()),
+                                    PackagerTradesConfig.getPackager2Offer2AgreementOrderCount(),
+                                    PackagerTradesConfig.getPackager2Offer2AgreementOrderXP(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+
+                            trades.get(journeyman).add(new LootTableForTagTable(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Request1()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer1()),
+                                    PackagerTradesConfig.getPackager3Offer1Count(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+                            trades.get(journeyman).add(new LootTableForSealedAgreement(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Request2()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementPriceTable()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementOfferTable()),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementID(),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementTitle())),
+                                    Component.literal(PackagerTradesConfig.getPackager2Offer3AgreementBacksideMessage()),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerName())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerAddress())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerMessage())),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementSeal(),
+                                    Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementSealTooltip()),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderCount(),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderXP(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+
+
+                            trades.get(expert).add(new LootTableForTagTable(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager4Request1()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager4Offer1()),
+                                    PackagerTradesConfig.getPackager4Offer1Count(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+                            trades.get(expert).add(new LootTableForSealedAgreement(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Request2()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementPriceTable()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementOfferTable()),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementID(),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementTitle())),
+                                    Component.literal(PackagerTradesConfig.getPackager2Offer3AgreementBacksideMessage()),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerName())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerAddress())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerMessage())),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementSeal(),
+                                    Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementSealTooltip()),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderCount(),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderXP(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+
+                            trades.get(master).add(new LootTableForTagTable(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager5Request1()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager5Offer1()),
+                                    PackagerTradesConfig.getPackager5Offer1Count(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+                            trades.get(master).add(new LootTableForSealedAgreement(
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Request2()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementPriceTable()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementOfferTable()),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementID(),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementTitle())),
+                                    Component.literal(PackagerTradesConfig.getPackager2Offer3AgreementBacksideMessage()),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerName())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerAddress())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerMessage())),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementSeal(),
+                                    Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementSealTooltip()),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderCount(),
+                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderXP(),
+                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
+                                    CONFIG_COMMON_TRADE_MULTIPLIER
+                            ));
+                        }
+                    }
+                }
+
                 // DynamicVillage mod trades
                 if (ModList.get().isLoaded("dynamicvillage")) {
                     // MECHANICAL ENGINEER

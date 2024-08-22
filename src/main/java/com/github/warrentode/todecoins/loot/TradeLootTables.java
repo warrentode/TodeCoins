@@ -319,6 +319,7 @@ public class TradeLootTables {
     public static final ResourceLocation ENCHANTABLE_PET_GEAR_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/enchantable_pet_gear_tag_table");
     public static final ResourceLocation LEAVES_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/leaves_tag_table");
     public static final ResourceLocation POISONOUS_POTATO_TABLE = register(MODID + ":" + "trade_tables/misc/poisonous_potato_table");
+    public static final ResourceLocation PACKAGE_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/package_tag_table");
 
     // create related tags
     public static final ResourceLocation COPPER_MATERIALS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/copper_materials_tag_table");

@@ -1,6 +1,5 @@
-package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table;
+package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
-import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
@@ -12,9 +11,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionBrewing;
-import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -26,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class LootTableForPotion implements VillagerTrades.ItemListing {
+public class LootTableForSUSStew implements VillagerTrades.ItemListing {
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
@@ -34,7 +30,7 @@ public class LootTableForPotion implements VillagerTrades.ItemListing {
     private final int duration;
     private final ResourceLocation requestTable;
 
-    public LootTableForPotion(MobEffect effect, int duration, ResourceLocation requestTable, int maxUses, int xpValue, float priceMultiplier) {
+    public LootTableForSUSStew(MobEffect effect, int duration, ResourceLocation requestTable, int maxUses, int xpValue, float priceMultiplier) {
         this.effect = effect;
         this.duration = duration;
         this.requestTable = requestTable;
@@ -64,21 +60,15 @@ public class LootTableForPotion implements VillagerTrades.ItemListing {
                     requested.get(source.nextInt(requested.size())).getItem(),
                     requested.get(source.nextInt(requested.size())).getCount());
 
-            //noinspection deprecation
-            List<Potion> list = Registry.POTION.stream().filter((potion) ->
-                    !potion.getEffects().isEmpty() && PotionBrewing.isBrewablePotion(potion)).toList();
-            Potion potion = list.get(source.nextInt(list.size()));
+            ItemStack offeredBowl = new ItemStack(Items.SUSPICIOUS_STEW, 1);
+            saveMobEffect(offeredBowl, this.effect, this.duration);
 
-            ItemStack offeredPotion = PotionUtils.setPotion(
-                    new ItemStack(Items.POTION, 1), potion);
-            saveMobEffect(offeredPotion, this.effect, this.duration);
-
-            return new MerchantOffer(requestStack, offeredPotion, this.maxUses, this.xpValue, this.priceMultiplier);
+            return new MerchantOffer(requestStack, offeredBowl, this.maxUses, this.xpValue, this.priceMultiplier);
         }
     }
 
-    public void saveMobEffect(ItemStack potionStack, MobEffect mobEffect, int effectDuration) {
-        CompoundTag compoundTag = potionStack.getOrCreateTag();
+    public void saveMobEffect(ItemStack bowlStack, MobEffect mobEffect, int effectDuration) {
+        CompoundTag compoundTag = bowlStack.getOrCreateTag();
         ListTag listTag = compoundTag.getList("Effects", 9);
         CompoundTag compoundTag1 = new CompoundTag();
         compoundTag1.putInt("EffectId", MobEffect.getId(mobEffect));

@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-18T04:06:49.8680362	LootTables
+// 1.19.2	2024-08-21T22:49:20.6720835	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -411,6 +411,7 @@ e3199d3dfb30d42aaea37af4d15e4412395bf0b7 data/todecoins/loot_tables/trade_tables
 6dbd21a87a933fffe43134484f69f7989aa3784f data/todecoins/loot_tables/trade_tables/misc/nether_star_table.json
 9b995d91bb911cdd279f33a6e15f5f909f88d21b data/todecoins/loot_tables/trade_tables/misc/nine_emerald_value_redstone.json
 fc522f7cb97de462b9cea253bb3940f8e2042cee data/todecoins/loot_tables/trade_tables/misc/one_emerald_value_fuel_table.json
+45bb81bba0c2c9e3a5beb7c56dfbf3924f4a9516 data/todecoins/loot_tables/trade_tables/misc/package_tag_table.json
 6d2184ceaa5e11e0bd19931338c689e3bc1cf357 data/todecoins/loot_tables/trade_tables/misc/patterns_tag_table.json
 e2fb95cc66de8eeb3a387221bbc7d5e381a94e42 data/todecoins/loot_tables/trade_tables/misc/pet_supplies_tag_table.json
 7a26827d42cd7c4f99836ac079f9cb82f5f4ebe6 data/todecoins/loot_tables/trade_tables/misc/poisonous_potato_table.json

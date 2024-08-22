@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-18T04:06:49.862037	Tags for minecraft:item
+// 1.19.2	2024-08-21T22:49:20.6772711	Tags for minecraft:item
 8e2bc408dad83ed16a56b702b891e65363fab23b data/beautify/tags/items/bookstack.json
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
@@ -332,3 +332,4 @@ d981dca9a04141e8b661ac119d9be5551667623b data/turtleblockacademy/tags/items/need
 99a41717ea74967107b8fa1e4cee405b5f7b1cd1 data/turtleblockacademy/tags/items/picture_frames.json
 b8cd61d1bab0e6f5d8730269fbe12ae76f98c5bd data/turtleblockacademy/tags/items/trellis.json
 2bd5be7eade54d22938e7985d97f565e1eec0201 data/villager_enchanter/tags/items/refresh_book.json
+d0b833d0d8365355a33bf3282146ad8aeaf6d27c data/wares/tags/items/package_containers.json

@@ -1,4 +1,4 @@
-package com.github.warrentode.todecoins.entity.villager.tradetypes.item_set;
+package com.github.warrentode.todecoins.entity.villager.tradetypes.item_set_types;
 
 import com.github.warrentode.todecoins.util.tags.ModTags;
 import com.google.common.collect.ImmutableSet;

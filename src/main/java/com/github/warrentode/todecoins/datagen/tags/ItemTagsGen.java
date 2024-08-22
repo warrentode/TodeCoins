@@ -1292,6 +1292,9 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ModTags.Items.BOOKSTACK)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:bookstack")));
+        tag(ModTags.Items.PACKAGE_CONTAINERS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("wares:cardboard_box")));
         tag(ModTags.Items.TEXTILES)
                 .addTag(ModTags.Items.CURRENCY_FIBER)
                 .addTag(ModTags.Items.CURRENCY_PAPER)

@@ -171,6 +171,7 @@ public class ModTags {
         public static final TagKey<Item> JAR_PLACEABLE = modItemTag("jar_placeable");
         public static final TagKey<Item> REFRESH_BOOK = modItemTag("villager_enchanter", "refresh_book");
         public static final TagKey<Item> BOOKSTACK = modItemTag("beautify", "bookstack");
+        public static final TagKey<Item> PACKAGE_CONTAINERS = modItemTag("wares", "package_containers");
 
         public static final TagKey<Item> NUGGETS = modItemTag("nuggets");
         public static final TagKey<Item> COPPER_NUGGET = modItemTag("nuggets/copper");

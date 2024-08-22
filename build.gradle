@@ -152,6 +152,7 @@ dependencies {
     implementation fg.deobf("curse.maven:guard-villagers-360203:5116175")
     implementation fg.deobf("curse.maven:unusual-end-617757:4549776")
     implementation fg.deobf("curse.maven:farmers-delight-398521:4679318")
+    compileOnly(fg.deobf("curse.maven:wares-839158:5275496"))
 
     runtimeOnly(fg.deobf("curse.maven:configured-457570:4462837"))
 

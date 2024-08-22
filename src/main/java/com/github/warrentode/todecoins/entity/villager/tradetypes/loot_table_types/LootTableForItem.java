@@ -1,4 +1,4 @@
-package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table;
+package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -17,20 +17,16 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LootTableAndItemForItem implements VillagerTrades.ItemListing {
+public class LootTableForItem implements VillagerTrades.ItemListing {
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
     private final ResourceLocation requestTable;
-    private final ItemStack requestItem;
-    private final int requestCount;
     private final ItemStack offerItem;
     private final int offerCount;
 
-    public LootTableAndItemForItem(ResourceLocation requestTable, ItemStack requestItem, int requestCount, ItemStack offerItem, int offerCount, int maxUses, int xpValue, float priceMultiplier) {
+    public LootTableForItem(ResourceLocation requestTable, ItemStack offerItem, int offerCount, int maxUses, int xpValue, float priceMultiplier) {
         this.requestTable = requestTable;
-        this.requestItem = requestItem;
-        this.requestCount = requestCount;
         this.offerItem = offerItem;
         this.offerCount = offerCount;
         this.maxUses = maxUses;
@@ -54,13 +50,11 @@ public class LootTableAndItemForItem implements VillagerTrades.ItemListing {
 
             List<ItemStack> requesting = requestTable.getRandomItems(lootContext);
 
-            ItemStack requestTableStack = new ItemStack(
+            ItemStack requestStack = new ItemStack(
                     requesting.get(source.nextInt(requesting.size())).getItem(),
                     requesting.get(source.nextInt(requesting.size())).getCount());
-            ItemStack requestStack = new ItemStack(this.requestItem.getItem(), this.requestCount);
-
             ItemStack offerStack = new ItemStack(this.offerItem.getItem(), this.offerCount);
-            return new MerchantOffer(requestTableStack, requestStack, offerStack, this.maxUses, this.xpValue, this.priceMultiplier);
+            return new MerchantOffer(requestStack, offerStack, this.maxUses, this.xpValue, this.priceMultiplier);
         }
     }
 }

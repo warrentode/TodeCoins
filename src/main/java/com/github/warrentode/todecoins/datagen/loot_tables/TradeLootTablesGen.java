@@ -2088,6 +2088,12 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ModTags.Items.COPPER_MATERIALS))
                 ));
+        consumer.accept(TradeLootTables.PACKAGE_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ModTags.Items.PACKAGE_CONTAINERS))
+                ));
         consumer.accept(TradeLootTables.POISONOUS_POTATO_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))

@@ -1,4 +1,4 @@
-package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table;
+package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -17,18 +17,22 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TagTableForLootTable implements VillagerTrades.ItemListing {
+public class LootTableAndItemForItem implements VillagerTrades.ItemListing {
     private final int maxUses;
     private final int xpValue;
     private final float priceMultiplier;
-    private final ResourceLocation requestedTagTable;
-    private final int requestedTagCount;
-    private final ResourceLocation offeredTable;
+    private final ResourceLocation requestTable;
+    private final ItemStack requestItem;
+    private final int requestCount;
+    private final ItemStack offerItem;
+    private final int offerCount;
 
-    public TagTableForLootTable(ResourceLocation requestedTagTable, int requestedTagCount, ResourceLocation offeredTable, int maxUses, int xpValue, float priceMultiplier) {
-        this.requestedTagTable = requestedTagTable;
-        this.requestedTagCount = requestedTagCount;
-        this.offeredTable = offeredTable;
+    public LootTableAndItemForItem(ResourceLocation requestTable, ItemStack requestItem, int requestCount, ItemStack offerItem, int offerCount, int maxUses, int xpValue, float priceMultiplier) {
+        this.requestTable = requestTable;
+        this.requestItem = requestItem;
+        this.requestCount = requestCount;
+        this.offerItem = offerItem;
+        this.offerCount = offerCount;
         this.maxUses = maxUses;
         this.xpValue = xpValue;
         this.priceMultiplier = priceMultiplier;
@@ -41,8 +45,7 @@ public class TagTableForLootTable implements VillagerTrades.ItemListing {
         }
         else {
             MinecraftServer minecraftServer = trader.level.getServer();
-            LootTable requestTable = minecraftServer.getLootTables().get(this.requestedTagTable);
-            LootTable offerTable = minecraftServer.getLootTables().get(this.offeredTable);
+            LootTable requestTable = minecraftServer.getLootTables().get(this.requestTable);
 
             LootContext lootContext = new LootContext.Builder(minecraftServer.createCommandSourceStack().getLevel())
                     .withParameter(LootContextParams.ORIGIN, trader.position())
@@ -50,15 +53,14 @@ public class TagTableForLootTable implements VillagerTrades.ItemListing {
                     .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
 
             List<ItemStack> requesting = requestTable.getRandomItems(lootContext);
-            List<ItemStack> offering = offerTable.getRandomItems(lootContext);
 
-            ItemStack requestStack = new ItemStack(
-                    requesting.get(source.nextInt(offering.size())).getItem(), this.requestedTagCount);
-            ItemStack offerStack = new ItemStack(
-                    offering.get(source.nextInt(offering.size())).getItem(),
-                    offering.get(source.nextInt(offering.size())).getCount());
+            ItemStack requestTableStack = new ItemStack(
+                    requesting.get(source.nextInt(requesting.size())).getItem(),
+                    requesting.get(source.nextInt(requesting.size())).getCount());
+            ItemStack requestStack = new ItemStack(this.requestItem.getItem(), this.requestCount);
 
-            return new MerchantOffer(requestStack, offerStack, this.maxUses, this.xpValue, this.priceMultiplier);
+            ItemStack offerStack = new ItemStack(this.offerItem.getItem(), this.offerCount);
+            return new MerchantOffer(requestTableStack, requestStack, offerStack, this.maxUses, this.xpValue, this.priceMultiplier);
         }
     }
 }
