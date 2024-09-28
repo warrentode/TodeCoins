@@ -153,7 +153,7 @@ public class ModVillagerTrades {
                                     ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementOfferTable()),
                                     PackagerTradesConfig.getPackager3Offer2AgreementID(),
                                     TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementTitle())),
-                                    Component.literal(PackagerTradesConfig.getPackager2Offer3AgreementBacksideMessage()),
+                                    Component.literal(PackagerTradesConfig.getPackager3Offer3AgreementBacksideMessage()),
                                     TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerName())),
                                     TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerAddress())),
                                     TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerMessage())),
@@ -165,7 +165,6 @@ public class ModVillagerTrades {
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
 
-
                             trades.get(expert).add(new LootTableForTagTable(
                                     ResourceLocation.tryParse(PackagerTradesConfig.getPackager4Request1()),
                                     ResourceLocation.tryParse(PackagerTradesConfig.getPackager4Offer1()),
@@ -174,19 +173,19 @@ public class ModVillagerTrades {
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
                             trades.get(expert).add(new LootTableForSealedAgreement(
-                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Request2()),
-                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementPriceTable()),
-                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementOfferTable()),
-                                    PackagerTradesConfig.getPackager3Offer2AgreementID(),
-                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementTitle())),
-                                    Component.literal(PackagerTradesConfig.getPackager2Offer3AgreementBacksideMessage()),
-                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerName())),
-                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerAddress())),
-                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerMessage())),
-                                    PackagerTradesConfig.getPackager3Offer2AgreementSeal(),
-                                    Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementSealTooltip()),
-                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderCount(),
-                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderXP(),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager4Request2()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager4Offer2AgreementPriceTable()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager4Offer2AgreementOfferTable()),
+                                    PackagerTradesConfig.getPackager4Offer2AgreementID(),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager4Offer2AgreementTitle())),
+                                    Component.literal(PackagerTradesConfig.getPackager4Offer3AgreementBacksideMessage()),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager4Offer2AgreementBuyerName())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager4Offer2AgreementBuyerAddress())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager4Offer2AgreementBuyerMessage())),
+                                    PackagerTradesConfig.getPackager4Offer2AgreementSeal(),
+                                    Component.literal(PackagerTradesConfig.getPackager4Offer2AgreementSealTooltip()),
+                                    PackagerTradesConfig.getPackager4Offer2AgreementOrderCount(),
+                                    PackagerTradesConfig.getPackager4Offer2AgreementOrderXP(),
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
@@ -199,19 +198,19 @@ public class ModVillagerTrades {
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
                             trades.get(master).add(new LootTableForSealedAgreement(
-                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Request2()),
-                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementPriceTable()),
-                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager3Offer2AgreementOfferTable()),
-                                    PackagerTradesConfig.getPackager3Offer2AgreementID(),
-                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementTitle())),
-                                    Component.literal(PackagerTradesConfig.getPackager2Offer3AgreementBacksideMessage()),
-                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerName())),
-                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerAddress())),
-                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementBuyerMessage())),
-                                    PackagerTradesConfig.getPackager3Offer2AgreementSeal(),
-                                    Component.literal(PackagerTradesConfig.getPackager3Offer2AgreementSealTooltip()),
-                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderCount(),
-                                    PackagerTradesConfig.getPackager3Offer2AgreementOrderXP(),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager5Request2()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager5Offer2AgreementPriceTable()),
+                                    ResourceLocation.tryParse(PackagerTradesConfig.getPackager5Offer2AgreementOfferTable()),
+                                    PackagerTradesConfig.getPackager5Offer2AgreementID(),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager5Offer2AgreementTitle())),
+                                    Component.literal(PackagerTradesConfig.getPackager5Offer3AgreementBacksideMessage()),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager5Offer2AgreementBuyerName())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager5Offer2AgreementBuyerAddress())),
+                                    TextProvider.of(Component.literal(PackagerTradesConfig.getPackager5Offer2AgreementBuyerMessage())),
+                                    PackagerTradesConfig.getPackager5Offer2AgreementSeal(),
+                                    Component.literal(PackagerTradesConfig.getPackager5Offer2AgreementSealTooltip()),
+                                    PackagerTradesConfig.getPackager5Offer2AgreementOrderCount(),
+                                    PackagerTradesConfig.getPackager5Offer2AgreementOrderXP(),
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));

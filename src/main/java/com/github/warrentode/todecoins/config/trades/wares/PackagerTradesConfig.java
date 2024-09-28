@@ -723,7 +723,7 @@ public class PackagerTradesConfig {
             return PACKAGER_3_OFFER_2_AGREEMENT_PRICE_TABLE.get();
         }
     }
-    public static String getPackager2Offer3AgreementBacksideMessage() {
+    public static String getPackager3Offer3AgreementBacksideMessage() {
         if (Objects.equals(PACKAGER_3_OFFER_2_AGREEMENT_BACKSIDE_MESSAGE.get(), PACKAGER_3_OFFER_2_AGREEMENT_BACKSIDE_MESSAGE.getDefault())) {
             return PACKAGER_3_OFFER_2_AGREEMENT_BACKSIDE_MESSAGE.getDefault();
         }
