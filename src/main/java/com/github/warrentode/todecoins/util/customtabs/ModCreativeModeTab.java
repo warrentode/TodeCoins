@@ -109,6 +109,7 @@ public class ModCreativeModeTab extends CreativeModeTab {
         items.add((ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get().getDefaultInstance()));
 
         items.add(ModItems.NUMISMATIST_SPAWN_EGG.get().getDefaultInstance());
+        items.add(ModItems.PIGLINMERCHANT_SPAWN_EGG.get().getDefaultInstance());
 
         if (ModList.get().isLoaded("cagerium")) {
             items.add(ModItems.GIANT_SPAWN_EGG.get().getDefaultInstance());

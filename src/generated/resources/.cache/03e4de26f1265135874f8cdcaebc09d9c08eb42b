@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-21T22:49:20.6772711	Tags for minecraft:item
+// 1.19.2	2024-10-16T08:39:40.950672	Tags for minecraft:item
 8e2bc408dad83ed16a56b702b891e65363fab23b data/beautify/tags/items/bookstack.json
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
@@ -125,7 +125,12 @@ e6aa1463fc9f3d6a23a6fdb9c8ad3273bd5abf55 data/forge/tags/items/nuggets/iron.json
 1019b2933186625b3a3f87c6c715a7e03365df11 data/forge/tags/items/pet_food.json
 e26373558745e567b408e29f0b3032c61eb9901c data/forge/tags/items/pet_supplies.json
 3b1f39daf2d8b5a3b80c7d46cc54f350772cd1d0 data/forge/tags/items/pies.json
-eceb115142137119185191b64ef142dbcb53a9dd data/forge/tags/items/piglin_barter_items.json
+f6fe6e8a05e9f214c9780d6a5ee393a96633c99d data/forge/tags/items/piglin_barter_items.json
+b00ab99c504d08c7337f2d71be1b9240bb0445d8 data/forge/tags/items/piglin_barter_items/cheap_barter_currency.json
+e2a840425e64e755edb7def34636760a5e0378ef data/forge/tags/items/piglin_barter_items/common_barter_currency.json
+193b269670ecf607580d014eb7dc897011bb9d07 data/forge/tags/items/piglin_barter_items/rare_barter_currency.json
+6f65945173b470070cc3ffbceeb8614d256b81f3 data/forge/tags/items/piglin_barter_items/uncommon_barter_currency.json
+559e6ea1da943e33b68ea36ea7ff498396d5fe4c data/forge/tags/items/piglin_wanted_items.json
 a972550a860122fffaa0fb70b666737ec3cac475 data/forge/tags/items/plated_foods.json
 7f366ee2ec5a49d86461f2deebf74226efae0308 data/forge/tags/items/quivers.json
 4df28934902d21837c64d046b2891d3dbdb2961a data/forge/tags/items/raw_fishes/raw_clam.json
@@ -178,7 +183,8 @@ dfae1adbe3cdcfe71de34baac625074a69bfd8f7 data/forge/tags/items/tools/knives.json
 abc74db62e55f86d4fc853a8ec90cda2d5055647 data/forge/tags/items/tools/wrench.json
 e199d3ab5411e637e6ee5c576a46d7f243cfeba4 data/hauntedharvest/tags/items/candy.json
 771a6a57c6423ef7bfde3dc7197a239176ecb4e8 data/hauntedharvest/tags/items/sweets.json
-ecffcbf9ec1d2c7b9bcd2ad00bc07dc0f9c6a22c data/minecraft/tags/items/piglin_loved.json
+f5f7914ac4fd854c1a22cc49e134862148bae7a1 data/minecraft/tags/items/piglin_food.json
+91645077f34ccb7a10a35548175d538eac4b78b7 data/minecraft/tags/items/piglin_loved.json
 7b975ada88349f8e6d8ec35475e6f20a36405eaa data/sewingkit/tags/items/file.json
 dc43988c84642e2f6d88f3b37d9c03c17f1fc66a data/sewingkit/tags/items/patterns.json
 85501e599f11da6fd937e4572943e5a17432e349 data/supplementaries/tags/items/chocolate_bars.json
@@ -316,6 +322,7 @@ c3840d2cc4f4ae12e640c48c209d672f85071710 data/todecoins/tags/items/nuggets/endon
 a600f08f3b82ea64e2da4220752cea0537967e95 data/todecoins/tags/items/nuggets/iron.json
 9f63c23d399e20ac5adf7f4b684c2189e5458d4b data/todecoins/tags/items/nuggets/lucky.json
 f0a2de5fa3e49648a06ea5638dbacc4a7d1c02d8 data/todecoins/tags/items/nuggets/netherite.json
+e29fe2bceb6935c3f59d94dde21de39bdd9b85a6 data/todecoins/tags/items/piglin_merchant_food.json
 e2feff85afb7e4871204d6f5d72b8760e2780187 data/todecoins/tags/items/shulker_boxes.json
 f5364732958a843323b63eaeabe6a5b15b8fcf2c data/todecoins/tags/items/soul_binder.json
 cd9c93fa4302eb30ddd58d13a9ec40603a6ce651 data/todecoins/tags/items/textiles.json
@@ -326,6 +333,12 @@ aba2458564760bf7bb9b9bd73acb591e86a2866c data/todecoins/tags/items/textiles/fabr
 d7cfa7074795abb34667bf7605e6d6a4787ea5a4 data/todecoins/tags/items/textiles/thread.json
 248d2cc48006d5fc334bc67bbe237e12527a7920 data/todecoins/tags/items/tools/carving.json
 07afe5b82d4526b131b02c23b0f2d53d4fbac6ef data/todecoins/tags/items/wallets.json
+59bdd8b007e213bd6cf741d01e21906b59d4ddb9 data/todepiglins/tags/items/fungus.json
+6015fa08395d5f994c48b35f2f1733d3999a9e76 data/todepiglins/tags/items/nether_stones.json
+4515545e23e5966f678efc0ac80e0242729b3749 data/todepiglins/tags/items/piglin_merchant_cheap_goods.json
+ea67e8e48885ca6e8bce42ce31c009ab78462ac0 data/todepiglins/tags/items/piglin_merchant_common_goods.json
+e831b3c52f4120e7ada4c49e50d2c50082dcc044 data/todepiglins/tags/items/piglin_merchant_goods.json
+1ac74d0c04c88cdc8d07ead7821e989c08f61d0b data/todepiglins/tags/items/piglin_merchant_rare_goods.json
 44e0ac6a9542c62b81f9e46666792ddb52f84fd2 data/todevillagers/tags/items/glassblower_tools.json
 b3366464606e3e50001f0b324c93bef17f4a9348 data/turtleblockacademy/tags/items/blinds.json
 d981dca9a04141e8b661ac119d9be5551667623b data/turtleblockacademy/tags/items/needles.json

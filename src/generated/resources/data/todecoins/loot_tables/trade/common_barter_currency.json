@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:piglin_barter_items/common_barter_currency"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// 1.19.2	2023-12-22T00:52:59.2428157	Item Models: todecoins
+// 1.19.2	2024-10-20T19:22:35.4603947	Item Models: todecoins
 ecda3412c5e3b57cf74228f4a5da8e6350216ef0 assets/todecoins/models/item/bracelet_friendship_echo.json
 05759aa60208204f897d6a422840a8209aff5d2f assets/todecoins/models/item/bracelet_friendship_emerald.json
 61ab9a0ea117f87f5bda5abf3d26644a6ac3885f assets/todecoins/models/item/bracelet_friendship_endonian.json
@@ -436,5 +436,6 @@ dca3d65d9c34e9a7da94dcf65b6507544d645b9e assets/todecoins/models/item/lucky_hat.
 0143237f4233d9714948d22d2820898a28c4ecec assets/todecoins/models/item/netherite_coin.json
 edafb0d5cb9a76a0c30d881920a2077e5925397c assets/todecoins/models/item/netherite_nugget.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/todecoins/models/item/numismatist_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/todecoins/models/item/piglinmerchant_spawn_egg.json
 c8da96b7a0567a638f57d53fde81f8186a030362 assets/todecoins/models/item/server_token_coin.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/todecoins/models/item/snow_golem_spawn_egg.json

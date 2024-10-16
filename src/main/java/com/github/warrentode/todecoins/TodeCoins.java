@@ -33,6 +33,8 @@ import com.github.warrentode.todecoins.config.trades.villagersplus.AlchemistTrad
 import com.github.warrentode.todecoins.config.trades.villagersplus.HorticulturistTradesConfig;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
+import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchant;
+import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchantRenderer;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
 import com.github.warrentode.todecoins.entity.villager.renderer.NumismatistRenderer;
 import com.github.warrentode.todecoins.gui.ModMenuTypes;
@@ -215,6 +217,13 @@ public class TodeCoins {
             //noinspection deprecation
             SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(), SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
+        });
+        event.enqueueWork(()-> {
+            //noinspection deprecation
+            SpawnPlacements.register(ModEntityTypes.PIGLINMERCHANT.get(),
+                    SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    PiglinMerchant::checkPiglinMerchantSpawnRules);
         });
         event.enqueueWork(() -> {
             // Potions
@@ -634,6 +643,7 @@ public class TodeCoins {
         public static void onClientSetup(@NotNull FMLClientSetupEvent event) {
             event.enqueueWork(() -> MenuScreens.register(ModMenuTypes.COIN_PRESS_MENU.get(), CoinPressScreen::new));
             EntityRenderers.register(ModEntityTypes.NUMISMATIST.get(), NumismatistRenderer::new);
+            EntityRenderers.register(ModEntityTypes.PIGLINMERCHANT.get(), PiglinMerchantRenderer::new);
         }
 
         @SubscribeEvent

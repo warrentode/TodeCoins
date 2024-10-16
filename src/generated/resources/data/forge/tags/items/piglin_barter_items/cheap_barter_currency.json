@@ -1,0 +1,9 @@
+{
+  "values": [
+    {
+      "id": "todecoins:gold_coin",
+      "required": false
+    },
+    "minecraft:gold_nugget"
+  ]
+}

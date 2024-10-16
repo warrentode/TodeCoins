@@ -6,7 +6,11 @@ import com.github.warrentode.todecoins.commands.VillagerTradeCommands;
 import com.github.warrentode.todecoins.effect.*;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.ai.goal.AvoidPlayerCatCoinGoal;
+import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchant;
+import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchantModel;
+import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchantModelLayers;
 import com.github.warrentode.todecoins.entity.spawners.numismatist.NumismatistSpawner;
+import com.github.warrentode.todecoins.entity.spawners.piglinmerchant.PiglinMerchantSpawner;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.item.custom.bracelet.FriendshipBraceletItem;
 import com.github.warrentode.todecoins.util.PlayerUtil;
@@ -35,6 +39,8 @@ import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
@@ -67,11 +73,20 @@ import java.util.Optional;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class ModEvents {
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ModEventBusClientEvents{
+        @SubscribeEvent
+        public static void registerLayerDefinitions(@NotNull EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(PiglinMerchantModelLayers.PIGLINMERCHANT, PiglinMerchantModel::createBodyLayer);
+        }
+    }
+
     @Mod.EventBusSubscriber(modid = TodeCoins.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEventBusEvents {
         @SubscribeEvent
         public static void onEntityAttributeEvent(@NotNull EntityAttributeCreationEvent event) {
             event.put(ModEntityTypes.NUMISMATIST.get(), Mob.createMobAttributes().build());
+            event.put(ModEntityTypes.PIGLINMERCHANT.get(), PiglinMerchant.setAttributes());
         }
     }
 
@@ -406,16 +421,19 @@ public class ModEvents {
     @Mod.EventBusSubscriber(modid = MODID)
     public static class CustomSpawnerHandler {
         private static final Map<ResourceLocation, NumismatistSpawner> numismatistSpawner = new HashMap<>();
+        private static final Map<ResourceLocation, PiglinMerchantSpawner> piglinMerchantSpawner = new HashMap<>();
 
         @SubscribeEvent
         public static void onWorldLoad(@NotNull ServerStartingEvent event) {
             MinecraftServer server = event.getServer();
             numismatistSpawner.put(BuiltinDimensionTypes.OVERWORLD.location(), new NumismatistSpawner(server, "Numismatist", ModEntityTypes.NUMISMATIST.get()));
+            piglinMerchantSpawner.put(BuiltinDimensionTypes.OVERWORLD.location(), new PiglinMerchantSpawner(server, "PiglinMerchant", ModEntityTypes.PIGLINMERCHANT.get()));
         }
 
         @SubscribeEvent
         public static void onServerStopped(ServerStoppedEvent event) {
             numismatistSpawner.clear();
+            piglinMerchantSpawner.clear();
         }
 
         @SubscribeEvent
@@ -428,9 +446,14 @@ public class ModEvents {
                 return;
             }
 
-            NumismatistSpawner spawner = numismatistSpawner.get(event.level.dimension().location());
-            if (spawner != null) {
-                spawner.tick((ServerLevel) event.level, true, true);
+            NumismatistSpawner numismatistSpawner1 = numismatistSpawner.get(event.level.dimension().location());
+            if (numismatistSpawner1 != null) {
+                numismatistSpawner1.tick((ServerLevel) event.level, true, true);
+            }
+
+            PiglinMerchantSpawner piglinMerchantSpawner1 = piglinMerchantSpawner.get(event.level.dimension().location());
+            if (piglinMerchantSpawner1 != null) {
+                piglinMerchantSpawner1.tick((ServerLevel) event.level, true, true);
             }
         }
     }

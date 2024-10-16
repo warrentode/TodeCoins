@@ -140,6 +140,9 @@ public class ModItems {
     public static final RegistryObject<ForgeSpawnEggItem> GIANT_SPAWN_EGG = ITEMS.register("giant_spawn_egg",
             () -> new ForgeSpawnEggItem(() -> EntityType.GIANT, 7969893, 44975,
                     new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<ForgeSpawnEggItem> PIGLINMERCHANT_SPAWN_EGG = ITEMS.register("piglinmerchant_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.PIGLINMERCHANT, 0x800000, 0xF9F3A4,
+                    new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     // CANDY COINS FOR HOLIDAY EVENTS
     public static final RegistryObject<Item> CRIMSON_SPORE_CHOCOLATE_COIN = ITEMS.register("chocolate_coin_crimson_spore",

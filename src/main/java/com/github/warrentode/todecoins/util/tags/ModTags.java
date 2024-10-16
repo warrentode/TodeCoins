@@ -200,6 +200,25 @@ public class ModTags {
         public static final TagKey<Item> CREATE_INGOTS = modItemTag("forge", "ingots/create_ingots");
         public static final TagKey<Item> TOOLS_WRENCH = modItemTag("forge", "tools/wrench");
         public static final TagKey<Item> ENGINEER_TOOLS = modItemTag("forge", "tools/engineer_tools");
+
+        public static final TagKey<Item> PIGLIN_MERCHANT_RARE_GOODS = modItemTag("todepiglins", "piglin_merchant_rare_goods");
+        public static final TagKey<Item> PIGLIN_MERCHANT_UNCOMMON_GOODS = modItemTag("todepiglins", "piglin_merchant_goods");
+        public static final TagKey<Item> PIGLIN_MERCHANT_COMMON_GOODS = modItemTag("todepiglins", "piglin_merchant_common_goods");
+        public static final TagKey<Item> PIGLIN_MERCHANT_CHEAP_GOODS = modItemTag("todepiglins", "piglin_merchant_cheap_goods");
+
+        public static final TagKey<Item> NETHER_BLOCKS = modItemTag("todepiglins", "nether_stones");
+        public static final TagKey<Item> FUNGUS = modItemTag("todepiglins", "fungus");
+
+        public static final TagKey<Item> CHEAP_BARTER_CURRENCY = modItemTag("forge","piglin_barter_items/cheap_barter_currency");
+        public static final TagKey<Item> COMMON_BARTER_CURRENCY = modItemTag("forge","piglin_barter_items/common_barter_currency");
+        public static final TagKey<Item> UNCOMMON_BARTER_CURRENCY = modItemTag("forge","piglin_barter_items/uncommon_barter_currency");
+        public static final TagKey<Item> RARE_BARTER_CURRENCY = modItemTag("forge","piglin_barter_items/rare_barter_currency");
+
+        public static final TagKey<Item> PIGLIN_BARTER_ITEMS = modItemTag("forge", "piglin_barter_items");
+        public static final TagKey<Item> PIGLIN_WANTED_ITEMS = modItemTag("forge", "piglin_wanted_items");
+        public static final TagKey<Item> PIGLIN_LOVED = modItemTag("minecraft", "piglin_loved");
+        public static final TagKey<Item> PIGLIN_FOOD = modItemTag("minecraft", "piglin_food");
+        public static final TagKey<Item> PIGLIN_MERCHANT_FOOD = modItemTag(MODID, "piglin_merchant_food");
     }
 
     private static @NotNull TagKey<Block> modBlockTag(String path) {
