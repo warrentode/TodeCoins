@@ -121,6 +121,191 @@
     ],
     "subtitle": "subtitles.todecoins.numismatist_yes"
   },
+  "piglinmerchant_ambient": {
+    "sounds": [
+      {
+        "name": "mob/piglin/idle1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/idle2",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/idle3",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/idle4",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/idle5",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_ambient"
+  },
+  "piglinmerchant_anger": {
+    "sounds": [
+      {
+        "name": "mob/piglin/angry1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/angry2",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/angry3",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/angry4",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_anger"
+  },
+  "piglinmerchant_celebrate": {
+    "sounds": [
+      {
+        "name": "mob/piglin/celebrate1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/celebrate2",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/celebrate3",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/celebrate4",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_celebrate"
+  },
+  "piglinmerchant_death": {
+    "sounds": [
+      {
+        "name": "mob/piglin/death1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/death2",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/death3",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/death4",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_death"
+  },
+  "piglinmerchant_examine": {
+    "sounds": [
+      {
+        "name": "mob/piglin/admire1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/admire2",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_examine"
+  },
+  "piglinmerchant_hurt": {
+    "sounds": [
+      {
+        "name": "mob/piglin/hurt1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/hurt2",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/hurt3",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_hurt"
+  },
+  "piglinmerchant_jealous": {
+    "sounds": [
+      {
+        "name": "mob/piglin/jealous1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/jealous2",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/jealous3",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/jealous4",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_jealous"
+  },
+  "piglinmerchant_retreat": {
+    "sounds": [
+      {
+        "name": "mob/piglin/retreat1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/retreat2",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/retreat3",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/retreat4",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_retreat"
+  },
+  "piglinmerchant_step": {
+    "sounds": [
+      {
+        "name": "mob/piglin/step1",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/step2",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/step3",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/step4",
+        "weight": 3
+      },
+      {
+        "name": "mob/piglin/step5",
+        "weight": 3
+      }
+    ],
+    "subtitle": "subtitles.todecoins.piglinmerchant_step"
+  },
   "work_banker": {
     "sounds": [
       {

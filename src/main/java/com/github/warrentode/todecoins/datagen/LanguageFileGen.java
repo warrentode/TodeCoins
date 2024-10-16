@@ -35,7 +35,7 @@ public class LanguageFileGen extends LanguageProvider {
         addAdvancements();
         addAttributes();
         addContainers();
-        addVillagers();
+        addEntities();
         addBlocks();
         addEffect();
         addItemGroups();
@@ -967,6 +967,7 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModItems.SNOW_GOLEM_SPAWN_EGG.get(), "Snow Golem Spawn Egg");
         add(ModItems.ILLUSIONER_SPAWN_EGG.get(), "Illusioner Spawn Egg");
         add(ModItems.GIANT_SPAWN_EGG.get(), "Giant Spawn Egg");
+        add(ModItems.PIGLINMERCHANT_SPAWN_EGG.get(), "Piglin Merchant Spawn Egg");
         add(ModItems.FOUR_LEAF_CLOVER.get(), "Four Leaf Clover");
         add(ModItems.CURRENCY_STAMP.get(), "Currency Stamp");
         add(ModItems.NETHER_CURRENCY_STAMP.get(), "Nether Currency Stamp");
@@ -1448,10 +1449,11 @@ public class LanguageFileGen extends LanguageProvider {
         add(ModBlocks.COINPRESSBLOCK.get(), "Coin Press");
     }
 
-    private void addVillagers() {
+    private void addEntities() {
         add(ModEntityTypes.NUMISMATIST.get(), "Numismatist");
-        add("entity.minecraft.villager.todecoins.banker", "Banker");
-        add("entity.minecraft.villager.todecoins.leprechaun", "Leprechaun");
+        add(ModEntityTypes.PIGLINMERCHANT.get(), "Piglin Merchant");
+        add("entity.minecraft.villager." + MODID + ".banker", "Banker");
+        add("entity.minecraft.villager." + MODID + ".leprechaun", "Leprechaun");
     }
 
     private void addContainers() {
@@ -1460,21 +1462,31 @@ public class LanguageFileGen extends LanguageProvider {
     }
 
     private void addSubtitles() {
-        add("subtitles.todecoins.work_banker", "Banker Works");
-        add("subtitles.todecoins.work_leprechaun", "Leprechaun Works");
-        add("subtitles.todecoins.coin_press_take", "Coin Press Cashes Out");
-        add("subtitles.todecoins.coin_press_use", "Coin Press Used");
+        add("subtitles." + MODID + ".work_banker", "Banker Works");
+        add("subtitles." + MODID + ".work_leprechaun", "Leprechaun Works");
+        add("subtitles." + MODID + ".coin_press_take", "Coin Press Cashes Out");
+        add("subtitles." + MODID + ".coin_press_use", "Coin Press Used");
 
-        add("subtitles.todecoins.numismatist_drink_milk", "Numismatist Drinks Milk");
-        add("subtitles.todecoins.numismatist_drink_potion", "Numismatist Drinks Potion");
-        add("subtitles.todecoins.numismatist_appeared", "Numismatist Appears");
-        add("subtitles.todecoins.numismatist_disappeared", "Numismatist Disappears");
-        add("subtitles.todecoins.numismatist_haggle", "Numismatist Haggles");
-        add("subtitles.todecoins.numismatist_no", "Numismatist Disagrees");
-        add("subtitles.todecoins.numismatist_yes", "Numismatist Agrees");
-        add("subtitles.todecoins.numismatist_idle", "Numismatist Mumbles");
-        add("subtitles.todecoins.numismatist_hurt", "Numismatist Hurt");
-        add("subtitles.todecoins.numismatist_death", "Numismatist Dies");
+        add("subtitles." + MODID + ".numismatist_drink_milk", "Numismatist Drinks Milk");
+        add("subtitles." + MODID + ".numismatist_drink_potion", "Numismatist Drinks Potion");
+        add("subtitles." + MODID + ".numismatist_appeared", "Numismatist Appears");
+        add("subtitles." + MODID + ".numismatist_disappeared", "Numismatist Disappears");
+        add("subtitles." + MODID + ".numismatist_haggle", "Numismatist Haggles");
+        add("subtitles." + MODID + ".numismatist_no", "Numismatist Disagrees");
+        add("subtitles." + MODID + ".numismatist_yes", "Numismatist Agrees");
+        add("subtitles." + MODID + ".numismatist_idle", "Numismatist Mumbles");
+        add("subtitles." + MODID + ".numismatist_hurt", "Numismatist Hurt");
+        add("subtitles." + MODID + ".numismatist_death", "Numismatist Dies");
+
+        add("subtitles." + MODID + ".piglinmerchant_hurt", "Piglin Merchant Hurt");
+        add("subtitles." + MODID + ".piglinmerchant_death", "Piglin Merchant Dies");
+        add("subtitles." + MODID + ".piglinmerchant_step", "Piglin Merchant Steps");
+        add("subtitles." + MODID + ".piglinmerchant_retreat", "Piglin Merchant Retreats");
+        add("subtitles." + MODID + ".piglinmerchant_jealous", "Piglin Merchant Snorts Enviously");
+        add("subtitles." + MODID + ".piglinmerchant_ambient", "Piglin Merchant Snorts");
+        add("subtitles." + MODID + ".piglinmerchant_celebrates", "Piglin Merchant Celebrates");
+        add("subtitles." + MODID + ".piglinmerchant_anger", "Piglin Merchant Snarls");
+        add("subtitles." + MODID + ".piglinmerchant_examine", "Piglin Merchant Examines Item");
     }
 
     private void addAttributes() {

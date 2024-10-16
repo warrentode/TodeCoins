@@ -1,5 +1,8 @@
 {
   "values": [
+    "#forge:piglin_barter_items/common_barter_currency",
+    "#forge:piglin_barter_items/uncommon_barter_currency",
+    "#forge:piglin_barter_items/rare_barter_currency",
     "todecoins:nether_gold_coin",
     "todecoins:collectible_coin_piglin_netherite"
   ]

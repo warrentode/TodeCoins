@@ -14,11 +14,15 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
+
+import static net.minecraft.world.item.Items.*;
 
 public class ItemTagsGen extends ItemTagsProvider {
     public ItemTagsGen(DataGenerator pGenerator, BlockTagsProvider pBlockTagsProvider, String modId,
@@ -1495,6 +1499,97 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("create:stressometer")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:speedometer")));
+
+        tag(ModTags.Items.PIGLIN_MERCHANT_RARE_GOODS)
+                .add(MUSIC_DISC_PIGSTEP)
+                .add(NETHERITE_SCRAP)
+                .add(ANCIENT_DEBRIS.asItem());
+        tag(ModTags.Items.PIGLIN_MERCHANT_UNCOMMON_GOODS)
+                .add(FIRE_CHARGE)
+                .add(MAGMA_CREAM)
+                .add(ENDER_PEARL);
+        tag(ModTags.Items.PIGLIN_MERCHANT_COMMON_GOODS)
+                .addTag(ModTags.Items.NETHER_BLOCKS)
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:rose_quartz")))
+                .add(IRON_INGOT)
+                .add(GLOWSTONE_DUST)
+                .add(QUARTZ);
+        tag(ModTags.Items.PIGLIN_MERCHANT_CHEAP_GOODS)
+                .add(NETHER_BRICK)
+                .add(LEATHER)
+                .add(WARPED_ROOTS)
+                .add(TWISTING_VINES)
+                .add(CRIMSON_ROOTS)
+                .add(WEEPING_VINES)
+                .add(STRING);
+
+        tag(ModTags.Items.NETHER_BLOCKS)
+                .add(WARPED_WART_BLOCK)
+                .add(NETHER_WART_BLOCK)
+                .add(WARPED_STEM)
+                .add(CRIMSON_STEM)
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:hellbark_log")))
+                .add(Block.byItem(BASALT).asItem())
+                .add(Block.byItem(WARPED_NYLIUM).asItem())
+                .add(Block.byItem(CRIMSON_NYLIUM).asItem())
+                .add(Block.byItem(OBSIDIAN).asItem())
+                .add(Block.byItem(CRYING_OBSIDIAN).asItem())
+                .add(Block.byItem(SOUL_SAND).asItem())
+                .add(Block.byItem(RED_NETHER_BRICKS).asItem())
+                .add(Block.byItem(NETHERRACK).asItem())
+                .add(Block.byItem(GRAVEL).asItem())
+                .add(Block.byItem(BLACKSTONE).asItem());
+        tag(ModTags.Items.FUNGUS)
+                .add(Block.byItem(SHROOMLIGHT).asItem())
+                .add(Items.WARPED_FUNGUS)
+                .add(Items.CRIMSON_FUNGUS)
+                .add(Items.BROWN_MUSHROOM)
+                .add(Items.RED_MUSHROOM);
+
+        tag(ModTags.Items.PIGLIN_MERCHANT_FOOD)
+                .add(APPLE)
+                .add(GOLDEN_APPLE)
+                .add(ENCHANTED_GOLDEN_APPLE)
+                .add(CARROT)
+                .add(GOLDEN_CARROT)
+                .add(POTATO)
+                .add(BEETROOT)
+                .addTag(ModTags.Items.PIGLIN_FOOD);
+
+        tag(ModTags.Items.PIGLIN_FOOD)
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("fastfooddelight:pork_sandwich")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:honey_glazed_ham")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:bacon_sandwich")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:bacon")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:smoked_ham")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:ham")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:hoglin_ear")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:hoglin_sirloin")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:hoglin_loin")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:plate_of_stuffed_hoglin_roast")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:plate_of_stuffed_hoglin_ham")))
+                .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:plate_of_stuffed_hoglin_snout")));
+
+        tag(ModTags.Items.PIGLIN_LOVED)
+                .addTag(ModTags.Items.PIGLIN_BARTER_ITEMS);
+        tag(ModTags.Items.PIGLIN_WANTED_ITEMS)
+                .addTag(ModTags.Items.PIGLIN_LOVED)
+                .addTag(ModTags.Items.PIGLIN_MERCHANT_FOOD)
+                .addTag(ModTags.Items.PIGLIN_BARTER_ITEMS);
+        tag(ModTags.Items.PIGLIN_BARTER_ITEMS)
+                .addTag(ModTags.Items.COMMON_BARTER_CURRENCY)
+                .addTag(ModTags.Items.UNCOMMON_BARTER_CURRENCY)
+                .addTag(ModTags.Items.RARE_BARTER_CURRENCY);
+        tag(ModTags.Items.CHEAP_BARTER_CURRENCY)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:gold_coin")))
+                .add(Items.GOLD_NUGGET);
+        tag(ModTags.Items.COMMON_BARTER_CURRENCY)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:nether_gold_coin")))
+                .add(Items.GOLD_INGOT);
+        tag(ModTags.Items.UNCOMMON_BARTER_CURRENCY)
+                .add(Blocks.GOLD_BLOCK.asItem());
+        tag(ModTags.Items.RARE_BARTER_CURRENCY)
+                .add(Items.ENCHANTED_GOLDEN_APPLE);
     }
 
     private void registerForgeTags() {

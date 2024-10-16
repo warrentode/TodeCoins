@@ -82,6 +82,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.ILLUSIONER_SPAWN_EGG.getId().toString(), "minecraft:item/template_spawn_egg");
         withExistingParent(ModItems.NUMISMATIST_SPAWN_EGG.getId().toString(), "minecraft:item/template_spawn_egg");
         withExistingParent(ModItems.SNOW_GOLEM_SPAWN_EGG.getId().toString(), "minecraft:item/template_spawn_egg");
+        withExistingParent(ModItems.PIGLINMERCHANT_SPAWN_EGG.getId().toString(), "minecraft:item/template_spawn_egg");
 
         // collectible coins
         basicItem(ModItems.EASTER_COIN.get());

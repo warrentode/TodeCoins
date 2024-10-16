@@ -340,6 +340,19 @@ public class TradeLootTables {
     public static final ResourceLocation WANDERING_TRADER_COMMON_OFFERS = register(MODID + ":" + "trade_tables/wandering_trader/common_offers");
     public static final ResourceLocation WANDERING_TRADER_RARE_OFFERS = register(MODID + ":" + "trade_tables/wandering_trader/rare_offers");
 
+    // piglin merchant trade tables
+    public static final ResourceLocation CHEAP_BARTER_CURRENCY = register(MODID + ":" + "trade/cheap_barter_currency");
+    public static final ResourceLocation CHEAP_TRADE_GOODS = register(MODID + ":" + "trade/cheap_trade_goods");
+    public static final ResourceLocation COMMON_BARTER_CURRENCY = register(MODID + ":" + "trade/common_barter_currency");
+    public static final ResourceLocation COMMON_TRADE_GOODS = register(MODID + ":" + "trade/common_trade_goods");
+    public static final ResourceLocation COMMON_ENCHANTABLE_GOODS = register(MODID + ":" + "trade/common_enchantable_goods");
+    public static final ResourceLocation UNCOMMON_BARTER_CURRENCY = register(MODID + ":" + "trade/uncommon_barter_currency");
+    public static final ResourceLocation UNCOMMON_TRADE_GOODS = register(MODID + ":" + "trade/uncommon_trade_goods");
+    public static final ResourceLocation UNCOMMON_ENCHANTABLE_GOODS = register(MODID + ":" + "trade/uncommon_enchantable_goods");
+    public static final ResourceLocation RARE_BARTER_CURRENCY = register(MODID + ":" + "trade/rare_barter_currency");
+    public static final ResourceLocation RARE_TRADE_GOODS = register(MODID + ":" + "trade/rare_trade_goods");
+    public static final ResourceLocation RARE_ENCHANTABLE_GOODS = register(MODID + ":" + "trade/rare_enchantable_goods");
+
     private static ResourceLocation register(String path) {
         return register(new ResourceLocation(path));
     }
