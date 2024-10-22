@@ -111,10 +111,10 @@ public class PiglinMerchantSpawner implements CustomSpawner {
                     return false;
                 }
 
-                PiglinMerchant trader =
-                        ModEntityTypes.PIGLINMERCHANT.get()
-                                .spawn(serverLevel, null,null, null, pos2,
-                                        MobSpawnType.EVENT, false, false);
+                PiglinMerchant trader = ModEntityTypes.PIGLINMERCHANT.get()
+                        .spawn(serverLevel, null,null, null, pos2,
+                                MobSpawnType.EVENT, false, false);
+
                 if (trader != null) {
                     trader.setDespawnDelay(defaultDespawnDelay);
                     trader.setWanderTarget(pos1);

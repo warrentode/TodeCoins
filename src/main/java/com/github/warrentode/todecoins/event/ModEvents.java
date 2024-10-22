@@ -427,7 +427,7 @@ public class ModEvents {
         public static void onWorldLoad(@NotNull ServerStartingEvent event) {
             MinecraftServer server = event.getServer();
             numismatistSpawner.put(BuiltinDimensionTypes.OVERWORLD.location(), new NumismatistSpawner(server, "Numismatist", ModEntityTypes.NUMISMATIST.get()));
-            piglinMerchantSpawner.put(BuiltinDimensionTypes.OVERWORLD.location(), new PiglinMerchantSpawner(server, "PiglinMerchant", ModEntityTypes.PIGLINMERCHANT.get()));
+            piglinMerchantSpawner.put(BuiltinDimensionTypes.NETHER.location(), new PiglinMerchantSpawner(server, "PiglinMerchant", ModEntityTypes.PIGLINMERCHANT.get()));
         }
 
         @SubscribeEvent
@@ -446,14 +446,14 @@ public class ModEvents {
                 return;
             }
 
-            NumismatistSpawner numismatistSpawner1 = numismatistSpawner.get(event.level.dimension().location());
-            if (numismatistSpawner1 != null) {
-                numismatistSpawner1.tick((ServerLevel) event.level, true, true);
+            NumismatistSpawner numismatistSpawn = numismatistSpawner.get(event.level.dimension().location());
+            if (numismatistSpawn != null) {
+                numismatistSpawn.tick((ServerLevel) event.level, true, true);
             }
 
-            PiglinMerchantSpawner piglinMerchantSpawner1 = piglinMerchantSpawner.get(event.level.dimension().location());
-            if (piglinMerchantSpawner1 != null) {
-                piglinMerchantSpawner1.tick((ServerLevel) event.level, true, true);
+            PiglinMerchantSpawner piglinMerchantSpawn = piglinMerchantSpawner.get(event.level.dimension().location());
+            if (piglinMerchantSpawn != null) {
+                piglinMerchantSpawn.tick((ServerLevel) event.level, true, true);
             }
         }
     }
