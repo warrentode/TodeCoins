@@ -29,6 +29,7 @@ public class CommonConfig {
     public static final ForgeConfigSpec.DoubleValue PRICE_MULTIPLIER;
     public static final ForgeConfigSpec.DoubleValue RARE_PRICE_MULTIPLIER;
     public static final ForgeConfigSpec.BooleanValue ALLOW_TREASURE_ENCHANTMENTS;
+    public static final ForgeConfigSpec.IntValue PIGLIN_MERCHANT_PORTAL_SPAWN_TICK;
 
     // general trade variable setters
     static {
@@ -66,6 +67,9 @@ public class CommonConfig {
         ALLOW_TREASURE_ENCHANTMENTS = BUILDER
                 .comment(" Allow Treasure Enchantments in Trades")
                 .define("allow_treasure_enchantments", false);
+        PIGLIN_MERCHANT_PORTAL_SPAWN_TICK = BUILDER
+                .comment(" Tick Frequency for Piglin Merchant Portal Spawn")
+                .defineInRange("piglin_merchant_portal_spawn_tick", 1000, 1, Integer.MAX_VALUE);
         BUILDER.pop();
 
         SPEC = BUILDER.build();
@@ -158,6 +162,14 @@ public class CommonConfig {
         }
         else {
             return ALLOW_TREASURE_ENCHANTMENTS.get();
+        }
+    }
+    public static int getPiglinMerchantPortalTickSpawnRate() {
+        if (Objects.equals(PIGLIN_MERCHANT_PORTAL_SPAWN_TICK.get(), PIGLIN_MERCHANT_PORTAL_SPAWN_TICK.getDefault())) {
+            return PIGLIN_MERCHANT_PORTAL_SPAWN_TICK.getDefault();
+        }
+        else {
+            return PIGLIN_MERCHANT_PORTAL_SPAWN_TICK.get();
         }
     }
 
