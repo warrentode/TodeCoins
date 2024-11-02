@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.spawners.piglinmerchant;
 
+import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchant;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
@@ -25,9 +26,9 @@ public class PiglinMerchantSpawner implements CustomSpawner {
     private final PiglinMerchantData data;
     @SuppressWarnings("unused")
     private final EntityType<PiglinMerchant> entityType;
-    private static final int tickDelayBeforeSpawn = 1200;
-    public static final int defaultSpawnDelay = 24000;
-    public static final int defaultDespawnDelay = 48000;
+    public static final int defaultSpawnDelay = CommonConfig.getPiglinMerchantNetherSpawnDelay();
+    public static final int defaultDespawnDelay = CommonConfig.getPiglinMerchantNetherDespawnDelay();
+    private static final int tickDelayBeforeSpawn = defaultSpawnDelay / 20;
     private static final int minSpawnChance = 25;
     private static final int maxSpawnChance = 100;
     private static final int spawnChanceIncrease = minSpawnChance;

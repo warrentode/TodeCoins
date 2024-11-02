@@ -29,7 +29,9 @@ public class CommonConfig {
     public static final ForgeConfigSpec.DoubleValue PRICE_MULTIPLIER;
     public static final ForgeConfigSpec.DoubleValue RARE_PRICE_MULTIPLIER;
     public static final ForgeConfigSpec.BooleanValue ALLOW_TREASURE_ENCHANTMENTS;
-    public static final ForgeConfigSpec.IntValue PIGLIN_MERCHANT_PORTAL_SPAWN_TICK;
+    public static final ForgeConfigSpec.IntValue PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE;
+    public static final ForgeConfigSpec.IntValue PIGLIN_MERCHANT_NETHER_SPAWN_DELAY;
+    public static final ForgeConfigSpec.IntValue PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY;
 
     // general trade variable setters
     static {
@@ -67,9 +69,15 @@ public class CommonConfig {
         ALLOW_TREASURE_ENCHANTMENTS = BUILDER
                 .comment(" Allow Treasure Enchantments in Trades")
                 .define("allow_treasure_enchantments", false);
-        PIGLIN_MERCHANT_PORTAL_SPAWN_TICK = BUILDER
-                .comment(" Tick Frequency for Piglin Merchant Portal Spawn")
-                .defineInRange("piglin_merchant_portal_spawn_tick", 1000, 1, Integer.MAX_VALUE);
+        PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE = BUILDER
+                .comment(" Delay for Piglin Merchant Portal Spawn Chance")
+                .defineInRange("piglin_merchant_portal_spawn_chance", 1000, 1, Integer.MAX_VALUE);
+        PIGLIN_MERCHANT_NETHER_SPAWN_DELAY = BUILDER
+                .comment(" Delay for Piglin Merchant Nether Spawn Chance")
+                        .defineInRange("piglin_merchant_nether_spawn_delay", 24000, 20, Integer.MAX_VALUE);
+        PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY = BUILDER
+                .comment(" Delay for Piglin Merchant Nether Despawn")
+                .defineInRange("piglin_merchant_nether_despawn_delay", 48000, 40, Integer.MAX_VALUE);
         BUILDER.pop();
 
         SPEC = BUILDER.build();
@@ -164,12 +172,28 @@ public class CommonConfig {
             return ALLOW_TREASURE_ENCHANTMENTS.get();
         }
     }
-    public static int getPiglinMerchantPortalTickSpawnRate() {
-        if (Objects.equals(PIGLIN_MERCHANT_PORTAL_SPAWN_TICK.get(), PIGLIN_MERCHANT_PORTAL_SPAWN_TICK.getDefault())) {
-            return PIGLIN_MERCHANT_PORTAL_SPAWN_TICK.getDefault();
+    public static int getPiglinMerchantPortalTickSpawnChance() {
+        if (Objects.equals(PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE.get(), PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE.getDefault())) {
+            return PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE.getDefault();
         }
         else {
-            return PIGLIN_MERCHANT_PORTAL_SPAWN_TICK.get();
+            return PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE.get();
+        }
+    }
+    public static int getPiglinMerchantNetherSpawnDelay() {
+        if (Objects.equals(PIGLIN_MERCHANT_NETHER_SPAWN_DELAY.get(), PIGLIN_MERCHANT_NETHER_SPAWN_DELAY.getDefault())) {
+            return PIGLIN_MERCHANT_NETHER_SPAWN_DELAY.getDefault();
+        }
+        else {
+            return PIGLIN_MERCHANT_NETHER_SPAWN_DELAY.get();
+        }
+    }
+    public static int getPiglinMerchantNetherDespawnDelay() {
+        if (Objects.equals(PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY.get(), PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY.getDefault())) {
+            return PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY.getDefault();
+        }
+        else {
+            return PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY.get();
         }
     }
 

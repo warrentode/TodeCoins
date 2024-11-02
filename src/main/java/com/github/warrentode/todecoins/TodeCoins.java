@@ -93,6 +93,7 @@ public class TodeCoins {
     public static final String MODID = "todecoins";
     public static final Logger LOGGER = LogManager.getLogger();
 
+    @SuppressWarnings("removal")
     public TodeCoins() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MODID + "/common.toml");
         // annabethsextravillagers trade config files

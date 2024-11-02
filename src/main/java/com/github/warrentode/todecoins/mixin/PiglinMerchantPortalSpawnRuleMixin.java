@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static com.github.warrentode.todecoins.config.CommonConfig.getPiglinMerchantPortalTickSpawnRate;
+import static com.github.warrentode.todecoins.config.CommonConfig.getPiglinMerchantPortalTickSpawnChance;
 
 @Mixin(NetherPortalBlock.class)
 public abstract class PiglinMerchantPortalSpawnRuleMixin {
@@ -27,7 +27,7 @@ public abstract class PiglinMerchantPortalSpawnRuleMixin {
 
     @Inject(at = @At("HEAD"), method = "randomTick")
     private void piglinmerchant_randomTick(BlockState blockState, @NotNull ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource, CallbackInfo ci) {
-        if (serverLevel.dimensionType().natural() && serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) && randomSource.nextInt(getPiglinMerchantPortalTickSpawnRate()) < serverLevel.getDifficulty().getId()) {
+        if (serverLevel.dimensionType().natural() && serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) && randomSource.nextInt(getPiglinMerchantPortalTickSpawnChance()) < serverLevel.getDifficulty().getId()) {
             while(serverLevel.getBlockState(blockPos).is(piglinmerchant$pBlock)) {
                 blockPos = blockPos.below();
             }
