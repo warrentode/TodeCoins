@@ -3,11 +3,16 @@ package com.github.warrentode.todecoins.config;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.Objects;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
@@ -74,7 +79,7 @@ public class CommonConfig {
                 .defineInRange("piglin_merchant_portal_spawn_chance", 1000, 1, Integer.MAX_VALUE);
         PIGLIN_MERCHANT_NETHER_SPAWN_DELAY = BUILDER
                 .comment(" Delay for Piglin Merchant Nether Spawn Chance")
-                        .defineInRange("piglin_merchant_nether_spawn_delay", 24000, 20, Integer.MAX_VALUE);
+                .defineInRange("piglin_merchant_nether_spawn_delay", 24000, 20, Integer.MAX_VALUE);
         PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY = BUILDER
                 .comment(" Delay for Piglin Merchant Nether Despawn")
                 .defineInRange("piglin_merchant_nether_despawn_delay", 48000, 40, Integer.MAX_VALUE);
@@ -92,6 +97,7 @@ public class CommonConfig {
             return USE_MOD_TRADES.get();
         }
     }
+
     public static Boolean getReplaceTrades() {
         if (Objects.equals(REPLACE_TRADES.get(), REPLACE_TRADES.getDefault())) {
             return REPLACE_TRADES.getDefault();
@@ -100,6 +106,7 @@ public class CommonConfig {
             return REPLACE_TRADES.get();
         }
     }
+
     public static Boolean getResetTrades() {
         if (Objects.equals(RESET_TRADES_ON_RESTOCK.get(), RESET_TRADES_ON_RESTOCK.getDefault())) {
             return RESET_TRADES_ON_RESTOCK.getDefault();
@@ -108,6 +115,7 @@ public class CommonConfig {
             return RESET_TRADES_ON_RESTOCK.get();
         }
     }
+
     public static int getBaseXP() {
         if (Objects.equals(BASE_XP.get(), BASE_XP.getDefault())) {
             return BASE_XP.getDefault();
@@ -116,6 +124,7 @@ public class CommonConfig {
             return BASE_XP.get();
         }
     }
+
     public static int getRareMaxUses() {
         if (Objects.equals(RARE_MAX_USES.get(), RARE_MAX_USES.getDefault())) {
             return RARE_MAX_USES.getDefault();
@@ -124,6 +133,7 @@ public class CommonConfig {
             return RARE_MAX_USES.get();
         }
     }
+
     public static int getCommonMaxUses() {
         if (Objects.equals(MAX_USES.get(), MAX_USES.getDefault())) {
             return MAX_USES.getDefault();
@@ -132,6 +142,7 @@ public class CommonConfig {
             return MAX_USES.get();
         }
     }
+
     public static double getCommonTradeMultiplier() {
         if (Objects.equals(PRICE_MULTIPLIER.get(), PRICE_MULTIPLIER.getDefault())) {
             return PRICE_MULTIPLIER.getDefault();
@@ -140,6 +151,7 @@ public class CommonConfig {
             return PRICE_MULTIPLIER.get();
         }
     }
+
     public static double getRareTradeMultiplier() {
         if (Objects.equals(RARE_PRICE_MULTIPLIER.get(), RARE_PRICE_MULTIPLIER.getDefault())) {
             return RARE_PRICE_MULTIPLIER.getDefault();
@@ -148,6 +160,7 @@ public class CommonConfig {
             return RARE_PRICE_MULTIPLIER.get();
         }
     }
+
     public static int getMaxVillagerTrades() {
         if (Objects.equals(MAX_VILLAGER_TRADES_PER_LEVEL.get(), MAX_VILLAGER_TRADES_PER_LEVEL.getDefault())) {
             return MAX_VILLAGER_TRADES_PER_LEVEL.getDefault();
@@ -156,6 +169,7 @@ public class CommonConfig {
             return MAX_VILLAGER_TRADES_PER_LEVEL.get();
         }
     }
+
     public static int getMaxWandererTrades() {
         if (Objects.equals(MAX_WANDERER_COMMON_TRADES.get(), MAX_WANDERER_COMMON_TRADES.getDefault())) {
             return MAX_WANDERER_COMMON_TRADES.getDefault();
@@ -164,6 +178,7 @@ public class CommonConfig {
             return MAX_WANDERER_COMMON_TRADES.get();
         }
     }
+
     public static Boolean getAllowTreasureEnchantments() {
         if (Objects.equals(ALLOW_TREASURE_ENCHANTMENTS.get(), ALLOW_TREASURE_ENCHANTMENTS.getDefault())) {
             return USE_MOD_TRADES.getDefault();
@@ -172,6 +187,7 @@ public class CommonConfig {
             return ALLOW_TREASURE_ENCHANTMENTS.get();
         }
     }
+
     public static int getPiglinMerchantPortalTickSpawnChance() {
         if (Objects.equals(PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE.get(), PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE.getDefault())) {
             return PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE.getDefault();
@@ -180,6 +196,7 @@ public class CommonConfig {
             return PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE.get();
         }
     }
+
     public static int getPiglinMerchantNetherSpawnDelay() {
         if (Objects.equals(PIGLIN_MERCHANT_NETHER_SPAWN_DELAY.get(), PIGLIN_MERCHANT_NETHER_SPAWN_DELAY.getDefault())) {
             return PIGLIN_MERCHANT_NETHER_SPAWN_DELAY.getDefault();
@@ -188,6 +205,7 @@ public class CommonConfig {
             return PIGLIN_MERCHANT_NETHER_SPAWN_DELAY.get();
         }
     }
+
     public static int getPiglinMerchantNetherDespawnDelay() {
         if (Objects.equals(PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY.get(), PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY.getDefault())) {
             return PIGLIN_MERCHANT_NETHER_DESPAWN_DELAY.getDefault();
@@ -207,4 +225,25 @@ public class CommonConfig {
             return ForgeTags.StructureTags.OVERWORLD_POI;
         }
     }
+
+    // enchantment instance getter
+    public static @NotNull EnchantmentInstance getEnchantmentInstance(String enchantment, int level) {
+        ResourceLocation enchantmentLocation = ResourceLocation.tryParse(enchantment);
+
+        if (enchantmentLocation != null) {
+            Enchantment enchantmentKey = ForgeRegistries.ENCHANTMENTS.getValue(ResourceLocation.tryParse(String.valueOf(enchantmentLocation)));
+            assert enchantmentKey != null;
+            return new EnchantmentInstance(enchantmentKey, level);
+        }
+        else {
+            return new EnchantmentInstance(Enchantments.ALL_DAMAGE_PROTECTION, 1);
+        }
+    }
+    public static @NotNull EnchantmentInstance[] getEnchantmentInstances(List<String> enchantmentList, int level) {
+        // Stream through the list, map each enchantment string to an EnchantmentInstance, and collect to an array
+        return enchantmentList.stream()
+                .map(enchantment -> getEnchantmentInstance(enchantment, level))
+                .toArray(EnchantmentInstance[]::new);
+    }
+
 }

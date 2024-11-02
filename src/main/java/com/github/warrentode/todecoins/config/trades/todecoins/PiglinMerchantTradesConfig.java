@@ -4,6 +4,7 @@ import com.github.warrentode.todecoins.loot.TradeLootTables;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.List;
 import java.util.Objects;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
@@ -32,6 +33,10 @@ public class PiglinMerchantTradesConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> PIGLIN_MERCHANT_2_OFFER_1_COUNT;
     public static final ForgeConfigSpec.ConfigValue<String> PIGLIN_MERCHANT_2_REQUEST_2;
     public static final ForgeConfigSpec.ConfigValue<String> PIGLIN_MERCHANT_2_OFFER_2;
+    public static final ForgeConfigSpec.ConfigValue<String> PIGLIN_MERCHANT_2_REQUEST_3;
+    public static final ForgeConfigSpec.ConfigValue<String> PIGLIN_MERCHANT_2_OFFER_3;
+    public static final ForgeConfigSpec.ConfigValue<List<String>> PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST;
+    public static final ForgeConfigSpec.ConfigValue<Integer> PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST_LEVEL;
 
     static {
         // TRADES
@@ -114,6 +119,23 @@ public class PiglinMerchantTradesConfig {
                 .comment(" Piglin Merchant 2 Trade Offer 2 Table")
                 .define("piglin_merchant_2_trade_offer_2_table",
                         TradeLootTables.RARE_TRADE_GOODS.toString());
+        BUILDER.pop();
+        BUILDER.push("Piglin Merchant Level Two Trade Three");
+        PIGLIN_MERCHANT_2_REQUEST_3 = BUILDER
+                .comment(" Piglin Merchant 2 Trade Request 3 Table")
+                .define("piglin_merchant_2_trade_request_3_table",
+                        TradeLootTables.RARE_BARTER_CURRENCY.toString());
+        PIGLIN_MERCHANT_2_OFFER_3 = BUILDER
+                .comment(" Piglin Merchant 2 Trade Offer 3 Table")
+                .define("piglin_merchant_2_trade_offer_3_table",
+                        TradeLootTables.IRON_TIER_BOOTS_TABLE.toString());
+        PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST = BUILDER
+                .comment(" Piglin Merchant 2 Trade Offer 3 Enchantment List")
+                .define("piglin_merchant_2_offer_3_enchantment_list",
+                        List.of("minecraft:soul_speed"));
+        PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST_LEVEL = BUILDER
+                .comment(" Piglin Merchant 2 Trade Offer 3 Enchantment Level of the Set")
+                .defineInRange("piglin_merchant_2_offer_3_enchantment_list_level", 1, 1, 10);
         BUILDER.pop();
 
         BUILDER.pop();
@@ -265,5 +287,36 @@ public class PiglinMerchantTradesConfig {
             return PIGLIN_MERCHANT_2_REQUEST_2.get();
         }
     }
-
+    public static String getPiglinMerchant2Offer3() {
+        if (Objects.equals(PIGLIN_MERCHANT_2_OFFER_3.get(), PIGLIN_MERCHANT_2_OFFER_3.getDefault())) {
+            return PIGLIN_MERCHANT_2_OFFER_3.getDefault();
+        }
+        else {
+            return PIGLIN_MERCHANT_2_OFFER_3.get();
+        }
+    }
+    public static String getPiglinMerchant2Request3() {
+        if (Objects.equals(PIGLIN_MERCHANT_2_REQUEST_3.get(), PIGLIN_MERCHANT_2_REQUEST_3.getDefault())) {
+            return PIGLIN_MERCHANT_2_REQUEST_3.getDefault();
+        }
+        else {
+            return PIGLIN_MERCHANT_2_REQUEST_3.get();
+        }
+    }
+    public static List<String> getPiglinMerchant2EnchantmentList() {
+        if (Objects.equals(PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST.get(), PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST.getDefault())) {
+            return PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST.getDefault();
+        }
+        else {
+            return PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST.get();
+        }
+    }
+    public static int getPiglinMerchant2EnchantmentListLevel() {
+        if (Objects.equals(PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST_LEVEL.get(), PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST_LEVEL.getDefault())) {
+            return PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST_LEVEL.getDefault();
+        }
+        else {
+            return PIGLIN_MERCHANT_2_OFFER_3_ENCHANTMENT_LIST_LEVEL.get();
+        }
+    }
 }
