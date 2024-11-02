@@ -49,8 +49,8 @@ public class PiglinMerchantTrades {
                                 ),
                                 // common currency enchantable barter loot
                                 new LootTableForEnchantedTable(
-                                        ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant1Request3()),
                                         ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant1Offer3()),
+                                        ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant1Request3()),
                                         rareSupply, baseXP, rareTradeMultiplier
                                 ),
                                 // uncommon currency barter loot
@@ -62,8 +62,8 @@ public class PiglinMerchantTrades {
                                 ),
                                 // uncommon currency enchantable barter loot
                                 new LootTableForEnchantedTable(
-                                        ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant1Request5()),
                                         ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant1Offer5()),
+                                        ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant1Request5()),
                                         rareSupply, baseXP, rareSupply
                                 )
                         },
@@ -77,8 +77,8 @@ public class PiglinMerchantTrades {
                                 ),
                                 // rare currency enchantable barter loot
                                 new LootTableForEnchantedTable(
-                                        ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant2Request2()),
                                         ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant2Offer2()),
+                                        ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant2Request2()),
                                         rareSupply, baseXP, rareSupply
                                 )
                         }
