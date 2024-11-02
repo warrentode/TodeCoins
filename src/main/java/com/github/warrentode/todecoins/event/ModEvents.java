@@ -426,6 +426,7 @@ public class ModEvents {
         @SubscribeEvent
         public static void onWorldLoad(@NotNull ServerStartingEvent event) {
             MinecraftServer server = event.getServer();
+
             numismatistSpawner.put(BuiltinDimensionTypes.OVERWORLD.location(), new NumismatistSpawner(server, "Numismatist", ModEntityTypes.NUMISMATIST.get()));
             piglinMerchantSpawner.put(BuiltinDimensionTypes.NETHER.location(), new PiglinMerchantSpawner(server, "PiglinMerchant", ModEntityTypes.PIGLINMERCHANT.get()));
         }

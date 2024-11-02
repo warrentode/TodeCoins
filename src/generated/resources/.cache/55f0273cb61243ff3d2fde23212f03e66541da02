@@ -1,4 +1,4 @@
-// 1.19.2	2024-08-13T10:25:29.4347034	Tags for minecraft:worldgen/biome
+// 1.19.2	2024-11-01T02:59:52.3166381	Tags for minecraft:worldgen/biome
 04d75d1148ebf1488557b3bb6d36cd926f672708 data/forge/tags/worldgen/biome/has_acacia.json
 f6cf4c5ba152cdc8af26ef165bebaccb56a0055b data/forge/tags/worldgen/biome/has_allium.json
 0f241c94b10e4b16b4304f66ad949bb089955b1e data/forge/tags/worldgen/biome/has_axolotl.json
@@ -24,6 +24,7 @@ c4d6a40ffc3ffe572e12bc913c9427c7a540e3df data/forge/tags/worldgen/biome/has_puff
 e26c17009929406e3872e4cd0cfaa9b1686f9814 data/forge/tags/worldgen/biome/has_red_sandstone.json
 41507c1a9aa782b7eb18ede8f72adcb05a2a6033 data/forge/tags/worldgen/biome/has_red_tulip.json
 780cec6ec623ede5a8e00c4fcd0bc3f853ba3f22 data/forge/tags/worldgen/biome/has_rose_bush.json
+68b79ba831ecf03b6808d610f80837da8f37ff2c data/forge/tags/worldgen/biome/has_ruined_portals.json
 a2622c8e3676c3d22e2f7ebf4d14b521589b5a21 data/forge/tags/worldgen/biome/has_salmon.json
 8cf6ca13f1f08c04d9b91bbc9bb07902c2883b12 data/forge/tags/worldgen/biome/has_sandstone.json
 739f1884225a0c8204b042bfc8d33dcf9b677f8f data/forge/tags/worldgen/biome/has_spruce.json

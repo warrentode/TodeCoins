@@ -771,91 +771,17 @@ public class ModVillagerTrades {
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
-                            trades.get(novice).add(new LootTableForTagTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Request3()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Offer3()),
-                                    HorticulturistTradesConfig.getHorticulturist1Offer3Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(novice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Request4()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Offer4()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(novice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Request5()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Offer5()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(novice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Request6()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Offer6()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(novice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Request7()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Offer7()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(novice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Request8()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist1Offer8()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
 
-                            trades.get(apprentice).add(new LootTableForLootTable(
+                            trades.get(apprentice).add(new LootTableForTagTable(
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Request1()),
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Offer1()),
+                                    HorticulturistTradesConfig.getHorticulturist2Offer1Count(),
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
-                            trades.get(apprentice).add(new LootTableForTagTable(
+                            trades.get(apprentice).add(new LootTableForLootTable(
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Request2()),
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Offer2()),
-                                    HorticulturistTradesConfig.getHorticulturist2Offer2Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(apprentice).add(new LootTableForTagTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Request3()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Offer3()),
-                                    HorticulturistTradesConfig.getHorticulturist2Offer3Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(apprentice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Request4()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Offer4()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(apprentice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Request5()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Offer5()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(apprentice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Request6()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Offer6()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(apprentice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Request7()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Offer7()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(apprentice).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Request8()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist2Offer8()),
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * apprentice,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
@@ -866,47 +792,9 @@ public class ModVillagerTrades {
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
-                            trades.get(journeyman).add(new LootTableForTagTable(
+                            trades.get(journeyman).add(new LootTableForLootTable(
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Request2()),
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Offer2()),
-                                    HorticulturistTradesConfig.getHorticulturist3Offer2Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(journeyman).add(new LootTableForTagTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Request3()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Offer3()),
-                                    HorticulturistTradesConfig.getHorticulturist3Offer3Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(journeyman).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Request4()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Offer4()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(journeyman).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Request5()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Offer5()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(journeyman).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Request6()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Offer6()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(journeyman).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Request7()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Offer7()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(journeyman).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Request8()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist3Offer8()),
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * journeyman,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
@@ -917,47 +805,9 @@ public class ModVillagerTrades {
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
-                            trades.get(expert).add(new LootTableForTagTable(
+                            trades.get(expert).add(new LootTableForLootTable(
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Request2()),
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Offer2()),
-                                    HorticulturistTradesConfig.getHorticulturist4Offer2Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(expert).add(new LootTableForTagTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Request3()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Offer3()),
-                                    HorticulturistTradesConfig.getHorticulturist4Offer3Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(expert).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Request4()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Offer4()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(expert).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Request5()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Offer5()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(expert).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Request6()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Offer6()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(expert).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Request7()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Offer7()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(expert).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Request8()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist4Offer8()),
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * expert,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
@@ -968,47 +818,9 @@ public class ModVillagerTrades {
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));
-                            trades.get(master).add(new LootTableForTagTable(
+                            trades.get(master).add(new LootTableForLootTable(
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Request2()),
                                     ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Offer2()),
-                                    HorticulturistTradesConfig.getHorticulturist5Offer2Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(master).add(new LootTableForTagTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Request3()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Offer3()),
-                                    HorticulturistTradesConfig.getHorticulturist5Offer3Count(),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(master).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Request4()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Offer4()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(master).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Request5()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Offer5()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(master).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Request6()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Offer6()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(master).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Request7()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Offer7()),
-                                    CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
-                                    CONFIG_COMMON_TRADE_MULTIPLIER
-                            ));
-                            trades.get(master).add(new LootTableForLootTable(
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Request8()),
-                                    ResourceLocation.tryParse(HorticulturistTradesConfig.getHorticulturist5Offer8()),
                                     CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * master,
                                     CONFIG_COMMON_TRADE_MULTIPLIER
                             ));

@@ -3,6 +3,7 @@ package com.github.warrentode.todecoins.datagen.tags;
 import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BiomeTagsProvider;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -180,5 +181,13 @@ public class BiomeTagsGen extends BiomeTagsProvider {
                 .add(Biomes.LUSH_CAVES);
         tag(ForgeTags.Biomes.HAS_MUD)
                 .add(Biomes.MANGROVE_SWAMP);
+        tag(ForgeTags.Biomes.HAS_RUINED_PORTALS)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_DESERT)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_JUNGLE)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_OCEAN)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_SWAMP)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_MOUNTAIN)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_STANDARD)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_NETHER);
     }
 }

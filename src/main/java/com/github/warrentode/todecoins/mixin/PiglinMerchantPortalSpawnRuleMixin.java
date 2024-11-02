@@ -26,14 +26,14 @@ public abstract class PiglinMerchantPortalSpawnRuleMixin {
     Block piglinmerchant$pBlock = (Block) (Object) this;
 
     @Inject(at = @At("HEAD"), method = "randomTick")
-    private void piglinmerchant_randomTick(BlockState pState, @NotNull ServerLevel pLevel, BlockPos pPos, RandomSource pRandom, CallbackInfo ci) {
-        if (pLevel.dimensionType().natural() && pLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) && pRandom.nextInt(getPiglinMerchantPortalTickSpawnRate()) < pLevel.getDifficulty().getId()) {
-            while(pLevel.getBlockState(pPos).is(piglinmerchant$pBlock)) {
-                pPos = pPos.below();
+    private void piglinmerchant_randomTick(BlockState blockState, @NotNull ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource, CallbackInfo ci) {
+        if (serverLevel.dimensionType().natural() && serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) && randomSource.nextInt(getPiglinMerchantPortalTickSpawnRate()) < serverLevel.getDifficulty().getId()) {
+            while(serverLevel.getBlockState(blockPos).is(piglinmerchant$pBlock)) {
+                blockPos = blockPos.below();
             }
 
-            if (pLevel.getBlockState(pPos).isValidSpawn(pLevel, pPos, ModEntityTypes.PIGLINMERCHANT.get())) {
-                Entity entity = ModEntityTypes.PIGLINMERCHANT.get().spawn(pLevel, null, null, null, pPos.above(), MobSpawnType.STRUCTURE, false, false);
+            if (serverLevel.getBlockState(blockPos).isValidSpawn(serverLevel, blockPos, ModEntityTypes.PIGLINMERCHANT.get())) {
+                Entity entity = ModEntityTypes.PIGLINMERCHANT.get().spawn(serverLevel, null, null, null, blockPos.above(), MobSpawnType.STRUCTURE, false, false);
                 if (entity != null) {
                     entity.setPortalCooldown();
                 }

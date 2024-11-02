@@ -387,6 +387,7 @@ public class ForgeTags {
         TagKey<Biome> HAS_FROGS = forgeBiomeTag("has_frogs");
         TagKey<Biome> HAS_AXOLOTL = forgeBiomeTag("has_axolotl");
         TagKey<Biome> HAS_MUD = forgeBiomeTag("has_mud");
+        TagKey<Biome> HAS_RUINED_PORTALS = forgeBiomeTag("has_ruined_portals");
     }
 
     private static @NotNull TagKey<Biome> forgeBiomeTag(String name) {

@@ -43,9 +43,7 @@ import net.minecraft.world.item.trading.Merchant;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -133,11 +131,6 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
                        .add(Attributes.KNOCKBACK_RESISTANCE, KNOCKBACK_RESISTANCE)
                        .add(Attributes.ATTACK_DAMAGE, ATTACK_DAMAGE)
                        .build();
-    }
-
-    @SuppressWarnings("unused")
-    public static boolean checkPiglinMerchantSpawnRules(EntityType<PiglinMerchant> piglinMerchant, @NotNull LevelAccessor pLevel, MobSpawnType pSpawnType, @NotNull BlockPos pPos, RandomSource pRandom) {
-        return !pLevel.getBlockState(pPos.below()).is(Blocks.NETHER_WART_BLOCK);
     }
 
     public static boolean isFood(@NotNull ItemStack stack) {

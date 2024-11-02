@@ -33,7 +33,6 @@ import com.github.warrentode.todecoins.config.trades.villagersplus.AlchemistTrad
 import com.github.warrentode.todecoins.config.trades.villagersplus.HorticulturistTradesConfig;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
-import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchant;
 import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchantRenderer;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
 import com.github.warrentode.todecoins.entity.villager.renderer.NumismatistRenderer;
@@ -220,10 +219,8 @@ public class TodeCoins {
         });
         event.enqueueWork(()-> {
             //noinspection deprecation
-            SpawnPlacements.register(ModEntityTypes.PIGLINMERCHANT.get(),
-                    SpawnPlacements.Type.ON_GROUND,
-                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    PiglinMerchant::checkPiglinMerchantSpawnRules);
+            SpawnPlacements.register(ModEntityTypes.PIGLINMERCHANT.get(), SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
         });
         event.enqueueWork(() -> {
             // Potions

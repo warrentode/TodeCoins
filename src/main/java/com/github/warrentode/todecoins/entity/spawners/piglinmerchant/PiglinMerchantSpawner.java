@@ -2,10 +2,10 @@ package com.github.warrentode.todecoins.entity.spawners.piglinmerchant;
 
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchant;
+import com.github.warrentode.todecoins.util.tags.ForgeTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
@@ -107,7 +107,7 @@ public class PiglinMerchantSpawner implements CustomSpawner {
             BlockPos pos1 = optional.orElse(pos);
             BlockPos pos2 = this.findSpawnPositionNear(serverLevel, pos1, maxDistance);
             if (pos2 != null && this.hasEnoughSpace(serverLevel, pos2)) {
-                if (serverLevel.getBiome(pos2).is(BiomeTags.WITHOUT_WANDERING_TRADER_SPAWNS)) {
+                if (serverLevel.getBiome(pos2).is(ForgeTags.Biomes.HAS_RUINED_PORTALS)) {
                     return false;
                 }
 
