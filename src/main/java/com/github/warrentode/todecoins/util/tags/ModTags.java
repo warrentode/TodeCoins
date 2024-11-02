@@ -209,11 +209,6 @@ public class ModTags {
         public static final TagKey<Item> NETHER_BLOCKS = modItemTag("todepiglins", "nether_stones");
         public static final TagKey<Item> FUNGUS = modItemTag("todepiglins", "fungus");
 
-        public static final TagKey<Item> CHEAP_BARTER_CURRENCY = modItemTag("forge","piglin_barter_items/cheap_barter_currency");
-        public static final TagKey<Item> COMMON_BARTER_CURRENCY = modItemTag("forge","piglin_barter_items/common_barter_currency");
-        public static final TagKey<Item> UNCOMMON_BARTER_CURRENCY = modItemTag("forge","piglin_barter_items/uncommon_barter_currency");
-        public static final TagKey<Item> RARE_BARTER_CURRENCY = modItemTag("forge","piglin_barter_items/rare_barter_currency");
-
         public static final TagKey<Item> PIGLIN_BARTER_ITEMS = modItemTag("forge", "piglin_barter_items");
         public static final TagKey<Item> PIGLIN_WANTED_ITEMS = modItemTag("forge", "piglin_wanted_items");
         public static final TagKey<Item> PIGLIN_LOVED = modItemTag("minecraft", "piglin_loved");

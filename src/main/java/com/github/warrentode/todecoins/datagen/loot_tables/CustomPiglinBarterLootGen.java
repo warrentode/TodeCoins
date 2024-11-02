@@ -27,26 +27,12 @@ import java.util.function.BiConsumer;
 
 public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
     public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
-        consumer.accept(TradeLootTables.CHEAP_BARTER_CURRENCY,
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.CHEAP_BARTER_CURRENCY))
-                        ));
         consumer.accept(TradeLootTables.CHEAP_TRADE_GOODS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
                                 .add(TagEntry.expandTag(ModTags.Items.PIGLIN_FOOD))
-                        ));
-        consumer.accept(TradeLootTables.COMMON_BARTER_CURRENCY,
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.COMMON_BARTER_CURRENCY))
                         ));
         consumer.accept(TradeLootTables.COMMON_TRADE_GOODS,
                 LootTable.lootTable()
@@ -55,26 +41,18 @@ public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
                                 .setBonusRolls(ConstantValue.exactly(0))
                                 .add(TagEntry.expandTag(ModTags.Items.PIGLIN_MERCHANT_COMMON_GOODS))
                         ));
-        consumer.accept(TradeLootTables.COMMON_ENCHANTABLE_GOODS,
+        consumer.accept(TradeLootTables.IRON_TIER_EQUIPMENT_SET,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(LootItem.lootTableItem(Items.IRON_SWORD))
-                                .add(LootItem.lootTableItem(Items.IRON_PICKAXE))
-                                .add(LootItem.lootTableItem(Items.IRON_AXE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_WEAPONS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_TOOLS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_BOOTS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_LEGGINGS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_CHESTPLATES_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_HELMETS_TABLE))
                                 .add(LootItem.lootTableItem(Items.CROSSBOW))
-                                .add(LootItem.lootTableItem(Items.IRON_HELMET))
-                                .add(LootItem.lootTableItem(Items.IRON_CHESTPLATE))
-                                .add(LootItem.lootTableItem(Items.IRON_LEGGINGS))
-                                .add(LootItem.lootTableItem(Items.IRON_BOOTS))
-                        ));
-        consumer.accept(TradeLootTables.UNCOMMON_BARTER_CURRENCY,
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.UNCOMMON_BARTER_CURRENCY))
                         ));
         consumer.accept(TradeLootTables.UNCOMMON_TRADE_GOODS,
                 LootTable.lootTable()
@@ -83,25 +61,24 @@ public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
                                 .setBonusRolls(ConstantValue.exactly(0))
                                 .add(TagEntry.expandTag(ModTags.Items.PIGLIN_MERCHANT_UNCOMMON_GOODS))
                         ));
-        consumer.accept(TradeLootTables.UNCOMMON_ENCHANTABLE_GOODS,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_EQUIPMENT_SET,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_SWORD))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_PICKAXE))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_AXE))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_HELMET))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_CHESTPLATE))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_LEGGINGS))
-                                .add(LootItem.lootTableItem(Items.DIAMOND_BOOTS))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.DIAMOND_TIER_WEAPONS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.DIAMOND_TIER_TOOLS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.DIAMOND_TIER_BOOTS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.DIAMOND_TIER_LEGGINGS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.DIAMOND_TIER_CHESTPLATES_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.DIAMOND_TIER_HELMETS_TABLE))
                         ));
         consumer.accept(TradeLootTables.RARE_BARTER_CURRENCY,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.RARE_BARTER_CURRENCY))
+                                .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE))
                         ));
         consumer.accept(TradeLootTables.RARE_TRADE_GOODS,
                 LootTable.lootTable()
@@ -110,19 +87,17 @@ public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
                                 .setBonusRolls(ConstantValue.exactly(0))
                                 .add(TagEntry.expandTag(ModTags.Items.PIGLIN_MERCHANT_RARE_GOODS))
                         ));
-        consumer.accept(TradeLootTables.RARE_ENCHANTABLE_GOODS,
+        consumer.accept(TradeLootTables.NETHERITE_TIER_EQUIPMENT_SET,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(LootItem.lootTableItem(Items.NETHERITE_SWORD))
-                                .add(LootItem.lootTableItem(Items.NETHERITE_PICKAXE))
-                                .add(LootItem.lootTableItem(Items.NETHERITE_AXE))
-                                .add(LootItem.lootTableItem(Items.BOOK))
-                                .add(LootItem.lootTableItem(Items.NETHERITE_HELMET))
-                                .add(LootItem.lootTableItem(Items.NETHERITE_CHESTPLATE))
-                                .add(LootItem.lootTableItem(Items.NETHERITE_LEGGINGS))
-                                .add(LootItem.lootTableItem(Items.NETHERITE_BOOTS))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.NETHERITE_TIER_WEAPONS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.NETHERITE_TIER_TOOLS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.NETHERITE_TIER_BOOTS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.NETHERITE_TIER_LEGGINGS_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.NETHERITE_TIER_CHESTPLATES_TABLE))
+                                .add(LootTableReference.lootTableReference(TradeLootTables.NETHERITE_TIER_HELMETS_TABLE))
                         ));
 
         consumer.accept(ModBuiltInLootTables.PIGLIN_EVENT_BARTER_LOOT,

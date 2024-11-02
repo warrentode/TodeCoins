@@ -1,4 +1,4 @@
-// 1.19.2	2024-10-16T08:39:40.950672	Tags for minecraft:item
+// 1.19.2	2024-11-02T03:37:36.6081237	Tags for minecraft:item
 8e2bc408dad83ed16a56b702b891e65363fab23b data/beautify/tags/items/bookstack.json
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
@@ -125,11 +125,7 @@ e6aa1463fc9f3d6a23a6fdb9c8ad3273bd5abf55 data/forge/tags/items/nuggets/iron.json
 1019b2933186625b3a3f87c6c715a7e03365df11 data/forge/tags/items/pet_food.json
 e26373558745e567b408e29f0b3032c61eb9901c data/forge/tags/items/pet_supplies.json
 3b1f39daf2d8b5a3b80c7d46cc54f350772cd1d0 data/forge/tags/items/pies.json
-f6fe6e8a05e9f214c9780d6a5ee393a96633c99d data/forge/tags/items/piglin_barter_items.json
-b00ab99c504d08c7337f2d71be1b9240bb0445d8 data/forge/tags/items/piglin_barter_items/cheap_barter_currency.json
-e2a840425e64e755edb7def34636760a5e0378ef data/forge/tags/items/piglin_barter_items/common_barter_currency.json
-193b269670ecf607580d014eb7dc897011bb9d07 data/forge/tags/items/piglin_barter_items/rare_barter_currency.json
-6f65945173b470070cc3ffbceeb8614d256b81f3 data/forge/tags/items/piglin_barter_items/uncommon_barter_currency.json
+10faca3628983a92d6a0de41692fc906af3bb3cb data/forge/tags/items/piglin_barter_items.json
 559e6ea1da943e33b68ea36ea7ff498396d5fe4c data/forge/tags/items/piglin_wanted_items.json
 a972550a860122fffaa0fb70b666737ec3cac475 data/forge/tags/items/plated_foods.json
 7f366ee2ec5a49d86461f2deebf74226efae0308 data/forge/tags/items/quivers.json

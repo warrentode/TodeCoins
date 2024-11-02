@@ -15,7 +15,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -1577,19 +1576,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addTag(ModTags.Items.PIGLIN_MERCHANT_FOOD)
                 .addTag(ModTags.Items.PIGLIN_BARTER_ITEMS);
         tag(ModTags.Items.PIGLIN_BARTER_ITEMS)
-                .addTag(ModTags.Items.COMMON_BARTER_CURRENCY)
-                .addTag(ModTags.Items.UNCOMMON_BARTER_CURRENCY)
-                .addTag(ModTags.Items.RARE_BARTER_CURRENCY);
-        tag(ModTags.Items.CHEAP_BARTER_CURRENCY)
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:gold_coin")))
-                .add(Items.GOLD_NUGGET);
-        tag(ModTags.Items.COMMON_BARTER_CURRENCY)
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:nether_gold_coin")))
-                .add(Items.GOLD_INGOT);
-        tag(ModTags.Items.UNCOMMON_BARTER_CURRENCY)
-                .add(Blocks.GOLD_BLOCK.asItem());
-        tag(ModTags.Items.RARE_BARTER_CURRENCY)
-                .add(Items.ENCHANTED_GOLDEN_APPLE);
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:nether_gold_coin")));
     }
 
     private void registerForgeTags() {

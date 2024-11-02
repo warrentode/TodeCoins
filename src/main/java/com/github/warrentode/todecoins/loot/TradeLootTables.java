@@ -60,6 +60,9 @@ public class TradeLootTables {
     // nether dimension currency
     public static final ResourceLocation THREE_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/three_nether_gold_coin_table");
     public static final ResourceLocation NINE_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/nine_nether_gold_coin_table");
+    public static final ResourceLocation FIFTEEN_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/fifteen_nether_gold_coin_table");
+    public static final ResourceLocation SIX_NETHER_GOLD_COIN_BAG_TABLE = register(MODID + ":" + "trade_tables/currency/six_nether_gold_coin_bag_table");
+    public static final ResourceLocation NINE_NETHER_GOLD_COIN_BAG_TABLE = register(MODID + ":" + "trade_tables/currency/nine_nether_gold_coin_bag_table");
     public static final ResourceLocation EIGHTEEN_NETHERITE_COIN_VALUE_CURRENCY = register(MODID + ":" + "trade_tables/currency/eighteen_netherite_coin_value_currency");
     public static final ResourceLocation THIRTY_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/thirty_nether_gold_coin_table");
     public static final ResourceLocation FORTY_TWO_NETHER_GOLD_COIN_TABLE = register(MODID + ":" + "trade_tables/currency/forty_two_nether_gold_coin_table");
@@ -341,17 +344,14 @@ public class TradeLootTables {
     public static final ResourceLocation WANDERING_TRADER_RARE_OFFERS = register(MODID + ":" + "trade_tables/wandering_trader/rare_offers");
 
     // piglin merchant trade tables
-    public static final ResourceLocation CHEAP_BARTER_CURRENCY = register(MODID + ":" + "trade/cheap_barter_currency");
-    public static final ResourceLocation CHEAP_TRADE_GOODS = register(MODID + ":" + "trade/cheap_trade_goods");
-    public static final ResourceLocation COMMON_BARTER_CURRENCY = register(MODID + ":" + "trade/common_barter_currency");
-    public static final ResourceLocation COMMON_TRADE_GOODS = register(MODID + ":" + "trade/common_trade_goods");
-    public static final ResourceLocation COMMON_ENCHANTABLE_GOODS = register(MODID + ":" + "trade/common_enchantable_goods");
-    public static final ResourceLocation UNCOMMON_BARTER_CURRENCY = register(MODID + ":" + "trade/uncommon_barter_currency");
-    public static final ResourceLocation UNCOMMON_TRADE_GOODS = register(MODID + ":" + "trade/uncommon_trade_goods");
-    public static final ResourceLocation UNCOMMON_ENCHANTABLE_GOODS = register(MODID + ":" + "trade/uncommon_enchantable_goods");
-    public static final ResourceLocation RARE_BARTER_CURRENCY = register(MODID + ":" + "trade/rare_barter_currency");
-    public static final ResourceLocation RARE_TRADE_GOODS = register(MODID + ":" + "trade/rare_trade_goods");
-    public static final ResourceLocation RARE_ENCHANTABLE_GOODS = register(MODID + ":" + "trade/rare_enchantable_goods");
+    public static final ResourceLocation CHEAP_TRADE_GOODS = register(MODID + ":" + "trade/cheap_piglin_trade_goods");
+    public static final ResourceLocation COMMON_TRADE_GOODS = register(MODID + ":" + "trade/common_piglin_trade_goods");
+    public static final ResourceLocation IRON_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade/iron_tier_equipment_set");
+    public static final ResourceLocation UNCOMMON_TRADE_GOODS = register(MODID + ":" + "trade/uncommon_piglin_trade_goods");
+    public static final ResourceLocation DIAMOND_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade/diamond_tier_equipment_set");
+    public static final ResourceLocation RARE_BARTER_CURRENCY = register(MODID + ":" + "trade/rare_piglin_merchant_currency");
+    public static final ResourceLocation RARE_TRADE_GOODS = register(MODID + ":" + "trade/rare_piglin_trade_goods");
+    public static final ResourceLocation NETHERITE_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade/netherite_tier_equipment_set");
 
     private static ResourceLocation register(String path) {
         return register(new ResourceLocation(path));

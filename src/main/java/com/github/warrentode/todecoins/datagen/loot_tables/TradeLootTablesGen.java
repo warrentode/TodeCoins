@@ -821,6 +821,27 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
                 ));
+        consumer.accept(TradeLootTables.FIFTEEN_NETHER_GOLD_COIN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
+                ));
+        consumer.accept(TradeLootTables.SIX_NETHER_GOLD_COIN_BAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.NINE_NETHER_GOLD_COIN_BAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                ));
         consumer.accept(TradeLootTables.EIGHTEEN_NETHERITE_COIN_VALUE_CURRENCY,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))

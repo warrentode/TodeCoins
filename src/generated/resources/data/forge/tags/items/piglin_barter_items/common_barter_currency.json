@@ -1,9 +1,0 @@
-{
-  "values": [
-    {
-      "id": "todecoins:nether_gold_coin",
-      "required": false
-    },
-    "minecraft:gold_ingot"
-  ]
-}
