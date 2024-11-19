@@ -475,30 +475,30 @@ public class TodeCoins {
 
             // Blind Shroud Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,
-                    Items.GOLDEN_CARROT, ModPotions.BLIND_SHROUD_POTION.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION.get(),
-                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_2.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_2.get(),
-                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_3.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_3.get(),
-                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_4.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_4.get(),
-                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_5.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_5.get(),
-                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHROUD_POTION_6.get()));
+                    Items.GOLDEN_CARROT, ModPotions.BLIND_SHIELD_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHIELD_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_2.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHIELD_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_3.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHIELD_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_4.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHIELD_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_5.get(),
+                    Items.GLOWSTONE_DUST, ModPotions.BLIND_SHIELD_POTION_6.get()));
             // Long Blind Shroud Potions
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION.get(),
-                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_2.get(),
-                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_2.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_3.get(),
-                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_3.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_4.get(),
-                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_4.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_5.get(),
-                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_5.get()));
-            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHROUD_POTION_6.get(),
-                    Items.REDSTONE, ModPotions.LONG_BLIND_SHROUD_POTION_6.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHIELD_POTION.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_2.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHIELD_POTION_2.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_3.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHIELD_POTION_3.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_4.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHIELD_POTION_4.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_5.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHIELD_POTION_5.get()));
+            BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ModPotions.BLIND_SHIELD_POTION_6.get(),
+                    Items.REDSTONE, ModPotions.LONG_BLIND_SHIELD_POTION_6.get()));
 
             // Thunderstrike Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.THICK,

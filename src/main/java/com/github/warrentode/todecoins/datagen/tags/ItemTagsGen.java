@@ -614,6 +614,7 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ModTags.Items.SOUL_BINDER)
                 .add(Items.TOTEM_OF_UNDYING)
                 .add(Items.ECHO_SHARD)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("alexsmobs:soul_heart")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("cagerium:binding_gemstone")));
         tag(ModTags.Items.JAR_PLACEABLE)
                 .addTag(SupplementariesTags.Items.SWEETS)

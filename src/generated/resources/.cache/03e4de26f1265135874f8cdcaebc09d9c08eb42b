@@ -1,4 +1,4 @@
-// 1.19.2	2024-11-02T03:37:36.6081237	Tags for minecraft:item
+// 1.19.2	2024-11-19T00:32:16.1658476	Tags for minecraft:item
 8e2bc408dad83ed16a56b702b891e65363fab23b data/beautify/tags/items/bookstack.json
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
@@ -320,7 +320,7 @@ a600f08f3b82ea64e2da4220752cea0537967e95 data/todecoins/tags/items/nuggets/iron.
 f0a2de5fa3e49648a06ea5638dbacc4a7d1c02d8 data/todecoins/tags/items/nuggets/netherite.json
 e29fe2bceb6935c3f59d94dde21de39bdd9b85a6 data/todecoins/tags/items/piglin_merchant_food.json
 e2feff85afb7e4871204d6f5d72b8760e2780187 data/todecoins/tags/items/shulker_boxes.json
-f5364732958a843323b63eaeabe6a5b15b8fcf2c data/todecoins/tags/items/soul_binder.json
+ecaea12c8bd951a2e0039ef7a6e293471910c6fb data/todecoins/tags/items/soul_binder.json
 cd9c93fa4302eb30ddd58d13a9ec40603a6ce651 data/todecoins/tags/items/textiles.json
 e189f29a4d97932a310f6d36f9d8c79982a77384 data/todecoins/tags/items/textiles/currency_fiber.json
 8819ca23a68e1dd64cdb4a243f5889202f0f2167 data/todecoins/tags/items/textiles/currency_paper.json
