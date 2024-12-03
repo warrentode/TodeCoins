@@ -108,7 +108,7 @@ public class PiglinMerchantSpawner implements CustomSpawner {
             BlockPos pos1 = optional.orElse(pos);
             BlockPos pos2 = this.findSpawnPositionNear(serverLevel, pos1, maxDistance);
             if (pos2 != null && this.hasEnoughSpace(serverLevel, pos2)) {
-                if (serverLevel.getBiome(pos2).is(ForgeTags.Biomes.HAS_RUINED_PORTALS)) {
+                if (!serverLevel.getBiome(pos2).is(ForgeTags.Biomes.HAS_RUINED_PORTALS)) {
                     return false;
                 }
 

@@ -76,7 +76,7 @@ public class CommonConfig {
                 .define("allow_treasure_enchantments", false);
         PIGLIN_MERCHANT_PORTAL_SPAWN_CHANCE = BUILDER
                 .comment(" Delay for Piglin Merchant Portal Spawn Chance")
-                .defineInRange("piglin_merchant_portal_spawn_chance", 1000, 1, Integer.MAX_VALUE);
+                .defineInRange("piglin_merchant_portal_spawn_chance", 1000, 0, Integer.MAX_VALUE);
         PIGLIN_MERCHANT_NETHER_SPAWN_DELAY = BUILDER
                 .comment(" Delay for Piglin Merchant Nether Spawn Chance")
                 .defineInRange("piglin_merchant_nether_spawn_delay", 24000, 20, Integer.MAX_VALUE);

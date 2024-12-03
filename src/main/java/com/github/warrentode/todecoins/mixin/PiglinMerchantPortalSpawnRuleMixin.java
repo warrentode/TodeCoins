@@ -27,7 +27,7 @@ public abstract class PiglinMerchantPortalSpawnRuleMixin {
 
     @Inject(at = @At("HEAD"), method = "randomTick")
     private void piglinmerchant_randomTick(BlockState blockState, @NotNull ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource, CallbackInfo ci) {
-        if (serverLevel.dimensionType().natural() && serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) && randomSource.nextInt(getPiglinMerchantPortalTickSpawnChance()) < serverLevel.getDifficulty().getId()) {
+        if (serverLevel.dimensionType().natural() && serverLevel.getGameRules().getBoolean(GameRules.RULE_DO_TRADER_SPAWNING) && randomSource.nextInt(getPiglinMerchantPortalTickSpawnChance()) < serverLevel.getDifficulty().getId()) {
             while(serverLevel.getBlockState(blockPos).is(piglinmerchant$pBlock)) {
                 blockPos = blockPos.below();
             }
