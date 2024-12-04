@@ -137,8 +137,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
     // addresses vulnerabilities with imported external libraries
-    implementation 'io.netty:netty-codec:4.1.104.Final'
-    implementation 'io.netty:netty-handler:4.1.104.Final'
+    implementation 'io.netty:netty-codec:5.0.0.Alpha2'
+    implementation 'io.netty:netty-handler:5.0.0.Alpha2'
     implementation 'com.google.guava:guava:33.0.0-jre'
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
     implementation 'org.apache.commons:commons-compress:1.26.1'
