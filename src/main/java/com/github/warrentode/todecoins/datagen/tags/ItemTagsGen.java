@@ -62,6 +62,10 @@ public class ItemTagsGen extends ItemTagsProvider {
     }
 
     private void registerModTags() {
+        tag(ModTags.Items.STICKS)
+                .addOptional(Objects.requireNonNull(
+                        ResourceLocation.tryParse("aether:skyroot_stick")))
+                .add(STICK);
         tag(ModTags.Items.PET_BEDS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("domesticationinnovation:pet_bed_yellow")))
@@ -1716,8 +1720,8 @@ public class ItemTagsGen extends ItemTagsProvider {
         tag(ForgeTags.Items.INK)
                 .add(Items.INK_SAC)
                 .add(Items.GLOW_INK_SAC);
-        tag(ForgeTags.Items.STICKS)
-                .add(Items.STICK);
+        tag(ForgeTags.Items.RODS)
+                .addTag(ModTags.Items.STICKS);
         tag(ForgeTags.Items.QUIVERS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("supplementaries:quivers")));

@@ -1,4 +1,4 @@
-// 1.19.2	2024-11-02T03:37:36.6081237	LootTables
+// 1.19.2	2024-12-03T19:22:04.0113738	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -433,7 +433,7 @@ a49d05b66ce57d30f22fd54393f15ca72cb9f817 data/todecoins/loot_tables/trade_tables
 ed520ec604126c34bd1f360b762d09dfef431480 data/todecoins/loot_tables/trade_tables/misc/single_lucky_coin_value_items.json
 3f41fa6c5199402475af2fbab960d2889df48875 data/todecoins/loot_tables/trade_tables/misc/sixty_pot_of_gold_value_items.json
 34d98115c74ab31ab641ae051c3204b316b3be4e data/todecoins/loot_tables/trade_tables/misc/tagged_ash_table.json
-1a57db57d5f26cc761ba028bf3215e08e20123ce data/todecoins/loot_tables/trade_tables/misc/tagged_stick_table.json
+89ce37d173f398bdd7d28be57cfb4d33d53cf41c data/todecoins/loot_tables/trade_tables/misc/tagged_stick_table.json
 7c42155b3f5496c0414094c26f00044a97fa1431 data/todecoins/loot_tables/trade_tables/misc/tailor_tools_table.json
 af58d801db9e2bc5533fa61a1bfdd3bed23b2859 data/todecoins/loot_tables/trade_tables/misc/textiles_tag_table.json
 b18c926fee0f6252d882ef2fa12282fd83eb7675 data/todecoins/loot_tables/trade_tables/misc/thirty_pot_of_gold_value_items.json

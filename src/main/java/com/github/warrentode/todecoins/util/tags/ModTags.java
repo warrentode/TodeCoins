@@ -32,6 +32,7 @@ public class ModTags {
         public static final TagKey<Item> HANGING_POT = modItemTag("beautify","hanging_pot");
         public static final TagKey<Item> FLOWER_BOX = modItemTag("supplementaries","flower_box");
         public static final TagKey<Item> PET_BEDS = modItemTag("domesticationinnovation","pet_beds");
+        public static final TagKey<Item> STICKS = modItemTag(MODID,"sticks");
 
         public static final TagKey<Item> CURRENCY = modItemTag("currency");
         public static final TagKey<Item> BANKNOTES = modItemTag("currency/banknotes");

@@ -2567,7 +2567,7 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.STICKS))
+                        .add(TagEntry.expandTag(ModTags.Items.STICKS))
                 ));
         consumer.accept(TradeLootTables.TAGGED_STRING_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()

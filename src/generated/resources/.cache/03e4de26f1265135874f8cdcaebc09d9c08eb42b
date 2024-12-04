@@ -1,4 +1,4 @@
-// 1.19.2	2024-11-19T00:32:16.1658476	Tags for minecraft:item
+// 1.19.2	2024-12-03T19:20:42.9900983	Tags for minecraft:item
 8e2bc408dad83ed16a56b702b891e65363fab23b data/beautify/tags/items/bookstack.json
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
@@ -150,7 +150,7 @@ ec0a7309322ef8719a8dd108a2ba8da89b556822 data/forge/tags/items/raw_meats/raw_goa
 d446ee2af1c0373c5465ef905fa918af501f2a00 data/forge/tags/items/raw_meats/raw_venison.json
 df0e0579de3880831933b87f169620da0965c720 data/forge/tags/items/raw_pork/raw_bacon.json
 3d7a237252555308b9bc778b50b9162d45c1fe8f data/forge/tags/items/recyclable_glass.json
-1ad920aa65e2706dabb6265f3b12546ab33e8936 data/forge/tags/items/rods.json
+7a0b1a272b84418d7bd288c8981800fbf8988aa0 data/forge/tags/items/rods.json
 d65ee2a4f97bbb1ba46b10f8a796eeef013f4297 data/forge/tags/items/salts.json
 e85d473045cf55c6f706798af73a74b69875c186 data/forge/tags/items/sand.json
 8b9c44dfbb27b1788ed918e3e6ab1287b326bd00 data/forge/tags/items/sandwiches.json
@@ -321,6 +321,7 @@ f0a2de5fa3e49648a06ea5638dbacc4a7d1c02d8 data/todecoins/tags/items/nuggets/nethe
 e29fe2bceb6935c3f59d94dde21de39bdd9b85a6 data/todecoins/tags/items/piglin_merchant_food.json
 e2feff85afb7e4871204d6f5d72b8760e2780187 data/todecoins/tags/items/shulker_boxes.json
 ecaea12c8bd951a2e0039ef7a6e293471910c6fb data/todecoins/tags/items/soul_binder.json
+1691be5fee2f8f85f225a3260a461dc9fbbdac33 data/todecoins/tags/items/sticks.json
 cd9c93fa4302eb30ddd58d13a9ec40603a6ce651 data/todecoins/tags/items/textiles.json
 e189f29a4d97932a310f6d36f9d8c79982a77384 data/todecoins/tags/items/textiles/currency_fiber.json
 8819ca23a68e1dd64cdb4a243f5889202f0f2167 data/todecoins/tags/items/textiles/currency_paper.json

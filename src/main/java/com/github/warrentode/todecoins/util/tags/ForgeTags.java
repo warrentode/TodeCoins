@@ -249,7 +249,7 @@ public class ForgeTags {
         public static final TagKey<Item> INK = forgeItemTag("forge", "ink");
         public static final TagKey<Item> GUIDE_BOOKS = forgeItemTag("forge", "guide_books");
         public static final TagKey<Item> GLAZED_TERRACOTTA = forgeItemTag("forge", "glazed_terracotta");
-        public static final TagKey<Item> STICKS = forgeItemTag("forge", "rods");
+        public static final TagKey<Item> RODS = forgeItemTag("forge", "rods");
         public static final TagKey<Item> DYES = forgeItemTag("forge","dyes");
 
         public static final TagKey<Item> TOOLS_KNIVES = forgeItemTag("forge", "tools/knives");

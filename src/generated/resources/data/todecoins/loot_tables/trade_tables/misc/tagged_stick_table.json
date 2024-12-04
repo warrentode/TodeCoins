@@ -7,7 +7,7 @@
         {
           "type": "minecraft:tag",
           "expand": true,
-          "name": "forge:rods"
+          "name": "todecoins:sticks"
         }
       ],
       "rolls": 1.0
