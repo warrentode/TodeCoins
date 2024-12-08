@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -22,7 +23,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class LootTableForSelectableEnchantmentLootTable implements VillagerTrades.ItemListing {
+public class LootTableForSpecifiedEnchantmentLootTable implements VillagerTrades.ItemListing {
     private final ResourceLocation enchantedTable;
     private final ResourceLocation requestedLootTable;
     private final int maxUses;
@@ -31,8 +32,8 @@ public class LootTableForSelectableEnchantmentLootTable implements VillagerTrade
     private final EnchantmentInstance[] enchantments;
     private final int enchantmentLevel;
 
-    public LootTableForSelectableEnchantmentLootTable(ResourceLocation enchantedTable, ResourceLocation requestedLootTable,
-                                                      int maxUses, int xpValue, float priceMultiplier, int enchantmentLevel, EnchantmentInstance[] enchantments) {
+    public LootTableForSpecifiedEnchantmentLootTable(ResourceLocation enchantedTable, ResourceLocation requestedLootTable,
+                                                     int maxUses, int xpValue, float priceMultiplier, int enchantmentLevel, EnchantmentInstance[] enchantments) {
         this.enchantedTable = enchantedTable;
         this.requestedLootTable = requestedLootTable;
         this.maxUses = maxUses;
@@ -65,6 +66,15 @@ public class LootTableForSelectableEnchantmentLootTable implements VillagerTrade
                     request.get(source.nextInt(request.size())).getCount());
 
             ItemStack offerStack = new ItemStack(enchantStack.get(source.nextInt(enchantStack.size())).getItem());
+
+
+
+            if (requestStack.isEmpty()) {
+                TodeCoins.LOGGER.warn("Requested loot table '{}' returned no items.", request); // Log the warning
+            }
+            if (enchantStack.isEmpty()) {
+                TodeCoins.LOGGER.warn("Offered loot table '{}' returned no items.", enchanted); // Log the warning
+            }
 
             if (offerStack.getItem() == Items.ENCHANTED_BOOK) {
                 EnchantmentHelper.setEnchantments(Stream.of(this.enchantments).collect(Collectors.toMap(o -> o.enchantment, e -> e.level)), offerStack);

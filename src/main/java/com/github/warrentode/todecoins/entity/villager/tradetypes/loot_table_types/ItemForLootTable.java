@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -49,6 +50,10 @@ public class ItemForLootTable implements VillagerTrades.ItemListing {
                     .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
 
             List<ItemStack> offered = offerTable.getRandomItems(lootContext);
+
+            if (offered.isEmpty()) {
+                TodeCoins.LOGGER.warn("Offered loot table '{}' returned no items.", offerTable); // Log the warning
+            }
 
             ItemStack requestStack = new ItemStack(this.requestItem.getItem(), this.requestItemCount);
             ItemStack offerStack = new ItemStack(

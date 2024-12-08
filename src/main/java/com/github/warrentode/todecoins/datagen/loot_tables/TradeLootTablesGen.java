@@ -1173,6 +1173,28 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .when(IN_NETHER.invert()).when(IN_END.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
                 ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
+                                .when(IN_OVERWORLD.or(IN_NETHER))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
+                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
+                                .when(IN_OVERWORLD.or(IN_NETHER))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem())
+                                .when(IN_OVERWORLD.or(IN_NETHER))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        // default
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                ));
         consumer.accept(TradeLootTables.TAGGED_RAW_MEATS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))

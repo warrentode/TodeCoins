@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -59,6 +60,10 @@ public class LootTableForPotion implements VillagerTrades.ItemListing {
                     .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
 
             List<ItemStack> requested = requestedTable.getRandomItems(lootContext);
+
+            if (requested.isEmpty()) {
+                TodeCoins.LOGGER.warn("Requested loot table '{}' returned no items.", requestedTable); // Log the warning
+            }
 
             ItemStack requestStack = new ItemStack(
                     requested.get(source.nextInt(requested.size())).getItem(),

@@ -3,7 +3,7 @@ package com.github.warrentode.todecoins.entity.piglinmerchant;
 import com.github.warrentode.todecoins.config.CommonConfig;
 import com.github.warrentode.todecoins.config.trades.todecoins.PiglinMerchantTradesConfig;
 import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types.LootTableForEnchantedTable;
-import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types.LootTableForSelectableEnchantmentLootTable;
+import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types.LootTableForSpecifiedEnchantmentLootTable;
 import com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types.LootTableForTagTable;
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -83,7 +83,7 @@ public class PiglinMerchantTrades {
                                         rareSupply, baseXP, rareSupply
                                 ),
                                 // rare soul speed boots trade
-                                new LootTableForSelectableEnchantmentLootTable(
+                                new LootTableForSpecifiedEnchantmentLootTable(
                                         ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant2Offer3()),
                                         ResourceLocation.tryParse(PiglinMerchantTradesConfig.getPiglinMerchant2Request3()),
                                         rareSupply, baseXP, rareSupply, PiglinMerchantTradesConfig.getPiglinMerchant2EnchantmentListLevel(),

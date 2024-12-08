@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -55,6 +56,16 @@ public class LootTableForTwoLootTable implements VillagerTrades.ItemListing {
             List<ItemStack> sellGoods = sellingTable.getRandomItems(lootContext);
             List<ItemStack> currency1 = currencyTable1.getRandomItems(lootContext);
             List<ItemStack> currency2 = currencyTable2.getRandomItems(lootContext);
+
+            if (currency1.isEmpty()) {
+                TodeCoins.LOGGER.warn("First requested loot table '{}' returned no items.", currencyTable1); // Log the warning
+            }
+            if (currency2.isEmpty()) {
+                TodeCoins.LOGGER.warn("Second requested loot table '{}' returned no items.", currencyTable2); // Log the warning
+            }
+            if (sellGoods.isEmpty()) {
+                TodeCoins.LOGGER.warn("Offered loot table '{}' returned no items.", sellingTable); // Log the warning
+            }
 
             ItemStack sellStack = new ItemStack(
                     sellGoods.get(source.nextInt(sellGoods.size())).getItem(),

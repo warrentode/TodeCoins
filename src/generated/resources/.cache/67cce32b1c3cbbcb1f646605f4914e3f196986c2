@@ -1,4 +1,4 @@
-// 1.19.2	2024-12-03T19:22:04.0113738	LootTables
+// 1.19.2	2024-12-08T02:18:27.838344	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -302,6 +302,7 @@ c9c1daadc8bb62c3eb0512e10fb0eb0f3388b03f data/todecoins/loot_tables/trade_tables
 48b252a2e20b98a0c3a22b0830a63574edf63e08 data/todecoins/loot_tables/trade_tables/currency/six_emerald_value_currency.json
 d38f2a1a3081b19ae28876cf5130b719fbc78d96 data/todecoins/loot_tables/trade_tables/currency/six_nether_gold_coin_bag_table.json
 3e15384736e95492c87fe4b1f5e76e9266bc763e data/todecoins/loot_tables/trade_tables/currency/smallest_coin.json
+c1f7f313f9e6052cf781aa71e10c61f4bbdd53cb data/todecoins/loot_tables/trade_tables/currency/ten_emerald_value_currency.json
 c0b0034312e145cff4f78ff0ae7e17c4e1bb9994 data/todecoins/loot_tables/trade_tables/currency/thirty_nether_gold_coin_table.json
 6902c5ae8b24e307c115b8cabb799565bece90f3 data/todecoins/loot_tables/trade_tables/currency/thirty_pot_of_gold_table.json
 fec55bac27b59fae4d09c0a493ff0e9a03aab651 data/todecoins/loot_tables/trade_tables/currency/thirty_pot_of_gold_value_currency.json

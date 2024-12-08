@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -66,6 +67,13 @@ public class TwoLootTableForMap implements VillagerTrades.ItemListing {
                         .withRandom(trader.level.random).create(LootContextParamSets.GIFT);
                 List<ItemStack> currency = currencyTable.getRandomItems(lootContext);
                 List<ItemStack> requested = requestedTable.getRandomItems(lootContext);
+
+                if (requested.isEmpty()) {
+                    TodeCoins.LOGGER.warn("First requested loot table '{}' returned no items.", requestedTable); // Log the warning
+                }
+                if (currency.isEmpty()) {
+                    TodeCoins.LOGGER.warn("Second requested loot table '{}' returned no items.", currencyTable); // Log the warning
+                }
 
                 ItemStack offeredMap = MapItem.create(serverlevel, blockpos.getX(), blockpos.getZ(), (byte) 2, true, true);
                 MapItem.renderBiomePreviewMap(serverlevel, offeredMap);

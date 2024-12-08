@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class VillagerTypeTrade implements VillagerTrades.ItemListing {
+public class VillagerTypeLootTableTrade implements VillagerTrades.ItemListing {
     public static final int DEFAULT_SUPPLY = 12;
     public static final int COMMON_ITEMS_SUPPLY = 16;
     public static final int UNCOMMON_ITEMS_SUPPLY = 3;
@@ -38,7 +38,7 @@ public class VillagerTypeTrade implements VillagerTrades.ItemListing {
     private final int xpValue;
     private final float priceMultiplier;
 
-    public VillagerTypeTrade(Map<VillagerType, Item> offeredItemType, int offeredItemTypeCount, Map<VillagerType, Item> requestedItemType, int requestedItemTypeCount, int maxUses, int xpValue, float priceMultiplier) {
+    public VillagerTypeLootTableTrade(Map<VillagerType, Item> offeredItemType, int offeredItemTypeCount, Map<VillagerType, Item> requestedItemType, int requestedItemTypeCount, int maxUses, int xpValue, float priceMultiplier) {
         Registry.VILLAGER_TYPE.stream().filter((containsKey) -> !offeredItemType.containsKey(containsKey)).findAny().ifPresent((villagerType) -> {
             throw new IllegalStateException("Missing trade for villager type: " + Registry.VILLAGER_TYPE.getKey(villagerType));
         });

@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.config.CommonConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -52,6 +53,14 @@ public class LootTableForEnchantedTable implements VillagerTrades.ItemListing {
 
             List<ItemStack> enchantStack = enchanted.getRandomItems(lootContext);
             List<ItemStack> request = requested.getRandomItems(lootContext);
+
+
+            if (request.isEmpty()) {
+                TodeCoins.LOGGER.warn("Requested loot table '{}' returned no items.", requested); // Log the warning
+            }
+            if (enchantStack.isEmpty()) {
+                TodeCoins.LOGGER.warn("Offered loot table '{}' returned no items.", enchanted); // Log the warning
+            }
 
             ItemStack requestStack = new ItemStack(
                     request.get(source.nextInt(request.size())).getItem(),

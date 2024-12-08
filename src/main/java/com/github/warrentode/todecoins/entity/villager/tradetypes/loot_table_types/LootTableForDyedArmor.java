@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager.tradetypes.loot_table_types;
 
+import com.github.warrentode.todecoins.TodeCoins;
 import com.google.common.collect.Lists;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -51,6 +52,13 @@ public class LootTableForDyedArmor implements VillagerTrades.ItemListing {
 
             List<ItemStack> requested = requestedTable.getRandomItems(lootContext);
             List<ItemStack> offered = offeredTable.getRandomItems(lootContext);
+
+            if (requested.isEmpty()) {
+                TodeCoins.LOGGER.warn("Requested loot table '{}' returned no items.", requestedTable); // Log the warning
+            }
+            if (offered.isEmpty()) {
+                TodeCoins.LOGGER.warn("Offered loot table '{}' returned no items.", offeredTable); // Log the warning
+            }
 
             ItemStack requestStack = new ItemStack(
                     requested.get(source.nextInt(requested.size())).getItem(),
