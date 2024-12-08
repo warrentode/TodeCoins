@@ -1,4 +1,4 @@
-// 1.19.2	2024-12-03T19:20:42.9900983	Tags for minecraft:item
+// 1.19.2	2024-12-08T01:41:59.7219035	Tags for minecraft:item
 8e2bc408dad83ed16a56b702b891e65363fab23b data/beautify/tags/items/bookstack.json
 0efa9488c8856f65d0dd3167fafb5c8351e0e413 data/beautify/tags/items/hanging_pot.json
 b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_trap.json
@@ -7,7 +7,7 @@ b4cf4be6fefb47e2fd60b55088e0adea982c9566 data/crabbersdelight/tags/items/crab_tr
 ffb9de977b064eba657b87e38eabbbf60f1b9f84 data/create/tags/items/equipment/mechanical.json
 d87994869677900ead4d020a084c54bd2fbc0e4d data/create/tags/items/equipment/mining.json
 706e1a828816a7f4ec609081f03bcdb7902b9a1b data/create/tags/items/equipment/train.json
-36a42907f322b175934b1e539b45657f653e75ab data/create/tags/items/goggle.json
+f6ec9810297c363a7700f8468600e18342913d82 data/create/tags/items/goggle.json
 85cfc7478b28c66b06dddad346d33aa63b003889 data/create/tags/items/materials/copper.json
 5f4e31d2fa982c1c94164518bd76d944544d366e data/create/tags/items/materials/iron.json
 ff9a4d4805a838a0470450eaf4e42d61599caf26 data/create/tags/items/materials/zinc.json

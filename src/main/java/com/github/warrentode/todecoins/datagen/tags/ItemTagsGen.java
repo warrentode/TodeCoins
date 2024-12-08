@@ -1381,7 +1381,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("create:copper_sheet")));
         tag(ModTags.Items.GOGGLES)
                 .addOptional(Objects.requireNonNull(
-                        ResourceLocation.tryParse("create:goggle")));
+                        ResourceLocation.tryParse("create:goggles")));
         tag(ModTags.Items.ZINC_MATERIALS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:raw_zinc")))
