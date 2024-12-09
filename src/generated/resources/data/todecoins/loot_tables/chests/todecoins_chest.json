@@ -43,35 +43,10 @@
           "type": "minecraft:loot_table",
           "conditions": [
             {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:fortress"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:ruined_portal_nether"
-                  }
-                },
-                {
-                  "condition": "minecraft:location_check",
-                  "predicate": {
-                    "structure": "minecraft:bastion_remnant"
-                  }
-                },
-                {
-                  "condition": "todecoins:biometag_condition",
-                  "tag": "forge:nether_biomes"
-                }
-              ]
-            },
-            {
-              "chance": 0.5,
-              "condition": "minecraft:random_chance"
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
             }
           ],
           "name": "todecoins:chests/currency/todecoins_nether_gold_coin_loot",
@@ -84,12 +59,8 @@
             {
               "condition": "minecraft:location_check",
               "predicate": {
-                "structure": "minecraft:end_city"
+                "dimension": "minecraft:the_end"
               }
-            },
-            {
-              "chance": 0.4,
-              "condition": "minecraft:random_chance"
             }
           ],
           "name": "todecoins:chests/currency/todecoins_endonian_coin_loot",

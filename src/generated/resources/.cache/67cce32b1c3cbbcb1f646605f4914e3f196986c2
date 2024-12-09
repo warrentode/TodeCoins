@@ -1,4 +1,4 @@
-// 1.19.2	2024-12-08T02:18:27.838344	LootTables
+// 1.19.2	2024-12-08T21:55:44.5623927	LootTables
 c7cae11272dc0484f6a2f3519cd1add9790206ea data/ecologics/loot_tables/cagerium/camel.json
 25a13337f840c73f4748adfc5b8c3d93e3183730 data/ecologics/loot_tables/cagerium/coconut_crab.json
 ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/ecologics/loot_tables/cagerium/penguin.json
@@ -148,7 +148,7 @@ da2fad6cf4d958f8725df2d6364cdb045fb8ce3c data/todecoins/loot_tables/chests/curre
 18e9fad59c3b7c0db7f9690d10d3c291cd6edd47 data/todecoins/loot_tables/chests/currency/todecoins_netherite_coin_loot.json
 d67652a38680055e80f4c6a2b890cc5688d3f5e2 data/todecoins/loot_tables/chests/currency/todecoins_nether_gold_coin_loot.json
 884458d92a2d8ca543bb9f92738a7799b1ef0280 data/todecoins/loot_tables/chests/endonian_materials_loot.json
-4fd6a2d13f87b9484e6d43e869d013ce019ec2ff data/todecoins/loot_tables/chests/todecoins_chest.json
+282a8c8af147c6c0c1ae2eef2582a8eac2cdda07 data/todecoins/loot_tables/chests/todecoins_chest.json
 0833dbabc57e1f5bb6e5731a5fe9b42cce4cfdd0 data/todecoins/loot_tables/chests/village/villager_banker.json
 ab27d7159655e5650a73ef5008eda6b609f1e61e data/todecoins/loot_tables/chests/village/villager_leprechaun.json
 5cb3191854d8281368e6517a301d5f50f4b51c07 data/todecoins/loot_tables/entity/coins/todecoins_boss_copper_coin_drops.json
