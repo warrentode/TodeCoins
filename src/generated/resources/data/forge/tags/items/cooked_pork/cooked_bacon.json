@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:cooked_bacon",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:cooked_bacon",
+      "required": false
+    }
+  ]
 }

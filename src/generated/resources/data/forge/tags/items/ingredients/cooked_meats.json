@@ -1,15 +1,15 @@
 {
-    "values": [
-        {
-            "id": "miners_delight:smoked_wing",
-            "required": false
-        },
-        "#forge:cooked_meats/cooked_goat",
-        "#forge:cooked_meats/cooked_venison",
-        "#forge:cooked_meats/cooked_beef",
-        "#forge:cooked_meats/cooked_rabbit",
-        "#forge:cooked_meats/cooked_pork",
-        "#forge:cooked_meats/cooked_chicken",
-        "#forge:cooked_meats/cooked_mutton"
-    ]
+  "values": [
+    {
+      "id": "miners_delight:smoked_wing",
+      "required": false
+    },
+    "#forge:cooked_meats/cooked_goat",
+    "#forge:cooked_meats/cooked_venison",
+    "#forge:cooked_meats/cooked_beef",
+    "#forge:cooked_meats/cooked_rabbit",
+    "#forge:cooked_meats/cooked_pork",
+    "#forge:cooked_meats/cooked_chicken",
+    "#forge:cooked_meats/cooked_mutton"
+  ]
 }

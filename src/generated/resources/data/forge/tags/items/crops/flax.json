@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "supplementaries:flax",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "supplementaries:flax",
+      "required": false
+    }
+  ]
 }

@@ -1,9 +1,9 @@
 {
-    "values": [
-        "minecraft:cooked_beef",
-        {
-            "id": "farmersdelight:beef_patty",
-            "required": false
-        }
-    ]
+  "values": [
+    "minecraft:cooked_beef",
+    {
+      "id": "farmersdelight:beef_patty",
+      "required": false
+    }
+  ]
 }

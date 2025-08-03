@@ -1,8 +1,8 @@
 {
-    "values": [
-        "todecoins:collectible_coin_cod_copper",
-        "todecoins:collectible_coin_cod_iron",
-        "todecoins:collectible_coin_cod_gold",
-        "todecoins:collectible_coin_cod_netherite"
-    ]
+  "values": [
+    "todecoins:collectible_coin_cod_copper",
+    "todecoins:collectible_coin_cod_iron",
+    "todecoins:collectible_coin_cod_gold",
+    "todecoins:collectible_coin_cod_netherite"
+  ]
 }

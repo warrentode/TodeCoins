@@ -1,9 +1,9 @@
 {
-    "values": [
-        "minecraft:pufferfish",
-        {
-            "id": "oceansdelight:fugu_slice",
-            "required": false
-        }
-    ]
+  "values": [
+    "minecraft:pufferfish",
+    {
+      "id": "oceansdelight:fugu_slice",
+      "required": false
+    }
+  ]
 }

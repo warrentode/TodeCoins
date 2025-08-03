@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "hauntedharvest:corn",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "hauntedharvest:corn",
+      "required": false
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:flint_knife",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:flint_knife",
+      "required": false
+    }
+  ]
 }

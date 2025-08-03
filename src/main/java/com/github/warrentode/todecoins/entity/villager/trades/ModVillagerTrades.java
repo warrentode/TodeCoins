@@ -3957,10 +3957,10 @@ public class ModVillagerTrades {
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));
-                        trades.get(novice).add(new TwoLootTableForLootTable(
+                        trades.get(novice).add(new LootTableForTwoLootTable(
+                                ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Offer2()),
                                 ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Request2()),
                                 ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Request2Secondary()),
-                                ResourceLocation.tryParse(FletcherTradesConfig.getFletcher1Offer2()),
                                 CONFIG_COMMON_MAX_TRADES, CONFIG_BASE_XP * novice,
                                 CONFIG_COMMON_TRADE_MULTIPLIER
                         ));

@@ -1,13 +1,13 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:chocolate_pie",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:apple_pie",
-            "required": false
-        },
-        "minecraft:pumpkin_pie"
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:chocolate_pie",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:apple_pie",
+      "required": false
+    },
+    "minecraft:pumpkin_pie"
+  ]
 }

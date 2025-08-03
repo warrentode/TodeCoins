@@ -1,21 +1,21 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:baked_cod_stew",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:vegetable_soup",
-            "required": false
-        },
-        {
-            "id": "miners_delight:cave_soup_cup",
-            "required": false
-        },
-        {
-            "id": "miners_delight:mushroom_stew_cup",
-            "required": false
-        },
-        "minecraft:mushroom_stem"
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:baked_cod_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:vegetable_soup",
+      "required": false
+    },
+    {
+      "id": "miners_delight:cave_soup_cup",
+      "required": false
+    },
+    {
+      "id": "miners_delight:mushroom_stew_cup",
+      "required": false
+    },
+    "minecraft:mushroom_stem"
+  ]
 }

@@ -22,7 +22,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:trade_tables/armor/chestplate/diamond_tier_chestplates"
+          "name": "todecoins:trade_tables/armor/chestplates/diamond_tier_chestplates"
         },
         {
           "type": "minecraft:loot_table",

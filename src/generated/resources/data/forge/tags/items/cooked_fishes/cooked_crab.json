@@ -1,16 +1,16 @@
 {
-    "values": [
-        {
-            "id": "ecologics:crab_meat",
-            "required": false
-        },
-        {
-            "id": "crabbersdelight:crab_cakes",
-            "required": false
-        },
-        {
-            "id": "crabbersdelight:cooked_crab",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "ecologics:crab_meat",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:crab_cakes",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:cooked_crab",
+      "required": false
+    }
+  ]
 }

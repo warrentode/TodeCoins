@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "crabbersdelight:raw_clam_meat",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "crabbersdelight:raw_clam_meat",
+      "required": false
+    }
+  ]
 }

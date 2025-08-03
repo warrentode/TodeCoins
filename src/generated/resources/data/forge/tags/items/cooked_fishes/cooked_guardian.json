@@ -1,12 +1,12 @@
 {
-    "values": [
-        {
-            "id": "oceansdelight:cooked_guardian_tail",
-            "required": false
-        },
-        {
-            "id": "oceansdelight:bowl_of_guardian_soup",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "oceansdelight:cooked_guardian_tail",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:bowl_of_guardian_soup",
+      "required": false
+    }
+  ]
 }

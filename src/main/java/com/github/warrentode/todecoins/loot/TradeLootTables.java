@@ -255,12 +255,12 @@ public class TradeLootTables {
     public static final ResourceLocation DIAMOND_TIER_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/diamond_tier_helmets");
     public static final ResourceLocation NETHERITE_TIER_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/netherite_tier_helmets");
 
-    public static final ResourceLocation LEATHER_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplate/leather_tier_chestplates");
-    public static final ResourceLocation CHAINMAIL_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplate/chainmail_tier_chestplates");
-    public static final ResourceLocation IRON_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplate/iron_tier_chestplates");
-    public static final ResourceLocation GOLD_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplate/gold_tier_chestplates");
-    public static final ResourceLocation DIAMOND_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplate/diamond_tier_chestplates");
-    public static final ResourceLocation NETHERITE_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplate/netherite_tier_chestplates");
+    public static final ResourceLocation LEATHER_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/leather_tier_chestplates");
+    public static final ResourceLocation CHAINMAIL_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/chainmail_tier_chestplates");
+    public static final ResourceLocation IRON_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/iron_tier_chestplates");
+    public static final ResourceLocation GOLD_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/gold_tier_chestplates");
+    public static final ResourceLocation DIAMOND_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/diamond_tier_chestplates");
+    public static final ResourceLocation NETHERITE_TIER_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/netherite_tier_chestplates");
 
     public static final ResourceLocation LEATHER_TIER_LEGGINGS_TABLE = register(MODID + ":" + "trade_tables/armor/leggings/leather_tier_leggings");
     public static final ResourceLocation CHAINMAIL_TIER_LEGGINGS_TABLE = register(MODID + ":" + "trade_tables/armor/leggings/chainmail_tier_leggings");
@@ -276,10 +276,10 @@ public class TradeLootTables {
     public static final ResourceLocation DIAMOND_TIER_BOOTS_TABLE = register(MODID + ":" + "trade_tables/armor/boots/diamond_tier_boots");
     public static final ResourceLocation NETHERITE_TIER_BOOTS_TABLE = register(MODID + ":" + "trade_tables/armor/boots/netherite_tier_boots");
 
-    public static final ResourceLocation DYEABLE_BOOTS_TABLE = register(MODID + ":" + "trade_tables/armor/boots/dyeable");
-    public static final ResourceLocation DYEABLE_LEGGINGS_TABLE = register(MODID + ":" + "trade_tables/armor/leggings/dyeable");
-    public static final ResourceLocation DYEABLE_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/dyeable");
-    public static final ResourceLocation DYEABLE_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/dyeable");
+    public static final ResourceLocation DYEABLE_BOOTS_TABLE = register(MODID + ":" + "trade_tables/armor/boots/dyeable_boots");
+    public static final ResourceLocation DYEABLE_LEGGINGS_TABLE = register(MODID + ":" + "trade_tables/armor/leggings/dyeable_leggings");
+    public static final ResourceLocation DYEABLE_CHESTPLATES_TABLE = register(MODID + ":" + "trade_tables/armor/chestplates/dyeable_chestplates");
+    public static final ResourceLocation DYEABLE_HELMETS_TABLE = register(MODID + ":" + "trade_tables/armor/helmets/dyeable_helmets");
 
     // misc item tables
     public static final ResourceLocation TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS = register(MODID + ":" + "trade_tables/misc/twenty_seven_lucky_coin_value_items");

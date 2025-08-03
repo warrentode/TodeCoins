@@ -1,7 +1,7 @@
 {
-    "values": [
-        "#forge:soups/fish_soups",
-        "#forge:soups/vegetable_soups",
-        "#forge:soups/meat_soups"
-    ]
+  "values": [
+    "#forge:soups/fish_soups",
+    "#forge:soups/vegetable_soups",
+    "#forge:soups/meat_soups"
+  ]
 }

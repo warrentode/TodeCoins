@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:rice_panicle",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:rice_panicle",
+      "required": false
+    }
+  ]
 }

@@ -1,24 +1,24 @@
 {
-    "values": [
-        {
-            "id": "crabbersdelight:stuffed_nautilus_shell",
-            "required": false
-        },
-        {
-            "id": "crabbersdelight:fish_stick",
-            "required": false
-        },
-        {
-            "id": "crabbersdelight:surf_and_turf",
-            "required": false
-        },
-        "#forge:cooked_fishes/cooked_elder_guardian",
-        "#forge:cooked_fishes/cooked_guardian",
-        "#forge:cooked_fishes/cooked_clawster",
-        "#forge:cooked_fishes/cooked_shrimp",
-        "#forge:cooked_fishes/cooked_clam",
-        "#forge:cooked_fishes/cooked_crab",
-        "#forge:cooked_fishes/cooked_squid",
-        "#forge:cooked_fishes/cooked_glow_squid"
-    ]
+  "values": [
+    {
+      "id": "crabbersdelight:stuffed_nautilus_shell",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:fish_stick",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:surf_and_turf",
+      "required": false
+    },
+    "#forge:cooked_fishes/cooked_elder_guardian",
+    "#forge:cooked_fishes/cooked_guardian",
+    "#forge:cooked_fishes/cooked_clawster",
+    "#forge:cooked_fishes/cooked_shrimp",
+    "#forge:cooked_fishes/cooked_clam",
+    "#forge:cooked_fishes/cooked_crab",
+    "#forge:cooked_fishes/cooked_squid",
+    "#forge:cooked_fishes/cooked_glow_squid"
+  ]
 }

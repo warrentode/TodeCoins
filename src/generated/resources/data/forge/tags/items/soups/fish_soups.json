@@ -1,32 +1,32 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:fish_stew",
-            "required": false
-        },
-        {
-            "id": "ecologics:tropical_stew",
-            "required": false
-        },
-        {
-            "id": "crabbersdelight:seafood_gumbo",
-            "required": false
-        },
-        {
-            "id": "crabbersdelight:bisque",
-            "required": false
-        },
-        {
-            "id": "crabbersdelight:clam_chowder",
-            "required": false
-        },
-        {
-            "id": "miners_delight:fish_stew_cup",
-            "required": false
-        },
-        {
-            "id": "miners_delight:baked_cod_stew_cup",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:fish_stew",
+      "required": false
+    },
+    {
+      "id": "ecologics:tropical_stew",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:seafood_gumbo",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:bisque",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:clam_chowder",
+      "required": false
+    },
+    {
+      "id": "miners_delight:fish_stew_cup",
+      "required": false
+    },
+    {
+      "id": "miners_delight:baked_cod_stew_cup",
+      "required": false
+    }
+  ]
 }

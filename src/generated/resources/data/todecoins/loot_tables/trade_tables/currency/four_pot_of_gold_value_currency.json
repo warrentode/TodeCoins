@@ -1,168 +1,168 @@
 {
-    "type": "minecraft:chest",
-    "pools": [
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
         {
-            "bonus_rolls": 0.0,
-            "entries": [
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 6.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:copper_block"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 48.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:iron_coin_bag"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
                 {
-                    "type": "minecraft:item",
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": 6.0,
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "minecraft:copper_block"
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:overworld"
+                  }
                 },
                 {
-                    "type": "minecraft:item",
-                    "conditions": [
-                        {
-                            "condition": "minecraft:location_check",
-                            "predicate": {
-                                "dimension": "minecraft:overworld"
-                            }
-                        }
-                    ],
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": 48.0,
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "todecoins:iron_coin_bag"
-                },
-                {
-                    "type": "minecraft:item",
-                    "conditions": [
-                        {
-                            "condition": "minecraft:alternative",
-                            "terms": [
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "dimension": "minecraft:overworld"
-                                    }
-                                },
-                                {
-                                    "condition": "minecraft:location_check",
-                                    "predicate": {
-                                        "dimension": "minecraft:the_nether"
-                                    }
-                                }
-                            ]
-                        }
-                    ],
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": 36.0,
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "todecoins:gold_coin_bag"
-                },
-                {
-                    "type": "minecraft:item",
-                    "conditions": [
-                        {
-                            "condition": "minecraft:location_check",
-                            "predicate": {
-                                "dimension": "minecraft:overworld"
-                            }
-                        }
-                    ],
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": 48.0,
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "todecoins:iron_coin_bag"
-                },
-                {
-                    "type": "minecraft:item",
-                    "conditions": [
-                        {
-                            "condition": "minecraft:location_check",
-                            "predicate": {
-                                "dimension": "minecraft:the_nether"
-                            }
-                        }
-                    ],
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": 18.0,
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "todecoins:netherite_coin_bag"
-                },
-                {
-                    "type": "minecraft:item",
-                    "conditions": [
-                        {
-                            "condition": "minecraft:location_check",
-                            "predicate": {
-                                "dimension": "minecraft:the_end"
-                            }
-                        }
-                    ],
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": 6.0,
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "todecoins:endonian_coin"
-                },
-                {
-                    "type": "minecraft:item",
-                    "conditions": [
-                        {
-                            "condition": "minecraft:inverted",
-                            "term": {
-                                "condition": "minecraft:location_check",
-                                "predicate": {
-                                    "dimension": "minecraft:overworld"
-                                }
-                            }
-                        },
-                        {
-                            "condition": "minecraft:inverted",
-                            "term": {
-                                "condition": "minecraft:location_check",
-                                "predicate": {
-                                    "dimension": "minecraft:the_nether"
-                                }
-                            }
-                        },
-                        {
-                            "condition": "minecraft:inverted",
-                            "term": {
-                                "condition": "minecraft:location_check",
-                                "predicate": {
-                                    "dimension": "minecraft:the_end"
-                                }
-                            }
-                        }
-                    ],
-                    "functions": [
-                        {
-                            "add": false,
-                            "count": 6.0,
-                            "function": "minecraft:set_count"
-                        }
-                    ],
-                    "name": "minecraft:emerald"
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "dimension": "minecraft:the_nether"
+                  }
                 }
-            ],
-            "rolls": 1.0
+              ]
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 36.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:gold_coin_bag"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 48.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:iron_coin_bag"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_nether"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 18.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:netherite_coin_bag"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:the_end"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 6.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:endonian_coin"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:the_nether"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:the_end"
+                }
+              }
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 6.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:emerald"
         }
-    ]
+      ],
+      "rolls": 1.0
+    }
+  ]
 }

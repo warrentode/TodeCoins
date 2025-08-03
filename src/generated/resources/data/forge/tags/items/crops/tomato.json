@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:tomato",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:tomato",
+      "required": false
+    }
+  ]
 }

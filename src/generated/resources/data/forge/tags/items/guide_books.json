@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "patchouli:guide_book",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "patchouli:guide_book",
+      "required": false
+    }
+  ]
 }

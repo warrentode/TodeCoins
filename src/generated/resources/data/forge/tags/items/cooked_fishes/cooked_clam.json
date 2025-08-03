@@ -1,12 +1,12 @@
 {
-    "values": [
-        {
-            "id": "crabbersdelight:clam_bake",
-            "required": false
-        },
-        {
-            "id": "crabbersdelight:cooked_clam_meat",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "crabbersdelight:clam_bake",
+      "required": false
+    },
+    {
+      "id": "crabbersdelight:cooked_clam_meat",
+      "required": false
+    }
+  ]
 }

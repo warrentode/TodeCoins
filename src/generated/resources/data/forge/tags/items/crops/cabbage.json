@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:cabbage",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:cabbage",
+      "required": false
+    }
+  ]
 }

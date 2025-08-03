@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "supplementaries:quivers",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "supplementaries:quivers",
+      "required": false
+    }
+  ]
 }

@@ -1,9 +1,9 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:cooked_chicken_cuts",
-            "required": false
-        },
-        "minecraft:cooked_chicken"
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:cooked_chicken_cuts",
+      "required": false
+    },
+    "minecraft:cooked_chicken"
+  ]
 }

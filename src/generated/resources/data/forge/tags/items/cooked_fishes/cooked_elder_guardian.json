@@ -1,21 +1,21 @@
 {
-    "values": [
-        "#forge:cooked_fishes/cooked_guardian",
-        {
-            "id": "oceansdelight:cabbage_wrapped_elder_guardian",
-            "required": false
-        },
-        {
-            "id": "oceansdelight:cooked_elder_guardian_slice",
-            "required": false
-        },
-        {
-            "id": "oceansdelight:elder_guardian_roll",
-            "required": false
-        },
-        {
-            "id": "oceansdelight:bowl_of_guardian_soup",
-            "required": false
-        }
-    ]
+  "values": [
+    "#forge:cooked_fishes/cooked_guardian",
+    {
+      "id": "oceansdelight:cabbage_wrapped_elder_guardian",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:cooked_elder_guardian_slice",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:elder_guardian_roll",
+      "required": false
+    },
+    {
+      "id": "oceansdelight:bowl_of_guardian_soup",
+      "required": false
+    }
+  ]
 }

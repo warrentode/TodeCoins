@@ -1,8 +1,8 @@
 {
-    "values": [
-        "todecoins:collectible_coin_camel_copper",
-        "todecoins:collectible_coin_camel_iron",
-        "todecoins:collectible_coin_camel_gold",
-        "todecoins:collectible_coin_camel_netherite"
-    ]
+  "values": [
+    "todecoins:collectible_coin_camel_copper",
+    "todecoins:collectible_coin_camel_iron",
+    "todecoins:collectible_coin_camel_gold",
+    "todecoins:collectible_coin_camel_netherite"
+  ]
 }

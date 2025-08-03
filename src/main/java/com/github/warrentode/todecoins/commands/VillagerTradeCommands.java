@@ -16,6 +16,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.entity.EntityTypeTest;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,7 +30,7 @@ import java.util.stream.StreamSupport;
  <a
  href="https://github.com/PssbleTrngle/DataTrades/blob/1.19/common/src/main/java/com/possible_triangle/data_trades/command/VillagersCommand.java#L95">DataTrades</a> */
 public class VillagerTradeCommands {
-    public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
+    public static void register(@NotNull CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("trades").requires(it -> it.hasPermission(3))
                 .then(Commands.literal("reset").executes(VillagerTradeCommands::resetAllVillagers)
                         .then(Commands.argument("target", EntityArgument.entities())
@@ -39,7 +40,7 @@ public class VillagerTradeCommands {
         );
     }
 
-    private static int resetVillagers(Stream<AbstractVillager> villagers) {
+    private static int resetVillagers(@NotNull Stream<AbstractVillager> villagers) {
         return (int) villagers.filter(VillagerTradeCommands::reset).count();
     }
 
@@ -50,7 +51,7 @@ public class VillagerTradeCommands {
         return resetVillagers(targets);
     }
 
-    private static int resetAllVillagers(CommandContext<CommandSourceStack> context) {
+    private static int resetAllVillagers(@NotNull CommandContext<CommandSourceStack> context) {
         var server = context.getSource().getServer();
         return resetVillagers(StreamSupport.stream(server.getAllLevels().spliterator(), false)
                 .flatMap(level -> level.getEntities(EntityTypeTest.forClass(AbstractVillager.class), $ -> true).stream())
@@ -132,7 +133,7 @@ public class VillagerTradeCommands {
         return true;
     }
 
-    private static boolean resetVillager(Villager villager) {
+    private static boolean resetVillager(@NotNull Villager villager) {
         var offers = new MerchantOffers();
         var data = villager.getVillagerData();
 

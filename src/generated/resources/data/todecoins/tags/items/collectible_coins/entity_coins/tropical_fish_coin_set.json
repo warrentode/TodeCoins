@@ -1,8 +1,8 @@
 {
-    "values": [
-        "todecoins:collectible_coin_tropical_fish_copper",
-        "todecoins:collectible_coin_tropical_fish_iron",
-        "todecoins:collectible_coin_tropical_fish_gold",
-        "todecoins:collectible_coin_tropical_fish_netherite"
-    ]
+  "values": [
+    "todecoins:collectible_coin_tropical_fish_copper",
+    "todecoins:collectible_coin_tropical_fish_iron",
+    "todecoins:collectible_coin_tropical_fish_gold",
+    "todecoins:collectible_coin_tropical_fish_netherite"
+  ]
 }

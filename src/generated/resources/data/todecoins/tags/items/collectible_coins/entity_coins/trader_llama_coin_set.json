@@ -1,8 +1,8 @@
 {
-    "values": [
-        "todecoins:collectible_coin_trader_llama_copper",
-        "todecoins:collectible_coin_trader_llama_iron",
-        "todecoins:collectible_coin_trader_llama_gold",
-        "todecoins:collectible_coin_trader_llama_netherite"
-    ]
+  "values": [
+    "todecoins:collectible_coin_trader_llama_copper",
+    "todecoins:collectible_coin_trader_llama_iron",
+    "todecoins:collectible_coin_trader_llama_gold",
+    "todecoins:collectible_coin_trader_llama_netherite"
+  ]
 }

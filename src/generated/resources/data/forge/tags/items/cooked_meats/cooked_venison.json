@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "delightful:cooked_venison_chops",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "delightful:cooked_venison_chops",
+      "required": false
+    }
+  ]
 }

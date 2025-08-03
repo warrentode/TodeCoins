@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "crabbersdelight:raw_clawster",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "crabbersdelight:raw_clawster",
+      "required": false
+    }
+  ]
 }

@@ -1,13 +1,13 @@
 {
-    "values": [
-        "minecraft:cooked_cod",
-        {
-            "id": "oceansdelight:cooked_stuffed_cod",
-            "required": false
-        },
-        {
-            "id": "farmersdelight:cooked_cod_slice",
-            "required": false
-        }
-    ]
+  "values": [
+    "minecraft:cooked_cod",
+    {
+      "id": "oceansdelight:cooked_stuffed_cod",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cooked_cod_slice",
+      "required": false
+    }
+  ]
 }

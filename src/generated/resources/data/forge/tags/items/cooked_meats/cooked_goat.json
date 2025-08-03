@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "delightful:cooked_goat",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "delightful:cooked_goat",
+      "required": false
+    }
+  ]
 }

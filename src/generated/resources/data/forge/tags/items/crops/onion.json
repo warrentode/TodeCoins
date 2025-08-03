@@ -1,8 +1,8 @@
 {
-    "values": [
-        {
-            "id": "farmersdelight:onion",
-            "required": false
-        }
-    ]
+  "values": [
+    {
+      "id": "farmersdelight:onion",
+      "required": false
+    }
+  ]
 }

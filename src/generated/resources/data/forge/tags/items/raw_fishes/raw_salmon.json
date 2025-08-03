@@ -1,9 +1,9 @@
 {
-    "values": [
-        "minecraft:salmon",
-        {
-            "id": "farmersdelight:salmon_slice",
-            "required": false
-        }
-    ]
+  "values": [
+    "minecraft:salmon",
+    {
+      "id": "farmersdelight:salmon_slice",
+      "required": false
+    }
+  ]
 }

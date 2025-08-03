@@ -1,15 +1,15 @@
 {
-    "type": "minecraft:chest",
-    "pools": [
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
         {
-            "bonus_rolls": 0.0,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "minecraft:bookshelf"
-                }
-            ],
-            "rolls": 1.0
+          "type": "minecraft:item",
+          "name": "minecraft:bookshelf"
         }
-    ]
+      ],
+      "rolls": 1.0
+    }
+  ]
 }

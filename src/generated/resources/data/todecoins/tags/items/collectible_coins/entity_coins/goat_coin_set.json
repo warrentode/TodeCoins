@@ -1,8 +1,8 @@
 {
-    "values": [
-        "todecoins:collectible_coin_goat_copper",
-        "todecoins:collectible_coin_goat_iron",
-        "todecoins:collectible_coin_goat_gold",
-        "todecoins:collectible_coin_goat_netherite"
-    ]
+  "values": [
+    "todecoins:collectible_coin_goat_copper",
+    "todecoins:collectible_coin_goat_iron",
+    "todecoins:collectible_coin_goat_gold",
+    "todecoins:collectible_coin_goat_netherite"
+  ]
 }

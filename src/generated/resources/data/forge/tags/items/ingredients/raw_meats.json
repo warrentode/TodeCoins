@@ -1,15 +1,15 @@
 {
-    "values": [
-        {
-            "id": "miners_delight:bat_wing",
-            "required": false
-        },
-        "#forge:raw_meats/raw_goat",
-        "#forge:raw_meats/raw_venison",
-        "#forge:raw_meats/raw_rabbit",
-        "#forge:raw_meats/raw_beef",
-        "#forge:raw_meats/raw_chicken",
-        "#forge:raw_meats/raw_mutton",
-        "#forge:raw_meats/raw_pork"
-    ]
+  "values": [
+    {
+      "id": "miners_delight:bat_wing",
+      "required": false
+    },
+    "#forge:raw_meats/raw_goat",
+    "#forge:raw_meats/raw_venison",
+    "#forge:raw_meats/raw_rabbit",
+    "#forge:raw_meats/raw_beef",
+    "#forge:raw_meats/raw_chicken",
+    "#forge:raw_meats/raw_mutton",
+    "#forge:raw_meats/raw_pork"
+  ]
 }

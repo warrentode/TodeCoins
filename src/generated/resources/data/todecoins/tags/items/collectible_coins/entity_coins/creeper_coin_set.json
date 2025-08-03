@@ -1,8 +1,8 @@
 {
-    "values": [
-        "todecoins:collectible_coin_creeper_copper",
-        "todecoins:collectible_coin_creeper_iron",
-        "todecoins:collectible_coin_creeper_gold",
-        "todecoins:collectible_coin_creeper_netherite"
-    ]
+  "values": [
+    "todecoins:collectible_coin_creeper_copper",
+    "todecoins:collectible_coin_creeper_iron",
+    "todecoins:collectible_coin_creeper_gold",
+    "todecoins:collectible_coin_creeper_netherite"
+  ]
 }
