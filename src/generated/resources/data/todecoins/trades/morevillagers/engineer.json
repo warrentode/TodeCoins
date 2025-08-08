@@ -1,0 +1,73 @@
+{
+  "offers": {
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_components_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_components_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_components_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_components_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_components_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_components_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_components_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_components_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 25
+      }
+    ],
+    "novice": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/nine_emerald_value_redstone",
+        "requested_table": "todecoins:trade_tables/currency/nine_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/redstone_torch_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "morevillagers:engineer"
+}

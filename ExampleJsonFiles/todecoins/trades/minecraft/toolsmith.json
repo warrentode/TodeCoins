@@ -1,0 +1,88 @@
+{
+  "offers": {
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/metals/single_emerald_value_metals",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/misc/bell_table",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/thirty_six_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 18,
+        "offered_table": "todecoins:trade_tables/misc/tagged_ash_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_enchanted_item_table",
+        "offered_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency",
+        "requested_table": "todecoins:trade_tables/tools/iron_tier_tools",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/tools/diamond_tier_tools",
+        "requested_table": "todecoins:trade_tables/currency/four_emerald_value_currency",
+        "trade_experience": 20
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/three_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/tools/iron_tier_tools",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/misc/flint_buy_table",
+        "trade_experience": 15
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:loot_table_for_enchanted_item_table",
+        "offered_table": "todecoins:trade_tables/currency/twenty_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/tools/gold_tier_tools",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_enchanted_item_table",
+        "offered_table": "todecoins:trade_tables/currency/single_lucky_coin_bag_value_currency",
+        "requested_table": "todecoins:trade_tables/tools/netherite_tier_tools",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_enchanted_item_table",
+        "offered_table": "todecoins:trade_tables/currency/twenty_six_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/tools/diamond_tier_tools",
+        "trade_experience": 25
+      }
+    ],
+    "novice": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/misc/one_emerald_value_fuel_table"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/tools/stone_tier_tools",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "minecraft:toolsmith"
+}

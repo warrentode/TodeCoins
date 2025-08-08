@@ -1,0 +1,209 @@
+{
+  "offers": {
+    "novice": [
+      {
+        "type": "todecoins:item_for_loot_table",
+        "offered_table": "minecraft:chests/simple_dungeon",
+        "requested_item": "minecraft:emerald"
+      },
+      {
+        "type": "todecoins:loot_table_and_item_for_enchanted_item",
+        "max_trades": 12,
+        "offered_item": {
+          "Count": 1,
+          "id": "minecraft:leather_boots",
+          "tag": {
+            "Damage": 0
+          }
+        },
+        "price_multiplier": 0.05,
+        "requested_item": {
+          "Count": 1,
+          "id": "minecraft:leather_boots",
+          "tag": {
+            "Damage": 0
+          }
+        },
+        "requested_table": "minecraft:chests/village/village_armorer",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_and_item_for_item",
+        "offered_item": {
+          "Count": 1,
+          "id": "minecraft:stone_axe",
+          "tag": {
+            "Damage": 0
+          }
+        },
+        "requested_table": "minecraft:chests/village/village_armorer",
+        "secondary_requested_item": "minecraft:emerald",
+        "trade_experience": 25
+      }
+    ],
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_dyed_armor",
+        "offered_table": "todecoins:trade_tables/armor/helmets/leather_tier_helmets",
+        "requested_table": "minecraft:chests/village/village_armorer",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_enchanted_item",
+        "max_trades": 12,
+        "offered_item": {
+          "Count": 1,
+          "id": "minecraft:leather_boots",
+          "tag": {
+            "Damage": 0
+          }
+        },
+        "price_multiplier": 0.05,
+        "requested_table": "minecraft:chests/village/village_armorer",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_enchanted_item_table",
+        "max_trades": 12,
+        "offered_table": "todecoins:trade_tables/armor/helmets/leather_tier_helmets",
+        "price_multiplier": 0.05,
+        "requested_table": "minecraft:chests/village/village_armorer",
+        "trade_experience": 25
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:loot_table_for_item",
+        "offered_item": "minecraft:emerald",
+        "requested_table": "minecraft:chests/simple_dungeon"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "Loot Box",
+        "loot_table": "minecraft:chests/simple_dungeon",
+        "offered_item": "minecraft:chest",
+        "requested_table": "minecraft:chests/village/village_butcher"
+      },
+      {
+        "type": "todecoins:two_loot_table_for_loot_box",
+        "display_name": "Loot Box",
+        "loot_table": "minecraft:chests/simple_dungeon",
+        "offered_item": "minecraft:chest",
+        "requested_table": "minecraft:chests/village/village_butcher",
+        "secondary_requested_table": "minecraft:chests/village/village_desert_house"
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "minecraft:chests/village/village_butcher",
+        "requested_table": "minecraft:chests/simple_dungeon"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "max_trades": 12,
+        "potion_duration": 200,
+        "potion_effect": "minecraft:blindness",
+        "price_multiplier": 0.05,
+        "requested_table": "minecraft:chests/village/village_butcher"
+      },
+      {
+        "type": "todecoins:loot_table_for_specified_enchantment",
+        "enchantment": "minecraft:soul_speed",
+        "enchantment_level": 1,
+        "max_trades": 12,
+        "offered_table": "todecoins:trade_tables/armor/helmets/leather_tier_helmets",
+        "price_multiplier": 0.05,
+        "requested_table": "minecraft:chests/village/village_butcher"
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 200,
+        "potion_effect": "minecraft:water_breathing",
+        "price_multiplier": 0.05,
+        "requested_table": "minecraft:chests/village/village_butcher"
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "minecraft:chests/village/village_shepherd",
+        "requested_table": "minecraft:chests/village/village_butcher"
+      },
+      {
+        "type": "todecoins:tag_table_for_loot_table",
+        "offered_table": "minecraft:chests/village/village_butcher",
+        "requested_item_count": 6,
+        "requested_table": "minecraft:chests/village/village_shepherd"
+      }
+    ],
+    "common": [
+      {
+        "type": "todecoins:loot_table_for_tipped_arrow",
+        "arrow_count": 6,
+        "max_trades": 12,
+        "price_multiplier": 0.05,
+        "requested_table": "minecraft:chests/village/village_butcher"
+      },
+      {
+        "type": "minecraft:sell_item_for_items",
+        "offered_item": "minecraft:coal",
+        "requested_item": "minecraft:apple",
+        "secondary_requested_item": "minecraft:emerald"
+      },
+      {
+        "type": "todecoins:two_loot_table_for_enchanted_item",
+        "max_trades": 12,
+        "offered_item": {
+          "Count": 1,
+          "id": "minecraft:iron_sword",
+          "tag": {
+            "Damage": 0
+          }
+        },
+        "price_multiplier": 0.05,
+        "requested_table": "minecraft:chests/village/village_butcher",
+        "secondary_requested_table": "minecraft:chests/village/village_shepherd"
+      }
+    ],
+    "rare": [
+      {
+        "type": "todecoins:loot_table_for_two_loot_table",
+        "offered_table": "minecraft:chests/simple_dungeon",
+        "requested_table": "minecraft:chests/village/village_butcher",
+        "secondary_requested_table": "minecraft:chests/village/village_fletcher"
+      },
+      {
+        "type": "todecoins:two_loot_table_for_map",
+        "map_marker": "RED_X",
+        "map_name": "Mineshaft Map",
+        "max_trades": 12,
+        "price_multiplier": 0.05,
+        "requested_table": "minecraft:chests/simple_dungeon",
+        "secondary_requested_table": "minecraft:chests/village/village_butcher",
+        "structure_tag": "minecraft:mineshaft"
+      },
+      {
+        "type": "todecoins:loot_table_for_sealed_agreement",
+        "agreement_id": "example_agreement_id",
+        "agreement_offer_table": "minecraft:chests/village/village_armorer",
+        "agreement_price_table": "minecraft:chests/village/village_plains_house",
+        "backside_message": "{\"text\":\"Example Backside Message\"}",
+        "buyer_address": "{\"text\":\"Example Address\"}",
+        "buyer_message": "{\"text\":\"Example Buyer Message\"}",
+        "buyer_name": "{\"text\":\"Example Buyer Name\"}",
+        "max_trades": 12,
+        "order_count": 12,
+        "order_xp": 5,
+        "price_multiplier": 0.05,
+        "request_table": "minecraft:chests/village/village_butcher",
+        "seal": "default",
+        "seal_tooltip": "{\"text\":\"Example Seal Tooltip\"}",
+        "title": "{\"text\":\"Example Agreement Tile\"}"
+      }
+    ]
+  },
+  "profession": "example_modid:examplemod_profession"
+}

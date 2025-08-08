@@ -15,6 +15,7 @@ public class SoundsFileGen extends SoundDefinitionsProvider {
 
     private static final String modid = "minecraft";
 
+    @SuppressWarnings("removal")
     @Override
     public void registerSounds() {
         this.add(ModSounds.COINPRESS_USE, definition()

@@ -1,6 +1,6 @@
 package com.github.warrentode.todecoins.datagen.tags;
 
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.StructureTagsProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -22,18 +22,18 @@ public class StructureTagsGen extends StructureTagsProvider {
     }
 
     private void registerForgeTags() {
-        tag(ForgeTags.StructureTags.END_SLIME_ISLANDS)
+        tag(TodeCoinsTags.StructureTags.END_SLIME_ISLANDS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tconstruct:end_slime_island")));
-        tag(ForgeTags.StructureTags.NETHER_SLIME_ISLANDS)
+        tag(TodeCoinsTags.StructureTags.NETHER_SLIME_ISLANDS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tconstruct:blood_island")));
-        tag(ForgeTags.StructureTags.OVERWORLD_SLIME_ISLANDS)
+        tag(TodeCoinsTags.StructureTags.OVERWORLD_SLIME_ISLANDS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tconstruct:clay_island")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tconstruct:earth_slime_island")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tconstruct:sky_slime_island")));
-        tag(ForgeTags.StructureTags.WAY_SIGN_DESTINATIONS)
-                .addTag(ForgeTags.StructureTags.SETTLEMENT);
-        tag(ForgeTags.StructureTags.DESERT_POI)
-                .addTag(ForgeTags.StructureTags.ON_DESERT_PYRAMID_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.WAY_SIGN_DESTINATIONS)
+                .addTag(TodeCoinsTags.StructureTags.SETTLEMENT);
+        tag(TodeCoinsTags.StructureTags.DESERT_POI)
+                .addTag(TodeCoinsTags.StructureTags.ON_DESERT_PYRAMID_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:pyramid_badlands")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:monument_desert")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("imst:pyramid")))
@@ -49,10 +49,10 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("imst:desertwell")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("imst:pyramid")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("betterdeserttemples:better_desert_temples")));
-        tag(ForgeTags.StructureTags.OCEAN_POI)
-                .addTag(ForgeTags.StructureTags.ON_OCEAN_MONUMENT_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_OCEAN_RUIN_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_SHIPWRECK_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.OCEAN_POI)
+                .addTag(TodeCoinsTags.StructureTags.ON_OCEAN_MONUMENT_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_OCEAN_RUIN_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_SHIPWRECK_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:temple_ocean")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:pyramid_ocean")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:ancient_city_ocean")))
@@ -70,9 +70,9 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:undead_pirate_ship")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("towns_and_towers:wreckage_ocean")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("betteroceanmonuments:better_ocean_monuments")));
-        tag(ForgeTags.StructureTags.PILLAGER_POI)
-                .addTag(ForgeTags.StructureTags.ON_PILLAGER_OUTPOST_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_WOODLAND_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.PILLAGER_POI)
+                .addTag(TodeCoinsTags.StructureTags.ON_PILLAGER_OUTPOST_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_WOODLAND_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:outpost_taiga")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:outpost_snowy")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:outpost_oak")))
@@ -133,9 +133,9 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("towns_and_towers:pillager_outpost_tudor")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("ctov:pillager_outpost")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("morevillagers:on_pillager_outpost_explorer_maps")));
-        tag(ForgeTags.StructureTags.SETTLEMENT)
-                .addTag(ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_IGLOO_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.SETTLEMENT)
+                .addTag(TodeCoinsTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_IGLOO_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:fishing_hut")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:mushroom_house")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:mushroom_village")))
@@ -186,28 +186,28 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("ctov:village")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:explorer_maps/monastery")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("towns_and_towers:town")));
-        tag(ForgeTags.StructureTags.OVERWORLD_POI)
-                .addTag(ForgeTags.StructureTags.WAY_SIGN_DESTINATIONS)
-                .addTag(ForgeTags.StructureTags.PILLAGER_POI)
-                .addTag(ForgeTags.StructureTags.DESERT_POI)
-                .addTag(ForgeTags.StructureTags.JUNGLE_POI)
-                .addTag(ForgeTags.StructureTags.MISC_POI)
-                .addTag(ForgeTags.StructureTags.WITCH_SIGHTING)
-                .addTag(ForgeTags.StructureTags.TREASURE_POI)
-                .addTag(ForgeTags.StructureTags.UNDERGROUND_POI)
-                .addTag(ForgeTags.StructureTags.OVERWORLD_NETHER_POI)
-                .addTag(ForgeTags.StructureTags.OVERWORLD_END_POI)
-                .addTag(ForgeTags.StructureTags.OVERWORLD_SLIME_ISLANDS);
-        tag(ForgeTags.StructureTags.OVERWORLD_END_POI)
-                .addTag(ForgeTags.StructureTags.ON_STRONGHOLD_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.OVERWORLD_POI)
+                .addTag(TodeCoinsTags.StructureTags.WAY_SIGN_DESTINATIONS)
+                .addTag(TodeCoinsTags.StructureTags.PILLAGER_POI)
+                .addTag(TodeCoinsTags.StructureTags.DESERT_POI)
+                .addTag(TodeCoinsTags.StructureTags.JUNGLE_POI)
+                .addTag(TodeCoinsTags.StructureTags.MISC_POI)
+                .addTag(TodeCoinsTags.StructureTags.WITCH_SIGHTING)
+                .addTag(TodeCoinsTags.StructureTags.TREASURE_POI)
+                .addTag(TodeCoinsTags.StructureTags.UNDERGROUND_POI)
+                .addTag(TodeCoinsTags.StructureTags.OVERWORLD_NETHER_POI)
+                .addTag(TodeCoinsTags.StructureTags.OVERWORLD_END_POI)
+                .addTag(TodeCoinsTags.StructureTags.OVERWORLD_SLIME_ISLANDS);
+        tag(TodeCoinsTags.StructureTags.OVERWORLD_END_POI)
+                .addTag(TodeCoinsTags.StructureTags.ON_STRONGHOLD_EXPLORER_MAPS)
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("betterstrongholds:better_strongholds")))
-                .addTag(ForgeTags.StructureTags.ON_STRONGHOLD_EXPLORER_MAPS);
-        tag(ForgeTags.StructureTags.OVERWORLD_NETHER_POI)
-                .addTag(ForgeTags.StructureTags.ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS);
-        tag(ForgeTags.StructureTags.UNDERGROUND_POI)
-                .addTag(ForgeTags.StructureTags.ON_ANCIENT_CITY_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_MINESHAFT_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_STRONGHOLD_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_STRONGHOLD_EXPLORER_MAPS);
+        tag(TodeCoinsTags.StructureTags.OVERWORLD_NETHER_POI)
+                .addTag(TodeCoinsTags.StructureTags.ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS);
+        tag(TodeCoinsTags.StructureTags.UNDERGROUND_POI)
+                .addTag(TodeCoinsTags.StructureTags.ON_ANCIENT_CITY_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_MINESHAFT_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_STRONGHOLD_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:mineshaft_birch")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:mineshaft_dark_forest")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:mineshaft_desert")))
@@ -245,8 +245,8 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("ctov:village_underground")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("morevillagers:on_ancient_city_explorer_maps")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("morevillagers:on_mineshaft_explorer_maps")));
-        tag(ForgeTags.StructureTags.WITCH_SIGHTING)
-                .addTag(ForgeTags.StructureTags.ON_SWAMP_HUT_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.WITCH_SIGHTING)
+                .addTag(TodeCoinsTags.StructureTags.ON_SWAMP_HUT_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:witch_hut_birch")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:witch_hut_dark_forest")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:witch_hut_giant_tree_taiga")))
@@ -255,11 +255,11 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("betterwitchhuts:witch_hut")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("betterwitchhuts:witch_circle")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("morevillagers:on_swamp_hut_explorer_maps")));
-        tag(ForgeTags.StructureTags.TREASURE_POI)
-                .addTag(ForgeTags.StructureTags.ON_TREASURE_MAPS);
-        tag(ForgeTags.StructureTags.MISC_POI)
-                .addTag(ForgeTags.StructureTags.OVERWORLD_SLIME_ISLANDS)
-                .addTag(ForgeTags.StructureTags.ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.TREASURE_POI)
+                .addTag(TodeCoinsTags.StructureTags.ON_TREASURE_MAPS);
+        tag(TodeCoinsTags.StructureTags.MISC_POI)
+                .addTag(TodeCoinsTags.StructureTags.OVERWORLD_SLIME_ISLANDS)
+                .addTag(TodeCoinsTags.StructureTags.ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:temple_taiga")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:pyramid_dark_forest")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:pyramid_flower_forest")))
@@ -290,16 +290,16 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:explorer_maps/keep_kayra")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:explorer_maps/shiraz_palace")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:explorer_maps/thornborn_towers")));
-        tag(ForgeTags.StructureTags.JUNGLE_POI)
-                .addTag(ForgeTags.StructureTags.ON_JUNGLE_TEMPLE_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.JUNGLE_POI)
+                .addTag(TodeCoinsTags.StructureTags.ON_JUNGLE_TEMPLE_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:pyramid_jungle")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:monument_jungle")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:fortress_jungle")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("dungeons_arise:jungle_tree_house")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("morevillagers:on_jungle_temple_explorer_maps")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("additionalstructures:maya_temple")));
-        tag(ForgeTags.StructureTags.NETHER_POI)
-                .addTag(ForgeTags.StructureTags.NETHER_SLIME_ISLANDS)
+        tag(TodeCoinsTags.StructureTags.NETHER_POI)
+                .addTag(TodeCoinsTags.StructureTags.NETHER_SLIME_ISLANDS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:village_warped")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:village_crimson")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:temple_nether_wasteland")))
@@ -329,13 +329,13 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("additionalstructures:nether_dungeon_2")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("additionalstructures:nether_dungeon_3")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("additionalstructures:nether_villager_house_1")))
-                .addTag(ForgeTags.StructureTags.ON_BASTION_REMNANT_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_NETHER_FORTRESS_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_NETHER_FOSSIL_EXPLORER_MAPS)
-                .addTag(ForgeTags.StructureTags.ON_NETHER_RUINED_PORTAL_EXPLORER_MAPS);
-        tag(ForgeTags.StructureTags.END_POI)
-                .addTag(ForgeTags.StructureTags.END_SLIME_ISLANDS)
-                .addTag(ForgeTags.StructureTags.ON_END_CITY_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_BASTION_REMNANT_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_NETHER_FORTRESS_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_NETHER_FOSSIL_EXPLORER_MAPS)
+                .addTag(TodeCoinsTags.StructureTags.ON_NETHER_RUINED_PORTAL_EXPLORER_MAPS);
+        tag(TodeCoinsTags.StructureTags.END_POI)
+                .addTag(TodeCoinsTags.StructureTags.END_SLIME_ISLANDS)
+                .addTag(TodeCoinsTags.StructureTags.ON_END_CITY_EXPLORER_MAPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:stronghold_end")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:shipwreck_end")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("repurposed_structures:ruined_portal_end")))
@@ -351,51 +351,51 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("additionalstructures:end_ruin_1")));
         // VANILLA
         // underground
-        tag(ForgeTags.StructureTags.ON_ANCIENT_CITY_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_ANCIENT_CITY_EXPLORER_MAPS)
                 .add(ANCIENT_CITY);
-        tag(ForgeTags.StructureTags.ON_MINESHAFT_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_MINESHAFT_EXPLORER_MAPS)
                 .add(MINESHAFT)
                 .add(MINESHAFT_MESA);
-        tag(ForgeTags.StructureTags.ON_STRONGHOLD_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_STRONGHOLD_EXPLORER_MAPS)
                 .add(STRONGHOLD);
         // nether
-        tag(ForgeTags.StructureTags.ON_BASTION_REMNANT_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_BASTION_REMNANT_EXPLORER_MAPS)
                 .add(BASTION_REMNANT);
-        tag(ForgeTags.StructureTags.ON_NETHER_FORTRESS_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_NETHER_FORTRESS_EXPLORER_MAPS)
                 .add(FORTRESS);
-        tag(ForgeTags.StructureTags.ON_NETHER_FOSSIL_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_NETHER_FOSSIL_EXPLORER_MAPS)
                 .add(NETHER_FOSSIL);
-        tag(ForgeTags.StructureTags.ON_NETHER_RUINED_PORTAL_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_NETHER_RUINED_PORTAL_EXPLORER_MAPS)
                 .add(RUINED_PORTAL_NETHER);
         // desert
-        tag(ForgeTags.StructureTags.ON_DESERT_PYRAMID_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_DESERT_PYRAMID_EXPLORER_MAPS)
                 .add(DESERT_PYRAMID);
         // end
-        tag(ForgeTags.StructureTags.ON_END_CITY_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_END_CITY_EXPLORER_MAPS)
                 .add(END_CITY);
         // settlement
-        tag(ForgeTags.StructureTags.ON_IGLOO_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_IGLOO_EXPLORER_MAPS)
                 .add(IGLOO);
-        tag(ForgeTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_VILLAGE_EXPLORER_MAPS)
                 .add(VILLAGE_DESERT)
                 .add(VILLAGE_PLAINS)
                 .add(VILLAGE_SAVANNA)
                 .add(VILLAGE_SNOWY)
                 .add(VILLAGE_TAIGA);
         // jungle
-        tag(ForgeTags.StructureTags.ON_JUNGLE_TEMPLE_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_JUNGLE_TEMPLE_EXPLORER_MAPS)
                 .add(JUNGLE_TEMPLE);
         // ocean
-        tag(ForgeTags.StructureTags.ON_OCEAN_RUIN_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_OCEAN_RUIN_EXPLORER_MAPS)
                 .add(OCEAN_RUIN_WARM)
                 .add(OCEAN_RUIN_COLD);
-        tag(ForgeTags.StructureTags.ON_OCEAN_MONUMENT_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_OCEAN_MONUMENT_EXPLORER_MAPS)
                 .add(OCEAN_MONUMENT);
-        tag(ForgeTags.StructureTags.ON_SHIPWRECK_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_SHIPWRECK_EXPLORER_MAPS)
                 .add(SHIPWRECK)
                 .add(SHIPWRECK_BEACHED);
         // interesting
-        tag(ForgeTags.StructureTags.ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_OVERWORLD_RUINED_PORTAL_EXPLORER_MAPS)
                 .add(RUINED_PORTAL_STANDARD)
                 .add(RUINED_PORTAL_DESERT)
                 .add(RUINED_PORTAL_JUNGLE)
@@ -403,15 +403,15 @@ public class StructureTagsGen extends StructureTagsProvider {
                 .add(RUINED_PORTAL_MOUNTAIN)
                 .add(RUINED_PORTAL_OCEAN);
         // illager
-        tag(ForgeTags.StructureTags.ON_PILLAGER_OUTPOST_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_PILLAGER_OUTPOST_EXPLORER_MAPS)
                 .add(PILLAGER_OUTPOST);
-        tag(ForgeTags.StructureTags.ON_WOODLAND_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_WOODLAND_EXPLORER_MAPS)
                 .add(WOODLAND_MANSION);
         // witch hut
-        tag(ForgeTags.StructureTags.ON_SWAMP_HUT_EXPLORER_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_SWAMP_HUT_EXPLORER_MAPS)
                 .add(SWAMP_HUT);
         // treasure
-        tag(ForgeTags.StructureTags.ON_TREASURE_MAPS)
+        tag(TodeCoinsTags.StructureTags.ON_TREASURE_MAPS)
                 .add(BURIED_TREASURE);
     }
 }

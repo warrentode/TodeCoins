@@ -7,7 +7,7 @@ import com.github.warrentode.todecoins.datagen.loot_tables.mystery_coin_packs.*;
 import com.github.warrentode.todecoins.loot.conditions.season.*;
 import com.github.warrentode.todecoins.loot.conditions.tag.BiomeTagCondition;
 import com.github.warrentode.todecoins.loot.conditions.tag.EntityTypeTagCondition;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.advancements.critereon.LocationPredicate;
@@ -82,9 +82,9 @@ public class ModLootTableGenProvider extends LootTableProvider {
 
     // entity checks
     public static final LootItemCondition.Builder DROPS_CURRENCY =
-            EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.DROPS_CURRENCY).build();
+            EntityTypeTagCondition.isTag(TodeCoinsTags.EntityTypes.DROPS_CURRENCY).build();
     public static final LootItemCondition.Builder DROPS_BOSS_CURRENCY =
-            EntityTypeTagCondition.isTag(ForgeTags.EntityTypes.BOSSES).build();
+            EntityTypeTagCondition.isTag(TodeCoinsTags.EntityTypes.BOSSES).build();
 
     // dimension checks
     public static final LootItemCondition.Builder IN_OVERWORLD =
@@ -117,37 +117,37 @@ public class ModLootTableGenProvider extends LootTableProvider {
     public static final LootItemCondition.Builder IN_END_CITY = LocationCheck.checkLocation(LocationPredicate.Builder.location().setStructure(Structures.END_CITY.unwrapKey().orElseThrow()));
 
     // biome tag checks
-    public static final LootItemCondition.Builder HAS_SUNFLOWER = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_SUNFLOWER);
-    public static final LootItemCondition.Builder HAS_PEONY = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_PEONY);
-    public static final LootItemCondition.Builder HAS_ROSE_BUSH = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_ROSE_BUSH);
-    public static final LootItemCondition.Builder HAS_LILAC = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_LILAC);
-    public static final LootItemCondition.Builder HAS_BUTTERCUP = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_BUTTERCUP);
-    public static final LootItemCondition.Builder HAS_LILY_OF_THE_VALLEY = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_LILY_OF_THE_VALLEY);
-    public static final LootItemCondition.Builder HAS_CORNFLOWER = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_CORNFLOWER);
-    public static final LootItemCondition.Builder HAS_OXEYE_DAISY = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_OXEYE_DAISY);
-    public static final LootItemCondition.Builder HAS_PINK_TULIP = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_PINK_TULIP);
-    public static final LootItemCondition.Builder HAS_WHITE_TULIP = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_WHITE_TULIP);
-    public static final LootItemCondition.Builder HAS_ORANGE_TULIP = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_ORANGE_TULIP);
-    public static final LootItemCondition.Builder HAS_RED_TULIP = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_RED_TULIP);
-    public static final LootItemCondition.Builder HAS_AZURE_BLUET = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_AZURE_BLUET);
-    public static final LootItemCondition.Builder HAS_ALLIUM = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_ALLIUM);
-    public static final LootItemCondition.Builder HAS_BLUE_ORCHID = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_BLUE_ORCHID);
-    public static final LootItemCondition.Builder HAS_SPRUCE = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_SPRUCE);
-    public static final LootItemCondition.Builder HAS_MANGROVE = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_MANGROVE);
-    public static final LootItemCondition.Builder HAS_ACACIA = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_ACACIA);
-    public static final LootItemCondition.Builder HAS_JUNGLE = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_JUNGLE);
-    public static final LootItemCondition.Builder HAS_BIRCH = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_BIRCH);
-    public static final LootItemCondition.Builder HAS_DARK_OAK = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_DARK_OAK);
-    public static final LootItemCondition.Builder NETHER_BIOMES = BiomeTagCondition.tag().set(ForgeTags.Biomes.NETHER_BIOMES);
-    public static final LootItemCondition.Builder HAS_WARPED_FUNGUS = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_WARPED_FUNGUS);
-    public static final LootItemCondition.Builder HAS_CRIMSON_FUNGUS = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_CRIMSON_FUNGUS);
-    public static final LootItemCondition.Builder HAS_SANDSTONE = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_SANDSTONE);
-    public static final LootItemCondition.Builder HAS_RED_SANDSTONE = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_RED_SANDSTONE);
-    public static final LootItemCondition.Builder HAS_MOSSY_STONE = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_MOSSY_STONE);
-    public static final LootItemCondition.Builder HAS_PUFFERFISH = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_PUFFERFISH);
-    public static final LootItemCondition.Builder HAS_TROPICAL_FISH = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_TROPICAL_FISH);
-    public static final LootItemCondition.Builder HAS_SALMON = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_SALMON);
-    public static final LootItemCondition.Builder HAS_FROGS = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_FROGS);
-    public static final LootItemCondition.Builder HAS_AXOLOTL = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_AXOLOTL);
-    public static final LootItemCondition.Builder HAS_MUD = BiomeTagCondition.tag().set(ForgeTags.Biomes.HAS_MUD);
+    public static final LootItemCondition.Builder HAS_SUNFLOWER = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_SUNFLOWER);
+    public static final LootItemCondition.Builder HAS_PEONY = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_PEONY);
+    public static final LootItemCondition.Builder HAS_ROSE_BUSH = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_ROSE_BUSH);
+    public static final LootItemCondition.Builder HAS_LILAC = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_LILAC);
+    public static final LootItemCondition.Builder HAS_BUTTERCUP = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_BUTTERCUP);
+    public static final LootItemCondition.Builder HAS_LILY_OF_THE_VALLEY = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_LILY_OF_THE_VALLEY);
+    public static final LootItemCondition.Builder HAS_CORNFLOWER = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_CORNFLOWER);
+    public static final LootItemCondition.Builder HAS_OXEYE_DAISY = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_OXEYE_DAISY);
+    public static final LootItemCondition.Builder HAS_PINK_TULIP = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_PINK_TULIP);
+    public static final LootItemCondition.Builder HAS_WHITE_TULIP = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_WHITE_TULIP);
+    public static final LootItemCondition.Builder HAS_ORANGE_TULIP = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_ORANGE_TULIP);
+    public static final LootItemCondition.Builder HAS_RED_TULIP = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_RED_TULIP);
+    public static final LootItemCondition.Builder HAS_AZURE_BLUET = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_AZURE_BLUET);
+    public static final LootItemCondition.Builder HAS_ALLIUM = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_ALLIUM);
+    public static final LootItemCondition.Builder HAS_BLUE_ORCHID = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_BLUE_ORCHID);
+    public static final LootItemCondition.Builder HAS_SPRUCE = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_SPRUCE);
+    public static final LootItemCondition.Builder HAS_MANGROVE = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_MANGROVE);
+    public static final LootItemCondition.Builder HAS_ACACIA = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_ACACIA);
+    public static final LootItemCondition.Builder HAS_JUNGLE = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_JUNGLE);
+    public static final LootItemCondition.Builder HAS_BIRCH = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_BIRCH);
+    public static final LootItemCondition.Builder HAS_DARK_OAK = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_DARK_OAK);
+    public static final LootItemCondition.Builder NETHER_BIOMES = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.NETHER_BIOMES);
+    public static final LootItemCondition.Builder HAS_WARPED_FUNGUS = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_WARPED_FUNGUS);
+    public static final LootItemCondition.Builder HAS_CRIMSON_FUNGUS = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_CRIMSON_FUNGUS);
+    public static final LootItemCondition.Builder HAS_SANDSTONE = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_SANDSTONE);
+    public static final LootItemCondition.Builder HAS_RED_SANDSTONE = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_RED_SANDSTONE);
+    public static final LootItemCondition.Builder HAS_MOSSY_STONE = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_MOSSY_STONE);
+    public static final LootItemCondition.Builder HAS_PUFFERFISH = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_PUFFERFISH);
+    public static final LootItemCondition.Builder HAS_TROPICAL_FISH = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_TROPICAL_FISH);
+    public static final LootItemCondition.Builder HAS_SALMON = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_SALMON);
+    public static final LootItemCondition.Builder HAS_FROGS = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_FROGS);
+    public static final LootItemCondition.Builder HAS_AXOLOTL = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_AXOLOTL);
+    public static final LootItemCondition.Builder HAS_MUD = BiomeTagCondition.tag().set(TodeCoinsTags.Biomes.HAS_MUD);
 }

@@ -18,7 +18,9 @@ import org.jetbrains.annotations.NotNull;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class CoinPressRecipeCategory implements IRecipeCategory<CoinPressRecipe> {
+    @SuppressWarnings("removal")
     public static final ResourceLocation UID = new ResourceLocation(MODID, "coinpress");
+    @SuppressWarnings("removal")
     public static final ResourceLocation TEXTURE = new ResourceLocation(MODID, "textures/gui/coin_press_gui.png");
 
     private final IDrawable background;

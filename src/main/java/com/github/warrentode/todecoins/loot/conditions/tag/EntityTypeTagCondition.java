@@ -73,6 +73,7 @@ public class EntityTypeTagCondition implements LootItemCondition {
          * Deserialize a value by reading it from the JsonObject.
          */
         public @NotNull EntityTypeTagCondition deserialize(@NotNull JsonObject jsonObject, @NotNull JsonDeserializationContext context) {
+            //noinspection removal
             ResourceLocation resourcelocation = new ResourceLocation(GsonHelper.getAsString(jsonObject, "tag"));
             TagKey<EntityType<?>> entityTypeTag = TagKey.create(Registry.ENTITY_TYPE_REGISTRY, resourcelocation);
             return new EntityTypeTagCondition(entityTypeTag);

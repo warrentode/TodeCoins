@@ -3,7 +3,7 @@ package com.github.warrentode.todecoins.item.custom.collectiblecoins.gameplay;
 import com.github.warrentode.todecoins.attribute.*;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
@@ -124,25 +124,25 @@ public class FishCoinItem extends CollectibleCoin implements ICurioItem {
                                     AttributeModifier.Operation.ADDITION));
                 }
 
-                if (stack.is(ModTags.Items.COD_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.COD_COIN_SET)) {
                     attribute.put(ModAttributes.COD_BONUS.get(),
                             new AttributeModifier(ModAttributes.COD_BONUS_MODIFIER_UUID,
                                     ModAttributes.COD_BONUS_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
                 }
-                else if (stack.is(ModTags.Items.PUFFERFISH_COIN_SET)) {
+                else if (stack.is(TodeCoinsTags.Items.PUFFERFISH_COIN_SET)) {
                     attribute.put(ModAttributes.PUFFERFISH_BONUS.get(),
                             new AttributeModifier(ModAttributes.PUFFERFISH_BONUS_MODIFIER_UUID,
                                     ModAttributes.PUFFERFISH_BONUS_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
                 }
-                else if (stack.is(ModTags.Items.SALMON_COIN_SET)) {
+                else if (stack.is(TodeCoinsTags.Items.SALMON_COIN_SET)) {
                     attribute.put(ModAttributes.SALMON_BONUS.get(),
                             new AttributeModifier(ModAttributes.SALMON_BONUS_MODIFIER_UUID,
                                     ModAttributes.SALMON_BONUS_MODIFIER_NAME, 1,
                                     AttributeModifier.Operation.ADDITION));
                 }
-                else if (stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)) {
+                else if (stack.is(TodeCoinsTags.Items.TROPICAL_FISH_COIN_SET)) {
                     attribute.put(ModAttributes.TROPICAL_FISH_BONUS.get(),
                             new AttributeModifier(ModAttributes.TROPICAL_FISH_BONUS_MODIFIER_UUID,
                                     ModAttributes.TROPICAL_FISH_BONUS_MODIFIER_NAME, 1,
@@ -155,16 +155,16 @@ public class FishCoinItem extends CollectibleCoin implements ICurioItem {
             @Override
             public void onEquip(SlotContext slotContext, ItemStack prevStack) {
                 ICurio.super.onEquip(slotContext, prevStack);
-                if (stack.is(ModTags.Items.COD_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.COD_COIN_SET)) {
                     PlayerCodBonus.addBonus(1);
                 }
-                if (stack.is(ModTags.Items.PUFFERFISH_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.PUFFERFISH_COIN_SET)) {
                     PlayerPufferfishBonus.addBonus(1);
                 }
-                if (stack.is(ModTags.Items.SALMON_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.SALMON_COIN_SET)) {
                     PlayerSalmonBonus.addBonus(1);
                 }
-                if (stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.TROPICAL_FISH_COIN_SET)) {
                     PlayerTropicalFishBonus.addBonus(1);
                 }
             }
@@ -174,16 +174,16 @@ public class FishCoinItem extends CollectibleCoin implements ICurioItem {
                 LivingEntity livingEntity = slotContext.entity();
                 livingEntity.removeEffect(MobEffects.WATER_BREATHING);
 
-                if (stack.is(ModTags.Items.COD_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.COD_COIN_SET)) {
                     PlayerCodBonus.subtractBonus(1);
                 }
-                if (stack.is(ModTags.Items.PUFFERFISH_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.PUFFERFISH_COIN_SET)) {
                     PlayerPufferfishBonus.subtractBonus(1);
                 }
-                if (stack.is(ModTags.Items.SALMON_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.SALMON_COIN_SET)) {
                     PlayerSalmonBonus.subtractBonus(1);
                 }
-                if (stack.is(ModTags.Items.TROPICAL_FISH_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.TROPICAL_FISH_COIN_SET)) {
                     PlayerTropicalFishBonus.subtractBonus(1);
                 }
             }

@@ -3,10 +3,7 @@ package com.github.warrentode.todecoins.datagen.tags;
 
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.tags.CuriosTags;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
-import com.github.warrentode.todecoins.util.tags.ModTags;
-import com.github.warrentode.todecoins.util.tags.SupplementariesTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.mehvahdjukaar.cagerium.Cagerium;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
@@ -35,21 +32,21 @@ public class ItemTagsGen extends ItemTagsProvider {
         this.registerMinecraftTags();
         this.registerForgeTags();
         this.registerCuriosTags();
-        this.registerSupplementariesTags();
+        this.registerTodeCoinsTags();
     }
 
-    private void registerSupplementariesTags() {
-        tag(SupplementariesTags.Items.COOKIES)
-                .addTag(ForgeTags.Items.COOKIES)
-                .addTag(ModTags.Items.JAR_PLACEABLE);
+    private void registerTodeCoinsTags() {
+        tag(TodeCoinsTags.Items.COOKIES)
+                .addTag(TodeCoinsTags.Items.COOKIES_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.JAR_PLACEABLE);
     }
 
     private void registerCuriosTags() {
-        tag(CuriosTags.Items.CHARM)
+        tag(TodeCoinsTags.Items.CHARM)
                 .add(ModItems.LUCKY_COIN.get())
-                .addTag(ModTags.Items.COLLECTIBLE_COINS);
-        tag(CuriosTags.Items.BELT)
-                .addTag(ModTags.Items.WALLETS);
+                .addTag(TodeCoinsTags.Items.COLLECTIBLE_COINS);
+        tag(TodeCoinsTags.Items.BELT)
+                .addTag(TodeCoinsTags.Items.WALLETS);
     }
 
     private void registerMinecraftTags() {
@@ -58,15 +55,15 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.NETHER_GOLD_COIN.get())
                 .add(ModBlocks.GOLD_COIN_BAG.get().asItem())
                 .add(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem())
-                .addTag(ForgeTags.Items.PIGLIN_BARTER_ITEMS);
+                .addTag(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS);
     }
 
     private void registerModTags() {
-        tag(ModTags.Items.STICKS)
+        tag(TodeCoinsTags.Items.STICKS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("aether:skyroot_stick")))
                 .add(STICK);
-        tag(ModTags.Items.PET_BEDS)
+        tag(TodeCoinsTags.Items.PET_BEDS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("domesticationinnovation:pet_bed_yellow")))
                 .addOptional(Objects.requireNonNull(
@@ -99,13 +96,13 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("domesticationinnovation:pet_bed_blue")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("domesticationinnovation:pet_bed_black")));
-        tag(ModTags.Items.HANGING_POT)
+        tag(TodeCoinsTags.Items.HANGING_POT)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:hanging_pot")));
-        tag(ModTags.Items.FLOWER_BOX)
+        tag(TodeCoinsTags.Items.FLOWER_BOX)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("supplementaries:flower_box")));
-        tag(ModTags.Items.TRELLIS)
+        tag(TodeCoinsTags.Items.TRELLIS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:oak_trellis")))
                 .addOptional(Objects.requireNonNull(
@@ -124,7 +121,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("beautify:warped_trellis")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:mangrove_trellis")));
-        tag(ModTags.Items.PICTURE_FRAMES)
+        tag(TodeCoinsTags.Items.PICTURE_FRAMES)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:oak_picture_frame")))
                 .addOptional(Objects.requireNonNull(
@@ -145,7 +142,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("beautify:mangrove_picture_frame")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:quartz_picture_frame")));
-        tag(ModTags.Items.BLINDS)
+        tag(TodeCoinsTags.Items.BLINDS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:oak_blinds")))
                 .addOptional(Objects.requireNonNull(
@@ -166,14 +163,14 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("beautify:mangrove_blinds")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:iron_blinds")));
-        tag(ModTags.Items.FILE)
+        tag(TodeCoinsTags.Items.FILE)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:file")));
-        tag(ModTags.Items.PATTERNS)
+        tag(TodeCoinsTags.Items.PATTERNS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:common_pattern")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:uncommon_pattern")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:rare_pattern")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:legendary_pattern")));
-        tag(ModTags.Items.NEEDLES)
+        tag(TodeCoinsTags.Items.NEEDLES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("turtleblockacademy:copper_sewing_needle")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:wood_sewing_needle")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:stone_sewing_needle")))
@@ -183,10 +180,10 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:iron_sewing_needle")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:diamond_sewing_needle")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("sewingkit:netherite_sewing_needle")));
-        tag(ModTags.Items.ENDONIAN_COLLECTIBLE_COINS)
-                .addTag(ModTags.Items.HOLIDAY_COIN_SET)
-                .addTag(ModTags.Items.PATRON_COIN_SET);
-        tag(ModTags.Items.NETHERITE_COLLECTIBLE_COINS)
+        tag(TodeCoinsTags.Items.ENDONIAN_COLLECTIBLE_COINS)
+                .addTag(TodeCoinsTags.Items.HOLIDAY_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PATRON_COIN_SET);
+        tag(TodeCoinsTags.Items.NETHERITE_COLLECTIBLE_COINS)
                 .add(ModItems.NETHERITE_COD_COIN.get())
                 .add(ModItems.NETHERITE_HERO_COIN.get())
                 .add(ModItems.NETHERITE_PUFFERFISH_COIN.get())
@@ -282,7 +279,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.NETHERITE_SQUIRREL_COIN.get())
                 .add(ModItems.NETHERITE_PENGUIN_COIN.get())
                 .add(ModItems.NETHERITE_GUARD_COIN.get());
-        tag(ModTags.Items.GOLD_COLLECTIBLE_COINS)
+        tag(TodeCoinsTags.Items.GOLD_COLLECTIBLE_COINS)
                 .add(ModItems.GOLD_COD_COIN.get())
                 .add(ModItems.GOLD_HERO_COIN.get())
                 .add(ModItems.GOLD_PUFFERFISH_COIN.get())
@@ -378,7 +375,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.GOLD_SQUIRREL_COIN.get())
                 .add(ModItems.GOLD_PENGUIN_COIN.get())
                 .add(ModItems.GOLD_GUARD_COIN.get());
-        tag(ModTags.Items.IRON_COLLECTIBLE_COINS)
+        tag(TodeCoinsTags.Items.IRON_COLLECTIBLE_COINS)
                 .add(ModItems.IRON_COD_COIN.get())
                 .add(ModItems.IRON_HERO_COIN.get())
                 .add(ModItems.IRON_PUFFERFISH_COIN.get())
@@ -474,7 +471,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.IRON_SQUIRREL_COIN.get())
                 .add(ModItems.IRON_PENGUIN_COIN.get())
                 .add(ModItems.IRON_GUARD_COIN.get());
-        tag(ModTags.Items.COPPER_COLLECTIBLE_COINS)
+        tag(TodeCoinsTags.Items.COPPER_COLLECTIBLE_COINS)
                 .add(ModItems.COPPER_COD_COIN.get())
                 .add(ModItems.COPPER_HERO_COIN.get())
                 .add(ModItems.COPPER_PUFFERFISH_COIN.get())
@@ -570,7 +567,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.COPPER_SQUIRREL_COIN.get())
                 .add(ModItems.COPPER_PENGUIN_COIN.get())
                 .add(ModItems.COPPER_GUARD_COIN.get());
-        tag(ModTags.Items.NO_AI_EGGS)
+        tag(TodeCoinsTags.Items.NO_AI_EGGS)
                 .add(Items.BLAZE_SPAWN_EGG)
                 .add(Items.CAVE_SPIDER_SPAWN_EGG)
                 .add(Items.CREEPER_SPAWN_EGG)
@@ -611,629 +608,629 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Cagerium.WITHER_SPAWN_EGG.getId())
                 .addOptional(Cagerium.ENDER_DRAGON_SPAWN_EGG.getId())
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:illusioner_spawn_egg")));
-        tag(ModTags.Items.TOOLS_CARVING)
+        tag(TodeCoinsTags.Items.TOOLS_CARVING)
                 .addTag(Tags.Items.TOOLS_PICKAXES)
-                .addTag(ForgeTags.Items.TOOLS_KNIVES)
-                .addTag(ForgeTags.Items.TOOLS_CHISELS);
-        tag(ModTags.Items.SOUL_BINDER)
+                .addTag(TodeCoinsTags.Items.TOOLS_KNIVES)
+                .addTag(TodeCoinsTags.Items.TOOLS_CHISELS);
+        tag(TodeCoinsTags.Items.SOUL_BINDER)
                 .add(Items.TOTEM_OF_UNDYING)
                 .add(Items.ECHO_SHARD)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("alexsmobs:soul_heart")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("cagerium:binding_gemstone")));
-        tag(ModTags.Items.JAR_PLACEABLE)
-                .addTag(SupplementariesTags.Items.SWEETS)
-                .addTag(SupplementariesTags.Items.CANDY)
-                .addTag(SupplementariesTags.Items.CHOCOLATE)
-                .addTag(ModTags.Items.COLLECTIBLE_COINS)
-                .addTag(ForgeTags.Items.CURRENCY);
-        tag(ModTags.Items.COLLECTIBLE_COINS)
-                .addTag(ModTags.Items.HOLIDAY_COIN_SET)
-                .addTag(ModTags.Items.PATRON_COIN_SET)
-                .addTag(ModTags.Items.GAMEPLAY_COIN_SET)
-                .addTag(ModTags.Items.ENTITY_COIN_SET);
-        tag(ModTags.Items.GAMEPLAY_COIN_SET)
-                .addTag(ModTags.Items.FISHING_COIN_SET)
-                .addTag(ModTags.Items.HERO_COIN_SET);
-        tag(ModTags.Items.FISHING_COIN_SET)
-                .addTag(ModTags.Items.COD_COIN_SET)
-                .addTag(ModTags.Items.PUFFERFISH_COIN_SET)
-                .addTag(ModTags.Items.SALMON_COIN_SET)
-                .addTag(ModTags.Items.TROPICAL_FISH_COIN_SET);
-        tag(ModTags.Items.HERO_COIN_SET)
+        tag(TodeCoinsTags.Items.JAR_PLACEABLE)
+                .addTag(TodeCoinsTags.Items.SWEETS)
+                .addTag(TodeCoinsTags.Items.CANDY)
+                .addTag(TodeCoinsTags.Items.CHOCOLATE)
+                .addTag(TodeCoinsTags.Items.COLLECTIBLE_COINS)
+                .addTag(TodeCoinsTags.Items.CURRENCY_FORGE_TAG);
+        tag(TodeCoinsTags.Items.COLLECTIBLE_COINS)
+                .addTag(TodeCoinsTags.Items.HOLIDAY_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PATRON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GAMEPLAY_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ENTITY_COIN_SET);
+        tag(TodeCoinsTags.Items.GAMEPLAY_COIN_SET)
+                .addTag(TodeCoinsTags.Items.FISHING_COIN_SET)
+                .addTag(TodeCoinsTags.Items.HERO_COIN_SET);
+        tag(TodeCoinsTags.Items.FISHING_COIN_SET)
+                .addTag(TodeCoinsTags.Items.COD_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PUFFERFISH_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SALMON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.TROPICAL_FISH_COIN_SET);
+        tag(TodeCoinsTags.Items.HERO_COIN_SET)
                 .add(ModItems.COPPER_HERO_COIN.get())
                 .add(ModItems.IRON_HERO_COIN.get())
                 .add(ModItems.GOLD_HERO_COIN.get())
                 .add(ModItems.NETHERITE_HERO_COIN.get());
-        tag(ModTags.Items.HOLIDAY_COIN_SET)
+        tag(TodeCoinsTags.Items.HOLIDAY_COIN_SET)
                 .add(ModItems.EASTER_COIN.get())
                 .add(ModItems.HALLOWEEN_COIN.get())
                 .add(ModItems.CHRISTMAS_COIN.get())
                 .add(ModItems.BIRTHDAY_COIN.get())
                 .add(ModItems.NEW_YEAR_COIN.get());
-        tag(ModTags.Items.PATRON_COIN_SET)
-                .addTag(ModTags.Items.LIFETIME_PATRON_COIN_SET)
-                .addTag(ModTags.Items.CARNATION_PATRON_COIN_SET)
-                .addTag(ModTags.Items.COSMOS_PATRON_COIN_SET)
-                .addTag(ModTags.Items.SUNFLOWER_PATRON_COIN_SET);
-        tag(ModTags.Items.LIFETIME_PATRON_COIN_SET)
+        tag(TodeCoinsTags.Items.PATRON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.LIFETIME_PATRON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.CARNATION_PATRON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.COSMOS_PATRON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SUNFLOWER_PATRON_COIN_SET);
+        tag(TodeCoinsTags.Items.LIFETIME_PATRON_COIN_SET)
                 .add(ModItems.SCHOLAR_OWL_COIN.get())
                 .add(ModItems.TUXEDO_CAT_COIN.get())
                 .add(ModItems.LITTLE_BEAR_COIN.get());
-        tag(ModTags.Items.CARNATION_PATRON_COIN_SET)
+        tag(TodeCoinsTags.Items.CARNATION_PATRON_COIN_SET)
                 .add(ModItems.MARSHALL_NASH_CARNATION_COIN.get())
                 .add(ModItems.TREVOR_BRANNIGAN_CARNATION_COIN.get());
-        tag(ModTags.Items.COSMOS_PATRON_COIN_SET)
+        tag(TodeCoinsTags.Items.COSMOS_PATRON_COIN_SET)
                 .add(ModItems.MARSHALL_NASH_COSMOS_COIN.get())
                 .add(ModItems.TREVOR_BRANNIGAN_COSMOS_COIN.get());
-        tag(ModTags.Items.SUNFLOWER_PATRON_COIN_SET)
+        tag(TodeCoinsTags.Items.SUNFLOWER_PATRON_COIN_SET)
                 .add(ModItems.MARSHALL_NASH_SUNFLOWER_COIN.get());
-        tag(ModTags.Items.ENTITY_COIN_SET)
-                .addTag(ModTags.Items.ARMADILLO_COIN_SET)
-                .addTag(ModTags.Items.RASCAL_COIN_SET)
-                .addTag(ModTags.Items.ALLAY_COIN_SET)
-                .addTag(ModTags.Items.AXOLOTL_COIN_SET)
-                .addTag(ModTags.Items.BAT_COIN_SET)
-                .addTag(ModTags.Items.BEE_COIN_SET)
-                .addTag(ModTags.Items.BLAZE_COIN_SET)
-                .addTag(ModTags.Items.CAMEL_COIN_SET)
-                .addTag(ModTags.Items.CAT_COIN_SET)
-                .addTag(ModTags.Items.CAVE_SPIDER_COIN_SET)
-                .addTag(ModTags.Items.CHICKEN_COIN_SET)
-                .addTag(ModTags.Items.COD_COIN_SET)
-                .addTag(ModTags.Items.COW_COIN_SET)
-                .addTag(ModTags.Items.CREEPER_COIN_SET)
-                .addTag(ModTags.Items.DOLPHIN_COIN_SET)
-                .addTag(ModTags.Items.DONKEY_COIN_SET)
-                .addTag(ModTags.Items.DROWNED_COIN_SET)
-                .addTag(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
-                .addTag(ModTags.Items.ENDER_DRAGON_COIN_SET)
-                .addTag(ModTags.Items.ENDERMAN_COIN_SET)
-                .addTag(ModTags.Items.ENDERMITE_COIN_SET)
-                .addTag(ModTags.Items.EVOKER_COIN_SET)
-                .addTag(ModTags.Items.FOX_COIN_SET)
-                .addTag(ModTags.Items.FROG_COIN_SET)
-                .addTag(ModTags.Items.GIANT_COIN_SET)
-                .addTag(ModTags.Items.GLOW_SQUID_COIN_SET)
-                .addTag(ModTags.Items.GOAT_COIN_SET)
-                .addTag(ModTags.Items.GUARDIAN_COIN_SET)
-                .addTag(ModTags.Items.GHAST_COIN_SET)
-                .addTag(ModTags.Items.HOGLIN_COIN_SET)
-                .addTag(ModTags.Items.HORSE_COIN_SET)
-                .addTag(ModTags.Items.HUSK_COIN_SET)
-                .addTag(ModTags.Items.IRON_GOLEM_COIN_SET)
-                .addTag(ModTags.Items.ILLUSIONER_COIN_SET)
-                .addTag(ModTags.Items.LLAMA_COIN_SET)
-                .addTag(ModTags.Items.MAGMA_CUBE_COIN_SET)
-                .addTag(ModTags.Items.MOOSHROOM_COIN_SET)
-                .addTag(ModTags.Items.MULE_COIN_SET)
-                .addTag(ModTags.Items.NUMISMATIST_COIN_SET)
-                .addTag(ModTags.Items.OCELOT_COIN_SET)
-                .addTag(ModTags.Items.PANDA_COIN_SET)
-                .addTag(ModTags.Items.PARROT_COIN_SET)
-                .addTag(ModTags.Items.PHANTOM_COIN_SET)
-                .addTag(ModTags.Items.PIG_COIN_SET)
-                .addTag(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
-                .addTag(ModTags.Items.PIGLIN_COIN_SET)
-                .addTag(ModTags.Items.PIGLIN_MERCHANT_COIN_SET)
-                .addTag(ModTags.Items.PILLAGER_COIN_SET)
-                .addTag(ModTags.Items.POLAR_BEAR_COIN_SET)
-                .addTag(ModTags.Items.PUFFERFISH_COIN_SET)
-                .addTag(ModTags.Items.RABBIT_COIN_SET)
-                .addTag(ModTags.Items.RAVAGER_COIN_SET)
-                .addTag(ModTags.Items.SALMON_COIN_SET)
-                .addTag(ModTags.Items.SHEEP_COIN_SET)
-                .addTag(ModTags.Items.SHULKER_COIN_SET)
-                .addTag(ModTags.Items.SILVERFISH_COIN_SET)
-                .addTag(ModTags.Items.SKELETON_COIN_SET)
-                .addTag(ModTags.Items.SKELETON_HORSE_COIN_SET)
-                .addTag(ModTags.Items.SLIME_COIN_SET)
-                .addTag(ModTags.Items.SNIFFER_COIN_SET)
-                .addTag(ModTags.Items.SNOW_GOLEM_COIN_SET)
-                .addTag(ModTags.Items.SPIDER_COIN_SET)
-                .addTag(ModTags.Items.SQUID_COIN_SET)
-                .addTag(ModTags.Items.STRAY_COIN_SET)
-                .addTag(ModTags.Items.STRIDER_COIN_SET)
-                .addTag(ModTags.Items.TADPOLE_COIN_SET)
-                .addTag(ModTags.Items.TRADER_LLAMA_COIN_SET)
-                .addTag(ModTags.Items.TURTLE_COIN_SET)
-                .addTag(ModTags.Items.TROPICAL_FISH_COIN_SET)
-                .addTag(ModTags.Items.VEX_COIN_SET)
-                .addTag(ModTags.Items.VILLAGER_COIN_SET)
-                .addTag(ModTags.Items.VINDICATOR_COIN_SET)
-                .addTag(ModTags.Items.WANDERING_TRADER_COIN_SET)
-                .addTag(ModTags.Items.WARDEN_COIN_SET)
-                .addTag(ModTags.Items.WITCH_COIN_SET)
-                .addTag(ModTags.Items.WITHER_SKELETON_COIN_SET)
-                .addTag(ModTags.Items.WITHER_COIN_SET)
-                .addTag(ModTags.Items.WOLF_COIN_SET)
-                .addTag(ModTags.Items.ZOGLIN_COIN_SET)
-                .addTag(ModTags.Items.ZOMBIE_COIN_SET)
-                .addTag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
-                .addTag(ModTags.Items.ZOMBIE_VILLAGER_COIN_SET)
-                .addTag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
-                .addTag(ModTags.Items.MOOBLOOM_COIN_SET)
-                .addTag(ModTags.Items.COPPER_GOLEM_COIN_SET)
-                .addTag(ModTags.Items.GLARE_COIN_SET)
-                .addTag(ModTags.Items.GLARE_COIN_SET)
-                .addTag(ModTags.Items.ICEOLOGER_COIN_SET)
-                .addTag(ModTags.Items.MAULER_COIN_SET)
-                .addTag(ModTags.Items.WILDFIRE_COIN_SET)
-                .addTag(ModTags.Items.TUFF_GOLEM_COIN_SET)
-                .addTag(ModTags.Items.SQUIRREL_COIN_SET)
-                .addTag(ModTags.Items.PENGUIN_COIN_SET)
-                .addTag(ModTags.Items.GUARD_COIN_SET)
-                .addTag(ModTags.Items.CRAB_COIN_SET);
-        tag(ModTags.Items.RASCAL_COIN_SET)
+        tag(TodeCoinsTags.Items.ENTITY_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ARMADILLO_COIN_SET)
+                .addTag(TodeCoinsTags.Items.RASCAL_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ALLAY_COIN_SET)
+                .addTag(TodeCoinsTags.Items.AXOLOTL_COIN_SET)
+                .addTag(TodeCoinsTags.Items.BAT_COIN_SET)
+                .addTag(TodeCoinsTags.Items.BEE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.BLAZE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.CAMEL_COIN_SET)
+                .addTag(TodeCoinsTags.Items.CAT_COIN_SET)
+                .addTag(TodeCoinsTags.Items.CAVE_SPIDER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.CHICKEN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.COD_COIN_SET)
+                .addTag(TodeCoinsTags.Items.COW_COIN_SET)
+                .addTag(TodeCoinsTags.Items.CREEPER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.DOLPHIN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.DONKEY_COIN_SET)
+                .addTag(TodeCoinsTags.Items.DROWNED_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ENDER_DRAGON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ENDERMAN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ENDERMITE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.EVOKER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.FOX_COIN_SET)
+                .addTag(TodeCoinsTags.Items.FROG_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GIANT_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GLOW_SQUID_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GOAT_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GUARDIAN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GHAST_COIN_SET)
+                .addTag(TodeCoinsTags.Items.HOGLIN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.HORSE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.HUSK_COIN_SET)
+                .addTag(TodeCoinsTags.Items.IRON_GOLEM_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ILLUSIONER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.LLAMA_COIN_SET)
+                .addTag(TodeCoinsTags.Items.MAGMA_CUBE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.MOOSHROOM_COIN_SET)
+                .addTag(TodeCoinsTags.Items.MULE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.NUMISMATIST_COIN_SET)
+                .addTag(TodeCoinsTags.Items.OCELOT_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PANDA_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PARROT_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PHANTOM_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PIG_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PIGLIN_BRUTE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PIGLIN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PIGLIN_MERCHANT_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PILLAGER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.POLAR_BEAR_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PUFFERFISH_COIN_SET)
+                .addTag(TodeCoinsTags.Items.RABBIT_COIN_SET)
+                .addTag(TodeCoinsTags.Items.RAVAGER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SALMON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SHEEP_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SHULKER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SILVERFISH_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SKELETON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SKELETON_HORSE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SLIME_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SNIFFER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SNOW_GOLEM_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SPIDER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SQUID_COIN_SET)
+                .addTag(TodeCoinsTags.Items.STRAY_COIN_SET)
+                .addTag(TodeCoinsTags.Items.STRIDER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.TADPOLE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.TRADER_LLAMA_COIN_SET)
+                .addTag(TodeCoinsTags.Items.TURTLE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.TROPICAL_FISH_COIN_SET)
+                .addTag(TodeCoinsTags.Items.VEX_COIN_SET)
+                .addTag(TodeCoinsTags.Items.VILLAGER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.VINDICATOR_COIN_SET)
+                .addTag(TodeCoinsTags.Items.WANDERING_TRADER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.WARDEN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.WITCH_COIN_SET)
+                .addTag(TodeCoinsTags.Items.WITHER_SKELETON_COIN_SET)
+                .addTag(TodeCoinsTags.Items.WITHER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.WOLF_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ZOGLIN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ZOMBIE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ZOMBIE_HORSE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ZOMBIE_VILLAGER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.MOOBLOOM_COIN_SET)
+                .addTag(TodeCoinsTags.Items.COPPER_GOLEM_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GLARE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GLARE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.ICEOLOGER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.MAULER_COIN_SET)
+                .addTag(TodeCoinsTags.Items.WILDFIRE_COIN_SET)
+                .addTag(TodeCoinsTags.Items.TUFF_GOLEM_COIN_SET)
+                .addTag(TodeCoinsTags.Items.SQUIRREL_COIN_SET)
+                .addTag(TodeCoinsTags.Items.PENGUIN_COIN_SET)
+                .addTag(TodeCoinsTags.Items.GUARD_COIN_SET)
+                .addTag(TodeCoinsTags.Items.CRAB_COIN_SET);
+        tag(TodeCoinsTags.Items.RASCAL_COIN_SET)
                 .add(ModItems.COPPER_RASCAL_COIN.get())
                 .add(ModItems.IRON_RASCAL_COIN.get())
                 .add(ModItems.GOLD_RASCAL_COIN.get())
                 .add(ModItems.NETHERITE_RASCAL_COIN.get());
-        tag(ModTags.Items.PIGLIN_MERCHANT_COIN_SET)
+        tag(TodeCoinsTags.Items.PIGLIN_MERCHANT_COIN_SET)
                 .add(ModItems.COPPER_PIGLIN_MERCHANT_COIN.get())
                 .add(ModItems.IRON_PIGLIN_MERCHANT_COIN.get())
                 .add(ModItems.GOLD_PIGLIN_MERCHANT_COIN.get())
                 .add(ModItems.NETHERITE_PIGLIN_MERCHANT_COIN.get());
-        tag(ModTags.Items.GUARD_COIN_SET)
+        tag(TodeCoinsTags.Items.GUARD_COIN_SET)
                 .add(ModItems.COPPER_GUARD_COIN.get())
                 .add(ModItems.IRON_GUARD_COIN.get())
                 .add(ModItems.GOLD_GUARD_COIN.get())
                 .add(ModItems.NETHERITE_GUARD_COIN.get());
-        tag(ModTags.Items.PENGUIN_COIN_SET)
+        tag(TodeCoinsTags.Items.PENGUIN_COIN_SET)
                 .add(ModItems.COPPER_PENGUIN_COIN.get())
                 .add(ModItems.IRON_PENGUIN_COIN.get())
                 .add(ModItems.GOLD_PENGUIN_COIN.get())
                 .add(ModItems.NETHERITE_PENGUIN_COIN.get());
-        tag(ModTags.Items.SQUIRREL_COIN_SET)
+        tag(TodeCoinsTags.Items.SQUIRREL_COIN_SET)
                 .add(ModItems.COPPER_SQUIRREL_COIN.get())
                 .add(ModItems.IRON_SQUIRREL_COIN.get())
                 .add(ModItems.GOLD_SQUIRREL_COIN.get())
                 .add(ModItems.NETHERITE_SQUIRREL_COIN.get());
-        tag(ModTags.Items.CRAB_COIN_SET)
+        tag(TodeCoinsTags.Items.CRAB_COIN_SET)
                 .add(ModItems.COPPER_CRAB_COIN.get())
                 .add(ModItems.IRON_CRAB_COIN.get())
                 .add(ModItems.GOLD_CRAB_COIN.get())
                 .add(ModItems.NETHERITE_CRAB_COIN.get());
-        tag(ModTags.Items.TUFF_GOLEM_COIN_SET)
+        tag(TodeCoinsTags.Items.TUFF_GOLEM_COIN_SET)
                 .add(ModItems.COPPER_TUFF_GOLEM_COIN.get())
                 .add(ModItems.IRON_TUFF_GOLEM_COIN.get())
                 .add(ModItems.GOLD_TUFF_GOLEM_COIN.get())
                 .add(ModItems.NETHERITE_TUFF_GOLEM_COIN.get());
-        tag(ModTags.Items.WILDFIRE_COIN_SET)
+        tag(TodeCoinsTags.Items.WILDFIRE_COIN_SET)
                 .add(ModItems.COPPER_WILDFIRE_COIN.get())
                 .add(ModItems.IRON_WILDFIRE_COIN.get())
                 .add(ModItems.GOLD_WILDFIRE_COIN.get())
                 .add(ModItems.NETHERITE_WILDFIRE_COIN.get());
-        tag(ModTags.Items.MAULER_COIN_SET)
+        tag(TodeCoinsTags.Items.MAULER_COIN_SET)
                 .add(ModItems.COPPER_MAULER_COIN.get())
                 .add(ModItems.IRON_MAULER_COIN.get())
                 .add(ModItems.GOLD_MAULER_COIN.get())
                 .add(ModItems.NETHERITE_MAULER_COIN.get());
-        tag(ModTags.Items.ICEOLOGER_COIN_SET)
+        tag(TodeCoinsTags.Items.ICEOLOGER_COIN_SET)
                 .add(ModItems.COPPER_ICEOLOGER_COIN.get())
                 .add(ModItems.IRON_ICEOLOGER_COIN.get())
                 .add(ModItems.GOLD_ICEOLOGER_COIN.get())
                 .add(ModItems.NETHERITE_ICEOLOGER_COIN.get());
-        tag(ModTags.Items.COPPER_GOLEM_COIN_SET)
+        tag(TodeCoinsTags.Items.COPPER_GOLEM_COIN_SET)
                 .add(ModItems.COPPER_COPPER_GOLEM_COIN.get())
                 .add(ModItems.IRON_COPPER_GOLEM_COIN.get())
                 .add(ModItems.GOLD_COPPER_GOLEM_COIN.get())
                 .add(ModItems.NETHERITE_COPPER_GOLEM_COIN.get());
-        tag(ModTags.Items.GLARE_COIN_SET)
+        tag(TodeCoinsTags.Items.GLARE_COIN_SET)
                 .add(ModItems.COPPER_GLARE_COIN.get())
                 .add(ModItems.IRON_GLARE_COIN.get())
                 .add(ModItems.GOLD_GLARE_COIN.get())
                 .add(ModItems.NETHERITE_GLARE_COIN.get());
-        tag(ModTags.Items.GIANT_COIN_SET)
+        tag(TodeCoinsTags.Items.GIANT_COIN_SET)
                 .add(ModItems.COPPER_GIANT_COIN.get())
                 .add(ModItems.IRON_GIANT_COIN.get())
                 .add(ModItems.GOLD_GIANT_COIN.get())
                 .add(ModItems.NETHERITE_GIANT_COIN.get());
-        tag(ModTags.Items.STRAY_COIN_SET)
+        tag(TodeCoinsTags.Items.STRAY_COIN_SET)
                 .add(ModItems.COPPER_STRAY_COIN.get())
                 .add(ModItems.IRON_STRAY_COIN.get())
                 .add(ModItems.GOLD_STRAY_COIN.get())
                 .add(ModItems.NETHERITE_STRAY_COIN.get());
-        tag(ModTags.Items.ILLUSIONER_COIN_SET)
+        tag(TodeCoinsTags.Items.ILLUSIONER_COIN_SET)
                 .add(ModItems.COPPER_ILLUSIONER_COIN.get())
                 .add(ModItems.IRON_ILLUSIONER_COIN.get())
                 .add(ModItems.GOLD_ILLUSIONER_COIN.get())
                 .add(ModItems.NETHERITE_ILLUSIONER_COIN.get());
-        tag(ModTags.Items.ENDER_DRAGON_COIN_SET)
+        tag(TodeCoinsTags.Items.ENDER_DRAGON_COIN_SET)
                 .add(ModItems.COPPER_ENDER_DRAGON_COIN.get())
                 .add(ModItems.IRON_ENDER_DRAGON_COIN.get())
                 .add(ModItems.GOLD_ENDER_DRAGON_COIN.get())
                 .add(ModItems.NETHERITE_ENDER_DRAGON_COIN.get());
-        tag(ModTags.Items.ZOMBIE_VILLAGER_COIN_SET)
+        tag(TodeCoinsTags.Items.ZOMBIE_VILLAGER_COIN_SET)
                 .add(ModItems.COPPER_ZOMBIE_VILLAGER_COIN.get())
                 .add(ModItems.IRON_ZOMBIE_VILLAGER_COIN.get())
                 .add(ModItems.GOLD_ZOMBIE_VILLAGER_COIN.get())
                 .add(ModItems.NETHERITE_ZOMBIE_VILLAGER_COIN.get());
-        tag(ModTags.Items.ZOMBIE_COIN_SET)
+        tag(TodeCoinsTags.Items.ZOMBIE_COIN_SET)
                 .add(ModItems.COPPER_ZOMBIE_COIN.get())
                 .add(ModItems.IRON_ZOMBIE_COIN.get())
                 .add(ModItems.GOLD_ZOMBIE_COIN.get())
                 .add(ModItems.NETHERITE_ZOMBIE_COIN.get());
-        tag(ModTags.Items.ZOGLIN_COIN_SET)
+        tag(TodeCoinsTags.Items.ZOGLIN_COIN_SET)
                 .add(ModItems.COPPER_ZOGLIN_COIN.get())
                 .add(ModItems.IRON_ZOGLIN_COIN.get())
                 .add(ModItems.GOLD_ZOGLIN_COIN.get())
                 .add(ModItems.NETHERITE_ZOGLIN_COIN.get());
-        tag(ModTags.Items.WITHER_COIN_SET)
+        tag(TodeCoinsTags.Items.WITHER_COIN_SET)
                 .add(ModItems.COPPER_WITHER_COIN.get())
                 .add(ModItems.IRON_WITHER_COIN.get())
                 .add(ModItems.GOLD_WITHER_COIN.get())
                 .add(ModItems.NETHERITE_WITHER_COIN.get());
-        tag(ModTags.Items.WITHER_SKELETON_COIN_SET)
+        tag(TodeCoinsTags.Items.WITHER_SKELETON_COIN_SET)
                 .add(ModItems.COPPER_WITHER_SKELETON_COIN.get())
                 .add(ModItems.IRON_WITHER_SKELETON_COIN.get())
                 .add(ModItems.GOLD_WITHER_SKELETON_COIN.get())
                 .add(ModItems.NETHERITE_WITHER_SKELETON_COIN.get());
-        tag(ModTags.Items.WITCH_COIN_SET)
+        tag(TodeCoinsTags.Items.WITCH_COIN_SET)
                 .add(ModItems.COPPER_WITCH_COIN.get())
                 .add(ModItems.IRON_WITCH_COIN.get())
                 .add(ModItems.GOLD_WITCH_COIN.get())
                 .add(ModItems.NETHERITE_WITCH_COIN.get());
-        tag(ModTags.Items.WARDEN_COIN_SET)
+        tag(TodeCoinsTags.Items.WARDEN_COIN_SET)
                 .add(ModItems.COPPER_WARDEN_COIN.get())
                 .add(ModItems.IRON_WARDEN_COIN.get())
                 .add(ModItems.GOLD_WARDEN_COIN.get())
                 .add(ModItems.NETHERITE_WARDEN_COIN.get());
-        tag(ModTags.Items.VINDICATOR_COIN_SET)
+        tag(TodeCoinsTags.Items.VINDICATOR_COIN_SET)
                 .add(ModItems.COPPER_VINDICATOR_COIN.get())
                 .add(ModItems.IRON_VINDICATOR_COIN.get())
                 .add(ModItems.GOLD_VINDICATOR_COIN.get())
                 .add(ModItems.NETHERITE_VINDICATOR_COIN.get());
-        tag(ModTags.Items.VEX_COIN_SET)
+        tag(TodeCoinsTags.Items.VEX_COIN_SET)
                 .add(ModItems.COPPER_VEX_COIN.get())
                 .add(ModItems.IRON_VEX_COIN.get())
                 .add(ModItems.GOLD_VEX_COIN.get())
                 .add(ModItems.NETHERITE_VEX_COIN.get());
-        tag(ModTags.Items.SKELETON_COIN_SET)
+        tag(TodeCoinsTags.Items.SKELETON_COIN_SET)
                 .add(ModItems.COPPER_SKELETON_COIN.get())
                 .add(ModItems.IRON_SKELETON_COIN.get())
                 .add(ModItems.GOLD_SKELETON_COIN.get())
                 .add(ModItems.NETHERITE_SKELETON_COIN.get());
-        tag(ModTags.Items.SILVERFISH_COIN_SET)
+        tag(TodeCoinsTags.Items.SILVERFISH_COIN_SET)
                 .add(ModItems.COPPER_SILVERFISH_COIN.get())
                 .add(ModItems.IRON_SILVERFISH_COIN.get())
                 .add(ModItems.GOLD_SILVERFISH_COIN.get())
                 .add(ModItems.NETHERITE_SILVERFISH_COIN.get());
-        tag(ModTags.Items.SHULKER_COIN_SET)
+        tag(TodeCoinsTags.Items.SHULKER_COIN_SET)
                 .add(ModItems.COPPER_SHULKER_COIN.get())
                 .add(ModItems.IRON_SHULKER_COIN.get())
                 .add(ModItems.GOLD_SHULKER_COIN.get())
                 .add(ModItems.NETHERITE_SHULKER_COIN.get());
-        tag(ModTags.Items.RAVAGER_COIN_SET)
+        tag(TodeCoinsTags.Items.RAVAGER_COIN_SET)
                 .add(ModItems.COPPER_RAVAGER_COIN.get())
                 .add(ModItems.IRON_RAVAGER_COIN.get())
                 .add(ModItems.GOLD_RAVAGER_COIN.get())
                 .add(ModItems.NETHERITE_RAVAGER_COIN.get());
-        tag(ModTags.Items.PILLAGER_COIN_SET)
+        tag(TodeCoinsTags.Items.PILLAGER_COIN_SET)
                 .add(ModItems.COPPER_PILLAGER_COIN.get())
                 .add(ModItems.IRON_PILLAGER_COIN.get())
                 .add(ModItems.GOLD_PILLAGER_COIN.get())
                 .add(ModItems.NETHERITE_PILLAGER_COIN.get());
-        tag(ModTags.Items.PIGLIN_BRUTE_COIN_SET)
+        tag(TodeCoinsTags.Items.PIGLIN_BRUTE_COIN_SET)
                 .add(ModItems.COPPER_PIGLIN_BRUTE_COIN.get())
                 .add(ModItems.IRON_PIGLIN_BRUTE_COIN.get())
                 .add(ModItems.GOLD_PIGLIN_BRUTE_COIN.get())
                 .add(ModItems.NETHERITE_PIGLIN_BRUTE_COIN.get());
-        tag(ModTags.Items.PHANTOM_COIN_SET)
+        tag(TodeCoinsTags.Items.PHANTOM_COIN_SET)
                 .add(ModItems.COPPER_PHANTOM_COIN.get())
                 .add(ModItems.IRON_PHANTOM_COIN.get())
                 .add(ModItems.GOLD_PHANTOM_COIN.get())
                 .add(ModItems.NETHERITE_PHANTOM_COIN.get());
-        tag(ModTags.Items.SLIME_COIN_SET)
+        tag(TodeCoinsTags.Items.SLIME_COIN_SET)
                 .add(ModItems.COPPER_SLIME_COIN.get())
                 .add(ModItems.IRON_SLIME_COIN.get())
                 .add(ModItems.GOLD_SLIME_COIN.get())
                 .add(ModItems.NETHERITE_SLIME_COIN.get());
-        tag(ModTags.Items.MAGMA_CUBE_COIN_SET)
+        tag(TodeCoinsTags.Items.MAGMA_CUBE_COIN_SET)
                 .add(ModItems.COPPER_MAGMA_CUBE_COIN.get())
                 .add(ModItems.IRON_MAGMA_CUBE_COIN.get())
                 .add(ModItems.GOLD_MAGMA_CUBE_COIN.get())
                 .add(ModItems.NETHERITE_MAGMA_CUBE_COIN.get());
-        tag(ModTags.Items.HUSK_COIN_SET)
+        tag(TodeCoinsTags.Items.HUSK_COIN_SET)
                 .add(ModItems.COPPER_HUSK_COIN.get())
                 .add(ModItems.IRON_HUSK_COIN.get())
                 .add(ModItems.GOLD_HUSK_COIN.get())
                 .add(ModItems.NETHERITE_HUSK_COIN.get());
-        tag(ModTags.Items.GHAST_COIN_SET)
+        tag(TodeCoinsTags.Items.GHAST_COIN_SET)
                 .add(ModItems.COPPER_GHAST_COIN.get())
                 .add(ModItems.IRON_GHAST_COIN.get())
                 .add(ModItems.GOLD_GHAST_COIN.get())
                 .add(ModItems.NETHERITE_GHAST_COIN.get());
-        tag(ModTags.Items.EVOKER_COIN_SET)
+        tag(TodeCoinsTags.Items.EVOKER_COIN_SET)
                 .add(ModItems.COPPER_EVOKER_COIN.get())
                 .add(ModItems.IRON_EVOKER_COIN.get())
                 .add(ModItems.GOLD_EVOKER_COIN.get())
                 .add(ModItems.NETHERITE_EVOKER_COIN.get());
-        tag(ModTags.Items.ENDERMITE_COIN_SET)
+        tag(TodeCoinsTags.Items.ENDERMITE_COIN_SET)
                 .add(ModItems.COPPER_ENDERMITE_COIN.get())
                 .add(ModItems.IRON_ENDERMITE_COIN.get())
                 .add(ModItems.GOLD_ENDERMITE_COIN.get())
                 .add(ModItems.NETHERITE_ENDERMITE_COIN.get());
-        tag(ModTags.Items.GUARDIAN_COIN_SET)
+        tag(TodeCoinsTags.Items.GUARDIAN_COIN_SET)
                 .add(ModItems.COPPER_GUARDIAN_COIN.get())
                 .add(ModItems.IRON_GUARDIAN_COIN.get())
                 .add(ModItems.GOLD_GUARDIAN_COIN.get())
                 .add(ModItems.NETHERITE_GUARDIAN_COIN.get());
-        tag(ModTags.Items.ELDER_GUARDIAN_COIN_SET)
+        tag(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)
                 .add(ModItems.COPPER_ELDER_GUARDIAN_COIN.get())
                 .add(ModItems.IRON_ELDER_GUARDIAN_COIN.get())
                 .add(ModItems.GOLD_ELDER_GUARDIAN_COIN.get())
                 .add(ModItems.NETHERITE_ELDER_GUARDIAN_COIN.get());
-        tag(ModTags.Items.DROWNED_COIN_SET)
+        tag(TodeCoinsTags.Items.DROWNED_COIN_SET)
                 .add(ModItems.COPPER_DROWNED_COIN.get())
                 .add(ModItems.IRON_DROWNED_COIN.get())
                 .add(ModItems.GOLD_DROWNED_COIN.get())
                 .add(ModItems.NETHERITE_DROWNED_COIN.get());
-        tag(ModTags.Items.CREEPER_COIN_SET)
+        tag(TodeCoinsTags.Items.CREEPER_COIN_SET)
                 .add(ModItems.COPPER_CREEPER_COIN.get())
                 .add(ModItems.IRON_CREEPER_COIN.get())
                 .add(ModItems.GOLD_CREEPER_COIN.get())
                 .add(ModItems.NETHERITE_CREEPER_COIN.get());
-        tag(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
+        tag(TodeCoinsTags.Items.ZOMBIFIED_PIGLIN_COIN_SET)
                 .add(ModItems.COPPER_ZOMBIFIED_PIGLIN_COIN.get())
                 .add(ModItems.IRON_ZOMBIFIED_PIGLIN_COIN.get())
                 .add(ModItems.GOLD_ZOMBIFIED_PIGLIN_COIN.get())
                 .add(ModItems.NETHERITE_ZOMBIFIED_PIGLIN_COIN.get());
-        tag(ModTags.Items.WOLF_COIN_SET)
+        tag(TodeCoinsTags.Items.WOLF_COIN_SET)
                 .add(ModItems.COPPER_WOLF_COIN.get())
                 .add(ModItems.IRON_WOLF_COIN.get())
                 .add(ModItems.GOLD_WOLF_COIN.get())
                 .add(ModItems.NETHERITE_WOLF_COIN.get());
-        tag(ModTags.Items.SPIDER_COIN_SET)
+        tag(TodeCoinsTags.Items.SPIDER_COIN_SET)
                 .add(ModItems.COPPER_SPIDER_COIN.get())
                 .add(ModItems.IRON_SPIDER_COIN.get())
                 .add(ModItems.GOLD_SPIDER_COIN.get())
                 .add(ModItems.NETHERITE_SPIDER_COIN.get());
-        tag(ModTags.Items.POLAR_BEAR_COIN_SET)
+        tag(TodeCoinsTags.Items.POLAR_BEAR_COIN_SET)
                 .add(ModItems.COPPER_POLAR_BEAR_COIN.get())
                 .add(ModItems.IRON_POLAR_BEAR_COIN.get())
                 .add(ModItems.GOLD_POLAR_BEAR_COIN.get())
                 .add(ModItems.NETHERITE_POLAR_BEAR_COIN.get());
-        tag(ModTags.Items.PANDA_COIN_SET)
+        tag(TodeCoinsTags.Items.PANDA_COIN_SET)
                 .add(ModItems.COPPER_PANDA_COIN.get())
                 .add(ModItems.IRON_PANDA_COIN.get())
                 .add(ModItems.GOLD_PANDA_COIN.get())
                 .add(ModItems.NETHERITE_PANDA_COIN.get());
-        tag(ModTags.Items.TRADER_LLAMA_COIN_SET)
+        tag(TodeCoinsTags.Items.TRADER_LLAMA_COIN_SET)
                 .add(ModItems.COPPER_TRADER_LLAMA_COIN.get())
                 .add(ModItems.IRON_TRADER_LLAMA_COIN.get())
                 .add(ModItems.GOLD_TRADER_LLAMA_COIN.get())
                 .add(ModItems.NETHERITE_TRADER_LLAMA_COIN.get());
-        tag(ModTags.Items.LLAMA_COIN_SET)
+        tag(TodeCoinsTags.Items.LLAMA_COIN_SET)
                 .add(ModItems.COPPER_LLAMA_COIN.get())
                 .add(ModItems.IRON_LLAMA_COIN.get())
                 .add(ModItems.GOLD_LLAMA_COIN.get())
                 .add(ModItems.NETHERITE_LLAMA_COIN.get());
-        tag(ModTags.Items.IRON_GOLEM_COIN_SET)
+        tag(TodeCoinsTags.Items.IRON_GOLEM_COIN_SET)
                 .add(ModItems.COPPER_IRON_GOLEM_COIN.get())
                 .add(ModItems.IRON_IRON_GOLEM_COIN.get())
                 .add(ModItems.GOLD_IRON_GOLEM_COIN.get())
                 .add(ModItems.NETHERITE_IRON_GOLEM_COIN.get());
-        tag(ModTags.Items.GOAT_COIN_SET)
+        tag(TodeCoinsTags.Items.GOAT_COIN_SET)
                 .add(ModItems.COPPER_GOAT_COIN.get())
                 .add(ModItems.IRON_GOAT_COIN.get())
                 .add(ModItems.GOLD_GOAT_COIN.get())
                 .add(ModItems.NETHERITE_GOAT_COIN.get());
-        tag(ModTags.Items.DOLPHIN_COIN_SET)
+        tag(TodeCoinsTags.Items.DOLPHIN_COIN_SET)
                 .add(ModItems.COPPER_DOLPHIN_COIN.get())
                 .add(ModItems.IRON_DOLPHIN_COIN.get())
                 .add(ModItems.GOLD_DOLPHIN_COIN.get())
                 .add(ModItems.NETHERITE_DOLPHIN_COIN.get());
-        tag(ModTags.Items.NUMISMATIST_COIN_SET)
+        tag(TodeCoinsTags.Items.NUMISMATIST_COIN_SET)
                 .add(ModItems.COPPER_NUMISMATIST_COIN.get())
                 .add(ModItems.IRON_NUMISMATIST_COIN.get())
                 .add(ModItems.GOLD_NUMISMATIST_COIN.get())
                 .add(ModItems.NETHERITE_NUMISMATIST_COIN.get());
-        tag(ModTags.Items.WANDERING_TRADER_COIN_SET)
+        tag(TodeCoinsTags.Items.WANDERING_TRADER_COIN_SET)
                 .add(ModItems.COPPER_WANDERING_TRADER_COIN.get())
                 .add(ModItems.IRON_WANDERING_TRADER_COIN.get())
                 .add(ModItems.GOLD_WANDERING_TRADER_COIN.get())
                 .add(ModItems.NETHERITE_WANDERING_TRADER_COIN.get());
-        tag(ModTags.Items.VILLAGER_COIN_SET)
+        tag(TodeCoinsTags.Items.VILLAGER_COIN_SET)
                 .add(ModItems.COPPER_VILLAGER_COIN.get())
                 .add(ModItems.IRON_VILLAGER_COIN.get())
                 .add(ModItems.GOLD_VILLAGER_COIN.get())
                 .add(ModItems.NETHERITE_VILLAGER_COIN.get());
-        tag(ModTags.Items.TURTLE_COIN_SET)
+        tag(TodeCoinsTags.Items.TURTLE_COIN_SET)
                 .add(ModItems.COPPER_TURTLE_COIN.get())
                 .add(ModItems.IRON_TURTLE_COIN.get())
                 .add(ModItems.GOLD_TURTLE_COIN.get())
                 .add(ModItems.NETHERITE_TURTLE_COIN.get());
-        tag(ModTags.Items.TADPOLE_COIN_SET)
+        tag(TodeCoinsTags.Items.TADPOLE_COIN_SET)
                 .add(ModItems.COPPER_TADPOLE_COIN.get())
                 .add(ModItems.IRON_TADPOLE_COIN.get())
                 .add(ModItems.GOLD_TADPOLE_COIN.get())
                 .add(ModItems.NETHERITE_TADPOLE_COIN.get());
-        tag(ModTags.Items.STRIDER_COIN_SET)
+        tag(TodeCoinsTags.Items.STRIDER_COIN_SET)
                 .add(ModItems.COPPER_STRIDER_COIN.get())
                 .add(ModItems.IRON_STRIDER_COIN.get())
                 .add(ModItems.GOLD_STRIDER_COIN.get())
                 .add(ModItems.NETHERITE_STRIDER_COIN.get());
-        tag(ModTags.Items.SNOW_GOLEM_COIN_SET)
+        tag(TodeCoinsTags.Items.SNOW_GOLEM_COIN_SET)
                 .add(ModItems.COPPER_SNOW_GOLEM_COIN.get())
                 .add(ModItems.IRON_SNOW_GOLEM_COIN.get())
                 .add(ModItems.GOLD_SNOW_GOLEM_COIN.get())
                 .add(ModItems.NETHERITE_SNOW_GOLEM_COIN.get());
-        tag(ModTags.Items.SNIFFER_COIN_SET)
+        tag(TodeCoinsTags.Items.SNIFFER_COIN_SET)
                 .add(ModItems.COPPER_SNIFFER_COIN.get())
                 .add(ModItems.IRON_SNIFFER_COIN.get())
                 .add(ModItems.GOLD_SNIFFER_COIN.get())
                 .add(ModItems.NETHERITE_SNIFFER_COIN.get());
-        tag(ModTags.Items.ARMADILLO_COIN_SET)
+        tag(TodeCoinsTags.Items.ARMADILLO_COIN_SET)
                 .add(ModItems.COPPER_ARMADILLO_COIN.get())
                 .add(ModItems.IRON_ARMADILLO_COIN.get())
                 .add(ModItems.GOLD_ARMADILLO_COIN.get())
                 .add(ModItems.NETHERITE_ARMADILLO_COIN.get());
-        tag(ModTags.Items.SHEEP_COIN_SET)
+        tag(TodeCoinsTags.Items.SHEEP_COIN_SET)
                 .add(ModItems.COPPER_SHEEP_COIN.get())
                 .add(ModItems.IRON_SHEEP_COIN.get())
                 .add(ModItems.GOLD_SHEEP_COIN.get())
                 .add(ModItems.NETHERITE_SHEEP_COIN.get());
-        tag(ModTags.Items.RABBIT_COIN_SET)
+        tag(TodeCoinsTags.Items.RABBIT_COIN_SET)
                 .add(ModItems.COPPER_RABBIT_COIN.get())
                 .add(ModItems.IRON_RABBIT_COIN.get())
                 .add(ModItems.GOLD_RABBIT_COIN.get())
                 .add(ModItems.NETHERITE_RABBIT_COIN.get());
-        tag(ModTags.Items.PIG_COIN_SET)
+        tag(TodeCoinsTags.Items.PIG_COIN_SET)
                 .add(ModItems.COPPER_PIG_COIN.get())
                 .add(ModItems.IRON_PIG_COIN.get())
                 .add(ModItems.GOLD_PIG_COIN.get())
                 .add(ModItems.NETHERITE_PIG_COIN.get());
-        tag(ModTags.Items.HOGLIN_COIN_SET)
+        tag(TodeCoinsTags.Items.HOGLIN_COIN_SET)
                 .add(ModItems.COPPER_HOGLIN_COIN.get())
                 .add(ModItems.IRON_HOGLIN_COIN.get())
                 .add(ModItems.GOLD_HOGLIN_COIN.get())
                 .add(ModItems.NETHERITE_HOGLIN_COIN.get());
-        tag(ModTags.Items.PARROT_COIN_SET)
+        tag(TodeCoinsTags.Items.PARROT_COIN_SET)
                 .add(ModItems.COPPER_PARROT_COIN.get())
                 .add(ModItems.IRON_PARROT_COIN.get())
                 .add(ModItems.GOLD_PARROT_COIN.get())
                 .add(ModItems.NETHERITE_PARROT_COIN.get());
-        tag(ModTags.Items.SQUID_COIN_SET)
+        tag(TodeCoinsTags.Items.SQUID_COIN_SET)
                 .add(ModItems.COPPER_SQUID_COIN.get())
                 .add(ModItems.IRON_SQUID_COIN.get())
                 .add(ModItems.GOLD_SQUID_COIN.get())
                 .add(ModItems.NETHERITE_SQUID_COIN.get());
-        tag(ModTags.Items.GLOW_SQUID_COIN_SET)
+        tag(TodeCoinsTags.Items.GLOW_SQUID_COIN_SET)
                 .add(ModItems.COPPER_GLOW_SQUID_COIN.get())
                 .add(ModItems.IRON_GLOW_SQUID_COIN.get())
                 .add(ModItems.GOLD_GLOW_SQUID_COIN.get())
                 .add(ModItems.NETHERITE_GLOW_SQUID_COIN.get());
-        tag(ModTags.Items.ALLAY_COIN_SET)
+        tag(TodeCoinsTags.Items.ALLAY_COIN_SET)
                 .add(ModItems.COPPER_ALLAY_COIN.get())
                 .add(ModItems.IRON_ALLAY_COIN.get())
                 .add(ModItems.GOLD_ALLAY_COIN.get())
                 .add(ModItems.NETHERITE_ALLAY_COIN.get());
-        tag(ModTags.Items.AXOLOTL_COIN_SET)
+        tag(TodeCoinsTags.Items.AXOLOTL_COIN_SET)
                 .add(ModItems.COPPER_AXOLOTL_COIN.get())
                 .add(ModItems.IRON_AXOLOTL_COIN.get())
                 .add(ModItems.GOLD_AXOLOTL_COIN.get())
                 .add(ModItems.NETHERITE_AXOLOTL_COIN.get());
-        tag(ModTags.Items.BAT_COIN_SET)
+        tag(TodeCoinsTags.Items.BAT_COIN_SET)
                 .add(ModItems.COPPER_BAT_COIN.get())
                 .add(ModItems.IRON_BAT_COIN.get())
                 .add(ModItems.GOLD_BAT_COIN.get())
                 .add(ModItems.NETHERITE_BAT_COIN.get());
-        tag(ModTags.Items.BEE_COIN_SET)
+        tag(TodeCoinsTags.Items.BEE_COIN_SET)
                 .add(ModItems.COPPER_BEE_COIN.get())
                 .add(ModItems.IRON_BEE_COIN.get())
                 .add(ModItems.GOLD_BEE_COIN.get())
                 .add(ModItems.NETHERITE_BEE_COIN.get());
-        tag(ModTags.Items.BLAZE_COIN_SET)
+        tag(TodeCoinsTags.Items.BLAZE_COIN_SET)
                 .add(ModItems.COPPER_BLAZE_COIN.get())
                 .add(ModItems.IRON_BLAZE_COIN.get())
                 .add(ModItems.GOLD_BLAZE_COIN.get())
                 .add(ModItems.NETHERITE_BLAZE_COIN.get());
-        tag(ModTags.Items.CAMEL_COIN_SET)
+        tag(TodeCoinsTags.Items.CAMEL_COIN_SET)
                 .add(ModItems.COPPER_CAMEL_COIN.get())
                 .add(ModItems.IRON_CAMEL_COIN.get())
                 .add(ModItems.GOLD_CAMEL_COIN.get())
                 .add(ModItems.NETHERITE_CAMEL_COIN.get());
-        tag(ModTags.Items.CAT_COIN_SET)
+        tag(TodeCoinsTags.Items.CAT_COIN_SET)
                 .add(ModItems.COPPER_CAT_COIN.get())
                 .add(ModItems.IRON_CAT_COIN.get())
                 .add(ModItems.GOLD_CAT_COIN.get())
                 .add(ModItems.NETHERITE_CAT_COIN.get());
-        tag(ModTags.Items.CAVE_SPIDER_COIN_SET)
+        tag(TodeCoinsTags.Items.CAVE_SPIDER_COIN_SET)
                 .add(ModItems.COPPER_CAVE_SPIDER_COIN.get())
                 .add(ModItems.IRON_CAVE_SPIDER_COIN.get())
                 .add(ModItems.GOLD_CAVE_SPIDER_COIN.get())
                 .add(ModItems.NETHERITE_CAVE_SPIDER_COIN.get());
-        tag(ModTags.Items.CHICKEN_COIN_SET)
+        tag(TodeCoinsTags.Items.CHICKEN_COIN_SET)
                 .add(ModItems.COPPER_CHICKEN_COIN.get())
                 .add(ModItems.IRON_CHICKEN_COIN.get())
                 .add(ModItems.GOLD_CHICKEN_COIN.get())
                 .add(ModItems.NETHERITE_CHICKEN_COIN.get());
-        tag(ModTags.Items.COD_COIN_SET)
+        tag(TodeCoinsTags.Items.COD_COIN_SET)
                 .add(ModItems.COPPER_COD_COIN.get())
                 .add(ModItems.IRON_COD_COIN.get())
                 .add(ModItems.GOLD_COD_COIN.get())
                 .add(ModItems.NETHERITE_COD_COIN.get());
-        tag(ModTags.Items.COW_COIN_SET)
+        tag(TodeCoinsTags.Items.COW_COIN_SET)
                 .add(ModItems.COPPER_COW_COIN.get())
                 .add(ModItems.IRON_COW_COIN.get())
                 .add(ModItems.GOLD_COW_COIN.get())
                 .add(ModItems.NETHERITE_COW_COIN.get());
-        tag(ModTags.Items.DONKEY_COIN_SET)
+        tag(TodeCoinsTags.Items.DONKEY_COIN_SET)
                 .add(ModItems.COPPER_DONKEY_COIN.get())
                 .add(ModItems.IRON_DONKEY_COIN.get())
                 .add(ModItems.GOLD_DONKEY_COIN.get())
                 .add(ModItems.NETHERITE_DONKEY_COIN.get());
-        tag(ModTags.Items.ENDERMAN_COIN_SET)
+        tag(TodeCoinsTags.Items.ENDERMAN_COIN_SET)
                 .add(ModItems.COPPER_ENDERMAN_COIN.get())
                 .add(ModItems.IRON_ENDERMAN_COIN.get())
                 .add(ModItems.GOLD_ENDERMAN_COIN.get())
                 .add(ModItems.NETHERITE_ENDERMAN_COIN.get());
-        tag(ModTags.Items.FOX_COIN_SET)
+        tag(TodeCoinsTags.Items.FOX_COIN_SET)
                 .add(ModItems.COPPER_FOX_COIN.get())
                 .add(ModItems.IRON_FOX_COIN.get())
                 .add(ModItems.GOLD_FOX_COIN.get())
                 .add(ModItems.NETHERITE_FOX_COIN.get());
-        tag(ModTags.Items.FROG_COIN_SET)
+        tag(TodeCoinsTags.Items.FROG_COIN_SET)
                 .add(ModItems.COPPER_FROG_COIN.get())
                 .add(ModItems.IRON_FROG_COIN.get())
                 .add(ModItems.GOLD_FROG_COIN.get())
                 .add(ModItems.NETHERITE_FROG_COIN.get());
-        tag(ModTags.Items.HORSE_COIN_SET)
+        tag(TodeCoinsTags.Items.HORSE_COIN_SET)
                 .add(ModItems.COPPER_HORSE_COIN.get())
                 .add(ModItems.IRON_HORSE_COIN.get())
                 .add(ModItems.GOLD_HORSE_COIN.get())
                 .add(ModItems.NETHERITE_HORSE_COIN.get());
-        tag(ModTags.Items.MOOBLOOM_COIN_SET)
+        tag(TodeCoinsTags.Items.MOOBLOOM_COIN_SET)
                 .add(ModItems.COPPER_MOOBLOOM_COIN.get())
                 .add(ModItems.IRON_MOOBLOOM_COIN.get())
                 .add(ModItems.GOLD_MOOBLOOM_COIN.get())
                 .add(ModItems.NETHERITE_MOOBLOOM_COIN.get());
-        tag(ModTags.Items.MOOSHROOM_COIN_SET)
+        tag(TodeCoinsTags.Items.MOOSHROOM_COIN_SET)
                 .add(ModItems.COPPER_MOOSHROOM_COIN.get())
                 .add(ModItems.IRON_MOOSHROOM_COIN.get())
                 .add(ModItems.GOLD_MOOSHROOM_COIN.get())
                 .add(ModItems.NETHERITE_MOOSHROOM_COIN.get());
-        tag(ModTags.Items.MULE_COIN_SET)
+        tag(TodeCoinsTags.Items.MULE_COIN_SET)
                 .add(ModItems.COPPER_MULE_COIN.get())
                 .add(ModItems.IRON_MULE_COIN.get())
                 .add(ModItems.GOLD_MULE_COIN.get())
                 .add(ModItems.NETHERITE_MULE_COIN.get());
-        tag(ModTags.Items.OCELOT_COIN_SET)
+        tag(TodeCoinsTags.Items.OCELOT_COIN_SET)
                 .add(ModItems.COPPER_OCELOT_COIN.get())
                 .add(ModItems.IRON_OCELOT_COIN.get())
                 .add(ModItems.GOLD_OCELOT_COIN.get())
                 .add(ModItems.NETHERITE_OCELOT_COIN.get());
-        tag(ModTags.Items.PIGLIN_COIN_SET)
+        tag(TodeCoinsTags.Items.PIGLIN_COIN_SET)
                 .add(ModItems.COPPER_PIGLIN_COIN.get())
                 .add(ModItems.IRON_PIGLIN_COIN.get())
                 .add(ModItems.GOLD_PIGLIN_COIN.get())
                 .add(ModItems.NETHERITE_PIGLIN_COIN.get());
-        tag(ModTags.Items.PUFFERFISH_COIN_SET)
+        tag(TodeCoinsTags.Items.PUFFERFISH_COIN_SET)
                 .add(ModItems.COPPER_PUFFERFISH_COIN.get())
                 .add(ModItems.IRON_PUFFERFISH_COIN.get())
                 .add(ModItems.GOLD_PUFFERFISH_COIN.get())
                 .add(ModItems.NETHERITE_PUFFERFISH_COIN.get());
-        tag(ModTags.Items.SALMON_COIN_SET)
+        tag(TodeCoinsTags.Items.SALMON_COIN_SET)
                 .add(ModItems.COPPER_SALMON_COIN.get())
                 .add(ModItems.IRON_SALMON_COIN.get())
                 .add(ModItems.GOLD_SALMON_COIN.get())
                 .add(ModItems.NETHERITE_SALMON_COIN.get());
-        tag(ModTags.Items.SKELETON_HORSE_COIN_SET)
+        tag(TodeCoinsTags.Items.SKELETON_HORSE_COIN_SET)
                 .add(ModItems.COPPER_SKELETON_HORSE_COIN.get())
                 .add(ModItems.IRON_SKELETON_HORSE_COIN.get())
                 .add(ModItems.GOLD_SKELETON_HORSE_COIN.get())
                 .add(ModItems.NETHERITE_SKELETON_HORSE_COIN.get());
-        tag(ModTags.Items.TROPICAL_FISH_COIN_SET)
+        tag(TodeCoinsTags.Items.TROPICAL_FISH_COIN_SET)
                 .add(ModItems.COPPER_TROPICAL_FISH_COIN.get())
                 .add(ModItems.IRON_TROPICAL_FISH_COIN.get())
                 .add(ModItems.GOLD_TROPICAL_FISH_COIN.get())
                 .add(ModItems.NETHERITE_TROPICAL_FISH_COIN.get());
-        tag(ModTags.Items.ZOMBIE_HORSE_COIN_SET)
+        tag(TodeCoinsTags.Items.ZOMBIE_HORSE_COIN_SET)
                 .add(ModItems.COPPER_ZOMBIE_HORSE_COIN.get())
                 .add(ModItems.IRON_ZOMBIE_HORSE_COIN.get())
                 .add(ModItems.GOLD_ZOMBIE_HORSE_COIN.get())
                 .add(ModItems.NETHERITE_ZOMBIE_HORSE_COIN.get());
-        tag(ModTags.Items.SHULKER_BOXES)
+        tag(TodeCoinsTags.Items.SHULKER_BOXES)
                 .add(Items.SHULKER_BOX)
                 .add(Items.BLACK_SHULKER_BOX)
                 .add(Items.BLUE_SHULKER_BOX)
@@ -1251,23 +1248,23 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.RED_SHULKER_BOX)
                 .add(Items.WHITE_SHULKER_BOX)
                 .add(Items.YELLOW_SHULKER_BOX);
-        tag(ModTags.Items.BUNDLES)
+        tag(TodeCoinsTags.Items.BUNDLES)
                 .add(Items.BUNDLE)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("bagofholding:leather_bag_of_holding")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("bagofholding:iron_bag_of_holding")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("bagofholding:golden_bag_of_holding")));
-        tag(ModTags.Items.WALLETS)
-                .addTag(ModTags.Items.BUNDLES);
-        tag(ModTags.Items.GEM_CURRENCY)
-                .addTag(ForgeTags.Items.GEM_CURRENCY);
-        tag(ModTags.Items.BANKNOTES)
+        tag(TodeCoinsTags.Items.WALLETS)
+                .addTag(TodeCoinsTags.Items.BUNDLES);
+        tag(TodeCoinsTags.Items.GEM_CURRENCY)
+                .addTag(TodeCoinsTags.Items.GEM_CURRENCY_FORGE_TAG);
+        tag(TodeCoinsTags.Items.BANKNOTES)
                 .add(ModItems.EMERALD_BANK_NOTE.get())
                 .add(ModItems.EMERALD_HALF_BANK_NOTE.get())
                 .add(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
                 .add(ModBlocks.EMERALD_BANK_NOTE_BAG.get().asItem())
                 .add(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get().asItem())
                 .add(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get().asItem());
-        tag(ModTags.Items.COINS)
+        tag(TodeCoinsTags.Items.COINS)
                 .add(ModItems.COPPER_COIN.get())
                 .add(ModItems.IRON_COIN.get())
                 .add(ModItems.GOLD_COIN.get())
@@ -1282,112 +1279,112 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem())
                 .add(ModBlocks.NETHERITE_COIN_BAG.get().asItem())
                 .add(ModBlocks.ENDONIAN_COIN_BAG.get().asItem());
-        tag(ModTags.Items.CURRENCY)
-                .addTag(ModTags.Items.BANKNOTES)
-                .addTag(ModTags.Items.COINS)
-                .addTag(ForgeTags.Items.PIGLIN_BARTER_ITEMS);
-        tag(ModTags.Items.CURRENCY_MATERIALS)
-                .addTag(ModTags.Items.NUGGETS)
-                .addTag(ModTags.Items.INGOTS)
-                .addTag(ModTags.Items.CURRENCY_PAPER);
-        tag(ModTags.Items.CURRENCY_STAMPS)
+        tag(TodeCoinsTags.Items.CURRENCY)
+                .addTag(TodeCoinsTags.Items.BANKNOTES)
+                .addTag(TodeCoinsTags.Items.COINS)
+                .addTag(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS);
+        tag(TodeCoinsTags.Items.CURRENCY_MATERIALS)
+                .addTag(TodeCoinsTags.Items.NUGGETS)
+                .addTag(TodeCoinsTags.Items.INGOTS)
+                .addTag(TodeCoinsTags.Items.CURRENCY_PAPER);
+        tag(TodeCoinsTags.Items.CURRENCY_STAMPS)
                 .add(ModItems.CURRENCY_STAMP.get())
                 .add(ModItems.NETHER_CURRENCY_STAMP.get())
                 .add(ModItems.ENDONIAN_CURRENCY_STAMP.get());
-        tag(ModTags.Items.REFRESH_BOOK)
+        tag(TodeCoinsTags.Items.REFRESH_BOOK)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("villager_enchanter:enchant_refresh_book")));
-        tag(ModTags.Items.BOOKSTACK)
+        tag(TodeCoinsTags.Items.BOOKSTACK)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("beautify:bookstack")));
-        tag(ModTags.Items.PACKAGE_CONTAINERS)
+        tag(TodeCoinsTags.Items.PACKAGE_CONTAINERS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("wares:cardboard_box")));
-        tag(ModTags.Items.TEXTILES)
-                .addTag(ModTags.Items.CURRENCY_FIBER)
-                .addTag(ModTags.Items.CURRENCY_PAPER)
-                .addTag(ModTags.Items.FABRIC)
-                .addTag(ModTags.Items.FIBRE)
-                .addTag(ModTags.Items.THREAD);
-        tag(ModTags.Items.CURRENCY_FIBER)
+        tag(TodeCoinsTags.Items.TEXTILES)
+                .addTag(TodeCoinsTags.Items.CURRENCY_FIBER)
+                .addTag(TodeCoinsTags.Items.CURRENCY_PAPER)
+                .addTag(TodeCoinsTags.Items.FABRIC)
+                .addTag(TodeCoinsTags.Items.FIBRE)
+                .addTag(TodeCoinsTags.Items.THREAD);
+        tag(TodeCoinsTags.Items.CURRENCY_FIBER)
                 .add(Items.PAPER)
                 .add(Items.STRING)
-                .addTag(ForgeTags.Items.FIBRE)
-                .addTag(ForgeTags.Items.BARK)
-                .addTag(ForgeTags.Items.STRING)
-                .addTag(ForgeTags.Items.PAPER);
-        tag(ModTags.Items.CURRENCY_PAPER)
+                .addTag(TodeCoinsTags.Items.FIBRE_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.BARK)
+                .addTag(TodeCoinsTags.Items.STRING)
+                .addTag(TodeCoinsTags.Items.PAPER);
+        tag(TodeCoinsTags.Items.CURRENCY_PAPER)
                 .add(ModItems.EMERALD_COARSE_WOVE_PAPER.get())
                 .add(ModItems.EMERALD_WOVE_PAPER.get())
                 .add(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get());
-        tag(ModTags.Items.FABRIC)
+        tag(TodeCoinsTags.Items.FABRIC)
                 .add(ModItems.LUCKY_FABRIC.get());
-        tag(ModTags.Items.FIBRE)
+        tag(TodeCoinsTags.Items.FIBRE)
                 .add(ModItems.EMERALD_FIBER.get())
                 .add(ModItems.LUCKY_FIBER.get())
                 .add(ModItems.ENDONIAN_FIBER.get())
                 .add(ModItems.ECHO_FIBER.get());
-        tag(ModTags.Items.THREAD)
+        tag(TodeCoinsTags.Items.THREAD)
                 .add(ModItems.EMERALD_THREAD.get())
                 .add(ModItems.LUCKY_THREAD.get())
                 .add(ModItems.ENDONIAN_THREAD.get())
                 .add(ModItems.ECHO_THREAD.get());
-        tag(ModTags.Items.NUGGETS)
-                .addTag(ModTags.Items.COPPER_NUGGET)
-                .addTag(ModTags.Items.IRON_NUGGET)
-                .addTag(ModTags.Items.GOLD_NUGGET)
-                .addTag(ModTags.Items.LUCKY_NUGGET)
-                .addTag(ModTags.Items.NETHERITE_NUGGET)
-                .addTag(ModTags.Items.ENDONIAN_NUGGET);
-        tag(ModTags.Items.COPPER_NUGGET)
+        tag(TodeCoinsTags.Items.NUGGETS)
+                .addTag(TodeCoinsTags.Items.COPPER_NUGGET)
+                .addTag(TodeCoinsTags.Items.IRON_NUGGET)
+                .addTag(TodeCoinsTags.Items.GOLD_NUGGET)
+                .addTag(TodeCoinsTags.Items.LUCKY_NUGGET)
+                .addTag(TodeCoinsTags.Items.NETHERITE_NUGGET)
+                .addTag(TodeCoinsTags.Items.ENDONIAN_NUGGET);
+        tag(TodeCoinsTags.Items.COPPER_NUGGET)
                 .add(ModItems.COPPER_NUGGET.get());
-        tag(ModTags.Items.IRON_NUGGET)
+        tag(TodeCoinsTags.Items.IRON_NUGGET)
                 .add(Items.IRON_NUGGET);
-        tag(ModTags.Items.GOLD_NUGGET)
+        tag(TodeCoinsTags.Items.GOLD_NUGGET)
                 .add(Items.GOLD_NUGGET);
-        tag(ModTags.Items.LUCKY_NUGGET)
+        tag(TodeCoinsTags.Items.LUCKY_NUGGET)
                 .add(ModItems.LUCKY_NUGGET.get());
-        tag(ModTags.Items.NETHERITE_NUGGET)
+        tag(TodeCoinsTags.Items.NETHERITE_NUGGET)
                 .add(ModItems.NETHERITE_NUGGET.get());
-        tag(ModTags.Items.ENDONIAN_NUGGET)
+        tag(TodeCoinsTags.Items.ENDONIAN_NUGGET)
                 .add(ModItems.ENDONIAN_NUGGET.get());
-        tag(ModTags.Items.INGOTS)
-                .addTag(ForgeTags.Items.COPPER_INGOT)
-                .addTag(ForgeTags.Items.IRON_INGOT)
-                .addTag(ForgeTags.Items.GOLD_INGOT)
-                .addTag(ForgeTags.Items.NETHERITE_INGOT)
-                .addTag(ForgeTags.Items.ENDONIAN_INGOT);
-        tag(ModTags.Items.COPPER_INGOT)
+        tag(TodeCoinsTags.Items.INGOTS)
+                .addTag(TodeCoinsTags.Items.COPPER_INGOT_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.IRON_INGOT_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.GOLD_INGOT_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.NETHERITE_INGOT_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.ENDONIAN_INGOT_FORGE_TAG);
+        tag(TodeCoinsTags.Items.COPPER_INGOT)
                 .add(Items.COPPER_INGOT);
-        tag(ModTags.Items.IRON_INGOT)
+        tag(TodeCoinsTags.Items.IRON_INGOT)
                 .add(Items.IRON_INGOT);
-        tag(ModTags.Items.GOLD_INGOT)
+        tag(TodeCoinsTags.Items.GOLD_INGOT)
                 .add(Items.GOLD_INGOT);
-        tag(ModTags.Items.NETHERITE_INGOT)
+        tag(TodeCoinsTags.Items.NETHERITE_INGOT)
                 .add(Items.NETHERITE_INGOT);
-        tag(ModTags.Items.ENDONIAN_INGOT)
+        tag(TodeCoinsTags.Items.ENDONIAN_INGOT)
                 .add(ModItems.ENDONIAN_INGOT.get());
-        tag(ModTags.Items.IRON_MATERIALS)
+        tag(TodeCoinsTags.Items.IRON_MATERIALS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:crushed_raw_iron")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:iron_sheet")));
-        tag(ModTags.Items.COPPER_MATERIALS)
+        tag(TodeCoinsTags.Items.COPPER_MATERIALS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:crushed_raw_copper")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:copper_casing")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:copper_sheet")));
-        tag(ModTags.Items.GOGGLES)
+        tag(TodeCoinsTags.Items.GOGGLES)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:goggles")));
-        tag(ModTags.Items.ZINC_MATERIALS)
+        tag(TodeCoinsTags.Items.ZINC_MATERIALS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:raw_zinc")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:crushed_raw_zinc")));
-        tag(ModTags.Items.TRAIN_EQUIPMENT)
+        tag(TodeCoinsTags.Items.TRAIN_EQUIPMENT)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:sturdy_sheet")))
                 .addOptional(Objects.requireNonNull(
@@ -1414,7 +1411,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("create:steam_whistle")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:train_door")));
-        tag(ModTags.Items.MINING_EQUIPMENT)
+        tag(TodeCoinsTags.Items.MINING_EQUIPMENT)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:rope_pulley")))
                 .addOptional(Objects.requireNonNull(
@@ -1429,7 +1426,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("create:encased_fan")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:mechanical_drill")));
-        tag(ModTags.Items.MECHANICAL_EQUIPMENT)
+        tag(TodeCoinsTags.Items.MECHANICAL_EQUIPMENT)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:mechanical_crafter")))
                 .addOptional(Objects.requireNonNull(
@@ -1462,7 +1459,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("create:windmill_bearing")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:mechanical_bearing")));
-        tag(ModTags.Items.HYDRAULIC_EQUIPMENT)
+        tag(TodeCoinsTags.Items.HYDRAULIC_EQUIPMENT)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:large_water_wheel")))
                 .addOptional(Objects.requireNonNull(
@@ -1479,24 +1476,24 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("create:fluid_tank")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:fluid_pipe")));
-        tag(ModTags.Items.COPPER_DIVING_GEAR)
+        tag(TodeCoinsTags.Items.COPPER_DIVING_GEAR)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:copper_backtank")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:copper_diving_boots")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:copper_diving_helmet")));
-        tag(ModTags.Items.CREATE_INGOTS)
+        tag(TodeCoinsTags.Items.CREATE_INGOTS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:andesite_alloy")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:zinc_ingot")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:brass_ingot")));
-        tag(ModTags.Items.TOOLS_WRENCH)
+        tag(TodeCoinsTags.Items.TOOLS_WRENCH)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:wrench")));
-        tag(ModTags.Items.ENGINEER_TOOLS)
+        tag(TodeCoinsTags.Items.ENGINEER_TOOLS)
                 .addOptionalTag(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:toolboxes")))
                 .addOptional(Objects.requireNonNull(
@@ -1504,21 +1501,21 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("create:speedometer")));
 
-        tag(ModTags.Items.PIGLIN_MERCHANT_RARE_GOODS)
+        tag(TodeCoinsTags.Items.PIGLIN_MERCHANT_RARE_GOODS)
                 .add(MUSIC_DISC_PIGSTEP)
                 .add(NETHERITE_SCRAP)
                 .add(ANCIENT_DEBRIS.asItem());
-        tag(ModTags.Items.PIGLIN_MERCHANT_UNCOMMON_GOODS)
+        tag(TodeCoinsTags.Items.PIGLIN_MERCHANT_UNCOMMON_GOODS)
                 .add(FIRE_CHARGE)
                 .add(MAGMA_CREAM)
                 .add(ENDER_PEARL);
-        tag(ModTags.Items.PIGLIN_MERCHANT_COMMON_GOODS)
-                .addTag(ModTags.Items.NETHER_BLOCKS)
+        tag(TodeCoinsTags.Items.PIGLIN_MERCHANT_COMMON_GOODS)
+                .addTag(TodeCoinsTags.Items.NETHER_BLOCKS)
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:rose_quartz")))
                 .add(IRON_INGOT)
                 .add(GLOWSTONE_DUST)
                 .add(QUARTZ);
-        tag(ModTags.Items.PIGLIN_MERCHANT_CHEAP_GOODS)
+        tag(TodeCoinsTags.Items.PIGLIN_MERCHANT_CHEAP_GOODS)
                 .add(NETHER_BRICK)
                 .add(LEATHER)
                 .add(WARPED_ROOTS)
@@ -1527,7 +1524,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(WEEPING_VINES)
                 .add(STRING);
 
-        tag(ModTags.Items.NETHER_BLOCKS)
+        tag(TodeCoinsTags.Items.NETHER_BLOCKS)
                 .add(WARPED_WART_BLOCK)
                 .add(NETHER_WART_BLOCK)
                 .add(WARPED_STEM)
@@ -1543,14 +1540,14 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Block.byItem(NETHERRACK).asItem())
                 .add(Block.byItem(GRAVEL).asItem())
                 .add(Block.byItem(BLACKSTONE).asItem());
-        tag(ModTags.Items.FUNGUS)
+        tag(TodeCoinsTags.Items.FUNGUS)
                 .add(Block.byItem(SHROOMLIGHT).asItem())
                 .add(Items.WARPED_FUNGUS)
                 .add(Items.CRIMSON_FUNGUS)
                 .add(Items.BROWN_MUSHROOM)
                 .add(Items.RED_MUSHROOM);
 
-        tag(ModTags.Items.PIGLIN_MERCHANT_FOOD)
+        tag(TodeCoinsTags.Items.PIGLIN_MERCHANT_FOOD)
                 .add(APPLE)
                 .add(GOLDEN_APPLE)
                 .add(ENCHANTED_GOLDEN_APPLE)
@@ -1558,9 +1555,9 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(GOLDEN_CARROT)
                 .add(POTATO)
                 .add(BEETROOT)
-                .addTag(ModTags.Items.PIGLIN_FOOD);
+                .addTag(TodeCoinsTags.Items.PIGLIN_FOOD);
 
-        tag(ModTags.Items.PIGLIN_FOOD)
+        tag(TodeCoinsTags.Items.PIGLIN_FOOD)
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("fastfooddelight:pork_sandwich")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:honey_glazed_ham")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:bacon_sandwich")))
@@ -1574,25 +1571,25 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:plate_of_stuffed_hoglin_ham")))
                 .addOptionalTag(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:plate_of_stuffed_hoglin_snout")));
 
-        tag(ModTags.Items.PIGLIN_LOVED)
-                .addTag(ModTags.Items.PIGLIN_BARTER_ITEMS);
-        tag(ModTags.Items.PIGLIN_WANTED_ITEMS)
-                .addTag(ModTags.Items.PIGLIN_LOVED)
-                .addTag(ModTags.Items.PIGLIN_MERCHANT_FOOD)
-                .addTag(ModTags.Items.PIGLIN_BARTER_ITEMS);
-        tag(ModTags.Items.PIGLIN_BARTER_ITEMS)
+        tag(TodeCoinsTags.Items.PIGLIN_LOVED)
+                .addTag(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS);
+        tag(TodeCoinsTags.Items.PIGLIN_WANTED_ITEMS)
+                .addTag(TodeCoinsTags.Items.PIGLIN_LOVED)
+                .addTag(TodeCoinsTags.Items.PIGLIN_MERCHANT_FOOD)
+                .addTag(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS);
+        tag(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("todecoins:nether_gold_coin")));
     }
 
     private void registerForgeTags() {
-        tag(ForgeTags.Items.ENCHANTABLE_PET_GEAR)
+        tag(TodeCoinsTags.Items.ENCHANTABLE_PET_GEAR)
                 .add(Items.DIAMOND_HORSE_ARMOR)
                 .add(Items.GOLDEN_HORSE_ARMOR)
                 .add(Items.IRON_HORSE_ARMOR)
                 .add(Items.LEATHER_HORSE_ARMOR)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("domesticationinnovation:collar_tag")));
-        tag(ForgeTags.Items.PET_SUPPLIES)
+        tag(TodeCoinsTags.Items.PET_SUPPLIES)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("domesticationinnovation:feather_on_a_stick")))
                 .addOptional(Objects.requireNonNull(
@@ -1611,7 +1608,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.WARPED_FUNGUS_ON_A_STICK)
                 .add(Items.CARROT_ON_A_STICK)
                 .add(Items.SADDLE);
-        tag(ForgeTags.Items.PET_FOOD)
+        tag(TodeCoinsTags.Items.PET_FOOD)
                 .add(Items.TROPICAL_FISH)
                 .add(Items.BONE)
                 .add(Items.CARROT)
@@ -1619,7 +1616,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.HAY_BLOCK)
                 .add(Items.SPIDER_EYE)
                 .addTag(ItemTags.FOX_FOOD)
-                .addTag(ForgeTags.Items.RAW_MEATS)
+                .addTag(TodeCoinsTags.Items.RAW_MEATS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("domesticationinnovation:rotten_apple")))
                 .addOptional(Objects.requireNonNull(
@@ -1628,59 +1625,59 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("farmersdelight:horse_feed")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("supplementaries:sugar_cube")));
-        tag(ForgeTags.Items.INGREDIENTS)
+        tag(TodeCoinsTags.Items.INGREDIENTS)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.PIE_CRUST.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.TOMATO_SAUCE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.WHEAT_DOUGH.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.RAW_PASTA.get())
                 .addTag(Tags.Items.EGGS)
-                .addTag(ForgeTags.Items.CROPS)
-                .addTag(ForgeTags.Items.COCOA_INGREDIENTS)
-                .addTag(ForgeTags.Items.MILK_BOTTLES)
-                .addTag(ForgeTags.Items.MILK)
-                .addTag(ForgeTags.Items.COOKED_FISHES)
-                .addTag(ForgeTags.Items.RAW_FISHES)
-                .addTag(ForgeTags.Items.COOKED_MEATS)
-                .addTag(ForgeTags.Items.RAW_MEATS)
-                .addTag(ForgeTags.Items.BREAD);
-        tag(ForgeTags.Items.DYEABLE_BOOTS)
+                .addTag(TodeCoinsTags.Items.CROPS)
+                .addTag(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                .addTag(TodeCoinsTags.Items.MILK_BOTTLES)
+                .addTag(TodeCoinsTags.Items.MILK)
+                .addTag(TodeCoinsTags.Items.COOKED_FISHES)
+                .addTag(TodeCoinsTags.Items.RAW_FISHES)
+                .addTag(TodeCoinsTags.Items.COOKED_MEATS)
+                .addTag(TodeCoinsTags.Items.RAW_MEATS)
+                .addTag(TodeCoinsTags.Items.BREAD);
+        tag(TodeCoinsTags.Items.DYEABLE_BOOTS)
                 .add(Items.LEATHER_BOOTS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("sewingkit:wool_shoes")));
-        tag(ForgeTags.Items.DYEABLE_LEGGINGS)
+        tag(TodeCoinsTags.Items.DYEABLE_LEGGINGS)
                 .add(Items.LEATHER_LEGGINGS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("sewingkit:wool_pants")));
-        tag(ForgeTags.Items.DYEABLE_CHESTPLATES)
+        tag(TodeCoinsTags.Items.DYEABLE_CHESTPLATES)
                 .add(Items.LEATHER_CHESTPLATE)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("sewingkit:wool_shirt")));
-        tag(ForgeTags.Items.DYEABLE_HELMETS)
+        tag(TodeCoinsTags.Items.DYEABLE_HELMETS)
                 .add(Items.LEATHER_HELMET)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("sewingkit:wool_hat")));
-        tag(ForgeTags.Items.GLASSBLOWER_TOOLS)
+        tag(TodeCoinsTags.Items.GLASSBLOWER_TOOLS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("todevillagers:marver")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("todevillagers:glassblowing_pipe")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("todevillagers:glassblower_shears")));
-        tag(ForgeTags.Items.RECYCLABLE_GLASS)
+        tag(TodeCoinsTags.Items.RECYCLABLE_GLASS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("todevillagers:crushed_glass")));
-        tag(ForgeTags.Items.CORAL_BLOCKS)
+        tag(TodeCoinsTags.Items.CORAL_BLOCKS)
                 .add(Items.TUBE_CORAL_BLOCK)
                 .add(Items.HORN_CORAL_BLOCK)
                 .add(Items.FIRE_CORAL_BLOCK)
                 .add(Items.BUBBLE_CORAL_BLOCK)
                 .add(Items.BRAIN_CORAL_BLOCK);
-        tag(ForgeTags.Items.SAND)
+        tag(TodeCoinsTags.Items.SAND)
                 .add(Items.SAND)
                 .add(Items.RED_SAND);
-        tag(ForgeTags.Items.SLIMEBALLS)
+        tag(TodeCoinsTags.Items.SLIMEBALLS)
                 .add(Items.SLIME_BALL);
-        tag(ForgeTags.Items.DYES)
+        tag(TodeCoinsTags.Items.DYES)
                 .add(Items.GRAY_DYE)
                 .add(Items.GREEN_DYE)
                 .add(Items.BLACK_DYE)
@@ -1697,7 +1694,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.RED_DYE)
                 .add(Items.WHITE_DYE)
                 .add(Items.YELLOW_DYE);
-        tag(ForgeTags.Items.GLAZED_TERRACOTTA)
+        tag(TodeCoinsTags.Items.GLAZED_TERRACOTTA)
                 .add(Items.GRAY_GLAZED_TERRACOTTA)
                 .add(Items.GREEN_GLAZED_TERRACOTTA)
                 .add(Items.BLACK_GLAZED_TERRACOTTA)
@@ -1714,43 +1711,43 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.RED_GLAZED_TERRACOTTA)
                 .add(Items.WHITE_GLAZED_TERRACOTTA)
                 .add(Items.YELLOW_GLAZED_TERRACOTTA);
-        tag(ForgeTags.Items.GUIDE_BOOKS)
+        tag(TodeCoinsTags.Items.GUIDE_BOOKS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("patchouli:guide_book")));
-        tag(ForgeTags.Items.INK)
+        tag(TodeCoinsTags.Items.INK)
                 .add(Items.INK_SAC)
                 .add(Items.GLOW_INK_SAC);
-        tag(ForgeTags.Items.RODS)
-                .addTag(ModTags.Items.STICKS);
-        tag(ForgeTags.Items.QUIVERS)
+        tag(TodeCoinsTags.Items.RODS)
+                .addTag(TodeCoinsTags.Items.STICKS);
+        tag(TodeCoinsTags.Items.QUIVERS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("supplementaries:quivers")));
-        tag(ForgeTags.Items.CRAB_TRAP)
+        tag(TodeCoinsTags.Items.CRAB_TRAP)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:crab_trap")));
-        tag(ForgeTags.Items.SUSHI)
+        tag(TodeCoinsTags.Items.SUSHI)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:fugu_roll")))
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL.getId())
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.SALMON_ROLL.getId())
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.COD_ROLL.getId());
-        tag(ForgeTags.Items.COOKED_FISHES)
+        tag(TodeCoinsTags.Items.COOKED_FISHES)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:stuffed_nautilus_shell")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:fish_stick")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:surf_and_turf")))
-                .addTag(ForgeTags.Items.COOKED_ELDER_GUARDIAN)
-                .addTag(ForgeTags.Items.COOKED_GUARDIAN)
-                .addTag(ForgeTags.Items.COOKED_CLAWSTER)
-                .addTag(ForgeTags.Items.COOKED_SHRIMP)
-                .addTag(ForgeTags.Items.COOKED_CLAM)
-                .addTag(ForgeTags.Items.COOKED_CRAB)
-                .addTag(ForgeTags.Items.COOKED_SQUID)
-                .addTag(ForgeTags.Items.COOKED_GLOW_SQUID);
-        tag(ForgeTags.Items.COOKED_ELDER_GUARDIAN)
-                .addTag(ForgeTags.Items.COOKED_GUARDIAN)
+                .addTag(TodeCoinsTags.Items.COOKED_ELDER_GUARDIAN)
+                .addTag(TodeCoinsTags.Items.COOKED_GUARDIAN)
+                .addTag(TodeCoinsTags.Items.COOKED_CLAWSTER)
+                .addTag(TodeCoinsTags.Items.COOKED_SHRIMP)
+                .addTag(TodeCoinsTags.Items.COOKED_CLAM)
+                .addTag(TodeCoinsTags.Items.COOKED_CRAB)
+                .addTag(TodeCoinsTags.Items.COOKED_SQUID)
+                .addTag(TodeCoinsTags.Items.COOKED_GLOW_SQUID);
+        tag(TodeCoinsTags.Items.COOKED_ELDER_GUARDIAN)
+                .addTag(TodeCoinsTags.Items.COOKED_GUARDIAN)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:cabbage_wrapped_elder_guardian")))
                 .addOptional(Objects.requireNonNull(
@@ -1759,112 +1756,112 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("oceansdelight:elder_guardian_roll")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:bowl_of_guardian_soup")));
-        tag(ForgeTags.Items.COOKED_GUARDIAN)
+        tag(TodeCoinsTags.Items.COOKED_GUARDIAN)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:cooked_guardian_tail")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:bowl_of_guardian_soup")));
-        tag(ForgeTags.Items.COOKED_CLAWSTER)
+        tag(TodeCoinsTags.Items.COOKED_CLAWSTER)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:cooked_clawster")));
-        tag(ForgeTags.Items.COOKED_SHRIMP)
+        tag(TodeCoinsTags.Items.COOKED_SHRIMP)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:shrimp_skewer")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:cooked_shrimp")));
-        tag(ForgeTags.Items.COOKED_CLAM)
+        tag(TodeCoinsTags.Items.COOKED_CLAM)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:clam_bake")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:cooked_clam_meat")));
-        tag(ForgeTags.Items.COOKED_CRAB)
+        tag(TodeCoinsTags.Items.COOKED_CRAB)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("ecologics:crab_meat")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:crab_cakes")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:cooked_crab")));
-        tag(ForgeTags.Items.COOKED_SQUID)
+        tag(TodeCoinsTags.Items.COOKED_SQUID)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:squid_rings")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:baked_tentacle_on_a_stick")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("miners_delight:bowl_of_stuffed_squid")));
-        tag(ForgeTags.Items.COOKED_GLOW_SQUID)
+        tag(TodeCoinsTags.Items.COOKED_GLOW_SQUID)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:squid_rings")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:baked_tentacle_on_a_stick")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("miners_delight:bowl_of_stuffed_squid")));
-        tag(ForgeTags.Items.COOKED_TROPICAL_FISH)
+        tag(TodeCoinsTags.Items.COOKED_TROPICAL_FISH)
                 .add(Items.TROPICAL_FISH)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:cooked_tropical_fish")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:cooked_tropical_fish_slice")));
-        tag(ForgeTags.Items.COOKED_COD)
+        tag(TodeCoinsTags.Items.COOKED_COD)
                 .add(Items.COOKED_COD)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:cooked_stuffed_cod")))
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.COOKED_COD_SLICE.getId());
-        tag(ForgeTags.Items.COOKED_SALMON)
+        tag(TodeCoinsTags.Items.COOKED_SALMON)
                 .add(Items.COOKED_SALMON)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.COOKED_SALMON_SLICE.getId());
-        tag(ForgeTags.Items.RAW_FISHES)
-                .addTag(ForgeTags.Items.RAW_TROPICAL_FISH)
-                .addTag(ForgeTags.Items.RAW_PUFFERFISH)
-                .addTag(ForgeTags.Items.RAW_COD)
-                .addTag(ForgeTags.Items.RAW_SALMON)
-                .addTag(ForgeTags.Items.RAW_ELDER_GUARDIAN)
-                .addTag(ForgeTags.Items.RAW_GUARDIAN)
-                .addTag(ForgeTags.Items.RAW_CLAWSTER)
-                .addTag(ForgeTags.Items.RAW_SHRIMP)
-                .addTag(ForgeTags.Items.RAW_CLAM)
-                .addTag(ForgeTags.Items.RAW_CRAB)
-                .addTag(ForgeTags.Items.RAW_SQUID)
-                .addTag(ForgeTags.Items.RAW_GLOW_SQUID);
-        tag(ForgeTags.Items.RAW_PUFFERFISH)
+        tag(TodeCoinsTags.Items.RAW_FISHES)
+                .addTag(TodeCoinsTags.Items.RAW_TROPICAL_FISH)
+                .addTag(TodeCoinsTags.Items.RAW_PUFFERFISH)
+                .addTag(TodeCoinsTags.Items.RAW_COD)
+                .addTag(TodeCoinsTags.Items.RAW_SALMON)
+                .addTag(TodeCoinsTags.Items.RAW_ELDER_GUARDIAN)
+                .addTag(TodeCoinsTags.Items.RAW_GUARDIAN)
+                .addTag(TodeCoinsTags.Items.RAW_CLAWSTER)
+                .addTag(TodeCoinsTags.Items.RAW_SHRIMP)
+                .addTag(TodeCoinsTags.Items.RAW_CLAM)
+                .addTag(TodeCoinsTags.Items.RAW_CRAB)
+                .addTag(TodeCoinsTags.Items.RAW_SQUID)
+                .addTag(TodeCoinsTags.Items.RAW_GLOW_SQUID);
+        tag(TodeCoinsTags.Items.RAW_PUFFERFISH)
                 .add(Items.PUFFERFISH)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:fugu_slice")));
-        tag(ForgeTags.Items.RAW_TROPICAL_FISH)
+        tag(TodeCoinsTags.Items.RAW_TROPICAL_FISH)
                 .add(Items.TROPICAL_FISH)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:tropical_fish_slice")));
-        tag(ForgeTags.Items.RAW_COD)
+        tag(TodeCoinsTags.Items.RAW_COD)
                 .add(Items.COD)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.COD_SLICE.getId());
-        tag(ForgeTags.Items.RAW_SALMON)
+        tag(TodeCoinsTags.Items.RAW_SALMON)
                 .add(Items.SALMON)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.SALMON_SLICE.getId());
-        tag(ForgeTags.Items.RAW_ELDER_GUARDIAN)
-                .addTag(ForgeTags.Items.RAW_GUARDIAN)
+        tag(TodeCoinsTags.Items.RAW_ELDER_GUARDIAN)
+                .addTag(TodeCoinsTags.Items.RAW_GUARDIAN)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:elder_guardian_slice")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:elder_guardian_slab")));
-        tag(ForgeTags.Items.RAW_GUARDIAN)
+        tag(TodeCoinsTags.Items.RAW_GUARDIAN)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:guardian_tail")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:guardian")));
-        tag(ForgeTags.Items.RAW_CLAWSTER)
+        tag(TodeCoinsTags.Items.RAW_CLAWSTER)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:raw_clawster")));
-        tag(ForgeTags.Items.RAW_SHRIMP)
+        tag(TodeCoinsTags.Items.RAW_SHRIMP)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:raw_shrimp")));
-        tag(ForgeTags.Items.RAW_CLAM)
+        tag(TodeCoinsTags.Items.RAW_CLAM)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:raw_clam_meat")));
-        tag(ForgeTags.Items.RAW_CRAB)
+        tag(TodeCoinsTags.Items.RAW_CRAB)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("ecologics:crab_claw")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("crabbersdelight:raw_crab")));
-        tag(ForgeTags.Items.RAW_SQUID)
+        tag(TodeCoinsTags.Items.RAW_SQUID)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:cut_tentacles")))
                 .addOptional(Objects.requireNonNull(
@@ -1873,7 +1870,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("miners_delight:tentacles")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:squid")));
-        tag(ForgeTags.Items.RAW_GLOW_SQUID)
+        tag(TodeCoinsTags.Items.RAW_GLOW_SQUID)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("oceansdelight:cut_tentacles")))
                 .addOptional(Objects.requireNonNull(
@@ -1882,15 +1879,15 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("miners_delight:tentacles")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("miners_delight:glow_squid")));
-        tag(ForgeTags.Items.DESSERTS)
+        tag(TodeCoinsTags.Items.DESSERTS)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.CAKE_SLICE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.APPLE_PIE_SLICE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.SWEET_BERRY_CHEESECAKE_SLICE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.CHOCOLATE_PIE_SLICE.get())
-                .addTag(ForgeTags.Items.COOKIES)
+                .addTag(TodeCoinsTags.Items.COOKIES_FORGE_TAG)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.MELON_POPSICLE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.GLOW_BERRY_CUSTARD.get());
-        tag(ForgeTags.Items.PLATED_FOODS)
+        tag(TodeCoinsTags.Items.PLATED_FOODS)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.SHEPHERDS_PIE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.HONEY_GLAZED_HAM.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.STUFFED_PUMPKIN.get())
@@ -1908,12 +1905,12 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(vectorwing.farmersdelight.common.registry.ModItems.FRIED_RICE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.BACON_AND_EGGS.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.PASTA_WITH_MEATBALLS.get());
-        tag(ForgeTags.Items.DRINKS)
+        tag(TodeCoinsTags.Items.DRINKS)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.MELON_JUICE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.APPLE_CIDER.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.HOT_COCOA.get());
-        tag(ForgeTags.Items.FAST_FOOD_DESSERTS)
+        tag(TodeCoinsTags.Items.FAST_FOOD_DESSERTS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:fruit_ice_cream")))
                 .addOptional(Objects.requireNonNull(
@@ -1922,7 +1919,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("fastfooddelight:chocolate_ice_cream")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:ice_cream")));
-        tag(ForgeTags.Items.KAWAII_DESSERTS)
+        tag(TodeCoinsTags.Items.KAWAII_DESSERTS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("kawaiidishes:milk_chocolate_bar")))
                 .addOptional(Objects.requireNonNull(
@@ -1977,7 +1974,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("kawaiidishes:honey_cookie")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("kawaiidishes:golden_cookie")));
-        tag(ForgeTags.Items.FAST_FOOD_DRINKS)
+        tag(TodeCoinsTags.Items.FAST_FOOD_DRINKS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:iced_tea")))
                 .addOptional(Objects.requireNonNull(
@@ -1988,7 +1985,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("fastfooddelight:orange_soda")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:cola_soda")));
-        tag(ForgeTags.Items.KAWAII_DRINKS)
+        tag(TodeCoinsTags.Items.KAWAII_DRINKS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("kawaiidishes:expresso_coffee")))
                 .addOptional(Objects.requireNonNull(
@@ -2003,14 +2000,14 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("kawaiidishes:doppio_coffee")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("kawaiidishes:cappuccino_coffee")));
-        tag(ForgeTags.Items.KAWAII_CUPS)
+        tag(TodeCoinsTags.Items.KAWAII_CUPS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("kawaiidishes:mug")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("kawaiidishes:glass_cup")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("kawaiidishes:milkshake_cup")));
-        tag(ForgeTags.Items.FAST_FOOD_SANDWICHES)
+        tag(TodeCoinsTags.Items.FAST_FOOD_SANDWICHES)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:chicken_wrap")))
                 .addOptional(Objects.requireNonNull(
@@ -2029,7 +2026,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("fastfooddelight:salmon_sandwich")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:pork_sandwich")));
-        tag(ForgeTags.Items.FAST_FOOD_SIDE_DISHES)
+        tag(TodeCoinsTags.Items.FAST_FOOD_SIDE_DISHES)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:apple_sauce")))
                 .addOptional(Objects.requireNonNull(
@@ -2040,7 +2037,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("fastfooddelight:carrot_fries")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("fastfooddelight:french_fries")));
-        tag(ForgeTags.Items.SIDE_DISHES)
+        tag(TodeCoinsTags.Items.SIDE_DISHES)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.SALMON_ROLL.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.COD_ROLL.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.KELP_ROLL.get())
@@ -2051,13 +2048,13 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(vectorwing.farmersdelight.common.registry.ModItems.MIXED_SALAD.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.NETHER_SALAD.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.BARBECUE_STICK.get());
-        tag(ForgeTags.Items.SANDWICHES)
+        tag(TodeCoinsTags.Items.SANDWICHES)
                 .add(vectorwing.farmersdelight.common.registry.ModItems.MUTTON_WRAP.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.HAMBURGER.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.EGG_SANDWICH.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.CHICKEN_SANDWICH.get())
                 .add(vectorwing.farmersdelight.common.registry.ModItems.BACON_SANDWICH.get());
-        tag(ForgeTags.Items.CAKES)
+        tag(TodeCoinsTags.Items.CAKES)
                 .add(Items.CAKE)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.SWEET_BERRY_CHEESECAKE.getId())
                 .addOptional(Objects.requireNonNull(
@@ -2068,7 +2065,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                         ResourceLocation.tryParse("kawaiidishes:chocolate_cheesecake")))
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("kawaiidishes:cheesecake")));
-        tag(ForgeTags.Items.COOKIES)
+        tag(TodeCoinsTags.Items.COOKIES_FORGE_TAG)
                 .add(Items.COOKIE)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:chocolate_cookie")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:sweet_berry_cookie")))
@@ -2082,20 +2079,20 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("festive_delight:gingerbread_cookie_star")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("festive_delight:gingerbread_cookie_creeper")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("festive_delight:gingerbread_cookie_block")));
-        tag(ForgeTags.Items.PIES)
+        tag(TodeCoinsTags.Items.PIES)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.CHOCOLATE_PIE.getId())
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.APPLE_PIE.getId())
                 .add(Items.PUMPKIN_PIE);
-        tag(ForgeTags.Items.GOURDS)
+        tag(TodeCoinsTags.Items.GOURDS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:cantaloupe")))
                 .add(Items.PUMPKIN)
                 .add(Items.MELON);
-        tag(ForgeTags.Items.KAWAII_COFFEE_INGREDIENTS)
+        tag(TodeCoinsTags.Items.KAWAII_COFFEE_INGREDIENTS)
                 .add(Items.SUGAR)
                 .add(Items.COCOA_BEANS)
                 .add(Items.HONEY_BOTTLE)
-                .addTag(ForgeTags.Items.MILK)
-                .addTag(ForgeTags.Items.BERRIES)
+                .addTag(TodeCoinsTags.Items.MILK)
+                .addTag(TodeCoinsTags.Items.BERRIES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:cream_cheese")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:roasted_coffee_beans")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:roasted_cocoa_beans")))
@@ -2104,7 +2101,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:coffee_fruit")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:coffee_powder")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:cocoa_powder")));
-        tag(ForgeTags.Items.BREAD)
+        tag(TodeCoinsTags.Items.BREAD)
                 .add(Items.BREAD)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tofucraft:steamed_bread")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tofucraft:steamed_bread")))
@@ -2112,21 +2109,21 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tofucraft:apricotjerry_bread")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("hauntedharvest:cornbread")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("farmersrespite:nether_wart_sourdough")));
-        tag(ForgeTags.Items.CROPS)
-                .addTag(ForgeTags.Items.CROPS_FRUIT)
-                .addTag(ForgeTags.Items.CROPS_GRAINS)
-                .addTag(ForgeTags.Items.CROPS_VEGETABLES)
-                .addTag(ForgeTags.Items.CROPS_WHEAT)
-                .addTag(ForgeTags.Items.CROPS_POTATO)
-                .addTag(ForgeTags.Items.CROPS_CARROTS)
-                .addTag(ForgeTags.Items.CROPS_BEETROOT)
-                .addTag(ForgeTags.Items.CROPS_CABBAGE)
-                .addTag(ForgeTags.Items.CROPS_ONION)
-                .addTag(ForgeTags.Items.CROPS_RICE)
-                .addTag(ForgeTags.Items.CROPS_TOMATO)
-                .addTag(ForgeTags.Items.CROPS_FLAX)
-                .addTag(ForgeTags.Items.CROPS_CORN);
-        tag(ForgeTags.Items.SEEDS)
+        tag(TodeCoinsTags.Items.CROPS)
+                .addTag(TodeCoinsTags.Items.CROPS_FRUIT)
+                .addTag(TodeCoinsTags.Items.CROPS_GRAINS)
+                .addTag(TodeCoinsTags.Items.CROPS_VEGETABLES)
+                .addTag(TodeCoinsTags.Items.CROPS_WHEAT)
+                .addTag(TodeCoinsTags.Items.CROPS_POTATO)
+                .addTag(TodeCoinsTags.Items.CROPS_CARROTS)
+                .addTag(TodeCoinsTags.Items.CROPS_BEETROOT)
+                .addTag(TodeCoinsTags.Items.CROPS_CABBAGE)
+                .addTag(TodeCoinsTags.Items.CROPS_ONION)
+                .addTag(TodeCoinsTags.Items.CROPS_RICE)
+                .addTag(TodeCoinsTags.Items.CROPS_TOMATO)
+                .addTag(TodeCoinsTags.Items.CROPS_FLAX)
+                .addTag(TodeCoinsTags.Items.CROPS_CORN);
+        tag(TodeCoinsTags.Items.SEEDS)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("snowyspirit:ginger")))
                 .addOptional(Objects.requireNonNull(
@@ -2147,62 +2144,62 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.POTATO)
                 .add(Items.BEETROOT_SEEDS)
                 .add(Items.WHEAT_SEEDS);
-        tag(ForgeTags.Items.CROPS_FRUIT)
-                .addTag(ForgeTags.Items.BERRIES)
-                .addTag(ForgeTags.Items.CROPS_APPLES);
-        tag(ForgeTags.Items.BERRIES)
+        tag(TodeCoinsTags.Items.CROPS_FRUIT)
+                .addTag(TodeCoinsTags.Items.BERRIES)
+                .addTag(TodeCoinsTags.Items.CROPS_APPLES);
+        tag(TodeCoinsTags.Items.BERRIES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:salmonberries")))
                 .add(Items.SWEET_BERRIES)
                 .add(Items.GLOW_BERRIES)
                 .addTag(ItemTags.FOX_FOOD);
-        tag(ForgeTags.Items.CROPS_APPLES)
+        tag(TodeCoinsTags.Items.CROPS_APPLES)
                 .add(Items.APPLE);
-        tag(ForgeTags.Items.CROPS_GRAINS)
-                .addTag(ForgeTags.Items.CROPS_WHEAT)
-                .addTag(ForgeTags.Items.CROPS_RICE)
-                .addTag(ForgeTags.Items.CROPS_FLAX)
-                .addTag(ForgeTags.Items.CROPS_CORN);
-        tag(ForgeTags.Items.CROPS_VEGETABLES)
-                .addTag(ForgeTags.Items.CROPS_TOMATO)
-                .addTag(ForgeTags.Items.CROPS_TOMATO)
-                .addTag(ForgeTags.Items.CROPS_CARROTS)
-                .addTag(ForgeTags.Items.CROPS_BEETROOT)
-                .addTag(ForgeTags.Items.CROPS_CABBAGE)
-                .addTag(ForgeTags.Items.CROPS_ONION);
-        tag(ForgeTags.Items.CROPS_CORN)
+        tag(TodeCoinsTags.Items.CROPS_GRAINS)
+                .addTag(TodeCoinsTags.Items.CROPS_WHEAT)
+                .addTag(TodeCoinsTags.Items.CROPS_RICE)
+                .addTag(TodeCoinsTags.Items.CROPS_FLAX)
+                .addTag(TodeCoinsTags.Items.CROPS_CORN);
+        tag(TodeCoinsTags.Items.CROPS_VEGETABLES)
+                .addTag(TodeCoinsTags.Items.CROPS_TOMATO)
+                .addTag(TodeCoinsTags.Items.CROPS_TOMATO)
+                .addTag(TodeCoinsTags.Items.CROPS_CARROTS)
+                .addTag(TodeCoinsTags.Items.CROPS_BEETROOT)
+                .addTag(TodeCoinsTags.Items.CROPS_CABBAGE)
+                .addTag(TodeCoinsTags.Items.CROPS_ONION);
+        tag(TodeCoinsTags.Items.CROPS_CORN)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("hauntedharvest:corn")));
-        tag(ForgeTags.Items.CROPS_FLAX)
+        tag(TodeCoinsTags.Items.CROPS_FLAX)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("supplementaries:flax")));
-        tag(ForgeTags.Items.CROPS_TOMATO)
+        tag(TodeCoinsTags.Items.CROPS_TOMATO)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.getId());
-        tag(ForgeTags.Items.CROPS_RICE)
+        tag(TodeCoinsTags.Items.CROPS_RICE)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.RICE_PANICLE.getId());
-        tag(ForgeTags.Items.CROPS_ONION)
+        tag(TodeCoinsTags.Items.CROPS_ONION)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.ONION.getId());
-        tag(ForgeTags.Items.CROPS_CABBAGE)
+        tag(TodeCoinsTags.Items.CROPS_CABBAGE)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.CABBAGE.getId());
-        tag(ForgeTags.Items.CROPS_BEETROOT)
+        tag(TodeCoinsTags.Items.CROPS_BEETROOT)
                 .add(Items.BEETROOT);
-        tag(ForgeTags.Items.CROPS_CARROTS)
+        tag(TodeCoinsTags.Items.CROPS_CARROTS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("miners_delight:cave_carrot")))
                 .add(Items.CARROT);
-        tag(ForgeTags.Items.CROPS_POTATO)
+        tag(TodeCoinsTags.Items.CROPS_POTATO)
                 .add(Items.POTATO);
-        tag(ForgeTags.Items.CROPS_WHEAT)
+        tag(TodeCoinsTags.Items.CROPS_WHEAT)
                 .add(Items.WHEAT);
-        tag(ForgeTags.Items.SALTS)
+        tag(TodeCoinsTags.Items.SALTS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "turtleblockacademy:pickling_salt")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "salt:salt")));
-        tag(ForgeTags.Items.ASH)
+        tag(TodeCoinsTags.Items.ASH)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "supplementaries:ash")));
-        tag(ForgeTags.Items.SOUPS)
-                .addTag(ForgeTags.Items.FISH_SOUPS)
-                .addTag(ForgeTags.Items.VEGETABLE_SOUPS)
-                .addTag(ForgeTags.Items.MEAT_SOUPS);
-        tag(ForgeTags.Items.MEAT_SOUPS)
+        tag(TodeCoinsTags.Items.SOUPS)
+                .addTag(TodeCoinsTags.Items.FISH_SOUPS)
+                .addTag(TodeCoinsTags.Items.VEGETABLE_SOUPS)
+                .addTag(TodeCoinsTags.Items.MEAT_SOUPS);
+        tag(TodeCoinsTags.Items.MEAT_SOUPS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "miners_delight:noodle_soup_cup")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
@@ -2221,7 +2218,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.BEEF_STEW.getId())
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.CHICKEN_SOUP.getId())
                 .add(Items.RABBIT_STEW);
-        tag(ForgeTags.Items.VEGETABLE_SOUPS)
+        tag(TodeCoinsTags.Items.VEGETABLE_SOUPS)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.BAKED_COD_STEW.getId())
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.VEGETABLE_SOUP.getId())
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
@@ -2229,7 +2226,7 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "miners_delight:mushroom_stew_cup")))
                 .add(Items.MUSHROOM_STEM);
-        tag(ForgeTags.Items.FISH_SOUPS)
+        tag(TodeCoinsTags.Items.FISH_SOUPS)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.FISH_STEW.getId())
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "ecologics:tropical_stew")))
@@ -2243,111 +2240,111 @@ public class ItemTagsGen extends ItemTagsProvider {
                         "miners_delight:fish_stew_cup")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "miners_delight:baked_cod_stew_cup")));
-        tag(ForgeTags.Items.COOKED_MEATS)
+        tag(TodeCoinsTags.Items.COOKED_MEATS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "miners_delight:smoked_wing")))
-                .addTag(ForgeTags.Items.COOKED_GOAT)
-                .addTag(ForgeTags.Items.COOKED_VENISON)
-                .addTag(ForgeTags.Items.COOKED_BEEF)
-                .addTag(ForgeTags.Items.COOKED_RABBIT)
-                .addTag(ForgeTags.Items.COOKED_PORK)
-                .addTag(ForgeTags.Items.COOKED_CHICKEN)
-                .addTag(ForgeTags.Items.COOKED_MUTTON);
-        tag(ForgeTags.Items.COOKED_GOAT)
+                .addTag(TodeCoinsTags.Items.COOKED_GOAT)
+                .addTag(TodeCoinsTags.Items.COOKED_VENISON)
+                .addTag(TodeCoinsTags.Items.COOKED_BEEF)
+                .addTag(TodeCoinsTags.Items.COOKED_RABBIT)
+                .addTag(TodeCoinsTags.Items.COOKED_PORK)
+                .addTag(TodeCoinsTags.Items.COOKED_CHICKEN)
+                .addTag(TodeCoinsTags.Items.COOKED_MUTTON);
+        tag(TodeCoinsTags.Items.COOKED_GOAT)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "delightful:cooked_goat")));
-        tag(ForgeTags.Items.COOKED_VENISON)
+        tag(TodeCoinsTags.Items.COOKED_VENISON)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "delightful:cooked_venison_chops")));
-        tag(ForgeTags.Items.COOKED_RABBIT)
+        tag(TodeCoinsTags.Items.COOKED_RABBIT)
                 .add(Items.COOKED_RABBIT);
-        tag(ForgeTags.Items.COOKED_BEEF)
+        tag(TodeCoinsTags.Items.COOKED_BEEF)
                 .add(Items.COOKED_BEEF)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.BEEF_PATTY.getId());
-        tag(ForgeTags.Items.COOKED_BACON)
+        tag(TodeCoinsTags.Items.COOKED_BACON)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.COOKED_BACON.getId());
-        tag(ForgeTags.Items.COOKED_PORK)
-                .addTag(ForgeTags.Items.COOKED_BACON)
+        tag(TodeCoinsTags.Items.COOKED_PORK)
+                .addTag(TodeCoinsTags.Items.COOKED_BACON)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "nethersdelight:hoglin_sirloin")))
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.SMOKED_HAM.getId())
                 .add(Items.COOKED_PORKCHOP);
-        tag(ForgeTags.Items.COOKED_CHICKEN)
+        tag(TodeCoinsTags.Items.COOKED_CHICKEN)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.COOKED_CHICKEN_CUTS.getId())
                 .add(Items.COOKED_CHICKEN);
-        tag(ForgeTags.Items.COOKED_MUTTON)
+        tag(TodeCoinsTags.Items.COOKED_MUTTON)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.COOKED_MUTTON_CHOPS.getId())
                 .add(Items.COOKED_MUTTON);
-        tag(ForgeTags.Items.RAW_MEATS)
+        tag(TodeCoinsTags.Items.RAW_MEATS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse(
                         "miners_delight:bat_wing")))
-                .addTag(ForgeTags.Items.RAW_GOAT)
-                .addTag(ForgeTags.Items.RAW_VENISON)
-                .addTag(ForgeTags.Items.RAW_RABBIT)
-                .addTag(ForgeTags.Items.RAW_BEEF)
-                .addTag(ForgeTags.Items.RAW_CHICKEN)
-                .addTag(ForgeTags.Items.RAW_MUTTON)
-                .addTag(ForgeTags.Items.RAW_PORK);
-        tag(ForgeTags.Items.RAW_BEEF)
+                .addTag(TodeCoinsTags.Items.RAW_GOAT)
+                .addTag(TodeCoinsTags.Items.RAW_VENISON)
+                .addTag(TodeCoinsTags.Items.RAW_RABBIT)
+                .addTag(TodeCoinsTags.Items.RAW_BEEF)
+                .addTag(TodeCoinsTags.Items.RAW_CHICKEN)
+                .addTag(TodeCoinsTags.Items.RAW_MUTTON)
+                .addTag(TodeCoinsTags.Items.RAW_PORK);
+        tag(TodeCoinsTags.Items.RAW_BEEF)
                 .add(Items.BEEF)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:minced_beef")));
-        tag(ForgeTags.Items.RAW_MUTTON)
+        tag(TodeCoinsTags.Items.RAW_MUTTON)
                 .add(Items.MUTTON)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:mutton_chops")));
-        tag(ForgeTags.Items.RAW_GOAT)
+        tag(TodeCoinsTags.Items.RAW_GOAT)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:raw_goat")));
-        tag(ForgeTags.Items.RAW_VENISON)
+        tag(TodeCoinsTags.Items.RAW_VENISON)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:venison_chops")));
-        tag(ForgeTags.Items.RAW_RABBIT)
+        tag(TodeCoinsTags.Items.RAW_RABBIT)
                 .add(Items.RABBIT);
-        tag(ForgeTags.Items.RAW_BACON)
+        tag(TodeCoinsTags.Items.RAW_BACON)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("tconstruct:bacon")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:bacon")));
-        tag(ForgeTags.Items.RAW_PORK)
-                .addTag(ForgeTags.Items.RAW_BACON)
+        tag(TodeCoinsTags.Items.RAW_PORK)
+                .addTag(TodeCoinsTags.Items.RAW_BACON)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("netherssdelight:hoglin_loin")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:ham")))
                 .add(Items.PORKCHOP);
-        tag(ForgeTags.Items.RAW_CHICKEN)
+        tag(TodeCoinsTags.Items.RAW_CHICKEN)
                 .add(Items.CHICKEN)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.CHICKEN_CUTS.getId());
         tag(Tags.Items.LEATHER)
                 .add(Items.LEATHER)
                 .add(Items.RABBIT_HIDE)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("nethersdelight:hoglin_hide")));
-        tag(ForgeTags.Items.CURRENCY_PAPER)
-                .addTag(ModTags.Items.CURRENCY_PAPER);
-        tag(ForgeTags.Items.CURRENCY_FIBER)
-                .addTag(ModTags.Items.CURRENCY_FIBER);
-        tag(ForgeTags.Items.SUGAR)
+        tag(TodeCoinsTags.Items.CURRENCY_PAPER_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.CURRENCY_PAPER);
+        tag(TodeCoinsTags.Items.CURRENCY_FIBER_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.CURRENCY_FIBER);
+        tag(TodeCoinsTags.Items.SUGAR)
                 .add(Items.SUGAR)
                 .add(Items.HONEY_BOTTLE);
-        tag(ForgeTags.Items.COCOA)
+        tag(TodeCoinsTags.Items.COCOA)
                 .add(Items.COCOA_BEANS);
-        tag(ForgeTags.Items.COCOA_INGREDIENTS)
+        tag(TodeCoinsTags.Items.COCOA_INGREDIENTS)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:dried_cocoa_beans")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:roasted_cocoa_beans")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:cocoa_powder")))
                 .add(Items.COCOA_BEANS);
-        tag(ForgeTags.Items.FAT)
+        tag(TodeCoinsTags.Items.FAT)
                 .add(Items.HONEYCOMB)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:animal_oil_bottle")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:animal_fat")));
-        tag(ForgeTags.Items.MILK_BOTTLES)
+        tag(TodeCoinsTags.Items.MILK_BOTTLES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("farmersdelight:milk_bottle")));
-        tag(ForgeTags.Items.MILK)
-                .addTag(ForgeTags.Items.MILK_BOTTLES)
+        tag(TodeCoinsTags.Items.MILK)
+                .addTag(TodeCoinsTags.Items.MILK_BOTTLES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("kawaiidishes:condensed_milk")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether:skyroot_milk_bucket")))
                 .add(Items.MILK_BUCKET);
-        tag(ForgeTags.Items.MILK_TYPES)
-                .addTag(ForgeTags.Items.MILK_BOTTLES)
-                .addTag(ForgeTags.Items.MILK);
-        tag(SupplementariesTags.Items.CANDY)
-                .addTag(SupplementariesTags.Items.CHOCOLATE);
-        tag(SupplementariesTags.Items.SWEETS)
-                .addTag(SupplementariesTags.Items.CANDY);
-        tag(SupplementariesTags.Items.CHOCOLATE)
+        tag(TodeCoinsTags.Items.MILK_TYPES)
+                .addTag(TodeCoinsTags.Items.MILK_BOTTLES)
+                .addTag(TodeCoinsTags.Items.MILK);
+        tag(TodeCoinsTags.Items.CANDY)
+                .addTag(TodeCoinsTags.Items.CHOCOLATE);
+        tag(TodeCoinsTags.Items.SWEETS)
+                .addTag(TodeCoinsTags.Items.CANDY);
+        tag(TodeCoinsTags.Items.CHOCOLATE)
                 .add(ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get())
                 .add(ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get())
                 .add(ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get())
@@ -2357,40 +2354,40 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(ModItems.MILK_BONE_CHOCOLATE_COIN.get())
                 .add(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get())
                 .add(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get());
-        tag(ForgeTags.Items.CLOVER)
+        tag(TodeCoinsTags.Items.CLOVER)
                 .add(ModItems.FOUR_LEAF_CLOVER.get())
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("phantasm:ender_clover")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:clover")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:huge_clover_petal")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("delightful:chopped_clover")));
-        tag(ForgeTags.Items.TOOLS_KNIVES)
+        tag(TodeCoinsTags.Items.TOOLS_KNIVES)
                 .addOptional(vectorwing.farmersdelight.common.registry.ModItems.FLINT_KNIFE.getId());
-        tag(ForgeTags.Items.TOOLS_CHISELS);
+        tag(TodeCoinsTags.Items.TOOLS_CHISELS);
         tag(Tags.Items.EGGS)
                 .add(Items.TURTLE_EGG)
                 .add(Items.EGG);
         tag(Tags.Items.ENCHANTING_FUELS)
                 .add(Items.LAPIS_LAZULI);
-        tag(ForgeTags.Items.GEM_CURRENCY)
-                .addTag(ForgeTags.Items.AMETHYST)
-                .addTag(ForgeTags.Items.DIAMOND)
-                .addTag(ForgeTags.Items.ECHO_SHARD)
-                .addTag(ForgeTags.Items.EMERALD)
-                .addTag(ForgeTags.Items.END_CRYSTAL)
-                .addTag(ForgeTags.Items.ENDER_EYE)
-                .addTag(ForgeTags.Items.ENDER_PEARL)
-                .addTag(ForgeTags.Items.GLOWSTONE)
-                .addTag(ForgeTags.Items.LAPIS_LAZULI)
-                .addTag(ForgeTags.Items.NETHER_STAR)
-                .addTag(ForgeTags.Items.PRISMARINE)
-                .addTag(ForgeTags.Items.QUARTZ)
-                .addTag(ForgeTags.Items.REDSTONE)
+        tag(TodeCoinsTags.Items.GEM_CURRENCY_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.AMETHYST)
+                .addTag(TodeCoinsTags.Items.DIAMOND)
+                .addTag(TodeCoinsTags.Items.ECHO_SHARD)
+                .addTag(TodeCoinsTags.Items.EMERALD)
+                .addTag(TodeCoinsTags.Items.END_CRYSTAL)
+                .addTag(TodeCoinsTags.Items.ENDER_EYE)
+                .addTag(TodeCoinsTags.Items.ENDER_PEARL)
+                .addTag(TodeCoinsTags.Items.GLOWSTONE)
+                .addTag(TodeCoinsTags.Items.LAPIS_LAZULI)
+                .addTag(TodeCoinsTags.Items.NETHER_STAR)
+                .addTag(TodeCoinsTags.Items.PRISMARINE)
+                .addTag(TodeCoinsTags.Items.QUARTZ)
+                .addTag(TodeCoinsTags.Items.REDSTONE)
                 .add(Items.SEA_LANTERN)
                 .add(Items.SHULKER_SHELL)
                 .add(Items.BLAZE_ROD)
                 .add(Items.BLAZE_POWDER)
                 .add(Items.GHAST_TEAR);
-        tag(ForgeTags.Items.AMETHYST).add(
+        tag(TodeCoinsTags.Items.AMETHYST).add(
                 Items.AMETHYST_BLOCK,
                 Items.AMETHYST_CLUSTER,
                 Items.AMETHYST_SHARD,
@@ -2399,94 +2396,94 @@ public class ItemTagsGen extends ItemTagsProvider {
                 Items.MEDIUM_AMETHYST_BUD,
                 Items.SMALL_AMETHYST_BUD
         );
-        tag(ForgeTags.Items.DIAMOND).add(
+        tag(TodeCoinsTags.Items.DIAMOND).add(
                 Items.DIAMOND,
                 Items.DIAMOND_BLOCK
         );
-        tag(ForgeTags.Items.ECHO_SHARD).add(
+        tag(TodeCoinsTags.Items.ECHO_SHARD).add(
                 Items.ECHO_SHARD
         );
-        tag(ForgeTags.Items.EMERALD).add(
+        tag(TodeCoinsTags.Items.EMERALD).add(
                 Items.EMERALD,
                 Items.EMERALD_BLOCK
         );
-        tag(ForgeTags.Items.END_CRYSTAL).add(
+        tag(TodeCoinsTags.Items.END_CRYSTAL).add(
                 Items.END_CRYSTAL
         );
-        tag(ForgeTags.Items.ENDER_EYE).add(
+        tag(TodeCoinsTags.Items.ENDER_EYE).add(
                 Items.ENDER_EYE
         );
-        tag(ForgeTags.Items.ENDER_PEARL).add(
+        tag(TodeCoinsTags.Items.ENDER_PEARL).add(
                 Items.ENDER_PEARL
         );
-        tag(ForgeTags.Items.GLOWSTONE).add(
+        tag(TodeCoinsTags.Items.GLOWSTONE).add(
                 Items.GLOWSTONE,
                 Items.GLOWSTONE_DUST
         );
-        tag(ForgeTags.Items.LAPIS_LAZULI).add(
+        tag(TodeCoinsTags.Items.LAPIS_LAZULI).add(
                 Items.LAPIS_LAZULI,
                 Items.LAPIS_BLOCK
         );
-        tag(ForgeTags.Items.NETHER_STAR).add(
+        tag(TodeCoinsTags.Items.NETHER_STAR).add(
                 Items.NETHER_STAR
         );
-        tag(ForgeTags.Items.PRISMARINE).add(
+        tag(TodeCoinsTags.Items.PRISMARINE).add(
                 Items.PRISMARINE_CRYSTALS,
                 Items.PRISMARINE_SHARD,
                 Items.PRISMARINE
         );
-        tag(ForgeTags.Items.QUARTZ).add(
+        tag(TodeCoinsTags.Items.QUARTZ).add(
                 Items.QUARTZ,
                 Items.QUARTZ_BLOCK
         );
-        tag(ForgeTags.Items.REDSTONE).add(
+        tag(TodeCoinsTags.Items.REDSTONE).add(
                 Items.REDSTONE,
                 Items.REDSTONE_BLOCK
         );
-        tag(ForgeTags.Items.NUGGETS)
-                .addTag(ForgeTags.Items.COPPER_NUGGET)
-                .addTag(ForgeTags.Items.IRON_NUGGET)
-                .addTag(ForgeTags.Items.GOLD_NUGGET)
-                .addTag(ForgeTags.Items.LUCKY_NUGGET)
-                .addTag(ForgeTags.Items.NETHERITE_NUGGET)
-                .addTag(ForgeTags.Items.ENDONIAN_NUGGET);
-        tag(ForgeTags.Items.COPPER_NUGGET)
-                .addTag(ModTags.Items.COPPER_NUGGET);
-        tag(ForgeTags.Items.IRON_NUGGET)
-                .addTag(ModTags.Items.IRON_NUGGET);
-        tag(ForgeTags.Items.GOLD_NUGGET)
-                .addTag(ModTags.Items.GOLD_NUGGET);
-        tag(ForgeTags.Items.LUCKY_NUGGET)
-                .addTag(ModTags.Items.LUCKY_NUGGET);
-        tag(ForgeTags.Items.NETHERITE_NUGGET)
-                .addTag(ModTags.Items.NETHERITE_NUGGET);
-        tag(ForgeTags.Items.ENDONIAN_NUGGET)
-                .addTag(ModTags.Items.ENDONIAN_NUGGET);
-        tag(ForgeTags.Items.INGOTS)
-                .addTag(ForgeTags.Items.COPPER_INGOT)
-                .addTag(ForgeTags.Items.IRON_INGOT)
-                .addTag(ForgeTags.Items.GOLD_INGOT)
-                .addTag(ForgeTags.Items.NETHERITE_INGOT)
-                .addTag(ForgeTags.Items.ENDONIAN_INGOT);
-        tag(ForgeTags.Items.COPPER_INGOT).add(
+        tag(TodeCoinsTags.Items.NUGGETS_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.COPPER_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.IRON_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.GOLD_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.LUCKY_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.NETHERITE_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.ENDONIAN_NUGGET_FORGE_TAG);
+        tag(TodeCoinsTags.Items.COPPER_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.COPPER_NUGGET);
+        tag(TodeCoinsTags.Items.IRON_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.IRON_NUGGET);
+        tag(TodeCoinsTags.Items.GOLD_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.GOLD_NUGGET);
+        tag(TodeCoinsTags.Items.LUCKY_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.LUCKY_NUGGET);
+        tag(TodeCoinsTags.Items.NETHERITE_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.NETHERITE_NUGGET);
+        tag(TodeCoinsTags.Items.ENDONIAN_NUGGET_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.ENDONIAN_NUGGET);
+        tag(TodeCoinsTags.Items.INGOTS_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.COPPER_INGOT_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.IRON_INGOT_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.GOLD_INGOT_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.NETHERITE_INGOT_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.ENDONIAN_INGOT_FORGE_TAG);
+        tag(TodeCoinsTags.Items.COPPER_INGOT_FORGE_TAG).add(
                 Items.COPPER_INGOT
         );
-        tag(ForgeTags.Items.IRON_INGOT).add(
+        tag(TodeCoinsTags.Items.IRON_INGOT_FORGE_TAG).add(
                 Items.IRON_INGOT
         );
-        tag(ForgeTags.Items.GOLD_INGOT).add(
+        tag(TodeCoinsTags.Items.GOLD_INGOT_FORGE_TAG).add(
                 Items.GOLD_INGOT
         );
-        tag(ForgeTags.Items.NETHERITE_INGOT).add(
+        tag(TodeCoinsTags.Items.NETHERITE_INGOT_FORGE_TAG).add(
                 Items.NETHERITE_INGOT
         );
-        tag(ForgeTags.Items.ENDONIAN_INGOT).add(
+        tag(TodeCoinsTags.Items.ENDONIAN_INGOT_FORGE_TAG).add(
                 ModItems.ENDONIAN_INGOT.get());
-        tag(ForgeTags.Items.CURRENCY_MATERIALS)
+        tag(TodeCoinsTags.Items.CURRENCY_MATERIALS_FORGE_TAG)
                 .addTag(Tags.Items.NUGGETS)
                 .addTag(Tags.Items.INGOTS)
-                .addTag(ModTags.Items.CURRENCY_PAPER);
-        tag(ForgeTags.Items.LEATHER_TEXTILES)
+                .addTag(TodeCoinsTags.Items.CURRENCY_PAPER);
+        tag(TodeCoinsTags.Items.LEATHER_TEXTILES)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("sewingkit:leather_strip")))
                 .addOptional(Objects.requireNonNull(
@@ -2499,43 +2496,43 @@ public class ItemTagsGen extends ItemTagsProvider {
                 .add(Items.LEATHER)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("nethersdelight:hoglin_hide")));
-        tag(ForgeTags.Items.LEATHER)
+        tag(TodeCoinsTags.Items.LEATHER)
                 .add(Items.RABBIT_HIDE)
                 .add(Items.LEATHER)
                 .addOptional(Objects.requireNonNull(
                         ResourceLocation.tryParse("nethersdelight:hoglin_hide")));
-        tag(ForgeTags.Items.TEXTILES)
-                .addTag(ForgeTags.Items.BARK)
-                .addTag(ForgeTags.Items.LEATHER)
-                .addTag(ForgeTags.Items.FIBRE)
-                .addTag(ForgeTags.Items.STRING)
-                .addTag(ForgeTags.Items.PAPER)
-                .addTag(ForgeTags.Items.FABRIC)
-                .addTag(ForgeTags.Items.THREAD)
-                .addTag(ForgeTags.Items.CURRENCY_PAPER)
-                .addTag(ForgeTags.Items.CURRENCY_FIBER);
-        tag(ForgeTags.Items.BARK);
-        tag(ForgeTags.Items.THREAD);
-        tag(ForgeTags.Items.CURRENCY_PAPER);
-        tag(ForgeTags.Items.CURRENCY_FIBER);
-        tag(ForgeTags.Items.FABRIC)
+        tag(TodeCoinsTags.Items.TEXTILES_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.BARK)
+                .addTag(TodeCoinsTags.Items.LEATHER)
+                .addTag(TodeCoinsTags.Items.FIBRE_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.STRING)
+                .addTag(TodeCoinsTags.Items.PAPER)
+                .addTag(TodeCoinsTags.Items.FABRIC_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.THREAD_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.CURRENCY_PAPER_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.CURRENCY_FIBER_FORGE_TAG);
+        tag(TodeCoinsTags.Items.BARK);
+        tag(TodeCoinsTags.Items.THREAD_FORGE_TAG);
+        tag(TodeCoinsTags.Items.CURRENCY_PAPER_FORGE_TAG);
+        tag(TodeCoinsTags.Items.CURRENCY_FIBER_FORGE_TAG);
+        tag(TodeCoinsTags.Items.FABRIC_FORGE_TAG)
                 .addTag(net.minecraft.tags.ItemTags.WOOL);
-        tag(ForgeTags.Items.FIBRE);
-        tag(ForgeTags.Items.PAPER).add(
+        tag(TodeCoinsTags.Items.FIBRE_FORGE_TAG);
+        tag(TodeCoinsTags.Items.PAPER).add(
                 Items.PAPER
         );
-        tag(ForgeTags.Items.STRING).add(
+        tag(TodeCoinsTags.Items.STRING).add(
                 Items.STRING
         );
-        tag(ForgeTags.Items.CURRENCY_STAMPS)
-                .addTag(ModTags.Items.CURRENCY_STAMPS);
-        tag(ForgeTags.Items.CURRENCY)
-                .addTag(ModTags.Items.CURRENCY);
-        tag(ForgeTags.Items.BANKNOTES)
-                .addTag(ModTags.Items.BANKNOTES);
-        tag(ForgeTags.Items.COINS)
-                .addTag(ModTags.Items.COINS);
-        tag(ForgeTags.Items.PIGLIN_BARTER_ITEMS).add(
+        tag(TodeCoinsTags.Items.CURRENCY_STAMPS_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.CURRENCY_STAMPS);
+        tag(TodeCoinsTags.Items.CURRENCY_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.CURRENCY);
+        tag(TodeCoinsTags.Items.BANKNOTES_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.BANKNOTES);
+        tag(TodeCoinsTags.Items.COINS_FORGE_TAG)
+                .addTag(TodeCoinsTags.Items.COINS);
+        tag(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS).add(
                 ModItems.NETHER_GOLD_COIN.get(),
                 ModItems.NETHERITE_PIGLIN_COIN.get()
         );

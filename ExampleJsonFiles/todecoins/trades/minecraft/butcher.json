@@ -1,0 +1,101 @@
+{
+  "offers": {
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/misc/one_emerald_value_fuel_table",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "todecoins:trade_tables/food/tagged_cooked_meats_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/misc/one_emerald_value_fuel_table",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 18,
+        "offered_table": "todecoins:trade_tables/food/tagged_salts_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 18,
+        "offered_table": "todecoins:trade_tables/misc/tagged_ash_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "todecoins:trade_tables/food/tagged_cooked_meats_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/tools/stone_tier_knives_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:tag_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_item_count": 12,
+        "requested_table": "todecoins:trade_tables/food/tagged_raw_meats_table",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "todecoins:trade_tables/food/tagged_cooked_meats_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:tag_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_item_count": 8,
+        "requested_table": "todecoins:trade_tables/food/tagged_fox_food_table",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "todecoins:trade_tables/food/tagged_cooked_meats_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 25
+      }
+    ],
+    "novice": [
+      {
+        "type": "todecoins:tag_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_item_count": 12,
+        "requested_table": "todecoins:trade_tables/food/tagged_raw_meats_table"
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/tagged_meat_soups_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "minecraft:butcher"
+}

@@ -72,6 +72,7 @@ public class TodeCoinsAdvancementsGen extends AdvancementProvider {
         }
 
         public void accept(Consumer<Advancement> consumer) {
+            //noinspection removal
             Advancement todeCoins = Advancement.Builder.advancement().display(ModItems.GOLD_COIN.get(),
                     Component.translatable("advancement.root"), Component.translatable("advancement.root.desc"),
                     new ResourceLocation("todecoins:textures/block/pot.png"),
@@ -142,6 +143,7 @@ public class TodeCoinsAdvancementsGen extends AdvancementProvider {
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/minting_coins"));
 
             // Printing Notes
+            //noinspection unused
             Advancement printingMoney = getAdvancement(textileEngineering1, ModItems.EMERALD_BANK_NOTE.get(),
                     "printingMoney", FrameType.TASK, true, true, false)
                     .addCriterion("craft_emerald_quarter_bank_note",
@@ -194,6 +196,7 @@ public class TodeCoinsAdvancementsGen extends AdvancementProvider {
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/bagging_dough"));
 
             // Rainbow's End
+            //noinspection unused
             Advancement rainbowEnd = getAdvancement(baggingDough, ModBlocks.POT_OF_GOLD.get(),
                     "rainbowEnd", FrameType.GOAL, true, true, false)
                     .addCriterion("craft_pot_of_gold",
@@ -201,6 +204,7 @@ public class TodeCoinsAdvancementsGen extends AdvancementProvider {
                     .requirements(RequirementsStrategy.OR).save(consumer, getPath("main/rainbows_end"));
 
             // Lucky Armor Set
+            //noinspection unused
             Advancement luckyArmor = getAdvancement(textileEngineering2, ModItems.LUCKY_SHIRT.get(),
                     "luckyArmor", FrameType.GOAL, true, true, false)
                     .addCriterion("craft_lucky_shirt",
@@ -232,6 +236,7 @@ public class TodeCoinsAdvancementsGen extends AdvancementProvider {
                     .requirements(RequirementsStrategy.AND).save(consumer, getPath("main/textile_engineering_4"));
 
             // Friends Forever
+            //noinspection unused
             Advancement friendsForever = getAdvancement(textileEngineering4, ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get(),
                     "friendsForever", FrameType.GOAL, true, true, false)
                     .addCriterion("craft_friendship_bracelet_endonian",

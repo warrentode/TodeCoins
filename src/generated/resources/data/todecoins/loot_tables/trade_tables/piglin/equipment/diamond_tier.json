@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/weapons/diamond_tier_weapons"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/tools/diamond_tier_tools"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/armor/boots/diamond_tier_boots"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/armor/leggings/diamond_tier_leggings"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/armor/chestplates/diamond_tier_chestplates"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/armor/helmets/diamond_tier_helmets"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

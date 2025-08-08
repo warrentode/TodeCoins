@@ -16,6 +16,7 @@ import java.util.List;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class CoinPressRecipeBookComponent extends RecipeBookComponent {
+    @SuppressWarnings("removal")
     protected static final ResourceLocation RECIPE_BOOK_BUTTONS = new ResourceLocation(MODID, "textures/gui/recipe_book_buttons.png");
 
     @Override
@@ -23,6 +24,7 @@ public class CoinPressRecipeBookComponent extends RecipeBookComponent {
         this.filterButton.initTextureValues(0, 0, 28, 18, RECIPE_BOOK_BUTTONS);
     }
 
+    @SuppressWarnings("unused")
     public void hide() {
         this.setVisible(false);
     }

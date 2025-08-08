@@ -114,6 +114,7 @@ public class ModBuiltInLootTables {
     private static final Set<ResourceLocation> IMMUTABLE_LOCATIONS = Collections.unmodifiableSet(LOCATIONS);
 
     private static ResourceLocation register(String path) {
+        //noinspection removal
         return register(new ResourceLocation(path));
     }
 

@@ -14,7 +14,7 @@ import com.github.warrentode.todecoins.entity.spawners.piglinmerchant.PiglinMerc
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.item.custom.bracelet.FriendshipBraceletItem;
 import com.github.warrentode.todecoins.util.PlayerUtil;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -94,13 +94,14 @@ public class ModEvents {
     public static class ForgeEvents {
         @SubscribeEvent
         public static void registerCommands(@NotNull RegisterCommandsEvent event) {
+            TodeCoins.LOGGER.info("Registering Json Trades Commands");
             VillagerTradeCommands.register(event.getDispatcher());
         }
         @SubscribeEvent
         public static void onItemCrafted(@NotNull PlayerEvent.ItemCraftedEvent event) {
             ItemStack stack = event.getCrafting();
             Player player = event.getEntity();
-            if (stack.is(ModTags.Items.NO_AI_EGGS)) {
+            if (stack.is(TodeCoinsTags.Items.NO_AI_EGGS)) {
                 final CompoundTag entityTag = stack.getOrCreateTagElement("EntityTag");
                 entityTag.putBoolean("NoAI", true);
             }
@@ -165,6 +166,7 @@ public class ModEvents {
             return event;
         }
 
+        @SuppressWarnings("removal")
         @SubscribeEvent
         public static void onAttachCapabilitiesPlayer(@NotNull AttachCapabilitiesEvent<Entity> event) {
             if (event.getObject() instanceof Player) {
@@ -398,7 +400,7 @@ public class ModEvents {
                         catCharm = ocelotCoin4.get().stack();
                     }
 
-                    if (catCharm != null && (catCharm.is(ModTags.Items.CAT_COIN_SET) || catCharm.is(ModTags.Items.OCELOT_COIN_SET))) {
+                    if (catCharm != null && (catCharm.is(TodeCoinsTags.Items.CAT_COIN_SET) || catCharm.is(TodeCoinsTags.Items.OCELOT_COIN_SET))) {
                         event.setCanceled(true);
                     }
                 }

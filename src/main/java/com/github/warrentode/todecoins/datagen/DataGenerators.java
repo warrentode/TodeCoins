@@ -7,6 +7,7 @@ import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalCageriu
 import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalCookingPotRecipesGen;
 import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalSpawnEggRecipes;
 import com.github.warrentode.todecoins.datagen.tags.*;
+import com.github.warrentode.todecoins.datagen.trades.JsonTradesProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -52,5 +53,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModItemModelProvider(generator, MODID, helper));
         generator.addProvider(event.includeServer(), new ModBlockStateProvider(generator, MODID, helper));
         generator.addProvider(event.includeServer(), new ModLootModifierGenProvider(generator, MODID));
+        generator.addProvider(event.includeServer(), new JsonTradesProvider(generator));
     }
 }

@@ -5,18 +5,20 @@ import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class PlayerCharisma {
+    @SuppressWarnings("unused")
     private final LivingEntity entity;
     private static int charisma;
+    @SuppressWarnings("unused")
     private static int charismaBonus;
+    @SuppressWarnings("unused")
     private final int MIN_CHR = 0;
-    private static int MAX_CHR = 100;
+    private static final int MAX_CHR = 100;
 
-    public PlayerCharisma(@Nullable LivingEntity entity) {
+    public PlayerCharisma(LivingEntity entity) {
         this.entity = entity;
     }
 
@@ -30,6 +32,7 @@ public class PlayerCharisma {
                 EntitySelector.NO_SPECTATORS);
 
         int charismaBonus = 0;
+        //noinspection unused
         for (LivingEntity entity : list) {
             charismaBonus += 10 * getCharisma();
         }

@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.datagen.recipes.recipe;
 
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -28,6 +28,7 @@ public class RepairRecipes extends RecipeProvider implements IConditionBuilder {
         bracelets(consumer);
     }
 
+    @SuppressWarnings("removal")
     private static void bracelets(Consumer<FinishedRecipe> consumer) {
         ShapelessRecipeBuilder.shapeless(ModItems.BRACELET_FRIENDSHIP_EMERALD.get(), 1)
                 .group("bracelets")
@@ -166,12 +167,13 @@ public class RepairRecipes extends RecipeProvider implements IConditionBuilder {
         copperCoinRepairRecipe(consumer, ModItems.COPPER_HERO_COIN.get());
     }
 
+    @SuppressWarnings("removal")
     private static void copperCoinRepairRecipe(Consumer<FinishedRecipe> consumer, Item coin) {
         ShapelessRecipeBuilder.shapeless(coin, 1)
                 .group("collectible_coins_copper")
-                .requires(ModTags.Items.COPPER_NUGGET)
+                .requires(TodeCoinsTags.Items.COPPER_NUGGET)
                 .requires(coin)
-                .unlockedBy("has_copper_nugget", has(ModTags.Items.COPPER_NUGGET))
+                .unlockedBy("has_copper_nugget", has(TodeCoinsTags.Items.COPPER_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "collectible_coin_repair/copper/" + coin));
     }
 
@@ -271,12 +273,13 @@ public class RepairRecipes extends RecipeProvider implements IConditionBuilder {
         ironCoinRepairRecipe(consumer, ModItems.IRON_HERO_COIN.get());
     }
 
+    @SuppressWarnings("removal")
     private static void ironCoinRepairRecipe(Consumer<FinishedRecipe> consumer, Item coin) {
         ShapelessRecipeBuilder.shapeless(coin, 1)
                 .group("collectible_coins_iron")
-                .requires(ModTags.Items.IRON_NUGGET)
+                .requires(TodeCoinsTags.Items.IRON_NUGGET)
                 .requires(coin)
-                .unlockedBy("has_iron_nugget", has(ModTags.Items.IRON_NUGGET))
+                .unlockedBy("has_iron_nugget", has(TodeCoinsTags.Items.IRON_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "collectible_coin_repair/iron/" + coin));
     }
 
@@ -376,12 +379,13 @@ public class RepairRecipes extends RecipeProvider implements IConditionBuilder {
         goldCoinRepairRecipe(consumer, ModItems.GOLD_HERO_COIN.get());
     }
 
+    @SuppressWarnings("removal")
     private static void goldCoinRepairRecipe(Consumer<FinishedRecipe> consumer, Item coin) {
         ShapelessRecipeBuilder.shapeless(coin, 1)
                 .group("collectible_coins_gold")
-                .requires(ModTags.Items.GOLD_NUGGET)
+                .requires(TodeCoinsTags.Items.GOLD_NUGGET)
                 .requires(coin)
-                .unlockedBy("has_gold_nugget", has(ModTags.Items.GOLD_NUGGET))
+                .unlockedBy("has_gold_nugget", has(TodeCoinsTags.Items.GOLD_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "collectible_coin_repair/gold/" + coin));
     }
 
@@ -481,12 +485,13 @@ public class RepairRecipes extends RecipeProvider implements IConditionBuilder {
         netheriteCoinRepairRecipe(consumer, ModItems.NETHERITE_HERO_COIN.get());
     }
 
+    @SuppressWarnings("removal")
     private static void netheriteCoinRepairRecipe(Consumer<FinishedRecipe> consumer, Item coin) {
         ShapelessRecipeBuilder.shapeless(coin, 1)
                 .group("collectible_coins_netherite")
-                .requires(ModTags.Items.NETHERITE_NUGGET)
+                .requires(TodeCoinsTags.Items.NETHERITE_NUGGET)
                 .requires(coin)
-                .unlockedBy("has_netherite_nugget", has(ModTags.Items.NETHERITE_NUGGET))
+                .unlockedBy("has_netherite_nugget", has(TodeCoinsTags.Items.NETHERITE_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "collectible_coin_repair/netherite/" + coin));
     }
 
@@ -506,12 +511,13 @@ public class RepairRecipes extends RecipeProvider implements IConditionBuilder {
         endonianCoinRepairRecipe(consumer, ModItems.LITTLE_BEAR_COIN.get());
     }
 
+    @SuppressWarnings("removal")
     private static void endonianCoinRepairRecipe(Consumer<FinishedRecipe> consumer, Item coin) {
         ShapelessRecipeBuilder.shapeless(coin, 1)
                 .group("collectible_coins_endonian")
-                .requires(ModTags.Items.ENDONIAN_NUGGET)
+                .requires(TodeCoinsTags.Items.ENDONIAN_NUGGET)
                 .requires(coin)
-                .unlockedBy("has_endonian_nugget", has(ModTags.Items.ENDONIAN_NUGGET))
+                .unlockedBy("has_endonian_nugget", has(TodeCoinsTags.Items.ENDONIAN_NUGGET))
                 .save(consumer, new ResourceLocation(MODID, "collectible_coin_repair/endonian/" + coin));
     }
 }

@@ -3,7 +3,7 @@ package com.github.warrentode.todecoins.item.custom.collectiblecoins.entity;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
@@ -74,11 +74,11 @@ public class FelineCoinItem extends CollectibleCoin implements ICurioItem {
             playerUsing.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
                     false, false, false));
 
-            if (stack.is(ModTags.Items.CAT_COIN_SET)) {
+            if (stack.is(TodeCoinsTags.Items.CAT_COIN_SET)) {
                 playerUsing.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0,
                         false, false, false));
             }
-            if (stack.is(ModTags.Items.OCELOT_COIN_SET)) {
+            if (stack.is(TodeCoinsTags.Items.OCELOT_COIN_SET)) {
                 playerUsing.addEffect(new MobEffectInstance(ModEffects.HEALING_MIST.get(), 200, 0,
                         false, false, false));
             }
@@ -171,10 +171,10 @@ public class FelineCoinItem extends CollectibleCoin implements ICurioItem {
                 tooltips.add(Component.translatable("tooltips.coin_effects.cat_intimidation").withStyle(ChatFormatting.BLUE));
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable(MobEffects.SLOW_FALLING.getDescriptionId()).withStyle(ChatFormatting.BLUE));
-                if (stack.is(ModTags.Items.CAT_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.CAT_COIN_SET)) {
                     tooltips.add(Component.translatable(MobEffects.REGENERATION.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 }
-                if (stack.is(ModTags.Items.OCELOT_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.OCELOT_COIN_SET)) {
                     tooltips.add(Component.translatable(ModEffects.HEALING_MIST.get().getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);

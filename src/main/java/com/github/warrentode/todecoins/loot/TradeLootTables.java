@@ -89,7 +89,7 @@ public class TradeLootTables {
 
     // metals
     public static final ResourceLocation EMERALD_BANK_NOTE_VALUE_METALS = register(MODID + ":" + "trade_tables/metals/emerald_bank_note_value_metals");
-    public static final ResourceLocation SINGLE_EMERALD_VALUE_METALS = register(MODID + ":" + "trade_tables/metals/single_emerald_value_metals");
+    public static final ResourceLocation ONE_EMERALD_VALUE_METALS = register(MODID + ":" + "trade_tables/metals/single_emerald_value_metals");
     public static final ResourceLocation SINGLE_EMERALD_VALUE_GOLD = register(MODID + ":" + "trade_tables/metals/single_emerald_value_gold");
     public static final ResourceLocation THREE_EMERALD_VALUE_GOLD = register(MODID + ":" + "trade_tables/metals/three_emerald_value_gold");
 
@@ -99,7 +99,7 @@ public class TradeLootTables {
     public static final ResourceLocation TAGGED_COOKED_MEATS_TABLE = register(MODID + ":" + "trade_tables/food/tagged_cooked_meats_table");
     public static final ResourceLocation TAGGED_SALTS_TABLE = register(MODID + ":" + "trade_tables/food/tagged_salts_table");
     public static final ResourceLocation TAGGED_VEGGIES_AND_GRAINS_TABLE = register(MODID + ":" + "trade_tables/food/tagged_veggies_and_grains_table");
-    public static final ResourceLocation TAGGED_BREADS_TABLE = register(MODID + ":" + "trade_tables/food/tagged_crops_table");
+    public static final ResourceLocation TAGGED_BREADS_TABLE = register(MODID + ":" + "trade_tables/food/tagged_bread_table");
     public static final ResourceLocation TAGGED_GOURDS_TABLE = register(MODID + ":" + "trade_tables/food/tagged_gourds_table");
     public static final ResourceLocation TAGGED_PIES_TABLE = register(MODID + ":" + "trade_tables/food/tagged_pies_table");
     public static final ResourceLocation TAGGED_FRUITS_TABLE = register(MODID + ":" + "trade_tables/food/tagged_fruits_table");
@@ -129,6 +129,7 @@ public class TradeLootTables {
     public static final ResourceLocation TAGGED_STRING_TABLE = register(MODID + ":" + "trade_tables/textiles/tagged_string_table");
     public static final ResourceLocation TAGGED_DYES_TABLE = register(MODID + ":" + "trade_tables/textiles/tagged_dyes_table");
     public static final ResourceLocation FEATHER_TABLE = register(MODID + ":" + "trade_tables/textiles/feather_table");
+    public static final ResourceLocation NATURAL_WOOL_TABLE = register(MODID + ":" + "trade_tables/textiles/natural_wool");
 
     // glass
     public static final ResourceLocation TAGGED_GLASS_PANES_TABLE = register(MODID + ":" + "trade_tables/glass/tagged_glass_panes_table");
@@ -197,7 +198,7 @@ public class TradeLootTables {
     public static final ResourceLocation CORAL_BLOCK_TAG_TABLE = register(MODID + ":" + "trade_tables/blocks/coral_block_tag_table");
     public static final ResourceLocation SPECIAL_DIRT_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/special_dirt_blocks_table");
     public static final ResourceLocation ICE_TABLE = register(MODID + ":" + "trade_tables/blocks/ice_table");
-    public static final ResourceLocation OVERWORLD_BRICK_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_brick");
+    public static final ResourceLocation BRICK_ITEMS_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_brick");
     public static final ResourceLocation OVERWORLD_STONE_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_stone_blocks");
     public static final ResourceLocation OVERWORLD_BRICK_BLOCKS_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_brick_blocks");
     public static final ResourceLocation OVERWORLD_POLISHED_STONE_TABLE = register(MODID + ":" + "trade_tables/blocks/stone/overworld_polished_stone_blocks");
@@ -323,6 +324,11 @@ public class TradeLootTables {
     public static final ResourceLocation LEAVES_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/leaves_tag_table");
     public static final ResourceLocation POISONOUS_POTATO_TABLE = register(MODID + ":" + "trade_tables/misc/poisonous_potato_table");
     public static final ResourceLocation PACKAGE_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/package_tag_table");
+    public static final ResourceLocation FUEL_TABLE = register(MODID + ":" + "trade_tables/misc/fuel");
+
+    // other tables
+    public static final ResourceLocation BOATS_TABLE = register(MODID + ":" + "trade_tables/boats_table");
+
 
     // create related tags
     public static final ResourceLocation COPPER_MATERIALS_TAG_TABLE = register(MODID + ":" + "trade_tables/misc/copper_materials_tag_table");
@@ -340,20 +346,25 @@ public class TradeLootTables {
     public static final ResourceLocation NUMISMATIST_CONTAINER_OFFERS = register(MODID + ":" + "trade_tables/numismatist/container_offers");
 
     // wandering trader specific offers loot tables
-    public static final ResourceLocation WANDERING_TRADER_COMMON_OFFERS = register(MODID + ":" + "trade_tables/wandering_trader/common_offers");
-    public static final ResourceLocation WANDERING_TRADER_RARE_OFFERS = register(MODID + ":" + "trade_tables/wandering_trader/rare_offers");
+    public static final ResourceLocation WANDERING_PURCHASE_TABLE = register(MODID + ":" + "trade_tables/wandering/purchase");
+    public static final ResourceLocation WANDERING_SELL_ONE_EMERALD_VALUE_TABLE = register(MODID + ":" + "trade_tables/wandering/sell_one_emerald_value");
+    public static final ResourceLocation WANDERING_SELL_TWO_EMERALD_VALUE_TABLE = register(MODID + ":" + "trade_tables/wandering/sell_two_emerald_value");
+    public static final ResourceLocation WANDERING_SELL_THREE_EMERALD_VALUE_TABLE = register(MODID + ":" + "trade_tables/wandering/sell_three_emerald_value");
+    public static final ResourceLocation WANDERING_SELL_FIVE_EMERALD_VALUE_TABLE = register(MODID + ":" + "trade_tables/wandering/sell_five_emerald_value");
+    public static final ResourceLocation WANDERING_SELL_SPECIAL_TABLE = register(MODID + ":" + "trade_tables/wandering/sell_special");
 
     // piglin merchant trade tables
-    public static final ResourceLocation CHEAP_TRADE_GOODS = register(MODID + ":" + "trade/cheap_piglin_trade_goods");
-    public static final ResourceLocation COMMON_TRADE_GOODS = register(MODID + ":" + "trade/common_piglin_trade_goods");
-    public static final ResourceLocation IRON_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade/iron_tier_equipment_set");
-    public static final ResourceLocation UNCOMMON_TRADE_GOODS = register(MODID + ":" + "trade/uncommon_piglin_trade_goods");
-    public static final ResourceLocation DIAMOND_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade/diamond_tier_equipment_set");
-    public static final ResourceLocation RARE_BARTER_CURRENCY = register(MODID + ":" + "trade/rare_piglin_merchant_currency");
-    public static final ResourceLocation RARE_TRADE_GOODS = register(MODID + ":" + "trade/rare_piglin_trade_goods");
-    public static final ResourceLocation NETHERITE_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade/netherite_tier_equipment_set");
+    public static final ResourceLocation CHEAP_TRADE_GOODS = register(MODID + ":" + "trade_tables/piglin/goods/cheap_goods");
+    public static final ResourceLocation COMMON_TRADE_GOODS = register(MODID + ":" + "trade_tables/piglin/goods/common_goods");
+    public static final ResourceLocation UNCOMMON_TRADE_GOODS = register(MODID + ":" + "trade_tables/piglin/goods/uncommon_goods");
+    public static final ResourceLocation RARE_TRADE_GOODS = register(MODID + ":" + "trade_tables/piglin/goods/rare_goods");
+    public static final ResourceLocation RARE_BARTER_CURRENCY = register(MODID + ":" + "trade_tables/piglin/currency/rare_currency");
+    public static final ResourceLocation IRON_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade_tables/piglin/equipment/iron_tier");
+    public static final ResourceLocation DIAMOND_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade_tables/piglin/equipment/diamond_tier");
+    public static final ResourceLocation NETHERITE_TIER_EQUIPMENT_SET = register(MODID + ":" + "trade_tables/piglin/equipment/netherite_tier");
 
     private static ResourceLocation register(String path) {
+        //noinspection removal
         return register(new ResourceLocation(path));
     }
 

@@ -1,0 +1,419 @@
+{
+  "offers": {
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/one_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/five_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/five_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/ten_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/ten_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/glass/glass_bottle_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/one_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/five_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/five_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/ten_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/ten_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/glass/glass_bottle_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/one_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/five_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/five_emerald_value_currency",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/ten_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/ten_emerald_value_currency",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/glass/glass_bottle_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "farmersdelight:nourishment",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:speed",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:slowness",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:haste",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:mining_fatigue",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:strength",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:instant_health",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:instant_damage",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:jump_boost",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:nausea",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:regeneration",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:resistance",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:fire_resistance",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:water_breathing",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:invisibility",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:blindness",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:night_vision",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:hunger",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:weakness",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:poison",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:wither",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:health_boost",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:absorption",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:saturation",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:glowing",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:levitation",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:luck",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:unluck",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:slow_falling",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:conduit_power",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:dolphins_grace",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:bad_omen",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:hero_of_the_village",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "minecraft:darkness",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "farmersdelight:comfort",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "unusualend:ender_infection",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "unusualend:building_inability",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "unusualend:heaviness",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:venom_strike",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:illager_bane",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:thorn_shield",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:thunderstrike",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:blind_shield",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:frost_strike",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:burning_strike",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:glowing_aura",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:healing_mist",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:arthropod_blight",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:silence_cloak",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:withering_strike",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "todecoins:holy_strike",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_potion",
+        "potion_duration": 300,
+        "potion_effect": "ecologics:slippery",
+        "requested_table": "todecoins:trade_tables/currency/emerald_quarter_bank_note_value_currency"
+      }
+    ],
+    "novice": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/one_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/five_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/five_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/brewing/ten_emerald_value_potion_ingredients_table",
+        "requested_table": "todecoins:trade_tables/currency/ten_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/glass/glass_bottle_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "villagersplus:alchemist"
+}

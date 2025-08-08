@@ -3,7 +3,7 @@ package com.github.warrentode.todecoins.item.custom.collectiblecoins.entity;
 
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
@@ -74,11 +74,11 @@ public class CubeCoinItem extends CollectibleCoin implements ICurioItem {
             playerUsing.addEffect(new MobEffectInstance(MobEffects.JUMP, 200, 0,
                     false, false, false));
 
-            if (stack.is(ModTags.Items.SLIME_COIN_SET)) {
+            if (stack.is(TodeCoinsTags.Items.SLIME_COIN_SET)) {
                 playerUsing.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 200, 0,
                         false, false, false));
             }
-            if (stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
+            if (stack.is(TodeCoinsTags.Items.MAGMA_CUBE_COIN_SET)) {
                 playerUsing.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0,
                         false, false, false));
             }
@@ -169,10 +169,10 @@ public class CubeCoinItem extends CollectibleCoin implements ICurioItem {
             public List<Component> getSlotsTooltip(List<Component> tooltips) {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable(MobEffects.JUMP.getDescriptionId()).withStyle(ChatFormatting.BLUE));
-                if (stack.is(ModTags.Items.SLIME_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.SLIME_COIN_SET)) {
                     tooltips.add(Component.translatable(MobEffects.ABSORPTION.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 }
-                if (stack.is(ModTags.Items.MAGMA_CUBE_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.MAGMA_CUBE_COIN_SET)) {
                     tooltips.add(Component.translatable(MobEffects.FIRE_RESISTANCE.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);

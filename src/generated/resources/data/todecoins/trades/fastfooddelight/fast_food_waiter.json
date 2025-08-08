@@ -1,0 +1,83 @@
+{
+  "offers": {
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/drinks_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "todecoins:trade_tables/food/sandwich_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/drinks_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 4,
+        "offered_table": "todecoins:trade_tables/food/plated_foods_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/drinks_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/soup_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/drinks_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/dessert_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 25
+      }
+    ],
+    "novice": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/drinks_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "todecoins:trade_tables/food/side_dish_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "fastfooddelight:fast_food_waiter"
+}

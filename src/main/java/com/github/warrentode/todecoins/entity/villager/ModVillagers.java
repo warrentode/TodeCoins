@@ -37,12 +37,14 @@ public class ModVillagers {
                     x -> x.get() == LEPRECHAUN_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
                     ModSounds.WORK_LEPRECHAUN.get()));
 
+    @SuppressWarnings("removal")
     public static void init() {
         setHeroGifts(new ResourceLocation(TodeCoins.MODID, "banker_gift"), BANKER.get());
         setHeroGifts(new ResourceLocation(TodeCoins.MODID, "leprechaun_gift"), LEPRECHAUN.get());
     }
 
     public static void setHeroGifts(@NotNull ResourceLocation name, VillagerProfession profession) {
+        //noinspection removal
         GiveGiftToHero.GIFTS.put(profession, new ResourceLocation(name.getNamespace(), "gameplay/hero_of_the_village/" + name.getPath()));
     }
 
