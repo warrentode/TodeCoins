@@ -1,0 +1,83 @@
+{
+  "offers": {
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency",
+        "trade_experience": 20
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency",
+        "trade_experience": 15
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency",
+        "trade_experience": 25
+      }
+    ],
+    "novice": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/misc/train_equipment_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/two_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "dynamicvillage:train_mechanic"
+}

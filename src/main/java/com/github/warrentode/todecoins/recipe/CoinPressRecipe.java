@@ -125,7 +125,7 @@ public class CoinPressRecipe implements Recipe<RecipeWrapper> {
 
     public static class Serializer implements RecipeSerializer<CoinPressRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        @SuppressWarnings("unused")
+        @SuppressWarnings({"unused", "removal"})
         public static final ResourceLocation ID = new ResourceLocation(MODID, "glassblowing");
 
         public Serializer() {

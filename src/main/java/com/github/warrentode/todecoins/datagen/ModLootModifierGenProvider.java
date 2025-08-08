@@ -7,7 +7,7 @@ import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.loot.conditions.tag.BlockTagCondition;
 import com.github.warrentode.todecoins.loot.modifiers.AddItemLootModifier;
 import com.github.warrentode.todecoins.loot.modifiers.AddLootTableModifier;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
@@ -27,7 +27,7 @@ public class ModLootModifierGenProvider extends GlobalLootModifierProvider {
     protected void start() {
         add("add_four_leaf_clover_drops", new AddItemLootModifier(
                 new LootItemCondition[]{
-                        BlockTagCondition.isTag(ModTags.Blocks.DROPS_FOUR_LEAF_CLOVER)
+                        BlockTagCondition.isTag(TodeCoinsTags.Blocks.DROPS_FOUR_LEAF_CLOVER)
                 },
                 ModItems.FOUR_LEAF_CLOVER.get(), 0.001F
         ));

@@ -1,9 +1,9 @@
 package com.github.warrentode.todecoins.entity.spawners.piglinmerchant;
 
-import com.github.warrentode.todecoins.config.CommonConfig;
+import com.github.warrentode.todecoins.config.Config;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchant;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -26,8 +26,8 @@ public class PiglinMerchantSpawner implements CustomSpawner {
     private final PiglinMerchantData data;
     @SuppressWarnings("unused")
     private final EntityType<PiglinMerchant> entityType;
-    public static final int defaultSpawnDelay = CommonConfig.getPiglinMerchantNetherSpawnDelay();
-    public static final int defaultDespawnDelay = CommonConfig.getPiglinMerchantNetherDespawnDelay();
+    public static final int defaultSpawnDelay = Config.getPiglinMerchantNetherSpawnDelay();
+    public static final int defaultDespawnDelay = Config.getPiglinMerchantNetherDespawnDelay();
     private static final int tickDelayBeforeSpawn = defaultSpawnDelay / 20;
     private static final int minSpawnChance = 25;
     private static final int maxSpawnChance = 100;
@@ -108,7 +108,7 @@ public class PiglinMerchantSpawner implements CustomSpawner {
             BlockPos pos1 = optional.orElse(pos);
             BlockPos pos2 = this.findSpawnPositionNear(serverLevel, pos1, maxDistance);
             if (pos2 != null && this.hasEnoughSpace(serverLevel, pos2)) {
-                if (!serverLevel.getBiome(pos2).is(ForgeTags.Biomes.HAS_RUINED_PORTALS)) {
+                if (!serverLevel.getBiome(pos2).is(TodeCoinsTags.Biomes.HAS_RUINED_PORTALS)) {
                     return false;
                 }
 

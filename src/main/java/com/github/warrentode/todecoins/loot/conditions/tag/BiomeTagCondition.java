@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
+@SuppressWarnings("ALL")
 public class BiomeTagCondition implements LootItemCondition {
     final TagKey<Biome> biomeTag;
 

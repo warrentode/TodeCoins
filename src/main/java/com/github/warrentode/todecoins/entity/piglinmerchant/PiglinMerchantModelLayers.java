@@ -7,6 +7,7 @@ import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 
 public class PiglinMerchantModelLayers {
+    @SuppressWarnings("removal")
     public static final ModelLayerLocation PIGLINMERCHANT
             = new ModelLayerLocation(new ResourceLocation(MODID, "piglinmerchant"), "main");
 }

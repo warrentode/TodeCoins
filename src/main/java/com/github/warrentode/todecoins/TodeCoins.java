@@ -3,38 +3,13 @@ package com.github.warrentode.todecoins;
 import com.github.warrentode.todecoins.attribute.ModAttributes;
 import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.block.entity.ModBlockEntities;
-import com.github.warrentode.todecoins.config.CommonConfig;
-import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.CarpenterTradesConfig;
-import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.MusicianTradesConfig;
-import com.github.warrentode.todecoins.config.trades.annabethsextravillagers.PotterTradesConfig;
-import com.github.warrentode.todecoins.config.trades.beautify.BotanistTradesConfig;
-import com.github.warrentode.todecoins.config.trades.chefsdelight.ChefTradesConfig;
-import com.github.warrentode.todecoins.config.trades.chefsdelight.CookTradesConfig;
-import com.github.warrentode.todecoins.config.trades.domesticationinnovation.AnimalTamerTradesConfig;
-import com.github.warrentode.todecoins.config.trades.dynamicvillage.HydraulicEngineerTradesConfig;
-import com.github.warrentode.todecoins.config.trades.dynamicvillage.MechanicalEngineerTradesConfig;
-import com.github.warrentode.todecoins.config.trades.dynamicvillage.MinerTradesConfig;
-import com.github.warrentode.todecoins.config.trades.dynamicvillage.TrainMechanicTradesConfig;
-import com.github.warrentode.todecoins.config.trades.fastfooddelight.WaiterTradesConfig;
-import com.github.warrentode.todecoins.config.trades.friendsandfoes.BeekeeperTradesConfig;
-import com.github.warrentode.todecoins.config.trades.kawaiidishes.BaristaTradesConfig;
-import com.github.warrentode.todecoins.config.trades.minecraft.*;
-import com.github.warrentode.todecoins.config.trades.morevillagers.*;
-import com.github.warrentode.todecoins.config.trades.todecoins.PiglinMerchantTradesConfig;
-import com.github.warrentode.todecoins.config.trades.sawmill.SawmillTradesConfig;
-import com.github.warrentode.todecoins.config.trades.sewingkit.TailorTradesConfig;
-import com.github.warrentode.todecoins.config.trades.todecoins.BankerTradesConfig;
-import com.github.warrentode.todecoins.config.trades.todecoins.LeprechaunTradesConfig;
-import com.github.warrentode.todecoins.config.trades.todecoins.NumismatistTradesConfig;
-import com.github.warrentode.todecoins.config.trades.todevillagers.DiscJockeyTradesConfig;
-import com.github.warrentode.todecoins.config.trades.todevillagers.GlassblowerTradesConfig;
-import com.github.warrentode.todecoins.config.trades.todevillagers.RetiredTraderTradesConfig;
-import com.github.warrentode.todecoins.config.trades.villager_enchanter.EnchanterTradesConfig;
-import com.github.warrentode.todecoins.config.trades.villagersplus.AlchemistTradesConfig;
-import com.github.warrentode.todecoins.config.trades.villagersplus.HorticulturistTradesConfig;
+import com.github.warrentode.todecoins.config.Config;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.entity.ModEntityTypes;
 import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchantRenderer;
+import com.github.warrentode.todecoins.entity.trades.trade_api.CustomRegistryHelper;
+import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.TradeOfferManager;
+import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types.TradeOfferFactoryType;
 import com.github.warrentode.todecoins.entity.villager.ModVillagers;
 import com.github.warrentode.todecoins.entity.villager.renderer.NumismatistRenderer;
 import com.github.warrentode.todecoins.gui.ModMenuTypes;
@@ -48,16 +23,18 @@ import com.github.warrentode.todecoins.potion.ModPotions;
 import com.github.warrentode.todecoins.recipe.ModRecipes;
 import com.github.warrentode.todecoins.recipe.recipebook.CoinPressRecipeCategories;
 import com.github.warrentode.todecoins.sounds.ModSounds;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.item.trading.Merchant;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
@@ -79,6 +56,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -89,83 +67,35 @@ import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
 import top.theillusivec4.curios.api.type.capability.ICurio;
 
+import java.util.function.Supplier;
+
 @Mod(TodeCoins.MODID)
 public class TodeCoins {
     public static final String MODID = "todecoins";
     public static final Logger LOGGER = LogManager.getLogger();
 
+    public static Supplier<IForgeRegistry<TradeOfferFactoryType<?>>> supplier = null;
+    @SuppressWarnings("removal")
+    public static final ResourceLocation TRADE_OFFER_FACTORY_REGISTRY_KEY = new ResourceLocation(MODID, "trade_offer_factory");
+
+    // Instance of TradeOfferManager
+    public static final TradeOfferManager TRADE_OFFER_MANAGER = new TradeOfferManager();
+
     @SuppressWarnings("removal")
     public TodeCoins() {
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MODID + "/common.toml");
-        // annabethsextravillagers trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CarpenterTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/carpenter.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MusicianTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/musician.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PotterTradesConfig.SPEC, MODID + "/trades/annabethsextravillagers/potter.toml");
-        // beautify trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BotanistTradesConfig.SPEC, MODID + "/trades/beautify/botanist.toml");
-        // chefsdelight trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ChefTradesConfig.SPEC, MODID + "/trades/chefsdelight/delightchef.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CookTradesConfig.SPEC, MODID + "/trades/chefsdelight/delightcook.toml");
-        // domesticationinnovation trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AnimalTamerTradesConfig.SPEC, MODID + "/trades/domesticationinnovation/animal_tamer.toml");
-        // dynamicvillage trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, HydraulicEngineerTradesConfig.SPEC, MODID + "/trades/dynamicvillage/hydraulic_engineer.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MechanicalEngineerTradesConfig.SPEC, MODID + "/trades/dynamicvillage/mechanical_engineer.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MinerTradesConfig.SPEC, MODID + "/trades/dynamicvillage/miner.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TrainMechanicTradesConfig.SPEC, MODID + "/trades/dynamicvillage/train_mechanic.toml");
-        // fastfooddelight trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WaiterTradesConfig.SPEC, MODID + "/trades/fastfooddelight/waiter.toml");
-        // friendsandfoes trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BeekeeperTradesConfig.SPEC, MODID + "/trades/friendsandfoes/beekeeper.toml");
-        // kawaiidishes trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BaristaTradesConfig.SPEC, MODID + "/trades/kawaiidishes/barista.toml");
-        // minecraft trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ArmorerTradesConfig.SPEC, MODID + "/trades/minecraft/armorer.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ButcherTradesConfig.SPEC, MODID + "/trades/minecraft/butcher.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CartographerTradesConfig.SPEC, MODID + "/trades/minecraft/cartographer.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ClericTradesConfig.SPEC, MODID + "/trades/minecraft/cleric.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FarmerTradesConfig.SPEC, MODID + "/trades/minecraft/farmer.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FishermanTradesConfig.SPEC, MODID + "/trades/minecraft/fisherman.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FletcherTradesConfig.SPEC, MODID + "/trades/minecraft/fletcher.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LeatherworkerTradesConfig.SPEC, MODID + "/trades/minecraft/leatherworker.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LibrarianTradesConfig.SPEC, MODID + "/trades/minecraft/librarian.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, MasonTradesConfig.SPEC, MODID + "/trades/minecraft/mason.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ShepherdTradesConfig.SPEC, MODID + "/trades/minecraft/shepherd.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ToolsmithTradesConfig.SPEC, MODID + "/trades/minecraft/toolsmith.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WanderingTraderTradesConfig.SPEC, MODID + "/trades/minecraft/wandering_trader.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WeaponsmithTradesConfig.SPEC, MODID + "/trades/minecraft/weaponsmith.toml");
-        // morevillagers trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EnderianTradesConfig.SPEC, MODID + "/trades/morevillagers/enderian.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EngineerTradesConfig.SPEC, MODID + "/trades/morevillagers/engineer.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, FloristTradesConfig.SPEC, MODID + "/trades/morevillagers/florist.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, HunterTradesConfig.SPEC, MODID + "/trades/morevillagers/hunter.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NetherianTradesConfig.SPEC, MODID + "/trades/morevillagers/netherian.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, OceanographerTradesConfig.SPEC, MODID + "/trades/morevillagers/oceanographer.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, WoodworkerTradesConfig.SPEC, MODID + "/trades/morevillagers/woodworker.toml");
-        // sawmill trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SawmillTradesConfig.SPEC, MODID + "/trades/sawmill/carpenter.toml");
-        // sewingkit trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TailorTradesConfig.SPEC, MODID + "/trades/sewingkit/tailor.toml");
-        // todecoins trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, BankerTradesConfig.SPEC, MODID + "/trades/todecoins/banker.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, LeprechaunTradesConfig.SPEC, MODID + "/trades/todecoins/leprechaun.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, NumismatistTradesConfig.SPEC, MODID + "/trades/todecoins/numismatist.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, PiglinMerchantTradesConfig.SPEC, MODID + "/trades/todecoins/piglin_merchant.toml");
-        // todevillagers trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, RetiredTraderTradesConfig.SPEC, MODID + "/trades/todevillagers/retired_trader.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, GlassblowerTradesConfig.SPEC, MODID + "/trades/todevillagers/glassblower.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DiscJockeyTradesConfig.SPEC, MODID + "/trades/todevillagers/disc_jockey.toml");
-        // villager_enchanter trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, EnchanterTradesConfig.SPEC, MODID + "/trades/villager_enchanter/enchanter.toml");
-        // villagersplus trade config files
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, AlchemistTradesConfig.SPEC, MODID + "/trades/villagersplus/alchemist.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, HorticulturistTradesConfig.SPEC, MODID + "/trades/villagersplus/horticulturist.toml");
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, com.github.warrentode.todecoins.config.trades.villagersplus.OceanographerTradesConfig.SPEC, MODID + "/trades/villagersplus/oceanographer.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC, MODID + "/common.toml");
 
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
+
+        // add listeners
         modEventBus.addListener(this::onIMEnqueueEvent);
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::newRegistryEventListener);
+        modEventBus.addListener(this::registerEventListener);
+
+        // Register manager as a reload listener
+        MinecraftForge.EVENT_BUS.addListener(TRADE_OFFER_MANAGER::onDataPackReload);
 
         ModSounds.SOUNDS.register(modEventBus);
         ModAttributes.ATTRIBUTES.register(modEventBus);
@@ -184,6 +114,21 @@ public class TodeCoins {
 
         ModLootModifiers.register(modEventBus);
         ModLootItemConditions.register(modEventBus);
+
+        // forces the class to load early
+        TradeOfferFactoryType.init();
+
+        LOGGER.info("Initializing TodeCoins.");
+    }
+
+    private void newRegistryEventListener(@NotNull NewRegistryEvent event) {
+        RegistryBuilder<TradeOfferFactoryType<?>> builder = new RegistryBuilder<>();
+        builder.setName(TRADE_OFFER_FACTORY_REGISTRY_KEY);
+        supplier = event.create(builder);
+    }
+
+    private void registerEventListener(RegisterEvent event) {
+        CustomRegistryHelper.tradeOfferFactoryTypeRegistryHelper.registerAll(event);
     }
 
     private void onIMEnqueueEvent(InterModEnqueueEvent event) {
@@ -200,7 +145,7 @@ public class TodeCoins {
         ItemStack stack = event.getObject();
         //noinspection unused
         Item item = stack.getItem();
-        if (stack.is(ModTags.Items.WALLETS)) {
+        if (stack.is(TodeCoinsTags.Items.WALLETS)) {
             final LazyOptional<ICurio> curioBeltSlot = LazyOptional.of(() -> new CurioBeltSlot(stack));
             event.addCapability(CuriosCapability.ID_ITEM, new ICapabilityProvider() {
                 @Override
@@ -213,19 +158,33 @@ public class TodeCoins {
     }
 
     private void commonSetup(final @NotNull FMLCommonSetupEvent event) {
-        event.enqueueWork(ModVillagers::registerPOIs);
-        event.enqueueWork(ModVillagers::init);
         event.enqueueWork(() -> {
+            // Register all Merchant-implementing entity types
+            ForgeRegistries.ENTITY_TYPES.getValues().forEach(entityType -> {
+                Class<?> entityClass = entityType.getBaseClass();
+
+                if (Merchant.class.isAssignableFrom(entityClass)) {
+                    ResourceLocation id = ForgeRegistries.ENTITY_TYPES.getKey(entityType);
+                    if (id != null) {
+                        TradeOfferManager.registerGenericMerchant(entityType, id);
+                        TodeCoins.LOGGER.info("Registered merchant entity: {}", id);
+                    }
+                }
+            });
+
+            // Register POIs and Villager-related setup
+            ModVillagers.registerPOIs();
+            ModVillagers.init();
+
+            // Register spawn placements
             //noinspection deprecation
             SpawnPlacements.register(ModEntityTypes.NUMISMATIST.get(), SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
-        });
-        event.enqueueWork(()-> {
+
             //noinspection deprecation
             SpawnPlacements.register(ModEntityTypes.PIGLINMERCHANT.get(), SpawnPlacements.Type.ON_GROUND,
                     Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules);
-        });
-        event.enqueueWork(() -> {
+
             // Potions
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
                     ModItems.LUCKY_COIN.get(), Potions.THICK));

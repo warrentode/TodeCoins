@@ -83,10 +83,12 @@ public class CoinPressRecipeBuilder {
         return this;
     }
 
+    @SuppressWarnings("unused")
     public CoinPressRecipeBuilder unlockedByItems(String criterionName, ItemLike... items) {
         return unlockedBy(criterionName, InventoryChangeTrigger.TriggerInstance.hasItems(items));
     }
 
+    @SuppressWarnings("unused")
     public CoinPressRecipeBuilder unlockedByAnyIngredient(ItemLike... items) {
         advancement.addCriterion("has_any_ingredient", InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(items).build()));
         return this;
@@ -103,6 +105,7 @@ public class CoinPressRecipeBuilder {
         build(consumerIn, TodeCoins.MODID + ":coinpress/" + location.getPath());
     }
 
+    @SuppressWarnings("removal")
     public void build(Consumer<FinishedRecipe> consumerIn, String save) {
         ResourceLocation resourcelocation = ForgeRegistries.ITEMS.getKey(result);
         if ((new ResourceLocation(save)).equals(resourcelocation)) {
@@ -113,6 +116,7 @@ public class CoinPressRecipeBuilder {
         }
     }
 
+    @SuppressWarnings("removal")
     public void build(Consumer<FinishedRecipe> consumerIn, ResourceLocation id) {
         if (!advancement.getCriteria().isEmpty()) {
             advancement.parent(new ResourceLocation("recipes/root")).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))

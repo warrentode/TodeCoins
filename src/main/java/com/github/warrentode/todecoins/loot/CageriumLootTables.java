@@ -122,6 +122,7 @@ public class CageriumLootTables {
     public static final ResourceLocation GUARD = register("guardvillagers", "guard");
 
     private static ResourceLocation register(String modid, String entity) {
+        //noinspection removal
         return register(new ResourceLocation(modid, "cagerium/" + entity));
     }
 

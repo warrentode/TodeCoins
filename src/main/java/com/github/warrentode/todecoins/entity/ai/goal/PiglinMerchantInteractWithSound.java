@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.entity.ai.goal;
 
 import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchant;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -31,7 +31,7 @@ public class PiglinMerchantInteractWithSound extends LookAtPlayerGoal {
 
     public boolean canUse() {
         if (this.lookAt instanceof Player player) {
-            if (player.getOffhandItem().is(ModTags.Items.PIGLIN_LOVED) || player.getMainHandItem().is(ModTags.Items.PIGLIN_LOVED)) {
+            if (player.getOffhandItem().is(TodeCoinsTags.Items.PIGLIN_LOVED) || player.getMainHandItem().is(TodeCoinsTags.Items.PIGLIN_LOVED)) {
                 if (RandomSource.create().nextFloat() < 0.0125) {
                     this.mob.playSound(soundEvent, 0.15F, RandomSource.create().nextFloat());
                 }

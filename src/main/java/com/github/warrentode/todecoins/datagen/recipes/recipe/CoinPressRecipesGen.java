@@ -3,7 +3,7 @@ package com.github.warrentode.todecoins.datagen.recipes.recipe;
 import com.github.warrentode.todecoins.datagen.recipes.builder.CoinPressRecipeBuilder;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.recipe.recipebook.CoinPressRecipeBookTab;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
 
@@ -26,44 +26,44 @@ public class CoinPressRecipesGen {
     private static void stampCoins(Consumer<FinishedRecipe> consumer) {
         CoinPressRecipeBuilder.coinPressRecipe(ModItems.COPPER_COIN.get(), 2, BASIC_STAMP_TIME, BASIC_XP)
                 .addIngredient(ModItems.CURRENCY_STAMP.get())
-                .addIngredient(ForgeTags.Items.COPPER_NUGGET)
+                .addIngredient(TodeCoinsTags.Items.COPPER_NUGGET_FORGE_TAG)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
                 .unlockedBy("has_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CURRENCY_STAMP.get()))
                 .build(consumer);
 
         CoinPressRecipeBuilder.coinPressRecipe(ModItems.IRON_COIN.get(), 2, BASIC_STAMP_TIME, BASIC_XP)
                 .addIngredient(ModItems.CURRENCY_STAMP.get())
-                .addIngredient(ForgeTags.Items.IRON_NUGGET)
+                .addIngredient(TodeCoinsTags.Items.IRON_NUGGET_FORGE_TAG)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
                 .unlockedBy("has_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CURRENCY_STAMP.get()))
                 .build(consumer);
         CoinPressRecipeBuilder.coinPressRecipe(ModItems.GOLD_COIN.get(), 2, BASIC_STAMP_TIME, BASIC_XP)
                 .addIngredient(ModItems.CURRENCY_STAMP.get())
-                .addIngredient(ForgeTags.Items.GOLD_NUGGET)
+                .addIngredient(TodeCoinsTags.Items.GOLD_NUGGET_FORGE_TAG)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
                 .unlockedBy("has_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CURRENCY_STAMP.get()))
                 .build(consumer);
         CoinPressRecipeBuilder.coinPressRecipe(ModItems.NETHERITE_COIN.get(), 2, BASIC_STAMP_TIME, BASIC_XP)
                 .addIngredient(ModItems.CURRENCY_STAMP.get())
-                .addIngredient(ForgeTags.Items.NETHERITE_NUGGET)
+                .addIngredient(TodeCoinsTags.Items.NETHERITE_NUGGET_FORGE_TAG)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
                 .unlockedBy("has_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CURRENCY_STAMP.get()))
                 .build(consumer);
         CoinPressRecipeBuilder.coinPressRecipe(ModItems.LUCKY_COIN.get(), 2, BASIC_STAMP_TIME, BASIC_XP)
                 .addIngredient(ModItems.CURRENCY_STAMP.get())
-                .addIngredient(ForgeTags.Items.LUCKY_NUGGET)
+                .addIngredient(TodeCoinsTags.Items.LUCKY_NUGGET_FORGE_TAG)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
                 .unlockedBy("has_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.CURRENCY_STAMP.get()))
                 .build(consumer);
         CoinPressRecipeBuilder.coinPressRecipe(ModItems.NETHER_GOLD_COIN.get(), 1, NETHER_STAMP_TIME, NETHER_XP)
                 .addIngredient(ModItems.NETHER_CURRENCY_STAMP.get())
-                .addIngredient(ForgeTags.Items.GOLD_INGOT)
+                .addIngredient(TodeCoinsTags.Items.GOLD_INGOT_FORGE_TAG)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
                 .unlockedBy("has_nether_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.NETHER_CURRENCY_STAMP.get()))
                 .build(consumer);
         CoinPressRecipeBuilder.coinPressRecipe(ModItems.ENDONIAN_COIN.get(), 2, ENDONIAN_STAMP_TIME, ENDONIAN_XP)
                 .addIngredient(ModItems.ENDONIAN_CURRENCY_STAMP.get())
-                .addIngredient(ForgeTags.Items.ENDONIAN_NUGGET)
+                .addIngredient(TodeCoinsTags.Items.ENDONIAN_NUGGET_FORGE_TAG)
                 .setRecipeBookTab(CoinPressRecipeBookTab.COINS)
                 .unlockedBy("has_endonian_currency_stamp", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.ENDONIAN_CURRENCY_STAMP.get()))
                 .build(consumer);

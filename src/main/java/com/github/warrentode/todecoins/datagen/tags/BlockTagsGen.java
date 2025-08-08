@@ -1,8 +1,7 @@
 package com.github.warrentode.todecoins.datagen.tags;
 
 import com.github.warrentode.todecoins.block.ModBlocks;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -36,20 +35,20 @@ public class BlockTagsGen extends BlockTagsProvider {
                 .add(ModBlocks.COINPRESSBLOCK.get());
     }
     protected void registerForgeTags() {
-        tag(ForgeTags.Blocks.STORAGE_BLOCKS)
-                .addTag(ForgeTags.Blocks.CURRENCY_BLOCKS);
-        tag(ForgeTags.Blocks.CURRENCY_BLOCKS)
-                .addTag(ModTags.Blocks.CURRENCY_BLOCKS);
+        tag(TodeCoinsTags.Blocks.STORAGE_BLOCKS_FORGE_TAG)
+                .addTag(TodeCoinsTags.Blocks.CURRENCY_BLOCKS_FORGE_TAG);
+        tag(TodeCoinsTags.Blocks.CURRENCY_BLOCKS_FORGE_TAG)
+                .addTag(TodeCoinsTags.Blocks.CURRENCY_BLOCKS);
     }
     protected void registerModTags() {
-        tag(ModTags.Blocks.DROPS_FOUR_LEAF_CLOVER)
+        tag(TodeCoinsTags.Blocks.DROPS_FOUR_LEAF_CLOVER)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:clover")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("biomesoplenty:huge_clover_petal")))
                 .add(Blocks.GRASS)
                 .add(Blocks.TALL_GRASS);
-        tag(ModTags.Blocks.STORAGE_BLOCKS)
-                .addTag(ModTags.Blocks.CURRENCY_BLOCKS);
-        tag(ModTags.Blocks.CURRENCY_BLOCKS).add(
+        tag(TodeCoinsTags.Blocks.STORAGE_BLOCKS)
+                .addTag(TodeCoinsTags.Blocks.CURRENCY_BLOCKS);
+        tag(TodeCoinsTags.Blocks.CURRENCY_BLOCKS).add(
                 ModBlocks.COPPER_COIN_BAG.get(),
                 ModBlocks.IRON_COIN_BAG.get(),
                 ModBlocks.GOLD_COIN_BAG.get(),
@@ -62,7 +61,7 @@ public class BlockTagsGen extends BlockTagsProvider {
                 ModBlocks.EMERALD_BANK_NOTE_BAG.get(),
                 ModBlocks.POT_OF_GOLD.get()
         );
-        tag(ModTags.Blocks.JOB_BLOCKS).add(
+        tag(TodeCoinsTags.Blocks.JOB_BLOCKS).add(
                 ModBlocks.COINPRESSBLOCK.get(),
                 ModBlocks.POT_OF_GOLD.get()
         );

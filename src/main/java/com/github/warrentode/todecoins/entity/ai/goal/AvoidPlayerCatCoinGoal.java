@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.entity.ai.goal;
 
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -68,6 +68,7 @@ public class AvoidPlayerCatCoinGoal<T extends LivingEntity> extends Goal {
     /**
      * Goal that helps mobs avoid mobs of a specific class
      */
+    @SuppressWarnings("unused")
     public AvoidPlayerCatCoinGoal(PathfinderMob pMob, Class<T> avoidClass, float pMaxDistance, double pWalkSpeedModifier, double pSprintSpeedModifier, Predicate<LivingEntity> pPredicateOnAvoidEntity) {
         this(pMob, avoidClass, (entity) -> true, pMaxDistance, pWalkSpeedModifier, pSprintSpeedModifier, pPredicateOnAvoidEntity);
     }
@@ -111,8 +112,8 @@ public class AvoidPlayerCatCoinGoal<T extends LivingEntity> extends Goal {
                 catCharm = ocelotCoin4.get().stack();
             }
 
-            return ModList.get().isLoaded("curios") && (catCharm != null && catCharm.is(ModTags.Items.CAT_COIN_SET)
-                    || catCharm != null && catCharm.is(ModTags.Items.OCELOT_COIN_SET));
+            return ModList.get().isLoaded("curios") && (catCharm != null && catCharm.is(TodeCoinsTags.Items.CAT_COIN_SET)
+                    || catCharm != null && catCharm.is(TodeCoinsTags.Items.OCELOT_COIN_SET));
         }
         return false;
     }
@@ -123,7 +124,7 @@ public class AvoidPlayerCatCoinGoal<T extends LivingEntity> extends Goal {
      */
     public boolean canUse() {
         MinecraftServer server = this.mob != null ? this.mob.getServer() : null;
-        ServerLevel serverLevel = server != null ? server.getLevel(this.mob.level.dimension()) : null;
+        @SuppressWarnings("unused") ServerLevel serverLevel = server != null ? server.getLevel(this.mob.level.dimension()) : null;
         ServerPlayer player = server != null ? server.createCommandSourceStack().getPlayer() : null;
 
         this.toAvoid = this.mob != null ? this.mob.level.getNearestEntity(this.mob.level.getEntitiesOfClass(this.avoidClass, this.mob.getBoundingBox().inflate(this.maxDist, 3.0D, this.maxDist), (typeTest) -> true), this.avoidEntityTargeting, this.mob, this.mob.getX(), this.mob.getY(), this.mob.getZ()) : null;

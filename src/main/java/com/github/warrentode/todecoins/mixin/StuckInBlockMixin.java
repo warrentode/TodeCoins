@@ -2,7 +2,7 @@ package com.github.warrentode.todecoins.mixin;
 
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -53,7 +53,7 @@ public class StuckInBlockMixin {
             if (livingEntity.hasEffect(ModEffects.ARTHROPOD_BLIGHT.get()) && state.is(Blocks.COBWEB)) {
                 ci.cancel();
             }
-            if ((stack != null && stack.is(ModTags.Items.FOX_COIN_SET)) && state.is(Blocks.SWEET_BERRY_BUSH)) {
+            if ((stack != null && stack.is(TodeCoinsTags.Items.FOX_COIN_SET)) && state.is(Blocks.SWEET_BERRY_BUSH)) {
                 ci.cancel();
             }
         }

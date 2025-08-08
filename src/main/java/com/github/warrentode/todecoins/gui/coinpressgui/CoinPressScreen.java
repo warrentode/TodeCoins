@@ -21,7 +21,9 @@ import java.awt.*;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> implements RecipeUpdateListener {
+    @SuppressWarnings("removal")
     private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(MODID, "textures/gui/coin_press_gui.png");
+    @SuppressWarnings("removal")
     private static final ResourceLocation RECIPE_BUTTON_TEXTURE = new ResourceLocation("textures/gui/recipe_button.png");
     private static final Rectangle PROGRESS_ARROW = new Rectangle(106, 51, 0, 15);
     private final CoinPressRecipeBookComponent recipeBookComponent = new CoinPressRecipeBookComponent();

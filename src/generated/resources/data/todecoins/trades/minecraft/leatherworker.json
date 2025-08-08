@@ -1,0 +1,86 @@
+{
+  "offers": {
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/misc/flint_buy_table",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_dyed_armor",
+        "offered_table": "todecoins:trade_tables/armor/helmets/leather_tier_helmets",
+        "requested_table": "todecoins:trade_tables/currency/three_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_dyed_armor",
+        "offered_table": "todecoins:trade_tables/armor/boots/leather_tier_boots",
+        "requested_table": "todecoins:trade_tables/currency/four_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/mob_parts/scute_table",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_dyed_armor",
+        "offered_table": "todecoins:trade_tables/horse_gear/leather_tier_horse_armor",
+        "requested_table": "todecoins:trade_tables/currency/six_emerald_value_currency",
+        "trade_experience": 20
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:tag_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_item_count": 6,
+        "requested_table": "todecoins:trade_tables/textiles/tagged_leather_table",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_dyed_armor",
+        "offered_table": "todecoins:trade_tables/armor/chestplates/leather_tier_chestplates",
+        "requested_table": "todecoins:trade_tables/currency/seven_emerald_value_currency",
+        "trade_experience": 15
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/horse_gear/saddle_table",
+        "requested_table": "todecoins:trade_tables/currency/six_emerald_value_currency",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_dyed_armor",
+        "offered_table": "todecoins:trade_tables/armor/helmets/leather_tier_helmets",
+        "requested_table": "todecoins:trade_tables/currency/five_emerald_value_currency",
+        "trade_experience": 25
+      }
+    ],
+    "novice": [
+      {
+        "type": "todecoins:tag_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_item_count": 6,
+        "requested_table": "todecoins:trade_tables/textiles/tagged_leather_table"
+      },
+      {
+        "type": "todecoins:loot_table_for_dyed_armor",
+        "offered_table": "todecoins:trade_tables/armor/leggings/leather_tier_leggings",
+        "requested_table": "todecoins:trade_tables/currency/five_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_dyed_armor",
+        "offered_table": "todecoins:trade_tables/armor/chestplates/leather_tier_chestplates",
+        "requested_table": "todecoins:trade_tables/currency/seven_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "minecraft:leatherworker"
+}

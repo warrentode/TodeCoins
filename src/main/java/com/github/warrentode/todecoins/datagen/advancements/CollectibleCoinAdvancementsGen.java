@@ -2,7 +2,7 @@ package com.github.warrentode.todecoins.datagen.advancements;
 
 import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import com.google.common.collect.Sets;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.advancements.Advancement;
@@ -80,7 +80,7 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
         }
 
         public void accept(Consumer<Advancement> consumer) {
-            Advancement collectibleCoins = Advancement.Builder.advancement().display(ModItems.SCHOLAR_OWL_COIN.get(),
+            @SuppressWarnings("removal") Advancement collectibleCoins = Advancement.Builder.advancement().display(ModItems.SCHOLAR_OWL_COIN.get(),
                     Component.translatable("advancement.collectibleCoins"), Component.translatable("advancement.collectibleCoins.desc"),
                     new ResourceLocation("todecoins:textures/block/pot.png"),
                     FrameType.TASK, false, false, false).addCriterion("trade",
@@ -91,7 +91,7 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
                     "first_coin", FrameType.TASK, true, true, false)
                     .addCriterion("find_first_coin",
                             InventoryChangeTrigger.TriggerInstance
-                                    .hasItems(ItemPredicate.Builder.item().of(ModTags.Items.COLLECTIBLE_COINS).build()))
+                                    .hasItems(ItemPredicate.Builder.item().of(TodeCoinsTags.Items.COLLECTIBLE_COINS).build()))
                     .requirements(RequirementsStrategy.OR).save(consumer, getPath("collectible/first_coin"));
 
             //noinspection unused
@@ -111,7 +111,7 @@ public class CollectibleCoinAdvancementsGen extends AdvancementProvider {
                     "equip_wallet", FrameType.TASK, true, true, false)
                     .addCriterion("equip_wallet",
                             CuriosTriggers.equip()
-                                    .withItem(ItemPredicate.Builder.item().of(ModTags.Items.WALLETS))
+                                    .withItem(ItemPredicate.Builder.item().of(TodeCoinsTags.Items.WALLETS))
                                     .withSlot(SlotPredicate.Builder.slot().of(SlotTypePreset.BELT.getIdentifier()))
                                     .withLocation(LocationPredicate.Builder.location())
                                     .build())

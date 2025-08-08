@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.datagen.recipes.recipe;
 
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -21,6 +21,7 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
         super(generator);
     }
 
+    @SuppressWarnings("removal")
     @Override
     protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         ConditionalRecipe.builder()
@@ -29,13 +30,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
                                 .addIngredient(Items.CRIMSON_FUNGUS)
                                 .addIngredient(Items.ROTTEN_FLESH)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get()))
                 );
@@ -46,13 +47,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.WARPED_SPICE_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
                                 .addIngredient(Items.WARPED_FUNGUS)
                                 .addIngredient(Items.PUFFERFISH)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.WARPED_SPICE_CHOCOLATE_COIN.get()))
                 );
@@ -63,13 +64,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.MILK_BONE_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
                                 .addIngredient(Items.BONE_MEAL)
                                 .addIngredient(Items.COBWEB)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.MILK_BONE_CHOCOLATE_COIN.get()))
                 );
@@ -80,13 +81,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
                                 .addIngredient(Items.EMERALD)
                                 .addIngredient(Items.INK_SAC)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get()))
                 );
@@ -97,13 +98,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
-                                .addIngredient(ForgeTags.Items.BERRIES)
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.BERRIES)
                                 .addIngredient(Items.PHANTOM_MEMBRANE)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get()))
                 );
@@ -114,13 +115,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
-                                .addIngredient(ForgeTags.Items.CLOVER)
-                                .addIngredient(ForgeTags.Items.CLOVER)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.CLOVER)
+                                .addIngredient(TodeCoinsTags.Items.CLOVER)
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get()))
                 );
@@ -131,13 +132,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
-                                .addIngredient(ForgeTags.Items.COCOA)
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.COCOA)
                                 .addIngredient(Items.GLOW_LICHEN)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get()))
                 );
@@ -148,13 +149,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
                                 .addIngredient(Items.MAGMA_CREAM)
                                 .addIngredient(Items.GLOWSTONE_DUST)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get()))
                 );
@@ -165,13 +166,13 @@ public class ConditionalCookingPotRecipesGen extends RecipeProvider implements I
                         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get(),
                                         4, CookingRecipes.NORMAL_COOKING, CookingRecipes.SMALL_EXP)
                                 .setRecipeBookTab(CookingPotRecipeBookTab.MISC)
-                                .addIngredient(ForgeTags.Items.COCOA_INGREDIENTS)
-                                .addIngredient(ForgeTags.Items.SUGAR)
-                                .addIngredient(ForgeTags.Items.MILK)
-                                .addIngredient(ForgeTags.Items.FAT)
+                                .addIngredient(TodeCoinsTags.Items.COCOA_INGREDIENTS)
+                                .addIngredient(TodeCoinsTags.Items.SUGAR)
+                                .addIngredient(TodeCoinsTags.Items.MILK)
+                                .addIngredient(TodeCoinsTags.Items.FAT)
                                 .addIngredient(Items.HONEY_BLOCK)
                                 .addIngredient(Items.COOKIE)
-                                .unlockedBy("has_cocoa", has(ForgeTags.Items.COCOA))
+                                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
                                 .build(consumer, new ResourceLocation("todecoins", "cooking/chocolate_coins/"
                                         + ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get()))
                 );

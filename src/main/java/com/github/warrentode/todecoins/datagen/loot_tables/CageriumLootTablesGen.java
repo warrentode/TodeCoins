@@ -41,6 +41,7 @@ public class CageriumLootTablesGen implements Consumer<BiConsumer<ResourceLocati
 
     @SuppressWarnings("SameParameterValue")
     static ResourceLocation path(String modid, String path) {
+        //noinspection removal
         return new ResourceLocation(modid, path);
     }
 

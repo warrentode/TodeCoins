@@ -3,8 +3,7 @@ package com.github.warrentode.todecoins.mixin;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.util.CalendarUtil;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -66,7 +65,7 @@ public abstract class PiglinBarterMixin {
                 stack = zombiePiglinCoin4.get().stack();
             }
 
-            return stack != null && stack.is(ModTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
+            return stack != null && stack.is(TodeCoinsTags.Items.ZOMBIFIED_PIGLIN_COIN_SET);
         }
         return false;
     }
@@ -216,21 +215,21 @@ public abstract class PiglinBarterMixin {
 
     @Inject(at = @At("HEAD"), method = "wantsToPickup", cancellable = true)
     private static void todeCoins_wantsToPickup(Piglin piglin, @NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (stack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS) && isNotHoldingLovedItemInOffHand(piglin)) {
+        if (stack.is(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS) && isNotHoldingLovedItemInOffHand(piglin)) {
             cir.setReturnValue(true);
             cir.cancel();
         }
     }
     @Inject(at = @At("HEAD"), method = "canAdmire", cancellable = true)
     private static void todeCoins_canAdmire(Piglin piglin, ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (!isAdmiringDisabled(piglin) && !isAdmiringItem(piglin) && piglin.isAdult() && (stack.isPiglinCurrency() || stack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS))) {
+        if (!isAdmiringDisabled(piglin) && !isAdmiringItem(piglin) && piglin.isAdult() && (stack.isPiglinCurrency() || stack.is(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS))) {
             cir.setReturnValue(true);
             cir.cancel();
         }
     }
     @Inject(at = @At("HEAD"), method = "isBarterCurrency", cancellable = true)
     private static void todeCoins_isBarterCurrency(@NotNull ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if (stack.is(ForgeTags.Items.PIGLIN_BARTER_ITEMS)) {
+        if (stack.is(TodeCoinsTags.Items.PIGLIN_BARTER_ITEMS)) {
             cir.setReturnValue(true);
             cir.cancel();
         }

@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.mixin;
 
 import com.github.warrentode.todecoins.attribute.PlayerCharisma;
-import com.github.warrentode.todecoins.config.CommonConfig;
+import com.github.warrentode.todecoins.config.Config;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.VillagerData;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -41,7 +41,7 @@ public abstract class VillagerMixin {
 
     @Inject(at = {@At("HEAD")}, method = {"restock"}, cancellable = true)
     public void restock(CallbackInfo ci) {
-        if (CommonConfig.getResetTrades()) {
+        if (Config.getResetTrades()) {
             MerchantOffers newOffers = new MerchantOffers();
             VillagerData data = invokeGetVillagerData();
 
@@ -53,7 +53,7 @@ public abstract class VillagerMixin {
             if (trades != null) {
                 for (int level = 1; level <= data.getLevel(); level++) {
                     var listings = trades.get(level);
-                    var tradeCount = CommonConfig.getMaxVillagerTrades();
+                    var tradeCount = Config.getMaxVillagerTrades();
 
                     if (listings == null) {
                         continue;

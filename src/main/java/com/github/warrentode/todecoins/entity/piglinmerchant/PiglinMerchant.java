@@ -1,8 +1,9 @@
 package com.github.warrentode.todecoins.entity.piglinmerchant;
 
 import com.github.warrentode.todecoins.entity.ai.goal.*;
+import com.github.warrentode.todecoins.entity.trades.PiglinMerchantTrades;
 import com.github.warrentode.todecoins.sounds.ModSounds;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import com.google.common.collect.Sets;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -134,7 +135,7 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
     }
 
     public static boolean isFood(@NotNull ItemStack stack) {
-        return stack.is(ModTags.Items.PIGLIN_MERCHANT_FOOD);
+        return stack.is(TodeCoinsTags.Items.PIGLIN_MERCHANT_FOOD);
     }
     private static @NotNull ItemStack removeOneItemFromItemEntity(@NotNull ItemEntity item) {
         ItemStack stack = item.getItem();
@@ -327,8 +328,7 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
 
     // synced data management
     private void stopWalking(PathfinderMob pathfinderMob) {
-        pathfinderMob.getNavigation()
-                .stop();
+        pathfinderMob.getNavigation().stop();
         setWalking(false);
     }
 
@@ -413,13 +413,13 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
         VillagerTrades.ItemListing[] trades$itemlisting = PiglinMerchantTrades.PIGLINMERCHANT_TRADES.get(1);
         VillagerTrades.ItemListing[] trades$itemlisting1 = PiglinMerchantTrades.PIGLINMERCHANT_TRADES.get(2);
         if (trades$itemlisting != null && trades$itemlisting1 != null) {
-            MerchantOffers merchantoffers = this.getOffers();
-            this.addOffersFromItemListings(merchantoffers, trades$itemlisting);
+            MerchantOffers merchantOffers = this.getOffers();
+            this.addOffersFromItemListings(merchantOffers, trades$itemlisting);
             int i = this.random.nextInt(trades$itemlisting1.length);
             VillagerTrades.ItemListing villagertrades$itemlisting = trades$itemlisting1[i];
             MerchantOffer merchantOffer = villagertrades$itemlisting.getOffer(this, this.random);
             if (merchantOffer != null) {
-                merchantoffers.add(merchantOffer);
+                merchantOffers.add(merchantOffer);
             }
         }
     }

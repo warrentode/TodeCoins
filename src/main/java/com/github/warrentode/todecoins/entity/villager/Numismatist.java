@@ -1,6 +1,6 @@
 package com.github.warrentode.todecoins.entity.villager;
 
-import com.github.warrentode.todecoins.entity.villager.trades.NumismatistTrades;
+import com.github.warrentode.todecoins.entity.trades.NumismatistTrades;
 import com.github.warrentode.todecoins.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

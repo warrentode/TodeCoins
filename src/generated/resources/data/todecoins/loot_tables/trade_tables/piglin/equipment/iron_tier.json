@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:barter",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/weapons/iron_tier_weapons"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/tools/iron_tier_tools"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/armor/boots/iron_tier_boots"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/armor/leggings/iron_tier_leggings"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/armor/chestplates/iron_tier_chestplates"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/armor/helmets/iron_tier_helmets"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:crossbow"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
 public class NumismatistRenderer extends MobRenderer<WanderingTrader, VillagerModel<WanderingTrader>> {
+    @SuppressWarnings("removal")
     private static final ResourceLocation VILLAGER_BASE_SKIN = new ResourceLocation("todecoins:textures/entity/numismatist.png");
 
     public NumismatistRenderer(EntityRendererProvider.Context context) {
@@ -29,7 +30,7 @@ public class NumismatistRenderer extends MobRenderer<WanderingTrader, VillagerMo
     }
 
     protected void scale(@NotNull WanderingTrader pLivingEntity, @NotNull PoseStack pMatrixStack, float pPartialTickTime) {
-        float f = 0.9375F;
-        pMatrixStack.scale(0.9375F, 0.9375F, 0.9375F);
+        float floatValue = 0.9375F;
+        pMatrixStack.scale(floatValue, floatValue, floatValue);
     }
 }

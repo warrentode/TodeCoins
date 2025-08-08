@@ -10,6 +10,7 @@ import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 
 public class PiglinMerchantRenderer extends MobRenderer<PiglinMerchant, PiglinMerchantModel<PiglinMerchant>> {
+    @SuppressWarnings("removal")
     private static final ResourceLocation TEXTURE = new ResourceLocation(MODID, "textures/entity/piglinmerchant.png");
 
     public PiglinMerchantRenderer(EntityRendererProvider.Context context) {

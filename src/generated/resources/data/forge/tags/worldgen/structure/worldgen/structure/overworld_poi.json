@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#supplementaries:worldgen/structure/way_sign_destinations",
+    "#forge:worldgen/structure/pillager_poi",
+    "#forge:worldgen/structure/desert_poi",
+    "#forge:worldgen/structure/jungle_poi",
+    "#forge:worldgen/structure/misc_poi",
+    "#forge:worldgen/structure/witch_sighting",
+    "#forge:worldgen/structure/treasure_poi",
+    "#forge:worldgen/structure/underground_poi",
+    "#forge:worldgen/structure/overworld_nether_poi",
+    "#forge:worldgen/structure/overworld_end_poi",
+    "#forge:worldgen/structure/overworld_slime_islands"
+  ]
+}

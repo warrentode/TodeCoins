@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.mixin;
 
 import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -45,7 +45,7 @@ public abstract class WalkThroughBerryBushMixin {
                     stack = foxCoin4.get().stack();
                 }
 
-                if (stack != null && stack.is(ModTags.Items.FOX_COIN_SET)) {
+                if (stack != null && stack.is(TodeCoinsTags.Items.FOX_COIN_SET)) {
                     ci.cancel();
                 }
             }

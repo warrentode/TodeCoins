@@ -5,10 +5,11 @@ import com.github.warrentode.todecoins.block.ModBlocks;
 import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.TradeLootTables;
 import com.github.warrentode.todecoins.loot.conditions.ModCheckCondition;
-import com.github.warrentode.todecoins.util.tags.ForgeTags;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.mehvahdjukaar.cagerium.Cagerium;
 import net.minecraft.data.loot.ChestLoot;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
@@ -19,6 +20,7 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.entries.TagEntry;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.functions.SetNbtFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.common.Tags;
@@ -684,7 +686,7 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.GOLD_INGOT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_METALS,
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_METALS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -1199,25 +1201,28 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.RAW_MEATS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.RAW_MEATS))
                 ));
         consumer.accept(TradeLootTables.TAGGED_MEAT_SOUPS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.MEAT_SOUPS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.MEAT_SOUPS))
                 ));
         consumer.accept(TradeLootTables.TAGGED_COOKED_MEATS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.COOKED_MEATS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COOKED_MEATS))
                 ));
         consumer.accept(TradeLootTables.TAGGED_SALTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SALTS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SALTS)
+                                .when(ModCheckCondition.mod().isLoaded("supplementaries")))
+                        .add(LootItem.lootTableItem(Items.SUGAR)
+                                .when(ModCheckCondition.mod().isLoaded("supplementaries").invert()))
                 ));
         consumer.accept(TradeLootTables.STONE_TIER_KNIVES,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1225,13 +1230,19 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.FLINT_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
+                        .add(LootItem.lootTableItem(Items.STONE_AXE)
+                                .when(ModCheckCondition.mod().isLoaded("farmersdelight").invert()))
                 ));
         consumer.accept(TradeLootTables.TAGGED_ASH_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.ASH))
-                ));
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.ASH)
+                                .when(ModCheckCondition.mod().isLoaded("supplementaries")))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TAGGED_STICK_TABLE)
+                                .when(ModCheckCondition.mod().isLoaded("supplementaries").invert()))
+                )
+        );
         consumer.accept(TradeLootTables.TAGGED_FOX_FOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1298,58 +1309,58 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.CROPS_VEGETABLES))
-                        .add(TagEntry.expandTag(ForgeTags.Items.CROPS_GRAINS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CROPS_VEGETABLES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CROPS_GRAINS))
                 ));
         consumer.accept(TradeLootTables.TAGGED_BREADS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.BREAD))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.BREAD))
                 ));
         consumer.accept(TradeLootTables.TAGGED_GOURDS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.GOURDS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GOURDS))
                 ));
         consumer.accept(TradeLootTables.TAGGED_PIES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.PIES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PIES))
                 ));
         consumer.accept(TradeLootTables.TAGGED_FRUITS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.CROPS_FRUIT))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CROPS_FRUIT))
                 ));
         consumer.accept(TradeLootTables.TAGGED_COOKIES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.COOKIES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COOKIES_FORGE_TAG))
                 ));
         consumer.accept(TradeLootTables.TAGGED_CAKES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.CAKES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CAKES))
                 ));
         consumer.accept(TradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.COOKED_FISHES))
-                        .add(TagEntry.expandTag(ForgeTags.Items.FISH_SOUPS))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SUSHI))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COOKED_FISHES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FISH_SOUPS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SUSHI))
                 ));
         consumer.accept(TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.RAW_FISHES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.RAW_FISHES))
                 ));
         consumer.accept(TradeLootTables.BELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1396,7 +1407,7 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.REFRESH_BOOK)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.REFRESH_BOOK)
                                 .when(ModCheckCondition.mod().isLoaded("villager_enchanter")))
                 ));
         consumer.accept(TradeLootTables.BOOK_TABLE,
@@ -1407,7 +1418,7 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                         .add(LootItem.lootTableItem(Items.WRITABLE_BOOK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(TagEntry.expandTag(ModTags.Items.BOOKSTACK)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.BOOKSTACK)
                                 .when(ModCheckCondition.mod().isLoaded("beautify")))
                 ));
         consumer.accept(TradeLootTables.CLOCK_TABLE,
@@ -1532,14 +1543,14 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootTableReference.lootTableReference(TradeLootTables.ITEM_FRAME_TABLE))
-                        .add(TagEntry.expandTag(ModTags.Items.PICTURE_FRAMES)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PICTURE_FRAMES)
                                 .when(ModCheckCondition.mod().isLoaded("beautify")))
                 ));
         consumer.accept(TradeLootTables.TRELLIS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.TRELLIS)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.TRELLIS)
                                 .when(ModCheckCondition.mod().isLoaded("beautify")))
                 ));
         consumer.accept(TradeLootTables.FLOWER_POT_TABLE,
@@ -1548,9 +1559,9 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.FLOWER_POT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(TagEntry.expandTag(ModTags.Items.FLOWER_BOX)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FLOWER_BOX)
                                 .when(ModCheckCondition.mod().isLoaded("supplementaries")))
-                        .add(TagEntry.expandTag(ModTags.Items.HANGING_POT)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.HANGING_POT)
                                 .when(ModCheckCondition.mod().isLoaded("beautify")))
                 ));
         consumer.accept(TradeLootTables.FLOWER_BUY_TABLE,
@@ -1683,81 +1694,83 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_COFFEE_INGREDIENTS)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.KAWAII_COFFEE_INGREDIENTS)
                                 .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
                 ));
         consumer.accept(TradeLootTables.DRIED_KELP_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.DRIED_KELP)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
                 ));
         consumer.accept(TradeLootTables.PET_FOOD_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.PET_FOOD))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PET_FOOD))
                 ));
         consumer.accept(TradeLootTables.DRINKS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_DRINKS)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.KAWAII_DRINKS)
                                 .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
-                        .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_DRINKS)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FAST_FOOD_DRINKS)
                                 .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
-                        .add(TagEntry.expandTag(ForgeTags.Items.DRINKS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DRINKS))
                 ));
         consumer.accept(TradeLootTables.DESSERT_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_DESSERTS)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.KAWAII_DESSERTS)
                                 .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
-                        .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_DESSERTS)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FAST_FOOD_DESSERTS)
                                 .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
-                        .add(TagEntry.expandTag(ForgeTags.Items.DESSERTS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DESSERTS))
                 ));
         consumer.accept(TradeLootTables.PLATED_FOODS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.PLATED_FOODS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PLATED_FOODS))
                 ));
         consumer.accept(TradeLootTables.SOUP_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SOUPS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SOUPS))
                 ));
         consumer.accept(TradeLootTables.SIDE_DISH_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_SIDE_DISHES)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FAST_FOOD_SIDE_DISHES)
                                 .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SIDE_DISHES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SIDE_DISHES))
                 ));
         consumer.accept(TradeLootTables.SANDWICH_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.FAST_FOOD_SANDWICHES)
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FAST_FOOD_SANDWICHES)
                                 .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SANDWICHES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SANDWICHES))
                 ));
         consumer.accept(TradeLootTables.INGREDIENTS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.INGREDIENTS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.INGREDIENTS))
                 ));
         consumer.accept(TradeLootTables.SEED_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SEEDS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SEEDS))
                 ));
         consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_MOB_PARTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1787,13 +1800,13 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SLIMEBALLS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SLIMEBALLS))
                 ));
         consumer.accept(TradeLootTables.SAND_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SAND))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SAND))
                 ));
         consumer.accept(TradeLootTables.SEASHELL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1822,7 +1835,7 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.CORAL_BLOCKS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CORAL_BLOCKS))
                 ));
         consumer.accept(TradeLootTables.MUSIC_DISC_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1834,13 +1847,13 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.RECYCLABLE_GLASS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.RECYCLABLE_GLASS))
                 ));
         consumer.accept(TradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.GLASSBLOWER_TOOLS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GLASSBLOWER_TOOLS))
                 ));
         consumer.accept(TradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1925,7 +1938,7 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.SLIMEBALLS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SLIMEBALLS))
                         .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
@@ -2081,61 +2094,61 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.CREATE_INGOTS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CREATE_INGOTS))
                 ));
         consumer.accept(TradeLootTables.COPPER_DIVING_GEAR_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.COPPER_DIVING_GEAR))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COPPER_DIVING_GEAR))
                 ));
         consumer.accept(TradeLootTables.MINING_EQUIPMENT_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.MINING_EQUIPMENT))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.MINING_EQUIPMENT))
                 ));
         consumer.accept(TradeLootTables.TRAIN_EQUIPMENT_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.TRAIN_EQUIPMENT))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.TRAIN_EQUIPMENT))
                 ));
         consumer.accept(TradeLootTables.MECHANICAL_EQUIPMENT_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.MECHANICAL_EQUIPMENT))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.MECHANICAL_EQUIPMENT))
                 ));
         consumer.accept(TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.HYDRAULIC_EQUIPMENT))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.HYDRAULIC_EQUIPMENT))
                 ));
         consumer.accept(TradeLootTables.ZINC_MATERIALS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.ZINC_MATERIALS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.ZINC_MATERIALS))
                 ));
         consumer.accept(TradeLootTables.IRON_MATERIALS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.IRON_MATERIALS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.IRON_MATERIALS))
                 ));
         consumer.accept(TradeLootTables.COPPER_MATERIALS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.COPPER_MATERIALS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COPPER_MATERIALS))
                 ));
         consumer.accept(TradeLootTables.PACKAGE_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.PACKAGE_CONTAINERS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PACKAGE_CONTAINERS))
                 ));
         consumer.accept(TradeLootTables.POISONOUS_POTATO_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2161,27 +2174,27 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.ENCHANTABLE_PET_GEAR))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.ENCHANTABLE_PET_GEAR))
                 ));
         consumer.accept(TradeLootTables.PET_SUPPLIES_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.PET_BEDS))
-                        .add(TagEntry.expandTag(ForgeTags.Items.PET_SUPPLIES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PET_BEDS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PET_SUPPLIES))
                 ));
         consumer.accept(TradeLootTables.CUPS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.GLASS_BOTTLE))
-                        .add(TagEntry.expandTag(ForgeTags.Items.KAWAII_CUPS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.KAWAII_CUPS))
                 ));
         consumer.accept(TradeLootTables.COOKING_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.TOOLS_KNIVES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.TOOLS_KNIVES))
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.CUTTING_BOARD.get()))
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.COOKING_POT.get()))
                 ));
@@ -2189,24 +2202,24 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.LEATHER_TEXTILES))
-                        .add(TagEntry.expandTag(ForgeTags.Items.FIBRE))
-                        .add(TagEntry.expandTag(ForgeTags.Items.STRING))
-                        .add(TagEntry.expandTag(ForgeTags.Items.FABRIC))
-                        .add(TagEntry.expandTag(ForgeTags.Items.THREAD))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.LEATHER_TEXTILES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FIBRE_FORGE_TAG))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.STRING))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FABRIC_FORGE_TAG))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.THREAD_FORGE_TAG))
                 ));
         consumer.accept(TradeLootTables.PATTERNS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.PATTERNS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PATTERNS))
                 ));
         consumer.accept(TradeLootTables.TAILOR_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.NEEDLES))
-                        .add(TagEntry.expandTag(ModTags.Items.FILE))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.NEEDLES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FILE))
                 ));
         consumer.accept(TradeLootTables.NAME_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2235,13 +2248,6 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.SHULKER_SHELL)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.FIREWORK_ROCKET_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.FIREWORK_ROCKET)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
         consumer.accept(TradeLootTables.ENDER_PEARL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2313,7 +2319,7 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.SPRUCE_BOAT)
                                 .when(HAS_SPRUCE))
                         .add(LootItem.lootTableItem(Items.OAK_BOAT))
-                        .add(TagEntry.expandTag(ForgeTags.Items.CRAB_TRAP))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CRAB_TRAP))
                 ));
         consumer.accept(TradeLootTables.FISHING_ROD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2326,7 +2332,7 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.GOGGLES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GOGGLES))
                 ));
         consumer.accept(TradeLootTables.LEATHER_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2479,25 +2485,25 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.DYEABLE_HELMETS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYEABLE_HELMETS))
                 ));
         consumer.accept(TradeLootTables.DYEABLE_CHESTPLATES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.DYEABLE_CHESTPLATES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYEABLE_CHESTPLATES))
                 ));
         consumer.accept(TradeLootTables.DYEABLE_LEGGINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.DYEABLE_LEGGINGS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYEABLE_LEGGINGS))
                 ));
         consumer.accept(TradeLootTables.DYEABLE_BOOTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.DYEABLE_BOOTS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYEABLE_BOOTS))
                 ));
         consumer.accept(TradeLootTables.TRIDENT_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2516,13 +2522,18 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.QUIVERS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.QUIVERS)
+                                .when(ModCheckCondition.mod().isLoaded("supplementaries")
+                                        .or(ModCheckCondition.mod().isLoaded("tconstruct"))))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.STRING)
+                                .when(ModCheckCondition.mod().isLoaded("supplementaries").invert())
+                                .when(ModCheckCondition.mod().isLoaded("tconstruct").invert()))
                 ));
         consumer.accept(TradeLootTables.TAGGED_LEATHER_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.LEATHER))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.LEATHER))
                 ));
         consumer.accept(TradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2577,25 +2588,25 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.INK))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.INK))
                 ));
         consumer.accept(TradeLootTables.TAGGED_DYES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.DYES))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYES))
                 ));
         consumer.accept(TradeLootTables.TAGGED_STICK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.STICKS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.STICKS))
                 ));
         consumer.accept(TradeLootTables.TAGGED_STRING_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.STRING))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.STRING))
                 ));
         consumer.accept(TradeLootTables.TAGGED_WOOL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2619,7 +2630,10 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.INK))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GUIDE_BOOKS)
+                                .when(ModCheckCondition.mod().isLoaded("patchouli")))
+                        .add(LootItem.lootTableItem(Items.PAPER)
+                                .when(ModCheckCondition.mod().isLoaded("patchouli").invert()))
                 ));
         consumer.accept(TradeLootTables.PAINTINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2650,13 +2664,13 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.ENGINEER_TOOLS))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.ENGINEER_TOOLS))
                 ));
         consumer.accept(TradeLootTables.WRENCH_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ModTags.Items.TOOLS_WRENCH))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.TOOLS_WRENCH))
                 ));
         consumer.accept(TradeLootTables.DIAMOND_TIER_LUMBER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2745,7 +2759,7 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.NETHERITE_KNIFE.get())
                                 .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
                 ));
-        consumer.accept(TradeLootTables.OVERWORLD_BRICK_TABLE,
+        consumer.accept(TradeLootTables.BRICK_ITEMS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -2989,7 +3003,7 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ForgeTags.Items.GLAZED_TERRACOTTA))
+                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GLAZED_TERRACOTTA))
                 ));
         consumer.accept(TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -3012,28 +3026,89 @@ public class TradeLootTablesGen extends ChestLoot {
                                         ConstantValue.exactly(4))))
                 ));
 
-        consumer.accept(TradeLootTables.WANDERING_TRADER_RARE_OFFERS,
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .setBonusRolls(ConstantValue.exactly(0))
-                                .add(LootItem.lootTableItem(Items.GUNPOWDER))
-                        ));
-        consumer.accept(TradeLootTables.WANDERING_TRADER_COMMON_OFFERS,
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .setBonusRolls(ConstantValue.exactly(0))
-                                .add(LootItem.lootTableItem(Items.KELP))
-                                .add(LootItem.lootTableItem(Items.SEA_PICKLE))
-                                .add(LootItem.lootTableItem(Items.RED_MUSHROOM))
-                                .add(LootItem.lootTableItem(Items.BROWN_MUSHROOM))
-                                .add(LootTableReference.lootTableReference(TradeLootTables.DECOR_PLANTS_TABLE))
-                                .add(LootItem.lootTableItem(Items.POINTED_DRIPSTONE)
-                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                                .add(LootItem.lootTableItem(Items.MOSS_BLOCK)
-                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        ));
+
+        consumer.accept(TradeLootTables.WANDERING_SELL_SPECIAL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.PACKED_ICE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PODZOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.LOGS_SELL_TABLE))
+                ));
+        consumer.accept(TradeLootTables.WANDERING_SELL_FIVE_EMERALD_VALUE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SAPLING_SELL_TABLE))
+                        .add(LootItem.lootTableItem(Items.NAUTILUS_SHELL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.WANDERING_SELL_THREE_EMERALD_VALUE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.CORAL_BLOCK_TAG_TABLE))
+                        .add(LootItem.lootTableItem(Items.TROPICAL_FISH_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PUFFERFISH_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.TADPOLE_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.AXOLOTL_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.KELP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.CACTUS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.WANDERING_SELL_TWO_EMERALD_VALUE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SEA_PICKLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.WANDERING_SELL_ONE_EMERALD_VALUE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FLOWER_SELL_TABLE))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.DECOR_PLANTS_TABLE))
+                        .add(TagEntry.expandTag(Tags.Items.SEEDS))
+                        .add(LootItem.lootTableItem(Items.PUMPKIN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.HAY_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SAND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(Items.RED_SAND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.POINTED_DRIPSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.ROOTED_DIRT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.MOSS_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.WANDERING_PURCHASE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.HAY_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BAKED_POTATO)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.MILK_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.WATER_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                ));
 
         consumer.accept(TradeLootTables.NUMISMATIST_RARE_OFFERS,
                 LootTable.lootTable()
@@ -3041,7 +3116,7 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
                                 .add(TagEntry.expandTag(ItemTags.MUSIC_DISCS))
-                                .add(TagEntry.expandTag(ModTags.Items.SOUL_BINDER))
+                                .add(TagEntry.expandTag(TodeCoinsTags.Items.SOUL_BINDER))
                                 .add(LootItem.lootTableItem(Items.HEART_OF_THE_SEA))
                                 .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE))
                                 .add(LootItem.lootTableItem(Items.MOJANG_BANNER_PATTERN))
@@ -3069,9 +3144,110 @@ public class TradeLootTablesGen extends ChestLoot {
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.SHULKER_BOXES))
-                                .add(TagEntry.expandTag(ModTags.Items.WALLETS))
+                                .add(TagEntry.expandTag(TodeCoinsTags.Items.SHULKER_BOXES))
+                                .add(TagEntry.expandTag(TodeCoinsTags.Items.WALLETS))
                                 .add(LootItem.lootTableItem(Items.ENDER_CHEST))
                         ));
+        consumer.accept(TradeLootTables.FUEL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.COAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        .add(LootItem.lootTableItem(Items.CHARCOAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                        .add(LootItem.lootTableItem(Items.LAVA_BUCKET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.BOATS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.ACACIA_BOAT).when(HAS_ACACIA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BIRCH_BOAT).when(HAS_BIRCH.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DARK_OAK_BOAT).when(HAS_DARK_OAK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.JUNGLE_BOAT).when(HAS_JUNGLE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.MANGROVE_BOAT).when(HAS_MANGROVE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.OAK_BOAT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SPRUCE_BOAT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.NATURAL_WOOL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.WHITE_WOOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.BROWN_WOOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.BLACK_WOOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.GRAY_WOOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                ));
+
+        // FIREWORKS TABLE
+        LootPool.Builder pool = LootPool.lootPool()
+                .setRolls(ConstantValue.exactly(1))
+                .setBonusRolls(ConstantValue.exactly(0));
+
+        for (int type = 0; type <= 4; type++) {
+            for (int color : getVanillaColors()) {
+                //noinspection deprecation
+                pool.add(LootItem.lootTableItem(Items.FIREWORK_ROCKET)
+                        .apply(SetNbtFunction.setTag(makeFireworkTag(type, color))))
+                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6)));
+            }
+        }
+
+        consumer.accept(TradeLootTables.FIREWORK_ROCKET_TABLE, LootTable.lootTable().withPool(pool));
+    }
+
+    private CompoundTag makeFireworkTag(int type, int color) {
+        CompoundTag explosion = new CompoundTag();
+        explosion.putByte("Type", (byte) type);
+        explosion.putIntArray("Colors", new int[]{color});
+        explosion.putBoolean("Flicker", false);
+        explosion.putBoolean("Trail", false);
+
+        ListTag explosions = new ListTag();
+        explosions.add(explosion);
+
+        CompoundTag fireworks = new CompoundTag();
+        fireworks.put("Explosions", explosions);
+        fireworks.putByte("Flight", (byte) 1);
+
+        CompoundTag tag = new CompoundTag();
+        tag.put("Fireworks", fireworks);
+        return tag;
+    }
+
+    private int[] getVanillaColors() {
+        return new int[] {
+                0x1D1D21, // Black
+                0xB02E26, // Red
+                0x5E7C16, // Green
+                0x835432, // Brown
+                0x3C44AA, // Blue
+                0x8932B8, // Purple
+                0x169C9C, // Cyan
+                0x9D9D97, // Light Gray
+                0x474F52, // Gray
+                0xF38BAA, // Pink
+                0x80C71F, // Lime
+                0xFED83D, // Yellow
+                0x3AB3DA, // Light Blue
+                0xC74EBD, // Magenta
+                0xF9801D, // Orange
+                0xF9FFFE  // White
+        };
     }
 }

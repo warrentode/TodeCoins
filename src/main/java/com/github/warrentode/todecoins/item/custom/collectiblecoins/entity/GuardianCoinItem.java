@@ -3,7 +3,7 @@ package com.github.warrentode.todecoins.item.custom.collectiblecoins.entity;
 import com.github.warrentode.todecoins.effect.ModEffects;
 import com.github.warrentode.todecoins.item.custom.CollectibleCoin;
 import com.github.warrentode.todecoins.item.custom.collectiblecoins.CollectibleCoinProperties;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.ChatFormatting;
@@ -76,12 +76,12 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
             playerUsing.addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, getCoinEffectDuration(), getCoinEffectAmplifier(),
                     false, false, true));
 
-            if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+            if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                 playerUsing.addEffect(new MobEffectInstance(ModEffects.HEALING_MIST.get(), getCoinEffectDuration(), getCoinEffectAmplifier(),
                         false, false, true));
             }
 
-            if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET) && RandomSource.create().nextInt(100) > 50) {
+            if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET) && RandomSource.create().nextInt(100) > 50) {
                 stack.hurtAndBreak(1, playerUsing, (playerLambda) -> playerLambda.broadcastBreakEvent(useHand));
             }
             else {
@@ -108,7 +108,7 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
 
                 // material based attributes
                 if (getCoinMaterial() == CollectibleCoinProperties.Material.COPPER) {
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+                    if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                         attribute.put(Attributes.MAX_HEALTH,
                                 new AttributeModifier(uuid, "generic.max_health", 4,
                                         AttributeModifier.Operation.ADDITION));
@@ -120,7 +120,7 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
                     }
                 }
                 if (getCoinMaterial() == CollectibleCoinProperties.Material.IRON) {
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+                    if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                         attribute.put(Attributes.ATTACK_DAMAGE,
                                 new AttributeModifier(uuid, "generic.attack_damage", 2,
                                         AttributeModifier.Operation.ADDITION));
@@ -132,7 +132,7 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
                     }
                 }
                 if (getCoinMaterial() == CollectibleCoinProperties.Material.GOLDEN) {
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+                    if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                         attribute.put(Attributes.ATTACK_SPEED,
                                 new AttributeModifier(uuid, "generic.attack_speed", 3,
                                         AttributeModifier.Operation.ADDITION));
@@ -144,7 +144,7 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
                     }
                 }
                 else {
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+                    if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                         attribute.put(Attributes.ATTACK_SPEED,
                                 new AttributeModifier(uuid, "generic.attack_speed", 2,
                                         AttributeModifier.Operation.ADDITION));
@@ -156,7 +156,7 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
                     }
                 }
                 if (getCoinMaterial() == CollectibleCoinProperties.Material.NETHERITE) {
-                    if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+                    if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                         attribute.put(Attributes.KNOCKBACK_RESISTANCE,
                                 new AttributeModifier(uuid, "generic.knockback_resistance", 0.2,
                                         AttributeModifier.Operation.ADDITION));
@@ -168,7 +168,7 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
                     }
                 }
 
-                if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                     attribute.put(Attributes.ARMOR,
                             new AttributeModifier(uuid, "generic.armor", 2,
                                     AttributeModifier.Operation.ADDITION));
@@ -219,7 +219,7 @@ public class GuardianCoinItem extends CollectibleCoin implements ICurioItem {
                 tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
                 tooltips.add(Component.translatable(MobEffects.DOLPHINS_GRACE.getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 tooltips.add(Component.translatable(MobEffects.CONDUIT_POWER.getDescriptionId()).withStyle(ChatFormatting.BLUE));
-                if (stack.is(ModTags.Items.ELDER_GUARDIAN_COIN_SET)) {
+                if (stack.is(TodeCoinsTags.Items.ELDER_GUARDIAN_COIN_SET)) {
                     tooltips.add(Component.translatable(ModEffects.HEALING_MIST.get().getDescriptionId()).withStyle(ChatFormatting.BLUE));
                 }
                 return ICurio.super.getSlotsTooltip(tooltips);

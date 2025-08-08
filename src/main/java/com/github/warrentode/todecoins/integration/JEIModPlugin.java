@@ -23,6 +23,7 @@ public class JEIModPlugin implements IModPlugin {
 
     @Override
     public @NotNull ResourceLocation getPluginUid() {
+        //noinspection removal
         return new ResourceLocation(MODID, "jei_plugin");
     }
 

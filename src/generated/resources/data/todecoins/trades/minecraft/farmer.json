@@ -1,0 +1,546 @@
+{
+  "offers": {
+    "apprentice": [
+      {
+        "type": "todecoins:tag_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_item_count": 6,
+        "requested_table": "todecoins:trade_tables/food/tagged_gourds_table",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 4,
+        "offered_table": "todecoins:trade_tables/food/tagged_pies_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "expert": [
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "farmersdelight:nourishment",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:speed",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:slowness",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:haste",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:mining_fatigue",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:strength",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:instant_health",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:instant_damage",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:jump_boost",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:nausea",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:regeneration",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:resistance",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:fire_resistance",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:water_breathing",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:invisibility",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:blindness",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:night_vision",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:hunger",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:weakness",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:poison",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:wither",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:health_boost",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:absorption",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:saturation",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:glowing",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:levitation",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:luck",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:unluck",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:slow_falling",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:conduit_power",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:dolphins_grace",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:bad_omen",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:hero_of_the_village",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "minecraft:darkness",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "farmersdelight:comfort",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "unusualend:ender_infection",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "unusualend:building_inability",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "unusualend:heaviness",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:venom_strike",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:illager_bane",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:thorn_shield",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:thunderstrike",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:blind_shield",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:frost_strike",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:burning_strike",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:glowing_aura",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:healing_mist",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:arthropod_blight",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:silence_cloak",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:withering_strike",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "todecoins:holy_strike",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_sus_stew",
+        "max_trades": 12,
+        "potion_duration": 300,
+        "potion_effect": "ecologics:slippery",
+        "price_multiplier": 0.05,
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/food/tagged_cakes_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 20
+      }
+    ],
+    "journeyman": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "todecoins:trade_tables/food/tagged_fruits_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 8,
+        "offered_table": "todecoins:trade_tables/food/tagged_cookies_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "trade_experience": 15
+      }
+    ],
+    "master": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/food/golden_food_table",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/five_emerald_value_currency",
+        "trade_experience": 25
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/food/golden_food_table",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/five_emerald_value_currency",
+        "trade_experience": 25
+      }
+    ],
+    "novice": [
+      {
+        "type": "todecoins:tag_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_item_count": 24,
+        "requested_table": "todecoins:trade_tables/food/tagged_veggies_and_grains_table"
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 6,
+        "offered_table": "todecoins:trade_tables/food/tagged_bread_table",
+        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "minecraft:farmer"
+}

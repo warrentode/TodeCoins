@@ -4,7 +4,7 @@ import com.github.warrentode.todecoins.item.ModItems;
 import com.github.warrentode.todecoins.loot.ModBuiltInLootTables;
 import com.github.warrentode.todecoins.loot.TradeLootTables;
 import com.github.warrentode.todecoins.loot.conditions.season.*;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import net.minecraft.data.loot.PiglinBarterLoot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -32,14 +32,14 @@ public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.PIGLIN_FOOD))
+                                .add(TagEntry.expandTag(TodeCoinsTags.Items.PIGLIN_FOOD))
                         ));
         consumer.accept(TradeLootTables.COMMON_TRADE_GOODS,
                 LootTable.lootTable()
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.PIGLIN_MERCHANT_COMMON_GOODS))
+                                .add(TagEntry.expandTag(TodeCoinsTags.Items.PIGLIN_MERCHANT_COMMON_GOODS))
                         ));
         consumer.accept(TradeLootTables.IRON_TIER_EQUIPMENT_SET,
                 LootTable.lootTable()
@@ -59,7 +59,7 @@ public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.PIGLIN_MERCHANT_UNCOMMON_GOODS))
+                                .add(TagEntry.expandTag(TodeCoinsTags.Items.PIGLIN_MERCHANT_UNCOMMON_GOODS))
                         ));
         consumer.accept(TradeLootTables.DIAMOND_TIER_EQUIPMENT_SET,
                 LootTable.lootTable()
@@ -85,7 +85,7 @@ public class CustomPiglinBarterLootGen extends PiglinBarterLoot {
                         .withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ModTags.Items.PIGLIN_MERCHANT_RARE_GOODS))
+                                .add(TagEntry.expandTag(TodeCoinsTags.Items.PIGLIN_MERCHANT_RARE_GOODS))
                         ));
         consumer.accept(TradeLootTables.NETHERITE_TIER_EQUIPMENT_SET,
                 LootTable.lootTable()

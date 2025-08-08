@@ -15,6 +15,7 @@ import static com.github.warrentode.todecoins.TodeCoins.MODID;
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.Keys.ENTITY_TYPES, MODID);
 
+    @SuppressWarnings("removal")
     public static final RegistryObject<EntityType<Numismatist>> NUMISMATIST =
             ENTITY_TYPES.register("numismatist",
                     () -> EntityType.Builder.of(Numismatist::new, MobCategory.CREATURE)
@@ -22,6 +23,7 @@ public class ModEntityTypes {
                             .clientTrackingRange(10)
                             .build(new ResourceLocation(MODID, "numismatist").toString()));
 
+    @SuppressWarnings("removal")
     public static final RegistryObject<EntityType<PiglinMerchant>> PIGLINMERCHANT =
             ENTITY_TYPES.register("piglinmerchant",
                     () -> EntityType.Builder.of(PiglinMerchant::new, MobCategory.MISC)

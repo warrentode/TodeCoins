@@ -5,7 +5,7 @@ import com.github.warrentode.todecoins.block.entity.container.inventory.CoinPres
 import com.github.warrentode.todecoins.gui.coinpressgui.CoinPressMenu;
 import com.github.warrentode.todecoins.recipe.CoinPressRecipe;
 import com.github.warrentode.todecoins.recipe.ModRecipes;
-import com.github.warrentode.todecoins.util.tags.ModTags;
+import com.github.warrentode.todecoins.util.TodeCoinsTags;
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
@@ -81,8 +81,8 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 0 -> stack.is(ModTags.Items.CURRENCY_STAMPS);
-                case 1 -> stack.is(ModTags.Items.CURRENCY_MATERIALS);
+                case 0 -> stack.is(TodeCoinsTags.Items.CURRENCY_STAMPS);
+                case 1 -> stack.is(TodeCoinsTags.Items.CURRENCY_MATERIALS);
                 case 2 -> false;
                 default -> super.isItemValid(slot, stack);
             };
@@ -236,6 +236,7 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
         nbt.put("lastItemCrafted", lastItemCrafted.serializeNBT());
         CompoundTag compoundRecipes = nbt.getCompound("usedRecipes");
         for (String key : compoundRecipes.getAllKeys()) {
+            //noinspection removal
             usedRecipes.put(new ResourceLocation(key), compoundRecipes.getInt(key));
         }
     }
@@ -304,11 +305,11 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
 
         // check first input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
         if (inventory.getStackInSlot(0).getDamageValue() == (inventory.getStackInSlot(0).getMaxDamage() - 1)
-                && inventory.getStackInSlot(0).is(ModTags.Items.CURRENCY_STAMPS)) {
+                && inventory.getStackInSlot(0).is(TodeCoinsTags.Items.CURRENCY_STAMPS)) {
             inventory.extractItem(0, 1, false);
         }
         else if (inventory.getStackInSlot(0).getDamageValue() != inventory.getStackInSlot(0).getMaxDamage()
-                && inventory.getStackInSlot(0).is(ModTags.Items.CURRENCY_STAMPS)) {
+                && inventory.getStackInSlot(0).is(TodeCoinsTags.Items.CURRENCY_STAMPS)) {
             inventory.getStackInSlot(0).hurt(1, new SingleThreadedRandomSource(1), null);
         }
         else {
@@ -317,11 +318,11 @@ public class CoinPressBlockEntity extends BlockEntity implements MenuProvider, N
 
         // check second input slot for stamp, remove if at max dmg, if not, dmg it - otherwise shrink stack
         if (inventory.getStackInSlot(1).getDamageValue() == inventory.getStackInSlot(1).getMaxDamage()
-                && inventory.getStackInSlot(1).is(ModTags.Items.CURRENCY_STAMPS)) {
+                && inventory.getStackInSlot(1).is(TodeCoinsTags.Items.CURRENCY_STAMPS)) {
             inventory.extractItem(1, 1, false);
         }
         else if (inventory.getStackInSlot(1).getDamageValue() != inventory.getStackInSlot(1).getMaxDamage()
-                && inventory.getStackInSlot(1).is(ModTags.Items.CURRENCY_STAMPS)) {
+                && inventory.getStackInSlot(1).is(TodeCoinsTags.Items.CURRENCY_STAMPS)) {
             inventory.getStackInSlot(1).hurt(1, new SingleThreadedRandomSource(1), null);
         }
         else {
