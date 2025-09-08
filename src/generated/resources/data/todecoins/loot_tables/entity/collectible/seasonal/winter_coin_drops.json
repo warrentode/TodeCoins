@@ -1,0 +1,944 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bogged"
+            }
+          ],
+          "name": "todecoins:collectible_coin_bogged_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:breeze"
+            }
+          ],
+          "name": "todecoins:collectible_coin_breeze_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:happy_ghast"
+            }
+          ],
+          "name": "todecoins:collectible_coin_happy_ghast_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:creeking"
+            }
+          ],
+          "name": "todecoins:collectible_coin_creaking_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:allay"
+            }
+          ],
+          "name": "todecoins:collectible_coin_allay_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:armadillo"
+            }
+          ],
+          "name": "todecoins:collectible_coin_armadillo_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:axolotl"
+            }
+          ],
+          "name": "todecoins:collectible_coin_axolotl_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bat"
+            }
+          ],
+          "name": "todecoins:collectible_coin_bat_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:bee"
+            }
+          ],
+          "name": "todecoins:collectible_coin_bee_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:blaze"
+            }
+          ],
+          "name": "todecoins:collectible_coin_blaze_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:camel"
+            }
+          ],
+          "name": "todecoins:collectible_coin_camel_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:cat"
+            }
+          ],
+          "name": "todecoins:collectible_coin_cat_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:cave_spider"
+            }
+          ],
+          "name": "todecoins:collectible_coin_cave_spider_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:chicken"
+            }
+          ],
+          "name": "todecoins:collectible_coin_chicken_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:cod"
+            }
+          ],
+          "name": "todecoins:collectible_coin_cod_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:cow"
+            }
+          ],
+          "name": "todecoins:collectible_coin_cow_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:copper_golem"
+            }
+          ],
+          "name": "todecoins:collectible_coin_copper_golem_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:creeper"
+            }
+          ],
+          "name": "todecoins:collectible_coin_creeper_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:crab"
+            }
+          ],
+          "name": "todecoins:collectible_coin_crab_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:dolphin"
+            }
+          ],
+          "name": "todecoins:collectible_coin_dolphin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:donkey"
+            }
+          ],
+          "name": "todecoins:collectible_coin_donkey_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:drowned"
+            }
+          ],
+          "name": "todecoins:collectible_coin_drowned_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:enderman"
+            }
+          ],
+          "name": "todecoins:collectible_coin_enderman_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:endermites"
+            }
+          ],
+          "name": "todecoins:collectible_coin_endermite_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:evoker"
+            }
+          ],
+          "name": "todecoins:collectible_coin_evoker_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:fox"
+            }
+          ],
+          "name": "todecoins:collectible_coin_fox_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:frog"
+            }
+          ],
+          "name": "todecoins:collectible_coin_frog_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:ghast"
+            }
+          ],
+          "name": "todecoins:collectible_coin_ghast_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:giant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_giant_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:glare"
+            }
+          ],
+          "name": "todecoins:collectible_coin_glare_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:glow_squid"
+            }
+          ],
+          "name": "todecoins:collectible_coin_glow_squid_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:goat"
+            }
+          ],
+          "name": "todecoins:collectible_coin_goat_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:guard"
+            }
+          ],
+          "name": "todecoins:collectible_coin_guard_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:guardian"
+            }
+          ],
+          "name": "todecoins:collectible_coin_guardian_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:hoglin"
+            }
+          ],
+          "name": "todecoins:collectible_coin_hoglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:horse"
+            }
+          ],
+          "name": "todecoins:collectible_coin_horse_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:husk"
+            }
+          ],
+          "name": "todecoins:collectible_coin_husk_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:iceologer"
+            }
+          ],
+          "name": "todecoins:collectible_coin_iceologer_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:illusioner"
+            }
+          ],
+          "name": "todecoins:collectible_coin_illusioner_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:iron_golem"
+            }
+          ],
+          "name": "todecoins:collectible_coin_iron_golem_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:llama"
+            }
+          ],
+          "name": "todecoins:collectible_coin_llama_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:magma_cube"
+            }
+          ],
+          "name": "todecoins:collectible_coin_magma_cube_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:mauler"
+            }
+          ],
+          "name": "todecoins:collectible_coin_mauler_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:moobloom"
+            }
+          ],
+          "name": "todecoins:collectible_coin_moobloom_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:mooshroom"
+            }
+          ],
+          "name": "todecoins:collectible_coin_mooshroom_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:mule"
+            }
+          ],
+          "name": "todecoins:collectible_coin_mule_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:numismatist"
+            }
+          ],
+          "name": "todecoins:collectible_coin_numismatist_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:ocelot"
+            }
+          ],
+          "name": "todecoins:collectible_coin_ocelot_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:parrot"
+            }
+          ],
+          "name": "todecoins:collectible_coin_parrot_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:panda"
+            }
+          ],
+          "name": "todecoins:collectible_coin_panda_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:phantom"
+            }
+          ],
+          "name": "todecoins:collectible_coin_phantom_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:penguin"
+            }
+          ],
+          "name": "todecoins:collectible_coin_penguin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:pillager"
+            }
+          ],
+          "name": "todecoins:collectible_coin_pillager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:pig"
+            }
+          ],
+          "name": "todecoins:collectible_coin_pig_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:piglin"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:piglin_brute"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_brute_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:piglin_merchant"
+            }
+          ],
+          "name": "todecoins:collectible_coin_piglin_merchant_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:polar_bear"
+            }
+          ],
+          "name": "todecoins:collectible_coin_polar_bear_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:pufferfish"
+            }
+          ],
+          "name": "todecoins:collectible_coin_pufferfish_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:rabbit"
+            }
+          ],
+          "name": "todecoins:collectible_coin_rabbit_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:ravager"
+            }
+          ],
+          "name": "todecoins:collectible_coin_ravager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:rascal"
+            }
+          ],
+          "name": "todecoins:collectible_coin_rascal_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:salmon"
+            }
+          ],
+          "name": "todecoins:collectible_coin_salmon_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:sheep"
+            }
+          ],
+          "name": "todecoins:collectible_coin_sheep_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:shulker"
+            }
+          ],
+          "name": "todecoins:collectible_coin_shulker_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:silverfish"
+            }
+          ],
+          "name": "todecoins:collectible_coin_silverfish_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:skeleton"
+            }
+          ],
+          "name": "todecoins:collectible_coin_skeleton_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:skeleton_horse"
+            }
+          ],
+          "name": "todecoins:collectible_coin_skeleton_horse_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:slime"
+            }
+          ],
+          "name": "todecoins:collectible_coin_slime_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:sniffer"
+            }
+          ],
+          "name": "todecoins:collectible_coin_sniffer_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:snow_golem"
+            }
+          ],
+          "name": "todecoins:collectible_coin_snow_golem_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:spider"
+            }
+          ],
+          "name": "todecoins:collectible_coin_spider_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:squid"
+            }
+          ],
+          "name": "todecoins:collectible_coin_squid_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:squirrel"
+            }
+          ],
+          "name": "todecoins:collectible_coin_squirrel_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:stray"
+            }
+          ],
+          "name": "todecoins:collectible_coin_stray_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:tadpole"
+            }
+          ],
+          "name": "todecoins:collectible_coin_tadpole_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:tropical_fish"
+            }
+          ],
+          "name": "todecoins:collectible_coin_tropical_fish_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:trader_llama"
+            }
+          ],
+          "name": "todecoins:collectible_coin_trader_llama_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:turtle"
+            }
+          ],
+          "name": "todecoins:collectible_coin_turtle_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:tuff_golem"
+            }
+          ],
+          "name": "todecoins:collectible_coin_tuff_golem_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:vex"
+            }
+          ],
+          "name": "todecoins:collectible_coin_vex_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:vindicator"
+            }
+          ],
+          "name": "todecoins:collectible_coin_vindicator_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:villager"
+            }
+          ],
+          "name": "todecoins:collectible_coin_villager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wandering_trader"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wandering_trader_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wither_skeleton"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_skeleton_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wolf"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wolf_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:witch"
+            }
+          ],
+          "name": "todecoins:collectible_coin_witch_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zoglin"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zoglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zombie"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zombie_horse"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_horse_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zombie_villager"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombie_villager_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:zombified_piglin"
+            }
+          ],
+          "name": "todecoins:collectible_coin_zombified_piglin_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:entity_type_tag_condition",
+                "tag": "forge:known_entities"
+              }
+            }
+          ],
+          "name": "todecoins:server_token_coin"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:entity/collectible/seasonal/winter_coin_drops"
+}

@@ -1660,6 +1660,7 @@ public class PiglinMerchantAnimation {
                                       AnimationChannel.Interpolations.LINEAR)))
                       .build();
 
+    @SuppressWarnings("unused")
     public static final AnimationDefinition DEATH
             = AnimationDefinition.Builder.withLength(1f)
                       .addAnimation("root", new AnimationChannel(AnimationChannel.Targets.POSITION,
@@ -1787,4 +1788,18 @@ public class PiglinMerchantAnimation {
                               new Keyframe(1f, KeyframeAnimations.degreeVec(-90f, -25f, 0f),
                                       AnimationChannel.Interpolations.LINEAR)))
                       .build();
+    public static final AnimationDefinition OFFER_RIGHT =
+            AnimationDefinition.Builder.withLength(1f)
+                    .addAnimation("armRight", new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f), AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.25f, KeyframeAnimations.degreeVec(-60f, 0f, 0f), AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.5f, KeyframeAnimations.degreeVec(-60f, 0f, 0f), AnimationChannel.Interpolations.LINEAR)))
+                    .build();
+    public static final AnimationDefinition OFFER_LEFT =
+            AnimationDefinition.Builder.withLength(1f)
+                    .addAnimation("armLeft", new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f), AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.25f, KeyframeAnimations.degreeVec(-60f, 0f, 0f), AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.5f, KeyframeAnimations.degreeVec(-60f, 0f, 0f), AnimationChannel.Interpolations.LINEAR)))
+                    .build();
 }

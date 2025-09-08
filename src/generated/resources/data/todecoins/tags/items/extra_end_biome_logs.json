@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "phantasm:pream_log",
+      "required": false
+    },
+    {
+      "id": "phantasm:ebony_wood",
+      "required": false
+    },
+    {
+      "id": "unusualend:chorus_nest_planks",
+      "required": false
+    },
+    {
+      "id": "unusualend:stripped_chorus_nest_planks",
+      "required": false
+    }
+  ]
+}

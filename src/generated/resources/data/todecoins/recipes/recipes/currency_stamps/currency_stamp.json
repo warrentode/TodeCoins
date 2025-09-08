@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone_slab"
+    }
+  },
+  "pattern": [
+    " S ",
+    " C ",
+    " S "
+  ],
+  "result": {
+    "item": "todecoins:currency_stamp"
+  },
+  "show_notification": true
+}

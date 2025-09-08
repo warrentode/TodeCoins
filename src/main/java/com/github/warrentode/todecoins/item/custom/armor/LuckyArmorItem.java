@@ -1,12 +1,12 @@
 package com.github.warrentode.todecoins.item.custom.armor;
 
+import com.github.warrentode.todecoins.datagen.translations.TooltipTranslations;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -24,23 +24,24 @@ public class LuckyArmorItem extends ArmorItem {
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ModArmorMaterials.LUCKY,
                     new MobEffectInstance(MobEffects.LUCK, 6000, 0)).build();
 
-    public LuckyArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
+    public LuckyArmorItem(ArmorMaterial material, Type slot, Properties settings) {
         super(material, slot, settings);
     }
 
     @Override
     public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
-            tooltips.add(Component.translatable("tooltips.lucky_armor_item.hover").withStyle(ChatFormatting.DARK_GRAY));
+            tooltips.add(Component.translatable(TooltipTranslations.tooltipPrefix + "lucky_armor").withStyle(ChatFormatting.DARK_GRAY));
         }
         else {
-            tooltips.add(Component.translatable("tooltips.shift.hover").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+            tooltips.add(Component.translatable(TooltipTranslations.tooltipPrefix + "shift.hover").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
         }
         super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
     }
 
+    @SuppressWarnings("removal")
     @Override
-    public void onArmorTick(ItemStack stack, Level world, Player player) {
+    public void onArmorTick(ItemStack stack, @NotNull Level world, Player player) {
         if (!world.isClientSide()) {
             if (hasFullSuitOfArmorOn(player)) {
                 evaluateArmorEffects(player);
@@ -59,8 +60,8 @@ public class LuckyArmorItem extends ArmorItem {
         }
     }
 
-    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
-                                            MobEffectInstance mapStatusEffect) {
+    private void addStatusEffectForMaterial(@NotNull Player player, ArmorMaterial mapArmorMaterial,
+                                            @NotNull MobEffectInstance mapStatusEffect) {
         boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
 
         if (hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
@@ -69,7 +70,7 @@ public class LuckyArmorItem extends ArmorItem {
         }
     }
 
-    private boolean hasFullSuitOfArmorOn(Player player) {
+    private boolean hasFullSuitOfArmorOn(@NotNull Player player) {
         ItemStack boots = player.getInventory().getArmor(0);
         ItemStack leggings = player.getInventory().getArmor(1);
         ItemStack chestplate = player.getInventory().getArmor(2);
@@ -79,7 +80,7 @@ public class LuckyArmorItem extends ArmorItem {
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
 
-    private boolean hasCorrectArmorOn(ArmorMaterial material, Player player) {
+    private boolean hasCorrectArmorOn(ArmorMaterial material, @NotNull Player player) {
         ArmorItem boots = ((ArmorItem) player.getInventory().getArmor(0).getItem());
         ArmorItem leggings = ((ArmorItem) player.getInventory().getArmor(1).getItem());
         ArmorItem breastplate = ((ArmorItem) player.getInventory().getArmor(2).getItem());

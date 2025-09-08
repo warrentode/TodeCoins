@@ -41,7 +41,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.textileEngineering2.desc"
+      "translate": "advancement.textile_engineering_2.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -50,7 +50,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.textileEngineering2"
+      "translate": "advancement.textile_engineering_2"
     }
   },
   "requirements": [
@@ -63,5 +63,11 @@
     [
       "craft_lucky_fabric"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.luckyClover.desc"
+      "translate": "advancement.lucky_clover.desc"
     },
     "frame": "challenge",
     "hidden": false,
@@ -26,12 +26,18 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.luckyClover"
+      "translate": "advancement.lucky_clover"
     }
   },
   "requirements": [
     [
       "find_four_leaf_clover"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

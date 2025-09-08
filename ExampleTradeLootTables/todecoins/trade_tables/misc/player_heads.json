@@ -1,0 +1,241 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:creeper_head"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:zombie_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:end_biomes"
+            }
+          ],
+          "name": "minecraft:dragon_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:nether_biomes"
+            }
+          ],
+          "name": "minecraft:piglin_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:enderman_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "tconstruct"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:nether_biomes"
+            }
+          ],
+          "name": "tconstruct:blaze_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "tconstruct"
+            }
+          ],
+          "name": "tconstruct:cave_spider_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "tconstruct"
+            }
+          ],
+          "name": "tconstruct:drowned_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "tconstruct"
+            }
+          ],
+          "name": "tconstruct:enderman_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "tconstruct"
+            }
+          ],
+          "name": "tconstruct:husk_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "tconstruct"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:nether_biomes"
+            }
+          ],
+          "name": "tconstruct:piglin_brute_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "tconstruct"
+            }
+          ],
+          "name": "tconstruct:spider_head"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "tconstruct"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:nether_biomes"
+            }
+          ],
+          "name": "tconstruct:zombified_piglin_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "entity": "this",
+              "function": "minecraft:fill_player_head"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"MHF_Steve\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"MHF_Alex\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"MHF_Alex\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"MHF_Herobrine\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"ToadieOdie\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"Minepika94\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"MikieSteve\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"EnderDragonRobot\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{SkullOwner:\"Technoblade\"}"
+            }
+          ],
+          "name": "minecraft:player_head"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/misc/player_heads"
+}

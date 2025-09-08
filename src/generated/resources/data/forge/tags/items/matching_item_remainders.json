@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#todecoins:collectible/coins",
+    "#forge:tools/sewing",
+    "#forge:tools/carving",
+    {
+      "id": "#todevillagers:glassblower_tools",
+      "required": false
+    },
+    {
+      "id": "#todecoins:currency_stamps",
+      "required": false
+    }
+  ]
+}

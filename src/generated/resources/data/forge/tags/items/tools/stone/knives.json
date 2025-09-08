@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:flint_knife",
+      "required": false
+    },
+    {
+      "id": "endsdelight:purpur_knife",
+      "required": false
+    },
+    {
+      "id": "endsdelight:endstone_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:holystone_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:lead_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:lapis_lazuli_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:tin_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:bone_knife",
+      "required": false
+    }
+  ]
+}

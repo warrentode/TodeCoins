@@ -1,7 +1,7 @@
 package com.github.warrentode.todecoins.datagen.recipes.builder;
 
 import com.github.warrentode.todecoins.TodeCoins;
-import com.github.warrentode.todecoins.recipe.ModRecipes;
+import com.github.warrentode.todecoins.recipe.TCRecipes;
 import com.github.warrentode.todecoins.recipe.recipebook.CoinPressRecipeBookTab;
 import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
@@ -105,27 +105,22 @@ public class CoinPressRecipeBuilder {
         build(consumerIn, TodeCoins.MODID + ":coinpress/" + location.getPath());
     }
 
-    @SuppressWarnings("removal")
     public void build(Consumer<FinishedRecipe> consumerIn, String save) {
         ResourceLocation resourcelocation = ForgeRegistries.ITEMS.getKey(result);
-        if ((new ResourceLocation(save)).equals(resourcelocation)) {
+        if ((ResourceLocation.parse(save)).equals(resourcelocation)) {
             throw new IllegalStateException("Coin Press Recipe " + save + " should remove its 'save' argument");
         }
         else {
-            build(consumerIn, new ResourceLocation(save));
+            build(consumerIn, ResourceLocation.parse(save));
         }
     }
 
-    @SuppressWarnings("removal")
     public void build(Consumer<FinishedRecipe> consumerIn, ResourceLocation id) {
         if (!advancement.getCriteria().isEmpty()) {
-            advancement.parent(new ResourceLocation("recipes/root")).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
+            advancement.parent(ResourceLocation.parse("recipes/root")).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
                     .rewards(AdvancementRewards.Builder.recipe(id))
                     .requirements(RequirementsStrategy.OR);
-            ResourceLocation advancementId = null;
-            if (result.getItemCategory() != null) {
-                advancementId = new ResourceLocation(id.getNamespace(), "recipes/" + result.getItemCategory().getRecipeFolderName() + "/" + id.getPath());
-            }
+            ResourceLocation advancementId = ResourceLocation.parse(id.getNamespace() + ":recipes/" + id.getPath());
             consumerIn.accept(new Result(id, result, count, ingredients, stampingTime, experience, tab, advancement, advancementId));
         }
         else {
@@ -193,7 +188,7 @@ public class CoinPressRecipeBuilder {
 
         @Override
         public RecipeSerializer<?> getType() {
-            return ModRecipes.COINPRESS_SERIALIZER.get();
+            return TCRecipes.COINPRESS_SERIALIZER.get();
         }
 
         @Nullable

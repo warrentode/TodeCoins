@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "festive_delight:sword_cutter",
+      "required": false
+    },
+    {
+      "id": "festive_delight:gingerbread_man_cutter",
+      "required": false
+    },
+    {
+      "id": "festive_delight:flake_cutter",
+      "required": false
+    },
+    {
+      "id": "festive_delight:creeper_cutter",
+      "required": false
+    }
+  ]
+}

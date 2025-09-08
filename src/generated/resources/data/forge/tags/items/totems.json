@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:totem_of_undying",
+    {
+      "id": "friendsandfoes:totem_of_freezing",
+      "required": false
+    },
+    {
+      "id": "friendsandfoes:totem_of_illusion",
+      "required": false
+    }
+  ]
+}

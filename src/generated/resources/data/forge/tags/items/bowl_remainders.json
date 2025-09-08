@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#forge:soups",
+    {
+      "id": "minecraft:meat_soup",
+      "required": false
+    }
+  ]
+}

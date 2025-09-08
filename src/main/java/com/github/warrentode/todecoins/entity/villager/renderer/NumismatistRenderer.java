@@ -15,8 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
 public class NumismatistRenderer extends MobRenderer<WanderingTrader, VillagerModel<WanderingTrader>> {
-    @SuppressWarnings("removal")
-    private static final ResourceLocation VILLAGER_BASE_SKIN = new ResourceLocation("todecoins:textures/entity/numismatist.png");
+    private static final ResourceLocation VILLAGER_BASE_SKIN = ResourceLocation.parse("todecoins:textures/entity/numismatist.png");
 
     public NumismatistRenderer(EntityRendererProvider.Context context) {
         super(context, new VillagerModel<>(context.bakeLayer(ModelLayers.WANDERING_TRADER)), 0.5F);

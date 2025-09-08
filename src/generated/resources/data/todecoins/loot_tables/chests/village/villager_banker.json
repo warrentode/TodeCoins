@@ -1,25 +1,23 @@
 {
-  "type": "minecraft:chest",
   "pools": [
     {
       "bonus_rolls": 0.0,
       "entries": [
         {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/currency/one_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/metals/one_emerald_value_overworld_ingots"
+        },
+        {
           "type": "minecraft:item",
           "name": "todecoins:currency_stamp"
         }
       ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins_chest"
-        }
-      ],
-      "rolls": 1.0
+      "rolls": 3.0
     }
-  ]
+  ],
+  "random_sequence": "todecoins:chests/village/villager_banker"
 }

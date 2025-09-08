@@ -1,0 +1,95 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:bubble_blower"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:confetti_popper"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:jar_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:globe"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:globe_sepia"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:statue"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:hat_stand"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "supplementaries"
+            }
+          ],
+          "name": "supplementaries:wind_vane"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "todecoins:tip_jar"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/misc/whimsy"
+}

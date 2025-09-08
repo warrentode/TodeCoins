@@ -1,10 +1,35 @@
 {
-    "required": true,
-    "package": "com.github.warrentode.todecoins.mixin",
-    "compatibilityLevel": "JAVA_17",
-    "refmap": "mixins.todecoins.refmap.json",
-    "mixins": ["AbstractVillagerAccessor", "MerchantMenuAccessor", "MerchantMixin", "PiglinBarterMixin", "PiglinMerchantPortalSpawnRuleMixin", "SilenceEntityMixin", "SilenceLivingEntityMixin", "SilenceMobMixin", "SilencePlayerMixin", "StuckInBlockMixin", "TradeOffersAccessor", "TradeOffersAccessor$DyedArmorForEmeraldsAccessor", "TradeOffersAccessor$EmeraldForItemsAccessor", "TradeOffersAccessor$EmeraldsForVillagerTypeItemAccessor", "TradeOffersAccessor$EnchantBookForEmeraldsAccessor", "TradeOffersAccessor$EnchantedItemForEmeraldsAccessor", "TradeOffersAccessor$ItemsAndEmeraldsToItemsAccessor", "TradeOffersAccessor$ItemsForEmeraldsAccessor", "TradeOffersAccessor$SuspiciousStewForEmeraldAccessor", "TradeOffersAccessor$TippedArrowForItemsAndEmeraldsAccessor", "TradeOffersAccessor$TreasureMapForEmeraldsAccessor", "TradeOffersFactoryMixin", "VillagerMixin", "WalkThroughBerryBushMixin", "WanderingTraderMixin", "WitherLootMixin"],
-    "client": [
-    ],
-    "minVersion": "0.8"
+  "required": true,
+  "package": "com.github.warrentode.todecoins.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.todecoins.refmap.json",
+  "mixins": [
+    "PiglinBarterMixin",
+    "PiglinMerchantPortalSpawnRuleMixin",
+    "silence.SilenceEntityMixin",
+    "silence.SilenceLivingEntityMixin",
+    "silence.SilenceMobMixin",
+    "silence.SilencePlayerMixin",
+    "trades.TradeOffersAccessor",
+    "trades.TradeOffersAccessor$DyedArmorForEmeraldsAccessor",
+    "trades.TradeOffersAccessor$EmeraldForItemsAccessor",
+    "trades.TradeOffersAccessor$EmeraldsForVillagerTypeItemAccessor",
+    "trades.TradeOffersAccessor$EnchantBookForEmeraldsAccessor",
+    "trades.TradeOffersAccessor$EnchantedItemForEmeraldsAccessor",
+    "trades.TradeOffersAccessor$ItemsAndEmeraldsToItemsAccessor",
+    "trades.TradeOffersAccessor$ItemsForEmeraldsAccessor",
+    "trades.TradeOffersAccessor$SuspiciousStewForEmeraldAccessor",
+    "trades.TradeOffersAccessor$TippedArrowForItemsAndEmeraldsAccessor",
+    "trades.TradeOffersAccessor$TreasureMapForEmeraldsAccessor",
+    "trades.TradeOffersFactoryMixin",
+    "unhindered.StuckInBlockMixin",
+    "unhindered.WalkThroughBerryBushMixin",
+    "villagers.AbstractVillagerAccessor",
+    "villagers.VillagerMixin",
+    "villagers.WanderingTraderMixin"
+  ],
+  "client": [
+    "silence.SilenceClientLevelMixin"
+  ],
+  "minVersion": "0.8"
 }

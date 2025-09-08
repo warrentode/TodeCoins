@@ -1,6 +1,22 @@
 {
   "values": [
     "minecraft:sand",
-    "minecraft:red_sand"
+    "minecraft:red_sand",
+    {
+      "id": "biomesoplenty:blocks/white_sand",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:blocks/orange_sand",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:blocks/black_sand",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:blocks/mossy_black_sand",
+      "required": false
+    }
   ]
 }

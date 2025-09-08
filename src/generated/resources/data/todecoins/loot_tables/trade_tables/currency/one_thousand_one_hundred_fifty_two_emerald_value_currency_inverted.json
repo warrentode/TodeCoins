@@ -1,0 +1,80 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:is_mountain"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/mountain/one_thousand_one_hundred_fifty_two_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:has_structure/leprechaun_wagon"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/leprechaun/one_thousand_one_hundred_fifty_two_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:is_underground"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/underground/one_thousand_one_hundred_fifty_two_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:end_biomes"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/endonian/one_thousand_one_hundred_fifty_two_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:nether_biomes"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/nether/one_thousand_one_hundred_fifty_two_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/currency/default/one_thousand_one_hundred_fifty_two_emerald_value_currency"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/currency/one_thousand_one_hundred_fifty_two_emerald_value_currency_inverted"
+}

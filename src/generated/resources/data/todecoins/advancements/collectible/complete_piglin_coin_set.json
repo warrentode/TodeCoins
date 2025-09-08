@@ -1,0 +1,329 @@
+{
+  "parent": "todecoins:collectible/find_all_coins",
+  "criteria": {
+    "has_collectible_coin_hoglin_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_hoglin_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_hoglin_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_hoglin_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_hoglin_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_hoglin_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_hoglin_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_hoglin_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_brute_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_brute_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_brute_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_brute_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_brute_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_brute_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_brute_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_brute_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_merchant_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_merchant_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_merchant_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_merchant_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_merchant_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_merchant_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_merchant_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_merchant_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_piglin_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_piglin_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_zombified_piglin_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombified_piglin_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_zombified_piglin_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombified_piglin_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_zombified_piglin_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombified_piglin_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_zombified_piglin_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_zombified_piglin_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.complete_piglin_coin_set.desc"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "todecoins:collectible_coin_piglin_brute_gold",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.complete_piglin_coin_set"
+    }
+  },
+  "requirements": [
+    [
+      "has_collectible_coin_zombified_piglin_copper"
+    ],
+    [
+      "has_collectible_coin_zombified_piglin_iron"
+    ],
+    [
+      "has_collectible_coin_zombified_piglin_gold"
+    ],
+    [
+      "has_collectible_coin_zombified_piglin_netherite"
+    ],
+    [
+      "has_collectible_coin_hoglin_copper"
+    ],
+    [
+      "has_collectible_coin_hoglin_iron"
+    ],
+    [
+      "has_collectible_coin_hoglin_gold"
+    ],
+    [
+      "has_collectible_coin_hoglin_netherite"
+    ],
+    [
+      "has_collectible_coin_piglin_copper"
+    ],
+    [
+      "has_collectible_coin_piglin_iron"
+    ],
+    [
+      "has_collectible_coin_piglin_gold"
+    ],
+    [
+      "has_collectible_coin_piglin_netherite"
+    ],
+    [
+      "has_collectible_coin_piglin_brute_copper"
+    ],
+    [
+      "has_collectible_coin_piglin_brute_iron"
+    ],
+    [
+      "has_collectible_coin_piglin_brute_gold"
+    ],
+    [
+      "has_collectible_coin_piglin_brute_netherite"
+    ],
+    [
+      "has_collectible_coin_piglin_merchant_copper"
+    ],
+    [
+      "has_collectible_coin_piglin_merchant_iron"
+    ],
+    [
+      "has_collectible_coin_piglin_merchant_gold"
+    ],
+    [
+      "has_collectible_coin_piglin_merchant_netherite"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
+}

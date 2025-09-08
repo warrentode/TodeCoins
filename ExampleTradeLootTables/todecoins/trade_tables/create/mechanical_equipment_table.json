@@ -1,0 +1,154 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:mechanical_crafter"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:mechanical_arm"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:mechanical_roller"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:crushing_wheel"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:chute"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:belt_connector"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:depot"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:basin"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:cogwheel"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:large_cogwheel"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:windmill_bearing"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:mechanical_bearing"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:clockwork_bearing"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:modloaded_condition",
+                "modid": "create"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/misc/redstone_components_table"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/create/mechanical_equipment_table"
+}

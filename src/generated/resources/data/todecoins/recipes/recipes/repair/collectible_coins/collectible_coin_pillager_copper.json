@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "collectible_coins",
+  "ingredients": [
+    {
+      "item": "todecoins:collectible_coin_pillager_copper"
+    },
+    {
+      "item": "todecoins:copper_nugget"
+    }
+  ],
+  "result": {
+    "item": "todecoins:collectible_coin_pillager_copper"
+  }
+}

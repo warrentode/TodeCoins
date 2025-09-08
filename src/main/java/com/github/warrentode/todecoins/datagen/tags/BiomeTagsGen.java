@@ -1,125 +1,456 @@
 package com.github.warrentode.todecoins.datagen.tags;
 
-import com.github.warrentode.todecoins.util.TodeCoinsTags;
-import net.minecraft.data.DataGenerator;
+import biomesoplenty.api.biome.BOPBiomes;
+import com.aetherteam.aether.data.resources.registries.AetherBiomes;
+import com.github.warrentode.todecoins.util.tags.TCBiomeTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
+
 public class BiomeTagsGen extends BiomeTagsProvider {
-    public BiomeTagsGen(DataGenerator generator, String modid, @Nullable ExistingFileHelper helper) {
-        super(generator, modid, helper);
+    public BiomeTagsGen(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, String modid, @Nullable ExistingFileHelper helper) {
+        super(output, provider, modid, helper);
     }
 
     @Override
-    protected void addTags() {
-        registerTags();
+    protected void addTags(@NotNull HolderLookup.Provider provider) {
+        registerHasOreTags();
+        registerHasLogTags();
+        registerHasPlantTags();
+        registerHasBlockTags();
+        registerHasEntityTags();
+        registerHasStructureTags();
+        registerBiomeTags();
     }
 
-    private void registerTags() {
-        tag(TodeCoinsTags.Biomes.HAS_AZURE_BLUET)
+    private void registerHasStructureTags() {
+        tag(TCBiomeTags.HAS_RUINED_PORTALS)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_DESERT)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_JUNGLE)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_OCEAN)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_SWAMP)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_MOUNTAIN)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_STANDARD)
+                .addTag(BiomeTags.HAS_RUINED_PORTAL_NETHER);
+        tag(TCBiomeTags.HAS_LEPRECHAUN_WAGON)
+                .add(Biomes.FLOWER_FOREST)
                 .add(Biomes.SUNFLOWER_PLAINS)
-                .add(Biomes.PLAINS)
-                .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_SUNFLOWER)
+                .add(Biomes.MEADOW)
+                .add(Biomes.CHERRY_GROVE)
+                .addOptional(BOPBiomes.AURORAL_GARDEN.location())
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location())
+                .addOptional(BOPBiomes.JACARANDA_GLADE.location())
+                .addOptional(BOPBiomes.LAVENDER_FIELD.location())
+                .addOptional(BOPBiomes.SNOWBLOSSOM_GROVE.location())
+                .addOptional(BOPBiomes.OVERGROWN_GREENS.location())
+                .addOptional(BOPBiomes.HIGHLAND.location())
+                .addOptional(BOPBiomes.MOOR.location());
+    }
+
+    private void registerHasEntityTags() {
+        tag(TCBiomeTags.HAS_PUFFERFISH)
+                .add(Biomes.LUKEWARM_OCEAN)
+                .add(Biomes.DEEP_LUKEWARM_OCEAN)
+                .add(Biomes.WARM_OCEAN);
+        tag(TCBiomeTags.HAS_TROPICAL_FISH)
+                .add(Biomes.LUSH_CAVES)
+                .add(Biomes.MANGROVE_SWAMP)
+                .add(Biomes.LUKEWARM_OCEAN)
+                .add(Biomes.DEEP_LUKEWARM_OCEAN)
+                .add(Biomes.WARM_OCEAN);
+        tag(TCBiomeTags.HAS_SALMON)
+                .add(Biomes.RIVER)
+                .add(Biomes.FROZEN_RIVER)
+                .add(Biomes.COLD_OCEAN)
+                .add(Biomes.DEEP_COLD_OCEAN)
+                .add(Biomes.FROZEN_OCEAN)
+                .add(Biomes.DEEP_FROZEN_OCEAN);
+        tag(TCBiomeTags.HAS_FROGS)
+                .add(Biomes.SWAMP)
+                .add(Biomes.MANGROVE_SWAMP);
+        tag(TCBiomeTags.HAS_AXOLOTL)
+                .add(Biomes.LUSH_CAVES);
+    }
+
+    private void registerHasBlockTags() {
+        tag(TCBiomeTags.HAS_MUD)
+                .add(Biomes.MANGROVE_SWAMP)
+                .addOptional(BOPBiomes.WETLAND.location())
+                .addOptional(BOPBiomes.MUSKEG.location())
+                .addOptional(BOPBiomes.HOT_SPRINGS.location())
+                .addOptional(BOPBiomes.BAYOU.location())
+                .addOptional(BOPBiomes.GLOWING_GROTTO.location());
+        tag(TCBiomeTags.HAS_SANDSTONE)
+                .add(Biomes.SNOWY_BEACH)
+                .add(Biomes.BEACH)
+                .add(Biomes.DESERT);
+        tag(TCBiomeTags.HAS_RED_SANDSTONE)
+                .add(Biomes.WOODED_BADLANDS)
+                .add(Biomes.ERODED_BADLANDS)
+                .add(Biomes.BADLANDS);
+        tag(TCBiomeTags.HAS_MOSSY_STONE)
+                .add(Biomes.TAIGA)
+                .add(Biomes.OLD_GROWTH_PINE_TAIGA)
+                .add(Biomes.OLD_GROWTH_SPRUCE_TAIGA);
+    }
+
+    private void registerHasPlantTags() {
+        tag(TCBiomeTags.HAS_SUNFLOWER)
                 .add(Biomes.SUNFLOWER_PLAINS)
-                .add(Biomes.ICE_SPIKES);
-        tag(TodeCoinsTags.Biomes.HAS_PEONY)
+                .add(Biomes.ICE_SPIKES)
+                .addOptional(BOPBiomes.FORESTED_FIELD.location())
+                .addOptional(BOPBiomes.FIELD.location());
+        tag(TCBiomeTags.HAS_PEONY)
                 .add(Biomes.OLD_GROWTH_BIRCH_FOREST)
                 .add(Biomes.FOREST)
                 .add(Biomes.DARK_FOREST)
                 .add(Biomes.FLOWER_FOREST)
-                .add(Biomes.BIRCH_FOREST);
-        tag(TodeCoinsTags.Biomes.HAS_ROSE_BUSH)
+                .add(Biomes.BIRCH_FOREST)
+                .add(Biomes.CHERRY_GROVE)
+                .addOptional(BOPBiomes.MEDITERRANEAN_FOREST.location());
+        tag(TCBiomeTags.HAS_ROSE_BUSH)
                 .add(Biomes.OLD_GROWTH_BIRCH_FOREST)
                 .add(Biomes.FOREST)
                 .add(Biomes.DARK_FOREST)
                 .add(Biomes.FLOWER_FOREST)
-                .add(Biomes.BIRCH_FOREST);
-        tag(TodeCoinsTags.Biomes.HAS_LILAC)
+                .add(Biomes.BIRCH_FOREST)
+                .addOptional(BOPBiomes.TROPICS.location())
+                .addOptional(BOPBiomes.FIELD.location())
+                .addOptional(BOPBiomes.FORESTED_FIELD.location())
+                .addOptional(BOPBiomes.LUSH_SAVANNA.location())
+                .addOptional(BOPBiomes.OLD_GROWTH_WOODLAND.location())
+                .addOptional(BOPBiomes.ORCHARD.location())
+                .addOptional(BOPBiomes.WOODLAND.location());
+        tag(TCBiomeTags.HAS_LILAC)
                 .add(Biomes.OLD_GROWTH_BIRCH_FOREST)
                 .add(Biomes.FOREST)
                 .add(Biomes.DARK_FOREST)
                 .add(Biomes.FLOWER_FOREST)
-                .add(Biomes.BIRCH_FOREST);
-        tag(TodeCoinsTags.Biomes.HAS_BUTTERCUP)
+                .add(Biomes.BIRCH_FOREST)
+                .add(Biomes.CHERRY_GROVE)
+                .addOptional(BOPBiomes.SHRUBLAND.location())
+                .addOptional(BOPBiomes.FIELD.location())
+                .addOptional(BOPBiomes.FORESTED_FIELD.location())
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location())
+                .addOptional(BOPBiomes.ROCKY_SHRUBLAND.location());
+        tag(TCBiomeTags.HAS_BUTTERCUP)
                 .add(Biomes.FLOWER_FOREST)
                 .add(Biomes.MEADOW)
                 .add(Biomes.SUNFLOWER_PLAINS);
-        tag(TodeCoinsTags.Biomes.HAS_LILY_OF_THE_VALLEY)
+        tag(TCBiomeTags.HAS_LILY_OF_THE_VALLEY)
                 .add(Biomes.OLD_GROWTH_BIRCH_FOREST)
                 .add(Biomes.FOREST)
                 .add(Biomes.DARK_FOREST)
                 .add(Biomes.FLOWER_FOREST)
-                .add(Biomes.BIRCH_FOREST);
-        tag(TodeCoinsTags.Biomes.HAS_CORNFLOWER)
+                .add(Biomes.BIRCH_FOREST)
+                .add(Biomes.CHERRY_GROVE)
+                .addOptional(BOPBiomes.JACARANDA_GLADE.location())
+                .addOptional(BOPBiomes.HIGHLAND.location())
+                .addOptional(BOPBiomes.FIELD.location())
+                .addOptional(BOPBiomes.MOOR.location());
+        tag(TCBiomeTags.HAS_CORNFLOWER)
+                .add(Biomes.DRIPSTONE_CAVES)
+                .add(Biomes.DEEP_DARK)
+                .add(Biomes.PLAINS)
+                .add(Biomes.SUNFLOWER_PLAINS)
+                .add(Biomes.MEADOW)
+                .addOptional(BOPBiomes.PRAIRIE.location())
+                .addOptional(BOPBiomes.CONIFEROUS_FOREST.location())
+                .addOptional(BOPBiomes.FIR_CLEARING.location())
+                .addOptional(BOPBiomes.SPIDER_NEST.location())
+                .addOptional(BOPBiomes.GLOWING_GROTTO.location());
+        tag(TCBiomeTags.HAS_OXEYE_DAISY)
+                .add(Biomes.DRIPSTONE_CAVES)
+                .add(Biomes.DEEP_DARK)
+                .add(Biomes.PLAINS)
+                .add(Biomes.SUNFLOWER_PLAINS)
+                .add(Biomes.MEADOW)
+                .addOptional(BOPBiomes.MEDITERRANEAN_FOREST.location())
+                .addOptional(BOPBiomes.OLD_GROWTH_WOODLAND.location())
+                .addOptional(BOPBiomes.ORCHARD.location())
+                .addOptional(BOPBiomes.WOODLAND.location())
+                .addOptional(BOPBiomes.PRAIRIE.location())
+                .addOptional(BOPBiomes.CONIFEROUS_FOREST.location())
+                .addOptional(BOPBiomes.FIR_CLEARING.location())
+                .addOptional(BOPBiomes.SPIDER_NEST.location())
+                .addOptional(BOPBiomes.GLOWING_GROTTO.location())
+                .addOptional(BOPBiomes.FLOODPLAIN.location());
+        tag(TCBiomeTags.HAS_PINK_TULIP)
                 .add(Biomes.DRIPSTONE_CAVES)
                 .add(Biomes.DEEP_DARK)
                 .add(Biomes.PLAINS)
                 .add(Biomes.SUNFLOWER_PLAINS)
                 .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_OXEYE_DAISY)
+        tag(TCBiomeTags.HAS_WHITE_TULIP)
                 .add(Biomes.DRIPSTONE_CAVES)
                 .add(Biomes.DEEP_DARK)
                 .add(Biomes.PLAINS)
                 .add(Biomes.SUNFLOWER_PLAINS)
                 .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_PINK_TULIP)
+        tag(TCBiomeTags.HAS_ORANGE_TULIP)
                 .add(Biomes.DRIPSTONE_CAVES)
                 .add(Biomes.DEEP_DARK)
                 .add(Biomes.PLAINS)
                 .add(Biomes.SUNFLOWER_PLAINS)
                 .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_WHITE_TULIP)
+        tag(TCBiomeTags.HAS_RED_TULIP)
                 .add(Biomes.DRIPSTONE_CAVES)
                 .add(Biomes.DEEP_DARK)
                 .add(Biomes.PLAINS)
                 .add(Biomes.SUNFLOWER_PLAINS)
                 .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_ORANGE_TULIP)
-                .add(Biomes.DRIPSTONE_CAVES)
-                .add(Biomes.DEEP_DARK)
-                .add(Biomes.PLAINS)
-                .add(Biomes.SUNFLOWER_PLAINS)
-                .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_RED_TULIP)
-                .add(Biomes.DRIPSTONE_CAVES)
-                .add(Biomes.DEEP_DARK)
-                .add(Biomes.PLAINS)
-                .add(Biomes.SUNFLOWER_PLAINS)
-                .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_RED_TULIP)
+        tag(TCBiomeTags.HAS_ALLIUM)
                 .add(Biomes.FLOWER_FOREST)
-                .add(Biomes.DRIPSTONE_CAVES)
-                .add(Biomes.DEEP_DARK)
-                .add(Biomes.PLAINS)
+                .add(Biomes.MEADOW)
+                .addOptional(BOPBiomes.SCRUBLAND.location())
+                .addOptional(BOPBiomes.ROCKY_SHRUBLAND.location())
+                .addOptional(BOPBiomes.MOOR.location())
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location())
+                .addOptional(BOPBiomes.DRYLAND.location())
+                .addOptional(BOPBiomes.SHRUBLAND.location())
+                .addOptional(BOPBiomes.HIGHLAND.location())
+                .addOptional(BOPBiomes.ORIGIN_VALLEY.location());
+        tag(TCBiomeTags.HAS_BLUE_ORCHID)
+                .add(Biomes.SWAMP)
+                .addOptional(BOPBiomes.WETLAND.location())
+                .addOptional(BOPBiomes.JACARANDA_GLADE.location())
+                .addOptional(BOPBiomes.HIGHLAND.location());
+        tag(TCBiomeTags.HAS_BURNING_BLOSSOM)
+                .addOptional(BOPBiomes.UNDERGROWTH.location());
+        tag(TCBiomeTags.HAS_ICY_IRIS)
+                .addOptional(BOPBiomes.AURORAL_GARDEN.location());
+        tag(TCBiomeTags.HAS_WHITE_LAVENDER)
+                .addOptional(BOPBiomes.FORESTED_FIELD.location())
+                .addOptional(BOPBiomes.FIELD.location());
+        tag(TCBiomeTags.HAS_LAVENDER)
+                .addOptional(BOPBiomes.LAVENDER_FIELD.location());
+        tag(TCBiomeTags.HAS_PINK_DAFFODIL)
+                .add(Biomes.CHERRY_GROVE)
+                .addOptional(BOPBiomes.OVERGROWN_GREENS.location())
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location());
+        tag(TCBiomeTags.HAS_GLOWFLOWER)
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location());
+        tag(TCBiomeTags.HAS_AZURE_BLUET)
                 .add(Biomes.SUNFLOWER_PLAINS)
-                .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_ALLIUM)
-                .add(Biomes.FLOWER_FOREST)
-                .add(Biomes.MEADOW);
-        tag(TodeCoinsTags.Biomes.HAS_BLUE_ORCHID)
-                .add(Biomes.SWAMP);
-        tag(TodeCoinsTags.Biomes.HAS_DARK_OAK)
+                .add(Biomes.PLAINS)
+                .add(Biomes.MEADOW)
+                .addOptional(BOPBiomes.OVERGROWN_GREENS.location())
+                .addOptional(BOPBiomes.FIELD.location())
+                .addOptional(BOPBiomes.FORESTED_FIELD.location())
+                .addOptional(BOPBiomes.SPIDER_NEST.location())
+                .addOptional(BOPBiomes.GLOWING_GROTTO.location())
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location());
+        tag(TCBiomeTags.HAS_WITHER_ROSE)
+                .add(Biomes.SOUL_SAND_VALLEY)
+                .add(Biomes.BASALT_DELTAS)
+                .add(Biomes.CRIMSON_FOREST)
+                .add(Biomes.WARPED_FOREST)
+                .add(Biomes.NETHER_WASTES)
+                .addOptional(BOPBiomes.UNDERGROWTH.location())
+                .addOptional(BOPBiomes.WITHERED_ABYSS.location())
+                .addOptional(BOPBiomes.OMINOUS_WOODS.location());
+        tag(TCBiomeTags.HAS_ROSE)
+                .addOptional(BOPBiomes.WINTRY_ORIGIN_VALLEY.location())
+                .addOptional(BOPBiomes.ORIGIN_VALLEY.location());
+        tag(TCBiomeTags.HAS_ORANGE_COSMOS)
+                .addOptional(BOPBiomes.FLOODPLAIN.location())
+                .addOptional(BOPBiomes.ROCKY_RAINFOREST.location())
+                .addOptional(BOPBiomes.RAINFOREST.location());
+        tag(TCBiomeTags.HAS_VIOLET)
+                .addOptional(BOPBiomes.SNOWY_CONIFEROUS_FOREST.location())
+                .addOptional(BOPBiomes.SNOWY_MAPLE_WOODS.location())
+                .addOptional(BOPBiomes.MAPLE_WOODS.location())
+                .addOptional(BOPBiomes.MOOR.location())
+                .addOptional(BOPBiomes.AURORAL_GARDEN.location())
+                .addOptional(BOPBiomes.SNOWY_FIR_CLEARING.location());
+        tag(TCBiomeTags.HAS_PINK_HIBISCUS)
+                .addOptional(BOPBiomes.TROPICS.location());
+        tag(TCBiomeTags.HAS_BLUE_HYDRANGEA)
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location())
+                .addOptional(BOPBiomes.TROPICS.location());
+        tag(TCBiomeTags.HAS_WILTED_LILY)
+                .addOptional(BOPBiomes.WASTELAND.location())
+                .addOptional(BOPBiomes.WASTELAND_STEPPE.location());
+        tag(TCBiomeTags.HAS_CATTAIL)
+                .addOptional(BOPBiomes.MARSH.location())
+                .addOptional(BOPBiomes.BAYOU.location())
+                .addOptional(BOPBiomes.BOG.location())
+                .addOptional(BOPBiomes.WETLAND.location());
+        tag(TCBiomeTags.HAS_WILDFLOWER)
+                .addOptional(BOPBiomes.FORESTED_FIELD.location())
+                .addOptional(BOPBiomes.FIELD.location())
+                .addOptional(BOPBiomes.SCRUBLAND.location())
+                .addOptional(BOPBiomes.SCRUBLAND.location())
+                .addOptional(BOPBiomes.LUSH_DESERT.location());
+        tag(TCBiomeTags.HAS_GOLDENROD)
+                .addOptional(BOPBiomes.PRAIRIE.location())
+                .addOptional(BOPBiomes.OLD_GROWTH_WOODLAND.location())
+                .addOptional(BOPBiomes.WOODLAND.location());
+        tag(TCBiomeTags.HAS_CLOVER)
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location())
+                .addOptional(BOPBiomes.ORCHARD.location())
+                .addOptional(BOPBiomes.OVERGROWN_GREENS.location());
+        tag(TCBiomeTags.HAS_WHITE_FLOWER)
+                .addOptional(AetherBiomes.SKYROOT_WOODLAND.location())
+                .addOptional(AetherBiomes.SKYROOT_MEADOW.location())
+                .addOptional(AetherBiomes.SKYROOT_GROVE.location())
+                .addOptional(AetherBiomes.SKYROOT_FOREST.location());
+        tag(TCBiomeTags.HAS_PURPLE_FLOWER)
+                .addOptional(AetherBiomes.SKYROOT_WOODLAND.location())
+                .addOptional(AetherBiomes.SKYROOT_MEADOW.location())
+                .addOptional(AetherBiomes.SKYROOT_GROVE.location())
+                .addOptional(AetherBiomes.SKYROOT_FOREST.location());
+        tag(TCBiomeTags.HAS_WARPED_FUNGUS)
+                .add(Biomes.WARPED_FOREST);
+        tag(TCBiomeTags.HAS_CRIMSON_FUNGUS)
+                .add(Biomes.CRIMSON_FOREST);
+        tag(TCBiomeTags.HAS_ENDBLOOM)
+                .addTag(TCBiomeTags.END_BIOMES);
+    }
+
+    private void registerHasLogTags() {
+        tag(TCBiomeTags.HAS_SNOWBLOSSOM)
+                .addOptional(BOPBiomes.SNOWBLOSSOM_GROVE.location());
+        tag(TCBiomeTags.HAS_YELLOW_MAPLE)
+                .addOptional(BOPBiomes.ASPEN_GLADE.location())
+                .addOptional(BOPBiomes.SEASONAL_FOREST.location())
+                .addOptional(BOPBiomes.SNOWY_MAPLE_WOODS.location())
+                .addOptional(BOPBiomes.MAPLE_WOODS.location());
+        tag(TCBiomeTags.HAS_ORANGE_MAPLE)
+                .addOptional(BOPBiomes.PUMPKIN_PATCH.location())
+                .addOptional(BOPBiomes.SEASONAL_FOREST.location())
+                .addOptional(BOPBiomes.SNOWY_MAPLE_WOODS.location())
+                .addOptional(BOPBiomes.MAPLE_WOODS.location());
+        tag(TCBiomeTags.HAS_RED_MAPLE)
+                .addOptional(BOPBiomes.SEASONAL_FOREST.location())
+                .addOptional(BOPBiomes.SNOWY_MAPLE_WOODS.location())
+                .addOptional(BOPBiomes.MAPLE_WOODS.location());
+        tag(TCBiomeTags.HAS_ORIGIN)
+                .addOptional(BOPBiomes.WINTRY_ORIGIN_VALLEY.location())
+                .addOptional(BOPBiomes.ORIGIN_VALLEY.location());
+        tag(TCBiomeTags.HAS_RAINBOW_BIRCH)
+                .addOptional(BOPBiomes.AURORAL_GARDEN.location());
+        tag(TCBiomeTags.HAS_FLOWERING_OAK)
+                .addOptional(BOPBiomes.MEDITERRANEAN_FOREST.location())
+                .addOptional(BOPBiomes.ORCHARD.location())
+                .addOptional(BOPBiomes.LAVENDER_FIELD.location())
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location())
+                .addOptional(BOPBiomes.TROPICS.location());
+        tag(TCBiomeTags.HAS_GREENHEART)
+                .add(Biomes.OCEAN)
+                .add(Biomes.COLD_OCEAN)
+                .add(Biomes.DEEP_COLD_OCEAN)
+                .add(Biomes.DEEP_FROZEN_OCEAN)
+                .add(Biomes.DEEP_LUKEWARM_OCEAN)
+                .add(Biomes.DEEP_OCEAN)
+                .add(Biomes.FROZEN_OCEAN)
+                .add(Biomes.LUKEWARM_OCEAN)
+                .add(Biomes.WARM_OCEAN);
+        tag(TCBiomeTags.HAS_ENDERBARK)
+                .addTag(TCBiomeTags.END_BIOMES);
+        tag(TCBiomeTags.HAS_BLOODSHROOM)
+                .addTag(TCBiomeTags.NETHER_BIOMES);
+        tag(TCBiomeTags.HAS_GOLDEN_OAK)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether.skyroot_grove")));
+        tag(TCBiomeTags.HAS_AETHER_SKYROOT)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether.skyroot_woodland")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether.skyroot_meadow")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether.skyroot_grove")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether.skyroot_forest")));
+        tag(TCBiomeTags.HAS_PREAM)
+                .addTag(TCBiomeTags.END_BIOMES);
+        tag(TCBiomeTags.HAS_EBONY)
+                .addTag(TCBiomeTags.END_BIOMES);
+        tag(TCBiomeTags.HAS_CHORUS_NEST)
+                .addTag(TCBiomeTags.END_BIOMES);
+        tag(TCBiomeTags.HAS_AZALEA)
+                .add(Biomes.LUSH_CAVES);
+        tag(TCBiomeTags.HAS_COCONUT)
+                .add(Biomes.BEACH);
+        tag(TCBiomeTags.HAS_HELLBARK)
+                .addTag(TCBiomeTags.NETHER_BIOMES);
+        tag(TCBiomeTags.HAS_UMBRAN)
+                .addOptional(BOPBiomes.OMINOUS_WOODS.location());
+        tag(TCBiomeTags.HAS_MAGIC)
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location());
+        tag(TCBiomeTags.HAS_DEAD)
+                .addOptional(BOPBiomes.WASTELAND.location())
+                .addOptional(BOPBiomes.TUNDRA.location())
+                .addOptional(BOPBiomes.WASTELAND_STEPPE.location())
+                .addOptional(BOPBiomes.OMINOUS_WOODS.location())
+                .addOptional(BOPBiomes.MUSKEG.location())
+                .addOptional(BOPBiomes.OLD_GROWTH_DEAD_FOREST.location())
+                .addOptional(BOPBiomes.DEAD_FOREST.location());
+        tag(TCBiomeTags.HAS_WILLOW)
+                .addOptional(BOPBiomes.WETLAND.location())
+                .addOptional(BOPBiomes.BAYOU.location());
+        tag(TCBiomeTags.HAS_PALM)
+                .addOptional(BOPBiomes.LUSH_DESERT.location())
+                .addOptional(BOPBiomes.TROPICS.location());
+        tag(TCBiomeTags.HAS_JACARANDA)
+                .addOptional(BOPBiomes.MYSTIC_GROVE.location())
+                .addOptional(BOPBiomes.JACARANDA_GLADE.location())
+                .addOptional(BOPBiomes.LAVENDER_FIELD.location());
+        tag(TCBiomeTags.HAS_MAHOGANY)
+                .addOptional(BOPBiomes.ROCKY_RAINFOREST.location())
+                .addOptional(BOPBiomes.RAINFOREST.location());
+        tag(TCBiomeTags.HAS_REDWOOD)
+                .addOptional(BOPBiomes.REDWOOD_FOREST.location());
+        tag(TCBiomeTags.HAS_CHERRY)
+                .add(Biomes.CHERRY_GROVE)
+                .addOptional(BOPBiomes.TROPICS.location())
+                .addOptional(BOPBiomes.SNOWBLOSSOM_GROVE.location());
+        tag(TCBiomeTags.HAS_PINE)
+                .addOptional(BOPBiomes.JADE_CLIFFS.location())
+                .addOptional(BOPBiomes.SCRUBLAND.location())
+                .addOptional(BOPBiomes.DRYLAND.location())
+                .addOptional(BOPBiomes.HOT_SPRINGS.location());
+        tag(TCBiomeTags.HAS_FIR)
+                .addOptional(BOPBiomes.AURORAL_GARDEN.location())
+                .addOptional(BOPBiomes.SNOWY_FIR_CLEARING.location())
+                .addOptional(BOPBiomes.FIR_CLEARING.location())
+                .addOptional(BOPBiomes.SNOWY_CONIFEROUS_FOREST.location())
+                .addOptional(BOPBiomes.CONIFEROUS_FOREST.location());
+        tag(TCBiomeTags.HAS_DARK_OAK)
                 .add(Biomes.DARK_FOREST);
-        tag(TodeCoinsTags.Biomes.HAS_BIRCH)
+        tag(TCBiomeTags.HAS_BIRCH)
+                .add(Biomes.DARK_FOREST)
                 .add(Biomes.OLD_GROWTH_BIRCH_FOREST)
                 .add(Biomes.BIRCH_FOREST)
                 .add(Biomes.FLOWER_FOREST)
-                .add(Biomes.FOREST);
-        tag(TodeCoinsTags.Biomes.HAS_JUNGLE)
+                .add(Biomes.FOREST)
+                .addOptional(BOPBiomes.AURORAL_GARDEN.location())
+                .addOptional(BOPBiomes.MEDITERRANEAN_FOREST.location())
+                .addOptional(BOPBiomes.ASPEN_GLADE.location());
+        tag(TCBiomeTags.HAS_EMPYREAL)
+                .addTag(TCBiomeTags.END_BIOMES);
+        tag(TCBiomeTags.HAS_JUNGLE)
                 .add(Biomes.SPARSE_JUNGLE)
                 .add(Biomes.BAMBOO_JUNGLE)
-                .add(Biomes.JUNGLE);
-        tag(TodeCoinsTags.Biomes.HAS_ACACIA)
+                .add(Biomes.JUNGLE)
+                .addOptional(BOPBiomes.TROPICS.location())
+                .addOptional(BOPBiomes.ROCKY_RAINFOREST.location())
+                .addOptional(BOPBiomes.RAINFOREST.location())
+                .addOptional(BOPBiomes.FUNGAL_JUNGLE.location());
+        tag(TCBiomeTags.HAS_ACACIA)
                 .add(Biomes.WINDSWEPT_SAVANNA)
                 .add(Biomes.SAVANNA_PLATEAU)
-                .add(Biomes.SAVANNA);
-        tag(TodeCoinsTags.Biomes.HAS_MANGROVE)
-                .add(Biomes.MANGROVE_SWAMP);
-        tag(TodeCoinsTags.Biomes.HAS_SPRUCE)
+                .add(Biomes.SAVANNA)
+                .addOptional(BOPBiomes.LUSH_SAVANNA.location())
+                .addOptional(BOPBiomes.DRYLAND.location());
+        tag(TCBiomeTags.HAS_MANGROVE)
+                .add(Biomes.MANGROVE_SWAMP)
+                .addOptional(BOPBiomes.BOG.location());
+        tag(TCBiomeTags.HAS_SPRUCE)
                 .add(Biomes.TAIGA)
                 .add(Biomes.FROZEN_RIVER)
                 .add(Biomes.SNOWY_BEACH)
@@ -134,60 +465,37 @@ public class BiomeTagsGen extends BiomeTagsProvider {
                 .add(Biomes.WINDSWEPT_GRAVELLY_HILLS)
                 .add(Biomes.WINDSWEPT_FOREST)
                 .add(Biomes.OLD_GROWTH_SPRUCE_TAIGA)
-                .add(Biomes.OLD_GROWTH_PINE_TAIGA);
-        tag(TodeCoinsTags.Biomes.NETHER_BIOMES)
+                .add(Biomes.OLD_GROWTH_PINE_TAIGA)
+                .addOptional(BOPBiomes.WETLAND.location())
+                .addOptional(BOPBiomes.DEAD_FOREST.location())
+                .addOptional(BOPBiomes.OLD_GROWTH_DEAD_FOREST.location())
+                .addOptional(BOPBiomes.JADE_CLIFFS.location())
+                .addOptional(BOPBiomes.BOG.location())
+                .addOptional(BOPBiomes.FORESTED_FIELD.location())
+                .addOptional(BOPBiomes.MAPLE_WOODS.location())
+                .addOptional(BOPBiomes.SNOWY_MAPLE_WOODS.location());
+    }
+
+    private void registerHasOreTags() {
+        tag(TCBiomeTags.HAS_ENDONIAN_ORE)
+                .addTag(TCBiomeTags.END_BIOMES);
+    }
+
+    private void registerBiomeTags() {
+        tag(TCBiomeTags.END_BIOMES)
+                .add(Biomes.END_HIGHLANDS)
+                .add(Biomes.END_MIDLANDS)
+                .add(Biomes.END_BARRENS)
+                .add(Biomes.SMALL_END_ISLANDS)
+                .add(Biomes.THE_END);
+        tag(TCBiomeTags.NETHER_BIOMES)
                 .add(Biomes.BASALT_DELTAS)
                 .add(Biomes.NETHER_WASTES)
                 .add(Biomes.WARPED_FOREST)
                 .add(Biomes.CRIMSON_FOREST)
-                .add(Biomes.SOUL_SAND_VALLEY);
-        tag(TodeCoinsTags.Biomes.HAS_WARPED_FUNGUS)
-                .add(Biomes.WARPED_FOREST);
-        tag(TodeCoinsTags.Biomes.HAS_CRIMSON_FUNGUS)
-                .add(Biomes.CRIMSON_FOREST);
-        tag(TodeCoinsTags.Biomes.HAS_SANDSTONE)
-                .add(Biomes.SNOWY_BEACH)
-                .add(Biomes.BEACH)
-                .add(Biomes.DESERT);
-        tag(TodeCoinsTags.Biomes.HAS_RED_SANDSTONE)
-                .add(Biomes.WOODED_BADLANDS)
-                .add(Biomes.ERODED_BADLANDS)
-                .add(Biomes.BADLANDS);
-        tag(TodeCoinsTags.Biomes.HAS_MOSSY_STONE)
-                .add(Biomes.TAIGA)
-                .add(Biomes.OLD_GROWTH_PINE_TAIGA)
-                .add(Biomes.OLD_GROWTH_SPRUCE_TAIGA);
-        tag(TodeCoinsTags.Biomes.HAS_PUFFERFISH)
-                .add(Biomes.LUKEWARM_OCEAN)
-                .add(Biomes.DEEP_LUKEWARM_OCEAN)
-                .add(Biomes.WARM_OCEAN);
-        tag(TodeCoinsTags.Biomes.HAS_TROPICAL_FISH)
-                .add(Biomes.LUSH_CAVES)
-                .add(Biomes.MANGROVE_SWAMP)
-                .add(Biomes.LUKEWARM_OCEAN)
-                .add(Biomes.DEEP_LUKEWARM_OCEAN)
-                .add(Biomes.WARM_OCEAN);
-        tag(TodeCoinsTags.Biomes.HAS_SALMON)
-                .add(Biomes.RIVER)
-                .add(Biomes.FROZEN_RIVER)
-                .add(Biomes.COLD_OCEAN)
-                .add(Biomes.DEEP_COLD_OCEAN)
-                .add(Biomes.FROZEN_OCEAN)
-                .add(Biomes.DEEP_FROZEN_OCEAN);
-        tag(TodeCoinsTags.Biomes.HAS_FROGS)
-                .add(Biomes.SWAMP)
-                .add(Biomes.MANGROVE_SWAMP);
-        tag(TodeCoinsTags.Biomes.HAS_AXOLOTL)
-                .add(Biomes.LUSH_CAVES);
-        tag(TodeCoinsTags.Biomes.HAS_MUD)
-                .add(Biomes.MANGROVE_SWAMP);
-        tag(TodeCoinsTags.Biomes.HAS_RUINED_PORTALS)
-                .addTag(BiomeTags.HAS_RUINED_PORTAL_DESERT)
-                .addTag(BiomeTags.HAS_RUINED_PORTAL_JUNGLE)
-                .addTag(BiomeTags.HAS_RUINED_PORTAL_OCEAN)
-                .addTag(BiomeTags.HAS_RUINED_PORTAL_SWAMP)
-                .addTag(BiomeTags.HAS_RUINED_PORTAL_MOUNTAIN)
-                .addTag(BiomeTags.HAS_RUINED_PORTAL_STANDARD)
-                .addTag(BiomeTags.HAS_RUINED_PORTAL_NETHER);
+                .add(Biomes.SOUL_SAND_VALLEY)
+                .addOptional(BOPBiomes.WITHERED_ABYSS.location())
+                .addOptional(BOPBiomes.VISCERAL_HEAP.location())
+                .addOptional(BOPBiomes.UNDERGROWTH.location());
     }
 }

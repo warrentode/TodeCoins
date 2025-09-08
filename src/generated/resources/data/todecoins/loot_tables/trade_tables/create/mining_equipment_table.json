@@ -1,0 +1,94 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:blaze_burner"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:encased_fan"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:mechanical_drill"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:hose_pulley"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "minecraft:air"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:elevator_pulley"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:rope_pulley"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:modloaded_condition",
+                "modid": "create"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/misc/redstone_components_table"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/create/mining_equipment_table"
+}

@@ -8,6 +8,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import java.util.Iterator;
@@ -16,12 +17,11 @@ import java.util.List;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class CoinPressRecipeBookComponent extends RecipeBookComponent {
-    @SuppressWarnings("removal")
-    protected static final ResourceLocation RECIPE_BOOK_BUTTONS = new ResourceLocation(MODID, "textures/gui/recipe_book_buttons.png");
+    protected static final ResourceLocation RECIPE_TAB_BUTTONS = ResourceLocation.parse(MODID + ":" + "textures/gui/recipe_book_buttons.png");
 
     @Override
     protected void initFilterButtonTextures() {
-        this.filterButton.initTextureValues(0, 0, 28, 18, RECIPE_BOOK_BUTTONS);
+        this.filterButton.initTextureValues(0, 0, 28, 18, RECIPE_TAB_BUTTONS);
     }
 
     @SuppressWarnings("unused")
@@ -36,8 +36,11 @@ public class CoinPressRecipeBookComponent extends RecipeBookComponent {
     }
 
     @Override
-    public void setupGhostRecipe(Recipe<?> recipe, List<Slot> slots) {
-        ItemStack resultStack = recipe.getResultItem();
+    public void setupGhostRecipe(@NotNull Recipe<?> recipe, @NotNull List<Slot> slots) {
+        if (this.minecraft.level == null) {
+            return;
+        }
+        ItemStack resultStack = recipe.getResultItem(this.minecraft.level.registryAccess());
         this.ghostRecipe.setRecipe(recipe);
         NonNullList<Ingredient> nonnulllist = recipe.getIngredients();
         if (slots.get(2).getItem().isEmpty()) {

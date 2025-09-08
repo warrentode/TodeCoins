@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#todecoins:collectible/steed/horse",
+    "#todecoins:collectible/steed/donkey",
+    "#todecoins:collectible/steed/mule",
+    "#todecoins:collectible/steed/skeleton_horse",
+    "#todecoins:collectible/steed/zombie_horse",
+    "#todecoins:collectible/steed/llama",
+    "#todecoins:collectible/steed/trader_llama",
+    "#todecoins:collectible/steed/camel",
+    "#todecoins:collectible/steed/strider"
+  ]
+}

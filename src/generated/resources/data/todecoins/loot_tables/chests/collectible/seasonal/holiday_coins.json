@@ -1,0 +1,110 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:birthday_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_birthday"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:christmas_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_christmas"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:halloween_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_halloween"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:easter_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_easter"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:new_year_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_new_year"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_scholar_owl"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_tuxedo_cat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_little_bear"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_patron_carnation"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_patron_cosmos"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:anniversary_condition"
+            }
+          ],
+          "name": "todecoins:collectible_coin_patron_sunflower"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:chests/collectible/seasonal/holiday_coins"
+}

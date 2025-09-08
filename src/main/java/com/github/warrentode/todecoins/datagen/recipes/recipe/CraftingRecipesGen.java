@@ -1,269 +1,530 @@
 package com.github.warrentode.todecoins.datagen.recipes.recipe;
 
-
-import com.github.warrentode.todecoins.block.ModBlocks;
-import com.github.warrentode.todecoins.item.ModItems;
-import com.github.warrentode.todecoins.util.TodeCoinsTags;
+import com.github.warrentode.todecoins.block.TCBlocks;
+import com.github.warrentode.todecoins.datagen.recipes.builder.RemainderShapelessRecipeBuilder;
+import com.github.warrentode.todecoins.item.TCItems;
+import com.github.warrentode.todecoins.item.custom.collectible.CollectibleCoinItem;
+import com.github.warrentode.todecoins.util.tags.TCItemTags;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.function.Consumer;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
+import static com.github.warrentode.todecoins.datagen.RecipesGen.*;
 
 public class CraftingRecipesGen extends RecipeProvider implements IConditionBuilder {
-    public CraftingRecipesGen(DataGenerator pGenerator) {
-        super(pGenerator);
+    public CraftingRecipesGen(@NotNull DataGenerator generator) {
+        super(generator.getPackOutput());
+    }
+
+    @Override
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+        register(consumer);
     }
 
     public static void register(Consumer<FinishedRecipe> consumer) {
-        armorRecipes(consumer);
         currencyStampsRecipes(consumer);
         jobBlockRecipes(consumer);
+        armorRecipes(consumer);
+        ingotRecipes(consumer);
         nuggetRecipes(consumer);
-        storageBlockRecipes(consumer);
+        currencyBagRecipes(consumer);
+        currencyRecipes(consumer);
+        materialBlockRecipes(consumer);
         textileRecipes(consumer);
-        collectibleCoinSmeltingRecipes(consumer);
-        collectibleCoinBlastingRecipes(consumer);
-        holidayChocolateCoinRecipes(consumer);
-        braceletRecipes(consumer);
+        chocolateCoinRecipes(consumer);
+        toolRecipes(consumer);
+        smeltingRecipes(consumer);
+        blastingRecipes(consumer);
     }
 
-    private static void braceletRecipes(Consumer<FinishedRecipe> consumer) {
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_EMERALD.get(), 1)
+    private static void smeltingRecipes(Consumer<FinishedRecipe> consumer) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(TCItems.ENDONIAN_CRYSTAL.get()),
+                        RecipeCategory.MISC, TCItems.ENDONIAN_NUGGET.get(), 0.1F, 200)
+                .unlockedBy("has_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(TCItems.ENDONIAN_NUGGET.get())).getPath(),
+                        InventoryChangeTrigger.TriggerInstance.hasItems(TCItems.ENDONIAN_CRYSTAL.get()))
+                .save(consumer, setLocation(MODID, "nuggets/smelting/" +
+                        Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(TCItems.ENDONIAN_NUGGET.get())).getPath()));
+
+        getCoinByMaterial().forEach((material, coins) -> {
+            Item nugget = getNuggetForCoin(material);
+            for (CollectibleCoinItem coin : coins) {
+                String coinPath = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(coin)).getPath();
+                String nuggetPath = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(nugget)).getPath();
+
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(coin), RecipeCategory.MISC, nugget, 0.1F, 200)
+                        .unlockedBy("has_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(nugget)).getPath(),
+                                InventoryChangeTrigger.TriggerInstance.hasItems(nugget))
+                        .save(consumer, setLocation(MODID,"nuggets/smelting/" + nuggetPath + "_from_" + coinPath));
+            }
+        });
+    }
+
+    private static void blastingRecipes(Consumer<FinishedRecipe> consumer) {
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(TCItems.ENDONIAN_CRYSTAL.get()),
+                        RecipeCategory.MISC, TCItems.ENDONIAN_NUGGET.get(), 0.1F, 100)
+                .unlockedBy("has_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(TCItems.ENDONIAN_NUGGET.get())).getPath(),
+                        InventoryChangeTrigger.TriggerInstance.hasItems(TCItems.ENDONIAN_CRYSTAL.get()))
+                .save(consumer, setLocation(MODID, "nuggets/blasting/" +
+                        Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(TCItems.ENDONIAN_NUGGET.get())).getPath()));
+
+        getCoinByMaterial().forEach((material, coins) -> {
+            Item nugget = getNuggetForCoin(material);
+            for (CollectibleCoinItem coin : coins) {
+                String coinPath = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(coin)).getPath();
+                String nuggetPath = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(nugget)).getPath();
+
+                SimpleCookingRecipeBuilder.blasting(Ingredient.of(coin), RecipeCategory.MISC, nugget, 0.1F, 100)
+                        .unlockedBy("has_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(nugget)).getPath(),
+                                InventoryChangeTrigger.TriggerInstance.hasItems(nugget))
+                        .save(consumer, setLocation(MODID,"nuggets/blasting/" + nuggetPath + "_from_" + coinPath));
+            }
+        });
+    }
+
+    private static void toolRecipes(Consumer<FinishedRecipe> consumer) {
+        RemainderShapelessRecipeBuilder.shapelessRemainderRecipe(RecipeCategory.TOOLS, TCItems.COIN_ALBUM_BLOCK_ITEM.get(), 1)
+                .addIngredient(TCItemTags.COLLECTIBLE_COINS_TAG)
+                .addIngredient(Items.BOOK)
+                .unlockedBy("has_collectible_coin", has(TCItemTags.COLLECTIBLE_COINS_TAG))
+                .build(consumer, setLocation(MODID, "coin_album"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,TCItems.BRACELET_FRIENDSHIP_EMERALD.get(), 1)
                 .pattern("#A#")
                 .pattern("APA")
                 .pattern("#A#")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
-                .define('A', ModItems.EMERALD_THREAD.get())
+                .define('#', TCItems.ENDONIAN_THREAD.get())
+                .define('A', TCItems.EMERALD_THREAD.get())
                 .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_emerald_thread", has(ModItems.EMERALD_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_emerald"));
+                .unlockedBy("has_emerald_thread", has(TCItems.EMERALD_THREAD.get()))
+                .save(consumer, setLocation(MODID, "bracelets/bracelet_friendship_emerald"));
 
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_ECHO.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,TCItems.BRACELET_FRIENDSHIP_ECHO.get(), 1)
                 .pattern("#A#")
                 .pattern("APA")
                 .pattern("#A#")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
-                .define('A', ModItems.ECHO_THREAD.get())
+                .define('#', TCItems.ENDONIAN_THREAD.get())
+                .define('A', TCItems.ECHO_THREAD.get())
                 .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_echo_thread", has(ModItems.ECHO_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_echo"));
+                .unlockedBy("has_echo_thread", has(TCItems.ECHO_THREAD.get()))
+                .save(consumer, setLocation(MODID, "bracelets/bracelet_friendship_echo"));
 
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_ENDONIAN.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,TCItems.BRACELET_FRIENDSHIP_ENDONIAN.get(), 1)
                 .pattern("###")
                 .pattern("#P#")
                 .pattern("###")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
+                .define('#', TCItems.ENDONIAN_THREAD.get())
                 .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_endonian_thread", has(ModItems.ENDONIAN_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_endonian"));
+                .unlockedBy("has_endonian_thread", has(TCItems.ENDONIAN_THREAD.get()))
+                .save(consumer, setLocation(MODID, "bracelets/bracelet_friendship_endonian"));
 
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_FRIENDSHIP_LUCKY.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,TCItems.BRACELET_FRIENDSHIP_LUCKY.get(), 1)
                 .pattern("#A#")
                 .pattern("APA")
                 .pattern("#A#")
-                .define('#', ModItems.ENDONIAN_THREAD.get())
-                .define('A', ModItems.LUCKY_THREAD.get())
+                .define('#', TCItems.ENDONIAN_THREAD.get())
+                .define('A', TCItems.LUCKY_THREAD.get())
                 .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_lucky_thread", has(ModItems.LUCKY_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "bracelets/bracelet_friendship_lucky"));
+                .unlockedBy("has_lucky_thread", has(TCItems.LUCKY_THREAD.get()))
+                .save(consumer, setLocation(MODID, "bracelets/bracelet_friendship_lucky"));
     }
 
-    private static void holidayChocolateCoinRecipes(Consumer<FinishedRecipe> consumer) {
-        chocolateCoinRecipeTemplate(consumer, ModItems.CRIMSON_SPORE_CHOCOLATE_COIN.get(), 4, Items.CRIMSON_FUNGUS, Items.ROTTEN_FLESH);
-        chocolateCoinRecipeTemplate(consumer, ModItems.WARPED_SPICE_CHOCOLATE_COIN.get(), 4, Items.WARPED_FUNGUS, Items.PUFFERFISH);
-        chocolateCoinRecipeTemplate(consumer, ModItems.MILK_BONE_CHOCOLATE_COIN.get(), 4, Items.BONE_MEAL, Items.COBWEB);
-        chocolateCoinRecipeTemplate(consumer, ModItems.ULTIMATE_DARK_CHOCOLATE_COIN.get(), 4, Items.EMERALD, Items.INK_SAC);
-        chocolateCoinRecipeTemplate(consumer, ModItems.FUEGO_FUDGE_CHOCOLATE_COIN.get(), 4, Items.MAGMA_CREAM, Items.GLOWSTONE_DUST);
-        chocolateCoinRecipeTemplate(consumer, ModItems.CARMEL_CRISP_CHOCOLATE_COIN.get(), 4, Items.HONEY_BLOCK, Items.COOKIE);
-
-        chocolateCoinRecipeTemplate2(consumer, ModItems.BUBBLY_BERRY_CHOCOLATE_COIN.get(), 4, TodeCoinsTags.Items.BERRIES, Items.PHANTOM_MEMBRANE);
-        chocolateCoinRecipeTemplate2(consumer, ModItems.FESTIVE_FUDGE_CHOCOLATE_COIN.get(), 4, TodeCoinsTags.Items.COCOA, Items.GLOW_LICHEN);
-
-        chocolateCoinRecipeTemplate3(consumer, ModItems.VELVETY_CLOVER_CHOCOLATE_COIN.get(), 4, TodeCoinsTags.Items.CLOVER, TodeCoinsTags.Items.CLOVER);
+    private static void chocolateCoinRecipes(Consumer<FinishedRecipe> consumer) {
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_CRIMSON_SPORE.get(), 4, Items.CRIMSON_FUNGUS, Items.ROTTEN_FLESH, null, null);
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_WARPED_SPICE.get(), 4, Items.WARPED_FUNGUS, Items.PUFFERFISH, null, null);
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_MILK_BONE.get(), 4, Items.BONE_MEAL, Items.COBWEB, null, null);
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_ULTIMATE_DARK.get(), 4, Items.EMERALD, Items.INK_SAC, null, null);
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_FUEGO_FUDGE.get(), 4, Items.MAGMA_CREAM, Items.GLOWSTONE_DUST, null, null);
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_CARMEL_CRISP.get(), 4, Items.HONEY_BLOCK, Items.COOKIE, null, null);
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_BUBBLY_BERRY.get(), 4, null,Items.PHANTOM_MEMBRANE, TCItemTags.BERRIES, null);
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_FESTIVE_FUDGE.get(), 4, null, Items.GLOW_LICHEN, TCItemTags.COCOA_INGREDIENTS, null);
+        chocolateCoinRecipeTemplate(consumer, TCItems.CHOCOLATE_COIN_VELVETY_CLOVER.get(), 2, null,null, TCItemTags.CLOVER, TCItemTags.CLOVER);
     }
 
-    @SuppressWarnings("SameParameterValue")
-    private static void chocolateCoinRecipeTemplate(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, Item flavorA, Item flavorB) {
-        //noinspection removal
-        ShapelessRecipeBuilder.shapeless(result, resultAmount)
-                .group("chocolate_coins")
-                .requires(TodeCoinsTags.Items.COCOA)
-                .requires(TodeCoinsTags.Items.SUGAR)
-                .requires(TodeCoinsTags.Items.MILK)
-                .requires(TodeCoinsTags.Items.FAT)
-                // flavoring "extract" item 1
-                .requires(flavorA)
-                // flavoring "extract" item 2
-                .requires(flavorB)
-                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
-                .save(consumer, new ResourceLocation(MODID, "chocolate_coins/" + result));
+    private static void textileRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.EMERALD_FIBER.get(), 1)
+                .pattern("###")
+                .pattern("#E#")
+                .pattern("###")
+                .define('#', TCItemTags.CURRENCY_FIBER)
+                .define('E', Items.EMERALD)
+                .unlockedBy("has_emerald", has(TCItemTags.CURRENCY_FIBER))
+                .save(consumer, setLocation(MODID, "textiles/fiber/emerald_fiber"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.EMERALD_THREAD.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.EMERALD_FIBER.get())
+                .unlockedBy("has_emerald_fiber", has(TCItems.EMERALD_FIBER.get()))
+                .save(consumer, setLocation(MODID, "textiles/thread/emerald_thread"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.EMERALD_SMOOTH_WOVE_PAPER.get(), 1)
+                .pattern("##")
+                .pattern("##")
+                .pattern("##")
+                .define('#', TCItems.EMERALD_FIBER.get())
+                .unlockedBy("has_emerald_fiber", has(TCItems.EMERALD_FIBER.get()))
+                .save(consumer, setLocation(MODID, "textiles/paper/emerald_smooth_wove_paper"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.EMERALD_WOVE_PAPER.get(), 1)
+                .pattern("##")
+                .pattern("##")
+                .define('#', TCItems.EMERALD_FIBER.get())
+                .unlockedBy("has_emerald_fiber", has(TCItems.EMERALD_FIBER.get()))
+                .save(consumer, setLocation(MODID, "textiles/paper/emerald_wove_paper"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.EMERALD_COARSE_WOVE_PAPER.get(), 1)
+                .pattern("##")
+                .define('#', TCItems.EMERALD_FIBER.get())
+                .unlockedBy("has_emerald_fiber", has(TCItems.EMERALD_FIBER.get()))
+                .save(consumer, setLocation(MODID, "textiles/paper/emerald_coarse_wove_paper"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.LUCKY_FIBER.get(), 1)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("###")
+                .define('#', TCItemTags.CURRENCY_FIBER)
+                .define('C', TCItems.LUCKY_COIN.get())
+                .unlockedBy("has_lucky_coin", has(TCItems.LUCKY_COIN.get()))
+                .save(consumer, setLocation(MODID, "textiles/fiber/lucky_fiber"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.LUCKY_THREAD.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.LUCKY_FIBER.get())
+                .unlockedBy("has_lucky_fiber", has(TCItems.LUCKY_FIBER.get()))
+                .save(consumer, setLocation(MODID, "textiles/thread/lucky_thread"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.LUCKY_FABRIC.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.LUCKY_THREAD.get())
+                .unlockedBy("has_lucky_thread", has(TCItems.LUCKY_THREAD.get()))
+                .save(consumer, setLocation(MODID, "textiles/fabric/lucky_fabric"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.ENDONIAN_FIBER.get(), 1)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("###")
+                .define('#', TCItemTags.CURRENCY_FIBER)
+                .define('C', TCItems.ENDONIAN_NUGGET.get())
+                .unlockedBy("has_endonian_nugget", has(TCItems.ENDONIAN_NUGGET.get()))
+                .save(consumer, setLocation(MODID, "textiles/fiber/endonian_fiber"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.ENDONIAN_THREAD.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.ENDONIAN_FIBER.get())
+                .unlockedBy("has_endonian_fiber", has(TCItems.ENDONIAN_FIBER.get()))
+                .save(consumer, setLocation(MODID, "textiles/thread/endonian_thread"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.ECHO_FIBER.get(), 1)
+                .pattern("###")
+                .pattern("#C#")
+                .pattern("###")
+                .define('#', TCItems.ENDONIAN_FIBER.get())
+                .define('C', Items.ECHO_SHARD)
+                .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
+                .save(consumer, setLocation(MODID, "textiles/fiber/echo_fiber"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.ECHO_THREAD.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.ECHO_FIBER.get())
+                .unlockedBy("has_echo_fiber", has(TCItems.ECHO_FIBER.get()))
+                .save(consumer, setLocation(MODID, "textiles/thread/echo_thread"));
     }
 
-    @SuppressWarnings("SameParameterValue")
-    private static void chocolateCoinRecipeTemplate2(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, TagKey<Item> flavorA, Item flavorB) {
-        //noinspection removal
-        ShapelessRecipeBuilder.shapeless(result, resultAmount)
-                .group("chocolate_coins")
-                .requires(TodeCoinsTags.Items.COCOA)
-                .requires(TodeCoinsTags.Items.SUGAR)
-                .requires(TodeCoinsTags.Items.MILK)
-                .requires(TodeCoinsTags.Items.FAT)
-                // flavoring "extract" item 1
-                .requires(flavorA)
-                // flavoring "extract" item 2
-                .requires(flavorB)
-                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
-                .save(consumer, new ResourceLocation(MODID, "chocolate_coins/" + result));
+    private static void materialBlockRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.ENDONIAN_BLOCK.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItemTags.ENDONIAN_INGOT)
+                .unlockedBy("has_endonian_ingot", has(TCItemTags.ENDONIAN_INGOT))
+                .save(consumer, setLocation(MODID, "blocks/from_ingots/endonian_block"));
     }
 
-    @SuppressWarnings("SameParameterValue")
-    private static void chocolateCoinRecipeTemplate3(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, TagKey<Item> flavorA, TagKey<Item> flavorB) {
-        //noinspection removal
-        ShapelessRecipeBuilder.shapeless(result, resultAmount)
-                .group("chocolate_coins")
-                .requires(TodeCoinsTags.Items.COCOA)
-                .requires(TodeCoinsTags.Items.SUGAR)
-                .requires(TodeCoinsTags.Items.MILK)
-                .requires(TodeCoinsTags.Items.FAT)
-                // flavoring "extract" item 1
-                .requires(flavorA)
-                // flavoring "extract" item 2
-                .requires(flavorB)
-                .unlockedBy("has_cocoa", has(TodeCoinsTags.Items.COCOA))
-                .save(consumer, new ResourceLocation(MODID, "chocolate_coins/" + result));
+    private static void currencyRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.COPPER_COIN.get(), 9)
+                .requires(TCBlocks.COPPER_COIN_BAG.get())
+                .unlockedBy("has_copper_bag", has(TCBlocks.COPPER_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/copper_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.IRON_COIN.get(), 9)
+                .requires(TCBlocks.IRON_COIN_BAG.get())
+                .unlockedBy("has_iron_bag", has(TCBlocks.IRON_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/iron_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.GOLD_COIN.get(), 9)
+                .requires(TCBlocks.GOLD_COIN_BAG.get())
+                .unlockedBy("has_gold_bag", has(TCBlocks.GOLD_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/gold_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.NETHERITE_COIN.get(), 9)
+                .requires(TCBlocks.NETHERITE_COIN_BAG.get())
+                .unlockedBy("has_netherite_bag", has(TCBlocks.NETHERITE_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/netherite_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.ENDONIAN_COIN.get(), 9)
+                .requires(TCBlocks.ENDONIAN_COIN_BAG.get())
+                .unlockedBy("has_endonian_bag", has(TCBlocks.ENDONIAN_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/endonian_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.NETHER_GOLD_COIN.get(), 9)
+                .requires(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                .unlockedBy("has_nether_gold_bag", has(TCBlocks.NETHER_GOLD_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/nether_gold_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.LUCKY_COIN.get(), 9)
+                .requires(TCBlocks.LUCKY_COIN_BAG.get())
+                .unlockedBy("has_lucky_coin_bag", has(TCBlocks.LUCKY_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/lucky_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.EMERALD_QUARTER_BANK_NOTE.get(), 9)
+                .requires(TCBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                .unlockedBy("has_emerald_quarter_note_bag", has(TCBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/emerald_quarter_bank_notes"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.EMERALD_HALF_BANK_NOTE.get(), 9)
+                .requires(TCBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
+                .unlockedBy("has_emerald_half_note_bag", has(TCBlocks.EMERALD_HALF_BANK_NOTE_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/emerald_half_bank_notes"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.EMERALD_BANK_NOTE.get(), 9)
+                .requires(TCBlocks.EMERALD_BANK_NOTE_BAG.get())
+                .unlockedBy("has_emerald_note_bag", has(TCBlocks.EMERALD_BANK_NOTE_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/emerald_bank_notes"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.LAPIS_FLORIN.get(), 9)
+                .requires(TCBlocks.LAPIS_FLORIN_BAG.get())
+                .unlockedBy("has_lapis_coin_bag", has(TCBlocks.LAPIS_FLORIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/lapis_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.AMETHYST_FLORIN.get(), 9)
+                .requires(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                .unlockedBy("has_amethyst_coin_bag", has(TCBlocks.AMETHYST_FLORIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/amethyst_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.DIAMOND_FLORIN.get(), 9)
+                .requires(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                .unlockedBy("has_diamond_coin_bag", has(TCBlocks.DIAMOND_FLORIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/diamond_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.EMERALD_FLORIN.get(), 9)
+                .requires(TCBlocks.EMERALD_FLORIN_BAG.get())
+                .unlockedBy("has_emerald_coin_bag", has(TCBlocks.EMERALD_FLORIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/emerald_coins"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.ECHO_FLORIN.get(), 9)
+                .requires(TCBlocks.ECHO_COIN_BAG.get())
+                .unlockedBy("has_echo_coin_bag", has(TCBlocks.ECHO_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "currency/from_bag/echo_coins"));
     }
 
-    static Ingredient copperCollectibleCoin = Ingredient.of(TodeCoinsTags.Items.COPPER_COLLECTIBLE_COINS);
-    static Ingredient ironCollectibleCoin = Ingredient.of(TodeCoinsTags.Items.IRON_COLLECTIBLE_COINS);
-    static Ingredient goldCollectibleCoin = Ingredient.of(TodeCoinsTags.Items.GOLD_COLLECTIBLE_COINS);
-    static Ingredient netheriteCollectibleCoin = Ingredient.of(TodeCoinsTags.Items.NETHERITE_COLLECTIBLE_COINS);
-    static Ingredient endonianCollectibleCoin = Ingredient.of(TodeCoinsTags.Items.ENDONIAN_COLLECTIBLE_COINS);
-
-    @SuppressWarnings("removal")
-    private static void collectibleCoinSmeltingRecipes(Consumer<FinishedRecipe> consumer) {
-        //noinspection removal
-        SimpleCookingRecipeBuilder.smelting(copperCollectibleCoin, ModItems.COPPER_NUGGET.get(), 0.1F, 100)
-                .unlockedBy("has_copper_collectible_coin", has(TodeCoinsTags.Items.COPPER_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/copper_nugget"));
-        //noinspection removal
-        SimpleCookingRecipeBuilder.smelting(ironCollectibleCoin, Items.IRON_NUGGET, 0.1F, 100)
-                .unlockedBy("has_iron_collectible_coin", has(TodeCoinsTags.Items.IRON_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/iron_nugget"));
-        //noinspection removal
-        SimpleCookingRecipeBuilder.smelting(goldCollectibleCoin, Items.GOLD_NUGGET, 0.1F, 100)
-                .unlockedBy("has_gold_collectible_coin", has(TodeCoinsTags.Items.GOLD_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/gold_nugget"));
-        //noinspection removal
-        SimpleCookingRecipeBuilder.smelting(netheriteCollectibleCoin, ModItems.NETHERITE_NUGGET.get(), 0.1F, 100)
-                .unlockedBy("has_netherite_collectible_coin", has(TodeCoinsTags.Items.NETHERITE_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/netherite_nugget"));
-        SimpleCookingRecipeBuilder.smelting(endonianCollectibleCoin, ModItems.ENDONIAN_NUGGET.get(), 0.1F, 100)
-                .unlockedBy("has_endonian_collectible_coin", has(TodeCoinsTags.Items.ENDONIAN_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/smelting/endonian_nugget"));
+    private static void currencyBagRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.COPPER_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.COPPER_COIN.get())
+                .unlockedBy("has_copper_coin", has(TCItems.COPPER_COIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/copper_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.IRON_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.IRON_COIN.get())
+                .unlockedBy("has_iron_coin", has(TCItems.IRON_COIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/iron_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.GOLD_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.GOLD_COIN.get())
+                .unlockedBy("has_gold_coin", has(TCItems.GOLD_COIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/gold_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.NETHERITE_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.NETHERITE_COIN.get())
+                .unlockedBy("has_netherite_coin", has(TCItems.NETHERITE_COIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/netherite_coin_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.ENDONIAN_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.ENDONIAN_COIN.get())
+                .unlockedBy("has_endonian_coin", has(TCItems.ENDONIAN_COIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/endonian_coin_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.NETHER_GOLD_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.NETHER_GOLD_COIN.get())
+                .unlockedBy("has_nether_gold_coin", has(TCItems.NETHER_GOLD_COIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/nether_gold_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.LUCKY_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.LUCKY_COIN.get())
+                .unlockedBy("has_lucky_coin", has(TCItems.LUCKY_COIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/lucky_coin_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                .unlockedBy("has_emerald_quarter_note", has(TCItems.EMERALD_QUARTER_BANK_NOTE.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/emerald_quarter_bank_note_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.EMERALD_HALF_BANK_NOTE_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.EMERALD_HALF_BANK_NOTE.get())
+                .unlockedBy("has_emerald_half_note", has(TCItems.EMERALD_HALF_BANK_NOTE.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/bank_notes_to_bags/emerald_half_bank_note_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.EMERALD_BANK_NOTE_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.EMERALD_BANK_NOTE.get())
+                .unlockedBy("has_emerald_note", has(TCItems.EMERALD_BANK_NOTE.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/emerald_bank_note_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.LAPIS_FLORIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.LAPIS_FLORIN.get())
+                .unlockedBy("has_lapis_coin", has(TCItems.LAPIS_FLORIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/lapis_coin_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.AMETHYST_FLORIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.AMETHYST_FLORIN.get())
+                .unlockedBy("has_amethyst_coin", has(TCItems.AMETHYST_FLORIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/amethyst_coin_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.DIAMOND_FLORIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.DIAMOND_FLORIN.get())
+                .unlockedBy("has_diamond_coin", has(TCItems.DIAMOND_FLORIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/diamond_coin_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.EMERALD_FLORIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.EMERALD_FLORIN.get())
+                .unlockedBy("has_emerald_coin", has(TCItems.EMERALD_FLORIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/emerald_coin_bag"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCBlocks.ECHO_COIN_BAG.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItems.ECHO_FLORIN.get())
+                .unlockedBy("has_echo_coin", has(TCItems.ECHO_FLORIN.get()))
+                .save(consumer, setLocation(MODID, "storage_blocks/echo_coin_bag"));
     }
 
-    @SuppressWarnings("removal")
-    private static void collectibleCoinBlastingRecipes(Consumer<FinishedRecipe> consumer) {
-        //noinspection removal
-        SimpleCookingRecipeBuilder.blasting(copperCollectibleCoin, ModItems.COPPER_NUGGET.get(), 0.1F, 100)
-                .unlockedBy("has_copper_collectible_coin", has(TodeCoinsTags.Items.COPPER_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/copper_nugget"));
-        //noinspection removal
-        SimpleCookingRecipeBuilder.blasting(ironCollectibleCoin, Items.IRON_NUGGET, 0.1F, 100)
-                .unlockedBy("has_iron_collectible_coin", has(TodeCoinsTags.Items.IRON_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/iron_nugget"));
-        //noinspection removal
-        SimpleCookingRecipeBuilder.blasting(goldCollectibleCoin, Items.GOLD_NUGGET, 0.1F, 100)
-                .unlockedBy("has_gold_collectible_coin", has(TodeCoinsTags.Items.GOLD_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/gold_nugget"));
-        //noinspection removal
-        SimpleCookingRecipeBuilder.blasting(netheriteCollectibleCoin, ModItems.NETHERITE_NUGGET.get(), 0.1F, 100)
-                .unlockedBy("has_netherite_collectible_coin", has(TodeCoinsTags.Items.NETHERITE_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/netherite_nugget"));
-        SimpleCookingRecipeBuilder.blasting(endonianCollectibleCoin, ModItems.ENDONIAN_NUGGET.get(), 0.1F, 100)
-                .unlockedBy("has_endonian_collectible_coin", has(TodeCoinsTags.Items.ENDONIAN_COLLECTIBLE_COINS))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/blasting/endonian_nugget"));
+    private static void nuggetRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.LUCKY_NUGGET.get(), 1)
+                .pattern("###")
+                .pattern(" # ")
+                .pattern("###")
+                .define('#', TCItems.FOUR_LEAF_CLOVER.get())
+                .unlockedBy("has_four_leaf_clover", has(TCItems.FOUR_LEAF_CLOVER.get()))
+                .save(consumer, setLocation(MODID, "nuggets/from_other/lucky_nugget"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.COPPER_NUGGET.get(), 9)
+                .requires(TCItemTags.COPPER_INGOT)
+                .unlockedBy("has_copper_ingot", has(TCItemTags.COPPER_INGOT))
+                .save(consumer, setLocation(MODID, "nuggets/from_ingots/copper_nugget"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.NETHERITE_NUGGET.get(), 9)
+                .requires(TCItemTags.NETHERITE_INGOT)
+                .unlockedBy("has_netherite_ingot", has(TCItemTags.NETHERITE_INGOT))
+                .save(consumer, setLocation(MODID, "nuggets/from_ingots/netherite_nugget"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.ENDONIAN_NUGGET.get(), 9)
+                .requires(TCItemTags.ENDONIAN_INGOT)
+                .unlockedBy("has_endonian_ingot", has(TCItemTags.ENDONIAN_INGOT))
+                .save(consumer, setLocation(MODID, "nuggets/from_ingots/endonian_nugget"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.COPPER_NUGGET.get())
+                .requires(TCItems.COPPER_COIN.get(), 2)
+                .unlockedBy("has_copper_coin", has(TCItemTags.COPPER_NUGGET))
+                .save(consumer, setLocation(MODID, "nuggets/from_coins/copper_nugget"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.IRON_NUGGET)
+                .requires(TCItems.IRON_COIN.get(), 2)
+                .unlockedBy("has_iron_coin", has(TCItemTags.IRON_NUGGET))
+                .save(consumer, setLocation(MODID, "nuggets/from_coins/iron_nugget"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.GOLD_NUGGET)
+                .requires(TCItems.GOLD_COIN.get(), 2)
+                .unlockedBy("has_gold_coin", has(TCItemTags.GOLD_NUGGET))
+                .save(consumer, setLocation(MODID, "nuggets/from_coins/gold_nugget"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.NETHERITE_NUGGET.get())
+                .requires(TCItems.NETHERITE_COIN.get(), 2)
+                .unlockedBy("has_netherite_coin", has(TCItemTags.NETHERITE_NUGGET))
+                .save(consumer, setLocation(MODID, "nuggets/from_coins/netherite_nugget"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.ENDONIAN_NUGGET.get())
+                .requires(TCItems.ENDONIAN_COIN.get(), 2)
+                .unlockedBy("has_endonian_coin", has(TCItemTags.ENDONIAN_NUGGET))
+                .save(consumer, setLocation(MODID, "nuggets/from_coins/endonian_nugget"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.LUCKY_NUGGET.get())
+                .requires(TCItems.LUCKY_COIN.get(), 2)
+                .unlockedBy("has_lucky_coin", has(TCItems.LUCKY_COIN.get()))
+                .save(consumer, setLocation(MODID, "nuggets/from_coins/lucky_nugget"));
+    }
+
+    private static void ingotRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.COPPER_INGOT, 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItemTags.COPPER_NUGGET)
+                .unlockedBy("has_copper_nugget", has(TCItemTags.COPPER_NUGGET))
+                .save(consumer, setLocation(MODID, "ingots/from_nuggets/copper_ingot"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.NETHERITE_INGOT, 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItemTags.NETHERITE_NUGGET)
+                .unlockedBy("has_netherite_nugget", has(TCItemTags.NETHERITE_NUGGET))
+                .save(consumer, setLocation(MODID, "ingots/ingot_from_nuggets/netherite_ingot"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.ENDONIAN_INGOT.get(), 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', TCItemTags.ENDONIAN_NUGGET)
+                .unlockedBy("has_endonian_nugget", has(TCItemTags.ENDONIAN_NUGGET))
+                .save(consumer, setLocation(MODID, "ingots/ingot_from_nuggets/endonian_ingot"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCItems.ENDONIAN_INGOT.get(), 9)
+                .requires(TCBlocks.ENDONIAN_BLOCK.get())
+                .unlockedBy("has_endonian_block", has(TCBlocks.ENDONIAN_BLOCK.get()))
+                .save(consumer, setLocation(MODID, "ingots/from_blocks/endonian_ingot"));
     }
 
     private static void armorRecipes(Consumer<FinishedRecipe> consumer) {
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.LUCKY_HAT.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, TCItems.LUCKY_HAT.get(), 1)
                 .pattern("CCC")
                 .pattern("C C")
-                .define('C', ModItems.LUCKY_FABRIC.get())
-                .unlockedBy("has_lucky_fabric", has(ModItems.LUCKY_FABRIC.get()))
-                .save(consumer, new ResourceLocation(MODID, "armor/lucky_fabric/lucky_hat"));
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.LUCKY_SHIRT.get(), 1)
+                .define('C', TCItems.LUCKY_FABRIC.get())
+                .unlockedBy("has_lucky_fabric", has(TCItems.LUCKY_FABRIC.get()))
+                .save(consumer, setLocation(MODID, "armor/lucky_fabric/lucky_hat"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, TCItems.LUCKY_SHIRT.get(), 1)
                 .pattern("C C")
                 .pattern("CCC")
                 .pattern("CCC")
-                .define('C', ModItems.LUCKY_FABRIC.get())
-                .unlockedBy("has_lucky_fabric", has(ModItems.LUCKY_FABRIC.get()))
-                .save(consumer, new ResourceLocation(MODID, "armor/lucky_fabric/lucky_shirt"));
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.LUCKY_BOOTS.get(), 1)
+                .define('C', TCItems.LUCKY_FABRIC.get())
+                .unlockedBy("has_lucky_fabric", has(TCItems.LUCKY_FABRIC.get()))
+                .save(consumer, setLocation(MODID, "armor/lucky_fabric/lucky_shirt"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, TCItems.LUCKY_BOOTS.get(), 1)
                 .pattern("C C")
                 .pattern("C C")
-                .define('C', ModItems.LUCKY_FABRIC.get())
-                .unlockedBy("has_lucky_fabric", has(ModItems.LUCKY_FABRIC.get()))
-                .save(consumer, new ResourceLocation(MODID, "armor/lucky_fabric/lucky_boots"));
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.LUCKY_PANTS.get(), 1)
+                .define('C', TCItems.LUCKY_FABRIC.get())
+                .unlockedBy("has_lucky_fabric", has(TCItems.LUCKY_FABRIC.get()))
+                .save(consumer, setLocation(MODID, "armor/lucky_fabric/lucky_boots"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, TCItems.LUCKY_PANTS.get(), 1)
                 .pattern("CCC")
                 .pattern("C C")
                 .pattern("C C")
-                .define('C', ModItems.LUCKY_FABRIC.get())
-                .unlockedBy("has_lucky_fabric", has(ModItems.LUCKY_FABRIC.get()))
-                .save(consumer, new ResourceLocation(MODID, "armor/lucky_fabric/lucky_pants"));
+                .define('C', TCItems.LUCKY_FABRIC.get())
+                .unlockedBy("has_lucky_fabric", has(TCItems.LUCKY_FABRIC.get()))
+                .save(consumer, setLocation(MODID, "armor/lucky_fabric/lucky_pants"));
     }
 
-    private static void currencyStampsRecipes(Consumer<FinishedRecipe> consumer) {
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.CURRENCY_STAMP.get(), 1)
-                .pattern(" S ")
-                .pattern(" C ")
-                .pattern(" S ")
-                .define('S', Items.SMOOTH_STONE_SLAB)
-                .define('C', Items.COBBLESTONE)
-                .unlockedBy("has_smooth_stone", has(Items.SMOOTH_STONE_SLAB))
-                .save(consumer, new ResourceLocation(MODID, "currency_stamps/currency_stamp"));
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.NETHER_CURRENCY_STAMP.get(), 1)
-                .pattern(" S ")
-                .pattern(" C ")
-                .pattern(" S ")
-                .define('S', Items.BLACKSTONE_SLAB)
-                .define('C', Items.CHISELED_POLISHED_BLACKSTONE)
-                .unlockedBy("has_chiseled_polished_blackstone", has(Items.CHISELED_POLISHED_BLACKSTONE))
-                .save(consumer, new ResourceLocation(MODID, "currency_stamps/nether_currency_stamp"));
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModItems.ENDONIAN_CURRENCY_STAMP.get(), 1)
-                .pattern(" S ")
-                .pattern(" C ")
-                .pattern(" S ")
-                .define('S', Items.PURPUR_SLAB)
-                .define('C', Items.ENDER_EYE)
-                .unlockedBy("has_purpur_slab", has(Items.PURPUR_SLAB))
-                .save(consumer, new ResourceLocation(MODID, "currency_stamps/endonian_currency_stamp"));
-    }
-    @SuppressWarnings("removal")
     private static void jobBlockRecipes(Consumer<FinishedRecipe> consumer) {
-        //noinspection removal
-        ShapedRecipeBuilder.shaped(ModBlocks.COINPRESSBLOCK.get(), 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, TCBlocks.COINPRESSBLOCK.get(), 1)
                 .pattern("III")
                 .pattern("DID")
                 .pattern("PPP")
@@ -271,312 +532,92 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
                 .define('D', Items.POLISHED_DEEPSLATE)
                 .define('P', ItemTags.PLANKS)
                 .unlockedBy("has_polished_deepslate", has(Items.POLISHED_DEEPSLATE))
-                .save(consumer, new ResourceLocation(MODID, "job_blocks/coin_press"));
-        ShapedRecipeBuilder.shaped(ModBlocks.POT_OF_GOLD.get(), 1)
+                .save(consumer, setLocation(MODID, "job_blocks/coin_press"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, TCBlocks.POT_OF_GOLD.get(), 1)
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
-                .define('#', ModBlocks.GOLD_COIN_BAG.get())
-                .unlockedBy("has_gold_coin_bag", has(ModBlocks.GOLD_COIN_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "job_blocks/pot_of_gold"));
-        ShapelessRecipeBuilder.shapeless(ModBlocks.GOLD_COIN_BAG.get(), 9)
-                .requires(ModBlocks.POT_OF_GOLD.get())
-                .unlockedBy("has_pot_of_gold", has(ModBlocks.POT_OF_GOLD.get()))
-                .save(consumer, new ResourceLocation(MODID, "job_blocks/bags_of_gold_from_pot_of_gold"));
+                .define('#', TCBlocks.GOLD_COIN_BAG.get())
+                .unlockedBy("has_gold_coin_bag", has(TCBlocks.GOLD_COIN_BAG.get()))
+                .save(consumer, setLocation(MODID, "job_blocks/pot_of_gold"));
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCBlocks.GOLD_COIN_BAG.get(), 9)
+                .requires(TCBlocks.POT_OF_GOLD.get())
+                .unlockedBy("has_pot_of_gold", has(TCBlocks.POT_OF_GOLD.get()))
+                .save(consumer, setLocation(MODID, "job_blocks/bags_of_gold_from_pot_of_gold"));
     }
-    @SuppressWarnings("removal")
-    private static void nuggetRecipes(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(Items.COPPER_INGOT, 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', TodeCoinsTags.Items.COPPER_NUGGET_FORGE_TAG)
-                .unlockedBy("has_copper_nugget", has(TodeCoinsTags.Items.COPPER_NUGGET_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/copper_ingot"));
-        ShapedRecipeBuilder.shaped(Items.NETHERITE_INGOT, 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', TodeCoinsTags.Items.NETHERITE_NUGGET_FORGE_TAG)
-                .unlockedBy("has_netherite_nugget", has(TodeCoinsTags.Items.NETHERITE_NUGGET_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/netherite_ingot"));
-        ShapedRecipeBuilder.shaped(ModItems.ENDONIAN_INGOT.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', TodeCoinsTags.Items.ENDONIAN_NUGGET_FORGE_TAG)
-                .unlockedBy("has_endonian_nugget", has(TodeCoinsTags.Items.ENDONIAN_NUGGET_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_nuggets/endonian_ingot"));
 
-        ShapedRecipeBuilder.shaped(ModItems.LUCKY_NUGGET.get(), 1)
-                .pattern("###")
-                .pattern(" # ")
-                .pattern("###")
-                .define('#', ModItems.FOUR_LEAF_CLOVER.get())
-                .unlockedBy("has_four_leaf_clover", has(ModItems.FOUR_LEAF_CLOVER.get()))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_other/lucky_nugget"));
-
-        ShapelessRecipeBuilder.shapeless(ModItems.COPPER_NUGGET.get(), 9)
-                .requires(TodeCoinsTags.Items.COPPER_INGOT_FORGE_TAG)
-                .unlockedBy("has_copper_ingot", has(TodeCoinsTags.Items.COPPER_INGOT_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nuggets_from_ingots/copper_nugget"));
-        ShapelessRecipeBuilder.shapeless(ModItems.NETHERITE_NUGGET.get(), 9)
-                .requires(TodeCoinsTags.Items.NETHERITE_INGOT_FORGE_TAG)
-                .unlockedBy("has_netherite_ingot", has(TodeCoinsTags.Items.NETHERITE_INGOT_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nuggets_from_ingots/netherite_nugget"));
-        ShapelessRecipeBuilder.shapeless(ModItems.ENDONIAN_NUGGET.get(), 9)
-                .requires(TodeCoinsTags.Items.ENDONIAN_INGOT_FORGE_TAG)
-                .unlockedBy("has_endonian_ingot", has(TodeCoinsTags.Items.ENDONIAN_INGOT_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nuggets_from_ingots/endonian_nugget"));
-
-
-        ShapelessRecipeBuilder.shapeless(ModItems.COPPER_NUGGET.get())
-                .requires(ModItems.COPPER_COIN.get(), 2)
-                .unlockedBy("has_copper_coin", has(TodeCoinsTags.Items.COPPER_NUGGET_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/copper_nugget"));
-        ShapelessRecipeBuilder.shapeless(Items.IRON_NUGGET)
-                .requires(ModItems.IRON_COIN.get(), 2)
-                .unlockedBy("has_iron_coin", has(TodeCoinsTags.Items.IRON_NUGGET_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/iron_nugget"));
-        ShapelessRecipeBuilder.shapeless(Items.GOLD_NUGGET)
-                .requires(ModItems.GOLD_COIN.get(), 2)
-                .unlockedBy("has_gold_coin", has(TodeCoinsTags.Items.GOLD_NUGGET_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/gold_nugget"));
-        ShapelessRecipeBuilder.shapeless(ModItems.NETHERITE_NUGGET.get())
-                .requires(ModItems.NETHERITE_COIN.get(), 2)
-                .unlockedBy("has_netherite_coin", has(TodeCoinsTags.Items.NETHERITE_NUGGET_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/netherite_nugget"));
-        ShapelessRecipeBuilder.shapeless(ModItems.ENDONIAN_NUGGET.get())
-                .requires(ModItems.ENDONIAN_COIN.get(), 2)
-                .unlockedBy("has_endonian_coin", has(TodeCoinsTags.Items.ENDONIAN_NUGGET_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "nuggets/nugget_from_coins/endonian_nugget"));
+    private static void currencyStampsRecipes(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.CURRENCY_STAMP.get(), 1)
+                .pattern(" S ")
+                .pattern(" C ")
+                .pattern(" S ")
+                .define('S', Items.SMOOTH_STONE_SLAB)
+                .define('C', Items.COBBLESTONE)
+                .unlockedBy("has_smooth_stone", has(Items.SMOOTH_STONE_SLAB))
+                .save(consumer, setLocation(MODID, "currency_stamps/currency_stamp"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.NETHER_CURRENCY_STAMP.get(), 1)
+                .pattern(" S ")
+                .pattern(" C ")
+                .pattern(" S ")
+                .define('S', Items.BLACKSTONE_SLAB)
+                .define('C', Items.CHISELED_POLISHED_BLACKSTONE)
+                .unlockedBy("has_chiseled_polished_blackstone", has(Items.CHISELED_POLISHED_BLACKSTONE))
+                .save(consumer, setLocation(MODID, "currency_stamps/nether_currency_stamp"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.ENDONIAN_CURRENCY_STAMP.get(), 1)
+                .pattern(" S ")
+                .pattern(" C ")
+                .pattern(" S ")
+                .define('S', Items.PURPUR_SLAB)
+                .define('C', Items.ENDER_EYE)
+                .unlockedBy("has_purpur_slab", has(Items.PURPUR_SLAB))
+                .save(consumer, setLocation(MODID, "currency_stamps/endonian_currency_stamp"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, TCItems.GEM_CURRENCY_STAMP.get(), 1)
+                .pattern(" S ")
+                .pattern(" C ")
+                .pattern(" S ")
+                .define('S', Items.POLISHED_DEEPSLATE_SLAB)
+                .define('C', Items.DEEPSLATE_TILES)
+                .unlockedBy("has_deepslate", has(Items.COBBLED_DEEPSLATE))
+                .save(consumer, setLocation(MODID, "currency_stamps/gem_currency_stamp"));
     }
-    @SuppressWarnings("removal")
-    private static void storageBlockRecipes(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(ModBlocks.COPPER_COIN_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.COPPER_COIN.get())
-                .unlockedBy("has_copper_coin", has(ModItems.COPPER_COIN.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/coins_to_bags/copper_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.IRON_COIN_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.IRON_COIN.get())
-                .unlockedBy("has_iron_coin", has(ModItems.IRON_COIN.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/coins_to_bags/iron_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.GOLD_COIN_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.GOLD_COIN.get())
-                .unlockedBy("has_gold_coin", has(ModItems.GOLD_COIN.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/coins_to_bags/gold_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERITE_COIN_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.NETHERITE_COIN.get())
-                .unlockedBy("has_netherite_coin", has(ModItems.NETHERITE_COIN.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/coins_to_bags/netherite_coin_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.ENDONIAN_COIN_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.ENDONIAN_COIN.get())
-                .unlockedBy("has_endonian_coin", has(ModItems.ENDONIAN_COIN.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/coins_to_bags/endonian_coin_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHER_GOLD_COIN_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.NETHER_GOLD_COIN.get())
-                .unlockedBy("has_nether_gold_coin", has(ModItems.NETHER_GOLD_COIN.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/coins_to_bags/nether_gold_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.LUCKY_COIN_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.LUCKY_COIN.get())
-                .unlockedBy("has_lucky_coin", has(ModItems.EMERALD_BANK_NOTE.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/coin_to_bags/lucky_coin_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.EMERALD_QUARTER_BANK_NOTE.get())
-                .unlockedBy("has_emerald_quarter_note", has(ModItems.EMERALD_QUARTER_BANK_NOTE.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bank_notes_to_bags/emerald_quarter_bank_note_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.EMERALD_HALF_BANK_NOTE.get())
-                .unlockedBy("has_emerald_half_note", has(ModItems.EMERALD_HALF_BANK_NOTE.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bank_notes_to_bags/emerald_half_bank_note_bag"));
-        ShapedRecipeBuilder.shaped(ModBlocks.EMERALD_BANK_NOTE_BAG.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.EMERALD_BANK_NOTE.get())
-                .unlockedBy("has_emerald_note", has(ModItems.EMERALD_BANK_NOTE.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bank_notes_to_bags/emerald_bank_note_bag"));
 
-        ShapedRecipeBuilder.shaped(ModBlocks.ENDONIAN_BLOCK.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', TodeCoinsTags.Items.ENDONIAN_INGOT_FORGE_TAG)
-                .unlockedBy("has_endonian_ingot", has(TodeCoinsTags.Items.ENDONIAN_INGOT_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "blocks/blocks_from_ingots/endonian_block"));
-        ShapedRecipeBuilder.shaped(ModBlocks.ENDONIAN_BLOCK.get(), 1)
-                .pattern("# #")
-                .pattern(" P ")
-                .pattern("# #")
-                .define('#', Items.CHORUS_FLOWER)
-                .define('P', Items.ENDER_PEARL)
-                .unlockedBy("has_chorus_flower", has(Items.CHORUS_FLOWER))
-                .save(consumer, new ResourceLocation(MODID, "blocks/blocks_from_other/endonian_block"));
+    private static void chocolateCoinRecipeTemplate(Consumer<FinishedRecipe> consumer, Item result, int resultAmount, @Nullable Item flavorA, @Nullable Item flavorB, @Nullable TagKey<Item> flavorTagA, @Nullable TagKey<Item> flavorTagB) {
+        RemainderShapelessRecipeBuilder builder = RemainderShapelessRecipeBuilder
+                .shapelessRemainderRecipe(RecipeCategory.FOOD, result, resultAmount)
+                .group("chocolate_coins")
+                .addIngredient(TCItemTags.COCOA_INGREDIENTS)
+                .addIngredient(TCItemTags.SWEETENER)
+                .addIngredient(TCItemTags.MILK)
+                .addIngredient(TCItemTags.FAT);
 
-        ShapelessRecipeBuilder.shapeless(ModItems.COPPER_COIN.get(), 9)
-                .requires(ModBlocks.COPPER_COIN_BAG.get())
-                .unlockedBy("has_copper_bag", has(ModBlocks.COPPER_COIN_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/copper_coins"));
-        ShapelessRecipeBuilder.shapeless(ModItems.IRON_COIN.get(), 9)
-                .requires(ModBlocks.IRON_COIN_BAG.get())
-                .unlockedBy("has_iron_bag", has(ModBlocks.IRON_COIN_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/iron_coins"));
-        ShapelessRecipeBuilder.shapeless(ModItems.GOLD_COIN.get(), 9)
-                .requires(ModBlocks.GOLD_COIN_BAG.get())
-                .unlockedBy("has_gold_bag", has(ModBlocks.GOLD_COIN_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/gold_coins"));
-        ShapelessRecipeBuilder.shapeless(ModItems.NETHERITE_COIN.get(), 9)
-                .requires(ModBlocks.NETHERITE_COIN_BAG.get())
-                .unlockedBy("has_netherite_bag", has(ModBlocks.NETHERITE_COIN_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/netherite_coins"));
-        ShapelessRecipeBuilder.shapeless(ModItems.ENDONIAN_COIN.get(), 9)
-                .requires(ModBlocks.ENDONIAN_COIN_BAG.get())
-                .unlockedBy("has_endonian_bag", has(ModBlocks.ENDONIAN_COIN_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/endonian_coins"));
-        ShapelessRecipeBuilder.shapeless(ModItems.NETHER_GOLD_COIN.get(), 9)
-                .requires(ModBlocks.NETHER_GOLD_COIN_BAG.get())
-                .unlockedBy("has_nether_gold_bag", has(ModBlocks.NETHER_GOLD_COIN_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/nether_gold_coins"));
-        ShapelessRecipeBuilder.shapeless(ModItems.LUCKY_COIN.get(), 9)
-                .requires(ModBlocks.LUCKY_COIN_BAG.get())
-                .unlockedBy("has_lucky_coin_bag", has(ModBlocks.LUCKY_COIN_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_coins/lucky_coins"));
-        ShapelessRecipeBuilder.shapeless(ModItems.EMERALD_QUARTER_BANK_NOTE.get(), 9)
-                .requires(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
-                .unlockedBy("has_emerald_quarter_note_bag", has(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_bank_notes/emerald_quarter_bank_notes"));
-        ShapelessRecipeBuilder.shapeless(ModItems.EMERALD_HALF_BANK_NOTE.get(), 9)
-                .requires(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
-                .unlockedBy("has_emerald_half_note_bag", has(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_bank_notes/emerald_half_bank_notes"));
-        ShapelessRecipeBuilder.shapeless(ModItems.EMERALD_BANK_NOTE.get(), 9)
-                .requires(ModBlocks.EMERALD_BANK_NOTE_BAG.get())
-                .unlockedBy("has_emerald_note_bag", has(ModBlocks.EMERALD_BANK_NOTE_BAG.get()))
-                .save(consumer, new ResourceLocation(MODID, "storage_blocks/bags_to_bank_notes/emerald_bank_notes"));
+        int ingredientCount = 4; // base ingredients
 
-        ShapelessRecipeBuilder.shapeless(ModItems.ENDONIAN_INGOT.get(), 9)
-                .requires(ModBlocks.ENDONIAN_BLOCK.get())
-                .unlockedBy("has_endonian_block", has(ModBlocks.ENDONIAN_BLOCK.get()))
-                .save(consumer, new ResourceLocation(MODID, "ingots/ingot_from_blocks/endonian_ingot"));
-    }
-    @SuppressWarnings("removal")
-    private static void textileRecipes(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(ModItems.EMERALD_FIBER.get(), 1)
-                .pattern("###")
-                .pattern("#E#")
-                .pattern("###")
-                .define('#', TodeCoinsTags.Items.CURRENCY_FIBER_FORGE_TAG)
-                .define('E', Items.EMERALD)
-                .unlockedBy("has_emerald", has(TodeCoinsTags.Items.CURRENCY_FIBER_FORGE_TAG))
-                .save(consumer, new ResourceLocation(MODID, "textiles/fiber/emerald_fiber"));
+        // flavor A (must be either item or tag if used)
+        if (flavorA != null) {
+            builder.addIngredient(flavorA);
+            ingredientCount++;
+        }
+        else if (flavorTagA != null) {
+            builder.addIngredient(flavorTagA);
+            ingredientCount++;
+        }
 
-        ShapedRecipeBuilder.shaped(ModItems.EMERALD_THREAD.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.EMERALD_FIBER.get())
-                .unlockedBy("has_emerald_fiber", has(ModItems.EMERALD_FIBER.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/thread/emerald_thread"));
+        // flavor B (must be either item or tag if used)
+        if (flavorB != null) {
+            builder.addIngredient(flavorB);
+            ingredientCount++;
+        }
+        else if (flavorTagB != null) {
+            builder.addIngredient(flavorTagB);
+            ingredientCount++;
+        }
 
-        ShapedRecipeBuilder.shaped(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get(), 1)
-                .pattern("##")
-                .pattern("##")
-                .pattern("##")
-                .define('#', ModItems.EMERALD_FIBER.get())
-                .unlockedBy("has_emerald_fiber", has(ModItems.EMERALD_FIBER.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/paper/emerald_smooth_wove_paper"));
-        ShapedRecipeBuilder.shaped(ModItems.EMERALD_WOVE_PAPER.get(), 1)
-                .pattern("##")
-                .pattern("##")
-                .define('#', ModItems.EMERALD_FIBER.get())
-                .unlockedBy("has_emerald_fiber", has(ModItems.EMERALD_FIBER.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/paper/emerald_wove_paper"));
-        ShapedRecipeBuilder.shaped(ModItems.EMERALD_COARSE_WOVE_PAPER.get(), 1)
-                .pattern("##")
-                .define('#', ModItems.EMERALD_FIBER.get())
-                .unlockedBy("has_emerald_fiber", has(ModItems.EMERALD_FIBER.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/paper/emerald_coarse_wove_paper"));
+        // enforce exactly 6 ingredients
+        if (ingredientCount != 6) {
+            throw new IllegalArgumentException("Chocolate coin recipe for " + result + " must have exactly 6 ingredients (found " + ingredientCount + ")");
+        }
 
-        ShapedRecipeBuilder.shaped(ModItems.LUCKY_FIBER.get(), 1)
-                .pattern("###")
-                .pattern("#C#")
-                .pattern("###")
-                .define('#', TodeCoinsTags.Items.CURRENCY_FIBER_FORGE_TAG)
-                .define('C', ModItems.LUCKY_COIN.get())
-                .unlockedBy("has_lucky_coin", has(ModItems.LUCKY_COIN.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/fiber/lucky_fiber"));
-
-        ShapedRecipeBuilder.shaped(ModItems.LUCKY_THREAD.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.LUCKY_FIBER.get())
-                .unlockedBy("has_lucky_fiber", has(ModItems.LUCKY_FIBER.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/thread/lucky_thread"));
-
-        ShapedRecipeBuilder.shaped(ModItems.LUCKY_FABRIC.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.LUCKY_THREAD.get())
-                .unlockedBy("has_lucky_thread", has(ModItems.LUCKY_THREAD.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/fabric/lucky_fabric"));
-
-        ShapedRecipeBuilder.shaped(ModItems.ENDONIAN_FIBER.get(), 1)
-                .pattern("###")
-                .pattern("#C#")
-                .pattern("###")
-                .define('#', TodeCoinsTags.Items.CURRENCY_FIBER_FORGE_TAG)
-                .define('C', ModItems.ENDONIAN_NUGGET.get())
-                .unlockedBy("has_endonian_nugget", has(ModItems.ENDONIAN_NUGGET.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/fiber/endonian_fiber"));
-
-        ShapedRecipeBuilder.shaped(ModItems.ENDONIAN_THREAD.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.ENDONIAN_FIBER.get())
-                .unlockedBy("has_endonian_fiber", has(ModItems.ENDONIAN_FIBER.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/thread/endonian_thread"));
-
-        ShapedRecipeBuilder.shaped(ModItems.ECHO_FIBER.get(), 1)
-                .pattern("###")
-                .pattern("#C#")
-                .pattern("###")
-                .define('#', ModItems.ENDONIAN_FIBER.get())
-                .define('C', Items.ECHO_SHARD)
-                .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
-                .save(consumer, new ResourceLocation(MODID, "textiles/fiber/echo_fiber"));
-
-        ShapedRecipeBuilder.shaped(ModItems.ECHO_THREAD.get(), 1)
-                .pattern("###")
-                .pattern("###")
-                .define('#', ModItems.ECHO_FIBER.get())
-                .unlockedBy("has_echo_fiber", has(ModItems.ECHO_FIBER.get()))
-                .save(consumer, new ResourceLocation(MODID, "textiles/thread/echo_thread"));
+        builder.unlockedBy("has_cocoa", has(TCItemTags.COCOA_INGREDIENTS))
+                .build(consumer, setLocation(MODID, "chocolate_coins/" + result));
     }
 }

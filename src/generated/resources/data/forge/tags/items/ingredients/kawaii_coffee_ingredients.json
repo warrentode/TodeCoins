@@ -1,0 +1,21 @@
+{
+  "values": [
+    "minecraft:sugar",
+    "minecraft:cocoa_beans",
+    "minecraft:honey_bottle",
+    "#forge:milk/milk",
+    "#forge:crops/berries",
+    {
+      "id": "#forge:ingredients/cocoa",
+      "required": false
+    },
+    {
+      "id": "#forge:ingredients/coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:cream_cheese",
+      "required": false
+    }
+  ]
+}

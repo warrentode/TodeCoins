@@ -1,10 +1,11 @@
 package com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types;
 
+import com.github.warrentode.todecoins.entity.trades.TradeOfferConstants;
 import com.github.warrentode.todecoins.entity.trades.trade_api.CodecHelper;
-import com.github.warrentode.todecoins.mixin.TradeOffersAccessor;
+import com.github.warrentode.todecoins.mixin.trades.TradeOffersAccessor;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -81,7 +82,7 @@ public class VanillaTradeOfferFactories {
 
     public static final Codec<VillagerTrades.TreasureMapForEmeralds> SELL_MAP = RecordCodecBuilder.create(instance -> instance.group(
             Codec.INT.optionalFieldOf(TradeOfferConstants.emeraldCount, 1).forGetter(factory -> ((TradeOffersAccessor.TreasureMapForEmeraldsAccessor) factory).getPrice()),
-            ResourceLocation.CODEC.fieldOf(TradeOfferConstants.structureTag).xmap(resourceLocation -> TagKey.create(Registry.STRUCTURE_REGISTRY, resourceLocation),TagKey::location).forGetter(factory -> ((TradeOffersAccessor.TreasureMapForEmeraldsAccessor) factory).getStructure()),
+            ResourceLocation.CODEC.fieldOf(TradeOfferConstants.structureTag).xmap(resourceLocation -> TagKey.create(Registries.STRUCTURE, resourceLocation),TagKey::location).forGetter(factory -> ((TradeOffersAccessor.TreasureMapForEmeraldsAccessor) factory).getStructure()),
             Codec.STRING.fieldOf(TradeOfferConstants.mapName).forGetter(factory -> ((TradeOffersAccessor.TreasureMapForEmeraldsAccessor) factory).getNameKey()),
             CodecHelper.forEnum(MapDecoration.Type.class).optionalFieldOf(TradeOfferConstants.mapMarker, MapDecoration.Type.TARGET_X).forGetter(factory -> ((TradeOffersAccessor.TreasureMapForEmeraldsAccessor) factory).getIconType()),
             Codec.INT.optionalFieldOf(TradeOfferConstants.maxUses, TradeOfferConstants.COMMON_MAX_TRADES).forGetter(factory -> ((TradeOffersAccessor.TreasureMapForEmeraldsAccessor) factory).getMaxUses()),

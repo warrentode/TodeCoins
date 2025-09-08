@@ -1,0 +1,30 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:fishing_rod"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/gear/boats_table"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "crabbersdelight"
+            }
+          ],
+          "expand": true,
+          "name": "crabbersdelight:crab_trap"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/gear/fishing_gear_table"
+}

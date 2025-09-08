@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:experience_bottle",
+    "minecraft:lingering_potion",
+    "minecraft:splash_potion",
+    "minecraft:potion",
+    {
+      "id": "minecraft:venom_bottle",
+      "required": false
+    },
+    {
+      "id": "minecraft:magma_bottle",
+      "required": false
+    }
+  ]
+}

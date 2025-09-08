@@ -1,5 +1,6 @@
 {
   "values": [
+    "minecraft:mushroom_stew",
     {
       "id": "farmersdelight:baked_cod_stew",
       "required": false
@@ -15,7 +16,6 @@
     {
       "id": "miners_delight:mushroom_stew_cup",
       "required": false
-    },
-    "minecraft:mushroom_stem"
+    }
   ]
 }

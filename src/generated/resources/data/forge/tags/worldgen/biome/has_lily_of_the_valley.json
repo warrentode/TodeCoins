@@ -4,6 +4,23 @@
     "minecraft:forest",
     "minecraft:dark_forest",
     "minecraft:flower_forest",
-    "minecraft:birch_forest"
+    "minecraft:birch_forest",
+    "minecraft:cherry_grove",
+    {
+      "id": "biomesoplenty:jacaranda_glade",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:highland",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:field",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:moor",
+      "required": false
+    }
   ]
 }

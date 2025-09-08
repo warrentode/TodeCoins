@@ -2,6 +2,7 @@
     "homepage": "https://www.planetminecraft.com/mod/tode-coins/",
     "devpage": "https://github.com/warrentode/TodeCoins/releases",
     "promos": {
+        "1.19.2": "1.19.2-2.2.0",
         "stable-release": "stable_release",
         "latest-release": "latest_version"
     }

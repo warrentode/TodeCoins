@@ -1,0 +1,123 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:drops_collectible_coin_blacklist"
+                  }
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "chance": 0.05,
+                      "condition": "minecraft:random_chance"
+                    },
+                    {
+                      "condition": "minecraft:inverted",
+                      "term": {
+                        "condition": "todecoins:entity_type_tag_condition",
+                        "tag": "cagerium:bosses"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:entity/collectible/master_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:drops_currency_blacklist"
+                  }
+                },
+                {
+                  "condition": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "chance": 0.1,
+                      "condition": "minecraft:random_chance"
+                    },
+                    {
+                      "condition": "minecraft:inverted",
+                      "term": {
+                        "condition": "todecoins:entity_type_tag_condition",
+                        "tag": "cagerium:bosses"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/one_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:drops_collectible_coin_blacklist"
+                  }
+                },
+                {
+                  "condition": "todecoins:entity_type_tag_condition",
+                  "tag": "cagerium:bosses"
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:entity/collectible/boss_coin_drops"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:drops_currency_blacklist"
+                  }
+                },
+                {
+                  "condition": "todecoins:entity_type_tag_condition",
+                  "tag": "cagerium:bosses"
+                }
+              ]
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/nine_emerald_value_currency"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:entity/master_drops"
+}

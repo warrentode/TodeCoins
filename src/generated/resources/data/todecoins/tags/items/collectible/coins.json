@@ -1,0 +1,20 @@
+{
+  "values": [
+    "#todecoins:collectible/aerial",
+    "#todecoins:collectible/aquatic",
+    "#todecoins:collectible/arthropod",
+    "#todecoins:collectible/blaze",
+    "#todecoins:collectible/breedable",
+    "#todecoins:collectible/celebration_coins",
+    "#todecoins:collectible/fish",
+    "#todecoins:collectible/golem",
+    "#todecoins:collectible/humanoid",
+    "#todecoins:collectible/misc",
+    "#todecoins:collectible/piglin",
+    "#todecoins:collectible/raider",
+    "#todecoins:collectible/slime",
+    "#todecoins:collectible/steed",
+    "#todecoins:collectible/undead",
+    "#todecoins:collectible/wild"
+  ]
+}

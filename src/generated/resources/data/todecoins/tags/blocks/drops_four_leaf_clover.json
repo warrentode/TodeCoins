@@ -1,5 +1,9 @@
 {
   "values": [
+    "minecraft:grass",
+    "minecraft:tall_grass",
+    "minecraft:fern",
+    "minecraft:large_fern",
     {
       "id": "biomesoplenty:clover",
       "required": false
@@ -7,8 +11,6 @@
     {
       "id": "biomesoplenty:huge_clover_petal",
       "required": false
-    },
-    "minecraft:grass",
-    "minecraft:tall_grass"
+    }
   ]
 }

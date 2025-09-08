@@ -1,0 +1,336 @@
+[07Sep2025 20:06:00.316] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\toadi\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.4.4, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, todecoins, --all, --output, C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\src\generated\resources, --existing, C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\src\main\resources, --mixin.config, mixins.todecoins.json]
+[07Sep2025 20:06:00.334] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.10 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[07Sep2025 20:06:00.424] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[07Sep2025 20:06:00.462] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/toadi/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23132!/ Service=ModLauncher Env=CLIENT
+[07Sep2025 20:06:00.721] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\toadi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.4.4\c05c04093d241dea1d0f54782d19cfe5db9d0aac\javafmllanguage-1.20.1-47.4.4.jar is missing mods.toml file
+[07Sep2025 20:06:00.729] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\toadi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.4.4\8a8bd6d44f3f0e6a1145b9066eac84fdcfbe7108\lowcodelanguage-1.20.1-47.4.4.jar is missing mods.toml file
+[07Sep2025 20:06:00.733] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\toadi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.4.4\a8876f0a1a04237fc48a4a73692ea08e0443d2ba\mclanguage-1.20.1-47.4.4.jar is missing mods.toml file
+[07Sep2025 20:06:00.737] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\toadi\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.4.4\55a693260a8a7b851c3531972ef997294c191b3e\fmlcore-1.20.1-47.4.4.jar is missing mods.toml file
+[07Sep2025 20:06:01.182] [main/WARN] [net.minecraftforge.jarjar.selection.JarSelector/]: Attempted to select two dependency jars from JarJar which have the same identification: Mod File:  and Mod File: . Using Mod File: 
+[07Sep2025 20:06:01.182] [main/WARN] [net.minecraftforge.jarjar.selection.JarSelector/]: Attempted to select a dependency jar for JarJar which was passed in as source: curios. Using Mod File: C:\Users\toadi\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\curios-309927\6418456_mapped_parchment_2023.09.03-1.20.1\curios-309927-6418456_mapped_parchment_2023.09.03-1.20.1.jar
+[07Sep2025 20:06:01.182] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 9 dependencies adding them to mods collection
+[07Sep2025 20:06:06.082] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[07Sep2025 20:06:06.143] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\toadi\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, todecoins, --all, --output, C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\src\generated\resources, --existing, C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\src\main\resources]
+[07Sep2025 20:06:06.207] [main/WARN] [mixin/]: Reference map 'mixins.todecoins.refmap.json' for mixins.todecoins.json could not be read. If this is a development environment you can ignore this message
+[07Sep2025 20:06:06.316] [main/INFO] [mixin/]: Remapping refMap farmersdelight.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.316] [main/INFO] [mixin/]: Remapping refMap moonlight-common-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.316] [main/INFO] [mixin/]: Remapping refMap moonlight-forge-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.316] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.316] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap snowyspirit-common-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap snowyspirit-forge-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap aether.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap goblintraders.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap curios.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/WARN] [mixin/]: Reference map 'farmersrespite.refmap.json' for farmersrespite.mixins.json could not be read. If this is a development environment you can ignore this message
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap backend-flywheel.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap flywheel.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap ponder.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap ponder.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap create.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.331] [main/INFO] [mixin/]: Remapping refMap createdeco-common-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.347] [main/INFO] [mixin/]: Remapping refMap ecologics-common-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.347] [main/INFO] [mixin/]: Remapping refMap ecologics-forge-forge-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.348] [main/INFO] [mixin/]: Remapping refMap configured.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.372] [main/INFO] [mixin/]: Remapping refMap glitchcore.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.372] [main/INFO] [mixin/]: Remapping refMap glitchcore.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.385] [main/INFO] [mixin/]: Remapping refMap biomesoplenty.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.387] [main/INFO] [mixin/]: Remapping refMap biomesoplenty.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.387] [main/INFO] [mixin/]: Remapping refMap sereneseasons.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.387] [main/INFO] [mixin/]: Remapping refMap sereneseasons.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap guardvillagers.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap cumulus_menus.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/WARN] [mixin/]: Reference map 'mixins.wares.refmap.json' for mixins.wares.json could not be read. If this is a development environment you can ignore this message
+[07Sep2025 20:06:06.389] [main/WARN] [mixin/]: Reference map 'nitrogen_internals.refmap.json' for nitrogen_internals.mixins.json could not be read. If this is a development environment you can ignore this message
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap crafttweaker.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap crafttweaker.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap supplementaries-common-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap supplementaries-forge-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap friendsandfoes-mc1.20.1-common-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap friendsandfoes-forge-mc1.20.1-forge-refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.389] [main/INFO] [mixin/]: Remapping refMap drinkbeer.refmap.json using C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\build\createSrgToMcp\output.srg
+[07Sep2025 20:06:06.799] [main/WARN] [mixin/]: Error loading class: traben/entity_model_features/models/animation/EMFAnimationEntityContext (java.lang.ClassNotFoundException: traben.entity_model_features.models.animation.EMFAnimationEntityContext)
+[07Sep2025 20:06:07.158] [main/WARN] [mixin/]: Error loading class: me/jellysquid/mods/sodium/client/render/chunk/compile/pipeline/FluidRenderer (java.lang.ClassNotFoundException: me.jellysquid.mods.sodium.client.render.chunk.compile.pipeline.FluidRenderer)
+[07Sep2025 20:06:07.158] [main/WARN] [mixin/]: Error loading class: net/raphimc/immediatelyfast/feature/map_atlas_generation/MapAtlasTexture (java.lang.ClassNotFoundException: net.raphimc.immediatelyfast.feature.map_atlas_generation.MapAtlasTexture)
+[07Sep2025 20:06:07.252] [main/WARN] [mixin/]: Error loading class: journeymap/client/ui/fullscreen/Fullscreen (java.lang.ClassNotFoundException: journeymap.client.ui.fullscreen.Fullscreen)
+[07Sep2025 20:06:07.252] [main/WARN] [mixin/]: @Mixin target journeymap.client.ui.fullscreen.Fullscreen was not found create.mixins.json:compat.JourneyFullscreenMapMixin
+[07Sep2025 20:06:07.580] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [todecoins]
+[07Sep2025 20:06:07.582] [main/INFO] [MixinExtras|Service/]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[07Sep2025 20:06:10.592] [main/WARN] [mixin/]: @Final field attackTargeting:Lnet/minecraft/world/entity/ai/targeting/TargetingConditions; in guardvillagers.mixins.json:DefendVillageGoalGolemMixin should be final
+[07Sep2025 20:06:11.794] [modloading-worker-0/INFO] [com.simibubi.create.Create/]: Create 6.0.6 initializing! Commit hash: 338bfa0aec952fa51656e8f61bd621ca9b3b2e00
+[07Sep2025 20:06:11.849] [modloading-worker-0/INFO] [Create Deco/]: Registering items for Create Deco
+[07Sep2025 20:06:11.868] [modloading-worker-0/WARN] [net.minecraftforge.common.ForgeConfigSpec/CORE]: Configuration file C:\Users\toadi\Documents\Minecraft Stuff\00 - My Forge Mods\TodeCoins\run-data\config\guardvillagers-common.toml is not correct. Correcting
+[07Sep2025 20:06:12.151] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.4.4, for MC 1.20.1 with MCP 20230612.114412
+[07Sep2025 20:06:12.166] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.4 Initialized
+[07Sep2025 20:06:13.003] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[07Sep2025 20:06:13.013] [modloading-worker-0/INFO] [Create Deco/]: Registering blocks for Create Deco
+[07Sep2025 20:06:13.078] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 69.38 ms
+[07Sep2025 20:06:13.212] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:buy_for_one_emerald
+[07Sep2025 20:06:13.213] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:sell_for_emeralds
+[07Sep2025 20:06:13.213] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:sell_suspicious_stew
+[07Sep2025 20:06:13.213] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:items_and_emeralds_to_items
+[07Sep2025 20:06:13.213] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:sell_enchanted_item
+[07Sep2025 20:06:13.214] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:type_aware_buy_for_one_emerald
+[07Sep2025 20:06:13.214] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:sell_tipped_arrow
+[07Sep2025 20:06:13.214] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:sell_enchanted_book
+[07Sep2025 20:06:13.215] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:sell_map
+[07Sep2025 20:06:13.215] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:sell_dyed_armor
+[07Sep2025 20:06:13.227] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:sell_item_for_items
+[07Sep2025 20:06:13.238] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:type_aware_sell_item_for_items
+[07Sep2025 20:06:13.238] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register minecraft:type_aware
+[07Sep2025 20:06:13.253] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:item_for_loot_table
+[07Sep2025 20:06:13.257] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:item_for_tag_table
+[07Sep2025 20:06:13.275] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_and_item_for_item
+[07Sep2025 20:06:13.286] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_dyed_armor
+[07Sep2025 20:06:13.299] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_enchanted_item
+[07Sep2025 20:06:13.307] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_enchanted_item_table
+[07Sep2025 20:06:13.310] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_item
+[07Sep2025 20:06:13.324] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_loot_table
+[07Sep2025 20:06:13.333] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_potion
+[07Sep2025 20:06:13.336] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_specified_enchantment
+[07Sep2025 20:06:13.349] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_sus_stew
+[07Sep2025 20:06:13.356] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_tag_table
+[07Sep2025 20:06:13.359] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_tipped_arrow
+[07Sep2025 20:06:13.371] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_two_loot_table
+[07Sep2025 20:06:13.379] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:tag_table_for_loot_table
+[07Sep2025 20:06:13.387] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:two_loot_table_for_enchanted_item
+[07Sep2025 20:06:13.387] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:two_loot_table_for_loot_box
+[07Sep2025 20:06:13.401] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:two_loot_table_for_map
+[07Sep2025 20:06:13.418] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_loot_box
+[07Sep2025 20:06:13.425] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_and_item_for_enchanted_item
+[07Sep2025 20:06:13.463] [modloading-worker-0/INFO] [com.github.warrentode.todecoins.TodeCoins/]: register todecoins:loot_table_for_sealed_agreement
+[07Sep2025 20:06:14.692] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:sound_event]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:14.721] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:fluid]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.098] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:block]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.106] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:attribute]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.112] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:mob_effect]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.122] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:particle_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.330] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:item]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.370] [main/INFO] [Moonlight/]: Initialized block sets in 13ms
+[07Sep2025 20:06:17.433] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:entity_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.440] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:sensor_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.440] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:memory_module_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.440] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:potion]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.440] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:game_event]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.440] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:enchantment]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.471] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:block_entity_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.471] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:painting_variant]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.471] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:stat_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.471] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:custom_stat]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.471] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:chunk_status]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.471] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:rule_test]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.471] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:rule_block_entity_modifier]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.471] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:pos_rule_test]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.541] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:menu]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.543] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:recipe_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.747] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:recipe_serializer]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.750] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:position_source_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.754] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:command_argument_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.755] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:villager_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.756] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:villager_profession]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.759] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:point_of_interest_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.760] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:schedule]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.761] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:activity]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.764] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:loot_pool_entry_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.768] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:loot_function_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.768] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:loot_condition_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.768] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:loot_number_provider_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.768] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:loot_nbt_provider_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.768] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:loot_score_provider_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.768] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:float_provider_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.768] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:int_provider_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.784] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:height_provider_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.784] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:block_predicate_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.784] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/carver]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.800] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/feature]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.800] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/structure_processor]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.800] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/structure_placement]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.800] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/structure_piece]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.800] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/structure_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/placement_modifier_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/block_state_provider_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/foliage_placer_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/trunk_placer_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/root_placer_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/tree_decorator_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/feature_size_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/biome_source]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/chunk_generator]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/material_condition]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/material_rule]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/density_function_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/structure_pool_element]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:cat_variant]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:frog_variant]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:banner_pattern]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:instrument]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.816] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:decorated_pot_patterns]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:creative_mode_tab]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / aether:advancement_sound_override]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / aether:moa_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:arm_interaction_point_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:contraption_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:display_source]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:display_target]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:fan_processing_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:item_attribute_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.832] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:mounted_fluid_storage_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.848] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:mounted_item_storage_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.848] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:potato_projectile/block_hit_action]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.848] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:potato_projectile/entity_hit_action]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.848] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / create:potato_projectile/render_mode]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.871] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / cumulus_menus:menu]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.876] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / forge:biome_modifier_serializers]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.877] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / forge:display_contexts]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.877] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / forge:entity_data_serializers]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.877] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / forge:fluid_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / forge:global_loot_modifier_serializers]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / forge:holder_set_type]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / forge:structure_modifier_serializers]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / minecraft:worldgen/biome]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Getting custom registry keys: ResourceKey[minecraft:root / todecoins:trade_offer_factory]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: Registered custom registry key: ResourceKey[minecraft:root / todecoins:trade_offer_factory]_ResourceKey[minecraft:root / todecoins:trade_offer_factory]
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:buy_for_one_emerald
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:sell_for_emeralds
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:sell_suspicious_stew
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:items_and_emeralds_to_items
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:sell_enchanted_item
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:type_aware_buy_for_one_emerald
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:sell_tipped_arrow
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:sell_enchanted_book
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:sell_map
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:sell_dyed_armor
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:sell_item_for_items
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:type_aware_sell_item_for_items
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: minecraft:type_aware
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:item_for_loot_table
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:item_for_tag_table
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_and_item_for_item
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_dyed_armor
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_enchanted_item
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_enchanted_item_table
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_item
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_loot_table
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_potion
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_specified_enchantment
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_sus_stew
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_tag_table
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_tipped_arrow
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_two_loot_table
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:tag_table_for_loot_table
+[07Sep2025 20:06:17.893] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:two_loot_table_for_enchanted_item
+[07Sep2025 20:06:17.904] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:two_loot_table_for_loot_box
+[07Sep2025 20:06:17.904] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:two_loot_table_for_map
+[07Sep2025 20:06:17.904] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_loot_box
+[07Sep2025 20:06:17.904] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_and_item_for_enchanted_item
+[07Sep2025 20:06:17.904] [main/INFO] [com.github.warrentode.todecoins.TodeCoins/]: todecoins:loot_table_for_sealed_agreement
+[07Sep2025 20:06:17.965] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/toadi/Documents/Minecraft%20Stuff/00%20-%20My%20Forge%20Mods/TodeCoins/build/fg_cache/net/minecraftforge/forge/1.20.1-47.4.4_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.4_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[07Sep2025 20:06:17.965] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/toadi/Documents/Minecraft%20Stuff/00%20-%20My%20Forge%20Mods/TodeCoins/build/fg_cache/net/minecraftforge/forge/1.20.1-47.4.4_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.4.4_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[07Sep2025 20:06:18.482] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_us
+[07Sep2025 20:06:18.565] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_us finished after 92 ms
+[07Sep2025 20:06:18.565] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_gb
+[07Sep2025 20:06:18.581] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_gb finished after 10 ms
+[07Sep2025 20:06:18.581] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_ca
+[07Sep2025 20:06:18.581] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_ca finished after 8 ms
+[07Sep2025 20:06:18.581] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_au
+[07Sep2025 20:06:18.597] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_au finished after 8 ms
+[07Sep2025 20:06:18.597] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: de_de
+[07Sep2025 20:06:18.597] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: de_de finished after 5 ms
+[07Sep2025 20:06:18.597] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: fr_fr
+[07Sep2025 20:06:18.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: fr_fr finished after 5 ms
+[07Sep2025 20:06:18.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: fr_ca
+[07Sep2025 20:06:18.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: fr_ca finished after 4 ms
+[07Sep2025 20:06:18.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: es_es
+[07Sep2025 20:06:18.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: es_es finished after 3 ms
+[07Sep2025 20:06:18.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: es_mx
+[07Sep2025 20:06:18.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: es_mx finished after 3 ms
+[07Sep2025 20:06:18.612] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: pt_pt
+[07Sep2025 20:06:18.628] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: pt_pt finished after 4 ms
+[07Sep2025 20:06:18.628] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: pt_br
+[07Sep2025 20:06:18.628] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: pt_br finished after 4 ms
+[07Sep2025 20:06:18.628] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: it_it
+[07Sep2025 20:06:18.628] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: it_it finished after 3 ms
+[07Sep2025 20:06:18.628] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: nl_nl
+[07Sep2025 20:06:18.644] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: nl_nl finished after 4 ms
+[07Sep2025 20:06:18.644] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: ru_ru
+[07Sep2025 20:06:18.644] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: ru_ru finished after 5 ms
+[07Sep2025 20:06:18.644] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: uk_ua
+[07Sep2025 20:06:18.644] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: uk_ua finished after 3 ms
+[07Sep2025 20:06:18.644] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: pl_pl
+[07Sep2025 20:06:18.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: pl_pl finished after 3 ms
+[07Sep2025 20:06:18.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: cs_cz
+[07Sep2025 20:06:18.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: cs_cz finished after 3 ms
+[07Sep2025 20:06:18.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: sk_sk
+[07Sep2025 20:06:18.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: sk_sk finished after 3 ms
+[07Sep2025 20:06:18.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: hu_hu
+[07Sep2025 20:06:18.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: hu_hu finished after 3 ms
+[07Sep2025 20:06:18.659] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: sv_se
+[07Sep2025 20:06:18.675] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: sv_se finished after 5 ms
+[07Sep2025 20:06:18.675] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: no_no
+[07Sep2025 20:06:18.675] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: no_no finished after 4 ms
+[07Sep2025 20:06:18.675] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: da_dk
+[07Sep2025 20:06:18.675] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: da_dk finished after 4 ms
+[07Sep2025 20:06:18.675] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: fi_fi
+[07Sep2025 20:06:18.691] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: fi_fi finished after 5 ms
+[07Sep2025 20:06:18.691] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: tr_tr
+[07Sep2025 20:06:18.691] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: tr_tr finished after 8 ms
+[07Sep2025 20:06:18.691] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: el_gr
+[07Sep2025 20:06:18.704] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: el_gr finished after 2 ms
+[07Sep2025 20:06:18.704] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: ro_ro
+[07Sep2025 20:06:18.707] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: ro_ro finished after 2 ms
+[07Sep2025 20:06:18.707] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: bg_bg
+[07Sep2025 20:06:18.710] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: bg_bg finished after 2 ms
+[07Sep2025 20:06:18.710] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: zh_cn
+[07Sep2025 20:06:18.712] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: zh_cn finished after 2 ms
+[07Sep2025 20:06:18.712] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: zh_tw
+[07Sep2025 20:06:18.716] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: zh_tw finished after 2 ms
+[07Sep2025 20:06:18.716] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: ja_jp
+[07Sep2025 20:06:18.716] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: ja_jp finished after 2 ms
+[07Sep2025 20:06:18.716] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: ko_kr
+[07Sep2025 20:06:18.716] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: ko_kr finished after 2 ms
+[07Sep2025 20:06:18.716] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: th_th
+[07Sep2025 20:06:18.723] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: th_th finished after 2 ms
+[07Sep2025 20:06:18.723] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: ar_sa
+[07Sep2025 20:06:18.725] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: ar_sa finished after 2 ms
+[07Sep2025 20:06:18.725] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: he_il
+[07Sep2025 20:06:18.728] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: he_il finished after 2 ms
+[07Sep2025 20:06:18.728] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: hi_in
+[07Sep2025 20:06:18.730] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: hi_in finished after 2 ms
+[07Sep2025 20:06:18.730] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: id_id
+[07Sep2025 20:06:18.732] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: id_id finished after 1 ms
+[07Sep2025 20:06:18.733] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: ms_my
+[07Sep2025 20:06:18.735] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: ms_my finished after 2 ms
+[07Sep2025 20:06:18.735] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Languages: en_pt
+[07Sep2025 20:06:18.737] [main/INFO] [net.minecraft.data.DataGenerator/]: Languages: en_pt finished after 1 ms
+[07Sep2025 20:06:18.737] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: todecoins
+[07Sep2025 20:06:18.752] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: todecoins finished after 21 ms
+[07Sep2025 20:06:18.752] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: todecoins
+[07Sep2025 20:06:18.770] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: todecoins finished after 13 ms
+[07Sep2025 20:06:18.770] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id todecoins
+[07Sep2025 20:06:18.784] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id todecoins finished after 12 ms
+[07Sep2025 20:06:18.784] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id todecoins
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id todecoins finished after 16 ms
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:worldgen/biome mod id todecoins
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:worldgen/biome mod id todecoins finished after 4 ms
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:worldgen/structure mod id todecoins
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:worldgen/structure mod id todecoins finished after 4 ms
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:entity_type mod id todecoins
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:entity_type mod id todecoins finished after 2 ms
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:point_of_interest_type mod id todecoins
+[07Sep2025 20:06:18.800] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:point_of_interest_type mod id todecoins finished after 0 ms
+[07Sep2025 20:06:18.815] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Sound Definitions
+[07Sep2025 20:06:18.831] [main/INFO] [net.minecraft.data.DataGenerator/]: Sound Definitions finished after 16 ms
+[07Sep2025 20:06:18.833] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[07Sep2025 20:06:18.908] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 82 ms
+[07Sep2025 20:06:18.908] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Global Loot Modifiers : todecoins
+[07Sep2025 20:06:18.924] [main/INFO] [net.minecraft.data.DataGenerator/]: Global Loot Modifiers : todecoins finished after 16 ms
+[07Sep2025 20:06:18.924] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[07Sep2025 20:06:18.956] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 23 ms
+[07Sep2025 20:06:18.956] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[07Sep2025 20:06:19.069] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 112 ms
+[07Sep2025 20:06:19.069] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: JsonTrades - Custom Trade JSON Generator
+[07Sep2025 20:06:19.127] [main/INFO] [net.minecraft.data.DataGenerator/]: JsonTrades - Custom Trade JSON Generator finished after 61 ms
+[07Sep2025 20:06:19.127] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Advancements
+[07Sep2025 20:06:19.170] [main/INFO] [net.minecraft.data.DataGenerator/]: Advancements finished after 38 ms
+[07Sep2025 20:06:19.171] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 689 ms
+[07Sep2025 20:06:19.393] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 4408, old count: 4409, new count: 4409, removed stale: 0, written: 0

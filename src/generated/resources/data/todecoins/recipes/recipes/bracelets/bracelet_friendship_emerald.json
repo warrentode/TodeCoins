@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "todecoins:endonian_thread"
+    },
+    "A": {
+      "item": "todecoins:emerald_thread"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "#A#",
+    "APA",
+    "#A#"
+  ],
+  "result": {
+    "item": "todecoins:bracelet_friendship_emerald"
+  },
+  "show_notification": true
+}

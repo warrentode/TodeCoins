@@ -1,0 +1,33 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 17.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:pot_of_gold"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 8.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "todecoins:nether_gold_coin_bag"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/currency/leprechaun/twenty_six_emerald_leprechaun_currency_value"
+}

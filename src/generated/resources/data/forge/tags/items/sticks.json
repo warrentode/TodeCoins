@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:stick",
+    {
+      "id": "aether:skyroot_stick",
+      "required": false
+    }
+  ]
+}

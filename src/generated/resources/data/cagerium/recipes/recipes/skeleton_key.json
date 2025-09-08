@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "cagerium"
+            },
+            {
+              "type": "forge:true"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "todecoins:crafting_shapeless_remainder",
+        "ingredients": [
+          {
+            "item": "minecraft:bone_block"
+          },
+          {
+            "tag": "forge:tools/carving"
+          }
+        ],
+        "recipe_book_category": "MISC",
+        "result": {
+          "item": "cagerium:skeleton_key"
+        }
+      }
+    }
+  ]
+}

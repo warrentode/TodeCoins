@@ -29,7 +29,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.textileEngineering4.desc"
+      "translate": "advancement.textile_engineering_4.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -38,7 +38,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.textileEngineering4"
+      "translate": "advancement.textile_engineering_4"
     }
   },
   "requirements": [
@@ -48,5 +48,11 @@
     [
       "craft_echo_thread"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

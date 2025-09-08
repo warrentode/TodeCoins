@@ -1,284 +1,351 @@
 package com.github.warrentode.todecoins.datagen.tags;
 
-import com.github.warrentode.todecoins.entity.ModEntityTypes;
-import com.github.warrentode.todecoins.util.TodeCoinsTags;
-import net.minecraft.data.DataGenerator;
+import com.github.warrentode.todecoins.entity.TCEntityTypes;
+import com.github.warrentode.todecoins.util.tags.TCEntityTypeTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
+import java.util.concurrent.CompletableFuture;
 
 public class EntityTypeTagsGen extends EntityTypeTagsProvider {
-    public EntityTypeTagsGen(DataGenerator pGenerator, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(pGenerator, modId, existingFileHelper);
+    public EntityTypeTagsGen(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, String modid, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, provider, modid, existingFileHelper);
     }
-
 
     @Override
-    protected void addTags() {
-        this.registerTodeCoinsTags();
-        this.registerForgeTags();
+    protected void addTags(@NotNull HolderLookup.Provider provider) {
+        this.registerTags();
     }
 
-    private void registerTodeCoinsTags() {
-        tag(TodeCoinsTags.EntityTypes.CAGERIUM_BOSSES)
-                .addTag(TodeCoinsTags.EntityTypes.BOSSES);
-        tag(TodeCoinsTags.EntityTypes.CAGERIUM_BLACKLIST);
-    }
-
-    private void registerForgeTags() {
-        tag(TodeCoinsTags.EntityTypes.BOSSES)
-                .add(EntityType.ENDER_DRAGON)
-                .add(EntityType.ELDER_GUARDIAN)
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:wildfire")))
-                .add(EntityType.WARDEN)
-                .add(EntityType.WITHER);
-        tag(TodeCoinsTags.EntityTypes.ILLAGERS)
-                .addTag(TodeCoinsTags.EntityTypes.WITCH_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.VEX_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.RAVAGER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.EVOKER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ICEOLOGER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ILLUSIONER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.PILLAGER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.RAVAGER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.VINDICATOR_TYPES);
-        tag(TodeCoinsTags.EntityTypes.ZOMBIES)
-                .addTag(TodeCoinsTags.EntityTypes.ZOMBIE_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ZOMBIE_VILLAGER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.DROWNED_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.HUSK_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ZOGLIN_TYPES);
-        tag(TodeCoinsTags.EntityTypes.DROPS_CURRENCY)
-                .addTag(TodeCoinsTags.EntityTypes.BOSSES)
-                .addTag(TodeCoinsTags.EntityTypes.BLAZE_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.CAVE_SPIDER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.CREEPER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ELDER_GUARDIAN_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.DROWNED_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ENDERMAN_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ENDERMITES_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.EVOKER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.GHAST_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.GUARDIAN_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.HUSK_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ICEOLOGER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ILLUSIONER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.MAGMA_CUBE_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.PHANTOM_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.PIGLIN_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.PILLAGER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.RAVAGER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.SHULKER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.SILVERFISH_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.SKELETON_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.SLIME_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.SPIDER_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.STRAY_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.VEX_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.VINDICATOR_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.WITCH_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.WITHER_SKELETON_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ZOGLIN_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ZOMBIE_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.ZOMBIFIED_PIGLIN_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.HOGLIN_TYPES)
-                .addTag(TodeCoinsTags.EntityTypes.PIGLIN_BRUTE_TYPES);
-        tag(TodeCoinsTags.EntityTypes.ALLAY_TYPES)
+    private void registerTags() {
+        tag(TCEntityTypeTags.DROPS_COLLECTIBLE_COIN_BLACKLIST);
+        tag(TCEntityTypeTags.DROPS_CURRENCY_BLACKLIST);
+        tag(TCEntityTypeTags.BOSSES)
+                .addTag(TCEntityTypeTags.ENDER_DRAGON_TYPES)
+                .addTag(TCEntityTypeTags.ELDER_GUARDIAN_TYPES)
+                .addTag(TCEntityTypeTags.WARDEN_TYPES)
+                .addTag(TCEntityTypeTags.WITHER_TYPES)
+                .addTag(TCEntityTypeTags.WILDFIRE_TYPES);
+        tag(TCEntityTypeTags.CAGERIUM_BLACKLIST);
+        tag(TCEntityTypeTags.KNOWN_ENTITIES)
+                .addTag(TCEntityTypeTags.HAPPY_GHAST_TYPES)
+                .addTag(TCEntityTypeTags.CREAKING_TYPES)
+                .addTag(TCEntityTypeTags.BREEZE_TYPES)
+                .addTag(TCEntityTypeTags.GUARD_TYPES)
+                .addTag(TCEntityTypeTags.PENGUIN_TYPES)
+                .addTag(TCEntityTypeTags.SQUIRREL_TYPES)
+                .addTag(TCEntityTypeTags.CRAB_TYPES)
+                .addTag(TCEntityTypeTags.RASCAL_TYPES)
+                .addTag(TCEntityTypeTags.WILDFIRE_TYPES)
+                .addTag(TCEntityTypeTags.TUFF_GOLEM_TYPES)
+                .addTag(TCEntityTypeTags.MOOBLOOM_TYPES)
+                .addTag(TCEntityTypeTags.MAULER_TYPES)
+                .addTag(TCEntityTypeTags.GLARE_TYPES)
+                .addTag(TCEntityTypeTags.COPPER_GOLEM_TYPES)
+                .addTag(TCEntityTypeTags.PIGLIN_MERCHANT_TYPES)
+                .addTag(TCEntityTypeTags.PIGLIN_BRUTE_TYPES)
+                .addTag(TCEntityTypeTags.HOGLIN_TYPES)
+                .addTag(TCEntityTypeTags.WOLF_TYPES)
+                .addTag(TCEntityTypeTags.WITHER_SKELETON_TYPES)
+                .addTag(TCEntityTypeTags.WITHER_TYPES)
+                .addTag(TCEntityTypeTags.WITCH_TYPES)
+                .addTag(TCEntityTypeTags.WANDERING_TRADER_TYPES)
+                .addTag(TCEntityTypeTags.WARDEN_TYPES)
+                .addTag(TCEntityTypeTags.VILLAGER_TYPES)
+                .addTag(TCEntityTypeTags.TURTLE_TYPES)
+                .addTag(TCEntityTypeTags.TROPICAL_FISH_TYPES)
+                .addTag(TCEntityTypeTags.TRADER_LLAMA_TYPES)
+                .addTag(TCEntityTypeTags.TADPOLE_TYPES)
+                .addTag(TCEntityTypeTags.STRIDER_TYPES)
+                .addTag(TCEntityTypeTags.STRAY_TYPES)
+                .addTag(TCEntityTypeTags.SQUID_TYPES)
+                .addTag(TCEntityTypeTags.SPIDER_TYPES)
+                .addTag(TCEntityTypeTags.SNOW_GOLEM_TYPES)
+                .addTag(TCEntityTypeTags.SNIFFER_TYPES)
+                .addTag(TCEntityTypeTags.SLIME_TYPES)
+                .addTag(TCEntityTypeTags.SKELETON_HORSE_TYPES)
+                .addTag(TCEntityTypeTags.SKELETON_TYPES)
+                .addTag(TCEntityTypeTags.SILVERFISH_TYPES)
+                .addTag(TCEntityTypeTags.SHULKER_TYPES)
+                .addTag(TCEntityTypeTags.SHEEP_TYPES)
+                .addTag(TCEntityTypeTags.SALMON_TYPES)
+                .addTag(TCEntityTypeTags.RABBIT_TYPES)
+                .addTag(TCEntityTypeTags.PUFFERFISH_TYPES)
+                .addTag(TCEntityTypeTags.POLAR_BEAR_TYPES)
+                .addTag(TCEntityTypeTags.PIGLIN_TYPES)
+                .addTag(TCEntityTypeTags.PIG_TYPES)
+                .addTag(TCEntityTypeTags.PHANTOM_TYPES)
+                .addTag(TCEntityTypeTags.PARROT_TYPES)
+                .addTag(TCEntityTypeTags.PANDA_TYPES)
+                .addTag(TCEntityTypeTags.NUMISMATIST_TYPES)
+                .addTag(TCEntityTypeTags.OCELOT_TYPES)
+                .addTag(TCEntityTypeTags.MOOSHROOM_TYPES)
+                .addTag(TCEntityTypeTags.MULE_TYPES)
+                .addTag(TCEntityTypeTags.MAGMA_CUBE_TYPES)
+                .addTag(TCEntityTypeTags.LLAMA_TYPES)
+                .addTag(TCEntityTypeTags.IRON_GOLEM_TYPES)
+                .addTag(TCEntityTypeTags.HORSE_TYPES)
+                .addTag(TCEntityTypeTags.GUARDIAN_TYPES)
+                .addTag(TCEntityTypeTags.GOAT_TYPES)
+                .addTag(TCEntityTypeTags.GLOW_SQUID_TYPES)
+                .addTag(TCEntityTypeTags.GIANT_TYPES)
+                .addTag(TCEntityTypeTags.GHAST_TYPES)
+                .addTag(TCEntityTypeTags.FROG_TYPES)
+                .addTag(TCEntityTypeTags.FOX_TYPES)
+                .addTag(TCEntityTypeTags.EVOKER_TYPES)
+                .addTag(TCEntityTypeTags.ENDERMITES_TYPES)
+                .addTag(TCEntityTypeTags.ENDERMAN_TYPES)
+                .addTag(TCEntityTypeTags.ENDER_DRAGON_TYPES)
+                .addTag(TCEntityTypeTags.ELDER_GUARDIAN_TYPES)
+                .addTag(TCEntityTypeTags.DONKEY_TYPES)
+                .addTag(TCEntityTypeTags.DOLPHIN_TYPES)
+                .addTag(TCEntityTypeTags.CREEPER_TYPES)
+                .addTag(TCEntityTypeTags.COW_TYPES)
+                .addTag(TCEntityTypeTags.COD_TYPES)
+                .addTag(TCEntityTypeTags.CHICKEN_TYPES)
+                .addTag(TCEntityTypeTags.CAVE_SPIDER_TYPES)
+                .addTag(TCEntityTypeTags.CAT_TYPES)
+                .addTag(TCEntityTypeTags.CAMEL_TYPES)
+                .addTag(TCEntityTypeTags.BLAZE_TYPES)
+                .addTag(TCEntityTypeTags.BEE_TYPES)
+                .addTag(TCEntityTypeTags.BAT_TYPES)
+                .addTag(TCEntityTypeTags.AXOLOTL_TYPES)
+                .addTag(TCEntityTypeTags.ARMAIDLLO_TYPES)
+                .addTag(TCEntityTypeTags.ALLAY_TYPES)
+                .addTag(TCEntityTypeTags.ZOMBIES)
+                .addTag(TCEntityTypeTags.ILLAGERS);
+        tag(TCEntityTypeTags.ILLAGERS)
+                .addTag(TCEntityTypeTags.WITCH_TYPES)
+                .addTag(TCEntityTypeTags.VEX_TYPES)
+                .addTag(TCEntityTypeTags.RAVAGER_TYPES)
+                .addTag(TCEntityTypeTags.EVOKER_TYPES)
+                .addTag(TCEntityTypeTags.ICEOLOGER_TYPES)
+                .addTag(TCEntityTypeTags.ILLUSIONER_TYPES)
+                .addTag(TCEntityTypeTags.PILLAGER_TYPES)
+                .addTag(TCEntityTypeTags.RAVAGER_TYPES)
+                .addTag(TCEntityTypeTags.VINDICATOR_TYPES);
+        tag(TCEntityTypeTags.ZOMBIES)
+                .addTag(TCEntityTypeTags.BOGGED_TYPES)
+                .addTag(TCEntityTypeTags.ZOMBIE_TYPES)
+                .addTag(TCEntityTypeTags.ZOMBIE_VILLAGER_TYPES)
+                .addTag(TCEntityTypeTags.DROWNED_TYPES)
+                .addTag(TCEntityTypeTags.HUSK_TYPES)
+                .addTag(TCEntityTypeTags.ZOGLIN_TYPES);
+        // sneak peek types
+        tag(TCEntityTypeTags.CREAKING_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:creaking")));
+        tag(TCEntityTypeTags.HAPPY_GHAST_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:happy_ghast")));
+        tag(TCEntityTypeTags.BOGGED_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:bogged")));
+        tag(TCEntityTypeTags.BREEZE_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aether:evil_whirlwind")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("aerther:whirlwind")))
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:breeze")));
+        // existing types
+        tag(TCEntityTypeTags.ALLAY_TYPES)
                 .add(EntityType.ALLAY);
-        tag(TodeCoinsTags.EntityTypes.AXOLOTL_TYPES)
+        tag(TCEntityTypeTags.AXOLOTL_TYPES)
                 .add(EntityType.AXOLOTL);
-        tag(TodeCoinsTags.EntityTypes.BAT_TYPES)
+        tag(TCEntityTypeTags.BAT_TYPES)
                 .add(EntityType.BAT);
-        tag(TodeCoinsTags.EntityTypes.BEE_TYPES)
+        tag(TCEntityTypeTags.BEE_TYPES)
                 .add(EntityType.BEE);
-        tag(TodeCoinsTags.EntityTypes.BLAZE_TYPES)
+        tag(TCEntityTypeTags.BLAZE_TYPES)
                 .add(EntityType.BLAZE);
-        tag(TodeCoinsTags.EntityTypes.CAMEL_TYPES)
+        tag(TCEntityTypeTags.CAMEL_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:camel")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("ecologics:camel")));
-        tag(TodeCoinsTags.EntityTypes.CAT_TYPES)
+        tag(TCEntityTypeTags.CAT_TYPES)
                 .add(EntityType.CAT);
-        tag(TodeCoinsTags.EntityTypes.CAVE_SPIDER_TYPES)
+        tag(TCEntityTypeTags.CAVE_SPIDER_TYPES)
                 .add(EntityType.CAVE_SPIDER);
-        tag(TodeCoinsTags.EntityTypes.CHICKEN_TYPES)
+        tag(TCEntityTypeTags.CHICKEN_TYPES)
                 .add(EntityType.CHICKEN);
-        tag(TodeCoinsTags.EntityTypes.COD_TYPES)
+        tag(TCEntityTypeTags.COD_TYPES)
                 .add(EntityType.COD);
-        tag(TodeCoinsTags.EntityTypes.COPPER_GOLEM_TYPES)
+        tag(TCEntityTypeTags.COPPER_GOLEM_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:copper_golem")));
-        tag(TodeCoinsTags.EntityTypes.RASCAL_TYPES)
+        tag(TCEntityTypeTags.RASCAL_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:rascal")));
-        tag(TodeCoinsTags.EntityTypes.COW_TYPES)
+        tag(TCEntityTypeTags.COW_TYPES)
                 .add(EntityType.COW);
-        tag(TodeCoinsTags.EntityTypes.CRAB_TYPES)
+        tag(TCEntityTypeTags.CRAB_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("ecologics:coconut_crab")));
-        tag(TodeCoinsTags.EntityTypes.CREEPER_TYPES)
+        tag(TCEntityTypeTags.CREEPER_TYPES)
                 .add(EntityType.CREEPER);
-        tag(TodeCoinsTags.EntityTypes.DOLPHIN_TYPES)
+        tag(TCEntityTypeTags.DOLPHIN_TYPES)
                 .add(EntityType.DOLPHIN);
-        tag(TodeCoinsTags.EntityTypes.DROWNED_TYPES)
+        tag(TCEntityTypeTags.DONKEY_TYPES)
+                .add(EntityType.DONKEY);
+        tag(TCEntityTypeTags.DROWNED_TYPES)
                 .add(EntityType.DROWNED);
-        tag(TodeCoinsTags.EntityTypes.ELDER_GUARDIAN_TYPES)
+        tag(TCEntityTypeTags.ELDER_GUARDIAN_TYPES)
                 .add(EntityType.ELDER_GUARDIAN);
-        tag(TodeCoinsTags.EntityTypes.ENDER_DRAGON_TYPES)
+        tag(TCEntityTypeTags.ENDER_DRAGON_TYPES)
                 .add(EntityType.ENDER_DRAGON);
-        tag(TodeCoinsTags.EntityTypes.ENDERMAN_TYPES)
+        tag(TCEntityTypeTags.ENDERMAN_TYPES)
+                .add(EntityType.ENDERMAN)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:undead_enderling")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:dragling")))
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:endstone_trapper")))
-                .add(EntityType.ENDERMAN);
-        tag(TodeCoinsTags.EntityTypes.ENDERMITES_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:endstone_trapper")));
+        tag(TCEntityTypeTags.ENDERMITES_TYPES)
+                .add(EntityType.ENDERMITE)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:ender_blob")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:ender_firefly")))
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:bolok")))
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("phantasm:crystie")))
-                .add(EntityType.ENDERMITE);
-        tag(TodeCoinsTags.EntityTypes.EVOKER_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("phantasm:crystie")));
+        tag(TCEntityTypeTags.EVOKER_TYPES)
                 .add(EntityType.EVOKER);
-        tag(TodeCoinsTags.EntityTypes.FOX_TYPES)
+        tag(TCEntityTypeTags.FOX_TYPES)
                 .add(EntityType.FOX);
-        tag(TodeCoinsTags.EntityTypes.FROG_TYPES)
+        tag(TCEntityTypeTags.FROG_TYPES)
                 .add(EntityType.FROG);
-        tag(TodeCoinsTags.EntityTypes.GHAST_TYPES)
+        tag(TCEntityTypeTags.GHAST_TYPES)
                 .add(EntityType.GHAST);
-        tag(TodeCoinsTags.EntityTypes.GLARE_TYPES)
+        tag(TCEntityTypeTags.GLARE_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:glare")));
-        tag(TodeCoinsTags.EntityTypes.GLOW_SQUID_TYPES)
+        tag(TCEntityTypeTags.GLOW_SQUID_TYPES)
                 .add(EntityType.GIANT);
-        tag(TodeCoinsTags.EntityTypes.GIANT_TYPES)
+        tag(TCEntityTypeTags.GIANT_TYPES)
                 .add(EntityType.GLOW_SQUID);
-        tag(TodeCoinsTags.EntityTypes.GOAT_TYPES)
+        tag(TCEntityTypeTags.GOAT_TYPES)
                 .add(EntityType.GOAT);
-        tag(TodeCoinsTags.EntityTypes.GUARD_TYPES)
+        tag(TCEntityTypeTags.GUARD_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("guardvillagers:guard")));
-        tag(TodeCoinsTags.EntityTypes.GUARDIAN_TYPES)
+        tag(TCEntityTypeTags.GUARDIAN_TYPES)
                 .add(EntityType.GUARDIAN);
-        tag(TodeCoinsTags.EntityTypes.HOGLIN_TYPES)
+        tag(TCEntityTypeTags.HOGLIN_TYPES)
                 .add(EntityType.HOGLIN);
-        tag(TodeCoinsTags.EntityTypes.HORSE_TYPES)
+        tag(TCEntityTypeTags.HORSE_TYPES)
                 .add(EntityType.HORSE);
-        tag(TodeCoinsTags.EntityTypes.HUSK_TYPES)
+        tag(TCEntityTypeTags.HUSK_TYPES)
                 .add(EntityType.HUSK);
-        tag(TodeCoinsTags.EntityTypes.ICEOLOGER_TYPES)
+        tag(TCEntityTypeTags.ICEOLOGER_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:iceologer")));
-        tag(TodeCoinsTags.EntityTypes.ILLUSIONER_TYPES)
+        tag(TCEntityTypeTags.ILLUSIONER_TYPES)
                 .add(EntityType.ILLUSIONER);
-        tag(TodeCoinsTags.EntityTypes.IRON_GOLEM_TYPES)
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:endstone_golem")))
-                .add(EntityType.IRON_GOLEM);
-        tag(TodeCoinsTags.EntityTypes.LLAMA_TYPES)
+        tag(TCEntityTypeTags.IRON_GOLEM_TYPES)
+                .add(EntityType.IRON_GOLEM)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("unusualend:endstone_golem")));
+        tag(TCEntityTypeTags.LLAMA_TYPES)
                 .add(EntityType.LLAMA);
-        tag(TodeCoinsTags.EntityTypes.MAGMA_CUBE_TYPES)
+        tag(TCEntityTypeTags.MAGMA_CUBE_TYPES)
                 .add(EntityType.MAGMA_CUBE);
-        tag(TodeCoinsTags.EntityTypes.MAULER_TYPES)
+        tag(TCEntityTypeTags.MAULER_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:mauler")));
-        tag(TodeCoinsTags.EntityTypes.MULE_TYPES)
+        tag(TCEntityTypeTags.MULE_TYPES)
                 .add(EntityType.MULE);
-        tag(TodeCoinsTags.EntityTypes.MOOBLOOM_TYPES)
+        tag(TCEntityTypeTags.MOOBLOOM_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:moobloom")));
-        tag(TodeCoinsTags.EntityTypes.MOOSHROOM_TYPES)
+        tag(TCEntityTypeTags.MOOSHROOM_TYPES)
                 .add(EntityType.MOOSHROOM);
-        tag(TodeCoinsTags.EntityTypes.NUMISMATIST_TYPES)
-                .add(ModEntityTypes.NUMISMATIST.get());
-        tag(TodeCoinsTags.EntityTypes.OCELOT_TYPES)
+        tag(TCEntityTypeTags.NUMISMATIST_TYPES)
+                .add(TCEntityTypes.NUMISMATIST.get());
+        tag(TCEntityTypeTags.OCELOT_TYPES)
                 .add(EntityType.OCELOT);
-        tag(TodeCoinsTags.EntityTypes.PANDA_TYPES)
+        tag(TCEntityTypeTags.PANDA_TYPES)
                 .add(EntityType.PANDA);
-        tag(TodeCoinsTags.EntityTypes.PARROT_TYPES)
+        tag(TCEntityTypeTags.PARROT_TYPES)
                 .add(EntityType.PARROT);
-        tag(TodeCoinsTags.EntityTypes.PENGUIN_TYPES)
+        tag(TCEntityTypeTags.PENGUIN_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("ecologics:penguin")));
-        tag(TodeCoinsTags.EntityTypes.PHANTOM_TYPES)
+        tag(TCEntityTypeTags.PHANTOM_TYPES)
                 .add(EntityType.PHANTOM);
-        tag(TodeCoinsTags.EntityTypes.PIG_TYPES)
+        tag(TCEntityTypeTags.PIG_TYPES)
                 .add(EntityType.PIG);
-        tag(TodeCoinsTags.EntityTypes.PIGLIN_TYPES)
+        tag(TCEntityTypeTags.PIGLIN_TYPES)
                 .add(EntityType.PIGLIN);
-        tag(TodeCoinsTags.EntityTypes.PIGLIN_BRUTE_TYPES)
+        tag(TCEntityTypeTags.PIGLIN_BRUTE_TYPES)
                 .add(EntityType.PIGLIN_BRUTE);
-        tag(TodeCoinsTags.EntityTypes.PIGLIN_MERCHANT_TYPES)
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("todepiglins:todepiglinmerchant")));
-        tag(TodeCoinsTags.EntityTypes.PILLAGER_TYPES)
+        tag(TCEntityTypeTags.PIGLIN_MERCHANT_TYPES)
+                .add(TCEntityTypes.PIGLINMERCHANT.get());
+        tag(TCEntityTypeTags.PILLAGER_TYPES)
                 .add(EntityType.PILLAGER);
-        tag(TodeCoinsTags.EntityTypes.POLAR_BEAR_TYPES)
+        tag(TCEntityTypeTags.POLAR_BEAR_TYPES)
                 .add(EntityType.POLAR_BEAR);
-        tag(TodeCoinsTags.EntityTypes.PUFFERFISH_TYPES)
+        tag(TCEntityTypeTags.PUFFERFISH_TYPES)
                 .add(EntityType.PUFFERFISH);
-        tag(TodeCoinsTags.EntityTypes.RABBIT_TYPES)
+        tag(TCEntityTypeTags.RABBIT_TYPES)
                 .add(EntityType.RABBIT);
-        tag(TodeCoinsTags.EntityTypes.RAVAGER_TYPES)
+        tag(TCEntityTypeTags.RAVAGER_TYPES)
                 .add(EntityType.RAVAGER);
-        tag(TodeCoinsTags.EntityTypes.SALMON_TYPES)
+        tag(TCEntityTypeTags.SALMON_TYPES)
                 .add(EntityType.SALMON);
-        tag(TodeCoinsTags.EntityTypes.SHEEP_TYPES)
+        tag(TCEntityTypeTags.SHEEP_TYPES)
                 .add(EntityType.SHEEP);
-        tag(TodeCoinsTags.EntityTypes.SHULKER_TYPES)
+        tag(TCEntityTypeTags.SHULKER_TYPES)
                 .add(EntityType.SHULKER);
-        tag(TodeCoinsTags.EntityTypes.SILVERFISH_TYPES)
+        tag(TCEntityTypeTags.SILVERFISH_TYPES)
                 .add(EntityType.SILVERFISH);
-        tag(TodeCoinsTags.EntityTypes.SKELETON_TYPES)
+        tag(TCEntityTypeTags.SKELETON_TYPES)
                 .add(EntityType.SKELETON);
-        tag(TodeCoinsTags.EntityTypes.SKELETON_HORSE_TYPES)
+        tag(TCEntityTypeTags.SKELETON_HORSE_TYPES)
                 .add(EntityType.SKELETON_HORSE);
-        tag(TodeCoinsTags.EntityTypes.SLIME_TYPES)
+        tag(TCEntityTypeTags.SLIME_TYPES)
                 .add(EntityType.SLIME);
-        tag(TodeCoinsTags.EntityTypes.SNIFFER_TYPES)
-                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:sniffer")));
-        tag(TodeCoinsTags.EntityTypes.ARMADILLO_TYPES)
+        tag(TCEntityTypeTags.SNIFFER_TYPES)
+                .add(EntityType.SNIFFER);
+        tag(TCEntityTypeTags.ARMAIDLLO_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("minecraft:armadillo")));
-        tag(TodeCoinsTags.EntityTypes.SNOW_GOLEM_TYPES)
+        tag(TCEntityTypeTags.SNOW_GOLEM_TYPES)
                 .add(EntityType.SNOW_GOLEM);
-        tag(TodeCoinsTags.EntityTypes.SPIDER_TYPES)
+        tag(TCEntityTypeTags.SPIDER_TYPES)
                 .add(EntityType.SPIDER);
-        tag(TodeCoinsTags.EntityTypes.SQUID_TYPES)
+        tag(TCEntityTypeTags.SQUID_TYPES)
                 .add(EntityType.SQUID);
-        tag(TodeCoinsTags.EntityTypes.SQUIRREL_TYPES)
+        tag(TCEntityTypeTags.SQUIRREL_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("ecologics:squirrel")));
-        tag(TodeCoinsTags.EntityTypes.STRAY_TYPES)
+        tag(TCEntityTypeTags.STRAY_TYPES)
                 .add(EntityType.STRAY);
-        tag(TodeCoinsTags.EntityTypes.STRIDER_TYPES)
+        tag(TCEntityTypeTags.STRIDER_TYPES)
                 .add(EntityType.STRIDER);
-        tag(TodeCoinsTags.EntityTypes.TADPOLE_TYPES)
+        tag(TCEntityTypeTags.TADPOLE_TYPES)
                 .add(EntityType.TADPOLE);
-        tag(TodeCoinsTags.EntityTypes.TRADER_LLAMA_TYPES)
+        tag(TCEntityTypeTags.TRADER_LLAMA_TYPES)
                 .add(EntityType.TRADER_LLAMA);
-        tag(TodeCoinsTags.EntityTypes.TROPICAL_FISH_TYPES)
+        tag(TCEntityTypeTags.TROPICAL_FISH_TYPES)
                 .add(EntityType.TROPICAL_FISH);
-        tag(TodeCoinsTags.EntityTypes.TUFF_GOLEM_TYPES)
+        tag(TCEntityTypeTags.TUFF_GOLEM_TYPES)
                 .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:tuff_golem")));
-        tag(TodeCoinsTags.EntityTypes.TURTLE_TYPES)
+        tag(TCEntityTypeTags.WILDFIRE_TYPES)
+                .addOptional(Objects.requireNonNull(ResourceLocation.tryParse("friendsandfoes:wildfire")));
+        tag(TCEntityTypeTags.TURTLE_TYPES)
                 .add(EntityType.TURTLE);
-        tag(TodeCoinsTags.EntityTypes.VEX_TYPES)
+        tag(TCEntityTypeTags.VEX_TYPES)
                 .add(EntityType.VEX);
-        tag(TodeCoinsTags.EntityTypes.VILLAGER_TYPES)
+        tag(TCEntityTypeTags.VILLAGER_TYPES)
                 .add(EntityType.VILLAGER);
-        tag(TodeCoinsTags.EntityTypes.VINDICATOR_TYPES)
+        tag(TCEntityTypeTags.VINDICATOR_TYPES)
                 .add(EntityType.VINDICATOR);
-        tag(TodeCoinsTags.EntityTypes.WANDERING_TRADER_TYPES)
+        tag(TCEntityTypeTags.WANDERING_TRADER_TYPES)
                 .add(EntityType.WANDERING_TRADER);
-        tag(TodeCoinsTags.EntityTypes.WARDEN_TYPES)
+        tag(TCEntityTypeTags.WARDEN_TYPES)
                 .add(EntityType.WARDEN);
-        tag(TodeCoinsTags.EntityTypes.WITCH_TYPES)
+        tag(TCEntityTypeTags.WITCH_TYPES)
                 .add(EntityType.WITCH);
-        tag(TodeCoinsTags.EntityTypes.WITHER_TYPES)
+        tag(TCEntityTypeTags.WITHER_TYPES)
                 .add(EntityType.WITHER);
-        tag(TodeCoinsTags.EntityTypes.WITHER_SKELETON_TYPES)
+        tag(TCEntityTypeTags.WITHER_SKELETON_TYPES)
                 .add(EntityType.WITHER_SKELETON);
-        tag(TodeCoinsTags.EntityTypes.WOLF_TYPES)
+        tag(TCEntityTypeTags.WOLF_TYPES)
                 .add(EntityType.WOLF);
-        tag(TodeCoinsTags.EntityTypes.ZOGLIN_TYPES)
+        tag(TCEntityTypeTags.ZOGLIN_TYPES)
                 .add(EntityType.ZOGLIN);
-        tag(TodeCoinsTags.EntityTypes.ZOMBIE_TYPES)
+        tag(TCEntityTypeTags.ZOMBIE_TYPES)
                 .add(EntityType.ZOMBIE);
-        tag(TodeCoinsTags.EntityTypes.ZOMBIE_HORSE_TYPES)
+        tag(TCEntityTypeTags.ZOMBIE_HORSE_TYPES)
                 .add(EntityType.ZOMBIE_HORSE);
-        tag(TodeCoinsTags.EntityTypes.ZOMBIFIED_PIGLIN_TYPES)
+        tag(TCEntityTypeTags.ZOMBIFIED_PIGLIN_TYPES)
                 .add(EntityType.ZOMBIFIED_PIGLIN);
-        tag(TodeCoinsTags.EntityTypes.ZOMBIE_VILLAGER_TYPES)
+        tag(TCEntityTypeTags.ZOMBIE_VILLAGER_TYPES)
                 .add(EntityType.ZOMBIE_VILLAGER);
     }
 }

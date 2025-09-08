@@ -2,6 +2,7 @@
   "values": [
     "todecoins:currency_stamp",
     "todecoins:nether_currency_stamp",
-    "todecoins:endonian_currency_stamp"
+    "todecoins:endonian_currency_stamp",
+    "todecoins:gem_currency_stamp"
   ]
 }

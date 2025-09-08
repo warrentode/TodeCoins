@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:golden_knife",
+      "required": false
+    },
+    {
+      "id": "nethersdelight:golden_machete",
+      "required": false
+    },
+    {
+      "id": "delightful:adamantium_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:blazing_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:rose_gold_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:infused_veridium_knife",
+      "required": false
+    }
+  ]
+}

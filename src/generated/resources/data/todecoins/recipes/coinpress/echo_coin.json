@@ -1,0 +1,17 @@
+{
+  "type": "todecoins:coinpress",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "todecoins:gem_currency_stamp"
+    },
+    {
+      "item": "minecraft:echo_shard"
+    }
+  ],
+  "recipe_book_tab": "coins",
+  "result": {
+    "item": "todecoins:echo_coin"
+  },
+  "stampingTime": 50
+}

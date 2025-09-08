@@ -1,8 +1,11 @@
 {
   "values": [
-    {
-      "id": "farmersdelight:flint_knife",
-      "required": false
-    }
+    "#forge:tools/beyond/knives",
+    "#forge:tools/netherite/knives",
+    "#forge:tools/diamond/knives",
+    "#forge:tools/gold/knives",
+    "#forge:tools/iron/knives",
+    "#forge:tools/stone/knives",
+    "#forge:tools/wood/knives"
   ]
 }

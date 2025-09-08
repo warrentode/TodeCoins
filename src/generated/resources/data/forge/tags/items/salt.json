@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "biomesoplenty:dried_salt",
+      "required": false
+    },
+    {
+      "id": "turtleblockacademy:pickling_salt",
+      "required": false
+    },
+    {
+      "id": "salt:salt",
+      "required": false
+    }
+  ]
+}

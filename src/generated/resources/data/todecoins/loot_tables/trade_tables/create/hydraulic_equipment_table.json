@@ -1,0 +1,104 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:large_water_wheel"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:water_wheel"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:mechanical_mixer"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:mechanical_pump"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:spout"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:fluid_valve"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:fluid_tank"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "create"
+            }
+          ],
+          "name": "create:fluid_pipe"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:modloaded_condition",
+                "modid": "create"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/misc/redstone_components_table"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/create/hydraulic_equipment_table"
+}

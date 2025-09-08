@@ -1,5 +1,9 @@
 {
   "values": [
+    "minecraft:lead",
+    "minecraft:warped_fungus_on_a_stick",
+    "minecraft:carrot_on_a_stick",
+    "minecraft:saddle",
     {
       "id": "domesticationinnovation:feather_on_a_stick",
       "required": false
@@ -27,10 +31,6 @@
     {
       "id": "leashed:diamond_lead",
       "required": false
-    },
-    "minecraft:lead",
-    "minecraft:warped_fungus_on_a_stick",
-    "minecraft:carrot_on_a_stick",
-    "minecraft:saddle"
+    }
   ]
 }

@@ -1,0 +1,509 @@
+{
+  "parent": "todecoins:collectible/find_all_coins",
+  "criteria": {
+    "has_collectible_coin_evoker_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_evoker_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_evoker_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_evoker_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_evoker_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_evoker_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_evoker_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_evoker_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_iceologer_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_iceologer_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_iceologer_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_iceologer_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_iceologer_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_iceologer_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_iceologer_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_iceologer_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_illusioner_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_illusioner_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_illusioner_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_illusioner_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_illusioner_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_pillager_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_pillager_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_pillager_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_pillager_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_pillager_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_ravager_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_ravager_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_ravager_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_ravager_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_ravager_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_vex_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vex_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_vex_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vex_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_vex_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vex_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_vex_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vex_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_vindicator_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vindicator_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_vindicator_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vindicator_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_vindicator_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vindicator_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_vindicator_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_vindicator_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_witch_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_witch_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_witch_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_witch_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_witch_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.complete_raider_coin_set.desc"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "todecoins:collectible_coin_pillager_netherite",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.complete_raider_coin_set"
+    }
+  },
+  "requirements": [
+    [
+      "has_collectible_coin_evoker_copper"
+    ],
+    [
+      "has_collectible_coin_evoker_iron"
+    ],
+    [
+      "has_collectible_coin_evoker_gold"
+    ],
+    [
+      "has_collectible_coin_evoker_netherite"
+    ],
+    [
+      "has_collectible_coin_iceologer_copper"
+    ],
+    [
+      "has_collectible_coin_iceologer_iron"
+    ],
+    [
+      "has_collectible_coin_iceologer_gold"
+    ],
+    [
+      "has_collectible_coin_iceologer_netherite"
+    ],
+    [
+      "has_collectible_coin_illusioner_copper"
+    ],
+    [
+      "has_collectible_coin_illusioner_iron"
+    ],
+    [
+      "has_collectible_coin_illusioner_gold"
+    ],
+    [
+      "has_collectible_coin_illusioner_netherite"
+    ],
+    [
+      "has_collectible_coin_pillager_copper"
+    ],
+    [
+      "has_collectible_coin_pillager_iron"
+    ],
+    [
+      "has_collectible_coin_pillager_gold"
+    ],
+    [
+      "has_collectible_coin_pillager_netherite"
+    ],
+    [
+      "has_collectible_coin_ravager_copper"
+    ],
+    [
+      "has_collectible_coin_ravager_iron"
+    ],
+    [
+      "has_collectible_coin_ravager_gold"
+    ],
+    [
+      "has_collectible_coin_ravager_netherite"
+    ],
+    [
+      "has_collectible_coin_vex_copper"
+    ],
+    [
+      "has_collectible_coin_vex_iron"
+    ],
+    [
+      "has_collectible_coin_vex_gold"
+    ],
+    [
+      "has_collectible_coin_vex_netherite"
+    ],
+    [
+      "has_collectible_coin_vindicator_copper"
+    ],
+    [
+      "has_collectible_coin_vindicator_iron"
+    ],
+    [
+      "has_collectible_coin_vindicator_gold"
+    ],
+    [
+      "has_collectible_coin_vindicator_netherite"
+    ],
+    [
+      "has_collectible_coin_witch_copper"
+    ],
+    [
+      "has_collectible_coin_witch_iron"
+    ],
+    [
+      "has_collectible_coin_witch_gold"
+    ],
+    [
+      "has_collectible_coin_witch_netherite"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
+}

@@ -1,8 +1,21 @@
 {
   "values": [
+    "minecraft:dark_forest",
     "minecraft:old_growth_birch_forest",
     "minecraft:birch_forest",
     "minecraft:flower_forest",
-    "minecraft:forest"
+    "minecraft:forest",
+    {
+      "id": "biomesoplenty:auroral_garden",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mediterranean_forest",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:aspen_glade",
+      "required": false
+    }
   ]
 }

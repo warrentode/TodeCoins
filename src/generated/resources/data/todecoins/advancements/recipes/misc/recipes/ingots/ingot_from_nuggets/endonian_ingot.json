@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_endonian_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:nuggets/endonian_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "todecoins:recipes/ingots/ingot_from_nuggets/endonian_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_endonian_nugget",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "todecoins:recipes/ingots/ingot_from_nuggets/endonian_ingot"
+    ]
+  },
+  "sends_telemetry_event": false
+}

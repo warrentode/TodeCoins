@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "phantasm:pream_sapling",
+      "required": false
+    },
+    {
+      "id": "phantasm:putac_shroom",
+      "required": false
+    }
+  ]
+}

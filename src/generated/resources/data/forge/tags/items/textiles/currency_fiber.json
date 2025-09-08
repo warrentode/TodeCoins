@@ -1,5 +1,10 @@
 {
   "values": [
-    "#todecoins:textiles/currency_fiber"
+    "minecraft:paper",
+    "minecraft:string",
+    "#forge:textiles/fibre",
+    "#forge:textiles/bark",
+    "#forge:textiles/string",
+    "#forge:textiles/paper"
   ]
 }

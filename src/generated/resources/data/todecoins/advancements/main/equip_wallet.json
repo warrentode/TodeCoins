@@ -1,0 +1,43 @@
+{
+  "parent": "todecoins:main/craft_wallet",
+  "criteria": {
+    "equip_wallet": {
+      "conditions": {
+        "curios:slot": {
+          "slots": [
+            "belt"
+          ]
+        },
+        "item": {
+          "tag": "todecoins:wallets"
+        },
+        "location": {}
+      },
+      "trigger": "curios:equip_curio"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.equip_wallet.desc"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "todecoins:wallet"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.equip_wallet"
+    }
+  },
+  "requirements": [
+    [
+      "equip_wallet"
+    ]
+  ],
+  "rewards": {
+    "function": "todecoins:add_belt_slot"
+  },
+  "sends_telemetry_event": true
+}

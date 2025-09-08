@@ -1,0 +1,44 @@
+{
+  "offers": {
+    "rare": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/tools/bomb_table",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/thirty_two_emerald_value_currency",
+        "trade_experience": 10
+      }
+    ],
+    "common": [
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "offered_item_count": 4,
+        "offered_table": "todecoins:trade_tables/tools/rope_tag_table",
+        "requested_table": "todecoins:trade_tables/currency/one_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_item",
+        "offered_item": "minecraft:gunpowder",
+        "offered_item_count": 4,
+        "requested_table": "todecoins:trade_tables/currency/one_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/firework_rocket_table",
+        "requested_table": "todecoins:trade_tables/currency/one_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/decor/lantern_table",
+        "requested_table": "todecoins:trade_tables/currency/one_emerald_value_currency"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/decor/torch_table",
+        "requested_table": "todecoins:trade_tables/currency/one_emerald_value_currency"
+      }
+    ]
+  },
+  "profession": "supplementaries:red_merchant"
+}

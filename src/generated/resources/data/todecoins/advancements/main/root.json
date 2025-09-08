@@ -12,7 +12,7 @@
       "translate": "advancement.root.desc"
     },
     "frame": "task",
-    "hidden": false,
+    "hidden": true,
     "icon": {
       "item": "todecoins:gold_coin"
     },
@@ -25,5 +25,6 @@
     [
       "trade"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

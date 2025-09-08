@@ -1,5 +1,6 @@
 {
   "values": [
+    "minecraft:pumpkin_pie",
     {
       "id": "farmersdelight:chocolate_pie",
       "required": false
@@ -7,7 +8,6 @@
     {
       "id": "farmersdelight:apple_pie",
       "required": false
-    },
-    "minecraft:pumpkin_pie"
+    }
   ]
 }

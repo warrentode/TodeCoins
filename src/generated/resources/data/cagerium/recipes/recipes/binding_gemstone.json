@@ -1,0 +1,57 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "cagerium"
+            },
+            {
+              "type": "forge:true"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "minecraft:heart_of_the_sea"
+          },
+          {
+            "item": "minecraft:dragon_breath"
+          },
+          {
+            "item": "minecraft:dragon_breath"
+          },
+          {
+            "tag": "todecoins:one_emerald_currency_gems"
+          },
+          {
+            "tag": "todecoins:one_emerald_currency_gems"
+          },
+          {
+            "tag": "forge:nuggets/netherite"
+          },
+          {
+            "tag": "forge:nuggets/netherite"
+          },
+          {
+            "tag": "forge:nuggets/netherite"
+          },
+          {
+            "tag": "forge:nuggets/netherite"
+          }
+        ],
+        "result": {
+          "item": "cagerium:binding_gemstone"
+        }
+      }
+    }
+  ]
+}

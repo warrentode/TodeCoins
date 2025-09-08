@@ -23,9 +23,12 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
-/mcmodsrepo/
 /CHANGELOG.txt
-/zine_zone/
-/zine_zone/TODO.txt
-/src/generated/resources/.cache/
-/src/generated/resources/data/todecoins/trades/example_modid/
+/update_template.json
+/potion_color_swatches.png
+/templates/
+/run/*
+/zine/
+/run-data/
+/debugging_tools/
+/debug/

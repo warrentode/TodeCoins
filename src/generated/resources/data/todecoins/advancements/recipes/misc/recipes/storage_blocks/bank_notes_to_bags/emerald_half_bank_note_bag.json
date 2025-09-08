@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_emerald_half_note": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:emerald_half_bank_note"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "todecoins:recipes/storage_blocks/bank_notes_to_bags/emerald_half_bank_note_bag"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald_half_note",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "todecoins:recipes/storage_blocks/bank_notes_to_bags/emerald_half_bank_note_bag"
+    ]
+  },
+  "sends_telemetry_event": false
+}

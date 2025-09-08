@@ -1,0 +1,149 @@
+{
+  "parent": "todecoins:collectible/find_all_coins",
+  "criteria": {
+    "has_collectible_coin_blaze_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_blaze_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_blaze_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_blaze_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_blaze_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_blaze_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_blaze_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_blaze_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_wildfire_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wildfire_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_wildfire_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wildfire_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_wildfire_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wildfire_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_collectible_coin_wildfire_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:collectible_coin_wildfire_netherite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.complete_blaze_coin_set.desc"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "todecoins:collectible_coin_blaze_netherite",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.complete_blaze_coin_set"
+    }
+  },
+  "requirements": [
+    [
+      "has_collectible_coin_blaze_copper"
+    ],
+    [
+      "has_collectible_coin_blaze_iron"
+    ],
+    [
+      "has_collectible_coin_blaze_gold"
+    ],
+    [
+      "has_collectible_coin_blaze_netherite"
+    ],
+    [
+      "has_collectible_coin_wildfire_copper"
+    ],
+    [
+      "has_collectible_coin_wildfire_iron"
+    ],
+    [
+      "has_collectible_coin_wildfire_gold"
+    ],
+    [
+      "has_collectible_coin_wildfire_netherite"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
+}

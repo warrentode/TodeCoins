@@ -1,0 +1,15 @@
+{
+  "type": "todecoins:crafting_shapeless_remainder",
+  "ingredients": [
+    {
+      "tag": "todecoins:collectible/coins"
+    },
+    {
+      "item": "minecraft:book"
+    }
+  ],
+  "recipe_book_category": "TOOLS",
+  "result": {
+    "item": "todecoins:coin_album"
+  }
+}

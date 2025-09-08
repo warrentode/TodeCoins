@@ -21,7 +21,7 @@ public class PiglinMerchantTradeWithPlayer extends Goal {
         else if (this.piglinMerchant.isInWater()) {
             return false;
         }
-        else if (!this.piglinMerchant.isOnGround()) {
+        else if (!this.piglinMerchant.onGround()) {
             return false;
         }
         else if (this.piglinMerchant.hurtMarked) {

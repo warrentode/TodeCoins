@@ -1,0 +1,44 @@
+{
+  "parent": "todecoins:main/friends_forever",
+  "criteria": {
+    "equip_bracelet": {
+      "conditions": {
+        "curios:slot": {
+          "slots": [
+            "bracelet"
+          ]
+        },
+        "item": {
+          "tag": "todecoins:friendship_bracelets"
+        },
+        "location": {}
+      },
+      "trigger": "curios:equip_curio"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.equip_bracelet.desc"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "todecoins:bracelet_friendship_emerald",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.equip_bracelet"
+    }
+  },
+  "requirements": [
+    [
+      "equip_bracelet"
+    ]
+  ],
+  "rewards": {
+    "function": "todecoins:add_bracelet_slot"
+  },
+  "sends_telemetry_event": true
+}

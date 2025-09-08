@@ -1,89 +1,184 @@
 #@formatter:off
-modLoader = "javafml"
-loaderVersion = "[43,)"
-license = "GNU_GPL.3"
-issueTrackerURL="https://github.com/warrentode/TodeCoins/issues"
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+issueTrackerURL="${issue_url}"
 
 [[mods]]
-modId = "todecoins"
-version = "${file.jarVersion}"
-displayName = "TodeCoins"
-updateJSONURL = "https://raw.githubusercontent.com/warrentode/TodeCoins/master/update.json"
-displayURL = "https://github.com/warrentode/TodeCoins"
-logoFile = "logo.png"
-credits = '''Special thanks to my sons, and my supporters: Marshal Nash and Trevor Brannigan, for supporting my blog and my various projects!'''
-authors = "Warren Tode (ToadieOdie)"
-description = '''Adds currency, collectible coins, a collectible coin trader, a banker and leprechaun villager with trades, an armor set with set effects, and luck potions to the game.
-An additional location to report issues or ask questions is on my discord at: https://discord.gg/gB8PjQgZ4Q
-'''
+    modId="${mod_id}"
+    version="${mod_version}"
+    displayName="${mod_name}"
+    updateJSONURL="${update_url}"
+    displayURL="${display_url}"
+    logoFile="logo.png"
+    credits="${mod_credits}"
+    authors="${mod_authors}"
+    description='''${mod_description}'''
 
-[modproperties.todecoins]
-    catalogueItemIcon = "todecoins:currency_stamp" #Support for Catalogue mod
+[modproperties.${mod_id}]
+    catalogueItemIcon = "todecoins:copper_coin" #Support for Catalogue mod
     configuredBackground = "todecoins:textures/block/pot.png" #Support for Configured mod
 
-[[dependencies.todecoins]]
-    modId = "forge"
-    mandatory = true
-    versionRange = "[43,)"
-    ordering = "NONE"
-    side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "minecraft"
-    mandatory = true
-    versionRange = "[1.19.2,1.20)"
-    ordering = "NONE"
-    side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "curios"
-    mandatory = true
-    versionRange = "[1.19.2-5.1.6.1,)"
-    ordering = "BEFORE"
-    side = "BOTH"
-[[dependencies.todecoins]]
+[[dependencies.${mod_id}]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.${mod_id}]]
     modId = "sereneseasons"
     mandatory = false
-    versionRange = "[1.19.2-8.1.0.24,)"
-    ordering = "BEFORE"
+    versionRange = "[9.1.0.2,)"
+    ordering = "AFTER"
     side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "cagerium"
+[[dependencies.${mod_id}]]
+    modId = "glitchcore"
     mandatory = false
-    versionRange = "[1.19.2-1.1.8,)"
-    ordering = "BEFORE"
+    versionRange = "[0.0.1.1,)"
+    ordering = "AFTER"
     side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "ecologics"
+[[dependencies.${mod_id}]]
+    modId = "biomesoplenty"
     mandatory = false
-    versionRange = "[2.1.11,)"
-    ordering = "BEFORE"
+    versionRange = "[19.0.0.96,)"
+    ordering = "AFTER"
     side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "friendsandfoes"
+[[dependencies.${mod_id}]]
+    modId = "terrablender"
     mandatory = false
-    versionRange = "[2.0.9,)"
-    ordering = "BEFORE"
+    versionRange = "[3.0.1.10,)"
+    ordering = "AFTER"
     side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "guardvillagers"
-    mandatory = false
-    versionRange = "[1.19.2-1.5.9,)"
-    ordering = "BEFORE"
-    side = "BOTH"
-[[dependencies.todecoins]]
-    modId = "unusualend"
-    mandatory = false
-    versionRange = "[1.4.3,)"
-    ordering = "NONE"
-    side = "BOTH"
-[[dependencies.todecoins]]
+[[dependencies.${mod_id}]]
     modId = "farmersdelight"
     mandatory = false
-    versionRange = "[1.19.2-1.2.3,)"
+    versionRange = "[1.20.1-1.2.8,)"
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.todecoins]]
+[[dependencies.${mod_id}]]
     modId = "wares"
     mandatory = false
-    versionRange = "[1.2.8,)"
+    versionRange = "[1.2.9,)"
     ordering = "NONE"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "cagerium"
+    mandatory = false
+    versionRange = "[1.20.1-1.1.9,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "curios"
+    mandatory = false
+    versionRange = "[5.14.1+1.20.1,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "friendsandfoes"
+    mandatory = false
+    versionRange = "[3.0.9,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "guardvillagers"
+    mandatory = false
+    versionRange = "[1.20.1-1.6.11,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "aether"
+    mandatory = false
+    versionRange = "[1.20.1-1.5.2-neoforge,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "mantle"
+    mandatory = false
+    versionRange = "[1.11.79,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "tconstruct"
+    mandatory = false
+    versionRange = "[1.20.1-3.10.2.92,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "moonlight"
+    mandatory = false
+    versionRange = "[1.20-2.16.5,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "supplementaries"
+    mandatory = false
+    versionRange = "[1.20-3.1.37,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "ecologics"
+    mandatory = false
+    versionRange = "[2.2.2,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "drinkbeer"
+    mandatory = false
+    versionRange = "[1.0.5,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "farmersrespite"
+    mandatory = false
+    versionRange = "[1.20.1-2.1,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "delightful"
+    mandatory = false
+    versionRange = "[3.7.4,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "festive_delight"
+    mandatory = false
+    versionRange = "[1.3.0,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "snowyspirit"
+    mandatory = false
+    versionRange = "[1.20-3.0.10,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "goblintraders"
+    mandatory = false
+    versionRange = "[1.11.5,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "framework"
+    mandatory = false
+    versionRange = "[0.7.15,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "create"
+    mandatory = false
+    versionRange = "[1.0.3-forge-1.20.1,)"
+    ordering = "AFTER"
+    side = "BOTH"
+[[dependencies.${mod_id}]]
+    modId = "createdeco"
+    mandatory = false
+    versionRange = "[1.0.3-forge-1.20.1,)"
+    ordering = "AFTER"
     side = "BOTH"

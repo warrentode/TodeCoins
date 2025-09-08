@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "tconstruct"
+        }
+      ],
+      "recipe": {
+        "type": "todecoins:spawn_egg_shapeless",
+        "group": "spawn_eggs",
+        "ingredients": [
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:soul_binder"
+          },
+          {
+            "tag": "forge:nuggets/netherite"
+          },
+          {
+            "item": "minecraft:heart_of_the_sea"
+          },
+          {
+            "item": "tconstruct:earth_slime_crystal"
+          },
+          {
+            "item": "tconstruct:sky_slime_ball"
+          }
+        ],
+        "recipe_book_category": "MISC",
+        "result": {
+          "item": "tconstruct:sky_slime_spawn_egg"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:diamond_knife",
+      "required": false
+    },
+    {
+      "id": "nethersdelight:diamond_machete",
+      "required": false
+    },
+    {
+      "id": "endsdelight:dragon_egg_shell_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:gilded_quartz_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:phoenix_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:gravitite_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:utherium_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:necronium_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:soul_steal_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:pearlescent_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:knightmetal_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:steel_leaf_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:osmium_knife",
+      "required": false
+    }
+  ]
+}

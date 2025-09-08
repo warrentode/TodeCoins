@@ -1,0 +1,92 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:iron_knife",
+      "required": false
+    },
+    {
+      "id": "nethersdelight:iron_machete",
+      "required": false
+    },
+    {
+      "id": "delightful:veridium_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:froststeel_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:cloggrum_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:crystalline_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:kiwano_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:experience_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:zinc_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:ironwood_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:nickel_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:invar_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:electrum_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:constantan_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:refined_glowstone_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:bronze_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:aluminum_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:brass_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:silver_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:steel_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:copper_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:amethyst_knife",
+      "required": false
+    }
+  ]
+}

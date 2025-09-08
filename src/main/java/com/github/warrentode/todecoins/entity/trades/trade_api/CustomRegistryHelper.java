@@ -14,6 +14,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import static com.github.warrentode.todecoins.TodeCoins.TC_LOGGER;
+
 public class CustomRegistryHelper {
 
     public static final RegistryHelper<TradeOfferFactoryType<?>> tradeOfferFactoryTypeRegistryHelper =
@@ -38,20 +40,20 @@ public class CustomRegistryHelper {
 
         public void registerAll(@NotNull RegisterEvent event) {
             ResourceKey<Registry<T>> registryKey = this.registry.get().getRegistryKey();
-            TodeCoins.LOGGER.info("Getting custom registry keys: {}_{}", event.getRegistryKey(), registryKey.toString());
+            TC_LOGGER.info("Getting custom registry keys: {}_{}", event.getRegistryKey(), registryKey.toString());
             if (event.getRegistryKey().equals(registryKey)) {
                 registered = true;
-                TodeCoins.LOGGER.info("Registered custom registry key: {}", event.getRegistryKey() + "_" + registryKey);
+                TC_LOGGER.info("Registered custom registry key: {}", event.getRegistryKey() + "_" + registryKey);
                 for (Map.Entry<ResourceLocation, Supplier<? extends T>> supplierEntry : this.entries.entrySet()) {
                     event.register(registryKey, supplierEntry.getKey(), () -> supplierEntry.getValue().get());
-                    TodeCoins.LOGGER.info("{}", supplierEntry.getKey().toString());
+                    TC_LOGGER.info("{}", supplierEntry.getKey().toString());
                 }
                 this.entries.clear();
             }
         }
 
         public <V extends T> Supplier<V> register(@NotNull ResourceLocation name, Supplier<V> entry) {
-            TodeCoins.LOGGER.info("{}", "register " + name);
+            TC_LOGGER.info("{}", "register " + name);
             if (registered) {
                 this.registry.get().register(name, entry.get());
             }

@@ -1,0 +1,183 @@
+{
+  "offers": {
+    "rare": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/brewing/experience_bottle_table",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/tools/name_tag_table",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/underground/twenty_emerald_florin_currency_value",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_item",
+        "max_trades": 3,
+        "offered_item": "minecraft:blue_ice",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_specified_enchantment",
+        "enchantment": "minecraft:luck_of_the_sea",
+        "enchantment_level": 1,
+        "offered_table": "todecoins:trade_tables/tools/fishing_rod_table",
+        "requested_table": "todecoins:trade_tables/currency/underground/twenty_six_emerald_florin_currency_value",
+        "trade_experience": 20
+      },
+      {
+        "type": "todecoins:loot_table_for_specified_enchantment",
+        "enchantment": "minecraft:lure",
+        "enchantment_level": 1,
+        "offered_table": "todecoins:trade_tables/tools/fishing_rod_table",
+        "requested_table": "todecoins:trade_tables/currency/underground/twenty_six_emerald_florin_currency_value",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_tag_table",
+        "max_trades": 3,
+        "offered_item_count": 1,
+        "offered_table": "todecoins:trade_tables/music/music_disc_tag_table",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/underground/twenty_six_emerald_florin_currency_value",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_specified_enchantment",
+        "enchantment": "minecraft:efficiency",
+        "enchantment_level": 5,
+        "offered_table": "todecoins:trade_tables/tools/diamond_tier_tools",
+        "requested_table": "todecoins:trade_tables/currency/underground/twenty_six_emerald_florin_currency_value",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_specified_enchantment",
+        "enchantment": "minecraft:unbreaking",
+        "enchantment_level": 5,
+        "offered_table": "todecoins:trade_tables/tools/diamond_tier_tools",
+        "requested_table": "todecoins:trade_tables/currency/underground/twenty_six_emerald_florin_currency_value",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_specified_enchantment",
+        "enchantment": "minecraft:fortune",
+        "enchantment_level": 5,
+        "offered_table": "todecoins:trade_tables/tools/diamond_tier_tools",
+        "requested_table": "todecoins:trade_tables/currency/underground/twenty_six_emerald_florin_currency_value",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_specified_enchantment",
+        "enchantment": "minecraft:silk_touch",
+        "enchantment_level": 5,
+        "offered_table": "todecoins:trade_tables/tools/diamond_tier_tools",
+        "requested_table": "todecoins:trade_tables/currency/underground/twenty_six_emerald_florin_currency_value",
+        "trade_experience": 10
+      }
+    ],
+    "common": [
+      {
+        "type": "todecoins:loot_table_for_item",
+        "offered_item": "minecraft:apple",
+        "offered_item_count": 8,
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value"
+      },
+      {
+        "type": "todecoins:loot_table_and_item_for_item",
+        "offered_item": "minecraft:iron_ingot",
+        "offered_item_count": 4,
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value",
+        "secondary_requested_item": "minecraft:raw_iron",
+        "secondary_requested_item_count": 3
+      },
+      {
+        "type": "todecoins:loot_table_and_item_for_item",
+        "offered_item": "minecraft:gold_ingot",
+        "offered_item_count": 3,
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value",
+        "secondary_requested_item": "minecraft:raw_gold",
+        "secondary_requested_item_count": 2
+      },
+      {
+        "type": "todecoins:loot_table_and_item_for_item",
+        "offered_item": "minecraft:copper_ingot",
+        "offered_item_count": 9,
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value",
+        "secondary_requested_item": "minecraft:raw_copper",
+        "secondary_requested_item_count": 8
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/one_emerald_value_fuel_table",
+        "requested_table": "todecoins:trade_tables/mob_parts/one_emerald_value_mob_parts_table"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/misc/flint_buy_table",
+        "requested_table": "todecoins:trade_tables/blocks/gravel_table"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value",
+        "requested_table": "todecoins:trade_tables/blocks/stone/overworld_stone_blocks"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/wandering/sell_one_emerald_value",
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/tools/fish_bucket_table",
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/blocks/ocean_blocks_table",
+        "requested_table": "todecoins:trade_tables/currency/underground/thirty_two_emerald_florin_currency_value"
+      },
+      {
+        "type": "todecoins:loot_table_for_item",
+        "offered_item": "minecraft:turtle_egg",
+        "requested_table": "todecoins:trade_tables/currency/underground/eight_emerald_florin_currency_value"
+      },
+      {
+        "type": "todecoins:loot_table_and_item_for_item",
+        "offered_item": "minecraft:damaged_anvil",
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value",
+        "secondary_requested_item": "minecraft:chipped_anvil"
+      },
+      {
+        "type": "todecoins:loot_table_and_item_for_item",
+        "offered_item": "minecraft:anvil",
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value",
+        "secondary_requested_item": "minecraft:damaged_anvil"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/blocks/terracotta/terracotta_blocks",
+        "requested_table": "todecoins:trade_tables/misc/clay_table"
+      },
+      {
+        "type": "todecoins:loot_table_for_item",
+        "offered_item": "minecraft:bookshelf",
+        "offered_item_count": 2,
+        "requested_table": "todecoins:trade_tables/textiles/tagged_leather_table"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "offered_table": "todecoins:trade_tables/gems/one_emerald_value_gems",
+        "requested_table": "todecoins:trade_tables/currency/underground/one_emerald_florin_currency_value"
+      }
+    ]
+  },
+  "profession": "goblintraders:goblin_trader"
+}

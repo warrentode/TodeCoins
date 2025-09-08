@@ -1,5 +1,6 @@
 {
   "values": [
+    "minecraft:rabbit_stew",
     {
       "id": "miners_delight:noodle_soup_cup",
       "required": false
@@ -43,7 +44,6 @@
     {
       "id": "farmersdelight:chicken_soup",
       "required": false
-    },
-    "minecraft:rabbit_stew"
+    }
   ]
 }

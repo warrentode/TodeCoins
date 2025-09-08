@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_endonian_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:endonian_nugget"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "todecoins:recipes/nuggets/smelting/endonian_nugget_from_collectible_coin_patron_cosmos"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_endonian_nugget",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "todecoins:recipes/nuggets/smelting/endonian_nugget_from_collectible_coin_patron_cosmos"
+    ]
+  },
+  "sends_telemetry_event": false
+}

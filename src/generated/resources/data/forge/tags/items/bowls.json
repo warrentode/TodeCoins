@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:bowl",
+    {
+      "id": "ecologics:coconut_husk",
+      "required": false
+    }
+  ]
+}

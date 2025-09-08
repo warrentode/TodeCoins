@@ -1,12 +1,16 @@
 package com.github.warrentode.todecoins.entity.villager;
 
+import com.github.warrentode.todecoins.Config;
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.entity.trades.NumismatistTrades;
-import com.github.warrentode.todecoins.sounds.ModSounds;
+import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.TradeOfferManager;
+import com.github.warrentode.todecoins.sounds.TCSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
@@ -29,12 +33,9 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
+import java.util.Optional;
 
 public class Numismatist extends WanderingTrader {
-    /**
-     * the number of total trades this merchant has to offer can be altered here - default is 5 for Wandering Trader
-     **/
-    private static final int maxOFFERS = 5;
     @Nullable
     private BlockPos wanderTarget;
     private int despawnDelay;
@@ -46,9 +47,9 @@ public class Numismatist extends WanderingTrader {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(0, new UseItemGoal<>(this, PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.INVISIBILITY),
-                ModSounds.NUMISMATIST_DISAPPEARED.get(), (numismatist) -> this.level.isNight() && !numismatist.isInvisible()));
+                TCSounds.NUMISMATIST_DISAPPEARED.get(), (numismatist) -> this.level.isNight() && !numismatist.isInvisible()));
         this.goalSelector.addGoal(0, new UseItemGoal<>(this, new ItemStack(Items.MILK_BUCKET),
-                ModSounds.NUMISMATIST_APPEARED.get(), (numismatist) -> this.level.isDay() && numismatist.isInvisible()));
+                TCSounds.NUMISMATIST_APPEARED.get(), (numismatist) -> this.level.isDay() && numismatist.isInvisible()));
         this.goalSelector.addGoal(1, new TradeWithPlayerGoal(this));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Zombie.class, 8.0F, 0.5D, 0.5D));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Evoker.class, 12.0F, 0.5D, 0.5D));
@@ -59,7 +60,7 @@ public class Numismatist extends WanderingTrader {
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Zoglin.class, 10.0F, 0.5D, 0.5D));
         this.goalSelector.addGoal(1, new PanicGoal(this, 0.5D));
         this.goalSelector.addGoal(1, new LookAtTradingPlayerGoal(this));
-        this.goalSelector.addGoal(2, new Numismatist.WanderToPositionGoal(this, 2.0D, 0.35D));
+        this.goalSelector.addGoal(2, new WanderToPositionGoal(this, 2.0D, 0.35D));
         this.goalSelector.addGoal(4, new MoveTowardsRestrictionGoal(this, 0.35D));
         this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 0.35D));
         this.goalSelector.addGoal(9, new InteractGoal(this, Player.class, 3.0F, 1.0F));
@@ -88,17 +89,53 @@ public class Numismatist extends WanderingTrader {
 
     @Override
     public void updateTrades() {
-        VillagerTrades.ItemListing[] avillagertrades$itemlisting = NumismatistTrades.NUMISMATIST_TRADES.get(1);
-        VillagerTrades.ItemListing[] avillagertrades$itemlisting1 = NumismatistTrades.NUMISMATIST_TRADES.get(2);
-        if (avillagertrades$itemlisting != null && avillagertrades$itemlisting1 != null) {
-            MerchantOffers merchantoffers = this.getOffers();
-            this.addOffersFromItemListings(merchantoffers, avillagertrades$itemlisting, maxOFFERS);
-            int i = this.random.nextInt(avillagertrades$itemlisting1.length);
-            VillagerTrades.ItemListing villagertrades$itemlisting = avillagertrades$itemlisting1[i];
-            MerchantOffer merchantOffer = villagertrades$itemlisting.getOffer(this, this.random);
-            if (merchantOffer != null) {
-                merchantoffers.add(merchantOffer);
+        this.getOffers();
+
+        // Get trades dynamically from the TradeOfferManager
+        TradeOfferManager manager = TodeCoins.TRADE_OFFER_MANAGER;
+        Optional<VillagerTrades.ItemListing[]> commonTradesOpt = manager.getNumismatistOffers(TradeOfferManager.MerchantLevel.COMMON);
+        Optional<VillagerTrades.ItemListing[]> rareTradesOpt = manager.getNumismatistOffers(TradeOfferManager.MerchantLevel.RARE);
+
+        // Only use JSON trades if both are present
+        if (commonTradesOpt.isPresent() && rareTradesOpt.isPresent()) {
+            VillagerTrades.ItemListing[] commonTrades = commonTradesOpt.get();
+            VillagerTrades.ItemListing[] rareTrades = rareTradesOpt.get();
+
+            addShuffledOffersAllowDuplicates(this.getOffers(), commonTrades, Config.getMaxWandererTrades());
+
+            if (rareTrades.length > 0) {
+                int i = this.random.nextInt(rareTrades.length);
+                VillagerTrades.ItemListing rareListing = rareTrades[i];
+                MerchantOffer rareOffer = rareListing.getOffer(this, this.random);
+                if (rareOffer != null) this.getOffers().add(rareOffer);
             }
+
+            return; // cancel default/hardcoded trade population
+        }
+
+        // Fallback to hardcoded NumismatistTrades if JSON trades are missing
+        VillagerTrades.ItemListing[] fallbackCommon = NumismatistTrades.NUMISMATIST_TRADES.get(1);
+        VillagerTrades.ItemListing[] fallbackRare = NumismatistTrades.NUMISMATIST_TRADES.get(2);
+
+        if (fallbackCommon != null) {
+            addShuffledOffersAllowDuplicates(this.getOffers(), fallbackCommon, Config.getMaxWandererTrades());
+        }
+
+        if (fallbackRare != null && fallbackRare.length > 0) {
+            int i = this.random.nextInt(fallbackRare.length);
+            VillagerTrades.ItemListing rareListing = fallbackRare[i];
+            MerchantOffer rareOffer = rareListing.getOffer(this, this.random);
+            if (rareOffer != null) this.getOffers().add(rareOffer);
+        }
+    }
+
+    // Helper method reused from PiglinMerchant
+    protected void addShuffledOffersAllowDuplicates(@NotNull MerchantOffers offers, VillagerTrades.ItemListing @NotNull [] listings, int maxOffers) {
+        RandomSource random = this.random;
+        for (int i = 0; i < maxOffers; i++) {
+            VillagerTrades.ItemListing listing = listings[random.nextInt(listings.length)];
+            MerchantOffer offer = listing.getOffer(this, random);
+            if (offer != null) offers.add(offer);
         }
     }
 
@@ -127,35 +164,35 @@ public class Numismatist extends WanderingTrader {
 
     @Override
     protected @NotNull SoundEvent getDrinkingSound(@NotNull ItemStack stack) {
-        return stack.is(Items.MILK_BUCKET) ? ModSounds.NUMISMATIST_DRINK_MILK.get() : ModSounds.NUMISMATIST_DRINK_POTION.get();
+        return stack.is(Items.MILK_BUCKET) ? TCSounds.NUMISMATIST_DRINK_MILK.get() : TCSounds.NUMISMATIST_DRINK_POTION.get();
     }
 
     @Override
     protected @NotNull SoundEvent getTradeUpdatedSound(boolean pGetYesSound) {
-        return pGetYesSound ? ModSounds.NUMISMATIST_HAGGLE.get() : ModSounds.NUMISMATIST_NO.get();
+        return pGetYesSound ? TCSounds.NUMISMATIST_HAGGLE.get() : TCSounds.NUMISMATIST_NO.get();
     }
 
     @Override
     public @NotNull SoundEvent getNotifyTradeSound() {
-        return ModSounds.NUMISMATIST_YES.get();
+        return TCSounds.NUMISMATIST_YES.get();
     }
 
     @Override
     protected SoundEvent getAmbientSound() {
         super.getAmbientSound();
-        return ModSounds.NUMISMATIST_IDLE.get();
+        return TCSounds.NUMISMATIST_IDLE.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
         super.getHurtSound(pDamageSource);
-        return ModSounds.NUMISMATIST_HURT.get();
+        return TCSounds.NUMISMATIST_HURT.get();
     }
 
     @Override
     protected SoundEvent getDeathSound() {
         super.getDeathSound();
-        return ModSounds.NUMISMATIST_DEATH.get();
+        return TCSounds.NUMISMATIST_DEATH.get();
     }
 
     @Override
@@ -197,11 +234,12 @@ public class Numismatist extends WanderingTrader {
         final double stopDistance;
         final double speedModifier;
 
+        @SuppressWarnings("SameParameterValue")
         WanderToPositionGoal(Numismatist numismatist, double stopDistance, double speedModifier) {
             this.trader = numismatist;
             this.stopDistance = stopDistance;
             this.speedModifier = speedModifier;
-            this.setFlags(EnumSet.of(Goal.Flag.MOVE));
+            this.setFlags(EnumSet.of(Flag.MOVE));
         }
 
         /**

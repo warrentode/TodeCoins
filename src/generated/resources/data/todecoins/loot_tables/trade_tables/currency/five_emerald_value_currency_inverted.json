@@ -1,0 +1,99 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:is_mountain"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/mountain/five_emerald_mountain_currency_value"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:has_structure/leprechaun_wagon"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/leprechaun/five_emerald_leprechaun_currency_value"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:is_underground"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/underground/five_emerald_florin_currency_value"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:end_biomes"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/endonian/five_emerald_endonian_currency_value"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:nether_biomes"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/nether/five_emerald_nether_currency_value"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/default/five_emerald_default_currency_value"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 5.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:emerald"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/currency/five_emerald_value_currency_inverted"
+}

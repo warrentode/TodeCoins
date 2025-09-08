@@ -1,10 +1,5 @@
 {
   "values": [
-    {
-      "id": "todecoins:nether_gold_coin",
-      "required": false
-    },
-    "todecoins:nether_gold_coin",
-    "todecoins:collectible_coin_piglin_netherite"
+    "todecoins:nether_gold_coin"
   ]
 }

@@ -1,8 +1,5 @@
 {
   "values": [
-    {
-      "id": "todepiglins:todepiglinmerchant",
-      "required": false
-    }
+    "todecoins:piglinmerchant"
   ]
 }

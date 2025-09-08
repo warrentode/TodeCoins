@@ -1,10 +1,13 @@
 package com.github.warrentode.todecoins.entity.piglinmerchant;
 
+import com.github.warrentode.todecoins.Config;
+import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.entity.ai.goal.*;
 import com.github.warrentode.todecoins.entity.trades.PiglinMerchantTrades;
-import com.github.warrentode.todecoins.sounds.ModSounds;
-import com.github.warrentode.todecoins.util.TodeCoinsTags;
-import com.google.common.collect.Sets;
+import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.TradeOfferManager;
+import com.github.warrentode.todecoins.sounds.TCSounds;
+import com.github.warrentode.todecoins.util.tags.TCEntityTypeTags;
+import com.github.warrentode.todecoins.util.tags.TCItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -53,9 +56,9 @@ import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.EnumSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
+
+import static com.github.warrentode.todecoins.entity.ai.goal.OfferRandomItemGestureGoal.OFFER_TICKS;
 
 public class PiglinMerchant extends PathfinderMob implements Merchant, InventoryCarrier {
     public static final float MAX_DISTANCE = 16.0F;
@@ -68,7 +71,6 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
     private static final double ATTACK_DAMAGE = 7.0D;
     private static final float LOOK_TIME = 3.0F;
     private static final int MELEE_COOLDOWN = 20;
-    private static final int maxOFFERS = 10;
     private static final EntityDataAccessor<Boolean> DEFAULT = SynchedEntityData.defineId(PiglinMerchant.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> WALKING = SynchedEntityData.defineId(PiglinMerchant.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> IDLE = SynchedEntityData.defineId(PiglinMerchant.class, EntityDataSerializers.BOOLEAN);
@@ -76,6 +78,7 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
     private static final EntityDataAccessor<Integer> DANCE_TIMER = SynchedEntityData.defineId(PiglinMerchant.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Boolean> DANCING = SynchedEntityData.defineId(PiglinMerchant.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> ATTACKING = SynchedEntityData.defineId(PiglinMerchant.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> OFFERING = SynchedEntityData.defineId(PiglinMerchant.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> DYING = SynchedEntityData.defineId(PiglinMerchant.class, EntityDataSerializers.BOOLEAN);
     public final SimpleContainer inventory = new SimpleContainer(8);
     public final AnimationState defaultAnimationState = new AnimationState();
@@ -86,8 +89,11 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
     public final AnimationState meleeLeftAnimationState = new AnimationState();
     public final AnimationState meleeRightAnimationState = new AnimationState();
     public final AnimationState deathAnimationState = new AnimationState();
+    public final AnimationState offerLeftAnimationState = new AnimationState();
+    public final AnimationState offerRightAnimationState = new AnimationState();
     public int idleAnimationTimeout = 0;
     public int attackAnimationTimeout = 0;
+    public int offerAnimationTimeout = 0;
     @Nullable
     private Player tradingPlayer;
     @Nullable
@@ -110,8 +116,6 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
         this.setPathfindingMalus(BlockPathTypes.DAMAGE_FIRE, -1.0F);
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, 8.0F);
         this.setPathfindingMalus(BlockPathTypes.DANGER_FIRE, -1.0F);
-        this.setPathfindingMalus(BlockPathTypes.DANGER_CACTUS, 8.0F);
-        this.setPathfindingMalus(BlockPathTypes.DANGER_CACTUS, -1.0F);
         this.setPathfindingMalus(BlockPathTypes.DANGER_OTHER, 8.0F);
         this.setPathfindingMalus(BlockPathTypes.DANGER_OTHER, -1.0F);
         this.setPathfindingMalus(BlockPathTypes.BLOCKED, 8.0F);
@@ -127,16 +131,17 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
 
     public static @NotNull AttributeSupplier setAttributes() {
         return Monster.createMonsterAttributes()
-                       .add(Attributes.MAX_HEALTH, MAX_HEALTH)
-                       .add(Attributes.MOVEMENT_SPEED, SPEED_WALK)
-                       .add(Attributes.KNOCKBACK_RESISTANCE, KNOCKBACK_RESISTANCE)
-                       .add(Attributes.ATTACK_DAMAGE, ATTACK_DAMAGE)
-                       .build();
+                .add(Attributes.MAX_HEALTH, MAX_HEALTH)
+                .add(Attributes.MOVEMENT_SPEED, SPEED_WALK)
+                .add(Attributes.KNOCKBACK_RESISTANCE, KNOCKBACK_RESISTANCE)
+                .add(Attributes.ATTACK_DAMAGE, ATTACK_DAMAGE)
+                .build();
     }
 
     public static boolean isFood(@NotNull ItemStack stack) {
-        return stack.is(TodeCoinsTags.Items.PIGLIN_MERCHANT_FOOD);
+        return stack.is(TCItemTags.PIGLIN_MERCHANT_FOOD);
     }
+
     private static @NotNull ItemStack removeOneItemFromItemEntity(@NotNull ItemEntity item) {
         ItemStack stack = item.getItem();
         ItemStack stack1 = stack.split(1);
@@ -168,29 +173,36 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
 
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(0, new CelebrateVictory<>(this));
+        this.goalSelector.addGoal(0, new CelebrateVictory(this));
         this.goalSelector.addGoal(1, new PiglinMerchantMeleeAttackWithSound(this, SPEED_SPRINT,
-                false, MELEE_COOLDOWN, ModSounds.PIGLINMERCHANT_ANGER.get()));
+                false, MELEE_COOLDOWN, TCSounds.PIGLINMERCHANT_ANGER.get()));
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Raider.class, true));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, AbstractSkeleton.class, true));
         this.targetSelector.addGoal(1, new PiglinMerchantDefendVillageTarget(this));
 
-        this.goalSelector.addGoal(2, new AvoidEntityWithSound<>(this, Creeper.class, MAX_DISTANCE,
-                SPEED_WALK, SPEED_SPRINT, ModSounds.PIGLINMERCHANT_RETREAT.get()));
-        this.goalSelector.addGoal(2, new AvoidEntityWithSound<>(this, Zombie.class, MAX_DISTANCE,
-                SPEED_WALK, SPEED_SPRINT, ModSounds.PIGLINMERCHANT_RETREAT.get()));
-        this.goalSelector.addGoal(2, new AvoidEntityWithSound<>(this, ZombieVillager.class, MAX_DISTANCE,
-                SPEED_WALK, SPEED_SPRINT, ModSounds.PIGLINMERCHANT_RETREAT.get()));
-        this.goalSelector.addGoal(2, new AvoidEntityWithSound<>(this, ZombieHorse.class, MAX_DISTANCE,
-                SPEED_WALK, SPEED_SPRINT, ModSounds.PIGLINMERCHANT_RETREAT.get()));
-        this.goalSelector.addGoal(2, new AvoidEntityWithSound<>(this, ZombifiedPiglin.class, MAX_DISTANCE,
-                SPEED_WALK, SPEED_SPRINT, ModSounds.PIGLINMERCHANT_RETREAT.get()));
-        this.goalSelector.addGoal(2, new AvoidEntityWithSound<>(this, Zoglin.class, MAX_DISTANCE,
-                SPEED_WALK, SPEED_SPRINT, ModSounds.PIGLINMERCHANT_RETREAT.get()));
-        this.goalSelector.addGoal(2, new AvoidRepellentWithSound<>(this,
+        this.goalSelector.addGoal(3, new AvoidEntityWithSound<>(this, Creeper.class,
+                16.0F, 1.0D, 1.2D, TCSounds.PIGLINMERCHANT_RETREAT.get(), null,
+                livingEntity -> true, livingEntity -> livingEntity.getType().is(TCEntityTypeTags.CREEPER_TYPES)));
+        this.goalSelector.addGoal(3, new AvoidEntityWithSound<>(this, Zombie.class,
+                16.0F, 1.0D, 1.2D, TCSounds.PIGLINMERCHANT_RETREAT.get(), null,
+                livingEntity -> true, livingEntity -> livingEntity.getType().is(TCEntityTypeTags.ZOMBIE_TYPES)));
+        this.goalSelector.addGoal(3, new AvoidEntityWithSound<>(this, ZombieVillager.class,
+                16.0F, 1.0D, 1.2D, TCSounds.PIGLINMERCHANT_RETREAT.get(), null,
+                livingEntity -> true, livingEntity -> livingEntity.getType().is(TCEntityTypeTags.ZOMBIE_VILLAGER_TYPES)));
+        this.goalSelector.addGoal(3, new AvoidEntityWithSound<>(this, ZombieHorse.class,
+                16.0F, 1.0D, 1.2D, TCSounds.PIGLINMERCHANT_RETREAT.get(), null,
+                livingEntity -> true, livingEntity -> livingEntity.getType().is(TCEntityTypeTags.ZOMBIE_HORSE_TYPES)));
+        this.goalSelector.addGoal(3, new AvoidEntityWithSound<>(this, ZombifiedPiglin.class,
+                16.0F, 1.0D, 1.2D, TCSounds.PIGLINMERCHANT_RETREAT.get(), null,
+                livingEntity -> true, livingEntity -> livingEntity.getType().is(TCEntityTypeTags.ZOMBIFIED_PIGLIN_TYPES)));
+        this.goalSelector.addGoal(3, new AvoidEntityWithSound<>(this, Zoglin.class,
+                16.0F, 1.0D, 1.2D, TCSounds.PIGLINMERCHANT_RETREAT.get(), null,
+                livingEntity -> true, livingEntity -> livingEntity.getType().is(TCEntityTypeTags.ZOGLIN_TYPES)));
+
+        this.goalSelector.addGoal(2, new AvoidRepellentWithSound(this,
                 BlockTags.PIGLIN_REPELLENTS, (int) MAX_DISTANCE,
-                SPEED_WALK, SPEED_SPRINT, ModSounds.PIGLINMERCHANT_RETREAT.get()));
+                SPEED_WALK, SPEED_SPRINT, TCSounds.PIGLINMERCHANT_RETREAT.get()));
 
         this.goalSelector.addGoal(3, new PiglinMerchantTradeWithPlayer(this));
         this.goalSelector.addGoal(3, new PiglinMerchantLookAtTradingPlayer(this));
@@ -199,8 +211,10 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
         this.goalSelector.addGoal(4, new WanderToPositionGoal(this));
         this.goalSelector.addGoal(4, new MoveTowardsRestrictionGoal(this, SPEED_WALK));
 
+        this.goalSelector.addGoal(5, new OfferRandomItemGestureGoal(this));
+
         this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, SPEED_WALK));
-        this.goalSelector.addGoal(9, new PiglinMerchantInteractWithSound(this, Player.class, MAX_DISTANCE, LOOK_TIME, ModSounds.PIGLINMERCHANT_JEALOUS.get()));
+        this.goalSelector.addGoal(9, new PiglinMerchantInteractWithSound(this, Player.class, MAX_DISTANCE, LOOK_TIME, TCSounds.PIGLINMERCHANT_JEALOUS.get()));
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, MAX_DISTANCE));
         this.goalSelector.addGoal(11, new RandomLookAroundGoal(this));
     }
@@ -224,12 +238,14 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
         }
     }
 
+    @SuppressWarnings("deprecation")
     public SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor levelAccessor, @NotNull DifficultyInstance difficultyInstance,
-            @NotNull MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag nbt) {
+                                        @NotNull MobSpawnType spawnType, @Nullable SpawnGroupData groupData, @Nullable CompoundTag nbt) {
         RandomSource randomsource = levelAccessor.getRandom();
         this.setItemSlot(EquipmentSlot.MAINHAND, this.createSpawnWeapon());
         this.populateDefaultEquipmentSlots(randomsource, difficultyInstance);
         this.populateDefaultEquipmentEnchantments(randomsource, difficultyInstance);
+        rebuildOffers(); // ensure shuffled offers are applied immediately
         return super.finalizeSpawn(levelAccessor, difficultyInstance, spawnType, groupData, nbt);
     }
 
@@ -243,7 +259,7 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
                 .forEach(this::spawnAtLocation);
     }
 
-    private ItemStack createSpawnWeapon() {
+    public ItemStack createSpawnWeapon() {
         return new ItemStack(Items.GOLDEN_AXE);
     }
 
@@ -275,10 +291,10 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
 
     public boolean wantsToPickUp(@NotNull ItemStack stack) {
         return isFood(stack) && this.canHoldItem(stack) && (this.getHealth() < this.getMaxHealth())
-                       && ForgeEventFactory.getMobGriefingEvent(this.level, this);
+                && ForgeEventFactory.getMobGriefingEvent(this.level, this);
     }
 
-    protected void pickUpItem(ItemEntity item) {
+    protected void pickUpItem(@NotNull ItemEntity item) {
         if (isFood(item.getItem())) {
             pickUpItem(this, item);
         }
@@ -327,7 +343,7 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
     }
 
     // synced data management
-    private void stopWalking(PathfinderMob pathfinderMob) {
+    private void stopWalking(@NotNull PathfinderMob pathfinderMob) {
         pathfinderMob.getNavigation().stop();
         setWalking(false);
     }
@@ -364,6 +380,14 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
         return this.entityData.get(ATTACKING);
     }
 
+    public void setOfferingItem(boolean offering) {
+        this.entityData.set(OFFERING, offering);
+    }
+
+    public boolean isOfferingItem() {
+        return this.entityData.get(OFFERING);
+    }
+
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DEFAULT, false);
@@ -371,6 +395,7 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
         this.entityData.define(IDLE, false);
         this.entityData.define(DANCING, false);
         this.entityData.define(ATTACKING, false);
+        this.entityData.define(OFFERING, false);
         this.entityData.define(DYING, false);
         this.entityData.define(MIGHT_DANCE, false);
         this.entityData.define(DANCE_TIMER, 0);
@@ -396,64 +421,83 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
         return this.tradingPlayer != null;
     }
 
-    @SuppressWarnings("NullableProblems")
     @Override
-    public MerchantOffers getOffers() {
+    public @NotNull MerchantOffers getOffers() {
         if (this.offers == null) {
             this.offers = new MerchantOffers();
-            this.setTrades();
+            rebuildOffers(); // rebuildOffers now initializes this.offers internally
         }
         return this.offers;
     }
 
     @Override
-    public void overrideOffers(@NotNull MerchantOffers offers) {}
+    public void overrideOffers(@NotNull MerchantOffers offers) {
+        rebuildOffers(); // replace old offers entirely
+    }
 
-    public void setTrades() {
-        VillagerTrades.ItemListing[] trades$itemlisting = PiglinMerchantTrades.PIGLINMERCHANT_TRADES.get(1);
-        VillagerTrades.ItemListing[] trades$itemlisting1 = PiglinMerchantTrades.PIGLINMERCHANT_TRADES.get(2);
-        if (trades$itemlisting != null && trades$itemlisting1 != null) {
-            MerchantOffers merchantOffers = this.getOffers();
-            this.addOffersFromItemListings(merchantOffers, trades$itemlisting);
-            int i = this.random.nextInt(trades$itemlisting1.length);
-            VillagerTrades.ItemListing villagertrades$itemlisting = trades$itemlisting1[i];
-            MerchantOffer merchantOffer = villagertrades$itemlisting.getOffer(this, this.random);
-            if (merchantOffer != null) {
-                merchantOffers.add(merchantOffer);
+    public void rebuildOffers() {
+        if (this.offers == null) return;
+
+        // Get trades dynamically from the TradeOfferManager
+        TradeOfferManager manager = TodeCoins.TRADE_OFFER_MANAGER;
+        Optional<VillagerTrades.ItemListing[]> commonTradesOpt = manager.getPiglinMerchantOffers(TradeOfferManager.MerchantLevel.COMMON);
+        Optional<VillagerTrades.ItemListing[]> rareTradesOpt = manager.getPiglinMerchantOffers(TradeOfferManager.MerchantLevel.RARE);
+
+        // Only use JSON trades if both are present
+        if (commonTradesOpt.isPresent() && rareTradesOpt.isPresent()) {
+            VillagerTrades.ItemListing[] commonTrades = commonTradesOpt.get();
+            VillagerTrades.ItemListing[] rareTrades = rareTradesOpt.get();
+
+            addShuffledOffersAllowDuplicates(this.offers, commonTrades, Config.getMaxWandererTrades());
+
+            if (rareTrades.length > 0) {
+                int i = this.random.nextInt(rareTrades.length);
+                VillagerTrades.ItemListing rareListing = rareTrades[i];
+                MerchantOffer rareOffer = rareListing.getOffer(this, this.random);
+                if (rareOffer != null) this.offers.add(rareOffer);
             }
+
+            return; // cancel the default/hardcoded trade population
+        }
+
+        // Fallback to hardcoded PiglinMerchantTrades if JSON trades are missing
+        VillagerTrades.ItemListing[] fallbackCommon = PiglinMerchantTrades.PIGLINMERCHANT_TRADES.get(1);
+        VillagerTrades.ItemListing[] fallbackRare = PiglinMerchantTrades.PIGLINMERCHANT_TRADES.get(2);
+
+        if (fallbackCommon != null) {
+            addShuffledOffersAllowDuplicates(this.offers, fallbackCommon, Config.getMaxWandererTrades());
+        }
+
+        if (fallbackRare != null && fallbackRare.length > 0) {
+            int i = this.random.nextInt(fallbackRare.length);
+            VillagerTrades.ItemListing rareListing = fallbackRare[i];
+            MerchantOffer rareOffer = rareListing.getOffer(this, this.random);
+            if (rareOffer != null) this.offers.add(rareOffer);
         }
     }
 
-    protected void addOffersFromItemListings(MerchantOffers offers, VillagerTrades.ItemListing[] listings) {
-        Set<Integer> set = Sets.newHashSet();
-        if (listings.length > PiglinMerchant.maxOFFERS) {
-            while (set.size() < PiglinMerchant.maxOFFERS) {
-                set.add(this.random.nextInt(listings.length));
-            }
-        }
-        else {
-            for (int i = 0; i < listings.length; ++i) {
-                set.add(i);
-            }
-        }
+    // Rebuild offers allowing duplicates if maxOffers > listings.length
+    protected void addShuffledOffersAllowDuplicates(@NotNull MerchantOffers offers, VillagerTrades.ItemListing @NotNull [] listings, int maxOffers) {
+        RandomSource random = this.random;
 
-        for (Integer integer : set) {
-            VillagerTrades.ItemListing villagertrades$itemlisting = listings[integer];
-            MerchantOffer merchantoffer = villagertrades$itemlisting.getOffer(this, this.random);
-            if (merchantoffer != null) {
-                offers.add(merchantoffer);
+        for (int i = 0; i < maxOffers; i++) {
+            int index = random.nextInt(listings.length); // pick random trade each time
+            VillagerTrades.ItemListing listing = listings[index];
+            MerchantOffer offer = listing.getOffer(this, random);
+            if (offer != null) {
+                offers.add(offer);
             }
         }
     }
 
     @Override
-    public void notifyTrade(MerchantOffer offer) {
+    public void notifyTrade(@NotNull MerchantOffer offer) {
         offer.increaseUses();
         this.ambientSoundTime = -this.getAmbientSoundInterval();
         this.rewardTradeXp(offer);
     }
 
-    protected void rewardTradeXp(MerchantOffer offer) {
+    protected void rewardTradeXp(@NotNull MerchantOffer offer) {
         if (offer.shouldRewardExp()) {
             int i = 3 + this.random.nextInt(4);
             this.level.addFreshEntity(new ExperienceOrb(this.level, this.getX(), this.getY() + 0.5D, this.getZ(), i));
@@ -474,7 +518,8 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
     }
 
     @Override
-    public void overrideXp(int xp) {}
+    public void overrideXp(int xp) {
+    }
 
     @Override
     public boolean showProgressBar() {
@@ -483,7 +528,7 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
 
     @Override
     public boolean isClientSide() {
-        return this.getLevel().isClientSide;
+        return this.level.isClientSide;
     }
 
     @Override
@@ -493,30 +538,30 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
 
     // sound events
     protected @NotNull SoundEvent getTradeUpdatedSound(boolean likesOffer) {
-        return likesOffer ? ModSounds.PIGLINMERCHANT_CELEBRATE.get() : ModSounds.PIGLINMERCHANT_EXAMINE.get();
+        return likesOffer ? TCSounds.PIGLINMERCHANT_CELEBRATE.get() : TCSounds.PIGLINMERCHANT_EXAMINE.get();
     }
 
     @Override
     public @NotNull SoundEvent getNotifyTradeSound() {
-        return ModSounds.PIGLINMERCHANT_CELEBRATE.get();
+        return TCSounds.PIGLINMERCHANT_CELEBRATE.get();
     }
 
     protected SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
-        return ModSounds.PIGLINMERCHANT_HURT.get();
+        return TCSounds.PIGLINMERCHANT_HURT.get();
     }
 
     protected SoundEvent getDeathSound() {
-        return ModSounds.PIGLINMERCHANT_DEATH.get();
+        return TCSounds.PIGLINMERCHANT_DEATH.get();
     }
 
     protected void playStepSound(@NotNull BlockPos pPos, @NotNull BlockState pBlock) {
-        this.playSound(ModSounds.PIGLINMERCHANT_STEP.get(), 0.15F, 1.0F);
+        this.playSound(TCSounds.PIGLINMERCHANT_STEP.get(), 0.15F, 1.0F);
     }
 
     @Override
     protected SoundEvent getAmbientSound() {
         super.getAmbientSound();
-        return ModSounds.PIGLINMERCHANT_AMBIENT.get();
+        return TCSounds.PIGLINMERCHANT_AMBIENT.get();
     }
 
     // "lifespan" control
@@ -567,6 +612,25 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
             this.meleeRightAnimationState.stop();
         }
 
+        // Custom "offer item" animation
+        if (this.isOfferingItem() && this.offerAnimationTimeout <= 0) {
+            this.offerAnimationTimeout = OFFER_TICKS; // imported from goal
+            if (this.isLeftHanded()) {
+                this.offerLeftAnimationState.start(this.tickCount);
+            }
+            else {
+                this.offerRightAnimationState.start(this.tickCount);
+            }
+        }
+        else {
+            --this.offerAnimationTimeout;
+        }
+
+        if (!this.isOfferingItem()) {
+            this.offerLeftAnimationState.stop();
+            this.offerRightAnimationState.stop();
+        }
+
         //noinspection RedundantIfStatement
         if (isMovingOnLand()) {
             this.setWalking(true);
@@ -602,8 +666,9 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
     }
 
     private boolean isMovingOnLand() {
-        return this.onGround && this.getDeltaMovement()
-                                        .horizontalDistanceSqr() > 1.0E-6 && !this.isInWaterOrBubble();
+        return this.onGround
+                && this.getDeltaMovement().horizontalDistanceSqr() > 1.0E-6
+                && !this.isInWaterOrBubble();
     }
 
     private void clientParticles(AnimationState animationState) {
@@ -683,7 +748,7 @@ public class PiglinMerchant extends PathfinderMob implements Merchant, Inventory
                 if (this.isTooFarAway(blockPos, 10.0D)) {
                     Vec3 vec3 = (new Vec3((double) blockPos.getX() - this.trader.getX(), (double) blockPos.getY() - this.trader.getY(), (double) blockPos.getZ() - this.trader.getZ())).normalize();
                     Vec3 vec31 = vec3.scale(10.0D)
-                                         .add(this.trader.getX(), this.trader.getY(), this.trader.getZ());
+                            .add(this.trader.getX(), this.trader.getY(), this.trader.getZ());
                     PiglinMerchant.this.navigation.moveTo(vec31.x, vec31.y, vec31.z, this.speedModifier);
                 }
                 else {

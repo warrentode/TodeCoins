@@ -1,5 +1,6 @@
 {
   "values": [
-    "#todecoins:bundles"
+    "todecoins:wallet",
+    "#forge:bundles"
   ]
 }

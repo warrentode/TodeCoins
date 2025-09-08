@@ -6,5 +6,5 @@
       "loot_table_id": "friendsandfoes:rewards/rascal_good_reward"
     }
   ],
-  "lootTable": "todecoins:chests/collectible/rascal_coin_reward"
+  "lootTable": "todecoins:gameplay/rewards/rascal_coin_reward"
 }

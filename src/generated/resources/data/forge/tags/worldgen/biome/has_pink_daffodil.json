@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:cherry_grove",
+    {
+      "id": "biomesoplenty:overgrown_greens",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:mystic_grove",
+      "required": false
+    }
+  ]
+}

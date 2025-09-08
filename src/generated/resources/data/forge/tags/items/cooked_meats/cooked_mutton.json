@@ -1,9 +1,9 @@
 {
   "values": [
+    "minecraft:cooked_mutton",
     {
       "id": "farmersdelight:cooked_mutton_chops",
       "required": false
-    },
-    "minecraft:cooked_mutton"
+    }
   ]
 }

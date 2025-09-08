@@ -1,18 +1,29 @@
 {
   "values": [
-    "farmersdelight:pie_crust",
-    "farmersdelight:tomato_sauce",
-    "farmersdelight:wheat_dough",
-    "farmersdelight:raw_pasta",
     "#forge:eggs",
     "#forge:crops",
     "#forge:ingredients/cocoa",
-    "#forge:milk/milk_bottle",
     "#forge:milk/milk",
     "#forge:cooked_fishes",
     "#forge:ingredients/raw_fishes",
     "#forge:ingredients/cooked_meats",
     "#forge:ingredients/raw_meats",
-    "#forge:ingredients/bread"
+    "#forge:ingredients/bread",
+    {
+      "id": "farmersdelight:pie_crust",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:wheat_dough",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:raw_pasta",
+      "required": false
+    }
   ]
 }

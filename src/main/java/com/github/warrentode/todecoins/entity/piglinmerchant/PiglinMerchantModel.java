@@ -17,36 +17,37 @@ public class PiglinMerchantModel<T extends PiglinMerchant> extends HierarchicalM
     public final ModelPart body;
     public final ModelPart backpack;
     public final ModelPart backpackBoneBase;
-    public final ModelPart netherwart1;
-    public final ModelPart netherwart2;
-    public final ModelPart netherwart3;
+    public final ModelPart boneWart1;
+    public final ModelPart boneWart2;
+    public final ModelPart boneWart3;
     public final ModelPart head;
     public final ModelPart noseBone;
     public final ModelPart rightEar;
     public final ModelPart leftEar;
-    public final ModelPart netherwart4;
-    public final ModelPart netherwart5;
+    public final ModelPart headWart1;
+    public final ModelPart headWart2;
     public final ModelPart armRight;
     public final ModelPart handRight;
     public final ModelPart armLeft;
     public final ModelPart handLeft;
     public final ModelPart legRight;
     public final ModelPart legLeft;
+    boolean isOfferingItem;
 
     public PiglinMerchantModel(@NotNull ModelPart part) {
         this.root = part.getChild("root");
         this.body = this.root.getChild("body");
         this.backpack = this.body.getChild("backpack");
         this.backpackBoneBase = this.backpack.getChild("backpackBoneBase");
-        this.netherwart1 = this.backpackBoneBase.getChild("netherwart1");
-        this.netherwart2 = this.backpackBoneBase.getChild("netherwart2");
-        this.netherwart3 = this.backpackBoneBase.getChild("netherwart3");
+        this.boneWart1 = this.backpackBoneBase.getChild("netherwart1");
+        this.boneWart2 = this.backpackBoneBase.getChild("netherwart2");
+        this.boneWart3 = this.backpackBoneBase.getChild("netherwart3");
         this.head = this.body.getChild("head");
         this.noseBone = this.head.getChild("noseBone");
         this.rightEar = this.head.getChild("rightEar");
         this.leftEar = this.head.getChild("leftEar");
-        this.netherwart4 = this.head.getChild("netherwart4");
-        this.netherwart5 = this.head.getChild("netherwart5");
+        this.headWart1 = this.head.getChild("netherwart4");
+        this.headWart2 = this.head.getChild("netherwart5");
         this.armRight = this.body.getChild("armRight");
         this.handRight = this.armRight.getChild("handRight");
         this.armLeft = this.body.getChild("armLeft");
@@ -55,7 +56,7 @@ public class PiglinMerchantModel<T extends PiglinMerchant> extends HierarchicalM
         this.legLeft = this.root.getChild("legLeft");
     }
 
-    public static LayerDefinition createBodyLayer() {
+    public static @NotNull LayerDefinition createBodyLayer() {
         MeshDefinition meshDefinition = new MeshDefinition();
         PartDefinition partDefinition = meshDefinition.getRoot();
 
@@ -254,16 +255,6 @@ public class PiglinMerchantModel<T extends PiglinMerchant> extends HierarchicalM
                                 new CubeDeformation(0.0F)),
                 PartPose.offsetAndRotation(-4.2063F, 25.0908F, 2.8874F, 0.2533F, -0.0167F, -0.0079F));
 
-        PartDefinition handLeft = armLeft.addOrReplaceChild("handLeft",
-                CubeListBuilder.create()
-                        .texOffs(0, 0)
-                        .addBox(0.0F, 0.0F, -2.0F, 0.0F, 0.0F, 0.0F,
-                                new CubeDeformation(0.0F))
-                        .texOffs(0, 0)
-                        .addBox(0.0F, 0.0F, -2.0F, 0.0F, 0.0F, 0.0F,
-                                new CubeDeformation(0.0F)),
-                PartPose.offset(1.6666F, 12.188F, 2.0117F));
-
         PartDefinition armRight = body.addOrReplaceChild("armRight", CubeListBuilder.create(),
                 PartPose.offsetAndRotation(-6.7051F, -5.1656F, -1.0745F, -0.1309F, 0.0F, 0.1745F));
 
@@ -279,16 +270,6 @@ public class PiglinMerchantModel<T extends PiglinMerchant> extends HierarchicalM
                         .addBox(-7.9762F, -24.6111F, 1.1026F, 4.0F, 12.0F, 4.0F,
                                 new CubeDeformation(0.0F)),
                 PartPose.offsetAndRotation(4.0909F, 24.0913F, 2.744F, 0.2538F, -0.0612F, -0.0168F));
-
-        PartDefinition handRight = armRight.addOrReplaceChild("handRight",
-                CubeListBuilder.create()
-                        .texOffs(0, 0)
-                        .addBox(0.0F, 0.0F, -2.0F, 0.0F, 0.0F, 0.0F,
-                                new CubeDeformation(0.0F))
-                        .texOffs(0, 0)
-                        .addBox(0.0F, 0.0F, -2.0F, 0.0F, 0.0F, 0.0F,
-                                new CubeDeformation(0.0F)),
-                PartPose.offset(-2.0F, 11.0F, 2.0F));
 
         PartDefinition legLeft = root.addOrReplaceChild("legLeft",
                 CubeListBuilder.create()
@@ -320,6 +301,21 @@ public class PiglinMerchantModel<T extends PiglinMerchant> extends HierarchicalM
                                 new CubeDeformation(0.27F)),
                 PartPose.offset(-3.4F, 13.0F, 1.5F));
 
+        // Right hand (main hand)
+        PartDefinition handRight = armRight.addOrReplaceChild("handRight",
+                CubeListBuilder.create()
+                        .texOffs(0, 0)
+                        .addBox(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+                                new CubeDeformation(0.0F)),
+                PartPose.offset(-1.5F, 11.5F, 0.0F)); // X, Y, Z pivot
+        // Left hand (off-hand)
+        PartDefinition handLeft = armLeft.addOrReplaceChild("handLeft",
+                CubeListBuilder.create()
+                        .texOffs(0, 0)
+                        .addBox(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+                                new CubeDeformation(0.0F)),
+                PartPose.offset(1.5F, 11.5F, 0.0F)); // X, Y, Z pivot
+
         return LayerDefinition.create(meshDefinition, 128, 128);
     }
 
@@ -335,6 +331,9 @@ public class PiglinMerchantModel<T extends PiglinMerchant> extends HierarchicalM
         this.leftEar.zRot = (-1 * angle) - Mth.cos(angle1 * 1.2F) * angle2;
         this.rightEar.zRot = angle + Mth.cos(angle1) * angle2;
 
+        float headXRot = this.head.xRot;
+        float headYRot = this.head.yRot;
+
         this.animateHeadLookTarget(netHeadYaw, headPitch);
         this.animate(entity.defaultAnimationState, PiglinMerchantAnimation.DEFAULT, ageInTicks);
         this.animate(entity.walkLegsOnlyAnimationState, PiglinMerchantAnimation.WALK_LEGS_ONLY, ageInTicks);
@@ -343,7 +342,12 @@ public class PiglinMerchantModel<T extends PiglinMerchant> extends HierarchicalM
         this.animate(entity.danceAnimationState, PiglinMerchantAnimation.DANCE, ageInTicks);
         this.animate(entity.meleeLeftAnimationState, PiglinMerchantAnimation.MELEE_LEFT, ageInTicks);
         this.animate(entity.meleeRightAnimationState, PiglinMerchantAnimation.MELEE_RIGHT, ageInTicks);
-        this.animate(entity.deathAnimationState, PiglinMerchantAnimation.MELEE_RIGHT, ageInTicks);
+        this.animate(entity.deathAnimationState, PiglinMerchantAnimation.DEATH, ageInTicks);
+        this.animate(entity.offerLeftAnimationState, PiglinMerchantAnimation.OFFER_LEFT, ageInTicks);
+        this.animate(entity.offerRightAnimationState, PiglinMerchantAnimation.OFFER_RIGHT, ageInTicks);
+
+        // Set flag based on entity state
+        this.isOfferingItem = entity.isOfferingItem();
     }
 
     private void animateHeadLookTarget(float netHeadYaw, float headPitch) {
@@ -354,10 +358,25 @@ public class PiglinMerchantModel<T extends PiglinMerchant> extends HierarchicalM
     private ModelPart getArm(HumanoidArm arm) {
         return arm == HumanoidArm.LEFT ? this.armLeft : this.armRight;
     }
+
     @Override
     public void translateToHand(@NotNull HumanoidArm arm, @NotNull PoseStack poseStack) {
         this.getArm(arm).translateAndRotate(poseStack);
-        poseStack.translate(0, 0.5, 0.2);
+        /** this translate setting is relative to the hand,
+         * facing the same way as the merchant
+         * x = left (+) / right (-)
+         * y = front (+) / back (-)
+         * z = down (+) / up (-)
+         */
+
+        // Only tweak position for the "offer" animation
+        if (isOfferingItem) {
+            poseStack.translate(0, 0.29, 0.5);
+        }
+        else {
+            // default offset for when arm is down
+            poseStack.translate(0, 0.5, 0.2);
+        }
     }
 
     @Override

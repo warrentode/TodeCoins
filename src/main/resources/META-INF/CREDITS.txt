@@ -1,6 +1,6 @@
 Author of this TodeCoins Mod: Warren Tode
 
-Additional Credits:
+Additional Credits (as of Minecraft 1.20.1 / Forge 47.4.4):
  * WrappedHandler Class by noeppi_noeppi | https://github.com/ModdingX/LibX
  * BetterBrewingRecipe Class by CAS-ual-TY from https://github.com/CAS-ual-TY/Extra-Potions
  * QuickMove method by diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -12,9 +12,16 @@ Additional Credits:
     - https://forums.minecraftforge.net/forum/70-modder-support/
 * inspiration for the Friendship Bracelets comes from MrBysco's Telepass mod
     - https://github.com/Mrbysco/TelePass/tree/1.19
-* Special thanks to my sons: MinePika94, MikieSteve, and EnderDragonRobot (known as Scholar Owl, Tuxedo Cat, and Little Bear on my blog) for all their
+* village house injection class from ChefsDelight used as a template
+* SimpleJsonVillagerTrades — base Fabric mod translated into Forge code for this mod
+** https://github.com/aws404/SimpleJsonVillagerTrades
+* Special thanks to my sons: MinePika94, MikieSteve, and EnderDragonRobot for all their
 insight, suggestions, and input with this mod regarding features, testing, game play and balance! This mod started out as a homeschooling
 project to learn about the history of currency in a fun, interactive way and it has become so much more.
 
 * All images used for the coins were either edited textures from vanilla Minecraft or are edited images from Pixabay.com
 ** except for the Warden Coins, for that I intentionally chose to draw the circle-squared symbol
+
+* Pixabay Image Licensing: Coin textures are derived from images under Pixabay’s free-to-use Content License (no attribution required), thoughtfully edited for mod use. Some source images predate January 9, 2019 and may be CC0. Per Pixabay policy, users are responsible for verifying any additional rights or restrictions.
+
+* ChatGPT was used for debugging, troubleshooting, and creating translation files. Since I'm only fluent in English, I have no way in knowing how accurate these translations are, so anyone that wishes to update and correct a language file is welcome to do so and credit will be provided here.

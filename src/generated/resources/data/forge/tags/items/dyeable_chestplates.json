@@ -1,9 +1,0 @@
-{
-  "values": [
-    "minecraft:leather_chestplate",
-    {
-      "id": "sewingkit:wool_shirt",
-      "required": false
-    }
-  ]
-}

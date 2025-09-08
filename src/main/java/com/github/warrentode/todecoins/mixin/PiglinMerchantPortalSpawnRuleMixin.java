@@ -1,6 +1,6 @@
 package com.github.warrentode.todecoins.mixin;
 
-import com.github.warrentode.todecoins.entity.ModEntityTypes;
+import com.github.warrentode.todecoins.entity.TCEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -17,13 +17,12 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static com.github.warrentode.todecoins.config.Config.getPiglinMerchantPortalTickSpawnChance;
+import static com.github.warrentode.todecoins.Config.getPiglinMerchantPortalTickSpawnChance;
 
 @Mixin(NetherPortalBlock.class)
 public abstract class PiglinMerchantPortalSpawnRuleMixin {
-    @SuppressWarnings("CanBeFinal")
     @Unique
-    Block piglinmerchant$pBlock = (Block) (Object) this;
+    final Block piglinmerchant$pBlock = (Block) (Object) this;
 
     @Inject(at = @At("HEAD"), method = "randomTick")
     private void piglinmerchant_randomTick(BlockState blockState, @NotNull ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource, CallbackInfo ci) {
@@ -32,8 +31,8 @@ public abstract class PiglinMerchantPortalSpawnRuleMixin {
                 blockPos = blockPos.below();
             }
 
-            if (serverLevel.getBlockState(blockPos).isValidSpawn(serverLevel, blockPos, ModEntityTypes.PIGLINMERCHANT.get())) {
-                Entity entity = ModEntityTypes.PIGLINMERCHANT.get().spawn(serverLevel, null, null, null, blockPos.above(), MobSpawnType.STRUCTURE, false, false);
+            if (serverLevel.getBlockState(blockPos).isValidSpawn(serverLevel, blockPos, TCEntityTypes.PIGLINMERCHANT.get())) {
+                Entity entity = TCEntityTypes.PIGLINMERCHANT.get().spawn(serverLevel, blockPos.above(), MobSpawnType.STRUCTURE);
                 if (entity != null) {
                     entity.setPortalCooldown();
                 }

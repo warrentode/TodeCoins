@@ -1,0 +1,41 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 45.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:industrial_iron_coinstack"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:modloaded_condition",
+                "modid": "createdeco"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/underground/ten_emerald_florin_currency_value"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/currency/mountain/ten_emerald_mountain_currency_value"
+}

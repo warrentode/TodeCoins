@@ -1,0 +1,40 @@
+{
+  "values": [
+    {
+      "id": "farmersdelight:netherite_knife",
+      "required": false
+    },
+    {
+      "id": "nethersdelight:netherite_machete",
+      "required": false
+    },
+    {
+      "id": "endsdelight:dragon_tooth_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:gilded_netherite_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:adamantite_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:warden_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:draco_arcanus_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:fiery_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:large_amethyst_knife",
+      "required": false
+    }
+  ]
+}

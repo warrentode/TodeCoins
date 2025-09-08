@@ -4,6 +4,18 @@
     "minecraft:nether_wastes",
     "minecraft:warped_forest",
     "minecraft:crimson_forest",
-    "minecraft:soul_sand_valley"
+    "minecraft:soul_sand_valley",
+    {
+      "id": "biomesoplenty:withered_abyss",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:visceral_heap",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:undergrowth",
+      "required": false
+    }
   ]
 }

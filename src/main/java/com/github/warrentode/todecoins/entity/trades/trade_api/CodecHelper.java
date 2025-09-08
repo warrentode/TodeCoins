@@ -1,11 +1,11 @@
 package com.github.warrentode.todecoins.entity.trades.trade_api;
 
-import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.DefaultMapCodec;
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -31,7 +31,7 @@ public class CodecHelper {
                     return DataResult.success(Component.Serializer.fromJson(json));
                 }
                 catch (Exception exception) {
-                    return DataResult.error("Failed to parse Component from JSON: " + exception.getMessage());
+                    return DataResult.error(() -> "Failed to parse Component from JSON: " + exception.getMessage());
                 }
             },
             component -> {
@@ -39,7 +39,7 @@ public class CodecHelper {
                     return Component.Serializer.toJson(component);
                 }
                 catch (Exception exception) {
-                    return "{}"; // fallback or better: DataResult.error if you want more strictness
+                    return "{}";
                 }
             }
     );
@@ -52,7 +52,10 @@ public class CodecHelper {
      * @return a codec for mapping VillagerType to elements of type T
      */
     public static <T> Codec<Map<VillagerType, T>> villagerTypeMap(Codec<T> elementCodec) {
-        return DefaultMapCodec.of(Registry.VILLAGER_TYPE.byNameCodec(), elementCodec, Registry.VILLAGER_TYPE);
+        return Codec.unboundedMap(
+                ResourceLocation.CODEC.xmap(BuiltInRegistries.VILLAGER_TYPE::get, BuiltInRegistries.VILLAGER_TYPE::getKey),
+                elementCodec
+        );
     }
 
     /**

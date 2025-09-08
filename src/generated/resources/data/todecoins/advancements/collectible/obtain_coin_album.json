@@ -1,0 +1,43 @@
+{
+  "parent": "todecoins:collectible/find_first_coin",
+  "criteria": {
+    "obtain_coin_album": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:coin_album"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.obtain_coin_album.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:coin_album"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.obtain_coin_album"
+    }
+  },
+  "requirements": [
+    [
+      "obtain_coin_album"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
+}

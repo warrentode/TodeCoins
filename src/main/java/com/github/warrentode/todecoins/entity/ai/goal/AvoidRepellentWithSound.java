@@ -10,7 +10,6 @@ import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.util.LandRandomPos;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
@@ -19,22 +18,23 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
-public class AvoidRepellentWithSound<T extends Blocks> extends Goal {
+public class AvoidRepellentWithSound extends Goal {
     protected final PathfinderMob mob;
     protected final int maxDist;
     protected final PathNavigation pathNav;
     protected final TagKey<Block> avoidedPredicate;
     private final double walkSpeedModifier;
     private final double sprintSpeedModifier;
-    private final SoundEvent soundEvent;
+    private final SoundEvent fleeSound;
+    private final RandomSource random = RandomSource.create();
     @Nullable
     protected BlockPos toAvoid;
     @Nullable
     protected Path path;
 
-    public AvoidRepellentWithSound(@NotNull PathfinderMob mob, TagKey<Block> avoidedPredicate, int maxDistance, double walkSpeedModifier, double sprintSpeedModifier, SoundEvent soundEvent) {
+    public AvoidRepellentWithSound(@NotNull PathfinderMob mob, TagKey<Block> avoidedPredicate, int maxDistance, double walkSpeedModifier, double sprintSpeedModifier, SoundEvent fleeSound) {
         this.mob = mob;
-        this.soundEvent = soundEvent;
+        this.fleeSound = fleeSound;
         this.avoidedPredicate = avoidedPredicate;
         this.maxDist = maxDistance;
         this.walkSpeedModifier = walkSpeedModifier;
@@ -89,9 +89,7 @@ public class AvoidRepellentWithSound<T extends Blocks> extends Goal {
                 this.mob.getNavigation().setSpeedModifier(this.walkSpeedModifier);
             }
 
-            if (RandomSource.create().nextFloat() < 0.0125) {
-                this.mob.playSound(soundEvent, 0.15F, RandomSource.create().nextFloat());
-            }
+            this.mob.playSound(fleeSound, 0.15F, random.nextFloat());
         }
     }
 }

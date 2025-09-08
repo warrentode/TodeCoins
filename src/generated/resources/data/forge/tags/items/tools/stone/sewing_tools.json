@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "sewingkit:stone_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "sewingkit:bone_sewing_needle",
+      "required": false
+    },
+    {
+      "id": "turtleblockacademy:copper_sewing_needle",
+      "required": false
+    }
+  ]
+}

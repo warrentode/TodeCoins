@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "aether:evil_whirlwind",
+      "required": false
+    },
+    {
+      "id": "aerther:whirlwind",
+      "required": false
+    },
+    {
+      "id": "minecraft:breeze",
+      "required": false
+    }
+  ]
+}

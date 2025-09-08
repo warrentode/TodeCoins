@@ -1,8 +1,8 @@
 package com.github.warrentode.todecoins.block.custom;
 
-import com.github.warrentode.todecoins.block.entity.CoinPressBlockEntity;
-import com.github.warrentode.todecoins.block.entity.ModBlockEntities;
-import com.github.warrentode.todecoins.sounds.ModSounds;
+import com.github.warrentode.todecoins.block.entity.custom.CoinPressBlockEntity;
+import com.github.warrentode.todecoins.block.entity.TCBlockEntities;
+import com.github.warrentode.todecoins.sounds.TCSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -97,7 +97,7 @@ public class CoinPressBlock extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> entityType) {
-        return createTickerHelper(entityType, ModBlockEntities.COINPRESS_ENTITY.get(), CoinPressBlockEntity::tick);
+        return createTickerHelper(entityType, TCBlockEntities.COINPRESS_ENTITY.get(), CoinPressBlockEntity::tick);
     }
 
     @Override
@@ -112,7 +112,7 @@ public class CoinPressBlock extends BaseEntityBlock {
             double v2 = random.triangle(0.0D, 0.4D);
 
             if (random.nextDouble() < 0.1D) {
-                level.playLocalSound(x, y, z, ModSounds.COINPRESS_USE.get(), SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.2F + 0.9F, false);
+                level.playLocalSound(x, y, z, TCSounds.COINPRESS_USE.get(), SoundSource.BLOCKS, 0.5F, random.nextFloat() * 0.2F + 0.9F, false);
                 level.addParticle(ParticleTypes.END_ROD, x + v, y + v1, z + v2, 0.0D, 0.0D, 0.0D);
                 level.addParticle(ParticleTypes.ELECTRIC_SPARK, x, y, z, 0.0D, 0.0D, 0.0D);
             }

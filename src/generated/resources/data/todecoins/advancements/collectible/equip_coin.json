@@ -1,0 +1,61 @@
+{
+  "parent": "todecoins:collectible/find_first_coin",
+  "criteria": {
+    "equip_collectible_coin": {
+      "conditions": {
+        "curios:slot": {
+          "slots": [
+            "charm"
+          ]
+        },
+        "item": {
+          "tag": "todecoins:collectible/coins"
+        },
+        "location": {}
+      },
+      "trigger": "curios:equip_curio"
+    },
+    "equip_lucky_coin": {
+      "conditions": {
+        "curios:slot": {
+          "slots": [
+            "charm"
+          ]
+        },
+        "item": {
+          "items": [
+            "todecoins:lucky_coin"
+          ]
+        },
+        "location": {}
+      },
+      "trigger": "curios:equip_curio"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.equip_coin.desc"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "todecoins:collectible_coin_patron_cosmos",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.equip_coin"
+    }
+  },
+  "requirements": [
+    [
+      "equip_lucky_coin",
+      "equip_collectible_coin"
+    ]
+  ],
+  "rewards": {
+    "function": "todecoins:add_charm_slot"
+  },
+  "sends_telemetry_event": true
+}

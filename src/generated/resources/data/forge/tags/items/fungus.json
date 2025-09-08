@@ -1,0 +1,17 @@
+{
+  "values": [
+    "minecraft:shroomlight",
+    "minecraft:warped_fungus",
+    "minecraft:crimson_fungus",
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    {
+      "id": "biomesoplenty:glowshroom",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:toadstool",
+      "required": false
+    }
+  ]
+}

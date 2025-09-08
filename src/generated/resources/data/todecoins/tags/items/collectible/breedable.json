@@ -1,0 +1,18 @@
+{
+  "values": [
+    "#todecoins:collectible/breedable/armadillo",
+    "#todecoins:collectible/breedable/cat",
+    "#todecoins:collectible/breedable/chicken",
+    "#todecoins:collectible/breedable/cow",
+    "#todecoins:collectible/breedable/fox",
+    "#todecoins:collectible/breedable/goat",
+    "#todecoins:collectible/breedable/moobloom",
+    "#todecoins:collectible/breedable/mooshroom",
+    "#todecoins:collectible/breedable/ocelot",
+    "#todecoins:collectible/breedable/panda",
+    "#todecoins:collectible/breedable/pig",
+    "#todecoins:collectible/breedable/rabbit",
+    "#todecoins:collectible/breedable/sheep",
+    "#todecoins:collectible/breedable/wolf"
+  ]
+}

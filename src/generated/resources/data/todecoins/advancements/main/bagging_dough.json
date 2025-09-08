@@ -1,6 +1,18 @@
 {
-  "parent": "todecoins:main/nether_dough",
+  "parent": "todecoins:main/printing_money",
   "criteria": {
+    "craft_amethyst_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:amethyst_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "craft_copper_coin_bag": {
       "conditions": {
         "items": [
@@ -13,12 +25,48 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "craft_diamond_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:diamond_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_echo_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:echo_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "craft_emerald_bank_note_bag": {
       "conditions": {
         "items": [
           {
             "items": [
               "todecoins:emerald_bank_note_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_emerald_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:emerald_coin_bag"
             ]
           }
         ]
@@ -85,6 +133,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "craft_lapis_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:lapis_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_lucky_coin_bag": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:lucky_coin_bag"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "craft_nether_gold_coin_bag": {
       "conditions": {
         "items": [
@@ -113,7 +185,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.baggingDough.desc"
+      "translate": "advancement.bagging_dough.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -122,7 +194,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.baggingDough"
+      "translate": "advancement.bagging_dough"
     }
   },
   "requirements": [
@@ -136,9 +208,6 @@
       "craft_gold_coin_bag"
     ],
     [
-      "craft_netherite_coin_bag"
-    ],
-    [
       "craft_emerald_quarter_bank_note_bag"
     ],
     [
@@ -148,10 +217,37 @@
       "craft_emerald_bank_note_bag"
     ],
     [
+      "craft_lucky_coin_bag"
+    ],
+    [
       "craft_nether_gold_coin_bag"
     ],
     [
+      "craft_netherite_coin_bag"
+    ],
+    [
       "craft_endonian_coin_bag"
+    ],
+    [
+      "craft_lapis_coin_bag"
+    ],
+    [
+      "craft_amethyst_coin_bag"
+    ],
+    [
+      "craft_diamond_coin_bag"
+    ],
+    [
+      "craft_emerald_coin_bag"
+    ],
+    [
+      "craft_echo_coin_bag"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#todecoins:collectible/humanoid/guard",
+    "#todecoins:collectible/humanoid/numismatist",
+    "#todecoins:collectible/humanoid/rascal",
+    "#todecoins:collectible/humanoid/villager",
+    "#todecoins:collectible/humanoid/wandering_trader"
+  ]
+}

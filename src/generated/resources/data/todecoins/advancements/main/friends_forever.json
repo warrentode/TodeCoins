@@ -1,49 +1,11 @@
 {
   "parent": "todecoins:main/textile_engineering_4",
   "criteria": {
-    "craft_friendship_bracelet_echo": {
+    "friends_forever": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "todecoins:bracelet_friendship_echo"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "craft_friendship_bracelet_emerald": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:bracelet_friendship_emerald"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "craft_friendship_bracelet_endonian": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:bracelet_friendship_endonian"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "craft_friendship_bracelet_lucky": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:bracelet_friendship_lucky"
-            ]
+            "tag": "todecoins:friendship_bracelets"
           }
         ]
       },
@@ -53,7 +15,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.friendsForever.desc"
+      "translate": "advancement.friends_forever.desc"
     },
     "frame": "goal",
     "hidden": false,
@@ -63,15 +25,18 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.friendsForever"
+      "translate": "advancement.friends_forever"
     }
   },
   "requirements": [
     [
-      "craft_friendship_bracelet_endonian",
-      "craft_friendship_bracelet_lucky",
-      "craft_friendship_bracelet_emerald",
-      "craft_friendship_bracelet_echo"
+      "friends_forever"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "todecoins:block/amethyst_coin_bag"
+    }
+  }
+}

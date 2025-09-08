@@ -2,6 +2,14 @@
   "values": [
     "minecraft:bread",
     {
+      "id": "festive_delight:sus_bread",
+      "required": false
+    },
+    {
+      "id": "delightful:cantaloupe_bread",
+      "required": false
+    },
+    {
       "id": "tofucraft:steamed_bread",
       "required": false
     },

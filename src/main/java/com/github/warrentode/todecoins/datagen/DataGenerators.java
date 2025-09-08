@@ -1,19 +1,19 @@
 package com.github.warrentode.todecoins.datagen;
 
-import com.github.warrentode.todecoins.datagen.advancements.CollectibleCoinAdvancementsGen;
-import com.github.warrentode.todecoins.datagen.advancements.TodeCoinsAdvancementsGen;
-import com.github.warrentode.todecoins.datagen.recipes.RecipesGen;
-import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalCageriumRecipes;
-import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalCookingPotRecipesGen;
-import com.github.warrentode.todecoins.datagen.recipes.recipe.ConditionalSpawnEggRecipes;
+import com.github.warrentode.todecoins.datagen.models.BlockStateGen;
+import com.github.warrentode.todecoins.datagen.models.ItemModelGen;
 import com.github.warrentode.todecoins.datagen.tags.*;
 import com.github.warrentode.todecoins.datagen.trades.JsonTradesProvider;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.CompletableFuture;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
@@ -22,37 +22,56 @@ public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(@NotNull GatherDataEvent event) {
         DataGenerator generator = event.getGenerator();
+        PackOutput packOutput = generator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
 
-        BlockTagsGen blockTagsGen = new BlockTagsGen(generator, MODID, helper);
+        // dynamically call for lang file locales
+        String[] supportedLanguages = {
+                "en_us", "en_gb", "en_ca", "en_au", "de_de", "fr_fr", "fr_ca", "es_es", "es_mx", "pt_pt",
+                "pt_br", "it_it", "nl_nl", "ru_ru", "uk_ua", "pl_pl", "cs_cz", "sk_sk", "hu_hu",
+                "sv_se", "no_no", "da_dk", "fi_fi", "tr_tr", "el_gr", "ro_ro", "bg_bg", "zh_cn",
+                "zh_tw", "ja_jp", "ko_kr", "th_th", "ar_sa", "he_il", "hi_in", "id_id", "ms_my",
+                "en_pt" // Pirate Speak ☠️
+        };
+
+        // lang filee
+        if (event.includeClient()) {
+            for (String locale : supportedLanguages) {
+                generator.addProvider(true, new LanguageFilesGen(packOutput, MODID, locale));
+            }
+        }
+
+        // models
+        generator.addProvider(event.includeServer(), new ItemModelGen(packOutput, MODID, helper));
+        generator.addProvider(event.includeServer(), new BlockStateGen(packOutput, MODID, helper));
+
+        // tags
+        BlockTagsGen blockTagsGen = new BlockTagsGen(packOutput, lookupProvider, helper);
         generator.addProvider(event.includeServer(), blockTagsGen);
+        generator.addProvider(event.includeServer(), new ItemTagsGen(packOutput, lookupProvider, blockTagsGen.contentsGetter(), MODID, helper));
+        generator.addProvider(event.includeServer(), new BiomeTagsGen(packOutput, lookupProvider, MODID, helper));
+        generator.addProvider(event.includeServer(), new StructureTagsGen(packOutput, lookupProvider, MODID, helper));
+        generator.addProvider(event.includeServer(), new EntityTypeTagsGen(packOutput, lookupProvider, MODID, helper));
+        generator.addProvider(event.includeServer(), new PoiTypeTagsGen(packOutput, lookupProvider, MODID, helper));
 
-        ItemTagsGen itemTagsGen = new ItemTagsGen(generator, blockTagsGen, MODID, helper);
-        generator.addProvider(event.includeServer(), itemTagsGen);
+        // sound files
+        generator.addProvider(event.includeClient(), new SoundsFileGen(packOutput, MODID, helper));
 
-        PoiTypeTagsGen poiTypeTagsGen = new PoiTypeTagsGen(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), poiTypeTagsGen);
+        // loot tables
+        generator.addProvider(event.includeServer(), LootTablesGen.create(packOutput));
+        generator.addProvider(event.includeServer(), new LootModifiersGen(packOutput, MODID));
 
-        EntityTypeTagsGen entityTypeTagsGen = new EntityTypeTagsGen(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), entityTypeTagsGen);
+        // world gen
+        generator.addProvider(event.includeServer(), new WorldGen(packOutput, lookupProvider));
 
-        StructureTagsGen structureTagsGen = new StructureTagsGen(generator, MODID, helper);
-        generator.addProvider(event.includeServer(), structureTagsGen);
+        // recipe gen
+        generator.addProvider(event.includeServer(), new RecipesGen(packOutput));
 
-        generator.addProvider(event.includeClient(), new LanguageFileGen(generator, MODID, "en_us"));
+        // json trades gen
+        generator.addProvider(event.includeServer(), new JsonTradesProvider(packOutput));
 
-        generator.addProvider(event.includeServer(), new BiomeTagsGen(generator, MODID, helper));
-        generator.addProvider(event.includeClient(), new SoundsFileGen(generator, MODID, helper));
-        generator.addProvider(event.includeServer(), new RecipesGen(generator));
-        generator.addProvider(event.includeServer(), new ConditionalCookingPotRecipesGen(generator));
-        generator.addProvider(event.includeServer(), new ConditionalCageriumRecipes(generator));
-        generator.addProvider(event.includeServer(), new ConditionalSpawnEggRecipes(generator));
-        generator.addProvider(event.includeServer(), new TodeCoinsAdvancementsGen(generator, helper));
-        generator.addProvider(event.includeServer(), new CollectibleCoinAdvancementsGen(generator, helper));
-        generator.addProvider(event.includeServer(), new ModLootTableGenProvider(generator));
-        generator.addProvider(event.includeServer(), new ModItemModelProvider(generator, MODID, helper));
-        generator.addProvider(event.includeServer(), new ModBlockStateProvider(generator, MODID, helper));
-        generator.addProvider(event.includeServer(), new ModLootModifierGenProvider(generator, MODID));
-        generator.addProvider(event.includeServer(), new JsonTradesProvider(generator));
+        // advancement gen
+        generator.addProvider(event.includeServer(), new AdvancementsGen(packOutput, lookupProvider, helper));
     }
 }
