@@ -1,9 +1,0 @@
-[20:06:12.629][INFO][CraftTweaker-EarlyInit]: CraftTweaker is running on a Minecraft 1.20.1 development client modded with platform Forge
-[20:06:12.732][INFO][CraftTweaker-EarlyInit]: Successfully injected RecipeFS file system
-[20:06:12.838][INFO][CraftTweaker-Plugins]: Successfully identified and loaded plugin farmersdelight:crafttweaker_plugin
-[20:06:12.875][INFO][CraftTweaker-Plugins]: Successfully identified and loaded plugin crafttweaker:builtin
-[20:06:12.877][INFO][CraftTweaker-Plugins]: Successfully identified and loaded plugin crafttweaker:builtin_forge
-[20:06:14.082][INFO][CraftTweaker]: The following mods have explicit CraftTweaker support through the default plugin:
-[20:06:14.082][INFO][CraftTweaker]: - 'aether' at version '1.20.1-1.5.2-neoforge'
-[20:06:14.082][INFO][CraftTweaker]: - 'crafttweaker' at version '14.0.57'
-[20:06:14.082][INFO][CraftTweaker]: - 'farmersdelight' at version '1.20.1-1.2.8'
