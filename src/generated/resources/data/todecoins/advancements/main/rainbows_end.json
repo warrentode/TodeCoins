@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.rainbowEnd.desc"
+      "translate": "advancement.rainbows_end.desc"
     },
     "frame": "goal",
     "hidden": false,
@@ -26,12 +26,18 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.rainbowEnd"
+      "translate": "advancement.rainbows_end"
     }
   },
   "requirements": [
     [
       "craft_pot_of_gold"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

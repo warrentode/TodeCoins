@@ -1,0 +1,21 @@
+{
+  "values": [
+    "#todecoins:currency_singles",
+    "#todecoins:collectible/coins",
+    "#forge:cookies",
+    "#forge:candy",
+    "#forge:seeds",
+    "#forge:bowls",
+    "#forge:cups",
+    "#forge:ingredients/bread",
+    "#forge:cookie_cutters",
+    {
+      "id": "#forge:tea_leaves",
+      "required": false
+    },
+    {
+      "id": "#forge:nuts",
+      "required": false
+    }
+  ]
+}

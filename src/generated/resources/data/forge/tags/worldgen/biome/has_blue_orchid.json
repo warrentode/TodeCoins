@@ -1,5 +1,17 @@
 {
   "values": [
-    "minecraft:swamp"
+    "minecraft:swamp",
+    {
+      "id": "biomesoplenty:wetland",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:jacaranda_glade",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:highland",
+      "required": false
+    }
   ]
 }

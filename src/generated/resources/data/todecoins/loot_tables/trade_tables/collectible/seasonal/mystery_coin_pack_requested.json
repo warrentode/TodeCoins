@@ -1,0 +1,67 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:gameplay/hero_of_the_village/hero_coins_inverted"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:chests/collectible/seasonal/holiday_coins_inverted"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:spring_condition"
+              }
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/spring_coins"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:summer_condition"
+              }
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/summer_coins"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:autumn_condition"
+              }
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/autumn_coins"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:winter_condition"
+              }
+            }
+          ],
+          "name": "todecoins:chests/collectible/seasonal/winter_coins"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_requested"
+}

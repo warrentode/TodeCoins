@@ -9,7 +9,7 @@
     "announce_to_chat": false,
     "background": "todecoins:textures/block/pot.png",
     "description": {
-      "translate": "advancement.collectibleCoins.desc"
+      "translate": "advancement.collectible_coins.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -19,12 +19,13 @@
     },
     "show_toast": false,
     "title": {
-      "translate": "advancement.collectibleCoins"
+      "translate": "advancement.collectible_coins"
     }
   },
   "requirements": [
     [
       "trade"
     ]
-  ]
+  ],
+  "sends_telemetry_event": true
 }

@@ -1,11 +1,11 @@
 {
   "values": [
+    "minecraft:sweet_berries",
+    "minecraft:glow_berries",
+    "#minecraft:fox_food",
     {
       "id": "delightful:salmonberries",
       "required": false
-    },
-    "minecraft:sweet_berries",
-    "minecraft:glow_berries",
-    "#minecraft:fox_food"
+    }
   ]
 }

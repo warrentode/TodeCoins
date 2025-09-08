@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "id": "supplementaries:rope_arrow",
+      "required": false
+    },
+    {
+      "id": "supplementaries:rope",
+      "required": false
+    },
+    {
+      "id": "beautify:rope",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:rope",
+      "required": false
+    }
+  ]
+}

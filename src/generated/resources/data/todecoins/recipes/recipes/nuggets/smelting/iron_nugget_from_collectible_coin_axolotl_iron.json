@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "todecoins:collectible_coin_axolotl_iron"
+  },
+  "result": "minecraft:iron_nugget"
+}

@@ -1,0 +1,41 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "todecoins:village/leprechaun_wagon/leprechaun_wagon_01",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 25
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "todecoins:village/leprechaun_wagon/leprechaun_wagon_02",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 25
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "todecoins:village/leprechaun_wagon/leprechaun_wagon_03",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 25
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "todecoins:village/leprechaun_wagon/leprechaun_wagon_04",
+        "processors": "minecraft:empty",
+        "projection": "rigid"
+      },
+      "weight": 25
+    }
+  ],
+  "fallback": "minecraft:empty"
+}

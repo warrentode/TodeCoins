@@ -1,0 +1,160 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 40.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:copper_coinstack"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 33.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:brass_coinstack"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 27.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:zinc_coinstack"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 18.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:iron_coinstack"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 54.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:gold_coin"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 13.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:gold_coinstack"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 36.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:industrial_iron_coin"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "createdeco"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 9.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "createdeco:industrial_iron_coinstack"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:modloaded_condition",
+                "modid": "createdeco"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/underground/two_emerald_florin_currency_value"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/currency/mountain/two_emerald_mountain_currency_value"
+}

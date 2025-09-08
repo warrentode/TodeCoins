@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "todecoins:collectible_coin_camel_netherite"
+  },
+  "result": "todecoins:netherite_nugget"
+}

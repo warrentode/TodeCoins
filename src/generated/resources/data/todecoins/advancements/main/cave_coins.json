@@ -1,0 +1,119 @@
+{
+  "parent": "todecoins:main/minting_coins",
+  "criteria": {
+    "craft_amethyst_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:amethyst_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_currency_stamp": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:gem_currency_stamp"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_diamond_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:diamond_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_echo_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:echo_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_emerald_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:emerald_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_lapis_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:lapis_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.cave_coins.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:gem_currency_stamp",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.cave_coins"
+    }
+  },
+  "requirements": [
+    [
+      "craft_currency_stamp"
+    ],
+    [
+      "craft_lapis_coin"
+    ],
+    [
+      "craft_amethyst_coin"
+    ],
+    [
+      "craft_diamond_coin"
+    ],
+    [
+      "craft_emerald_coin"
+    ],
+    [
+      "craft_echo_coin"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
+}

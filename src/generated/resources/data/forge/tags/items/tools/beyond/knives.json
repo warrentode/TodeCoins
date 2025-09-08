@@ -1,0 +1,44 @@
+{
+  "values": [
+    {
+      "id": "delightful:onyx_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:thyrium_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:valkyrum_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:allthemodium_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:sinisite_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:refined_obsidian_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:netherite_opal_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:black_opal_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:obsidian_infused_enderite_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:enderite_knife",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "todecoins:crafting_shapeless_remainder",
+  "group": "chocolate_coins",
+  "ingredients": [
+    {
+      "tag": "forge:ingredients/cocoa"
+    },
+    {
+      "tag": "forge:ingredients/sugar"
+    },
+    {
+      "tag": "forge:milk/milk"
+    },
+    {
+      "tag": "forge:fat"
+    },
+    {
+      "tag": "forge:clover"
+    },
+    {
+      "tag": "forge:clover"
+    }
+  ],
+  "recipe_book_category": "FOOD",
+  "result": {
+    "count": 2,
+    "item": "todecoins:chocolate_coin_velvety_clover"
+  }
+}

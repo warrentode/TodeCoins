@@ -1,0 +1,15 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/currency/underground/five_hundred_seventy_six_emerald_value_currency"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/currency/mountain/five_hundred_seventy_six_emerald_mountain_value_currency"
+}

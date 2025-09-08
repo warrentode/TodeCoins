@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "#forge:books/guide",
+      "required": false
+    },
+    {
+      "id": "turtleblockacademy:brewingguide",
+      "required": false
+    },
+    {
+      "id": "patchouli:guide_book",
+      "required": false
+    }
+  ]
+}

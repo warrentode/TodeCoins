@@ -1,6 +1,14 @@
 {
   "values": [
     "minecraft:sunflower_plains",
-    "minecraft:ice_spikes"
+    "minecraft:ice_spikes",
+    {
+      "id": "biomesoplenty:forested_field",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:field",
+      "required": false
+    }
   ]
 }

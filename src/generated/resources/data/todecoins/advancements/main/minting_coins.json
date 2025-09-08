@@ -1,18 +1,6 @@
 {
   "parent": "todecoins:main/craft_coinpress",
   "criteria": {
-    "craft_coin_press": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:coin_press"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "craft_copper_coin": {
       "conditions": {
         "items": [
@@ -60,24 +48,12 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "craft_netherite_coin": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "todecoins:netherite_coin"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.mintingCoins.desc"
+      "translate": "advancement.minting_coins.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -87,13 +63,10 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.mintingCoins"
+      "translate": "advancement.minting_coins"
     }
   },
   "requirements": [
-    [
-      "craft_coin_press"
-    ],
     [
       "craft_currency_stamp"
     ],
@@ -105,9 +78,12 @@
     ],
     [
       "craft_gold_coin"
-    ],
-    [
-      "craft_netherite_coin"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

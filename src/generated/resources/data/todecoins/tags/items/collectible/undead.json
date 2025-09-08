@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#todecoins:collectible/undead/bogged",
+    "#todecoins:collectible/undead/drowned",
+    "#todecoins:collectible/undead/husk",
+    "#todecoins:collectible/undead/skeleton",
+    "#todecoins:collectible/undead/stray",
+    "#todecoins:collectible/undead/wither",
+    "#todecoins:collectible/undead/wither_skeleton",
+    "#todecoins:collectible/undead/zoglin",
+    "#todecoins:collectible/undead/zombie",
+    "#todecoins:collectible/undead/zombie_villager",
+    "#todecoins:collectible/undead/zombified_piglin"
+  ]
+}

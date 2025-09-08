@@ -1,0 +1,18 @@
+{
+  "type": "todecoins:coinpress",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "todecoins:gem_currency_stamp"
+    },
+    {
+      "tag": "forge:gems/diamond"
+    }
+  ],
+  "recipe_book_tab": "coins",
+  "result": {
+    "count": 2,
+    "item": "todecoins:diamond_coin"
+  },
+  "stampingTime": 50
+}

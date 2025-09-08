@@ -1,5 +1,6 @@
 {
   "values": [
+    "minecraft:porkchop",
     "#forge:raw_pork/raw_bacon",
     {
       "id": "netherssdelight:hoglin_loin",
@@ -8,7 +9,6 @@
     {
       "id": "farmersdelight:ham",
       "required": false
-    },
-    "minecraft:porkchop"
+    }
   ]
 }

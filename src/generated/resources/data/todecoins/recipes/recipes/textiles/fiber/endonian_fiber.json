@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:textiles/currency_fiber"
+    },
+    "C": {
+      "item": "todecoins:endonian_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "item": "todecoins:endonian_fiber"
+  },
+  "show_notification": true
+}

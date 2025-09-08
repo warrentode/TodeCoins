@@ -1,8 +1,9 @@
 package com.github.warrentode.todecoins.entity.spawners.numismatist;
 
-import com.github.warrentode.todecoins.entity.ModEntityTypes;
-import com.github.warrentode.todecoins.entity.villager.ModVillagers;
+import com.github.warrentode.todecoins.Config;
+import com.github.warrentode.todecoins.entity.TCEntityTypes;
 import com.github.warrentode.todecoins.entity.villager.Numismatist;
+import com.github.warrentode.todecoins.entity.villager.TCVillagers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -24,10 +25,11 @@ import java.util.Optional;
 
 public class NumismatistSpawner implements CustomSpawner {
     private final NumismatistData numismatistData;
+    @SuppressWarnings("unused")
     private final EntityType<Numismatist> entityType;
-    private static final int tickDelayBeforeSpawn = 1200;
-    public static final int defaultSpawnDelay = 24000;
-    public static final int defaultDespawnDelay = 48000;
+    public static final int defaultSpawnDelay = Config.getNumismatistSpawnDelay();
+    public static final int defaultDespawnDelay = Config.getNumismatistDespawnDelay();
+    private static final int tickDelayBeforeSpawn = defaultSpawnDelay / 20;
     private static final int minSpawnChance = 25;
     private static final int maxSpawnChance = 75;
     private static final int spawnChanceIncrease = minSpawnChance;
@@ -100,19 +102,19 @@ public class NumismatistSpawner implements CustomSpawner {
         }
         else {
             BlockPos pos = player.blockPosition();
-            int i = 48;
+            int distance = 48;
             PoiManager poiManager = serverLevel.getPoiManager();
-            Optional<BlockPos> optional = poiManager.find((poiTypeHolder) -> poiTypeHolder.is(ModVillagers.BANKER_POI.getId()),
-                    (pos1) -> true, pos, 48, PoiManager.Occupancy.ANY);
+            Optional<BlockPos> optional = poiManager.find((poiTypeHolder) -> poiTypeHolder.is(TCVillagers.BANKER_POI.getId()),
+                    (pos1) -> true, pos, distance, PoiManager.Occupancy.ANY);
             BlockPos pos1 = optional.orElse(pos);
-            BlockPos pos2 = this.findSpawnPositionNear(serverLevel, pos1, 48);
+            BlockPos pos2 = this.findSpawnPositionNear(serverLevel, pos1, distance);
             if (pos2 != null && this.hasEnoughSpace(serverLevel, pos2)) {
                 if (serverLevel.getBiome(pos2).is(BiomeTags.WITHOUT_WANDERING_TRADER_SPAWNS)) {
                     return false;
                 }
 
-                Numismatist trader = ModEntityTypes.NUMISMATIST.get().spawn(serverLevel, null,
-                        null, null, pos2, MobSpawnType.EVENT, false, false);
+                Numismatist trader = TCEntityTypes.NUMISMATIST.get()
+                        .spawn(serverLevel, pos2, MobSpawnType.EVENT);
                 if (trader != null) {
                     for (int j = 0; j < 2; ++j) {
                         this.tryToSpawnLlamaFor(serverLevel, trader, 4);
@@ -129,11 +131,12 @@ public class NumismatistSpawner implements CustomSpawner {
         }
     }
 
+    @SuppressWarnings("SameParameterValue")
     private void tryToSpawnLlamaFor(ServerLevel serverLevel, @NotNull Numismatist numismatist, int maxDistance) {
         BlockPos pos = this.findSpawnPositionNear(serverLevel, numismatist.blockPosition(), maxDistance);
         if (pos != null) {
-            TraderLlama traderllama = EntityType.TRADER_LLAMA.spawn(serverLevel, null, null,
-                    null, pos, MobSpawnType.EVENT, false, false);
+            TraderLlama traderllama = EntityType.TRADER_LLAMA
+                    .spawn(serverLevel, pos, MobSpawnType.EVENT);
             if (traderllama != null) {
                 traderllama.setLeashedTo(numismatist, true);
             }
@@ -149,7 +152,7 @@ public class NumismatistSpawner implements CustomSpawner {
             int k = pos.getZ() + this.random.nextInt(maxDistance * 2) - maxDistance;
             int l = reader.getHeight(Heightmap.Types.WORLD_SURFACE, j, k);
             BlockPos blockPos1 = new BlockPos(j, l, k);
-            if (NaturalSpawner.isSpawnPositionOk(SpawnPlacements.Type.ON_GROUND, reader, blockPos1, ModEntityTypes.NUMISMATIST.get())) {
+            if (NaturalSpawner.isSpawnPositionOk(SpawnPlacements.Type.ON_GROUND, reader, blockPos1, TCEntityTypes.NUMISMATIST.get())) {
                 blockPos = blockPos1;
                 break;
             }

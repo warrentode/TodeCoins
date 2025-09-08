@@ -1,520 +1,2371 @@
 package com.github.warrentode.todecoins.datagen.loot_tables;
 
-import com.faboslav.friendsandfoes.init.FriendsAndFoesItems;
-import com.github.warrentode.todecoins.block.ModBlocks;
-import com.github.warrentode.todecoins.item.ModItems;
+import biomesoplenty.api.block.BOPBlocks;
+import biomesoplenty.api.item.BOPItems;
+import com.aetherteam.aether.block.AetherBlocks;
+import com.aetherteam.aether.item.AetherItems;
+import com.faboslav.friendsandfoes.common.init.FriendsAndFoesItems;
+import com.github.talrey.createdeco.ItemRegistry;
+import com.github.warrentode.todecoins.block.TCBlocks;
+import com.github.warrentode.todecoins.item.TCItems;
 import com.github.warrentode.todecoins.loot.TradeLootTables;
-import com.github.warrentode.todecoins.loot.conditions.ModCheckCondition;
-import com.github.warrentode.todecoins.util.TodeCoinsTags;
+import com.github.warrentode.todecoins.util.ModUtil;
+import com.github.warrentode.todecoins.util.tags.TCItemTags;
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllItems;
+import com.simibubi.create.AllTags;
+import net.mcreator.festivedelight.init.FestiveDelightModItems;
 import net.mehvahdjukaar.cagerium.Cagerium;
-import net.minecraft.data.loot.ChestLoot;
+import net.mehvahdjukaar.supplementaries.reg.ModRegistry;
+import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.entries.TagEntry;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.functions.SetNbtFunction;
+import net.minecraft.world.level.storage.loot.functions.*;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.common.Tags;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+import slimeknights.tconstruct.common.TinkerTags;
+import slimeknights.tconstruct.world.TinkerWorld;
+import slimeknights.tconstruct.world.block.FoliageType;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.function.BiConsumer;
 
-import static com.github.warrentode.todecoins.datagen.ModLootTableGenProvider.*;
+import static com.aetherteam.aether.block.AetherBlocks.*;
+import static com.github.warrentode.todecoins.datagen.LootTablesGen.*;
 
-public class TradeLootTablesGen extends ChestLoot {
+public class TradeLootTablesGen implements LootTableSubProvider {
     @Override
-    public void accept(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
-        consumer.accept(TradeLootTables.TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS,
+    public void generate(@NotNull BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
+        // endonian currency tables
+        consumer.accept(TradeLootTables.ONE_EMERALD_ENDONIAN_CURRENCY_VALUE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_BLOCK.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHERITE_COIN_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.NETHERITE_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_BANK_NOTE_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.NETHERITE_BLOCK)
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.BUDDING_AMETHYST)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.NETHER_STAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.SEA_LANTERN)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(23))))
-                        .add(LootItem.lootTableItem(ModItems.LUCKY_FIBER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
-                        .add(LootItem.lootTableItem(ModItems.LUCKY_THREAD.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(ModItems.LUCKY_FABRIC.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(TradeLootTables.EMERALD_HALF_BANK_NOTE_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.TWO_EMERALD_ENDONIAN_CURRENCY_VALUE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get()).when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(TradeLootTables.EMERALD_QUARTER_BANK_NOTE_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.THREE_EMERALD_ENDONIAN_CURRENCY_VALUE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get()).when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
-                ));
-        consumer.accept(TradeLootTables.THREE_LUCKY_COIN_VALUE_ITEMS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Blocks.BUDDING_AMETHYST)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                        .when(LootItemRandomChanceCondition.randomChance(0.000001F))
-                        .add(LootItem.lootTableItem(Items.ECHO_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(28))))
-                        .add(LootItem.lootTableItem(Items.END_CRYSTAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(19))))
-                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(57))))
-                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(57))))
-                        .add(LootItem.lootTableItem(Items.NETHER_STAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .when(LootItemRandomChanceCondition.randomChance(0.000001F))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.SEA_LANTERN)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.OCHRE_FROGLIGHT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.VERDANT_FROGLIGHT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.PEARLESCENT_FROGLIGHT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.LUCKY_FIBER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                ));
-        consumer.accept(TradeLootTables.FOUR_POTS_OF_GOLD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Blocks.COPPER_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get()).when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHERITE_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                ));
-        consumer.accept(TradeLootTables.SINGLE_LUCKY_COIN_VALUE_GEMS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Blocks.EMERALD_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
-                        .add(LootItem.lootTableItem(Items.ECHO_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(19))))
-                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
-                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(38))))
-                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(19))))
-                        .add(LootItem.lootTableItem(Items.GLOWSTONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
-                        .add(LootItem.lootTableItem(Items.LAPIS_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
-                ));
-        consumer.accept(TradeLootTables.SINGLE_LUCKY_COIN_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get())
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
                 ));
-        consumer.accept(TradeLootTables.SEVEN_NETHERITE_COIN_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.FOUR_EMERALD_ENDONIAN_CURRENCY_VALUE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get())
-                                .when(IN_NETHER)
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                ));
+        consumer.accept(TradeLootTables.SIX_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
+                ));
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_ENDONIAN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_ENDONIAN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_ENDONIAN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                ));
+        consumer.accept(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_ENDONIAN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_DEFAULT_VALUE_CURRENCY))
+                ));
+
+        // leprechaun currency tables
+        consumer.accept(TradeLootTables.ONE_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.TWO_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
+                ));
+        consumer.accept(TradeLootTables.THREE_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                ));
+        consumer.accept(TradeLootTables.FOUR_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(33))))
+                ));
+        consumer.accept(TradeLootTables.SIX_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                ));
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(47))))
+                ));
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(17))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_LEPRECHAUN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_LEPRECHAUN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LUCKY_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_LEPRECHAUN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LUCKY_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_LEPRECHAUN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LUCKY_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+
+        // create deco currency tables
+        consumer.accept(TradeLootTables.ONE_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Copper")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Brass")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(63))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Brass")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Zinc")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Zinc")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.TWO_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Copper")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Brass")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(33))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Zinc")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.THREE_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Copper")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Brass")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(49))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Zinc")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.FOUR_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Zinc")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.FIVE_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(33))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.SIX_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(63))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(47))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(31))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Gold")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Industrial Iron")).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(63))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(CREATE_DECO_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_FLORIN_CURRENCY_VALUE))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_FLORIN_CURRENCY_VALUE))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_FLORIN_CURRENCY_VALUE))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_FLORIN_CURRENCY_VALUE))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_MOUNTAIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_FLORIN_CURRENCY_VALUE))
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_MOUNTAIN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_FLORIN_VALUE_CURRENCY))
+                ));
+        consumer.accept(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_MOUNTAIN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_FLORIN_VALUE_CURRENCY))
+                ));
+        consumer.accept(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_MOUNTAIN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_FLORIN_VALUE_CURRENCY))
+                ));
+
+        // default currency tables
+        consumer.accept(TradeLootTables.ONE_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.COPPER_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.IRON_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(TCItems.GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.TWO_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.COPPER_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(TCBlocks.IRON_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.THREE_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.COPPER_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(TCBlocks.IRON_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.FOUR_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.IRON_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.IRON_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.SIX_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.IRON_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.IRON_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(56))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.IRON_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(17))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_HALF_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_DEFAULT_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.POT_OF_GOLD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_HALF_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_DEFAULT_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_HALF_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_DEFAULT_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_QUARTER_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_HALF_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_DEFAULT_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_HALF_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_BANK_NOTE.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+
+        // nether currency tables
+        consumer.accept(TradeLootTables.ONE_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.TWO_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.THREE_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FOUR_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SIX_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHER_GOLD_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        .add(LootItem.lootTableItem(TCItems.NETHERITE_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_NETHER_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                        .add(LootItem.lootTableItem(TCItems.NETHERITE_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Netherite"))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_NETHER_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHER_GOLD_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(TCItems.NETHERITE_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Netherite"))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_NETHER_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHERITE_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHERITE_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Netherite"))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Netherite"))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_NETHER_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.NETHERITE_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHERITE_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINS.get("Netherite"))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(ItemRegistry.COINSTACKS.get("Netherite"))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+
+        // florin currency tables
+        consumer.accept(TradeLootTables.ONE_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LAPIS_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.TWO_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LAPIS_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.THREE_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LAPIS_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.FOUR_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LAPIS_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LAPIS_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                ));
+        consumer.accept(TradeLootTables.SIX_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LAPIS_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LAPIS_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(56))))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(28))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                ));
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.LAPIS_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(56))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(28))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                        .add(LootItem.lootTableItem(TCItems.AMETHYST_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(17))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(23))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(11))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(52))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(28))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                        .add(LootItem.lootTableItem(TCItems.DIAMOND_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_FLORIN_CURRENCY_VALUE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.LAPIS_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(56))))
+                        .add(LootItem.lootTableItem(TCBlocks.AMETHYST_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(28))))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_FLORIN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.DIAMOND_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                        .add(LootItem.lootTableItem(TCItems.ECHO_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_FLORIN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_FLORIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(TCItems.ECHO_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_FLORIN_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.ECHO_FLORIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+
+        // base currency inverted tables
+        consumer.accept(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_MOUNTAIN_VALUE_CURRENCY)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_LEPRECHAUN_VALUE_CURRENCY)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_FLORIN_VALUE_CURRENCY)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_ENDONIAN_VALUE_CURRENCY)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_NETHER_VALUE_CURRENCY)
+                                .when(IN_NETHER.invert()))
+                        // fallback currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_DEFAULT_VALUE_CURRENCY))
+                ));
+        consumer.accept(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_MOUNTAIN_VALUE_CURRENCY)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_LEPRECHAUN_VALUE_CURRENCY)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_FLORIN_VALUE_CURRENCY)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_ENDONIAN_VALUE_CURRENCY)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_NETHER_VALUE_CURRENCY)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_DEFAULT_VALUE_CURRENCY)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_MOUNTAIN_VALUE_CURRENCY)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_LEPRECHAUN_VALUE_CURRENCY)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_FLORIN_VALUE_CURRENCY)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_ENDONIAN_VALUE_CURRENCY)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_NETHER_VALUE_CURRENCY)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_DEFAULT_VALUE_CURRENCY)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
                 ));
-        consumer.accept(TradeLootTables.ONE_LUCKY_COIN_TABLE,
+        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_CURRENCY_INVERTED,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.SINGLE_LUCKY_COIN_BAG_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_BANK_NOTE_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                ));
-        consumer.accept(TradeLootTables.THIRTY_POT_OF_GOLD_VALUE_ITEMS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_FIBER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_COARSE_WOVE_PAPER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(11))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_WOVE_PAPER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.SLIME_BALL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(11))))
-                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.SHULKER_SHELL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
-                                .when(LootItemRandomChanceCondition.randomChance(0.01F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.CHORUS_FLOWER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.CHORUS_FRUIT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                ));
-        consumer.accept(TradeLootTables.THIRTY_POT_OF_GOLD_VALUE_GEMS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.AMETHYST_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.AMETHYST_CLUSTER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.LARGE_AMETHYST_BUD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.DIAMOND)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(Items.ECHO_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.END_CRYSTAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.GLOWSTONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(11))))
-                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.LAPIS_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(Items.QUARTZ_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_FIBER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                ));
-        consumer.accept(TradeLootTables.THIRTY_POTS_OF_GOLD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                ));
-        consumer.accept(TradeLootTables.SIXTY_POT_OF_GOLD_VALUE_ITEMS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_FIBER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_COARSE_WOVE_PAPER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_WOVE_PAPER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(11))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_SMOOTH_WOVE_PAPER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(Items.SLIME_BALL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
-                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.SHULKER_SHELL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.DRAGON_HEAD)
-                                .when(LootItemRandomChanceCondition.randomChance(0.001F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.ELYTRA)
-                                .when(LootItemRandomChanceCondition.randomChance(0.001F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
-                        .add(LootItem.lootTableItem(Items.CHORUS_FLOWER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.CHORUS_FRUIT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                ));
-        consumer.accept(TradeLootTables.SIXTY_POT_OF_GOLD_VALUE_GEMS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(Items.LAPIS_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(Items.GLOWSTONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
-                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.END_CRYSTAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.ECHO_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK)
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(TradeLootTables.SIXTY_POTS_OF_GOLD_VALUE_CURRENCY,
+        consumer.accept(TradeLootTables.NINE_EMERALD_VALUE_CURRENCY_INVERTED,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(TradeLootTables.FOUR_POT_OF_GOLD_VALUE_GEMS,
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY_INVERTED,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.AMETHYST_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(Items.AMETHYST_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.AMETHYST_CLUSTER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.LARGE_AMETHYST_BUD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.MEDIUM_AMETHYST_BUD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.SMALL_AMETHYST_BUD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.REDSTONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.QUARTZ)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(Items.QUARTZ_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.DIAMOND)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                ));
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                ));
+        consumer.accept(TradeLootTables.SIX_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
                         .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.DIAMOND)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
-        consumer.accept(TradeLootTables.FOUR_POT_OF_GOLD_VALUE_ITEMS,
+        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY_INVERTED,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.COPPER_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
-                        .add(LootItem.lootTableItem(Items.COPPER_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.IRON_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(Items.IRON_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.GOLD_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_FIBER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_COARSE_WOVE_PAPER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
-                                .when(LootItemRandomChanceCondition.randomChance(0.10F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.SLIME_BALL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
-                                .when(LootItemRandomChanceCondition.randomChance(0.01F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                 ));
-        consumer.accept(TradeLootTables.TWO_POT_OF_GOLD_VALUE_ITEMS,
+        consumer.accept(TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY_INVERTED,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_FIBER.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.GOLD_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.IRON_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Blocks.COPPER_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.COPPER_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
-                        .add(LootItem.lootTableItem(Items.STRING)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
-                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
-                                .when(LootItemRandomChanceCondition.randomChance(0.10F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
-                                .when(LootItemRandomChanceCondition.randomChance(0.01F))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.THREE_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(TradeLootTables.TWO_POT_OF_GOLD_VALUE_GEMS,
+        consumer.accept(TradeLootTables.TWO_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_CURRENCY_INVERTED,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN.invert()))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN.invert()))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND.invert()))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END.invert()))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER.invert()))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+
+        // base currency tables
+        consumer.accept(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_MOUNTAIN_VALUE_CURRENCY)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_LEPRECHAUN_VALUE_CURRENCY)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_FLORIN_VALUE_CURRENCY)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_ENDONIAN_VALUE_CURRENCY)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_NETHER_VALUE_CURRENCY)
+                                .when(IN_NETHER))
+                        // fallback currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_THOUSAND_ONE_HUNDRED_FIFTY_TWO_EMERALD_DEFAULT_VALUE_CURRENCY))
+                ));
+        consumer.accept(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_MOUNTAIN_VALUE_CURRENCY)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_LEPRECHAUN_VALUE_CURRENCY)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_FLORIN_VALUE_CURRENCY)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_ENDONIAN_VALUE_CURRENCY)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_NETHER_VALUE_CURRENCY)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_HUNDRED_SEVENTY_SIX_EMERALD_DEFAULT_VALUE_CURRENCY)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_MOUNTAIN_VALUE_CURRENCY)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_LEPRECHAUN_VALUE_CURRENCY)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_FLORIN_VALUE_CURRENCY)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_ENDONIAN_VALUE_CURRENCY)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_NETHER_VALUE_CURRENCY)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_DEFAULT_VALUE_CURRENCY)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTY_FOUR_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THIRTY_TWO_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallabck currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_SIX_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWENTY_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
+                ));
+        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIXTEEN_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                ));
+        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOURTEEN_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                ));
+        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TEN_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.NINE_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                ));
+        consumer.accept(TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.EIGHT_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                ));
+        consumer.accept(TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SEVEN_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                ));
+        consumer.accept(TradeLootTables.SIX_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.SIX_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FIVE_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                ));
+        consumer.accept(TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.FOUR_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.THREE_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.THREE_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.TWO_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.TWO_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_CURRENCY,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // mountain currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_MOUNTAIN_CURRENCY_VALUE)
+                                .when(IN_MOUNTAIN))
+                        // leprechaun currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_LEPRECHAUN_CURRENCY_VALUE)
+                                .when(IN_LEPRECHAUN))
+                        // underground currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_FLORIN_CURRENCY_VALUE)
+                                .when(IN_UNDERGROUND))
+                        // endonian currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_ENDONIAN_CURRENCY_VALUE)
+                                .when(IN_END))
+                        // nether currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_NETHER_CURRENCY_VALUE)
+                                .when(IN_NETHER))
+                        // default overworld currency
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_DEFAULT_CURRENCY_VALUE)
+                                .when(IN_OVERWORLD))
+                        // fallback currency
+                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
+                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+
+        // server token tables
+        consumer.accept(TradeLootTables.SERVER_TOKEN_COIN,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.SERVER_TOKEN_COIN.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.THREE_EMERALD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
@@ -532,8 +2383,6 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                         .add(LootItem.lootTableItem(Items.LARGE_AMETHYST_BUD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.AMETHYST_CLUSTER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                         .add(LootItem.lootTableItem(Blocks.AMETHYST_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                         .add(LootItem.lootTableItem(Items.AMETHYST_SHARD)
@@ -544,186 +2393,125 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                         .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.EMERALD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
                 ));
-        consumer.accept(TradeLootTables.THIRTY_POTS_OF_GOLD_TABLE,
+        consumer.accept(TradeLootTables.SIX_EMERALD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
-                ));
-        consumer.accept(TradeLootTables.FOUR_POTS_OF_GOLD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                ));
-        consumer.accept(TradeLootTables.TWO_POTS_OF_GOLD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                ));
-        consumer.accept(TradeLootTables.TWO_POTS_OF_GOLD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get().asItem()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem()).when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
+                        .add(LootItem.lootTableItem(Items.AMETHYST_SHARD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(ModBlocks.COPPER_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
+                        .add(LootItem.lootTableItem(Items.AMETHYST_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.LARGE_AMETHYST_BUD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.MEDIUM_AMETHYST_BUD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.SMALL_AMETHYST_BUD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.QUARTZ)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(Items.QUARTZ_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.DIAMOND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.DIAMOND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_VALUE_GEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.AMETHYST_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.AMETHYST_CLUSTER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.LARGE_AMETHYST_BUD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.DIAMOND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                ));
-        consumer.accept(TradeLootTables.EMERALD_BANK_NOTE_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get()).when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
+                        .add(LootItem.lootTableItem(Items.END_CRYSTAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.LAPIS_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                ));
-        consumer.accept(TradeLootTables.EMERALD_BANK_NOTE_VALUE_GEMS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.QUARTZ_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
                         .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.LAPIS_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_VALUE_GEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.AMETHYST_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(Items.AMETHYST_CLUSTER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(Items.LARGE_AMETHYST_BUD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(Items.DIAMOND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(Items.END_CRYSTAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
                         .add(LootItem.lootTableItem(Items.GLOWSTONE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
-                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
-                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.END_CRYSTAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.ECHO_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Blocks.QUARTZ_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                        .add(LootItem.lootTableItem(Blocks.AMETHYST_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                        .add(LootItem.lootTableItem(Items.DIAMOND)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
                         .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                        .add(LootItem.lootTableItem(Items.EMERALD)
+                        .add(LootItem.lootTableItem(Items.LAPIS_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
+                        .add(LootItem.lootTableItem(Items.QUARTZ_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                ));
-        consumer.accept(TradeLootTables.EMERALD_BANK_NOTE_VALUE_METALS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.COPPER_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                        .add(LootItem.lootTableItem(Items.IRON_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(28))))
-                        .add(LootItem.lootTableItem(Items.GOLD_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_NUGGET.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_INGOT.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_NUGGET.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.THREE_EMERALD_VALUE_GOLD,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get())
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.GOLD_BLOCK)
+                        .add(LootItem.lootTableItem(Items.PRISMARINE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_GOLD,
+        consumer.accept(TradeLootTables.ENCHANTING_FUEL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.GOLD_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
-                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
-                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                ));
-        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_METALS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.IRON_NUGGET)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(Items.GOLD_NUGGET)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
-                        .add(LootItem.lootTableItem(Items.COPPER_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.IRON_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                ));
-        consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_GEMS,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.QUARTZ)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.AMETHYST_SHARD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.REDSTONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.DIAMOND)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.EMERALD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.ENCHANTING_GEMS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(TagEntry.expandTag(Tags.Items.ENCHANTING_FUELS))
                 ));
         consumer.accept(TradeLootTables.PRISMARINE_SHARD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -732,11 +2520,11 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.EQUIPMENT_GEMS_TABLE,
+        consumer.accept(TradeLootTables.NETHER_STAR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DIAMOND)
+                        .add(LootItem.lootTableItem(Items.NETHER_STAR)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
         consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_GEMS,
@@ -747,8 +2535,6 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
                         .add(LootItem.lootTableItem(Items.AMETHYST_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(Items.AMETHYST_CLUSTER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                         .add(LootItem.lootTableItem(Items.LARGE_AMETHYST_BUD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
                         .add(LootItem.lootTableItem(Items.MEDIUM_AMETHYST_BUD)
@@ -771,502 +2557,341 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
                         .add(LootItem.lootTableItem(Items.QUARTZ_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(Items.EMERALD))
-                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5)))
                 ));
-        consumer.accept(TradeLootTables.FIFTY_ENDONIAN_COIN_TABLE,
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_GEMS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(50))))
-                ));
-        consumer.accept(TradeLootTables.THIRTY_TWO_ENDONIAN_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                ));
-        consumer.accept(TradeLootTables.FOURTEEN_ENDONIAN_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
-                ));
-        consumer.accept(TradeLootTables.FIVE_ENDONIAN_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                ));
-        consumer.accept(TradeLootTables.ENDONIAN_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.THREE_NETHER_GOLD_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                ));
-        consumer.accept(TradeLootTables.NINE_NETHER_GOLD_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                ));
-        consumer.accept(TradeLootTables.FIFTEEN_NETHER_GOLD_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
-                ));
-        consumer.accept(TradeLootTables.SIX_NETHER_GOLD_COIN_BAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                ));
-        consumer.accept(TradeLootTables.NINE_NETHER_GOLD_COIN_BAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                ));
-        consumer.accept(TradeLootTables.EIGHTEEN_NETHERITE_COIN_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHERITE_COIN_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                        .add(LootItem.lootTableItem(BOPItems.ROSE_QUARTZ_CHUNK)
+                                .when(BIOMESOPLENTY_LOADED).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_HALF_BANK_NOTE_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModBlocks.EMERALD_BANK_NOTE_BAG.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(ModItems.LUCKY_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                ));
-        consumer.accept(TradeLootTables.FORTY_TWO_NETHER_GOLD_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
-                ));
-        consumer.accept(TradeLootTables.THIRTY_NETHER_GOLD_COIN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
-                ));
-        consumer.accept(TradeLootTables.SINGLE_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(ModBlocks.COPPER_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.SIXTY_FOUR_EMERALD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.EMERALD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                ));
-        consumer.accept(TradeLootTables.THIRTY_TWO_EMERALD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.EMERALD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                ));
-        consumer.accept(TradeLootTables.SIXTEEN_EMERALD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.EMERALD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
-                ));
-        consumer.accept(TradeLootTables.ONE_EMERALD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.EMERALD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.SMALLEST_COIN,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModItems.COPPER_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.TWO_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.COPPER_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                ));
-        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(40))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                ));
-        consumer.accept(TradeLootTables.SIX_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                ));
-        consumer.accept(TradeLootTables.NINE_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
+                        .add(LootItem.lootTableItem(Items.QUARTZ).when(IN_NETHER)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                ));
-        consumer.accept(TradeLootTables.EIGHT_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                ));
-        consumer.accept(TradeLootTables.SEVEN_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(56))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
+                        .add(LootItem.lootTableItem(Items.AMETHYST_SHARD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
+                        .add(LootItem.lootTableItem(Items.REDSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.ENDONIAN_CRYSTAL.get()).when(IN_END)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DIAMOND)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.LAPIS_LAZULI)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(AllItems.ROSE_QUARTZ).when(CREATE_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.ONE_HUNDRED_NINETY_TWO_EMERALD_VALUE_GEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
-                ));
-        consumer.accept(TradeLootTables.FOUR_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
+                        .add(LootItem.lootTableItem(Items.ECHO_SHARD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                ));
-        consumer.accept(TradeLootTables.THIRTY_SIX_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(ModBlocks.ENDONIAN_COIN_BAG.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_QUARTER_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.NETHERITE_COIN.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(ModItems.EMERALD_HALF_BANK_NOTE.get())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(Items.EMERALD_BLOCK).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                ));
-        consumer.accept(TradeLootTables.THREE_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.COPPER_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
-                        .add(LootItem.lootTableItem(ModBlocks.IRON_COIN_BAG.get().asItem()).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                ));
-        consumer.accept(TradeLootTables.TWENTY_SIX_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(17))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
-                ));
-        consumer.accept(TradeLootTables.TWENTY_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(13))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
+                        .add(LootItem.lootTableItem(Items.END_CRYSTAL)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(20))))
-                ));
-        consumer.accept(TradeLootTables.FOURTEEN_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
+                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(19))))
+                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(38))))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(19))))
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(48))))
+                        .add(LootItem.lootTableItem(Items.LAPIS_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(21))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(14))))
-                ));
-        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_CURRENCY,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(ModBlocks.GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(60))))
-                        .add(LootItem.lootTableItem(ModBlocks.POT_OF_GOLD.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
-                        .add(LootItem.lootTableItem(ModItems.NETHER_GOLD_COIN.get()).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
-                        .add(LootItem.lootTableItem(ModBlocks.NETHER_GOLD_COIN_BAG.get().asItem())
-                                .when(IN_OVERWORLD.or(IN_NETHER))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(ModItems.ENDONIAN_COIN.get()).when(IN_END)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        // default
-                        .add(LootItem.lootTableItem(Items.EMERALD).when(IN_OVERWORLD.invert())
-                                .when(IN_NETHER.invert()).when(IN_END.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_RAW_MEATS_TABLE,
+        // metals trade tables
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_OVERWORLD_INGOTS,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.RAW_MEATS))
+                        .add(LootItem.lootTableItem(Items.COPPER_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.IRON_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:cobalt_ingot")).when(TCONSTRUCT_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(ItemRegistry.INDUSTRIAL_IRON_INGOT).when(CREATE_DECO_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(AllItems.ZINC_INGOT).when(CREATE_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(AllItems.BRASS_INGOT).when(CREATE_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
+                        .add(LootItem.lootTableItem(AllItems.ANDESITE_ALLOY).when(CREATE_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(7))))
                 ));
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_NETHER_INGOTS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:cobalt_ingot")).when(TCONSTRUCT_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+
+        // food trade tables
         consumer.accept(TradeLootTables.TAGGED_MEAT_SOUPS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.MEAT_SOUPS))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_COOKED_MEATS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COOKED_MEATS))
+                        .add(TagEntry.expandTag(TCItemTags.MEAT_SOUPS))
                 ));
         consumer.accept(TradeLootTables.TAGGED_SALTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SALTS)
-                                .when(ModCheckCondition.mod().isLoaded("supplementaries")))
+                        .add(TagEntry.expandTag(TCItemTags.SALT)
+                                .when(BIOMESOPLENTY_LOADED
+                                        .or(SALT_MOD_LOADED)
+                                        .or(TBA_LOADED)))
                         .add(LootItem.lootTableItem(Items.SUGAR)
-                                .when(ModCheckCondition.mod().isLoaded("supplementaries").invert()))
+                                .when(BIOMESOPLENTY_LOADED.invert())
+                                .when(SALT_MOD_LOADED.invert())
+                                .when(TBA_LOADED.invert()))
                 ));
-        consumer.accept(TradeLootTables.STONE_TIER_KNIVES,
+        consumer.accept(TradeLootTables.TAGGED_CROPS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.FLINT_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                        .add(LootItem.lootTableItem(Items.STONE_AXE)
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight").invert()))
+                        // pre-filled forge tag - so all vanilla present by default
+                        .add(TagEntry.expandTag(Tags.Items.CROPS))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_ASH_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_BREADS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.ASH)
-                                .when(ModCheckCondition.mod().isLoaded("supplementaries")))
-                        .add(LootTableReference.lootTableReference(TradeLootTables.TAGGED_STICK_TABLE)
-                                .when(ModCheckCondition.mod().isLoaded("supplementaries").invert()))
-                )
-        );
+                        .add(TagEntry.expandTag(TCItemTags.BREAD))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_GOURDS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.GOURDS))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_PIES_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.PIES))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_FRUITS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.CROPS_FRUIT))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_COOKIES_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.COOKIES))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_CAKES_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.CAKES))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_COOKED_MEATS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.COOKED_MEATS))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_RAW_MEATS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.RAW_MEATS))
+                ));
         consumer.accept(TradeLootTables.TAGGED_FOX_FOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.FOX_FOOD))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_GLASS_PANES_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(Tags.Items.GLASS_PANES))
+                        .add(TagEntry.expandTag(TCItemTags.COOKED_FISHES))
+                        .add(TagEntry.expandTag(TCItemTags.FISH_SOUPS))
+                        .add(TagEntry.expandTag(TCItemTags.SUSHI))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_BANNER_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ItemTags.BANNERS))
+                        .add(TagEntry.expandTag(TCItemTags.RAW_FISHES))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_CANDLE_TABLE,
+        consumer.accept(TradeLootTables.DRIED_KELP_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ItemTags.CANDLES))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
                 ));
+        consumer.accept(TradeLootTables.SEED_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(Tags.Items.SEEDS))
+                ));
+        consumer.accept(TradeLootTables.PET_FOOD_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.PET_FOOD))
+                ));
+        consumer.accept(TradeLootTables.COFFEE_INGREDIENTS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.KAWAII_COFFEE_INGREDIENTS)
+                                .when(KAWAIIDISHES_LOADED))
+                ));
+        consumer.accept(TradeLootTables.SAND_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.SAND))
+                ));
+        consumer.accept(TradeLootTables.HONEY_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.HONEY_BOTTLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.HONEY_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.HONEY_COMB_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.HONEYCOMB)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.HONEYCOMB)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.FEAST_BLOCKS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModBlocks.HONEY_GLAZED_HAM_BLOCK.get())
+                                .when(FARMERSDELIGHT_LOADED))
+                        .add(LootItem.lootTableItem(ModBlocks.RICE_ROLL_MEDLEY_BLOCK.get())
+                                .when(FARMERSDELIGHT_LOADED))
+                        .add(LootItem.lootTableItem(ModBlocks.ROAST_CHICKEN_BLOCK.get())
+                                .when(FARMERSDELIGHT_LOADED))
+                        .add(LootItem.lootTableItem(ModBlocks.SHEPHERDS_PIE_BLOCK.get())
+                                .when(FARMERSDELIGHT_LOADED))
+                        .add(LootItem.lootTableItem(ModBlocks.STUFFED_PUMPKIN_BLOCK.get())
+                                .when(FARMERSDELIGHT_LOADED))
+                        .add(LootItem.lootTableItem(FestiveDelightModItems.FESTIVE_CHICKEN_BLOCK.get())
+                                .when(FESTIVE_DELIGHT_LOADED))
+                        .add(LootItem.lootTableItem(Items.CAKE)
+                                .when(FARMERSDELIGHT_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.INGREDIENTS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.INGREDIENTS))
+                ));
+        consumer.accept(TradeLootTables.DESSERT_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.DESSERTS))
+                ));
+        consumer.accept(TradeLootTables.SOUP_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.SOUPS))
+                ));
+        consumer.accept(TradeLootTables.PLATED_FOODS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(FestiveDelightModItems.SPRING_ROLLS.get())
+                                .when(NEW_YEAR_EVENT))
+                        .add(LootItem.lootTableItem(FestiveDelightModItems.LONGEVITY_NOODLE.get())
+                                .when(NEW_YEAR_EVENT))
+                        .add(LootItem.lootTableItem(FestiveDelightModItems.FESTIVE_CHIKEN.get())
+                                .when(CHRISTMAS_EVENT.or(EASTER_EVENT)))
+                        .add(TagEntry.expandTag(TCItemTags.PLATED_FOODS)
+                                .when(FARMERSDELIGHT_LOADED))
+                        .add(TagEntry.expandTag(TCItemTags.COOKED_MEATS)
+                                .when(FARMERSDELIGHT_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.SIDE_DISH_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(FestiveDelightModItems.SALMON_VERRINES.get())
+                                .when(FESTIVE_DELIGHT_LOADED)
+                                .when(CHRISTMAS_EVENT.or(NEW_YEAR_EVENT)))
+                        .add(TagEntry.expandTag(TCItemTags.SIDE_DISHES)
+                                .when(FASTFOODDELIGHT_LOADED
+                                        .or(FARMERSDELIGHT_LOADED)))
+                        .add(LootItem.lootTableItem(Items.BREAD)
+                                .when(FASTFOODDELIGHT_LOADED.invert())
+                                .when(FARMERSDELIGHT_LOADED))
+                ));
+        consumer.accept(TradeLootTables.SANDWICH_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.SANDWICHES)
+                                .when(FASTFOODDELIGHT_LOADED.or(FARMERSDELIGHT_LOADED)))
+                        .add(LootItem.lootTableItem(Items.BREAD)
+                                .when(FASTFOODDELIGHT_LOADED.invert())
+                                .when(FARMERSDELIGHT_LOADED))
+                ));
+        consumer.accept(TradeLootTables.DRINKS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(FestiveDelightModItems.CHRISTMAS_TEA.get())
+                                .when(FESTIVE_DELIGHT_LOADED)
+                                .when(CHRISTMAS_EVENT))
+                        .add(TagEntry.expandTag(TCItemTags.DRINKS)
+                                .when(KAWAIIDISHES_LOADED
+                                        .or(FASTFOODDELIGHT_LOADED)
+                                        .or(FARMERSDELIGHT_LOADED)))
+                        .add(TagEntry.expandTag(TCItemTags.CUPS)
+                                .when(KAWAIIDISHES_LOADED.invert())
+                                .when(FASTFOODDELIGHT_LOADED.invert())
+                                .when(FARMERSDELIGHT_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.GOLDEN_FOOD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_CARROT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.GLISTERING_MELON_SLICE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).when(BIRTHDAY_EVENT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        // beekeeping trade tables
         consumer.accept(TradeLootTables.BEE_EGG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1281,159 +2906,158 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.BEE_NEST))
                         .add(LootItem.lootTableItem(Items.BEEHIVE))
                         .add(LootItem.lootTableItem(FriendsAndFoesItems.ACACIA_BEEHIVE.get())
-                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
-                                .when(HAS_ACACIA))
+                                .when(HAS_ACACIA).when(FRIENDSANDFOES_LOADED))
                         .add(LootItem.lootTableItem(FriendsAndFoesItems.BIRCH_BEEHIVE.get())
-                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
-                                .when(HAS_BIRCH))
+                                .when(HAS_BIRCH).when(FRIENDSANDFOES_LOADED))
                         .add(LootItem.lootTableItem(FriendsAndFoesItems.CRIMSON_BEEHIVE.get())
-                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
-                                .when(HAS_CRIMSON_FUNGUS))
+                                .when(HAS_CRIMSON_FUNGUS).when(FRIENDSANDFOES_LOADED))
                         .add(LootItem.lootTableItem(FriendsAndFoesItems.WARPED_BEEHIVE.get())
-                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
-                                .when(HAS_WARPED_FUNGUS))
+                                .when(HAS_WARPED_FUNGUS).when(FRIENDSANDFOES_LOADED))
                         .add(LootItem.lootTableItem(FriendsAndFoesItems.DARK_OAK_BEEHIVE.get())
-                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
-                                .when(HAS_DARK_OAK))
+                                .when(HAS_DARK_OAK).when(FRIENDSANDFOES_LOADED))
                         .add(LootItem.lootTableItem(FriendsAndFoesItems.JUNGLE_BEEHIVE.get())
-                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
-                                .when(HAS_JUNGLE))
+                                .when(HAS_JUNGLE).when(FRIENDSANDFOES_LOADED))
                         .add(LootItem.lootTableItem(FriendsAndFoesItems.MANGROVE_BEEHIVE.get())
-                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
-                                .when(HAS_MANGROVE))
+                                .when(HAS_MANGROVE).when(FRIENDSANDFOES_LOADED))
                         .add(LootItem.lootTableItem(FriendsAndFoesItems.SPRUCE_BEEHIVE.get())
-                                .when(ModCheckCondition.mod().isLoaded("friendsandfoes"))
-                                .when(HAS_SPRUCE))
+                                .when(HAS_SPRUCE).when(FRIENDSANDFOES_LOADED))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_VEGGIES_AND_GRAINS_TABLE,
+        // textile trade tables
+        consumer.accept(TradeLootTables.TEXTILES_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CROPS_VEGETABLES))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CROPS_GRAINS))
+                        .add(TagEntry.expandTag(TCItemTags.LEATHER_TEXTILES))
+                        .add(TagEntry.expandTag(TCItemTags.FIBRE))
+                        .add(TagEntry.expandTag(TCItemTags.STRING))
+                        .add(TagEntry.expandTag(TCItemTags.FABRIC))
+                        .add(TagEntry.expandTag(TCItemTags.THREAD))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_BREADS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_DYES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.BREAD))
+                        .add(TagEntry.expandTag(TCItemTags.DYES))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_GOURDS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_STRING_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GOURDS))
+                        .add(TagEntry.expandTag(TCItemTags.STRING))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_PIES_TABLE,
+        // glass trade tables
+        consumer.accept(TradeLootTables.TAGGED_GLASS_PANES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PIES))
+                        .add(TagEntry.expandTag(Tags.Items.GLASS_PANES))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_FRUITS_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_GLASS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CROPS_FRUIT))
+                        .add(TagEntry.expandTag(Tags.Items.GLASS))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_COOKIES_TABLE,
+        consumer.accept(TradeLootTables.GLASS_BOTTLE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COOKIES_FORGE_TAG))
+                        // anything useable for making potions
+                        .add(LootItem.lootTableItem(Items.GLASS_BOTTLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_CAKES_TABLE,
+        consumer.accept(TradeLootTables.RECYCLABLE_GLASS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CAKES))
+                        .add(TagEntry.expandTag(TCItemTags.RECYCLABLE_GLASS))
                 ));
-        consumer.accept(TradeLootTables.TAGGED_PREPARED_SEAFOOD_TABLE,
+        // brewing trade tables
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COOKED_FISHES))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FISH_SOUPS))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SUSHI))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_RAW_SEAFOOD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.RAW_FISHES))
-                ));
-        consumer.accept(TradeLootTables.BELL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.BELL))
-                ));
-        consumer.accept(TradeLootTables.FLINT_BUY_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.FLINT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
-                ));
-        consumer.accept(TradeLootTables.FLINT_SELL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.FLINT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                ));
-        consumer.accept(TradeLootTables.ANVIL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.ANVIL)
+                        .add(LootItem.lootTableItem(Items.SUGAR)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.SHEARS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SHEARS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.PAPER_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.PAPER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                ));
-        consumer.accept(TradeLootTables.REFRESH_BOOK_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.REFRESH_BOOK)
-                                .when(ModCheckCondition.mod().isLoaded("villager_enchanter")))
-                ));
-        consumer.accept(TradeLootTables.BOOK_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.BOOK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.WRITABLE_BOOK)
+                        .add(LootItem.lootTableItem(Items.REDSTONE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.BOOKSTACK)
-                                .when(ModCheckCondition.mod().isLoaded("beautify")))
+                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.FERMENTED_SPIDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.PUFFERFISH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.SCUTE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT).when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH).when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.NETHER_WART)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
                 ));
-        consumer.accept(TradeLootTables.CLOCK_TABLE,
+        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.CLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(TagEntry.expandTag(TCItemTags.SLIMEBALLS))
+                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(TradeLootTables.COMPASS_TABLE,
+        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.COMPASS)
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.GHAST_TEAR_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.DISC_FRAGMENTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DISC_FRAGMENT_5))
+                ));
+        consumer.accept(TradeLootTables.MUSIC_DISC_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.MUSIC_DISCS))
+                ));
+        consumer.accept(TradeLootTables.NETHER_WART_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NETHER_WART)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
+                ));
+        consumer.accept(TradeLootTables.EXPERIENCE_BOTTLE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        // mob parts trade tables
+        consumer.accept(TradeLootTables.SLIMEBALL_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.SLIMEBALLS))
                 ));
         consumer.accept(TradeLootTables.SCUTE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1442,66 +3066,47 @@ public class TradeLootTablesGen extends ChestLoot {
                         .add(LootItem.lootTableItem(Items.SCUTE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                 ));
-        consumer.accept(TradeLootTables.SADDLE_TABLE,
+        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_MOB_PARTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SADDLE)
+                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.SEA_LANTERN_TABLE,
+        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_MOB_PARTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SEA_LANTERN)
+                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.OCEAN_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SPONGE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.DARK_PRISMARINE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.PRISMARINE_BRICKS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.BONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(TradeLootTables.GRAVEL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GRAVEL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                ));
-        consumer.accept(TradeLootTables.FEATHER_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.FEATHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
-                ));
-        consumer.accept(TradeLootTables.TRIPWIRE_HOOK_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.TRIPWIRE_HOOK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
-                ));
-        consumer.accept(TradeLootTables.BLANK_MAP_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.MAP)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.BANNER_PATTERN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GLOBE_BANNER_PATTERN)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
+
+        // decor trade tables
         consumer.accept(TradeLootTables.DECOR_PLANTS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -1520,16 +3125,53 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootItem.lootTableItem(Items.CACTUS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPItems.TINY_CACTUS).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.GLOW_LICHEN)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.SPORE_BLOSSOM)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.SUGAR_CANE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BAMBOO)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.GRASS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(BOPItems.SPROUT).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(BOPItems.CLOVER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_CLOVER.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
                         .add(LootItem.lootTableItem(Items.TALL_GRASS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.SEAGRASS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(BOPItems.BARLEY).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(BOPItems.REED).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(BOPItems.WATERGRASS).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(BOPItems.DESERT_GRASS).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(BOPItems.DEAD_GRASS).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(BOPItems.DUNE_GRASS).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(BOPItems.SEA_OATS).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(BOPItems.WILLOW_VINE).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(BOPItems.HUGE_LILY_PAD).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPItems.WATERLILY).when(BIOMESOPLENTY_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPItems.ENDERPHYTE).when(BIOMESOPLENTY_LOADED)
+                                .when(IN_END)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(BOPItems.LUMALOOP_PLANT).when(BIOMESOPLENTY_LOADED)
+                                .when(IN_END)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootTableReference.lootTableReference(TradeLootTables.TAGGED_FOX_FOOD_TABLE))
                         .add(LootItem.lootTableItem(Items.AZALEA)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
@@ -1537,32 +3179,455 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.HANGING_ROOTS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(TagEntry.expandTag(TCItemTags.FUNGUS))
+                ));
+        consumer.accept(TradeLootTables.CAMPFIRE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModRegistry.FIRE_PIT.get()).when(SUPPLEMENTARIES_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SOUL_CAMPFIRE).when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        // default offer
+                        .add(LootItem.lootTableItem(Items.CAMPFIRE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.LANTERN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.LANTERNS))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_WOOL_CARPETS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.WOOL_CARPETS))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_BEDS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.BEDS))
+                ));
+        consumer.accept(TradeLootTables.PAINTINGS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.PAINTING))
+                ));
+        consumer.accept(TradeLootTables.TORCH_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SOUL_TORCH).when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(Items.TORCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                ));
+        consumer.accept(TradeLootTables.LEAVES_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.LEAVES))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_CANDLE_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.CANDELABRA)
+                                .when(BEAUTIFY_LOADED))
+                        .add(TagEntry.expandTag(ItemTags.CANDLES))
+                ));
+        consumer.accept(TradeLootTables.SOUL_LIGHTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SOUL_TORCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
+                        .add(LootItem.lootTableItem(Items.SOUL_LANTERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.SOUL_CAMPFIRE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.END_ROD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.END_ROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.BLINDS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.BLINDS)
+                                .when(BEAUTIFY_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ITEM_FRAME_TABLE))
                 ));
         consumer.accept(TradeLootTables.FRAMES_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.PICTURE_FRAMES)
+                                .when(BEAUTIFY_LOADED))
                         .add(LootTableReference.lootTableReference(TradeLootTables.ITEM_FRAME_TABLE))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PICTURE_FRAMES)
-                                .when(ModCheckCondition.mod().isLoaded("beautify")))
                 ));
         consumer.accept(TradeLootTables.TRELLIS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.TRELLIS)
-                                .when(ModCheckCondition.mod().isLoaded("beautify")))
+                        .add(TagEntry.expandTag(TCItemTags.TRELLIS)
+                                .when(BEAUTIFY_LOADED))
+                        .add(TagEntry.expandTag(Tags.Items.FENCES)
+                                .when(BEAUTIFY_LOADED.invert()))
                 ));
         consumer.accept(TradeLootTables.FLOWER_POT_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.PLANTERS)
+                                .when(SUPPLEMENTARIES_LOADED.or(BEAUTIFY_LOADED)))
                         .add(LootItem.lootTableItem(Items.FLOWER_POT)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FLOWER_BOX)
-                                .when(ModCheckCondition.mod().isLoaded("supplementaries")))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.HANGING_POT)
-                                .when(ModCheckCondition.mod().isLoaded("beautify")))
+                ));
+        consumer.accept(TradeLootTables.ITEM_FRAME_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.ITEM_FRAME)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.GLOW_ITEM_FRAME)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_BANNER_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.BANNERS))
+                ));
+        consumer.accept(TradeLootTables.SAPLING_SELL_TABLE, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Blocks.SPRUCE_SAPLING).when(HAS_SPRUCE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.BIRCH_SAPLING).when(HAS_BIRCH.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.JUNGLE_SAPLING).when(HAS_JUNGLE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.ACACIA_SAPLING).when(HAS_ACACIA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.DARK_OAK_SAPLING).when(HAS_DARK_OAK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.MANGROVE_PROPAGULE).when(HAS_MANGROVE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.WARPED_FUNGUS).when(HAS_WARPED_FUNGUS.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.CRIMSON_FUNGUS).when(HAS_CRIMSON_FUNGUS.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.FIR_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_FIR.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PINE_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PINE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.EMPYREAL_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_EMPYREAL.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.REDWOOD_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_REDWOOD.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.CHERRY_SAPLING).when(HAS_CHERRY.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPItems.SNOWBLOSSOM_SAPLING).when(HAS_SNOWBLOSSOM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAHOGANY_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_MAHOGANY.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.JACARANDA_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_JACARANDA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PALM_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PALM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WILLOW_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WILLOW.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.DEAD_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_DEAD.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAGIC_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_MAGIC.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.UMBRAN_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_UMBRAN.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.HELLBARK_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_HELLBARK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.FLOWERING_OAK_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_FLOWERING_OAK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.RAINBOW_BIRCH_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_RAINBOW_BIRCH.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ORIGIN_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ORIGIN.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ORANGE_MAPLE_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ORANGE_MAPLE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.RED_MAPLE_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_RED_MAPLE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.YELLOW_MAPLE_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_YELLOW_MAPLE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.COCONUT_SEEDLING.get()).when(HAS_COCONUT.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.AZALEA).when(HAS_AZALEA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Blocks.FLOWERING_AZALEA).when(HAS_AZALEA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(SKYROOT_SAPLING.get()).when(AETHER_LOADED)
+                                .when(HAS_AETHER_SKYROOT.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TinkerWorld.slimeSapling.get(FoliageType.BLOOD)).when(TCONSTRUCT_LOADED)
+                                .when(HAS_BLOODSHROOM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TinkerWorld.slimeSapling.get(FoliageType.ENDER)).when(TCONSTRUCT_LOADED)
+                                .when(HAS_ENDERBARK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(TinkerWorld.slimeSapling.get(FoliageType.EARTH)).when(TCONSTRUCT_LOADED)
+                                .when(HAS_GREENHEART.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(TagEntry.expandTag(TCItemTags.END_SAPLINGS).when(IN_END.invert()))
+                        // default modded offers
+                        .add(LootItem.lootTableItem(TinkerWorld.slimeSapling.get(FoliageType.SKY)).when(TCONSTRUCT_LOADED)
+                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.WALNUT_SAPLING.get()).when(ECOLOGICS_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        // default offer
+                        .add(LootItem.lootTableItem(Blocks.OAK_SAPLING)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                )
+        );
+        consumer.accept(TradeLootTables.SAPLING_BUY_TABLE, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1)).setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Blocks.SPRUCE_SAPLING).when(HAS_SPRUCE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.BIRCH_SAPLING).when(HAS_BIRCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.JUNGLE_SAPLING).when(HAS_JUNGLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.ACACIA_SAPLING).when(HAS_ACACIA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.DARK_OAK_SAPLING).when(HAS_DARK_OAK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.MANGROVE_PROPAGULE).when(HAS_MANGROVE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.WARPED_FUNGUS).when(HAS_WARPED_FUNGUS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.CRIMSON_FUNGUS).when(HAS_CRIMSON_FUNGUS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.FIR_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_FIR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PINE_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PINE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.EMPYREAL_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_EMPYREAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.REDWOOD_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_REDWOOD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.CHERRY_SAPLING).when(HAS_CHERRY)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPItems.SNOWBLOSSOM_SAPLING).when(HAS_SNOWBLOSSOM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAHOGANY_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_MAHOGANY)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.JACARANDA_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_JACARANDA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PALM_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PALM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WILLOW_SAPLING).when(HAS_WILLOW)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.DEAD_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_DEAD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAGIC_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_MAGIC)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.UMBRAN_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_UMBRAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.HELLBARK_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_HELLBARK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.FLOWERING_OAK_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_FLOWERING_OAK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.RAINBOW_BIRCH_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_RAINBOW_BIRCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ORIGIN_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ORIGIN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.RED_MAPLE_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_RED_MAPLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.YELLOW_MAPLE_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_YELLOW_MAPLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ORANGE_MAPLE_SAPLING).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ORANGE_MAPLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.COCONUT_SEEDLING.get()).when(HAS_COCONUT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.AZALEA).when(HAS_AZALEA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.FLOWERING_AZALEA).when(HAS_AZALEA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(SKYROOT_SAPLING.get()).when(AETHER_LOADED)
+                                .when(HAS_AETHER_SKYROOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.slimeSapling.get(FoliageType.BLOOD)).when(TCONSTRUCT_LOADED)
+                                .when(HAS_BLOODSHROOM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.slimeSapling.get(FoliageType.ENDER)).when(TCONSTRUCT_LOADED)
+                                .when(HAS_ENDERBARK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.slimeSapling.get(FoliageType.EARTH)).when(TCONSTRUCT_LOADED)
+                                .when(HAS_GREENHEART)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        // default modded offers
+                        .add(LootItem.lootTableItem(TinkerWorld.slimeSapling.get(FoliageType.SKY)).when(TCONSTRUCT_LOADED)
+                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.WALNUT_SAPLING.get()).when(ECOLOGICS_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        // default offer
+                        .add(LootItem.lootTableItem(Blocks.OAK_SAPLING)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                )
+        );
+        // flowers
+        consumer.accept(TradeLootTables.FLOWER_SELL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SUNFLOWER).when(HAS_SUNFLOWER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PEONY).when(HAS_PEONY.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.ROSE_BUSH).when(HAS_ROSE_BUSH.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.LILAC).when(HAS_LILAC.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(FriendsAndFoesItems.BUTTERCUP.get()).when(HAS_BUTTERCUP.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.LILY_OF_THE_VALLEY).when(HAS_LILY_OF_THE_VALLEY.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.CORNFLOWER).when(HAS_CORNFLOWER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.OXEYE_DAISY).when(HAS_OXEYE_DAISY.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PINK_TULIP).when(HAS_PINK_TULIP.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.WHITE_TULIP).when(HAS_WHITE_TULIP.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.ORANGE_TULIP).when(HAS_ORANGE_TULIP.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.RED_TULIP).when(HAS_RED_TULIP.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.AZURE_BLUET).when(HAS_AZURE_BLUET.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.ALLIUM).when(HAS_ALLIUM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BLUE_ORCHID).when(HAS_BLUE_ORCHID.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.GOLDENROD).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_GOLDENROD.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WILDFLOWER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WILDFLOWER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.CATTAIL).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_CATTAIL.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WILTED_LILY).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WILTED_LILY.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.BLUE_HYDRANGEA).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_BLUE_HYDRANGEA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PINK_HIBISCUS).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PINK_HIBISCUS.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ORANGE_COSMOS).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ORANGE_COSMOS.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PINK_DAFFODIL).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PINK_DAFFODIL.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.VIOLET).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_VIOLET.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ROSE).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ROSE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.WITHER_ROSE).when(HAS_WITHER_ROSE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.GLOWFLOWER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_GLOWFLOWER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.LAVENDER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_LAVENDER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.TALL_LAVENDER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_LAVENDER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WHITE_LAVENDER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WHITE_LAVENDER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.TALL_WHITE_LAVENDER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WHITE_LAVENDER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ICY_IRIS).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ICY_IRIS.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.BURNING_BLOSSOM).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_BURNING_BLOSSOM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ENDBLOOM).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ENDBLOOM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(AetherBlocks.PURPLE_FLOWER.get()).when(AETHER_LOADED)
+                                .when(HAS_PURPLE_FLOWER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(AetherBlocks.WHITE_FLOWER.get()).when(AETHER_LOADED)
+                                .when(HAS_WHITE_FLOWER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        // random chance offers
+                        .add(LootItem.lootTableItem(Items.PITCHER_PLANT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.01F)))
+                        .add(LootItem.lootTableItem(Items.TORCHFLOWER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.01F)))
+                        // default offers
+                        .add(LootItem.lootTableItem(Items.POPPY)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DANDELION)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
         consumer.accept(TradeLootTables.FLOWER_BUY_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -1598,439 +3663,427 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                         .add(LootItem.lootTableItem(Items.BLUE_ORCHID).when(HAS_BLUE_ORCHID)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.GOLDENROD).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_GOLDENROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WILDFLOWER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WILDFLOWER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.CATTAIL).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_CATTAIL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WILTED_LILY).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WILTED_LILY)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.BLUE_HYDRANGEA).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_BLUE_HYDRANGEA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PINK_HIBISCUS).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PINK_HIBISCUS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ORANGE_COSMOS).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ORANGE_COSMOS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PINK_DAFFODIL).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PINK_DAFFODIL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.VIOLET).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_VIOLET)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ROSE).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ROSE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.WITHER_ROSE).when(HAS_WITHER_ROSE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.GLOWFLOWER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_GLOWFLOWER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.LAVENDER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_LAVENDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.TALL_LAVENDER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_LAVENDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WHITE_LAVENDER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WHITE_LAVENDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.TALL_WHITE_LAVENDER).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WHITE_LAVENDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ICY_IRIS).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ICY_IRIS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.BURNING_BLOSSOM).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_BURNING_BLOSSOM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(BOPBlocks.ENDBLOOM).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_ENDBLOOM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(AetherBlocks.PURPLE_FLOWER.get()).when(AETHER_LOADED)
+                                .when(HAS_PURPLE_FLOWER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(AetherBlocks.WHITE_FLOWER.get()).when(AETHER_LOADED)
+                                .when(HAS_WHITE_FLOWER.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        // random chance offers
+                        .add(LootItem.lootTableItem(Items.PITCHER_PLANT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.01F)))
+                        .add(LootItem.lootTableItem(Items.TORCHFLOWER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12)))
+                                .when(LootItemRandomChanceCondition.randomChance(0.01F)))
+                        // default offers
                         .add(LootItem.lootTableItem(Items.POPPY)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                         .add(LootItem.lootTableItem(Items.DANDELION)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
                 ));
-        consumer.accept(TradeLootTables.FLOWER_SELL_TABLE,
+
+        // tool trade tables
+        consumer.accept(TradeLootTables.COMPASS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SUNFLOWER).when(HAS_SUNFLOWER.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.PEONY).when(HAS_PEONY.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.ROSE_BUSH).when(HAS_ROSE_BUSH.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.LILAC).when(HAS_LILAC.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(FriendsAndFoesItems.BUTTERCUP.get()).when(HAS_BUTTERCUP.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.LILY_OF_THE_VALLEY).when(HAS_LILY_OF_THE_VALLEY.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.CORNFLOWER).when(HAS_CORNFLOWER.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.OXEYE_DAISY).when(HAS_OXEYE_DAISY.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.PINK_TULIP).when(HAS_PINK_TULIP.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.WHITE_TULIP).when(HAS_WHITE_TULIP.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.ORANGE_TULIP).when(HAS_ORANGE_TULIP.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.RED_TULIP).when(HAS_RED_TULIP.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.AZURE_BLUET).when(HAS_AZURE_BLUET.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.ALLIUM).when(HAS_ALLIUM.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.BLUE_ORCHID).when(HAS_BLUE_ORCHID.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.POPPY)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                        .add(LootItem.lootTableItem(Items.DANDELION)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
-                ));
-        consumer.accept(TradeLootTables.SAPLING_BUY_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SPRUCE_SAPLING).when(HAS_SPRUCE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.MANGROVE_PROPAGULE).when(HAS_MANGROVE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.ACACIA_SAPLING).when(HAS_ACACIA)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.JUNGLE_SAPLING).when(HAS_JUNGLE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.BIRCH_SAPLING).when(HAS_BIRCH)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.DARK_OAK_SAPLING).when(HAS_DARK_OAK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.OAK_SAPLING)
+                        .add(LootItem.lootTableItem(Items.COMPASS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.SAPLING_SELL_TABLE,
+
+        // weapon trade tables
+        consumer.accept(TradeLootTables.IRON_TIER_WEAPONS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SPRUCE_SAPLING).when(HAS_SPRUCE)
+                        .add(LootItem.lootTableItem(Items.IRON_SWORD))
+                        .add(LootItem.lootTableItem(Items.IRON_AXE))
+                        .add(TagEntry.expandTag(TCItemTags.IRON_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                ));
+        consumer.accept(TradeLootTables.GOLD_TIER_WEAPONS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_SWORD))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_AXE))
+                        .add(TagEntry.expandTag(TCItemTags.GOLD_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                ));
+        consumer.accept(TradeLootTables.DIAMOND_TIER_WEAPONS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_SWORD))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_AXE))
+                        .add(TagEntry.expandTag(TCItemTags.DIAMOND_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                ));
+        consumer.accept(TradeLootTables.NETHERITE_TIER_WEAPONS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_SWORD))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_AXE))
+                        .add(TagEntry.expandTag(TCItemTags.NETHERITE_TIER_KNIVES))
+                        .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED))
+                ));
+        consumer.accept(TradeLootTables.TRIDENT_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.TRIDENT))
+                ));
+        consumer.accept(TradeLootTables.BOWS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TinkerTags.Items.CROSSBOWS).when(TCONSTRUCT_LOADED))
+                        .add(TagEntry.expandTag(TinkerTags.Items.LONGBOWS).when(TCONSTRUCT_LOADED))
+                        .add(TagEntry.expandTag(TinkerTags.Items.BOWS).when(TCONSTRUCT_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.SLINGSHOT_ITEM.get())
+                                .when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(Items.BOW))
+                        .add(LootItem.lootTableItem(Items.CROSSBOW))
+                ));
+        consumer.accept(TradeLootTables.QUIVERS_TABLE,
+                LootTable.lootTable().withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(ModRegistry.QUIVER_ITEM.get())
+                                        .when(SUPPLEMENTARIES_LOADED))
+                                .add(LootItem.lootTableItem(Items.BOW)
+                                        .when(SUPPLEMENTARIES_LOADED.invert()))
+                ));
+        // tool trade tables
+        consumer.accept(TradeLootTables.STONE_TIER_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.STONE_PICKAXE))
+                        .add(LootItem.lootTableItem(Items.STONE_AXE))
+                        .add(LootItem.lootTableItem(Items.STONE_SHOVEL))
+                        .add(LootItem.lootTableItem(Items.STONE_HOE))
+                        .add(TagEntry.expandTag(TCItemTags.STONE_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                ));
+        consumer.accept(TradeLootTables.IRON_TIER_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.IRON_PICKAXE))
+                        .add(LootItem.lootTableItem(Items.IRON_AXE))
+                        .add(LootItem.lootTableItem(Items.IRON_SHOVEL))
+                        .add(LootItem.lootTableItem(Items.IRON_HOE))
+                        .add(TagEntry.expandTag(TCItemTags.IRON_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                ));
+        consumer.accept(TradeLootTables.GOLD_TIER_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_PICKAXE))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_AXE))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_SHOVEL))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_HOE))
+                        .add(TagEntry.expandTag(TCItemTags.GOLD_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                ));
+        consumer.accept(TradeLootTables.DIAMOND_TIER_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_PICKAXE))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_AXE))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_SHOVEL))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_HOE))
+                        .add(TagEntry.expandTag(TCItemTags.DIAMOND_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                ));
+        consumer.accept(TradeLootTables.NETHERITE_TIER_TOOLS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_PICKAXE))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_AXE))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_SHOVEL))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_HOE))
+                        .add(TagEntry.expandTag(TCItemTags.NETHERITE_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                ));
+        consumer.accept(TradeLootTables.WOOD_TIER_KNIVES,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.WOOD_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                        .add(LootItem.lootTableItem(Items.WOODEN_AXE)
+                                .when(FARMERSDELIGHT_LOADED.invert())
+                                .when(DELIGHTFUL_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.STONE_TIER_KNIVES,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.STONE_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                        .add(LootItem.lootTableItem(Items.STONE_AXE)
+                                .when(FARMERSDELIGHT_LOADED.invert())
+                                .when(DELIGHTFUL_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.IRON_TIER_KNIVES,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.IRON_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                        .add(LootItem.lootTableItem(Items.IRON_AXE)
+                                .when(FARMERSDELIGHT_LOADED.invert())
+                                .when(DELIGHTFUL_LOADED.invert())))
+        );
+        consumer.accept(TradeLootTables.GOLD_TIER_KNIVES,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.GOLD_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_AXE)
+                                .when(FARMERSDELIGHT_LOADED.invert())
+                                .when(DELIGHTFUL_LOADED.invert())))
+        );
+        consumer.accept(TradeLootTables.DIAMOND_TIER_KNIVES,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.DIAMOND_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_AXE)
+                                .when(FARMERSDELIGHT_LOADED.invert())
+                                .when(DELIGHTFUL_LOADED.invert())))
+        );
+        consumer.accept(TradeLootTables.NETHERITE_TIER_KNIVES,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.NETHERITE_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_AXE)
+                                .when(FARMERSDELIGHT_LOADED.invert())
+                                .when(DELIGHTFUL_LOADED.invert())))
+        );
+        consumer.accept(TradeLootTables.BEYOND_TIER_KNIVES,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.BEYOND_TIER_KNIVES)
+                                .when(FARMERSDELIGHT_LOADED.or(DELIGHTFUL_LOADED)))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_SWORD)
+                                .when(FARMERSDELIGHT_LOADED.invert())
+                                .when(DELIGHTFUL_LOADED.invert())))
+        );
+        consumer.accept(TradeLootTables.FISHING_ROD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // add modded fishing rods
+                        .add(LootItem.lootTableItem(Items.FISHING_ROD))
+                ));
+        consumer.accept(TradeLootTables.TRIPWIRE_HOOK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.TRIPWIRE_HOOK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(8))))
+                ));
+        consumer.accept(TradeLootTables.CLOCK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModRegistry.CLOCK_BLOCK.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.MYSTERIOUS_CUCKOO_CLOCK).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.CUCKOO_CLOCK).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(Items.CLOCK))
+                ));
+        consumer.accept(TradeLootTables.NAME_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NAME_TAG)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.MANGROVE_PROPAGULE).when(HAS_MANGROVE.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.ACACIA_SAPLING).when(HAS_ACACIA.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.JUNGLE_SAPLING).when(HAS_JUNGLE.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.BIRCH_SAPLING).when(HAS_BIRCH.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.DARK_OAK_SAPLING).when(HAS_DARK_OAK.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.OAK_SAPLING)
+                ));
+        consumer.accept(TradeLootTables.SHEARS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SHEARS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.FEAST_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.STONE_TIER_SEWING_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.HONEY_GLAZED_HAM_BLOCK.get()))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.RICE_ROLL_MEDLEY_BLOCK.get()))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.ROAST_CHICKEN_BLOCK.get()))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.SHEPHERDS_PIE_BLOCK.get()))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModBlocks.STUFFED_PUMPKIN_BLOCK.get()))
-                ));
-        consumer.accept(TradeLootTables.COFFEE_INGREDIENTS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.KAWAII_COFFEE_INGREDIENTS)
-                                .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
-                ));
-        consumer.accept(TradeLootTables.DRIED_KELP_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.DRIED_KELP)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                ));
-        consumer.accept(TradeLootTables.PET_FOOD_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PET_FOOD))
-                ));
-        consumer.accept(TradeLootTables.DRINKS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.KAWAII_DRINKS)
-                                .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FAST_FOOD_DRINKS)
-                                .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DRINKS))
-                ));
-        consumer.accept(TradeLootTables.DESSERT_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.KAWAII_DESSERTS)
-                                .when(ModCheckCondition.mod().isLoaded("kawaiidishes")))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FAST_FOOD_DESSERTS)
-                                .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DESSERTS))
-                ));
-        consumer.accept(TradeLootTables.PLATED_FOODS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PLATED_FOODS))
-                ));
-        consumer.accept(TradeLootTables.SOUP_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SOUPS))
-                ));
-        consumer.accept(TradeLootTables.SIDE_DISH_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FAST_FOOD_SIDE_DISHES)
-                                .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SIDE_DISHES))
-                ));
-        consumer.accept(TradeLootTables.SANDWICH_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FAST_FOOD_SANDWICHES)
-                                .when(ModCheckCondition.mod().isLoaded("fastfooddelight")))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SANDWICHES))
-                ));
-        consumer.accept(TradeLootTables.INGREDIENTS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.INGREDIENTS))
-                ));
-        consumer.accept(TradeLootTables.SEED_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SEEDS))
-                ));
-        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_MOB_PARTS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
+                        .add(TagEntry.expandTag(TCItemTags.STONE_TIER_SEWING_TOOLS)
+                                .when(SEWINGKIT_LOADED))
+                        .add(LootItem.lootTableItem(Items.SHEARS)
+                                .when(SEWINGKIT_LOADED.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_MOB_PARTS_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_SEWING_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.SLIMEBALL_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SLIMEBALLS))
-                ));
-        consumer.accept(TradeLootTables.SAND_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SAND))
-                ));
-        consumer.accept(TradeLootTables.SEASHELL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.NAUTILUS_SHELL))
-                ));
-        consumer.accept(TradeLootTables.ICE_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SNOW_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.PACKED_ICE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.BLUE_ICE)
+                        .add(TagEntry.expandTag(TCItemTags.IRON_TIER_SEWING_TOOLS)
+                                .when(SEWINGKIT_LOADED))
+                        .add(LootItem.lootTableItem(Items.SHEARS)
+                                .when(SEWINGKIT_LOADED.invert())
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.DISC_FRAGMENTS_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_SEWING_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DISC_FRAGMENT_5))
+                        .add(TagEntry.expandTag(TCItemTags.DIAMOND_TIER_SEWING_TOOLS)
+                                .when(SEWINGKIT_LOADED))
+                        .add(LootItem.lootTableItem(Items.SHEARS)
+                                .when(SEWINGKIT_LOADED.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.CORAL_BLOCK_TAG_TABLE,
+        consumer.accept(TradeLootTables.BOMB_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CORAL_BLOCKS))
+                        .add(LootItem.lootTableItem(ModRegistry.BOMB_ITEM.get()).when(SUPPLEMENTARIES_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(ModRegistry.BOMB_BLUE_ITEM.get()).when(SUPPLEMENTARIES_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(ModRegistry.BOMB_SPIKY_ITEM.get()).when(SUPPLEMENTARIES_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.TNT))
                 ));
-        consumer.accept(TradeLootTables.MUSIC_DISC_TAG_TABLE,
+        consumer.accept(TradeLootTables.ROPE_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ItemTags.MUSIC_DISCS))
+                        .add(TagEntry.expandTag(TCItemTags.ROPES)
+                                .when(FARMERSDELIGHT_LOADED.or(SUPPLEMENTARIES_LOADED
+                                        .or(BEAUTIFY_LOADED))))
+                        .add(TagEntry.expandTag(TCItemTags.STRING)
+                                .when(BEAUTIFY_LOADED.invert())
+                                .when(SUPPLEMENTARIES_LOADED.invert())
+                                .when(FARMERSDELIGHT_LOADED.invert()))
                 ));
-        consumer.accept(TradeLootTables.RECYCLABLE_GLASS_TAG_TABLE,
+        consumer.accept(TradeLootTables.BUCKETS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.RECYCLABLE_GLASS))
+                        .add(TagEntry.expandTag(TCItemTags.BUCKET_REMAINDERS))
                 ));
         consumer.accept(TradeLootTables.GLASSBLOWING_TOOLS_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GLASSBLOWER_TOOLS))
+                        .add(TagEntry.expandTag(TCItemTags.GLASSBLOWER_TOOLS).when(TODEVILLAGERS_LOADED))
+                        .add(LootItem.lootTableItem(Items.SHEARS).when(TODEVILLAGERS_LOADED.invert()))
                 ));
-        consumer.accept(TradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.NETHERITE_TIER_SEWING_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.MUD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.COARSE_DIRT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.PODZOL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.ROOTED_DIRT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.MOSS_BLOCK)
-                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.MYCELIUM)
-                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(TagEntry.expandTag(TCItemTags.NETHERITE_TIER_SEWING_TOOLS)
+                                .when(SEWINGKIT_LOADED))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_INGOT)
+                                .when(SEWINGKIT_LOADED.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.BOTTLED_HONEY_TABLE,
+        consumer.accept(TradeLootTables.COOKING_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.HONEY_BOTTLE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_KNIVES))
+                        .add(LootItem.lootTableItem(ModItems.CUTTING_BOARD.get()).when(FARMERSDELIGHT_LOADED))
+                        .add(LootItem.lootTableItem(ModItems.COOKING_POT.get()).when(FARMERSDELIGHT_LOADED))
                 ));
-        consumer.accept(TradeLootTables.HONEY_BLOCK_TABLE,
+        consumer.accept(TradeLootTables.ENGINEER_TOOLS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.HONEY_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
+                        .add(LootItem.lootTableItem(AllBlocks.STRESSOMETER).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.SPEEDOMETER).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.CLIPBOARD).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllItems.SUPER_GLUE).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllItems.EXTENDO_GRIP).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllItems.WAND_OF_SYMMETRY).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllItems.EMPTY_SCHEMATIC).when(CREATE_LOADED))
+                        .add(TagEntry.expandTag(AllTags.AllItemTags.TOOLBOXES.tag).when(CREATE_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_TOOLS_TABLE)
+                                .when(CREATE_LOADED.invert()))
                 ));
-        consumer.accept(TradeLootTables.HONEY_COMB_TABLE,
+        consumer.accept(TradeLootTables.WRENCH_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.HONEYCOMB)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.HONEYCOMB)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.SHIELD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SHIELD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.ITEM_FRAME_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.ITEM_FRAME)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.GLOW_ITEM_FRAME)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                ));
-        consumer.accept(TradeLootTables.EXPERIENCE_BOTTLE_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.GHAST_TEAR_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.NETHER_WART_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.NETHER_WART)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
-                ));
-        consumer.accept(TradeLootTables.FIVE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.SLIMEBALLS))
-                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                ));
-        consumer.accept(TradeLootTables.TEN_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SUGAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.REDSTONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.GLOWSTONE_DUST)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.FERMENTED_SPIDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(Items.PUFFERFISH)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.SCUTE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT).when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH).when(LootItemRandomChanceCondition.randomChance(0.1F))
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.NETHER_WART)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
-                ));
-        consumer.accept(TradeLootTables.GLASS_BOTTLE_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GLASS_BOTTLE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                ));
-        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_MOB_PARTS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GUNPOWDER))
-                        .add(LootItem.lootTableItem(Items.SPIDER_EYE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(Items.BONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                ));
-        consumer.accept(TradeLootTables.GOLDEN_FOOD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_CARROT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.GLISTERING_MELON_SLICE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_APPLE).when(BIRTHDAY_EVENT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.CAMPFIRE_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.CAMPFIRE).when(IN_OVERWORLD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.SOUL_CAMPFIRE).when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.SOUL_LIGHTS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SOUL_TORCH)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
-                        .add(LootItem.lootTableItem(Items.SOUL_LANTERN)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.SOUL_CAMPFIRE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(AllItems.WRENCH).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.WRENCH.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_TOOLS_TABLE)
+                                .when(SUPPLEMENTARIES_LOADED.invert())
+                                .when(CREATE_LOADED.invert()))
                 ));
         consumer.accept(TradeLootTables.FISH_BUCKET_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2046,293 +4099,58 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.SALMON_BUCKET).when(HAS_SALMON)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        // default offer
                         .add(LootItem.lootTableItem(Items.COD_BUCKET)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.DRAGON_BREATH_TABLE,
+        // armor trade tables
+        consumer.accept(TradeLootTables.SADDLE_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
+                        .add(LootItem.lootTableItem(Items.SADDLE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.NINE_EMERALD_VALUE_REDSTONE,
+        consumer.accept(TradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
-                        .add(LootItem.lootTableItem(Items.REDSTONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.LEATHER_HORSE_ARMOR))
                 ));
-        consumer.accept(TradeLootTables.REDSTONE_COMPONENTS_TABLE,
+        consumer.accept(TradeLootTables.IRON_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.REPEATER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.DROPPER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.DISPENSER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.REDSTONE_LAMP)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.OBSERVER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.COMPARATOR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.PISTON)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.STICKY_PISTON)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.DAYLIGHT_DETECTOR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.HOPPER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.IRON_HORSE_ARMOR))
                 ));
-        consumer.accept(TradeLootTables.CREATE_INGOTS_TAG_TABLE,
+        consumer.accept(TradeLootTables.GOLD_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CREATE_INGOTS))
+                        .add(LootItem.lootTableItem(Items.GOLDEN_HORSE_ARMOR))
                 ));
-        consumer.accept(TradeLootTables.COPPER_DIVING_GEAR_TAG_TABLE,
+        consumer.accept(TradeLootTables.DIAMOND_TIER_HORSE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COPPER_DIVING_GEAR))
+                        .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR))
                 ));
-        consumer.accept(TradeLootTables.MINING_EQUIPMENT_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.MINING_EQUIPMENT))
-                ));
-        consumer.accept(TradeLootTables.TRAIN_EQUIPMENT_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.TRAIN_EQUIPMENT))
-                ));
-        consumer.accept(TradeLootTables.MECHANICAL_EQUIPMENT_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.MECHANICAL_EQUIPMENT))
-                ));
-        consumer.accept(TradeLootTables.HYDRAULIC_EQUIPMENT_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.HYDRAULIC_EQUIPMENT))
-                ));
-        consumer.accept(TradeLootTables.ZINC_MATERIALS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.ZINC_MATERIALS))
-                ));
-        consumer.accept(TradeLootTables.IRON_MATERIALS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.IRON_MATERIALS))
-                ));
-        consumer.accept(TradeLootTables.COPPER_MATERIALS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.COPPER_MATERIALS))
-                ));
-        consumer.accept(TradeLootTables.PACKAGE_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PACKAGE_CONTAINERS))
-                ));
-        consumer.accept(TradeLootTables.POISONOUS_POTATO_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.POISONOUS_POTATO)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                ));
-        consumer.accept(TradeLootTables.REDSTONE_TORCH_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.REDSTONE_TORCH)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                ));
-        consumer.accept(TradeLootTables.LEAVES_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ItemTags.LEAVES))
-                ));
-        consumer.accept(TradeLootTables.ENCHANTABLE_PET_GEAR_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.ENCHANTABLE_PET_GEAR))
-                ));
-        consumer.accept(TradeLootTables.PET_SUPPLIES_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PET_BEDS))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PET_SUPPLIES))
-                ));
-        consumer.accept(TradeLootTables.CUPS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GLASS_BOTTLE))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.KAWAII_CUPS))
-                ));
-        consumer.accept(TradeLootTables.COOKING_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.TOOLS_KNIVES))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.CUTTING_BOARD.get()))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.COOKING_POT.get()))
-                ));
-        consumer.accept(TradeLootTables.TEXTILES_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.LEATHER_TEXTILES))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FIBRE_FORGE_TAG))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.STRING))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FABRIC_FORGE_TAG))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.THREAD_FORGE_TAG))
-                ));
-        consumer.accept(TradeLootTables.PATTERNS_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.PATTERNS))
-                ));
-        consumer.accept(TradeLootTables.TAILOR_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.NEEDLES))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.FILE))
-                ));
-        consumer.accept(TradeLootTables.NAME_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.NAME_TAG)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.BONE_MEAL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.BONE_MEAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
-                ));
-        consumer.accept(TradeLootTables.DRAGON_HEAD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DRAGON_HEAD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.SHULKER_SHELL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SHULKER_SHELL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.ENDER_PEARL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.END_ROD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.END_ROD)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                ));
-        consumer.accept(TradeLootTables.NETHER_STAR_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.NETHER_STAR)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.HEART_OF_THE_SEA_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.HEART_OF_THE_SEA)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                ));
-        consumer.accept(TradeLootTables.CLAY_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.CLAY)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.CLAY_BALL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                ));
-        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_FUEL,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.COAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.COAL_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
-                        .add(LootItem.lootTableItem(Items.CHARCOAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
-                        .add(LootItem.lootTableItem(Items.LAVA_BUCKET)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                ));
-        consumer.accept(TradeLootTables.FISHING_GEAR_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.FISHING_ROD))
-                        .add(LootItem.lootTableItem(Items.ACACIA_BOAT)
-                                .when(HAS_ACACIA))
-                        .add(LootItem.lootTableItem(Items.BIRCH_BOAT)
-                                .when(HAS_BIRCH))
-                        .add(LootItem.lootTableItem(Items.DARK_OAK_BOAT)
-                                .when(HAS_DARK_OAK))
-                        .add(LootItem.lootTableItem(Items.JUNGLE_BOAT)
-                                .when(HAS_JUNGLE))
-                        .add(LootItem.lootTableItem(Items.MANGROVE_BOAT)
-                                .when(HAS_MANGROVE))
-                        .add(LootItem.lootTableItem(Items.SPRUCE_BOAT)
-                                .when(HAS_SPRUCE))
-                        .add(LootItem.lootTableItem(Items.OAK_BOAT))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.CRAB_TRAP))
-                ));
-        consumer.accept(TradeLootTables.FISHING_ROD_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.FISHING_ROD))
-                ));
-
         consumer.accept(TradeLootTables.GOGGLES_TAG_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GOGGLES))
+                        .add(LootItem.lootTableItem(AllItems.GOGGLES)
+                                .when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(Items.LEATHER_HELMET)
+                                .when(CREATE_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.SHIELD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TinkerTags.Items.SHIELDS).when(TCONSTRUCT_LOADED))
+                        .add(TagEntry.expandTag(TinkerTags.Items.STONESHIELDS).when(TCONSTRUCT_LOADED))
+                        .add(LootItem.lootTableItem(Items.SHIELD))
                 ));
         consumer.accept(TradeLootTables.LEATHER_TIER_HELMETS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2407,7 +4225,6 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHERITE_CHESTPLATE))
                 ));
-
         consumer.accept(TradeLootTables.LEATHER_TIER_LEGGINGS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -2481,290 +4298,291 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.NETHERITE_BOOTS))
                 ));
-        consumer.accept(TradeLootTables.DYEABLE_HELMETS_TABLE,
+        consumer.accept(TradeLootTables.DYEABLE_ARMOR_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYEABLE_HELMETS))
+                        .add(TagEntry.expandTag(TCItemTags.DYEABLE_ARMOR))
                 ));
-        consumer.accept(TradeLootTables.DYEABLE_CHESTPLATES_TABLE,
+
+        // "library" trade tables
+        consumer.accept(TradeLootTables.PAPER_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYEABLE_CHESTPLATES))
-                ));
-        consumer.accept(TradeLootTables.DYEABLE_LEGGINGS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYEABLE_LEGGINGS))
-                ));
-        consumer.accept(TradeLootTables.DYEABLE_BOOTS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYEABLE_BOOTS))
-                ));
-        consumer.accept(TradeLootTables.TRIDENT_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.TRIDENT))
-                ));
-        consumer.accept(TradeLootTables.BOWS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.BOW))
-                        .add(LootItem.lootTableItem(Items.CROSSBOW))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_QUIVERS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.QUIVERS)
-                                .when(ModCheckCondition.mod().isLoaded("supplementaries")
-                                        .or(ModCheckCondition.mod().isLoaded("tconstruct"))))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.STRING)
-                                .when(ModCheckCondition.mod().isLoaded("supplementaries").invert())
-                                .when(ModCheckCondition.mod().isLoaded("tconstruct").invert()))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_LEATHER_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.LEATHER))
-                ));
-        consumer.accept(TradeLootTables.LEATHER_TIER_HORSE_ARMOR_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.LEATHER_HORSE_ARMOR))
-                ));
-        consumer.accept(TradeLootTables.IRON_TIER_HORSE_ARMOR_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.IRON_HORSE_ARMOR))
-                ));
-        consumer.accept(TradeLootTables.GOLD_TIER_HORSE_ARMOR_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_HORSE_ARMOR))
-                ));
-        consumer.accept(TradeLootTables.DIAMOND_TIER_HORSE_ARMOR_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_HORSE_ARMOR))
-                ));
-        consumer.accept(TradeLootTables.BOOKSHELF_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.BOOKSHELF))
-                ));
-        consumer.accept(TradeLootTables.TORCH_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.TORCH)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
-                ));
-        consumer.accept(TradeLootTables.LANTERN_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.LANTERN))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_GLASS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(Tags.Items.GLASS))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_INK_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.INK))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_DYES_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.DYES))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_STICK_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.STICKS))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_STRING_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.STRING))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_WOOL_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ItemTags.WOOL))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_WOOL_CARPETS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ItemTags.WOOL_CARPETS))
-                ));
-        consumer.accept(TradeLootTables.TAGGED_BEDS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(ItemTags.BEDS))
+                        // anything usable for making books or maps
+                        .add(LootItem.lootTableItem(Items.PAPER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
                 ));
         consumer.accept(TradeLootTables.GUIDE_BOOKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GUIDE_BOOKS)
-                                .when(ModCheckCondition.mod().isLoaded("patchouli")))
+                        .add(TagEntry.expandTag(TCItemTags.GUIDE_BOOKS)
+                                .when(PATCHOULI_LOADED))
                         .add(LootItem.lootTableItem(Items.PAPER)
-                                .when(ModCheckCondition.mod().isLoaded("patchouli").invert()))
+                                .when(PATCHOULI_LOADED.invert()))
                 ));
-        consumer.accept(TradeLootTables.PAINTINGS_TABLE,
+        consumer.accept(TradeLootTables.BOOKSHELF_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.PAINTING))
+                        .add(LootItem.lootTableItem(Items.CHISELED_BOOKSHELF))
+                        .add(LootItem.lootTableItem(Items.BOOKSHELF))
                 ));
-        consumer.accept(TradeLootTables.STONE_TIER_TOOLS_TABLE,
+        consumer.accept(TradeLootTables.BOOK_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.STONE_PICKAXE))
-                        .add(LootItem.lootTableItem(Items.STONE_AXE))
-                        .add(LootItem.lootTableItem(Items.STONE_SHOVEL))
-                        .add(LootItem.lootTableItem(Items.STONE_HOE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.FLINT_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.IRON_TIER_LUMBER_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.IRON_AXE))
-                        .add(LootItem.lootTableItem(Items.SHEARS))
-                        .add(LootItem.lootTableItem(Items.IRON_HOE))
-                ));
-        consumer.accept(TradeLootTables.ENGINEER_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.ENGINEER_TOOLS))
-                ));
-        consumer.accept(TradeLootTables.WRENCH_TAG_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.TOOLS_WRENCH))
-                ));
-        consumer.accept(TradeLootTables.DIAMOND_TIER_LUMBER_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_AXE))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_HOE))
-                ));
-        consumer.accept(TradeLootTables.IRON_TIER_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.IRON_PICKAXE))
-                        .add(LootItem.lootTableItem(Items.IRON_AXE))
-                        .add(LootItem.lootTableItem(Items.IRON_SHOVEL))
-                        .add(LootItem.lootTableItem(Items.IRON_HOE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.IRON_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.IRON_TIER_WEAPONS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.IRON_SWORD))
-                        .add(LootItem.lootTableItem(Items.IRON_AXE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.IRON_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.GOLD_TIER_WEAPONS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_SWORD))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_AXE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.GOLDEN_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.DIAMOND_TIER_WEAPONS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_SWORD))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_AXE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.NETHERITE_TIER_WEAPONS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.NETHERITE_SWORD))
-                        .add(LootItem.lootTableItem(Items.NETHERITE_AXE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.NETHERITE_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.GOLD_TIER_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_PICKAXE))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_AXE))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_SHOVEL))
-                        .add(LootItem.lootTableItem(Items.GOLDEN_HOE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.GOLDEN_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.DIAMOND_TIER_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_PICKAXE))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_AXE))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_SHOVEL))
-                        .add(LootItem.lootTableItem(Items.DIAMOND_HOE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.DIAMOND_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.NETHERITE_TIER_TOOLS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.NETHERITE_PICKAXE))
-                        .add(LootItem.lootTableItem(Items.NETHERITE_AXE))
-                        .add(LootItem.lootTableItem(Items.NETHERITE_SHOVEL))
-                        .add(LootItem.lootTableItem(Items.NETHERITE_HOE))
-                        .add(LootItem.lootTableItem(vectorwing.farmersdelight.common.registry.ModItems.NETHERITE_KNIFE.get())
-                                .when(ModCheckCondition.mod().isLoaded("farmersdelight")))
-                ));
-        consumer.accept(TradeLootTables.BRICK_ITEMS_TABLE,
-                LootTable.lootTable().withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.BRICK)
+                        .add(LootItem.lootTableItem(Items.BOOK)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.WRITABLE_BOOK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(TagEntry.expandTag(TCItemTags.DECORATIVE_BOOKS)
+                                .when(BEAUTIFY_LOADED))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_INK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.INK))
+                ));
+        consumer.accept(TradeLootTables.REFRESH_BOOK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.REFRESH_BOOK)
+                                .when(VILLAGER_ENCHANTER_LOADED))
+                        .add(LootItem.lootTableItem(Items.BOOK)
+                                .when(VILLAGER_ENCHANTER_LOADED.invert())
+                                .apply(EnchantRandomlyFunction.randomEnchantment()))
+                ));
+
+        // block trade tables
+        consumer.accept(TradeLootTables.CORAL_BLOCK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BRAIN_CORAL_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BRAIN_CORAL_FAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.BUBBLE_CORAL_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BUBBLE_CORAL_FAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.FIRE_CORAL_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.FIRE_CORAL_FAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.HORN_CORAL_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.HORN_CORAL_FAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.TUBE_CORAL_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.TUBE_CORAL_FAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.LOGS_BUY_TABLE, LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Blocks.SPRUCE_LOG).when(HAS_SPRUCE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.BIRCH_LOG).when(HAS_BIRCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.JUNGLE_LOG).when(HAS_JUNGLE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.ACACIA_LOG).when(HAS_ACACIA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.DARK_OAK_LOG).when(HAS_DARK_OAK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.MANGROVE_LOG).when(HAS_MANGROVE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.WARPED_STEM).when(HAS_WARPED_FUNGUS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.CRIMSON_STEM).when(HAS_CRIMSON_FUNGUS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.FIR_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_FIR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PINE_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PINE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.EMPYREAL_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_EMPYREAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.REDWOOD_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_REDWOOD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.CHERRY_LOG).when(HAS_CHERRY.or(HAS_SNOWBLOSSOM))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAHOGANY_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_MAHOGANY)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.JACARANDA_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_JACARANDA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PALM_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PALM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WILLOW_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WILLOW)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.DEAD_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_DEAD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAGIC_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_MAGIC)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAPLE_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_RED_MAPLE.or(HAS_ORANGE_MAPLE).or(HAS_YELLOW_MAPLE))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.UMBRAN_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_UMBRAN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.HELLBARK_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_HELLBARK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(SKYROOT_LOG.get()).when(AETHER_LOADED)
+                                .when(HAS_AETHER_SKYROOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(GOLDEN_OAK_LOG.get()).when(AETHER_LOADED)
+                                .when(HAS_GOLDEN_OAK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.bloodshroom.getLog()).when(TCONSTRUCT_LOADED)
+                                .when(HAS_BLOODSHROOM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.enderbark.getLog()).when(TCONSTRUCT_LOADED)
+                                .when(HAS_ENDERBARK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.greenheart.getLog()).when(TCONSTRUCT_LOADED)
+                                .when(HAS_GREENHEART)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.COCONUT_LOG.get()).when(ECOLOGICS_LOADED)
+                                .when(HAS_COCONUT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.AZALEA_LOG.get()).when(ECOLOGICS_LOADED)
+                                .when(HAS_AZALEA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.FLOWERING_AZALEA_LOG.get()).when(ECOLOGICS_LOADED)
+                                .when(HAS_AZALEA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        // default modded offers
+                        .add(LootItem.lootTableItem(TinkerWorld.skyroot.getLog()).when(TCONSTRUCT_LOADED)
+                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.WALNUT_LOG.get()).when(ECOLOGICS_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        // default offer
+                        .add(LootItem.lootTableItem(Blocks.OAK_LOG)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                )
+        );
+        consumer.accept(TradeLootTables.LOGS_SELL_TABLE, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1)).setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Blocks.SPRUCE_LOG).when(HAS_SPRUCE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.BIRCH_LOG).when(HAS_BIRCH.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.JUNGLE_LOG).when(HAS_JUNGLE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.ACACIA_LOG).when(HAS_ACACIA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.DARK_OAK_LOG).when(HAS_DARK_OAK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.MANGROVE_LOG).when(HAS_MANGROVE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.WARPED_STEM).when(HAS_WARPED_FUNGUS.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.CRIMSON_STEM).when(HAS_CRIMSON_FUNGUS.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.FIR_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_FIR.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PINE_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PINE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.EMPYREAL_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_EMPYREAL.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.REDWOOD_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_REDWOOD.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Blocks.CHERRY_LOG).when(HAS_CHERRY.invert())
+                                .when(HAS_SNOWBLOSSOM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAHOGANY_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_MAHOGANY.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.JACARANDA_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_JACARANDA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.PALM_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_PALM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.WILLOW_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_WILLOW.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.DEAD_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_DEAD.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAGIC_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_MAGIC.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.MAPLE_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_RED_MAPLE.invert())
+                                .when(HAS_ORANGE_MAPLE.invert())
+                                .when(HAS_YELLOW_MAPLE.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.UMBRAN_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_UMBRAN.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(BOPBlocks.HELLBARK_LOG).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_HELLBARK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(SKYROOT_LOG.get()).when(AETHER_LOADED)
+                                .when(HAS_AETHER_SKYROOT.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(GOLDEN_OAK_LOG.get()).when(AETHER_LOADED)
+                                .when(HAS_GOLDEN_OAK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.bloodshroom.getLog()).when(TCONSTRUCT_LOADED)
+                                .when(HAS_BLOODSHROOM.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.enderbark.getLog()).when(TCONSTRUCT_LOADED)
+                                .when(HAS_ENDERBARK.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(TinkerWorld.greenheart.getLog()).when(TCONSTRUCT_LOADED)
+                                .when(HAS_GREENHEART.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.COCONUT_LOG.get()).when(ECOLOGICS_LOADED)
+                                .when(HAS_COCONUT.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.AZALEA_LOG.get()).when(ECOLOGICS_LOADED)
+                                .when(HAS_AZALEA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.FLOWERING_AZALEA_LOG.get()).when(ECOLOGICS_LOADED)
+                                .when(HAS_AZALEA.invert())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        // default modded offers
+                        .add(LootItem.lootTableItem(TinkerWorld.skyroot.getLog()).when(TCONSTRUCT_LOADED)
+                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModBlocks.WALNUT_LOG.get()).when(ECOLOGICS_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        // default offer
+                        .add(LootItem.lootTableItem(Blocks.OAK_LOG)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                )
+        );
+        consumer.accept(TradeLootTables.GRAVEL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GRAVEL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
         consumer.accept(TradeLootTables.OVERWORLD_STONE_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
@@ -2862,57 +4680,19 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(TagEntry.expandTag(ItemTags.TERRACOTTA))
                 ));
-        consumer.accept(TradeLootTables.LOGS_SELL_TABLE,
+        consumer.accept(TradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SPRUCE_LOG).when(HAS_SPRUCE.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.MANGROVE_LOG).when(HAS_MANGROVE.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.ACACIA_LOG).when(HAS_ACACIA.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.JUNGLE_LOG).when(HAS_JUNGLE.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.BIRCH_LOG).when(HAS_BIRCH.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.DARK_OAK_LOG).when(HAS_DARK_OAK.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.CRIMSON_STEM)
-                                .when(IN_NETHER.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.WARPED_STEM)
-                                .when(IN_NETHER.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.OAK_LOG)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(TagEntry.expandTag(TCItemTags.GLAZED_TERRACOTTA))
                 ));
-        consumer.accept(TradeLootTables.LOGS_BUY_TABLE, LootTable.lootTable()
-                .withPool(LootPool.lootPool().
-                        setRolls(ConstantValue.exactly(1))
+        consumer.accept(TradeLootTables.SEA_LANTERN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.SPRUCE_LOG).when(HAS_SPRUCE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.MANGROVE_LOG).when(HAS_MANGROVE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.ACACIA_LOG).when(HAS_ACACIA)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.JUNGLE_LOG).when(HAS_JUNGLE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.BIRCH_LOG).when(HAS_BIRCH)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.DARK_OAK_LOG).when(HAS_DARK_OAK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.CRIMSON_STEM)
-                                .when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.WARPED_STEM)
-                                .when(IN_NETHER)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Items.OAK_LOG)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                )
-        );
+                        .add(LootItem.lootTableItem(Items.SEA_LANTERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
         consumer.accept(TradeLootTables.END_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -2930,103 +4710,183 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(
                                         ConstantValue.exactly(4))))
                 ));
-        consumer.accept(TradeLootTables.NETHER_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.OCEAN_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.BASALT)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.SMOOTH_BASALT)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.POLISHED_BASALT)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.QUARTZ_BLOCK)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.QUARTZ_PILLAR)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.QUARTZ_BRICKS)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.CHISELED_QUARTZ_BLOCK)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.SMOOTH_QUARTZ)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.BLACKSTONE)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(16))))
-                        .add(LootItem.lootTableItem(Items.CHISELED_POLISHED_BLACKSTONE)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.POLISHED_BLACKSTONE)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.POLISHED_BLACKSTONE_BRICKS)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Blocks.WARPED_WART_BLOCK)
+                        .add(LootItem.lootTableItem(Items.SPONGE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Blocks.NETHER_WART_BLOCK)
+                        .add(LootItem.lootTableItem(Items.DARK_PRISMARINE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Blocks.WARPED_NYLIUM)
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_BRICKS)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Blocks.CRIMSON_NYLIUM)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Blocks.GLOWSTONE)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Blocks.OBSIDIAN)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Blocks.CRYING_OBSIDIAN)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Blocks.NETHERRACK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
-                        .add(LootItem.lootTableItem(Blocks.CHISELED_NETHER_BRICKS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Blocks.NETHER_BRICKS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Blocks.CRACKED_NETHER_BRICKS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Blocks.RED_NETHER_BRICKS)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Blocks.CRIMSON_STEM)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
-                        .add(LootItem.lootTableItem(Blocks.WARPED_STEM)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
                 ));
-        consumer.accept(TradeLootTables.GLAZED_TERRACOTTA_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.SPECIAL_DIRT_BLOCKS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(TagEntry.expandTag(TodeCoinsTags.Items.GLAZED_TERRACOTTA))
+                        .add(LootItem.lootTableItem(Items.MUD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.COARSE_DIRT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.PODZOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.ROOTED_DIRT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.MOSS_BLOCK)
+                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.MYCELIUM)
+                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                 ));
-        consumer.accept(TradeLootTables.OVERWORLD_OTHER_STONE_BLOCKS_TABLE,
+        consumer.accept(TradeLootTables.FEATHER_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.DRIPSTONE_BLOCK)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.CALCITE)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.TUFF)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.SMOOTH_BASALT)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
-                        .add(LootItem.lootTableItem(Items.DEEPSLATE_TILES)
-                                .apply(SetItemCountFunction.setCount(
-                                        ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(ModRegistry.FEATHER_BLOCK.get())
+                                .when(SUPPLEMENTARIES_LOADED)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.FEATHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_LEATHER_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.LEATHER))
+                ));
+        consumer.accept(TradeLootTables.NATURAL_WOOL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.WHITE_WOOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.BROWN_WOOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.BLACK_WOOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.GRAY_WOOL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_WOOL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(ItemTags.WOOL))
+                ));
+        consumer.accept(TradeLootTables.NETHER_BLOCKS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.WARPED_WART_BLOCK))
+                        .add(LootItem.lootTableItem(Items.NETHER_WART_BLOCK))
+                        .add(LootItem.lootTableItem(Items.WARPED_STEM))
+                        .add(LootItem.lootTableItem(Items.CRIMSON_STEM))
+                        .add(LootItem.lootTableItem(Items.BASALT))
+                        .add(LootItem.lootTableItem(Items.WARPED_NYLIUM))
+                        .add(LootItem.lootTableItem(Items.CRIMSON_NYLIUM))
+                        .add(LootItem.lootTableItem(Items.OBSIDIAN))
+                        .add(LootItem.lootTableItem(Items.CRYING_OBSIDIAN))
+                        .add(LootItem.lootTableItem(Items.SOUL_SAND))
+                        .add(LootItem.lootTableItem(Items.SOUL_SOIL))
+                        .add(LootItem.lootTableItem(Items.RED_NETHER_BRICKS))
+                        .add(LootItem.lootTableItem(Items.NETHERRACK))
+                        .add(LootItem.lootTableItem(Items.BLACKSTONE))
+                        .add(LootItem.lootTableItem(Items.SOUL_SOIL))
+                        .add(LootItem.lootTableItem(BOPBlocks.HELLBARK_LOG)
+                                .when(BIOMESOPLENTY_LOADED))
+                        .add(LootItem.lootTableItem(BOPBlocks.BRIMSTONE)
+                                .when(BIOMESOPLENTY_LOADED))
+                        .add(LootItem.lootTableItem(BOPBlocks.FLESH)
+                                .when(BIOMESOPLENTY_LOADED))
+                ));
+        // gear trade tables
+
+        consumer.accept(TradeLootTables.FISHING_GEAR_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.FISHING_ROD))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.BOATS_TABLE))
+                        .add(TagEntry.expandTag(TCItemTags.CRAB_TRAP).when(CRABBERSDELIGHT_LOADED))
+                ));
+        consumer.accept(TradeLootTables.BOATS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // sled tag for winter sales
+                        .add(TagEntry.expandTag(TCItemTags.SLEDS).when(SNOWY_SPIRIT_LOADED).when(WINTER))
+                        // Biomes O' Plenty wood types
+                        .add(LootItem.lootTableItem(BOPItems.EMPYREAL_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_EMPYREAL))
+                        .add(LootItem.lootTableItem(BOPItems.HELLBARK_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_HELLBARK))
+                        .add(LootItem.lootTableItem(BOPItems.UMBRAN_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_UMBRAN))
+                        .add(LootItem.lootTableItem(BOPItems.MAGIC_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_MAGIC))
+                        .add(LootItem.lootTableItem(BOPItems.DEAD_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_DEAD))
+                        .add(LootItem.lootTableItem(BOPItems.WILLOW_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_WILLOW))
+                        .add(LootItem.lootTableItem(BOPItems.PALM_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_PALM))
+                        .add(LootItem.lootTableItem(BOPItems.JACARANDA_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_JACARANDA))
+                        .add(LootItem.lootTableItem(BOPItems.MAHOGANY_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_MAHOGANY))
+                        .add(LootItem.lootTableItem(BOPItems.REDWOOD_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_REDWOOD))
+                        .add(LootItem.lootTableItem(BOPItems.MAPLE_BOAT).when(BIOMESOPLENTY_LOADED)
+                                .when(HAS_RED_MAPLE.or(HAS_ORANGE_MAPLE).or(HAS_YELLOW_MAPLE)))
+                        .add(LootItem.lootTableItem(BOPItems.PINE_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_PINE))
+                        .add(LootItem.lootTableItem(BOPItems.FIR_BOAT).when(BIOMESOPLENTY_LOADED).when(HAS_FIR))
+                        // Vanilla wood types
+                        .add(LootItem.lootTableItem(Items.ACACIA_BOAT).when(HAS_ACACIA))
+                        .add(LootItem.lootTableItem(Items.BIRCH_BOAT).when(HAS_BIRCH))
+                        .add(LootItem.lootTableItem(Items.CHERRY_BOAT).when(HAS_CHERRY.or(HAS_SNOWBLOSSOM)))
+                        .add(LootItem.lootTableItem(Items.DARK_OAK_BOAT).when(HAS_DARK_OAK))
+                        .add(LootItem.lootTableItem(Items.JUNGLE_BOAT).when(HAS_JUNGLE))
+                        .add(LootItem.lootTableItem(Items.MANGROVE_BOAT).when(HAS_MANGROVE))
+                        .add(LootItem.lootTableItem(Items.SPRUCE_BOAT).when(HAS_SPRUCE))
+                        // Aether wood
+                        .add(LootItem.lootTableItem(AetherItems.SKYROOT_BOAT.get()).when(AETHER_LOADED).when(HAS_AETHER_SKYROOT))
+                        // Ecologics wood
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModItems.COCONUT_BOAT.get()).when(ECOLOGICS_LOADED).when(HAS_COCONUT))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModItems.AZALEA_BOAT.get()).when(ECOLOGICS_LOADED).when(HAS_AZALEA))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModItems.FLOWERING_AZALEA_BOAT.get()).when(ECOLOGICS_LOADED).when(HAS_AZALEA))
+                        .add(LootItem.lootTableItem(samebutdifferent.ecologics.registry.ModItems.WALNUT_BOAT.get()).when(ECOLOGICS_LOADED))
+                        // Default vanilla oak
+                        .add(LootItem.lootTableItem(Items.OAK_BOAT))
                 ));
 
+        // numismatist trade tables
+        consumer.accept(TradeLootTables.NUMISMATIST_RARE_OFFERS,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .setBonusRolls(ConstantValue.exactly(0))
+                                .add(TagEntry.expandTag(ItemTags.MUSIC_DISCS))
+                                .add(TagEntry.expandTag(TCItemTags.SOUL_BINDER))
+                                .add(LootItem.lootTableItem(Items.HEART_OF_THE_SEA))
+                                .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE))
+                                .add(LootItem.lootTableItem(Items.MOJANG_BANNER_PATTERN))
+                                .add(LootItem.lootTableItem(Items.DRAGON_BREATH))
+                                .add(LootItem.lootTableItem(Items.AMETHYST_BLOCK))
+                                .add(LootItem.lootTableItem(Items.ELYTRA))
+                                .add(LootItem.lootTableItem(Cagerium.TERRARIUM_BASE.get())
+                                        .when(CAGERIUM_LOADED))
+                                .add(LootItem.lootTableItem(Cagerium.CAGE_BASE.get())
+                                        .when(CAGERIUM_LOADED))
+                                .add(LootItem.lootTableItem(Cagerium.PLATE_GEM.get())
+                                        .when(CAGERIUM_LOADED))
+                                .add(LootItem.lootTableItem(Cagerium.FIRE_UPGRADE.get())
+                                        .when(CAGERIUM_LOADED))
+                                .add(TagEntry.expandTag(TCItemTags.TOTEMS))
+                        ));
+        consumer.accept(TradeLootTables.NUMISMATIST_CONTAINER_OFFERS,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .setBonusRolls(ConstantValue.exactly(0))
+                                .add(LootItem.lootTableItem(TCItems.COIN_ALBUM_BLOCK_ITEM.get()))
+                                .add(TagEntry.expandTag(TCItemTags.SHULKER_BOXES))
+                                .add(TagEntry.expandTag(TCItemTags.WALLETS))
+                                .add(LootItem.lootTableItem(Items.ENDER_CHEST))
+                        ));
 
+        // wandering trader trade tables
         consumer.accept(TradeLootTables.WANDERING_SELL_SPECIAL_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
@@ -3049,7 +4909,7 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootTableReference.lootTableReference(TradeLootTables.CORAL_BLOCK_TAG_TABLE))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.CORAL_BLOCK_TABLE))
                         .add(LootItem.lootTableItem(Items.TROPICAL_FISH_BUCKET)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.PUFFERFISH_BUCKET)
@@ -3067,6 +4927,8 @@ public class TradeLootTablesGen extends ChestLoot {
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TinkerTags.Items.CHEST_PARTS).when(TCONSTRUCT_LOADED))
+                        .add(TagEntry.expandTag(TinkerTags.Items.TOOL_PARTS).when(TCONSTRUCT_LOADED))
                         .add(LootItem.lootTableItem(Items.SEA_PICKLE)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .add(LootItem.lootTableItem(Items.GLOWSTONE)
@@ -3078,6 +4940,7 @@ public class TradeLootTablesGen extends ChestLoot {
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootTableReference.lootTableReference(TradeLootTables.FLOWER_SELL_TABLE))
                         .add(LootTableReference.lootTableReference(TradeLootTables.DECOR_PLANTS_TABLE))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.ONE_EMERALD_VALUE_POTION_INGREDIENTS_TABLE))
                         .add(TagEntry.expandTag(Tags.Items.SEEDS))
                         .add(LootItem.lootTableItem(Items.PUMPKIN)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
@@ -3110,89 +4973,529 @@ public class TradeLootTablesGen extends ChestLoot {
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(16))))
                 ));
 
-        consumer.accept(TradeLootTables.NUMISMATIST_RARE_OFFERS,
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(ItemTags.MUSIC_DISCS))
-                                .add(TagEntry.expandTag(TodeCoinsTags.Items.SOUL_BINDER))
-                                .add(LootItem.lootTableItem(Items.HEART_OF_THE_SEA))
-                                .add(LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE))
-                                .add(LootItem.lootTableItem(Items.MOJANG_BANNER_PATTERN))
-                                .add(LootItem.lootTableItem(Items.TOTEM_OF_UNDYING))
-                                .add(LootItem.lootTableItem(Items.DRAGON_BREATH))
-                                .add(LootItem.lootTableItem(Items.AMETHYST_BLOCK))
-                                .add(LootItem.lootTableItem(Items.ELYTRA))
-                                .add(LootItem.lootTableItem(Cagerium.TERRARIUM_BASE.get())
-                                        .when(ModCheckCondition.mod().isLoaded("cagerium")))
-                                .add(LootItem.lootTableItem(Cagerium.CAGE_BASE.get())
-                                        .when(ModCheckCondition.mod().isLoaded("cagerium")))
-                                .add(LootItem.lootTableItem(Cagerium.PLATE_GEM.get())
-                                        .when(ModCheckCondition.mod().isLoaded("cagerium")))
-                                .add(LootItem.lootTableItem(Cagerium.FIRE_UPGRADE.get())
-                                        .when(ModCheckCondition.mod().isLoaded("cagerium")))
-                                .add(LootItem.lootTableItem(FriendsAndFoesItems.TOTEM_OF_ILLUSION.get())
-                                        .when(ModCheckCondition.mod().isLoaded("friendsandfoes")))
-                                .add(LootItem.lootTableItem(FriendsAndFoesItems.TOTEM_OF_FREEZING.get())
-                                        .when(ModCheckCondition.mod().isLoaded("friendsandfoes")))
-                                .add(LootItem.lootTableItem(FriendsAndFoesItems.WILDFIRE_CROWN_FRAGMENT.get())
-                                        .when(ModCheckCondition.mod().isLoaded("friendsandfoes")))
-                        ));
-        consumer.accept(TradeLootTables.NUMISMATIST_CONTAINER_OFFERS,
-                LootTable.lootTable()
-                        .withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .setBonusRolls(ConstantValue.exactly(0))
-                                .add(TagEntry.expandTag(TodeCoinsTags.Items.SHULKER_BOXES))
-                                .add(TagEntry.expandTag(TodeCoinsTags.Items.WALLETS))
-                                .add(LootItem.lootTableItem(Items.ENDER_CHEST))
-                        ));
-        consumer.accept(TradeLootTables.FUEL_TABLE,
+        // misc item tables
+        consumer.accept(TradeLootTables.TAGGED_ASH_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        // Use ash if Supplementaries is loaded
+                        .add(TagEntry.expandTag(TCItemTags.ASH)
+                                .when(SUPPLEMENTARIES_LOADED))
+                        // Fallback to charcoal if the mod isn't loaded
+                        .add(LootItem.lootTableItem(Items.CHARCOAL)
+                                .when(SUPPLEMENTARIES_LOADED.invert()))
+                )
+        );
+        consumer.accept(TradeLootTables.FLINT_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.FLINT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
+                ));
+        consumer.accept(TradeLootTables.CLAY_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.CLAY)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.CLAY_BALL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.BRICK_ITEMS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NETHER_BRICK).when(IN_NETHER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.BRICK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                ));
+        consumer.accept(TradeLootTables.PACKAGE_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.PACKAGE_CONTAINERS))
+                ));
+        consumer.accept(TradeLootTables.FERTILIZER_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.BONE_MEAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.SEASHELL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.NAUTILUS_SHELL))
+                ));
+        consumer.accept(TradeLootTables.HEART_OF_THE_SEA_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.HEART_OF_THE_SEA)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.ENCHANTABLE_PET_GEAR_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.ENCHANTABLE_PET_GEAR))
+                ));
+        consumer.accept(TradeLootTables.NINE_EMERALD_VALUE_REDSTONE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.REDSTONE_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                ));
+        consumer.accept(TradeLootTables.DRAGON_BREATH_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.DRAGON_HEAD_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.DRAGON_HEAD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.SHULKER_SHELL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.SHULKER_SHELL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.ENDER_PEARL_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.ENDER_PEARL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.REDSTONE_COMPONENTS_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.REDSTONE_TORCH)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.REPEATER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DROPPER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DISPENSER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.REDSTONE_LAMP)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.OBSERVER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.COMPARATOR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.PISTON)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.STICKY_PISTON)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DAYLIGHT_DETECTOR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.HOPPER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.BANNER_PATTERN_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.GLOBE_BANNER_PATTERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                ));
+        consumer.accept(TradeLootTables.PATTERNS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.SEWING_PATTERNS)
+                                .when(SEWINGKIT_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.BANNER_PATTERN_TABLE)
+                                .when(SEWINGKIT_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.CUPS_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.CUPS))
+                        .add(LootItem.lootTableItem(Items.GLASS_BOTTLE)
+                                .when(KAWAIIDISHES_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.PET_SUPPLIES_TAG_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.PET_BEDS))
+                        .add(TagEntry.expandTag(TCItemTags.PET_SUPPLIES))
+                ));
+        consumer.accept(TradeLootTables.TAGGED_STICK_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(TagEntry.expandTag(TCItemTags.STICKS))
+                ));
+        consumer.accept(TradeLootTables.ONE_EMERALD_VALUE_FUEL,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
                         .add(LootItem.lootTableItem(Items.COAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(15))))
-                        .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
-                        .add(LootItem.lootTableItem(Items.CHARCOAL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(30))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.COAL_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
                         .add(LootItem.lootTableItem(Items.LAVA_BUCKET)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DRIED_KELP_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10))))
                 ));
-        consumer.accept(TradeLootTables.BOATS_TABLE,
+        consumer.accept(TradeLootTables.BLANK_MAP_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.ACACIA_BOAT).when(HAS_ACACIA.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.BIRCH_BOAT).when(HAS_BIRCH.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.DARK_OAK_BOAT).when(HAS_DARK_OAK.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.JUNGLE_BOAT).when(HAS_JUNGLE.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.MANGROVE_BOAT).when(HAS_MANGROVE.invert())
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.OAK_BOAT)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
-                        .add(LootItem.lootTableItem(Items.SPRUCE_BOAT)
+                        // anything used as a blank map - like the map atlas mod
+                        .add(LootItem.lootTableItem(Items.MAP)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                 ));
-        consumer.accept(TradeLootTables.NATURAL_WOOL_TABLE,
+        consumer.accept(TradeLootTables.TAGGED_TRIMS_TABLE,
                 LootTable.lootTable().withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1))
                         .setBonusRolls(ConstantValue.exactly(0))
-                        .add(LootItem.lootTableItem(Items.WHITE_WOOL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.BROWN_WOOL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.BLACK_WOOL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
-                        .add(LootItem.lootTableItem(Items.GRAY_WOOL)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        // contains vanilla trims
+                        .add(TagEntry.expandTag(TCItemTags.TRIMS))
                 ));
+        consumer.accept(TradeLootTables.TWO_POT_OF_GOLD_VALUE_ITEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FIBER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GOLD_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.IRON_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Blocks.COPPER_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.COPPER_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(27))))
+                        .add(LootItem.lootTableItem(Items.STRING)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(42))))
+                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
+                                .when(LootItemRandomChanceCondition.randomChance(0.10F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
+                                .when(LootItemRandomChanceCondition.randomChance(0.01F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                ));
+        consumer.accept(TradeLootTables.FOUR_POT_OF_GOLD_VALUE_ITEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Items.COPPER_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(54))))
+                        .add(LootItem.lootTableItem(Items.COPPER_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                        .add(LootItem.lootTableItem(Items.IRON_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(Items.IRON_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.GOLD_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.GOLD_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FIBER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_COARSE_WOVE_PAPER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.RABBIT_FOOT)
+                                .when(LootItemRandomChanceCondition.randomChance(0.10F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(12))))
+                        .add(LootItem.lootTableItem(Items.SLIME_BALL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.GUNPOWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(24))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.MAGMA_CREAM)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3))))
+                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
+                                .when(LootItemRandomChanceCondition.randomChance(0.01F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6))))
+                ));
+        consumer.accept(TradeLootTables.THIRTY_POT_OF_GOLD_VALUE_ITEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FIBER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_COARSE_WOVE_PAPER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(11))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_WOVE_PAPER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_SMOOTH_WOVE_PAPER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.SLIME_BALL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(11))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(Items.SHULKER_SHELL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.DRAGON_BREATH)
+                                .when(LootItemRandomChanceCondition.randomChance(0.01F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
+                        .add(LootItem.lootTableItem(Items.CHORUS_FLOWER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.CHORUS_FRUIT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.SIXTY_POT_OF_GOLD_VALUE_ITEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_FIBER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(45))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_COARSE_WOVE_PAPER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_WOVE_PAPER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(11))))
+                        .add(LootItem.lootTableItem(TCItems.EMERALD_SMOOTH_WOVE_PAPER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                        .add(LootItem.lootTableItem(Items.SLIME_BALL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_POWDER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(Items.BLAZE_ROD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.PHANTOM_MEMBRANE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.SHULKER_SHELL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.DRAGON_HEAD)
+                                .when(LootItemRandomChanceCondition.randomChance(0.001F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.ELYTRA)
+                                .when(LootItemRandomChanceCondition.randomChance(0.001F))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(22))))
+                        .add(LootItem.lootTableItem(Items.CHORUS_FLOWER)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.CHORUS_FRUIT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5))))
+                ));
+        consumer.accept(TradeLootTables.THREE_LUCKY_COIN_VALUE_ITEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(Blocks.BUDDING_AMETHYST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(64))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.000001F))
+                        .add(LootItem.lootTableItem(Items.END_CRYSTAL)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(19))))
+                        .add(LootItem.lootTableItem(Items.ENDER_EYE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(57))))
+                        .add(LootItem.lootTableItem(Items.GHAST_TEAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(57))))
+                        .add(LootItem.lootTableItem(Items.NETHER_STAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .when(LootItemRandomChanceCondition.randomChance(0.000001F))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_SHARD)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE_CRYSTALS)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.PRISMARINE)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.SEA_LANTERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.OCHRE_FROGLIGHT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.VERDANT_FROGLIGHT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(Items.PEARLESCENT_FROGLIGHT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                        .add(LootItem.lootTableItem(TCItems.LUCKY_FIBER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+        consumer.accept(TradeLootTables.TWENTY_SEVEN_LUCKY_COIN_VALUE_ITEMS,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(TCBlocks.ENDONIAN_BLOCK.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(32))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(36))))
+                        .add(LootItem.lootTableItem(TCBlocks.NETHERITE_COIN_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_QUARTER_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(18))))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_INGOT)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(TCBlocks.EMERALD_BANK_NOTE_BAG.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.NETHERITE_BLOCK)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                        .add(LootItem.lootTableItem(Items.BUDDING_AMETHYST)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.NETHER_STAR)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(9))))
+                        .add(LootItem.lootTableItem(Items.SEA_LANTERN)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(23))))
+                        .add(LootItem.lootTableItem(TCItems.LUCKY_FIBER.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(26))))
+                        .add(LootItem.lootTableItem(TCItems.LUCKY_THREAD.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4))))
+                        .add(LootItem.lootTableItem(TCItems.LUCKY_FABRIC.get())
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2))))
+                ));
+
+
+        // create tables
+        consumer.accept(TradeLootTables.COPPER_DIVING_GEAR_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(AllItems.COPPER_BACKTANK).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllItems.COPPER_DIVING_BOOTS).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllItems.COPPER_DIVING_HELMET).when(CREATE_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.IRON_TIER_EQUIPMENT_SET).when(CREATE_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.MINING_EQUIPMENT_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(AllBlocks.BLAZE_BURNER).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.ENCASED_FAN).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.MECHANICAL_DRILL).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.HOSE_PULLEY).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.PULLEY_MAGNET).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.ELEVATOR_PULLEY).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.ROPE_PULLEY).when(CREATE_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.REDSTONE_COMPONENTS_TABLE).when(CREATE_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.TRAIN_EQUIPMENT_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(AllBlocks.STEAM_ENGINE).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.STEAM_WHISTLE).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.PORTABLE_STORAGE_INTERFACE).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.RAILWAY_CASING).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.TRACK).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.TRACK_STATION).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.TRAIN_DOOR).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.TRAIN_CONTROLS).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.STEAM_ENGINE).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.PLACARD).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.DISPLAY_BOARD).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.DISPLAY_LINK).when(CREATE_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.REDSTONE_COMPONENTS_TABLE).when(CREATE_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.MECHANICAL_EQUIPMENT_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(AllBlocks.MECHANICAL_CRAFTER).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.MECHANICAL_ARM).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.MECHANICAL_ROLLER).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.CRUSHING_WHEEL).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.CHUTE).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.BELT).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.DEPOT).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.BASIN).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.COGWHEEL).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.LARGE_COGWHEEL).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.WINDMILL_BEARING).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.MECHANICAL_BEARING).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.CLOCKWORK_BEARING).when(CREATE_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.REDSTONE_COMPONENTS_TABLE).when(CREATE_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.HYDRAULIC_EQUIPMENT_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(AllBlocks.LARGE_WATER_WHEEL).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.WATER_WHEEL).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.MECHANICAL_MIXER).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.MECHANICAL_PUMP).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.SPOUT).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.FLUID_VALVE).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.FLUID_TANK).when(CREATE_LOADED))
+                        .add(LootItem.lootTableItem(AllBlocks.FLUID_PIPE).when(CREATE_LOADED))
+                        .add(LootTableReference.lootTableReference(TradeLootTables.REDSTONE_COMPONENTS_TABLE).when(CREATE_LOADED.invert()))
+                ));
+        consumer.accept(TradeLootTables.WHIMSY_TABLE,
+                LootTable.lootTable().withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .setBonusRolls(ConstantValue.exactly(0))
+                        .add(LootItem.lootTableItem(ModRegistry.BUBBLE_BLOWER.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.CONFETTI_POPPER.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.JAR_BOAT.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.GLOBE_ITEM.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.GLOBE_SEPIA_ITEM.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.STATUE.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.HAT_STAND.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(ModRegistry.WIND_VANE.get()).when(SUPPLEMENTARIES_LOADED))
+                        .add(LootItem.lootTableItem(TCItems.TIP_JAR_BLOCK_ITEM.get()))
+                ));
+
+        consumer.accept(TradeLootTables.PLAYER_HEADS_TABLE,
+                LootTable.lootTable()
+                        .withPool(LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .setBonusRolls(ConstantValue.exactly(0))
+                                .add(LootItem.lootTableItem(Items.CREEPER_HEAD))
+                                .add(LootItem.lootTableItem(Items.ZOMBIE_HEAD))
+                                .add(LootItem.lootTableItem(Items.DRAGON_HEAD).when(IN_END))
+                                .add(LootItem.lootTableItem(Items.PIGLIN_HEAD).when(IN_NETHER))
+                                .add(LootItem.lootTableItem(ModRegistry.ENDERMAN_SKULL_ITEM.get()).when(SUPPLEMENTARIES_LOADED))
+                                .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:blaze_head")).when(TCONSTRUCT_LOADED).when(IN_NETHER))
+                                .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:cave_spider_head")).when(TCONSTRUCT_LOADED))
+                                .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:drowned_head")).when(TCONSTRUCT_LOADED))
+                                .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:enderman_head")).when(TCONSTRUCT_LOADED))
+                                .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:husk_head")).when(TCONSTRUCT_LOADED))
+                                .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:piglin_brute_head")).when(TCONSTRUCT_LOADED).when(IN_NETHER))
+                                .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:spider_head")).when(TCONSTRUCT_LOADED))
+                                .add(LootItem.lootTableItem(ModUtil.getItem("tconstruct:zombified_piglin_head")).when(TCONSTRUCT_LOADED).when(IN_NETHER))
+                                // dynamic player head (entity head, like "this" in JSON)
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(FillPlayerHead.fillPlayerHead(LootContext.EntityTarget.THIS)))
+                                // static player heads
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("MHF_Steve")))
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("MHF_Alex")))
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("MHF_Alex")))
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("MHF_Herobrine")))
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("ToadieOdie")))
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("Minepika94")))
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("MikieSteve")))
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("EnderDragonRobot")))
+                                .add(LootItem.lootTableItem(Items.PLAYER_HEAD)
+                                        .apply(setRawSkullOwner("Technoblade")))
+                        )
+        );
 
         // FIREWORKS TABLE
         LootPool.Builder pool = LootPool.lootPool()
@@ -3203,7 +5506,7 @@ public class TradeLootTablesGen extends ChestLoot {
             for (int color : getVanillaColors()) {
                 //noinspection deprecation
                 pool.add(LootItem.lootTableItem(Items.FIREWORK_ROCKET)
-                        .apply(SetNbtFunction.setTag(makeFireworkTag(type, color))))
+                                .apply(SetNbtFunction.setTag(makeFireworkTag(type, color))))
                         .apply(SetItemCountFunction.setCount(ConstantValue.exactly(6)));
             }
         }
@@ -3211,7 +5514,15 @@ public class TradeLootTablesGen extends ChestLoot {
         consumer.accept(TradeLootTables.FIREWORK_ROCKET_TABLE, LootTable.lootTable().withPool(pool));
     }
 
-    private CompoundTag makeFireworkTag(int type, int color) {
+    // Helper for setting SkullOwner NBT
+    private static SetNbtFunction.@NotNull Builder<?> setRawSkullOwner(String owner) {
+        CompoundTag tag = new CompoundTag();
+        tag.putString("SkullOwner", owner);
+        //noinspection deprecation
+        return SetNbtFunction.setTag(tag); // returns Builder
+    }
+
+    private @NotNull CompoundTag makeFireworkTag(int type, int color) {
         CompoundTag explosion = new CompoundTag();
         explosion.putByte("Type", (byte) type);
         explosion.putIntArray("Colors", new int[]{color});
@@ -3230,8 +5541,9 @@ public class TradeLootTablesGen extends ChestLoot {
         return tag;
     }
 
-    private int[] getVanillaColors() {
-        return new int[] {
+    @Contract(value = " -> new", pure = true)
+    private int @NotNull [] getVanillaColors() {
+        return new int[]{
                 0x1D1D21, // Black
                 0xB02E26, // Red
                 0x5E7C16, // Green

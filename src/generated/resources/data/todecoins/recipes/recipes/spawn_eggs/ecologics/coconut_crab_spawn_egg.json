@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "ecologics"
+        }
+      ],
+      "recipe": {
+        "type": "todecoins:spawn_egg_shapeless",
+        "group": "spawn_eggs",
+        "ingredients": [
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:soul_binder"
+          },
+          {
+            "tag": "forge:nuggets/netherite"
+          },
+          {
+            "item": "minecraft:heart_of_the_sea"
+          },
+          {
+            "item": "ecologics:walnut"
+          },
+          {
+            "tag": "todecoins:collectible/aquatic/crab"
+          }
+        ],
+        "recipe_book_category": "MISC",
+        "result": {
+          "item": "ecologics:coconut_crab_spawn_egg"
+        }
+      }
+    }
+  ]
+}

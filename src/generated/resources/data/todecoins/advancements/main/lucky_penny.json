@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.luckyPenny.desc"
+      "translate": "advancement.lucky_penny.desc"
     },
     "frame": "challenge",
     "hidden": false,
@@ -26,12 +26,18 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.luckyPenny"
+      "translate": "advancement.lucky_penny"
     }
   },
   "requirements": [
     [
       "craft_lucky_coin"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

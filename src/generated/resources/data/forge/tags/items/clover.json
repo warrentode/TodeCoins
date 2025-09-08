@@ -1,21 +1,5 @@
 {
   "values": [
-    "todecoins:four_leaf_clover",
-    {
-      "id": "phantasm:ender_clover",
-      "required": false
-    },
-    {
-      "id": "biomesoplenty:clover",
-      "required": false
-    },
-    {
-      "id": "biomesoplenty:huge_clover_petal",
-      "required": false
-    },
-    {
-      "id": "delightful:chopped_clover",
-      "required": false
-    }
+    "todecoins:four_leaf_clover"
   ]
 }

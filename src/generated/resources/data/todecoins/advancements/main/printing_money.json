@@ -41,7 +41,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.printingMoney.desc"
+      "translate": "advancement.printing_money.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -50,7 +50,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.printingMoney"
+      "translate": "advancement.printing_money"
     }
   },
   "requirements": [
@@ -63,5 +63,11 @@
     [
       "craft_emerald_bank_note"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

@@ -1,0 +1,17 @@
+{
+  "type": "todecoins:coinpress",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "todecoins:gem_currency_stamp"
+    },
+    {
+      "tag": "forge:gems/emerald"
+    }
+  ],
+  "recipe_book_tab": "coins",
+  "result": {
+    "item": "todecoins:emerald_coin"
+  },
+  "stampingTime": 50
+}

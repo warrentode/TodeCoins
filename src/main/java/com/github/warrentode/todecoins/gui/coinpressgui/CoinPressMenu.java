@@ -1,10 +1,10 @@
 package com.github.warrentode.todecoins.gui.coinpressgui;
 
-import com.github.warrentode.todecoins.block.ModBlocks;
-import com.github.warrentode.todecoins.block.entity.CoinPressBlockEntity;
-import com.github.warrentode.todecoins.block.entity.container.slot.CoinPressResultSlot;
-import com.github.warrentode.todecoins.gui.ModMenuTypes;
-import com.github.warrentode.todecoins.recipe.ModRecipes;
+import com.github.warrentode.todecoins.block.TCBlocks;
+import com.github.warrentode.todecoins.block.entity.custom.CoinPressBlockEntity;
+import com.github.warrentode.todecoins.block.entity.container.coinpress.CoinPressResultSlot;
+import com.github.warrentode.todecoins.gui.TCMenuTypes;
+import com.github.warrentode.todecoins.recipe.TCRecipes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -49,7 +49,7 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
     }
 
     public CoinPressMenu(final int windowId, final Inventory playerInventory, final CoinPressBlockEntity blockEntity, ContainerData coinpressData) {
-        super(ModMenuTypes.COIN_PRESS_MENU.get(), windowId);
+        super(TCMenuTypes.COIN_PRESS_MENU.get(), windowId);
         this.coinPress = blockEntity;
         this.inventory = coinPress.getInventory();
         this.coinpressData = coinpressData;
@@ -135,7 +135,7 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
 
     @Override
     public boolean stillValid(@NotNull Player player) {
-        return stillValid(this.canInteractWithCallable, player, ModBlocks.COINPRESSBLOCK.get());
+        return stillValid(this.canInteractWithCallable, player, TCBlocks.COINPRESSBLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
@@ -193,7 +193,7 @@ public class CoinPressMenu extends RecipeBookMenu<RecipeWrapper> {
 
     @Override
     public @NotNull RecipeBookType getRecipeBookType() {
-        return ModRecipes.COINPRESS_BOOK;
+        return TCRecipes.COINPRESS_BOOK;
     }
 
     @Override

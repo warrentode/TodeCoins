@@ -1,8 +1,68 @@
 {
   "values": [
-    "farmersdelight:melon_juice",
-    "farmersdelight:apple_cider",
-    "farmersdelight:milk_bottle",
-    "farmersdelight:hot_cocoa"
+    {
+      "id": "fastfooddelight:iced_tea",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:creaming_soda",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:lemon_soda",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:orange_soda",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:cola_soda",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:expresso_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:american_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:latte_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:mocha_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:macchiato_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:doppio_coffee",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:cappuccino_coffee",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:melon_juice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:apple_cider",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:milk_bottle",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:hot_cocoa",
+      "required": false
+    }
   ]
 }

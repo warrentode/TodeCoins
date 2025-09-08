@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "todecoins:gold_coin"
+    },
+    {
+      "item": "todecoins:gold_coin"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gold_nugget"
+  }
+}

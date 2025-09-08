@@ -1,13 +1,13 @@
 {
   "values": [
-    "todecoins:chocolate_coin_bubbly_berry",
+    "todecoins:chocolate_coin_warped_spice",
     "todecoins:chocolate_coin_velvety_clover",
-    "todecoins:chocolate_coin_festive_fudge",
-    "todecoins:chocolate_coin_fuego_fudge",
-    "todecoins:chocolate_coin_carmel_crisp",
     "todecoins:chocolate_coin_ultimate_dark",
     "todecoins:chocolate_coin_milk_bone",
+    "todecoins:chocolate_coin_fuego_fudge",
+    "todecoins:chocolate_coin_festive_fudge",
     "todecoins:chocolate_coin_crimson_spore",
-    "todecoins:chocolate_coin_warped_spice"
+    "todecoins:chocolate_coin_carmel_crisp",
+    "todecoins:chocolate_coin_bubbly_berry"
   ]
 }

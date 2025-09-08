@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether"
+        }
+      ],
+      "recipe": {
+        "type": "todecoins:spawn_egg_shapeless",
+        "group": "spawn_eggs",
+        "ingredients": [
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:soul_binder"
+          },
+          {
+            "tag": "forge:nuggets/netherite"
+          },
+          {
+            "item": "minecraft:heart_of_the_sea"
+          },
+          {
+            "item": "aether:zanite_gemstone"
+          },
+          {
+            "item": "aether:aechor_petal"
+          }
+        ],
+        "recipe_book_category": "MISC",
+        "result": {
+          "item": "aether:aechor_plant_spawn_egg"
+        }
+      }
+    }
+  ]
+}

@@ -1,14 +1,64 @@
 {
   "values": [
-    "farmersdelight:salmon_roll",
-    "farmersdelight:cod_roll",
-    "farmersdelight:kelp_roll",
-    "farmersdelight:stuffed_potato",
-    "farmersdelight:cooked_bacon",
-    "farmersdelight:fried_egg",
-    "farmersdelight:fruit_salad",
-    "farmersdelight:mixed_salad",
-    "farmersdelight:nether_salad",
-    "farmersdelight:barbecue_stick"
+    {
+      "id": "fastfooddelight:apple_sauce",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:chicken_nuggets",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:fried_onions",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:carrot_fries",
+      "required": false
+    },
+    {
+      "id": "fastfooddelight:french_fries",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:salmon_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cod_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:kelp_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:stuffed_potato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cooked_bacon",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fried_egg",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fruit_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:mixed_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:nether_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:barbecue_stick",
+      "required": false
+    }
   ]
 }

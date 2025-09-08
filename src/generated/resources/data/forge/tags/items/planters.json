@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "beautify:hanging_pot",
+      "required": false
+    },
+    {
+      "id": "supplementaries:planter",
+      "required": false
+    },
+    {
+      "id": "supplementaries:flower_box",
+      "required": false
+    }
+  ]
+}

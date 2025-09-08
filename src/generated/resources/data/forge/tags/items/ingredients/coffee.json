@@ -1,0 +1,28 @@
+{
+  "values": [
+    {
+      "id": "farmersrespite:coffee_beans",
+      "required": false
+    },
+    {
+      "id": "farmersrespite:coffee_berries",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:roasted_coffee_beans",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:dried_coffee_beans",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:coffee_fruit",
+      "required": false
+    },
+    {
+      "id": "kawaiidishes:coffee_powder",
+      "required": false
+    }
+  ]
+}

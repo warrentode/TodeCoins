@@ -1,12 +1,12 @@
 package com.github.warrentode.todecoins.recipe;
 
-import com.github.warrentode.todecoins.TodeCoins;
-import com.github.warrentode.todecoins.block.ModBlocks;
+import com.github.warrentode.todecoins.block.TCBlocks;
 import com.github.warrentode.todecoins.recipe.recipebook.CoinPressRecipeBookTab;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -20,6 +20,7 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
+import static com.github.warrentode.todecoins.TodeCoins.TC_LOGGER;
 
 public class CoinPressRecipe implements Recipe<RecipeWrapper> {
     public static final int INPUT_SLOTS = 2;
@@ -62,12 +63,12 @@ public class CoinPressRecipe implements Recipe<RecipeWrapper> {
     }
 
     @Override
-    public @NotNull ItemStack getResultItem() {
+    public @NotNull ItemStack getResultItem(@NotNull RegistryAccess registryAccess) {
         return this.result;
     }
 
     @Override
-    public @NotNull ItemStack assemble(@NotNull RecipeWrapper inventory) {
+    public @NotNull ItemStack assemble(@NotNull RecipeWrapper inventory, @NotNull RegistryAccess registryAccess) {
         return this.result.copy();
     }
 
@@ -111,7 +112,7 @@ public class CoinPressRecipe implements Recipe<RecipeWrapper> {
 
     @Override
     public @NotNull ItemStack getToastSymbol() {
-        return new ItemStack(ModBlocks.COINPRESSBLOCK.get());
+        return new ItemStack(TCBlocks.COINPRESSBLOCK.get());
     }
 
     public static class Type implements RecipeType<CoinPressRecipe> {
@@ -125,8 +126,8 @@ public class CoinPressRecipe implements Recipe<RecipeWrapper> {
 
     public static class Serializer implements RecipeSerializer<CoinPressRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        @SuppressWarnings({"unused", "removal"})
-        public static final ResourceLocation ID = new ResourceLocation(MODID, "glassblowing");
+        @SuppressWarnings({"unused"})
+        public static final ResourceLocation ID = ResourceLocation.parse(MODID + ":glassblowing");
 
         public Serializer() {
         }
@@ -158,7 +159,7 @@ public class CoinPressRecipe implements Recipe<RecipeWrapper> {
                 final String tabKey = GsonHelper.getAsString(json, "recipe_book_tab", null);
                 final CoinPressRecipeBookTab tab = CoinPressRecipeBookTab.findByName(tabKey);
                 if (tabKey != null && tab == null) {
-                    TodeCoins.LOGGER.warn("Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: {}", EnumSet.allOf(CoinPressRecipeBookTab.class));
+                    TC_LOGGER.warn("Optional field 'recipe_book_tab' does not match any valid tab. If defined, must be one of the following: {}", EnumSet.allOf(CoinPressRecipeBookTab.class));
                 }
                 ItemStack result = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
                 final float experience = GsonHelper.getAsFloat(json, "experience", 0.0F);

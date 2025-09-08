@@ -1,5 +1,6 @@
 {
   "values": [
+    "minecraft:cooked_porkchop",
     "#forge:cooked_pork/cooked_bacon",
     {
       "id": "nethersdelight:hoglin_sirloin",
@@ -8,7 +9,6 @@
     {
       "id": "farmersdelight:smoked_ham",
       "required": false
-    },
-    "minecraft:cooked_porkchop"
+    }
   ]
 }

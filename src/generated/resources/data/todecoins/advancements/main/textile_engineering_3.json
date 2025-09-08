@@ -29,7 +29,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.textileEngineering3.desc"
+      "translate": "advancement.textile_engineering_3.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -38,7 +38,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.textileEngineering3"
+      "translate": "advancement.textile_engineering_3"
     }
   },
   "requirements": [
@@ -48,5 +48,11 @@
     [
       "craft_endonian_thread"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

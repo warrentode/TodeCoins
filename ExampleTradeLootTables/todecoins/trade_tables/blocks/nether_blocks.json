@@ -1,0 +1,101 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:warped_wart_block"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_wart_block"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:warped_stem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:crimson_stem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:basalt"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:warped_nylium"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:crimson_nylium"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:obsidian"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:crying_obsidian"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:soul_sand"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:soul_soil"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:red_nether_bricks"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherrack"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:blackstone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:soul_soil"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            }
+          ],
+          "name": "biomesoplenty:hellbark_log"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            }
+          ],
+          "name": "biomesoplenty:brimstone"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            }
+          ],
+          "name": "biomesoplenty:flesh"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/blocks/nether_blocks"
+}

@@ -1,0 +1,107 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:elder_guardian"
+            }
+          ],
+          "name": "todecoins:collectible_coin_elder_guardian_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:ender_dragon"
+            }
+          ],
+          "name": "todecoins:collectible_coin_ender_dragon_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:warden"
+            }
+          ],
+          "name": "todecoins:collectible_coin_warden_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wildfire"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wildfire_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:entity_type_tag_condition",
+              "tag": "forge:wither"
+            }
+          ],
+          "name": "todecoins:collectible_coin_wither_netherite"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:elder_guardian"
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:ender_dragon"
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:warden"
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:wildfire"
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "todecoins:entity_type_tag_condition",
+                    "tag": "forge:wither"
+                  }
+                }
+              ]
+            }
+          ],
+          "name": "minecraft:enchanted_golden_apple"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:entity/collectible/seasonal/winter_boss_coin_drops"
+}

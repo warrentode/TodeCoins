@@ -1,0 +1,43 @@
+{
+  "parent": "todecoins:main/textile_engineering_4",
+  "criteria": {
+    "craft_wallet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:wallet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.craft_wallet.desc"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "todecoins:wallet"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.craft_wallet"
+    }
+  },
+  "requirements": [
+    [
+      "craft_wallet"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
+}

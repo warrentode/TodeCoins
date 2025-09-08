@@ -1,0 +1,36 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:textiles/leather"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:textiles/fibre"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:textiles/string"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:textiles/fabric"
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "forge:textiles/thread"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/textiles/textiles_tag_table"
+}

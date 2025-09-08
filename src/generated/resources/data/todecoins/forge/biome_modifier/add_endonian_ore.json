@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:has_endonian_ore",
+  "features": "todecoins:endonian_ore_placed",
+  "step": "underground_ores"
+}

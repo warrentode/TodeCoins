@@ -1,0 +1,54 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "cagerium"
+            },
+            {
+              "type": "forge:true"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "cagerium:ominous_skull"
+          },
+          {
+            "item": "cagerium:ominous_skull"
+          },
+          {
+            "item": "cagerium:ominous_skull"
+          },
+          {
+            "item": "cagerium:ominous_skull"
+          },
+          {
+            "item": "minecraft:iron_bars"
+          },
+          {
+            "item": "minecraft:iron_bars"
+          },
+          {
+            "item": "minecraft:iron_ingot"
+          },
+          {
+            "item": "minecraft:iron_ingot"
+          }
+        ],
+        "result": {
+          "item": "cagerium:cage"
+        }
+      }
+    }
+  ]
+}

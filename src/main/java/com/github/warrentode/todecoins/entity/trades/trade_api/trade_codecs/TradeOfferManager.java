@@ -1,6 +1,5 @@
 package com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs;
 
-import com.github.warrentode.todecoins.TodeCoins;
 import com.github.warrentode.todecoins.entity.trades.trade_api.TradeInjectionHelper;
 import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types.TradeOfferFactoryType;
 import com.google.gson.Gson;
@@ -32,27 +31,21 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
+import static com.github.warrentode.todecoins.TodeCoins.TC_LOGGER;
 
 public class TradeOfferManager extends SimpleJsonResourceReloadListener {
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     public static final ResourceLocation WANDERING_TRADER_PROFESSION_ID = ForgeRegistries.ENTITY_TYPES.getKey(EntityType.WANDERING_TRADER);
-    @SuppressWarnings("removal")
-    public static final ResourceLocation NUMISMATIST_PROFESSION_ID = new ResourceLocation("todecoins:numismatist");
-    @SuppressWarnings("removal")
-    public static final ResourceLocation PIGLINMERCHANT_PROFESSION_ID = new ResourceLocation("todecoins:piglin_merchant");
-    @SuppressWarnings("removal")
-    private static final ResourceLocation ID = new ResourceLocation(MODID, "trades");
+    public static final ResourceLocation NUMISMATIST_PROFESSION_ID = ResourceLocation.parse("todecoins:numismatist");
+    public static final ResourceLocation PIGLINMERCHANT_PROFESSION_ID = ResourceLocation.parse("todecoins:piglin_merchant");
+    public static final ResourceLocation GOBLIN_TRADER_ID = ResourceLocation.parse("goblintraders:goblin_trader");
+    public static final ResourceLocation VEIN_GOBLIN_TRADER_ID = ResourceLocation.parse("goblintraders:vein_goblin_trader");
+    public static final ResourceLocation RED_MERCHANT_ID = ResourceLocation.parse("supplementaries:red_merchant");
+    private static final ResourceLocation ID = ResourceLocation.parse(MODID + ":trades");
 
     private static final Map<ResourceLocation, Int2ObjectMap<List<VillagerTrades.ItemListing>>> cachedTrades = new Object2ObjectOpenHashMap<>();
     // Changed to mutable map
     public Map<ResourceLocation, Int2ObjectMap<VillagerTrades.ItemListing[]>> offerFactories = new HashMap<>();
-
-    // Maps custom Merchant EntityType to a resource key in JSON (e.g. modid:custom_trader)
-    private static final Map<EntityType<?>, ResourceLocation> GENERIC_MERCHANTS = new HashMap<>();
-
-    public static void registerGenericMerchant(EntityType<?> type, ResourceLocation tradeKey) {
-        GENERIC_MERCHANTS.put(type, tradeKey);
-    }
 
     public TradeOfferManager() {
         super(GSON, ID.getPath());
@@ -60,7 +53,7 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
 
     @Override
     protected void apply(@NotNull Map<ResourceLocation, JsonElement> prepared, @NotNull ResourceManager manager, @NotNull ProfilerFiller profiler) {
-        TodeCoins.LOGGER.info("Applying trade data...");
+        TC_LOGGER.info("Applying trade data...");
 
         TradeInjectionHelper.clearCache();
         cachedTrades.clear(); // Clear previous cached trades
@@ -70,7 +63,7 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
             ResourceLocation resourceLocation = entry.getKey();
             JsonElement jsonElement = entry.getValue();
 
-            // Decode either villager-style or wandering-trader-style trades
+            // Decode villager-style trades
             try {
                 CustomVillagerTrades trades = CustomVillagerTrades.CUSTOM_VILLAGER_TRADES_CODEC
                         .decode(JsonOps.INSTANCE, jsonElement)
@@ -88,14 +81,15 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
                     levelList.addAll(listings);
                 });
 
-                TodeCoins.LOGGER.info("Loaded Villager trades for {}: {}", profession, trades.trades());
+                TC_LOGGER.info("Loaded Villager trades for {}: {}", profession, trades.trades());
                 loadedCount.incrementAndGet();
                 continue;
             }
             catch (Exception exception) {
-                TodeCoins.LOGGER.error("Failed to process Villager trade JSON {}: {}", resourceLocation, exception.getMessage());
+                TC_LOGGER.error("Failed to process Villager trade JSON {}: {}", resourceLocation, exception.getMessage());
             }
 
+            // Decode wandering-trader-style trades
             try {
                 CustomWanderingTraderTrades trades = CustomWanderingTraderTrades.CUSTOM_WANDERING_TRADER_TRADES_CODEC
                         .decode(JsonOps.INSTANCE, jsonElement)
@@ -113,11 +107,11 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
                     rarityList.addAll(listings);
                 });
 
-                TodeCoins.LOGGER.info("Loaded Wandering Trader trades for {}: {}", profession, trades.trades());
+                TC_LOGGER.info("Loaded Wandering Trader trades for {}: {}", profession, trades.trades());
                 loadedCount.incrementAndGet();
             }
             catch (Exception exception) {
-                TodeCoins.LOGGER.error("Failed to process Wandering Trader trade JSON {}: {}", resourceLocation, exception.getMessage());
+                TC_LOGGER.error("Failed to process Wandering Trader trade JSON {}: {}", resourceLocation, exception.getMessage());
             }
 
             loadedCount.incrementAndGet();
@@ -143,7 +137,7 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
                         }
                 ));
 
-        TodeCoins.LOGGER.info("Loaded {} trade offer files", loadedCount.get());
+        TC_LOGGER.info("Loaded {} trade offer files", loadedCount.get());
     }
 
     public Optional<Int2ObjectMap<List<VillagerTrades.ItemListing>>> getVillagerOffers(VillagerProfession profession) {
@@ -183,17 +177,35 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
         }
     }
 
-    public Optional<VillagerTrades.ItemListing[]> getOffersForMerchant(EntityType<?> entityType, MerchantLevel level) {
-        ResourceLocation professionId = GENERIC_MERCHANTS.get(entityType);
-        if (professionId == null) {
+    public Optional<VillagerTrades.ItemListing[]> getOffersForGoblinTrader(MerchantLevel rarity) {
+        Int2ObjectMap<List<VillagerTrades.ItemListing>> map = cachedTrades.get(GOBLIN_TRADER_ID);
+        if (map != null && map.containsKey(rarity.getId())) {
+            List<VillagerTrades.ItemListing> itemsList = map.get(rarity.getId());
+            return Optional.of(itemsList.toArray(new VillagerTrades.ItemListing[0]));
+        }
+        else {
             return Optional.empty();
         }
+    }
 
-        Int2ObjectMap<List<VillagerTrades.ItemListing>> levelMap = cachedTrades.get(professionId);
-        if (levelMap != null && levelMap.containsKey(level.getId())) {
-            List<VillagerTrades.ItemListing> itemsList = levelMap.get(level.getId());
+    public Optional<VillagerTrades.ItemListing[]> getOffersForVeinGoblinTrader(MerchantLevel rarity) {
+        Int2ObjectMap<List<VillagerTrades.ItemListing>> map = cachedTrades.get(VEIN_GOBLIN_TRADER_ID);
+        if (map != null && map.containsKey(rarity.getId())) {
+            List<VillagerTrades.ItemListing> itemsList = map.get(rarity.getId());
             return Optional.of(itemsList.toArray(new VillagerTrades.ItemListing[0]));
-        } else {
+        }
+        else {
+            return Optional.empty();
+        }
+    }
+
+    public Optional<VillagerTrades.ItemListing[]> getOffersForRedMerchant(MerchantLevel rarity) {
+        Int2ObjectMap<List<VillagerTrades.ItemListing>> map = cachedTrades.get(RED_MERCHANT_ID);
+        if (map != null && map.containsKey(rarity.getId())) {
+            List<VillagerTrades.ItemListing> itemsList = map.get(rarity.getId());
+            return Optional.of(itemsList.toArray(new VillagerTrades.ItemListing[0]));
+        }
+        else {
             return Optional.empty();
         }
     }
@@ -212,7 +224,7 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
         ResourceManager manager = server.getResourceManager();
         Map<ResourceLocation, JsonElement> tradesJson = this.prepare(manager, server.getProfiler());
         this.apply(tradesJson, manager, server.getProfiler());
-        TodeCoins.LOGGER.info("Manually reloaded trade offers.");
+        TC_LOGGER.info("Manually reloaded trade offers.");
     }
 
     public enum MerchantLevel implements StringRepresentable {
@@ -243,7 +255,7 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
                 }
             }
 
-            return DataResult.error("Invalid level index " + id + " provided.");
+            return DataResult.error(() -> "Invalid level index " + id + " provided.");
         }
 
         @Override
@@ -262,7 +274,8 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
         }
     }
 
-    public record CustomVillagerTrades(ResourceLocation profession, boolean replace, Map<Integer, List<VillagerTrades.ItemListing>> trades) {
+    public record CustomVillagerTrades(ResourceLocation profession, boolean replace,
+                                       Map<Integer, List<VillagerTrades.ItemListing>> trades) {
         public static final Codec<CustomVillagerTrades> CUSTOM_VILLAGER_TRADES_CODEC = RecordCodecBuilder.create(instance -> instance.group(
                 ResourceLocation.CODEC.fieldOf("profession").forGetter(CustomVillagerTrades::profession),
                 Codec.BOOL.optionalFieldOf("replace", false).forGetter(CustomVillagerTrades::replace),
@@ -272,7 +285,8 @@ public class TradeOfferManager extends SimpleJsonResourceReloadListener {
         ).apply(instance, CustomVillagerTrades::new));
     }
 
-    public record CustomWanderingTraderTrades(ResourceLocation profession, boolean replace,Map<Integer, List<VillagerTrades.ItemListing>> trades) {
+    public record CustomWanderingTraderTrades(ResourceLocation profession, boolean replace,
+                                              Map<Integer, List<VillagerTrades.ItemListing>> trades) {
         public static final Codec<CustomWanderingTraderTrades> CUSTOM_WANDERING_TRADER_TRADES_CODEC = RecordCodecBuilder.create(instance -> instance.group(
                 ResourceLocation.CODEC.fieldOf("profession").forGetter(CustomWanderingTraderTrades::profession),
                 Codec.BOOL.optionalFieldOf("replace", false).forGetter(CustomWanderingTraderTrades::replace),

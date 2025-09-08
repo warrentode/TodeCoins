@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#todecoins:collectible/coins",
+    "todecoins:lucky_coin"
+  ]
+}

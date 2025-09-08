@@ -1,9 +1,9 @@
 package com.github.warrentode.todecoins.entity.spawners.piglinmerchant;
 
-import com.github.warrentode.todecoins.config.Config;
-import com.github.warrentode.todecoins.entity.ModEntityTypes;
+import com.github.warrentode.todecoins.Config;
+import com.github.warrentode.todecoins.entity.TCEntityTypes;
 import com.github.warrentode.todecoins.entity.piglinmerchant.PiglinMerchant;
-import com.github.warrentode.todecoins.util.TodeCoinsTags;
+import com.github.warrentode.todecoins.util.tags.TCBiomeTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
@@ -108,13 +108,12 @@ public class PiglinMerchantSpawner implements CustomSpawner {
             BlockPos pos1 = optional.orElse(pos);
             BlockPos pos2 = this.findSpawnPositionNear(serverLevel, pos1, maxDistance);
             if (pos2 != null && this.hasEnoughSpace(serverLevel, pos2)) {
-                if (!serverLevel.getBiome(pos2).is(TodeCoinsTags.Biomes.HAS_RUINED_PORTALS)) {
+                if (!serverLevel.getBiome(pos2).is(TCBiomeTags.HAS_RUINED_PORTALS)) {
                     return false;
                 }
 
-                PiglinMerchant trader = ModEntityTypes.PIGLINMERCHANT.get()
-                        .spawn(serverLevel, null,null, null, pos2,
-                                MobSpawnType.EVENT, false, false);
+                PiglinMerchant trader = TCEntityTypes.PIGLINMERCHANT.get()
+                        .spawn(serverLevel, pos2, MobSpawnType.EVENT);
 
                 if (trader != null) {
                     trader.setDespawnDelay(defaultDespawnDelay);
@@ -137,7 +136,8 @@ public class PiglinMerchantSpawner implements CustomSpawner {
             int k = pos.getZ() + this.random.nextInt(maxDistance * 2) - maxDistance;
             int l = reader.getHeight(Heightmap.Types.WORLD_SURFACE, j, k);
             BlockPos blockPos1 = new BlockPos(j, l, k);
-            if (NaturalSpawner.isSpawnPositionOk(SpawnPlacements.Type.ON_GROUND, reader, blockPos1, ModEntityTypes.PIGLINMERCHANT.get())) {
+            if (NaturalSpawner.isSpawnPositionOk(SpawnPlacements.Type.ON_GROUND,
+                    reader, blockPos1, TCEntityTypes.PIGLINMERCHANT.get())) {
                 blockPos = blockPos1;
                 break;
             }

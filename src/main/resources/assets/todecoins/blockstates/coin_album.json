@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "todecoins:block/coin_album"
+    },
+    "facing=south": {
+      "model": "todecoins:block/coin_album",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "todecoins:block/coin_album",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "todecoins:block/coin_album",
+      "y": 90
+    }
+  }
+}

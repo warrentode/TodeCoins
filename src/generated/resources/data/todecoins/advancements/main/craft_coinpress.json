@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.craftCoinPress.desc"
+      "translate": "advancement.craft_coinpress.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -26,12 +26,18 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.craftCoinPress"
+      "translate": "advancement.craft_coinpress"
     }
   },
   "requirements": [
     [
       "craft_coinpress"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

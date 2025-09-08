@@ -1,11 +1,20 @@
 {
-  "type": "minecraft:chest",
   "pools": [
     {
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "todecoins:gold_coin_bag"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.05,
+              "condition": "minecraft:random_chance"
+            }
+          ],
           "functions": [
             {
               "decoration": "red_x",
@@ -16,24 +25,35 @@
             {
               "function": "minecraft:set_name",
               "name": {
-                "translate": "filled_map.buried_treasure"
+                "translate": "filled_map.rainbow_end"
               }
             }
           ],
           "name": "minecraft:map"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "entries": [
+        },
         {
           "type": "minecraft:loot_table",
-          "name": "todecoins:chests/todecoins_chest"
+          "name": "todecoins:trade_tables/brewing/one_emerald_value_potion_ingredients_table"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/blocks/logs_sell_table"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/misc/one_emerald_value_fuel_table"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/wandering/sell_one_emerald_value"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "todecoins:trade_tables/wandering/purchase"
         }
       ],
-      "rolls": 1.0
+      "rolls": 10.0
     }
-  ]
+  ],
+  "random_sequence": "todecoins:chests/village/villager_leprechaun"
 }

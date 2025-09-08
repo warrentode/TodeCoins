@@ -1,12 +1,442 @@
 {
   "offers": {
-    "rare": [
+    "apprentice": [
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/spawn_bonus_chest",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/end_city_treasure",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/simple_dungeon",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_weaponsmith",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_toolsmith",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_armorer",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_cartographer",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_mason",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_shepherd",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_butcher",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_fletcher",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_fisher",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_tannery",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_temple",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_desert_house",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_plains_house",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_taiga_house",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_snowy_house",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/village/village_savanna_house",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/abandoned_mineshaft",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/nether_bridge",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/stronghold_library",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/stronghold_crossing",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/stronghold_corridor",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/desert_pyramid",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/jungle_temple",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/jungle_temple_dispenser",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/igloo_chest",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/woodland_mansion",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/underwater_ruin_small",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/underwater_ruin_big",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/buried_treasure",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/shipwreck_map",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/shipwreck_supply",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/shipwreck_treasure",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/pillager_outpost",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/bastion_treasure",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/bastion_other",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/bastion_bridge",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/bastion_hoglin_stable",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/ancient_city",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/ancient_city_ice_box",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.mystery_loot_box",
+        "loot_table": "minecraft:chests/ruined_portal",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.2,
+        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_value_currency",
+        "trade_experience": 10
+      },
       {
         "type": "todecoins:loot_table_for_loot_table",
         "max_trades": 3,
         "offered_table": "todecoins:trade_tables/wandering/sell_special",
         "price_multiplier": 0.2,
-        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "requested_table": "todecoins:trade_tables/currency/one_emerald_value_currency",
         "trade_experience": 10
       },
       {
@@ -20,25 +450,15 @@
         "max_trades": 3,
         "offered_item": "minecraft:blue_ice",
         "price_multiplier": 0.2,
-        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
-        "trade_experience": 10
-      },
-      {
-        "type": "todecoins:loot_table_for_loot_box",
-        "display_name": "Mystery Loot Box",
-        "loot_table": "minecraft:chests/abandoned_mineshaft",
-        "max_trades": 1,
-        "offered_item": "minecraft:shulker_box",
-        "price_multiplier": 0.2,
-        "requested_table": "todecoins:trade_tables/currency/sixteen_emerald_table",
+        "requested_table": "todecoins:trade_tables/currency/one_emerald_value_currency",
         "trade_experience": 10
       }
     ],
-    "common": [
+    "novice": [
       {
         "type": "todecoins:loot_table_for_loot_table",
         "max_trades": 3,
-        "offered_table": "todecoins:trade_tables/currency/single_emerald_value_currency",
+        "offered_table": "todecoins:trade_tables/currency/one_emerald_value_currency",
         "price_multiplier": 0.2,
         "requested_table": "todecoins:trade_tables/wandering/purchase"
       },
@@ -48,7 +468,7 @@
         "offered_item_count": 3,
         "offered_table": "todecoins:trade_tables/textiles/tagged_dyes_table",
         "price_multiplier": 0.2,
-        "requested_table": "todecoins:trade_tables/currency/single_emerald_value_currency"
+        "requested_table": "todecoins:trade_tables/currency/one_emerald_value_currency"
       },
       {
         "type": "todecoins:loot_table_for_loot_table",
@@ -65,9 +485,9 @@
         "requested_table": "todecoins:trade_tables/currency/three_emerald_value_currency"
       },
       {
-        "type": "todecoins:loot_table_for_item",
+        "type": "todecoins:loot_table_for_loot_table",
         "max_trades": 3,
-        "offered_item": "minecraft:slime_ball",
+        "offered_table": "todecoins:trade_tables/mob_parts/slimeball_tag_table",
         "price_multiplier": 0.2,
         "requested_table": "todecoins:trade_tables/currency/four_emerald_value_currency"
       },

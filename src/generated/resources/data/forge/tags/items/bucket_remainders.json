@@ -1,0 +1,55 @@
+{
+  "values": [
+    "minecraft:tropical_fish_bucket",
+    "minecraft:salmon_bucket",
+    "minecraft:pufferfish_bucket",
+    "minecraft:cod_bucket",
+    "minecraft:axolotl_bucket",
+    "minecraft:powder_snow_bucket",
+    "minecraft:water_bucket",
+    {
+      "id": "minecraft:beetroot_soup_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:earth_slime_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:sky_slime_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:ender_slime_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:magma_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:honey_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:mushroom_stew_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:rabbit_stew_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:potion_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:blazing_blood_bucket",
+      "required": false
+    },
+    {
+      "id": "minecraft:liquid_soul_bucket",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "todecoins:coinpress",
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "item": "todecoins:gem_currency_stamp"
+    },
+    {
+      "tag": "forge:gems/amethyst"
+    }
+  ],
+  "recipe_book_tab": "coins",
+  "result": {
+    "count": 4,
+    "item": "todecoins:amethyst_coin"
+  },
+  "stampingTime": 50
+}

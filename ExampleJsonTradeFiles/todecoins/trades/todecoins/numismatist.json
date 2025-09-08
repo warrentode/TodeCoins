@@ -1,0 +1,67 @@
+{
+  "offers": {
+    "rare": [
+      {
+        "type": "todecoins:loot_table_for_two_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/numismatist/rare_offers",
+        "price_multiplier": 0.0,
+        "requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_offered",
+        "secondary_requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_requested",
+        "trade_experience": 10
+      },
+      {
+        "type": "todecoins:two_loot_table_for_enchanted_item",
+        "offered_item": "minecraft:book",
+        "price_multiplier": 0.0,
+        "requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_offered",
+        "secondary_requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_requested",
+        "trade_experience": 10
+      }
+    ],
+    "common": [
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_offered",
+        "price_multiplier": 0.0,
+        "requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_requested"
+      },
+      {
+        "type": "todecoins:loot_table_for_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_requested",
+        "price_multiplier": 0.0,
+        "requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_offered"
+      },
+      {
+        "type": "todecoins:two_loot_table_for_map",
+        "map_marker": "TARGET_POINT",
+        "map_name": "filled_map.settlement",
+        "price_multiplier": 0.0,
+        "requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_offered",
+        "secondary_requested_table": "todecoins:trade_tables/tools/compass_table",
+        "structure_tag": "forge:worldgen/structure/settlement"
+      },
+      {
+        "type": "todecoins:loot_table_for_two_loot_table",
+        "max_trades": 3,
+        "offered_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_offered",
+        "price_multiplier": 0.0,
+        "requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_requested",
+        "secondary_requested_table": "todecoins:trade_tables/numismatist/container_offers"
+      },
+      {
+        "type": "todecoins:two_loot_table_for_loot_box",
+        "display_name": "tooltip.todecoins.collectible_coin_pack",
+        "loot_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_offered",
+        "max_trades": 3,
+        "offered_item": "minecraft:shulker_box",
+        "price_multiplier": 0.0,
+        "requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_offered",
+        "secondary_requested_table": "todecoins:trade_tables/collectible/seasonal/mystery_coin_pack_requested"
+      }
+    ]
+  },
+  "profession": "todecoins:numismatist"
+}

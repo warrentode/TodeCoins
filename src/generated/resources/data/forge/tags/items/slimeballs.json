@@ -1,5 +1,21 @@
 {
   "values": [
-    "minecraft:slime_ball"
+    "minecraft:slime_ball",
+    {
+      "id": "tconstruct:sky_slime_ball",
+      "required": false
+    },
+    {
+      "id": "tconstruct:ichor_slime_ball",
+      "required": false
+    },
+    {
+      "id": "tconstruct:ender_slime_ball",
+      "required": false
+    },
+    {
+      "id": "aether:swet_ball",
+      "required": false
+    }
   ]
 }

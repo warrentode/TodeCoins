@@ -1,0 +1,72 @@
+{
+  "values": [
+    {
+      "id": "beautify:lamp_candleabra_yellow",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_white",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_red",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_purple",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_pink",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_orange",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_magenta",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_lime",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_green",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_gray",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_cyan",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_brown",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_blue",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_black",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_light_gray",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra_light_blue",
+      "required": false
+    },
+    {
+      "id": "beautify:lamp_candleabra",
+      "required": false
+    }
+  ]
+}

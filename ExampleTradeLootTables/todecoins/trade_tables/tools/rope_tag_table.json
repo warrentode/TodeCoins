@@ -1,0 +1,68 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "todecoins:modloaded_condition",
+                  "modid": "farmersdelight"
+                },
+                {
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "todecoins:modloaded_condition",
+                      "modid": "supplementaries"
+                    },
+                    {
+                      "condition": "todecoins:modloaded_condition",
+                      "modid": "beautify"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "expand": true,
+          "name": "forge:ropes"
+        },
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:modloaded_condition",
+                "modid": "beautify"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:modloaded_condition",
+                "modid": "supplementaries"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:modloaded_condition",
+                "modid": "farmersdelight"
+              }
+            }
+          ],
+          "expand": true,
+          "name": "forge:textiles/string"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/tools/rope_tag_table"
+}

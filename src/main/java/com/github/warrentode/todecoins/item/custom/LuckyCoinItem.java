@@ -1,106 +1,170 @@
 package com.github.warrentode.todecoins.item.custom;
 
-import com.github.warrentode.todecoins.TodeCoins;
-import com.google.common.collect.LinkedHashMultimap;
-import com.google.common.collect.Multimap;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.gui.screens.Screen;
+import com.github.warrentode.todecoins.integration.curios.CurioCapabilityProvider;
+import com.github.warrentode.todecoins.integration.curios.CuriosHelper;
+import com.github.warrentode.todecoins.item.TCItems;
+import com.github.warrentode.todecoins.particle.TCParticles;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.type.capability.ICurio;
-import top.theillusivec4.curios.api.type.capability.ICurioItem;
-import top.theillusivec4.curios.common.capability.CurioItemCapability;
 
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.UUID;
+import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
-public class LuckyCoinItem extends CoinItem implements ICurioItem {
-
-    public LuckyCoinItem(Properties pProperties) {
-        super(pProperties);
-    }
-
-    @Nullable
-    public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return CurioItemCapability.createProvider(new ICurio() {
-            @Override
-            public ItemStack getStack() {
-                return stack;
-            }
-
-            @Override
-            public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid) {
-                Multimap<Attribute, AttributeModifier> attribute = LinkedHashMultimap.create();
-                attribute.put(Attributes.LUCK,
-                        new AttributeModifier(uuid, TodeCoins.MODID + ":luck_bonus", 1,
-                                AttributeModifier.Operation.ADDITION));
-                return attribute;
-            }
-
-            @Override
-            public int getFortuneLevel(SlotContext slotContext, @javax.annotation.Nullable LootContext lootContext) {
-                return 1;
-            }
-
-            @Override
-            public int getLootingLevel(SlotContext slotContext, DamageSource source, LivingEntity target, int baseLooting) {
-                return 1;
-            }
-
-            @Nonnull
-            @Override
-            public SoundInfo getEquipSound(SlotContext context) {
-                return new SoundInfo(SoundEvents.CHAIN_STEP, 1.0F, 1.5F);
-            }
-
-            @Override
-            public boolean canEquipFromUse(SlotContext context) {
-                return true;
-            }
-
-            @Override
-            public boolean canSync(SlotContext context) {
-                return true;
-            }
-
-            @Nonnull
-            @Override
-            public DropRule getDropRule(SlotContext context, DamageSource source, int lootingLevel, boolean recentlyHit) {
-                return DropRule.DEFAULT;
-            }
-
-            @Override
-            public List<Component> getSlotsTooltip(List<Component> tooltips) {
-                tooltips.add(Component.translatable("tooltips.coin_effects").withStyle(ChatFormatting.GOLD));
-                tooltips.add(Component.translatable("tooltips.coin_effects.fortune_1").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.coin_effects.looting_1").withStyle(ChatFormatting.BLUE));
-                tooltips.add(Component.translatable("tooltips.coin_effects.undying").withStyle(ChatFormatting.BLUE));
-                return ICurio.super.getSlotsTooltip(tooltips);
-            }
-        });
+@Mod.EventBusSubscriber(modid = MODID)
+public class LuckyCoinItem extends CurrencyItem {
+    public LuckyCoinItem(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        if (Screen.hasShiftDown()) {
-            tooltips.add(Component.translatable("curios.modifiers.charm").withStyle(ChatFormatting.GOLD));
-        }
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
+    public @Nullable ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
+        return CurioCapabilityProvider.initCapabilities(stack, nbt);
     }
 
+    @SubscribeEvent
+    public static void onLivingDeath(@NotNull LivingDeathEvent event) {
+        LivingEntity dyingEntity = event.getEntity();
+        Level level = dyingEntity.getCommandSenderWorld();
+        if (!level.isClientSide) {
+            if (dyingEntity instanceof ServerPlayer player) {
+                DamageSource damageSource = player.getLastDamageSource();
+                ItemStack luckyCoin = CuriosHelper.getEquippedOrInventoryStack(player, TCItems.LUCKY_COIN.get());
+
+                if (!luckyCoin.isEmpty()) {
+                    player.setHealth(1.0F);
+                    player.removeAllEffects();
+                    player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 1));
+                    player.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 800, 0));
+                    player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 900, 1));
+
+                    // Optional levitation if fell out of world
+                    if (damageSource != null && damageSource.is(DamageTypes.FELL_OUT_OF_WORLD)) {
+                        player.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 3000, 0));
+                        // Set flags for server slow-fall
+                        player.getPersistentData().putBoolean("LuckyCoinSlowFall", true);
+                    }
+
+                    // Smooth spiral particle animation for all nearby clients
+                    spawnSpiralParticles((ServerLevel) level, player);
+
+                    luckyCoin.shrink(1);
+                    event.setCanceled(true);
+                }
+            }
+        }
+    }
+
+    private static void spawnSpiralParticles(ServerLevel serverLevel, @NotNull ServerPlayer player) {
+        RandomSource random = RandomSource.create();
+
+        double centerX = player.getX();
+        double centerY = player.getY();
+        double centerZ = player.getZ();
+
+        // particle settings
+        int particleCount = 100;
+        double radius = 1.5;
+        double height = 2.5;
+        int turns = 3;
+
+        for (int i = 0; i < particleCount; i++) {
+            double progress = (double) i / particleCount;
+            double angle = 2 * Math.PI * turns * progress;
+
+            // random offsets
+            double randX = (random.nextDouble() - 0.5) * 0.3;
+            double randY = (random.nextDouble() - 0.5) * 0.5;
+            double randZ = (random.nextDouble() - 0.5) * 0.3;
+
+            double offsetX = Math.cos(angle) * radius + randX;
+            double offsetZ = Math.sin(angle) * radius + randZ;
+            double offsetY = height * progress + randY;
+
+            // velocity along spiral
+            double velocityX = -Math.sin(angle) * 0.08 + (random.nextDouble() - 0.5) * 0.02;
+            double velocityZ =  Math.cos(angle) * 0.08 + (random.nextDouble() - 0.5) * 0.02;
+            double velocityY = 0.03 + (random.nextDouble() - 0.5) * 0.01;
+
+            serverLevel.sendParticles(TCParticles.LUCK_PARTICLES.get(),
+                    centerX + offsetX, centerY + offsetY, centerZ + offsetZ,
+                    1, velocityX, velocityY, velocityZ,
+                    0.03    // speed (small for subtle movement)
+            );
+
+            // intentionally called inside the loop for a layered "resonance" effect
+            serverLevel.playSeededSound(
+                    null,
+                    player.getX(), player.getY(), player.getZ(),
+                    SoundEvents.AMETHYST_BLOCK_RESONATE,
+                    SoundSource.NEUTRAL,
+                    0.2F + random.nextFloat() * 0.2F,
+                    0.4F / (serverLevel.getRandom().nextFloat() * 0.4F + 0.8F),
+                    serverLevel.random.nextLong()
+            );
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerTick(@NotNull TickEvent.PlayerTickEvent event) {
+        Player player = event.player;
+        Level level = player.level;
+
+        // --- Server-side: Apply slow-falling after levitation ---
+        if (!level.isClientSide && event.player.getPersistentData().getBoolean("LuckyCoinSlowFall")) {
+            if (!player.hasEffect(MobEffects.LEVITATION)) {
+                player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 2000, 0));
+                // set flag for slow fall application when levitate wears off
+                player.getPersistentData().remove("LuckyCoinSlowFall");
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPlayerDamage(@NotNull LivingHurtEvent event) {
+        if (!(event.getEntity() instanceof ServerPlayer player)) return;
+
+        DamageSource source = event.getSource();
+
+        // Only intercept void damage
+        if (source.is(DamageTypes.FELL_OUT_OF_WORLD)) {
+            // Check if the Lucky Coin levitation is active
+            if (player.getPersistentData().getBoolean("LuckyCoinSlowFall")) {
+                // Cancel the damage while levitating
+                event.setCanceled(true);
+
+                double y = player.getY();
+                double upwardVelocity = 0.5;
+
+                if (y < -100) {
+                    upwardVelocity = 1.5;
+                }
+                else if (y < 0) {
+                    upwardVelocity = 1.0;
+                }
+
+                player.setDeltaMovement(player.getDeltaMovement().x,
+                        upwardVelocity,
+                        player.getDeltaMovement().z);
+            }
+        }
+    }
 }

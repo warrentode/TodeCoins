@@ -1,5 +1,4 @@
 {
-  "type": "minecraft:gift",
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -15,5 +14,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "todecoins:gameplay/hero_of_the_village/leprechaun_gift"
 }

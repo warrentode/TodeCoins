@@ -1,0 +1,25 @@
+{
+  "values": [
+    "minecraft:leather_horse_armor",
+    "minecraft:leather_boots",
+    "minecraft:leather_leggings",
+    "minecraft:leather_chestplate",
+    "minecraft:leather_helmet",
+    {
+      "id": "sewingkit:wool_shoes",
+      "required": false
+    },
+    {
+      "id": "sewingkit:wool_pants",
+      "required": false
+    },
+    {
+      "id": "sewingkit:wool_shirt",
+      "required": false
+    },
+    {
+      "id": "sewingkit:wool_hat",
+      "required": false
+    }
+  ]
+}

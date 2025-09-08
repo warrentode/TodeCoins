@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "delightful:leaf_knife",
+      "required": false
+    },
+    {
+      "id": "delightful:skyroot_knife",
+      "required": false
+    }
+  ]
+}

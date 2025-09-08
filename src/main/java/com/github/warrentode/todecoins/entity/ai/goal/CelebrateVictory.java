@@ -9,7 +9,7 @@ import net.minecraft.world.entity.raid.Raid;
 import net.minecraftforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
 
-public class CelebrateVictory<T extends LivingEntity> extends Goal {
+public class CelebrateVictory extends Goal {
     private final MinecraftServer minecraftServer = ServerLifecycleHooks.getCurrentServer().getPlayerList().getServer();
     private final LivingEntity entity;
     private final ServerLevel level = minecraftServer.createCommandSourceStack().getLevel();

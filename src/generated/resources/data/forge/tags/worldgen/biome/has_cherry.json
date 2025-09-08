@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:cherry_grove",
+    {
+      "id": "biomesoplenty:tropics",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:snowblossom_grove",
+      "required": false
+    }
+  ]
+}

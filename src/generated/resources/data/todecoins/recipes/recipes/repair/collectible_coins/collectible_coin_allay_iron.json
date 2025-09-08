@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "collectible_coins",
+  "ingredients": [
+    {
+      "item": "todecoins:collectible_coin_allay_iron"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "result": {
+    "item": "todecoins:collectible_coin_allay_iron"
+  }
+}

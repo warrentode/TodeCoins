@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "todecoins:block/tip_jar"
+    },
+    "facing=south": {
+      "model": "todecoins:block/tip_jar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "todecoins:block/tip_jar",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "todecoins:block/tip_jar",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#forge:tools/wood/sewing_tools",
+    "#forge:tools/stone/sewing_tools",
+    "#forge:tools/iron/sewing_tools",
+    "#forge:tools/gold/sewing_tools",
+    "#forge:tools/diamond/sewing_tools",
+    "#forge:tools/netherite/sewing_tools"
+  ]
+}

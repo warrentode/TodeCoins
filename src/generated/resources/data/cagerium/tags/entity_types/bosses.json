@@ -1,5 +1,9 @@
 {
   "values": [
-    "#forge:bosses"
+    "#forge:ender_dragon",
+    "#forge:elder_guardian",
+    "#forge:warden",
+    "#forge:wither",
+    "#forge:wildfire"
   ]
 }

@@ -2,6 +2,30 @@
   "values": [
     "minecraft:cookie",
     {
+      "id": "festive_delight:gingerbread_cookie_flake",
+      "required": false
+    },
+    {
+      "id": "festive_delight:gingerbread_cookie_sword",
+      "required": false
+    },
+    {
+      "id": "festive_delight:gingerbread_man_creeper",
+      "required": false
+    },
+    {
+      "id": "festive_delight:gingerbread_man",
+      "required": false
+    },
+    {
+      "id": "aether:gingerbread_man",
+      "required": false
+    },
+    {
+      "id": "supplementaries:cookies",
+      "required": false
+    },
+    {
       "id": "kawaiidishes:chocolate_cookie",
       "required": false
     },
@@ -27,10 +51,6 @@
     },
     {
       "id": "farmersdelight:green_tea_cookie",
-      "required": false
-    },
-    {
-      "id": "snowyspirit:gingerbread_cookie",
       "required": false
     },
     {

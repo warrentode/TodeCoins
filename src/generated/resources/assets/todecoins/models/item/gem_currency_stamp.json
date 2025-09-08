@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "todecoins:item/gem_currency_stamp"
+  }
+}

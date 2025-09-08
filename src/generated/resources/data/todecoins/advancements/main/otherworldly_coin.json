@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/minting_coins",
+  "parent": "todecoins:main/nether_dough",
   "criteria": {
     "craft_endonian_coin": {
       "conditions": {
@@ -29,7 +29,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.otherworldlyCoin.desc"
+      "translate": "advancement.otherworldly_coin.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -38,7 +38,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.otherworldlyCoin"
+      "translate": "advancement.otherworldly_coin"
     }
   },
   "requirements": [
@@ -48,5 +48,11 @@
     [
       "craft_endonian_coin"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

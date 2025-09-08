@@ -63,7 +63,6 @@ public class NumismatistSavedData extends SavedData {
 
     public static NumismatistSavedData get(@NotNull MinecraftServer server) {
         ServerLevel serverLevel = server.createCommandSourceStack().getLevel();
-        assert serverLevel != null;
         return serverLevel.getDataStorage().computeIfAbsent(tag -> new NumismatistSavedData().read(tag), NumismatistSavedData::new, DATA_NAME);
     }
 }

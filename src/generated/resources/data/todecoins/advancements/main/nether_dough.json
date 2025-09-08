@@ -1,5 +1,5 @@
 {
-  "parent": "todecoins:main/minting_coins",
+  "parent": "todecoins:main/cave_coins",
   "criteria": {
     "craft_nether_currency_stamp": {
       "conditions": {
@@ -24,12 +24,24 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "craft_netherite_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:netherite_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.netherDough.desc"
+      "translate": "advancement.nether_dough.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -38,7 +50,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.netherDough"
+      "translate": "advancement.nether_dough"
     }
   },
   "requirements": [
@@ -47,6 +59,15 @@
     ],
     [
       "craft_nether_gold_coin"
+    ],
+    [
+      "craft_netherite_coin"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

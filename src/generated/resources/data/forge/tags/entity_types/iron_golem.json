@@ -1,9 +1,9 @@
 {
   "values": [
+    "minecraft:iron_golem",
     {
       "id": "unusualend:endstone_golem",
       "required": false
-    },
-    "minecraft:iron_golem"
+    }
   ]
 }

@@ -53,7 +53,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.luckyArmor.desc"
+      "translate": "advancement.lucky_armor.desc"
     },
     "frame": "goal",
     "hidden": false,
@@ -63,7 +63,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.luckyArmor"
+      "translate": "advancement.lucky_armor"
     }
   },
   "requirements": [
@@ -79,5 +79,11 @@
     [
       "craft_lucky_boots"
     ]
-  ]
+  ],
+  "rewards": {
+    "loot": [
+      "todecoins:trade_tables/currency/server_token"
+    ]
+  },
+  "sends_telemetry_event": true
 }

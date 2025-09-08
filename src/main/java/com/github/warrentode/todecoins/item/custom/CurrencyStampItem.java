@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.item.custom;
 
+import com.github.warrentode.todecoins.datagen.translations.TooltipTranslations;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
@@ -12,14 +13,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class CurrencyStampItem extends Item {
-    public CurrencyStampItem(Properties pProperties) {
-        super(pProperties);
+    public CurrencyStampItem(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> tooltips, @NotNull TooltipFlag pIsAdvanced) {
-        tooltips.add(Component.translatable("tooltips.coin_stamp.hover").withStyle(ChatFormatting.DARK_GRAY));
-        super.appendHoverText(pStack, pLevel, tooltips, pIsAdvanced);
+    public final void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltips, @NotNull TooltipFlag tooltipFlag) {
+        tooltips.add(Component.translatable(TooltipTranslations.tooltipPrefix + "currency_stamp").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
+        super.appendHoverText(stack, level, tooltips, tooltipFlag);
     }
-
 }

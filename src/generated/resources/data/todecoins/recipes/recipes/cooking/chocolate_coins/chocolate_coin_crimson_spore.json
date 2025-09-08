@@ -1,0 +1,30 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredients": [
+    {
+      "tag": "forge:ingredients/cocoa"
+    },
+    {
+      "tag": "forge:ingredients/sugar"
+    },
+    {
+      "tag": "forge:milk/milk"
+    },
+    {
+      "tag": "forge:fat"
+    },
+    {
+      "item": "minecraft:crimson_fungus"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "count": 4,
+    "item": "todecoins:chocolate_coin_crimson_spore"
+  }
+}

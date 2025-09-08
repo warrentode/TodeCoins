@@ -1,0 +1,109 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:is_mountain"
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/mountain/five_hundred_seventy_six_emerald_mountain_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_structure/leprechaun_wagon"
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/leprechaun/five_hundred_seventy_six_emerald_leprechaun_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:is_underground"
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/underground/five_hundred_seventy_six_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:end_biomes"
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/endonian/five_hundred_seventy_six_emerald_endonian_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:nether_biomes"
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/nether/five_hundred_seventy_six_emerald_nether_value_currency"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            }
+          ],
+          "name": "todecoins:trade_tables/currency/default/five_hundred_seventy_six_emerald_value_currency"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "dimension": "minecraft:overworld"
+                }
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:nether_biomes"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "todecoins:biometag_condition",
+                "tag": "forge:end_biomes"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "count": 64.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:emerald_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/currency/five_hundred_seventy_six_emerald_value_currency"
+}

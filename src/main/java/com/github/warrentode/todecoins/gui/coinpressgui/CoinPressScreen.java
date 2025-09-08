@@ -2,7 +2,7 @@ package com.github.warrentode.todecoins.gui.coinpressgui;
 
 import com.github.warrentode.todecoins.recipe.recipebook.CoinPressRecipeBookComponent;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
@@ -21,10 +21,8 @@ import java.awt.*;
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
 public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> implements RecipeUpdateListener {
-    @SuppressWarnings("removal")
-    private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(MODID, "textures/gui/coin_press_gui.png");
-    @SuppressWarnings("removal")
-    private static final ResourceLocation RECIPE_BUTTON_TEXTURE = new ResourceLocation("textures/gui/recipe_button.png");
+    private static final ResourceLocation BACKGROUND_TEXTURE = ResourceLocation.parse(MODID + ":" + "textures/gui/coin_press_gui.png");
+    private static final ResourceLocation RECIPE_BOOK_BUTTON_TEXTURE = ResourceLocation.parse("minecraft:textures/gui/recipe_button.png");
     private static final Rectangle PROGRESS_ARROW = new Rectangle(106, 51, 0, 15);
     private final CoinPressRecipeBookComponent recipeBookComponent = new CoinPressRecipeBookComponent();
     private boolean widthTooNarrow;
@@ -41,12 +39,18 @@ public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> impl
         assert this.minecraft != null;
         this.recipeBookComponent.init(this.width, this.height, this.minecraft, this.widthTooNarrow, this.menu);
         this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
-        this.addRenderableWidget(new ImageButton(this.leftPos + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, RECIPE_BUTTON_TEXTURE, (button) ->
-        {
-            this.recipeBookComponent.toggleVisibility();
-            this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
-            ((ImageButton) button).setPosition(this.leftPos + 5, this.height / 2 - 49);
-        }));
+        this.addRenderableWidget(new ImageButton(
+                this.leftPos + 5,
+                this.height / 2 - 49,
+                20, 18,
+                0, 0, 19,
+                RECIPE_BOOK_BUTTON_TEXTURE,
+                256, 256,
+                (button) -> {
+                    this.recipeBookComponent.toggleVisibility();
+                    this.leftPos = this.recipeBookComponent.updateScreenPosition(this.width, this.imageWidth);
+                    button.setPosition(this.leftPos + 5, this.height / 2 - 49);
+                }));
         this.addWidget(this.recipeBookComponent);
         this.setInitialFocus(this.recipeBookComponent);
     }
@@ -58,46 +62,47 @@ public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> impl
     }
 
     @Override
-    public void render(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTicks) {
-        this.renderBackground(poseStack);
+    public void render(@NotNull GuiGraphics graphics, int mouseX, int mouseY, float delta) {
+        this.renderBackground(graphics);
 
-        if (this.recipeBookComponent.isVisible() && this.widthTooNarrow) {
-            this.renderBg(poseStack, partialTicks, mouseX, mouseY);
-            this.recipeBookComponent.render(poseStack, mouseX, mouseY, partialTicks);
-        }
-        else {
-            this.recipeBookComponent.render(poseStack, mouseX, mouseY, partialTicks);
-            super.render(poseStack, mouseX, mouseY, partialTicks);
-            this.recipeBookComponent.renderGhostRecipe(poseStack, this.leftPos, this.topPos, true, partialTicks);
-        }
+        // always render background
+        this.renderBg(graphics, delta, mouseX, mouseY);
 
-        this.renderTooltip(poseStack, mouseX, mouseY);
-        this.recipeBookComponent.renderTooltip(poseStack, this.leftPos, this.topPos, mouseX, mouseY);
+        // render the recipe book behind the toggle
+        this.recipeBookComponent.render(graphics, mouseX, mouseY, delta);
+
+        // render your widgets (including the toggle button) on top
+        super.render(graphics, mouseX, mouseY, delta);
+
+        // ghost recipes, tooltips
+        this.recipeBookComponent.renderGhostRecipe(graphics, this.leftPos, this.topPos, true, delta);
+        this.renderTooltip(graphics, mouseX, mouseY);
+        this.recipeBookComponent.renderTooltip(graphics, this.leftPos, this.topPos, mouseX, mouseY);
     }
 
     @Override
-    protected void renderLabels(@NotNull PoseStack poseStack, int mouseX, int mouseY) {
-        super.renderLabels(poseStack, mouseX, mouseY);
-        this.font.draw(poseStack, this.playerInventoryTitle, 8.0f, (float) (this.imageHeight - 96 + 2), 4210752);
+    protected void renderLabels(@NotNull GuiGraphics graphics, int mouseX, int mouseY) {
+        super.renderLabels(graphics, mouseX, mouseY);
+        graphics.drawString(this.font, this.playerInventoryTitle, 8, (this.imageHeight - 96 + 2), 4210752, false);
     }
 
     @Override
-    protected void renderBg(@NotNull PoseStack poseStack, float partialTicks, int mouseX, int mouseY) {
+    protected void renderBg(@NotNull GuiGraphics graphics, float partialTick, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, BACKGROUND_TEXTURE);
         int x = this.leftPos;
         int y = (height - imageHeight) / 2;
 
-        this.blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
+        graphics.blit(BACKGROUND_TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
-        renderProgressArrow(poseStack, x, y);
+        renderProgressArrow(graphics);
     }
 
-    private void renderProgressArrow(PoseStack poseStack, int ignoredX, int ignoredY) {
+    private void renderProgressArrow(@NotNull GuiGraphics graphics) {
         if (menu.isCrafting()) {
             int l = menu.getScaledProgress();
-            blit(poseStack, this.leftPos + PROGRESS_ARROW.x, this.topPos + PROGRESS_ARROW.y, 179, 3, l + 1, PROGRESS_ARROW.height);
+            graphics.blit(BACKGROUND_TEXTURE, this.leftPos + PROGRESS_ARROW.x, this.topPos + PROGRESS_ARROW.y, 179, 3, l + 1, PROGRESS_ARROW.height);
         }
     }
 
@@ -132,9 +137,9 @@ public class CoinPressScreen extends AbstractContainerScreen<CoinPressMenu> impl
         this.recipeBookComponent.recipesUpdated();
     }
 
+    @SuppressWarnings("EmptyMethod")
     @Override
     public void removed() {
-        this.recipeBookComponent.removed();
         super.removed();
     }
 

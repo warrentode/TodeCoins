@@ -1,7 +1,10 @@
 package com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types;
 
+import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types.loot_table_types.*;
 import com.github.warrentode.todecoins.entity.trades.trade_api.CustomRegistryHelper;
-import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types.custom.*;
+import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types.semi_vanilla.SellItemForItemsFactory;
+import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types.semi_vanilla.TypeAwareSellItemForItemsFactory;
+import com.github.warrentode.todecoins.entity.trades.trade_api.trade_codecs.trade_types.semi_vanilla.TypeAwareTradeFactory;
 import com.mojang.serialization.Codec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.ExtraCodecs;
@@ -12,7 +15,6 @@ import java.util.function.Supplier;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
 
-@SuppressWarnings("removal")
 public class TradeOfferFactoryType<P extends VillagerTrades.ItemListing> {
     private final Codec<P> tradeTypeCodec;
 
@@ -34,103 +36,106 @@ public class TradeOfferFactoryType<P extends VillagerTrades.ItemListing> {
                     TradeOfferFactoryType::codec));
 
     public static final Supplier<TradeOfferFactoryType<?>> BUY_FOR_ONE_EMERALD =
-            register(new ResourceLocation("buy_for_one_emerald"),
+            register(ResourceLocation.parse("minecraft:buy_for_one_emerald"),
                     VanillaTradeOfferFactories.BUY_FOR_ONE_EMERALD);
     public static final Supplier<TradeOfferFactoryType<?>> SELL_ITEM =
-            register(new ResourceLocation("sell_for_emeralds"),
+            register(ResourceLocation.parse("minecraft:sell_for_emeralds"),
                     VanillaTradeOfferFactories.SELL_ITEM);
     public static final Supplier<TradeOfferFactoryType<?>> SELL_SUSPICIOUS_STEW =
-            register(new ResourceLocation("sell_suspicious_stew"),
+            register(ResourceLocation.parse("minecraft:sell_suspicious_stew"),
                     VanillaTradeOfferFactories.SELL_SUSPICIOUS_STEW);
     public static final Supplier<TradeOfferFactoryType<?>> PROCESS_ITEM =
-            register(new ResourceLocation("items_and_emeralds_to_items"),
+            register(ResourceLocation.parse("minecraft:items_and_emeralds_to_items"),
                     VanillaTradeOfferFactories.PROCESS_ITEM);
     public static final Supplier<TradeOfferFactoryType<?>> SELL_ENCHANTED_ITEM =
-            register(new ResourceLocation("sell_enchanted_item"),
+            register(ResourceLocation.parse("minecraft:sell_enchanted_item"),
                     VanillaTradeOfferFactories.SELL_ENCHANTED_ITEM);
     public static final Supplier<TradeOfferFactoryType<?>> TYPE_AWARE_BUY_FOR_ONE_EMERALD =
-            register(new ResourceLocation("type_aware_buy_for_one_emerald"),
+            register(ResourceLocation.parse("minecraft:type_aware_buy_for_one_emerald"),
                     VanillaTradeOfferFactories.TYPE_AWARE_BUY_FOR_ONE_EMERALD);
     public static final Supplier<TradeOfferFactoryType<?>> SELL_TIPPED_ARROW =
-            register(new ResourceLocation("sell_tipped_arrow"),
+            register(ResourceLocation.parse("minecraft:sell_tipped_arrow"),
                     VanillaTradeOfferFactories.SELL_TIPPED_ARROW);
     public static final Supplier<TradeOfferFactoryType<?>> SELL_ENCHANT_BOOK =
-            register(new ResourceLocation("sell_enchanted_book"),
+            register(ResourceLocation.parse("minecraft:sell_enchanted_book"),
                     VanillaTradeOfferFactories.SELL_ENCHANT_BOOK);
     public static final Supplier<TradeOfferFactoryType<?>> SELL_MAP =
-            register(new ResourceLocation("sell_map"),
+            register(ResourceLocation.parse("minecraft:sell_map"),
                     VanillaTradeOfferFactories.SELL_MAP);
     public static final Supplier<TradeOfferFactoryType<?>> SELL_DYED_ARMOR =
-            register(new ResourceLocation("sell_dyed_armor"),
+            register(ResourceLocation.parse("minecraft:sell_dyed_armor"),
                     VanillaTradeOfferFactories.SELL_DYED_ARMOR);
 
     public static final Supplier<TradeOfferFactoryType<?>> SELL_ITEM_FOR_ITEMS =
-            register(new ResourceLocation("sell_item_for_items"),
+            register(ResourceLocation.parse("minecraft:sell_item_for_items"),
                     SellItemForItemsFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> TYPE_AWARE_SELL_ITEMS_FOR_ITEM =
-            register(new ResourceLocation("type_aware_sell_item_for_items"),
+            register(ResourceLocation.parse("minecraft:type_aware_sell_item_for_items"),
                     TypeAwareSellItemForItemsFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> TYPE_AWARE =
-            register(new ResourceLocation("type_aware"),
+            register(ResourceLocation.parse("minecraft:type_aware"),
                     TypeAwareTradeFactory.CODEC);
 
     // my custom trade types
     public static final Supplier<TradeOfferFactoryType<?>> ITEM_FOR_LOOT_TABLE =
-            register(new ResourceLocation(MODID, "item_for_loot_table"),
+            register(ResourceLocation.parse(MODID + ":item_for_loot_table"),
                     ItemForLootTableFactory.CODEC);
+    public static final Supplier<TradeOfferFactoryType<?>> ITEM_FOR_TAG_TABLE =
+            register(ResourceLocation.parse(MODID + ":item_for_tag_table"),
+                    ItemForTagTableFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_AND_ITEM_FOR_ITEM =
-            register(new ResourceLocation(MODID, "loot_table_and_item_for_item"),
+            register(ResourceLocation.parse(MODID + ":loot_table_and_item_for_item"),
                     LootTableAndItemForItemFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_DYED_ARMOR =
-            register(new ResourceLocation(MODID, "loot_table_for_dyed_armor"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_dyed_armor"),
                     LootTableForDyedArmorFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_ENCHANTED =
-            register(new ResourceLocation(MODID, "loot_table_for_enchanted_item"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_enchanted_item"),
                     LootTableForEnchantedItemFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_ENCHANTED_ITEM_TABLE =
-            register(new ResourceLocation(MODID, "loot_table_for_enchanted_item_table"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_enchanted_item_table"),
                     LootTableForEnchantedItemTableFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_ITEM =
-            register(new ResourceLocation(MODID, "loot_table_for_item"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_item"),
                     LootTableForItemFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_LOOT_TABLE =
-            register(new ResourceLocation(MODID, "loot_table_for_loot_table"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_loot_table"),
                     LootTableForLootTableFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_POTION =
-            register(new ResourceLocation(MODID, "loot_table_for_potion"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_potion"),
                     LootTableForPotionFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_SPECIFIED_ENCHANTMENT =
-            register(new ResourceLocation(MODID, "loot_table_for_specified_enchantment"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_specified_enchantment"),
                     LootTableForSpecifiedEnchantmentFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_SUS_STEW =
-            register(new ResourceLocation(MODID, "loot_table_for_sus_stew"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_sus_stew"),
                     LootTableForSUSStewFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_TAG_TABLE =
-            register(new ResourceLocation(MODID, "loot_table_for_tag_table"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_tag_table"),
                     LootTableForTagTableFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_TIPPED_ARROW =
-            register(new ResourceLocation(MODID, "loot_table_for_tipped_arrow"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_tipped_arrow"),
                     LootTableForTippedArrowFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_TWO_LOOT_TABLE =
-            register(new ResourceLocation(MODID, "loot_table_for_two_loot_table"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_two_loot_table"),
                     TwoLootTableForLootTableFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> TAG_TABLE_FOR_LOOT_TABLE =
-            register(new ResourceLocation(MODID, "tag_table_for_loot_table"),
+            register(ResourceLocation.parse(MODID + ":tag_table_for_loot_table"),
                     TagTableForLootTableFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> TWO_LOOT_TABLE_FOR_ENCHANTED =
-            register(new ResourceLocation(MODID, "two_loot_table_for_enchanted_item"),
+            register(ResourceLocation.parse(MODID + ":two_loot_table_for_enchanted_item"),
                     TwoLootTableForEnchantedItemFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> TWO_LOOT_TABLE_FOR_LOOT_BOX =
-            register(new ResourceLocation(MODID, "two_loot_table_for_loot_box"),
+            register(ResourceLocation.parse(MODID + ":two_loot_table_for_loot_box"),
                     TwoLootTableForLootBoxFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> TWO_LOOT_TABLE_FOR_MAP =
-            register(new ResourceLocation(MODID, "two_loot_table_for_map"),
+            register(ResourceLocation.parse(MODID + ":two_loot_table_for_map"),
                     TwoLootTableForMapFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_FOR_LOOT_BOX =
-            register(new ResourceLocation(MODID, "loot_table_for_loot_box"),
+            register(ResourceLocation.parse(MODID + ":loot_table_for_loot_box"),
                     LootTableForLootBoxFactory.CODEC);
     public static final Supplier<TradeOfferFactoryType<?>> LOOT_TABLE_AND_ITEM_FOR_ENCHANTED_ITEM =
-            register(new ResourceLocation(MODID, "loot_table_and_item_for_enchanted_item"),
+            register(ResourceLocation.parse(MODID + ":loot_table_and_item_for_enchanted_item"),
                     LootTableAndItemForEnchantedItemFactory.CODEC);
 
     // requires wares mod
@@ -138,7 +143,7 @@ public class TradeOfferFactoryType<P extends VillagerTrades.ItemListing> {
     private static Supplier<TradeOfferFactoryType<?>> createSealedAgreementFactory() {
         if (ModList.get().isLoaded("wares")) {
             return register(
-                    new ResourceLocation(MODID, "loot_table_for_sealed_agreement"),
+                    ResourceLocation.parse(MODID + ":loot_table_for_sealed_agreement"),
                     LootTableForSealedAgreementFactory.CODEC
             );
         }

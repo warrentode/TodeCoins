@@ -1,0 +1,369 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "snowyspirit"
+            },
+            {
+              "condition": "todecoins:winter_condition"
+            }
+          ],
+          "expand": true,
+          "name": "forge:sleds"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_empyreal"
+            }
+          ],
+          "name": "biomesoplenty:empyreal_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_hellbark"
+            }
+          ],
+          "name": "biomesoplenty:hellbark_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_umbran"
+            }
+          ],
+          "name": "biomesoplenty:umbran_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_magic"
+            }
+          ],
+          "name": "biomesoplenty:magic_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_dead"
+            }
+          ],
+          "name": "biomesoplenty:dead_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_willow"
+            }
+          ],
+          "name": "biomesoplenty:willow_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_palm"
+            }
+          ],
+          "name": "biomesoplenty:palm_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_jacaranda"
+            }
+          ],
+          "name": "biomesoplenty:jacaranda_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_mahogany"
+            }
+          ],
+          "name": "biomesoplenty:mahogany_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_redwood"
+            }
+          ],
+          "name": "biomesoplenty:redwood_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "todecoins:biometag_condition",
+                  "tag": "forge:has_red_maple"
+                },
+                {
+                  "condition": "todecoins:biometag_condition",
+                  "tag": "forge:has_orange_maple"
+                },
+                {
+                  "condition": "todecoins:biometag_condition",
+                  "tag": "forge:has_yellow_maple"
+                }
+              ]
+            }
+          ],
+          "name": "biomesoplenty:maple_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_pine"
+            }
+          ],
+          "name": "biomesoplenty:pine_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "biomesoplenty"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_fir"
+            }
+          ],
+          "name": "biomesoplenty:fir_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_acacia"
+            }
+          ],
+          "name": "minecraft:acacia_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_birch"
+            }
+          ],
+          "name": "minecraft:birch_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "todecoins:biometag_condition",
+                  "tag": "forge:has_cherry"
+                },
+                {
+                  "condition": "todecoins:biometag_condition",
+                  "tag": "forge:has_snowblossom"
+                }
+              ]
+            }
+          ],
+          "name": "minecraft:cherry_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_dark_oak"
+            }
+          ],
+          "name": "minecraft:dark_oak_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_jungle"
+            }
+          ],
+          "name": "minecraft:jungle_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_mangrove"
+            }
+          ],
+          "name": "minecraft:mangrove_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_spruce"
+            }
+          ],
+          "name": "minecraft:spruce_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "aether"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_aether_skyroot"
+            }
+          ],
+          "name": "aether:skyroot_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "ecologics"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_coconut"
+            }
+          ],
+          "name": "ecologics:coconut_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "ecologics"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_azalea"
+            }
+          ],
+          "name": "ecologics:azalea_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "ecologics"
+            },
+            {
+              "condition": "todecoins:biometag_condition",
+              "tag": "forge:has_azalea"
+            }
+          ],
+          "name": "ecologics:flowering_azalea_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "todecoins:modloaded_condition",
+              "modid": "ecologics"
+            }
+          ],
+          "name": "ecologics:walnut_boat"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:oak_boat"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "todecoins:trade_tables/gear/boats_table"
+}

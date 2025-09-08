@@ -1,5 +1,4 @@
 {
-  "type": "minecraft:barter",
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -11,8 +10,7 @@
               "condition": "todecoins:spring_condition"
             }
           ],
-          "name": "todecoins:collectible_coin_piglin_copper",
-          "weight": 20
+          "name": "todecoins:collectible_coin_piglin_copper"
         },
         {
           "type": "minecraft:item",
@@ -30,8 +28,7 @@
               "condition": "todecoins:autumn_condition"
             }
           ],
-          "name": "todecoins:collectible_coin_piglin_gold",
-          "weight": 20
+          "name": "todecoins:collectible_coin_piglin_gold"
         },
         {
           "type": "minecraft:item",
@@ -40,8 +37,7 @@
               "condition": "todecoins:winter_condition"
             }
           ],
-          "name": "todecoins:collectible_coin_piglin_netherite",
-          "weight": 20
+          "name": "todecoins:collectible_coin_piglin_netherite"
         },
         {
           "type": "minecraft:item",
@@ -214,5 +210,6 @@
       ],
       "rolls": 1.0
     }
-  ]
+  ],
+  "random_sequence": "todecoins:gameplay/bartering/iron_piglin_coin_barter_loot"
 }

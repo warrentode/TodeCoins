@@ -1,11 +1,5 @@
 {
   "values": [
-    "minecraft:leather",
-    "minecraft:rabbit_hide",
-    {
-      "id": "nethersdelight:hoglin_hide",
-      "required": false
-    },
     "minecraft:rabbit_hide",
     "minecraft:leather",
     {
