@@ -20,8 +20,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Consumer;
 
 import static com.github.warrentode.todecoins.TodeCoins.MODID;
@@ -31,7 +30,7 @@ public class RemainderShapedRecipeBuilder {
     private final Item result;
     private final int count;
     private String group = "";
-    private String[] pattern = null;
+    private final List<String> pattern = new ArrayList<>();
     private final Advancement.Builder advancement = Advancement.Builder.advancement();
     private final Map<String, Ingredient> keyMap = Maps.newHashMap();
 
@@ -55,12 +54,12 @@ public class RemainderShapedRecipeBuilder {
         return this;
     }
 
-    public RemainderShapedRecipeBuilder setPattern(String... patternRows) {
-        this.pattern = patternRows;
+    public RemainderShapedRecipeBuilder pattern(String... patternRows) {
+        Collections.addAll(this.pattern, patternRows); // append instead of overwrite
         return this;
     }
 
-    public RemainderShapedRecipeBuilder addKey(@NotNull String symbol, Ingredient ingredient) {
+    public RemainderShapedRecipeBuilder define(@NotNull String symbol, Ingredient ingredient) {
         if (symbol.length() != 1) throw new IllegalArgumentException("Key symbol must be a single character");
         keyMap.put(symbol, ingredient);
         return this;
@@ -71,13 +70,13 @@ public class RemainderShapedRecipeBuilder {
         return this;
     }
 
-    public void build(Consumer<FinishedRecipe> consumerIn) {
+    public void save(Consumer<FinishedRecipe> consumerIn) {
         ResourceLocation location = ForgeRegistries.ITEMS.getKey(result);
         assert location != null;
-        build(consumerIn, ResourceLocation.parse(MODID + ":shaped_remainder/" + location.getPath()));
+        save(consumerIn, ResourceLocation.parse(MODID + ":shaped_remainder/" + location.getPath()));
     }
 
-    public void build(Consumer<FinishedRecipe> consumerIn, ResourceLocation id) {
+    public void save(Consumer<FinishedRecipe> consumerIn, ResourceLocation id) {
         if (!advancement.getCriteria().isEmpty()) {
             advancement.parent(ResourceLocation.parse("recipes/root"))
                     .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
@@ -95,14 +94,14 @@ public class RemainderShapedRecipeBuilder {
         private final ResourceLocation id;
         private final Item result;
         private final int count;
-        private final String[] pattern;
+        private List<String> pattern = new ArrayList<>();
         private final Map<String, Ingredient> keyMap;
         private final CraftingBookCategory category;
         private final String group; // NEW
         private final Advancement.Builder advancement;
         private final ResourceLocation advancementId;
 
-        public Result(ResourceLocation id, Item result, int count, String[] pattern, Map<String, Ingredient> keyMap,
+        public Result(ResourceLocation id, Item result, int count, List<String> pattern, Map<String, Ingredient> keyMap,
                       CraftingBookCategory category, String group,
                       @Nullable Advancement.Builder advancement, @Nullable ResourceLocation advancementId) {
             this.id = id;

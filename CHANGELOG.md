@@ -1,1 +1,3 @@
-[3.0.0] updated to minecraft 1.20.1
+[3.0.1]
+- added missing block loot tables
+- fixed the remainder shaped recipe builder to print files correctly
