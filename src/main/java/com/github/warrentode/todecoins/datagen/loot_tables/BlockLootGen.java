@@ -3,9 +3,11 @@ package com.github.warrentode.todecoins.datagen.loot_tables;
 import com.github.warrentode.todecoins.block.TCBlocks;
 import com.github.warrentode.todecoins.item.TCItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -25,9 +27,11 @@ public class BlockLootGen extends BlockLootSubProvider {
         this.add(TCBlocks.ENDONIAN_ORE.get(),
                 (block) -> this.createOreDrop(block, TCItems.ENDONIAN_CRYSTAL.get()));
 
-        List<Block> blockList = ForgeRegistries.BLOCKS.getValues().stream()
-                .filter(item -> item.getDescriptionId().contains(MODID))
-                .filter(item -> !item.getDescriptionId().contains("ore"))
+        List<Block> blockList = TCBlocks.BLOCKS.getEntries().stream()
+                .map(RegistryObject::get).filter(block -> {
+                    ResourceLocation location = ForgeRegistries.BLOCKS.getKey(block);
+                    return location != null && !location.getPath().contains("ore");
+                })
                 .toList();
 
         blockList.forEach(this::dropSelf);
