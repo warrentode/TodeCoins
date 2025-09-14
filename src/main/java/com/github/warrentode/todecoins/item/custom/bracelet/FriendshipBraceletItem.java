@@ -1,5 +1,6 @@
 package com.github.warrentode.todecoins.item.custom.bracelet;
 
+import com.github.warrentode.todecoins.Config;
 import com.github.warrentode.todecoins.datagen.translations.TooltipTranslations;
 import com.github.warrentode.todecoins.effect.TCMobEffects;
 import com.github.warrentode.todecoins.integration.curios.CurioCapabilityProvider;
@@ -11,6 +12,7 @@ import net.minecraft.core.GlobalPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -151,6 +153,15 @@ public class FriendshipBraceletItem extends Item {
                 // Teleport to respawn point (cross-dimension)
                 ServerLevel targetLevel = Objects.requireNonNull(playerUsing.getServer()).getLevel(respawnDim);
                 if (targetLevel != null) {
+                    if (isDimensionBlacklisted(playerUsing.level) || isDimensionBlacklisted(targetLevel)) {
+                        if (isDimensionBlacklisted(playerUsing.level)) {
+                            playerUsing.sendSystemMessage(Component.literal("Cannot teleport from this dimension!").withStyle(ChatFormatting.RED));
+                        }
+                        else {
+                            playerUsing.sendSystemMessage(Component.literal("Cannot teleport to this dimension!").withStyle(ChatFormatting.RED));
+                        }
+                        return;
+                    }
                     TC_LOGGER.info("[FriendshipBracelet] {}'s respawn point at {} {} {} in {}",
                             playerUsing.getName().getString(),
                             respawnPos.getX(), respawnPos.getY(), respawnPos.getZ(),
@@ -212,6 +223,16 @@ public class FriendshipBraceletItem extends Item {
             try {
                 ServerLevel targetLevel = (ServerLevel) targetServerPlayer.level;
 
+                if (isDimensionBlacklisted(playerUsing.level) || isDimensionBlacklisted(targetLevel)) {
+                    if (isDimensionBlacklisted(playerUsing.level)) {
+                        playerUsing.sendSystemMessage(Component.literal("Cannot teleport from this dimension!").withStyle(ChatFormatting.RED));
+                    }
+                    else {
+                        playerUsing.sendSystemMessage(Component.literal("Cannot teleport to this dimension!").withStyle(ChatFormatting.RED));
+                    }
+                    return;
+                }
+
                 TC_LOGGER.info("[FriendshipBracelet] {} is currently at {} {} {} in {}",
                         playerUsing.getName().getString(),
                         playerUsing.getX(), playerUsing.getY(), playerUsing.getZ(),
@@ -247,6 +268,12 @@ public class FriendshipBraceletItem extends Item {
             TC_LOGGER.info("[FriendshipBracelet] {} attempted to teleport to {} but they are offline or not a ServerPlayer",
                     playerUsing.getName().getString(), friendName);
         }
+    }
+
+    public static boolean isDimensionBlacklisted(@NotNull Level level) {
+        ResourceLocation dimId = level.dimension().location();
+        List<? extends String> blacklist = Config.getDimensionBlacklist();
+        return blacklist.contains(dimId.toString());
     }
 
     // ---------- CURIO KEYBIND USE METHOD ----------

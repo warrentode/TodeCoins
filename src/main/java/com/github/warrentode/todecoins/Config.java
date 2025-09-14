@@ -41,6 +41,8 @@ public class Config {
     public static final ForgeConfigSpec.IntValue TAIGA_VILLAGE_BANK_SPAWN_WEIGHT;
     public static final ForgeConfigSpec.IntValue SNOWY_VILLAGE_BANK_SPAWN_WEIGHT;
 
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> DIMENSION_BLACKLIST;
+
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> CUSTOM_EVENTS;
 
     // config setting setters
@@ -127,6 +129,16 @@ public class Config {
                         ),
                         customEvent -> customEvent instanceof String
                 );
+        BUILDER.pop();
+
+
+        // bracelet settings
+        BUILDER.push("Friendship Bracelet Settings");
+        DIMENSION_BLACKLIST = BUILDER
+                .comment("Set which Dimensions the Bracelet cannot Target")
+                .defineList("dimension_blacklist",
+                        List.of("turtleblockacademy:creative_dimension"),
+                        object -> object instanceof String);
         BUILDER.pop();
 
         SPEC = BUILDER.build();
@@ -279,6 +291,15 @@ public class Config {
         }
         else {
             return SNOWY_VILLAGE_BANK_SPAWN_WEIGHT.get();
+        }
+    }
+
+    public static List<? extends String> getDimensionBlacklist() {
+        if (Objects.equals(DIMENSION_BLACKLIST.get(), DIMENSION_BLACKLIST.getDefault())) {
+            return DIMENSION_BLACKLIST.getDefault();
+        }
+        else {
+            return DIMENSION_BLACKLIST.get();
         }
     }
 
