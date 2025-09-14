@@ -26,6 +26,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.SingleThreadedRandomSource;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -46,6 +47,10 @@ public class AquaticCoinItem extends CollectibleCoinItem {
 
     @Override
     public @Nullable ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
+        if (!ModList.get().isLoaded("curios")) {
+            return null;
+        }
+        // Delegate to a helper class that only exists if Curios is loaded
         return CurioCapabilityProvider.initCapabilities(stack, nbt);
     }
 

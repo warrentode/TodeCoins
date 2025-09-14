@@ -27,6 +27,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.fml.ModList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,7 +35,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static com.github.warrentode.todecoins.TodeCoins.TC_LOGGER;
-
+// TODO add a blacklist to/from dimension check prior to teleport
 public class FriendshipBraceletItem extends Item {
     public static int braceletDurability;
     private final BraceletProperties braceletMaterials;
@@ -49,6 +50,10 @@ public class FriendshipBraceletItem extends Item {
 
     @Override
     public @Nullable ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
+        if (!ModList.get().isLoaded("curios")) {
+            return null;
+        }
+        // Delegate to a helper class that only exists if Curios is loaded
         return CurioCapabilityProvider.initCapabilities(stack, nbt);
     }
 

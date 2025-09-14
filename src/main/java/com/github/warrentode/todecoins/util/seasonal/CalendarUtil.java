@@ -33,41 +33,39 @@ public class CalendarUtil {
     static Boolean isSeason;
 
     public static boolean check(String season) {
-        if (ModList.get().isLoaded("sereneseasons")) {
-            MinecraftServer minecraftServer = ServerLifecycleHooks.getCurrentServer().getPlayerList().getServer();
-            //noinspection ConstantValue
-            if (minecraftServer != null) {
-                ServerLevel serverLevel = minecraftServer.createCommandSourceStack().getLevel();
-                if (Objects.equals(season, "ANNIVERSARY")) {
-                    return isSeason = CalendarUtil.isAnniversary(serverLevel);
-                }
-                if (Objects.equals(season, "BIRTHDAY")) {
-                    return isSeason = CalendarUtil.isBirthday(serverLevel);
-                }
-                if (Objects.equals(season, "HALLOWEEN")) {
-                    return isSeason = CalendarUtil.isHalloween(serverLevel);
-                }
-                if (Objects.equals(season, "CHRISTMAS")) {
-                    return isSeason = CalendarUtil.isChristmas(serverLevel);
-                }
-                if (Objects.equals(season, "EASTER")) {
-                    return isSeason = CalendarUtil.isEaster(serverLevel);
-                }
-                if (Objects.equals(season, "NEW_YEAR")) {
-                    return isSeason = CalendarUtil.isNewYear(serverLevel);
-                }
-                if (Objects.equals(season, "SPRING")) {
-                    return isSeason = CalendarUtil.isSpring(serverLevel);
-                }
-                if (Objects.equals(season, "SUMMER")) {
-                    return isSeason = CalendarUtil.isSummer(serverLevel);
-                }
-                if (Objects.equals(season, "AUTUMN")) {
-                    return isSeason = CalendarUtil.isAutumn(serverLevel);
-                }
-                if (Objects.equals(season, "WINTER")) {
-                    return isSeason = CalendarUtil.isWinter(serverLevel);
-                }
+        MinecraftServer minecraftServer = ServerLifecycleHooks.getCurrentServer().getPlayerList().getServer();
+        //noinspection ConstantValue
+        if (minecraftServer != null) {
+            ServerLevel serverLevel = minecraftServer.createCommandSourceStack().getLevel();
+            if (Objects.equals(season, "ANNIVERSARY")) {
+                return isSeason = CalendarUtil.isAnniversary(serverLevel);
+            }
+            if (Objects.equals(season, "BIRTHDAY")) {
+                return isSeason = CalendarUtil.isBirthday(serverLevel);
+            }
+            if (Objects.equals(season, "HALLOWEEN")) {
+                return isSeason = CalendarUtil.isHalloween(serverLevel);
+            }
+            if (Objects.equals(season, "CHRISTMAS")) {
+                return isSeason = CalendarUtil.isChristmas(serverLevel);
+            }
+            if (Objects.equals(season, "EASTER")) {
+                return isSeason = CalendarUtil.isEaster(serverLevel);
+            }
+            if (Objects.equals(season, "NEW_YEAR")) {
+                return isSeason = CalendarUtil.isNewYear(serverLevel);
+            }
+            if (Objects.equals(season, "SPRING")) {
+                return isSeason = CalendarUtil.isSpring(serverLevel);
+            }
+            if (Objects.equals(season, "SUMMER")) {
+                return isSeason = CalendarUtil.isSummer(serverLevel);
+            }
+            if (Objects.equals(season, "AUTUMN")) {
+                return isSeason = CalendarUtil.isAutumn(serverLevel);
+            }
+            if (Objects.equals(season, "WINTER")) {
+                return isSeason = CalendarUtil.isWinter(serverLevel);
             }
         }
         TC_LOGGER.warn("Event check didn't match up");
