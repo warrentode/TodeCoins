@@ -23,6 +23,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,6 +38,10 @@ public class LuckyCoinItem extends CurrencyItem {
 
     @Override
     public @Nullable ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
+        if (!ModList.get().isLoaded("curios")) {
+            return null;
+        }
+        // Delegate to a helper class that only exists if Curios is loaded
         return CurioCapabilityProvider.initCapabilities(stack, nbt);
     }
 

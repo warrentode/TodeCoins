@@ -133,14 +133,6 @@ public class Config {
     }
 
     // config setting getters
-    public static Boolean getResetTrades() {
-        if (Objects.equals(RESET_TRADES_ON_RESTOCK.get(), RESET_TRADES_ON_RESTOCK.getDefault())) {
-            return RESET_TRADES_ON_RESTOCK.getDefault();
-        }
-        else {
-            return RESET_TRADES_ON_RESTOCK.get();
-        }
-    }
     public static Boolean getReplaceGoblinTraderTrades() {
         if (Objects.equals(REPLACE_GOBLIN_TRADER_TRADES.get(), REPLACE_GOBLIN_TRADER_TRADES.getDefault())) {
             return REPLACE_GOBLIN_TRADER_TRADES.getDefault();
@@ -165,6 +157,15 @@ public class Config {
             return REPLACE_WANDERING_TRADER_TRADES.get();
         }
     }
+
+    public static Boolean getResetTrades() {
+        if (Objects.equals(RESET_TRADES_ON_RESTOCK.get(), RESET_TRADES_ON_RESTOCK.getDefault())) {
+            return RESET_TRADES_ON_RESTOCK.getDefault();
+        }
+        else {
+            return RESET_TRADES_ON_RESTOCK.get();
+        }
+    }
     public static Boolean getReplaceVillagerTrades() {
         if (Objects.equals(REPLACE_VILLAGER_TRADES.get(), REPLACE_VILLAGER_TRADES.getDefault())) {
             return REPLACE_VILLAGER_TRADES.getDefault();
@@ -173,7 +174,6 @@ public class Config {
             return REPLACE_VILLAGER_TRADES.get();
         }
     }
-
     public static int getMaxVillagerTrades() {
         if (Objects.equals(MAX_VILLAGER_TRADES_PER_LEVEL.get(), MAX_VILLAGER_TRADES_PER_LEVEL.getDefault())) {
             return MAX_VILLAGER_TRADES_PER_LEVEL.getDefault();

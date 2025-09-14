@@ -20,6 +20,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
@@ -73,13 +74,19 @@ public class WalletItem extends Item {
     @Override
     public @Nullable ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
         WalletCapabilityProvider walletCap = new WalletCapabilityProvider(stack, nbt);
-        ICapabilityProvider curiosCap = CurioCapabilityProvider.initCapabilities(stack, nbt);
+
+        ICapabilityProvider curiosCap = null;
+        if (ModList.get().isLoaded("curios")) {
+            // delegate to a separate loader class to avoid classloading issues
+            curiosCap = CurioCapabilityProvider.initCapabilities(stack, nbt);
+        }
 
         if (curiosCap == null) {
             return walletCap;
         }
 
         // Wrap both capabilities together
+        ICapabilityProvider finalCuriosCap = curiosCap; // effectively final for inner class
         return new ICapabilityProvider() {
             @Nonnull
             @Override
@@ -87,7 +94,7 @@ public class WalletItem extends Item {
                 LazyOptional<T> wallet = walletCap.getCapability(cap, side);
                 if (wallet.isPresent()) return wallet;
 
-                LazyOptional<T> curios = curiosCap.getCapability(cap, side);
+                LazyOptional<T> curios = finalCuriosCap.getCapability(cap, side);
                 return curios.isPresent() ? curios : LazyOptional.empty();
             }
         };

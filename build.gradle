@@ -9,7 +9,7 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = mod_version
+version = "${mc_version}-${mod_version}"
 group = mod_domain
 
 base {
@@ -223,7 +223,7 @@ tasks.named('jar', Jar).configure {
                 'Specification-Vendor'    : mod_authors,
                 'Specification-Version'   : '1',
                 'Implementation-Title'    : project.name,
-                'Implementation-Version'  : project.jar.archiveVersion,
+                'Implementation-Version'  : project.version,
                 'Implementation-Vendor'   : mod_authors,
                 'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs"            : "mixins.todecoins.json"

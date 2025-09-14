@@ -1,5 +1,6 @@
 {
   "values": [
+    "todecoins:server_token_coin",
     "todecoins:echo_coin",
     "todecoins:emerald_coin",
     "todecoins:diamond_coin",

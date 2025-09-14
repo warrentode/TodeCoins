@@ -1,63 +1,21 @@
 {
   "values": [
+    "#todecoins:currency_singles",
     "todecoins:echo_coin_bag",
-    "todecoins:echo_coin",
     "todecoins:emerald_coin_bag",
-    "todecoins:emerald_coin",
     "todecoins:diamond_coin_bag",
-    "todecoins:diamond_coin",
     "todecoins:amethyst_coin_bag",
-    "todecoins:amethyst_coin",
     "todecoins:lapis_coin_bag",
-    "todecoins:lapis_coin",
     "todecoins:endonian_coin_bag",
-    "todecoins:endonian_coin",
     "todecoins:lucky_coin_bag",
-    "todecoins:lucky_coin",
     "todecoins:emerald_bank_note_bag",
-    "todecoins:emerald_bank_note",
     "todecoins:emerald_half_bank_note_bag",
-    "todecoins:emerald_half_bank_note",
     "todecoins:emerald_quarter_bank_note_bag",
-    "todecoins:emerald_quarter_bank_note",
     "todecoins:nether_gold_coin_bag",
-    "todecoins:nether_gold_coin",
     "todecoins:netherite_coin_bag",
-    "todecoins:netherite_coin",
     "todecoins:gold_coin_bag",
-    "todecoins:gold_coin",
     "todecoins:iron_coin_bag",
-    "todecoins:iron_coin",
     "todecoins:copper_coin_bag",
-    "todecoins:copper_coin",
-    {
-      "id": "createdeco:copper_coin",
-      "required": false
-    },
-    {
-      "id": "createdeco:brass_coin",
-      "required": false
-    },
-    {
-      "id": "createdeco:zinc_coin",
-      "required": false
-    },
-    {
-      "id": "createdeco:iron_coin",
-      "required": false
-    },
-    {
-      "id": "createdeco:gold_coin",
-      "required": false
-    },
-    {
-      "id": "createdeco:industrial_iron_coin",
-      "required": false
-    },
-    {
-      "id": "createdeco:netherite_coin",
-      "required": false
-    },
     {
       "id": "createdeco:copper_coinstack",
       "required": false

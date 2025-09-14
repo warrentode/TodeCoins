@@ -3066,7 +3066,7 @@ public static final RegistryObject<Item> COLLECTIBLE_COIN_BOGGED_COPPER = regist
             TabCategory.DECORATIVE
     );
 
-    // register item with lang keys
+    // register item with tab categories
     private static RegistryObject<Item> registerItem(String name, Supplier<Item> supplier, TabCategory category) {
         RegistryObject<Item> item = ITEMS.register(name, supplier);
         ITEM_CATEGORIES.put(item, category);
