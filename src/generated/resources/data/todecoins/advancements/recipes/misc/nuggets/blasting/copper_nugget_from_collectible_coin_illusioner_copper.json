@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "todecoins:copper_nugget"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "todecoins:nuggets/blasting/copper_nugget_from_collectible_coin_illusioner_copper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_copper_nugget",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "todecoins:nuggets/blasting/copper_nugget_from_collectible_coin_illusioner_copper"
+    ]
+  },
+  "sends_telemetry_event": false
+}

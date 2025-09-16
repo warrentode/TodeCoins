@@ -46,7 +46,7 @@ public class RecipesGen extends RecipeProvider {
 
     @Contract("_, _ -> new")
     public static @NotNull ResourceLocation setLocation(String modid, String path) {
-        return ResourceLocation.parse(modid + ":recipes/" + path);
+        return ResourceLocation.parse(modid + ":" + path);
     }
 
     public static Item getNuggetForCoin(@NotNull CollectibleCoinMaterial material) {

@@ -543,7 +543,7 @@ public class CraftingRecipesGen extends RecipeProvider implements IConditionBuil
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, TCBlocks.GOLD_COIN_BAG.get(), 9)
                 .requires(TCBlocks.POT_OF_GOLD.get())
                 .unlockedBy("has_pot_of_gold", has(TCBlocks.POT_OF_GOLD.get()))
-                .save(consumer, setLocation(MODID, "job_blocks/bags_of_gold_from_pot_of_gold"));
+                .save(consumer, setLocation(MODID, "currency/bags_of_gold_from_pot_of_gold"));
     }
 
     private static void currencyStampsRecipes(Consumer<FinishedRecipe> consumer) {

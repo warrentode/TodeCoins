@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersdelight"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "tag": "forge:ingredients/cocoa"
+          },
+          {
+            "tag": "forge:ingredients/sugar"
+          },
+          {
+            "tag": "forge:milk/milk"
+          },
+          {
+            "tag": "forge:fat"
+          },
+          {
+            "item": "minecraft:warped_fungus"
+          },
+          {
+            "item": "minecraft:pufferfish"
+          }
+        ],
+        "recipe_book_tab": "misc",
+        "result": {
+          "count": 4,
+          "item": "todecoins:chocolate_coin_warped_spice"
+        }
+      }
+    }
+  ]
+}
